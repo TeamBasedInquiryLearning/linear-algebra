@@ -4,9 +4,10 @@
 \renewcommand{\P}{\mathcal{P}}
 \renewcommand{\Im}{{\rm Im\ }}
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}
-\newtheorem{example}{Example}
-\newtheorem{app}{Application Activity}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{observation}{Observation}
+\newtheorem*{activityRaw}{Activity}
 \DeclareMathOperator{\RREF}{RREF}
 \makeatletter
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
@@ -15,8 +16,11 @@
   \array{#1}}
 \makeatother
 
+\setlength{\parindent}{0pt}
+
 
 \newenvironment{readinessAssuranceOutcomes}{
+\newpage
 \section*{Readiness Assurance Outcomes}
 
 Before beginning this module, each student should be able to...
@@ -33,4 +37,37 @@ The following resources will help you prepare for this module.
 \begin{itemize}
 }{
 \end{itemize}
+}
+
+\newenvironment{readinessAssuranceTest}{
+\newpage
+\section*{Readiness Assurance Test}
+Choose the most appropriate response for each question.
+\begin{enumerate}[1)]
+}{
+\end{enumerate}
+}
+
+\newenvironment{readinessAssuranceTestChoices}{
+\begin{enumerate}[(a)]
+}{
+\end{enumerate}
+}
+
+\newenvironment{applicationActivities}[1]{
+\newpage
+\section*{Application Activities - #1}
+}{
+%
+}
+
+\newcommand{\term}{\textbf}
+
+\newenvironment{activity}{
+\begin{activityRaw}
+}{
+\end{activityRaw}
+\begin{center}
+\rule{6.5in}{0.2pt}
+\end{center}
 }
