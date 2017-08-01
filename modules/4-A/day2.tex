@@ -1,0 +1,82 @@
+%!TEX root =../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
+
+\begin{applicationActivities}{Day 2}
+
+\begin{definition}
+Let $T: V \rightarrow W$ be a linear transformation.
+\begin{itemize}
+\item $T$ is called \term{injective} or \term{one-to-one} if $T$ does not map two distinct values to the same place.  More precisely, $T$ is injective if $T(\vec{v}) \neq T(\vec{w})$ whenever $\vec{v} \neq \vec{w}$.
+\item $T$ is called \term{surjective} or \term{onto} if every element of $W$ is mapped to by an element of $V$.  More precisely, for every $\vec{w} \in W$, there is some $v \in V$ with $T(\vec{v})=\vec{w}$.
+\end{itemize}
+\end{definition}
+
+\begin{activity}
+Let $T: \IR^3 \rightarrow \IR^2$ be given by the matrix $\begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}$.  Determine if $T$ is injective, surjective, both, or neither.
+\end{activity}
+
+\begin{activity}
+Let $T: \IR^2 \rightarrow \IR^3$ be given by the matrix $\begin{bmatrix} 1 & 0 &0  \\ 0 & 1 & 0 \end{bmatrix}$.  Determine if $T$ is injective, surjective, both, or neither.
+\end{activity}
+
+\begin{definition}
+We also have two important sets called the \term{kernel} of $T$ and the \term{image} of $T$.
+\begin{align*}
+\ker T &= \left\{ \vec{v} \in V\ \big|\ T(\vec{v})=0\right\} \\
+\Im T &= \left\{ \vec{w} \in W\ \big|\ \text{there is some }v\in V \text{ with } T(\vec{v})=\vec{w}\right\}
+\end{align*}
+\end{definition}
+
+\begin{activity}
+Let $T: \IR^3 \rightarrow \IR^2$ be given by the matrix $\begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}$ (for the standard basis).  Find the kernel and image of $T$.
+\end{activity}
+
+\begin{activity}
+Let $T: \IR^2 \rightarrow \IR^3$ be given by the matrix $\begin{bmatrix} 1 & 0 &0  \\ 0 & 1 & 0 \end{bmatrix}$ (for the standard basis).  Find the kernel and image of $T$.
+\end{activity}
+
+\begin{activity}
+Describe surjective linear transformations in terms of the image.
+\end{activity}
+
+\begin{activity}
+Describe injective linear transformations in terms of the kernel.
+\end{activity}
+
+\begin{activity}
+Let $T: \IR^3 \rightarrow \IR^2$ be the linear transformation given by the matrix $A=\begin{bmatrix} 3 & 4 & -1 \\ 1 & 2 & 1 \end{bmatrix}$ (for the standard basis).
+\begin{enumerate}[1)]
+\item Write a system of equations whose solution set is the kernel.
+\item Compute $\RREF(A)$ and solve the system of equations.
+\item Compute the kernel of $T$
+\item Find a basis for the kernel of $T$
+\end{enumerate}
+\end{activity}
+
+\begin{activity}
+Let $S: \IR^3 \rightarrow \IR^2$ be the linear transformation given by the matrix $B=\begin{bmatrix} 3 & 4 & 1 \\ 1 & 2 & 4 \\ 5 & 8 & 9 \end{bmatrix}$ (for the standard basis).
+\begin{enumerate}[1)]
+\item Write a system of equations whose solution set is the kernel.
+\item Compute $\RREF(A)$ and solve the system of equations.
+\item Compute the kernel of $T$
+\item Find a basis for the kernel of $T$
+\end{enumerate}
+\end{activity}
+
+\begin{activity}
+Let $T: \IR^3 \rightarrow \IR^3$ be the linear transformation given by the matrix $A=\begin{bmatrix} 3 & 4 & -1 \\ 1 & 2 & 1 \end{bmatrix}$ (for the standard basis).
+\begin{enumerate}[1)]
+\item Find a set of vectors that span the image of $T$
+\item Find a basis for the image of $T$.
+\end{enumerate}
+\end{activity}
+
+\begin{activity}
+Let $S: \IR^3 \rightarrow \IR^3$ be the linear transformation given by the matrix $B=\begin{bmatrix} 3 & 4 & 1 \\ 1 & 2 & 4 \\ 5 & 8 & 9  \end{bmatrix}$ (for the standard basis).
+\begin{enumerate}[1)]
+\item Find a set of vectors that span the image of $T$
+\item Find a basis for the image of $T$.
+\end{enumerate}
+\end{activity}
+
+\end{applicationActivities}

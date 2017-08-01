@@ -1,0 +1,47 @@
+%!TEX root =../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
+
+\begin{applicationActivities}{Day 3}
+
+\begin{activity}
+Consider the linear transformation $A : \IR^2 \rightarrow \IR^2$ given by the matrix $A = \begin{bmatrix} 2 & 2 \\ 0 & 3 \end{bmatrix}$
+
+\begin{center}
+\begin{tikzpicture}
+\draw[thin,gray,<->] (-1,0)-- (4,0);
+\draw[thin,gray,<->] (0,-1)-- (0,4);
+\draw[thick,blue,->] (0,0) -- node[below] {$A \vec{e}_1$}++ (2,0);
+\draw[thick,blue,->] (0,0) -- node[above left] {$A \vec{e}_2$}++(2,3);
+\draw[blue,dashed] (2,0) -- (4,3) -- (2,3);
+\end{tikzpicture}
+\end{center}
+Observe $$A\vec{e_1} = A\begin{bmatrix}1 \\ 0 \end{bmatrix} = 2 \begin{bmatrix}1 \\ 0 \end{bmatrix} = 2 \vec{e_1}$$
+
+Is there another vector $\vec{v} \in \IR^2$ such that $A\vec{v}=\lambda \vec{v}$ for some $\lambda \in \IR$?
+\end{activity}
+
+\begin{definition}Let $A \in M_n(\IR)$.
+An \term{eigenvector} is a vector $\vec{x} \in \IR^n$ such that $A\vec{x}$ is parallel to $\vec{x}$; in other words, $A\vec{x}=\lambda \vec{x}$ for some scalar $\lambda$, which is called an \term{eigenvalue}
+\end{definition}
+
+\begin{observation}
+Observe that $A\vec{x}=\lambda \vec{x}$ is equivalent to $(A-\lambda I)\vec{x} = 0$.
+\begin{itemize}
+\item To find eigenvalues, we need to find values of $\lambda$ such that $A-\lambda I$ has a nontrivial kernel; equivalently, $A-\lambda I$ is not invertible, which is equivalent to $\det(A-\lambda I)=0$.  $\det(A-\lambda I)$ is called the \term{characteristic polynomial}.
+\item Once an eigenvalue is found, the eigenvectors form a subspace called the \term{eigenspace}, which is simply the kernel of $A-\lambda I$.  Each eigenvalue will have an associated eigenspace.
+\end{itemize}
+\end{observation}
+
+\begin{activity}
+Find the eigenvalues for the matrix $A = \begin{bmatrix} 2 & 2 \\ 0 & 3 \end{bmatrix}$.
+\end{activity}
+
+\begin{activity}
+  Compute the eigenspace associated to the eigenvalue $3$.
+\end{activity}
+
+\begin{activity}
+  Find all the eigenvalues and associated eigenspaces for the matrix $\begin{bmatrix} 6 & -2 & 1 \\ 17 & -5 & 5 \\ -4 & 2 & 1 \end{bmatrix}$.
+\end{activity}
+
+\end{applicationActivities}
