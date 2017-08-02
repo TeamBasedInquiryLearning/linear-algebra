@@ -1,0 +1,431 @@
+%!TEX root =../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
+
+\begin{applicationActivities}{Day 1}
+
+\begin{definition}
+A \term{linear equation} is an equation of the variables \(x_i\) of the form
+\[
+a_1x_1+a_2x_2+\dots+a_nx_n=b
+.\]
+A \term{solution} \((s_1,s_2,\dots,s_n)\) for a linear equation satisfies
+\[
+a_1s_1+a_2s_2+\dots+a_ns_n=b
+.\]
+\end{definition}
+
+\begin{observation}
+The linear equation \(3x-5y=-2\) may be graphed as a line in the \(xy\) plane.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.3]
+\draw[thin,gray,<->] (-5,0) -- (5,0);
+\draw[thin,gray,<->] (0,-5) -- (0,5);
+\draw[thick,blue] (-5,-2.6) -- (5,3.4);
+% \draw[thick,red] (-5,-3.67) -- (5,3);
+\end{tikzpicture}
+\end{center}
+
+The linear equation \(x+2y-z=4\) may be graphed as a plane in \(xyz\) space.
+\end{observation}
+
+\begin{remark}
+In previous classes you likely assumed \(x=x_1\), \(y=x_2\), and \(z=x_3\).
+However, since this course often deals with equations of four or more
+variables, we will almost always write our variables as \(x_i\).
+\end{remark}
+
+\begin{definition}
+A \term{system of linear equations} (or a \term{linear system} for short)
+is a collection of one or more linear equations.
+  \begin{alignat*}{5}
+    a_{11}x_1 &\,+\,& a_{12}x_2 &\,+\,& \dots  &\,+\,& a_{1n}x_n &\,=\,& b_1 \\
+    a_{21}x_1 &\,+\,& a_{22}x_2 &\,+\,& \dots  &\,+\,& a_{2n}x_n &\,=\,& b_2 \\
+     \vdots&  &\vdots&   &&  &\vdots&&\vdots  \\
+    a_{m1}x_1 &\,+\,& a_{m2}x_2 &\,+\,& \dots  &\,+\,& a_{mn}x_n &\,=\,& b_m
+  \end{alignat*}
+A \term{solution} \((s_1,s_2,\dots,s_n)\) for a linear system satisfies
+\[
+a_{i1}s_1+a_{i2}s_2+\dots+a_{in}s_n=b_i
+\]
+for \(1\leq i\leq m\) (that is, the solution satisfies all equations
+in the system).
+\end{definition}
+
+\begin{remark}
+  When variables in a large linear system are missing, we prefer to
+  write the system in one of the following standard forms:
+
+  \begin{multicols}{3}\noindent
+    Original linear system:
+    \begin{alignat*}{2}
+       x_1 + 3x_3 &\,=\,& 3 \\
+      3x_1 - 2x_2 + 4x_3 &\,=\,& 0 \\
+      -x_2 +  x_3 &\,=\,& -2
+    \end{alignat*}
+    Verbose standard form:
+    \begin{alignat*}{4}
+       x_1 &\,+\,& 0x_2 &\,+\,& 3x_3 &\,=\,& 3 \\
+      3x_1 &\,-\,& 2x_2 &\,+\,& 4x_3 &\,=\,& 0 \\
+      0x_1 &\,-\,&  x_2 &\,+\,&  x_3 &\,=\,& -2
+    \end{alignat*}
+    Concise standard form:
+    \begin{alignat*}{4}
+       x_1 &     &      &\,+\,& 3x_3 &\,=\,& 3 \\
+      3x_1 &\,-\,& 2x_2 &\,+\,& 4x_3 &\,=\,& 0 \\
+           &\,-\,&  x_2 &\,+\,&  x_3 &\,=\,& -2
+    \end{alignat*}
+  \end{multicols}
+\end{remark}
+
+\begin{definition}
+  A linear system is \term{consistent} if there exists a solution for the
+  system. Otherwise it is \term{inconsistent}.
+\end{definition}
+
+\begin{fact}
+  All linear systems are either \textbf{consistent with one solution},
+  \textbf{consistent with infinitely-many solutions}, or
+  \textbf{inconsistent}.
+\end{fact}
+
+\begin{activity}
+  Consider the following graphs representing linear systems of two variables.
+  Label each graph with \textbf{consistent with one solution},
+  \textbf{consistent with infinitely-many solutions}, or
+  \textbf{inconsistent}.
+  \begin{multicols}{4}
+  \begin{center}
+    \systemWithInfinitelyManySolutions
+    \systemWithOneSolutionB
+    \systemWithNoSolutions
+    \systemWithOneSolutionA
+  \end{center}
+  \end{multicols}
+\end{activity}
+
+\begin{activity}
+  All inconsistent linear systems contain a \term{contradiction}.
+  Find a contradiction in this system by solving for \(x_1\) in the first
+  equation, substituting the resulting expression into the
+  second equation, and then simplifying.
+  \begin{align*}
+  -x_1+2x_2  &=  5 \\
+  2x_1-4x_2  &=  6
+  \end{align*}
+\end{activity}
+
+\begin{activity}
+  Find three different solutions to the following consistent linear system.
+  \begin{align*}
+  -x_1+2x_2  &= -3 \\
+  2x_1-4x_2  &=  6
+  \end{align*}
+\end{activity}
+
+\begin{activity}
+  Find a formula for \(x_1\) in terms of \(x_2\) that describes all possible
+  solutions to the following consistent linear system. Then use it to
+  verify the three different solutions you found in the previous activity.
+  \begin{align*}
+  -x_1+2x_2  &= -3 \\
+  2x_1-4x_2  &=  6
+  \end{align*}
+\end{activity}
+
+\begin{observation}
+  Solving linear systems of two variables by graphing or substitution is
+  reasonable for two-variable systems, but won't cut it for equations with
+  more variables. Linear Algebra provides us several tools to make this
+  process more efficient.
+\end{observation}
+
+\begin{definition}
+  Let \(\mathbb R^{m\times n}\) denote the space of \(m\times n\)
+  dimensional \term{Euclidean matrices} of the form:
+  \[
+  \begin{bmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & \cdots & a_{mn}
+  \end{bmatrix}
+  \]
+  Let \(\mathbb R^{n}=\mathbb R^{1\times n}\) denote the space of
+  \(n\)-dimensional \term{Euclidean vectors} of the form:
+  \[
+  \begin{bmatrix}
+    a_{1} \\
+    a_{2} \\
+    \vdots \\
+    a_{m}
+  \end{bmatrix}
+  \]
+  Note that a Euclidean vector is just a Euclidean matrix with a single column.
+\end{definition}
+
+\begin{remark}
+  There are other types of matrices/vectors, but since the above situation is
+  the most common/useful for our course, we will often refer to a
+  ``Euclidean matrix'' as just a ``matrix'', and a ``Euclidean vector'' as
+  just a ``vector''.
+\end{remark}
+
+\begin{definition}
+  \textbf{Matrix addition} is done coordinate-wise:
+  \[
+  \begin{bmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & \cdots & a_{mn}
+  \end{bmatrix} +
+  \begin{bmatrix}
+    b_{11} & b_{12} & \cdots & b_{1n} \\
+    b_{21} & b_{22} & \cdots & b_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    b_{m1} & b_{m2} & \cdots & b_{mn}
+  \end{bmatrix} =
+  \begin{bmatrix}
+    a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n} \\
+    a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & a_{mn}+b_{mn}
+  \end{bmatrix}
+  \]
+  \textbf{Scalar multiplication} of a matrix is done by distribution:
+  \[
+  c
+  \begin{bmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & \cdots & a_{mn}
+  \end{bmatrix} =
+  \begin{bmatrix}
+    ca_{11} & ca_{12} & \cdots & ca_{1n} \\
+    ca_{21} & ca_{22} & \cdots & ca_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    ca_{m1} & ca_{m2} & \cdots & ca_{mn}
+  \end{bmatrix}
+  \]
+\end{definition}
+
+\begin{activity}
+  Simplify the following matrix expression. (Subtracting a matrix is the
+  same as multiplying it by \(-1\) and adding.)
+  \[
+  2
+  \begin{bmatrix}
+    3 & -1 & 0 \\
+    2 & 4  & -1
+  \end{bmatrix}-
+  3
+  \begin{bmatrix}
+    0 & 2 & 1 \\
+    1 & -3  & 0
+  \end{bmatrix}
+  \]
+\end{activity}
+
+
+\begin{activity}
+  Two matrices/vectors are equal if and only if the values at every coordinate
+  are equal. Show that the following linear system and the following vector
+  equation must have the same solutions by simplifying the vector equation.
+  \begin{multicols}{2}\noindent
+  \[
+    x_1
+    \begin{bmatrix}
+      1 \\
+      3 \\
+      0
+    \end{bmatrix}+
+    x_2
+    \begin{bmatrix}
+      0 \\
+      -2 \\
+      -1
+    \end{bmatrix}+
+    x_3
+    \begin{bmatrix}
+      3 \\
+      4 \\
+      1
+    \end{bmatrix}=
+    \begin{bmatrix}
+      3 \\
+      0 \\
+      -2
+    \end{bmatrix}
+  \]
+  \begin{alignat*}{4}
+     x_1 &     &      &\,+\,& 3x_3 &\,=\,& 3 \\
+    3x_1 &\,-\,& 2x_2 &\,+\,& 4x_3 &\,=\,& 0 \\
+         &\,-\,&  x_2 &\,+\,&  x_3 &\,=\,& -2
+  \end{alignat*}
+  \end{multicols}
+\end{activity}
+
+\begin{definition}
+  A system of \(m\) linear equations with \(n\) variables is often represented
+  by writing its coefficients and constants in an \term{augmented matrix}.
+  (The vertical bar in the matrix is just for decoration, to represent the
+  equal signs in the original system and separate the coefficients from the
+  constant.)
+  \begin{multicols}{2}\noindent
+  \begin{alignat*}{5}
+    a_{11}x_1 &\,+\,& a_{12}x_2 &\,+\,& \dots  &\,+\,& a_{1n}x_n &\,=\,& b_1 \\
+    a_{21}x_1 &\,+\,& a_{22}x_2 &\,+\,& \dots  &\,+\,& a_{2n}x_n &\,=\,& b_2 \\
+     \vdots&  &\vdots&   &&  &\vdots&&\vdots  \\
+    a_{m1}x_1 &\,+\,& a_{m2}x_2 &\,+\,& \dots  &\,+\,& a_{mn}x_n &\,=\,& b_m
+  \end{alignat*}
+  \[
+    \begin{bmatrix}[cccc|c]
+      a_{11} & a_{12} & \cdots & a_{1n} & b_1\\
+      a_{21} & a_{22} & \cdots & a_{2n} & b_2\\
+      \vdots & \vdots & \ddots & \vdots & \vdots\\
+      a_{m1} & a_{m2} & \cdots & a_{mn} & b_m
+    \end{bmatrix}
+  \]
+  \end{multicols}
+\end{definition}
+
+\begin{definition}
+  Two systems of linear equations (and their corresponding augmented
+  matrices) are said to be \term{equivalent} if they share exactly the
+  same solutions.
+\end{definition}
+
+\begin{activity}
+  Following are six procedures used to manipulate an augmented matrix.
+  Label the three procedures that would result in an equivalent augmented
+  matrix as \textbf{valid}, and label the three procedures that would
+  change the solution set of the corresponding linear system as
+  \textbf{invalid}.
+  \begin{multicols}{2}
+    \begin{enumerate}[a)]
+      \item Swap two rows.
+      \item Swap two columns.
+      \item Add a constant to every term in a row.
+      \item Multiply a row by a conzero constant.
+      \item Add a constant multiple of one row to another row.
+      \item Replace a column with zeros.
+    \end{enumerate}
+  \end{multicols}
+\end{activity}
+
+% \begin{activity}
+%   Use the linear system and its augmented matrix
+%   \begin{multicols}{2}\noindent
+%   \begin{alignat*}{3}
+%      x_1 &\,+\,& 2x_2 &\,=\,& 4 \\
+%     2x_1 &\,-\,& 3x_2 &\,=\,& 1
+%   \end{alignat*}
+%   \[
+%     \begin{bmatrix}[cc|c]
+%       1 & 2 & 4 \\
+%       2 & -3 & 1
+%     \end{bmatrix}
+%   \]
+%   \end{multicols}
+%   to demonstrate why each of these operations is invalid
+%   \begin{multicols}{2}
+%     \begin{itemize}
+%       \item Interchange two columns.
+%       \item Add a constant to every term in a row.
+%       \item Multiply a row by a conzero constant.
+%       \item Add a constant multiple of one row to another row.
+%       \item Replace a column with zeros.
+%     \end{itemize}
+%   \end{multicols}
+% \end{activity}
+
+\begin{definition}
+  The following \term{elementary row operations} produce equivalent
+  augmented matrices:
+  \begin{enumerate}
+    \item Swap two rows.
+    \item Multiply a row by a conzero constant.
+    \item Add a constant multiple of one row to another row.
+  \end{enumerate}
+  Whenever two matrices \(A,B\) are equivalent (so whenever we do any of
+  these operations), we write \(A\sim B\).
+\end{definition}
+
+\begin{activity}
+  Show that the following two linear systems:
+  \begin{multicols}{2}\noindent
+    \begin{alignat*}{4}
+      3x_1 &\,-\,& 2x_2 &\,+\,& 13x_3 &\,=\,& 6 \\
+      2x_1 &\,-\,& 2x_2 &\,+\,& 10x_3 &\,=\,& 2 \\
+     -1x_1 &\,+\,& 3x_2 &\,-\,&  6x_3 &\,=\,& -1
+    \end{alignat*}
+    \begin{alignat*}{4}
+       x_1 &\,-\,&  x_2  &\,+\,&  5x_3 &\,=\,& 1 \\
+           &\, \,&  x_2 &\,-\,&  2x_3 &\,=\,& 3 \\
+           &\, \,&      &\, \,&   x_3 &\,=\,& 2
+    \end{alignat*}
+  \end{multicols}
+  are equivalent by converting the first system to an augmented matrix,
+  and then performing the following elementary row operations to obtain
+  an augmented matrix equivalent to the second system.
+  \begin{multicols}{2}\noindent
+  \begin{enumerate}
+    \item Multiply \(R_2\) (the second row) by \(\frac{1}{2}\).
+    \item Swap \(R_1\) and \(R_2\).
+    \item Add \(R_1\) to \(R_3\).
+    \item Add \(-3R_1\) to \(R_2\).
+    \item Add \(-2R_2\) to \(R_3\).
+    \item Multiply \(R_3\) (the second row) by \(\frac{1}{3}\).
+  \end{enumerate}
+  \end{multicols}
+\end{activity}
+
+\begin{definition}
+  The \term{leading term} of a matrix row is its first nonzero term.
+  A matrix is in \term{row echelon form} if all leading terms are \(1\),
+  the leading term of every row
+  is farther right than every leading term on a higher row, and all zero
+  rows are at the bottom of the matrix.
+\end{definition}
+
+\begin{activity}
+  Reproduce the steps that manipulated the matrix
+  \[
+    \begin{bmatrix}[ccc|c]
+      3 & -2 & 13 & 6 \\
+      2 & -2 & 10 & 2 \\
+      -1 & 3 & -6 & -1
+    \end{bmatrix}\sim
+    \begin{bmatrix}[ccc|c]
+      1 & -1 &  5 & 1 \\
+      0 &  1 & -2 & 3 \\
+      0 &  0 &  1 & 2
+    \end{bmatrix}
+  \]
+  into row echelon form by using the following algorithm.
+  \begin{multicols}{2}\noindent
+  \begin{enumerate}
+    \item Identify
+    the top cell of the first non-zero column as your \textbf{pivot position};
+    you will ignore anything in the matrix that is above or left of your
+    current pivot position.
+    \item If the pivot position contains a \(0\), swap its row with a lower
+          row that does not contain a \(0\) in its column.
+    \item Divide the pivot row by the term in pivot position to change the
+          pivot term to \(1\). (If convenient, you can first swap the
+          pivot row with a lower row to make this division easier.)
+    \item Add multiples of the pivot row to all lower rows so that all terms
+          below pivot position become \(0\).
+    \item Move your pivot position down and right one step.
+    \item If all terms in and below pivot position are zero, move your
+          pivot position right. Repeat this step as needed.
+    \item If the matrix is not yet in row echelon form, return to Step 2.
+  \end{enumerate}
+  \end{multicols}
+\end{activity}
+
+
+
+\end{applicationActivities}
