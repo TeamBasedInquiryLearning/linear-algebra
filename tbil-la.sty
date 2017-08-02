@@ -5,6 +5,7 @@
 
 \usepackage{fancyhdr}
 
+%%%Page layout setup%%%
 \newcommand{\header}{Test}
 \newcommand{\setHeader}[1]{\renewcommand{\header}{#1}}
 
@@ -15,23 +16,14 @@
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0pt}
 
-\newcommand{\IR}{\mathbb{R}}
-\renewcommand{\P}{\mathcal{P}}
-\renewcommand{\Im}{{\rm Im\ }}
+\setlength{\parindent}{0pt}
+
+%%%Environment definitions%%%
 \theoremstyle{definition}
 \newtheorem*{definition}{Definition}
 \newtheorem*{example}{Example}
 \newtheorem*{observation}{Observation}
 \newtheorem*{activityRaw}{Activity}
-\DeclareMathOperator{\RREF}{RREF}
-\makeatletter
-\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
-  \hskip -\arraycolsep
-  \let\@ifnextchar\new@ifnextchar
-  \array{#1}}
-\makeatother
-
-\setlength{\parindent}{0pt}
 
 
 \newenvironment{readinessAssuranceOutcomes}{
@@ -44,7 +36,6 @@ Before beginning this module, each student should be able to...
 \end{itemize}
 }
 
-\newcommand{\standardList}[1]{\textbf{(Standard(s) #1)}}
 
 \newenvironment{readinessAssuranceResources}{
 \subsection*{Readiness Assurance Resources}
@@ -53,6 +44,7 @@ The following resources will help you prepare for this module.
 }{
 \end{itemize}
 }
+
 
 \newenvironment{readinessAssuranceTest}{
 \newpage
@@ -63,11 +55,13 @@ Choose the most appropriate response for each question.
 \end{enumerate}
 }
 
+
 \newenvironment{readinessAssuranceTestChoices}{
 \begin{enumerate}[(a)]
 }{
 \end{enumerate}
 }
+
 
 \newenvironment{applicationActivities}[1]{
 \newpage
@@ -76,7 +70,6 @@ Choose the most appropriate response for each question.
 %
 }
 
-\newcommand{\term}{\textbf}
 
 \newenvironment{activity}{
 \begin{activityRaw}
@@ -86,3 +79,28 @@ Choose the most appropriate response for each question.
 \rule{6.5in}{0.2pt}
 \end{center}
 }
+
+
+%%%New Commands/Math operators%%%
+\newcommand{\IR}{\mathbb{R}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{{\rm Im\ }}
+\DeclareMathOperator{\RREF}{RREF}
+
+%This code allows for augmented matrices, e.g. by \begin{bmatrix}{cc|c} ...
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\newcommand{\standardList}[1]{\textbf{(Standard(s) #1)}}
+\newcommand{\term}{\textbf}
+
+%This is for making instructor notes about running the activity (e.g. card sort, gallery walk...)
+\newenvironment{TBLnote}
+{\color{blue}}{}
+
+
+
