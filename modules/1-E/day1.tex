@@ -116,21 +116,19 @@ in the system).
 \end{activity}
 
 \begin{activity}
-  Find three different solutions to the following consistent linear system.
+  Consider the following consistent linear system.
   \begin{align*}
   -x_1+2x_2  &= -3 \\
   2x_1-4x_2  &=  6
   \end{align*}
-\end{activity}
-
-\begin{activity}
+\begin{subactivity}
+  Find three different solutions for this system.
+\end{subactivity}
+\begin{subactivity}
   Find a formula for \(x_1\) in terms of \(x_2\) that describes all possible
-  solutions to the following consistent linear system. Then use it to
+  solutions for this system. Then use it to
   verify the three different solutions you found in the previous activity.
-  \begin{align*}
-  -x_1+2x_2  &= -3 \\
-  2x_1-4x_2  &=  6
-  \end{align*}
+\end{subactivity}
 \end{activity}
 
 \begin{observation}
@@ -140,139 +138,139 @@ in the system).
   process more efficient.
 \end{observation}
 
-\begin{definition}
-  Let \(\mathbb R^{m\times n}\) denote the space of \(m\times n\)
-  dimensional \term{Euclidean matrices} of the form:
-  \[
-  \begin{bmatrix}
-    a_{11} & a_{12} & \cdots & a_{1n} \\
-    a_{21} & a_{22} & \cdots & a_{2n} \\
-    \vdots & \vdots & \ddots & \vdots \\
-    a_{m1} & a_{m2} & \cdots & a_{mn}
-  \end{bmatrix}
-  \]
-  Let \(\mathbb R^{n}=\mathbb R^{1\times n}\) denote the space of
-  \(n\)-dimensional \term{Euclidean vectors} of the form:
-  \[
-  \begin{bmatrix}
-    a_{1} \\
-    a_{2} \\
-    \vdots \\
-    a_{m}
-  \end{bmatrix}
-  \]
-  Note that a Euclidean vector is just a Euclidean matrix with a single column.
-\end{definition}
-
-\begin{remark}
-  There are other types of matrices/vectors, but since the above situation is
-  the most common/useful for our course, we will often refer to a
-  ``Euclidean matrix'' as just a ``matrix'', and a ``Euclidean vector'' as
-  just a ``vector''.
-\end{remark}
-
-\begin{definition}
-  \textbf{Matrix addition} is done coordinate-wise:
-  \[
-  \begin{bmatrix}
-    a_{11} & a_{12} & \cdots & a_{1n} \\
-    a_{21} & a_{22} & \cdots & a_{2n} \\
-    \vdots & \vdots & \ddots & \vdots \\
-    a_{m1} & a_{m2} & \cdots & a_{mn}
-  \end{bmatrix} +
-  \begin{bmatrix}
-    b_{11} & b_{12} & \cdots & b_{1n} \\
-    b_{21} & b_{22} & \cdots & b_{2n} \\
-    \vdots & \vdots & \ddots & \vdots \\
-    b_{m1} & b_{m2} & \cdots & b_{mn}
-  \end{bmatrix} =
-  \begin{bmatrix}
-    a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n} \\
-    a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n} \\
-    \vdots & \vdots & \ddots & \vdots \\
-    a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & a_{mn}+b_{mn}
-  \end{bmatrix}
-  \]
-  \textbf{Scalar multiplication} of a matrix is done by distribution:
-  \[
-  c
-  \begin{bmatrix}
-    a_{11} & a_{12} & \cdots & a_{1n} \\
-    a_{21} & a_{22} & \cdots & a_{2n} \\
-    \vdots & \vdots & \ddots & \vdots \\
-    a_{m1} & a_{m2} & \cdots & a_{mn}
-  \end{bmatrix} =
-  \begin{bmatrix}
-    ca_{11} & ca_{12} & \cdots & ca_{1n} \\
-    ca_{21} & ca_{22} & \cdots & ca_{2n} \\
-    \vdots & \vdots & \ddots & \vdots \\
-    ca_{m1} & ca_{m2} & \cdots & ca_{mn}
-  \end{bmatrix}
-  \]
-\end{definition}
-
-\begin{activity}
-  Simplify the following matrix expression. (Subtracting a matrix is the
-  same as multiplying it by \(-1\) and adding.)
-  \[
-  2
-  \begin{bmatrix}
-    3 & -1 & 0 \\
-    2 & 4  & -1
-  \end{bmatrix}-
-  3
-  \begin{bmatrix}
-    0 & 2 & 1 \\
-    1 & -3  & 0
-  \end{bmatrix}
-  \]
-\end{activity}
-
-
-\begin{activity}
-  Two matrices/vectors are equal if and only if the values at every coordinate
-  are equal. Show that the following linear system and the following vector
-  equation must have the same solutions by simplifying the vector equation.
-  \begin{multicols}{2}\noindent
-  \[
-    x_1
-    \begin{bmatrix}
-      1 \\
-      3 \\
-      0
-    \end{bmatrix}+
-    x_2
-    \begin{bmatrix}
-      0 \\
-      -2 \\
-      -1
-    \end{bmatrix}+
-    x_3
-    \begin{bmatrix}
-      3 \\
-      4 \\
-      1
-    \end{bmatrix}=
-    \begin{bmatrix}
-      3 \\
-      0 \\
-      -2
-    \end{bmatrix}
-  \]
-  \begin{alignat*}{4}
-     x_1 &     &      &\,+\,& 3x_3 &\,=\,& 3 \\
-    3x_1 &\,-\,& 2x_2 &\,+\,& 4x_3 &\,=\,& 0 \\
-         &\,-\,&  x_2 &\,+\,&  x_3 &\,=\,& -2
-  \end{alignat*}
-  \end{multicols}
-\end{activity}
+% \begin{definition}
+%   Let \(\mathbb R^{m\times n}\) denote the space of \(m\times n\)
+%   dimensional \term{Euclidean matrices} of the form:
+%   \[
+%   \begin{bmatrix}
+%     a_{11} & a_{12} & \cdots & a_{1n} \\
+%     a_{21} & a_{22} & \cdots & a_{2n} \\
+%     \vdots & \vdots & \ddots & \vdots \\
+%     a_{m1} & a_{m2} & \cdots & a_{mn}
+%   \end{bmatrix}
+%   \]
+%   Let \(\mathbb R^{n}=\mathbb R^{1\times n}\) denote the space of
+%   \(n\)-dimensional \term{Euclidean vectors} of the form:
+%   \[
+%   \begin{bmatrix}
+%     a_{1} \\
+%     a_{2} \\
+%     \vdots \\
+%     a_{m}
+%   \end{bmatrix}
+%   \]
+%   Note that a Euclidean vector is just a Euclidean matrix with a single column.
+% \end{definition}
+%
+% \begin{remark}
+%   There are other types of matrices/vectors, but since the above situation is
+%   the most common/useful for our course, we will often refer to a
+%   ``Euclidean matrix'' as just a ``matrix'', and a ``Euclidean vector'' as
+%   just a ``vector''.
+% \end{remark}
+%
+% \begin{definition}
+%   \textbf{Matrix addition} is done coordinate-wise:
+%   \[
+%   \begin{bmatrix}
+%     a_{11} & a_{12} & \cdots & a_{1n} \\
+%     a_{21} & a_{22} & \cdots & a_{2n} \\
+%     \vdots & \vdots & \ddots & \vdots \\
+%     a_{m1} & a_{m2} & \cdots & a_{mn}
+%   \end{bmatrix} +
+%   \begin{bmatrix}
+%     b_{11} & b_{12} & \cdots & b_{1n} \\
+%     b_{21} & b_{22} & \cdots & b_{2n} \\
+%     \vdots & \vdots & \ddots & \vdots \\
+%     b_{m1} & b_{m2} & \cdots & b_{mn}
+%   \end{bmatrix} =
+%   \begin{bmatrix}
+%     a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n} \\
+%     a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n} \\
+%     \vdots & \vdots & \ddots & \vdots \\
+%     a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & a_{mn}+b_{mn}
+%   \end{bmatrix}
+%   \]
+%   \textbf{Scalar multiplication} of a matrix is done by distribution:
+%   \[
+%   c
+%   \begin{bmatrix}
+%     a_{11} & a_{12} & \cdots & a_{1n} \\
+%     a_{21} & a_{22} & \cdots & a_{2n} \\
+%     \vdots & \vdots & \ddots & \vdots \\
+%     a_{m1} & a_{m2} & \cdots & a_{mn}
+%   \end{bmatrix} =
+%   \begin{bmatrix}
+%     ca_{11} & ca_{12} & \cdots & ca_{1n} \\
+%     ca_{21} & ca_{22} & \cdots & ca_{2n} \\
+%     \vdots & \vdots & \ddots & \vdots \\
+%     ca_{m1} & ca_{m2} & \cdots & ca_{mn}
+%   \end{bmatrix}
+%   \]
+% \end{definition}
+%
+% \begin{activity}
+%   Simplify the following matrix expression. (Subtracting a matrix is the
+%   same as multiplying it by \(-1\) and adding.)
+%   \[
+%   2
+%   \begin{bmatrix}
+%     3 & -1 & 0 \\
+%     2 & 4  & -1
+%   \end{bmatrix}-
+%   3
+%   \begin{bmatrix}
+%     0 & 2 & 1 \\
+%     1 & -3  & 0
+%   \end{bmatrix}
+%   \]
+% \end{activity}
+%
+%
+% \begin{activity}
+%   Two matrices/vectors are equal if and only if the values at every coordinate
+%   are equal. Show that the following linear system and the following vector
+%   equation must have the same solutions by simplifying the vector equation.
+%   \begin{multicols}{2}\noindent
+%   \[
+%     x_1
+%     \begin{bmatrix}
+%       1 \\
+%       3 \\
+%       0
+%     \end{bmatrix}+
+%     x_2
+%     \begin{bmatrix}
+%       0 \\
+%       -2 \\
+%       -1
+%     \end{bmatrix}+
+%     x_3
+%     \begin{bmatrix}
+%       3 \\
+%       4 \\
+%       1
+%     \end{bmatrix}=
+%     \begin{bmatrix}
+%       3 \\
+%       0 \\
+%       -2
+%     \end{bmatrix}
+%   \]
+%   \begin{alignat*}{4}
+%      x_1 &     &      &\,+\,& 3x_3 &\,=\,& 3 \\
+%     3x_1 &\,-\,& 2x_2 &\,+\,& 4x_3 &\,=\,& 0 \\
+%          &\,-\,&  x_2 &\,+\,&  x_3 &\,=\,& -2
+%   \end{alignat*}
+%   \end{multicols}
+% \end{activity}
 
 \begin{definition}
   A system of \(m\) linear equations with \(n\) variables is often represented
   by writing its coefficients and constants in an \term{augmented matrix}.
-  (The vertical bar in the matrix is just for decoration, to represent the
-  equal signs in the original system and separate the coefficients from the
-  constant.)
+  % (The vertical bar in the matrix is just for decoration, to represent the
+  % equal signs in the original system and separate the coefficients from the
+  % constant.)
   \begin{multicols}{2}\noindent
   \begin{alignat*}{5}
     a_{11}x_1 &\,+\,& a_{12}x_2 &\,+\,& \dots  &\,+\,& a_{1n}x_n &\,=\,& b_1 \\
@@ -299,8 +297,8 @@ in the system).
 
 \begin{activity}
   Following are six procedures used to manipulate an augmented matrix.
-  Label the three procedures that would result in an equivalent augmented
-  matrix as \textbf{valid}, and label the three procedures that would
+  Label the procedures that would result in an equivalent augmented
+  matrix as \textbf{valid}, and label the procedures that would
   change the solution set of the corresponding linear system as
   \textbf{invalid}.
   \begin{multicols}{2}
@@ -313,6 +311,9 @@ in the system).
       \item Replace a column with zeros.
     \end{enumerate}
   \end{multicols}
+  \begin{TBLnote}
+    This activity could be ran as a card sort.
+  \end{TBLnote}
 \end{activity}
 
 % \begin{activity}
@@ -342,7 +343,7 @@ in the system).
 % \end{activity}
 
 \begin{definition}
-  The following \term{elementary row operations} produce equivalent
+  The following \term{row operations} produce equivalent
   augmented matrices:
   \begin{enumerate}
     \item Swap two rows.
@@ -359,7 +360,7 @@ in the system).
     \begin{alignat*}{4}
       3x_1 &\,-\,& 2x_2 &\,+\,& 13x_3 &\,=\,& 6 \\
       2x_1 &\,-\,& 2x_2 &\,+\,& 10x_3 &\,=\,& 2 \\
-     -1x_1 &\,+\,& 3x_2 &\,-\,&  6x_3 &\,=\,& -1
+     -1x_1 &\,+\,& 3x_2 &\,-\,&  6x_3 &\,=\,& 11
     \end{alignat*}
     \begin{alignat*}{4}
        x_1 &\,-\,&  x_2  &\,+\,&  5x_3 &\,=\,& 1 \\
@@ -368,16 +369,16 @@ in the system).
     \end{alignat*}
   \end{multicols}
   are equivalent by converting the first system to an augmented matrix,
-  and then performing the following elementary row operations to obtain
+  and then performing the following row operations to obtain
   an augmented matrix equivalent to the second system.
   \begin{multicols}{2}\noindent
   \begin{enumerate}
-    \item Multiply \(R_2\) (the second row) by \(\frac{1}{2}\).
-    \item Swap \(R_1\) and \(R_2\).
+    \item Swap \(R_1\) (first row) and \(R_2\) (second row).
+    \item Multiply \(R_2\) by \(\frac{1}{2}\).
     \item Add \(R_1\) to \(R_3\).
     \item Add \(-3R_1\) to \(R_2\).
     \item Add \(-2R_2\) to \(R_3\).
-    \item Multiply \(R_3\) (the second row) by \(\frac{1}{3}\).
+    \item Multiply \(R_3\) by \(\frac{1}{3}\).
   \end{enumerate}
   \end{multicols}
 \end{activity}
@@ -396,7 +397,7 @@ in the system).
     \begin{bmatrix}[ccc|c]
       3 & -2 & 13 & 6 \\
       2 & -2 & 10 & 2 \\
-      -1 & 3 & -6 & -1
+      -1 & 3 & -6 & 11
     \end{bmatrix}\sim
     \begin{bmatrix}[ccc|c]
       1 & -1 &  5 & 1 \\
@@ -424,6 +425,190 @@ in the system).
     \item If the matrix is not yet in row echelon form, return to Step 2.
   \end{enumerate}
   \end{multicols}
+\end{activity}
+
+\begin{definition}
+  A matrix is in \term{reduced row echelon form} if it is in row echelon form
+  and all terms above leading terms are \(0\).
+\end{definition}
+
+\begin{activity}
+  Show that the following two linear systems:
+  \begin{multicols}{2}\noindent
+    \begin{alignat*}{4}
+       x_1 &\,-\,&  x_2  &\,+\,&  5x_3 &\,=\,& 1 \\
+           &\, \,&  x_2 &\,-\,&  2x_3 &\,=\,& 3 \\
+           &\, \,&      &\, \,&   x_3 &\,=\,& 2
+    \end{alignat*}
+      \begin{alignat*}{4}
+         x_1 &\, \,&      &\, \,&       &\,=\,& -2 \\
+             &\, \,&  x_2 &\, \,&       &\,=\,& 7 \\
+             &\, \,&      &\, \,&   x_3 &\,=\,& 2
+      \end{alignat*}
+  \end{multicols}
+  are equivalent by converting the first system to an augmented matrix,
+  and then performing the following row operations to obtain
+  an augmented matrix equivalent to the second system.
+  \begin{enumerate}
+    \item Add \(2R_3\) to \(R_2\).
+    \item Add \(-5R_3\) to \(R_1\).
+    \item Add \(R_2\) to \(R_1\).
+  \end{enumerate}
+  This shows that the original linear system is consistent with a single
+  solution \((x_1,x_2,x_3)=(-2,7,2)\).
+\end{activity}
+
+\begin{activity}
+  Verify that \((x_1,x_2,x_3)=(-2,7,2)\) is a solution to the linear system
+    \begin{alignat*}{4}
+      3x_1 &\,-\,& 2x_2 &\,+\,& 13x_3 &\,=\,& 6 \\
+      2x_1 &\,-\,& 2x_2 &\,+\,& 10x_3 &\,=\,& 2 \\
+     -1x_1 &\,+\,& 3x_2 &\,-\,&  6x_3 &\,=\,& 11
+    \end{alignat*}
+  by plugging the solution into each equation.
+\end{activity}
+
+\begin{activity}
+  Reproduce the steps that manipulated the matrix
+  \[
+    \begin{bmatrix}[ccc|c]
+      1 & -1 &  5 & 1 \\
+      0 &  1 & -2 & 3 \\
+      0 &  0 &  1 & 2
+    \end{bmatrix}\sim
+    \begin{bmatrix}[ccc|c]
+      1 &  0 &  0 & -2 \\
+      0 &  1 &  0 & 7 \\
+      0 &  0 &  1 & 2
+    \end{bmatrix}
+  \]
+  into reduced row echelon form by adding multiples of lower rows into
+  higher rows, zeroing out all terms above leading terms.
+\end{activity}
+
+\begin{fact}
+  Every augmented matrix \(A\) reduces to a unique reduced row echelon form
+  matrix. This matrix is denoted as \(\RREF(A)\).
+\end{fact}
+
+\begin{definition}
+  The following algorithm that reduces \(A\) to \(\RREF(A)\) is known as
+  \term{Gauss-Jordan elimination}.
+
+  \begin{multicols}{2}\noindent
+  \begin{enumerate}
+    \item Identify
+    the top cell of the first non-zero column as your \textbf{pivot position};
+    you will ignore anything in the matrix that is above or left of your
+    current pivot position.
+    \item If the pivot position contains a \(0\), swap its row with a lower
+          row that does not contain a \(0\) in its column.
+    \item Divide the pivot row by the term in pivot position to change the
+          pivot term to \(1\). (If convenient, you can first swap the
+          pivot row with a lower row to make this division easier.)
+    \item Add multiples of the pivot row to all lower rows so that all terms
+          below pivot position become \(0\).
+    \item Move your pivot position down and right one step.
+    \item If all terms in and below pivot position are zero, move your
+          pivot position right. Repeat this step as needed.
+    \item If the matrix is not yet in row echelon form, return to Step 2.
+    \item Finally, add multiples of lower rows into higher rows, zeroing out
+          all terms above leading terms.
+  \end{enumerate}
+  \end{multicols}
+\end{definition}
+
+\begin{activity}
+  Find \(\RREF(A)\) where
+  \[A=
+    \begin{bmatrix}[cccc|c]
+      -1 &  1 & -3 &  2 &  0 \\
+       2 & -1 &  5 &  3 & -11 \\
+       3 &  2 &  4 &  1 &  1 \\
+       0 &  1 & -1 &  1 &  1 \\
+    \end{bmatrix}
+  .\]
+\end{activity}
+
+\begin{definition}
+  The columns of \(\RREF(A)\) without a leading term represent
+  \term{free variables} of the linear system modeled by \(A\).
+  The other \term{bounded variables} can be expressed in terms of free
+  variables to
+  represent all possible solutions to the linear system modeled by \(A\).
+\end{definition}
+
+\begin{activity}
+  Given the linear system and its equivalent augmented matrices
+  \begin{multicols}{2}\noindent
+    \begin{alignat*}{5}
+      -x_1 &\,+\,&  x_2 &\,-\,&  3x_3 &\,+\,&  2x_4 &\,=\,& 0 \\
+      2x_1 &\,-\,&  x_2 &\,+\,&  5x_3 &\,+\,&  3x_4 &\,=\,& -11 \\
+      3x_1 &\,+\,& 2x_2 &\,+\,&  4x_3 &\,+\,&   x_4 &\,=\,& 1 \\
+           &\, \,&  x_2 &\,-\,&   x_3 &\,+\,&   x_4 &\,=\,& 1 \\
+    \end{alignat*}
+  \[
+    \begin{bmatrix}[cccc|c]
+      -1 &  1 & -3 &  2 &  0 \\
+       2 & -1 &  5 &  3 & -11 \\
+       3 &  2 &  4 &  1 &  1 \\
+       0 &  1 & -1 &  1 &  1 \\
+    \end{bmatrix}\sim
+    \begin{bmatrix}[cccc|c]
+       1 &  0 &  2 &  0 & -1 \\
+       0 &  1 & -1 &  0 &  3 \\
+       0 &  0 &  0 &  1 & -2 \\
+       0 &  0 &  0 &  0 &  0 \\
+    \end{bmatrix}
+  \]
+  \end{multicols}
+  describe all solutions to the linear system by setting each of the
+  bounded variables \(x_1,x_2,x_4\) equal to an expression in terms
+  of the free variable \(x_3\).
+\end{activity}
+
+\begin{remark}
+  It's not necessary to completely find \(\RREF(A)\) to
+  deduce that a linear system is inconsistent.
+\end{remark}
+
+\begin{activity}
+  Find the contradiction in the inconsistent linear system
+    \begin{alignat*}{4}
+      2x_1 &\,-\,& 3x_2 &\,=\,& 17 \\
+       x_1 &\,+\,& 2x_2 &\,=\,& -2 \\
+      -x_1 &\,-\,&  x_2 &\,=\,& 1
+    \end{alignat*}
+  by considering the following equivalent augmented matrices:
+  \[
+    \begin{bmatrix}[cc|c]
+       2 & -3 & 17 \\
+       1 &  2 & -2 \\
+      -1 & -1 &  1 \\
+    \end{bmatrix}\sim
+    \begin{bmatrix}[cc|c]
+       1 &  2 & -2 \\
+       0 &  1 &  3 \\
+       0 &  0 &  2 \\
+    \end{bmatrix}
+  .\]
+\end{activity}
+
+\begin{definition}
+  A \term{homogeneous system} is a linear system satisfying \(b_i=0\), that is,
+  it is a linear system of the form
+  \begin{alignat*}{5}
+    a_{11}x_1 &\,+\,& a_{12}x_2 &\,+\,& \dots  &\,+\,& a_{1n}x_n &\,=\,& 0 \\
+    a_{21}x_1 &\,+\,& a_{22}x_2 &\,+\,& \dots  &\,+\,& a_{2n}x_n &\,=\,& 0 \\
+     \vdots&  &\vdots&   &&  &\vdots&&\vdots  \\
+    a_{m1}x_1 &\,+\,& a_{m2}x_2 &\,+\,& \dots  &\,+\,& a_{mn}x_n &\,=\,& 0
+  \end{alignat*}
+\end{definition}
+
+\begin{activity}
+  Prove that all homogeneous systems are consistent.
+  (Hint: Find an obvious solution that satisfies every homogeneous
+  system.)
 \end{activity}
 
 
