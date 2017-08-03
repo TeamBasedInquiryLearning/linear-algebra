@@ -1,0 +1,152 @@
+%!TEX root =../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
+
+\begin{applicationActivities}{Day 2}
+
+\begin{definition}
+  The following \term{row operations} produce equivalent
+  augmented matrices:
+  \begin{enumerate}
+    \item Swap two rows.
+    \item Multiply a row by a conzero constant.
+    \item Add a constant multiple of one row to another row.
+  \end{enumerate}
+  Whenever two matrices \(A,B\) are equivalent (so whenever we do any of
+  these operations), we write \(A\sim B\).
+\end{definition}
+
+\begin{activity}{15}
+  Show that the following two linear systems:
+  \begin{multicols}{2}\noindent
+    \begin{alignat*}{4}
+      3x_1 &\,-\,& 2x_2 &\,+\,& 13x_3 &\,=\,& 6 \\
+      2x_1 &\,-\,& 2x_2 &\,+\,& 10x_3 &\,=\,& 2 \\
+     -1x_1 &\,+\,& 3x_2 &\,-\,&  6x_3 &\,=\,& 11
+    \end{alignat*}
+    \begin{alignat*}{4}
+       x_1 &\,-\,&  x_2  &\,+\,&  5x_3 &\,=\,& 1 \\
+           &\, \,&  x_2 &\,-\,&  2x_3 &\,=\,& 3 \\
+           &\, \,&      &\, \,&   x_3 &\,=\,& 2
+    \end{alignat*}
+  \end{multicols}
+  are equivalent by converting the first system to an augmented matrix,
+  and then performing the following row operations to obtain
+  an augmented matrix equivalent to the second system.
+  \begin{multicols}{2}\noindent
+  \begin{enumerate}
+    \item Swap \(R_1\) (first row) and \(R_2\) (second row).
+    \item Multiply \(R_2\) by \(\frac{1}{2}\).
+    \item Add \(R_1\) to \(R_3\).
+    \item Add \(-3R_1\) to \(R_2\).
+    \item Add \(-2R_2\) to \(R_3\).
+    \item Multiply \(R_3\) by \(\frac{1}{3}\).
+  \end{enumerate}
+  \end{multicols}
+\end{activity}
+
+\begin{definition}
+  The \term{leading term} of a matrix row is its first nonzero term.
+  A matrix is in \term{row echelon form} if all leading terms are \(1\),
+  the leading term of every row
+  is farther right than every leading term on a higher row, and all zero
+  rows are at the bottom of the matrix.
+\end{definition}
+
+\begin{activity}{10}
+  Reproduce the steps that manipulated the matrix
+  \[
+    \begin{bmatrix}[ccc|c]
+      3 & -2 & 13 & 6 \\
+      2 & -2 & 10 & 2 \\
+      -1 & 3 & -6 & 11
+    \end{bmatrix}\sim
+    \begin{bmatrix}[ccc|c]
+      1 & -1 &  5 & 1 \\
+      0 &  1 & -2 & 3 \\
+      0 &  0 &  1 & 2
+    \end{bmatrix}
+  \]
+  into row echelon form by using the following algorithm.
+  \begin{multicols}{2}\noindent
+  \begin{enumerate}
+    \item Identify
+    the top cell of the first non-zero column as your \textbf{pivot position};
+    you will ignore anything in the matrix that is above or left of your
+    current pivot position.
+    \item If the pivot position contains a \(0\), swap its row with a lower
+          row that does not contain a \(0\) in its column.
+    \item Divide the pivot row by the term in pivot position to change the
+          pivot term to \(1\). (If convenient, you can first swap the
+          pivot row with a lower row to make this division easier.)
+    \item Add multiples of the pivot row to all lower rows so that all terms
+          below pivot position become \(0\).
+    \item Move your pivot position down and right one step.
+    \item If all terms in and below pivot position are zero, move your
+          pivot position right. Repeat this step as needed.
+    \item If the matrix is not yet in row echelon form, return to Step 2.
+  \end{enumerate}
+  \end{multicols}
+\end{activity}
+
+\begin{definition}
+  A matrix is in \term{reduced row echelon form} if it is in row echelon form
+  and all terms above leading terms are \(0\).
+\end{definition}
+
+\begin{activity}{10}
+  Show that the following two linear systems:
+  \begin{multicols}{2}\noindent
+    \begin{alignat*}{4}
+       x_1 &\,-\,&  x_2  &\,+\,&  5x_3 &\,=\,& 1 \\
+           &\, \,&  x_2 &\,-\,&  2x_3 &\,=\,& 3 \\
+           &\, \,&      &\, \,&   x_3 &\,=\,& 2
+    \end{alignat*}
+      \begin{alignat*}{4}
+         x_1 &\, \,&      &\, \,&       &\,=\,& -2 \\
+             &\, \,&  x_2 &\, \,&       &\,=\,& 7 \\
+             &\, \,&      &\, \,&   x_3 &\,=\,& 2
+      \end{alignat*}
+  \end{multicols}
+  are equivalent by converting the first system to an augmented matrix,
+  and then performing the following row operations to obtain
+  an augmented matrix equivalent to the second system.
+  \begin{enumerate}
+    \item Add \(2R_3\) to \(R_2\).
+    \item Add \(-5R_3\) to \(R_1\).
+    \item Add \(R_2\) to \(R_1\).
+  \end{enumerate}
+  Then write the solution to the linear system.
+\end{activity}
+
+\begin{activity}{5}
+  Verify that \((x_1,x_2,x_3)=(-2,7,2)\) is a solution to the linear system
+    \begin{alignat*}{4}
+      3x_1 &\,-\,& 2x_2 &\,+\,& 13x_3 &\,=\,& 6 \\
+      2x_1 &\,-\,& 2x_2 &\,+\,& 10x_3 &\,=\,& 2 \\
+     -1x_1 &\,+\,& 3x_2 &\,-\,&  6x_3 &\,=\,& 11
+    \end{alignat*}
+  by plugging the solution into each equation.
+\end{activity}
+
+\begin{activity}{10}
+  Reproduce the steps that manipulated the matrix
+  \[
+    \begin{bmatrix}[ccc|c]
+      1 & -1 &  5 & 1 \\
+      0 &  1 & -2 & 3 \\
+      0 &  0 &  1 & 2
+    \end{bmatrix}\sim
+    \begin{bmatrix}[ccc|c]
+      1 &  0 &  0 & -2 \\
+      0 &  1 &  0 & 7 \\
+      0 &  0 &  1 & 2
+    \end{bmatrix}
+  \]
+  into reduced row echelon form by adding multiples of lower rows into
+  higher rows, zeroing out all terms above leading terms.
+\end{activity}
+
+
+
+
+\end{applicationActivities}

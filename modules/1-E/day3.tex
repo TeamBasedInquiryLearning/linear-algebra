@@ -1,0 +1,249 @@
+%!TEX root =../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
+
+\begin{applicationActivities}{Day 3}
+
+\begin{fact}
+  Every augmented matrix \(A\) reduces to a unique reduced row echelon form
+  matrix. This matrix is denoted as \(\RREF(A)\).
+\end{fact}
+
+\begin{definition}
+  The following algorithm that reduces \(A\) to \(\RREF(A)\) is known as
+  \term{Gauss-Jordan elimination}.
+
+  \begin{multicols}{2}\noindent
+  \begin{enumerate}
+    \item Identify
+    the top cell of the first non-zero column as your pivot position;
+    you will ignore anything in the matrix that is above or left of your
+    current pivot position.
+    \item If the pivot position contains a \(0\), swap its row with a lower
+          row that does not contain a \(0\) in its column.
+    \item Divide the pivot row by the term in pivot position to change the
+          pivot term to \(1\). (If convenient, you can first swap the
+          pivot row with a lower row to make this division easier.)
+    \item Add multiples of the pivot row to all lower rows so that all terms
+          below pivot position become \(0\).
+    \item Move your pivot position down and right one step.
+    \item If all terms in and below pivot position are zero, move your
+          pivot position right. Repeat this step as needed.
+    \item If the matrix is not yet in row echelon form, return to Step 2.
+    \item Finally, add multiples of lower rows into higher rows, zeroing out
+          all terms above leading terms.
+  \end{enumerate}
+  \end{multicols}
+\end{definition}
+
+\begin{activity}{15}
+  Find \(\RREF(A)\) where
+  \[A=
+    \begin{bmatrix}[cccc|c]
+      -1 &  1 & -3 &  2 &  0 \\
+       2 & -1 &  5 &  3 & -11 \\
+       3 &  2 &  4 &  1 &  1 \\
+       0 &  1 & -1 &  1 &  1 \\
+    \end{bmatrix}
+  .\]
+\end{activity}
+
+\begin{definition}
+  The columns of \(\RREF(A)\) without a leading term represent
+  \term{free variables} of the linear system modeled by \(A\)
+  that may be set equal to arbitrary parameters.
+  The other \term{bounded variables} can then be expressed in terms
+  of those parameters to describe the solution set
+  to the linear system modeled by \(A\).
+\end{definition}
+
+\begin{activity}{10}
+  Given the linear system and its equivalent augmented matrices
+  \begin{multicols}{2}\noindent
+    \begin{alignat*}{5}
+      -x_1 &\,+\,&  x_2 &\,-\,&  3x_3 &\,+\,&  2x_4 &\,=\,& 0 \\
+      2x_1 &\,-\,&  x_2 &\,+\,&  5x_3 &\,+\,&  3x_4 &\,=\,& -11 \\
+      3x_1 &\,+\,& 2x_2 &\,+\,&  4x_3 &\,+\,&   x_4 &\,=\,& 1 \\
+           &\, \,&  x_2 &\,-\,&   x_3 &\,+\,&   x_4 &\,=\,& 1 \\
+    \end{alignat*}
+  \[
+    \begin{bmatrix}[cccc|c]
+      -1 &  1 & -3 &  2 &  0 \\
+       2 & -1 &  5 &  3 & -11 \\
+       3 &  2 &  4 &  1 &  1 \\
+       0 &  1 & -1 &  1 &  1 \\
+    \end{bmatrix}\sim
+    \begin{bmatrix}[cccc|c]
+       1 &  0 &  2 &  0 & -1 \\
+       0 &  1 & -1 &  0 &  3 \\
+       0 &  0 &  0 &  1 & -2 \\
+       0 &  0 &  0 &  0 &  0 \\
+    \end{bmatrix}
+  \]
+  \end{multicols}
+  describe the solution set
+  \(
+    \begin{bmatrix}
+      x_1 \\
+      x_2 \\
+      x_3 \\
+      x_4
+    \end{bmatrix}=
+    a\begin{bmatrix}
+      r_1 \\
+      r_2 \\
+      r_3 \\
+      r_4
+    \end{bmatrix}+
+    \begin{bmatrix}
+      s_1 \\
+      s_2 \\
+      s_3 \\
+      s_4
+    \end{bmatrix}
+  \) to the linear system by setting the free variable
+  \(x_3=a\), and then expressing each of the
+  bounded variables \(x_1,x_2,x_4\) equal to an expression in terms
+  of \(a\).
+\end{activity}
+
+\begin{remark}
+  It's not necessary to completely find \(\RREF(A)\) to
+  deduce that a linear system is inconsistent.
+\end{remark}
+
+\begin{activity}{10}
+  Find the contradiction in the inconsistent linear system
+    \begin{alignat*}{4}
+      2x_1 &\,-\,& 3x_2 &\,=\,& 17 \\
+       x_1 &\,+\,& 2x_2 &\,=\,& -2 \\
+      -x_1 &\,-\,&  x_2 &\,=\,& 1
+    \end{alignat*}
+  by considering the following equivalent augmented matrices:
+  \[
+    \begin{bmatrix}[cc|c]
+       2 & -3 & 17 \\
+       1 &  2 & -2 \\
+      -1 & -1 &  1 \\
+    \end{bmatrix}\sim
+    \begin{bmatrix}[cc|c]
+       1 &  2 & -2 \\
+       0 &  1 &  3 \\
+       0 &  0 &  2 \\
+    \end{bmatrix}
+  .\]
+\end{activity}
+
+\begin{definition}
+  A \term{homogeneous system} is a linear system satisfying \(b_i=0\), that is,
+  it is a linear system of the form
+  \begin{alignat*}{5}
+    a_{11}x_1 &\,+\,& a_{12}x_2 &\,+\,& \dots  &\,+\,& a_{1n}x_n &\,=\,& 0 \\
+    a_{21}x_1 &\,+\,& a_{22}x_2 &\,+\,& \dots  &\,+\,& a_{2n}x_n &\,=\,& 0 \\
+     \vdots&  &\vdots&   &&  &\vdots&&\vdots  \\
+    a_{m1}x_1 &\,+\,& a_{m2}x_2 &\,+\,& \dots  &\,+\,& a_{mn}x_n &\,=\,& 0
+  \end{alignat*}
+\end{definition}
+
+\begin{activity}{5}
+  Prove that all homogeneous systems are consistent.
+  (Hint: Find an obvious solution
+  \(
+    \begin{bmatrix}
+      x_1 \\
+      x_2 \\
+      \vdots \\
+      x_n
+    \end{bmatrix}=
+    \begin{bmatrix}
+      s_1 \\
+      s_2 \\
+      \vdots \\
+      s_n
+    \end{bmatrix}
+  \) that satisfies every homogeneous
+  system.)
+\end{activity}
+
+\begin{fact}
+  The solution set to any homogeneous system with infinitely-many solutions
+  is generated by multiplying the parameters representing the free variables
+  by Euclidean vectors, and adding these up. For example:
+  \[
+    \begin{bmatrix}
+      x_1 \\
+      x_2 \\
+      x_3 \\
+      x_4
+    \end{bmatrix}=
+    a\begin{bmatrix}
+      3 \\
+      1 \\
+      -1 \\
+      0
+    \end{bmatrix}+
+    b\begin{bmatrix}
+      0 \\
+      0 \\
+      0 \\
+      1
+    \end{bmatrix}
+  \]
+\end{fact}
+
+\begin{definition}
+  A set of Euclidean vectors generating the solution set to a homogeneous
+  system is called a \textbf{basis} for the solution
+  set of the homogeneous system. For example:
+  \begin{multicols}{2}\noindent
+  \[
+    \begin{bmatrix}
+      x_1 \\
+      x_2 \\
+      x_3 \\
+      x_4
+    \end{bmatrix}=
+    a\begin{bmatrix}
+      3 \\
+      1 \\
+      -1 \\
+      0
+    \end{bmatrix}+
+    b\begin{bmatrix}
+      0 \\
+      0 \\
+      0 \\
+      1
+    \end{bmatrix}
+  \]
+  \[
+    \textrm{Basis}=\left\{
+    \begin{bmatrix}
+      3 \\
+      1 \\
+      -1 \\
+      0
+    \end{bmatrix},
+    \begin{bmatrix}
+      0 \\
+      0 \\
+      0 \\
+      1
+    \end{bmatrix}\right\}
+  \]
+  \end{multicols}
+\end{definition}
+
+\begin{activity}{10}
+  Find a basis for the solution set of the following homogeneous linear
+  system.
+  \begin{alignat*}{5}
+    x_1 &\,+\,& 2x_2 &\, \,&     &\,-\,&  x_4 &\,=\,& 0 \\
+        &\, \,&      &\, \,& x_3 &\,+\,& 4x_4 &\,=\,& 0 \\
+   2x_1 &\,+\,& 4x_2 &\,+\,& x_3 &\,+\,& 2x_4 &\,=\,& 0 \\
+  \end{alignat*}
+\end{activity}
+
+
+
+
+\end{applicationActivities}
