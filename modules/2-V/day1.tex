@@ -1,0 +1,146 @@
+%!TEX root =../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
+
+\begin{applicationActivities}{Day 1}
+
+\begin{activity}{15}
+Let \(\vect u=\begin{bmatrix} u_1 \\ u_2 \end{bmatrix}\),
+\(\vect v=\begin{bmatrix} v_1 \\ v_2 \end{bmatrix}\), and
+\(\vect w=\begin{bmatrix} w_1 \\ w_2 \end{bmatrix}\).
+Rewrite the following proofs about two-dimensional Euclidean vector addition,
+filling in the missing information.
+\begin{enumerate}
+  \item Euclidean vector addition is \textbf{well-defined}.
+
+        \textbf{Proof:} \(\vect u+\vect v=?\). Since this is a Euclidean
+        vector, addition is well-defined. \(\square\)
+  \item Euclidean vector addition is \textbf{associative}.
+
+        \textbf{Proof:} \(\vect u+(\vect v+\vect w)=\,?\) and
+        \((\vect u+\vect v)+\vect w=\,?\). Since both expressions are equal,
+        addition is associative. \(\square\)
+  \item Euclidean vector addition is \textbf{commutative}.
+
+        \textbf{Proof:} \(\vect u+\vect v=\,?\) and
+        \(\vect v+\vect u=\,?\). Since both expressions are equal,
+        addition is commutative. \(\square\)
+  \item There exists an \textbf{additive identity} for Euclidean vector
+        addition.
+
+        \textbf{Proof:} Let \(\vect e=\,?\). Since
+        \(\vect v+\vect e=\,?=\vect v\), \(\vect e\) is an identity. \(\square\)
+  \item Every Euclidean vector has an \textbf{additive inverse}.
+
+        \textbf{Proof:} Let \(-\vect v=\,?\). Since
+        \(\vect v+(-\vect v)=\,?=\vect e\), \(-\vect v\) is an inverse
+        for \(\vect v\). \(\square\)
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{15}
+Let \(\vect u=\begin{bmatrix} u_1 \\ u_2 \end{bmatrix}\) and
+\(\vect v=\begin{bmatrix} v_1 \\ v_2 \end{bmatrix}\), and let \(a,b\) be
+scalar numbers.
+Rewrite the following proofs about scalar multiplication of
+two-dimensional Euclidean vectors,
+filling in the missing information.
+\begin{enumerate}
+  \item Scalar multiplication of Euclidean vectors is \textbf{well-defined}.
+
+        \textbf{Proof:} \(a\vect v=?\). Since this is a Euclidean
+        vector, scalar multiplication is well-defined. \(\square\)
+  \item Scalar multiplication of Euclidean vectors is \textbf{compatible}.
+
+        \textbf{Proof:} \(a(b\vect v)=\,?\) and
+        \((ab)\vect v=\,?\). Since both expressions are equal,
+        scalar multiplication is compatible. \(\square\)
+  \item Scalar multiplication of Euclidean vectors
+        \textbf{distributes scalars}.
+
+        \textbf{Proof:} \(a(\vect u+\vect v)=\,?\) and
+        \(a\vect u+a\vect v=\,?\). Since both expressions are equal,
+        scalars distribute. \(\square\)
+  \item Scalar multiplication of Euclidean vectors
+        \textbf{distributes vectors}.
+
+        \textbf{Proof:} \((a+b)\vect v=\,?\) and
+        \(a\vect v+b\vect v=\,?\). Since both expressions are equal,
+        vectors distribute. \(\square\)
+  \item The scalar \(1\) is a \textbf{multiplicative identity} for the
+        scalar multiplication of Euclidean vectors.
+
+        \textbf{Proof:} Since
+        \(1\vect v=\,?=\vect v\), \(1\) is an identity. \(\square\)
+\end{enumerate}
+\end{activity}
+
+\begin{definition}
+  A \textbf{vector space} \(V\) is any collection of mathematical objects with
+  associated addition and scalar multiplication operations that satisfy
+  the following properties. Let \(\vect u,\vect v,\vect w\) belong to \(V\),
+  and let \(a,b\) be scalar numbers.
+  \begin{multicols}{2}
+  \begin{itemize}
+    \item \textbf{Well-defined addition.}
+
+          \(\vect v+\vect w\) belongs to \(V\).
+    \item \textbf{Associative addition.}
+
+          \(\vect u+(\vect v+\vect w)=
+          (\vect u+\vect v)+\vect w\).
+    \item \textbf{Commutative addition.}
+
+          \(\vect u+\vect v=
+          \vect v+\vect u\).
+    \item \textbf{Additive identity.}
+
+          There exists some \(\vect e\) in \(V\)
+          where \(\vect v+\vect e=\vect v\).
+    \item \textbf{Additive identity.}
+
+          There exists some \(-\vect v\) in \(V\)
+          where \(\vect v+(-\vect v)=\vect e\).
+    \item \textbf{Well-defined scalar multipication.}
+
+          \(a\vect v\) belongs to
+          \(V\).
+    \item \textbf{Compatible scalar multipication.}
+
+          \(a(b\vect v)=(ab)\vect v\).
+    \item \textbf{Scalar distribution.}
+
+          \(a(\vect u+\vect v)=a\vect u+a\vect v\).
+    \item \textbf{Vector distribution.}
+
+          \((a+b)\vect v=a\vect v+b\vect v\).
+    \item \textbf{Scalar multiplication identity.}
+
+          \(1\vect v=\vect v\).
+  \end{itemize}
+  \end{multicols}
+\end{definition}
+
+\begin{activity}{15}
+  Assuming the usual definitions of addition and scalar multiplication,
+  label each of the following sets as a \textbf{valid} or \textbf{non-valid}
+  vector space. If the set is not a valid vector space, give an example of
+  a vector space property that fails to hold.
+  \begin{multicols}{2}
+  \begin{enumerate}
+    \item \(\left\{
+    \begin{bmatrix}
+      v_1\\v_2\\v_3\\v_4
+    \end{bmatrix}:v_i\text{ is an integer}\right\}\)
+    \item \(\left\{
+      a+bi
+      :a,b\text{ are real numbers}\right\}\)
+    \item \(\left\{
+      x^2+bx+c
+      :b,c\text{ are positive}\right\}\)
+  \end{enumerate}
+  \end{multicols}
+\end{activity}
+
+
+
+\end{applicationActivities}
