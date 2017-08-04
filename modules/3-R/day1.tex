@@ -1,0 +1,99 @@
+%!TEX root =../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
+
+\begin{applicationActivities}{Day 1}
+
+\begin{activity}{10}
+  How many vectors are required to span \(\IR^2\)?
+  Sketch a drawing in the \(xy\) plane to support your guess.
+\end{activity}
+
+\begin{fact}
+  At least \(n\) vectors are required to span \(\IR^n\).
+
+  \begin{center}
+  \begin{tikzpicture}[scale=0.5]
+    \draw[<->] (-4,0) -- (4,0);
+    \draw[<->] (0,-4) -- (0,4);
+    \draw[blue!50] (2,-4) -- (-2,4);
+    \draw[thick,blue,->] (0,0) -- (1,-2);
+  \end{tikzpicture}
+  \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)},scale=0.4]
+    \draw[->] (0,0,0) -- (6,0,0);
+    \draw[->] (0,0,0) -- (0,6,0);
+    \draw[->] (0,0,0) -- (0,0,6);
+    \draw[fill=purple!20,fill opacity=0.5]
+      (-2,-2,2) -- (6,-2,-2) -- (2,2,-2) -- (-6,2,2) -- (-2,-2,2);
+    \draw[thick,blue,->] (0,0,0) -- (1,-1,0);
+    \draw[thick,red,->] (0,0,0) -- (-2,0,1);
+  \end{tikzpicture}
+  \end{center}
+\end{fact}
+
+\begin{activity}{15}
+  Find a vector \(\begin{bmatrix}a\\b\\c\end{bmatrix}\)
+  in \(\IR^3\) that is not in
+  \(\vspan\left\{\begin{bmatrix}1\\-1\\0\end{bmatrix},
+  \begin{bmatrix}-2\\0\\1\end{bmatrix}\right\}\) by doing the following.
+    \begin{subactivity}
+      Choose simple values for \(x,y,z\) such that
+      \(\begin{bmatrix}[cc|c]1&0&x\\0&1&y\\0&0&z\end{bmatrix}\)
+      represents an inconsistent linear equation.
+    \end{subactivity}
+    \begin{subactivity}
+      Use row operations to manipulate
+      \(\begin{bmatrix}[cc|c]1&0&0\\0&1&0\\0&0&1\end{bmatrix}\sim
+      \begin{bmatrix}[cc|c]1&-2&a\\-1&0&b\\0&1&c\end{bmatrix}\).
+    \end{subactivity}
+    \begin{subactivity}
+      Write a sentence explaining why \(\begin{bmatrix}a\\b\\c\end{bmatrix}\)
+      cannot be in \(\vspan\left\{\begin{bmatrix}1\\-1\\0\end{bmatrix},
+      \begin{bmatrix}-2\\0\\1\end{bmatrix}\right\}\).
+    \end{subactivity}
+\end{activity}
+
+\begin{fact}
+  The set \(\{\vect v_1,\dots,\vect v_m\}\) fails to span all of \(\IR^n\)
+  exactly when \(\RREF[\vect v_1\,\dots\,\vect v_m]\) has a row of zeros.
+\end{fact}
+
+\begin{activity}{10}
+  Consider the set of vectors \(S=\left\{
+  \begin{bmatrix}2\\3\\0\\-1\end{bmatrix},
+  \begin{bmatrix}1\\-4\\3\\0\end{bmatrix},
+  \begin{bmatrix}2\\0\\0\\3\end{bmatrix},
+  \begin{bmatrix}0\\3\\5\\7\end{bmatrix},
+  \begin{bmatrix}3\\13\\7\\16\end{bmatrix}
+  \right\}
+  \).
+  \begin{subactivity}
+  Prove that
+  \(\IR^4=\vspan S\).
+  \end{subactivity}
+  \begin{subactivity}
+  Find a linear combination of vectors in \(S\) that equals
+  \(\begin{bmatrix}-1\\10\\7\\14\end{bmatrix}\).
+  \end{subactivity}
+\end{activity}
+
+\begin{activity}{15}
+  Consider the set of vectors \(S=\left\{
+  \begin{bmatrix}2\\3\\0\\-1\end{bmatrix},
+  \begin{bmatrix}2\\0\\0\\3\end{bmatrix},
+  \begin{bmatrix}3\\13\\7\\16\end{bmatrix},
+  \begin{bmatrix}-1\\10\\7\\14\end{bmatrix},
+  \begin{bmatrix}4\\3\\0\\2\end{bmatrix}
+  \right\}
+  \).
+  \begin{subactivity}
+  Prove that
+  \(\IR^4\not=\vspan S\).
+  \end{subactivity}
+  \begin{subactivity}
+  Find a vector in \(\IR^4\) that is not in \(\vspan S\).
+  \end{subactivity}
+\end{activity}
+
+
+
+\end{applicationActivities}
