@@ -6,7 +6,7 @@
 \usepackage{fancyhdr}
 
 %%%Page layout setup%%%
-\newcommand{\header}{Test}
+\newcommand{\header}{Unknown Header}
 \newcommand{\setHeader}[1]{\renewcommand{\header}{#1}}
 
 \pagestyle{fancy}
@@ -40,6 +40,11 @@ Before beginning this module, each student should be able to...
 \end{itemize}
 }
 
+
+\newenvironment{module}[1]{
+\newpage
+\setHeader{#1}
+}
 
 
 \newenvironment{moduleStandards}{
@@ -107,9 +112,12 @@ Choose the most appropriate response for each question.
 
 %%%New Commands/Math operators%%%
 \newcommand{\IR}{\mathbb{R}}
+\newcommand{\IP}{\mathbb{P}}
+\newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
 \renewcommand{\Im}{{\rm Im\ }}
 \DeclareMathOperator{\RREF}{RREF}
+\DeclareMathOperator{\vspan}{span}
 
 %This code allows for augmented matrices, e.g. by \begin{bmatrix}{cc|c} ...
 \makeatletter

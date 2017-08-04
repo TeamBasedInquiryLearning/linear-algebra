@@ -1,0 +1,135 @@
+%!TEX root =../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
+
+\begin{applicationActivities}{Day 2}
+
+\begin{remark}
+  The following sets are examples of vector spaces, with the usual/natural
+  operations for addition and scalar multiplication.
+  \begin{itemize}
+    \item \(\IR^n\): Euclidean vectors with \(n\) components.
+    \item \(\IR^\infty\): Sequences of real numbers \((v_1,v_2,\dots)\).
+    \item \(\IR^{m\times n}\): Matrices of real numbers with \(m\) rows and
+          \(n\) columns.
+    \item \(\IC\): Complex numbers.
+    \item \(\IP^n\): Polynomials of degree \(n\) or less.
+    \item \(\IP\): Polynomials of any degree.
+    \item \(C(\IR)\): Real-valued continuous functions.
+  \end{itemize}
+\end{remark}
+
+\begin{activity}{10}
+  Prove that \(\IP^2\) satisfies the \textit{commutative addition} property
+  of vector spaces,
+  by showing that if \(f(x)=a_1x^2+b_1x+c_1\) and \(g(x)=a_2x^2+b_2x+c_2\),
+  then \(f(x)+g(x)=g(x)+f(x)\).
+\end{activity}
+
+\begin{definition}
+  A \term{linear combination} of a set of vectors
+  \(\{\vect v_1,\vect v_2,\dots,\vect v_m\}\) is given by
+  \(c_1\vect v_1+c_2\vect v_2+\dots+c_m\vect v_m\) for any choice of
+  scalar multiples \(c_1,c_2,\dots,c_m\).
+\end{definition}
+
+\begin{definition}
+  The \term{span} of a set of vectors is the collection of all linear
+  combinations of that set:
+  \[
+    \vspan\{\vect v_1,\vect v_2,\dots,\vect v_m\} =
+    \{c_1\vect v_1+c_2\vect v_2+\dots+c_m\vect v_m :
+    c_i\text{ is a real number}\}
+  \]
+\end{definition}
+
+\begin{activity}{10}
+  Consider \(\vspan\left\{\begin{bmatrix}1\\2\end{bmatrix}\right\}\).
+  \begin{subactivity}
+    Sketch
+    \(c\begin{bmatrix}1\\2\end{bmatrix}\) in the \(xy\) plane
+    for \(c=1,3,0,-2\).
+  \end{subactivity}
+  \begin{subactivity}
+    Sketch a representation of all the vectors given by
+    \(\vspan\left\{\begin{bmatrix}1\\2\end{bmatrix}\right\}\)
+    in the \(xy\) plane.
+  \end{subactivity}
+\end{activity}
+
+\begin{activity}{10}
+  Consider \(\vspan\left\{\begin{bmatrix}1\\2\end{bmatrix},
+  \begin{bmatrix}-1\\1\end{bmatrix}\right\}\).
+  \begin{subactivity}
+    Sketch
+    \(c_1\begin{bmatrix}1\\2\end{bmatrix}+
+    c_2\begin{bmatrix}-1\\1\end{bmatrix}\) in the \(xy\) plane
+    for \(\begin{bmatrix}c_1\\c_2\end{bmatrix}=
+    \begin{bmatrix}1\\0\end{bmatrix},
+    \begin{bmatrix}0\\1\end{bmatrix},
+    \begin{bmatrix}2\\0\end{bmatrix},
+    \begin{bmatrix}2\\1\end{bmatrix}\).
+  \end{subactivity}
+  \begin{subactivity}
+    Sketch a representation of all the vectors given by
+    \(\vspan\left\{\begin{bmatrix}1\\2\end{bmatrix},
+     \begin{bmatrix}-1\\1\end{bmatrix}\right\}\)
+    in the \(xy\) plane.
+  \end{subactivity}
+\end{activity}
+
+\begin{activity}{5}
+    Sketch a representation of all the vectors given by
+    \(\vspan\left\{\begin{bmatrix}6\\-4\end{bmatrix},
+     \begin{bmatrix}-2\\3\end{bmatrix}\right\}\)
+    in the \(xy\) plane.
+\end{activity}
+
+\begin{activity}{10}
+  Consider the following linear system.
+    \begin{alignat*}{3}
+       x_1 &\,-\,&  x_2 &\,=\,& -1 \\
+           &\,-\,& 3x_2 &\,=\,& -6 \\
+     -3x_1 &\,+\,& 2x_2 &\,=\,&  1
+    \end{alignat*}
+  \begin{subactivity}
+    Solve this system by using a calculator to find
+    \[\RREF
+      \begin{bmatrix}[cc|c]
+        1 & -1 & -1 \\
+        0 & -3 & -6 \\
+        -3 & 2 & 1
+      \end{bmatrix}
+    \]
+  \end{subactivity}
+  \begin{subactivity}
+    Given this solution, does
+    \(\begin{bmatrix}-1\\-6\\1\end{bmatrix}\) belong to
+    \(\vspan\left\{\begin{bmatrix}1\\0\\-3\end{bmatrix},
+    \begin{bmatrix}-1\\-3\\2\end{bmatrix}\right\}\)?
+  \end{subactivity}
+\end{activity}
+
+\begin{fact}
+  A vector \(\vect b\) belongs to
+  \(\vspan\{\vect v_1,\dots,\vect v_n\}\) if and only if
+  the linear system corresponding to
+  \([\vect v_1\,\dots\,\vect v_n \,|\, \vect b]\)
+  is consistent.
+\end{fact}
+
+\begin{remark}
+  To determine if \(\vect b\) belongs to
+  \(\vspan\{\vect v_1,\dots,\vect v_n\}\), find
+  \(\RREF[\vect v_1\,\dots\,\vect v_n \,|\, \vect b]\).
+\end{remark}
+
+\begin{activity}{5}
+  Determine if
+  \(\begin{bmatrix}3\\-2\\1\end{bmatrix}\) belongs to
+  \(\vspan\left\{\begin{bmatrix}1\\0\\-3\end{bmatrix},
+  \begin{bmatrix}-1\\-3\\2\end{bmatrix}\right\}\)
+  by row-reducing an appropriate matrix.
+\end{activity}
+
+
+\end{applicationActivities}
