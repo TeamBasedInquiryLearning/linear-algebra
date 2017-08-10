@@ -15,7 +15,7 @@
   these operations), we write \(A\sim B\).
 \end{definition}
 
-\begin{activity}{15}
+\begin{activity}{15} % TODO add subactivity for finding solution
   Show that the following two linear systems:
   \begin{multicols}{2}\noindent
     \begin{alignat*}{4}
@@ -53,6 +53,7 @@
 \end{definition}
 
 \begin{activity}{10}
+  % TODO rewrite column-by-column
   Reproduce the steps that manipulated the matrix
   \[
     \begin{bmatrix}[ccc|c]
@@ -67,6 +68,7 @@
     \end{bmatrix}
   \]
   into row echelon form by using the following algorithm.
+  % TODO rewrite algorithm
   \begin{multicols}{2}\noindent
   \begin{enumerate}
     \item Identify
@@ -88,12 +90,14 @@
   \end{multicols}
 \end{activity}
 
-\begin{definition}
+\begin{definition}%TODO move after next activity
   A matrix is in \term{reduced row echelon form} if it is in row echelon form
-  and all terms above leading terms are \(0\).
+  and all terms above leading terms are \(0\). %TODO change leading terms
+  % to pivot positions
 \end{definition}
 
 \begin{activity}{10}
+  % TODO remove explicit steps
   Show that the following two linear systems:
   \begin{multicols}{2}\noindent
     \begin{alignat*}{4}
@@ -118,33 +122,36 @@
   Then write the solution to the linear system.
 \end{activity}
 
-\begin{activity}{5}
-  Verify that \((x_1,x_2,x_3)=(-2,7,2)\) is a solution to the linear system
+\begin{remark}
+  We may verify that \((x_1,x_2,x_3)=(-2,7,2)\) is a solution to the
+  original linear system
     \begin{alignat*}{4}
       3x_1 &\,-\,& 2x_2 &\,+\,& 13x_3 &\,=\,& 6 \\
       2x_1 &\,-\,& 2x_2 &\,+\,& 10x_3 &\,=\,& 2 \\
      -1x_1 &\,+\,& 3x_2 &\,-\,&  6x_3 &\,=\,& 11
     \end{alignat*}
   by plugging the solution into each equation.
-\end{activity}
+\end{remark}
 
-\begin{activity}{10}
-  Reproduce the steps that manipulated the matrix
-  \[
-    \begin{bmatrix}[ccc|c]
-      1 & -1 &  5 & 1 \\
-      0 &  1 & -2 & 3 \\
-      0 &  0 &  1 & 2
-    \end{bmatrix}\sim
-    \begin{bmatrix}[ccc|c]
-      1 &  0 &  0 & -2 \\
-      0 &  1 &  0 & 7 \\
-      0 &  0 &  1 & 2
-    \end{bmatrix}
-  \]
-  into reduced row echelon form by adding multiples of lower rows into
-  higher rows, zeroing out all terms above leading terms.
-\end{activity}
+%TODO 3x3 example that is consistent with inf solutions
+
+% \begin{activity}{10}
+%   Reproduce the steps that manipulated the matrix
+%   \[
+%     \begin{bmatrix}[ccc|c]
+%       1 & -1 &  5 & 1 \\
+%       0 &  1 & -2 & 3 \\
+%       0 &  0 &  1 & 2
+%     \end{bmatrix}\sim
+%     \begin{bmatrix}[ccc|c]
+%       1 &  0 &  0 & -2 \\
+%       0 &  1 &  0 & 7 \\
+%       0 &  0 &  1 & 2
+%     \end{bmatrix}
+%   \]
+%   into reduced row echelon form by adding multiples of lower rows into
+%   higher rows, zeroing out all terms above leading terms.
+% \end{activity}
 
 
 
