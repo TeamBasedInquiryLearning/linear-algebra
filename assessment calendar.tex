@@ -1,0 +1,105 @@
+\documentclass{article}
+
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{enumerate,amssymb}
+\usepackage{termcal}
+
+\input{class-macros.tex}
+
+\newcommand{\RAT}[1]{\ifbool{TBL}{{\bf RAT Module #1} \\}{}}
+
+\begin{document}
+\pagestyle{empty}
+\noindent \course \hfill \sem \hfill \prof
+\vspace{0.3in}
+\hrule
+\begin{center}{\large \bf Assessment Calendar}\end{center}
+\hrule
+
+
+\begin{center}
+\begin{calendar}{8/14/2017}{17} % Calendar starts on 8/14/17 and lasts for 16 weeks
+
+%\renewcommand{\calprintclass}{}  %Suppress printing class day
+%\setlength{\calboxdepth}{.3in}
+\calday[Monday]{\ifbool{TR}{}{\classday} } 
+\calday[Tuesday]{\ifbool{TR}{\classday}{}} 
+\calday[Wednesday]{\ifbool{TR}{}{\classday}} 
+\calday[Thursday]{\ifbool{TR}{\classday}{}} 
+\calday[Friday]{} 
+\skipday \skipday
+
+%Specify holidays/exceptions
+\options{8/14/2017}{\noclassday}
+\options{8/15/2017}{\noclassday}
+
+\options{9/4/2017}{\noclassday}
+\caltext{9/4/2017}{Labor Day}
+
+\options{10/12/2017}{\noclassday}
+\caltext{10/12/2017}{Fall Break}
+\caltext{10/13/2017}{Fall Break}
+
+\options{11/22/2017}{\noclassday}
+\caltext{11/22/2017}{Thanksgiving Break}
+\options{11/23/2017}{\noclassday}
+\caltext{11/23/2017}{Thanksgiving}
+\caltext{11/24/2017}{Thanksgiving Break}
+
+\options{12/4/2017}{\noclassday \weeklytext{Finals Week}}
+\options{12/5/2017}{\noclassday \weeklytext{Finals Week}}
+\options{12/6/2017}{\noclassday \weeklytext{Finals Week}}
+\options{12/7/2017}{\noclassday \weeklytext{Finals Week}}
+\options{12/8/2017}{\noclassday \weeklytext{Finals Week}}
+
+\ifbool{TR}
+{
+	\ifbool{TBL}
+	{ %TR TBL Final
+		\caltext{12/7/2017}{{\bf Final Exam 10:30-12:30}} 
+	}
+	{ %TR Lecture Final
+		\caltext{12/7/2017}{{\bf Final Exam 1:00-3:00}}
+	} 
+}
+{
+	\ifbool{TBL}
+	{ %MW TBL Final
+	}
+	{ %MW Lecture Final
+	}
+}
+
+% schedule
+\caltexton{1}{First day--no assessments}
+\caltexton{2}{\RAT{E}}
+\caltexton{4}{E.1}
+\caltexton{5}{E.2}
+\caltexton{6}{\RAT{V} E.1,E.2,E.3,E.4}
+\caltexton{7}{E.2}
+\caltexton{8}{ E.1,E.2,E.3,E.4, V.1}
+\caltexton{10}{\RAT{S?} E.1,E.2,E.3,E.4, V.1}
+\caltexton{16}{\bf Midterm Exam}
+\caltexton{17}{\RAT{A}}
+
+\caltexton{19}{A.1,A.2}
+\caltexton{20}{A.3,A.4}
+\caltexton{21}{\RAT{M}  A.1,A.2}
+\caltexton{22}{A.3,A.4}
+\caltexton{23}{A.1,A.2,M.1}
+\caltexton{24}{A.3,A.4}
+\caltexton{25}{\RAT{G}  A.1,A.2,M.1,M.2,M.3}
+\caltexton{26}{A.3,A.4}
+\caltexton{27}{M.1,M.2,M.3}
+\caltexton{28}{M.1,M.2,M.3,G.1}
+\caltexton{29}{G.1,G.2,G.3}
+
+
+
+
+\end{calendar}
+\end{center}
+
+
+
+\end{document}
