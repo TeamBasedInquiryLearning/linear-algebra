@@ -6,75 +6,58 @@
 % have students capture 8 properties of R2 from list of 11
 % include ca=b, unique equidistant, nonzero orthogonal
 
-\begin{activity}{15}
-Let \(\vect u=\begin{bmatrix} u_1 \\ u_2 \end{bmatrix}\),
-\(\vect v=\begin{bmatrix} v_1 \\ v_2 \end{bmatrix}\), and
-\(\vect w=\begin{bmatrix} w_1 \\ w_2 \end{bmatrix}\).
-Rewrite the following proofs about two-dimensional Euclidean vector addition,
-filling in the missing information.
+\begin{activity}{25}
+Consider each of the following vector properties. Label each property
+with \(\IR^1\), \(\IR^2\), and/or \(\IR^3\) if that property holds for
+Euclidean vectors/scalars \(\vect u,\vect v,\vect w\) of that dimension.
+\begin{multicols}{2}
 \begin{enumerate}
-  \item Euclidean vector addition is \textbf{well-defined}.
+  \item \textbf{Addition associativity.}
 
-        \textbf{Proof:} \(\vect u+\vect v=?\). Since this is a Euclidean
-        vector, addition is well-defined. \(\square\)
-  \item Euclidean vector addition is \textbf{associative}.
+        \(\vect u+(\vect v+\vect w)=
+        (\vect u+\vect v)+\vect w\).
+  \item \textbf{Addition commutivity.}
 
-        \textbf{Proof:} \(\vect u+(\vect v+\vect w)=\,?\) and
-        \((\vect u+\vect v)+\vect w=\,?\). Since both expressions are equal,
-        addition is associative. \(\square\)
-  \item Euclidean vector addition is \textbf{commutative}.
+        \(\vect u+\vect v=
+        \vect v+\vect u\).
+  \item \textbf{Addition identity.}
 
-        \textbf{Proof:} \(\vect u+\vect v=\,?\) and
-        \(\vect v+\vect u=\,?\). Since both expressions are equal,
-        addition is commutative. \(\square\)
-  \item There exists an \textbf{additive identity} for Euclidean vector
-        addition.
+        There exists some \(\vect 0\)
+        where \(\vect v+\vect 0=\vect v\).
+  \item \textbf{Addition inverse.}
 
-        \textbf{Proof:} Let \(\vect 0=\,?\). Since
-        \(\vect v+\vect 0=\,?=\vect v\), \(\vect 0\) is an identity. \(\square\)
-  \item Every Euclidean vector has an \textbf{additive inverse}.
+        There exists some \(-\vect v\)
+        where \(\vect v+(-\vect v)=\vect 0\).
+  \item \textbf{Addition midpoint uniqueness.}
 
-        \textbf{Proof:} Let \(-\vect v=\,?\). Since
-        \(\vect v+(-\vect v)=\,?=\vect 0\), \(-\vect v\) is an inverse
-        for \(\vect v\). \(\square\)
+        There exists a unique \(\vect m\) where the distance from
+        \(\vect u\) to \(\vect m\) equals the distance from \(\vect m\)
+        to \(\vect v\).
+  \item \textbf{Scalar multiplication associativity.}
+
+        \(a(b\vect v)=(ab)\vect v\).
+  \item \textbf{Scalar multiplication identity.}
+
+        \(1\vect v=\vect v\).
+  \item \textbf{Scalar multiplication relativity.}
+
+        There exists some scalar \(c\) where either \(c\vect v=\vect w\)
+        or \(c\vect w=\vect v\).
+  \item \textbf{Scalar distribution.}
+
+        \(a(\vect u+\vect v)=a\vect u+a\vect v\).
+  \item \textbf{Vector distribution.}
+
+        \((a+b)\vect v=a\vect v+b\vect v\).
+  \item \textbf{Orthogonality.}
+
+        There exists a non-zero vector \(\vect n\) such that
+        \(\vect n\) is orthogonal to both \(\vect u\) and \(\vect v\).
+  \item \textbf{Bidimensionality.}
+
+        \(\vect v=a\vect i+b\vect j\) for some value of \(a,b\).
 \end{enumerate}
-\end{activity}
-
-\begin{activity}{15}
-Let \(\vect u=\begin{bmatrix} u_1 \\ u_2 \end{bmatrix}\) and
-\(\vect v=\begin{bmatrix} v_1 \\ v_2 \end{bmatrix}\), and let \(a,b\) be
-scalar numbers.
-Rewrite the following proofs about scalar multiplication of
-two-dimensional Euclidean vectors,
-filling in the missing information.
-\begin{enumerate}
-  \item Scalar multiplication of Euclidean vectors is \textbf{well-defined}.
-
-        \textbf{Proof:} \(a\vect v=?\). Since this is a Euclidean
-        vector, scalar multiplication is well-defined. \(\square\)
-  \item Scalar multiplication of Euclidean vectors is \textbf{compatible}.
-
-        \textbf{Proof:} \(a(b\vect v)=\,?\) and
-        \((ab)\vect v=\,?\). Since both expressions are equal,
-        scalar multiplication is compatible. \(\square\)
-  \item Scalar multiplication of Euclidean vectors
-        \textbf{distributes scalars}.
-
-        \textbf{Proof:} \(a(\vect u+\vect v)=\,?\) and
-        \(a\vect u+a\vect v=\,?\). Since both expressions are equal,
-        scalars distribute. \(\square\)
-  \item Scalar multiplication of Euclidean vectors
-        \textbf{distributes vectors}.
-
-        \textbf{Proof:} \((a+b)\vect v=\,?\) and
-        \(a\vect v+b\vect v=\,?\). Since both expressions are equal,
-        vectors distribute. \(\square\)
-  \item The scalar \(1\) is a \textbf{multiplicative identity} for the
-        scalar multiplication of Euclidean vectors.
-
-        \textbf{Proof:} Since
-        \(1\vect v=\,?=\vect v\), \(1\) is an identity. \(\square\)
-\end{enumerate}
+\end{multicols}
 \end{activity}
 
 \begin{definition}
@@ -84,30 +67,30 @@ filling in the missing information.
   and let \(a,b\) be scalar numbers.
   \begin{multicols}{2}
   \begin{itemize}
-    \item \textbf{Well-defined addition.}
-
-          \(\vect v+\vect w\) belongs to \(V\).
-    \item \textbf{Associative addition.}
+    % \item \textbf{Well-defined addition.}
+    %
+    %       \(\vect v+\vect w\) belongs to \(V\).
+    \item \textbf{Addition associativity.}
 
           \(\vect u+(\vect v+\vect w)=
           (\vect u+\vect v)+\vect w\).
-    \item \textbf{Commutative addition.}
+    \item \textbf{Addition commutivity.}
 
           \(\vect u+\vect v=
           \vect v+\vect u\).
-    \item \textbf{Additive identity.}
+    \item \textbf{Addition identity.}
 
-          There exists some \(\vect 0\) in \(V\)
+          There exists some \(\vect 0\)
           where \(\vect v+\vect 0=\vect v\).
-    \item \textbf{Additive inverse.}
+    \item \textbf{Addition inverse.}
 
-          There exists some \(-\vect v\) in \(V\)
+          There exists some \(-\vect v\)
           where \(\vect v+(-\vect v)=\vect 0\).
-    \item \textbf{Well-defined scalar multipication.}
-
-          \(a\vect v\) belongs to
-          \(V\).
-    \item \textbf{Associative scalar multipication.}
+    % \item \textbf{Well-defined scalar multipication.}
+    %
+    %       \(a\vect v\) belongs to
+    %       \(V\).
+    \item \textbf{Scalar multiplication associativity.}
 
           \(a(b\vect v)=(ab)\vect v\).
     \item \textbf{Scalar multiplication identity.}
