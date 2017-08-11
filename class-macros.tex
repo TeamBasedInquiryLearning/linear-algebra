@@ -1,19 +1,29 @@
-%This file is for defining specific commands that apply only to one or two 
+%This file is for defining specific commands that apply only to one or two
 %of the four sections
 \usepackage{etoolbox}
 \newcommand{\sem}{Fall 2017}
-\newcommand{\course}{Math 237}
 
 \newbool{TR}
-\booltrue{TR} 
-%\boolfalse{TR} %Set to false for Steven's MW sections
-
-\newcommand{\prof}{\ifbool{TR}{Dr. Drew Lewis}{Dr. Steven Clontz}}
-\newcommand{\profemail}{\ifbool{TR}{{\tt drewlewis@southalabama.edu}}{}}
-\newcommand{\profoffice}{\ifbool{TR}{MSPB (ILB) 439}{MSPB (ILB) 3??}}
-\newcommand{\tbltime}{\ifbool{TR}{TR 9:30-10:45 COMM 0160}{MW COMM 0160}}
-\newcommand{\lecturetime}{\ifbool{TR}{TR 12:30-1:45 MSPB (ILB) 350}{MW  MSPB (ILB) }}
-
-
 \newbool{TBL}
-\booltrue{TBL} %Set to false for non-TBL section
+
+\newcommand{\course}{Math 237-%
+  \ifbool{TR}{%
+    \ifbool{TBL}{???}{???}%
+  }{%
+    \ifbool{TBL}{501}{101}%
+  }%
+}
+\newcommand{\prof}{\ifbool{TR}{Dr. Drew Lewis}{Dr. Steven Clontz}}
+\newcommand{\profemail}{\ifbool{TR}{{\tt drewlewis@southalabama.edu}}{\tt sclontz@southalabama.edu}}
+\newcommand{\profoffice}{\ifbool{TR}{MSPB (ILB) 439}{MSPB (ILB) 314}}
+\newcommand{\tbltime}{\ifbool{TR}{TR 9:30-10:45 COMM 0160}{MW COMM 0160}}
+\newcommand{\lecturetime}{\ifbool{TR}{TR 12:30-1:45 MSPB (ILB) 350}{MW 3:35-4:50 MSPB (ILB) 360}}
+
+
+
+% Include the following to configure course
+% \booltrue{TR}   %Use for Drew's TR sections
+% \boolfalse{TR}  %Use for Steven's MW sections
+% \booltrue{TBL}  %Use for TBL sections
+% \boolfalse{TBL} %Use for non-TBL sections
+\input{class-macros.local}
