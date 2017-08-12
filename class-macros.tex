@@ -13,12 +13,49 @@
     \ifbool{TBL}{501}{101}%
   }%
 }
-\newcommand{\prof}{\ifbool{TR}{Dr. Drew Lewis}{Dr. Steven Clontz}}
-\newcommand{\profemail}{\ifbool{TR}{{\tt drewlewis@southalabama.edu}}{\tt sclontz@southalabama.edu}}
-\newcommand{\profoffice}{\ifbool{TR}{MSPB (ILB) 439}{MSPB (ILB) 314}}
-\newcommand{\tbltime}{\ifbool{TR}{TR 9:30-10:45 COMM 0160}{MW COMM 0160}}
-\newcommand{\lecturetime}{\ifbool{TR}{TR 12:30-1:45 MSPB (ILB) 350}{MW 3:35-4:50 MSPB (ILB) 360}}
-
+\newcommand{\prof}{%
+  \ifbool{TR}{%
+    Dr. Drew Lewis%
+  }{%
+    Dr. Steven Clontz%
+  }%
+}
+\newcommand{\profemail}{%
+  \ifbool{TR}{%
+    \texttt{drewlewis@southalabama.edu}%
+  }{%
+    \texttt{sclontz@southalabama.edu}%
+  }%
+}
+\newcommand{\profoffice}{%
+  \ifbool{TR}{%
+    MSPB (ILB) 439%
+  }{%
+    MSPB (ILB) 314%
+  }%
+}
+\newcommand{\profhours}{%
+  \ifbool{TR}{%
+    TBA%
+  }{%
+    W 10:30-3:30, 4:50-5:50%
+  }%
+}
+\newcommand{\tbltime}{%
+  \ifbool{TR}{%
+    TR 9:30-10:45 COMM 0160%
+  }{%
+    MW 6:00-7:15 COMM 0160%
+  }%
+}
+\newcommand{\lecturetime}{%
+  \ifbool{TR}{%
+    TR 12:30-1:45 MSPB (ILB) 350%
+  }{%
+    MW 3:35-4:50 MSPB (ILB) 360%
+  }%
+}
+\newcommand{\classtime}{\ifbool{TBL}{\tbltime}{\lecturetime}}
 
 
 % Include the following to configure course
