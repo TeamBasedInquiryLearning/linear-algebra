@@ -1,0 +1,131 @@
+\usepackage{tbil-la}
+
+\usepackage[left=1in,right=1in,top=1.1in,bottom=1.1in,includeheadfoot]{geometry}
+\usepackage{fancyhdr}
+
+%%%Page layout setup%%%
+\newcommand{\header}{Unknown Header}
+\newcommand{\setHeader}[1]{\renewcommand{\header}{#1}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{\header}
+\rfoot{Page \thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\setlength{\parindent}{0pt}
+
+
+\newenvironment{readinessAssuranceOutcomes}{
+\newpage
+\section*{Readiness Assurance Outcomes}
+
+Before beginning this module, each student should be able to...
+\begin{itemize}
+}{
+\end{itemize}
+}
+
+
+\newenvironment{module}[1]{
+\newpage
+\setHeader{#1}
+}
+
+
+\newenvironment{moduleStandards}{
+\newpage
+\section*{Standards for this Module}
+
+At the end of this module, students will be able to...
+\begin{itemize}
+}{
+\end{itemize}
+}
+
+\newcommand{\standardList}[1]{\textbf{(Standard(s) #1)}}
+
+\newenvironment{readinessAssuranceResources}{
+\subsection*{Readiness Assurance Resources}
+The following resources will help you prepare for this module.
+\begin{itemize}
+}{
+\end{itemize}
+}
+
+
+\newenvironment{readinessAssuranceTest}{
+\newpage
+\section*{Readiness Assurance Test}
+Choose the most appropriate response for each question.
+\begin{enumerate}[1)]
+}{
+\end{enumerate}
+}
+
+
+\newenvironment{readinessAssuranceTestChoices}{
+\begin{enumerate}[(a)]
+}{
+\end{enumerate}
+}
+
+
+\newenvironment{applicationActivities}[1]{
+\newpage
+\section*{Application Activities - #1}
+}{
+%
+}
+
+
+\newenvironment{activity}[1]{
+  \begin{activityRaw} \textit{(#1 min)}
+}{
+  \end{activityRaw}
+  \begin{center}
+    \rule{6.5in}{0.2pt}
+  \end{center}
+}
+
+\newenvironment{remark}[1]{
+  \begin{remarkRaw}
+}{
+  \end{remarkRaw}
+}
+
+\newenvironment{fact}[1]{
+  \begin{factRaw}
+}{
+  \end{factRaw}
+}
+
+\newenvironment{observation}{
+  \begin{observationRaw}
+}{
+  \end{observationRaw}
+}
+
+\newenvironment{example}{
+  \begin{exampleRaw}
+}{
+  \end{exampleRaw}
+}
+
+\newenvironment{definition}{
+  \begin{definitionRaw}
+}{
+  \end{definitionRaw}
+}
+
+
+\newenvironment{subactivity}{
+
+\textbf{Part X:}
+}{
+}
+
+%This is for making instructor notes about running the activity (e.g. card sort, gallery walk...)
+\newenvironment{TBLnote}
+{\color{blue} \textbf{(Instructor Note:)}}{}
