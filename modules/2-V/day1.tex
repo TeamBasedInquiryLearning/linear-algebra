@@ -65,45 +65,8 @@ Euclidean vectors/scalars \(\vect u,\vect v,\vect w\) of that dimension.
   associated addition and scalar multiplication operations that satisfy
   the following properties. Let \(\vect u,\vect v,\vect w\) belong to \(V\),
   and let \(a,b\) be scalar numbers.
-  \begin{multicols}{2}
-  \begin{itemize}
-    % \item \textbf{Well-defined addition.}
-    %
-    %       \(\vect v+\vect w\) belongs to \(V\).
-    \item \textbf{Addition associativity.}
 
-          \(\vect u+(\vect v+\vect w)=
-          (\vect u+\vect v)+\vect w\).
-    \item \textbf{Addition commutivity.}
-
-          \(\vect u+\vect v=
-          \vect v+\vect u\).
-    \item \textbf{Addition identity.}
-
-          There exists some \(\vect 0\)
-          where \(\vect v+\vect 0=\vect v\).
-    \item \textbf{Addition inverse.}
-
-          There exists some \(-\vect v\)
-          where \(\vect v+(-\vect v)=\vect 0\).
-    % \item \textbf{Well-defined scalar multipication.}
-    %
-    %       \(a\vect v\) belongs to
-    %       \(V\).
-    \item \textbf{Scalar multiplication associativity.}
-
-          \(a(b\vect v)=(ab)\vect v\).
-    \item \textbf{Scalar multiplication identity.}
-
-          \(1\vect v=\vect v\).
-    \item \textbf{Scalar distribution.}
-
-          \(a(\vect u+\vect v)=a\vect u+a\vect v\).
-    \item \textbf{Vector distribution.}
-
-          \((a+b)\vect v=a\vect v+b\vect v\).
-  \end{itemize}
-  \end{multicols}
+  \vectorSpaceProperties
 \end{definition}
 
 \begin{definition}
@@ -111,25 +74,25 @@ Euclidean vectors/scalars \(\vect u,\vect v,\vect w\) of that dimension.
   vector spaces} \(\IR^n\), but there are other examples as well.
 \end{definition}
 
-\begin{activity}{15}
-  Assuming the usual definitions of addition and scalar multiplication,
-  label each of the following sets as a \textbf{valid} or \textbf{non-valid}
-  vector space. If the set is not a valid vector space, give an example of
-  a vector space property that fails to hold.
-  \begin{multicols}{2}
-  \begin{enumerate}
-    \item \(\left\{
-    \begin{bmatrix}
-      v_1\\v_2\\v_3\\v_4
-    \end{bmatrix}:v_i\text{ is an integer}\right\}\)
-    \item \(\left\{
-      a+bi
-      :a,b\text{ are real numbers}\right\}\)
-    \item \(\left\{
-      x^2+bx+c
-      :b,c\text{ are positive}\right\}\)
-  \end{enumerate}
-  \end{multicols}
+\begin{activity}{25}
+  Consider the following vector space that models motion along the curve
+  \(y=e^x\). Let \(V=\{(x,y):y=e^x\}\), where
+  \((a_1,b_1)+(a_2,b_2)=(a_1+a_2,b_1b_2)\), and \(c(a,b)=(ca,b^c)\).
+
+  \begin{subactivity}
+    Verify that \(3((1,e)+(-2,\frac{1}{e^2}))=
+    3(1,e)+3(-2,\frac{1}{e^2})\).
+  \end{subactivity}
+
+  \begin{TBLnote}
+    Draw a visualization of these vectors by sketching ``curved''
+    vectors in the \(xy\) plane.
+  \end{TBLnote}
+
+  \begin{subactivity}
+    Prove the scalar distribution property for this space:
+    \(c(\vect u+\vect v)=c\vect u+c\vect v\).
+  \end{subactivity}
 \end{activity}
 
 
