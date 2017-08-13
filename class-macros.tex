@@ -57,6 +57,15 @@
 }
 \newcommand{\classtime}{\ifbool{TBL}{\tbltime}{\lecturetime}}
 
+\newcommand*{\TakeFourierOrnament}[1]{{%
+\fontencoding{U}\fontfamily{futs}\selectfont\char#1}}
+\newcommand*{\danger}{\TakeFourierOrnament{66}}
+
+\newcommand{\masteryMark}{\ifbool{TR}{\textbf{M}}{\checkmark}}
+\newcommand{\minorMark}{\textbf{*}}
+\newcommand{\reattemptMark}{\ifbool{TR}{\textbf{R}}{\danger}}
+\newcommand{\noMark}{\ifbool{TR}{\textbf{B}}{\(\times\)}}
+
 
 % Include the following to configure course
 % \booltrue{TR}   %Use for Drew's TR sections
