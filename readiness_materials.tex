@@ -1,16 +1,18 @@
 \documentclass{article}
-\usepackage{tbil-la}
 
 \usepackage{xstring}
 
 %Trying to get extract to extract RATs here--will fix Tuesday DL
-%\let\Xfile\empty
-%\StrBefore*{\jobname}{readiness}[\Xfile]
-%\StrBetween{\jobname}{\textbackslash}{.tex}[\Xfile]
-%\edef\XXfile{\Xfile RAT.tex}
-%\typeout{XXfile=\XXfile}
-%\usepackage[active,generate=\XXfile,extract-env={readinessAssuranceTest}]{extract}
+\let\Xfile\empty
+\StrBefore*{\jobname}{readiness}[\Xfile]
+\typeout{Xfile=\Xfile}
+\StrBetween[1,2]{\Xfile}{/}{/}[\Xfile]
+\typeout{Xfile=\Xfile}
+\edef\XXfile{rat/\Xfile _RAT.tex}
+\typeout{XXfile=\XXfile}
+\usepackage[active,generate=\XXfile,extract-env={readinessAssuranceTest}]{extract}
 
+\extractline* \usepackage{tbil-la,course-notes}
 \begin{document}
 
 \input{\jobname.tex}
