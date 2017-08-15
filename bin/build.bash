@@ -27,6 +27,7 @@ pdflatex homework-problems.tex
 
 # TODO copy built PDFs into appropriate section folders
 # here's a quick one for syllabi and standards
+# TODO A symlink is probably a better choice than copying
 cp syllabus-clontz-lecture.pdf clontz/lecture/
 cp syllabus-clontz-tbl.pdf clontz/tbl/
 cp syllabus-lewis-lecture.pdf lewis/lecture/
