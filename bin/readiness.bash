@@ -7,8 +7,10 @@ done
 
 for i in `ls modules/*/readiness.pdf`
 do
-	j=${i/readiness.pdf/readiness-outcomes.pdf}
-	pdftk $i cat 1 output $j
+	mod=${i#modules\/}
+	mod=${mod%/readiness.pdf}
+	out=${i/readiness.pdf/readiness-outcomes-$mod.pdf}
+	pdftk $i cat 1 output $out
 done
 
 for i in `ls rat/*.tex`
