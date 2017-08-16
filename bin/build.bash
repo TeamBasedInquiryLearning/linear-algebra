@@ -26,16 +26,3 @@ pdflatex assessment-calendar-clontz-tbl.tex
 pdflatex assessment-calendar-lewis-lecture.tex
 pdflatex assessment-calendar-lewis-tbl.tex
 pdflatex homework-problems.tex
-
-# TODO copy built PDFs into appropriate section folders
-# here's a quick one for syllabi and standards
-# TODO A symlink is probably a better choice than copying
-cp syllabus-clontz-lecture.pdf clontz/lecture/
-cp syllabus-clontz-tbl.pdf clontz/tbl/
-cp syllabus-lewis-lecture.pdf lewis/lecture/
-cp syllabus-lewis-tbl.pdf lewis/tbl/
-cp standards-clontz.pdf clontz/lecture/
-cp standards-clontz.pdf clontz/tbl/
-cp standards-lewis.pdf lewis/lecture/
-cp standards-lewis.pdf lewis/tbl/
-# TODO write a Makefile that (might?) handle partial builds more intelligently
