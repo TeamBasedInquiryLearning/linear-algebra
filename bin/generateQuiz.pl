@@ -83,7 +83,7 @@ while( my($classDay, $standards) = each %quizStandardsHash)
 		open( my $outFile, '>', $outFileName) or die "Could not open $outFileName";
 	
 		my $texStandards = join (",",@{$standards});
-		my $header = "\\documentclass{sbgquiz}\n\n";
+		my $header = "\\documentclass{sbgLAquiz}\n\n";
 		$header .= "\\begin\{extract*\}\n";
 		$header .= "\\input\{quizHeader.tex\}\n";
 		$header .= "\\title\{Mastery Quiz Day $classDay \}\n";
