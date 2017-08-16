@@ -86,7 +86,7 @@
 %\newcommand   {\boxit}[1]     {$$\fbox{$#1$}$$}
 \everymath{\displaystyle}
 
-\newenvironment{problem}
+\newenvironment{problem}[1]
 %before
 {
 	\addtocounter{problem}{1}
@@ -94,7 +94,8 @@
 	\setcounter{subproblem}{0}
 
 	\begin{flushleft}
-	{\bfseries \arabic{problem}.}
+	%{\bfseries \arabic{problem} .}
+	{\bfseries {#1}. }
 	\ignorespaces
 }
 %after
