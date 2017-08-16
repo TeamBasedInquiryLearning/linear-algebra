@@ -11,6 +11,9 @@ pdflatex day1-slides-lewis-tbl.tex
 #Produce readiness materials
 ./bin/readiness.bash
 
+#Produce quizzes
+#./bin/quiz.bash
+
 #Produce syllabus and forms
 pdflatex syllabus-clontz-lecture.tex
 pdflatex syllabus-clontz-tbl.tex
