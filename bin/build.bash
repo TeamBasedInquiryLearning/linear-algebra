@@ -21,9 +21,10 @@ pdflatex syllabus-lewis-lecture.tex
 pdflatex syllabus-lewis-tbl.tex
 pdflatex standards-lewis.tex
 pdflatex standards-clontz.tex
-pdflatex homework-report.tex
-pdflatex reassessment-form-lewis.tex
+pdflatex homework-report-clontz.tex
+pdflatex homework-report-lewis.tex
 pdflatex reassessment-form-clontz.tex
+pdflatex reassessment-form-lewis.tex
 pdflatex assessment-calendar-clontz-lecture.tex
 pdflatex assessment-calendar-clontz-tbl.tex
 pdflatex assessment-calendar-lewis-lecture.tex
