@@ -29,6 +29,7 @@ sub getRandomProblems
 	}	
 
 	my @out;
+	my $index=0;
 	foreach my $standard (@STDs)
 	{
 		#Specify appropriate filename and open
@@ -47,6 +48,7 @@ sub getRandomProblems
 		#through the lines of the file
 		my $n=0;
 
+		#Get the random problem
 		foreach my $line (@probFileLines)
 		{
 			$n++ if( $line =~ m/begin\{problem\}/) ;
@@ -54,6 +56,9 @@ sub getRandomProblems
 
 		}
 
+		#Put a newpage after every second problem except the last one
+		push (@out, "\\begin\{extract\}\\newpage\\end\{extract\}\n") if ($index % 2 == 1 and $index != $#STDs) ;
+		$index++;
 
 	}
 	return @out
@@ -105,6 +110,7 @@ while( my($classDay, $standards) = each %quizStandardsHash)
 		$header .= "\\input\{quizHeader.tex\}\n";
 		$header .= "\\title\{Mastery Quiz Day $classDay \}\n";
 		$header .= "\\standard\{$texStandards\}\n";
+		$header .= "\\version\{$i\}\n";
 		$header .= "\\end\{extract*\}\n\n";
 		$header .= "\\begin\{document\}\n\n";
 
