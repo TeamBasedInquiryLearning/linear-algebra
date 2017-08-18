@@ -3,37 +3,56 @@
 
 \begin{applicationActivities}{Day 3}
 
-\begin{fact}
-  Every augmented matrix \(A\) reduces to a unique reduced row echelon form
-  matrix. This matrix is denoted as \(\RREF(A)\).
-\end{fact}
-
-\begin{definition}% TODO not make "memorized" definition, emphasize
-  % column process, draw illustration
-  The following algorithm that reduces \(A\) to \(\RREF(A)\) is known as
-  \term{Gauss-Jordan elimination}.
-
-  \begin{multicols}{2}\noindent
-  \begin{enumerate}
-    \item Identify
-    the top cell of the first non-zero column as your pivot position;
-    you will ignore anything in the matrix that is above or left of your
-    current pivot position.
-    \item If the pivot position contains a \(0\), swap its row with a lower
-          row that does not contain a \(0\) in its column.
-    \item Divide the pivot row by the term in pivot position to change the
-          pivot term to \(1\). (If convenient, you can first swap the
-          pivot row with a lower row to make this division easier.)
-    \item Add multiples of the pivot row to all lower rows so that all terms
-          below pivot position become \(0\).
-    \item Move your pivot position down and right one step.
-    \item If all terms in and below pivot position are zero, move your
-          pivot position right. Repeat this step as needed.
-    \item If the matrix is not yet in row echelon form, return to Step 2.
-    \item Finally, add multiples of lower rows into higher rows, zeroing out
-          all terms above leading terms.
-  \end{enumerate}
+\begin{definition}
+  An algorithm that reduces \(A\) to \(\RREF(A)\) is called
+  \term{Gauss-Jordan elimination}. For example:
+  \begin{multicols}{3}
+    \begin{enumerate}
+      \item Circle the top-left-most cell that (a) is below any existing pivot
+      positions and (b) has a nonzero term either in that position or below it.
+      \item Ignoring any rows above this pivot position, use row operations
+      to change the value of your pivot position to \(1\), and the terms below
+      it to \(0\).
+      \item Repeat these two steps as often as possible.
+      \item Finally,
+      zero out any terms above pivot positions.
+    \end{enumerate}
   \end{multicols}
+  \[
+    \begin{bmatrix}[ccc|c]
+      \circledNumber{3} & -2 & 13 & 6 \\
+      2 & -2 & 10 & 2 \\
+      -1 & 3 & -6 & 11
+    \end{bmatrix}\sim
+    \begin{bmatrix}[ccc|c]
+     \circledNumber{2} & -2 & 10 & 2 \\
+      3 & -2 & 13 & 6 \\
+      -1 & 3 & -6 & 11
+    \end{bmatrix}\sim
+    \begin{bmatrix}[ccc|c]
+     \circledNumber{1} & -1 & 5 & 1 \\
+      3 & -2 & 13 & 6 \\
+      -1 & 3 & -6 & 11
+    \end{bmatrix}\sim
+    \begin{bmatrix}[ccc|c]
+     \circledNumber{1} & -1 & 5 & 1 \\
+      0 & \circledNumber{1} & -2 & 3 \\
+      0 & 2 & -1 & 12
+    \end{bmatrix}
+  \]
+  \[
+    \sim\dots\sim
+    \begin{bmatrix}[ccc|c]
+     \circledNumber{1} & -1 & 5 & 1 \\
+      0 & \circledNumber{1} & -2 & 3 \\
+      0 & 0 & \circledNumber{1} & 2
+    \end{bmatrix}\sim\dots\sim
+    \begin{bmatrix}[ccc|c]
+     \circledNumber{1} & 0 & 0 & -2 \\
+      0 & \circledNumber{1} & 0 & 7 \\
+      0 & 0 & \circledNumber{1} & 2
+    \end{bmatrix}
+  \]
 \end{definition}
 
 \begin{activity}{15}
@@ -48,7 +67,7 @@
   .\]
 \end{activity}
 
-\begin{definition}% add image
+\begin{definition}
   The columns of \(\RREF(A)\) without a leading term represent
   \term{free variables} of the linear system modeled by \(A\)
   that may be set equal to arbitrary parameters.
@@ -57,7 +76,7 @@
   to the linear system modeled by \(A\).
 \end{definition}
 
-\begin{activity}{10}% subactivty to identify pivot columns
+\begin{activity}{10}
   Given the linear system and its equivalent augmented matrices
   \begin{multicols}{2}\noindent
     \begin{alignat*}{5}
@@ -81,7 +100,7 @@
     \end{bmatrix}
   \]
   \end{multicols}
-  describe the solution set
+  circle the pivot positions and describe the solution set
   \(
     \begin{bmatrix}
       x_1 \\
@@ -89,22 +108,21 @@
       x_3 \\
       x_4
     \end{bmatrix}=
-    a\begin{bmatrix}
-      r_1 \\
-      r_2 \\
-      r_3 \\
-      r_4
-    \end{bmatrix}+
     \begin{bmatrix}
+      p_1 \\
+      p_2 \\
+      p_3 \\
+      p_4
+    \end{bmatrix}
+    +a\begin{bmatrix}
       s_1 \\
       s_2 \\
       s_3 \\
       s_4
     \end{bmatrix}
-  \) to the linear system by setting the free variable
-  \(x_3=a\), and then expressing each of the
-  bounded variables \(x_1,x_2,x_4\) equal to an expression in terms
-  of \(a\).
+  \) by setting the free variable (the column without a pivot position)
+  equal to \(a\), and expressing each of the other
+  bounded variables equal to an expression in terms of \(a\).
 \end{activity}
 
 \begin{remark}
@@ -134,9 +152,17 @@
   .\]
 \end{activity}
 
-\begin{remark}
-  In Module TODO, we will %TODO motivate homogeneous
-\end{remark}
+\begin{activity}{5}
+  Show that all linear systems of the form
+  \begin{alignat*}{5}
+    a_{11}x_1 &\,+\,& a_{12}x_2 &\,+\,& \dots  &\,+\,& a_{1n}x_n &\,=\,& 0 \\
+    a_{21}x_1 &\,+\,& a_{22}x_2 &\,+\,& \dots  &\,+\,& a_{2n}x_n &\,=\,& 0 \\
+     \vdots&  &\vdots&   &&  &\vdots&&\vdots  \\
+    a_{m1}x_1 &\,+\,& a_{m2}x_2 &\,+\,& \dots  &\,+\,& a_{mn}x_n &\,=\,& 0
+  \end{alignat*}
+  are consistent by finding a
+  quickly verifiable solution.
+\end{activity}
 
 \begin{definition}
   A \term{homogeneous system} is a linear system satisfying \(b_i=0\), that is,
@@ -148,32 +174,6 @@
     a_{m1}x_1 &\,+\,& a_{m2}x_2 &\,+\,& \dots  &\,+\,& a_{mn}x_n &\,=\,& 0
   \end{alignat*}
 \end{definition}
-
-\begin{activity}{5}
-  Show that all homogeneous systems are consistent by finding a
-  quickly verifiable solution
-  % \(
-  %   \begin{bmatrix}
-  %     x_1 \\
-  %     x_2 \\
-  %     \vdots \\
-  %     x_n
-  %   \end{bmatrix}=
-  %   \begin{bmatrix}
-  %     s_1 \\
-  %     s_2 \\
-  %     \vdots \\
-  %     s_n
-  %   \end{bmatrix}
-  % \)
-  for
-  \begin{alignat*}{5}
-    a_{11}x_1 &\,+\,& a_{12}x_2 &\,+\,& \dots  &\,+\,& a_{1n}x_n &\,=\,& 0 \\
-    a_{21}x_1 &\,+\,& a_{22}x_2 &\,+\,& \dots  &\,+\,& a_{2n}x_n &\,=\,& 0 \\
-     \vdots&  &\vdots&   &&  &\vdots&&\vdots  \\
-    a_{m1}x_1 &\,+\,& a_{m2}x_2 &\,+\,& \dots  &\,+\,& a_{mn}x_n &\,=\,& 0
-  \end{alignat*}
-\end{activity}
 
 \begin{fact}
   Because the zero vector is always a solution,

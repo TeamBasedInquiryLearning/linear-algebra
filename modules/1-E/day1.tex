@@ -137,9 +137,7 @@ in the system).
 
 \begin{activity}{10}
   All inconsistent linear systems contain a logical \term{contradiction}.
-  Find a contradiction in this system by solving for \(x_1\) in the first
-  equation, substituting the resulting expression into the
-  second equation, and then simplifying. %TODO less handholding
+  Find a contradiction in this system.
   \begin{align*}
   -x_1+2x_2  &=  5 \\
   2x_1-4x_2  &=  6
@@ -246,142 +244,38 @@ in the system).
 \begin{observation}
   Solving linear systems of two variables by graphing or substitution is
   reasonable for two-variable systems, but won't cut it for equations with
-  more variables. %TODO motivate coming definitions
+  more variables.
 \end{observation}
 
-% \begin{definition}
-%   Let \(\mathbb R^{m\times n}\) denote the space of \(m\times n\)
-%   dimensional \term{Euclidean matrices} of the form:
-%   \[
-%   \begin{bmatrix}
-%     a_{11} & a_{12} & \cdots & a_{1n} \\
-%     a_{21} & a_{22} & \cdots & a_{2n} \\
-%     \vdots & \vdots & \ddots & \vdots \\
-%     a_{m1} & a_{m2} & \cdots & a_{mn}
-%   \end{bmatrix}
-%   \]
-%   Let \(\mathbb R^{n}=\mathbb R^{1\times n}\) denote the space of
-%   \(n\)-dimensional \term{Euclidean vectors} of the form:
-%   \[
-%   \begin{bmatrix}
-%     a_{1} \\
-%     a_{2} \\
-%     \vdots \\
-%     a_{m}
-%   \end{bmatrix}
-%   \]
-%   Note that a Euclidean vector is just a Euclidean matrix with a single column.
-% \end{definition}
-%
-% \begin{remark}
-%   There are other types of matrices/vectors, but since the above situation is
-%   the most common/useful for our course, we will often refer to a
-%   ``Euclidean matrix'' as just a ``matrix'', and a ``Euclidean vector'' as
-%   just a ``vector''.
-% \end{remark}
-%
-% \begin{definition}
-%   \textbf{Matrix addition} is done coordinate-wise:
-%   \[
-%   \begin{bmatrix}
-%     a_{11} & a_{12} & \cdots & a_{1n} \\
-%     a_{21} & a_{22} & \cdots & a_{2n} \\
-%     \vdots & \vdots & \ddots & \vdots \\
-%     a_{m1} & a_{m2} & \cdots & a_{mn}
-%   \end{bmatrix} +
-%   \begin{bmatrix}
-%     b_{11} & b_{12} & \cdots & b_{1n} \\
-%     b_{21} & b_{22} & \cdots & b_{2n} \\
-%     \vdots & \vdots & \ddots & \vdots \\
-%     b_{m1} & b_{m2} & \cdots & b_{mn}
-%   \end{bmatrix} =
-%   \begin{bmatrix}
-%     a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n} \\
-%     a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n} \\
-%     \vdots & \vdots & \ddots & \vdots \\
-%     a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & a_{mn}+b_{mn}
-%   \end{bmatrix}
-%   \]
-%   \textbf{Scalar multiplication} of a matrix is done by distribution:
-%   \[
-%   c
-%   \begin{bmatrix}
-%     a_{11} & a_{12} & \cdots & a_{1n} \\
-%     a_{21} & a_{22} & \cdots & a_{2n} \\
-%     \vdots & \vdots & \ddots & \vdots \\
-%     a_{m1} & a_{m2} & \cdots & a_{mn}
-%   \end{bmatrix} =
-%   \begin{bmatrix}
-%     ca_{11} & ca_{12} & \cdots & ca_{1n} \\
-%     ca_{21} & ca_{22} & \cdots & ca_{2n} \\
-%     \vdots & \vdots & \ddots & \vdots \\
-%     ca_{m1} & ca_{m2} & \cdots & ca_{mn}
-%   \end{bmatrix}
-%   \]
-% \end{definition}
-%
-% \begin{activity}{0}
-%   Simplify the following matrix expression. (Subtracting a matrix is the
-%   same as multiplying it by \(-1\) and adding.)
-%   \[
-%   2
-%   \begin{bmatrix}
-%     3 & -1 & 0 \\
-%     2 & 4  & -1
-%   \end{bmatrix}-
-%   3
-%   \begin{bmatrix}
-%     0 & 2 & 1 \\
-%     1 & -3  & 0
-%   \end{bmatrix}
-%   \]
-% \end{activity}
-%
-%
-% \begin{activity}{0}
-%   Two matrices/vectors are equal if and only if the values at every coordinate
-%   are equal. Show that the following linear system and the following vector
-%   equation must have the same solutions by simplifying the vector equation.
-%   \begin{multicols}{2}\noindent
-%   \[
-%     x_1
-%     \begin{bmatrix}
-%       1 \\
-%       3 \\
-%       0
-%     \end{bmatrix}+
-%     x_2
-%     \begin{bmatrix}
-%       0 \\
-%       -2 \\
-%       -1
-%     \end{bmatrix}+
-%     x_3
-%     \begin{bmatrix}
-%       3 \\
-%       4 \\
-%       1
-%     \end{bmatrix}=
-%     \begin{bmatrix}
-%       3 \\
-%       0 \\
-%       -2
-%     \end{bmatrix}
-%   \]
-%   \begin{alignat*}{4}
-%      x_1 &     &      &\,+\,& 3x_3 &\,=\,& 3 \\
-%     3x_1 &\,-\,& 2x_2 &\,+\,& 4x_3 &\,=\,& 0 \\
-%          &\,-\,&  x_2 &\,+\,&  x_3 &\,=\,& -2
-%   \end{alignat*}
-%   \end{multicols}
-% \end{activity}
+\begin{remark}
+  The only important information in a linear system are its coefficients and
+  constants.
+
+  \begin{multicols}{3}\noindent
+    Original linear system:
+    \begin{alignat*}{2}
+       x_1 + 3x_3 &\,=\,& 3 \\
+      3x_1 - 2x_2 + 4x_3 &\,=\,& 0 \\
+      -x_2 +  x_3 &\,=\,& -2
+    \end{alignat*}
+    Verbose standard form:
+    \begin{alignat*}{4}
+       x_1 &\,+\,& 0x_2 &\,+\,& 3x_3 &\,=\,& 3 \\
+      3x_1 &\,-\,& 2x_2 &\,+\,& 4x_3 &\,=\,& 0 \\
+      0x_1 &\,-\,&  x_2 &\,+\,&  x_3 &\,=\,& -2
+    \end{alignat*}
+    Coefficients and constants:
+    \begin{alignat*}{4}
+       1 &     &  0 &\,\,& 3 &\,\,\,|\,\,\,& 3 \\
+       3 &\, \,& -2 &\,\,& 4 &\,\,\,|\,\,\,& 0 \\
+       0 &\, \,&  1 &\,\,& 1 &\,\,\,|\,\,\,& -2
+    \end{alignat*}
+  \end{multicols}
+\end{remark}
 
 \begin{definition}
   A system of \(m\) linear equations with \(n\) variables is often represented
   by writing its coefficients and constants in an \term{augmented matrix}.
-  % (The vertical bar in the matrix is just for decoration, to represent the
-  % equal signs in the original system and separate the coefficients from the
-  % constant.)
   \begin{multicols}{2}\noindent
   \begin{alignat*}{5}
     a_{11}x_1 &\,+\,& a_{12}x_2 &\,+\,& \dots  &\,+\,& a_{1n}x_n &\,=\,& b_1 \\
@@ -426,33 +320,5 @@ in the system).
     This activity could be ran as a card sort.
   \end{TBLnote}
 \end{activity}
-
-% \begin{activity}{0}
-%   Use the linear system and its augmented matrix
-%   \begin{multicols}{2}\noindent
-%   \begin{alignat*}{3}
-%      x_1 &\,+\,& 2x_2 &\,=\,& 4 \\
-%     2x_1 &\,-\,& 3x_2 &\,=\,& 1
-%   \end{alignat*}
-%   \[
-%     \begin{bmatrix}[cc|c]
-%       1 & 2 & 4 \\
-%       2 & -3 & 1
-%     \end{bmatrix}
-%   \]
-%   \end{multicols}
-%   to demonstrate why each of these operations is invalid
-%   \begin{multicols}{2}
-%     \begin{itemize}
-%       \item Interchange two columns.
-%       \item Add a constant to every term in a row.
-%       \item Multiply a row by a conzero constant.
-%       \item Add a constant multiple of one row to another row.
-%       \item Replace a column with zeros.
-%     \end{itemize}
-%   \end{multicols}
-% \end{activity}
-
-
 
 \end{applicationActivities}
