@@ -33,7 +33,7 @@ sub getRandomProblems
 	foreach my $standard (@STDs)
 	{
 		#Specify appropriate filename and open
-		my $probFilePath = "assessments/problems/" . $standard . ".tex";
+		my $probFilePath = "problems/" . $standard . ".tex";
 		open( my $probFile, '<', $probFilePath) or die "Unable to open $probFilePath";
 
 		#Read file to array and count the number of problems
