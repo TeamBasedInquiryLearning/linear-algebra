@@ -17,9 +17,11 @@ sub countProblems
 	return $n;
 }
 
-#Returns an array of lines with  one problem for each standard passed as an arg
+#Returns an array of lines with one randomly chosen problem for each 
+#standard passed as an arg
 sub getRandomProblems
 {
+	#Sanitize arguments
 	my @STDs;
 	foreach my $arg (@_)
 	{
@@ -29,15 +31,20 @@ sub getRandomProblems
 	my @out;
 	foreach my $standard (@STDs)
 	{
+		#Specify appropriate filename and open
 		my $probFilePath = "assessments/problems/" . $standard . ".tex";
 		open( my $probFile, '<', $probFilePath) or die "Unable to open $probFilePath";
 
+		#Read file to array and count the number of problems
 		my @probFileLines = <$probFile>;
 		my $numProb = countProblems(\@probFileLines);
 
 		#Get a random problem number
 		#We count our problems starting at one.  
 		my $probIndex = 1+int rand($numProb);
+
+		#This variable keeps track of how many problems we've seen so far as we iterate
+		#through the lines of the file
 		my $n=0;
 
 		foreach my $line (@probFileLines)
@@ -59,6 +66,8 @@ sub getRandomProblems
 #######################################
 
 #Define Hash with class days and standards to be quizzed
+#Maybe read these out of a file later for greater portability
+my $nVersions = 6;
 my %quizStandardsHash =
 (
 	4 => ["E1"],
@@ -73,16 +82,24 @@ my %quizStandardsHash =
 	
 );
 
+
+#Iterate over the hash
 while( my($classDay, $standards) = each %quizStandardsHash)
 {
-	foreach my $i (1..6)
+	#Iterate over versions
+	foreach my $i (1..$nVersions)
 	{
+		#Specify file name and open
 		my $outFileName = "assessments/quiz" . $classDay . "v" . $i . "_solutions.tex";
-		print $outFileName . "\n";
-		my @output = getRandomProblems (@{$standards});
 		open( my $outFile, '>', $outFileName) or die "Could not open $outFileName";
+
+		#Get text of problems for each standard out of respective files
+		my @problems = getRandomProblems (@{$standards});
 	
+		#Format standardlist for correct passing to \standard macro in LaTeX
 		my $texStandards = join (",",@{$standards});
+
+		#Specify header LaTeX code
 		my $header = "\\documentclass{sbgLAquiz}\n\n";
 		$header .= "\\begin\{extract*\}\n";
 		$header .= "\\input\{quizHeader.tex\}\n";
@@ -90,9 +107,13 @@ while( my($classDay, $standards) = each %quizStandardsHash)
 		$header .= "\\standard\{$texStandards\}\n";
 		$header .= "\\end\{extract*\}\n\n";
 		$header .= "\\begin\{document\}\n\n";
+
+		#Specify footer LaTeX code
 		my $footer = "\\end\{document\}";
+	
+		#Write to file
 		print $outFile $header;
-		print $outFile @output;
+		print $outFile @problems;
 		print $outFile $footer;
 	}
 }
