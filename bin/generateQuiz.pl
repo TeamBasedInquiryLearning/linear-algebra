@@ -87,6 +87,11 @@ my %quizStandardsHash =
 	
 );
 
+#Profname from commandline
+my $prof = $ARGV[0];
+
+die "Bad command line argument $prof \n" if not ($prof eq "clontz" or $prof eq "lewis"); 
+
 
 #Iterate over the hash
 while( my($classDay, $standards) = each %quizStandardsHash)
@@ -95,7 +100,7 @@ while( my($classDay, $standards) = each %quizStandardsHash)
 	foreach my $i (1..$nVersions)
 	{
 		#Specify file name and open
-		my $outFileName = "assessments/quiz" . $classDay . "v" . $i . "_solutions.tex";
+		my $outFileName = "assessments/" . $prof . "/quiz" . $classDay . "v" . $i . "_solutions.tex";
 		open( my $outFile, '>', $outFileName) or die "Could not open $outFileName";
 
 		#Get text of problems for each standard out of respective files
