@@ -190,13 +190,13 @@ in the system).
 \end{subactivity}
 \end{activity}
 
-\begin{remark}
-  The solution set of a consistent linear system with infinitely many solutions
-  may be described by setting each
-  certain variable equal to an arbitrary parameter, and expressing the
-  other variables in terms of those parameters. (Later we will learn
-  how to do this methodically.)
-\end{remark}
+% \begin{remark}
+%   The solution set of a consistent linear system with infinitely many solutions
+%   may be described by setting each
+%   certain variable equal to an arbitrary parameter, and expressing the
+%   other variables in terms of those parameters. (Later we will learn
+%   how to do this methodically.)
+% \end{remark}
 
 \begin{activity}{10}
   Consider the following linear system.
@@ -218,6 +218,12 @@ in the system).
       ? \\
       b
     \end{bmatrix}=
+    \begin{bmatrix}
+      t_1 \\
+      0 \\
+      t_3 \\
+      0
+    \end{bmatrix}+
     a\begin{bmatrix}
       ? \\
       1 \\
@@ -229,12 +235,6 @@ in the system).
       0 \\
       ? \\
       1
-    \end{bmatrix}+
-    \begin{bmatrix}
-      t_1 \\
-      0 \\
-      t_3 \\
-      0
     \end{bmatrix}
   \] to the linear system
   by setting \(x_2=a\) and \(x_4=b\), and then solving for \(x_1\) and
@@ -243,8 +243,9 @@ in the system).
 
 \begin{observation}
   Solving linear systems of two variables by graphing or substitution is
-  reasonable for two-variable systems, but won't cut it for equations with
-  more variables.
+  reasonable for two-variable systems, but these simple techniques
+  won't cut it for equations with
+  more than two variables or more than two equations.
 \end{observation}
 
 \begin{remark}
@@ -264,11 +265,11 @@ in the system).
       3x_1 &\,-\,& 2x_2 &\,+\,& 4x_3 &\,=\,& 0 \\
       0x_1 &\,-\,&  x_2 &\,+\,&  x_3 &\,=\,& -2
     \end{alignat*}
-    Coefficients and constants:
+    Coefficients/constants:
     \begin{alignat*}{4}
-       1 &     &  0 &\,\,& 3 &\,\,\,|\,\,\,& 3 \\
-       3 &\, \,& -2 &\,\,& 4 &\,\,\,|\,\,\,& 0 \\
-       0 &\, \,&  1 &\,\,& 1 &\,\,\,|\,\,\,& -2
+       1 &     &  0 &\,\,& 3 &\,|\,& 3 \\
+       3 &\, \,& -2 &\,\,& 4 &\,|\,& 0 \\
+       0 &\, \,&  1 &\,\,& 1 &\,|\,& -2
     \end{alignat*}
   \end{multicols}
 \end{remark}
