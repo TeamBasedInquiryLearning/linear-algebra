@@ -19,54 +19,61 @@ x-z &= 1
 \end{problem}
 
 \begin{problem}{E3} 
-Solve the system of linear equations.
+Solve the system of equations
 \begin{align*}
-2x+y-z+w &=5 \\
-3x-y-2w &= 0 \\
--x+5z+3w&=-1
+x+3y+3z+7w &= 0 \\
+ x+3y-z-w &= 0 \\
+  2x+6y+3z+8w &= 0 \\
+   x+3y-2z-3w &= 0
 \end{align*}
 \end{problem}
+
 \begin{solution}
-$$\RREF\left( \begin{bmatrix}[cccc|c] 2 & 1 & -1 & 0 & 5 \\ 3 & -1 & 0 & -2 & 0 \\ -1 & 0 & 5 & 0 & -1 \end{bmatrix} \right) = \begin{bmatrix}[cccc|c] 1 & 0 & 0 & -\frac{1}{12} & 1 \\ 0 & 1 & 0 & \frac{7}{4} & 3 \\ 0 & 0 & 1 & \frac{7}{12} & 0 \end{bmatrix}$$
-So the solutions are $$\left\{ \begin{bmatrix} 1+a \\ 3-21a \\ -7a \\ 12a \end{bmatrix}\ \big|\ a \in \IR\right\}$$
+$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
+Then the solution set is 
+$$\left\{ \begin{bmatrix} -3a-b \\ a \\ -2b \\ b \end{bmatrix}\ \big|\ a,b \in \IR\right\} = {\rm span}\left(\left\{ \begin{bmatrix} 3 \\ -1 \\ 0 \\ 0 \end{bmatrix} , \begin{bmatrix} 1\\0 \\ 2 \\ -1 \end{bmatrix} \right\} \right)$$
 \end{solution}
+
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E4}
 Find a basis for the solution set of the system ...
 \end{problem}
 \begin{problem}{V1}
-Let $V$ be the set of all points on the line $x+y=2$ with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+Let $V$ be the  set of all real numbers together with the operations $\oplus$ and $\odot$ defined by, for any $x,y \in V$ and $c \in \IR$,
 \begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2-1,y_1+y_2-1) \\
-c \odot (x_1,y_1) &= (cx_1-(c-1), cy_1-(c-2))
+x\oplus y  &= x+y-3 \\
+c \odot x &= cx-3(c-1)
 \end{align*}
 Determine if $V$ is a vector space or not.
 \end{problem}
+
 \begin{solution}
+Let $x,y \in V$, $c,d \in \IR$.
 \begin{enumerate}[1)]
-\item Since real addition is associative, $\oplus$ is associative.
-\item Since real addition is commutative, $\oplus$ is commutative.
-\item $(x_1,y_1) \oplus (1,1) = (x_1,y_1)$, so $(1,1)$ is an additive identity element.
-\item $(x_1,y_1) \oplus (2-x_1,2-y_1) = (1,1)$, so $(2-x_1,2-y_1)$ is the additive inverse of $(x_1,y_1)$.
-\item \begin{align*} c\odot \left(d \odot (x_1,y_1) \right) &=c\odot \left( dx_1-(d-1),dy_1-(d-1)\right) \\ 
-&= \left( c\left(dx_1-(d-1) \right)-(c-1), c\left(dy_1-(d-1) \right) \right) \\
-&= \left(cdx_1-cd+c-(c-1), cdy_1-cd+c-(c-1) \right) \\
-&= \left(cdx_1-(cd-1), cdy_1-(cd-1) \right) \\
-&= (cd) \odot (x_1,y_1)
+\item Real addition is associative, so $\oplus$ is associative.
+\item $x\oplus 3 = x+3-3=x$, so $3$ is the additive identity.
+\item $x \oplus (6-x) = x+(6-x)-3=3$, so $6-x$ is the additive inverse of $x$.
+\item Real addition is commutative, so $\oplus$ is commutative.
+\item \begin{align*}
+c\odot \left( d \odot x\right) &= c\odot \left( dx-3(d-1) \right) \\
+&= c\left(dx-3(d-1)\right)-3(c-1) \\
+&= cdx-3(cd-1) \\
+&= (cd) \odot x
 \end{align*}
-\item $1 \odot (x_1,y_1) = (x_1-(1-1),y_1-(1-1)=(x_1,y_1)$
-\item \begin{align*} c \odot \left( (x_1,y_1)\oplus(x_2,y_2) \right) &= 
-c\odot \left( x_1+y_1-1,x_2+y_2-1 \right) \\
-&= \left( c(x_1+y_1-1)-(c-1), c(x_2+y_2-1)-(c-1) \right) \\
-&= (cx_1+cx_2-2c+1, cy_1+cy_2-2c+1) \\
-&= \left(cx_1-(c-1),cy_1-(c-1) \right) \oplus (cx_2-(c-1),cy_2-(c-1)) \\
-&=c \odot (x_1,y_1) \oplus c\odot (x_2,y_2) 
+\item $1 \odot x = x-3(1-1)=x$
+\item \begin{align*} c \odot (x \oplus y) &=
+c \odot (x+y-3) \\
+&= c(x+y-3)-3(c-1) \\
+&= cx-3(c-1) + cy-3(c-1) -3 \\
+&= (c\odot x ) \oplus (c\odot y)
 \end{align*}
-\item \begin{align*} (c+d) \odot (x_1,y_1) &=
-\left( (c+d)x_1-(c+d-1), (c+d)y_1-(c+d-1) \right) \\
-&= \left( cx_1-(c-1), cy_1-(c-1) \right) \oplus (dx_1-(d-1), dy_1-(d-1) ) \\
-&= c\odot (x_1,y_1) \oplus c \odot (x_2,y_2)
+\item \begin{align*} (c+d) \odot x &= (c+d)x-3(c+d-1) \\
+&= cx-3(c-1)+dx-3(c-1)-3 \\
+&= (c\odot x ) \oplus (d \odot x)
 \end{align*}
 \end{enumerate}
+
+Therefore $V$ is a vector space.
 \end{solution}
+
 \end{document}
