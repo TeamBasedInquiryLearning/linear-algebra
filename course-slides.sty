@@ -6,8 +6,11 @@
 \setbeamertemplate{frametitle}[default][center]
 
 \title{Linear Algebra}
-\author{\prof}
+\author{University of South Alabama}
 
+\resetcounteronoverlays{ClassDayCounter}
+\resetcounteronoverlays{ActivityCounter}
+\resetcounteronoverlays{SubactivityCounter}
 
 \NewEnviron{readinessAssuranceOutcomes}{
   \begin{frame}
@@ -19,7 +22,20 @@
 }
 
 
-\NewEnviron{module}[1]{\BODY}
+\NewEnviron{module}[2]{
+  \renewcommand{\moduleLetter}{#1}
+  \section{Module \moduleLetter{}}
+  \begin{frame}% see https://tex.stackexchange.com/a/178803
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+      \usebeamerfont{title}
+      Module \moduleLetter{}: #2
+    \end{beamercolorbox}
+    \vfill
+  \end{frame}
+  \BODY
+}
 
 
 \NewEnviron{moduleStandards}{
@@ -50,73 +66,88 @@
 
 
 \NewEnviron{applicationActivities}[2]{
-\begin{frame}
-\vfill
-\centering
-\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-  \usebeamerfont{title}Application Activities - Module X Part #1 - Day #2\par%
-\end{beamercolorbox}
-\vfill
-\end{frame}
-\BODY
+  \setcounter{ClassDayCounter}{#2}
+  \setcounter{ActivityCounter}{0}
+  \subsection{Part #1 (Day \theClassDayCounter)}
+  \begin{frame}% see https://tex.stackexchange.com/a/178803
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+      \usebeamerfont{title}
+      Application Activities -
+      Module \moduleLetter{} Part #1 -
+      Class Day \theClassDayCounter\par%
+    \end{beamercolorbox}
+    \vfill
+  \end{frame}
+  \BODY
 }
 
 
 
 \NewEnviron{activity}[1]{
+  \stepcounter{ActivityCounter}
+  \setcounter{SubactivityCounter}{0}
   \begin{frame}
-  \begin{activityRaw} %\textit{(#1 min)}
+  \textbf{Activity \theClassDayCounter.\theActivityCounter}
+
   \BODY
-  \end{activityRaw}
   \end{frame}
 }
 
 \NewEnviron{remark}{
+  \stepcounter{ActivityCounter}
   \begin{frame}
-  \begin{remarkRaw}
+  \textbf{Remark \theClassDayCounter.\theActivityCounter}
+
   \BODY
-  \end{remarkRaw}
   \end{frame}
 }
 
 \RenewEnviron{fact}{ % beamer defines this, because who cares about separation of concerns amirite
+  \stepcounter{ActivityCounter}
   \begin{frame}
-  \begin{factRaw}
+  \textbf{Fact \theClassDayCounter.\theActivityCounter}
+
   \BODY
-  \end{factRaw}
   \end{frame}
 }
 
 \NewEnviron{observation}{
+  \stepcounter{ActivityCounter}
   \begin{frame}
-  \begin{observationRaw}
+  \textbf{Observation \theClassDayCounter.\theActivityCounter}
+
   \BODY
-  \end{observationRaw}
   \end{frame}
 }
 
 \RenewEnviron{example}{ % beamer defines this, because who cares about separation of concerns amirite
+  \stepcounter{ActivityCounter}
   \begin{frame}
-  \begin{exampleRaw}
+  \textbf{Example \theClassDayCounter.\theActivityCounter}
+
   \BODY
-  \end{exampleRaw}
   \end{frame}
 }
 
 \RenewEnviron{definition}{ % beamer defines this, because who cares about separation of concerns amirite
+  \stepcounter{ActivityCounter}
   \begin{frame}
-  \begin{definitionRaw}
+  \textbf{Definition \theClassDayCounter.\theActivityCounter}
+
   \BODY
-  \end{definitionRaw}
   \end{frame}
 }
 
 
 
 \NewEnviron{subactivity}{
+  \stepcounter{SubactivityCounter}
 
-\textbf{Part X:}
-\BODY
+  \pause
+  \textit{Part \theSubactivityCounter:}
+  \BODY
 }
 
 \NewEnviron{TBLnote}{}

@@ -28,9 +28,10 @@ Before beginning this module, each student should be able to...
 }
 
 
-\newenvironment{module}[1]{
-\newpage
-\setHeader{#1}
+\newenvironment{module}[2]{
+  \newpage
+  \renewcommand{\moduleLetter}{#1}
+  \setHeader{Module \moduleLetter{}: #2}
 }
 
 
@@ -71,64 +72,77 @@ Choose the most appropriate response for each question.
 \end{enumerate}
 }
 
-\newcounter{ClassDayCounter}
-\newcounter{ActivityCounter}[ClassDayCounter]
-\newcounter{SubactivityCounter}[ActivityCounter]
 
+\NewEnviron{applicationActivities}[2]{
+  \newpage
+  \setcounter{ClassDayCounter}{#2}
+  \setcounter{ActivityCounter}{0}
+  \section*{Application Activities - Module \moduleLetter{} Part #1 - Class Day \theClassDayCounter}
 
-\newenvironment{applicationActivities}[2]{
-\newpage
-\setcounter{ClassDayCounter}{#2}
-\section*{Application Activities - Module X Part #1 - Class Day \theClassDayCounter}
-}{
-%
+  \BODY
 }
 
-
-\newenvironment{activity}[1]{
-  \begin{activityRaw} \textit{(#1 min)}
-}{
-  \end{activityRaw}
+\NewEnviron{activity}[1]{
+  \stepcounter{ActivityCounter}
+  \setcounter{SubactivityCounter}{0}
+  \textbf{Activity \theClassDayCounter.\theActivityCounter} \textit{(#1 min)}
+  \BODY
   \begin{center}
     \rule{6.5in}{0.2pt}
   \end{center}
 }
 
-\newenvironment{remark}{
-  \begin{remarkRaw}
-}{
-  \end{remarkRaw}
+\NewEnviron{remark}{
+  \stepcounter{ActivityCounter}
+  \setcounter{SubactivityCounter}{0}
+  \textbf{Remark \theClassDayCounter.\theActivityCounter}
+  \BODY
+
+  \vspace{1em}
 }
 
-\newenvironment{fact}{
-  \begin{factRaw}
-}{
-  \end{factRaw}
+\NewEnviron{fact}{
+  \stepcounter{ActivityCounter}
+  \setcounter{SubactivityCounter}{0}
+  \textbf{Fact \theClassDayCounter.\theActivityCounter}
+  \BODY
+
+  \vspace{1em}
 }
 
-\newenvironment{observation}{
-  \begin{observationRaw}
-}{
-  \end{observationRaw}
+\NewEnviron{observation}{
+  \stepcounter{ActivityCounter}
+  \setcounter{SubactivityCounter}{0}
+  \textbf{Observation \theClassDayCounter.\theActivityCounter}
+  \BODY
+
+  \vspace{1em}
 }
 
-\newenvironment{example}{
-  \begin{exampleRaw}
-}{
-  \end{exampleRaw}
+\NewEnviron{example}{
+  \stepcounter{ActivityCounter}
+  \setcounter{SubactivityCounter}{0}
+  \textbf{Example \theClassDayCounter.\theActivityCounter}
+  \BODY
+
+  \vspace{1em}
 }
 
-\newenvironment{definition}{
-  \begin{definitionRaw}
-}{
-  \end{definitionRaw}
+\NewEnviron{definition}{
+  \stepcounter{ActivityCounter}
+  \setcounter{SubactivityCounter}{0}
+  \textbf{Definition \theClassDayCounter.\theActivityCounter}
+  \BODY
+
+  \vspace{1em}
 }
 
 
-\newenvironment{subactivity}{
+\NewEnviron{subactivity}{
+  \stepcounter{SubactivityCounter}
 
-\textbf{Part X:}
-}{
+  \textit{Part \theSubactivityCounter:}
+  \BODY
 }
 
 %This is for making instructor notes about running the activity (e.g. card sort, gallery walk...)
