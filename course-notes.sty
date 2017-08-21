@@ -71,10 +71,15 @@ Choose the most appropriate response for each question.
 \end{enumerate}
 }
 
+\newcounter{ClassDayCounter}
+\newcounter{ActivityCounter}[ClassDayCounter]
+\newcounter{SubactivityCounter}[ActivityCounter]
 
-\newenvironment{applicationActivities}[1]{
+
+\newenvironment{applicationActivities}[2]{
 \newpage
-\section*{Application Activities - #1}
+\setcounter{ClassDayCounter}{#2}
+\section*{Application Activities - Module X Part #1 - Class Day \theClassDayCounter}
 }{
 %
 }

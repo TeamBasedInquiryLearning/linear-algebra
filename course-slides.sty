@@ -49,7 +49,17 @@
 \NewEnviron{readinessAssuranceTestChoices}{}
 
 
-\NewEnviron{applicationActivities}[1]{\BODY}
+\NewEnviron{applicationActivities}[2]{
+\begin{frame}
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+  \usebeamerfont{title}Application Activities - Module X Part #1 - Day #2\par%
+\end{beamercolorbox}
+\vfill
+\end{frame}
+\BODY
+}
 
 
 
