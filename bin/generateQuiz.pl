@@ -87,6 +87,16 @@ my %quizStandardsHash =
 	
 );
 
+my %implicitStandardsHash = 
+(
+	6 => ["E2"],
+	8 => ["E2"],
+	9 => ["E2"],
+	10 => ["E2"],
+	11 => ["E2"],
+	28 => ["G1"]
+);
+
 #Profname from commandline
 my $prof = $ARGV[0];
 
@@ -108,6 +118,8 @@ while( my($classDay, $standards) = each %quizStandardsHash)
 	
 		#Format standardlist for correct passing to \standard macro in LaTeX
 		my $texStandards = join (",",@{$standards});
+		$texStandards .= "," . join ( ",",@{$implicitStandardsHash{$classDay}}) if ($implicitStandardsHash{$classDay} ne undef);
+
 
 		#Specify header LaTeX code
 		my $header = "\\documentclass{sbgLAquiz}\n\n";
