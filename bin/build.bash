@@ -9,7 +9,7 @@ for file in day1-slides-*.tex ; do pdflatex $file ; done
 ./bin/readiness.bash
 
 #Produce defintions pages
-for file in course-definitions-*.tex ; do pdflatex $file ; done
+for file in course-notes*.tex ; do pdflatex $file ; done
 
 #Produce quizzes
 #./bin/quiz.bash
