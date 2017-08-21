@@ -1,10 +1,12 @@
 
 
-\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in,landscape]{geometry}
 \usepackage{enumerate,amssymb}
 \usepackage{termcal}
 
-\newcommand{\RAT}[1]{\ifbool{TBL}{{\bf RAT Module #1} \\}{}}
+\newcommand{\RAT}[1]{\ifbool{TBL}{{\bf RAT Module #1}}{{\bf Review for Module #1}}\\}
+\newcommand{\aday}[2]{{\bf Module #1 Part #2 \\}}
+\newcommand{\quiz}[2]{{{\bf Quiz #1:} #2 \\}}
 
 \begin{document}
 \pagestyle{empty}
@@ -16,7 +18,7 @@
 
 
 \begin{center}
-\begin{calendar}{8/14/2017}{17} % Calendar starts on 8/14/17 and lasts for 16 weeks
+\begin{calendar}{7/31/2017}{19} % Calendar starts on 8/14/17 and lasts for 16 weeks
 
 %\renewcommand{\calprintclass}{}  %Suppress printing class day
 %\setlength{\calboxdepth}{.3in}
@@ -28,6 +30,16 @@
 \skipday \skipday
 
 %Specify holidays/exceptions
+\options{7/31/2017}{\noclassday}
+\options{8/1/2017}{\noclassday}
+\options{8/2/2017}{\noclassday}
+\options{8/3/2017}{\noclassday}
+\options{8/4/2017}{\noclassday}
+\options{8/7/2017}{\noclassday}
+\options{8/8/2017}{\noclassday}
+\options{8/9/2017}{\noclassday}
+\options{8/10/2017}{\noclassday}
+\options{8/11/2017}{\noclassday}
 \options{8/14/2017}{\noclassday}
 \options{8/15/2017}{\noclassday}
 
@@ -70,38 +82,34 @@
 
 % schedule
 \caltexton{1}{{\em First day of class}}
-\caltexton{2}{\RAT{E}\ifbool{TBL}{}{No assessments}}
-\caltexton{3}{No assessments}
-\caltexton{4}{E1}
-\caltexton{5}{E2}
-\caltexton{6}{\RAT{V} E1, (E2), E3, E4}
-\caltexton{7}{E2}
-\caltexton{8}{E1, (E2), E3, E4, V1}
-\caltexton{9}{(E2), V2}
-\caltexton{10}{ E1, (E2), E3, E4, V1}
-\caltexton{11}{\RAT{S} (E2), V2}
-\caltexton{12}{ V1, V3, V4}
-\caltexton{13}{V2, S1}
-\caltexton{14}{V1, V3, V4, S2}
-\caltexton{15}{\RAT{A} V2, S1, S3, S4}
+\caltexton{2}{\RAT{E}  {No quiz}}
+\caltexton{3}{\aday{E}{1} No quiz}
+\caltexton{4}{\aday{E}{2} \quiz{4}{E1}}
+\caltexton{5}{\aday{E}{3} \quiz{5}{E2}}
+\caltexton{6}{\RAT{V} \quiz{6}{E1, (E2), E3, E4}}
+\caltexton{7}{\aday{V}{1} \quiz{7}{E2}}
+\caltexton{8}{\aday{V}{2} \quiz{8}{E1, (E2), E3, E4, V1}}
+\caltexton{9}{\aday{V}{3} \quiz{9}{(E2), V2}}
+\caltexton{10}{\aday{V}{4} \quiz{10}{E1, (E2), E3, E4, V1}}
+\caltexton{11}{\RAT{S} \quiz{11}{(E2), V2}}
+\caltexton{12}{\aday{S}{1} \quiz{12}{V1, V3, V4}}
+\caltexton{13}{\aday{S}{2} \quiz{13}{V2, S1}}
+\caltexton{14}{\aday{S}{3} \quiz{14}{V1, V3, V4, S2}}
+\caltexton{15}{\RAT{A} \quiz{15}{V2, S1, S3, S4}}
 \caltexton{16}{\bf Midterm Exam}
-\caltexton{17}{V3, V4, S2}
-\caltexton{18}{S1, S3, S4,  A1,A2}
-\caltexton{19}{S2, A3, A4}
-\caltexton{20}{\RAT{M} S3, S4, A1, A2}
-\caltexton{21}{ A3, A4}
-\caltexton{22}{A1, A2, M1}
-\caltexton{23}{A3, A4}
-\caltexton{24}{\RAT{G}  A1, A2, M1, M2, M3}
-\caltexton{25}{A3, A4}
-\caltexton{26}{M1, M2, M3}
-\caltexton{27}{G1}
-\caltexton{28}{M1, M2, M3, (G1), G2, G3}
-\caltexton{29}{G1, G3, G4}
-
-
-
-
+\caltexton{17}{\aday{A}{1} \quiz{17}{V3, V4, S2}}
+\caltexton{18}{\aday{A}{2} \quiz{18}{S1, S3, S4, A1, A2}}
+\caltexton{19}{\aday{A}{3} \quiz{19}{S2, A3, A4}}
+\caltexton{20}{\RAT{M} \quiz{20}{S3, S4, A1, A2}}
+\caltexton{21}{\aday{M}{1} \quiz{21}{A3, A4}}
+\caltexton{22}{\aday{M}{2} \quiz{22}{A1, A2, M1}}
+\caltexton{23}{\aday{M}{3} \quiz{23}{A3, A4}}
+\caltexton{24}{\RAT{G}  \quiz{24}{A1, A2, M1, M2, M3}}
+\caltexton{25}{\aday{G}{1} \quiz{25}{A3, A4}}
+\caltexton{26}{\aday{G}{2} \quiz{26}{M1, M2, M3}}
+\caltexton{27}{\aday{G}{3} \quiz{27}{G1}}
+\caltexton{28}{\aday{G}{4} \quiz{28}{M1, M2, M3, (G1), G2, G3}}
+\caltexton{29}{\aday{G}{5} \quiz{29}{G1, G3, G4}}
 \end{calendar}
 \end{center}
 
