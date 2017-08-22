@@ -97,14 +97,14 @@
 	\begin{flushleft}
 	%{\bfseries \arabic{problem} .}
 	%Problem numbering by standard
-	{\bfseries {#1}. }
-	\ignorespaces
+	\textbf{Standard #1.} Mark:\tikz{\draw (0,0) rectangle (1,1)}
+
 }
 %after
 {
 	\end{flushleft}
 	\ifthenelse{ \equal{\value{subproblem}}{0}}{\vfill}{}
-	\setcounter{subproblem}{0}	
+	\setcounter{subproblem}{0}
 }
 
 \newenvironment{solution}
@@ -142,7 +142,7 @@
 Name: \underline{\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}\\
 \ \\
 %\@coursetitle\ -- \@courselabel \\
-%\@semester 
+%\@semester
 \end{flushright}
 {
 	{\bf \@Title} \hfill \@coursetitle\ -- \@courselabel \\
