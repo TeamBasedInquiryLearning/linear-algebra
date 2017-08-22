@@ -1,14 +1,13 @@
 #!/bin/bash
 
 #Produce notes and slides
-pdflatex course-notes.tex
 pdflatex course-slides.tex
 for file in day1-slides-*.tex ; do pdflatex $file ; done
 
 #Produce readiness materials
 ./bin/readiness.bash
 
-#Produce defintions pages
+#Produce course notes
 for file in course-notes*.tex ; do pdflatex $file ; done
 
 #Produce quizzes

@@ -17,59 +17,61 @@
 \setlength{\parindent}{0pt}
 
 
-\newenvironment{readinessAssuranceOutcomes}{
-\newpage
-\section*{Readiness Assurance Outcomes}
-
-Before beginning this module, each student should be able to...
-\begin{itemize}
-}{
-\end{itemize}
-}
-
-
-\newenvironment{module}[2]{
+\NewEnviron{module}[2]{
   \newpage
   \renewcommand{\moduleLetter}{#1}
   \setHeader{Module \moduleLetter{}: #2}
+  \BODY
+  \newpage
 }
 
 
-\newenvironment{moduleStandards}{
-\newpage
-\section*{Standards for this Module}
+\NewEnviron{readinessAssuranceOutcomes}{
+  \newpage
+  \section*{Readiness Assurance Outcomes}
 
-At the end of this module, students will be able to...
-\begin{itemize}
-}{
-\end{itemize}
+  Before beginning this module, each student should be able to...
+  \begin{itemize}
+    \BODY
+  \end{itemize}
+}
+
+
+\NewEnviron{moduleStandards}{
+  \newpage
+  \section*{Standards for this Module}
+
+  At the end of this module, students will be able to...
+  \begin{itemize}
+    \BODY
+  \end{itemize}
 }
 
 \newcommand{\standardList}[1]{\textbf{(Standard(s) #1)}}
 
-\newenvironment{readinessAssuranceResources}{
-\subsection*{Readiness Assurance Resources}
-The following resources will help you prepare for this module.
-\begin{itemize}
-}{
-\end{itemize}
+\NewEnviron{readinessAssuranceResources}{
+  \subsection*{Readiness Assurance Resources}
+  The following resources will help you prepare for this module.
+  \begin{itemize}
+    \BODY
+  \end{itemize}
 }
 
 
-\newenvironment{readinessAssuranceTest}{
-\newpage
-\section*{Readiness Assurance Test}
-Choose the most appropriate response for each question.
-\begin{enumerate}[1)]
-}{
-\end{enumerate}
+\NewEnviron{readinessAssuranceTest}{
+  \newpage
+  \section*{Readiness Assurance Test}
+  Choose the most appropriate response for each question.
+  \begin{enumerate}[1)]
+    \BODY
+  \end{enumerate}
 }
 
 
-\newenvironment{readinessAssuranceTestChoices}{
-\begin{enumerate}[(a)]
-}{
-\end{enumerate}
+\NewEnviron{readinessAssuranceTestChoices}{
+  \begin{enumerate}[(a)]
+    \BODY
+  \end{enumerate}
 }
 
 
@@ -146,5 +148,9 @@ Choose the most appropriate response for each question.
 }
 
 %This is for making instructor notes about running the activity (e.g. card sort, gallery walk...)
-\newenvironment{TBLnote}
-{\color{blue} \textbf{(Instructor Note:)}}{}
+\NewEnviron{TBLnote}{
+  \textcolor{blue}{
+    \textbf{(Instructor Note:)}
+    \BODY
+  }
+}
