@@ -24,4 +24,4 @@ do
 	pdflatex $i || exit 1
 done
 
-cd ..
+cd ../..

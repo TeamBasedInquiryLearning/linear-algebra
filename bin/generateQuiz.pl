@@ -33,7 +33,7 @@ sub getRandomProblems
 	foreach my $standard (@STDs)
 	{
 		#Specify appropriate filename and open
-		my $probFilePath = "problems/" . $standard . ".tex";
+		my $probFilePath = "assessments/problems/" . $standard . ".tex";
 		open( my $probFile, '<', $probFilePath) or die "Unable to open $probFilePath";
 
 		#Read file to array and count the number of problems
@@ -70,32 +70,35 @@ sub getRandomProblems
 ###        Main                     ###
 #######################################
 
-#Define Hash with class days and standards to be quizzed
-#Maybe read these out of a file later for greater portability
+#Maybe shift this to reading from a textfile later
 my $nVersions = 6;
-my %quizStandardsHash =
-(
-	4 => ["E1"],
-	5 => ["E2"],
-	6 => ["E1","E3","E4"],
-	7 => ["E2"],
-	8 => ["E1","E3","E4","V1"],
-	9 => ["V2"],
-	10 => ["E1","E3","E4","V1"],
-	11 => ["V2"],
-	12 => ["V1","V3", "V4"]
-	
-);
 
-my %implicitStandardsHash = 
-(
-	6 => ["E2"],
-	8 => ["E2"],
-	9 => ["E2"],
-	10 => ["E2"],
-	11 => ["E2"],
-	28 => ["G1"]
-);
+#Read explicitly assessed standard list for each quiz
+my %quizStandardsHash;
+open (my $explicitFileHandle, '<', "assessments/quiz-standard-explicit-map.txt");
+my @quizStandards = <$explicitFileHandle>;
+foreach my $line (@quizStandards)
+{
+	chomp($line);
+	next if $line =~ /[!%*#]/;
+	print "Line = $line \n";
+	my ($quiz, $stds) = split (':', $line);
+	my @result = split (',', $stds);
+	$quizStandardsHash{$quiz} = \@result; 
+}
+
+#Read implicitly assessed standard list for each quiz
+my %implicitStandardsHash;
+open (my $implicitFileHandle, '<', "assessments/quiz-standard-implicit-map.txt");
+my @impStandards = <$implicitFileHandle>;
+foreach my $line (@impStandards)
+{
+	chomp($line);
+	my ($quiz, $stds) = split (':', $line);
+	my @result = split (',', $stds);
+	$implicitStandardsHash{$quiz} = \@result;
+	
+}
 
 #Profname from commandline
 my $prof = $ARGV[0];
