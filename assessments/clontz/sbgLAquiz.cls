@@ -22,6 +22,7 @@
 \RequirePackage[letterpaper,left=1in,right=1in,top=1in,bottom=1in]{geometry}
 \RequirePackage{xstring}
 \RequirePackage{amsthm}
+\RequirePackage{tikz}
 
 %Process jobname to automatically generate quiz from quiz with solution file.
 \let\Xfile\empty
@@ -97,7 +98,12 @@
 	\begin{flushleft}
 	%{\bfseries \arabic{problem} .}
 	%Problem numbering by standard
-	\textbf{Standard #1.} Mark:\tikz{\draw (0,0) rectangle (1,1)}
+	\begin{tikzpicture}[x=0.5in,y=0.5in]
+		\draw (0,0) rectangle (4,1);
+		\draw (3,0) -- (3,1);
+		\node at (1.5,0.5) {\textbf{Standard #1.}};
+		\node[anchor=north west] at (3,1) {\footnotesize\textcolor{gray}{Mark:}};
+	\end{tikzpicture}
 
 }
 %after
@@ -138,12 +144,22 @@
 
 
 \AtBeginDocument{%
-\begin{flushright}
-Name: \underline{\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}\\
+\begin{center}
+\begin{tikzpicture}[x=1in,y=1in]
+  \draw[color=black!20] (0,0) rectangle (4.5,1);
+  \draw[color=black!20] (0,0.67) -- (4.5,0.66);
+  \draw[color=black!20] (0,0.33) -- (4.5,0.33);
+
+  \node[anchor=west] at (0.1,0.83) {Name:};
+  \node[anchor=west] at (0.1,0.5) {J\#:};
+  \node[anchor=west] at (0.1,0.17) {Date:};
+
+  \node[anchor=west] at (4.7,0.5) {Dr. Clontz};
+\end{tikzpicture}
 \ \\
 %\@coursetitle\ -- \@courselabel \\
 %\@semester
-\end{flushright}
+\end{center}
 {
 	{\bf \@Title} \hfill \@coursetitle\ -- \@courselabel \\
 	{\bf\ifthenelse{\equal{\@version}{}}{\phantom{xx}}{Version \@version}} \hfill \@semester \\
@@ -155,7 +171,7 @@ Name: \underline{\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}\\
 \begin{flushright}
 %\renewcommand*{\do}[1]{\bf Standard #1 score: \fbox{\rule{0.5in}{0pt}\rule[-0.5ex]{0pt}{4ex}}\\}
 \renewcommand*{\do}[1]{\bf #1: \fbox{\rule{0.5in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \hfill}
-\dolistloop{\@standards}
+% \dolistloop{\@standards}
 \end{flushright}
 %\immediate\write18{pdflatex \XXfile}
 }
