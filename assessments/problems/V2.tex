@@ -12,7 +12,6 @@ $$\begin{bmatrix}0 \\ -1 \\ 2 \\ 6 \end{bmatrix}=\begin{bmatrix} 3 \\ -1 \\ -1 \
 Determine if $\begin{bmatrix} 0 \\ 1 \\ -2 \\ 1 \end{bmatrix}$ can be written as a linear combination of the vectors $\begin{bmatrix} 5 \\ 2 \\ -3 \\ 2 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 1 \\ 1 \\ 0 \end{bmatrix}$, and $\begin{bmatrix} 8 \\ 3 \\ 5 \\ -1 \end{bmatrix}$.
 \end{problem}
 \begin{solution}
-Since the matrix $\begin{bmatrix} 8 & 5 & 3 & 0\\ 3 & 2 & 1 & 1 \\ 5 & -3 & 1 & -2  \\ -1 & 2 & 0 & 1 \end{bmatrix}$ is invertible (see above), the columns are linearly independent, so no column can be written as a linear combination of the other three.  Alternatively, compute
 
 $$\RREF \left(\begin{bmatrix}[ccc|c] 8 & 5 & 3 & 0\\ 3 & 2 & 1 & 1 \\ 5 & -3 & 1 & -2  \\ -1 & 2 & 0 & 1 \end{bmatrix} \right) = \begin{bmatrix}[ccc|c] 1 & 0 & 0 & 0  \\ 0 &  1 & 0 & 0  \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1  \end{bmatrix}$$
 The system has no solution, so $\begin{bmatrix} 0 \\ 1 \\ -2 \\ 1 \end{bmatrix}$ is not a linear combination of the three other vectors.
@@ -23,6 +22,9 @@ The system has no solution, so $\begin{bmatrix} 0 \\ 1 \\ -2 \\ 1 \end{bmatrix}$
 Determine if  $\begin{bmatrix} 0 \\ 0 \\ 2 \end{bmatrix}$ can be written as a linear combination of the vectors $\begin{bmatrix} -1 \\ -9 \\ 15 \end{bmatrix}$ and $\begin{bmatrix} 1 \\ 5 \\ -5 \end{bmatrix}$.
 \end{problem}
 \begin{solution}
+$$\RREF\left(\begin{bmatrix}[cc|c] -1 & 1 & 0 \\ -9 & 5 & 0 \\ 15 & -5 & 2 \end{bmatrix} \right) = \begin{bmatrix}[cc|c] 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
+Since this system has no solution, $\begin{bmatrix} 0 \\ 0 \\ 2 \end{bmatrix}$ cannot be written as a linear combination of the vectors $\begin{bmatrix} -1 \\ -9 \\ 15 \end{bmatrix}$ and $\begin{bmatrix} 1 \\ 5 \\ -5 \end{bmatrix}$.
+ 
 \end{solution}
 
 
