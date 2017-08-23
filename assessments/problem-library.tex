@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{amsmath,ifthen,amsthm,amssymb,enumerate}
+
+%Counters for problems and subproblems
+\newcounter{problem}
+\newcounter{subproblem}
+
+%Set equation numbering
+\renewcommand{\theequation}{\arabic{problem}.\arabic{equation}}
+
+\newenvironment{problem}[1]
+%before
+{
+	\addtocounter{problem}{1}
+	\addtocounter{equation}{-\arabic{equation}}
+	\setcounter{subproblem}{0}
+
+	\begin{flushleft}
+	%{\bfseries \arabic{problem} .}
+	%Problem numbering by standard
+	{\bfseries {#1}. }
+	\ignorespaces
+}
+%after
+{
+	\end{flushleft}
+	\ifthenelse{ \equal{\value{subproblem}}{0}}{\vfill}{}
+	\setcounter{subproblem}{0}	
+}
+
+\newenvironment{solution}
+%before
+{
+	\ignorespaces
+	{\bf Solution: }
+}
+%after
+{
+	\ignorespacesafterend
+	\begin{flushright}
+	{\bfseries \qed}
+	\end{flushright}
+	\vskip 0pt plus 1filll
+}
+\newenvironment{subproblem}
+%before
+{
+	\addtocounter{subproblem}{1}
+	\begin{flushleft}
+	%\newline
+	{(\alph{subproblem})}
+	\ignorespaces
+}
+%after
+{
+	\end{flushleft}
+	\vfill
+}
+
+\newcommand{\IR}{\mathbb{R}}
+\DeclareMathOperator{\RREF}{RREF}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\begin{document}
+
+\input{problems/E1.tex} \newpage
+\input{problems/E2.tex} \newpage
+\input{problems/E3.tex} \newpage
+\input{problems/E4.tex} \newpage
+\input{problems/V1.tex} \newpage
+\input{problems/V2.tex} \newpage
+\input{problems/V3.tex} \newpage
+\input{problems/V4.tex} \newpage
+%\input{problems/S1.tex} \newpage
+%\input{problems/S2.tex} \newpage
+%\input{problems/S3.tex} \newpage
+%\input{problems/S4.tex} \newpage
+%\input{problems/A1.tex} \newpage
+%\input{problems/A2.tex} \newpage
+%\input{problems/A3.tex} \newpage
+%\input{problems/A4.tex} \newpage
+%\input{problems/M1.tex} \newpage
+%\input{problems/M2.tex} \newpage
+%\input{problems/M3.tex} \newpage
+%\input{problems/G1.tex} \newpage
+%\input{problems/G2.tex} \newpage
+%\input{problems/G3.tex} \newpage
+%\input{problems/G4.tex} 
+
+\end{document}

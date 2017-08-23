@@ -2,7 +2,10 @@
 ./bin/generateQuiz.pl lewis
 ./bin/generateQuiz.pl clontz
 
-cd assessments/lewis
+cd assessments
+pdflatex problem-library.tex
+
+cd lewis
 for i in `ls *solutions.tex`
 do
 	pdflatex $i || exit 1
