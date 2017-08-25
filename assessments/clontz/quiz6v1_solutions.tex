@@ -14,48 +14,52 @@ Write a system of linear equations corresponding to the following
 augmented matrix.
 \[
 \begin{bmatrix}[ccc|c]
-1 & 0 & 4 & 1 \\
-0 & 1 & -1 & 7 \\
-1 & -1 & 3 & -1
+-4 & -1 & 3 & 2  \\
+1 & 2 & -1 & 0 \\
+-1 & 4 & 1 & 4
 \end{bmatrix}
 \]
 \end{problem}
 \begin{solution}
 \begin{align*}
-x_1+4x_3 &= 1 \\
-x_2-x_3 &= 7 \\
-x_1-x_2+3x_3 &= -1
+-4x_1-x_2+3x_3&=2 \\
+x_1+2x_2-x_3 &= 0 \\
+-x_1+4x_2+x_3&=4
 \end{align*}
 \end{solution}
+
 \begin{problem}{E3}
 Solve the system of equations
 \begin{align*}
-x+3y-4z &= 5 \\
-3x+9y+z &= 2
+-3x +y &= 2\\
+-8x+2y-z &= 6 \\
+2y+3z &= -2
 \end{align*}
+
+
 \end{problem}
+
 \begin{solution}
-$$\RREF \left(\begin{bmatrix}[ccc|c] 1 & 3 & -4 & 5 \\ 3 & 9 & 1 & 2 \end{bmatrix} \right) = \begin{bmatrix}[ccc|c] 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & -1\end{bmatrix}$$
-So the solution set is 
-$$\left\{ \begin{bmatrix} 1-3c \\ c \\ -1 \end{bmatrix} \bigg|\ c \in \IR \right\}$$
+$$\RREF\left(\begin{bmatrix}[ccc|c] -3 & 1 & 0 & 2 \\ -8 & 2 & -1 & 6 \\ 0 & 2 & 3 & -2 \end{bmatrix} \right) = \begin{bmatrix}[ccc|c] 1 & 0 & \frac{1}{2} & -1 \\ 0 & 1 & \frac{3}{2} & -1 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
+The solutions are $$\left\{ \begin{bmatrix} -1-\frac{c}{2} \\ -1-\frac{3c}{2} \\ c \end{bmatrix}\ \bigg|\ c\in \IR\right\} = \left\{ \begin{bmatrix} c-1 \\ 3c-1 \\ -2c  \end{bmatrix}\ \bigg|\ c\in \IR\right\}$$
 \end{solution}
-
-
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E4} 
 Find a basis for the solution set of the system of equations
 \begin{align*}
-x+2y+3z+w &= 0 \\
-3x-y+z+w &= 0 \\
-2x-3y-2z &= 0 
+x+3y+3z+7w &= 0 \\
+ x+3y-z-w &= 0 \\
+  2x+6y+3z+8w &= 0 \\
+   x+3y-2z-3w &= 0
 \end{align*}
 \end{problem}
 \begin{solution}
-$$\RREF \left(\begin{bmatrix} 1 & -2 & 3 & 1 \\ 3 & -1 & 1 & 1 \\ 2 & -3 & -2 & 0  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & \frac{5}{7} & \frac{3}{7} \\ 0 & 1 & \frac{8}{7} & \frac{2}{7} \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-Then the solution set is
-$$\left\{ \begin{bmatrix} -\frac{5}{7}a-\frac{3}{7}b \\ -\frac{8}{7}a-\frac{2}{7}b \\ a \\ b \end{bmatrix} \bigg |\ a,b \in \IR \right\}$$
-So a basis for the solution set is $\left\{\begin{bmatrix} -\frac{5}{7} \\ -\frac{8}{7} \\ 1 \\ 0\end{bmatrix}, \begin{bmatrix} - \frac{3}{7} \\ -\frac{2}{7} \\ 0 \\ 1 \end{bmatrix} \right\}$, or $\left\{\begin{bmatrix} 5 \\ 8 \\ -7 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 2 \\ 0 \\ -7 \end{bmatrix}\right\}$.
+$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
+Then the solution set is 
+$$\left\{ \begin{bmatrix} -3a-b \\ a \\ -2b \\ b \end{bmatrix}\ \big|\ a,b \in \IR\right\}$$
+So a basis for the solution set is $$ \left\{ \begin{bmatrix} 3 \\ -1 \\ 0 \\ 0 \end{bmatrix} , \begin{bmatrix} 1\\0 \\ 2 \\ -1 \end{bmatrix} \right\} $$
 \end{solution}
+
 
 \end{document}
