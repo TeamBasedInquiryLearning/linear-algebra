@@ -168,11 +168,18 @@
 }
 
 \AtEndDocument{%
-\begin{flushright}
+% \begin{flushright}
 %\renewcommand*{\do}[1]{\bf Standard #1 score: \fbox{\rule{0.5in}{0pt}\rule[-0.5ex]{0pt}{4ex}}\\}
-\renewcommand*{\do}[1]{\bf #1: \fbox{\rule{0.5in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \hfill}
+% \renewcommand*{\do}[1]{\bf #1: \fbox{\rule{0.5in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \hfill}
 % \dolistloop{\@standards}
-\end{flushright}
+% \end{flushright}
+\begin{flushleft}
+\begin{tikzpicture}[x=0.5in,y=0.5in]
+	\draw (0,0) rectangle (12,1);
+	\draw (4,0) -- (4,1);
+	\node at (2,0.5) {\textbf{Additional Notes/Marks}};
+\end{tikzpicture}
+\end{flushleft}
 %\immediate\write18{pdflatex \XXfile}
 }
 \endinput
