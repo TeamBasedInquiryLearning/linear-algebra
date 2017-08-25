@@ -12,17 +12,17 @@
 \begin{problem}{E1}
 Write an augmented matrix corresponding to the following system of linear equations.
 \begin{align*}
-x_1+3x_2-4x_3 +x_4 &= 5 \\
-3x_1+9x_2+x_3-7x_4 &= 0 \\
-x_1-x_3 +x_4 &= 1
+x_1+4x_3 &= 1 \\
+x_2-x_3 &= 7 \\
+x_1-x_2+3x_3 &= -1
 \end{align*}
 \end{problem}
 \begin{solution}
 \[
-\begin{bmatrix}[cccc|c]
-1 & 3 & -4 & 1 & 5 \\
-3 & 9 & 1 & -7 & 0 \\
-1 & 0 & -1 & 1 &  1
+\begin{bmatrix}[ccc|c]
+1 & 0 & 4 & 1 \\
+0 & 1 & -1 & 7 \\
+1 & -1 & 3 & -1
 \end{bmatrix}
 \]
 \end{solution}
@@ -39,22 +39,21 @@ Solve the system of linear equations.
 $$\RREF\left( \begin{bmatrix}[cccc|c] 2 & 1 & -1 & 0 & 5 \\ 3 & -1 & 0 & -2 & 0 \\ -1 & 0 & 5 & 0 & -1 \end{bmatrix} \right) = \begin{bmatrix}[cccc|c] 1 & 0 & 0 & -\frac{1}{12} & 1 \\ 0 & 1 & 0 & \frac{7}{4} & 3 \\ 0 & 0 & 1 & \frac{7}{12} & 0 \end{bmatrix}$$
 So the solutions are $$\left\{ \begin{bmatrix} 1+a \\ 3-21a \\ -7a \\ 12a \end{bmatrix}\ \big|\ a \in \IR\right\}$$
 \end{solution}
+
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E4} 
 Find a basis for the solution set of the system of equations
 \begin{align*}
 x+2y+3z+w &= 0 \\
 3x-y+z+w &= 0 \\
-2x-3y-2z &= 0 \\
--x+2z+5w &=0
+2x-3y-2z &= 0 
 \end{align*}
 \end{problem}
 \begin{solution}
-$$\RREF \left(\begin{bmatrix} 1 & -2 & 3 & 1 \\ 3 & -1 & 1 & 1 \\ 2 & -3 & -2 & 0 \\ -1 & 0 & 2 & 5 \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 0 & -1 \\ 0 & 1 & 0 & -2 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
+$$\RREF \left(\begin{bmatrix} 1 & -2 & 3 & 1 \\ 3 & -1 & 1 & 1 \\ 2 & -3 & -2 & 0  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & \frac{5}{7} & \frac{3}{7} \\ 0 & 1 & \frac{8}{7} & \frac{2}{7} \\ 0 & 0 & 0 & 0\end{bmatrix}$$
 Then the solution set is
-$$\left\{ \begin{bmatrix} a \\ 2a \\ -2a \\ a \end{bmatrix} \bigg |\ a \in \IR \right\}$$
-So a basis for the solution set is $\left\{\begin{bmatrix} 1 \\ 2 \\ -2 \\ 1\end{bmatrix} \right\}$.
+$$\left\{ \begin{bmatrix} -\frac{5}{7}a-\frac{3}{7}b \\ -\frac{8}{7}a-\frac{2}{7}b \\ a \\ b \end{bmatrix} \bigg |\ a,b \in \IR \right\}$$
+So a basis for the solution set is $\left\{\begin{bmatrix} -\frac{5}{7} \\ -\frac{8}{7} \\ 1 \\ 0\end{bmatrix}, \begin{bmatrix} - \frac{3}{7} \\ -\frac{2}{7} \\ 0 \\ 1 \end{bmatrix} \right\}$, or $\left\{\begin{bmatrix} 5 \\ 8 \\ -7 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 2 \\ 0 \\ -7 \end{bmatrix}\right\}$.
 \end{solution}
-
 
 \end{document}
