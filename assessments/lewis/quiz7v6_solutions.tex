@@ -10,24 +10,37 @@
 \begin{document}
 
 \begin{problem}{E2}
-Find \(\RREF A\), where
-\[
-  A =
-  \begin{bmatrix}[cccc|c]
-    2 & 2 & 1 & 2 & -1 \\
-    1 & 1 & 2 & 4 & 5 \\
-    3 & 3 & -1 & -2 & 1
-  \end{bmatrix}
-\]
+Put the following matrix in reduced row echelon form.
+$$\begin{bmatrix}-3 & 5 & 2 & 0 \\ 1 & -1 & 0 & 2 \\ 1 & -2 & -1 & -1 \end{bmatrix}$$
 \end{problem}
 \begin{solution}
-\[
-  \RREF A =
-  \begin{bmatrix}[cccc|c]
-    1 & 1 & 0 & 0 & 0 \\
-    0 & 0 & 1 & 2 & 0 \\
-    0 & 0 & 0 & 0 & 1
-  \end{bmatrix}
-\]
+\begin{align*}
+\begin{bmatrix}
+-3 & 5 & 2 & 0 \\
+ 1 & -1 & 0 & 2 \\
+ 1 & -2 & -1 & -1
+\end{bmatrix} &\sim
+\begin{bmatrix}
+ 1 & -1 & 0 & 2 \\
+-3 & 5 & 2 & 0 \\
+ 1 & -2 & -1 & -1
+\end{bmatrix} \sim
+\begin{bmatrix}
+ 1 & -1 & 0 & 2 \\
+ 0 & 2 & 2 & 6 \\
+ 0 & -1 & -1 & -3
+\end{bmatrix} \sim
+\begin{bmatrix}
+ 1 & -1 & 0 & 2 \\
+ 0 & 1 & 1 & 3 \\
+ 0 & -1 & -1 & -3
+\end{bmatrix} \\ &\sim
+\begin{bmatrix}
+ 1 & 0 & 1 & 5 \\
+ 0 & 1 & 1 & 3 \\
+ 0 & 0 & 0 & 0
+\end{bmatrix}
+\end{align*}
 \end{solution}
+
 \end{document}

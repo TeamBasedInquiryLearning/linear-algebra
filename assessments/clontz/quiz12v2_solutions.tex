@@ -44,20 +44,19 @@ c\odot \left( x_1+y_1-1,x_2+y_2-1 \right) \\
 \end{align*}
 \end{enumerate}
 \end{solution}
-\begin{problem}{V3}
-Determine if the vectors $\begin{bmatrix} 1 \\ 1 \\ 2 \\1 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}$, $\begin{bmatrix}3 \\ -1 \\ 3 \\ -2\end{bmatrix}$, and $\begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix}$  span $\IR^4$.
+\begin{problem}{V3} 
+Determine if the vectors  $\begin{bmatrix} 8 \\ 21 \\ -7 \end{bmatrix}$, $\begin{bmatrix} -3 \\ -8 \\ 3 \end{bmatrix}$, $\begin{bmatrix} -1 \\ -3 \\ 2 \end{bmatrix}$, and $\begin{bmatrix} 4 \\ 11 \\ -5 \end{bmatrix}$ span $\IR^3$.
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0  \end{bmatrix}$$
-Since there are zero rows, they do not span.  Alternatively, by inspection $\begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}=3\begin{bmatrix} 1 \\ 1 \\ 2 \\1 \end{bmatrix}$, so the set is linearly dependent, so it spans a subspace of dimension at most 3, therefore it does not span $\IR^4$.
+$$\RREF\left(\begin{bmatrix} 8 & -3 & -1 & 4 \\ 21 & -8 & -3 & 11 \\ -7 & 3 & 2 & -5  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 1 & -1 \\ 0 & 1 & 3 & -4 \\ 0 & 0 & 0 & 0\end{bmatrix} $$
+Since the rank is less than 3, they do not span $\IR^3$.
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
-\begin{problem}{V4}
-Determine if the set of all lattice points, i.e. $\{(x,y)\ \big|\ \text{$x$ and $y$ are integers} \}$ is a subspace of $\IR^2$.
+\begin{problem}{V4} Let $W$ be the set of all polynomials of even degree.  Determine if $W$ is a subspace of the vector space of all polynomials.
 \end{problem}
 \begin{solution}
-This set is closed under addition, but not under scalar multiplication so it is not a subspace.
+$W$ is closed under scalar multiplication, but not under addition.  For example, $x-x^2$ and $x^2$ are both in $W$, but $(x-x^2)+(x^2)=x \notin W$.
 \end{solution}
 
 \end{document}
