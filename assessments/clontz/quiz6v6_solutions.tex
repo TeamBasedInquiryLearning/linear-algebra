@@ -28,16 +28,28 @@ x_1-x_3 +x_4 &= 1
 \end{solution}
 
 \begin{problem}{E3}
-Solve the system of linear equations.
+Solve the following linear system.
 \begin{align*}
-2x+y-z+w &=5 \\
-3x-y-2w &= 0 \\
--x+5z+3w&=-1
+4x_1+4x_2+3x_3-6x_4 &= 5 \\
+-2x_3-4x_4 &= 3 \\
+2x_1+2x_2+x_3-4x_4 &= -1 \\
 \end{align*}
 \end{problem}
 \begin{solution}
-$$\RREF\left( \begin{bmatrix}[cccc|c] 2 & 1 & -1 & 0 & 5 \\ 3 & -1 & 0 & -2 & 0 \\ -1 & 0 & 5 & 0 & -1 \end{bmatrix} \right) = \begin{bmatrix}[cccc|c] 1 & 0 & 0 & -\frac{1}{12} & 1 \\ 0 & 1 & 0 & \frac{7}{4} & 3 \\ 0 & 0 & 1 & \frac{7}{12} & 0 \end{bmatrix}$$
-So the solutions are $$\left\{ \begin{bmatrix} 1+a \\ 3-21a \\ -7a \\ 12a \end{bmatrix}\ \big|\ a \in \IR\right\}$$
+Let \(A =
+  \begin{bmatrix}[cccc|c]
+    4 & 4 & 3 & -6 & 5 \\
+    0 & 0 & -2 & -4 & 3 \\
+    2 & 2 & 1 & -4 & -1
+  \end{bmatrix}
+\), so \(\RREF A =
+  \begin{bmatrix}[cccc|c]
+    1 & 1 & 0 & -3 & 0 \\
+    0 & 0 & 1 & 2 & 0 \\
+    0 & 0 & 0 & 0 & 1
+  \end{bmatrix}
+\). It follows that the system is inconsistent with no solutions
+(since the bottom row implies the contradiction \(0=1\)).
 \end{solution}
 
 \begin{extract}\newpage\end{extract}

@@ -10,8 +10,14 @@
 \begin{document}
 
 \begin{problem}{E1}
-Write a system of linear equations corresponding to the following
-augmented matrix.
+Write an augmented matrix corresponding to the following system of linear equations.
+\begin{align*}
+x_1+4x_3 &= 1 \\
+x_2-x_3 &= 7 \\
+x_1-x_2+3x_3 &= -1
+\end{align*}
+\end{problem}
+\begin{solution}
 \[
 \begin{bmatrix}[ccc|c]
 1 & 0 & 4 & 1 \\
@@ -19,40 +25,31 @@ augmented matrix.
 1 & -1 & 3 & -1
 \end{bmatrix}
 \]
-\end{problem}
-\begin{solution}
-\begin{align*}
-x_1+4x_3 &= 1 \\
-x_2-x_3 &= 7 \\
-x_1-x_2+3x_3 &= -1
-\end{align*}
 \end{solution}
+
 \begin{problem}{E3}
-Find the solution set for the following system of linear equations.
+Solve the following linear system.
 \begin{align*}
-2x_1+3x_2-5x_3+14x_4 &= 8 \\
-x_1+x_2-x_3+5x_4&= 3
+4x_1+4x_2+3x_3-6x_4 &= 5 \\
+-2x_3-4x_4 &= 3 \\
+2x_1+2x_2+x_3-4x_4 &= -1 \\
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
   \begin{bmatrix}[cccc|c]
-    2 & 3 & -5 & 14 & 8 \\
-    1 & 1 & -1 & 5 & 3
+    4 & 4 & 3 & -6 & 5 \\
+    0 & 0 & -2 & -4 & 3 \\
+    2 & 2 & 1 & -4 & -1
   \end{bmatrix}
 \), so \(\RREF A =
   \begin{bmatrix}[cccc|c]
-    1 & 0 & 2 & 1 & 1 \\
-    0 & 1 & -3 & 4 & 2 \\
+    1 & 1 & 0 & -3 & 0 \\
+    0 & 0 & 1 & 2 & 0 \\
+    0 & 0 & 0 & 0 & 1
   \end{bmatrix}
-\). It follows that the solution set is given by \(
-  \begin{bmatrix}
-    2 - 2a - b \\
-    2 + 3a - 4b \\
-    a \\
-    b
-  \end{bmatrix}
-\) for all real numbers \(a,b\).
+\). It follows that the system is inconsistent with no solutions
+(since the bottom row implies the contradiction \(0=1\)).
 \end{solution}
 
 \begin{extract}\newpage\end{extract}

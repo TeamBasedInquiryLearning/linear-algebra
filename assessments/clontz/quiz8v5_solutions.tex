@@ -13,80 +13,77 @@
 Write a system of linear equations corresponding to the following
 augmented matrix.
 \[
-\begin{bmatrix}[ccc|c]
--4 & -1 & 3 & 2  \\
-1 & 2 & -1 & 0 \\
--1 & 4 & 1 & 4
+\begin{bmatrix}[cccc|c]
+3 & -1 & 0 & 1 & 5 \\
+-1 & 9 & 1 & -7 & 0 \\
+1 & 0 & -1 & 0 & -3
 \end{bmatrix}
 \]
 \end{problem}
 \begin{solution}
 \begin{align*}
--4x_1-x_2+3x_3&=2 \\
-x_1+2x_2-x_3 &= 0 \\
--x_1+4x_2+x_3&=4
+3x_1-x_2+x_4 &= 5 \\
+-x_1+9x_2+x_3-7x_4 &= 0 \\
+x_1-x_3 &= -3
 \end{align*}
 \end{solution}
 
 \begin{problem}{E3}
 Find the solution set for the following system of linear equations.
 \begin{align*}
-2x_1+3x_2-5x_3+14x_4 &= 8 \\
-x_1+x_2-x_3+5x_4&= 3
+2x_1-2x_2+6x_3-x_4 &=-1 \\
+3x_1+6x_3+x_4 &= 5 \\
+-4x_1+x_2-9x_3+2x_4&=-7
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
   \begin{bmatrix}[cccc|c]
-    2 & 3 & -5 & 14 & 8 \\
-    1 & 1 & -1 & 5 & 3
+    2 & -2 & 6 & -1 & -1 \\
+    3 & 0 & 6 & 1 & 5 \\
+    -4 & 1 & -9 & 2 & -7
   \end{bmatrix}
 \), so \(\RREF A =
   \begin{bmatrix}[cccc|c]
-    1 & 0 & 2 & 1 & 1 \\
-    0 & 1 & -3 & 4 & 2 \\
+    1 & 0 & 2 & 0 & 2 \\
+    0 & 1 & -1 & 0 & 3 \\
+    0 & 0 & 0 & 1 & -1
   \end{bmatrix}
 \). It follows that the solution set is given by \(
   \begin{bmatrix}
-    2 - 2a - b \\
-    2 + 3a - 4b \\
+    2 - 2a \\
+    3 + a \\
     a \\
-    b
+    -1
   \end{bmatrix}
-\) for all real numbers \(a,b\).
+\) for all real numbers \(a\).
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E4}
 Find a basis for the solution set to the homogeneous system of equations
+given by
 \begin{align*}
-2x_1+3x_2-5x_3+14x_4 &= 0\\
-x_1+x_2-x_3+5x_4 &= 0
+3x+2y+z &= 0 \\
+x+y+z &= 0
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
-  \begin{bmatrix}[cccc|c]
-    2 & 3 & -5 & 14 & 0 \\
-    1 & 1 & -1 & 5 & 0
+  \begin{bmatrix}[ccc|c]
+    3 & 2 & 1 & 0 \\
+    1 & 1 & 1 & 0
   \end{bmatrix}
 \), so \(\RREF A =
-  \begin{bmatrix}[cccc|c]
-    1 & 0 & 2 & 1 & 1 \\
-    0 & 1 & -3 & 4 & 2 \\
+  \begin{bmatrix}[ccc|c]
+    1 & 0 & -1 & 0 \\
+    0 & 1 & 2 & 0
   \end{bmatrix}
 \).
 It follows that the basis for the solution set is given by \(\left\{
   \begin{bmatrix}
-    - 2 \\
-    3 \\
     1 \\
-    0
-  \end{bmatrix},
-  \begin{bmatrix}
-    -1 \\
-    - 4 \\
-    0 \\
+    -2 \\
     1
   \end{bmatrix}
 \right\}\).
