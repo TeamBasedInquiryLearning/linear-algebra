@@ -10,79 +10,83 @@
 \begin{document}
 
 \begin{problem}{E1}
-Write a system of linear equations corresponding to the following
-augmented matrix.
-\[
-\begin{bmatrix}[ccc|c]
--4 & -1 & 3 & 2  \\
-1 & 2 & -1 & 0 \\
--1 & 4 & 1 & 4
-\end{bmatrix}
-\]
+Write an augmented matrix corresponding to the following system of linear equations.
+\begin{align*}
+x_1+4x_3 &= 1 \\
+x_2-x_3 &= 7 \\
+x_1-x_2+3x_3 &= -1
+\end{align*}
 \end{problem}
 \begin{solution}
-\begin{align*}
--4x_1-x_2+3x_3&=2 \\
-x_1+2x_2-x_3 &= 0 \\
--x_1+4x_2+x_3&=4
-\end{align*}
+\[
+\begin{bmatrix}[ccc|c]
+1 & 0 & 4 & 1 \\
+0 & 1 & -1 & 7 \\
+1 & -1 & 3 & -1
+\end{bmatrix}
+\]
 \end{solution}
 
 \begin{problem}{E3}
-Solve the following linear system.
+Find the solution set for the following system of linear equations.
 \begin{align*}
-3x+2y+z &= 7 \\
-x+y+z &= 1 \\
--2x+3z &= -11
+2x_1+3x_2-5x_3+14x_4 &= 8 \\
+x_1+x_2-x_3+5x_4&= 3
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
-  \begin{bmatrix}[ccc|c]
-    3 & 2 & 1 & 7 \\
-    1 & 1 & 1 & 1 \\
-    -2 & 0 & 3 & 11
+  \begin{bmatrix}[cccc|c]
+    2 & 3 & -5 & 14 & 8 \\
+    1 & 1 & -1 & 5 & 3
   \end{bmatrix}
 \), so \(\RREF A =
-  \begin{bmatrix}[ccc|c]
-    1 & 0 & 0 & 4 \\
-    0 & 1 & 0 & -2 \\
-    0 & 0 & 1 & -1
+  \begin{bmatrix}[cccc|c]
+    1 & 0 & 2 & 1 & 1 \\
+    0 & 1 & -3 & 4 & 2 \\
   \end{bmatrix}
-\). It follows that the system has exactly one solution:
-\(\begin{bmatrix}
-  4 & -2 & -1
-\end{bmatrix}\)
+\). It follows that the solution set is given by \(
+  \begin{bmatrix}
+    2 - 2a - b \\
+    2 + 3a - 4b \\
+    a \\
+    b
+  \end{bmatrix}
+\) for all real numbers \(a,b\).
 \end{solution}
+
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E4}
-Solve the following linear system.
+Find the solution set for the following system of linear equations.
 \begin{align*}
-3x+2y+z &= 0 \\
-x+y+z &= 0
+2x_1-2x_2+6x_3-x_4 &=0 \\
+3x_1+6x_3+x_4 &=0 \\
+-4x_1+x_2-9x_3+2x_4&=0
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
-  \begin{bmatrix}[ccc|c]
-    3 & 2 & 1 & 0 \\
-    1 & 1 & 1 & 0
+  \begin{bmatrix}[cccc|c]
+    2 & -2 & 6 & -1 & 0 \\
+    3 & 0 & 6 & 1 & 0 \\
+    -4 & 1 & -9 & 2 & 0
   \end{bmatrix}
 \), so \(\RREF A =
-  \begin{bmatrix}[ccc|c]
-    1 & 0 & -1 & 0 \\
-    0 & 1 & 2 & 0
+  \begin{bmatrix}[cccc|c]
+    1 & 0 & 2 & 0 & 0 \\
+    0 & 1 & -1 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 0
   \end{bmatrix}
 \).
 It follows that the basis for the solution set is given by \(\left\{
   \begin{bmatrix}
-    1 \\
     -2 \\
-    1
+    1 \\
+    1 \\
+    0
   \end{bmatrix}
 \right\}\).
 \end{solution}
-
 \begin{problem}{V1}
 Let $V$ be the set of all points on the line $x+y=2$ with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}

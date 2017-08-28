@@ -10,23 +10,23 @@
 \begin{document}
 
 \begin{problem}{E1}
-Write a system of linear equations corresponding to the following
-augmented matrix.
-\[
-\begin{bmatrix}[ccc|c]
-1 & 0 & 4 & 1 \\
-0 & 1 & -1 & 7 \\
-1 & -1 & 3 & -1
-\end{bmatrix}
-\]
-\end{problem}
-\begin{solution}
+Write an augmented matrix corresponding to the following system of linear equations.
 \begin{align*}
 x_1+4x_3 &= 1 \\
 x_2-x_3 &= 7 \\
-x_1-x_2+3x_3 &= -1
+x_1-x_2+3x_4 &= -1
 \end{align*}
+\end{problem}
+\begin{solution}
+\[
+\begin{bmatrix}[cccc|c]
+1 & 0 & 4 & 0 & 1 \\
+0 & 1 & -1 & 0 & 7 \\
+1 & -1 & 0 & 3 & -1
+\end{bmatrix}
+\]
 \end{solution}
+
 \begin{problem}{E3}
 Solve the system of linear equations.
 \begin{align*}
@@ -42,22 +42,36 @@ So the solutions are $$\left\{ \begin{bmatrix} 1+a \\ 3-21a \\ -7a \\ 12a \end{b
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E4}
-Find a basis for the solution set of the system of equations
+Find the solution set for the following system of linear equations.
 \begin{align*}
-x+2y+3z+w &= 0 \\
-3x-y+z+w &= 0 \\
-2x-3y-2z &= 0 \\
--x+2z+5w &=0
+2x_1-2x_2+6x_3-x_4 &=0 \\
+3x_1+6x_3+x_4 &=0 \\
+-4x_1+x_2-9x_3+2x_4&=0
 \end{align*}
 \end{problem}
 \begin{solution}
-$$\RREF \left(\begin{bmatrix} 1 & -2 & 3 & 1 \\ 3 & -1 & 1 & 1 \\ 2 & -3 & -2 & 0 \\ -1 & 0 & 2 & 5 \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 0 & -1 \\ 0 & 1 & 0 & -2 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-Then the solution set is
-$$\left\{ \begin{bmatrix} a \\ 2a \\ -2a \\ a \end{bmatrix} \bigg |\ a \in \IR \right\}$$
-So a basis for the solution set is $\left\{\begin{bmatrix} 1 \\ 2 \\ -2 \\ 1\end{bmatrix} \right\}$.
+Let \(A =
+  \begin{bmatrix}[cccc|c]
+    2 & -2 & 6 & -1 & 0 \\
+    3 & 0 & 6 & 1 & 0 \\
+    -4 & 1 & -9 & 2 & 0
+  \end{bmatrix}
+\), so \(\RREF A =
+  \begin{bmatrix}[cccc|c]
+    1 & 0 & 2 & 0 & 0 \\
+    0 & 1 & -1 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 0
+  \end{bmatrix}
+\).
+It follows that the basis for the solution set is given by \(\left\{
+  \begin{bmatrix}
+    -2 \\
+    1 \\
+    1 \\
+    0
+  \end{bmatrix}
+\right\}\).
 \end{solution}
-
-
 \begin{problem}{V1}
 Let $V$ be the  set of all real numbers together with the operations $\oplus$ and $\odot$ defined by, for any $x,y \in V$ and $c \in \IR$,
 \begin{align*}
