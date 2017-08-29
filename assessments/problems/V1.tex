@@ -70,4 +70,30 @@ c\odot \left( x_1+y_1-1,x_2+y_2-1 \right) \\
 &= c\odot (x_1,y_1) \oplus c \odot (x_2,y_2)
 \end{align*}
 \end{enumerate}
+Therefore $V$ is a vector space.
+\end{solution}
+
+\begin{problem}{V1}
+Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+\begin{align*}
+(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
+c \odot (x_1,y_1) &= (0, cy_1)
+\end{align*}
+Determine if $V$ is a vector space or not.
+\end{problem}
+\begin{solution}
+$V$ is not a vector space, as $1 \odot (x_1,y_1) = (0,y_1) \neq (x_1,y_1)$.
+\end{solution}
+
+\begin{problem}{V1}
+Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+\begin{align*}
+(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
+c \odot (x_1,y_1) &= (c^2x_1, c^3y_1)
+\end{align*}
+Determine if $V$ is a vector space or not.
+\end{problem}
+\begin{solution}
+$V$ is not a vector space, as one of the distributive laws fails, namely
+$$(c+d) \odot (x_1,y_1) = ( (c+d)^2 x_1, (c+d)^3 y_1) \neq ((c^2+d^2)x_1, (c^3+d^3)y_1) = c \odot (x_1,y_1) \oplus d \odot (x_1,y_1).$$
 \end{solution}

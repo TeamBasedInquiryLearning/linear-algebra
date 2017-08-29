@@ -2,6 +2,8 @@
 ./bin/generateQuiz.pl lewis
 ./bin/generateQuiz.pl clontz
 
+./bin/countProblems.pl
+
 cd assessments
 #Compile problem library
 pdflatex problem-library.tex
