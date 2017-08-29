@@ -10,123 +10,119 @@
 \begin{document}
 
 \begin{problem}{E1}
-Write an augmented matrix corresponding to the following system of linear equations.
-\begin{align*}
-x_1+4x_3 &= 1 \\
-x_2-x_3 &= 7 \\
-x_1-x_2+3x_4 &= -1
-\end{align*}
-\end{problem}
-\begin{solution}
+Write a system of linear equations corresponding to the following
+augmented matrix.
 \[
 \begin{bmatrix}[cccc|c]
-1 & 0 & 4 & 0 & 1 \\
-0 & 1 & -1 & 0 & 7 \\
-1 & -1 & 0 & 3 & -1
+3 & -1 & 0 & 1 & 5 \\
+-1 & 9 & 1 & -7 & 0 \\
+1 & 0 & -1 & 0 & -3
 \end{bmatrix}
 \]
+\end{problem}
+\begin{solution}
+\begin{align*}
+3x_1-x_2+x_4 &= 5 \\
+-x_1+9x_2+x_3-7x_4 &= 0 \\
+x_1-x_3 &= -3
+\end{align*}
 \end{solution}
 
 \begin{problem}{E3}
 Solve the following linear system.
 \begin{align*}
-4x_1+4x_2+3x_3-6x_4 &= 5 \\
--2x_3-4x_4 &= 3 \\
-2x_1+2x_2+x_3-4x_4 &= -1 \\
+3x+2y+z &= 7 \\
+x+y+z &= 1 \\
+-2x+3z &= -11
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
-  \begin{bmatrix}[cccc|c]
-    4 & 4 & 3 & -6 & 5 \\
-    0 & 0 & -2 & -4 & 3 \\
-    2 & 2 & 1 & -4 & -1
+  \begin{bmatrix}[ccc|c]
+    3 & 2 & 1 & 7 \\
+    1 & 1 & 1 & 1 \\
+    -2 & 0 & 3 & 11
   \end{bmatrix}
 \), so \(\RREF A =
-  \begin{bmatrix}[cccc|c]
-    1 & 1 & 0 & -3 & 0 \\
-    0 & 0 & 1 & 2 & 0 \\
-    0 & 0 & 0 & 0 & 1
+  \begin{bmatrix}[ccc|c]
+    1 & 0 & 0 & 4 \\
+    0 & 1 & 0 & -2 \\
+    0 & 0 & 1 & -1
   \end{bmatrix}
-\). It follows that the system is inconsistent with no solutions
-(since the bottom row implies the contradiction \(0=1\)).
+\). It follows that the system has exactly one solution:
+\(\begin{bmatrix}
+  4 & -2 & -1
+\end{bmatrix}\)
 \end{solution}
-
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E4}
 Find a basis for the solution set to the homogeneous system of equations
 \begin{align*}
-4x_1+4x_2+3x_3-6x_4 &= 0 \\
--2x_3-4x_4 &= 0 \\
-2x_1+2x_2+x_3-4x_4 &= 0 \\
+2x_1+3x_2-5x_3+14x_4 &= 0\\
+x_1+x_2-x_3+5x_4 &= 0
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
   \begin{bmatrix}[cccc|c]
-    4 & 4 & 3 & -6 & 0 \\
-    0 & 0 & -2 & -4 & 0 \\
-    2 & 2 & 1 & -4 & 0
+    2 & 3 & -5 & 14 & 0 \\
+    1 & 1 & -1 & 5 & 0
   \end{bmatrix}
 \), so \(\RREF A =
   \begin{bmatrix}[cccc|c]
-    1 & 1 & 0 & -3 & 0 \\
-    0 & 0 & 1 & 2 & 0 \\
-    0 & 0 & 0 & 0 & 0
+    1 & 0 & 2 & 1 & 1 \\
+    0 & 1 & -3 & 4 & 2 \\
   \end{bmatrix}
 \).
 It follows that the basis for the solution set is given by \(\left\{
   \begin{bmatrix}
-    -1 \\
+    - 2 \\
+    3 \\
     1 \\
-    0 \\
     0
   \end{bmatrix},
   \begin{bmatrix}
-    3 \\
+    -1 \\
+    - 4 \\
     0 \\
-    -2 \\
     1
   \end{bmatrix}
 \right\}\).
 \end{solution}
 
 \begin{problem}{V1}
-Let $V$ be the  set of all real numbers together with the operations $\oplus$ and $\odot$ defined by, for any $x,y \in V$ and $c \in \IR$,
+Let $V$ be the set of all points on the line $x+y=2$ with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
-x\oplus y  &= x+y-3 \\
-c \odot x &= cx-3(c-1)
+(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2-1,y_1+y_2-1) \\
+c \odot (x_1,y_1) &= (cx_1-(c-1), cy_1-(c-2))
 \end{align*}
 Determine if $V$ is a vector space or not.
 \end{problem}
-
 \begin{solution}
-Let $x,y \in V$, $c,d \in \IR$.
 \begin{enumerate}[1)]
-\item Real addition is associative, so $\oplus$ is associative.
-\item $x\oplus 3 = x+3-3=x$, so $3$ is the additive identity.
-\item $x \oplus (6-x) = x+(6-x)-3=3$, so $6-x$ is the additive inverse of $x$.
-\item Real addition is commutative, so $\oplus$ is commutative.
-\item \begin{align*}
-c\odot \left( d \odot x\right) &= c\odot \left( dx-3(d-1) \right) \\
-&= c\left(dx-3(d-1)\right)-3(c-1) \\
-&= cdx-3(cd-1) \\
-&= (cd) \odot x
+\item Since real addition is associative, $\oplus$ is associative.
+\item Since real addition is commutative, $\oplus$ is commutative.
+\item $(x_1,y_1) \oplus (1,1) = (x_1,y_1)$, so $(1,1)$ is an additive identity element.
+\item $(x_1,y_1) \oplus (2-x_1,2-y_1) = (1,1)$, so $(2-x_1,2-y_1)$ is the additive inverse of $(x_1,y_1)$.
+\item \begin{align*} c\odot \left(d \odot (x_1,y_1) \right) &=c\odot \left( dx_1-(d-1),dy_1-(d-1)\right) \\ 
+&= \left( c\left(dx_1-(d-1) \right)-(c-1), c\left(dy_1-(d-1) \right) \right) \\
+&= \left(cdx_1-cd+c-(c-1), cdy_1-cd+c-(c-1) \right) \\
+&= \left(cdx_1-(cd-1), cdy_1-(cd-1) \right) \\
+&= (cd) \odot (x_1,y_1)
 \end{align*}
-\item $1 \odot x = x-3(1-1)=x$
-\item \begin{align*} c \odot (x \oplus y) &=
-c \odot (x+y-3) \\
-&= c(x+y-3)-3(c-1) \\
-&= cx-3(c-1) + cy-3(c-1) -3 \\
-&= (c\odot x ) \oplus (c\odot y)
+\item $1 \odot (x_1,y_1) = (x_1-(1-1),y_1-(1-1)=(x_1,y_1)$
+\item \begin{align*} c \odot \left( (x_1,y_1)\oplus(x_2,y_2) \right) &= 
+c\odot \left( x_1+y_1-1,x_2+y_2-1 \right) \\
+&= \left( c(x_1+y_1-1)-(c-1), c(x_2+y_2-1)-(c-1) \right) \\
+&= (cx_1+cx_2-2c+1, cy_1+cy_2-2c+1) \\
+&= \left(cx_1-(c-1),cy_1-(c-1) \right) \oplus (cx_2-(c-1),cy_2-(c-1)) \\
+&=c \odot (x_1,y_1) \oplus c\odot (x_2,y_2) 
 \end{align*}
-\item \begin{align*} (c+d) \odot x &= (c+d)x-3(c+d-1) \\
-&= cx-3(c-1)+dx-3(c-1)-3 \\
-&= (c\odot x ) \oplus (d \odot x)
+\item \begin{align*} (c+d) \odot (x_1,y_1) &=
+\left( (c+d)x_1-(c+d-1), (c+d)y_1-(c+d-1) \right) \\
+&= \left( cx_1-(c-1), cy_1-(c-1) \right) \oplus (dx_1-(d-1), dy_1-(d-1) ) \\
+&= c\odot (x_1,y_1) \oplus c \odot (x_2,y_2)
 \end{align*}
 \end{enumerate}
-
-Therefore $V$ is a vector space.
 \end{solution}
-
 \end{document}

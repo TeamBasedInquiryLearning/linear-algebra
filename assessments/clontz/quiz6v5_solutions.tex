@@ -28,67 +28,51 @@ x_1-x_2+3x_3 &= -1
 \end{solution}
 
 \begin{problem}{E3}
-Solve the following linear system.
+Solve the system of equations
 \begin{align*}
-4x_1+4x_2+3x_3-6x_4 &= 5 \\
--2x_3-4x_4 &= 3 \\
-2x_1+2x_2+x_3-4x_4 &= -1 \\
+-3x +y &= 2\\
+-8x+2y-z &= 6 \\
+2y+3z &= -2
 \end{align*}
+
+
 \end{problem}
+
 \begin{solution}
-Let \(A =
-  \begin{bmatrix}[cccc|c]
-    4 & 4 & 3 & -6 & 5 \\
-    0 & 0 & -2 & -4 & 3 \\
-    2 & 2 & 1 & -4 & -1
-  \end{bmatrix}
-\), so \(\RREF A =
-  \begin{bmatrix}[cccc|c]
-    1 & 1 & 0 & -3 & 0 \\
-    0 & 0 & 1 & 2 & 0 \\
-    0 & 0 & 0 & 0 & 1
-  \end{bmatrix}
-\). It follows that the system is inconsistent with no solutions
-(since the bottom row implies the contradiction \(0=1\)).
+$$\RREF\left(\begin{bmatrix}[ccc|c] -3 & 1 & 0 & 2 \\ -8 & 2 & -1 & 6 \\ 0 & 2 & 3 & -2 \end{bmatrix} \right) = \begin{bmatrix}[ccc|c] 1 & 0 & \frac{1}{2} & -1 \\ 0 & 1 & \frac{3}{2} & -1 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
+The solutions are $$\left\{ \begin{bmatrix} -1-\frac{c}{2} \\ -1-\frac{3c}{2} \\ c \end{bmatrix}\ \bigg|\ c\in \IR\right\} = \left\{ \begin{bmatrix} c-1 \\ 3c-1 \\ -2c  \end{bmatrix}\ \bigg|\ c\in \IR\right\}$$
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E4}
-Find a basis for the solution set to the homogeneous system of equations
+Find the solution set for the following system of linear equations.
 \begin{align*}
-4x_1+4x_2+3x_3-6x_4 &= 0 \\
--2x_3-4x_4 &= 0 \\
-2x_1+2x_2+x_3-4x_4 &= 0 \\
+2x_1-2x_2+6x_3-x_4 &=0 \\
+3x_1+6x_3+x_4 &=0 \\
+-4x_1+x_2-9x_3+2x_4&=0
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
   \begin{bmatrix}[cccc|c]
-    4 & 4 & 3 & -6 & 0 \\
-    0 & 0 & -2 & -4 & 0 \\
-    2 & 2 & 1 & -4 & 0
+    2 & -2 & 6 & -1 & 0 \\
+    3 & 0 & 6 & 1 & 0 \\
+    -4 & 1 & -9 & 2 & 0
   \end{bmatrix}
 \), so \(\RREF A =
   \begin{bmatrix}[cccc|c]
-    1 & 1 & 0 & -3 & 0 \\
-    0 & 0 & 1 & 2 & 0 \\
-    0 & 0 & 0 & 0 & 0
+    1 & 0 & 2 & 0 & 0 \\
+    0 & 1 & -1 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 0
   \end{bmatrix}
 \).
 It follows that the basis for the solution set is given by \(\left\{
   \begin{bmatrix}
-    -1 \\
-    1 \\
-    0 \\
-    0
-  \end{bmatrix},
-  \begin{bmatrix}
-    3 \\
-    0 \\
     -2 \\
-    1
+    1 \\
+    1 \\
+    0
   \end{bmatrix}
 \right\}\).
 \end{solution}
-
 \end{document}
