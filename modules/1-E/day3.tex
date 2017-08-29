@@ -6,90 +6,66 @@
 \begin{definition}
   An algorithm that reduces \(A\) to \(\RREF(A)\) is called
   \term{Gauss-Jordan elimination}. For example:
-  \begin{multicols}{3}
+ % \begin{multicols}{3}
     \begin{enumerate}
       \item Circle the top-left-most cell that (a) is below any existing pivot
       positions and (b) has a nonzero term either in that position or below it.
-      \item Ignoring any rows above this pivot position, use row operations
-      to change the value of your pivot position to \(1\), and the terms below
-      it to \(0\).
-      \item Repeat these two steps as often as possible.
-      \item Finally,
-      zero out any terms above pivot positions.
+	\item Turn the pivot into a $1$ using only that row and rows below it.
+	\item Add or subtract multiples of the row with the pivot to zero out above and below the pivot.
+      \item Goto 1
     \end{enumerate}
-  \end{multicols}
+ % \end{multicols}
 \end{definition}
 
 \begin{observation}
   Here is an example of applying Gauss-Jordan elimination to a matrix:
-  \[
-    \begin{bmatrix}[ccc|c]
-      \circledNumber{3} & -2 & 13 & 6 \\
-      2 & -2 & 10 & 2 \\
-      -1 & 3 & -6 & 11
-    \end{bmatrix}\sim
-    \begin{bmatrix}[ccc|c]
-     \circledNumber{2} & -2 & 10 & 2 \\
-      3 & -2 & 13 & 6 \\
-      -1 & 3 & -6 & 11
-    \end{bmatrix}\sim
-    \begin{bmatrix}[ccc|c]
-     \circledNumber{1} & -1 & 5 & 1 \\
-      3 & -2 & 13 & 6 \\
-      -1 & 3 & -6 & 11
-    \end{bmatrix}
-  \]
-  \[\sim
-    \begin{bmatrix}[ccc|c]
-     \circledNumber{1} & -1 & 5 & 1 \\
-      0 & \circledNumber{1} & -2 & 3 \\
-      0 & 2 & -1 & 12
-    \end{bmatrix}
-    \sim
-      \begin{bmatrix}[ccc|c]
-       \circledNumber{1} & -1 & 5 & 1 \\
-        0 & \circledNumber{1} & -2 & 3 \\
-        0 & 0 & \circledNumber{3} & 6
-      \end{bmatrix}
-    \sim
-    \begin{bmatrix}[ccc|c]
-     \circledNumber{1} & -1 & 5 & 1 \\
-      0 & \circledNumber{1} & -2 & 3 \\
-      0 & 0 & \circledNumber{1} & 2
-    \end{bmatrix}
-  \]
-  \[\sim
-    \begin{bmatrix}[ccc|c]
-     \circledNumber{1} & -1 & 5 & 1 \\
-      0 & \circledNumber{1} & -2 & 3 \\
-      0 & 0 & \circledNumber{1} & 2
-    \end{bmatrix}
-    \sim
-    \begin{bmatrix}[ccc|c]
-     \circledNumber{1} & -1 & 0 & -9 \\
-      0 & \circledNumber{1} & 0 & 7 \\
-      0 & 0 & \circledNumber{1} & 2
-    \end{bmatrix}
-    \sim
-    \begin{bmatrix}[ccc|c]
-     \circledNumber{1} & 0 & 0 & -2 \\
-      0 & \circledNumber{1} & 0 & 7 \\
-      0 & 0 & \circledNumber{1} & 2
-    \end{bmatrix}
-  \]
-\end{observation}
 
-\begin{activity}{15}
-  Find \(\RREF(A)\) where
-  \[A=
-    \begin{bmatrix}[cccc|c]
-      -1 &  1 & -3 &  2 &  0 \\
-       2 & -1 &  5 &  3 & -11 \\
-       3 &  2 &  4 &  1 &  1 \\
-       0 &  1 & -1 &  1 &  1 \\
-    \end{bmatrix}
-  .\]
-\end{activity}
+\begin{small}
+\begin{align*}
+\begin{bmatrix}[cccc|c]
+\circledNumber{2} & -2 & -6 & 1 & 3 \\
+-1 & 1 & 3 & -1 & -3 \\
+1 & -2 & -1 & 1 & 2
+\end{bmatrix} 
+&\sim 
+\begin{bmatrix}[cccc|c]
+\circledNumber{1} & -2 & -1 & 1 & 2 \\
+-1 & 1 & 3 & -1 & -3 \\
+2 & -2 & -6 & 1 & 3 
+\end{bmatrix} \sim
+\begin{bmatrix}[cccc|c]
+\circledNumber{1} & -2 & -1 & 1 & 2 \\
+0 & \circledNumber{-1} & 2 & 0 & -1 \\
+0 & 2 & -4 & -1 & -1 
+\end{bmatrix} \\
+&\sim
+\begin{bmatrix}[cccc|c]
+\circledNumber{1} & -2 & -1 & 1 & 2 \\
+0 & \circledNumber{1} & -2 & 0  & 1 \\
+0 & 2 & -4 & -1 & -1 
+\end{bmatrix} 
+\sim
+\begin{bmatrix}[cccc|c]
+\circledNumber{1} & 0 & -5 & 1 & 4 \\
+0 & \circledNumber{1} & -2 & 0  & 1 \\
+0 & 0 & 0 & \circledNumber{-1} & -3  
+\end{bmatrix}  \\
+&\sim 
+\begin{bmatrix}[cccc|c]
+\circledNumber{1} & 0 & -5 & 1 & 4 \\
+0 & \circledNumber{1} & -2 & 0  & 1 \\
+0 & 0 & 0 & \circledNumber{1} & 3  
+\end{bmatrix} 
+\sim 
+\begin{bmatrix}[cccc|c]
+\circledNumber{1} & 0 & -5 & 0 & 1 \\
+0 & \circledNumber{1} & -2 & 0  & 1 \\
+0 & 0 & 0 & \circledNumber{1} & 3  
+\end{bmatrix}
+\end{align*}
+\end{small}
+
+\end{observation}
 
 \begin{definition}
   The columns of \(\RREF(A)\) without a leading term represent
@@ -100,15 +76,65 @@
   to the linear system modeled by \(A\).
 \end{definition}
 
-\begin{activity}{10}
-  Given the linear system and its equivalent row-reduced matrix
-  \begin{multicols}{2}\noindent
+\begin{example}
+\begin{tabular}{ccc}
+$\begin{aligned}
+2x_1-2x_2-6x_3+x_4 &= 3 \\
+-x_1+x_2+3x_3-x_4 &= -3 \\
+x_1-2x_2-x_3+x_4 &= 1
+\end{aligned}$ & &
+$\begin{aligned}
+x_1-5x_3 &= 1 \\
+x_2-2x_3 &= 1 \\
+x_3 &= a \\
+x_4 &= 3
+\end{aligned}$ \\
+$\Downarrow$ & & $\Uparrow$ \\
+$\begin{bmatrix}[cccc|c]
+{2} & -2 & -6 & 1 & 3 \\
+-1 & 1 & 3 & -1 & -3 \\
+1 & -2 & -1 & 1 & 2
+\end{bmatrix}$  & $\Rightarrow$ & 
+$\begin{bmatrix}[cccc|c]
+\circledNumber{1} & 0 & -5 & 0 & 1 \\
+0 & \circledNumber{1} & -2 & 0  & 1 \\
+0 & 0 & 0 & \circledNumber{1} & 3  
+\end{bmatrix}$ \\
+ & & \\
+\end{tabular}
+
+So the solution set is $\left\{\begin{bmatrix} 1+5a \\ 1+2a \\ a \\ 3 \end{bmatrix} \bigg|\ a \in \IR \right\}$.
+\end{example}
+
+%\begin{activity}{15}
+%  Find \(\RREF(A)\) where
+%  \[A=
+%    \begin{bmatrix}[cccc|c]
+%      -1 &  1 & -3 &  2 &  0 \\
+%       2 & -1 &  5 &  3 & -11 \\
+%       3 &  2 &  4 &  1 &  1 \\
+%       0 &  1 & -1 &  1 &  1 \\
+%    \end{bmatrix}
+%  .\]
+%\end{activity}
+
+
+
+\begin{activity}{20}
+  Solve the system of linear equations 
     \begin{alignat*}{5}
       -x_1 &\,+\,&  x_2 &\,-\,&  3x_3 &\,+\,&  2x_4 &\,=\,& 0 \\
       2x_1 &\,-\,&  x_2 &\,+\,&  5x_3 &\,+\,&  3x_4 &\,=\,& -11 \\
       3x_1 &\,+\,& 2x_2 &\,+\,&  4x_3 &\,+\,&   x_4 &\,=\,& 1 \\
            &\, \,&  x_2 &\,-\,&   x_3 &\,+\,&   x_4 &\,=\,& 1 \\
     \end{alignat*}
+  Circle the pivot positions in your augmented matrix and find the solution set of the system
+by setting the free variable (the column without a pivot position)
+  equal to \(a\), and expressing each of the other
+  bounded variables equal to an expression in terms of \(a\).
+\end{activity}
+\begin{TBLnote}
+  The resulting RREF matrix is
   \[
     \begin{bmatrix}[cccc|c]
        1 &  0 &  2 &  0 & -1 \\
@@ -117,58 +143,22 @@
        0 &  0 &  0 &  0 &  0 \\
     \end{bmatrix}
   \]
-  \end{multicols}
-  circle the pivot positions and describe the solution set
-  \(
-    \begin{bmatrix}
-      x_1 \\
-      x_2 \\
-      x_3 \\
-      x_4
-    \end{bmatrix}=
-    \begin{bmatrix}
-      p_1 \\
-      p_2 \\
-      p_3 \\
-      p_4
-    \end{bmatrix}
-    +a\begin{bmatrix}
-      s_1 \\
-      s_2 \\
-      s_3 \\
-      s_4
-    \end{bmatrix}
-  \) by setting the free variable (the column without a pivot position)
-  equal to \(a\), and expressing each of the other
-  bounded variables equal to an expression in terms of \(a\).
-\end{activity}
+\end{TBLnote}
 
-\begin{remark}
-  It's not necessary to completely find \(\RREF(A)\) to
-  deduce that a linear system is inconsistent.
-\end{remark}
+%\begin{remark}
+%  It's not necessary to completely find \(\RREF(A)\) to
+%  deduce that a linear system is inconsistent.
+%\end{remark}
 
-\begin{activity}{10} %TODO remove matrices, focus on augmented matrix
-  Find a contradiction in the inconsistent linear system
+\begin{activity}{10}  Solve the linear system
     \begin{alignat*}{4}
       2x_1 &\,-\,& 3x_2 &\,=\,& 17 \\
        x_1 &\,+\,& 2x_2 &\,=\,& -2 \\
       -x_1 &\,-\,&  x_2 &\,=\,& 1
     \end{alignat*}
-  by considering the following equivalent augmented matrices:
-  \[
-    \begin{bmatrix}[cc|c]
-       2 & -3 & 17 \\
-       1 &  2 & -2 \\
-      -1 & -1 &  1 \\
-    \end{bmatrix}\sim
-    \begin{bmatrix}[cc|c]
-       1 &  2 & -2 \\
-       0 &  1 &  3 \\
-       0 &  0 &  2 \\
-    \end{bmatrix}
-  .\]
 \end{activity}
+\begin{TBLnote} This is an inconsistent solution.  Point out to the students that one need not go all the way to RREF to discover a system is inconsistent.
+\end{TBLnote}
 
 \begin{activity}{5}
   Show that all linear systems of the form
