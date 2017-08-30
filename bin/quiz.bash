@@ -3,28 +3,22 @@
 ./bin/generateQuiz.pl clontz
 
 ./bin/countProblems.pl
+./bin/quizCompileList.pl
 
 cd assessments
 #Compile problem library
 pdflatex problem-library.tex
 
-./bin/quizCompileList.pl
 
 #Do Lewis quizzes
 cd lewis
 
-#Compile Solutions
-#for i in `ls *solutions.tex`
+#Compile Quizzes and solutions 
 for i in  `cat ../quizCompileList.txt`
 do
 	pdflatex $i || exit 1
 done
 
-#Compile quizzes
-#for i in `ls *.tex | grep -v solution | grep -v Header`
-#do
-#	pdflatex $i || exit 1
-#done
 
 #Concatenate quizzes into one pdf
 for i in `seq 1 30`;
@@ -38,18 +32,12 @@ done
 
 #Do Clontz quizzes
 cd ../clontz
-#Compile solutions
-#for i in `ls *solutions.tex`
+#Compile quizzes and solutions
 for i in  `cat ../quizCompileList.txt`
 do
 	pdflatex $i || exit 1
 done
 
-#Compile quizzes
-#for i in `ls *.tex | grep -v solution | grep -v Header`
-#do
-#	pdflatex $i || exit 1
-#done
 
 #Concatenate into one pdf
 for i in `seq 1 30`;
