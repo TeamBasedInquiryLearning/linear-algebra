@@ -81,7 +81,6 @@ foreach my $line (@quizStandards)
 {
 	chomp($line);
 	next if $line =~ /[!%*#]/;
-	print "Line = $line \n";
 	my ($quiz, $stds) = split (':', $line);
 	my @result = split (',', $stds);
 	$quizStandardsHash{$quiz} = \@result; 

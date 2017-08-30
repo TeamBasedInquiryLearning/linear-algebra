@@ -10,123 +10,81 @@
 \begin{document}
 
 \begin{problem}{E1}
-Write a system of linear equations corresponding to the following
-augmented matrix.
-\[
-\begin{bmatrix}[cccc|c]
-3 & -1 & 0 & 1 & 5 \\
--1 & 9 & 1 & -7 & 0 \\
-1 & 0 & -1 & 0 & -3
-\end{bmatrix}
-\]
+Write an augmented matrix corresponding to the following system of linear equations.
+\begin{align*}
+x+3y-4z &= 5 \\
+3x+9y+z &= 0 \\
+x-z &= 1
+\end{align*}
 \end{problem}
 \begin{solution}
-\begin{align*}
-3x_1-x_2+x_4 &= 5 \\
--x_1+9x_2+x_3-7x_4 &= 0 \\
-x_1-x_3 &= -3
-\end{align*}
+\[
+\begin{bmatrix}[ccc|c]
+1 & 3 & -4 & 5 \\
+3 & 9 & 1 & 0 \\
+1 & 0 & -1 & 1
+\end{bmatrix}
+\]
 \end{solution}
 
 \begin{problem}{E3}
 Find the solution set for the following system of linear equations.
 \begin{align*}
-2x_1+3x_2-5x_3+14x_4 &= 8 \\
-x_1+x_2-x_3+5x_4&= 3
+2x_1-2x_2+6x_3-x_4 &=-1 \\
+3x_1+6x_3+x_4 &= 5 \\
+-4x_1+x_2-9x_3+2x_4&=-7
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
   \begin{bmatrix}[cccc|c]
-    2 & 3 & -5 & 14 & 8 \\
-    1 & 1 & -1 & 5 & 3
+    2 & -2 & 6 & -1 & -1 \\
+    3 & 0 & 6 & 1 & 5 \\
+    -4 & 1 & -9 & 2 & -7
   \end{bmatrix}
 \), so \(\RREF A =
   \begin{bmatrix}[cccc|c]
-    1 & 0 & 2 & 1 & 1 \\
-    0 & 1 & -3 & 4 & 2 \\
+    1 & 0 & 2 & 0 & 2 \\
+    0 & 1 & -1 & 0 & 3 \\
+    0 & 0 & 0 & 1 & -1
   \end{bmatrix}
 \). It follows that the solution set is given by \(
   \begin{bmatrix}
-    2 - 2a - b \\
-    2 + 3a - 4b \\
+    2 - 2a \\
+    3 + a \\
     a \\
-    b
+    -1
   \end{bmatrix}
-\) for all real numbers \(a,b\).
+\) for all real numbers \(a\).
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E4}
-Find a basis for the solution set to the homogeneous system of equations
+Find a basis for the solution set of the system of equations
 \begin{align*}
-2x_1+3x_2-5x_3+14x_4 &= 0\\
-x_1+x_2-x_3+5x_4 &= 0
+x+2y+3z+w &= 0 \\
+3x-y+z+w &= 0 \\
+2x-3y-2z &= 0
 \end{align*}
 \end{problem}
 \begin{solution}
-Let \(A =
-  \begin{bmatrix}[cccc|c]
-    2 & 3 & -5 & 14 & 0 \\
-    1 & 1 & -1 & 5 & 0
-  \end{bmatrix}
-\), so \(\RREF A =
-  \begin{bmatrix}[cccc|c]
-    1 & 0 & 2 & 1 & 1 \\
-    0 & 1 & -3 & 4 & 2 \\
-  \end{bmatrix}
-\).
-It follows that the basis for the solution set is given by \(\left\{
-  \begin{bmatrix}
-    - 2 \\
-    3 \\
-    1 \\
-    0
-  \end{bmatrix},
-  \begin{bmatrix}
-    -1 \\
-    - 4 \\
-    0 \\
-    1
-  \end{bmatrix}
-\right\}\).
+$$\RREF \left(\begin{bmatrix} 1 & -2 & 3 & 1 \\ 3 & -1 & 1 & 1 \\ 2 & -3 & -2 & 0  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & \frac{5}{7} & \frac{3}{7} \\ 0 & 1 & \frac{8}{7} & \frac{2}{7} \\ 0 & 0 & 0 & 0\end{bmatrix}$$
+Then the solution set is
+$$\left\{ \begin{bmatrix} -\frac{5}{7}a-\frac{3}{7}b \\ -\frac{8}{7}a-\frac{2}{7}b \\ a \\ b \end{bmatrix} \bigg |\ a,b \in \IR \right\}$$
+So a basis for the solution set is $\left\{\begin{bmatrix} -\frac{5}{7} \\ -\frac{8}{7} \\ 1 \\ 0\end{bmatrix}, \begin{bmatrix} - \frac{3}{7} \\ -\frac{2}{7} \\ 0 \\ 1 \end{bmatrix} \right\}$, or $\left\{\begin{bmatrix} 5 \\ 8 \\ -7 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 2 \\ 0 \\ -7 \end{bmatrix}\right\}$.
 \end{solution}
 
 \begin{problem}{V1}
-Let $V$ be the set of all points on the line $x+y=2$ with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+Let $V$ be the set of all polynomials with the operations, for any $f, g \in V$, $c \in \IR$,
 \begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2-1,y_1+y_2-1) \\
-c \odot (x_1,y_1) &= (cx_1-(c-1), cy_1-(c-2))
+f \oplus g &= f^\prime + g^\prime \\
+c \odot f &= c f^\prime
 \end{align*}
-Determine if $V$ is a vector space or not.
+(here $f^\prime$ denotes the derivative of $f$).  Determine if $V$ is a vector space or not.
 \end{problem}
 \begin{solution}
-\begin{enumerate}[1)]
-\item Since real addition is associative, $\oplus$ is associative.
-\item Since real addition is commutative, $\oplus$ is commutative.
-\item $(x_1,y_1) \oplus (1,1) = (x_1,y_1)$, so $(1,1)$ is an additive identity element.
-\item $(x_1,y_1) \oplus (2-x_1,2-y_1) = (1,1)$, so $(2-x_1,2-y_1)$ is the additive inverse of $(x_1,y_1)$.
-\item \begin{align*} c\odot \left(d \odot (x_1,y_1) \right) &=c\odot \left( dx_1-(d-1),dy_1-(d-1)\right) \\ 
-&= \left( c\left(dx_1-(d-1) \right)-(c-1), c\left(dy_1-(d-1) \right) \right) \\
-&= \left(cdx_1-cd+c-(c-1), cdy_1-cd+c-(c-1) \right) \\
-&= \left(cdx_1-(cd-1), cdy_1-(cd-1) \right) \\
-&= (cd) \odot (x_1,y_1)
-\end{align*}
-\item $1 \odot (x_1,y_1) = (x_1-(1-1),y_1-(1-1)=(x_1,y_1)$
-\item \begin{align*} c \odot \left( (x_1,y_1)\oplus(x_2,y_2) \right) &= 
-c\odot \left( x_1+y_1-1,x_2+y_2-1 \right) \\
-&= \left( c(x_1+y_1-1)-(c-1), c(x_2+y_2-1)-(c-1) \right) \\
-&= (cx_1+cx_2-2c+1, cy_1+cy_2-2c+1) \\
-&= \left(cx_1-(c-1),cy_1-(c-1) \right) \oplus (cx_2-(c-1),cy_2-(c-1)) \\
-&=c \odot (x_1,y_1) \oplus c\odot (x_2,y_2) 
-\end{align*}
-\item \begin{align*} (c+d) \odot (x_1,y_1) &=
-\left( (c+d)x_1-(c+d-1), (c+d)y_1-(c+d-1) \right) \\
-&= \left( cx_1-(c-1), cy_1-(c-1) \right) \oplus (dx_1-(d-1), dy_1-(d-1) ) \\
-&= c\odot (x_1,y_1) \oplus c \odot (x_2,y_2)
-\end{align*}
-\end{enumerate}
-Therefore $V$ is a vector space.
+This is not a vector space, as there is no zero vector.  Additionally, $1 \odot f \neq f$ for any nonzero polynomial $f$.
 \end{solution}
+
 
 \end{document}
