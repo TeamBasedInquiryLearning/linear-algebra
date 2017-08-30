@@ -6,15 +6,18 @@
 \begin{definition}
   An algorithm that reduces \(A\) to \(\RREF(A)\) is called
   \term{Gauss-Jordan elimination}. For example:
- % \begin{multicols}{3}
-    \begin{enumerate}
-      \item Circle the top-left-most cell that (a) is below any existing pivot
-      positions and (b) has a nonzero term either in that position or below it.
-	\item Turn the pivot into a $1$ using only that row and rows below it.
-	\item Add or subtract multiples of the row with the pivot to zero out above and below the pivot.
-      \item Goto 1
-    \end{enumerate}
- % \end{multicols}
+  \begin{enumerate}
+    \item Circle the cell that
+      (a) is in the top-most row without a pivot position and
+      (b) is in the left-most column with a nonzero term either in that
+          position or below it.
+      This position (not the number inside) is called a \term{pivot}.
+  	\item Change the pivot's value to \(1\) by using row operations involving
+      only the pivot row and rows below it.
+  	\item Add or subtract multiples of the pivot row to zero out above and below the pivot.
+    \item Return to Step 1 and repeat as needed until the matrix is
+    in row reduced echelon form.
+  \end{enumerate}
 \end{definition}
 
 \begin{observation}
@@ -26,41 +29,41 @@
 \circledNumber{2} & -2 & -6 & 1 & 3 \\
 -1 & 1 & 3 & -1 & -3 \\
 1 & -2 & -1 & 1 & 2
-\end{bmatrix} 
-&\sim 
+\end{bmatrix}
+&\sim
 \begin{bmatrix}[cccc|c]
 \circledNumber{1} & -2 & -1 & 1 & 2 \\
 -1 & 1 & 3 & -1 & -3 \\
-2 & -2 & -6 & 1 & 3 
+2 & -2 & -6 & 1 & 3
 \end{bmatrix} \sim
 \begin{bmatrix}[cccc|c]
 \circledNumber{1} & -2 & -1 & 1 & 2 \\
 0 & \circledNumber{-1} & 2 & 0 & -1 \\
-0 & 2 & -4 & -1 & -1 
+0 & 2 & -4 & -1 & -1
 \end{bmatrix} \\
 &\sim
 \begin{bmatrix}[cccc|c]
 \circledNumber{1} & -2 & -1 & 1 & 2 \\
 0 & \circledNumber{1} & -2 & 0  & 1 \\
-0 & 2 & -4 & -1 & -1 
-\end{bmatrix} 
+0 & 2 & -4 & -1 & -1
+\end{bmatrix}
 \sim
 \begin{bmatrix}[cccc|c]
 \circledNumber{1} & 0 & -5 & 1 & 4 \\
 0 & \circledNumber{1} & -2 & 0  & 1 \\
-0 & 0 & 0 & \circledNumber{-1} & -3  
+0 & 0 & 0 & \circledNumber{-1} & -3
 \end{bmatrix}  \\
-&\sim 
+&\sim
 \begin{bmatrix}[cccc|c]
 \circledNumber{1} & 0 & -5 & 1 & 4 \\
 0 & \circledNumber{1} & -2 & 0  & 1 \\
-0 & 0 & 0 & \circledNumber{1} & 3  
-\end{bmatrix} 
-\sim 
+0 & 0 & 0 & \circledNumber{1} & 3
+\end{bmatrix}
+\sim
 \begin{bmatrix}[cccc|c]
 \circledNumber{1} & 0 & -5 & 0 & 1 \\
 0 & \circledNumber{1} & -2 & 0  & 1 \\
-0 & 0 & 0 & \circledNumber{1} & 3  
+0 & 0 & 0 & \circledNumber{1} & 3
 \end{bmatrix}
 \end{align*}
 \end{small}
@@ -77,7 +80,12 @@
 \end{definition}
 
 \begin{example}
-\begin{tabular}{ccc}
+Here, \(x_3\) is the free variable set equal to \(a\) since its
+column lacks a pivot, and the
+other bounded variables are put in terms of \(a\).
+
+\begin{center}
+\begin{tabular}{ccccc}
 $\begin{aligned}
 2x_1-2x_2-6x_3+x_4 &= 3 \\
 -x_1+x_2+3x_3-x_4 &= -3 \\
@@ -86,22 +94,29 @@ x_1-2x_2-x_3+x_4 &= 1
 $\begin{aligned}
 x_1-5x_3 &= 1 \\
 x_2-2x_3 &= 1 \\
+x_4 &= 3
+\end{aligned}$ &\(\Rightarrow\)&
+$\begin{aligned}
+x_1 &= 1+5a \\
+x_2 &= 1+2a \\
 x_3 &= a \\
 x_4 &= 3
-\end{aligned}$ \\
+\end{aligned}$
+\\
 $\Downarrow$ & & $\Uparrow$ \\
 $\begin{bmatrix}[cccc|c]
 {2} & -2 & -6 & 1 & 3 \\
 -1 & 1 & 3 & -1 & -3 \\
 1 & -2 & -1 & 1 & 2
-\end{bmatrix}$  & $\Rightarrow$ & 
+\end{bmatrix}$  & $\sim$ &
 $\begin{bmatrix}[cccc|c]
 \circledNumber{1} & 0 & -5 & 0 & 1 \\
 0 & \circledNumber{1} & -2 & 0  & 1 \\
-0 & 0 & 0 & \circledNumber{1} & 3  
+0 & 0 & 0 & \circledNumber{1} & 3
 \end{bmatrix}$ \\
  & & \\
 \end{tabular}
+\end{center}
 
 So the solution set is $\left\{\begin{bmatrix} 1+5a \\ 1+2a \\ a \\ 3 \end{bmatrix} \bigg|\ a \in \IR \right\}$.
 \end{example}
@@ -121,34 +136,37 @@ So the solution set is $\left\{\begin{bmatrix} 1+5a \\ 1+2a \\ a \\ 3 \end{bmatr
 
 
 \begin{activity}{20}
-  Solve the system of linear equations 
+  Solve the system of linear equations,
+  circling the pivot positions in your augmented matrices as you work.
     \begin{alignat*}{5}
       -x_1 &\,+\,&  x_2 &\,-\,&  3x_3 &\,+\,&  2x_4 &\,=\,& 0 \\
       2x_1 &\,-\,&  x_2 &\,+\,&  5x_3 &\,+\,&  3x_4 &\,=\,& -11 \\
       3x_1 &\,+\,& 2x_2 &\,+\,&  4x_3 &\,+\,&   x_4 &\,=\,& 1 \\
            &\, \,&  x_2 &\,-\,&   x_3 &\,+\,&   x_4 &\,=\,& 1 \\
     \end{alignat*}
-  Circle the pivot positions in your augmented matrix and find the solution set of the system
-by setting the free variable (the column without a pivot position)
-  equal to \(a\), and expressing each of the other
-  bounded variables equal to an expression in terms of \(a\).
-\end{activity}
-\begin{TBLnote}
-  The resulting RREF matrix is
-  \[
-    \begin{bmatrix}[cccc|c]
-       1 &  0 &  2 &  0 & -1 \\
-       0 &  1 & -1 &  0 &  3 \\
-       0 &  0 &  0 &  1 & -2 \\
-       0 &  0 &  0 &  0 &  0 \\
-    \end{bmatrix}
-  \]
-\end{TBLnote}
 
-%\begin{remark}
-%  It's not necessary to completely find \(\RREF(A)\) to
-%  deduce that a linear system is inconsistent.
-%\end{remark}
+  Remember to find the solution set of the system
+  by setting the free variable (the column without a pivot position)
+  equal to \(a\), and then express each of the other
+  bounded variables equal to an expression in terms of \(a\).
+
+  \begin{TBLnote}
+    The resulting RREF matrix is
+    \[
+      \begin{bmatrix}[cccc|c]
+         1 &  0 &  2 &  0 & -1 \\
+         0 &  1 & -1 &  0 &  3 \\
+         0 &  0 &  0 &  1 & -2 \\
+         0 &  0 &  0 &  0 &  0 \\
+      \end{bmatrix}
+    \]
+  \end{TBLnote}
+\end{activity}
+
+\begin{remark}
+  From now on, unless specified, there's no need to show your work in
+  finding \(\RREF(A)\), so you may use a calculator to speed up your work.
+\end{remark}
 
 \begin{activity}{10}  Solve the linear system
     \begin{alignat*}{4}
@@ -156,9 +174,10 @@ by setting the free variable (the column without a pivot position)
        x_1 &\,+\,& 2x_2 &\,=\,& -2 \\
       -x_1 &\,-\,&  x_2 &\,=\,& 1
     \end{alignat*}
+
+    \begin{TBLnote} This is an inconsistent solution.  Point out to the students that one need not go all the way to RREF to discover a system is inconsistent.
+    \end{TBLnote}
 \end{activity}
-\begin{TBLnote} This is an inconsistent solution.  Point out to the students that one need not go all the way to RREF to discover a system is inconsistent.
-\end{TBLnote}
 
 \begin{activity}{5}
   Show that all linear systems of the form
