@@ -29,6 +29,15 @@ do
 	[[ ! -z $j ]] && pdftk $j cat output "quiz$i.pdf"
 done
 
+#Concatenate quiz solutions into one pdf
+for i in `seq 1 30`;
+do
+	str="quiz"$i"v"
+	j=`ls *.pdf | grep $str | grep  "solution"`
+	#If j string is nonempty, concatenate pdfs
+	[[ ! -z $j ]] && pdftk $j cat output "quiz${i}_solutions.pdf"
+done
+
 
 #Do Clontz quizzes
 cd ../clontz
@@ -46,6 +55,15 @@ do
 	j=`ls *.pdf | grep $str | grep -v "solution"`
 	#If j string is nonempty, concatenate pdfs
 	[[ ! -z $j ]] && pdftk $j cat output "quiz$i.pdf"
+done
+
+#Concatenate quiz solutions into one pdf
+for i in `seq 1 30`;
+do
+	str="quiz"$i"v"
+	j=`ls *.pdf | grep $str | grep  "solution"`
+	#If j string is nonempty, concatenate pdfs
+	[[ ! -z $j ]] && pdftk $j cat output "quiz${i}_solutions.pdf"
 done
 
 cd ../..
