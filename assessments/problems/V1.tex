@@ -1,10 +1,15 @@
 \begin{problem}{V1}
-Let $V$ be the  set of all real numbers together with the operations $\oplus$ and $\odot$ defined by, for any $x,y \in V$ and $c \in \IR$,
+Let $V$ be the  set of all real numbers together with vector addition
+and scalar multiplication defined by, for any $\mathbf{x},\mathbf{y} \in V$ and $c \in \IR$,
 \begin{align*}
-x\oplus y  &= x+y-3 \\
-c \odot x &= cx-3(c-1)
+\mathbf{x}\oplus \mathbf{y}  &= \mathbf{x}+\mathbf{y}-3 \\
+c \mathbf{x} &= c\times\mathbf{x}-3(c-1)
 \end{align*}
-Determine if $V$ is a vector space or not.
+Determine if $V$ is a vector space or not by verifying all eight of the
+following properties, or showing that one of them fails: addition associatively,
+addition commutivitiy, addition identity, addition inverse,
+scalar multiplication associativity, scalar multiplication identity,
+scalar distribution, and vector distribution.
 \end{problem}
 
 \begin{solution}
@@ -37,12 +42,17 @@ Therefore $V$ is a vector space.
 \end{solution}
 
 \begin{problem}{V1}
-Let $V$ be the set of all points on the line $x+y=2$ with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+Let $V$ be the set of all points on the line $x+y=2$ with vector addition
+and scalar multiplication defined by, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
 (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2-1,y_1+y_2-1) \\
-c \odot (x_1,y_1) &= (cx_1-(c-1), cy_1-(c-2))
+c (x_1,y_1) &= (cx_1-(c-1), cy_1-(c-2))
 \end{align*}
-Determine if $V$ is a vector space or not.
+Determine if $V$ is a vector space or not by verifying all eight of the
+following properties, or showing that one of them fails: addition associatively,
+addition commutivitiy, addition identity, addition inverse,
+scalar multiplication associativity, scalar multiplication identity,
+scalar distribution, and vector distribution.
 \end{problem}
 \begin{solution}
 \begin{enumerate}[1)]
@@ -50,19 +60,19 @@ Determine if $V$ is a vector space or not.
 \item Since real addition is commutative, $\oplus$ is commutative.
 \item $(x_1,y_1) \oplus (1,1) = (x_1,y_1)$, so $(1,1)$ is an additive identity element.
 \item $(x_1,y_1) \oplus (2-x_1,2-y_1) = (1,1)$, so $(2-x_1,2-y_1)$ is the additive inverse of $(x_1,y_1)$.
-\item \begin{align*} c\odot \left(d \odot (x_1,y_1) \right) &=c\odot \left( dx_1-(d-1),dy_1-(d-1)\right) \\ 
+\item \begin{align*} c\odot \left(d \odot (x_1,y_1) \right) &=c\odot \left( dx_1-(d-1),dy_1-(d-1)\right) \\
 &= \left( c\left(dx_1-(d-1) \right)-(c-1), c\left(dy_1-(d-1) \right) \right) \\
 &= \left(cdx_1-cd+c-(c-1), cdy_1-cd+c-(c-1) \right) \\
 &= \left(cdx_1-(cd-1), cdy_1-(cd-1) \right) \\
 &= (cd) \odot (x_1,y_1)
 \end{align*}
 \item $1 \odot (x_1,y_1) = (x_1-(1-1),y_1-(1-1)=(x_1,y_1)$
-\item \begin{align*} c \odot \left( (x_1,y_1)\oplus(x_2,y_2) \right) &= 
+\item \begin{align*} c \odot \left( (x_1,y_1)\oplus(x_2,y_2) \right) &=
 c\odot \left( x_1+y_1-1,x_2+y_2-1 \right) \\
 &= \left( c(x_1+y_1-1)-(c-1), c(x_2+y_2-1)-(c-1) \right) \\
 &= (cx_1+cx_2-2c+1, cy_1+cy_2-2c+1) \\
 &= \left(cx_1-(c-1),cy_1-(c-1) \right) \oplus (cx_2-(c-1),cy_2-(c-1)) \\
-&=c \odot (x_1,y_1) \oplus c\odot (x_2,y_2) 
+&=c \odot (x_1,y_1) \oplus c\odot (x_2,y_2)
 \end{align*}
 \item \begin{align*} (c+d) \odot (x_1,y_1) &=
 \left( (c+d)x_1-(c+d-1), (c+d)y_1-(c+d-1) \right) \\
@@ -74,12 +84,17 @@ Therefore $V$ is a vector space.
 \end{solution}
 
 \begin{problem}{V1}
-Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+Let $V$ be the set of all pairs of real numbers with vector addition
+and scalar multiplication defined by, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
 (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
-c \odot (x_1,y_1) &= (0, cy_1)
+c (x_1,y_1) &= (0, cy_1)
 \end{align*}
-Determine if $V$ is a vector space or not.
+Determine if $V$ is a vector space or not by verifying all eight of the
+following properties, or showing that one of them fails: addition associatively,
+addition commutivitiy, addition identity, addition inverse,
+scalar multiplication associativity, scalar multiplication identity,
+scalar distribution, and vector distribution.
 \end{problem}
 \begin{solution}
 $V$ is not a vector space, as $1 \odot (x_1,y_1) = (0,y_1) \neq (x_1,y_1)$.
@@ -87,12 +102,17 @@ $V$ is not a vector space, as $1 \odot (x_1,y_1) = (0,y_1) \neq (x_1,y_1)$.
 
 
 \begin{problem}{V1}
-Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+Let $V$ be the set of all pairs of real numbers with vector addition
+and scalar multiplication defined by, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
 (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
-c \odot (x_1,y_1) &= (c^2x_1, c^3y_1)
+c (x_1,y_1) &= (c^2x_1, c^3y_1)
 \end{align*}
-Determine if $V$ is a vector space or not.
+Determine if $V$ is a vector space or not by verifying all eight of the
+following properties, or showing that one of them fails: addition associatively,
+addition commutivitiy, addition identity, addition inverse,
+scalar multiplication associativity, scalar multiplication identity,
+scalar distribution, and vector distribution.
 \end{problem}
 \begin{solution}
 $V$ is not a vector space, as one of the distributive laws fails, namely
@@ -101,12 +121,16 @@ $$(c+d) \odot (x_1,y_1) = ( (c+d)^2 x_1, (c+d)^3 y_1) \neq ((c^2+d^2)x_1, (c^3+d
 
 
 \begin{problem}{V1}
-Let $V$ be the set of all polynomials with the operations, for any $f, g \in V$, $c \in \IR$,
+Let $V$ be the set of all polynomials with the operations, for any $\mathbf{f}, \mathbf{g} \in V$, $c \in \IR$,
 \begin{align*}
-f \oplus g &= f^\prime + g^\prime \\
-c \odot f &= c f^\prime
+\mathbf{f} \oplus \mathbf{g} &= \frac{d\mathbf{f}}{dx}+\frac{d\mathbf{g}}{dx} \\
+c \mathbf{f} &= c \times\frac{d\mathbf{f}}{dx}
 \end{align*}
-(here $f^\prime$ denotes the derivative of $f$).  Determine if $V$ is a vector space or not.
+(here $\frac{d\mathbf{f}}{dx}$ denotes the derivative of $f$).  Determine if $V$ is a vector space or not by verifying all eight of the
+following properties, or showing that one of them fails: addition associatively,
+addition commutivitiy, addition identity, addition inverse,
+scalar multiplication associativity, scalar multiplication identity,
+scalar distribution, and vector distribution.
 \end{problem}
 \begin{solution}
 This is not a vector space, as there is no zero vector.  Additionally, $1 \odot f \neq f$ for any nonzero polynomial $f$.
@@ -114,12 +138,16 @@ This is not a vector space, as there is no zero vector.  Additionally, $1 \odot 
 
 
 \begin{problem}{V1}
-Let $V$ be the set of all real numbers with the operations, for any $x, y \in V$, $c \in \IR$,
+Let $V$ be the set of all real numbers with the operations, for any $\mathbf{x}, \mathbf{y} \in V$, $c \in \IR$,
 \begin{align*}
-x \oplus y &= \sqrt{x^2+y^2} \\
-c \odot x &= c x
+\mathbf{x} \oplus \mathbf{y} &= \sqrt{x^2+y^2} \\
+c \mathbf{x} &= c \times\mathbf{x}
 \end{align*}
-Determine if $V$ is a vector space or not.
+Determine if $V$ is a vector space or not by verifying all eight of the
+following properties, or showing that one of them fails: addition associatively,
+addition commutivitiy, addition identity, addition inverse,
+scalar multiplication associativity, scalar multiplication identity,
+scalar distribution, and vector distribution.
 \end{problem}
 \begin{solution}
 This is not a vector space, as there is no zero vector.
