@@ -25,31 +25,23 @@
   \end{center}
 \end{fact}
 
-\begin{activity}{15}
-  Find a vector \(\begin{bmatrix}a\\b\\c\end{bmatrix}\)
+\begin{activity}{10}
+  Choose a vector \(\begin{bmatrix}a\\b\\c\end{bmatrix}\)
   in \(\IR^3\) that is not in
   \(\vspan\left\{\begin{bmatrix}1\\-1\\0\end{bmatrix},
-  \begin{bmatrix}-2\\0\\1\end{bmatrix}\right\}\) by doing the following.
-    \begin{subactivity}
-      Choose simple values for \(x,y,z\) such that
-      \(\begin{bmatrix}[cc|c]1&0&x\\0&1&y\\0&0&z\end{bmatrix}\)
-      represents an inconsistent linear equation.
-    \end{subactivity}
-    \begin{subactivity}
-      Use row operations to manipulate
-      \(\begin{bmatrix}[cc|c]1&0&0\\0&1&0\\0&0&1\end{bmatrix}\sim
-      \begin{bmatrix}[cc|c]1&-2&a\\-1&0&b\\0&1&c\end{bmatrix}\).
-    \end{subactivity}
-    \begin{subactivity}
-      Write a sentence explaining why \(\begin{bmatrix}a\\b\\c\end{bmatrix}\)
-      cannot be in \(\vspan\left\{\begin{bmatrix}1\\-1\\0\end{bmatrix},
-      \begin{bmatrix}-2\\0\\1\end{bmatrix}\right\}\).
-    \end{subactivity}
+  \begin{bmatrix}-2\\0\\1\end{bmatrix}\right\}\) by ensuring
+  \(\begin{bmatrix}[cc|c]1&-2&a\\-1&0&b\\0&1&c\end{bmatrix}\sim
+  \begin{bmatrix}[cc|c]1&0&0\\0&1&0\\0&0&1\end{bmatrix}\).
+  (Why does this work?)
 \end{activity}
 
 \begin{fact}
   The set \(\{\vect v_1,\dots,\vect v_m\}\) fails to span all of \(\IR^n\)
-  exactly when \(\RREF[\vect v_1\,\dots\,\vect v_m]\) has a row of zeros.
+  exactly when \(\RREF[\vect v_1\,\dots\,\vect v_m]\) has a row of zeros:
+  \[\begin{bmatrix}[cc]1&-2\\-1&0\\0&1\end{bmatrix}\sim
+  \begin{bmatrix}[cc]1&0\\0&1\\0&0\end{bmatrix}\Rightarrow
+  \begin{bmatrix}[cc|c]1&-2&a\\-1&0&b\\0&1&c\end{bmatrix}\sim
+  \begin{bmatrix}[cc|c]1&0&0\\0&1&0\\0&0&1\end{bmatrix}\]
 \end{fact}
 
 \begin{activity}{5}
@@ -61,8 +53,8 @@
   \begin{bmatrix}3\\13\\7\\16\end{bmatrix}
   \right\}
   \).
-  Prove that
-  \(\IR^4=\vspan S\).
+  Does
+  \(\IR^4=\vspan S\)?
   % \begin{subactivity}
   % Find a linear combination of vectors in \(S\) that equals
   % \(\begin{bmatrix}-1\\10\\7\\14\end{bmatrix}\).
@@ -78,8 +70,8 @@
   4x^3+3x^2+2
   \right\}
   .\]
-  Prove that
-  \(\P^3\not=\vspan S\).
+  Does
+  \(\P^3=\vspan S\)?
   % \begin{subactivity}
   % Find a vector in \(\IR^4\) that is not in \(\vspan S\).
   % \end{subactivity}
@@ -118,17 +110,17 @@
     \draw[thick,blue] (0,-4.8) -- (0,4.8);
     \end{tikzpicture}
   \end{center}
-  \begin{subactivity}
+  % \begin{subactivity}
     Find a linear combination
-    \(c\begin{bmatrix}v_1\\v_2\end{bmatrix}+
-    d\begin{bmatrix}w_1\\w_2\end{bmatrix}\) that does not
+    \(c\vect v+
+    d\vect w\) that does not
     belong to this subset.
-  \end{subactivity}
-  \begin{subactivity}
+  % \end{subactivity}
+  \begin{TBLnote}
     Use this linear combination to sketch a picture
     illustrating why this subset is not
     a subspace.
-  \end{subactivity}
+  \end{TBLnote}
 \end{activity}
 
 \begin{fact}
@@ -145,7 +137,7 @@
     a,b\text{ are real numbers}
     \right\}
   \]
-  is a subspace of \(\IR^{2\times 2}\) by finding a Euclidean
+  is a subspace of \(\IR^{2\times 2}\) by selecting a Euclidean
   space isomorphic to \(S\).
 \end{activity}
 
