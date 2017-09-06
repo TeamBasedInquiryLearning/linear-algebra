@@ -75,19 +75,53 @@ Euclidean vectors/scalars \(\vect u,\vect v,\vect w\) of that dimension.
 \end{definition}
 
 \begin{activity}{25}
-  Consider the following vector space that models motion along the curve
-  \(y=e^x\). Let \(V=\{(x,y):y=e^x\}\), where
+  Consider the following set that models motion along the curve
+  \(y=e^x\). Let \(V=\{(x,y):y=e^x\}\). Let vector addition be defined by
   \((x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)\), and
-  \(c(x,y)=(cx,y^c)\).
+  let scalar multiplication be defined by
+  \(c\odot (x,y)=(cx,y^c)\).
 
-  Prove that \(V\) paired with these operations satisfies all the vector space
-  properties.
+  \begin{subactivity}
+    Which of the vector space properties are satisfied by \(V\) paired with
+    these operations?
+    \begin{multicols}{2}
+    \begin{itemize}
+      \item \textbf{Addition associativity.}
 
-  \vectorSpaceProperties
+            \(\vect u\oplus(\vect v\oplus\vect w)=
+            (\vect u\oplus\vect v)\oplus\vect w\).
+      \item \textbf{Addition commutivity.}
 
-  For example, Addition Commutivity may be proven by showing
-  \[\vect u\oplus \vect v=(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
-  =(x_2+x_1,y_2y_1)=(x_2,y_2)+(x_1,y_1)=\vect v\oplus \vect u\]
+            \(\vect u\oplus\vect v=
+            \vect v\oplus\vect u\).
+      \item \textbf{Addition identity.}
+
+            There exists some \(\vect 0\)
+            where \(\vect v\oplus\vect 0=\vect v\).
+      \item \textbf{Addition inverse.}
+
+            There exists some \(-\vect v\)
+            where \(\vect v\oplus(-\vect v)=\vect 0\).
+      \item \textbf{Scalar multiplication associativity.}
+
+            \(a\odot(b\odot\vect v)=(ab)\odot\vect v\).
+      \item \textbf{Scalar multiplication identity.}
+
+            \(1\vect v=\vect v\).
+      \item \textbf{Scalar distribution.}
+
+            \(a\odot(\vect u\oplus\vect v)=
+            (a\odot\vect u)\oplus (a\odot\vect v)\).
+      \item \textbf{Vector distribution.}
+
+            \((a+b)\odot\vect v=(a\odot\vect v)\oplus (b\odot\vect v)\).
+    \end{itemize}
+    \end{multicols}
+  \end{subactivity}
+
+  \begin{subactivity}
+    Is \(V\) a vector space?
+  \end{subactivity}
 \end{activity}
 
 
