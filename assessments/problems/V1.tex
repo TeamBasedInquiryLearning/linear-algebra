@@ -4,22 +4,29 @@ Let $V$ be the  set of all real numbers together with the operations $\oplus$ an
 x\oplus y  &= x+y-3 \\
 c \odot x &= cx-3(c-1)
 \end{align*}
-Determine if $V$ is a vector space or not.
+\begin{enumerate}[(a)]
+\item Show that this scalar multiplication $\odot$ is associative.
+\item Determine if $V$ is a vector space or not.  Justify your answer
+\end{enumerate}
 \end{problem}
 
 \begin{solution}
 Let $x,y \in V$, $c,d \in \IR$.
-\begin{enumerate}[1)]
-\item Real addition is associative, so $\oplus$ is associative.
-\item $x\oplus 3 = x+3-3=x$, so $3$ is the additive identity.
-\item $x \oplus (6-x) = x+(6-x)-3=3$, so $6-x$ is the additive inverse of $x$.
-\item Real addition is commutative, so $\oplus$ is commutative.
-\item \begin{align*}
+To show associativity:
+\begin{align*}
 c\odot \left( d \odot x\right) &= c\odot \left( dx-3(d-1) \right) \\
 &= c\left(dx-3(d-1)\right)-3(c-1) \\
 &= cdx-3(cd-1) \\
 &= (cd) \odot x
 \end{align*}
+
+We verify the remaining 7 properties to see that $V$ is a vector space.
+\begin{enumerate}[1)]
+\item Real addition is associative, so $\oplus$ is associative.
+\item $x\oplus 3 = x+3-3=x$, so $3$ is the additive identity.
+\item $x \oplus (6-x) = x+(6-x)-3=3$, so $6-x$ is the additive inverse of $x$.
+\item Real addition is commutative, so $\oplus$ is commutative.
+\item Associativity shown above
 \item $1 \odot x = x-3(1-1)=x$
 \item \begin{align*} c \odot (x \oplus y) &=
 c \odot (x+y-3) \\
@@ -42,13 +49,19 @@ Let $V$ be the set of all points on the line $x+y=2$ with the operations, for an
 (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2-1,y_1+y_2-1) \\
 c \odot (x_1,y_1) &= (cx_1-(c-1), cy_1-(c-2))
 \end{align*}
-Determine if $V$ is a vector space or not.
+\begin{enumerate}[(a)]
+\item Show that this vector space has an additive identity element.
+\item Determine if $V$ is a vector space or not.  Justify your answer.
+\end{enumerate}
 \end{problem}
 \begin{solution}
+Let $(x_1,y_1) \in V$; then $(x_1,y_1) \oplus (1,1) = (x_1,y_1)$, so $(1,1)$ is an additive identity element.
+
+Now we will show the other seven properties.  Let $(x_1,y_1), (x_2,y_2) \in V$, and let $c,d \in \IR$.
 \begin{enumerate}[1)]
 \item Since real addition is associative, $\oplus$ is associative.
 \item Since real addition is commutative, $\oplus$ is commutative.
-\item $(x_1,y_1) \oplus (1,1) = (x_1,y_1)$, so $(1,1)$ is an additive identity element.
+\item The additive identity is $(1,1)$.
 \item $(x_1,y_1) \oplus (2-x_1,2-y_1) = (1,1)$, so $(2-x_1,2-y_1)$ is the additive inverse of $(x_1,y_1)$.
 \item \begin{align*} c\odot \left(d \odot (x_1,y_1) \right) &=c\odot \left( dx_1-(d-1),dy_1-(d-1)\right) \\ 
 &= \left( c\left(dx_1-(d-1) \right)-(c-1), c\left(dy_1-(d-1) \right) \right) \\
@@ -79,10 +92,15 @@ Let $V$ be the set of all pairs of real numbers with the operations, for any $(x
 (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
 c \odot (x_1,y_1) &= (0, cy_1)
 \end{align*}
-Determine if $V$ is a vector space or not.
+\begin{enumerate}[(a)]
+\item Show that this scalar multiplication $\odot$ distributes over scalar addition.
+\item Determine if $V$ is a vector space or not.  Justify your answer.
+\end{enumerate}
 \end{problem}
 \begin{solution}
-$V$ is not a vector space, as $1 \odot (x_1,y_1) = (0,y_1) \neq (x_1,y_1)$.
+Let $(x_1,y_1) \in V$, and let $c,d \in \IR$.  Then
+$$(c+d)\odot (x_1,y_1)=(0, (c+d)y_1) = (0,cy_1) \oplus (0,dy_1) = c \odot (x_1,y_1) \oplus d \odot (x_1,y_1).$$
+However, $V$ is not a vector space, as $1 \odot (x_1,y_1) = (0,y_1) \neq (x_1,y_1)$.
 \end{solution}
 
 
@@ -92,10 +110,20 @@ Let $V$ be the set of all pairs of real numbers with the operations, for any $(x
 (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
 c \odot (x_1,y_1) &= (c^2x_1, c^3y_1)
 \end{align*}
-Determine if $V$ is a vector space or not.
+\begin{enumerate}[(a)]
+\item Show that this scalar multiplication $\odot$ distributes over vector addition $\oplus$.
+\item Determine if $V$ is a vector space or not.  Justify your answer.
+\end{enumerate}
 \end{problem}
 \begin{solution}
-$V$ is not a vector space, as one of the distributive laws fails, namely
+Let $(x_1,y_1), (x_2,y_2) \in V$ and let $c \in \IR$.
+\begin{align*}
+c \odot \left( (x_1,y_1) \oplus (x_2,y_2) \right) &= c \odot (x_1+x_2,y_1+y_2) \\
+&= (c^2(x_1+x_2), c^3(y_1+y_2) ) \\
+&= (c^2x_1,c^3y_1) \oplus (c^2x_2,c^3y_2) \\
+&= c \odot (x_1,y_1) \oplus c \odot (x_2,y_2)
+\end{align*}
+However, $V$ is not a vector space, as the other distributive law fails:
 $$(c+d) \odot (x_1,y_1) = ( (c+d)^2 x_1, (c+d)^3 y_1) \neq ((c^2+d^2)x_1, (c^3+d^3)y_1) = c \odot (x_1,y_1) \oplus d \odot (x_1,y_1).$$
 \end{solution}
 
@@ -106,10 +134,16 @@ Let $V$ be the set of all polynomials with the operations, for any $f, g \in V$,
 f \oplus g &= f^\prime + g^\prime \\
 c \odot f &= c f^\prime
 \end{align*}
-(here $f^\prime$ denotes the derivative of $f$).  Determine if $V$ is a vector space or not.
+(here $f^\prime$ denotes the derivative of $f$).  
+\begin{enumerate}[(a)]
+\item Show that this scalar multiplication $\odot$ distributes over vector addition $\oplus$.
+\item Determine if $V$ is a vector space or not.  Justify your answer.
+\end{enumerate}
 \end{problem}
 \begin{solution}
-This is not a vector space, as there is no zero vector.  Additionally, $1 \odot f \neq f$ for any nonzero polynomial $f$.
+Let $f,g \in \mathcal{P}$, and let $c \in \IR$.
+$$c \odot (f \oplus g) = c \odot (f^\prime+g^\prime) = c(f^\prime+g^\prime)^\prime = cf^{\prime\ \prime}+cg^{\prime\ \prime} = c \odot f \oplus c \odot g.$$
+However, this is not a vector space, as there is no zero vector.  Additionally, $1 \odot f \neq f$ for any nonzero polynomial $f$.
 \end{solution}
 
 
@@ -119,8 +153,16 @@ Let $V$ be the set of all real numbers with the operations, for any $x, y \in V$
 x \oplus y &= \sqrt{x^2+y^2} \\
 c \odot x &= c x
 \end{align*}
-Determine if $V$ is a vector space or not.
+\begin{enumerate}[(a)]
+\item Show that the vector addition $\oplus$ is associative.
+\item Determine if $V$ is a vector space or not.  Justify your answer.
+\end{enumerate}
 \end{problem}
 \begin{solution}
-This is not a vector space, as there is no zero vector.
+Let $x,y,z \in \IR$.  Then
+\begin{align*}
+(x\oplus y) \oplus z &= \sqrt{x^2+y^2} \oplus z \\&= \sqrt{ (\sqrt{x^2+y^2})^2+z^2} \\&= \sqrt{x^2+y^2+z^2} \\
+&= \sqrt{x^2+(\sqrt{y^2+z^2})^2} \\ &= x \oplus \sqrt{y^2+z^2} \\ &= x \oplus (y \oplus z)
+\end{align*}
+However, this is not a vector space, as there is no zero vector.
 \end{solution}

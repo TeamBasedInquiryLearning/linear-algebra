@@ -12,47 +12,32 @@
 \begin{problem}{E1}
 Write an augmented matrix corresponding to the following system of linear equations.
 \begin{align*}
-x_1+4x_3 &= 1 \\
-x_2-x_3 &= 7 \\
-x_1-x_2+3x_4 &= -1
+x_1+3x_2-4x_3 +x_4 &= 5 \\
+3x_1+9x_2+x_3-7x_4 &= 0 \\
+x_1-x_3 +x_4 &= 1
 \end{align*}
 \end{problem}
 \begin{solution}
 \[
 \begin{bmatrix}[cccc|c]
-1 & 0 & 4 & 0 & 1 \\
-0 & 1 & -1 & 0 & 7 \\
-1 & -1 & 0 & 3 & -1
+1 & 3 & -4 & 1 & 5 \\
+3 & 9 & 1 & -7 & 0 \\
+1 & 0 & -1 & 1 &  1
 \end{bmatrix}
 \]
 \end{solution}
 
 \begin{problem}{E3}
-Find the solution set for the following system of linear equations.
+Solve the system of linear equations.
 \begin{align*}
-2x_1+3x_2-5x_3+14x_4 &= 8 \\
-x_1+x_2-x_3+5x_4&= 3
+2x+y-z+w &=5 \\
+3x-y-2w &= 0 \\
+-x+5z+3w&=-1
 \end{align*}
 \end{problem}
 \begin{solution}
-Let \(A =
-  \begin{bmatrix}[cccc|c]
-    2 & 3 & -5 & 14 & 8 \\
-    1 & 1 & -1 & 5 & 3
-  \end{bmatrix}
-\), so \(\RREF A =
-  \begin{bmatrix}[cccc|c]
-    1 & 0 & 2 & 1 & 1 \\
-    0 & 1 & -3 & 4 & 2 \\
-  \end{bmatrix}
-\). It follows that the solution set is given by \(
-  \begin{bmatrix}
-    2 - 2a - b \\
-    2 + 3a - 4b \\
-    a \\
-    b
-  \end{bmatrix}
-\) for all real numbers \(a,b\).
+$$\RREF\left( \begin{bmatrix}[cccc|c] 2 & 1 & -1 & 0 & 5 \\ 3 & -1 & 0 & -2 & 0 \\ -1 & 0 & 5 & 0 & -1 \end{bmatrix} \right) = \begin{bmatrix}[cccc|c] 1 & 0 & 0 & -\frac{1}{12} & 1 \\ 0 & 1 & 0 & \frac{7}{4} & 3 \\ 0 & 0 & 1 & \frac{7}{12} & 0 \end{bmatrix}$$
+So the solutions are $$\left\{ \begin{bmatrix} 1+a \\ 3-21a \\ -7a \\ 12a \end{bmatrix}\ \big|\ a \in \IR\right\}$$
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
@@ -88,14 +73,46 @@ It follows that the basis for the solution set is given by \(\left\{
 \right\}\).
 \end{solution}
 \begin{problem}{V1}
-Let $V$ be the set of all real numbers with the operations, for any $x, y \in V$, $c \in \IR$,
+Let $V$ be the set of all points on the line $x+y=2$ with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
-x \oplus y &= \sqrt{x^2+y^2} \\
-c \odot x &= c x
+(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2-1,y_1+y_2-1) \\
+c \odot (x_1,y_1) &= (cx_1-(c-1), cy_1-(c-2))
 \end{align*}
-Determine if $V$ is a vector space or not.
+\begin{enumerate}[(a)]
+\item Show that this vector space has an additive identity element.
+\item Determine if $V$ is a vector space or not.  Justify your answer.
+\end{enumerate}
 \end{problem}
 \begin{solution}
-This is not a vector space, as there is no zero vector.
+Let $(x_1,y_1) \in V$; then $(x_1,y_1) \oplus (1,1) = (x_1,y_1)$, so $(1,1)$ is an additive identity element.
+
+Now we will show the other seven properties.  Let $(x_1,y_1), (x_2,y_2) \in V$, and let $c,d \in \IR$.
+\begin{enumerate}[1)]
+\item Since real addition is associative, $\oplus$ is associative.
+\item Since real addition is commutative, $\oplus$ is commutative.
+\item The additive identity is $(1,1)$.
+\item $(x_1,y_1) \oplus (2-x_1,2-y_1) = (1,1)$, so $(2-x_1,2-y_1)$ is the additive inverse of $(x_1,y_1)$.
+\item \begin{align*} c\odot \left(d \odot (x_1,y_1) \right) &=c\odot \left( dx_1-(d-1),dy_1-(d-1)\right) \\ 
+&= \left( c\left(dx_1-(d-1) \right)-(c-1), c\left(dy_1-(d-1) \right) \right) \\
+&= \left(cdx_1-cd+c-(c-1), cdy_1-cd+c-(c-1) \right) \\
+&= \left(cdx_1-(cd-1), cdy_1-(cd-1) \right) \\
+&= (cd) \odot (x_1,y_1)
+\end{align*}
+\item $1 \odot (x_1,y_1) = (x_1-(1-1),y_1-(1-1)=(x_1,y_1)$
+\item \begin{align*} c \odot \left( (x_1,y_1)\oplus(x_2,y_2) \right) &= 
+c\odot \left( x_1+y_1-1,x_2+y_2-1 \right) \\
+&= \left( c(x_1+y_1-1)-(c-1), c(x_2+y_2-1)-(c-1) \right) \\
+&= (cx_1+cx_2-2c+1, cy_1+cy_2-2c+1) \\
+&= \left(cx_1-(c-1),cy_1-(c-1) \right) \oplus (cx_2-(c-1),cy_2-(c-1)) \\
+&=c \odot (x_1,y_1) \oplus c\odot (x_2,y_2) 
+\end{align*}
+\item \begin{align*} (c+d) \odot (x_1,y_1) &=
+\left( (c+d)x_1-(c+d-1), (c+d)y_1-(c+d-1) \right) \\
+&= \left( cx_1-(c-1), cy_1-(c-1) \right) \oplus (dx_1-(d-1), dy_1-(d-1) ) \\
+&= c\odot (x_1,y_1) \oplus c \odot (x_2,y_2)
+\end{align*}
+\end{enumerate}
+Therefore $V$ is a vector space.
 \end{solution}
+
 \end{document}
