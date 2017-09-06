@@ -14,85 +14,103 @@ Write a system of linear equations corresponding to the following
 augmented matrix.
 \[
 \begin{bmatrix}[ccc|c]
-1 & 0 & 4 & 1 \\
-0 & 1 & -1 & 7 \\
-1 & -1 & 3 & -1
+-4 & -1 & 3 & 2  \\
+1 & 2 & -1 & 0 \\
+-1 & 4 & 1 & 4
 \end{bmatrix}
 \]
 \end{problem}
 \begin{solution}
 \begin{align*}
-x_1+4x_3 &= 1 \\
-x_2-x_3 &= 7 \\
-x_1-x_2+3x_3 &= -1
+-4x_1-x_2+3x_3&=2 \\
+x_1+2x_2-x_3 &= 0 \\
+-x_1+4x_2+x_3&=4
 \end{align*}
 \end{solution}
+
 \begin{problem}{E3}
 Find the solution set for the following system of linear equations.
 \begin{align*}
-2x_1-2x_2+6x_3-x_4 &=-1 \\
-3x_1+6x_3+x_4 &= 5 \\
--4x_1+x_2-9x_3+2x_4&=-7
+2x_1+3x_2-5x_3+14x_4 &= 8 \\
+x_1+x_2-x_3+5x_4&= 3
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
   \begin{bmatrix}[cccc|c]
-    2 & -2 & 6 & -1 & -1 \\
-    3 & 0 & 6 & 1 & 5 \\
-    -4 & 1 & -9 & 2 & -7
+    2 & 3 & -5 & 14 & 8 \\
+    1 & 1 & -1 & 5 & 3
   \end{bmatrix}
 \), so \(\RREF A =
   \begin{bmatrix}[cccc|c]
-    1 & 0 & 2 & 0 & 2 \\
-    0 & 1 & -1 & 0 & 3 \\
-    0 & 0 & 0 & 1 & -1
+    1 & 0 & 2 & 1 & 1 \\
+    0 & 1 & -3 & 4 & 2 \\
   \end{bmatrix}
 \). It follows that the solution set is given by \(
   \begin{bmatrix}
-    2 - 2a \\
-    3 + a \\
+    2 - 2a - b \\
+    2 + 3a - 4b \\
     a \\
-    -1
+    b
   \end{bmatrix}
-\) for all real numbers \(a\).
+\) for all real numbers \(a,b\).
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E4}
-Find a basis for the solution set of the system of equations
+Find a basis for the solution set to the homogeneous system of equations
 \begin{align*}
-x+2y+3z+w &= 0 \\
-3x-y+z+w &= 0 \\
-2x-3y-2z &= 0 \\
--x+2z+5w &=0
+4x_1+4x_2+3x_3-6x_4 &= 0 \\
+-2x_3-4x_4 &= 0 \\
+2x_1+2x_2+x_3-4x_4 &= 0 \\
 \end{align*}
 \end{problem}
 \begin{solution}
-$$\RREF \left(\begin{bmatrix} 1 & -2 & 3 & 1 \\ 3 & -1 & 1 & 1 \\ 2 & -3 & -2 & 0 \\ -1 & 0 & 2 & 5 \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 0 & -1 \\ 0 & 1 & 0 & -2 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-Then the solution set is
-$$\left\{ \begin{bmatrix} a \\ 2a \\ -2a \\ a \end{bmatrix} \bigg |\ a \in \IR \right\}$$
-So a basis for the solution set is $\left\{\begin{bmatrix} 1 \\ 2 \\ -2 \\ 1\end{bmatrix} \right\}$.
+Let \(A =
+  \begin{bmatrix}[cccc|c]
+    4 & 4 & 3 & -6 & 0 \\
+    0 & 0 & -2 & -4 & 0 \\
+    2 & 2 & 1 & -4 & 0
+  \end{bmatrix}
+\), so \(\RREF A =
+  \begin{bmatrix}[cccc|c]
+    1 & 1 & 0 & -3 & 0 \\
+    0 & 0 & 1 & 2 & 0 \\
+    0 & 0 & 0 & 0 & 0
+  \end{bmatrix}
+\).
+It follows that the basis for the solution set is given by \(\left\{
+  \begin{bmatrix}
+    -1 \\
+    1 \\
+    0 \\
+    0
+  \end{bmatrix},
+  \begin{bmatrix}
+    3 \\
+    0 \\
+    -2 \\
+    1
+  \end{bmatrix}
+\right\}\).
 \end{solution}
 
-
 \begin{problem}{V1}
-Let $V$ be the set of all real numbers with the operations, for any $x, y \in V$, $c \in \IR$,
+Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
-x \oplus y &= \sqrt{x^2+y^2} \\
-c \odot x &= c x
+(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
+c \odot (x_1,y_1) &= (0, cy_1)
 \end{align*}
 \begin{enumerate}[(a)]
-\item Show that the vector addition $\oplus$ is associative.
+\item Show that this scalar multiplication $\odot$ distributes over scalar addition.
 \item Determine if $V$ is a vector space or not.  Justify your answer.
 \end{enumerate}
 \end{problem}
 \begin{solution}
-Let $x,y,z \in \IR$.  Then
-\begin{align*}
-(x\oplus y) \oplus z &= \sqrt{x^2+y^2} \oplus z \\&= \sqrt{ (\sqrt{x^2+y^2})^2+z^2} \\&= \sqrt{x^2+y^2+z^2} \\
-&= \sqrt{x^2+(\sqrt{y^2+z^2})^2} \\ &= x \oplus \sqrt{y^2+z^2} \\ &= x \oplus (y \oplus z)
-\end{align*}
-However, this is not a vector space, as there is no zero vector.
+Let $(x_1,y_1) \in V$, and let $c,d \in \IR$.  Then
+$$(c+d)\odot (x_1,y_1)=(0, (c+d)y_1) = (0,cy_1) \oplus (0,dy_1) = c \odot (x_1,y_1) \oplus d \odot (x_1,y_1).$$
+However, $V$ is not a vector space, as $1 \odot (x_1,y_1) = (0,y_1) \neq (x_1,y_1)$.
 \end{solution}
+
+
 \end{document}

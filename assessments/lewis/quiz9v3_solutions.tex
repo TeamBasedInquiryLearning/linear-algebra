@@ -11,12 +11,11 @@
 
 \begin{problem}{V2}
   Determine if
-  \(\begin{bmatrix} 3 \\ -2 \\ 4 \end{bmatrix}\)
+  \(\begin{bmatrix} 0 \\ -1 \\ 6 \\ -7 \end{bmatrix}\)
   belongs to the span of the set
   \(\left\{
-    \begin{bmatrix} 1 \\ 2 \\ -3 \end{bmatrix},
-    \begin{bmatrix} 2 \\ 4 \\ -6 \end{bmatrix},
-    \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
+    \begin{bmatrix} 2 \\ 0 \\ -1 \\ 5 \end{bmatrix},
+    \begin{bmatrix} 4 \\ -1 \\ 4 \\ 3 \end{bmatrix}
     \right\}
   \).
 \end{problem}
@@ -24,20 +23,24 @@
   Since
   \[
     \RREF\left(
-      \begin{bmatrix}[ccc|c]
-        1 & 2 & 0 & 3 \\
-        2 & 4 & 0 & -2 \\
-        -3 & -6 & 0 & 4
+      \begin{bmatrix}[cc|c]
+        2 & 4 & 0 \\
+        0 & -1 & -1 \\
+        -1 & 4 & 6 \\
+        5 & 3 & -7
       \end{bmatrix}
     \right) =
-    \begin{bmatrix}[ccc|c]
-      1 & 2 & 0 & 0 \\
-      0 & 0 & 0 & 1 \\
-      0 & 0 & 0 & 0
+    \begin{bmatrix}[cc|c]
+      1 & 0 & -2 \\
+      0 & 1 & 1 \\
+      0 & 0 & 0 \\
+      0 & 0 & 0
     \end{bmatrix}
   \]
-  contains the contradiction \(0=1\),
-  \(\begin{bmatrix} 3 \\ -2 \\ 4 \end{bmatrix}\) is
-  not a linear combination of the three vectors.
+  does not contain a contradiction,
+  \(\begin{bmatrix} 0 \\ -1 \\ 6 \\ -7 \end{bmatrix}\) is
+  a linear combination of the three vectors.
 \end{solution}
+
+
 \end{document}
