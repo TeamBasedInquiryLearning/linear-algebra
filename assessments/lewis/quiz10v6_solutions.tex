@@ -10,75 +10,71 @@
 \begin{document}
 
 \begin{problem}{E1}
-Write an augmented matrix corresponding to the following system of linear equations.
-\begin{align*}
-x_1+3x_2-4x_3 +x_4 &= 5 \\
-3x_1+9x_2+x_3-7x_4 &= 0 \\
-x_1-x_3 +x_4 &= 1
-\end{align*}
-\end{problem}
-\begin{solution}
+Write a system of linear equations corresponding to the following
+augmented matrix.
 \[
-\begin{bmatrix}[cccc|c]
-1 & 3 & -4 & 1 & 5 \\
-3 & 9 & 1 & -7 & 0 \\
-1 & 0 & -1 & 1 &  1
+\begin{bmatrix}[ccc|c]
+2 & -1 & 0 & 1  \\
+-1 & 4 & 1 & -7  \\
+1 & 2 & -1 & 0
 \end{bmatrix}
 \]
+\end{problem}
+\begin{solution}
+\begin{align*}
+2x_1-x_2&=1 \\
+-x_1+4x_2+x_3&=-7 \\
+x_1+2x_2-x_3 &= 0
+\end{align*}
 \end{solution}
 
 \begin{problem}{E3}
-Solve the system of linear equations.
+Solve the system of equations
 \begin{align*}
-2x+y-z+w &=5 \\
-3x-y-2w &= 0 \\
--x+5z+3w&=-1
+x+3y-4z &= 5 \\
+3x+9y+z &= 2
 \end{align*}
 \end{problem}
 \begin{solution}
-$$\RREF\left( \begin{bmatrix}[cccc|c] 2 & 1 & -1 & 0 & 5 \\ 3 & -1 & 0 & -2 & 0 \\ -1 & 0 & 5 & 0 & -1 \end{bmatrix} \right) = \begin{bmatrix}[cccc|c] 1 & 0 & 0 & -\frac{1}{12} & 1 \\ 0 & 1 & 0 & \frac{7}{4} & 3 \\ 0 & 0 & 1 & \frac{7}{12} & 0 \end{bmatrix}$$
-So the solutions are $$\left\{ \begin{bmatrix} 1+a \\ 3-21a \\ -7a \\ 12a \end{bmatrix}\ \big|\ a \in \IR\right\}$$
+$$\RREF \left(\begin{bmatrix}[ccc|c] 1 & 3 & -4 & 5 \\ 3 & 9 & 1 & 2 \end{bmatrix} \right) = \begin{bmatrix}[ccc|c] 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & -1\end{bmatrix}$$
+So the solution set is
+$$\left\{ \begin{bmatrix} 1-3c \\ c \\ -1 \end{bmatrix} \bigg|\ c \in \IR \right\}$$
 \end{solution}
+
+
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E4}
-Find a basis for the solution set to the homogeneous system of equations
+Find the solution set for the following system of linear equations.
 \begin{align*}
-4x_1+4x_2+3x_3-6x_4 &= 0 \\
--2x_3-4x_4 &= 0 \\
-2x_1+2x_2+x_3-4x_4 &= 0 \\
+2x_1-2x_2+6x_3-x_4 &=0 \\
+3x_1+6x_3+x_4 &=0 \\
+-4x_1+x_2-9x_3+2x_4&=0
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
   \begin{bmatrix}[cccc|c]
-    4 & 4 & 3 & -6 & 0 \\
-    0 & 0 & -2 & -4 & 0 \\
-    2 & 2 & 1 & -4 & 0
+    2 & -2 & 6 & -1 & 0 \\
+    3 & 0 & 6 & 1 & 0 \\
+    -4 & 1 & -9 & 2 & 0
   \end{bmatrix}
 \), so \(\RREF A =
   \begin{bmatrix}[cccc|c]
-    1 & 1 & 0 & -3 & 0 \\
-    0 & 0 & 1 & 2 & 0 \\
-    0 & 0 & 0 & 0 & 0
+    1 & 0 & 2 & 0 & 0 \\
+    0 & 1 & -1 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 0
   \end{bmatrix}
 \).
 It follows that the basis for the solution set is given by \(\left\{
   \begin{bmatrix}
-    -1 \\
-    1 \\
-    0 \\
-    0
-  \end{bmatrix},
-  \begin{bmatrix}
-    3 \\
-    0 \\
     -2 \\
-    1
+    1 \\
+    1 \\
+    0
   \end{bmatrix}
 \right\}\).
 \end{solution}
-
 \begin{problem}{V1}
 Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
