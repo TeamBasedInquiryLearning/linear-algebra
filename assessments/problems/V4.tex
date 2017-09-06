@@ -9,15 +9,7 @@ This set is closed under addition, but not under scalar multiplication so it is 
 Determine if $\left\{ \begin{bmatrix} x \\ y \\ 0 \\ z \end{bmatrix}\  \bigg|\ x,y,z \in \IR\right\}$  a subspace of $\IR^4$.
 \end{problem}
 \begin{solution}
-It is closed under addition and scalar multiplication, so it is a subspace.  Alternatively, it is the image of the linear transformation from $\IR^3 \rightarrow \IR^4$ given by $$\begin{bmatrix} x \\ y \\ z \end{bmatrix} \rightarrow  \begin{bmatrix} x \\ y \\ 0 \\ z \end{bmatrix}.$$
-\end{solution}
-
-
-\begin{problem}{V4} 
-Let $W$ be the set of all 2 by 2 matrices which are not invertible.  Determine if $W$ is a subspace of $M_{2,2}$.
-\end{problem}
-\begin{solution}
-$W$ is closed under scalar multiplication, but not under addition. 
+It is closed under addition and scalar multiplication, so it is a subspace.  Alternatively, it is the image of the linear transformation from $\IR^3 \rightarrow \IR^4$ given by $$\begin{bmatrix} x \\ y \\ z \end{bmatrix} \mapsto  \begin{bmatrix} x \\ y \\ 0 \\ z \end{bmatrix}.$$
 \end{solution}
 
 
@@ -27,3 +19,62 @@ $W$ is closed under scalar multiplication, but not under addition.
 $W$ is closed under scalar multiplication, but not under addition.  For example, $x-x^2$ and $x^2$ are both in $W$, but $(x-x^2)+(x^2)=x \notin W$.
 \end{solution}
 
+
+\begin{problem}{V4} Let $W$ be the set of all polynomials of the form
+\(ax^3+bx\).  Determine if $W$ is a subspace of \(\P^3\).
+\end{problem}
+\begin{solution}
+Yes because \(s(a_1x^3+b_1x)+t(a_2x^3+b_2x)=
+(sa_1+ta_2)x^3+(sb_1+tb_2)x\) also belongs to \(W\).
+Alternately, yes because \(W\) is isomorphic to \(\IR^2\).
+\end{solution}
+
+
+\begin{problem}{V4} Let \(W\) be the set of all \(\IR^3\) vectors
+\(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\) with terminal points
+on the plane \(x+y+z=1\).
+Determine if \(W\) is a subspace of \(\IR^3\).
+\end{problem}
+\begin{solution}
+No, because \(\mathbf{0}\) does not belong to \(W\).
+\end{solution}
+
+
+\begin{problem}{V4} Let \(W\) be the set of all \(\IR^3\) vectors
+\(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\) with terminal points
+on the plane \(x+y+z=0\).
+Determine if \(W\) is a subspace of \(\IR^3\).
+\end{problem}
+\begin{solution}
+Yes, because \(z=-x-y\) and
+\(
+  a\begin{bmatrix} x_1 \\ y_1 \\ -x_1-y_1 \end{bmatrix}+
+  b\begin{bmatrix} x_2 \\ y_2 \\ -x_2-y_2 \end{bmatrix}=
+  \begin{bmatrix}
+    ax_1+bx_2 \\
+    ay_1+by_2 \\
+    -(ax_1+bx_2)-(ay_1+by_2)
+  \end{bmatrix}
+\).
+Alternately, yes because \(W\) is isomorphic to \(\IR^2\).
+\end{solution}
+
+
+\begin{problem}{V4} Let \(W\) be the set of all complex numbers
+that are purely real or purely imaginary.
+Determine if \(W\) is a subspace of \(\IC\).
+\end{problem}
+\begin{solution}
+No, because \(1\) is purely real and \(i\) is purely imaginary, but
+the linear combination \(1+i\) is neither.
+\end{solution}
+
+
+\begin{problem}{V4} Let \(W\) be the set of all complex numbers \(a+bi\)
+where \(a=2b\).
+Determine if \(W\) is a subspace of \(\IC\).
+\end{problem}
+\begin{solution}
+Yes, because \(c(2b_1+b_1i)+d(2b_2+b_2i)=2(cb_1+db_2)+(cb_1+db_2)i\) belongs to
+\(W\). Alternately, yes because \(W\) is isomorphic to \(\IR\).
+\end{solution}

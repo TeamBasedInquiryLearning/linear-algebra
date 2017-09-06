@@ -63,19 +63,19 @@ Now we will show the other seven properties.  Let $(x_1,y_1), (x_2,y_2) \in V$, 
 \item Since real addition is commutative, $\oplus$ is commutative.
 \item The additive identity is $(1,1)$.
 \item $(x_1,y_1) \oplus (2-x_1,2-y_1) = (1,1)$, so $(2-x_1,2-y_1)$ is the additive inverse of $(x_1,y_1)$.
-\item \begin{align*} c\odot \left(d \odot (x_1,y_1) \right) &=c\odot \left( dx_1-(d-1),dy_1-(d-1)\right) \\ 
+\item \begin{align*} c\odot \left(d \odot (x_1,y_1) \right) &=c\odot \left( dx_1-(d-1),dy_1-(d-1)\right) \\
 &= \left( c\left(dx_1-(d-1) \right)-(c-1), c\left(dy_1-(d-1) \right) \right) \\
 &= \left(cdx_1-cd+c-(c-1), cdy_1-cd+c-(c-1) \right) \\
 &= \left(cdx_1-(cd-1), cdy_1-(cd-1) \right) \\
 &= (cd) \odot (x_1,y_1)
 \end{align*}
 \item $1 \odot (x_1,y_1) = (x_1-(1-1),y_1-(1-1)=(x_1,y_1)$
-\item \begin{align*} c \odot \left( (x_1,y_1)\oplus(x_2,y_2) \right) &= 
+\item \begin{align*} c \odot \left( (x_1,y_1)\oplus(x_2,y_2) \right) &=
 c\odot \left( x_1+y_1-1,x_2+y_2-1 \right) \\
 &= \left( c(x_1+y_1-1)-(c-1), c(x_2+y_2-1)-(c-1) \right) \\
 &= (cx_1+cx_2-2c+1, cy_1+cy_2-2c+1) \\
 &= \left(cx_1-(c-1),cy_1-(c-1) \right) \oplus (cx_2-(c-1),cy_2-(c-1)) \\
-&=c \odot (x_1,y_1) \oplus c\odot (x_2,y_2) 
+&=c \odot (x_1,y_1) \oplus c\odot (x_2,y_2)
 \end{align*}
 \item \begin{align*} (c+d) \odot (x_1,y_1) &=
 \left( (c+d)x_1-(c+d-1), (c+d)y_1-(c+d-1) \right) \\
@@ -134,7 +134,7 @@ Let $V$ be the set of all polynomials with the operations, for any $f, g \in V$,
 f \oplus g &= f^\prime + g^\prime \\
 c \odot f &= c f^\prime
 \end{align*}
-(here $f^\prime$ denotes the derivative of $f$).  
+(here $f^\prime$ denotes the derivative of $f$).
 \begin{enumerate}[(a)]
 \item Show that this scalar multiplication $\odot$ distributes over vector addition $\oplus$.
 \item Determine if $V$ is a vector space or not.  Justify your answer.
@@ -142,7 +142,9 @@ c \odot f &= c f^\prime
 \end{problem}
 \begin{solution}
 Let $f,g \in \mathcal{P}$, and let $c \in \IR$.
-$$c \odot (f \oplus g) = c \odot (f^\prime+g^\prime) = c(f^\prime+g^\prime)^\prime = cf^{\prime\ \prime}+cg^{\prime\ \prime} = c \odot f \oplus c \odot g.$$
+$$c \odot (f \oplus g) = c \odot (f^\prime+g^\prime) =
+c(f^\prime+g^\prime)^\prime = cf^{\prime\ \prime}+cg^{\prime\ \prime} =
+cf^\prime\oplus cg^\prime= c \odot f \oplus c \odot g.$$
 However, this is not a vector space, as there is no zero vector.  Additionally, $1 \odot f \neq f$ for any nonzero polynomial $f$.
 \end{solution}
 
