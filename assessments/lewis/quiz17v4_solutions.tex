@@ -9,30 +9,28 @@
 
 \begin{document}
 
-\begin{problem}{V3} 
-Determine if the vectors $\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}$, $\begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}$, and $\begin{bmatrix}1 \\ 2 \\ 0 \\ 1 \end{bmatrix}$ span $\IR^4$.
+\begin{problem}{V3}
+Determine if the vectors  $\begin{bmatrix} 8 \\ 21 \\ -7 \end{bmatrix}$, $\begin{bmatrix} -3 \\ -8 \\ 3 \end{bmatrix}$, $\begin{bmatrix} -1 \\ -3 \\ 2 \end{bmatrix}$, and $\begin{bmatrix} 4 \\ 11 \\ -5 \end{bmatrix}$ span $\IR^3$.
 \end{problem}
 \begin{solution}
-$$\RREF\left( \begin{bmatrix} 2 & 3 & 0 & 1 \\ 0 & 1 & 0 & 2 \\ -2 & 3 & 1 & 0 \\ 0 & 6 & 1 & 1\end{bmatrix} \right) = \begin{bmatrix}1 & 0 & 0 & -\frac{5}{2} \\ 0 & 1 & 0 & 2 \\ 0 & 0 & 1 & -11\\ 0 & 0 & 0 & 0  \end{bmatrix} $$
-Since there is a zero row, the vectors do not span $\IR^4$.
+$$\RREF\left(\begin{bmatrix} 8 & -3 & -1 & 4 \\ 21 & -8 & -3 & 11 \\ -7 & 3 & 2 & -5  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 1 & -1 \\ 0 & 1 & 3 & -4 \\ 0 & 0 & 0 & 0\end{bmatrix} $$
+Since the rank is less than 3, they do not span $\IR^3$.
 \end{solution}
 
-\begin{problem}{V4} 
-Let $W$ be the set of all 2 by 2 matrices which are not invertible.  Determine if $W$ is a subspace of $M_{2,2}$.
+\begin{problem}{V4} Let \(W\) be the set of all complex numbers \(a+bi\)
+satisfying  \(a=2b\).
+Determine if \(W\) is a subspace of \(\IC\).
 \end{problem}
 \begin{solution}
-$W$ is closed under scalar multiplication, but not under addition. 
+Yes, because \(c(2b_1+b_1i)+d(2b_2+b_2i)=2(cb_1+db_2)+(cb_1+db_2)i\) belongs to
+\(W\). Alternately, yes because \(W\) is isomorphic to \(\IR\).
 \end{solution}
-
-
 \begin{extract}\newpage\end{extract}
 \begin{problem}{S2}
-Determine if the set $\left\{\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ -2 \end{bmatrix}\right\}$ is a basis of $\IR^3$
+Determine if the set $\left\{ \begin{bmatrix} 0 \\ 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ -1 \\ 0 \\ 2 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix}0 \\ 2 \\ 0 \\ -1 \end{bmatrix} \right\}$ is a basis of $\IR^4$.
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 1 & 3 & 2 \\ 1 & -1 & 0 \\ -1 & 1 & -2 \end{bmatrix} \right)= \begin{bmatrix} 1 & 0 &0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
-Since the resulting matrix is the identity matrix, it is a basis.
+$$\RREF\left(\begin{bmatrix} 0 & 1 & 1 & 0 \\ 1 & -1 & 0 & 2   \\ 1 & 0 & -1 & 0  \\ 1 & 2 & 0 & -1  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 0 & 1  \\ 0 & 1 & 0 & -1  \\ 0 & 0 & 1 & 1  \\ 0 & 0 & 0 & 0 \end{bmatrix} $$
+Since this is not the identity matrix, the set is not a basis.
 \end{solution}
-
-
 \end{document}

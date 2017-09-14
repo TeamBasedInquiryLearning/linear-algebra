@@ -10,40 +10,61 @@
 \begin{document}
 
 \begin{problem}{V1}
-Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+Let $V$ be the set of all polynomials with the operations, for any $f, g \in V$, $c \in \IR$,
 \begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
-c \odot (x_1,y_1) &= (0, cy_1)
+f \oplus g &= f^\prime + g^\prime \\
+c \odot f &= c f^\prime
 \end{align*}
-Determine if $V$ is a vector space or not.
+(here $f^\prime$ denotes the derivative of $f$).
+\begin{enumerate}[(a)]
+\item Show that this scalar multiplication $\odot$ distributes over vector addition $\oplus$.
+\item Determine if $V$ is a vector space or not.  Justify your answer.
+\end{enumerate}
 \end{problem}
 \begin{solution}
-$V$ is not a vector space, as $1 \odot (x_1,y_1) = (0,y_1) \neq (x_1,y_1)$.
+Let $f,g \in \mathcal{P}$, and let $c \in \IR$.
+$$c \odot (f \oplus g) = c \odot (f^\prime+g^\prime) =
+c(f^\prime+g^\prime)^\prime = cf^{\prime\ \prime}+cg^{\prime\ \prime} =
+cf^\prime\oplus cg^\prime= c \odot f \oplus c \odot g.$$
+However, this is not a vector space, as there is no zero vector.  Additionally, $1 \odot f \neq f$ for any nonzero polynomial $f$.
 \end{solution}
 
 
 \begin{problem}{V3}
-Determine if the vectors $\begin{bmatrix} 1 \\ 1 \\ 2 \\1 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}$, $\begin{bmatrix}3 \\ -1 \\ 3 \\ -2\end{bmatrix}$, and $\begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix}$  span $\IR^4$.
+Determine if the vectors $\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}$, $\begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}$, and $\begin{bmatrix}1 \\ 2 \\ 0 \\ 1 \end{bmatrix}$ span $\IR^4$.
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0  \end{bmatrix}$$
-Since there are zero rows, they do not span.  Alternatively, by inspection $\begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}=3\begin{bmatrix} 1 \\ 1 \\ 2 \\1 \end{bmatrix}$, so the set is linearly dependent, so it spans a subspace of dimension at most 3, therefore it does not span $\IR^4$.
+$$\RREF\left( \begin{bmatrix} 2 & 3 & 0 & 1 \\ 0 & 1 & 0 & 2 \\ -2 & 3 & 1 & 0 \\ 0 & 6 & 1 & 1\end{bmatrix} \right) = \begin{bmatrix}1 & 0 & 0 & -\frac{5}{2} \\ 0 & 1 & 0 & 2 \\ 0 & 0 & 1 & -11\\ 0 & 0 & 0 & 0  \end{bmatrix} $$
+Since there is a zero row, the vectors do not span $\IR^4$.
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
-\begin{problem}{V4}
-Determine if the set of all lattice points, i.e. $\{(x,y)\ \big|\ \text{$x$ and $y$ are integers} \}$ is a subspace of $\IR^2$.
+\begin{problem}{V4} Let \(W\) be the set of all \(\IR^3\) vectors
+\(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\) satisfying \(x+y+z=0\) (this forms a plane).
+Determine if \(W\) is a subspace of \(\IR^3\).
 \end{problem}
 \begin{solution}
-This set is closed under addition, but not under scalar multiplication so it is not a subspace.
+Yes, because \(z=-x-y\) and
+\(
+  a\begin{bmatrix} x_1 \\ y_1 \\ -x_1-y_1 \end{bmatrix}+
+  b\begin{bmatrix} x_2 \\ y_2 \\ -x_2-y_2 \end{bmatrix}=
+  \begin{bmatrix}
+    ax_1+bx_2 \\
+    ay_1+by_2 \\
+    -(ax_1+bx_2)-(ay_1+by_2)
+  \end{bmatrix}
+\).
+Alternately, yes because \(W\) is isomorphic to \(\IR^2\).
 \end{solution}
 
+
 \begin{problem}{S2}
-Determine if the set $\left\{ x^2+x-1, 3x^2-x+1, 2x-2 \right\}$ is a basis of $\P_2$
+Determine if the set $\left\{\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ -2 \end{bmatrix}\right\}$ is a basis of $\IR^3$
 \end{problem}
 \begin{solution}
 $$\RREF\left(\begin{bmatrix} 1 & 3 & 2 \\ 1 & -1 & 0 \\ -1 & 1 & -2 \end{bmatrix} \right)= \begin{bmatrix} 1 & 0 &0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
 Since the resulting matrix is the identity matrix, it is a basis.
 \end{solution}
+
 
 \end{document}

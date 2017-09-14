@@ -2,7 +2,7 @@
 %% This is file, `quiz14v3.tex',
 %% generated with the extract package.
 %% 
-%% Generated on :  2017/08/30,9:43
+%% Generated on :  2017/09/14,7:51
 %% From source  :  quiz14v3_solutions.tex
 %% Using options:  active,generate=quiz14v3,extract-env={problem}
 %% 
@@ -15,24 +15,38 @@
 \begin{document}
 
 \begin{problem}{V1}
-Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+Let $V$ be the set of all polynomials with the operations, for any $f, g \in V$, $c \in \IR$,
 \begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
-c \odot (x_1,y_1) &= (0, cy_1)
+f \oplus g &= f^\prime + g^\prime \\
+c \odot f &= c f^\prime
 \end{align*}
-Determine if $V$ is a vector space or not.
+(here $f^\prime$ denotes the derivative of $f$).
+\begin{enumerate}[(a)]
+\item Show that this scalar multiplication $\odot$ distributes over vector addition $\oplus$.
+\item Determine if $V$ is a vector space or not.  Justify your answer.
+\end{enumerate}
 \end{problem}
 
 \begin{problem}{V3}
-Determine if the vectors  $\begin{bmatrix} -3 \\ 1 \\ 1 \end{bmatrix}$,$\begin{bmatrix} 5 \\ -1 \\ -2 \end{bmatrix}$,$\begin{bmatrix}2 \\ 0 \\ -1 \end{bmatrix}$, and $\begin{bmatrix} 0 \\ 2 \\ -1\end{bmatrix}$ span $\IR^3$
+Does
+\(
+  \operatorname{span}\left\{
+    \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix},
+    \begin{bmatrix} 3 \\ 12 \\ -9 \end{bmatrix},
+    \begin{bmatrix} 1 \\ 4 \\ -3 \end{bmatrix},
+    \begin{bmatrix} -4 \\ 2 \\ -8 \end{bmatrix}
+  \right\} = \IR^3
+\)?
 \end{problem}
 \newpage
 
-\begin{problem}{V4} Let $W$ be the set of all polynomials of even degree.  Determine if $W$ is a subspace of the vector space of all polynomials.
+\begin{problem}{V4} Let \(W\) be the set of all complex numbers
+that are purely real (i.e of the form $a+0i$)  or purely imaginary (i.e. of the form $0+bi$).
+Determine if \(W\) is a subspace of \(\IC\).
 \end{problem}
 
 \begin{problem}{S2}
-Determine if the set $\left\{ x^2+x-1, 3x^2-x+1, 2x-2 \right\}$ is a basis of $\P_2$
+Determine if the set $\left\{ \begin{bmatrix} 0 \\ 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ -1 \\ 0 \\ 2 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix}0 \\ 2 \\ 0 \\ -1 \end{bmatrix} \right\}$ is a basis of $\IR^4$.
 \end{problem}
 
 \end{document}
