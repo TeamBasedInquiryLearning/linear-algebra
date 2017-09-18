@@ -11,7 +11,7 @@
 
 \begin{problem}{V2}
   Determine if
-  \(\begin{bmatrix} 4 \\ -1 \\ 6 \\ -7 \end{bmatrix}\)
+  \(\begin{bmatrix} 0 \\ -1 \\ 6 \\ -7 \end{bmatrix}\)
   belongs to the span of the set
   \(\left\{
     \begin{bmatrix} 2 \\ 0 \\ -1 \\ 5 \end{bmatrix},
@@ -24,32 +24,30 @@
   \[
     \RREF\left(
       \begin{bmatrix}[cc|c]
-        2 & 4 & 4 \\
+        2 & 4 & 0 \\
         0 & -1 & -1 \\
         -1 & 4 & 6 \\
         5 & 3 & -7
       \end{bmatrix}
     \right) =
     \begin{bmatrix}[cc|c]
-      1 & 0 & 0 \\
-      0 & 1 & 0 \\
-      0 & 0 & 1 \\
+      1 & 0 & -2 \\
+      0 & 1 & 1 \\
+      0 & 0 & 0 \\
       0 & 0 & 0
     \end{bmatrix}
   \]
-  contains the contradiction \(0=1\),
-  \(\begin{bmatrix} 4 \\ -1 \\ 6 \\ -7 \end{bmatrix}\) is
-  not a linear combination of the three vectors.
+  does not contain a contradiction,
+  \(\begin{bmatrix} 0 \\ -1 \\ 6 \\ -7 \end{bmatrix}\) is
+  a linear combination of the three vectors.
 \end{solution}
 
 
-\begin{problem}{S1}
-Determine if the vectors $\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}$, $\begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix}$, and $\begin{bmatrix} 2 \\ 0 \\ -2 \end{bmatrix}$ are linearly dependent or linearly independent
+\begin{problem}{S1} 
+Determine if the set of matrices $\left\{\begin{bmatrix} 3 & -1 \\ 0 & 4 \end{bmatrix}, \begin{bmatrix} 1  & 2 \\ -2 & 1 \end{bmatrix}, \begin{bmatrix} 3 & -8 \\ 6 & 5 \end{bmatrix} \right\}$  is linearly dependent or linearly independent.
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 1 & 3 & 2 \\ 1 & -1 & 0 \\ -1 & 1 & -2 \end{bmatrix} \right)= \begin{bmatrix} 1 & 0 &0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
-Since each column is a pivot column, the vectors are linearly independent.
+$$\RREF\left(\begin{bmatrix} 3 & 1 & 3 \\ -1 & 2 & -8 \\ 0 & -2 & 6 \\ 4 & 1 & 5 \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 2 \\ 0 & 1 & -3 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
+Since the reduced row echelon form has a nonpivot column, the vectors are linearly dependent.
 \end{solution}
-
-
 \end{document}

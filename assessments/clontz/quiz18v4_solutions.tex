@@ -1,0 +1,59 @@
+\documentclass{sbgLAquiz}
+
+\begin{extract*}
+\input{quizHeader.tex}
+\title{Mastery Quiz Day 18 }
+\standard{S1,S3,S4,A1,A2}
+\version{4}
+\end{extract*}
+
+\begin{document}
+
+\begin{problem}{S1}
+Determine if the set of polynomials $\left\{ x^3-8x, x^3+2x^2+2, -x^2+3\right\}$ is  linearly dependent or linearly independent
+\end{problem}
+\begin{solution}
+$$\RREF\left( \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3 \\ 0 & 0 & 0\end{bmatrix}\right) = \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{3}{2} \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$ 
+This has a non pivot column, therefore the set is linearly dependent.
+\end{solution}
+
+
+\begin{problem}{S3}
+Let $W$ be the subspace of $\P_3$ given by $W = {\rm span} \left( \left\{ x^3+x^2+2x+1, 3x^3+3x^2+6x+3, 3x^3-x^2+3x-2, 7x^3-x^2+8x-3 \right\} \right)$.  Find a basis for $W$.
+\end{problem}
+\begin{solution}
+$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \end{bmatrix}$$
+
+Then a basis is 
+$ \left\{ x^3+x^2+2x+1, 3x^3-x^2+3x-2 \right\} $.
+\end{solution}
+
+
+\begin{extract}\newpage\end{extract}
+\begin{problem}{S4}
+Let $W = {\rm span} \left( \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}, \begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix} \right\} \right)$.  Find the dimension of $W$.
+\end{problem}
+\begin{solution}
+$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \end{bmatrix}$$
+
+This has two pivot columns, so $W$ has dimension 2.
+\end{solution}
+
+
+\begin{problem}{A1}
+Let $T: \IR^3\rightarrow \IR^4$ be the linear transformation given by $$T\left(\begin{bmatrix} x \\ y \\ z \\  \end{bmatrix} \right) = \begin{bmatrix} -3x+y \\ -8x+2y-z \\ 2y+3z \\ 0 \end{bmatrix}$$.  Write the matrix for $T$ with respect to the standard bases of $\IR^3$ and $\IR^4$.
+\end{problem}
+\begin{solution}
+$$\begin{bmatrix} 3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3 \\ 0 & 0 & 0 \end{bmatrix}$$
+\end{solution}
+
+
+\begin{extract}\newpage\end{extract}
+\begin{problem}{A2}
+Determine if $D: M_{2,2} \rightarrow \IR$ given by $D\left(\begin{bmatrix} a & b \\ c & d \end{bmatrix} \right) = ad-bc$ is a linear transformation or not.
+\end{problem}
+\begin{solution}
+$D(I)=1$ but $D(2I)=4 \neq 2D(I)$, so $D$ is not linear.
+\end{solution}
+
+\end{document}

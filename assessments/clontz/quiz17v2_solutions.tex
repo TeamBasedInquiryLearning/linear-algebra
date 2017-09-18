@@ -10,23 +10,31 @@
 \begin{document}
 
 \begin{problem}{V3}
-Determine if the vectors $\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}$, $\begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}$, and $\begin{bmatrix}1 \\ 2 \\ 0 \\ 1 \end{bmatrix}$ span $\IR^4$.
+Does
+\(
+  \operatorname{span}\left\{
+    \begin{bmatrix} 2 \\ -1 \\ 4 \\ 2 \\ 1 \end{bmatrix},
+    \begin{bmatrix} -1 \\ 3 \\ 5 \\ 2 \\ 0 \end{bmatrix},
+    \begin{bmatrix} 1 \\ 0 \\ 5 \\ 1 \\ -3 \end{bmatrix}
+  \right\} = \IR^5
+\)?
 \end{problem}
 \begin{solution}
-$$\RREF\left( \begin{bmatrix} 2 & 3 & 0 & 1 \\ 0 & 1 & 0 & 2 \\ -2 & 3 & 1 & 0 \\ 0 & 6 & 1 & 1\end{bmatrix} \right) = \begin{bmatrix}1 & 0 & 0 & -\frac{5}{2} \\ 0 & 1 & 0 & 2 \\ 0 & 0 & 1 & -11\\ 0 & 0 & 0 & 0  \end{bmatrix} $$
-Since there is a zero row, the vectors do not span $\IR^4$.
+Since there are only three vectors, they cannot span \(\IR^5\).
+\end{solution}
+\begin{problem}{V4} Let $W$ be the set of all polynomials of the form
+\(ax^3+bx\).  Determine if $W$ is a subspace of \(\P^3\).
+\end{problem}
+\begin{solution}
+Yes because \(s(a_1x^3+b_1x)+t(a_2x^3+b_2x)=
+(sa_1+ta_2)x^3+(sb_1+tb_2)x\) also belongs to \(W\).
+Alternately, yes because \(W\) is isomorphic to \(\IR^2\).
 \end{solution}
 
-\begin{problem}{V4}
-Determine if the set of all lattice points, i.e. $\{(x,y)\ \big|\ \text{$x$ and $y$ are integers} \}$ is a subspace of $\IR^2$.
-\end{problem}
-\begin{solution}
-This set is closed under addition, but not under scalar multiplication so it is not a subspace.
-\end{solution}
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{S2}
-Determine if the set $\left\{ x^2+x-1, 3x^2-x+1, 2x-2 \right\}$ is a basis of $\P_2$
+Determine if the set $\left\{\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ -2 \end{bmatrix}\right\}$ is a basis of $\IR^3$
 \end{problem}
 \begin{solution}
 $$\RREF\left(\begin{bmatrix} 1 & 3 & 2 \\ 1 & -1 & 0 \\ -1 & 1 & -2 \end{bmatrix} \right)= \begin{bmatrix} 1 & 0 &0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
