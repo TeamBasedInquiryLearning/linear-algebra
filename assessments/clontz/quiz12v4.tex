@@ -2,7 +2,7 @@
 %% This is file, `quiz12v4.tex',
 %% generated with the extract package.
 %% 
-%% Generated on :  2017/09/06,15:07
+%% Generated on :  2017/09/18,11:46
 %% From source  :  quiz12v4_solutions.tex
 %% Using options:  active,generate=quiz12v4,extract-env={problem}
 %% 
@@ -15,32 +15,29 @@
 \begin{document}
 
 \begin{problem}{V1}
-Let $V$ be the  set of all real numbers together with the operations $\oplus$ and $\odot$ defined by, for any $x,y \in V$ and $c \in \IR$,
+Let $V$ be the set of all polynomials with the operations, for any $f, g \in V$, $c \in \IR$,
 \begin{align*}
-x\oplus y  &= x+y-3 \\
-c \odot x &= cx-3(c-1)
+f \oplus g &= f^\prime + g^\prime \\
+c \odot f &= c f^\prime
 \end{align*}
+(here $f^\prime$ denotes the derivative of $f$).
 \begin{enumerate}[(a)]
-\item Show that this scalar multiplication $\odot$ is associative.
-\item Determine if $V$ is a vector space or not.  Justify your answer
+\item Show that scalar multiplication \textbf{distributes scalars} over
+      vector addition:
+      \(c\odot(f \oplus g)=
+      c\odot f \oplus c\odot g\).
+\item Determine if $V$ is a vector space or not.  Justify your answer.
 \end{enumerate}
 \end{problem}
 
 \begin{problem}{V3}
-Does
-\(
-  \operatorname{span}\left\{
-    \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix},
-    \begin{bmatrix} 3 \\ 12 \\ -9 \end{bmatrix},
-    \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix},
-    \begin{bmatrix} -4 \\ 2 \\ -8 \end{bmatrix}
-  \right\} = \IR^3
-\)?
+Determine if the vectors  $\begin{bmatrix} -3 \\ 1 \\ 1 \end{bmatrix}$,$\begin{bmatrix} 5 \\ -1 \\ -2 \end{bmatrix}$,$\begin{bmatrix}2 \\ 0 \\ -1 \end{bmatrix}$, and $\begin{bmatrix} 0 \\ 2 \\ -1\end{bmatrix}$ span $\IR^3$
 \end{problem}
 \newpage
 
-\begin{problem}{V4}
-Determine if the set of all lattice points, i.e. $\{(x,y)\ \big|\ \text{$x$ and $y$ are integers} \}$ is a subspace of $\IR^2$.
+\begin{problem}{V4} Let \(W\) be the set of all \(\IR^3\) vectors
+\(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\) satisfying \(x+y+z=0\) (this forms a plane).
+Determine if \(W\) is a subspace of \(\IR^3\).
 \end{problem}
 
 \end{document}

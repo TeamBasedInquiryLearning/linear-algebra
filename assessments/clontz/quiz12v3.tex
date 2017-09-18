@@ -2,7 +2,7 @@
 %% This is file, `quiz12v3.tex',
 %% generated with the extract package.
 %% 
-%% Generated on :  2017/09/06,15:07
+%% Generated on :  2017/09/18,11:46
 %% From source  :  quiz12v3_solutions.tex
 %% Using options:  active,generate=quiz12v3,extract-env={problem}
 %% 
@@ -15,14 +15,17 @@
 \begin{document}
 
 \begin{problem}{V1}
-Let $V$ be the  set of all real numbers together with the operations $\oplus$ and $\odot$ defined by, for any $x,y \in V$ and $c \in \IR$,
+Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
-x\oplus y  &= x+y-3 \\
-c \odot x &= cx-3(c-1)
+(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
+c \odot (x_1,y_1) &= (c^2x_1, c^3y_1)
 \end{align*}
 \begin{enumerate}[(a)]
-\item Show that this scalar multiplication $\odot$ is associative.
-\item Determine if $V$ is a vector space or not.  Justify your answer
+\item Show that scalar multiplication \textbf{distributes scalars} over
+      vector addition:
+      \(c\odot((x_1,y_1) \oplus (x_2,y_2))=
+      c\odot(x_1,y_1) \oplus c\odot(x_2,y_2)\).
+\item Determine if $V$ is a vector space or not.  Justify your answer.
 \end{enumerate}
 \end{problem}
 
@@ -31,7 +34,9 @@ Determine if the vectors $\begin{bmatrix} 1 \\ 0 \\ 2 \\1 \end{bmatrix}$, $\begi
 \end{problem}
 \newpage
 
-\begin{problem}{V4} Let $W$ be the set of all polynomials of even degree.  Determine if $W$ is a subspace of the vector space of all polynomials.
+\begin{problem}{V4} Let \(W\) be the set of all complex numbers \(a+bi\)
+satisfying  \(a=2b\).
+Determine if \(W\) is a subspace of \(\IC\).
 \end{problem}
 
 \end{document}

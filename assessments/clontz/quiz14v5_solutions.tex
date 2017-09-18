@@ -10,29 +10,26 @@
 \begin{document}
 
 \begin{problem}{V1}
-Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+Let $V$ be the set of all polynomials with the operations, for any $f, g \in V$, $c \in \IR$,
 \begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
-c \odot (x_1,y_1) &= (c^2x_1, c^3y_1)
+f \oplus g &= f^\prime + g^\prime \\
+c \odot f &= c f^\prime
 \end{align*}
+(here $f^\prime$ denotes the derivative of $f$).
 \begin{enumerate}[(a)]
 \item Show that scalar multiplication \textbf{distributes scalars} over
       vector addition:
-      \(c\odot((x_1,y_1) \oplus (x_2,y_2))=
-      c\odot(x_1,y_1) \oplus c\odot(x_2,y_2)\).
+      \(c\odot(f \oplus g)=
+      c\odot f \oplus c\odot g\).
 \item Determine if $V$ is a vector space or not.  Justify your answer.
 \end{enumerate}
 \end{problem}
 \begin{solution}
-Let $(x_1,y_1), (x_2,y_2) \in V$ and let $c \in \IR$.
-\begin{align*}
-c \odot \left( (x_1,y_1) \oplus (x_2,y_2) \right) &= c \odot (x_1+x_2,y_1+y_2) \\
-&= (c^2(x_1+x_2), c^3(y_1+y_2) ) \\
-&= (c^2x_1,c^3y_1) \oplus (c^2x_2,c^3y_2) \\
-&= c \odot (x_1,y_1) \oplus c \odot (x_2,y_2)
-\end{align*}
-However, $V$ is not a vector space, as the other distributive law fails:
-$$(c+d) \odot (x_1,y_1) = ( (c+d)^2 x_1, (c+d)^3 y_1) \neq ((c^2+d^2)x_1, (c^3+d^3)y_1) = c \odot (x_1,y_1) \oplus d \odot (x_1,y_1).$$
+Let $f,g \in \mathcal{P}$, and let $c \in \IR$.
+$$c \odot (f \oplus g) = c \odot (f^\prime+g^\prime) =
+c(f^\prime+g^\prime)^\prime = cf^{\prime\ \prime}+cg^{\prime\ \prime} =
+cf^\prime\oplus cg^\prime= c \odot f \oplus c \odot g.$$
+However, this is not a vector space, as there is no zero vector.  Additionally, $1 \odot f \neq f$ for any nonzero polynomial $f$.
 \end{solution}
 
 
@@ -65,10 +62,12 @@ Alternately, yes because \(W\) is isomorphic to \(\IR^2\).
 
 
 \begin{problem}{S2}
-Determine if the set $\left\{ \begin{bmatrix} 0 \\ 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ -1 \\ 0 \\ 2 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix}0 \\ 2 \\ 0 \\ -1 \end{bmatrix} \right\}$ is a basis of $\IR^4$.
+Determine if the set $\left\{ x^3-x, x^2+x+1, x^3-x^2+2, 2x^2-1 \right\}$ is a basis of $\P_3$
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 0 & 1 & 1 & 0 \\ 1 & -1 & 0 & 2   \\ 1 & 0 & -1 & 0  \\ 1 & 2 & 0 & -1  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 0 & 1  \\ 0 & 1 & 0 & -1  \\ 0 & 0 & 1 & 1  \\ 0 & 0 & 0 & 0 \end{bmatrix} $$
-Since this is not the identity matrix, the set is not a basis.
+$$\RREF\left(\begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & -1 & 2 \\ -1 & 1 & 0 & 0 \\ 0 & 1 & 2 & -1 \end{bmatrix} \right)= \begin{bmatrix} 1 & 0 &0 & 1 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & -1 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
+Since the resulting matrix is not the identity matrix, it is not a basis.
 \end{solution}
+
+
 \end{document}
