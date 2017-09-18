@@ -1,0 +1,33 @@
+\begin{problem}{G2}
+Let $A= \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix}$.
+List the eigenvalues of $A$ along with their algebraic multiplicities.
+\end{problem}
+\begin{solution}
+
+\begin{align*}
+\det(A-\lambda I) &= \det \begin{bmatrix} -3-\lambda & 1 & 0 \\ -8 & 2-\lambda & -1 \\ 0 & 2 & 3-\lambda \end{bmatrix} \\
+&=(-3-\lambda) \det \begin{bmatrix} 2-\lambda & -1 \\ 2 & 3-\lambda \end{bmatrix} -(1) \det \begin{bmatrix} -8 & -1 \\ 0 & 3-\lambda \end{bmatrix} \\
+&=(-3-\lambda)\left( (2-\lambda)(3-\lambda)+2 \right)-\left(-8(3-\lambda) \right) \\
+&=(-3-\lambda)(8-5\lambda+\lambda ^2) +24-8\lambda \\
+&=-\lambda ^3 +2\lambda ^2+7\lambda -24 +24-8\lambda \\
+&= -\lambda ^3+2\lambda ^2 - \lambda \\
+&= -\lambda (\lambda ^2-2\lambda +1 ) \\
+&= -\lambda(\lambda-1)^2
+\end{align*}
+So $A$ has eigenvalues $0$ (with multiplicity 1) and $1$ (with algebraic multiplicity 2).
+\end{solution}
+
+
+\begin{problem}{G2} 
+Compute the eigenvalues, along with their algebraic multiplicities, of the matrix $ \begin{bmatrix} 8 & -3 & -1 \\ 21 & -8 & -3 \\ -7 & 3 & 2\end{bmatrix}$.
+\end{problem}
+\begin{solution}
+\begin{align*}
+\det(A-\lambda I) &= (8-\lambda) \det \begin{bmatrix} -8-\lambda & -3 \\ 3 & 2-\lambda \end{bmatrix}-(-3) \det \begin{bmatrix} 21 & -3 \\ -7 & 2-\lambda \end{bmatrix} +(-1) \det \begin{bmatrix} 21 & -8-\lambda \\ -7 & 3 \end{bmatrix} \\
+&=(8-\lambda)\left(\lambda ^2+6\lambda-7\right)+3\left(-21\lambda + 21 \right)-\left(-7\lambda +7 \right) \\
+&=(\lambda -1) \left( (8-\lambda)(\lambda+7)-63+7 \right) \\
+&= (\lambda-1)(\lambda -\lambda ^2) \\
+&= -\lambda (\lambda-1)^2
+\end{align*}
+So the eigenvalues are $0$ (with algebraic multiplicity 1) and $1$ (with algebraic multiplicity 2).
+\end{solution}
