@@ -72,6 +72,8 @@ sub getRandomProblems
 
 #Maybe shift this to reading from a textfile later
 my $nVersions = 6;
+my $genMidterm = 1;
+my $genFinal = 0;
 
 #Read explicitly assessed standard list for each quiz
 my %quizStandardsHash;
@@ -102,7 +104,7 @@ foreach my $line (@impStandards)
 #Profname from commandline
 my $prof = $ARGV[0];
 
-die "Bad command line argument $prof \n" if not ($prof eq "clontz" or $prof eq "lewis"); 
+die "Bad command line argument -- use 'generateQuiz.pl clontz' or 'generateQuiz.pl lewis'\n" if not ($prof eq "clontz" or $prof eq "lewis"); 
 
 
 #Iterate over the hash
@@ -143,3 +145,76 @@ while( my($classDay, $standards) = each %quizStandardsHash)
 	}
 }
 
+#Create midterm
+if($genMidterm)
+{
+		my @standards = split(',',qw(E1,E2,E3,E4,V1,V2,V3,V4,S1,S2,S3,S4));
+		#Iterate over versions
+		foreach my $i (1..$nVersions)
+		{
+			#Specify file name and open
+			my $outFileName = "assessments/" . $prof . "/midterm-v" . $i . "_solutions.tex";
+			open( my $outFile, '>', $outFileName) or die "Could not open $outFileName";
+
+			#Get text of problems for each standard out of respective files
+			my @problems = getRandomProblems (@standards);
+
+			#Format standardlist for correct passing to \standard macro in LaTeX
+			my $texStandards = join (",",@standards);
+
+			#Specify header LaTeX code
+			my $header = "\\documentclass{sbgLAexam}\n\n";
+			$header .= "\\begin\{extract*\}\n";
+			$header .= "\\input\{quizHeader.tex\}\n";
+			$header .= "\\title\{Midterm Exam\}\n";
+			$header .= "\\standard\{$texStandards\}\n";
+			$header .= "\\version\{$i\}\n";
+			$header .= "\\end\{extract*\}\n\n";
+			$header .= "\\begin\{document\}\n\n";
+
+			#Specify footer LaTeX code
+			my $footer = "\\end\{document\}";
+
+			#Write to file
+			print $outFile $header;
+			print $outFile @problems;
+			print $outFile $footer;
+		}
+}
+
+#Create final
+if($genFinal)
+{
+		my @standards = split(',',qw(E1,E2,E3,E4,V1,V2,V3,V4,S1,S2,S3,S4,A1,A2,A3,A4,M1,M2,M3,G1,G2,G3,G4));
+		#Iterate over versions
+		foreach my $i (1..$nVersions)
+		{
+			#Specify file name and open
+			my $outFileName = "assessments/" . $prof . "/final-v" . $i . "_solutions.tex";
+			open( my $outFile, '>', $outFileName) or die "Could not open $outFileName";
+
+			#Get text of problems for each standard out of respective files
+			my @problems = getRandomProblems (@standards);
+
+			#Format standardlist for correct passing to \standard macro in LaTeX
+			my $texStandards = join (",",@standards);
+
+			#Specify header LaTeX code
+			my $header = "\\documentclass{sbgLAexam}\n\n";
+			$header .= "\\begin\{extract*\}\n";
+			$header .= "\\input\{quizHeader.tex\}\n";
+			$header .= "\\title\{Final Exam\}\n";
+			$header .= "\\standard\{$texStandards\}\n";
+			$header .= "\\version\{$i\}\n";
+			$header .= "\\end\{extract*\}\n\n";
+			$header .= "\\begin\{document\}\n\n";
+
+			#Specify footer LaTeX code
+			my $footer = "\\end\{document\}";
+
+			#Write to file
+			print $outFile $header;
+			print $outFile @problems;
+			print $outFile $footer;
+		}
+}
