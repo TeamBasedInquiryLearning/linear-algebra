@@ -4,6 +4,8 @@ use warnings;
 
 my @quizFileNames;
 my $nVersions=6;
+my $compileMidterm=1;
+my $compileFinal=0;
 
 open (my $explicitFileHandle, '<', "assessments/quiz-standard-explicit-map.txt");
 my @quizStandards = <$explicitFileHandle>;
@@ -20,6 +22,29 @@ foreach my $line (@quizStandards)
 		push (@quizFileNames, $fn1);
 		push (@quizFileNames, $fn2);
 	}
+}
+
+if($compileMidterm)
+{	
+	foreach my $i (1..$nVersions)
+	{
+		my $fn1 = "midterm-v" . $i . "_solutions.tex\n";
+		my $fn2 = "midterm-v". $i . ".tex\n";
+		push (@quizFileNames, $fn1);
+		push (@quizFileNames, $fn2);
+	}
+
+}
+if($compileFinal)
+{	
+	foreach my $i (1..$nVersions)
+	{
+		my $fn1 = "final-v" . $i . "_solutions.tex\n";
+		my $fn2 = "final-v". $i . ".tex\n";
+		push (@quizFileNames, $fn1);
+		push (@quizFileNames, $fn2);
+	}
+
 }
 
 open (my $outFileHandle, '>', "assessments/quizCompileList.txt");

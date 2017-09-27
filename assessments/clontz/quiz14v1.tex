@@ -2,7 +2,7 @@
 %% This is file, `quiz14v1.tex',
 %% generated with the extract package.
 %% 
-%% Generated on :  2017/09/26,9:00
+%% Generated on :  2017/09/27,10:48
 %% From source  :  quiz14v1_solutions.tex
 %% Using options:  active,generate=quiz14v1,extract-env={problem}
 %% 
@@ -15,17 +15,16 @@
 \begin{document}
 
 \begin{problem}{V1}
-Let $V$ be the set of all polynomials with the operations, for any $f, g \in V$, $c \in \IR$,
+Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
-f \oplus g &= f^\prime + g^\prime \\
-c \odot f &= c f^\prime
+(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
+c \odot (x_1,y_1) &= (c^2x_1, c^3y_1)
 \end{align*}
-(here $f^\prime$ denotes the derivative of $f$).
 \begin{enumerate}[(a)]
 \item Show that scalar multiplication \textbf{distributes scalars} over
       vector addition:
-      \(c\odot(f \oplus g)=
-      c\odot f \oplus c\odot g\).
+      \(c\odot((x_1,y_1) \oplus (x_2,y_2))=
+      c\odot(x_1,y_1) \oplus c\odot(x_2,y_2)\).
 \item Determine if $V$ is a vector space or not.  Justify your answer.
 \end{enumerate}
 \end{problem}
@@ -35,11 +34,14 @@ Determine if the vectors  $\begin{bmatrix} 8 \\ 21 \\ -7 \end{bmatrix}$, $\begin
 \end{problem}
 \newpage
 
-\begin{problem}{V4} Let $W$ be the set of all polynomials of even degree.  Determine if $W$ is a subspace of the vector space of all polynomials.
+\begin{problem}{V4} Let \(W\) be the set of all \(\IR^3\) vectors
+\(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\)
+satisfying \(x+y+z=1\) (this forms a plane).
+Determine if \(W\) is a subspace of \(\IR^3\).
 \end{problem}
 
 \begin{problem}{S2}
-Determine if the set $\left\{\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ -2 \end{bmatrix}\right\}$ is a basis of $\IR^3$
+Determine if the set $\left\{ x^3-x, x^2+x+1, x^3-x^2+2, 2x^2-1 \right\}$ is a basis of $\P_3$
 \end{problem}
 
 \end{document}

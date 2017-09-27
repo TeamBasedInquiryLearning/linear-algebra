@@ -12,17 +12,17 @@
 \begin{problem}{E1}
 Write an augmented matrix corresponding to the following system of linear equations.
 \begin{align*}
-x_1+4x_3 &= 1 \\
-x_2-x_3 &= 7 \\
-x_1-x_2+3x_4 &= -1
+x+3y-4z &= 5 \\
+3x+9y+z &= 0 \\
+x-z &= 1
 \end{align*}
 \end{problem}
 \begin{solution}
 \[
-\begin{bmatrix}[cccc|c]
-1 & 0 & 4 & 0 & 1 \\
-0 & 1 & -1 & 0 & 7 \\
-1 & -1 & 0 & 3 & -1
+\begin{bmatrix}[ccc|c]
+1 & 3 & -4 & 5 \\
+3 & 9 & 1 & 0 \\
+1 & 0 & -1 & 1
 \end{bmatrix}
 \]
 \end{solution}
@@ -31,54 +31,47 @@ x_1-x_2+3x_4 &= -1
 Find \(\RREF A\), where
 \[
   A =
-  \begin{bmatrix}[ccc|c]
-    2 & -1 & 5 & 4 \\
-    -1 & 0 & -2 & -1 \\
-    1 & 3 & -1 & -5
+  \begin{bmatrix}[cccc|c]
+    2 & 2 & 1 & 2 & -1 \\
+    1 & 1 & 2 & 4 & 5 \\
+    3 & 3 & -1 & -2 & 1
   \end{bmatrix}
 \]
 \end{problem}
 \begin{solution}
 \[
   \RREF A =
-  \begin{bmatrix}[ccc|c]
-    1 & 0 & 2 & 1 \\
-    0 & 1 & -1 & -2 \\
-    0 & 0 & 0 & 0
+  \begin{bmatrix}[cccc|c]
+    1 & 1 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 2 & 0 \\
+    0 & 0 & 0 & 0 & 1
   \end{bmatrix}
 \]
 \end{solution}
-
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E3}
-Find the solution set for the following system of linear equations.
+Solve the following linear system.
 \begin{align*}
-2x_1-2x_2+6x_3-x_4 &=-1 \\
-3x_1+6x_3+x_4 &= 5 \\
--4x_1+x_2-9x_3+2x_4&=-7
+4x_1+4x_2+3x_3-6x_4 &= 5 \\
+-2x_3-4x_4 &= 3 \\
+2x_1+2x_2+x_3-4x_4 &= -1 \\
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
   \begin{bmatrix}[cccc|c]
-    2 & -2 & 6 & -1 & -1 \\
-    3 & 0 & 6 & 1 & 5 \\
-    -4 & 1 & -9 & 2 & -7
+    4 & 4 & 3 & -6 & 5 \\
+    0 & 0 & -2 & -4 & 3 \\
+    2 & 2 & 1 & -4 & -1
   \end{bmatrix}
 \), so \(\RREF A =
   \begin{bmatrix}[cccc|c]
-    1 & 0 & 2 & 0 & 2 \\
-    0 & 1 & -1 & 0 & 3 \\
-    0 & 0 & 0 & 1 & -1
+    1 & 1 & 0 & -3 & 0 \\
+    0 & 0 & 1 & 2 & 0 \\
+    0 & 0 & 0 & 0 & 1
   \end{bmatrix}
-\). It follows that the solution set is given by \(
-  \begin{bmatrix}
-    2 - 2a \\
-    3 + a \\
-    a \\
-    -1
-  \end{bmatrix}
-\) for all real numbers \(a\).
+\). It follows that the system is inconsistent with no solutions
+(since the bottom row implies the contradiction \(0=1\)).
 \end{solution}
 
 \begin{problem}{E4}
@@ -86,120 +79,93 @@ Find a basis for the solution set of the system of equations
 \begin{align*}
 x+2y+3z+w &= 0 \\
 3x-y+z+w &= 0 \\
-2x-3y-2z &= 0 \\
--x+2z+5w &=0
+2x-3y-2z &= 0
 \end{align*}
 \end{problem}
 \begin{solution}
-$$\RREF \left(\begin{bmatrix} 1 & -2 & 3 & 1 \\ 3 & -1 & 1 & 1 \\ 2 & -3 & -2 & 0 \\ -1 & 0 & 2 & 5 \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 0 & -1 \\ 0 & 1 & 0 & -2 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
+$$\RREF \left(\begin{bmatrix} 1 & -2 & 3 & 1 \\ 3 & -1 & 1 & 1 \\ 2 & -3 & -2 & 0  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & \frac{5}{7} & \frac{3}{7} \\ 0 & 1 & \frac{8}{7} & \frac{2}{7} \\ 0 & 0 & 0 & 0\end{bmatrix}$$
 Then the solution set is
-$$\left\{ \begin{bmatrix} a \\ 2a \\ -2a \\ a \end{bmatrix} \bigg |\ a \in \IR \right\}$$
-So a basis for the solution set is $\left\{\begin{bmatrix} 1 \\ 2 \\ -2 \\ 1\end{bmatrix} \right\}$.
+$$\left\{ \begin{bmatrix} -\frac{5}{7}a-\frac{3}{7}b \\ -\frac{8}{7}a-\frac{2}{7}b \\ a \\ b \end{bmatrix} \bigg |\ a,b \in \IR \right\}$$
+So a basis for the solution set is $\left\{\begin{bmatrix} -\frac{5}{7} \\ -\frac{8}{7} \\ 1 \\ 0\end{bmatrix}, \begin{bmatrix} - \frac{3}{7} \\ -\frac{2}{7} \\ 0 \\ 1 \end{bmatrix} \right\}$, or $\left\{\begin{bmatrix} 5 \\ 8 \\ -7 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 2 \\ 0 \\ -7 \end{bmatrix}\right\}$.
 \end{solution}
-
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{V1}
-Let $V$ be the  set of all real numbers together with the operations $\oplus$ and $\odot$ defined by, for any $x,y \in V$ and $c \in \IR$,
+Let $V$ be the set of all real numbers with the operations, for any $x, y \in V$, $c \in \IR$,
 \begin{align*}
-x\oplus y  &= x+y-3 \\
-c \odot x &= cx-3(c-1)
+x \oplus y &= \sqrt{x^2+y^2} \\
+c \odot x &= c x
 \end{align*}
 \begin{enumerate}[(a)]
-\item Show that \textbf{scalar multiplication} is
-      \textbf{associative}: \(a\odot(b\odot x)=(ab)\odot x\).
-\item Determine if $V$ is a vector space or not.  Justify your answer
+\item Show that the vector \textbf{addition} $\oplus$ is \textbf{associative}:
+      \(x \oplus (y \oplus z)=(x\oplus y)\oplus z\).
+\item Determine if $V$ is a vector space or not.  Justify your answer.
 \end{enumerate}
 \end{problem}
-
 \begin{solution}
-Let $x,y \in V$, $c,d \in \IR$.
-To show associativity:
+Let $x,y,z \in \IR$.  Then
 \begin{align*}
-c\odot \left( d \odot x\right) &= c\odot \left( dx-3(d-1) \right) \\
-&= c\left(dx-3(d-1)\right)-3(c-1) \\
-&= cdx-3(cd-1) \\
-&= (cd) \odot x
+(x\oplus y) \oplus z &= \sqrt{x^2+y^2} \oplus z \\&= \sqrt{ (\sqrt{x^2+y^2})^2+z^2} \\&= \sqrt{x^2+y^2+z^2} \\
+&= \sqrt{x^2+(\sqrt{y^2+z^2})^2} \\ &= x \oplus \sqrt{y^2+z^2} \\ &= x \oplus (y \oplus z)
 \end{align*}
-
-We verify the remaining 7 properties to see that $V$ is a vector space.
-\begin{enumerate}[1)]
-\item Real addition is associative, so $\oplus$ is associative.
-\item $x\oplus 3 = x+3-3=x$, so $3$ is the additive identity.
-\item $x \oplus (6-x) = x+(6-x)-3=3$, so $6-x$ is the additive inverse of $x$.
-\item Real addition is commutative, so $\oplus$ is commutative.
-\item Associativity shown above
-\item $1 \odot x = x-3(1-1)=x$
-\item \begin{align*} c \odot (x \oplus y) &=
-c \odot (x+y-3) \\
-&= c(x+y-3)-3(c-1) \\
-&= cx-3(c-1) + cy-3(c-1) -3 \\
-&= (c\odot x ) \oplus (c\odot y)
-\end{align*}
-\item \begin{align*} (c+d) \odot x &= (c+d)x-3(c+d-1) \\
-&= cx-3(c-1)+dx-3(c-1)-3 \\
-&= (c\odot x ) \oplus (d \odot x)
-\end{align*}
-\end{enumerate}
-
-Therefore $V$ is a vector space.
+However, this is not a vector space, as there is no zero vector.
 \end{solution}
-
 \begin{problem}{V2}
-Determine if $\begin{bmatrix} 1 \\ 4 \\ 3 \end{bmatrix}$ is a linear combination of the vectors $\begin{bmatrix} 2 \\ 3 \\ -1 \end{bmatrix}$, $\begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix}$, and $\begin{bmatrix} -3 \\ -2 \\ 5 \end{bmatrix}$.
+Determine if  $\begin{bmatrix} 0 \\ 0 \\ 2 \end{bmatrix}$ can be written as a linear combination of the vectors $\begin{bmatrix} -1 \\ -9 \\ 15 \end{bmatrix}$ and $\begin{bmatrix} 1 \\ 5 \\ -5 \end{bmatrix}$.
 \end{problem}
 \begin{solution}
-$$\RREF\left( \begin{bmatrix}[ccc|c] 2 & 1 & -3  & 1 \\ 3 & -1 & -2 & 4 \\ -1 & 0 & 5 & 3 \end{bmatrix} \right) = \begin{bmatrix}[ccc|c] 1 & 0 & 0 & 2 \\ 0 & 1 & 0 & 0 \\ 0 & 0 &  1 & 1 \end{bmatrix}$$
-Since this system has a solution,  $\begin{bmatrix} 1 \\ 4 \\ 3 \end{bmatrix}$ is a linear combination of the three vectors.
+$$\RREF\left(\begin{bmatrix}[cc|c] -1 & 1 & 0 \\ -9 & 5 & 0 \\ 15 & -5 & 2 \end{bmatrix} \right) = \begin{bmatrix}[cc|c] 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
+Since this system has no solution, $\begin{bmatrix} 0 \\ 0 \\ 2 \end{bmatrix}$ cannot be written as a linear combination of the vectors $\begin{bmatrix} -1 \\ -9 \\ 15 \end{bmatrix}$ and $\begin{bmatrix} 1 \\ 5 \\ -5 \end{bmatrix}$.
+
 \end{solution}
+
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{V3}
-Does
-\(
-  \operatorname{span}\left\{
-    \begin{bmatrix} 2 \\ -1 \\ 4 \\ 2 \\ 1 \end{bmatrix},
-    \begin{bmatrix} -1 \\ 3 \\ 5 \\ 2 \\ 0 \end{bmatrix},
-    \begin{bmatrix} 1 \\ 0 \\ 5 \\ 1 \\ -3 \end{bmatrix}
-  \right\} = \IR^5
-\)?
+Determine if the vectors  $\begin{bmatrix} -3 \\ 1 \\ 1 \end{bmatrix}$,$\begin{bmatrix} 5 \\ -1 \\ -2 \end{bmatrix}$,$\begin{bmatrix}2 \\ 0 \\ -1 \end{bmatrix}$, and $\begin{bmatrix} 0 \\ 2 \\ -1\end{bmatrix}$ span $\IR^3$
 \end{problem}
 \begin{solution}
-Since there are only three vectors, they cannot span \(\IR^5\).
-\end{solution}
-\begin{problem}{V4}
-Determine if $\left\{ \begin{bmatrix} x \\ y \\ 0 \\ z \end{bmatrix}\  \bigg|\ x,y,z \in \IR\right\}$  a subspace of $\IR^4$.
-\end{problem}
-\begin{solution}
-It is closed under addition and scalar multiplication, so it is a subspace.  Alternatively, it is the image of the linear transformation from $\IR^3 \rightarrow \IR^4$ given by $$\begin{bmatrix} x \\ y \\ z \end{bmatrix} \mapsto  \begin{bmatrix} x \\ y \\ 0 \\ z \end{bmatrix}.$$
+$$\RREF\left(\begin{bmatrix}
+-3 & 5 & 2 & 0 \\ 1 & -1 & 0 & 2 \\ 1 & -2 & -1 & -1 \end{bmatrix}\right)=\begin{bmatrix} 1 & 0 & 1 & 5 \\ 0 & 1 & 1 & 3 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
+Since the resulting matrix has only two pivot columns, the vectors do not span $\IR^3$.
 \end{solution}
 
+
+\begin{problem}{V4}
+Determine if the set of all lattice points, i.e. $\{(x,y)\ \big|\ \text{$x$ and $y$ are integers} \}$ is a subspace of $\IR^2$.
+\end{problem}
+\begin{solution}
+This set is closed under addition, but not under scalar multiplication so it is not a subspace.
+\end{solution}
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{S1}
-Determine if the set of vectors  $\left\{\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix}, \begin{bmatrix} 1 \\ 3 \\ -2 \end{bmatrix}\right\}$ is  linearly dependent or linearly independent
+Determine if the set of polynomials  $\left\{x^2+x, x^2+2x-1, x^2+3x-2\right\}$ is  linearly dependent or linearly independent
 \end{problem}
 \begin{solution}
 $$\RREF\left( \begin{bmatrix} 1 &  1 & 1 \\ 0  & 2 & 3 \\ 1  & -1 & -2 \end{bmatrix} \right) = \begin{bmatrix} 1 &  0 & -\frac{1}{2} \\ 0  & 1 & \frac{3}{2} \\ 0& 0 & 0  \end{bmatrix}$$
 Since there is a nonpivot column, the set is linearly dependent.
 \end{solution}
 
+
 \begin{problem}{S2}
-Determine if the set $\left\{ \begin{bmatrix} 0 \\ 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ -1 \\ 0 \\ 2 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix}0 \\ 2 \\ 0 \\ -1 \end{bmatrix} \right\}$ is a basis of $\IR^4$.
+Determine if the set $\left\{ x^2+x-1, 3x^2-x+1, 2x-2 \right\}$ is a basis of $\P_2$
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 0 & 1 & 1 & 0 \\ 1 & -1 & 0 & 2   \\ 1 & 0 & -1 & 0  \\ 1 & 2 & 0 & -1  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 0 & 1  \\ 0 & 1 & 0 & -1  \\ 0 & 0 & 1 & 1  \\ 0 & 0 & 0 & 0 \end{bmatrix} $$
-Since this is not the identity matrix, the set is not a basis.
+$$\RREF\left(\begin{bmatrix} 1 & 3 & 2 \\ 1 & -1 & 0 \\ -1 & 1 & -2 \end{bmatrix} \right)= \begin{bmatrix} 1 & 0 &0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
+Since the resulting matrix is the identity matrix, it is a basis.
 \end{solution}
+
+
 \begin{extract}\newpage\end{extract}
 \begin{problem}{S3}
-Let $W = {\rm span} \left( \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}, \begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix} \right\} \right)$.  Find a basis for $W$.
+Let $W$ be the subspace of $\P_3$ given by $W = {\rm span} \left( \left\{ x^3+x^2+2x+1, 3x^3+3x^2+6x+3, 3x^3-x^2+3x-2, 7x^3-x^2+8x-3 \right\} \right)$.  Find a basis for $W$.
 \end{problem}
 \begin{solution}
 $$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \end{bmatrix}$$
 
 Then a basis is 
-$ \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix} , \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}\right\} $.
+$ \left\{ x^3+x^2+2x+1, 3x^3-x^2+3x-2 \right\} $.
 \end{solution}
 
 
