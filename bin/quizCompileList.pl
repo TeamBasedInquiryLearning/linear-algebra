@@ -3,9 +3,17 @@ use strict;
 use warnings;
 
 my @quizFileNames;
-my $nVersions=6;
-my $compileMidterm=1;
-my $compileFinal=0;
+
+#my $nVersions=6;
+#my $compileMidterm=1;
+#my $compileFinal=0;
+
+#Read in parameters from file
+open (my $parameterFileHandle, '<', "assessments/parameters.txt");
+my @parameterFile = <$parameterFileHandle>;
+my ($nVersions)  = $parameterFile[0] =~ /(^\d)/;
+my ($compileMidterm) =  $parameterFile[1] =~ /(^\d)/;
+my ($compileFinal) =  $parameterFile[2] =~ /(^\d)/;
 
 open (my $explicitFileHandle, '<', "assessments/quiz-standard-explicit-map.txt");
 my @quizStandards = <$explicitFileHandle>;

@@ -30,39 +30,21 @@ Let $x,y,z \in \IR$.  Then
 However, this is not a vector space, as there is no zero vector.
 \end{solution}
 \begin{problem}{V3}
-Does
-\(
-  \operatorname{span}\left\{
-    \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix},
-    \begin{bmatrix} 3 \\ 12 \\ -9 \end{bmatrix},
-    \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix},
-    \begin{bmatrix} -4 \\ 2 \\ -8 \end{bmatrix}
-  \right\} = \IR^3
-\)?
+Determine if the vectors $\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}$, $\begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}$, and $\begin{bmatrix}1 \\ 2 \\ 0 \\ 1 \end{bmatrix}$ span $\IR^4$.
 \end{problem}
 \begin{solution}
-Since
-\[
-  \RREF\begin{bmatrix}
-    2 & 3 & 1 & -4 \\
-    -1 & 12 & 2 & 2 \\
-    4 & -9 & 3 & -8
-  \end{bmatrix} =
-  \begin{bmatrix}
-    1 & 0 & 0 & -2 \\
-    0 & 1 & 0 & 0 \\
-    0 & 0 & 1 & 0
-  \end{bmatrix}
-\]
-lacks a zero row, the vectors span \(\IR^3\).
+$$\RREF\left( \begin{bmatrix} 2 & 3 & 0 & 1 \\ 0 & 1 & 0 & 2 \\ -2 & 3 & 1 & 0 \\ 0 & 6 & 1 & 1\end{bmatrix} \right) = \begin{bmatrix}1 & 0 & 0 & -\frac{5}{2} \\ 0 & 1 & 0 & 2 \\ 0 & 0 & 1 & -11\\ 0 & 0 & 0 & 0  \end{bmatrix} $$
+Since there is a zero row, the vectors do not span $\IR^4$.
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
-\begin{problem}{V4}
-Determine if $\left\{ \begin{bmatrix} x \\ y \\ 0 \\ z \end{bmatrix}\  \bigg|\ x,y,z \in \IR\right\}$  a subspace of $\IR^4$.
+\begin{problem}{V4} Let \(W\) be the set of all complex numbers
+that are purely real (i.e of the form $a+0i$)  or purely imaginary (i.e. of the form $0+bi$).
+Determine if \(W\) is a subspace of \(\IC\).
 \end{problem}
 \begin{solution}
-It is closed under addition and scalar multiplication, so it is a subspace.  Alternatively, it is the image of the linear transformation from $\IR^3 \rightarrow \IR^4$ given by $$\begin{bmatrix} x \\ y \\ z \end{bmatrix} \mapsto  \begin{bmatrix} x \\ y \\ 0 \\ z \end{bmatrix}.$$
+No, because \(1\) is purely real and \(i\) is purely imaginary, but
+the linear combination \(1+i\) is neither.
 \end{solution}
 
 

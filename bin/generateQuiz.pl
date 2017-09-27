@@ -70,10 +70,12 @@ sub getRandomProblems
 ###        Main                     ###
 #######################################
 
-#Maybe shift this to reading from a textfile later
-my $nVersions = 6;
-my $genMidterm = 1;
-my $genFinal = 0;
+#Read parameters from file
+open (my $parameterFileHandle, '<', "assessments/parameters.txt");
+my @parameterFile = <$parameterFileHandle>;
+my ($nVersions)  = $parameterFile[0] =~ /(^\d)/;
+my ($genMidterm) =  $parameterFile[1] =~ /(^\d)/;
+my ($genFinal) =  $parameterFile[2] =~ /(^\d)/;
 
 #Read explicitly assessed standard list for each quiz
 my %quizStandardsHash;
