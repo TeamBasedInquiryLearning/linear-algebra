@@ -2,7 +2,7 @@
 %% This is file, `.tex',
 %% generated with the extract package.
 %% 
-%% Generated on :  2017/09/27,11:25
+%% Generated on :  2017/09/29,11:24
 %% From source  :  midterm-v6.tex
 %% Using options:  active,generate=,extract-env={problem}
 %% 
@@ -13,30 +13,22 @@
 \begin{problem}{E1}
 Write an augmented matrix corresponding to the following system of linear equations.
 \begin{align*}
-x_1+3x_2-4x_3 +x_4 &= 5 \\
-3x_1+9x_2+x_3-7x_4 &= 0 \\
-x_1-x_3 +x_4 &= 1
+x+3y-4z &= 5 \\
+3x+9y+z &= 0 \\
+x-z &= 1
 \end{align*}
 \end{problem}
 
 \begin{problem}{E2}
-Find \(\RREF A\), where
-\[
-  A =
-  \begin{bmatrix}[ccc|c]
-    2 & -1 & 5 & 4 \\
-    -1 & 0 & -2 & -1 \\
-    1 & 3 & -1 & -5
-  \end{bmatrix}
-\]
+Put the following matrix in reduced row echelon form.
+$$\begin{bmatrix}[ccc|c] -3 & 1 & 0 & 2 \\ -8 & 2 & -1 & 6 \\ 0 & 2 & 3 & -2 \end{bmatrix}$$
 \end{problem}
 
 \begin{problem}{E3}
-Solve the system of linear equations.
+Solve the system of equations
 \begin{align*}
-2x+y-z+w &=5 \\
-3x-y-2w &= 0 \\
--x+5z+3w&=-1
+x+3y-4z &= 5 \\
+3x+9y+z &= 2
 \end{align*}
 \end{problem}
 
@@ -44,8 +36,9 @@ Solve the system of linear equations.
 Find a basis for the solution set to the homogeneous system of equations
 given by
 \begin{align*}
-3x+2y+z &= 0 \\
-x+y+z &= 0
+2x_1-2x_2+6x_3-x_4 &=0 \\
+3x_1+6x_3+x_4 &=0 \\
+-4x_1+x_2-9x_3+2x_4&=0
 \end{align*}
 \end{problem}
 
@@ -53,40 +46,38 @@ x+y+z &= 0
 Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
 (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
-c \odot (x_1,y_1) &= (0, cy_1)
+c \odot (x_1,y_1) &= (c^2x_1, c^3y_1)
 \end{align*}
 \begin{enumerate}[(a)]
-\item Show that scalar multiplication
-      \textbf{distributes vectors} over scalar addition:
-      \((c+d)\odot(x,y)=
-      c\odot(x,y) \oplus d\odot(x,y)\).
+\item Show that scalar multiplication \textbf{distributes scalars} over
+      vector addition:
+      \(c\odot((x_1,y_1) \oplus (x_2,y_2))=
+      c\odot(x_1,y_1) \oplus c\odot(x_2,y_2)\).
 \item Determine if $V$ is a vector space or not.  Justify your answer.
 \end{enumerate}
 \end{problem}
 
 \begin{problem}{V2}
-  Determine if
-  \(\begin{bmatrix} 4 \\ -1 \\ 6 \\ -7 \end{bmatrix}\)
-  belongs to the span of the set
-  \(\left\{
-    \begin{bmatrix} 2 \\ 0 \\ -1 \\ 5 \end{bmatrix},
-    \begin{bmatrix} 4 \\ -1 \\ 4 \\ 3 \end{bmatrix}
-    \right\}
-  \).
+Determine if  $\begin{bmatrix} 0 \\ 0 \\ 2 \end{bmatrix}$ can be written as a linear combination of the vectors $\begin{bmatrix} -1 \\ -9 \\ 15 \end{bmatrix}$ and $\begin{bmatrix} 1 \\ 5 \\ -5 \end{bmatrix}$.
 \end{problem}
 
 \begin{problem}{V3}
-Determine if the vectors  $\begin{bmatrix} 8 \\ 21 \\ -7 \end{bmatrix}$, $\begin{bmatrix} -3 \\ -8 \\ 3 \end{bmatrix}$, $\begin{bmatrix} -1 \\ -3 \\ 2 \end{bmatrix}$, and $\begin{bmatrix} 4 \\ 11 \\ -5 \end{bmatrix}$ span $\IR^3$.
+Does
+\(
+  \operatorname{span}\left\{
+    \begin{bmatrix} 2 \\ -1 \\ 4 \\ 2 \\ 1 \end{bmatrix},
+    \begin{bmatrix} -1 \\ 3 \\ 5 \\ 2 \\ 0 \end{bmatrix},
+    \begin{bmatrix} 1 \\ 0 \\ 5 \\ 1 \\ -3 \end{bmatrix}
+  \right\} = \IR^5
+\)?
 \end{problem}
 
-\begin{problem}{V4} Let \(W\) be the set of all \(\IR^3\) vectors
-\(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\)
-satisfying \(x+y+z=1\) (this forms a plane).
-Determine if \(W\) is a subspace of \(\IR^3\).
+\begin{problem}{V4}
+Determine if the set of all lattice points, i.e. $\{(x,y)\ \big|\ \text{$x$ and $y$ are integers} \}$ is a subspace of $\IR^2$.
 \end{problem}
 
 \begin{problem}{S1}
-Determine if the vectors $\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}$, $\begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix}$, and $\begin{bmatrix} 2 \\ 0 \\ -2 \end{bmatrix}$ are linearly dependent or linearly independent
+Determine if the set of vectors $\left\{ \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\}$ is  linearly dependent or linearly independent
 \end{problem}
 
 \begin{problem}{S2}
@@ -94,11 +85,11 @@ Determine if the set $\left\{ x^2+x-1, 3x^2-x+1, 2x-2 \right\}$ is a basis of $\
 \end{problem}
 
 \begin{problem}{S3}
-Let $W={\rm span}\left( \left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 4 \\ -2 \end{bmatrix},  \begin{bmatrix} 1 \\ 1 \\ 1 \\ -7 \end{bmatrix} \right\}\right)$.  Find a basis of $W$.
+Let $W = {\rm span} \left( \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}, \begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix} \right\} \right)$.  Find a basis for $W$.
 \end{problem}
 
 \begin{problem}{S4}
-Let $W$ be the subspace of $M_{2,2}$ given by $W={\rm span}\left(\left\{\begin{bmatrix} 2 & 0 \\ -2 & 0 \end{bmatrix}, \begin{bmatrix} 3 & 1 \\ 3 & 6 \end{bmatrix}, \begin{bmatrix} 0 & 0 \\ 1 & 1 \end{bmatrix}, \begin{bmatrix}1 & 2 \\ 0 & 1 \end{bmatrix}\right\}\right)$. Compute the dimension of $W$.
+Let $W = {\rm span} \left( \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}, \begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix} \right\} \right)$.  Find the dimension of $W$.
 \end{problem}
 
 \end{document}

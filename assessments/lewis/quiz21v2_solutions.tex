@@ -27,20 +27,15 @@ Since all columns are pivot columns, $S$ is injective.  Since there is a zero ro
 
 
 
-\begin{problem}{A4}
-Let $T: \IR^4\rightarrow \IR^4$ be the linear transformation given by $$T\left(\begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix} \right) = \begin{bmatrix} x+3y+3z+7w \\ x+3y-z-w \\ 2x+6y+3z+8w \\ x+3y-2z-3w \end{bmatrix}$$
-Compute the kernel and image of $T$.
+\begin{problem}{A4} 
+Let $T: \IR^4 \rightarrow \IR^3$ be the linear map given by $T\left(\begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix} \right) = \begin{bmatrix}  8x-3y-z+4w \\ y+3z-4w \\ -7x+3y+2z-5w\end{bmatrix} $.  Compute the kernel and image of $T$.
 \end{problem}
 \begin{solution}
+$$\RREF \left( \begin{bmatrix} 8 & -3 & -1 & 4 \\ 0 & 1 & 3 & -4 \\ -7 & 3 & 2 & -5 \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 1 & -1 \\ 0 & 1 & 3 & -4 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$ 
 
-$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
-
-Then the kernel is
-$$\ker(T) = \left\{ \begin{bmatrix} -3a-b \\ a \\ -2b \\ b \end{bmatrix}\ \big|\ a,b \in \IR\right\} = {\rm span}\left(\left\{ \begin{bmatrix} 3 \\ -1 \\ 0 \\ 0 \end{bmatrix} , \begin{bmatrix} 1\\0 \\ 2 \\ -1 \end{bmatrix} \right\} \right)$$
-and the image is 
-$${\rm Im}(T) = {\rm span} \left( \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix} , \begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}, \begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix} \right\} \right) = {\rm span} \left( \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix} , \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}\right\} \right)$$
+\begin{align*}
+{\rm Im}(T) &= {\rm span} \left( \left\{ \begin{bmatrix} 8 \\ 0 \\ -7 \end{bmatrix}, \begin{bmatrix} -3 \\ 1 \\ 3 \end{bmatrix} \right\} \right) \\
+\ker(T)&={\rm span} \left( \left\{ \begin{bmatrix} 1 \\ 3 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 4 \\ 0 \\ 1 \end{bmatrix} \right\} \right)
+\end{align*}
 \end{solution}
-
-
-
 \end{document}
