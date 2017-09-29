@@ -10,14 +10,12 @@
 \begin{document}
 
 \begin{problem}{S3}  
-Let $W={\rm span}\left(\left\{\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix}1 \\ 2 \\ 0 \\ 1 \end{bmatrix}\right\}\right)$.  Find a basis of $W$.
+Let $W={\rm span}\left( \left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 4 \\ -2 \end{bmatrix},  \begin{bmatrix} 1 \\ 1 \\ 1 \\ -7 \end{bmatrix} \right\}\right)$.  Find a basis of $W$.
 \end{problem}
 \begin{solution}
-$$\RREF\left( \begin{bmatrix} 2 & 3 & 0 & 1 \\ 0 & 1 & 0 & 2 \\ -2 & 3 & 1 & 0 \\ 0 & 6 & 1 & 1\end{bmatrix} \right) = \begin{bmatrix}1 & 0 & 0 & -\frac{5}{2} \\ 0 & 1 & 0 & 2 \\ 0 & 0 & 1 & -11\\ 0 & 0 & 0 & 0  \end{bmatrix} $$
-Then $\left\{\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}\right\}$ is a basis of $W$.
+$$ \RREF \left( \begin{bmatrix} 1 & 2 & 3 & 1 \\ -1 & 0 & -1 & 1 \\ 3 & 1 & 4 & 1 \\ -3 & 1 & -2 & -7 \end{bmatrix} \right) =  \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
+Then  $\left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 4 \\ -2 \end{bmatrix},  \begin{bmatrix} 1 \\ 1 \\ 1 \\ -7 \end{bmatrix} \right\}$ is a basis for $W$.
 \end{solution}
-
-
 \begin{problem}{S4}  
 Let $W$ be the subspace of $\P_3$ given by $W={\rm span}\left( \left\{ x^3-x^2+3x-3, 2x^3+x+1, 3x^3-x^2+4x-2, x^3+x^2+x-7\right\}\right)$.  Compute the dimension of $W$.
 \end{problem}
@@ -34,11 +32,11 @@ Let $T: \IR^3 \rightarrow \IR$ be the linear transformation given by $$T\left(\b
 \begin{solution}
 $$\begin{bmatrix} 0 & 1 & 3 \end{bmatrix}$$
 \end{solution}
-\begin{problem}{A2} 
- Determine if $T: \IR^2 \rightarrow \IR^2$ given by $T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} e^{x} \\ e^y \end{bmatrix}$ is a linear transformation.
+\begin{problem}{A2}
+Determine if $D: M_{2,2} \rightarrow \IR$ given by $D\left(\begin{bmatrix} a & b \\ c & d \end{bmatrix} \right) = ad-bc$ is a linear transformation or not.
 \end{problem}
 \begin{solution}
-It is not linear.  For example, $$\begin{bmatrix}e^2 \\ 1 \end{bmatrix} = T\left(\begin{bmatrix} 2 \\ 0 \end{bmatrix} \right) \neq 2 T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right)=\begin{bmatrix} 2e \\ 1 \end{bmatrix}$$
+$D(I)=1$ but $D(2I)=4 \neq 2D(I)$, so $D$ is not linear.
 \end{solution}
 
 \end{document}

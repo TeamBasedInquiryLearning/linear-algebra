@@ -2,7 +2,7 @@
 %% This is file, `midterm-v3.tex',
 %% generated with the extract package.
 %% 
-%% Generated on :  2017/09/29,11:24
+%% Generated on :  2017/09/29,15:10
 %% From source  :  midterm-v3_solutions.tex
 %% Using options:  active,generate=midterm-v3,extract-env={problem}
 %% 
@@ -17,80 +17,77 @@
 \begin{problem}{E1}
 Write an augmented matrix corresponding to the following system of linear equations.
 \begin{align*}
-x_1+3x_2-4x_3 +x_4 &= 5 \\
-3x_1+9x_2+x_3-7x_4 &= 0 \\
-x_1-x_3 +x_4 &= 1
+x_1+4x_3 &= 1 \\
+x_2-x_3 &= 7 \\
+x_1-x_2+3x_3 &= -1
 \end{align*}
 \end{problem}
 
 \begin{problem}{E2}
-Find \(\RREF A\), where
-\[
-  A =
-  \begin{bmatrix}[cccc|c]
-    3 & -2 & 1 & 8 & -5 \\
-    2 & 2 & 0 & 6 & -2 \\
-    -1 & 1 & 1 & -4 & 6 \\
-  \end{bmatrix}
-\]
+Put the following matrix in reduced row echelon form.
+$$\begin{bmatrix}
+ 3 & -1 & 0 \\
+ -1 & 0 & -1 \\
+ -1 & 1 & 2 \\
+ 0 & 2 & 6
+\end{bmatrix}$$
 \end{problem}
 \newpage
 
 \begin{problem}{E3}
-Solve the system of linear equations.
+Solve the system of equations
 \begin{align*}
-2x+y-z+w &=5 \\
-3x-y-2w &= 0 \\
--x+5z+3w&=-1
+-3x +y &= 2\\
+-8x+2y-z &= 6 \\
+2y+3z &= -2
 \end{align*}
+
+
 \end{problem}
 
 \begin{problem}{E4}
-Find a basis for the solution set to the homogeneous system of equations
+Find a basis for the solution set of the system of equations
 \begin{align*}
-4x_1+4x_2+3x_3-6x_4 &= 0 \\
--2x_3-4x_4 &= 0 \\
-2x_1+2x_2+x_3-4x_4 &= 0 \\
+x+2y+3z+w &= 0 \\
+3x-y+z+w &= 0 \\
+2x-3y-2z &= 0
 \end{align*}
 \end{problem}
 \newpage
 
 \begin{problem}{V1}
-Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+Let $V$ be the set of all real numbers with the operations, for any $x, y \in V$, $c \in \IR$,
 \begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
-c \odot (x_1,y_1) &= (c^2x_1, c^3y_1)
+x \oplus y &= \sqrt{x^2+y^2} \\
+c \odot x &= c x
 \end{align*}
 \begin{enumerate}[(a)]
-\item Show that scalar multiplication \textbf{distributes scalars} over
-      vector addition:
-      \(c\odot((x_1,y_1) \oplus (x_2,y_2))=
-      c\odot(x_1,y_1) \oplus c\odot(x_2,y_2)\).
+\item Show that the vector \textbf{addition} $\oplus$ is \textbf{associative}:
+      \(x \oplus (y \oplus z)=(x\oplus y)\oplus z\).
 \item Determine if $V$ is a vector space or not.  Justify your answer.
 \end{enumerate}
 \end{problem}
 
 \begin{problem}{V2}
-  Determine if
-  \(\begin{bmatrix} 3 \\ -2 \\ 4 \end{bmatrix}\)
-  belongs to the span of the set
-  \(\left\{
-    \begin{bmatrix} 1 \\ 2 \\ -3 \end{bmatrix},
-    \begin{bmatrix} 2 \\ 4 \\ -6 \end{bmatrix},
-    \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
-    \right\}
-  \).
+Determine if $\begin{bmatrix} 1 \\ 4 \\ 3 \end{bmatrix}$ is a linear combination of the vectors $\begin{bmatrix} 2 \\ 3 \\ -1 \end{bmatrix}$, $\begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix}$, and $\begin{bmatrix} -3 \\ -2 \\ 5 \end{bmatrix}$.
 \end{problem}
 \newpage
 
 \begin{problem}{V3}
-Determine if the vectors  $\begin{bmatrix} 8 \\ 21 \\ -7 \end{bmatrix}$, $\begin{bmatrix} -3 \\ -8 \\ 3 \end{bmatrix}$, $\begin{bmatrix} -1 \\ -3 \\ 2 \end{bmatrix}$, and $\begin{bmatrix} 4 \\ 11 \\ -5 \end{bmatrix}$ span $\IR^3$.
+Does
+\(
+  \operatorname{span}\left\{
+    \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix},
+    \begin{bmatrix} 3 \\ 12 \\ -9 \end{bmatrix},
+    \begin{bmatrix} 1 \\ 4 \\ -3 \end{bmatrix},
+    \begin{bmatrix} -4 \\ 2 \\ -8 \end{bmatrix}
+  \right\} = \IR^3
+\)?
 \end{problem}
 
-\begin{problem}{V4} Let \(W\) be the set of all \(\IR^3\) vectors
-\(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\)
-satisfying \(x+y+z=1\) (this forms a plane).
-Determine if \(W\) is a subspace of \(\IR^3\).
+\begin{problem}{V4} Let \(W\) be the set of all complex numbers
+that are purely real (i.e of the form $a+0i$)  or purely imaginary (i.e. of the form $0+bi$).
+Determine if \(W\) is a subspace of \(\IC\).
 \end{problem}
 \newpage
 
@@ -99,16 +96,16 @@ Determine if the set of vectors $\left\{\begin{bmatrix} 3 \\ -1 \\ 0 \\ 4 \end{b
 \end{problem}
 
 \begin{problem}{S2}
-Determine if the set $\left\{ x^3-3x^2+2x+2, -x^3+4x^2-x+1, -x^3+2x+1, 3x^2+3x+9 \right\}$ is a basis of $\P^3$ or not.
+Determine if the set $\left\{ \begin{bmatrix} 0 \\ 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ -1 \\ 0 \\ 2 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix}0 \\ 2 \\ 0 \\ -1 \end{bmatrix} \right\}$ is a basis of $\IR^4$.
 \end{problem}
 \newpage
 
 \begin{problem}{S3}
-Let $W = {\rm span} \left( \left\{  \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\} \right)$.   Find a basis for $W$.
+Let $W = {\rm span} \left( \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}, \begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix} \right\} \right)$.  Find a basis for $W$.
 \end{problem}
 
 \begin{problem}{S4}
-Let $W = {\rm span} \left( \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}, \begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix} \right\} \right)$.  Find the dimension of $W$.
+Let $W={\rm span}\left(\left\{\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix}1 \\ 2 \\ 0 \\ 1 \end{bmatrix}\right\}\right)$. Compute the dimension of $W$.
 \end{problem}
 
 \end{document}

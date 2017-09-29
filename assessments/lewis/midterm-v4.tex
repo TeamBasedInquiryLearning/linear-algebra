@@ -2,7 +2,7 @@
 %% This is file, `midterm-v4.tex',
 %% generated with the extract package.
 %% 
-%% Generated on :  2017/09/29,11:24
+%% Generated on :  2017/09/29,15:10
 %% From source  :  midterm-v4_solutions.tex
 %% Using options:  active,generate=midterm-v4,extract-env={problem}
 %% 
@@ -15,40 +15,45 @@
 \begin{document}
 
 \begin{problem}{E1}
-Write an augmented matrix corresponding to the following system of linear equations.
-\begin{align*}
-x_1+4x_3 &= 1 \\
-x_2-x_3 &= 7 \\
-x_1-x_2+3x_3 &= -1
-\end{align*}
+Write a system of linear equations corresponding to the following
+augmented matrix.
+\[
+\begin{bmatrix}[cccc|c]
+3 & -1 & 0 & 1 & 5 \\
+-1 & 9 & 1 & -7 & 0 \\
+1 & 0 & -1 & 0 & -3
+\end{bmatrix}
+\]
 \end{problem}
 
 \begin{problem}{E2}
-Put the following matrix in reduced row echelon form.
-$$\begin{bmatrix}
- 3 & -1 & 0 \\
- -1 & 0 & -1 \\
- -1 & 1 & 2 \\
- 0 & 2 & 6
-\end{bmatrix}$$
+Find \(\RREF A\), where
+\[
+  A =
+  \begin{bmatrix}[cccc|c]
+    2 & 2 & 1 & 2 & -1 \\
+    1 & 1 & 2 & 4 & 5 \\
+    3 & 3 & -1 & -2 & 1
+  \end{bmatrix}
+\]
 \end{problem}
 \newpage
 
 \begin{problem}{E3}
-Solve the system of equations
+Solve the system of linear equations.
 \begin{align*}
-x+3y-4z &= 5 \\
-3x+9y+z &= 2
+2x+y-z+w &=5 \\
+3x-y-2w &= 0 \\
+-x+5z+3w&=-1
 \end{align*}
 \end{problem}
 
 \begin{problem}{E4}
-Find a basis for the solution set to the system of equations
+Find a basis for the solution set of the system of equations
 \begin{align*}
-x+2y-3z &= 0 \\
-2x+y-4z &= 0 \\
-3y -2z & = 0 \\
-x -y -z &= 0
+x+2y+3z+w &= 0 \\
+3x-y+z+w &= 0 \\
+2x-3y-2z &= 0
 \end{align*}
 \end{problem}
 \newpage
@@ -79,31 +84,32 @@ Does
   \operatorname{span}\left\{
     \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix},
     \begin{bmatrix} 3 \\ 12 \\ -9 \end{bmatrix},
-    \begin{bmatrix} 1 \\ 4 \\ -3 \end{bmatrix},
+    \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix},
     \begin{bmatrix} -4 \\ 2 \\ -8 \end{bmatrix}
   \right\} = \IR^3
 \)?
 \end{problem}
 
-\begin{problem}{V4} Let $W$ be the set of all polynomials of even degree.  Determine if $W$ is a subspace of the vector space of all polynomials.
+\begin{problem}{V4}
+Determine if $\left\{ \begin{bmatrix} x \\ y \\ 0 \\ z \end{bmatrix}\  \bigg|\ x,y,z \in \IR\right\}$  a subspace of $\IR^4$.
 \end{problem}
 \newpage
 
 \begin{problem}{S1}
-Determine if the vectors $\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}$, $\begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix}$, and $\begin{bmatrix} 2 \\ 0 \\ -2 \end{bmatrix}$ are linearly dependent or linearly independent
+Determine if the set of polynomials $\left\{ -3x^3-8x^2, x^3+2x^2+2, -x^2+3\right\}$ is  linearly dependent or linearly independent
 \end{problem}
 
 \begin{problem}{S2}
-Determine if the set $\left\{ x^2+x-1, 3x^2-x+1, 2x-2 \right\}$ is a basis of $\P_2$
+Determine if the set $\left\{ \begin{bmatrix} 0 \\ 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ -1 \\ 0 \\ 2 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix}0 \\ 2 \\ 0 \\ -1 \end{bmatrix} \right\}$ is a basis of $\IR^4$.
 \end{problem}
 \newpage
 
 \begin{problem}{S3}
-Let $W={\rm span}\left(\left\{\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix}1 \\ 2 \\ 0 \\ 1 \end{bmatrix}\right\}\right)$.  Find a basis of $W$.
+Let $W = {\rm span} \left( \left\{  \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\} \right)$.   Find a basis for $W$.
 \end{problem}
 
 \begin{problem}{S4}
-Let $W$ be the subspace of $\P_3$ given by $W={\rm span}\left( \left\{ x^3-x^2+3x-3, 2x^3+x+1, 3x^3-x^2+4x-2, x^3+x^2+x-7\right\}\right)$.  Compute the dimension of $W$.
+Let $W = {\rm span} \left( \left\{  \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\} \right)$.  Compute the dimension of $W$.
 \end{problem}
 
 \end{document}

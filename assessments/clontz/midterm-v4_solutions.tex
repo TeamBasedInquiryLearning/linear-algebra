@@ -10,71 +10,84 @@
 \begin{document}
 
 \begin{problem}{E1}
-Write a system of linear equations corresponding to the following
-augmented matrix.
+Write an augmented matrix corresponding to the following system of linear equations.
+\begin{align*}
+x_1+3x_2-4x_3 +x_4 &= 5 \\
+3x_1+9x_2+x_3-7x_4 &= 0 \\
+x_1-x_3 +x_4 &= 1
+\end{align*}
+\end{problem}
+\begin{solution}
 \[
-\begin{bmatrix}[ccc|c]
-1 & 0 & 4 & 1 \\
-0 & 1 & -1 & 7 \\
-1 & -1 & 3 & -1
+\begin{bmatrix}[cccc|c]
+1 & 3 & -4 & 1 & 5 \\
+3 & 9 & 1 & -7 & 0 \\
+1 & 0 & -1 & 1 &  1
 \end{bmatrix}
 \]
+\end{solution}
+
+\begin{problem}{E2}
+Put the following matrix in reduced row echelon form.
+$$\begin{bmatrix}-3 & 5 & 2 & 0 \\ 1 & -1 & 0 & 2 \\ 1 & -2 & -1 & -1 \end{bmatrix}$$
 \end{problem}
 \begin{solution}
 \begin{align*}
-x_1+4x_3 &= 1 \\
-x_2-x_3 &= 7 \\
-x_1-x_2+3x_3 &= -1
+\begin{bmatrix}
+-3 & 5 & 2 & 0 \\
+ 1 & -1 & 0 & 2 \\
+ 1 & -2 & -1 & -1
+\end{bmatrix} &\sim
+\begin{bmatrix}
+ 1 & -1 & 0 & 2 \\
+-3 & 5 & 2 & 0 \\
+ 1 & -2 & -1 & -1
+\end{bmatrix} \sim
+\begin{bmatrix}
+ 1 & -1 & 0 & 2 \\
+ 0 & 2 & 2 & 6 \\
+ 0 & -1 & -1 & -3
+\end{bmatrix} \sim
+\begin{bmatrix}
+ 1 & -1 & 0 & 2 \\
+ 0 & 1 & 1 & 3 \\
+ 0 & -1 & -1 & -3
+\end{bmatrix} \\ &\sim
+\begin{bmatrix}
+ 1 & 0 & 1 & 5 \\
+ 0 & 1 & 1 & 3 \\
+ 0 & 0 & 0 & 0
+\end{bmatrix}
 \end{align*}
-\end{solution}
-\begin{problem}{E2}
-Find \(\RREF A\), where
-\[
-  A =
-  \begin{bmatrix}[ccc|c]
-    2 & -1 & 5 & 4 \\
-    -1 & 0 & -2 & -1 \\
-    1 & 3 & -1 & -5
-  \end{bmatrix}
-\]
-\end{problem}
-\begin{solution}
-\[
-  \RREF A =
-  \begin{bmatrix}[ccc|c]
-    1 & 0 & 2 & 1 \\
-    0 & 1 & -1 & -2 \\
-    0 & 0 & 0 & 0
-  \end{bmatrix}
-\]
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E3}
 Solve the following linear system.
 \begin{align*}
-4x_1+4x_2+3x_3-6x_4 &= 5 \\
--2x_3-4x_4 &= 3 \\
-2x_1+2x_2+x_3-4x_4 &= -1 \\
+3x+2y+z &= 7 \\
+x+y+z &= 1 \\
+-2x+3z &= -11
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
-  \begin{bmatrix}[cccc|c]
-    4 & 4 & 3 & -6 & 5 \\
-    0 & 0 & -2 & -4 & 3 \\
-    2 & 2 & 1 & -4 & -1
+  \begin{bmatrix}[ccc|c]
+    3 & 2 & 1 & 7 \\
+    1 & 1 & 1 & 1 \\
+    -2 & 0 & 3 & 11
   \end{bmatrix}
 \), so \(\RREF A =
-  \begin{bmatrix}[cccc|c]
-    1 & 1 & 0 & -3 & 0 \\
-    0 & 0 & 1 & 2 & 0 \\
-    0 & 0 & 0 & 0 & 1
+  \begin{bmatrix}[ccc|c]
+    1 & 0 & 0 & 4 \\
+    0 & 1 & 0 & -2 \\
+    0 & 0 & 1 & -1
   \end{bmatrix}
-\). It follows that the system is inconsistent with no solutions
-(since the bottom row implies the contradiction \(0=1\)).
+\). It follows that the system has exactly one solution:
+\(\begin{bmatrix}
+  4 & -2 & -1
+\end{bmatrix}\)
 \end{solution}
-
 \begin{problem}{E4}
 Find a basis for the solution set of the system of equations
 \begin{align*}
@@ -138,79 +151,81 @@ Therefore $V$ is a vector space.
 \end{solution}
 
 \begin{problem}{V2}
-  Determine if
-  \(\begin{bmatrix} 3 \\ -2 \\ 4 \end{bmatrix}\)
-  belongs to the span of the set
-  \(\left\{
-    \begin{bmatrix} 1 \\ 2 \\ -3 \end{bmatrix},
-    \begin{bmatrix} 2 \\ 4 \\ -6 \end{bmatrix},
-    \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
-    \right\}
-  \).
+Determine if $\begin{bmatrix}0 \\ -1 \\ 2 \\ 6 \end{bmatrix}$ can be written as a linear combination of the vectors $\begin{bmatrix} 3 \\ -1 \\ -1 \\ 0 \end{bmatrix}$ and $\begin{bmatrix} -1 \\ 0 \\ 1 \\ 2 \end{bmatrix}$.
 \end{problem}
 \begin{solution}
-  Since
-  \[
-    \RREF\left(
-      \begin{bmatrix}[ccc|c]
-        1 & 2 & 0 & 3 \\
-        2 & 4 & 0 & -2 \\
-        -3 & -6 & 0 & 4
-      \end{bmatrix}
-    \right) =
-    \begin{bmatrix}[ccc|c]
-      1 & 2 & 0 & 0 \\
-      0 & 0 & 0 & 1 \\
-      0 & 0 & 0 & 0
-    \end{bmatrix}
-  \]
-  contains the contradiction \(0=1\),
-  \(\begin{bmatrix} 3 \\ -2 \\ 4 \end{bmatrix}\) is
-  not a linear combination of the three vectors.
-\end{solution}
-\begin{extract}\newpage\end{extract}
-\begin{problem}{V3}
-Determine if the vectors $\begin{bmatrix} 1 \\ 1 \\ 2 \\1 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}$, $\begin{bmatrix}3 \\ -1 \\ 3 \\ -2\end{bmatrix}$, and $\begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix}$  span $\IR^4$.
-\end{problem}
-\begin{solution}
-$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0  \end{bmatrix}$$
-Since there are zero rows, they do not span.  Alternatively, by inspection $\begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}=3\begin{bmatrix} 1 \\ 1 \\ 2 \\1 \end{bmatrix}$, so the set is linearly dependent, so it spans a subspace of dimension at most 3, therefore it does not span $\IR^4$.
+$$\RREF\left(\left[\begin{array}{cc|c} 3 & -1 & 0 \\ -1 & 0 & -1 \\ -1 & 1 & 2 \\ 0 & 2 & 6\end{array} \right] \right)= \left[ \begin{array}{cc|c} 1 & 0 & 1 \\ 0 & 1 & 3 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array} \right]$$
+
+Since this system has a solution, $\begin{bmatrix}0 \\ -1 \\ 2 \\ 6 \end{bmatrix}$ can be written as a linear combination of the vectors $\begin{bmatrix} 3 \\ -1 \\ -1 \\ 0 \end{bmatrix}$ and $\begin{bmatrix} -1 \\ 0 \\ 1 \\ 2 \end{bmatrix}$, namely
+$$\begin{bmatrix}0 \\ -1 \\ 2 \\ 6 \end{bmatrix}=\begin{bmatrix} 3 \\ -1 \\ -1 \\ 0 \end{bmatrix}+3\begin{bmatrix} -1 \\ 0 \\ 1 \\ 2 \end{bmatrix}.$$
 \end{solution}
 
-\begin{problem}{V4} Let $W$ be the set of all polynomials of even degree.  Determine if $W$ is a subspace of the vector space of all polynomials.
+\begin{extract}\newpage\end{extract}
+\begin{problem}{V3}
+Does
+\(
+  \operatorname{span}\left\{
+    \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix},
+    \begin{bmatrix} 3 \\ 12 \\ -9 \end{bmatrix},
+    \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix},
+    \begin{bmatrix} -4 \\ 2 \\ -8 \end{bmatrix}
+  \right\} = \IR^3
+\)?
 \end{problem}
 \begin{solution}
-$W$ is closed under scalar multiplication, but not under addition.  For example, $x-x^2$ and $x^2$ are both in $W$, but $(x-x^2)+(x^2)=x \notin W$.
+Since
+\[
+  \RREF\begin{bmatrix}
+    2 & 3 & 1 & -4 \\
+    -1 & 12 & 2 & 2 \\
+    4 & -9 & 3 & -8
+  \end{bmatrix} =
+  \begin{bmatrix}
+    1 & 0 & 0 & -2 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0
+  \end{bmatrix}
+\]
+lacks a zero row, the vectors span \(\IR^3\).
+\end{solution}
+
+\begin{problem}{V4} Let $W$ be the set of all polynomials of the form
+\(ax^3+bx\).  Determine if $W$ is a subspace of \(\P^3\).
+\end{problem}
+\begin{solution}
+Yes because \(s(a_1x^3+b_1x)+t(a_2x^3+b_2x)=
+(sa_1+ta_2)x^3+(sb_1+tb_2)x\) also belongs to \(W\).
+Alternately, yes because \(W\) is isomorphic to \(\IR^2\).
 \end{solution}
 
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{S1}
-Determine if the set of polynomials $\left\{ -3x^3-8x^2, x^3+2x^2+2, -x^2+3\right\}$ is  linearly dependent or linearly independent
+Determine if the set of vectors $\left\{ \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\}$ is  linearly dependent or linearly independent
 \end{problem}
 \begin{solution}
-$$\RREF\left( \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 0 & 0 \\ 0 & 2 & 3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{3}{2} \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$ 
+$$\RREF\left( \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{3}{2} \\ 0 & 0 & 0 \end{bmatrix}$$ 
 This has a non pivot column, therefore the set is linearly dependent.
 \end{solution}
 
-
 \begin{problem}{S2}
-Determine if the set $\left\{\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ -2 \end{bmatrix}\right\}$ is a basis of $\IR^3$
+Determine if the set $\left\{ x^3-3x^2+2x+2, -x^3+4x^2-x+1, -x^3+2x+1, 3x^2+3x+9 \right\}$ is a basis of $\P^3$ or not.
 \end{problem}
+
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 1 & 3 & 2 \\ 1 & -1 & 0 \\ -1 & 1 & -2 \end{bmatrix} \right)= \begin{bmatrix} 1 & 0 &0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
-Since the resulting matrix is the identity matrix, it is a basis.
+$$\RREF \begin{bmatrix} 1 & -1 & -1 & 0 \\ -3 & 4 & 0 & 3 \\ 2 & -1 & 2 & 3 \\ 2 & 1 & 1 & 9 \end{bmatrix}=\begin{bmatrix} 1 &0 & 0 & 3 \\ 0 & 1 & 0 & 3 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
+Since this is not the identity matrix, the set is not a basis.
 \end{solution}
-
-
 \begin{extract}\newpage\end{extract}
-\begin{problem}{S3}  
-Let $W={\rm span}\left( \left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 4 \\ -2 \end{bmatrix},  \begin{bmatrix} 1 \\ 1 \\ 1 \\ -7 \end{bmatrix} \right\}\right)$.  Find a basis of $W$.
+\begin{problem}{S3}
+Let $W$ be the subspace of $\P_2$ given by $W = {\rm span} \left( \left\{  -3x^2-8x, x^2+2x+2, -x+3\right\} \right)$.   Find a basis for $W$.
 \end{problem}
 \begin{solution}
-$$ \RREF \left( \begin{bmatrix} 1 & 2 & 3 & 1 \\ -1 & 0 & -1 & 1 \\ 3 & 1 & 4 & 1 \\ -3 & 1 & -2 & -7 \end{bmatrix} \right) =  \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-Then  $\left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 4 \\ -2 \end{bmatrix},  \begin{bmatrix} 1 \\ 1 \\ 1 \\ -7 \end{bmatrix} \right\}$ is a basis for $W$.
+Let $A= \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix}$, and compute $\RREF(A) = \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{3}{2} \\ 0 & 0 & 0 \end{bmatrix}$.
+Since the first two columns are pivot columns, $\left\{ -3x^2-8x, x^2+2x+2\right\} $ is a basis for $W$.
 \end{solution}
+
+
 \begin{problem}{S4}  
 Let $W={\rm span}\left( \left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 4 \\ -2 \end{bmatrix},  \begin{bmatrix} 1 \\ 1 \\ 1 \\ -7 \end{bmatrix} \right\}\right)$.  Compute the dimension of $W$.
 \end{problem}
