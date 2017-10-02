@@ -2,7 +2,7 @@
 %% This is file, `midterm-v6.tex',
 %% generated with the extract package.
 %% 
-%% Generated on :  2017/09/27,11:25
+%% Generated on :  2017/10/02,14:54
 %% From source  :  midterm-v6_solutions.tex
 %% Using options:  active,generate=midterm-v6,extract-env={problem}
 %% 
@@ -15,12 +15,15 @@
 \begin{document}
 
 \begin{problem}{E1}
-Write an augmented matrix corresponding to the following system of linear equations.
-\begin{align*}
-x_1+3x_2-4x_3 +x_4 &= 5 \\
-3x_1+9x_2+x_3-7x_4 &= 0 \\
-x_1-x_3 +x_4 &= 1
-\end{align*}
+Write a system of linear equations corresponding to the following
+augmented matrix.
+\[
+\begin{bmatrix}[cccc|c]
+3 & -1 & 0 & 1 & 5 \\
+-1 & 9 & 1 & -7 & 0 \\
+1 & 0 & -1 & 0 & -3
+\end{bmatrix}
+\]
 \end{problem}
 
 \begin{problem}{E2}
@@ -47,49 +50,37 @@ Solve the system of linear equations.
 
 \begin{problem}{E4}
 Find a basis for the solution set to the homogeneous system of equations
-given by
 \begin{align*}
-3x+2y+z &= 0 \\
-x+y+z &= 0
+4x_1+4x_2+3x_3-6x_4 &= 0 \\
+-2x_3-4x_4 &= 0 \\
+2x_1+2x_2+x_3-4x_4 &= 0 \\
 \end{align*}
 \end{problem}
 \newpage
 
 \begin{problem}{V1}
-Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+Let $V$ be the set of all points on the parabola $y=x^2$ with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
-c \odot (x_1,y_1) &= (0, cy_1)
+(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2+2x_1x_2) \\
+c \odot (x_1,y_1) &= (cx_1, c^2y_1)
 \end{align*}
 \begin{enumerate}[(a)]
-\item Show that scalar multiplication
-      \textbf{distributes vectors} over scalar addition:
-      \((c+d)\odot(x,y)=
-      c\odot(x,y) \oplus d\odot(x,y)\).
+\item Show that the vector \textbf{addition} $\oplus$ is \textbf{associative}:
+      \((x_1,y_1) \oplus ((x_2,y_2) \oplus (x_3,y_3))=((x_1,y_1)\oplus (x_2,y_2))\oplus (x_3,y_3)\).
 \item Determine if $V$ is a vector space or not.  Justify your answer.
 \end{enumerate}
 \end{problem}
 
-\begin{problem}{V2}
-  Determine if
-  \(\begin{bmatrix} 4 \\ -1 \\ 6 \\ -7 \end{bmatrix}\)
-  belongs to the span of the set
-  \(\left\{
-    \begin{bmatrix} 2 \\ 0 \\ -1 \\ 5 \end{bmatrix},
-    \begin{bmatrix} 4 \\ -1 \\ 4 \\ 3 \end{bmatrix}
-    \right\}
-  \).
+\begin{problem}{V2} Determine if $\begin{bmatrix} 1 \\ 4 \\ 3 \end{bmatrix}$ is a linear combination of the vectors $\begin{bmatrix} 3 \\ 0 \\ -1 \end{bmatrix}$, $\begin{bmatrix} 1 \\ -1 \\ 4 \end{bmatrix}$, and $\begin{bmatrix} 5 \\ 1 \\  -6 \end{bmatrix}$.
 \end{problem}
 \newpage
 
 \begin{problem}{V3}
-Determine if the vectors  $\begin{bmatrix} 8 \\ 21 \\ -7 \end{bmatrix}$, $\begin{bmatrix} -3 \\ -8 \\ 3 \end{bmatrix}$, $\begin{bmatrix} -1 \\ -3 \\ 2 \end{bmatrix}$, and $\begin{bmatrix} 4 \\ 11 \\ -5 \end{bmatrix}$ span $\IR^3$.
+Determine if the vectors $\begin{bmatrix} 1 \\ 0 \\ 2 \\1 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 1 \\ 0 \\ -3 \end{bmatrix}$,$\begin{bmatrix} 0 \\ 3 \\ 0 \\ -2 \end{bmatrix}$, and $\begin{bmatrix}-1 \\ 1 \\ -1 \\ -1 \end{bmatrix}$ span $\IR^4$.
 \end{problem}
 
-\begin{problem}{V4} Let \(W\) be the set of all \(\IR^3\) vectors
-\(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\)
-satisfying \(x+y+z=1\) (this forms a plane).
-Determine if \(W\) is a subspace of \(\IR^3\).
+\begin{problem}{V4} Let $W$ be the set of all polynomials of the form
+\(ax^3+bx\).  Determine if $W$ is a subspace of \(\P^3\).
 \end{problem}
 \newpage
 
@@ -98,16 +89,18 @@ Determine if the vectors $\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}$, $\begin{b
 \end{problem}
 
 \begin{problem}{S2}
-Determine if the set $\left\{ x^2+x-1, 3x^2-x+1, 2x-2 \right\}$ is a basis of $\P_2$
+Determine if the set $\left\{ \begin{bmatrix} 0 \\ 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ -1 \\ 0 \\ 2 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix}0 \\ 2 \\ 0 \\ -1 \end{bmatrix} \right\}$ is a basis of $\IR^4$.
 \end{problem}
 \newpage
 
 \begin{problem}{S3}
-Let $W={\rm span}\left( \left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 4 \\ -2 \end{bmatrix},  \begin{bmatrix} 1 \\ 1 \\ 1 \\ -7 \end{bmatrix} \right\}\right)$.  Find a basis of $W$.
+Let $W = {\rm span} \left( \left\{  \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\} \right)$.   Find a basis for $W$.
 \end{problem}
 
 \begin{problem}{S4}
-Let $W$ be the subspace of $M_{2,2}$ given by $W={\rm span}\left(\left\{\begin{bmatrix} 2 & 0 \\ -2 & 0 \end{bmatrix}, \begin{bmatrix} 3 & 1 \\ 3 & 6 \end{bmatrix}, \begin{bmatrix} 0 & 0 \\ 1 & 1 \end{bmatrix}, \begin{bmatrix}1 & 2 \\ 0 & 1 \end{bmatrix}\right\}\right)$. Compute the dimension of $W$.
+  Let \(
+    W={\rm span}\left\{ 2x^2-x+3, 2x^2+2, -x^2+4x+1 \right\}\).
+  Find the dimension of \(W\).
 \end{problem}
 
 \end{document}

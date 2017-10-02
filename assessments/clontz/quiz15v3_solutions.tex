@@ -9,36 +9,35 @@
 
 \begin{document}
 
-\begin{problem}{V2}
-Determine if $\begin{bmatrix} 0 \\ 1 \\ -2 \\ 1 \end{bmatrix}$ can be written as a linear combination of the vectors $\begin{bmatrix} 5 \\ 2 \\ -3 \\ 2 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 1 \\ 1 \\ 0 \end{bmatrix}$, and $\begin{bmatrix} 8 \\ 3 \\ 5 \\ -1 \end{bmatrix}$.
+\begin{problem}{V2} Determine if $\begin{bmatrix} 1 \\ 4 \\ 3 \end{bmatrix}$ is a linear combination of the vectors $\begin{bmatrix} 3 \\ 0 \\ -1 \end{bmatrix}$, $\begin{bmatrix} 1 \\ -1 \\ 4 \end{bmatrix}$, and $\begin{bmatrix} 5 \\ 1 \\  -6 \end{bmatrix}$.
 \end{problem}
 \begin{solution}
-
-$$\RREF \left(\begin{bmatrix}[ccc|c] 8 & 5 & 3 & 0\\ 3 & 2 & 1 & 1 \\ 5 & -3 & 1 & -2  \\ -1 & 2 & 0 & 1 \end{bmatrix} \right) = \begin{bmatrix}[ccc|c] 1 & 0 & 0 & 0  \\ 0 &  1 & 0 & 0  \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1  \end{bmatrix}$$
-The system has no solution, so $\begin{bmatrix} 0 \\ 1 \\ -2 \\ 1 \end{bmatrix}$ is not a linear combination of the three other vectors.
+$$\RREF\left(\begin{bmatrix}[ccc|c] 3 & 1 & 5 & 1 \\ 0 & -1 & 1 & 4 \\ -1 & 4 & -6 & 3 \end{bmatrix} \right) = \begin{bmatrix}[ccc|c] 1 & 0 & 2 & 0 \\ 0 & 1 & -1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
+So $\begin{bmatrix} 1 \\ 4 \\ 3 \end{bmatrix}$ is not a linear combination of the three vectors.
 \end{solution}
 
 
-\begin{problem}{S1}
-Determine if the set of polynomials $\left\{ x^3-8x, x^3+2x^2+2, -x^2+3\right\}$ is  linearly dependent or linearly independent
+\begin{problem}{S1} 
+Determine if the set of vectors $\left\{\begin{bmatrix} 3 \\ -1 \\ 0 \\ 4 \end{bmatrix}, \begin{bmatrix} 1  \\ 2 \\ -2 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ -8 \\ 6 \\ 5 \end{bmatrix} \right\}$  is linearly dependent or linearly independent.
 \end{problem}
 \begin{solution}
-$$\RREF\left( \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3 \\ 0 & 0 & 0\end{bmatrix}\right) = \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{3}{2} \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$ 
-This has a non pivot column, therefore the set is linearly dependent.
+$$\RREF\left(\begin{bmatrix} 3 & 1 & 3 \\ -1 & 2 & -8 \\ 0 & -2 & 6 \\ 4 & 1 & 5 \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 2 \\ 0 & 1 & -3 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
+Since the reduced row echelon form has a nonpivot column, the vectors are linearly dependent.
 \end{solution}
-
 
 \begin{extract}\newpage\end{extract}
-\begin{problem}{S3}  
-Let $W={\rm span}\left(\left\{\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix}1 \\ 2 \\ 0 \\ 1 \end{bmatrix}\right\}\right)$.  Find a basis of $W$.
+\begin{problem}{S3}
+Let $W = {\rm span} \left( \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}, \begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix} \right\} \right)$.  Find a basis for $W$.
 \end{problem}
 \begin{solution}
-$$\RREF\left( \begin{bmatrix} 2 & 3 & 0 & 1 \\ 0 & 1 & 0 & 2 \\ -2 & 3 & 1 & 0 \\ 0 & 6 & 1 & 1\end{bmatrix} \right) = \begin{bmatrix}1 & 0 & 0 & -\frac{5}{2} \\ 0 & 1 & 0 & 2 \\ 0 & 0 & 1 & -11\\ 0 & 0 & 0 & 0  \end{bmatrix} $$
-Then $\left\{\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}\right\}$ is a basis of $W$.
+$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \end{bmatrix}$$
+
+Then a basis is
+$ \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix} , \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}\right\} $.
 \end{solution}
 
 
-\begin{problem}{S4}  
+\begin{problem}{S4}
 Let $W$ be the subspace of $\P_3$ given by $W={\rm span}\left( \left\{ x^3-x^2+3x-3, 2x^3+x+1, 3x^3-x^2+4x-2, x^3+x^2+x-7\right\}\right)$.  Compute the dimension of $W$.
 \end{problem}
 \begin{solution}

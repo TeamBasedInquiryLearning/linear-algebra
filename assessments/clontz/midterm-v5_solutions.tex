@@ -10,118 +10,74 @@
 \begin{document}
 
 \begin{problem}{E1}
-Write a system of linear equations corresponding to the following
-augmented matrix.
-\[
-\begin{bmatrix}[ccc|c]
-2 & -1 & 0 & 1  \\
--1 & 4 & 1 & -7  \\
-1 & 2 & -1 & 0
-\end{bmatrix}
-\]
+Write an augmented matrix corresponding to the following system of linear equations.
+\begin{align*}
+x_1+3x_2-4x_3 +x_4 &= 5 \\
+3x_1+9x_2+x_3-7x_4 &= 0 \\
+x_1-x_3 +x_4 &= 1
+\end{align*}
 \end{problem}
 \begin{solution}
-\begin{align*}
-2x_1-x_2&=1 \\
--x_1+4x_2+x_3&=-7 \\
-x_1+2x_2-x_3 &= 0
-\end{align*}
+\[
+\begin{bmatrix}[cccc|c]
+1 & 3 & -4 & 1 & 5 \\
+3 & 9 & 1 & -7 & 0 \\
+1 & 0 & -1 & 1 &  1
+\end{bmatrix}
+\]
 \end{solution}
 
 \begin{problem}{E2}
-Put the following matrix in reduced row echelon form.
-$$\begin{bmatrix}[ccc|c] -3 & 1 & 0 & 2 \\ -8 & 2 & -1 & 6 \\ 0 & 2 & 3 & -2 \end{bmatrix}$$
+Find \(\RREF A\), where
+\[
+  A =
+  \begin{bmatrix}[cccc|c]
+    3 & -2 & 1 & 8 & -5 \\
+    2 & 2 & 0 & 6 & -2 \\
+    -1 & 1 & 1 & -4 & 6 \\
+  \end{bmatrix}
+\]
 \end{problem}
 \begin{solution}
-$$\begin{bmatrix}[ccc|c]
--3 & 1 & 0 & 2 \\
- -8 & 2 & -1 & 6 \\
- 0 & 2 & 3 & -2
-\end{bmatrix} \sim
-\begin{bmatrix}[ccc|c]
-1 & -\frac{1}{3} & 0 & -\frac{2}{3} \\
- -8 & 2 & -1 & 6 \\
- 0 & 2 & 3 & -2
-\end{bmatrix} \sim
-\begin{bmatrix}[ccc|c]
-1 & -\frac{1}{3} & 0 & -\frac{2}{3} \\
- 0 & -\frac{2}{3} & -1 & \frac{2}{3} \\
- 0 & 2 & 3 & -2
-\end{bmatrix} $$
-$$\sim
-\begin{bmatrix}[ccc|c]
-1 & -\frac{1}{3} & 0 & -\frac{2}{3} \\
- 0 & 1 & \frac{3}{2} & -1 \\
- 0 & 2 & 3 & -2
-\end{bmatrix} \sim
-\begin{bmatrix}[ccc|c]
-1 & 0 & \frac{1}{2} & -1 \\
- 0 & 1 & \frac{3}{2} & -1 \\
- 0 & 0 & 0 & 0
-\end{bmatrix}$$
+\[
+  \RREF A =
+  \begin{bmatrix}[cccc|c]
+    1 & 0 & 0 & 3 & -2 \\
+    0 & 1 & 0 & 0 & 1 \\
+    0 & 0 & 1 & -1 & 3
+  \end{bmatrix}
+\]
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E3}
-Find the solution set for the following system of linear equations.
+Solve the system of linear equations.
 \begin{align*}
-2x_1+3x_2-5x_3+14x_4 &= 8 \\
-x_1+x_2-x_3+5x_4&= 3
+2x+y-z+w &=5 \\
+3x-y-2w &= 0 \\
+-x+5z+3w&=-1
 \end{align*}
 \end{problem}
 \begin{solution}
-Let \(A =
-  \begin{bmatrix}[cccc|c]
-    2 & 3 & -5 & 14 & 8 \\
-    1 & 1 & -1 & 5 & 3
-  \end{bmatrix}
-\), so \(\RREF A =
-  \begin{bmatrix}[cccc|c]
-    1 & 0 & 2 & 1 & 1 \\
-    0 & 1 & -3 & 4 & 2 \\
-  \end{bmatrix}
-\). It follows that the solution set is given by \(
-  \begin{bmatrix}
-    1 - 2a - b \\
-    2 + 3a - 4b \\
-    a \\
-    b
-  \end{bmatrix}
-\) for all real numbers \(a,b\).
+$$\RREF\left( \begin{bmatrix}[cccc|c] 2 & 1 & -1 & 0 & 5 \\ 3 & -1 & 0 & -2 & 0 \\ -1 & 0 & 5 & 0 & -1 \end{bmatrix} \right) = \begin{bmatrix}[cccc|c] 1 & 0 & 0 & -\frac{1}{12} & 1 \\ 0 & 1 & 0 & \frac{7}{4} & 3 \\ 0 & 0 & 1 & \frac{7}{12} & 0 \end{bmatrix}$$
+So the solutions are $$\left\{ \begin{bmatrix} 1+a \\ 3-21a \\ -7a \\ 12a \end{bmatrix}\ \big|\ a \in \IR\right\}$$
 \end{solution}
 
 \begin{problem}{E4}
-Find a basis for the solution set to the homogeneous system of equations
-given by
+Find a basis for the solution set of the system of equations
 \begin{align*}
-2x_1-2x_2+6x_3-x_4 &=0 \\
-3x_1+6x_3+x_4 &=0 \\
--4x_1+x_2-9x_3+2x_4&=0
+x+2y+3z+w &= 0 \\
+3x-y+z+w &= 0 \\
+2x-3y-2z &= 0
 \end{align*}
 \end{problem}
 \begin{solution}
-Let \(A =
-  \begin{bmatrix}[cccc|c]
-    2 & -2 & 6 & -1 & 0 \\
-    3 & 0 & 6 & 1 & 0 \\
-    -4 & 1 & -9 & 2 & 0
-  \end{bmatrix}
-\), so \(\RREF A =
-  \begin{bmatrix}[cccc|c]
-    1 & 0 & 2 & 0 & 0 \\
-    0 & 1 & -1 & 0 & 0 \\
-    0 & 0 & 0 & 1 & 0
-  \end{bmatrix}
-\).
-It follows that the basis for the solution set is given by \(\left\{
-  \begin{bmatrix}
-    -2 \\
-    1 \\
-    1 \\
-    0
-  \end{bmatrix}
-\right\}\).
+$$\RREF \left(\begin{bmatrix} 1 & -2 & 3 & 1 \\ 3 & -1 & 1 & 1 \\ 2 & -3 & -2 & 0  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & \frac{5}{7} & \frac{3}{7} \\ 0 & 1 & \frac{8}{7} & \frac{2}{7} \\ 0 & 0 & 0 & 0\end{bmatrix}$$
+Then the solution set is
+$$\left\{ \begin{bmatrix} -\frac{5}{7}a-\frac{3}{7}b \\ -\frac{8}{7}a-\frac{2}{7}b \\ a \\ b \end{bmatrix} \bigg |\ a,b \in \IR \right\}$$
+So a basis for the solution set is $\left\{\begin{bmatrix} -\frac{5}{7} \\ -\frac{8}{7} \\ 1 \\ 0\end{bmatrix}, \begin{bmatrix} - \frac{3}{7} \\ -\frac{2}{7} \\ 0 \\ 1 \end{bmatrix} \right\}$, or $\left\{\begin{bmatrix} 5 \\ 8 \\ -7 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 2 \\ 0 \\ -7 \end{bmatrix}\right\}$.
 \end{solution}
+
 \begin{extract}\newpage\end{extract}
 \begin{problem}{V1}
 Let $V$ be the set of all real numbers with the operations, for any $x, y \in V$, $c \in \IR$,
@@ -143,47 +99,101 @@ Let $x,y,z \in \IR$.  Then
 \end{align*}
 However, this is not a vector space, as there is no zero vector.
 \end{solution}
-\begin{problem}{V2} Determine if $\begin{bmatrix} 1 \\ 4 \\ 3 \end{bmatrix}$ is a linear combination of the vectors $\begin{bmatrix} 3 \\ 0 \\ -1 \end{bmatrix}$, $\begin{bmatrix} 1 \\ -1 \\ 4 \end{bmatrix}$, and $\begin{bmatrix} 5 \\ 1 \\  -6 \end{bmatrix}$.
+\begin{problem}{V2}
+Determine if $\begin{bmatrix} 0 \\ 1 \\ -2 \\ 1 \end{bmatrix}$ can be written as a linear combination of the vectors $\begin{bmatrix} 5 \\ 2 \\ -3 \\ 2 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 1 \\ 1 \\ 0 \end{bmatrix}$, and $\begin{bmatrix} 8 \\ 3 \\ 5 \\ -1 \end{bmatrix}$.
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix}[ccc|c] 3 & 1 & 5 & 1 \\ 0 & -1 & 1 & 4 \\ -1 & 4 & -6 & 3 \end{bmatrix} \right) = \begin{bmatrix}[ccc|c] 1 & 0 & 2 & 0 \\ 0 & 1 & -1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
-So $\begin{bmatrix} 1 \\ 4 \\ 3 \end{bmatrix}$ is not a linear combination of the three vectors.
+
+$$\RREF \left(\begin{bmatrix}[ccc|c] 8 & 5 & 3 & 0\\ 3 & 2 & 1 & 1 \\ 5 & -3 & 1 & -2  \\ -1 & 2 & 0 & 1 \end{bmatrix} \right) = \begin{bmatrix}[ccc|c] 1 & 0 & 0 & 0  \\ 0 &  1 & 0 & 0  \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1  \end{bmatrix}$$
+The system has no solution, so $\begin{bmatrix} 0 \\ 1 \\ -2 \\ 1 \end{bmatrix}$ is not a linear combination of the three other vectors.
 \end{solution}
 
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{V3}
-Determine if the vectors $\begin{bmatrix} 1 \\ 1 \\ 2 \\1 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}$, $\begin{bmatrix}3 \\ -1 \\ 3 \\ -2\end{bmatrix}$, and $\begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix}$  span $\IR^4$.
+Does
+\(
+  \operatorname{span}\left\{
+    \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix},
+    \begin{bmatrix} 3 \\ 12 \\ -9 \end{bmatrix},
+    \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix},
+    \begin{bmatrix} -4 \\ 2 \\ -8 \end{bmatrix}
+  \right\} = \IR^3
+\)?
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0  \end{bmatrix}$$
-Since there are zero rows, they do not span.  Alternatively, by inspection $\begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}=3\begin{bmatrix} 1 \\ 1 \\ 2 \\1 \end{bmatrix}$, so the set is linearly dependent, so it spans a subspace of dimension at most 3, therefore it does not span $\IR^4$.
+Since
+\[
+  \RREF\begin{bmatrix}
+    2 & 3 & 1 & -4 \\
+    -1 & 12 & 2 & 2 \\
+    4 & -9 & 3 & -8
+  \end{bmatrix} =
+  \begin{bmatrix}
+    1 & 0 & 0 & -2 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0
+  \end{bmatrix}
+\]
+lacks a zero row, the vectors span \(\IR^3\).
 \end{solution}
 
-\begin{problem}{V4}
-Determine if the set of all lattice points, i.e. $\{(x,y)\ \big|\ \text{$x$ and $y$ are integers} \}$ is a subspace of $\IR^2$.
+\begin{problem}{V4} Let \(W\) be the set of all \(\IR^3\) vectors
+\(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\) satisfying \(x+y+z=0\) (this forms a plane).
+Determine if \(W\) is a subspace of \(\IR^3\).
 \end{problem}
 \begin{solution}
-This set is closed under addition, but not under scalar multiplication so it is not a subspace.
+Yes, because \(z=-x-y\) and
+\(
+  a\begin{bmatrix} x_1 \\ y_1 \\ -x_1-y_1 \end{bmatrix}+
+  b\begin{bmatrix} x_2 \\ y_2 \\ -x_2-y_2 \end{bmatrix}=
+  \begin{bmatrix}
+    ax_1+bx_2 \\
+    ay_1+by_2 \\
+    -(ax_1+bx_2)-(ay_1+by_2)
+  \end{bmatrix}
+\).
+Alternately, yes because \(W\) is isomorphic to \(\IR^2\).
 \end{solution}
+
 
 \begin{extract}\newpage\end{extract}
-\begin{problem}{S1} 
-Determine if the set of matrices $\left\{\begin{bmatrix} 3 & -1 \\ 0 & 4 \end{bmatrix}, \begin{bmatrix} 1  & 2 \\ -2 & 1 \end{bmatrix}, \begin{bmatrix} 3 & -8 \\ 6 & 5 \end{bmatrix} \right\}$  is linearly dependent or linearly independent.
+\begin{problem}{S1}
+Determine if the set of vectors  $\left\{\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix}, \begin{bmatrix} 1 \\ 3 \\ -2 \end{bmatrix}\right\}$ is  linearly dependent or linearly independent
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 3 & 1 & 3 \\ -1 & 2 & -8 \\ 0 & -2 & 6 \\ 4 & 1 & 5 \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 2 \\ 0 & 1 & -3 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
-Since the reduced row echelon form has a nonpivot column, the vectors are linearly dependent.
+$$\RREF\left( \begin{bmatrix} 1 &  1 & 1 \\ 0  & 2 & 3 \\ 1  & -1 & -2 \end{bmatrix} \right) = \begin{bmatrix} 1 &  0 & -\frac{1}{2} \\ 0  & 1 & \frac{3}{2} \\ 0& 0 & 0  \end{bmatrix}$$
+Since there is a nonpivot column, the set is linearly dependent.
 \end{solution}
+
 \begin{problem}{S2}
-Determine if the set $\left\{ \begin{bmatrix} 0 \\ 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ -1 \\ 0 \\ 2 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix}0 \\ 2 \\ 0 \\ -1 \end{bmatrix} \right\}$ is a basis of $\IR^4$.
+  Determine if the set \(\left\{
+    \begin{bmatrix} 3 & -1 \\ 2 &3 \end{bmatrix},
+    \begin{bmatrix} 2 & 0 \\ 2 & 4\end{bmatrix},
+    \begin{bmatrix} 1 & 4 \\ -1 & 8\end{bmatrix},
+    \begin{bmatrix} -1 & 3 \\ 0 & 4\end{bmatrix}
+  \right\}\) is a basis of $\IR^{2\times 2}$.
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 0 & 1 & 1 & 0 \\ 1 & -1 & 0 & 2   \\ 1 & 0 & -1 & 0  \\ 1 & 2 & 0 & -1  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 0 & 1  \\ 0 & 1 & 0 & -1  \\ 0 & 0 & 1 & 1  \\ 0 & 0 & 0 & 0 \end{bmatrix} $$
-Since this is not the identity matrix, the set is not a basis.
+  \[\RREF\left(
+    \begin{bmatrix}
+      3 & 2 & 1 & -1\\
+      -1 & 0 & 4 & 3\\
+      2 & 2 & -1 & 0\\
+      3 & 4 & 8 & 4\\
+    \end{bmatrix} \right)= \begin{bmatrix}
+      1 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0 \\
+      0 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 1
+    \end{bmatrix}
+  \]
+Since the resulting matrix is the identity matrix, it is a basis.
 \end{solution}
+
+
 \begin{extract}\newpage\end{extract}
-\begin{problem}{S3}  
+\begin{problem}{S3}
 Let $W={\rm span}\left(\left\{\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix}1 \\ 2 \\ 0 \\ 1 \end{bmatrix}\right\}\right)$.  Find a basis of $W$.
 \end{problem}
 \begin{solution}
@@ -192,7 +202,7 @@ Then $\left\{\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 
 \end{solution}
 
 
-\begin{problem}{S4}  
+\begin{problem}{S4}
 Let $W$ be the subspace of $\P_3$ given by $W={\rm span}\left( \left\{ x^3-x^2+3x-3, 2x^3+x+1, 3x^3-x^2+4x-2, x^3+x^2+x-7\right\}\right)$.  Compute the dimension of $W$.
 \end{problem}
 \begin{solution}

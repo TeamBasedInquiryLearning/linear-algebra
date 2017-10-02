@@ -10,28 +10,62 @@
 \begin{document}
 
 \begin{problem}{V3}
-Determine if the vectors  $\begin{bmatrix} -3 \\ 1 \\ 1 \end{bmatrix}$,$\begin{bmatrix} 5 \\ -1 \\ -2 \end{bmatrix}$,$\begin{bmatrix}2 \\ 0 \\ -1 \end{bmatrix}$, and $\begin{bmatrix} 0 \\ 2 \\ -1\end{bmatrix}$ span $\IR^3$
+Does
+\(
+  \operatorname{span}\left\{
+    \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix},
+    \begin{bmatrix} 3 \\ 12 \\ -9 \end{bmatrix},
+    \begin{bmatrix} 1 \\ 4 \\ -3 \end{bmatrix},
+    \begin{bmatrix} -4 \\ 2 \\ -8 \end{bmatrix}
+  \right\} = \IR^3
+\)?
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix}
--3 & 5 & 2 & 0 \\ 1 & -1 & 0 & 2 \\ 1 & -2 & -1 & -1 \end{bmatrix}\right)=\begin{bmatrix} 1 & 0 & 1 & 5 \\ 0 & 1 & 1 & 3 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-Since the resulting matrix has only two pivot columns, the vectors do not span $\IR^3$.
+Since
+\[
+  \RREF\begin{bmatrix}
+    2 & 3 & 1 & -4 \\
+    -1 & 12 & 4 & 2 \\
+    4 & -9 & -3 & -8
+  \end{bmatrix} =
+  \begin{bmatrix}
+    1 & 0 & 0 & -2 \\
+    0 & 1 & 1/3 & 0 \\
+    0 & 0 & 0 & 0
+  \end{bmatrix}
+\]
+has a zero row, the vectors fail to span \(\IR^3\).
 \end{solution}
 
-
-\begin{problem}{V4}
-Determine if the set of all lattice points, i.e. $\{(x,y)\ \big|\ \text{$x$ and $y$ are integers} \}$ is a subspace of $\IR^2$.
+\begin{problem}{V4} Let $W$ be the set of all polynomials of even degree.  Determine if $W$ is a subspace of the vector space of all polynomials.
 \end{problem}
 \begin{solution}
-This set is closed under addition, but not under scalar multiplication so it is not a subspace.
+$W$ is closed under scalar multiplication, but not under addition.  For example, $x-x^2$ and $x^2$ are both in $W$, but $(x-x^2)+(x^2)=x \notin W$.
 \end{solution}
+
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{S2}
-Determine if the set $\left\{ \begin{bmatrix} 0 \\ 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ -1 \\ 0 \\ 2 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix}0 \\ 2 \\ 0 \\ -1 \end{bmatrix} \right\}$ is a basis of $\IR^4$.
+  Determine if the set \(\left\{
+    \begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix},
+    \begin{bmatrix} 2 \\ 0 \\ 2 \end{bmatrix},
+    \begin{bmatrix} 1 \\ 4 \\ -1 \end{bmatrix}
+  \right\}\) is a basis of $\IR^3$.
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 0 & 1 & 1 & 0 \\ 1 & -1 & 0 & 2   \\ 1 & 0 & -1 & 0  \\ 1 & 2 & 0 & -1  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 0 & 1  \\ 0 & 1 & 0 & -1  \\ 0 & 0 & 1 & 1  \\ 0 & 0 & 0 & 0 \end{bmatrix} $$
-Since this is not the identity matrix, the set is not a basis.
+  \[\RREF\left(
+    \begin{bmatrix}
+      3 & 2 & 1 \\
+      -1 & 0 & 4 \\
+      2 & 2 & -1
+    \end{bmatrix} \right)= \begin{bmatrix}
+      1 & 0 &0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{bmatrix}
+  \]
+Since the resulting matrix is the identity matrix, it is a basis.
 \end{solution}
+
+
 \end{document}

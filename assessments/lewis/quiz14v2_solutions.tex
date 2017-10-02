@@ -34,33 +34,52 @@ However, this is not a vector space, as there is no zero vector.  Additionally, 
 
 
 \begin{problem}{V3}
-Determine if the vectors  $\begin{bmatrix} -3 \\ 1 \\ 1 \end{bmatrix}$,$\begin{bmatrix} 5 \\ -1 \\ -2 \end{bmatrix}$,$\begin{bmatrix}2 \\ 0 \\ -1 \end{bmatrix}$, and $\begin{bmatrix} 0 \\ 2 \\ -1\end{bmatrix}$ span $\IR^3$
+Does
+\(
+  \operatorname{span}\left\{
+    \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix},
+    \begin{bmatrix} 3 \\ 12 \\ -9 \end{bmatrix},
+    \begin{bmatrix} 1 \\ 4 \\ -3 \end{bmatrix},
+    \begin{bmatrix} -4 \\ 2 \\ -8 \end{bmatrix}
+  \right\} = \IR^3
+\)?
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix}
--3 & 5 & 2 & 0 \\ 1 & -1 & 0 & 2 \\ 1 & -2 & -1 & -1 \end{bmatrix}\right)=\begin{bmatrix} 1 & 0 & 1 & 5 \\ 0 & 1 & 1 & 3 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-Since the resulting matrix has only two pivot columns, the vectors do not span $\IR^3$.
+Since
+\[
+  \RREF\begin{bmatrix}
+    2 & 3 & 1 & -4 \\
+    -1 & 12 & 4 & 2 \\
+    4 & -9 & -3 & -8
+  \end{bmatrix} =
+  \begin{bmatrix}
+    1 & 0 & 0 & -2 \\
+    0 & 1 & 1/3 & 0 \\
+    0 & 0 & 0 & 0
+  \end{bmatrix}
+\]
+has a zero row, the vectors fail to span \(\IR^3\).
 \end{solution}
 
-
 \begin{extract}\newpage\end{extract}
-\begin{problem}{V4} Let $W$ be the set of all polynomials of the form
-\(ax^3+bx\).  Determine if $W$ is a subspace of \(\P^3\).
+\begin{problem}{V4} Let \(W\) be the set of all \(\IR^3\) vectors
+\(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\)
+satisfying \(x+y+z=1\) (this forms a plane).
+Determine if \(W\) is a subspace of \(\IR^3\).
 \end{problem}
 \begin{solution}
-Yes because \(s(a_1x^3+b_1x)+t(a_2x^3+b_2x)=
-(sa_1+ta_2)x^3+(sb_1+tb_2)x\) also belongs to \(W\).
-Alternately, yes because \(W\) is isomorphic to \(\IR^2\).
+No, because \(\mathbf{0}\) does not belong to \(W\).
 \end{solution}
 
 
 \begin{problem}{S2}
-Determine if the set $\left\{ x^2+x-1, 3x^2-x+1, 2x-2 \right\}$ is a basis of $\P_2$
+Determine if the set $\left\{ \begin{bmatrix} 0 \\ 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ -1 \\ 0 \\ 2 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix}0 \\ 2 \\ 0 \\ -1 \end{bmatrix} \right\}$ is a basis of $\IR^4$.
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 1 & 3 & 2 \\ 1 & -1 & 0 \\ -1 & 1 & -2 \end{bmatrix} \right)= \begin{bmatrix} 1 & 0 &0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
-Since the resulting matrix is the identity matrix, it is a basis.
+$$\RREF\left(\begin{bmatrix} 0 & 1 & 1 & 0 \\ 1 & -1 & 0 & 2   \\ 1 & 0 & -1 & 0  \\ 1 & 2 & 0 & -1  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 0 & 1  \\ 0 & 1 & 0 & -1  \\ 0 & 0 & 1 & 1  \\ 0 & 0 & 0 & 0 \end{bmatrix} $$
+Since this is not the identity matrix, the set is not a basis.
 \end{solution}
+
 
 
 \end{document}

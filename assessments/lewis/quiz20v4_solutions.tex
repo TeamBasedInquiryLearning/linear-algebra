@@ -10,35 +10,47 @@
 \begin{document}
 
 \begin{problem}{S3}
-Let $W$ be the subspace of $\P_3$ given by $W = {\rm span} \left( \left\{ x^3+x^2+2x+1, 3x^3+3x^2+6x+3, 3x^3-x^2+3x-2, 7x^3-x^2+8x-3 \right\} \right)$.  Find a basis for $W$.
+Let $W={\rm span}\left(\left\{\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix}1 \\ 2 \\ 0 \\ 1 \end{bmatrix}\right\}\right)$.  Find a basis of $W$.
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \end{bmatrix}$$
-
-Then a basis is 
-$ \left\{ x^3+x^2+2x+1, 3x^3-x^2+3x-2 \right\} $.
+$$\RREF\left( \begin{bmatrix} 2 & 3 & 0 & 1 \\ 0 & 1 & 0 & 2 \\ -2 & 3 & 1 & 0 \\ 0 & 6 & 1 & 1\end{bmatrix} \right) = \begin{bmatrix}1 & 0 & 0 & -\frac{5}{2} \\ 0 & 1 & 0 & 2 \\ 0 & 0 & 1 & -11\\ 0 & 0 & 0 & 0  \end{bmatrix} $$
+Then $\left\{\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}\right\}$ is a basis of $W$.
 \end{solution}
 
 
-\begin{problem}{S4}  
-Let $W={\rm span}\left( \left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 4 \\ -2 \end{bmatrix},  \begin{bmatrix} 1 \\ 1 \\ 1 \\ -7 \end{bmatrix} \right\}\right)$.  Compute the dimension of $W$.
+\begin{problem}{S4}
+  Let \(
+    W={\rm span}\left\{ 2x^2-x+3, 2x^2+2, -x^2+4x+1 \right\}\).
+  Find the dimension of \(W\).
 \end{problem}
 \begin{solution}
-$$ \RREF \left( \begin{bmatrix} 1 & 2 & 3 & 1 \\ -1 & 0 & -1 & 1 \\ 3 & 1 & 4 & 1 \\ -3 & 1 & -2 & -7 \end{bmatrix} \right) =  \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-This has 3 pivot columns so $\dim(W)=3$.
+  \[\RREF\left(
+    \begin{bmatrix}
+      2 & 2 & -1 \\
+      -1 & 0 & 4 \\
+      3 & 2 & 1
+    \end{bmatrix} \right)= \begin{bmatrix}
+      1 & 0 &0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{bmatrix}
+  \]
+  Since it has three pivot columns, its dimension is \(3\).
 \end{solution}
-
-
 \begin{extract}\newpage\end{extract}
 \begin{problem}{A1}
-Let $T: \IR^3 \rightarrow \IR$ be the linear transformation given by $$T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3  \end{bmatrix} \right) = \begin{bmatrix} x_2+3x_3 \end{bmatrix}$$. Write the matrix for $T$ with respect to the standard bases of $\IR^3$ and $\IR$.
+Let $T: \IR^3\rightarrow \IR^4$ be the linear transformation given by $$T\left(\begin{bmatrix} x \\ y \\ z \\  \end{bmatrix} \right) = \begin{bmatrix} -3x+y \\ -8x+2y-z \\ 2y+3z \\ 0 \end{bmatrix}$$.  Write the matrix for $T$ with respect to the standard bases of $\IR^3$ and $\IR^4$.
 \end{problem}
 \begin{solution}
-$$\begin{bmatrix} 0 & 1 & 3 \end{bmatrix}$$
+$$\begin{bmatrix} 3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3 \\ 0 & 0 & 0 \end{bmatrix}$$
 \end{solution}
-\begin{problem}{A2}
-Determine if the map $T: \P ^4 \rightarrow \P^3$ given by $T(f) = f^{\prime}-f^{\prime \prime}$ is a linear transformation or not.
-\end{problem}
 
+
+\begin{problem}{A2}
+Determine if $D: M_{2,2} \rightarrow \IR$ given by $D\left(\begin{bmatrix} a & b \\ c & d \end{bmatrix} \right) = ad-bc$ is a linear transformation or not.
+\end{problem}
+\begin{solution}
+$D(I)=1$ but $D(2I)=4 \neq 2D(I)$, so $D$ is not linear.
+\end{solution}
 
 \end{document}

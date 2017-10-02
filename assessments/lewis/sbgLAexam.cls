@@ -22,6 +22,7 @@
 \RequirePackage[letterpaper,left=1in,right=1in,top=1in,bottom=1in]{geometry}
 \RequirePackage{xstring}
 \RequirePackage{amsthm}
+\RequirePackage{multicol}
 
 %Process jobname to automatically generate quiz from quiz with solution file.
 \let\Xfile\empty
@@ -152,11 +153,12 @@ Name: \underline{\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}\\
 }
 
 \AtEndDocument{%
-\begin{flushright}
 %\renewcommand*{\do}[1]{\bf Standard #1 score: \fbox{\rule{0.5in}{0pt}\rule[-0.5ex]{0pt}{4ex}}\\}
-\renewcommand*{\do}[1]{\bf #1: \fbox{\rule{0.5in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \hfill}
+\newpage
+\begin{multicols}{2}
+\renewcommand*{\do}[1]{\noindent \bf #1: \fbox{\rule{0.5in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \\ \ \\}
 \dolistloop{\@standards}
-\end{flushright}
+\end{multicols}
 %\immediate\write18{pdflatex \XXfile}
 }
 \endinput

@@ -10,148 +10,143 @@
 \begin{document}
 
 \begin{problem}{E1}
-Write an augmented matrix corresponding to the following system of linear equations.
-\begin{align*}
-x+3y-4z &= 5 \\
-3x+9y+z &= 0 \\
-x-z &= 1
-\end{align*}
-\end{problem}
-\begin{solution}
+Write a system of linear equations corresponding to the following
+augmented matrix.
 \[
 \begin{bmatrix}[ccc|c]
-1 & 3 & -4 & 5 \\
-3 & 9 & 1 & 0 \\
-1 & 0 & -1 & 1
+-4 & -1 & 3 & 2  \\
+1 & 2 & -1 & 0 \\
+-1 & 4 & 1 & 4
 \end{bmatrix}
 \]
+\end{problem}
+\begin{solution}
+\begin{align*}
+-4x_1-x_2+3x_3&=2 \\
+x_1+2x_2-x_3 &= 0 \\
+-x_1+4x_2+x_3&=4
+\end{align*}
 \end{solution}
 
 \begin{problem}{E2}
-Put the following matrix in reduced row echelon form.
-$$\begin{bmatrix}[ccc|c] -3 & 1 & 0 & 2 \\ -8 & 2 & -1 & 6 \\ 0 & 2 & 3 & -2 \end{bmatrix}$$
+Find \(\RREF A\), where
+\[
+  A =
+  \begin{bmatrix}[ccc|c]
+    2 & -1 & 5 & 4 \\
+    -1 & 0 & -2 & -1 \\
+    1 & 3 & -1 & -5
+  \end{bmatrix}
+\]
 \end{problem}
 \begin{solution}
-$$\begin{bmatrix}[ccc|c]
--3 & 1 & 0 & 2 \\
- -8 & 2 & -1 & 6 \\
- 0 & 2 & 3 & -2
-\end{bmatrix} \sim
-\begin{bmatrix}[ccc|c]
-1 & -\frac{1}{3} & 0 & -\frac{2}{3} \\
- -8 & 2 & -1 & 6 \\
- 0 & 2 & 3 & -2
-\end{bmatrix} \sim
-\begin{bmatrix}[ccc|c]
-1 & -\frac{1}{3} & 0 & -\frac{2}{3} \\
- 0 & -\frac{2}{3} & -1 & \frac{2}{3} \\
- 0 & 2 & 3 & -2
-\end{bmatrix} $$
-$$\sim
-\begin{bmatrix}[ccc|c]
-1 & -\frac{1}{3} & 0 & -\frac{2}{3} \\
- 0 & 1 & \frac{3}{2} & -1 \\
- 0 & 2 & 3 & -2
-\end{bmatrix} \sim
-\begin{bmatrix}[ccc|c]
-1 & 0 & \frac{1}{2} & -1 \\
- 0 & 1 & \frac{3}{2} & -1 \\
- 0 & 0 & 0 & 0
-\end{bmatrix}$$
+\[
+  \RREF A =
+  \begin{bmatrix}[ccc|c]
+    1 & 0 & 2 & 1 \\
+    0 & 1 & -1 & -2 \\
+    0 & 0 & 0 & 0
+  \end{bmatrix}
+\]
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E3}
-Solve the following linear system.
+Solve the system of equations
 \begin{align*}
-4x_1+4x_2+3x_3-6x_4 &= 5 \\
--2x_3-4x_4 &= 3 \\
-2x_1+2x_2+x_3-4x_4 &= -1 \\
+-3x +y &= 2\\
+-8x+2y-z &= 6 \\
+2y+3z &= -2
 \end{align*}
+
+
 \end{problem}
+
 \begin{solution}
-Let \(A =
-  \begin{bmatrix}[cccc|c]
-    4 & 4 & 3 & -6 & 5 \\
-    0 & 0 & -2 & -4 & 3 \\
-    2 & 2 & 1 & -4 & -1
-  \end{bmatrix}
-\), so \(\RREF A =
-  \begin{bmatrix}[cccc|c]
-    1 & 1 & 0 & -3 & 0 \\
-    0 & 0 & 1 & 2 & 0 \\
-    0 & 0 & 0 & 0 & 1
-  \end{bmatrix}
-\). It follows that the system is inconsistent with no solutions
-(since the bottom row implies the contradiction \(0=1\)).
+$$\RREF\left(\begin{bmatrix}[ccc|c] -3 & 1 & 0 & 2 \\ -8 & 2 & -1 & 6 \\ 0 & 2 & 3 & -2 \end{bmatrix} \right) = \begin{bmatrix}[ccc|c] 1 & 0 & \frac{1}{2} & -1 \\ 0 & 1 & \frac{3}{2} & -1 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
+The solutions are $$\left\{ \begin{bmatrix} -1-\frac{c}{2} \\ -1-\frac{3c}{2} \\ c \end{bmatrix}\ \bigg|\ c\in \IR\right\} = \left\{ \begin{bmatrix} c-1 \\ 3c-1 \\ -2c  \end{bmatrix}\ \bigg|\ c\in \IR\right\}$$
 \end{solution}
 
 \begin{problem}{E4}
 Find a basis for the solution set to the homogeneous system of equations
+given by
 \begin{align*}
-4x_1+4x_2+3x_3-6x_4 &= 0 \\
--2x_3-4x_4 &= 0 \\
-2x_1+2x_2+x_3-4x_4 &= 0 \\
+2x_1-2x_2+6x_3-x_4 &=0 \\
+3x_1+6x_3+x_4 &=0 \\
+-4x_1+x_2-9x_3+2x_4&=0
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
   \begin{bmatrix}[cccc|c]
-    4 & 4 & 3 & -6 & 0 \\
-    0 & 0 & -2 & -4 & 0 \\
-    2 & 2 & 1 & -4 & 0
+    2 & -2 & 6 & -1 & 0 \\
+    3 & 0 & 6 & 1 & 0 \\
+    -4 & 1 & -9 & 2 & 0
   \end{bmatrix}
 \), so \(\RREF A =
   \begin{bmatrix}[cccc|c]
-    1 & 1 & 0 & -3 & 0 \\
-    0 & 0 & 1 & 2 & 0 \\
-    0 & 0 & 0 & 0 & 0
+    1 & 0 & 2 & 0 & 0 \\
+    0 & 1 & -1 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 0
   \end{bmatrix}
 \).
 It follows that the basis for the solution set is given by \(\left\{
   \begin{bmatrix}
-    -1 \\
-    1 \\
-    0 \\
-    0
-  \end{bmatrix},
-  \begin{bmatrix}
-    3 \\
-    0 \\
     -2 \\
-    1
+    1 \\
+    1 \\
+    0
   \end{bmatrix}
 \right\}\).
 \end{solution}
-
 \begin{extract}\newpage\end{extract}
 \begin{problem}{V1}
-Let $V$ be the set of all polynomials with the operations, for any $f, g \in V$, $c \in \IR$,
+Let $V$ be the set of all points on the line $x+y=2$ with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
-f \oplus g &= f^\prime + g^\prime \\
-c \odot f &= c f^\prime
+(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2-1,y_1+y_2-1) \\
+c \odot (x_1,y_1) &= (cx_1-(c-1), cy_1-(c-1))
 \end{align*}
-(here $f^\prime$ denotes the derivative of $f$).
 \begin{enumerate}[(a)]
-\item Show that scalar multiplication \textbf{distributes scalars} over
-      vector addition:
-      \(c\odot(f \oplus g)=
-      c\odot f \oplus c\odot g\).
+\item Show that this vector space has an \textbf{additive identity} element
+      \(\mathbf{0}\) satisfying \((x,y)\oplus\mathbf{0}=(x,y)\).
 \item Determine if $V$ is a vector space or not.  Justify your answer.
 \end{enumerate}
 \end{problem}
 \begin{solution}
-Let $f,g \in \mathcal{P}$, and let $c \in \IR$.
-$$c \odot (f \oplus g) = c \odot (f^\prime+g^\prime) =
-c(f^\prime+g^\prime)^\prime = cf^{\prime\ \prime}+cg^{\prime\ \prime} =
-cf^\prime\oplus cg^\prime= c \odot f \oplus c \odot g.$$
-However, this is not a vector space, as there is no zero vector.  Additionally, $1 \odot f \neq f$ for any nonzero polynomial $f$.
-\end{solution}
+Let $(x_1,y_1) \in V$; then $(x_1,y_1) \oplus (1,1) = (x_1,y_1)$, so $(1,1)$ is an additive identity element.
 
+Now we will show the other seven properties.  Let $(x_1,y_1), (x_2,y_2) \in V$, and let $c,d \in \IR$.
+\begin{enumerate}[1)]
+\item Since real addition is associative, $\oplus$ is associative.
+\item Since real addition is commutative, $\oplus$ is commutative.
+\item The additive identity is $(1,1)$.
+\item $(x_1,y_1) \oplus (2-x_1,2-y_1) = (1,1)$, so $(2-x_1,2-y_1)$ is the additive inverse of $(x_1,y_1)$.
+\item \begin{align*} c\odot \left(d \odot (x_1,y_1) \right) &=c\odot \left( dx_1-(d-1),dy_1-(d-1)\right) \\
+&= \left( c\left(dx_1-(d-1) \right)-(c-1), c\left(dy_1-(d-1) \right) \right) \\
+&= \left(cdx_1-cd+c-(c-1), cdy_1-cd+c-(c-1) \right) \\
+&= \left(cdx_1-(cd-1), cdy_1-(cd-1) \right) \\
+&= (cd) \odot (x_1,y_1)
+\end{align*}
+\item $1 \odot (x_1,y_1) = (x_1-(1-1),y_1-(1-1)=(x_1,y_1)$
+\item \begin{align*} c \odot \left( (x_1,y_1)\oplus(x_2,y_2) \right) &=
+c\odot \left( x_1+y_1-1,x_2+y_2-1 \right) \\
+&= \left( c(x_1+y_1-1)-(c-1), c(x_2+y_2-1)-(c-1) \right) \\
+&= (cx_1+cx_2-2c+1, cy_1+cy_2-2c+1) \\
+&= \left(cx_1-(c-1),cy_1-(c-1) \right) \oplus (cx_2-(c-1),cy_2-(c-1)) \\
+&=c \odot (x_1,y_1) \oplus c\odot (x_2,y_2)
+\end{align*}
+\item \begin{align*} (c+d) \odot (x_1,y_1) &=
+\left( (c+d)x_1-(c+d-1), (c+d)y_1-(c+d-1) \right) \\
+&= \left( cx_1-(c-1), cy_1-(c-1) \right) \oplus (dx_1-(d-1), dy_1-(d-1) ) \\
+&= c\odot (x_1,y_1) \oplus c \odot (x_2,y_2)
+\end{align*}
+\end{enumerate}
+Therefore $V$ is a vector space.
+\end{solution}
 
 \begin{problem}{V2}
   Determine if
-  \(\begin{bmatrix} 0 \\ -1 \\ 6 \\ -7 \end{bmatrix}\)
+  \(\begin{bmatrix} 4 \\ -1 \\ 6 \\ -7 \end{bmatrix}\)
   belongs to the span of the set
   \(\left\{
     \begin{bmatrix} 2 \\ 0 \\ -1 \\ 5 \end{bmatrix},
@@ -164,61 +159,38 @@ However, this is not a vector space, as there is no zero vector.  Additionally, 
   \[
     \RREF\left(
       \begin{bmatrix}[cc|c]
-        2 & 4 & 0 \\
+        2 & 4 & 4 \\
         0 & -1 & -1 \\
         -1 & 4 & 6 \\
         5 & 3 & -7
       \end{bmatrix}
     \right) =
     \begin{bmatrix}[cc|c]
-      1 & 0 & -2 \\
-      0 & 1 & 1 \\
-      0 & 0 & 0 \\
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1 \\
       0 & 0 & 0
     \end{bmatrix}
   \]
-  does not contain a contradiction,
-  \(\begin{bmatrix} 0 \\ -1 \\ 6 \\ -7 \end{bmatrix}\) is
-  a linear combination of the three vectors.
+  contains the contradiction \(0=1\),
+  \(\begin{bmatrix} 4 \\ -1 \\ 6 \\ -7 \end{bmatrix}\) is
+  not a linear combination of the three vectors.
 \end{solution}
 
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{V3}
-Does
-\(
-  \operatorname{span}\left\{
-    \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix},
-    \begin{bmatrix} 3 \\ 12 \\ -9 \end{bmatrix},
-    \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix},
-    \begin{bmatrix} -4 \\ 2 \\ -8 \end{bmatrix}
-  \right\} = \IR^3
-\)?
+Determine if the vectors $\begin{bmatrix} 1 \\ 1 \\ 2 \\1 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}$, $\begin{bmatrix}3 \\ -1 \\ 3 \\ -2\end{bmatrix}$, and $\begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix}$  span $\IR^4$.
 \end{problem}
 \begin{solution}
-Since
-\[
-  \RREF\begin{bmatrix}
-    2 & 3 & 1 & -4 \\
-    -1 & 12 & 2 & 2 \\
-    4 & -9 & 3 & -8
-  \end{bmatrix} =
-  \begin{bmatrix}
-    1 & 0 & 0 & -2 \\
-    0 & 1 & 0 & 0 \\
-    0 & 0 & 1 & 0
-  \end{bmatrix}
-\]
-lacks a zero row, the vectors span \(\IR^3\).
+$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0  \end{bmatrix}$$
+Since there are zero rows, they do not span.  Alternatively, by inspection $\begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}=3\begin{bmatrix} 1 \\ 1 \\ 2 \\1 \end{bmatrix}$, so the set is linearly dependent, so it spans a subspace of dimension at most 3, therefore it does not span $\IR^4$.
 \end{solution}
 
-\begin{problem}{V4} Let \(W\) be the set of all \(\IR^3\) vectors
-\(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\)
-satisfying \(x+y+z=1\) (this forms a plane).
-Determine if \(W\) is a subspace of \(\IR^3\).
+\begin{problem}{V4} Let $W$ be the set of all polynomials of even degree.  Determine if $W$ is a subspace of the vector space of all polynomials.
 \end{problem}
 \begin{solution}
-No, because \(\mathbf{0}\) does not belong to \(W\).
+$W$ is closed under scalar multiplication, but not under addition.  For example, $x-x^2$ and $x^2$ are both in $W$, but $(x-x^2)+(x^2)=x \notin W$.
 \end{solution}
 
 
@@ -233,28 +205,51 @@ Since there is a nonpivot column, the set is linearly dependent.
 
 
 \begin{problem}{S2}
-Determine if the set $\left\{ \begin{bmatrix} 0 \\ 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ -1 \\ 0 \\ 2 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix}0 \\ 2 \\ 0 \\ -1 \end{bmatrix} \right\}$ is a basis of $\IR^4$.
+Determine if the set $\left\{\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ -2 \end{bmatrix}\right\}$ is a basis of $\IR^3$.
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 0 & 1 & 1 & 0 \\ 1 & -1 & 0 & 2   \\ 1 & 0 & -1 & 0  \\ 1 & 2 & 0 & -1  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 0 & 1  \\ 0 & 1 & 0 & -1  \\ 0 & 0 & 1 & 1  \\ 0 & 0 & 0 & 0 \end{bmatrix} $$
-Since this is not the identity matrix, the set is not a basis.
+$$\RREF\left(\begin{bmatrix} 1 & 3 & 2 \\ 1 & -1 & 0 \\ -1 & 1 & -2 \end{bmatrix} \right)= \begin{bmatrix} 1 & 0 &0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
+Since the resulting matrix is the identity matrix, it is a basis.
 \end{solution}
+
+
 \begin{extract}\newpage\end{extract}
 \begin{problem}{S3}
-Let $W = {\rm span} \left( \left\{  \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\} \right)$.   Find a basis for $W$.
+Let $W = {\rm span} \left( \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}, \begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix} \right\} \right)$.  Find a basis for $W$.
 \end{problem}
 \begin{solution}
-Let $A= \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix}$, and compute $\RREF(A) = \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{3}{2} \\ 0 & 0 & 0 \end{bmatrix}$.
-Since the first two columns are pivot columns, $\left\{ \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix} \right\} $ is a basis for $W$.
+$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \end{bmatrix}$$
+
+Then a basis is
+$ \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix} , \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}\right\} $.
 \end{solution}
 
 
-\begin{problem}{S4}  
-Let $W$ be the subspace of $\P_3$ given by $W={\rm span}\left( \left\{ x^3-x^2+3x-3, 2x^3+x+1, 3x^3-x^2+4x-2, x^3+x^2+x-7\right\}\right)$.  Compute the dimension of $W$.
+\begin{problem}{S4}
+Let \(
+  W={\rm span}\left\{
+    \begin{bmatrix} 2 \\ 0 \\ 2 \\ 1 \end{bmatrix},
+    \begin{bmatrix} 3 \\ 1 \\ -1 \\ 1 \end{bmatrix},
+    \begin{bmatrix} 0 \\ 2 \\ -8 \\ 1 \end{bmatrix}
+  \right\}
+\). Find the dimension of \(W\).
 \end{problem}
 \begin{solution}
-$$ \RREF \left( \begin{bmatrix} 1 & 2 & 3 & 1 \\ -1 & 0 & -1 & 1 \\ 3 & 1 & 4 & 1 \\ -3 & 1 & -2 & -7 \end{bmatrix} \right) =  \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-This has 3 pivot columns so $\dim(W)=3$.
+\[
+  \RREF\left(\begin{bmatrix}
+    2 & 3 & 0 \\
+    0 & 1 & 2 \\
+    2 & -1 & -8 \\
+    1 & 1 & 1
+  \end{bmatrix} \right) =
+  \begin{bmatrix}
+    1 & 0 & -3 \\
+    0 & 1 & 2 \\
+    0 & 0 & 0 \\
+    0 & 0 & 0
+  \end{bmatrix}
+\]
+Since it has two pivot columns, its dimension is \(2\).
 \end{solution}
 
 
