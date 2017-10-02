@@ -44,6 +44,42 @@ c \odot (x+y-3) \\
 Therefore $V$ is a vector space.
 \end{solution}
 
+
+\begin{problem}{V1}
+Let $V$ be the set of all points on the parabola $y=x^2$ with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+\begin{align*}
+(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2+2x_1x_2) \\
+c \odot (x_1,y_1) &= (cx_1, c^2y_1)
+\end{align*}
+\begin{enumerate}[(a)]
+\item Show that the vector \textbf{addition} $\oplus$ is \textbf{associative}:
+      \((x_1,y_1) \oplus ((x_2,y_2) \oplus (x_3,y_3))=((x_1,y_1)\oplus (x_2,y_2))\oplus (x_3,y_3)\).
+\item Determine if $V$ is a vector space or not.  Justify your answer.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}{V1}
+Let $V$ be the set of all points on the parabola $y=x^2$ with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+\begin{align*}
+(x_1,y_1) \oplus (x_2,y_2) &= (x_1-x_2,y_1+y_2-2x_1x_2) \\
+c \odot (x_1,y_1) &= (cx_1, c^2y_1)
+\end{align*}
+\begin{enumerate}[(a)]
+\item Show that scalar multiplication \textbf{distributes scalars} over
+      vector addition:
+      \(c\odot((x_1,y_1) \oplus (x_2,y_2))=
+      c\odot(x_1,y_1) \oplus c\odot(x_2,y_2)\).
+\item Determine if $V$ is a vector space or not.  Justify your answer.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+$$ c\odot((x_1,y_1) \oplus (x_2,y_2))= c \odot (x_1-x_2,y_1+y_2-2x_1x_2) = (c(x_1-x_2), c^2(y_1+y_2-2x_1x_2) ) $$
+$$ c\odot(x_1,y_1) \oplus c\odot(x_2,y_2) = (cx_1,c^2y_1) \oplus (cx_2,c^2y_2) = (cx_1-cx_2, c^2y_1+c^2y_2-2(cx_1)(cx_2) )$$
+
+Not a vector space as addition is not commutative.
+\end{solution}
+
+
 \begin{problem}{V1}
 Let $V$ be the set of all points on the line $x+y=2$ with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
