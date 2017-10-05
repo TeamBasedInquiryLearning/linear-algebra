@@ -5,18 +5,12 @@ use warnings;
 my @STDs = split ( ' ', `ls assessments/problems/*.tex`);
 foreach my $standard (@STDs)
 {
-	#$standard = substr ($standard,0,2);
 	if ($standard =~ /assessments.problems.(..).tex/)
 	{
 		$standard = $1;
 	}
 }
 
-#foreach my $s (@STDs)
-#{
-#	print "$s\n";
-#}
-#die 1;
 
 open (my $outFile, '>', "assessments/problem-count.txt");
 
