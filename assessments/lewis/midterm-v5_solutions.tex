@@ -28,163 +28,179 @@ x_1-x_2+3x_3 &= -1
 \end{align*}
 \end{solution}
 \begin{problem}{E2}
-Find \(\RREF A\), where
-\[
-  A =
-  \begin{bmatrix}[cccc|c]
-    2 & 2 & 1 & 2 & -1 \\
-    1 & 1 & 2 & 4 & 5 \\
-    3 & 3 & -1 & -2 & 1
-  \end{bmatrix}
-\]
+Put the following matrix in reduced row echelon form.
+$$\begin{bmatrix}[ccc|c] -3 & 1 & 0 & 2 \\ -8 & 2 & -1 & 6 \\ 0 & 2 & 3 & -2 \end{bmatrix}$$
 \end{problem}
 \begin{solution}
-\[
-  \RREF A =
-  \begin{bmatrix}[cccc|c]
-    1 & 1 & 0 & 0 & 0 \\
-    0 & 0 & 1 & 2 & 0 \\
-    0 & 0 & 0 & 0 & 1
-  \end{bmatrix}
-\]
+$$\begin{bmatrix}[ccc|c]
+-3 & 1 & 0 & 2 \\
+ -8 & 2 & -1 & 6 \\
+ 0 & 2 & 3 & -2
+\end{bmatrix} \sim
+\begin{bmatrix}[ccc|c]
+1 & -\frac{1}{3} & 0 & -\frac{2}{3} \\
+ -8 & 2 & -1 & 6 \\
+ 0 & 2 & 3 & -2
+\end{bmatrix} \sim
+\begin{bmatrix}[ccc|c]
+1 & -\frac{1}{3} & 0 & -\frac{2}{3} \\
+ 0 & -\frac{2}{3} & -1 & \frac{2}{3} \\
+ 0 & 2 & 3 & -2
+\end{bmatrix} $$
+$$\sim
+\begin{bmatrix}[ccc|c]
+1 & -\frac{1}{3} & 0 & -\frac{2}{3} \\
+ 0 & 1 & \frac{3}{2} & -1 \\
+ 0 & 2 & 3 & -2
+\end{bmatrix} \sim
+\begin{bmatrix}[ccc|c]
+1 & 0 & \frac{1}{2} & -1 \\
+ 0 & 1 & \frac{3}{2} & -1 \\
+ 0 & 0 & 0 & 0
+\end{bmatrix}$$
 \end{solution}
+
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E3}
-Solve the following linear system.
+Solve the system of equations
 \begin{align*}
-3x+2y+z &= 7 \\
-x+y+z &= 1 \\
--2x+3z &= -11
+-3x +y &= 2\\
+-8x+2y-z &= 6 \\
+2y+3z &= -2
 \end{align*}
+
+
 \end{problem}
+
 \begin{solution}
-Let \(A =
-  \begin{bmatrix}[ccc|c]
-    3 & 2 & 1 & 7 \\
-    1 & 1 & 1 & 1 \\
-    -2 & 0 & 3 & 11
-  \end{bmatrix}
-\), so \(\RREF A =
-  \begin{bmatrix}[ccc|c]
-    1 & 0 & 0 & 4 \\
-    0 & 1 & 0 & -2 \\
-    0 & 0 & 1 & -1
-  \end{bmatrix}
-\). It follows that the system has exactly one solution:
-\(\begin{bmatrix}
-  4 & -2 & -1
-\end{bmatrix}\)
+$$\RREF\left(\begin{bmatrix}[ccc|c] -3 & 1 & 0 & 2 \\ -8 & 2 & -1 & 6 \\ 0 & 2 & 3 & -2 \end{bmatrix} \right) = \begin{bmatrix}[ccc|c] 1 & 0 & \frac{1}{2} & -1 \\ 0 & 1 & \frac{3}{2} & -1 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
+The solutions are $$\left\{ \begin{bmatrix} -1-\frac{c}{2} \\ -1-\frac{3c}{2} \\ c \end{bmatrix}\ \bigg|\ c\in \IR\right\} = \left\{ \begin{bmatrix} c-1 \\ 3c-1 \\ -2c  \end{bmatrix}\ \bigg|\ c\in \IR\right\}$$
 \end{solution}
+
 \begin{problem}{E4}
-Find a basis for the solution set to the homogeneous system of equations
+Find a basis for the solution set of the system of equations
 \begin{align*}
-2x_1+3x_2-5x_3+14x_4 &= 0\\
-x_1+x_2-x_3+5x_4 &= 0
+x+3y+3z+7w &= 0 \\
+ x+3y-z-w &= 0 \\
+  2x+6y+3z+8w &= 0 \\
+   x+3y-2z-3w &= 0
 \end{align*}
 \end{problem}
 \begin{solution}
-Let \(A =
-  \begin{bmatrix}[cccc|c]
-    2 & 3 & -5 & 14 & 0 \\
-    1 & 1 & -1 & 5 & 0
-  \end{bmatrix}
-\), so \(\RREF A =
-  \begin{bmatrix}[cccc|c]
-    1 & 0 & 2 & 1 & 1 \\
-    0 & 1 & -3 & 4 & 2 \\
-  \end{bmatrix}
-\).
-It follows that the basis for the solution set is given by \(\left\{
-  \begin{bmatrix}
-    - 2 \\
-    3 \\
-    1 \\
-    0
-  \end{bmatrix},
-  \begin{bmatrix}
-    -1 \\
-    - 4 \\
-    0 \\
-    1
-  \end{bmatrix}
-\right\}\).
+$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
+Then the solution set is
+$$\left\{ \begin{bmatrix} -3a-b \\ a \\ -2b \\ b \end{bmatrix}\ \big|\ a,b \in \IR\right\}$$
+So a basis for the solution set is $$ \left\{ \begin{bmatrix} 3 \\ -1 \\ 0 \\ 0 \end{bmatrix} , \begin{bmatrix} 1\\0 \\ 2 \\ -1 \end{bmatrix} \right\} $$
 \end{solution}
+
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{V1}
 Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
 (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
-c \odot (x_1,y_1) &= (0, cy_1)
+c \odot (x_1,y_1) &= (c^2x_1, c^3y_1)
 \end{align*}
 \begin{enumerate}[(a)]
-\item Show that scalar multiplication
-      \textbf{distributes vectors} over scalar addition:
-      \((c+d)\odot(x,y)=
-      c\odot(x,y) \oplus d\odot(x,y)\).
+\item Show that scalar multiplication \textbf{distributes scalars} over
+      vector addition:
+      \(c\odot((x_1,y_1) \oplus (x_2,y_2))=
+      c\odot(x_1,y_1) \oplus c\odot(x_2,y_2)\).
 \item Determine if $V$ is a vector space or not.  Justify your answer.
 \end{enumerate}
 \end{problem}
 \begin{solution}
-Let $(x_1,y_1) \in V$, and let $c,d \in \IR$.  Then
-$$(c+d)\odot (x_1,y_1)=(0, (c+d)y_1) = (0,cy_1) \oplus (0,dy_1) = c \odot (x_1,y_1) \oplus d \odot (x_1,y_1).$$
-However, $V$ is not a vector space, as $1 \odot (x_1,y_1) = (0,y_1) \neq (x_1,y_1)$.
+Let $(x_1,y_1), (x_2,y_2) \in V$ and let $c \in \IR$.
+\begin{align*}
+c \odot \left( (x_1,y_1) \oplus (x_2,y_2) \right) &= c \odot (x_1+x_2,y_1+y_2) \\
+&= (c^2(x_1+x_2), c^3(y_1+y_2) ) \\
+&= (c^2x_1,c^3y_1) \oplus (c^2x_2,c^3y_2) \\
+&= c \odot (x_1,y_1) \oplus c \odot (x_2,y_2)
+\end{align*}
+However, $V$ is not a vector space, as the other distributive law fails:
+$$(c+d) \odot (x_1,y_1) = ( (c+d)^2 x_1, (c+d)^3 y_1) \neq ((c^2+d^2)x_1, (c^3+d^3)y_1) = c \odot (x_1,y_1) \oplus d \odot (x_1,y_1).$$
 \end{solution}
 
 
 \begin{problem}{V2}
-Determine if $\begin{bmatrix}0 \\ -1 \\ 2 \\ 6 \end{bmatrix}$ can be written as a linear combination of the vectors $\begin{bmatrix} 3 \\ -1 \\ -1 \\ 0 \end{bmatrix}$ and $\begin{bmatrix} -1 \\ 0 \\ 1 \\ 2 \end{bmatrix}$.
+  Determine if
+  \(\begin{bmatrix} 3 \\ -2 \\ 4 \end{bmatrix}\)
+  belongs to the span of the set
+  \(\left\{
+    \begin{bmatrix} 1 \\ 2 \\ -3 \end{bmatrix},
+    \begin{bmatrix} 2 \\ 4 \\ -6 \end{bmatrix},
+    \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
+    \right\}
+  \).
 \end{problem}
 \begin{solution}
-$$\RREF\left(\left[\begin{array}{cc|c} 3 & -1 & 0 \\ -1 & 0 & -1 \\ -1 & 1 & 2 \\ 0 & 2 & 6\end{array} \right] \right)= \left[ \begin{array}{cc|c} 1 & 0 & 1 \\ 0 & 1 & 3 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array} \right]$$
-
-Since this system has a solution, $\begin{bmatrix}0 \\ -1 \\ 2 \\ 6 \end{bmatrix}$ can be written as a linear combination of the vectors $\begin{bmatrix} 3 \\ -1 \\ -1 \\ 0 \end{bmatrix}$ and $\begin{bmatrix} -1 \\ 0 \\ 1 \\ 2 \end{bmatrix}$, namely
-$$\begin{bmatrix}0 \\ -1 \\ 2 \\ 6 \end{bmatrix}=\begin{bmatrix} 3 \\ -1 \\ -1 \\ 0 \end{bmatrix}+3\begin{bmatrix} -1 \\ 0 \\ 1 \\ 2 \end{bmatrix}.$$
+  Since
+  \[
+    \RREF\left(
+      \begin{bmatrix}[ccc|c]
+        1 & 2 & 0 & 3 \\
+        2 & 4 & 0 & -2 \\
+        -3 & -6 & 0 & 4
+      \end{bmatrix}
+    \right) =
+    \begin{bmatrix}[ccc|c]
+      1 & 2 & 0 & 0 \\
+      0 & 0 & 0 & 1 \\
+      0 & 0 & 0 & 0
+    \end{bmatrix}
+  \]
+  contains the contradiction \(0=1\),
+  \(\begin{bmatrix} 3 \\ -2 \\ 4 \end{bmatrix}\) is
+  not a linear combination of the three vectors.
 \end{solution}
-
 \begin{extract}\newpage\end{extract}
 \begin{problem}{V3}
-Does
-\(
-  \operatorname{span}\left\{
-    \begin{bmatrix} 2 \\ -1 \\ 4 \\ 2 \\ 1 \end{bmatrix},
-    \begin{bmatrix} -1 \\ 3 \\ 5 \\ 2 \\ 0 \end{bmatrix},
-    \begin{bmatrix} 1 \\ 0 \\ 5 \\ 1 \\ -3 \end{bmatrix}
-  \right\} = \IR^5
-\)?
+Determine if the vectors $\begin{bmatrix} 1 \\ 0 \\ 2 \\1 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 1 \\ 0 \\ -3 \end{bmatrix}$,$\begin{bmatrix} 0 \\ 3 \\ 0 \\ -2 \end{bmatrix}$, and $\begin{bmatrix}-1 \\ 1 \\ -1 \\ -1 \end{bmatrix}$ span $\IR^4$.
 \end{problem}
 \begin{solution}
-Since there are only three vectors, they cannot span \(\IR^5\).
+$$\RREF\left(\begin{bmatrix}1 & 3 & 0 & -1 \\ 0 & 1 & 3 & 1 \\ 2 & 0 & 0 & -1 \\ 1 & -3 & -2 & -1 \end{bmatrix} \right) =\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
+Since every row contains a pivot, the vectors span $\IR^4$.
 \end{solution}
-\begin{problem}{V4}
-Determine if the set of all lattice points, i.e. $\{(x,y)\ \big|\ \text{$x$ and $y$ are integers} \}$ is a subspace of $\IR^2$.
+
+\begin{problem}{V4} Let $W$ be the set of all polynomials of even degree.  Determine if $W$ is a subspace of the vector space of all polynomials.
 \end{problem}
 \begin{solution}
-This set is closed under addition, but not under scalar multiplication so it is not a subspace.
+$W$ is closed under scalar multiplication, but not under addition.  For example, $x-x^2$ and $x^2$ are both in $W$, but $(x-x^2)+(x^2)=x \notin W$.
 \end{solution}
+
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{S1}
-Determine if the set of vectors $\left\{ \begin{bmatrix} -3 \\ 8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\}$ is  linearly dependent or linearly independent
+Determine if the vectors $\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}$, $\begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix}$, and $\begin{bmatrix} 2 \\ 0 \\ -2 \end{bmatrix}$ are linearly dependent or linearly independent
 \end{problem}
 \begin{solution}
-$$\RREF\left( \begin{bmatrix}-3 & 1 & 0 \\ 8 & 2 & -1 \\ 0 & 2 & 3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$ 
-Every column is a pivot column, therefore the set is linearly independent.
+$$\RREF\left(\begin{bmatrix} 1 & 3 & 2 \\ 1 & -1 & 0 \\ -1 & 1 & -2 \end{bmatrix} \right)= \begin{bmatrix} 1 & 0 &0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
+Since each column is a pivot column, the vectors are linearly independent.
 \end{solution}
+
 
 \begin{problem}{S2}
-Determine if the set $\left\{
-\begin{bmatrix} 1 & -3 \\ 2 & 2 \end{bmatrix},
-\begin{bmatrix} -1 & 4 \\ -1 & 1 \end{bmatrix},
-\begin{bmatrix} -1 & 0 \\ 2 & 1 \end{bmatrix},
-\begin{bmatrix} 0 & 3 \\ 3 & 9 \end{bmatrix}
-\right\}$ is a basis of $M_{2,2}$ or not.
+  Determine if the set \(\left\{
+    \begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix},
+    \begin{bmatrix} 2 \\ 0 \\ 2 \end{bmatrix},
+    \begin{bmatrix} 1 \\ 4 \\ -1 \end{bmatrix}
+  \right\}\) is a basis of $\IR^3$.
 \end{problem}
-
 \begin{solution}
-$$\RREF \begin{bmatrix} 1 & -1 & -1 & 0 \\ -3 & 4 & 0 & 3 \\ 2 & -1 & 2 & 3 \\ 2 & 1 & 1 & 9 \end{bmatrix}=\begin{bmatrix} 1 &0 & 0 & 3 \\ 0 & 1 & 0 & 3 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
-Since this is not the identity matrix, the set is not a basis.
+  \[\RREF\left(
+    \begin{bmatrix}
+      3 & 2 & 1 \\
+      -1 & 0 & 4 \\
+      2 & 2 & -1
+    \end{bmatrix} \right)= \begin{bmatrix}
+      1 & 0 &0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{bmatrix}
+  \]
+Since the resulting matrix is the identity matrix, it is a basis.
 \end{solution}
+
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{S3}
@@ -197,11 +213,12 @@ Then  $\left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix},\begin{bmatrix} 
 
 
 \begin{problem}{S4}
-Let $W$ be the subspace of $\P_3$ given by $W={\rm span}\left( \left\{ x^3-x^2+3x-3, 2x^3+x+1, 3x^3-x^2+4x-2, x^3+x^2+x-7\right\}\right)$.  Compute the dimension of $W$.
+Let $W = {\rm span} \left( \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}, \begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix} \right\} \right)$.  Find the dimension of $W$.
 \end{problem}
 \begin{solution}
-$$ \RREF \left( \begin{bmatrix} 1 & 2 & 3 & 1 \\ -1 & 0 & -1 & 1 \\ 3 & 1 & 4 & 1 \\ -3 & 1 & -2 & -7 \end{bmatrix} \right) =  \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-This has 3 pivot columns so $\dim(W)=3$.
+$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \end{bmatrix}$$
+
+This has two pivot columns, so $W$ has dimension 2.
 \end{solution}
 
 

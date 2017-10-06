@@ -10,14 +10,8 @@
 \begin{document}
 
 \begin{problem}{E1}
-Write an augmented matrix corresponding to the following system of linear equations.
-\begin{align*}
-x_1+4x_3 &= 1 \\
-x_2-x_3 &= 7 \\
-x_1-x_2+3x_3 &= -1
-\end{align*}
-\end{problem}
-\begin{solution}
+Write a system of linear equations corresponding to the following
+augmented matrix.
 \[
 \begin{bmatrix}[ccc|c]
 1 & 0 & 4 & 1 \\
@@ -25,78 +19,93 @@ x_1-x_2+3x_3 &= -1
 1 & -1 & 3 & -1
 \end{bmatrix}
 \]
-\end{solution}
-
-\begin{problem}{E2}
-Find the reduced row echelon form of the matrix below.
-$$\begin{bmatrix}[cccc|c] 2 & 1 & -1 & 0 & 5 \\ 3 & -1 & 0 & -2 & 0 \\ -1 & 0 & 5 & 0 & -1 \end{bmatrix}$$
 \end{problem}
 \begin{solution}
-$$\begin{bmatrix}[cccc|c]
- 2 & 1 & -1 & 0 & 5 \\
- 3 & -1 & 0 & -2 & 0 \\
- -1 & 0 & 5 & 0 & -1
-\end{bmatrix} \sim
-\begin{bmatrix}[cccc|c]
- -1 & 0 & 5 & 0 & -1  \\
- 2 & 1 & -1 & 0 & 5 \\
- 3 & -1 & 0 & -2 & 0
-\end{bmatrix} \sim
-\begin{bmatrix}[cccc|c]
- 1 & 0 & -5 & 0 & 1 \\
- 2 & 1 & -1 & 0 & 5 \\
- 3 & -1 & 0 & -2 & 0
-\end{bmatrix} $$
-$$\sim
-\begin{bmatrix}[cccc|c]
- 1 & 0 & -5 & 0 & 1  \\
- 0 & 1 & 9 & 0 & 3 \\
- 0 & -1 & 15 & -2 & -3 \\
-\end{bmatrix} \sim
-\begin{bmatrix}[cccc|c]
- 1 & 0 & -5 & 0 & 1  \\
- 0 & 1 & 9 & 0 & 3 \\
- 0 & 0 & 24 & -2 & 0 \\
-\end{bmatrix} \sim
-\begin{bmatrix}[cccc|c]
- 1 & 0 & -5 & 0 & 1 \\
- 0 & 1 & 9 & 0 & 3 \\
- 0 & 0 & 1 & -\frac{1}{12} & 0 \\
-\end{bmatrix} \sim
-\begin{bmatrix}[cccc|c]
-1 & 0 & 0 & -\frac{5}{12} & 1 \\
- 0 & 1 & 0 & \frac{3}{4} & 3 \\
- 0 & 0 & 1 & -\frac{1}{12} & 0
+\begin{align*}
+x_1+4x_3 &= 1 \\
+x_2-x_3 &= 7 \\
+x_1-x_2+3x_3 &= -1
+\end{align*}
+\end{solution}
+\begin{problem}{E2}
+Put the following matrix in reduced row echelon form.
+$$\begin{bmatrix}
+ 3 & -1 & 0 \\
+ -1 & 0 & -1 \\
+ -1 & 1 & 2 \\
+ 0 & 2 & 6
+\end{bmatrix}$$
+\end{problem}
+\begin{solution}
+$$\begin{bmatrix}
+ 3 & -1 & 0 \\
+ -1 & 0 & -1 \\
+ -1 & 1 & 2 \\
+ 0 & 2 & 6
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+ -1 & 0 & -1 \\
+ 3 & -1 & 0 \\
+ -1 & 1 & 2 \\
+ 0 & 2 & 6
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+ 1 & 0 & 1 \\
+ 3 & -1 & 0 \\
+ -1 & 1 & 2 \\
+ 0 & 2 & 6
+\end{bmatrix}
+$$
+$$
+\sim
+\begin{bmatrix}
+ 1 & 0 & 1 \\
+ 0 & -1 & -3 \\
+ 0 & 1 & 3 \\
+ 0 & 2 & 6
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+ 1 & 0 & 1 \\
+ 0 & 1 & 3 \\
+ 0 & -1 & -3 \\
+ 0 & 2 & 6
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+ 1 & 0 & 1 \\
+ 0 & 1 & 3 \\
+ 0 & 0 & 0 \\
+0 & 0 & 0
 \end{bmatrix}$$
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{E3}
-Find the solution set for the following system of linear equations.
+Solve the following linear system.
 \begin{align*}
-2x_1+3x_2-5x_3+14x_4 &= 8 \\
-x_1+x_2-x_3+5x_4&= 3
+4x_1+4x_2+3x_3-6x_4 &= 5 \\
+-2x_3-4x_4 &= 3 \\
+2x_1+2x_2+x_3-4x_4 &= -1 \\
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
   \begin{bmatrix}[cccc|c]
-    2 & 3 & -5 & 14 & 8 \\
-    1 & 1 & -1 & 5 & 3
+    4 & 4 & 3 & -6 & 5 \\
+    0 & 0 & -2 & -4 & 3 \\
+    2 & 2 & 1 & -4 & -1
   \end{bmatrix}
 \), so \(\RREF A =
   \begin{bmatrix}[cccc|c]
-    1 & 0 & 2 & 1 & 1 \\
-    0 & 1 & -3 & 4 & 2 \\
+    1 & 1 & 0 & -3 & 0 \\
+    0 & 0 & 1 & 2 & 0 \\
+    0 & 0 & 0 & 0 & 1
   \end{bmatrix}
-\). It follows that the solution set is given by \(
-  \begin{bmatrix}
-    1 - 2a - b \\
-    2 + 3a - 4b \\
-    a \\
-    b
-  \end{bmatrix}
-\) for all real numbers \(a,b\).
+\). It follows that the system is inconsistent with no solutions
+(since the bottom row implies the contradiction \(0=1\)).
 \end{solution}
 
 \begin{problem}{E4}
@@ -164,72 +173,67 @@ Since this system has a solution,  $\begin{bmatrix} 1 \\ 4 \\ 3 \end{bmatrix}$ i
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{V3}
-Determine if the vectors $\begin{bmatrix} 1 \\ 0 \\ 2 \\1 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 1 \\ 0 \\ -3 \end{bmatrix}$,$\begin{bmatrix} 0 \\ 3 \\ 0 \\ -2 \end{bmatrix}$, and $\begin{bmatrix}-1 \\ 1 \\ -1 \\ -1 \end{bmatrix}$ span $\IR^4$.
+Determine if the vectors  $\begin{bmatrix} 8 \\ 21 \\ -7 \end{bmatrix}$, $\begin{bmatrix} -3 \\ -8 \\ 3 \end{bmatrix}$, $\begin{bmatrix} -1 \\ -3 \\ 2 \end{bmatrix}$, and $\begin{bmatrix} 4 \\ 11 \\ -5 \end{bmatrix}$ span $\IR^3$.
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix}1 & 3 & 0 & -1 \\ 0 & 1 & 3 & 1 \\ 2 & 0 & 0 & -1 \\ 1 & -3 & -2 & -1 \end{bmatrix} \right) =\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
-Since every row contains a pivot, the vectors span $\IR^4$.
+$$\RREF\left(\begin{bmatrix} 8 & -3 & -1 & 4 \\ 21 & -8 & -3 & 11 \\ -7 & 3 & 2 & -5  \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 1 & -1 \\ 0 & 1 & 3 & -4 \\ 0 & 0 & 0 & 0\end{bmatrix} $$
+Since the rank is less than 3, they do not span $\IR^3$.
 \end{solution}
 
-\begin{problem}{V4} Let \(W\) be the set of all complex numbers \(a+bi\)
-satisfying  \(a=2b\).
-Determine if \(W\) is a subspace of \(\IC\).
+\begin{problem}{V4} Let \(W\) be the set of all \(\IR^3\) vectors
+\(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\) satisfying \(x+y+z=0\) (this forms a plane).
+Determine if \(W\) is a subspace of \(\IR^3\).
 \end{problem}
 \begin{solution}
-Yes, because \(c(2b_1+b_1i)+d(2b_2+b_2i)=2(cb_1+db_2)+(cb_1+db_2)i\) belongs to
-\(W\). Alternately, yes because \(W\) is isomorphic to \(\IR\).
+Yes, because \(z=-x-y\) and
+\(
+  a\begin{bmatrix} x_1 \\ y_1 \\ -x_1-y_1 \end{bmatrix}+
+  b\begin{bmatrix} x_2 \\ y_2 \\ -x_2-y_2 \end{bmatrix}=
+  \begin{bmatrix}
+    ax_1+bx_2 \\
+    ay_1+by_2 \\
+    -(ax_1+bx_2)-(ay_1+by_2)
+  \end{bmatrix}
+\).
+Alternately, yes because \(W\) is isomorphic to \(\IR^2\).
 \end{solution}
+
+
 \begin{extract}\newpage\end{extract}
 \begin{problem}{S1}
-Determine if the set of vectors $\left\{ \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\}$ is  linearly dependent or linearly independent
+Determine if the set of vectors $\left\{\begin{bmatrix} 3 \\ -1 \\ 0 \\ 4 \end{bmatrix}, \begin{bmatrix} 1  \\ 2 \\ -2 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ -8 \\ 6 \\ 5 \end{bmatrix} \right\}$  is linearly dependent or linearly independent.
 \end{problem}
 \begin{solution}
-$$\RREF\left( \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{3}{2} \\ 0 & 0 & 0 \end{bmatrix}$$ 
-This has a non pivot column, therefore the set is linearly dependent.
+$$\RREF\left(\begin{bmatrix} 3 & 1 & 3 \\ -1 & 2 & -8 \\ 0 & -2 & 6 \\ 4 & 1 & 5 \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 2 \\ 0 & 1 & -3 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
+Since the reduced row echelon form has a nonpivot column, the vectors are linearly dependent.
 \end{solution}
 
 \begin{problem}{S2}
-  Determine if the set \(\left\{
-    \begin{bmatrix} 3 \\ -1 \\ 2 \\3 \end{bmatrix},
-    \begin{bmatrix} 2 \\ 0 \\ 2 \\ 4\end{bmatrix},
-    \begin{bmatrix} 1 \\ -1 \\ 0 \\ -1\end{bmatrix},
-    \begin{bmatrix} -1 \\ 3 \\ 0 \\ 5\end{bmatrix}
-  \right\}\) is a basis of $\IR^4$.
+Determine if the set $\left\{\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ -2 \end{bmatrix}\right\}$ is a basis of $\IR^3$.
 \end{problem}
 \begin{solution}
-  \[\RREF\left(
-    \begin{bmatrix}
-      3 & 2 & 1 & -1\\
-      -1 & 0 & -1 & 3\\
-      2 & 2 & 0 & 0\\
-      3 & 4 & -1 & 5\\
-    \end{bmatrix} \right)= \begin{bmatrix}
-      1 & 0 & 1 & 0 \\
-      0 & 1 & -1 & 0 \\
-      0 & 0 & 0 & 1 \\
-      0 & 0 & 0 & 0
-    \end{bmatrix}
-  \]
-Since the resulting matrix is not the identity matrix, it is not a basis.
+$$\RREF\left(\begin{bmatrix} 1 & 3 & 2 \\ 1 & -1 & 0 \\ -1 & 1 & -2 \end{bmatrix} \right)= \begin{bmatrix} 1 & 0 &0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
+Since the resulting matrix is the identity matrix, it is a basis.
 \end{solution}
 
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{S3}
-Let $W={\rm span}\left( \left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 4 \\ -2 \end{bmatrix},  \begin{bmatrix} 1 \\ 1 \\ 1 \\ -7 \end{bmatrix} \right\}\right)$.  Find a basis of $W$.
+Let $W = {\rm span} \left( \left\{  \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\} \right)$.   Find a basis for $W$.
 \end{problem}
 \begin{solution}
-$$ \RREF \left( \begin{bmatrix} 1 & 2 & 3 & 1 \\ -1 & 0 & -1 & 1 \\ 3 & 1 & 4 & 1 \\ -3 & 1 & -2 & -7 \end{bmatrix} \right) =  \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-Then  $\left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ 1 \\ 1 \end{bmatrix},   \begin{bmatrix} 1 \\ 1 \\ 1 \\ -7 \end{bmatrix} \right\}$ is a basis for $W$.
+Let $A= \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix}$, and compute $\RREF(A) = \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{3}{2} \\ 0 & 0 & 0 \end{bmatrix}$.
+Since the first two columns are pivot columns, $\left\{ \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix} \right\} $ is a basis for $W$.
 \end{solution}
 
 
 \begin{problem}{S4}
-Let $W={\rm span}\left( \left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 4 \\ -2 \end{bmatrix},  \begin{bmatrix} 1 \\ 1 \\ 1 \\ -7 \end{bmatrix} \right\}\right)$.  Compute the dimension of $W$.
+Let $W = {\rm span} \left( \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}, \begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix} \right\} \right)$.  Find the dimension of $W$.
 \end{problem}
 \begin{solution}
-$$ \RREF \left( \begin{bmatrix} 1 & 2 & 3 & 1 \\ -1 & 0 & -1 & 1 \\ 3 & 1 & 4 & 1 \\ -3 & 1 & -2 & -7 \end{bmatrix} \right) =  \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-This has 3 pivot columns so $\dim(W)=3$.
+$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \end{bmatrix}$$
+
+This has two pivot columns, so $W$ has dimension 2.
 \end{solution}
 
 
