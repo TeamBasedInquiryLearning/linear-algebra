@@ -50,7 +50,7 @@
 \newcommand{\@solutionstext}{{\bfseries Solution:}}
 \newcommand{\@calculatorpolicy}{{No calculators are permitted.}}
 \newcommand{\@version}{}
-\newcommand{\@instructions}{{Show all work.  Answers without work will not receive credit. \@calculatorpolicy}}
+\newcommand{\@instructions}{{Show all work and justify all of your answers.  Answers without work or sufficient reasoning will not receive credit. \@calculatorpolicy}}
 \def \@standards{}
 
 %Specify macros for user to change the local versions
