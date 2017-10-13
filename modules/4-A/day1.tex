@@ -9,34 +9,97 @@ A \term{linear transformation} is a map between vector spaces that preserves the
 \item $T(\vec{v}+\vec{w}) = T(\vec{v})+T(\vec{w})$ for any $\vec{v},\vec{w} \in V$
 \item $T(c\vec{v}) = cT(\vec{v})$ for any $c \in \IR$, $\vec{v} \in V$.
 \end{enumerate}
-In other words, a map is linear if one can do vector space operations before applying the map or after, and obtain the same answer.
+\ \\
+\ \\
+In other words, a map is linear if one can do vector space operations before applying the map or after, and obtain the same answer. \\
+
+\ \\
+\ \\
 
 $V$ is called the \term{domain} of $T$ and $W$ is called the \term{co-domain} of $T$.
 \end{definition}
 
-\begin{activity}{15}
-Determine if each of the following maps are linear transformations
-\begin{enumerate}[(a)]
-\item $T_1 : \IR^2 \rightarrow \IR$ given by $T_1\left(\begin{bmatrix} a \\ b \end{bmatrix} \right) = \sqrt{a^2+b^2}$
-\item $T_2 : \IR^3 \rightarrow \IR^2$ given by $T_2\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix} \right) = \begin{bmatrix} x-z \\ y \end{bmatrix}$
-\item $T_3: \P_d \rightarrow \P_{d-1}$ given by $T_3(f(x)) = f^\prime(x)$.
-\item $T_4: C(\IR) \rightarrow C(\IR)$ given by $T_4(f(x)) = f(-x)$
-\item $T_5: \P \rightarrow \P$ given by $T_5(f(x)) = f(x)+x^2$
-\end{enumerate}
-\end{activity}
+\begin{example}
+Let $T : \IR^3 \rightarrow \IR^2$ be given by $$T\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix} \right) = \begin{bmatrix} x-z \\ y \end{bmatrix}$$
+
+\pause We check: 
+\begin{align*}
+T\left(\begin{bmatrix} x_1 \\ y_1 \\ z_1 \end{bmatrix} + \begin{bmatrix}x_2 \\ y_2  \\ z_2 \end{bmatrix} \right) &= T\left(\begin{bmatrix} x_1+x_2 \\ y_1+y_2 \\ z_1+z_2 \end{bmatrix} \right) = \begin{bmatrix} (x_1+x_2)-(z_1+z_2) \\ (y_1+y_2) \end{bmatrix} \\
+T\left(\begin{bmatrix} x_1 \\ y_1 \\ z_1 \end{bmatrix} \right) + T\left(\begin{bmatrix} x_2 \\ y_2 \\ z_2 \end{bmatrix} \right) &=  \begin{bmatrix} x_1-z_1 \\ y_1 \end{bmatrix}+\begin{bmatrix} x_2-z_2 \\ y_2 \end{bmatrix} 
+\end{align*}
+\pause
+$$T\left(c\begin{bmatrix} x \\ y \\ z \end{bmatrix} \right) = \begin{bmatrix} cx-cz \\ cy \end{bmatrix} = c\begin{bmatrix} x-z \\ y \end{bmatrix} = cT\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix} \right)$$
+
+Therefore $T$ is a linear transformation.
+\end{example}
+
 
 \begin{activity}{15}
-Suppose $T: \IR^3 \rightarrow \IR^2$ is a linear transformation, and you know $T\left(\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \right) = \begin{bmatrix} 2 \\ 1 \end{bmatrix} $ and $T\left(\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right) = \begin{bmatrix} -3 \\ 2 \end{bmatrix} $.  Compute each of the following:
-\begin{enumerate}[(a)]
-\item $T\left(\begin{bmatrix} 3 \\ 0 \\ 0 \end{bmatrix}\right)$
-\item $T\left(\begin{bmatrix} 0 \\ 0 \\ -2 \end{bmatrix}\right)$
-\item $T\left(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}\right)$
-\item $T\left(\begin{bmatrix} -2 \\ 0 \\ 5 \end{bmatrix}\right)$
-\end{enumerate}
+Determine if each of the following maps are linear transformations
+\begin{subactivity}
+$T_1: \IR^2 \rightarrow \IR$ given by $T_1 \left(\begin{bmatrix} x \\ y \end{bmatrix} \right) = \sqrt{x^2+y^2}$.
+\end{subactivity}
+\begin{subactivity}
+$T_2: \IR^2 \rightarrow \IR^3 $ given by $T_2\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix} \right)  = \begin{bmatrix} -x \\ -y \\ -z \end{bmatrix}$
+\end{subactivity}
+\begin{subactivity}
+$T_3: \P^d \rightarrow \P^{d-1}$ given by $T_3(f(x)) = f^\prime(x)$.
+\end{subactivity}
+\begin{subactivity}
+$T_4: \P \rightarrow \P$ given by $T_4(f(x)) = f(x)+x^2$
+\end{subactivity}
 \end{activity}
 
 \begin{activity}{5}
-Suppose $T: \IR^4 \rightarrow \IR^3$ is a linear transformation.  What is the smallest number of vectors needed to determine $T$?  In other words, what is the smallest number $n$ such that there are $\vec{v}_1,\ldots,\vec{v}_n \in \IR^4$ and given  $T(\vec{v}_1), \ldots, T(\vec{v}_n)$ you can determine $T(\vec{w})$ for \textit{any} $\vec{w} \in \IR^2$?
+Suppose $T: \IR^3 \rightarrow \IR^2$ is a linear transformation, and you know $T\left(\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \right) = \begin{bmatrix} 2 \\ 1 \end{bmatrix} $ and $T\left(\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right) = \begin{bmatrix} -3 \\ 2 \end{bmatrix} $.  Compute $T\left(\begin{bmatrix} 3 \\ 0 \\ 0 \end{bmatrix}\right)$.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item $\begin{bmatrix} 6 \\ 2\end{bmatrix}$
+\item $\begin{bmatrix} -9 \\ 6 \end{bmatrix}$
+\item $\begin{bmatrix} -4 \\ -2 \end{bmatrix}$
+\item $\begin{bmatrix} 6 \\ 4 \end{bmatrix}$
+\end{enumerate}
+\end{multicols}
+\end{activity}
+
+\begin{activity}{3}
+Suppose $T: \IR^3 \rightarrow \IR^2$ is a linear transformation, and you know $T\left(\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \right) = \begin{bmatrix} 2 \\ 1 \end{bmatrix} $ and $T\left(\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right) = \begin{bmatrix} -3 \\ 2 \end{bmatrix} $.  Compute $T\left(\begin{bmatrix} 0 \\ 0 \\ -2 \end{bmatrix}\right)$.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item $\begin{bmatrix} 6 \\ 2\end{bmatrix}$
+\item $\begin{bmatrix} -9 \\ 6 \end{bmatrix}$
+\item $\begin{bmatrix} -4 \\ -2 \end{bmatrix}$
+\item $\begin{bmatrix} 6 \\ 4 \end{bmatrix}$
+\end{enumerate}
+\end{multicols}
+\end{activity}
+
+\begin{activity}{5}
+Suppose $T: \IR^3 \rightarrow \IR^2$ is a linear transformation, and you know $T\left(\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \right) = \begin{bmatrix} 2 \\ 1 \end{bmatrix} $ and $T\left(\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right) = \begin{bmatrix} -3 \\ 2 \end{bmatrix} $.  Compute $T\left(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}\right)$.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item $\begin{bmatrix} 2 \\ 1\end{bmatrix}$
+\item $\begin{bmatrix} 3 \\ -1 \end{bmatrix}$
+\item $\begin{bmatrix} -1 \\ 3 \end{bmatrix}$
+\item $\begin{bmatrix} 5 \\ -8 \end{bmatrix}$
+\end{enumerate}
+\end{multicols}
+\end{activity}
+
+\begin{activity}{2}
+Suppose $T: \IR^3 \rightarrow \IR^2$ is a linear transformation, and you know $T\left(\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \right) = \begin{bmatrix} 2 \\ 1 \end{bmatrix} $ and $T\left(\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right) = \begin{bmatrix} -3 \\ 2 \end{bmatrix} $.  Compute $T\left(\begin{bmatrix} -2 \\ 0 \\ -3 \end{bmatrix}\right)$.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item $\begin{bmatrix} 2 \\ 1\end{bmatrix}$
+\item $\begin{bmatrix} 3 \\ -1 \end{bmatrix}$
+\item $\begin{bmatrix} -1 \\ 3 \end{bmatrix}$
+\item $\begin{bmatrix} 5 \\ -8 \end{bmatrix}$
+\end{enumerate}
+\end{multicols}
+\end{activity}
+
+\begin{activity}{5}
+Suppose $T: \IR^4 \rightarrow \IR^3$ is a linear transformation.  What is the smallest number of vectors needed to determine $T$?  \\ In other words, what is the smallest number $n$ such that there are $\vec{v}_1,\ldots,\vec{v}_n \in \IR^4$ and given  $T(\vec{v}_1), \ldots, T(\vec{v}_n)$ you can determine $T(\vec{w})$ for \textit{any} $\vec{w} \in \IR^4$?
 \begin{enumerate}[(a)]
 \item $2$
 \item $3$
@@ -50,6 +113,16 @@ Suppose $T: \IR^4 \rightarrow \IR^3$ is a linear transformation.  What is the sm
 Fix an ordered basis for $V$.  Since every vector can be written \textit{uniquely} as a linear combination of basis vectors, a linear transformation $T:V \rightarrow W$ corresponds exactly to a choice of where each basis vector goes.  For convenience, we can thus encode a linear transformation as a matrix, with one column for the image of each basis vector (in order).
 \end{observation}
 
+\begin{definition}
+The {\bf standard basis} of $\IR^n$ is the (ordered) basis $\{\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n\}$ where
+\begin{align*}
+\vec{e}_1 &= \begin{bmatrix} 1 \\ 0 \\ 0 \\\vdots \\ 0 \\ 0 \end{bmatrix}  & 
+\vec{e}_2 &= \begin{bmatrix} 0 \\ 1 \\ 0 \\\vdots \\ 0 \\ 0 \end{bmatrix}  & \cdots  & & 
+\vec{e}_n &= \begin{bmatrix} 0 \\ 0 \\ 0 \\\vdots \\ 0 \\ 1 \end{bmatrix} 
+\end{align*}
+\end{definition}
+
+
 \begin{example}
 Let $T: \IR^3 \rightarrow \IR^2$ be a linear transformation with
 \begin{align*}
@@ -61,14 +134,26 @@ T\left(\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right) &= \begin{bmatrix} 5 \\
 Then the matrix corresponding to $T$ with respect to the standard bases is $$\begin{bmatrix}3 & -1 & 5 \\ 2 & 4 & 0 \end{bmatrix}.$$
 \end{example}
 
-\begin{activity}{10}
+\begin{activity}{5}
   Let $T: \IR^3 \rightarrow \IR^2$ be the linear transformation given by
 $$T\left(\begin{bmatrix} x\\ y \\ z \end{bmatrix} \right) = \begin{bmatrix} x+3z \\ 2x-y-4z \end{bmatrix}$$
 Write the matrix corresponding to this linear transformation with respect to standard basis.
 \end{activity}
 
 \begin{activity}{5}
-Let $D: \P^3 \rightarrow \P^2$ be the derivative map (recall this is a linear transformation).  Write the matrix corresponding to $D$ with respect to the ordered basis $\{1,x,x^2,x^3\}$ for $\P^3$ and $\{1,x,x^2\}$ for $\P^2$.
+  Let $T: \IR^3 \rightarrow \IR^2$ be the linear transformation given by the matrix (with respect to the standard bases) $$\begin{bmatrix} 3  & -2 & -1  \\ 4 & 5 & 2 \end{bmatrix}.$$ 
+
+Compute $T\left(\begin{bmatrix} x\\ y \\ z \end{bmatrix} \right) $.
+\end{activity}
+
+\begin{activity}{10}
+Let $D: \P^3 \rightarrow \P^2$ be the derivative map (recall this is a linear transformation).  
+\begin{subactivity}
+Write down a  corresponding linear transformation $T: \IR^4 \rightarrow \IR^3$ 
+\end{subactivity}
+\begin{subactivity}
+Write the matrix corresponding to $T$ with respect to the standard bases.
+\end{subactivity}
 \end{activity}
 
 \end{applicationActivities}

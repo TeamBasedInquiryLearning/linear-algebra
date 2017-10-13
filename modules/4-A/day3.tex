@@ -2,40 +2,110 @@
 % ^ leave for LaTeXTools build functionality
 
 \begin{applicationActivities}{3}{19}
-\begin{activity}{15}
-  \begin{subactivity}
-    Describe surjective linear transformations in terms of the image.
-  \end{subactivity}
-  \begin{subactivity}
-    Describe injective linear transformations in terms of the kernel.
-  \end{subactivity}
-\end{activity}
 
-\begin{activity}{15}
-Let $T: \IR^n \rightarrow \IR^m$ be a linear map with matrix $A$ (for the standard basis).  You have cards containing a number of statements about $T$ and $A$.  Sort them into groups of equivalent statements, and post them on your board.
+\begin{observation}
+Let $T: V \rightarrow W$.  Last class we made 4 definitions.
+\begin{itemize}
+\item  $T$ is called \term{injective} or \term{one-to-one} if $T$ does not map two distinct values to the same place.
+\item $T$ is called \term{surjective} if every element of $W$ is mapped to by some element of $V$.
+\item The \term{kernel} of $T$ is the set of all things that are mapped to $\vec{0}$.  It is a subspace of $V$.
+\item The \term{image} of $T$ is the set of all things in $W$ that are mapped to by something in $V$.  It is a subspace of $W$.
+\end{itemize}
+\end{observation}
 
-\begin{TBLnote}Card sort activity for 10-15 minutes: cards contain the following
+\begin{activity}{5}
+Let $T: \IR^3 \rightarrow \IR^3$ be a linear transformation.  Suppose you know that $\ker T = \{ \vec{0} \}$.  What can you conclude about $T$?
 \begin{enumerate}[(a)]
 \item $T$ is injective
 \item $T$ is not injective
 \item $T$ is surjective
 \item $T$ is not surjective
-\item The system of linear equations given by the augmented matrix $\begin{bmatrix}[c|c]A & \vec{b} \end{bmatrix}$ has a solution for all $\vec{b} \in \IR^m$
-\item The system of linear equations given by the augmented matrix $\begin{bmatrix}[c|c]A & \vec{b} \end{bmatrix}$ has a unique solution for all $\vec{b} \in \IR^m$
-\item The system of linear equations given by the augmented matrix $\begin{bmatrix}[c|c] A & \vec{0} \end{bmatrix}$ has a non-trivial solution.
-\item The columns of $A$ span $\IR^m$
-\item The columns of $A$ are linearly independent
-\item The columns of $A$ are a basis of $\IR^m$
-\item Every column of $\RREF(A)$ is a pivot column
-\item $\RREF(A)$ has a non-pivot column
-\item $\RREF(A)$ has $n$ pivot columns
 \end{enumerate}
-\end{TBLnote}
 \end{activity}
 
-\begin{activity}{20}
-\begin{TBLnote}Gallery walk --3 minutes per board at 3 different boards.  Then 10 minutes to wrap up discussion \end{TBLnote}
-Cycle around the room counter-clockwise.  If they have two things grouped together that you know are not equivalent, write a reason or counter-example on a sticky note.
+\begin{fact}
+This goes both ways.  A linear transformation $T$ is injective {\bf if and only if} $\ker T = \{\vec{0}\}$ (sometimes phrased as ``The kernel of $T$ is \term{trivial}'').
+
+\ \\
+If $T(\vec{v})=T(\vec{w})$, then $T(\vec{v}-\vec{w})=0$
+\end{fact}
+
+\begin{activity}{5}
+Let $T: \IR^3 \rightarrow \IR^3$ be a linear transformation.  Suppose you know that $\Im T = {\rm span} \left\{ \begin{bmatrix} 1 \\ 0 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ -1 \end{bmatrix} \right\}$.  What can you conclude about $T$?
+\begin{enumerate}[(a)]
+\item $T$ is injective
+\item $T$ is not injective
+\item $T$ is surjective
+\item $T$ is not surjective
+\end{enumerate}
+\end{activity}
+
+\begin{fact}
+This goes both ways.  A linear transformation $T:V \rightarrow W$ is surjective {\bf if and only if} $\Im T = W$.
+\end{fact}
+
+\begin{activity}{15}
+Let $T: \IR^n \rightarrow \IR^m$ be a linear map with matrix $A$ (for the standard bases).  You have cards containing a number of statements about $T$ and $A$.  Sort them into two groups of equivalent statements, and post them on your board.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item $T$ is injective
+\item $T$ is surjective
+\item The system of linear equations given by the augmented matrix $\begin{bmatrix}[c|c]A & \vec{b} \end{bmatrix}$ has a solution for all $\vec{b} \in \IR^m$
+\item The system of linear equations given by the augmented matrix~$\begin{bmatrix}[c|c] A & \vec{0} \end{bmatrix}$ has a non-trivial solution.
+\item The columns of $A$ span $\IR^m$
+\item The columns of $A$ are linearly independent
+\item Every column of $\RREF(A)$ is a pivot column
+\item $\RREF(A)$ has a non-pivot column \\
+\ \\
+\ \\
+\end{enumerate}
+\end{multicols}
+
+
+\end{activity}
+
+\begin{definition}
+If $T: \IR^n \rightarrow \IR^m$ is both injective and surjective, it is called \term{bijective}
+\end{definition}
+
+\begin{activity}{10}
+Let $T: \IR^2 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y \end{bmatrix} \right) = \begin{bmatrix} 2x+3y \\ x-y \\ x+3y\end{bmatrix}.$$  Which of the following is true?
+\begin{enumerate}[(a)]
+\item $T$ is neither injective nor surjective
+\item $T$ is injective but not surjective
+\item $T$ is surjective but not injective
+\item $T$ is bijective.
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{5}
+Let $T: \IR^3 \rightarrow \IR^2$ be given by $$T\left(\begin{bmatrix} x \\ y  \\ z \end{bmatrix} \right) = \begin{bmatrix} 2x+y-z \\ 4x+y+z\end{bmatrix}.$$  Which of the following is true?
+\begin{enumerate}[(a)]
+\item $T$ is neither injective nor surjective
+\item $T$ is injective but not surjective
+\item $T$ is surjective but not injective
+\item $T$ is bijective.
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{5}
+Let $T: \IR^3 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y  \\ z \end{bmatrix} \right) = \begin{bmatrix} 2x+y-z \\ 4x+y+z \\ 6x+2y+z\end{bmatrix}.$$  Which of the following is true?
+\begin{enumerate}[(a)]
+\item $T$ is neither injective nor surjective
+\item $T$ is injective but not surjective
+\item $T$ is surjective but not injective
+\item $T$ is bijective.
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{5}
+Let $T: \IR^3 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y  \\ z \end{bmatrix} \right) = \begin{bmatrix} 2x+y-z \\ 4x+y+z \\ 6x+2y\end{bmatrix}.$$  Which of the following is true?
+\begin{enumerate}[(a)]
+\item $T$ is neither injective nor surjective
+\item $T$ is injective but not surjective
+\item $T$ is surjective but not injective
+\item $T$ is bijective.
+\end{enumerate}
 \end{activity}
 
 
