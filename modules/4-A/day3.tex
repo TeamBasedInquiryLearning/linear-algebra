@@ -4,72 +4,75 @@
 \begin{applicationActivities}{3}{19}
 
 \begin{observation}
-Let $T: V \rightarrow W$.  Last class we made 4 definitions.
+Let $T: V \rightarrow W$.  We have previously defined the following
+terms.
 \begin{itemize}
 \item  $T$ is called \term{injective} or \term{one-to-one} if $T$ does not map two distinct values to the same place.
-\item $T$ is called \term{surjective} if every element of $W$ is mapped to by some element of $V$.
+\item $T$ is called \term{surjective} or \term{onto} if every element of $W$ is mapped to by some element of $V$.
 \item The \term{kernel} of $T$ is the set of all things that are mapped to $\vec{0}$.  It is a subspace of $V$.
 \item The \term{image} of $T$ is the set of all things in $W$ that are mapped to by something in $V$.  It is a subspace of $W$.
 \end{itemize}
 \end{observation}
 
 \begin{activity}{5}
-Let $T: \IR^3 \rightarrow \IR^3$ be a linear transformation.  Suppose you know that $\ker T = \{ \vec{0} \}$.  What can you conclude about $T$?
+Let $T: \IR^3 \rightarrow \IR^3$ be a linear transformation where
+$\ker T = \{ \vec{0} \}$. Can you answer either of the following questions
+about \(T\)?
 \begin{enumerate}[(a)]
-\item $T$ is injective
-\item $T$ is not injective
-\item $T$ is surjective
-\item $T$ is not surjective
+\item Is $T$ injective?
+\item Is $T$ surjective?
 \end{enumerate}
+(Hint: If $T(\vec{v})=T(\vec{w})$, then what is $T(\vec{v}-\vec{w})$?)
 \end{activity}
 
 \begin{fact}
-This goes both ways.  A linear transformation $T$ is injective {\bf if and only if} $\ker T = \{\vec{0}\}$ (sometimes phrased as ``The kernel of $T$ is \term{trivial}'').
-
-\ \\
-If $T(\vec{v})=T(\vec{w})$, then $T(\vec{v}-\vec{w})=0$
+A linear transformation $T$ is injective \textbf{if and only if} $\ker T = \{\vec{0}\}$. Put another way, an injective linear transformation may be
+recognized by its \term{trivial} kernal.
 \end{fact}
 
 \begin{activity}{5}
-Let $T: \IR^3 \rightarrow \IR^3$ be a linear transformation.  Suppose you know that $\Im T = {\rm span} \left\{ \begin{bmatrix} 1 \\ 0 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ -1 \end{bmatrix} \right\}$.  What can you conclude about $T$?
+Let $T: \IR^3 \rightarrow \IR^3$ be a linear transformation where
+$\Im T = \vspan \left\{ \begin{bmatrix} 1 \\ 0 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ -1 \end{bmatrix} \right\}$.
+Can you answer either of the following questions about \(T\)?
 \begin{enumerate}[(a)]
-\item $T$ is injective
-\item $T$ is not injective
-\item $T$ is surjective
-\item $T$ is not surjective
+\item Is $T$ injective?
+\item Is $T$ surjective?
 \end{enumerate}
 \end{activity}
 
 \begin{fact}
-This goes both ways.  A linear transformation $T:V \rightarrow W$ is surjective {\bf if and only if} $\Im T = W$.
+A linear transformation $T:V \rightarrow W$ is surjective \textbf{if and only if} $\Im T = W$. Put another way, a surjective linear transformation may be
+recognized by its same codomain and image.
 \end{fact}
 
 \begin{activity}{15}
-Let $T: \IR^n \rightarrow \IR^m$ be a linear map with matrix $A$ (for the standard bases).  You have cards containing a number of statements about $T$ and $A$.  Sort them into two groups of equivalent statements, and post them on your board.
+Let $T: \IR^n \rightarrow \IR^m$ be a linear map with matrix $A$ (for the standard bases). Sort the following claims into two groups of
+equivalent statements.
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
 \item $T$ is injective
 \item $T$ is surjective
-\item The system of linear equations given by the augmented matrix $\begin{bmatrix}[c|c]A & \vec{b} \end{bmatrix}$ has a solution for all $\vec{b} \in \IR^m$
-\item The system of linear equations given by the augmented matrix~$\begin{bmatrix}[c|c] A & \vec{0} \end{bmatrix}$ has a non-trivial solution.
 \item The columns of $A$ span $\IR^m$
 \item The columns of $A$ are linearly independent
-\item Every column of $\RREF(A)$ is a pivot column
-\item $\RREF(A)$ has a non-pivot column \\
-\ \\
-\ \\
+\item Every column of $\RREF(A)$ has a pivot.
+\item Every row of $\RREF(A)$ has a pivot.
+\item The system of linear equations given by the augmented matrix $\begin{bmatrix}[c|c]A & \vec{b} \end{bmatrix}$ has a solution for all $\vec{b} \in \IR^m$
+\item The system of linear equations given by the augmented matrix~$\begin{bmatrix}[c|c] A & \vec{0} \end{bmatrix}$ has infinitely many solutions.
 \end{enumerate}
 \end{multicols}
+\begin{TBLnote}
+  This activity may be ran as a card sort.
+\end{TBLnote}
 
 
 \end{activity}
 
 \begin{definition}
-If $T: \IR^n \rightarrow \IR^m$ is both injective and surjective, it is called \term{bijective}
+If $T: \IR^n \rightarrow \IR^m$ is both injective and surjective, it is called \term{bijective}.
 \end{definition}
 
 \begin{activity}{10}
-Let $T: \IR^2 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y \end{bmatrix} \right) = \begin{bmatrix} 2x+3y \\ x-y \\ x+3y\end{bmatrix}.$$  Which of the following is true?
+Let $T: \IR^2 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y \end{bmatrix} \right) = \begin{bmatrix} 2x+3y \\ x-y \\ x+3y\end{bmatrix}.$$  Which of the following must be true?
 \begin{enumerate}[(a)]
 \item $T$ is neither injective nor surjective
 \item $T$ is injective but not surjective
@@ -79,7 +82,7 @@ Let $T: \IR^2 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y \en
 \end{activity}
 
 \begin{activity}{5}
-Let $T: \IR^3 \rightarrow \IR^2$ be given by $$T\left(\begin{bmatrix} x \\ y  \\ z \end{bmatrix} \right) = \begin{bmatrix} 2x+y-z \\ 4x+y+z\end{bmatrix}.$$  Which of the following is true?
+Let $T: \IR^3 \rightarrow \IR^2$ be given by $$T\left(\begin{bmatrix} x \\ y  \\ z \end{bmatrix} \right) = \begin{bmatrix} 2x+y-z \\ 4x+y+z\end{bmatrix}.$$  Which of the following must be true?
 \begin{enumerate}[(a)]
 \item $T$ is neither injective nor surjective
 \item $T$ is injective but not surjective
@@ -89,7 +92,7 @@ Let $T: \IR^3 \rightarrow \IR^2$ be given by $$T\left(\begin{bmatrix} x \\ y  \\
 \end{activity}
 
 \begin{activity}{5}
-Let $T: \IR^3 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y  \\ z \end{bmatrix} \right) = \begin{bmatrix} 2x+y-z \\ 4x+y+z \\ 6x+2y+z\end{bmatrix}.$$  Which of the following is true?
+Let $T: \IR^3 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y  \\ z \end{bmatrix} \right) = \begin{bmatrix} 2x+y-z \\ 4x+y+z \\ 6x+2y+z\end{bmatrix}.$$ Which of the following must be true?
 \begin{enumerate}[(a)]
 \item $T$ is neither injective nor surjective
 \item $T$ is injective but not surjective
@@ -99,7 +102,7 @@ Let $T: \IR^3 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y  \\
 \end{activity}
 
 \begin{activity}{5}
-Let $T: \IR^3 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y  \\ z \end{bmatrix} \right) = \begin{bmatrix} 2x+y-z \\ 4x+y+z \\ 6x+2y\end{bmatrix}.$$  Which of the following is true?
+Let $T: \IR^3 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y  \\ z \end{bmatrix} \right) = \begin{bmatrix} 2x+y-z \\ 4x+y+z \\ 6x+2y\end{bmatrix}.$$   Which of the following must be true?
 \begin{enumerate}[(a)]
 \item $T$ is neither injective nor surjective
 \item $T$ is injective but not surjective

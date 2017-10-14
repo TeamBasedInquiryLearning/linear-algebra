@@ -12,37 +12,37 @@ $T$ is called \term{injective} or \term{one-to-one} if $T$ does not map two dist
 \begin{activity}{5}
 Let $T: \IR^2 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix}x \\ y \end{bmatrix} \right) = \begin{bmatrix} x \\ y \\ 0 \end{bmatrix}.$$
 The matrix (with respect to the standard bases) of $T$ is thus $\begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}$. \\
-Determine if $T$ is injective or not.
+Is $T$ injective?
 \end{activity}
 
 \begin{activity}{5}
 Let $T: \IR^3 \rightarrow \IR^2$ be given by $$T\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix} \right) = \begin{bmatrix} x \\ y \end{bmatrix}.$$  The matrix (with respect to the standard bases) of $T$ is thus $\begin{bmatrix} 1 & 0 &0  \\ 0 & 1 & 0 \end{bmatrix}$.\\
-Determine if $T$ is injective or not.
+Is $T$ injective?
 \end{activity}
 
 \begin{definition}
 Let $T: V \rightarrow W$ be a linear transformation.
-$T$ is called \term{surjective} or \term{onto} if every element of $W$ is mapped to by an element of $V$.  More precisely, for every $\vec{w} \in W$, there is some $v \in V$ with $T(\vec{v})=\vec{w}$.
+$T$ is called \term{surjective} or \term{onto} if every element of $W$ is mapped to by an element of $V$.  More precisely, for every $\vec{w} \in W$, there is some $\vec{v} \in V$ with $T(\vec{v})=\vec{w}$.
 \end{definition}
 
 \begin{activity}{5}
 Let $T: \IR^2 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix}x \\ y \end{bmatrix} \right) = \begin{bmatrix} x \\ y \\ 0 \end{bmatrix}.$$
 The matrix (with respect to the standard bases) of $T$ is thus $\begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}$. \\
-Determine if $T$ is surjective or not.
+Is $T$ surjective?
 \end{activity}
 
 \begin{activity}{5}
 Let $T: \IR^3 \rightarrow \IR^2$ be given by $$T\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix} \right) = \begin{bmatrix} x \\ y \end{bmatrix}.$$  The matrix (with respect to the standard bases) of $T$ is thus $\begin{bmatrix} 1 & 0 &0  \\ 0 & 1 & 0 \end{bmatrix}$.\\
-Determine if $T$ is surjective or not.
+Is $T$ surjective?
 \end{activity}
 
 
 \begin{definition}
-Let $T: V \rightarrow W$ be a linear transformation.  An important set called the \term{kernel} of $T$ is given by
-\begin{align*}
-\ker T &= \left\{ \vec{v} \in V\ \big|\ T(\vec{v})=0\right\} \\
-\end{align*}
-
+Let $T: V \rightarrow W$ be a linear transformation.  The \term{kernel} of $T$
+is an important subspace of \(V\) defined by
+\[
+\ker T = \left\{ \vec{v} \in V\ \big|\ T(\vec{v})=\vec{0}\right\}
+\]
 \end{definition}
 
 \begin{activity}{5}
@@ -73,7 +73,8 @@ Find a basis for the kernel of $T$
 
 
 \begin{definition}
-Let $T: V \rightarrow W$ be a linear transformation.  Another important set called the \term{image} of $T$ is given by
+Let $T: V \rightarrow W$ be a linear transformation.
+The \term{image} of $T$ is an important subspace of \(W\) defined by
 \begin{align*}
 \Im T &= \left\{ \vec{w} \in W\ \big|\ \text{there is some }v\in V \text{ with } T(\vec{v})=\vec{w}\right\}
 \end{align*}
@@ -91,10 +92,10 @@ Let $T: \IR^2 \rightarrow \IR^3$ be given by the matrix $\begin{bmatrix} 1 & 0 &
 \begin{activity}{10}
 Let $T: \IR^3 \rightarrow \IR^2$ be the linear transformation given by the matrix $A=\begin{bmatrix} 3 & 4 & -1 \\ 1 & 2 & 1 \end{bmatrix}$ (for the standard basis).
 \begin{subactivity}
-Find a set of vectors that span the image of $T$
+Find a convenient set of vectors \(S\subseteq\IR^2\) such that \(\vspan S=\Im T\).
 \end{subactivity}
 \begin{subactivity}
-Find a basis for the image of $T$.
+Find a convenient basis for the image of $T$.
 \end{subactivity}
 \end{activity}
 
@@ -102,7 +103,7 @@ Find a basis for the image of $T$.
 Let $T: V \rightarrow W$ be a linear transformation with corresponding matrix $A$.
 
 \begin{itemize}
-\item If $A$ is a matrix corresponding to $T$, the kernel is the solution set of the homogeneous system with coefficients given by $A$. 
+\item If $A$ is a matrix corresponding to $T$, the kernel is the solution set of the homogeneous system with coefficients given by $A$.
 \item If $A$ is a matrix corresponding to $T$, the image is the span of the columns of $A$.
 \end{itemize}
 \end{observation}
