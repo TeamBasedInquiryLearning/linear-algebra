@@ -15,7 +15,7 @@ terms.
 \end{observation}
 
 \begin{activity}{5}
-Let $T: \IR^3 \rightarrow \IR^3$ be a linear transformation where
+Let $T: V \rightarrow W$ be a linear transformation where
 $\ker T = \{ \vec{0} \}$. Can you answer either of the following questions
 about \(T\)?
 \begin{enumerate}[(a)]
@@ -31,7 +31,7 @@ recognized by its \term{trivial} kernal.
 \end{fact}
 
 \begin{activity}{5}
-Let $T: \IR^3 \rightarrow \IR^3$ be a linear transformation where
+Let $T: V \rightarrow \IR^3$ be a linear transformation where
 $\Im T = \vspan \left\{ \begin{bmatrix} 1 \\ 0 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ -1 \end{bmatrix} \right\}$.
 Can you answer either of the following questions about \(T\)?
 \begin{enumerate}[(a)]
@@ -52,12 +52,14 @@ equivalent statements.
 \begin{enumerate}[(a)]
 \item $T$ is injective
 \item $T$ is surjective
+\item The kernel of \(T\) is trivial.
 \item The columns of $A$ span $\IR^m$
 \item The columns of $A$ are linearly independent
 \item Every column of $\RREF(A)$ has a pivot.
 \item Every row of $\RREF(A)$ has a pivot.
+\item The image of \(T\) equals its codomain.
 \item The system of linear equations given by the augmented matrix $\begin{bmatrix}[c|c]A & \vec{b} \end{bmatrix}$ has a solution for all $\vec{b} \in \IR^m$
-\item The system of linear equations given by the augmented matrix~$\begin{bmatrix}[c|c] A & \vec{0} \end{bmatrix}$ has infinitely many solutions.
+\item The system of linear equations given by the augmented matrix $\begin{bmatrix}[c|c] A & \vec{0} \end{bmatrix}$ has exactly one solution.
 \end{enumerate}
 \end{multicols}
 \begin{TBLnote}
@@ -68,8 +70,18 @@ equivalent statements.
 \end{activity}
 
 \begin{definition}
-If $T: \IR^n \rightarrow \IR^m$ is both injective and surjective, it is called \term{bijective}.
+If $T: V \rightarrow W$ is both injective and surjective, it is called \term{bijective}.
 \end{definition}
+
+\begin{activity}{5}
+Let $T: \IR^n \rightarrow \IR^m$ be a bijective linear map with matrix $A$ (for the standard bases). Label each of the following as true or false.
+\begin{enumerate}[(a)]
+\item The columns of $A$ form a basis for $\IR^m$
+\item $\RREF(A)$ is the identity matrix.
+\item The system of linear equations given by the augmented matrix $\begin{bmatrix}[c|c] A & \vec{b} \end{bmatrix}$ has exactly one solution
+for all \(\vect b \in \IR^m\).
+\end{enumerate}
+\end{activity}
 
 \begin{activity}{10}
 Let $T: \IR^2 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y \end{bmatrix} \right) = \begin{bmatrix} 2x+3y \\ x-y \\ x+3y\end{bmatrix}.$$  Which of the following must be true?
