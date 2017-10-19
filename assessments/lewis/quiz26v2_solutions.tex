@@ -1,0 +1,45 @@
+\documentclass{sbgLAquiz}
+
+\begin{extract*}
+\input{quizHeader.tex}
+\title{Mastery Quiz Day 26 }
+\standard{M1,M2,M3}
+\version{2}
+\end{extract*}
+
+\begin{document}
+
+\begin{problem}{M1}
+Let 
+\begin{align*}
+C &= \begin{bmatrix} 2 & 3 \\ 0 & 1 \end{bmatrix} & D&= \begin{bmatrix} 3 & 1 & 0 \end{bmatrix} & E&= \begin{bmatrix} 2 & 0 \\ 0 & -1 \\ 1 & -1 \end{bmatrix}
+\end{align*}
+
+Determine which of the six products $CD$, $CE$, $DC$, $DE$, $EC$, $ED$ can be computed, and compute them.
+\end{problem}
+\begin{solution}
+$$EC=\begin{bmatrix} 4 & 6 \\ 0 & -1 \\ 2 & 2 \end{bmatrix}$$
+$$DE = \begin{bmatrix} 6 & -1 \end{bmatrix}$$
+\end{solution}
+
+
+\begin{problem}{M2}
+Determine if the matrix $\begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix}$ is invertible.
+\end{problem}
+\begin{solution}
+The determinant is $0$, so it is not invertible.
+\end{solution}
+
+
+\begin{extract}\newpage\end{extract}
+\begin{problem}{M3}
+Find the inverse of the matrix $\begin{bmatrix} 8 & 5 & 3 & 0 \\ 3 & 2 & 1 & 1 \\ 5 & -3 & 1 & -2 \\ -1 & 2 & 0 & 1\end{bmatrix} $.
+\end{problem}
+\begin{solution}
+$$\RREF \left(\begin{bmatrix}[cccc|cccc] 8 & 5 & 3 & 0 & 1 & 0 & 0 & 0\\ 3 & 2 & 1 & 1 & 0 & 1 & 0 & 0 \\ 5 & -3 & 1 & -2 & 0 & 0 & 1 & 0 \\ -1 & 2 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix} \right) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 & 0 & 1 & 2 & -5 & 12 \\ 0 &  1 & 0 & 0 & 1 & 1 & -4 & -9 \\ 0 & 0 & 1 & 0 & -4 & -7 & 20 & 47 \\ 0 & 0 & 0 & 1 & -1 & 0 & 3 & 7 \end{bmatrix}$$
+
+So the inverse is $\begin{bmatrix} 1 & 2 & -5 & 12 \\  1 & 1 & -4 & -9 \\  -4 & -7 & 20 & 47 \\-1 & 0 & 3 & 7 \end{bmatrix}$.
+\end{solution}
+
+
+\end{document}

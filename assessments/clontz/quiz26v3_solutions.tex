@@ -1,0 +1,43 @@
+\documentclass{sbgLAquiz}
+
+\begin{extract*}
+\input{quizHeader.tex}
+\title{Mastery Quiz Day 26 }
+\standard{M1,M2,M3}
+\version{3}
+\end{extract*}
+
+\begin{document}
+
+\begin{problem}{M1}
+Let 
+\begin{align*}
+A &= \begin{bmatrix} 1 & 3 & -1 & -1 \\ 0 & 0 & 7 & 2 \end{bmatrix} & B &= \begin{bmatrix} 0 & 1 & 7 & 7 \\ -1 & -2 & 0 & 4 \\ 0 & 0 & 1 & 5 \end{bmatrix} & C&=\begin{bmatrix} 3 & 2 \\ 0 & 1 \\ -2 & -1 \end{bmatrix}
+\end{align*}
+Determine which of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed, and compute them.
+\end{problem}
+\begin{solution}
+$CA$ is the only one that can be computed, and 
+$$CA = \begin{bmatrix} 3 & 9 & 11 & 1 \\ 0 & 0 & 7 & 2 \\ -2 & - 6 & -5 & 0 \end{bmatrix}$$
+\end{solution}
+
+
+\begin{problem}{M2}
+Determine if the matrix $\begin{bmatrix} 2 & 1 & 0 & 3 \\ 1 & -1 & 3 & 1 \\ 3 & 2 & -1 & 7 \\ 4 & 1 & 2 & 0 \end{bmatrix}$ is invertible.
+\end{problem}
+\begin{solution}
+$$\RREF \begin{bmatrix} 2 & 1 & 0 & 3 \\ 1 & -1 & 3 & 1 \\ 3 & 2 & -1 & 7 \\ 4 & 1 & 2 & 0 \end{bmatrix}=\begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & -2 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
+Since it is not row equivalent to the identity matrix, it is not invertible.
+\end{solution}
+
+\begin{extract}\newpage\end{extract}
+\begin{problem}{M3}
+Compute the inverse of the matrix $\begin{bmatrix} 1 & 2 & 3 & 0 \\ 0 & -1 & 4 & -2 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$.
+\end{problem}
+\begin{solution}
+$$\RREF(A|I) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 &0 & 1 & 2 & -11 & 37 \\ 0 & 1 & 0 & 0 & 0 & -1 & 4 & -14 \\ 0 & 0 & 1 & 0 & 0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix}$$
+So the inverse is $\begin{bmatrix}  1 & 2 & -11 & 37 \\ 0 & -1 & 4 & -14 \\  0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$
+\end{solution}
+
+
+\end{document}
