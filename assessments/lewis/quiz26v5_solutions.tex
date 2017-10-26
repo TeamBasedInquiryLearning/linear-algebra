@@ -12,31 +12,33 @@
 \begin{problem}{M1}
 Let 
 \begin{align*}
-A &= \begin{bmatrix} 1 & 3 & -1  \\ 0 & 0 & 7  \end{bmatrix} & B &= \begin{bmatrix} 0 & 1 & 7 & 7 \\ -1 & -2 & 0 & 4 \\ 0 & 0 & 1 & 5 \end{bmatrix} & C&=\begin{bmatrix} 3 & 2 \\ 0 & 1 \end{bmatrix}
+A &= \begin{bmatrix} 2 & 3 \\ 0 & 1 \end{bmatrix} & B&= \begin{bmatrix} 3 & 1 & 0 \end{bmatrix} & C&= \begin{bmatrix} 3 & -1 & 4 \\ 1 & 0 & 2 \end{bmatrix}
 \end{align*}
-Determine which of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed, and compute them.
+
+Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and compute it.
 \end{problem}
 \begin{solution}
-$AB$ and $CA$ are the only ones that can be computed, and 
-$$AB = \begin{bmatrix} -3 & -5 & 6 & 14 \\ 0 & 0 & 7 & 35 \end{bmatrix}$$
-$$CA = \begin{bmatrix} 3 & 9 & 11  \\ 0 & 0 & 7    \end{bmatrix}$$
+$AC$ is the only one that can be computed, and 
+$$AC = \begin{bmatrix} 9 & -2 & 14 \\ 1 & 0 & 2 \end{bmatrix}$$
 \end{solution}
+
+
 \begin{problem}{M2}
-Determine if the matrix $\begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix}$ is invertible.
+Determine if the matrix $\begin{bmatrix} 3 & -1 & 0 & 4 \\ 2 & 1 & 1 & 1 \\ 0 & 1 & 1 & -1 \\ 1 & -2 & 0 & 3 \end{bmatrix}$ is invertible.
 \end{problem}
 \begin{solution}
-The determinant is $0$, so it is not invertible.
+$$\RREF \begin{bmatrix} 3 & -1 & 0 & 4 \\ 2 & 1 & 1 & 1 \\ 0 & 1 & 1 & -1 \\ 1 & -2 & 0 & 3 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & -1 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
+This matrix is not row equivalent to the identity matrix, so it is not invertible.
 \end{solution}
 
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{M3}
-Find the inverse of the matrix $\begin{bmatrix} 8 & 5 & 3 & 0 \\ 3 & 2 & 1 & 1 \\ 5 & -3 & 1 & -2 \\ -1 & 2 & 0 & 1\end{bmatrix} $.
+Compute the inverse of the matrix $\begin{bmatrix} 1 & 2 & 3 & 0 \\ 0 & -1 & 4 & -2 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$.
 \end{problem}
 \begin{solution}
-$$\RREF \left(\begin{bmatrix}[cccc|cccc] 8 & 5 & 3 & 0 & 1 & 0 & 0 & 0\\ 3 & 2 & 1 & 1 & 0 & 1 & 0 & 0 \\ 5 & -3 & 1 & -2 & 0 & 0 & 1 & 0 \\ -1 & 2 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix} \right) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 & 0 & 1 & 2 & -5 & 12 \\ 0 &  1 & 0 & 0 & 1 & 1 & -4 & -9 \\ 0 & 0 & 1 & 0 & -4 & -7 & 20 & 47 \\ 0 & 0 & 0 & 1 & -1 & 0 & 3 & 7 \end{bmatrix}$$
-
-So the inverse is $\begin{bmatrix} 1 & 2 & -5 & 12 \\  1 & 1 & -4 & -9 \\  -4 & -7 & 20 & 47 \\-1 & 0 & 3 & 7 \end{bmatrix}$.
+$$\RREF(A|I) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 &0 & 1 & 2 & -11 & 37 \\ 0 & 1 & 0 & 0 & 0 & -1 & 4 & -14 \\ 0 & 0 & 1 & 0 & 0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix}$$
+So the inverse is $\begin{bmatrix}  1 & 2 & -11 & 37 \\ 0 & -1 & 4 & -14 \\  0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$
 \end{solution}
 
 

@@ -10,30 +10,33 @@
 \begin{document}
 
 \begin{problem}{A1}
-Let $T: \IR^3\rightarrow \IR^4$ be the linear transformation given by $$T\left(\begin{bmatrix} x \\ y \\ z \\  \end{bmatrix} \right) = \begin{bmatrix} -3x+y \\ -8x+2y-z \\ 2y+3z \\ 7x \end{bmatrix}.$$  Write the matrix for $T$ with respect to the standard bases of $\IR^3$ and $\IR^4$.
+Let $T: \IR^4 \rightarrow \IR^2$ be the linear transformation given by $$T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} \right) = \begin{bmatrix} x_1+3x_3 \\ 3x_2-5x_3 \end{bmatrix}.$$ Write the matrix for $T$ with respect to the standard bases of $\IR^4$ and $\IR^2$.
 \end{problem}
 \begin{solution}
-$$\begin{bmatrix} 3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3 \\ 7 & 0 & 0 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & 0 & 3 & 0 \\ 0 & 3 & -5 & 0 \end{bmatrix}$$
 \end{solution}
 
-\begin{problem}{A2}
-Determine if $D: \IR^{2\times 2} \rightarrow \IR$ given by $D\left(\begin{bmatrix} a & b \\ c & d \end{bmatrix} \right) = ad-bc$ is a linear transformation or not.
+
+\begin{problem}{A2} 
+ Determine if $T: \IR^2 \rightarrow \IR^2$ given by $T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} e^{x} \\ e^y \end{bmatrix}$ is a linear transformation.
 \end{problem}
 \begin{solution}
-$D(I)=1$ but $D(2I)=4 \neq 2D(I)$, so $D$ is not linear.
+It is not linear.  For example, $$\begin{bmatrix}e^2 \\ 1 \end{bmatrix} = T\left(\begin{bmatrix} 2 \\ 0 \end{bmatrix} \right) \neq 2 T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right)=\begin{bmatrix} 2e \\ 1 \end{bmatrix}$$
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{M1}
 Let 
 \begin{align*}
-A &= \begin{bmatrix} 1 & 3 & -1  \\ 0 & 0 & 7  \end{bmatrix} & B &= \begin{bmatrix} 0 & 1 & 7 & 7 \\ -1 & -2 & 0 & 4 \\ 0 & 0 & 1 & 5 \end{bmatrix} & C&=\begin{bmatrix} 3 & 2 \\ 0 & 1 \end{bmatrix}
+A &= \begin{bmatrix} 2 & 3 \\ 0 & 1 \end{bmatrix} & B&= \begin{bmatrix} 3 & 1 & 0 \end{bmatrix} & C&= \begin{bmatrix} 3 & -1 & 4 \\ 1 & 0 & 2 \end{bmatrix}
 \end{align*}
-Determine which of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed, and compute them.
+
+Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and compute it.
 \end{problem}
 \begin{solution}
-$AB$ and $CA$ are the only ones that can be computed, and 
-$$AB = \begin{bmatrix} -3 & -5 & 6 & 14 \\ 0 & 0 & 7 & 35 \end{bmatrix}$$
-$$CA = \begin{bmatrix} 3 & 9 & 11  \\ 0 & 0 & 7    \end{bmatrix}$$
+$AC$ is the only one that can be computed, and 
+$$AC = \begin{bmatrix} 9 & -2 & 14 \\ 1 & 0 & 2 \end{bmatrix}$$
 \end{solution}
+
+
 \end{document}

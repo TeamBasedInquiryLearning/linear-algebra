@@ -10,32 +10,26 @@
 \begin{document}
 
 \begin{problem}{A1}
-Let $T: \IR^3\rightarrow \IR^4$ be the linear transformation given by $$T\left(\begin{bmatrix} x \\ y \\ z \\  \end{bmatrix} \right) = \begin{bmatrix} -3x+y \\ -8x+2y-z \\ 7x+2y+3z \\ 0 \end{bmatrix}.$$  Write the matrix for $T$ with respect to the standard bases of $\IR^3$ and $\IR^4$.
+Let $T: \IR^4 \rightarrow \IR^2$ be the linear transformation given by $$T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} \right) = \begin{bmatrix} x_1+3x_3 \\ 3x_2-5x_3 \end{bmatrix}.$$ Write the matrix for $T$ with respect to the standard bases of $\IR^4$ and $\IR^2$.
 \end{problem}
 \begin{solution}
-$$\begin{bmatrix} 3 & 1 & 0 \\ -8 & 2 & -1 \\ 7 & 2 & 3 \\ 0 & 0 & 0 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & 0 & 3 & 0 \\ 0 & 3 & -5 & 0 \end{bmatrix}$$
 \end{solution}
 
+
 \begin{problem}{A2}
-Determine if $D: \IR^{2\times 2} \rightarrow \IR$ given by $D\left(\begin{bmatrix} a & b \\ c & d \end{bmatrix} \right) = ad-bc$ is a linear transformation or not.
+Determine if the map $T: \P^6  \rightarrow \P^6$ given by $T(f) = f(x)-f(0)$ is a linear transformation or not.
 \end{problem}
-\begin{solution}
-$D(I)=1$ but $D(2I)=4 \neq 2D(I)$, so $D$ is not linear.
-\end{solution}
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{M1}
 Let 
 \begin{align*}
-C &= \begin{bmatrix} 2 & 3 \\ 0 & 1 \end{bmatrix} & D&= \begin{bmatrix} 3 & 1 & 0 \end{bmatrix} & E&= \begin{bmatrix} 2 & 0 \\ 0 & -1 \\ 1 & -1 \end{bmatrix}
-\end{align*}
-
-Determine which of the six products $CD$, $CE$, $DC$, $DE$, $EC$, $ED$ can be computed, and compute them.
+A &= \begin{bmatrix} 3 \\ 5 \\ -1  \end{bmatrix} & B&=\begin{bmatrix}  2 & 1 & -1 & 2 \\ 1 & -1 & 3 & -3  \end{bmatrix} & C &= \begin{bmatrix} 2 & -1 \\ 0 & 4 \\ 3 & 1 \end{bmatrix} \end{align*}
+Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and compute it.
 \end{problem}
 \begin{solution}
-$$EC=\begin{bmatrix} 4 & 6 \\ 0 & -1 \\ 2 & 2 \end{bmatrix}$$
-$$DE = \begin{bmatrix} 6 & -1 \end{bmatrix}$$
+$CB$ is the only one that can be computed, and
+$$CB=\begin{bmatrix} 3 & 3 & -5 & 7 \\ 4 & -4 & 12 & -12 \\ 7 & 2 & 0 & 3 \end{bmatrix}$$
 \end{solution}
-
-
 \end{document}

@@ -12,61 +12,52 @@
 \begin{problem}{M1}
 Let 
 \begin{align*}
-A &= \begin{bmatrix} 1 & 3 & -1  \\ 0 & 0 & 7  \end{bmatrix} & B &= \begin{bmatrix} 0 & 1 & 7 & 7 \\ -1 & -2 & 0 & 4 \\ 0 & 0 & 1 & 5 \end{bmatrix} & C&=\begin{bmatrix} 3 & 2 \\ 0 & 1 \end{bmatrix}
-\end{align*}
-Determine which of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed, and compute them.
+A &= \begin{bmatrix} 3 \\ 5 \\ -1  \end{bmatrix} & B&=\begin{bmatrix}  2 & 1 & -1 & 2 \\ 1 & -1 & 3 & -3  \end{bmatrix} & C &= \begin{bmatrix} 2 & -1 \\ 0 & 4 \\ 3 & 1 \end{bmatrix} \end{align*}
+Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and compute it.
 \end{problem}
 \begin{solution}
-$AB$ and $CA$ are the only ones that can be computed, and 
-$$AB = \begin{bmatrix} -3 & -5 & 6 & 14 \\ 0 & 0 & 7 & 35 \end{bmatrix}$$
-$$CA = \begin{bmatrix} 3 & 9 & 11  \\ 0 & 0 & 7    \end{bmatrix}$$
+$CB$ is the only one that can be computed, and
+$$CB=\begin{bmatrix} 3 & 3 & -5 & 7 \\ 4 & -4 & 12 & -12 \\ 7 & 2 & 0 & 3 \end{bmatrix}$$
 \end{solution}
 \begin{problem}{M2}
-Determine if the matrix $\begin{bmatrix} 2 & 1 & 0 & 3 \\ 1 & -1 & 3 & 1 \\ 3 & 2 & -1 & 7 \\ 4 & 1 & 2 & 0 \end{bmatrix}$ is invertible.
+Determine if the matrix $\begin{bmatrix} 2 & 1 & 0 & 3 \\ 1 & -1 & 0 & 1 \\ 3 & 2 & -1 & 7 \\ 4 & 1 & 2 & 0 \end{bmatrix}$ is invertible.
 \end{problem}
 \begin{solution}
-$$\RREF \begin{bmatrix} 2 & 1 & 0 & 3 \\ 1 & -1 & 3 & 1 \\ 3 & 2 & -1 & 7 \\ 4 & 1 & 2 & 0 \end{bmatrix}=\begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & -2 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
-Since it is not row equivalent to the identity matrix, it is not invertible.
+$$\RREF \begin{bmatrix} 2 & 1 & 0 & 3 \\ 1 & -1 & 0 & 1 \\ 3 & 2 & -1 & 7 \\ 4 & 1 & 2 & 0 \end{bmatrix}=\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
+Since it is row equivalent to the identity matrix, it is  invertible.
 \end{solution}
-
 \begin{extract}\newpage\end{extract}
 \begin{problem}{M3}
-Compute the inverse of the matrix $\begin{bmatrix} 1 & 2 & 3 & 0 \\ 0 & -1 & 4 & -2 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$.
+Find the inverse of the matrix $\begin{bmatrix} 8 & 5 & 3 & 0 \\ 3 & 2 & 1 & 1 \\ 5 & -3 & 1 & -2 \\ -1 & 2 & 0 & 1\end{bmatrix} $.
 \end{problem}
 \begin{solution}
-$$\RREF(A|I) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 &0 & 1 & 2 & -11 & 37 \\ 0 & 1 & 0 & 0 & 0 & -1 & 4 & -14 \\ 0 & 0 & 1 & 0 & 0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix}$$
-So the inverse is $\begin{bmatrix}  1 & 2 & -11 & 37 \\ 0 & -1 & 4 & -14 \\  0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$
+$$\RREF \left(\begin{bmatrix}[cccc|cccc] 8 & 5 & 3 & 0 & 1 & 0 & 0 & 0\\ 3 & 2 & 1 & 1 & 0 & 1 & 0 & 0 \\ 5 & -3 & 1 & -2 & 0 & 0 & 1 & 0 \\ -1 & 2 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix} \right) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 & 0 & 1 & 2 & -5 & 12 \\ 0 &  1 & 0 & 0 & 1 & 1 & -4 & -9 \\ 0 & 0 & 1 & 0 & -4 & -7 & 20 & 47 \\ 0 & 0 & 0 & 1 & -1 & 0 & 3 & 7 \end{bmatrix}$$
+
+So the inverse is $\begin{bmatrix} 1 & 2 & -5 & 12 \\  1 & 1 & -4 & -9 \\  -4 & -7 & 20 & 47 \\-1 & 0 & 3 & 7 \end{bmatrix}$.
 \end{solution}
 
 
-\begin{problem}{G2}
-Let $A= \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix}$.
-List the eigenvalues of $A$ along with their algebraic multiplicities.
+\begin{problem}{G2} 
+Compute the eigenvalues, along with their algebraic multiplicities, of the matrix $ \begin{bmatrix} 8 & -3 & -1 \\ 21 & -8 & -3 \\ -7 & 3 & 2\end{bmatrix}$.
 \end{problem}
 \begin{solution}
-
 \begin{align*}
-\det(A-\lambda I) &= \det \begin{bmatrix} -3-\lambda & 1 & 0 \\ -8 & 2-\lambda & -1 \\ 0 & 2 & 3-\lambda \end{bmatrix} \\
-&=(-3-\lambda) \det \begin{bmatrix} 2-\lambda & -1 \\ 2 & 3-\lambda \end{bmatrix} -(1) \det \begin{bmatrix} -8 & -1 \\ 0 & 3-\lambda \end{bmatrix} \\
-&=(-3-\lambda)\left( (2-\lambda)(3-\lambda)+2 \right)-\left(-8(3-\lambda) \right) \\
-&=(-3-\lambda)(8-5\lambda+\lambda ^2) +24-8\lambda \\
-&=-\lambda ^3 +2\lambda ^2+7\lambda -24 +24-8\lambda \\
-&= -\lambda ^3+2\lambda ^2 - \lambda \\
-&= -\lambda (\lambda ^2-2\lambda +1 ) \\
-&= -\lambda(\lambda-1)^2
+\det(A-\lambda I) &= (8-\lambda) \det \begin{bmatrix} -8-\lambda & -3 \\ 3 & 2-\lambda \end{bmatrix}-(-3) \det \begin{bmatrix} 21 & -3 \\ -7 & 2-\lambda \end{bmatrix} +(-1) \det \begin{bmatrix} 21 & -8-\lambda \\ -7 & 3 \end{bmatrix} \\
+&=(8-\lambda)\left(\lambda ^2+6\lambda-7\right)+3\left(-21\lambda + 21 \right)-\left(-7\lambda +7 \right) \\
+&=(\lambda -1) \left( (8-\lambda)(\lambda+7)-63+7 \right) \\
+&= (\lambda-1)(\lambda -\lambda ^2) \\
+&= -\lambda (\lambda-1)^2
 \end{align*}
-So $A$ has eigenvalues $0$ (with multiplicity 1) and $1$ (with algebraic multiplicity 2).
+So the eigenvalues are $0$ (with algebraic multiplicity 1) and $1$ (with algebraic multiplicity 2).
 \end{solution}
-
-
 \begin{extract}\newpage\end{extract}
 \begin{problem}{G3}
-Compute the eigenspace of the eigenvalue $-1$ in the matrix $\begin{bmatrix} 4 & -2 & -1 \\ 15 & -7 & -3 \\ -5 & 2 & 0 \end{bmatrix}$. 
+Compute the eigenspace associated to the eigenvalue $2$ in the matrix $\begin{bmatrix} -1 & 1 & 0 \\ -9 & 5 & 0 \\ 15 & -5 & 2 \end{bmatrix}$.
 \end{problem}
+
 \begin{solution}
-$$\RREF\left(A+I\right) = \begin{bmatrix} 1 & - \frac{2}{5} & -\frac{1}{5} \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
-So the eigenspace is spanned by $\begin{bmatrix} 2 \\5 \\  0 \end{bmatrix}$ and $\begin{bmatrix} 1 \\ 0 \\ 5 \end{bmatrix}$.
+The eigenspace is the solution space of the system $(B-2I)X=0$.
+$$\RREF(B-2I)=\RREF\left(\begin{bmatrix} -3 & 1 & 0 \\ -9 & 3 & 0 \\ 15 & - 5 & 0 \end{bmatrix} \right) = \begin{bmatrix} 1 & -\frac{1}{3} & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
+So the system simplifies to $x-\frac{y}{3}=0$, or $3x=y$.  Thus the eigenspace is $$E_2 = {\rm span}\left( \left\{ \begin{bmatrix} 1 \\ 3 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1\end{bmatrix} \right\} \right)$$
 \end{solution}
-
-
 \end{document}
