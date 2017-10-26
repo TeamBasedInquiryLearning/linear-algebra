@@ -4,30 +4,43 @@
 \begin{applicationActivities}{2}{22}
 
 \begin{activity}{5}
-Find a $4 \times 4$ matrix $I$ such that, for any $4 \times n$ matrix $A$, $IA=A$.
+Let $A=\begin{bmatrix} 2 & 7 & -1 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}$.  Find a $3 \times 3$ matrix $I$ such that $IA=A$.
 \end{activity}
 
 \begin{definition}
 The identity matrix $I_n$ (sometimes written as just $I$ if $n$ is understood) is  the $n \times n$ matrix $$I_n = \begin{bmatrix} 1 & 0  & \hdots & 0 \\ 0 & 1 & \ddots & \vdots  \\ \vdots & \ddots & \ddots & 0 \\ 0 & \hdots & 0 & 1 \end{bmatrix}$$
+It has a $1$ on each diagonal element and a $0$ in every other position.
 \end{definition}
 
 \begin{activity}{15}
-Each row operation can be interpreted as a matrix multiplication.  Let $A$ be a $4 \times 4$ matrix.
-\begin{enumerate}[1)]
-\item Find a matrix $S_1$ such that $S_1A$ is the result of swapping the second and fourth rows of $A$.
-\item Find a matrix $S_2$ such that $S_2A$ is the result of adding $5$ times the third row of $A$ to the first.
-\item Find a matrix $S_3$ such that $S_3A$ is the result of doubling the fourth row of $A$.
-\end{enumerate}
+Each row operation can be interpreted as a matrix multiplication.  $A=\begin{bmatrix} 2 & 7 & -1 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}$.
 
-{\em Hint:  Tweak the identity matrix slightly.}
+
+ \begin{subactivity}
+ Find a matrix $S_1$ such that $S_1A$ is the result of doubling the fourth row of $A$.
+ 
+ {\em Hint:  Tweak the identity matrix slightly.}
+ \end{subactivity}
+ \begin{subactivity}
+ Find a matrix $S_2$ such that $S_2A$ is the result of adding $5$ times the third row of $A$ to the first.
+ \end{subactivity}
+\begin{subactivity}
+ Find a matrix $S_3$ such that $S_3A$ is the result of swapping the second and third rows of $A$.
+ \end{subactivity}
+
+
 \end{activity}
+
+\begin{observation}
+For any matrix $A$, we can find a series of matrices $R_1, \ldots, R_k$ corresponding to the row operations such that $$R_1 R_2 \cdots R_k A = \RREF(A).$$
+\end{observation}
 
 
 \begin{activity}{15}
 Let $T: \IR^n \rightarrow \IR^m$ be a linear map with matrix $A$ (for the standard basis).  Consider the following statements about $T$
 \begin{enumerate}[(a)]
-\item $T$ is injective
-\item $T$ is surjective
+\item $T$ is injective (i.e. one-to-one)
+\item $T$ is surjective (i.e. onto)
 \item $T$ is bijective (i.e. both injective and surjective)
 \item $AX=B$ has a solution for all $m \times 1$ matrices $B$
 \item $AX=B$ has a unique solution for all $m \times 1$ matrices $B$
@@ -39,7 +52,7 @@ Let $T: \IR^n \rightarrow \IR^m$ be a linear map with matrix $A$ (for the standa
 \item $\RREF(A)$ has $m$ pivot columns
 \end{enumerate}
 
-Sort these statements into groups of equivalent statements.
+Sort these statements into three groups of equivalent statements.
 
 \end{activity}
 
@@ -49,7 +62,7 @@ If $T$ is injective, which of the following must be true?
 \begin{enumerate}[(a)]
 \item $A$ has strictly more columns that rows
 \item $A$ has at least as may columns as rows
-\item $A$ is square
+\item $A$ is square (i.e. has the same number of rows as columns)
 \item $A$ has at least as may rows as columns
 \item $A$ has strictly more rows than columns
 \end{enumerate}
@@ -61,7 +74,7 @@ If $T$ is surjective, which of the following must be true?
 \begin{enumerate}[(a)]
 \item $A$ has strictly more columns that rows
 \item $A$ has at least as may columns as rows
-\item $A$ is square
+\item $A$ is square (i.e. has the same number of rows as columns)
 \item $A$ has at least as may rows as columns
 \item $A$ has strictly more rows than columns
 \end{enumerate}
@@ -73,7 +86,7 @@ If $T$ is bijective, which of the following must be true?
 \begin{enumerate}[(a)]
 \item $A$ has strictly more columns that rows
 \item $A$ has at least as may columns as rows
-\item $A$ is square
+\item $A$ is square (i.e. has the same number of rows as columns)
 \item $A$ has at least as may rows as columns
 \item $A$ has strictly more rows than columns
 \end{enumerate}
