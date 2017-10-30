@@ -4,48 +4,72 @@
 \begin{applicationActivities}{3}{23}
 
 \begin{definition}
-  Let $T: \IR^n \rightarrow \IR^n$ be a linear map with matrix $A$.
-
+  Let $T: \IR^n \rightarrow \IR^n$ be a linear map with standard matrix $A$.
 \begin{itemize}
-\item  If $T$ is a bijection, then $AX=B$ has a unique solution for all $B \in \IR^n$.  
-\item Thus we can define a map $T^{-1} : \IR^n \rightarrow \IR^n$ by defining $T^{-1}(B)$ to be this solution.  
-\item It follows immediately that $T \circ T^{-1}$ is the identity map.  
-\item The standard matrix for $T^{-1}$ is denoted $A^{-1}$, and $A$ is called an {\bf invertible matrix}.
+\item  If $T$ is a bijection and $B$ is any $\IR^n$ vector, then $T(X)=AX=B$ has a unique solution $X$.
+\item So we may define an \term{inverse map} $T^{-1} : \IR^n \rightarrow \IR^n$ by setting $T^{-1}(B)=X$ to be this unique solution.
+\item Let $A^{-1}$ be the standard matrix for $T^{-1}$. We call $A^{-1}$ the
+\term{inverse matrix} of $A$, so we also say that $A$ is \term{invertible}.
 \end{itemize}
-
 \end{definition}
-\begin{activity}{20}
-Let $T: \IR^3 \rightarrow \IR^3$ be given by the matrix $A=\begin{bmatrix} 1 & -2 & 1 \\ -3 & 7 & 6 \\ 2 & -3 & 0 \end{bmatrix}$.
+
+\begin{activity}{5}
+  Let \(T:\IR^n\to\IR^n\) be a bijective linear map with standard matrix $A$,
+  and let \(X\in\IR^n\). Compute \((T^{-1}\circ T)(X)\)
+  and \(A^{-1}A\).
+\end{activity}
+
+\begin{observation}
+  By definition, a linear map \(T\) being bijective is equivalent to
+  its standard matrix being invertible. Furthermore,
+  \(T^{-1}\circ T=T\circ T^{-1}\) is the identity map, and
+  \(A^{-1}A=AA^{-1}=I\) is the identity matrix.
+\end{observation}
+
+
+\begin{activity}{25}
+  Let \(T: \IR^3 \rightarrow \IR^3\) be given by the matrix
+  \(A=\begin{bmatrix} 2 & -1 & -6 \\ 2 & 1 & 3 \\ 1 & 1 & 4 \end{bmatrix}\).
   \begin{subactivity}
-  Solve $AX=\vec{e}_1$ to determine $T^{-1}(\vec{e}_1)$
+  Solve $T(X)=\vec{e}_1$ to find $T^{-1}(\vec{e}_1)$.
   \end{subactivity}
   \begin{subactivity}
-   Solve $AX=\vec{e}_2$ to determine $T^{-1}(\vec{e}_2)$
+   Solve $T(X)=\vec{e}_2$ to find $T^{-1}(\vec{e}_2)$.
   \end{subactivity}
   \begin{subactivity}
-   Solve $AX=\vec{e}_3$ to determine $T^{-1}(\vec{e}_3)$
+   Solve $T(X)=\vec{e}_3$ to find $T^{-1}(\vec{e}_3)$.
   \end{subactivity}
   \begin{subactivity}
-  Compute $A^{-1}$ (the matrix corresponding to $T^{-1}$)
+  Compute $A^{-1}$, the standard matrix for $T^{-1}$.
   \end{subactivity}
 \end{activity}
 
 \begin{observation}
-We can solve these three systems simultaneously by row reducing the matrix 
-$$A=\begin{bmatrix}[ccc|ccc] 1 & -2 & 1 & 1 & 0 & 0 \\ -3 & 7 & 6 & 0 & 1 & 0 \\ 2 & -3 & 0 & 0 & 0 & 1 \end{bmatrix}$$
+We could have solved these three systems simultaneously
+by row reducing the matrix \([A\,|\,I]\) at once.
+\[
+  A=\begin{bmatrix}[ccc|ccc]
+    2 & -1 & -6 & 1 & 0 & 0 \\
+    2 & 1 & 3 & 0 & 1 & 0 \\
+    1 & 1 & 4 & 0 & 0 & 1
+  \end{bmatrix} \sim
+  \begin{bmatrix}[ccc|ccc]
+    1 & 0 & 0 & 1 & -2 & 3 \\
+    0 & 1 & 0 & -5 & 14 & -18 \\
+    0 & 0 & 1 & 1 & -3 & 4
+  \end{bmatrix}
+\]
 \end{observation}
 
 
-\begin{activity}{15}
-  Find the inverse of the matrix $\begin{bmatrix} 1 & 3 \\ 0 & -2 \end{bmatrix}$
+\begin{activity}{10}
+  Find the inverse \(A^{-1}\) of the matrix
+  \(A=\begin{bmatrix} 1 & 3 \\ 0 & -2 \end{bmatrix}\)
+  by row-reducing \([A\,|\,I]\).
 \end{activity}
 
-\begin{observation}
-If $A \in \IR^{n \times n}$ is invertible, then $\RREF(A|I) = (I | A^{-1} )$.
-\end{observation}
-
-\begin{activity}{15}
-Determine if the matrix $\begin{bmatrix} 2 & 3 & 1 \\ -1 & -4 & 2 \\ 0 & -5 & 5 \end{bmatrix}$ is invertible or not.
+\begin{activity}{10}
+Is the matrix $\begin{bmatrix} 2 & 3 & 1 \\ -1 & -4 & 2 \\ 0 & -5 & 5 \end{bmatrix}$ invertible? Give a reason for your answer.
 \end{activity}
 
 \begin{observation}
