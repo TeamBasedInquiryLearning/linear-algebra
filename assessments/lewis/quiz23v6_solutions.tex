@@ -1,0 +1,64 @@
+\documentclass{sbgLAquiz}
+
+\begin{extract*}
+\input{quizHeader.tex}
+\title{Mastery Quiz Day 23 }
+\standard{A3,A4}
+\version{6}
+\end{extract*}
+
+\begin{document}
+
+\begin{problem}{A3}
+Determine if each of the following linear transformations is injective (one-to-one) and/or surjective (onto).
+\begin{enumerate}[(a)]
+\item $S: \IR^2 \rightarrow \IR^2$ given by the standard matrix $\begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$.
+\item $T: \IR^4 \rightarrow \IR^3$ given by the standard matrix $\begin{bmatrix} 2 & 3 & -1 & -2 \\ 0 & 1 & 3 & 1 \\ 2 & 1 & -7 & -4 \end{bmatrix}$
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item $ \RREF\begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}=\begin{bmatrix}1 & 0 \\ 0 & 1 \end{bmatrix}$.  Since each column is a pivot column, $S$ is injective.  Since there is no zero row, $S$ is surjective.
+\item Since $\dim \IR^4 > \dim \IR^3$, $T$ is not injective.
+$$\RREF\left(\begin{bmatrix} 2 & 3 & -1 & -2 \\ 0 & 1 & 3 & 1 \\ 2 & 1 & -7 & -4 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0 & -5 & -\frac{5}{2} \\ 0 & 1 & 3 & 1 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
+Since there are only two pivot columns, $T$ is not surjective.
+\end{enumerate}
+\end{solution}
+
+
+\begin{problem}{A4}
+Let $T: \IR^{2\times 2} \rightarrow \IR^3$ be the linear map given by \(
+  T\left(\begin{bmatrix} a & b \\ x & y \end{bmatrix} \right) =
+  \begin{bmatrix}
+    a+x \\ 0 \\ b+y
+  \end{bmatrix}
+\). Compute a basis for the kernel and a basis for the image of $T$.
+\end{problem}
+\begin{solution}
+Rewrite as \(
+  T'\left(\begin{bmatrix} a \\ b \\ x \\ y \end{bmatrix} \right) =
+  \begin{bmatrix}
+    a+x \\ 0 \\ b+y
+  \end{bmatrix}
+\).
+\[
+  \RREF \left( \begin{bmatrix}
+    1 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 1
+  \end{bmatrix} \right) = \begin{bmatrix}
+    1 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 1
+  \end{bmatrix}
+\]
+
+Thus \(\left\{
+  \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},
+  \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+\right\} \) is a basis for the image, and \(\left\{
+  \begin{bmatrix} -1 & 0 \\ 1 & 0 \end{bmatrix},
+  \begin{bmatrix} 0 & -1 \\ 0 & 1 \end{bmatrix}
+\right\} \) is a basis for the kernel.
+\end{solution}
+\end{document}
