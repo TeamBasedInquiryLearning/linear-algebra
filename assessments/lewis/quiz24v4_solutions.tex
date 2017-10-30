@@ -17,39 +17,42 @@ $$\begin{bmatrix} 0 & 1 & 3 \end{bmatrix}$$
 \end{solution}
 
 
-\begin{problem}{A2}
-Determine if $D: \IR^{2\times 2} \rightarrow \IR$ given by $D\left(\begin{bmatrix} a & b \\ c & d \end{bmatrix} \right) = ad-bc$ is a linear transformation or not.
+\begin{problem}{A2} 
+ Determine if $T: \IR^2 \rightarrow \IR^2$ given by $T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} e^{x} \\ e^y \end{bmatrix}$ is a linear transformation.
 \end{problem}
 \begin{solution}
-$D(I)=1$ but $D(2I)=4 \neq 2D(I)$, so $D$ is not linear.
+It is not linear.  For example, $$\begin{bmatrix}e^2 \\ 1 \end{bmatrix} = T\left(\begin{bmatrix} 2 \\ 0 \end{bmatrix} \right) \neq 2 T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right)=\begin{bmatrix} 2e \\ 1 \end{bmatrix}$$
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{M1}
 Let 
 \begin{align*}
-A &= \begin{bmatrix} 3 \\ 5 \\ -1  \end{bmatrix} & B&=\begin{bmatrix} 1 & -1 & 3 & -3 \\ 2 & 1 & -1 & 2 \end{bmatrix} & C &= \begin{bmatrix} 2 & -1 \\ 0 & 4 \\ 3 & 1 \end{bmatrix} \end{align*}
+A &= \begin{bmatrix} 3 \\ 5 \\ -1  \end{bmatrix} & B &= \begin{bmatrix} 2 & -1 \\ 0 & 4 \\ 3 & 1 \end{bmatrix} & C&=\begin{bmatrix} 1 & -1 & 3 & -3 \\ 2 & 1 & -1 & 2 \end{bmatrix}
+\end{align*}
 Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and compute it.
 \end{problem}
 \begin{solution}
-$CB$ is the only one that can be computed, and
-$$CB=\begin{bmatrix} 0 & -3 & 7 & -8 \\ 8 & 4 & -4 & 8 \\ 5 & -2 & 8 & -7 \end{bmatrix}$$
+$BC$ is the only one that can be computed, and
+$$BC=\begin{bmatrix} 0 & -3 & 7 & -8 \\ 8 & 4 & -4 & 8 \\ 5 & -2 & 8 & -7 \end{bmatrix}$$
 \end{solution}
 
 \begin{problem}{M2}
-Determine if the matrix $\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}$ is invertible.
+Determine if the matrix $\begin{bmatrix} 2 & 1 & 0 & 3 \\ 1 & -1 & 0 & 1 \\ 3 & 2 & -1 & 7 \\ 4 & 1 & 2 & 0 \end{bmatrix}$ is invertible.
 \end{problem}
 \begin{solution}
-The second column is a multiple of the first, so it is not invertible.
+$$\RREF \begin{bmatrix} 2 & 1 & 0 & 3 \\ 1 & -1 & 0 & 1 \\ 3 & 2 & -1 & 7 \\ 4 & 1 & 2 & 0 \end{bmatrix}=\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
+Since it is row equivalent to the identity matrix, it is  invertible.
 \end{solution}
-
-
-
 \begin{extract}\newpage\end{extract}
-\begin{problem}{M3} Find the inverse of the matrix $\begin{bmatrix} 6 & 0 & 1 \\ -14 & 3 & -4 \\ -23 & 4 & -6\end{bmatrix}$.
+\begin{problem}{M3}
+Find the inverse of the matrix $\begin{bmatrix} 8 & 5 & 3 & 0 \\ 3 & 2 & 1 & 1 \\ 5 & -3 & 1 & -2 \\ -1 & 2 & 0 & 1\end{bmatrix} $.
 \end{problem}
 \begin{solution}
-$$\begin{bmatrix} 6 & 0 & 1 \\ -14 & 3 & -4 \\ -23 & 4 & -6\end{bmatrix}^{-1} = \begin{bmatrix} -2 & 4 & -3 \\ 8 & -13 & 10 \\ 13 & -24 & 18 \end{bmatrix}$$
+$$\RREF \left(\begin{bmatrix}[cccc|cccc] 8 & 5 & 3 & 0 & 1 & 0 & 0 & 0\\ 3 & 2 & 1 & 1 & 0 & 1 & 0 & 0 \\ 5 & -3 & 1 & -2 & 0 & 0 & 1 & 0 \\ -1 & 2 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix} \right) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 & 0 & 1 & 2 & -5 & 12 \\ 0 &  1 & 0 & 0 & 1 & 1 & -4 & -9 \\ 0 & 0 & 1 & 0 & -4 & -7 & 20 & 47 \\ 0 & 0 & 0 & 1 & -1 & 0 & 3 & 7 \end{bmatrix}$$
+
+So the inverse is $\begin{bmatrix} 1 & 2 & -5 & 12 \\  1 & 1 & -4 & -9 \\  -4 & -7 & 20 & 47 \\-1 & 0 & 3 & 7 \end{bmatrix}$.
 \end{solution}
+
 
 \end{document}

@@ -10,29 +10,27 @@
 \begin{document}
 
 \begin{problem}{A1}
-Let $T: \IR^3\rightarrow \IR^4$ be the linear transformation given by $$T\left(\begin{bmatrix} x \\ y \\ z \\  \end{bmatrix} \right) = \begin{bmatrix} -3x+y \\ -8x+2y-z \\ 7x+2y+3z \\ 0 \end{bmatrix}.$$  Write the matrix for $T$ with respect to the standard bases of $\IR^3$ and $\IR^4$.
+Let $T: \IR^4 \rightarrow \IR^2$ be the linear transformation given by $$T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} \right) = \begin{bmatrix} x_1+3x_3 \\ 3x_2-x_3 \end{bmatrix}.$$ Write the matrix for $T$ with respect to the standard bases of $\IR^4$ and $\IR^2$.
 \end{problem}
 \begin{solution}
-$$\begin{bmatrix} 3 & 1 & 0 \\ -8 & 2 & -1 \\ 7 & 2 & 3 \\ 0 & 0 & 0 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & 0 & 3 & 0 \\ 0 & 3 & -1 & 0 \end{bmatrix}$$
 \end{solution}
 
-\begin{problem}{A2} 
- Determine if $T: \IR^2 \rightarrow \IR^2$ given by $T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} e^{x} \\ e^y \end{bmatrix}$ is a linear transformation.
+
+\begin{problem}{A2}
+Determine if the map $T: \P^3 \rightarrow \P^4$ given by $T(f(x))=xf(x)-f(x)$ is a linear transformation or not.
 \end{problem}
-\begin{solution}
-It is not linear.  For example, $$\begin{bmatrix}e^2 \\ 1 \end{bmatrix} = T\left(\begin{bmatrix} 2 \\ 0 \end{bmatrix} \right) \neq 2 T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right)=\begin{bmatrix} 2e \\ 1 \end{bmatrix}$$
-\end{solution}
-
 \begin{extract}\newpage\end{extract}
 \begin{problem}{M1}
 Let 
 \begin{align*}
-A &= \begin{bmatrix} 3 \\ 5 \\ -1  \end{bmatrix} & B&=\begin{bmatrix} 1 & -1 & 3 & -3 \\ 2 & 1 & -1 & 2 \end{bmatrix} & C &= \begin{bmatrix} 2 & -1 \\ 0 & 4 \\ 3 & 1 \end{bmatrix} \end{align*}
+A &= \begin{bmatrix} 1 & 3 & -1 & -1 \\ 0 & 0 & 7 & 2 \end{bmatrix} & B &= \begin{bmatrix} 0 & 1 & 7 & 7 \\ -1 & -2 & 0 & 4 \\ 0 & 0 & 1 & 5 \end{bmatrix} & C&=\begin{bmatrix} 3 & 2 \\ 0 & 1 \\ -2 & -1 \end{bmatrix}
+\end{align*}
 Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and compute it.
 \end{problem}
 \begin{solution}
-$CB$ is the only one that can be computed, and
-$$CB=\begin{bmatrix} 0 & -3 & 7 & -8 \\ 8 & 4 & -4 & 8 \\ 5 & -2 & 8 & -7 \end{bmatrix}$$
+$CA$ is the only one that can be computed, and 
+$$CA = \begin{bmatrix} 3 & 9 & 11 & 1 \\ 0 & 0 & 7 & 2 \\ -2 & - 6 & -5 & 0 \end{bmatrix}$$
 \end{solution}
 
 \end{document}
