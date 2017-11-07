@@ -3,16 +3,17 @@
 
 \begin{applicationActivities}{1}{25}
 
-\begin{activity}{5}
-Consider the linear transformation $A : \IR^2 \rightarrow \IR^2$ given by the matrix $A = \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix}$
+\begin{observation}
+Consider the linear transformation $A_1 : \IR^2 \rightarrow \IR^2$ given by the matrix $A_1 = \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix}$
 
 \begin{center}
 \begin{tikzpicture}
 \draw[thin,gray,<->] (-4,0)-- (4,0);
 \draw[thin,gray,<->] (0,-4)-- (0,4);
-\draw[thick,blue,->] (0,0) -- node[below] {$A \vec{e}_1$}++ (2,0);
-\draw[thick,blue,->] (0,0) -- node[left] {$A \vec{e}_2$}++(0,3);
+\draw[thick,blue,->] (0,0) -- node[below] {$A_1 \vec{e}_1= \begin{bmatrix}2 \\ 0 \end{bmatrix}$}++ (2,0);
+\draw[thick,blue,->] (0,0) -- node[left] {$A_1 \vec{e}_2 = \begin{bmatrix} 0 \\ 3 \end{bmatrix}$}++(0,3);
 \draw[blue,dashed] (2,0) -- (2,3) -- (0,3);
+\draw[red,dashed] (1,0) -- (1,1) -- (0,1);
 \end{tikzpicture}
 \end{center}
 
@@ -24,19 +25,13 @@ We can summarize the transformation of the unit square into this rectangle by me
 \item How was the $y$-axis stretched?
 \end{enumerate}
 
-\end{activity}
+\end{observation}
 
 
-\begin{activity}{15}
-Consider the following linear transformations  $A_i: \IR^2 \rightarrow \IR^2$.
-\begin{itemize}
-\item $A_2 = \begin{bmatrix} 2 & 3 \\ 0 & 1 \end{bmatrix}$
-\item $A_3 = \begin{bmatrix} 1 & -1 \\ 1 & 1 \end{bmatrix}$
-\item $A_4 = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$
-\item $A_5 = \begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix}$
-\end{itemize}
+\begin{activity}{10}
+Consider the linear transformation  $A_2: \IR^2 \rightarrow \IR^2$ given by the matrix
+$A_2 = \begin{bmatrix} 2 & 3 \\ 0 & 1 \end{bmatrix}$.
 
-For each linear transformation, do the following:
 \begin{enumerate}[(a)]
 \item Draw a graph showing the image of the unit square.
 \item Compute how much the area was stretched out.
@@ -44,10 +39,47 @@ For each linear transformation, do the following:
 \end{enumerate}
 \end{activity}
 
-\begin{activity}{10}
-Our goal is to define a function $\det$ that takes a square matrix (linear transformation $\IR^n \rightarrow \IR^n$) and returns its area stretching factor.  This function is called the \term{determinant}.
+\begin{activity}{5}
+Consider the linear transformation  $A_2: \IR^2 \rightarrow \IR^2$ given by the matrix
+ $A_3 = \begin{bmatrix} 1 & -1 \\ 1 & 1 \end{bmatrix}$
+
+\begin{enumerate}[(a)]
+\item Draw a graph showing the image of the unit square.
+\item Compute how much the area was stretched out.
+\item Determine which axes (or lines) were preserved; how were they stretched out?
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{5}
+Consider the linear transformation  $A_2: \IR^2 \rightarrow \IR^2$ given by the matrix
+ $A_4 = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$
+
+\begin{enumerate}[(a)]
+\item Draw a graph showing the image of the unit square.
+\item Compute how much the area was stretched out.
+\item Determine which axes (or lines) were preserved; how were they stretched out?
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{5}
+Consider the linear transformation  $A_2: \IR^2 \rightarrow \IR^2$ given by the matrix
+ $A_5 = \begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix}$
+
+\begin{enumerate}[(a)]
+\item Draw a graph showing the image of the unit square.
+\item Compute how much the area was stretched out.
+\item Determine which axes (or lines) were preserved; how were they stretched out?
+\end{enumerate}
+\end{activity}
+
+
+\begin{definition}
+Our goal is to define a function  that takes a square matrix (linear transformation $\IR^n \rightarrow \IR^n$) and returns its area stretching factor.  This function is called the \term{determinant}, and we denote it $\det$.
 
 What properties should this function have?
+\end{definition}
+
+\begin{activity}{5}
 
 \begin{minipage}{0.8\textwidth}
 Match the four pictures to the following four expressions
@@ -119,14 +151,70 @@ Match the four pictures to the following four expressions
 
 \end{activity}
 
-\begin{activity}{10}
-What can you conclude about each of the following?
-\begin{enumerate}
-\item $\det(\vec{e}_1,\vec{e}_2)$
-\item $\det(\vec{v},\vec{v})$
-\item $\det(c\vec{v},\vec{w})$
-\item $\det(\vec{u}+\vec{v},\vec{w})$
-\end{enumerate}
+
+\begin{activity}{2}
+Based on the picture below, what is $\det(\vec{e}_1, \vec{e}_2)$?
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+\draw[thin,gray,<->] (-1,0)-- (3,0);
+\draw[thin,gray,<->] (0,-1)-- (0,3);
+\draw[thick,blue,->] (0,0) -- node[below] {$\vec{e}_1=\begin{bmatrix}1 \\ 0 \end{bmatrix}$} (1,0);
+\draw[thick,blue,->] (0,0) -- node[left] {$\vec{e}_2=\begin{bmatrix} 0 \\ 1 \end{bmatrix}$} (0,1);
+\draw[thick,blue,->] (1,0) -- (1,1);
+\draw[thick,blue,->] (0,1) -- (1,1);
+\end{tikzpicture}
+\end{center}
+\end{activity}
+
+\begin{activity}{2}
+Based on the picture below, what is $\det(\vec{v}, \vec{v})$ for any vector $\vec{v}$?
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+\draw[thin,gray,<->] (-1,0)-- (4,0);
+\draw[thin,gray,<->] (0,-1)-- (0,4);
+\draw[thick,blue,->] (0,0) -- node[below] {$\vec{v}$} (3,2);
+\end{tikzpicture}
+\end{center}
+\end{activity}
+
+
+\begin{activity}{5}
+Based on the picture below, how are $\det(\vec{v},\vec{w})$ and $\det(c\vec{v}, \vec{w})$ related?
+\begin{center}
+\begin{tikzpicture}
+\draw[thin,gray,<->] (-1,0)-- (6,0);
+\draw[thin,gray,<->] (0,-1)-- (0,6);
+\draw[very thick,red,->] (0,0) -- node[below right] {$c\vec{v}$}  (4,2);
+\draw[very thick,red,->] (1,3) -- (5,5);
+\draw[thick,blue,->] (0,0) -- node[below] {$\vec{v}$} (3,1.5);
+\draw[thick,blue,->] (0,0) -- node[left] {$\vec{w}$} (1,3);
+\draw[green,very thick,dashed] (1,3) -- (2,1);
+\draw[thick,blue,->] (3,1.5) -- (4,4.5);
+\draw[thick,blue,->] (1,3) -- (4,4.5);
+
+
+\draw[thick,blue,->] (4,2) -- (5,5);
+\end{tikzpicture}
+\end{center}
+\end{activity}
+
+\begin{activity}{5}
+Based on the picture below, how is $\det(\vec{u}+\vec{v},\vec{w})$ related to $\det(\vec{u},\vec{w})$ and $\det(\vec{v},\vec{w})$?
+\begin{center}
+\begin{tikzpicture}
+\draw[thin,gray,<->] (-1,0)-- (6,0);
+\draw[thin,gray,<->] (0,-1)-- (0,6);
+\draw[thick,blue,->] (0,0) -- node[below] {$\vec{u}$} (2,1);
+\draw[thick,blue,->] (0,0) -- node[left] {$\vec{w}$} (1,3);
+\draw[thick,blue,->] (2,1) -- node [below] {$\vec{v}$}(3,2);
+\draw[thick,blue,->] (2,1) -- (3,4);
+\draw[thick,blue,->] (3,2) -- (4,5);
+\draw[thick,blue,->] (1,3) -- (3,4);
+\draw[thick,blue,->] (3,4) -- (4,5);
+\draw[dashed,red,->] (0,0) -- node[above,left] {$\vec{u}+\vec{v}$} (3,2);
+\draw[dashed,red,->] (1,3) -- (4,5);
+\end{tikzpicture}
+\end{center}
 \end{activity}
 
 
@@ -146,32 +234,41 @@ Note that if $\vec{v},\vec{w} \in \IR^2$ and $A=\begin{bmatrix} \vec{v} & \vec{w
 \end{observation}
 
 \begin{activity}{5}
-How are $\det (\vec{v},\vec{w})$ and $\det(\vec{w},\vec{v})$ related?
-\begin{enumerate}[(a)]
-\item $\det(\vec{v},\vec{w}) = \det(\vec{w},\vec{v})$
-\item $\det(\vec{v},\vec{w}) = -\det(\vec{w},\vec{v})$
-\item They are unrelated
-\item They are related, but not by either (a) or (b).
-\end{enumerate}
+True or false: $$\det(\vec{v}+\vec{w},\vec{w}) = \det(\vec{v},\vec{w})$$
+
+\begin{center}
+\begin{tikzpicture}
+\draw[thin,gray,<->] (-1,0)-- (5,0);
+\draw[thin,gray,<->] (0,-1)-- (0,8);
+\draw[very thick,blue,->] (0,0) -- node[below right] {$\vec{v}$}  (3,1);
+\draw[very thick,blue,->] (0,0) -- node[left] {$\vec{w}$} (1,2);
+\draw[dashed,blue,->] (1,2) -- (4,3);
+\draw[dashed,blue,->] (3,1) -- (4,3);
+\draw[thick,red,->] (0,0) -- node[above left] {$\vec{v}+\vec{w}$} (4,3);
+\draw[dashed,red,->] (3,1) -- (7,4);
+\draw[dashed,red,->] (4,3) -- (7,4);
+\end{tikzpicture}
+\end{center}
 \end{activity}
 
-
 \begin{observation}
+$$\det(\vec{v},\vec{w}) =  \det(\vec{v}+\vec{w}, \vec{w}) = \det(\vec{v}+\vec{w}, -\vec{v}) = \det(\vec{w}, -\vec{v}).$$ 
+
+Therefore, $\det(\vec{w},\vec{v}) = -\det(\vec{v},\vec{w})$ 
+
+
 Note that this implies that the determinant is actually a \textit{signed} area (volume)!
 \end{observation}
 
-\begin{activity}{5}
-How are $\det (\vec{v}+\vec{w},\vec{w})$ and $\det(\vec{v},\vec{w})$ related?
-\begin{enumerate}[(a)]
-\item $\det(\vec{v}+\vec{w},\vec{w}) = \det(\vec{v},\vec{w})$
-\item $\det(\vec{v}+\vec{w},\vec{w}) = -\det(\vec{v},\vec{w})$
-\item They are unrelated
-\item They are related, but not by either (a) or (b).
-\end{enumerate}
-\end{activity}
+
 
 \begin{observation}
   Note that we now understand the effect of any column operation on the determinant.
+  \begin{enumerate}[(a)]
+  \item Multiplying a column by a scalar multiplies the determinant by that scalar.
+  \item Adding a multiple of a column to another column does not change the determinant.
+  \item Swapping two columns changes the sign of the determinant.
+  \end{enumerate}
 \end{observation}
 
 
