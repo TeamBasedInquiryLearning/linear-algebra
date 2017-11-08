@@ -7,7 +7,7 @@
 Consider the linear transformation $A_1 : \IR^2 \rightarrow \IR^2$ given by the matrix $A_1 = \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix}$
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.5]
 \draw[thin,gray,<->] (-4,0)-- (4,0);
 \draw[thin,gray,<->] (0,-4)-- (0,4);
 \draw[thick,blue,->] (0,0) -- node[below] {$A_1 \vec{e}_1= \begin{bmatrix}2 \\ 0 \end{bmatrix}$}++ (2,0);
@@ -21,7 +21,7 @@ We can summarize the transformation of the unit square into this rectangle by me
 
 \begin{enumerate}[(a)]
 \item How did the area change?
-\item How was th $x$-axis stretched?
+\item How was the $x$-axis stretched?
 \item How was the $y$-axis stretched?
 \end{enumerate}
 
@@ -83,7 +83,6 @@ What properties should this function have?
 
 \begin{minipage}{0.8\textwidth}
 Match the four pictures to the following four expressions
-
 \begin{align*}
 \det(\vec{e}_1,\vec{e}_2) &&
 \det(\vec{v},\vec{v}) &&
@@ -94,7 +93,7 @@ Match the four pictures to the following four expressions
 
 \begin{multicols}{2}
 \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=0.8]
 \draw[thin,gray,<->] (-1,0)-- (3,0);
 \draw[thin,gray,<->] (0,-1)-- (0,3);
 \draw[thick,blue,->] (0,0) -- node[below] {$\vec{e}_1$} (1,0);
@@ -105,7 +104,7 @@ Match the four pictures to the following four expressions
 \end{center}
 
 \begin{center}
-\begin{tikzpicture}[scale=1.2]
+\begin{tikzpicture}[scale=0.5]
 \draw[thin,gray,<->] (-1,0)-- (4,0);
 \draw[thin,gray,<->] (0,-1)-- (0,4);
 \draw[thick,blue,->] (0,0) -- node[below] {$\vec{v}$} (3,2);
@@ -114,7 +113,7 @@ Match the four pictures to the following four expressions
 
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.5]
 \draw[thin,gray,<->] (-1,0)-- (6,0);
 \draw[thin,gray,<->] (0,-1)-- (0,6);
 \draw[very thick,red,->] (0,0) -- node[below right] {$c\vec{v}$}  (4,2);
@@ -131,7 +130,7 @@ Match the four pictures to the following four expressions
 \end{center}
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.5]
 \draw[thin,gray,<->] (-1,0)-- (6,0);
 \draw[thin,gray,<->] (0,-1)-- (0,6);
 \draw[thick,blue,->] (0,0) -- node[below] {$\vec{u}$} (2,1);
@@ -141,8 +140,8 @@ Match the four pictures to the following four expressions
 \draw[thick,blue,->] (3,2) -- (4,5);
 \draw[thick,blue,->] (1,3) -- (3,4);
 \draw[thick,blue,->] (3,4) -- (4,5);
-\draw[dashed,red,->] (0,0) -- node[above,left] {$\vec{u}+\vec{v}$} (3,2);
-\draw[dashed,red,->] (1,3) -- (4,5);
+\draw[thick,red,->] (0,0) -- node[above,left] {$\vec{u}+\vec{v}$} (3,2);
+\draw[thick,red,->] (1,3) -- (4,5);
 \end{tikzpicture}
 \end{center}
 
@@ -211,8 +210,8 @@ Based on the picture below, how is $\det(\vec{u}+\vec{v},\vec{w})$ related to $\
 \draw[thick,blue,->] (3,2) -- (4,5);
 \draw[thick,blue,->] (1,3) -- (3,4);
 \draw[thick,blue,->] (3,4) -- (4,5);
-\draw[dashed,red,->] (0,0) -- node[above,left] {$\vec{u}+\vec{v}$} (3,2);
-\draw[dashed,red,->] (1,3) -- (4,5);
+\draw[thick,red,->] (0,0) -- node[above,left] {$\vec{u}+\vec{v}$} (3,2);
+\draw[thick,red,->] (1,3) -- (4,5);
 \end{tikzpicture}
 \end{center}
 \end{activity}
@@ -226,7 +225,8 @@ To summarize, we have 3 properties (stated here over $\IR^n$)
 \item[P3:] The determinant is linear in each column.
 \end{enumerate}
 
-These three properties uniquely define the \term{determinant}, as we shall see.
+These three properties uniquely define the \term{determinant}.
+
 \end{definition}
 
 \begin{observation}
@@ -234,7 +234,7 @@ Note that if $\vec{v},\vec{w} \in \IR^2$ and $A=\begin{bmatrix} \vec{v} & \vec{w
 \end{observation}
 
 \begin{activity}{5}
-True or false: $$\det(\vec{v}+\vec{w},\vec{w}) = \det(\vec{v},\vec{w})$$
+True or false: $$\det(\vec{v},\vec{v}+\vec{w}) = \det(\vec{v},\vec{w})$$
 
 \begin{center}
 \begin{tikzpicture}
@@ -269,6 +269,14 @@ Note that this implies that the determinant is actually a \textit{signed} area (
   \item Adding a multiple of a column to another column does not change the determinant.
   \item Swapping two columns changes the sign of the determinant.
   \end{enumerate}
+\end{observation}
+
+\begin{observation}
+Another important fact due to the way we have defined the determinant is that for square matrices $A$ and $B$, $\det(AB)=\det(A)\det(B)$.
+
+\ \\
+
+In particular, a matrix is invertible if and only if its determinant is nonzero.
 \end{observation}
 
 
