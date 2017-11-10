@@ -3,165 +3,328 @@
 
 \begin{applicationActivities}{2}{26}
 
+\begin{definition}
+  The \term{transpose} of a matrix is given by rewriting its columns as
+  rows and vice versa:
+  \[
+    \begin{bmatrix}
+      1 & 2 & 3 \\
+      4 & 5 & 6
+    \end{bmatrix}^T
+  =
+    \begin{bmatrix}
+      1 & 4  \\
+      2 & 5  \\
+      3 & 6
+    \end{bmatrix}
+  \]
+\end{definition}
+
 \begin{fact}
-By a geometric argument, one can show that the determinant of a matrix and its transpose are the same.    Thus, row operations behave like column operations.  In particular, we can use row reduction to compute determinants.
+It is possible to prove that the determinant of a matrix and its
+transpose are the same.
+For example, let \(A=\begin{bmatrix}3 & 3 \\ 0 & 2\end{bmatrix}\),
+so \(A^T=\begin{bmatrix}3 & 0 \\ 3 & 2\end{bmatrix}\); both matrices
+scale the unit square by \(6\).
+
+\begin{center}
+  \begin{tikzpicture}[scale=0.5]
+  \draw[thin,gray,<->] (-1,0)-- (4,0);
+  \draw[thin,gray,<->] (0,-1)-- (0,4);
+  \draw[blue,dashed] (0,0) -- (3,0) -- (6,2) -- (3,2) -- (0,0);
+  \draw[thick,blue,->] (0,0) -- node[below] {$A \vec{e}_1= \begin{bmatrix}3 \\ 0 \end{bmatrix}$}++ (3,0);
+  \draw[thick,blue,->] (0,0) -- ++(3,2) node[above] {$A \vec{e}_2 = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$};
+  \end{tikzpicture}
+  \begin{tikzpicture}[scale=0.5]
+  \draw[thin,gray,<->] (-1,0)-- (4,0);
+  \draw[thin,gray,<->] (0,-1)-- (0,4);
+  \draw[blue,dashed] (0,0) -- (3,3) -- (3,5) -- (0,2) -- (0,0);
+  \draw[thick,blue,->] (0,0) -- node[right] {$A^T \vec{e}_1= \begin{bmatrix}3 \\ 0 \end{bmatrix}$}++ (3,3);
+  \draw[thick,blue,->] (0,0) -- ++(0,2) node[left] {$A^T \vec{e}_2 = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$};
+  \end{tikzpicture}
+\end{center}
 \end{fact}
 
 \begin{fact}
-We deduced yesterday that row operations change the determinant in the following way
+We previously figured out that column operations can be used to simplify
+determinants; since \(\det(A)=\det(A^T)\), we can also use row operations:
 \begin{enumerate}
-\item Adding a multiple of one row to another does not change the determinant.
-\item Multiplying a row by a scalar multiplies the determinant by the same amount.
-\item Swapping two rows multiplies the determinant by $-1$.
+\item Multiplying rows by scalars:
+  \(\det\begin{bmatrix}\vdots\\cR\\\vdots\end{bmatrix}=
+  c\det\begin{bmatrix}\vdots\\R\\\vdots\end{bmatrix}\)
+\item Swapping two rows:
+  \(\det\begin{bmatrix}\vdots\\R\\\vdots\\S\\\vdots\end{bmatrix}=
+  -\det\begin{bmatrix}\vdots\\S\\\vdots\\R\\\vdots\end{bmatrix}\)
+\item Adding multiples of rows to other rows:
+  \(\det\begin{bmatrix}\vdots\\R\\\vdots\\S\\\vdots\end{bmatrix}=
+  \det\begin{bmatrix}\vdots\\R+cS\\\vdots\\S\\\vdots\end{bmatrix}\)
 \end{enumerate}
 \end{fact}
 
 \begin{activity}{10}
-  Compute $\det \begin{bmatrix} 4 & 5 \\ 2 & 3 \end{bmatrix}$ by using row reduction.
+  Complete the following determinant computation:
+    \begin{align*}
+    \det\begin{bmatrix} 4 & 5 \\ 2 & 3 \end{bmatrix}
+  &=
+    \unknown
+    \det\begin{bmatrix} 2 & 3 \\ 4 & 5 \end{bmatrix}
+  \\ &=
+    \unknown
+    \det\begin{bmatrix} 1 & 3/2 \\ 4 & 5 \end{bmatrix}
+  \\ &=
+    \unknown
+    \det\begin{bmatrix} 1 & 3/2 \\ 0 & -1 \end{bmatrix}
+  \\ &=
+    \unknown
+    \det\begin{bmatrix} 1 & 3/2 \\ 0 & 1 \end{bmatrix}
+  \\ &=
+    \unknown
+    \det\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
+  \\ &=
+    \unknown
+    \end{align*}
 \end{activity}
 
 \begin{fact}
-It is straightforward but slightly tedious to verify that $$\det \begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad-bc.$$
-
-You should feel free to use this formula to expedite your calculations.
+  This same process allows us to prove a more convenient formula:
+    \begin{align*}
+    \det\begin{bmatrix} a & b \\ c & d \end{bmatrix}
+  &=
+    a
+    \det\begin{bmatrix} 1 & b/a \\ c & d \end{bmatrix}
+  \\ &=
+    a
+    \det\begin{bmatrix} 1 & b/a \\ 0 & d-bc/a \end{bmatrix}
+  \\ &=
+    a(d-bc/a)
+    \det\begin{bmatrix} 1 & b/a \\ 0 & 1 \end{bmatrix}
+  \\ &=
+    (ad-bc)
+    \det\begin{bmatrix} 1 & b/a \\ 0 & 1 \end{bmatrix}
+  \\ &=
+    (ad-bc)
+    \det\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
+  \\ &=
+    ad-bc
+    \end{align*}
 \end{fact}
 
 
 \begin{activity}{5}
-  Which of the following is the same as $\det \begin{bmatrix} 3 & 1 & 0 \\  1 & 1 & 0 \\  0 & 0 & 1\end{bmatrix}$?
-\begin{multicols}{2}
+  The following image illustrates the transformation of the unit cube
+  by the matrix
+  $\begin{bmatrix} 3 & 1 & 0 \\  1 & 1 & 0 \\  0 & 0 & 1\end{bmatrix}$.
+
+  \begin{center}
+  \begin{tikzpicture}
+  \draw[thin,gray,->] (0,0,0) -- (3,0,0);
+  \draw[thin,gray,->] (0,0,0) -- (0,2,0);
+  \draw[thin,gray,->] (0,0,0) -- (0,0,2);
+  %(y,z,x)
+  \draw[blue] (0,1,0) -- (1,1,1);
+  \draw[blue] (0,1,0) -- (3,1,1);
+  \draw[blue] (3,0,1) -- (4,0,2);
+  \draw[blue] (3,0,1) -- (3,1,1);
+  \draw[blue] (1,0,1) -- (4,0,2);
+  \draw[blue] (1,0,1) -- (1,1,1);
+  \draw[blue] (1,1,1) -- (4,1,2);
+  \draw[blue] (4,0,2) -- (4,1,2);
+  \draw[blue] (3,1,1) -- (4,1,2);
+
+  \draw[purple,thick,->] (0,0,0) -- (0,1,0)
+    node[left]{\tiny$\begin{bmatrix} 0 \\ 0 \\ 1\end{bmatrix}$};
+  \draw[purple,thick,->] (0,0,0) -- (1,0,1)
+    node[below]{\tiny$\begin{bmatrix} 1 \\ 1 \\ 0\end{bmatrix}$};
+  \draw[purple,thick,->] (0,0,0) -- (3,0,1)
+    node[right]{\tiny$\begin{bmatrix} 3 \\ 1 \\ 0\end{bmatrix}$};
+  \end{tikzpicture}
+  \end{center}
+This volume is equal to which of the following areas?
+\begin{multicols}{4}
 \begin{enumerate}[(a)]
 \item $\det \begin{bmatrix} 3 & 1 \\ 1 & 1 \end{bmatrix}$
 \item $\det \begin{bmatrix} 3 & 1 \\ 1 & 0 \end{bmatrix}$
 \item $\det \begin{bmatrix} 3 & 1 \\ 0 & 1 \end{bmatrix}$
 \item $\det \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$
 \end{enumerate}
-
-\begin{center}
-\begin{tikzpicture}
-\draw[thin,gray,->] (0,0,0) -- (3,0,0);
-\draw[thin,gray,->] (0,0,0) -- (0,2,0);
-\draw[thin,gray,->] (0,0,0) -- (0,0,2);
-%(y,z,x)
-
-\draw[blue] (0,0,0) -- (0,1,0);
-\draw[blue] (0,0,0) -- (1,0,1);
-\draw[blue] (0,0,0) -- (3,0,1);
-\draw[blue] (0,1,0) -- (1,1,1);
-\draw[blue] (0,1,0) -- (3,1,1);
-\draw[blue] (3,0,1) -- (4,0,2);
-\draw[blue] (3,0,1) -- (3,1,1);
-\draw[blue] (1,0,1) -- (4,0,2);
-\draw[blue] (1,0,1) -- (1,1,1);
-\draw[blue] (1,1,1) -- (4,1,2);
-\draw[blue] (4,0,2) -- (4,1,2);
-\draw[blue] (3,1,1) -- (4,1,2);
-\end{tikzpicture}
-\end{center}
 \end{multicols}
 \end{activity}
 
+\begin{fact}
+If column $i$ of a matrix is $\vec{e}_i$, then both column and row $i$
+may be removed without changing the value of the determinant.
+For example, the second column of the following matrix is \(\vec e_2\), so:
+\[
+  \det \begin{bmatrix}
+    3 & 0 & -1 & 5 \\
+    2 & 1 & 4 & 0 \\
+    -1 & 0 & 1 & 11 \\
+    3 & 0 & 0 & 1
+  \end{bmatrix} =
+  \det \begin{bmatrix}
+    3 & -1 & 5 \\
+    -1 & 1 & 11 \\
+    3 & 0 & 1
+  \end{bmatrix}
+\]
+\end{fact}
+
+% \begin{activity}{5}
+%   The following image illustrates the transformation of the unit cube
+%   by the matrix
+%   $\begin{bmatrix} 3 & 1 & 0 \\  1 & 1 & 1 \\  0 & 0 & 1\end{bmatrix}$.
+%
+%
+%   \begin{center}
+%   \begin{tikzpicture}
+%   \draw[thin,gray,->] (0,0,0) -- (4,0,0);
+%   \draw[thin,gray,->] (0,0,0) -- (0,2,0);
+%   \draw[thin,gray,->] (0,0,0) -- (0,0,2);
+%   %(y,z,x)
+%
+%   \draw[blue] (0,0,0) -- (1,1,0);
+%   \draw[blue] (0,0,0) -- (1,0,1);
+%   \draw[blue] (0,0,0) -- (3,0,1);
+%   \draw[blue] (1,1,0) -- (2,1,1);
+%   \draw[blue] (1,1,0) -- (4,1,1);
+%   \draw[blue] (3,0,1) -- (4,0,2);
+%   \draw[blue] (3,0,1) -- (4,1,1);
+%   \draw[blue] (1,0,1) -- (4,0,2);
+%   \draw[blue] (1,0,1) -- (2,1,1);
+%   \draw[blue] (2,1,1) -- (5,1,2);
+%   \draw[blue] (4,0,2) -- (5,1,2);
+%   \draw[blue] (4,1,1) -- (5,1,2);
+%   \end{tikzpicture}
+%   \end{center}
+%
+%   This volume is equal to which of the following?
+%
+% \begin{multicols}{2}
+% \begin{enumerate}[(a)]
+% \item $\det \begin{bmatrix} 3 & 1 & 0 \\  1 & 1 & 0 \\  0 & 0 & 1\end{bmatrix}
+%       = \det \begin{bmatrix} 3 & 1 \\ 1 & 1 \end{bmatrix}$
+% \item $\det \begin{bmatrix} 3 & 1 & 0 \\  1 & 0 & 0 \\  0 & 0 & 1\end{bmatrix}
+%       = \det \begin{bmatrix} 3 & 1 \\ 1 & 0 \end{bmatrix}$
+% \item $\det \begin{bmatrix} 3 & 1 & 0 \\  0 & 1 & 0 \\  0 & 0 & 1\end{bmatrix}
+%       = \det \begin{bmatrix} 3 & 1 \\ 0 & 1 \end{bmatrix}$
+% \item $\det \begin{bmatrix} 1 & 1 & 0 \\  0 & 1 & 0 \\  0 & 0 & 1\end{bmatrix}
+%       = \det \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$
+% \end{enumerate}
+%
+% \end{multicols}
+% \end{activity}
+%
+% \begin{activity}{5}
+%   Which of the following is the same as
+%   $\det \begin{bmatrix}
+%     2 & 0 & 1 \\
+%     1 & 3 & 1 \\
+%     0 & 0 & 2
+%   \end{bmatrix}$?
+%
+% \begin{multicols}{2}
+% \begin{enumerate}[(a)]
+% \item $3\begin{bmatrix} 2 & 1 \\ 0 & 2 \end{bmatrix}$
+% \item $3\begin{bmatrix} 2 & 0 \\ 1 & 3 \end{bmatrix}$
+% \item $3\begin{bmatrix} 2 & 1 \\ 1 & 1 \end{bmatrix}$
+% \item $3\begin{bmatrix} 3 & 1 \\ 0 & 2 \end{bmatrix}$
+% \end{enumerate}
+%
+%
+% \begin{center}
+% \begin{tikzpicture}
+% \draw[thin,gray,->] (0,0,0) -- (3,0,0);
+% \draw[thin,gray,->] (0,0,0) -- (0,3,0);
+% \draw[thin,gray,->] (0,0,0) -- (0,0,2);
+% %(y,z,x)
+%
+% \draw[blue] (0,0,0) -- (1,0,2);
+% \draw[blue] (0,0,0) -- (1,2,1);
+% \draw[blue] (0,0,0) -- (3,0,0);
+% \draw[blue] (1,0,2) -- (2,2,3);
+% \draw[blue] (1,0,2) -- (4,0,2);
+% \draw[blue] (3,0,0) -- (4,0,2);
+% \draw[blue] (3,0,0) -- (4,2,1);
+% \draw[blue] (1,2,1) -- (2,2,3);
+% \draw[blue] (1,2,1) -- (4,2,1);
+% \draw[blue] (2,2,3) -- (5,2,3);
+% \draw[blue] (4,0,2) -- (5,2,3);
+% \draw[blue] (4,2,1) -- (5,2,3);
+% \end{tikzpicture}
+% \end{center}
+% \end{multicols}
+%
+% \end{activity}
+
+
+% \begin{activity}{5}
+%   Compute $\det \begin{bmatrix} 0 & 3 & -2 \\ 1 & 5 & 12 \\ 0 & 2 & -1 \end{bmatrix}$.
+%
+%   {\em Hint: Swap rows or columns to reduce to an easier problem}.
+% \end{activity}
+%
+% \begin{activity}{10}
+%    Using the fact that $\begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 2 \\ 0 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}$, compute $\det \begin{bmatrix} 2 & 2 & 3 \\ 1 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}$.
+% \end{activity}
+%
+% \begin{activity}{10}
+%    Compute $\det \begin{bmatrix} 2 & 3 & 5  \\ 1 & 1 & 0  \\ -1 & 2 & -1 \end{bmatrix}$.
+% \end{activity}
+%
+% \begin{activity}{10}
+%    Compute $\det \begin{bmatrix} 2 & 3 & 5 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 2 & 0 & 3 \\ -1 & -1 & 2 & 2 \end{bmatrix}$.
+% \end{activity}
+
+
 \begin{activity}{5}
-  Which of the following is the same as $\det \begin{bmatrix} 3 & 1 & 0 \\  1 & 1 & 1 \\  0 & 0 & 1 \end{bmatrix}$?
-  
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
-\item $\det \begin{bmatrix} 3 & 1 \\ 1 & 1 \end{bmatrix}$
-\item $\det \begin{bmatrix} 3 & 1 \\ 1 & 0 \end{bmatrix}$
-\item $\det \begin{bmatrix} 3 & 1 \\ 0 & 1 \end{bmatrix}$
-\item $\det \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$
-\end{enumerate}
+  Complete the following computation of
+  $\det \begin{bmatrix} 0 & 3 & -2 \\ 1 & 5 & 12 \\ 0 & 2 & -1 \end{bmatrix}$:
 
-
-\begin{center}
-\begin{tikzpicture}
-\draw[thin,gray,->] (0,0,0) -- (4,0,0);
-\draw[thin,gray,->] (0,0,0) -- (0,2,0);
-\draw[thin,gray,->] (0,0,0) -- (0,0,2);
-%(y,z,x)
-
-\draw[blue] (0,0,0) -- (1,1,0);
-\draw[blue] (0,0,0) -- (1,0,1);
-\draw[blue] (0,0,0) -- (3,0,1);
-\draw[blue] (1,1,0) -- (2,1,1);
-\draw[blue] (1,1,0) -- (4,1,1);
-\draw[blue] (3,0,1) -- (4,0,2);
-\draw[blue] (3,0,1) -- (4,1,1);
-\draw[blue] (1,0,1) -- (4,0,2);
-\draw[blue] (1,0,1) -- (2,1,1);
-\draw[blue] (2,1,1) -- (5,1,2);
-\draw[blue] (4,0,2) -- (5,1,2);
-\draw[blue] (4,1,1) -- (5,1,2);
-\end{tikzpicture}
-\end{center}
-\end{multicols}
-
-{\em Hint: Use a row operation and the previous activity}
-\end{activity}
-
-\begin{observation}
-If the $i$-th column or row is $\vec{e}_i$, then the determinant is the same as the determinant of the $(n-1) \times (n-1)$ submatrix with the $i$-th row and column removed.
-
-\ \\
-
-For example, 
-$$\det \begin{bmatrix} 3 & 0 & -1 & 5 \\ 2 & 1 & 4 & 0 \\ -1 & 0 & 1 & 11 \\ 3 & 0 & 0 & 1 \end{bmatrix} = \det \begin{bmatrix} 3 & -1 & 5 \\ -1 & 1 & 11 \\ 3 & 0 & 1 \end{bmatrix}$$
-\end{observation}
-
-\begin{activity}{5}
-  Which of the following is the same as $\det \begin{bmatrix} 2 & 0 & 1 \\  1 & 3 & 1 \\  0 & 0 & 2 \end{bmatrix}$?
-  
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
-\item $3\begin{bmatrix} 2 & 1 \\ 0 & 2 \end{bmatrix}$
-\item $3\begin{bmatrix} 2 & 0 \\ 1 & 3 \end{bmatrix}$
-\item $3\begin{bmatrix} 2 & 1 \\ 1 & 1 \end{bmatrix}$
-\item $3\begin{bmatrix} 3 & 1 \\ 0 & 2 \end{bmatrix}$
-\end{enumerate}
-
-
-\begin{center}
-\begin{tikzpicture}
-\draw[thin,gray,->] (0,0,0) -- (3,0,0);
-\draw[thin,gray,->] (0,0,0) -- (0,3,0);
-\draw[thin,gray,->] (0,0,0) -- (0,0,2);
-%(y,z,x)
-
-\draw[blue] (0,0,0) -- (1,0,2);
-\draw[blue] (0,0,0) -- (1,2,1);
-\draw[blue] (0,0,0) -- (3,0,0);
-\draw[blue] (1,0,2) -- (2,2,3);
-\draw[blue] (1,0,2) -- (4,0,2);
-\draw[blue] (3,0,0) -- (4,0,2);
-\draw[blue] (3,0,0) -- (4,2,1);
-\draw[blue] (1,2,1) -- (2,2,3);
-\draw[blue] (1,2,1) -- (4,2,1);
-\draw[blue] (2,2,3) -- (5,2,3);
-\draw[blue] (4,0,2) -- (5,2,3);
-\draw[blue] (4,2,1) -- (5,2,3);
-\end{tikzpicture}
-\end{center}
-\end{multicols}
-
-\end{activity}
-
-
-\begin{activity}{5}
-  Compute $\det \begin{bmatrix} 0 & 3 & -2 \\ 1 & 5 & 12 \\ 0 & 2 & -1 \end{bmatrix}$.
-
-  {\em Hint: Swap rows or columns to reduce to an easier problem}.
+  \begin{align*}
+    \det \begin{bmatrix} 0 & 3 & -2 \\ 1 & 5 & 12 \\ 0 & 2 & -1 \end{bmatrix}
+  &=
+    \unknown
+    \det \begin{bmatrix} 1 & 5 & 12 \\ 0 & 3 & -2 \\ 0 & 2 & -1 \end{bmatrix}
+  \\ &=
+    \unknown
+    \det \begin{bmatrix} \unknown & \unknown \\ \unknown & \unknown \end{bmatrix}
+  \\ &=
+    \unknown
+  \end{align*}
 \end{activity}
 
 \begin{activity}{10}
-   Using the fact that $\begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 2 \\ 0 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}$, compute $\det \begin{bmatrix} 2 & 2 & 3 \\ 1 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}$.
+  Complete the following computation of
+  $\det \begin{bmatrix} 2 & 2 & 3 \\ 1 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}$:
+
+  \begin{align*}
+    \det \begin{bmatrix} 2 & 2 & 3 \\ 1 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}
+  &=
+    \unknown\det \begin{bmatrix} 1 & 2 & 3 \\ 0 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}+
+    \unknown\det \begin{bmatrix} 0 & 2 & 3 \\ 1 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}
+  \\ &=
+    \unknown
+    \det \begin{bmatrix} \unknown & \unknown \\ \unknown & \unknown \end{bmatrix}+
+    \unknown
+    \det \begin{bmatrix} \unknown & \unknown \\ \unknown & \unknown \end{bmatrix}
+  \\ &=
+    \unknown
+  \end{align*}
 \end{activity}
 
-\begin{activity}{10}
-   Compute $\det \begin{bmatrix} 2 & 3 & 5  \\ 1 & 1 & 0  \\ -1 & 2 & -1 \end{bmatrix}$.
-\end{activity}
+\begin{activity}{15}
+  Complete the following computation of
+  $\det \begin{bmatrix} 2 & 3 & 5 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 2 & 0 & 3 \\ -1 & -1 & 2 & 2 \end{bmatrix}$:
 
-\begin{activity}{10}
-   Compute $\det \begin{bmatrix} 2 & 3 & 5 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 2 & 0 & 3 \\ -1 & -1 & 2 & 2 \end{bmatrix}$.
+  \begin{align*}
+    \det \begin{bmatrix} 2 & 3 & 5 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 2 & 0 & 3 \\ -1 & -1 & 2 & 2 \end{bmatrix}
+  &=
+    \det \begin{bmatrix} 2 & 3 & \unknown & 0 \\ 0 & 1 & 0 & 0 \\ 1 & 2 & \unknown & 3 \\ -1 & -1 & \unknown & 2 \end{bmatrix}
+  \\ &=
+    \det \begin{bmatrix} \unknown & \unknown & \unknown \\\unknown & \unknown & \unknown \\\unknown & \unknown & \unknown  \end{bmatrix}
+  \\ &=
+    \dots
+  \end{align*}
 \end{activity}
 
 \end{applicationActivities}
