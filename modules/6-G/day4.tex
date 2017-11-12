@@ -5,9 +5,15 @@
 \begin{observation}
 Recall from last class:
 \begin{itemize}
-\item To find eigenvalues the eigenvalues of a matrix $A$, we need to find values of $\lambda$ such that $A-\lambda I$ has a nontrivial kernel; equivalently, $A-\lambda I$ is not invertible, which is equivalent to $\det(A-\lambda I)=0$.  
-\item $\det(A-\lambda I)$ is called the \term{characteristic polynomial} of $A$.  It is a polynomial in the variable $\lambda$.
-\item Once an eigenvalue is found, the eigenvectors form a subspace called the \term{eigenspace}, which is simply the kernel of $A-\lambda I$.  Each eigenvalue will have an associated eigenspace.
+\item To find the eigenvalues of a matrix $A$, we need to find values of $\lambda$ such that $A-\lambda I$ has a nontrivial kernel. Equivalently,
+we want values where $A-\lambda I$ is not invertible, so we want to know
+the values of \(\lambda\) where $\det(A-\lambda I)=0$.
+\item $\det(A-\lambda I)$ is a polynomial with variable \(\lambda\),
+called the \term{characteristic polynomial} of $A$. Thus the roots of
+the characteristic polynomial of \(A\) are exactly the eigenvalues of \(A\).
+\item Once an eigenvalue \(\lambda\) is found, the \term{eigenspace}
+containing all \term{eigenvectors} \(\vec x\) satisfying
+\(A\vec x=\lambda\vec x\) is given by $\ker(A-\lambda I)$.
 \end{itemize}
 \end{observation}
 
@@ -22,10 +28,33 @@ Recall from last class:
   \end{enumerate}
 \end{activity}
 
-\begin{activity}{10}
-  $2$ is an eigenvalue of each of the matrices $A=\begin{bmatrix} 1 & -2 & 1 \\ -1 & 0 & 1 \\ -1 & -2 & 3\end{bmatrix}$ and $B=\begin{bmatrix} -3 & -9 & 5 \\ -2 & -2 & 2 \\ -7 & -13 & 9 \end{bmatrix}$.
+\begin{activity}{5}
+  $2$ is an eigenvalue of the matrix $A=\begin{bmatrix} 1 & -2 & 1 \\ -1 & 0 & 1 \\ -1 & -2 & 3\end{bmatrix}$.
 
-  Compute the eigenspace associated to $2$ for both $A$ and $B$.
+  Compute the eigenspace of $A$ associated to the eigenvalue $2$ by
+  solving for the kernel of
+  \[
+    A-2I
+      =
+    \begin{bmatrix}
+      1-2 & -2 & 1 \\
+      -1 & 0-2 & 1 \\
+      -1 & -2 & 3-2
+    \end{bmatrix}
+      =
+    \begin{bmatrix}
+      -1 & -2 & 1 \\
+      -1 & -2 & 1 \\
+      -1 & -2 & 1
+    \end{bmatrix}
+  \]
+\end{activity}
+
+\begin{activity}{5}
+  $2$ is an eigenvalue of the matrix $B=\begin{bmatrix} -3 & -9 & 5 \\ -2 & -2 & 2 \\ -7 & -13 & 9 \end{bmatrix}$.
+
+  Compute the eigenspace of $B$ associated to the eigenvalue $2$ by
+  solving for the kernel of \(B-2I\).
 \end{activity}
 
 \begin{definition}
@@ -37,13 +66,18 @@ Recall from last class:
 
 \end{definition}
 
-\begin{activity}{5} How are the algebraic and geometric multiplicities related?
-\begin{enumerate}[(a)]
-\item The algebraic multiplicity is always at least as big as than the geometric multiplicity.
-\item The geometric multiplicity is always at least as big as the algebraic multiplicity.
-\item Sometimes the algebraic multiplicity is larger and sometimes the geometric multiplicity is larger.
-\end{enumerate}
-\end{activity}
+\begin{fact}
+  The geometric multiplicity of an eigenvalue cannot exceed its
+  algebraic multiplicity (but it \textit{can} be different).
+\end{fact}
+
+% \begin{activity}{5} How are the algebraic and geometric multiplicities related?
+% \begin{enumerate}[(a)]
+% \item The algebraic multiplicity is always at least as big as than the geometric multiplicity.
+% \item The geometric multiplicity is always at least as big as the algebraic multiplicity.
+% \item Sometimes the algebraic multiplicity is larger and sometimes the geometric multiplicity is larger.
+% \end{enumerate}
+% \end{activity}
 
 \begin{activity}{20}
    Find all of the eigenvalues, along with both their algebraic and geometric multiplicities, for the matrix $\begin{bmatrix} -3 & 1 & 2 & 1 \\ -9 & 5 & -2 & -1 \\ 31 & -17 & 6 & 3 \\ -69 & 39 & -18 & -9 \end{bmatrix}$.  Use technology to help you!
