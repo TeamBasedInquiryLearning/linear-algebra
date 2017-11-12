@@ -167,6 +167,20 @@ For example, the second column of the following matrix is \(\vec e_2\), so:
     3 & 0 & 1
   \end{bmatrix}
 \]
+Therefore the same holds for the transpose:
+\[
+  \det \begin{bmatrix}
+    3 & 2 & -1 & 3 \\
+    0 & 1 & 0 & 0 \\
+    -1 & 4 & 1 & 0 \\
+    5 & 0 & 11 & 1
+  \end{bmatrix} =
+  \det \begin{bmatrix}
+    3 & -1 & 3 \\
+    -1 & 1 & 0 \\
+    5 & 11 & 1
+  \end{bmatrix}
+\]
 \end{fact}
 
 % \begin{activity}{5}
@@ -326,5 +340,48 @@ For example, the second column of the following matrix is \(\vec e_2\), so:
     \dots
   \end{align*}
 \end{activity}
+
+\begin{observation}
+  To reduce the dimension of an arbitrary determinant, one may always use
+  linearity to split up a chosen row/column, as seen for the top row in
+  this example:
+
+  \begin{align*}
+    \det \begin{bmatrix} 2 & 3 & 5  \\ 0 & 1 & -1  \\ 1 & 2 & 0  \end{bmatrix}
+  &=
+    2\det \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & -1 \\ 1 & 2 & 0 \end{bmatrix}
+    +3\det \begin{bmatrix} 0 & 1 & 0 \\ 0 & 1 & -1 \\ 1 & 2 & 0 \end{bmatrix}
+    +5\det \begin{bmatrix} 0 & 0 & 1 \\ 0 & 1 & -1 \\ 1 & 2 & 0 \end{bmatrix}
+  \\ &=
+    2\det \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & -1 \\ 1 & 2 & 0 \end{bmatrix}
+    -3\det \begin{bmatrix} 1 & 0 & 0 \\ 1 & 0 & -1 \\ 2 & 1 & 0 \end{bmatrix}
+    -5\det \begin{bmatrix} 1 & 0 & 0 \\ -1 & 1 & 0 \\ 0 & 2 & 1 \end{bmatrix}
+  \\ &=
+    2\det \begin{bmatrix}  1 & -1 \\  2 & 0 \end{bmatrix}
+    -3\det \begin{bmatrix}  0 & -1 \\ 1 & 0 \end{bmatrix}
+    -5\det \begin{bmatrix}  1 & 0 \\ 2 & 1 \end{bmatrix}
+  \\ &=
+    2(2)-3(1)-5(1) = -4
+  \end{align*}
+  \end{observation}
+
+  \begin{observation}
+  Note that choosing rows/columns containing zeros can save some writing:
+
+  \begin{align*}
+    \det \begin{bmatrix} 2 & 3 & 5  \\ 0 & 1 & -1  \\ 1 & 2 & 0  \end{bmatrix}
+  &=
+    2\det \begin{bmatrix} 1 & 3 & 5 \\ 0 & 1 & -1 \\ 0 & 2 & 0 \end{bmatrix}
+    +\det \begin{bmatrix} 0 & 3 & 5  \\ 0 & 1 & -1  \\ 1 & 2 & 0  \end{bmatrix}
+  \\ &=
+    2\det \begin{bmatrix} 1 & 3 & 5 \\ 0 & 1 & -1 \\ 0 & 2 & 0 \end{bmatrix}
+    -\det \begin{bmatrix} 1 & 2 & 0  \\ 0 & 1 & -1  \\  0 & 3 & 5 \end{bmatrix}
+  \\ &=
+    2\det \begin{bmatrix}  1 & -1 \\  2 & 0 \end{bmatrix}
+    -\det \begin{bmatrix}  1 & -1 \\ 3 & 5 \end{bmatrix}
+  \\ &=
+    2(2)-(8)=-4
+  \end{align*}
+\end{observation}
 
 \end{applicationActivities}

@@ -8,10 +8,19 @@
   with \(MM^{-1}=I\). It follows that \(\det(M)\det(M^{-1})=\det(I)\).
 
   What is the only number that \(\det(M)\) cannot equal?
+  \begin{multicols}{4}
+  \begin{enumerate}[(a)]
+  \item \(-1\)
+  \item \(0\)
+  \item \(1\)
+  \item \(\frac{1}{\det(M^{-1})}\)
+  \end{enumerate}
+  \end{multicols}
 \end{activity}
 
 \begin{fact}
-  A square matrix \(M\) is invertable if and only if \(\det(M)\not=0\).
+  Since \(\det(M^{-1})=\frac{1}{\det(M)}\) for every invertable matrix \(M\),
+  a square matrix \(M\) is invertable if and only if \(\det(M)\not=0\).
 \end{fact}
 
 \begin{observation}
@@ -88,7 +97,58 @@ Thus the characteristic polynomial of \(A\) is
   \(A-\lambda I\) for
   $A=\begin{bmatrix} 6 & -2 & 1 \\ 17 & -5 & 5 \\ -4 & 2 & 1 \end{bmatrix}$.
 
-  TODO
+  \begin{align*}
+    \begin{bmatrix} 6-\lambda & -2 & 1 \\ 17 & -5-\lambda & 5 \\ -4 & 2 & 1-\lambda \end{bmatrix}
+  &=
+    (6-\lambda)\det \begin{bmatrix}
+      \unknown & \unknown & \unknown \\
+      0 & 1 & -1 \\
+      1 & 2 & 0
+    \end{bmatrix}
+    -2\det \begin{bmatrix}
+      \unknown & \unknown & \unknown \\
+      0 & 1 & -1 \\
+      1 & 2 & 0
+    \end{bmatrix}
+    +\det \begin{bmatrix}
+      \unknown & \unknown & \unknown \\
+      0 & 1 & -1 \\
+      1 & 2 & 0
+    \end{bmatrix}
+  \\ &=
+    (6-\lambda)\det \begin{bmatrix}
+      1 & 0 & 0 \\
+      \unknown & \unknown & \unknown \\
+      \unknown & \unknown & \unknown \\
+    \end{bmatrix}
+    +2\det \begin{bmatrix}
+      1 & 0 & 0 \\
+      \unknown & \unknown & \unknown \\
+      \unknown & \unknown & \unknown \\
+    \end{bmatrix}
+    -\det \begin{bmatrix}
+      1 & 0 & 0 \\
+      \unknown & \unknown & \unknown \\
+      \unknown & \unknown & \unknown \\
+    \end{bmatrix}
+  \\ &=
+    (6-\lambda)\det \begin{bmatrix}
+      \unknown & \unknown \\
+      \unknown & \unknown \\
+    \end{bmatrix}
+    +2\det \begin{bmatrix}
+      \unknown & \unknown \\
+      \unknown & \unknown \\
+    \end{bmatrix}
+    -\det \begin{bmatrix}
+      \unknown & \unknown \\
+      \unknown & \unknown \\
+    \end{bmatrix}
+  \\ &=
+    (6-\lambda)((-5-\lambda)(1-\lambda)-10)
+    +2(17(1-\lambda)+20)
+    -(-4(-5-\lambda)-34)
+  \end{align*}
 \end{activity}
 
 \begin{activity}{15}
@@ -97,7 +157,8 @@ Let $A = \begin{bmatrix} 2 & 2 \\ 0 & 3 \end{bmatrix}$.
 Compute $\det \begin{bmatrix} 2-\lambda & 2 \\ 0 & 3-\lambda \end{bmatrix}$ to determine the characteristic polynomial of $A$.
 \end{subactivity}
 \begin{subactivity}
-Find the roots of the characteristic polynomial to determine the eigenvalues of $A$.
+Find the roots of the characteristic polynomial
+to determine the eigenvalues of $A$.
 \end{subactivity}
 \begin{subactivity}
 Compute the kernel of the transformation given by $A-2I$ to determine all the eigenvectors associated to the eigenvalue $2$.
@@ -122,10 +183,13 @@ Compute the kernel of the transformation given by $A-3I$ to determine all the ei
  Compute $\det (A-\lambda I)$ to determine the characteristic polynomial of $A$.
 \end{subactivity}
 \begin{subactivity}
-Find the roots of the characteristic polynomial to determine the eigenvalues of $A$.
+Find the roots of the characteristic polynomial
+\((3-\lambda)(\lambda^2-4\lambda-12)\)
+to determine the eigenvalues of $A$.
 \end{subactivity}
 \begin{subactivity}
-Compute the kernel of $A-\lambda I$ for each eigenvalue $\lambda$ to determine the respective eigenspaces.
+Compute the kernels of $A-\lambda I$ for each eigenvalue
+$\lambda\in\{-2,3,6\}$ to determine the respective eigenspaces.
 \end{subactivity}
 \end{activity}
 
