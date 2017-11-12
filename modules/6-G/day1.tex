@@ -204,7 +204,7 @@ standard matrix \([\vec{e}_1\hspace{0.5em} \vec{e}_2]=\begin{bmatrix}1&0\\0&1\en
 What is $\det([\vec{e}_1\hspace{0.5em} \vec{e}_2])=\det(I)$, that is, by what
 factor has the area of the unit square been scaled?
 \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1]
 \draw[thin,gray,<->] (-1,0)-- (3,0);
 \draw[thin,gray,<->] (0,-1)-- (0,3);
 \draw[thick,blue,->] (0,0) -- node[below] {$\vec{e}_1=\begin{bmatrix}1 \\ 0 \end{bmatrix}$} (1,0);
@@ -228,7 +228,7 @@ standard matrix \([\vec{v}\hspace{0.5em} \vec{v}]\) is illustrated below: both
 What is \(\det([\vec{v}\hspace{0.5em} \vec{v}])\), that is, by what factor has
 area been scaled?
 \begin{center}
-\begin{tikzpicture}[scale=1.2]
+\begin{tikzpicture}[scale=1]
 \draw[thin,gray,<->] (-1,0)-- (4,0);
 \draw[thin,gray,<->] (0,-1)-- (0,4);
 \draw[thick,blue,->] (0,0) -- node[below] {$\vec{v}$} (3,2);
@@ -249,7 +249,7 @@ standard matrices \([\vec{v}\hspace{0.5em} \vec{w}]\) and
 \([c\vec{v}\hspace{0.5em} \vec{w}]\) are illustrated below.
 How are $\det([\vec{v}\hspace{0.5em} \vec{w}])$ and $\det([c\vec{v}\hspace{0.5em} \vec{w}])$ related?
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[thin,gray,<->] (-1,0)-- (6,0);
 \draw[thin,gray,<->] (0,-1)-- (0,6);
 \draw[very thick,red,->] (0,0) -- node[below right] {$c\vec{v}$}  (4,2);
@@ -278,7 +278,7 @@ standard matrices \([\vec{u}\hspace{0.5em} \vec{w}]\), \([\vec{v}\hspace{0.5em} 
 How is $\det([\vec{u}+\vec{v}\hspace{0.5em} \vec{w}])$ related to
 $\det([\vec{u}\hspace{0.5em} \vec{w}])$ and $\det([\vec{v}\hspace{0.5em} \vec{w}])$?
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[thin,gray,<->] (-1,0)-- (6,0);
 \draw[thin,gray,<->] (0,-1)-- (0,6);
 \draw[thick,blue,->] (0,0) -- node[below] {$\vec{u}$} (2,1);
@@ -288,7 +288,7 @@ $\det([\vec{u}\hspace{0.5em} \vec{w}])$ and $\det([\vec{v}\hspace{0.5em} \vec{w}
 \draw[thick,blue,->] (3,2) -- (4,5);
 \draw[thick,blue,->] (1,3) -- (3,4);
 \draw[thick,blue,->] (3,4) -- (4,5);
-\draw[thick,red,->] (0,0) -- node[above,left] {$\vec{u}+\vec{v}$} (3,2);
+\draw[thick,red,->] (0,0) --  (3,2)node[above,right] {$\vec{u}+\vec{v}$};
 \draw[thick,red,->] (1,3) -- (4,5);
 \end{tikzpicture}
 \end{center}
@@ -385,15 +385,19 @@ determinant.
   \begin{enumerate}[(a)]
   \item Multiplying a column by a scalar multiplies the
         determinant by that scalar:
-        \[c\det([\vec{v}\hspace{0.5em} \vec{w}])=
-        \det([c\vec{v}\hspace{0.5em} \vec{w}])\]
+        \[c\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em} \cdots])=
+        \det([\cdots\hspace{0.5em}c\vec{v}\hspace{0.5em} \cdots])\]
+  \item Swapping two columns changes the sign of the determinant:
+        \[\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])=
+        -\det([\cdots\hspace{0.5em}\vec{w}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{v}\hspace{0.5em} \cdots])\]
   \item Adding a multiple of a column to another column does not
         change the determinant:
-        \[\det([\vec{v}\hspace{1em}\vec{w}])=
-        \det([\vec{v}+c\vec{w}\hspace{1em}\vec{w}])\]
-  \item Swapping two columns changes the sign of the determinant:
-        \[\det([\vec{v}\hspace{1em}\vec{w}])=
-        -\det([\vec{w}\hspace{1em}\vec{v}])\]
+        \[\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])=
+        \det([\cdots\hspace{0.5em}\vec{v}+c\vec{w}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])\]
   \end{enumerate}
 \end{fact}
 

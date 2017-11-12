@@ -384,4 +384,20 @@ Therefore the same holds for the transpose:
   \end{align*}
 \end{observation}
 
+\begin{observation}
+And using row/column operations can save even more work:
+
+\begin{align*}
+  \det \begin{bmatrix} 2 & 3 & 5  \\ 0 & 1 & -1  \\ 1 & 2 & 0  \end{bmatrix}
+&=
+  -\det \begin{bmatrix} 1 & 2 & 0  \\ 0 & 1 & -1  \\ 2 & 3 & 5  \end{bmatrix}
+\\ &=
+  -\det \begin{bmatrix} 1 & 2 & 0  \\ 0 & 1 & -1  \\ 0 & -1 & 5  \end{bmatrix}
+\\ &=
+  -\det \begin{bmatrix} 1 & -1  \\ -1 & 5  \end{bmatrix}
+\\ &=
+  -(5-1)=-4
+\end{align*}
+\end{observation}
+
 \end{applicationActivities}
