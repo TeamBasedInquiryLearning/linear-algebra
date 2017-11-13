@@ -64,6 +64,51 @@ sub getRandomProblems
 	return @out
 }
 
+#Returns an array of lines with one randomly chosen problem for each 
+#standard passed as an arg
+sub getSemiRandomProblems
+{
+	#Sanitize arguments
+	my @STDs;
+	foreach my $arg (@_)
+	{
+		push(@STDs, $arg) if $arg =~ m/[A-Z][0-9]/ ;
+	}	
+
+	my @out;
+	my $index=0;
+	foreach my $standard (@STDs)
+	{
+		#Specify appropriate filename and open
+		my $probFilePath = "assessments/problems/" . $standard . ".tex";
+		open( my $probFile, '<', $probFilePath) or die "Unable to open $probFilePath";
+
+		#Read file to array and count the number of problems
+		my @probFileLines = <$probFile>;
+		my $numProb = countProblems(\@probFileLines);
+
+		#Get a random problem number
+		#We count our problems starting at one.  
+		my $probIndex = 1+int rand($numProb);
+
+		#This variable keeps track of how many problems we've seen so far as we iterate
+		#through the lines of the file
+		my $n=0;
+
+		#Get the random problem
+		foreach my $line (@probFileLines)
+		{
+			$n++ if( $line =~ m/begin\{problem\}/) ;
+			push (@out, $line) if $n==$probIndex;
+
+		}
+
+		$index++;
+
+	}
+	return @out
+}
+
 
 
 #######################################
@@ -76,6 +121,7 @@ my @parameterFile = <$parameterFileHandle>;
 my ($nVersions)  = $parameterFile[0] =~ /(^\d)/;
 my ($genMidterm) =  $parameterFile[1] =~ /(^\d)/;
 my ($genFinal) =  $parameterFile[2] =~ /(^\d)/;
+my ($genSemi) =  $parameterFile[3] =~ /(^\d)/;
 
 #Read explicitly assessed standard list for each quiz
 my %quizStandardsHash;
@@ -170,6 +216,43 @@ if($genMidterm)
 			$header .= "\\input\{quizHeader.tex\}\n";
 			$header .= "\\title\{Midterm Exam\}\n";
 			$header .= "\\standard\{$texStandards\}\n";
+			$header .= "\\version\{$i\}\n";
+			$header .= "\\end\{extract*\}\n\n";
+			$header .= "\\begin\{document\}\n\n";
+
+			#Specify footer LaTeX code
+			my $footer = "\\end\{document\}";
+
+			#Write to file
+			print $outFile $header;
+			print $outFile @problems;
+			print $outFile $footer;
+		}
+}
+
+#Create semifinal
+if($genSemi)
+{
+		my @standards = split(',',qw(E1,E2,E3,E4,V1,V2,V3,V4,S1,S2,S3,S4,A1,A2,A3,A4,M1,M2,M3,G1,G2,G3,G4));
+		#Iterate over versions
+		foreach my $i (1..$nVersions)
+		{
+			#Specify file name and open
+			my $outFileName = "assessments/" . $prof . "/semifinal-v" . $i . "_solutions.tex";
+			open( my $outFile, '>', $outFileName) or die "Could not open $outFileName";
+
+			#Get text of problems for each standard out of respective files
+			my @problems = getSemiRandomProblems (@standards);
+
+			#Format standardlist for correct passing to \standard macro in LaTeX
+			#my $texStandards = join (",",@standards);
+
+			#Specify header LaTeX code
+			my $header = "\\documentclass{sbgLAsemi}\n\n";
+			$header .= "\\begin\{extract*\}\n";
+			$header .= "\\input\{quizHeader.tex\}\n";
+			$header .= "\\title\{Semifinal\}\n";
+			#$header .= "\\standard\{$texStandards\}\n";
 			$header .= "\\version\{$i\}\n";
 			$header .= "\\end\{extract*\}\n\n";
 			$header .= "\\begin\{document\}\n\n";

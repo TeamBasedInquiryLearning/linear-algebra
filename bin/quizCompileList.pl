@@ -14,6 +14,7 @@ my @parameterFile = <$parameterFileHandle>;
 my ($nVersions)  = $parameterFile[0] =~ /(^\d)/;
 my ($compileMidterm) =  $parameterFile[1] =~ /(^\d)/;
 my ($compileFinal) =  $parameterFile[2] =~ /(^\d)/;
+my ($compileSemi) =  $parameterFile[3] =~ /(^\d)/;
 
 open (my $explicitFileHandle, '<', "assessments/quiz-standard-explicit-map.txt");
 my @quizStandards = <$explicitFileHandle>;
@@ -43,6 +44,20 @@ if($compileMidterm)
 	}
 
 }
+
+if($compileSemi)
+{	
+	foreach my $i (1..$nVersions)
+	{
+		my $fn1 = "semifinal-v" . $i . "_solutions.tex\n";
+		my $fn2 = "semifinal-v". $i . ".tex\n";
+		push (@quizFileNames, $fn1);
+		push (@quizFileNames, $fn2);
+	}
+
+}
+
+
 if($compileFinal)
 {	
 	foreach my $i (1..$nVersions)
