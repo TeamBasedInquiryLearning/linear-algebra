@@ -12,32 +12,48 @@
 \begin{problem}{M1}
 Let 
 \begin{align*}
-A &= \begin{bmatrix} 1 & 3 & -1  \\ 0 & 0 & 7  \end{bmatrix} & B &= \begin{bmatrix} 0 & 1 & 7 & 7 \\ -1 & -2 & 0 & 4 \\ 0 & 0 & 1 & 5 \end{bmatrix} & C&=\begin{bmatrix} 3  \\  1 \end{bmatrix}
+A &= \begin{bmatrix} 0 & 0 & -1 & -1 \\ 1 & 3 & 7 & 2 \end{bmatrix} & B &= \begin{bmatrix} 0 & 1 & 7 & 7 \\ -1 & -2 & 0 & 4 \\ 0 & 0 & 1 & 5 \end{bmatrix} & C&=\begin{bmatrix} 3 & 2 \\ 0 & 1 \\ -2 & -1 \end{bmatrix}
 \end{align*}
 Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and compute it.
 \end{problem}
 \begin{solution}
-$AB$ is the only ones that can be computed, and 
-$$AB = \begin{bmatrix} -3 & -5 & 6 & 14 \\ 0 & 0 & 7 & 35 \end{bmatrix}$$
+$CA$ is the only one that can be computed, and 
+$$CA = \begin{bmatrix} 2 & 6 & 11 & 1 \\ 1 & 3 & 7 & 2 \\ -1 & -3 & -5 & 0 \end{bmatrix}$$
 \end{solution}
+
 
 
 \begin{problem}{M2}
-Determine if the matrix $\begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix}$ is invertible.
+Determine if the matrix $\begin{bmatrix} 3 & -1 & 0 & 4 \\ 2 & 1 & 1 & -1 \\ 0 & 1 & 1 & 3 \\ 1 & -2 & 0 & 0 \end{bmatrix}$ is invertible.
 \end{problem}
 \begin{solution}
-$$\RREF \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix} = \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{3}{2} \\ 0 & 0 & 0 \end{bmatrix}$$
-Since it is not equivalent to the identity matrix, it is not invertible.
+This matrix is row equivalent to the identity matrix, so it is invertible.
 \end{solution}
-
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{M3}
-Compute the inverse of the matrix $\begin{bmatrix} 1 & 2 & 3 & 0 \\ 0 & -1 & 4 & -2 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$.
+  Find the inverse of the matrix
+  \(\begin{bmatrix}
+    3 & 1 & 3  \\
+    2 & -1 & -6  \\
+    1 & 1 & 4
+  \end{bmatrix}\).
 \end{problem}
 \begin{solution}
-$$\RREF(A|I) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 &0 & 1 & 2 & -11 & 37 \\ 0 & 1 & 0 & 0 & 0 & -1 & 4 & -14 \\ 0 & 0 & 1 & 0 & 0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix}$$
-So the inverse is $\begin{bmatrix}  1 & 2 & -11 & 37 \\ 0 & -1 & 4 & -14 \\  0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$
+\(\begin{bmatrix}[ccc|ccc]
+  3 & 1 & 3 & 1 & 0 & 0 \\
+  2 & -1 & -6 & 0 & 1 & 0 \\
+  1 & 1 & 4 & 0 & 0 & 1
+\end{bmatrix}\sim\begin{bmatrix}[ccc|ccc]
+  1 & 0 & 0 & 2 & -1 & -3  \\
+  0 & 1 & 0 & -14 & 9 & 24  \\
+  0 & 0 & 1 & 3 & -2 & -5
+\end{bmatrix}\). Thus the inverse is
+\(\begin{bmatrix}
+  2 & -1 & -3  \\
+  -14 & 9 & 24  \\
+  3 & -2 & -5
+\end{bmatrix}\).
 \end{solution}
 
 
@@ -54,6 +70,8 @@ Compute the eigenvalues, along with their algebraic multiplicities, of the matri
 \end{align*}
 So the eigenvalues are $0$ (with algebraic multiplicity 1) and $1$ (with algebraic multiplicity 2).
 \end{solution}
+
+
 \begin{extract}\newpage\end{extract}
 \begin{problem}{G3}
 Compute the eigenspace associated to the eigenvalue $2$ in the matrix $\begin{bmatrix} -1 & 1 & 0 \\ -9 & 5 & 0 \\ 15 & -5 & 2 \end{bmatrix}$.
