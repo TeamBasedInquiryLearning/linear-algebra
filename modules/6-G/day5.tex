@@ -1,0 +1,248 @@
+%!TEX root =../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
+
+\begin{applicationActivities}{5}{29}
+
+\begin{activity}{10}
+
+{\bf A \$700,000,000,000 problem: }
+
+In the picture below, each circle represents a webpage, and an arrow is a link to a different webpage.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+    \node (4) at (4,4) {4};
+    \node (5) at (6,4) {5};
+    \node (6) at (10,4) {6} ;
+    \node (7) at (6,0) {7} ;
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (4);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (2) edge (3);
+    \draw [->] (3) edge (4);
+    \draw [->] (3) edge (7);
+    \draw [->] (4) edge (2);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (5) edge (7);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (7);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+Rank the 7 webpages from most imporant to least important.
+\end{activity}
+
+\begin{observation}
+{\bf The \$700,000,000,000 idea:} 
+\begin{itemize} 
+\item A webpage is important if important webpages link to it.
+\item A webpage should divide its importance equally among the pages that link to it.
+\end{itemize}
+\end{observation}
+
+\begin{observation}
+A simple example:
+\begin{center}
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (3);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (3) edge (2);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{multicols}{2}
+\begin{align*}
+x_1 &\Leftarrow x_2 \\
+x_2 &\Leftarrow \frac{1}{2}x_1+ x_3 \\
+x_3 &\Leftarrow \frac{1}{2} x_1
+\end{align*}
+
+Transition matrix:
+$$A=\begin{bmatrix} 0 & 1 & 0 \\ \frac{1}{2} & 0 & 1 \\ \frac{1}{2} & 0 & 0 \end{bmatrix}$$
+\end{multicols}
+\end{observation}
+
+\begin{fact}
+This is called a \term{Markov chain model}.  We can think about iteratively moving importance from webpages to each other by repeatedly multiplying by $A$.
+
+The {\bf steady state vector} will be a vector satisfying $A\vec{x}=\vec{x}$.
+
+Thus, the \$700,000,000,000 problem is an eigenvector problem!
+\end{fact}
+
+\begin{activity}{10}
+Find an eigenvector associated to the eigenvalue $1$ for our small example
+\begin{multicols}{2}
+\begin{tikzpicture}[scale=0.75]
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (3);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (3) edge (2);
+\end{scope}
+\end{tikzpicture}
+
+$$A=\begin{bmatrix} 0 & 1 & 0 \\ \frac{1}{2} & 0 & 1 \\ \frac{1}{2} & 0 & 0 \end{bmatrix}$$
+\end{multicols}
+\end{activity}
+
+\begin{fact}
+The eigenvector $\begin{bmatrix} 2 \\ 2 \\1 \end{bmatrix}$ tells us webpages $1$ and $2$ are equally important, and both twice as important as webpage 3.
+
+\begin{tikzpicture}[scale=0.75]
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (3);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (3) edge (2);
+\end{scope}
+\end{tikzpicture}
+\end{fact}
+
+
+\begin{activity}{10}
+Write the $7 \times 7$ transition matrix for the website graph below.
+\begin{center}
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (3,0) {3};
+    \node (4) at (3,4) {4};
+    \node (5) at (6,4) {5};
+    \node (6) at (10,4) {6} ;
+    \node (7) at (6,0) {7} ;
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (4);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (2) edge (3);
+    \draw [->] (3) edge (4);
+    \draw [->] (3) edge (7);
+    \draw [->] (4) edge (2);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (5) edge (7);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (7);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\end{activity}
+
+\begin{activity}{10}
+Find the \term{page rank vector}, i.e. an eigenvector associated to $1$ for the transition matrix
+
+\begin{multicols}{2}
+$$A=\begin{bmatrix} 
+0 & \frac{1}{2} & 0 & 0 & 0 & 0 & 0 \\
+\frac{1}{2} & 0 & 0 & 1 & 0 & 0 & \frac{1}{2} \\
+0 & \frac{1}{2} & 0 & 0 & 0 & 0 & 0 \\
+\frac{1}{2} & 0 & \frac{1}{2} & 0 & 0 & 0 & \frac{1}{2} \\
+0 & 0 & 0 & 0 & 0 & \frac{1}{2} & 0 \\
+0 & 0 & 0 & 0 & \frac{1}{2} & 0 & 0 \\
+0 & 0 & \frac{1}{2} & 0 & \frac{1}{2} & \frac{1}{2} & 0 
+\end{bmatrix}$$
+
+\begin{tikzpicture}[scale=0.5]
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (3,0) {3};
+    \node (4) at (3,4) {4};
+    \node (5) at (6,4) {5};
+    \node (6) at (10,4) {6} ;
+    \node (7) at (6,0) {7} ;
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (4);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (2) edge (3);
+    \draw [->] (3) edge (4);
+    \draw [->] (3) edge (7);
+    \draw [->] (4) edge (2);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (5) edge (7);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (7);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+\end{multicols}
+
+Which webpage is most important?
+\end{activity}
+
+\begin{observation}
+\begin{multicols}{2}
+\begin{tikzpicture}[scale=0.5]
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (3,0) {3};
+    \node (4) at (3,4) {4};
+    \node (5) at (6,4) {5};
+    \node (6) at (10,4) {6} ;
+    \node (7) at (6,0) {7} ;
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (4);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (2) edge (3);
+    \draw [->] (3) edge (4);
+    \draw [->] (3) edge (7);
+    \draw [->] (4) edge (2);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (5) edge (7);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (7);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+
+The page rank vector is $$\begin{bmatrix} 2 \\ 4 \\2 \\ 2.5 \\ 0 \\ 0 \\ 1\end{bmatrix}$$
+\end{multicols}
+
+\end{observation}
+
+\end{applicationActivities}
