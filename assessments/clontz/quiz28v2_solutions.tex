@@ -12,13 +12,15 @@
 \begin{problem}{M1}
 Let 
 \begin{align*}
-A &= \begin{bmatrix} 3 \\ 5 \\ -1  \end{bmatrix} & B&=\begin{bmatrix}  2 & 1 & -1 & 2 \\ 1 & -1 & 3 & -3  \end{bmatrix} & C &= \begin{bmatrix} 2 & -1 \\ 0 & 4 \\ 3 & 1 \end{bmatrix} \end{align*}
+A &= \begin{bmatrix} 3 \\ 5 \\ -1  \end{bmatrix} & B &= \begin{bmatrix} 2 & -1 \\ 0 & 4 \\ 3 & 1 \end{bmatrix} & C&=\begin{bmatrix} 1 & -1 & 3 & -3 \\ 2 & 1 & -1 & 2 \end{bmatrix}
+\end{align*}
 Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and compute it.
 \end{problem}
 \begin{solution}
-$CB$ is the only one that can be computed, and
-$$CB=\begin{bmatrix} 3 & 3 & -5 & 7 \\ 4 & -4 & 12 & -12 \\ 7 & 2 & 0 & 3 \end{bmatrix}$$
+$BC$ is the only one that can be computed, and
+$$BC=\begin{bmatrix} 0 & -3 & 7 & -8 \\ 8 & 4 & -4 & 8 \\ 5 & -2 & 8 & -7 \end{bmatrix}$$
 \end{solution}
+
 \begin{problem}{M2}
 Determine if the matrix $\begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix}$ is invertible.
 \end{problem}
@@ -30,19 +32,34 @@ Since it is not equivalent to the identity matrix, it is not invertible.
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{M3}
-Compute the inverse of the matrix $\begin{bmatrix} 1 & 2 & 3 & 0 \\ 0 & -1 & 4 & -2 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$.
+  Find the inverse of the matrix
+  \(\begin{bmatrix}
+    2 & -1 & -3  \\
+    -14 & 9 & 24  \\
+    3 & -2 & -5
+  \end{bmatrix}\).
 \end{problem}
 \begin{solution}
-$$\RREF(A|I) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 &0 & 1 & 2 & -11 & 37 \\ 0 & 1 & 0 & 0 & 0 & -1 & 4 & -14 \\ 0 & 0 & 1 & 0 & 0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix}$$
-So the inverse is $\begin{bmatrix}  1 & 2 & -11 & 37 \\ 0 & -1 & 4 & -14 \\  0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$
+  \(\begin{bmatrix}[ccc|ccc]
+    2 & -1 & -3 & 1 & 0 & 0 \\
+    -14 & 9 & 24 & 0 & 1 & 0 \\
+    3 & -2 & -5 & 0 & 0 & 1
+  \end{bmatrix}\sim\begin{bmatrix}[ccc|ccc]
+    1 & 0 & 0 & 3 & 1 & 3  \\
+    0 & 1 & 0 & 2 & -1 & -6  \\
+    0 & 0 & 1 & 1 & 1 & 4
+  \end{bmatrix}\). Thus the inverse is
+  \(\begin{bmatrix}
+    3 & 1 & 3  \\
+    2 & -1 & -6  \\
+    1 & 1 & 4
+  \end{bmatrix}\).
 \end{solution}
-
-
 \begin{problem}{G2} 
-Compute the eigenvalues, along with their algebraic multiplicities, of the matrix $ \begin{bmatrix} 9 & -3 & 2 \\ 19 & -6 & 5 \\ -11 & 4 & -2\end{bmatrix}$.
+Compute the eigenvalues, along with their algebraic multiplicities, of the matrix $ \begin{bmatrix} 9 & -3 & 2 \\ 23 & -8 & 5 \\  2 & -1 & 1 \end{bmatrix}$.
 \end{problem}
 \begin{solution}
-1 with algebraic multiplicity 2, and -1 with algebraic multiplicity 1.
+The eigenvalues are $-1$, $1$, and $2$, each with multiplicity 1.
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
