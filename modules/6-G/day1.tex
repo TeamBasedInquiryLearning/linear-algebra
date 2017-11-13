@@ -338,28 +338,46 @@ all other columns are equal.
 % \end{activity}
 
 \begin{observation}
-Multiples of columns may be may be added to other
-columns without affecting the value of a determinant.
-  \begin{align*}
-  \det([\vec{v}\hspace{1em}\vec{w}])
-&=
-  \det([\vec{v}\hspace{1em}\vec{w}])+
-  c\cdot 0
-\\ &=
-  \det([\vec{v}\hspace{1em}\vec{w}])+
-  c\det([\vec{w}\hspace{1em}\vec{w}])
-\\ &=
-  \det([\vec{v}\hspace{1em}\vec{w}])+
-  \det([c\vec{w}\hspace{1em}\vec{w}])
-\\ &=
-  \det([\vec{v}+c\vec{w}\hspace{1em}\vec{w}])
-  \end{align*}
+%Multiples of columns may be may be added to other
+%columns without affecting the value of a determinant.
+%  \begin{align*}
+%  \det([\vec{v}\hspace{1em}\vec{w}])
+%&=
+%  \det([\vec{v}\hspace{1em}\vec{w}])+
+%  c\cdot 0
+%\\ &=
+%  \det([\vec{v}\hspace{1em}\vec{w}])+
+%  c\det([\vec{w}\hspace{1em}\vec{w}])
+%\\ &=
+%  \det([\vec{v}\hspace{1em}\vec{w}])+
+%  \det([c\vec{w}\hspace{1em}\vec{w}])
+%\\ &=
+%  \det([\vec{v}+c\vec{w}\hspace{1em}\vec{w}])
+%  \end{align*}
+What happens if we had a multiple of one column to another?
+
+\begin{center}
+\begin{tikzpicture}
+\draw[thin,gray,<->] (-1,0)-- (8,0);
+\draw[thin,gray,<->] (0,-1)-- (0,6);
+\draw[very thick,blue,->] (0,0) -- node[below right] {$\vec{v}$}  (3,1);
+\draw[very thick,blue,->] (0,0) -- node[left] {$\vec{w}$} (1,2);
+\draw[dashed,blue,->] (1,2) -- (4,3);
+\draw[dashed,blue,->] (3,1) -- (4,3);
+\draw[thick,red,->] (0,0) -- node[above left] {$\vec{w}+c\vec{v}$} (5.5,3.5);
+\draw[dashed,red,->] (3,1) -- (8.5,4.5);
+\draw[dashed,red,->] (5.5,3.5) -- (8.5,4.5);
+\draw[thin,dashed,gray] (3,1) -- (2.5,2.5);
+\draw[thin,dashed,gray] (4,3) -- (5.5,3.5);
+\end{tikzpicture}
+\end{center}
+
+The base of both parallelograms is $\vec{v}$, while the height has not changed.  Thus
+$$\det ([\vec{v}\hspace{1em}\vec{w}+c\vec{v}]) = \det ([\vec{v} \hspace{1em} \vec{w}])$$
 \end{observation}
 
 \begin{observation}
-Determinants represent a \textit{signed} area, since they are not always
-positive. In fact, reversing two columns results in a negation of the
-determinant.
+Swapping columns can be obtained from a sequence of adding column multiples.
   \begin{align*}
   \det([\vec{v}\hspace{1em}\vec{w}])
 &=
@@ -375,6 +393,10 @@ determinant.
 \\ &=
   -\det([\vec{w}\hspace{1em}\vec{v}])
   \end{align*}
+  
+So swapping two columns results in a negation of the
+determinant.  Therefore, determinants represent a \textit{signed} area, since they are not always
+positive. 
 \end{observation}
 
 
