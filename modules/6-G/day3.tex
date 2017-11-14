@@ -4,6 +4,18 @@
 \begin{applicationActivities}{3}{27}
 
 \begin{activity}{5}
+  An invertible matrix \(M\) and its inverse \(M^{-1}\) are given below:
+
+  \[
+    M=\begin{bmatrix}1&2\\3&4\end{bmatrix}
+  \hspace{2em}
+    M^{-1}=\begin{bmatrix}-2&1\\3/2&-1/2\end{bmatrix}
+  \]
+
+  Compute \(\det(M)\) and \(\det(M^{-1})\).
+\end{activity}
+
+\begin{activity}{5}
   Suppose the matrix \(M\) is invertible, so there exists \(M^{-1}\)
   with \(MM^{-1}=I\). It follows that \(\det(M)\det(M^{-1})=\det(I)\).
 
@@ -19,7 +31,10 @@
 \end{activity}
 
 \begin{fact}
-  Since \(\det(M^{-1})=\frac{1}{\det(M)}\) for every invertible matrix \(M\),
+  For every invertible matrix \(M\),
+  \(\det(M^{-1})=\frac{1}{\det(M)}\).
+
+  Furthermore,
   a square matrix \(M\) is invertible if and only if \(\det(M)\not=0\).
 \end{fact}
 
@@ -198,5 +213,13 @@ Compute the kernels of $A-\lambda I$ for each eigenvalue
 $\lambda\in\{-2,3,6\}$ to determine the respective eigenspaces.
 \end{subactivity}
 \end{activity}
+
+\begin{observation}
+  Recall that \(a\) is a root of the polynomial \(p(\lambda)\) if
+  the polynomial may be factored into \(p(\lambda)=q(\lambda)(\lambda-a)^k\)
+  for some maximal positive integer \(k\), since \(p(a)=q(a)(a-a)^k=0\).
+
+  This \(k\) is called the \term{algebraic multiplicity} of the root.
+\end{observation}
 
 \end{applicationActivities}

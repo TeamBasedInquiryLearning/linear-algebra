@@ -25,7 +25,8 @@ It is possible to prove that the determinant of a matrix and its
 transpose are the same.
 For example, let \(A=\begin{bmatrix}3 & 3 \\ 0 & 2\end{bmatrix}\),
 so \(A^T=\begin{bmatrix}3 & 0 \\ 3 & 2\end{bmatrix}\); both matrices
-scale the unit square by \(6\).
+scale the unit square by \(6\), even though the parallelograms are not
+congruent.
 
 \begin{center}
   \begin{tikzpicture}[scale=0.5]
@@ -39,8 +40,8 @@ scale the unit square by \(6\).
   \draw[thin,gray,<->] (-1,0)-- (4,0);
   \draw[thin,gray,<->] (0,-1)-- (0,4);
   \draw[blue,dashed] (0,0) -- (3,3) -- (3,5) -- (0,2) -- (0,0);
-  \draw[thick,blue,->] (0,0) -- node[right] {$A^T \vec{e}_1= \begin{bmatrix}3 \\ 0 \end{bmatrix}$}++ (3,3);
-  \draw[thick,blue,->] (0,0) -- ++(0,2) node[left] {$A^T \vec{e}_2 = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$};
+  \draw[thick,blue,->] (0,0) -- node[right] {$A^T \vec{e}_1= \begin{bmatrix}3 \\ 3 \end{bmatrix}$}++ (3,3);
+  \draw[thick,blue,->] (0,0) -- ++(0,2) node[left] {$A^T \vec{e}_2 = \begin{bmatrix} 0 \\ 2 \end{bmatrix}$};
   \end{tikzpicture}
 \end{center}
 \end{fact}
