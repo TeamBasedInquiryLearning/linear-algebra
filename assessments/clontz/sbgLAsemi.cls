@@ -50,7 +50,7 @@
 \newcommand{\@solutionstext}{{\bfseries Solution:}}
 \newcommand{\@calculatorpolicy}{{No calculators are permitted.}}
 \newcommand{\@version}{}
-\newcommand{\@instructions}{{{\bf Choose up to 6 problems to work.}  Work each problem on one of the attached pages; write the standard in the lower left corner.  Show all work and justify all of your answers.  Answers without work or sufficient reasoning will not receive credit. \@calculatorpolicy}}
+\newcommand{\@instructions}{{Work any problems you wish on the provided answer sheets; take care to label the standard for each response.  Show all work and justify all of your answers.  Answers without work or sufficient reasoning will not receive credit. \@calculatorpolicy}}
 \def \@standards{}
 
 %Specify macros for user to change the local versions
@@ -105,7 +105,7 @@
 {
 	\end{flushleft}
 	%\ifthenelse{ \equal{\value{subproblem}}{0}}{\vfill}{}
-	\setcounter{subproblem}{0}	
+	\setcounter{subproblem}{0}
 }
 
 \newenvironment{solution}
@@ -143,7 +143,7 @@
 Name: \underline{\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}\\
 \ \\
 %\@coursetitle\ -- \@courselabel \\
-%\@semester 
+%\@semester
 \end{flushright}
 {
 	{\bf \@Title} \hfill \@coursetitle\ -- \@courselabel \\
@@ -163,10 +163,10 @@ Name: \underline{\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}\\
 \whiledo {\value{i} < 6}%
 {%
   \newpage
-  
+
 	\vfill
 
-	{\bf Standard: \underline{\phantom{xxxxxxxxxxx}}} \hfill   \fbox{\rule{0.5in}{0pt}\rule[-0.5ex]{0pt}{4ex}} 
+	{\bf Standard: \underline{\phantom{xxxxxxxxxxx}}} \hfill   \fbox{\rule{0.5in}{0pt}\rule[-0.5ex]{0pt}{4ex}}
   \stepcounter {i}%
 }
 }

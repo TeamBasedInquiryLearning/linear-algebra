@@ -2,7 +2,7 @@
 %% This is file, `semifinal-v6.tex',
 %% generated with the extract package.
 %% 
-%% Generated on :  2017/11/13,15:39
+%% Generated on :  2017/11/15,12:30
 %% From source  :  semifinal-v6_solutions.tex
 %% Using options:  active,generate=semifinal-v6,extract-env={problem}
 %% 
@@ -16,51 +16,57 @@
 \begin{problem}{E1}
 Write an augmented matrix corresponding to the following system of linear equations.
 \begin{align*}
-x_1+4x_3 &= 1 \\
-x_2-x_3 &= 7 \\
-x_1-x_2+3x_4 &= -1
+x+3y-4z &= 5 \\
+3x+9y+z &= 0 \\
+x-z &= 1
 \end{align*}
 \end{problem}
 
 \begin{problem}{E2}
 Put the following matrix in reduced row echelon form.
-$$\begin{bmatrix}-3 & 5 & 2 & 0 \\ 1 & -1 & 0 & 2 \\ 1 & -2 & -1 & -1 \end{bmatrix}$$
+$$\begin{bmatrix}
+ 3 & -1 & 0 \\
+ -1 & 0 & -1 \\
+ -1 & 1 & 2 \\
+ 0 & 2 & 6
+\end{bmatrix}$$
 \end{problem}
 
 \begin{problem}{E3}
-Solve the system of linear equations.
+Solve the following linear system.
 \begin{align*}
-2x+y-z+w &=5 \\
-3x-y-2w &= 0 \\
--x+5z+3w&=-1
+4x_1+4x_2+3x_3-6x_4 &= 5 \\
+-2x_3-4x_4 &= 3 \\
+2x_1+2x_2+x_3-4x_4 &= -1 \\
 \end{align*}
 \end{problem}
 
 \begin{problem}{E4}
 Find a basis for the solution set of the system of equations
 \begin{align*}
-x+2y+3z+w &= 0 \\
-3x-y+z+w &= 0 \\
-2x-3y-2z &= 0
+x+3y+3z+7w &= 0 \\
+ x+3y-z-w &= 0 \\
+  2x+6y+3z+8w &= 0 \\
+   x+3y-2z-3w &= 0
 \end{align*}
 \end{problem}
 
 \begin{problem}{V1}
-Let $V$ be the set of all points on the parabola $y=x^2$ with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
+Let $V$ be the set of all points on the line $x+y=2$ with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2+2x_1x_2) \\
-c \odot (x_1,y_1) &= (cx_1, c^2y_1)
+(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2-1,y_1+y_2-1) \\
+c \odot (x_1,y_1) &= (cx_1-(c-1), cy_1-(c-1))
 \end{align*}
 \begin{enumerate}[(a)]
-\item Show that the vector \textbf{addition} $\oplus$ is \textbf{associative}:
-      \((x_1,y_1) \oplus ((x_2,y_2) \oplus (x_3,y_3))=((x_1,y_1)\oplus (x_2,y_2))\oplus (x_3,y_3)\).
+\item Show that this vector space has an \textbf{additive identity} element
+      \(\mathbf{0}\) satisfying \((x,y)\oplus\mathbf{0}=(x,y)\).
 \item Determine if $V$ is a vector space or not.  Justify your answer.
 \end{enumerate}
 \end{problem}
 
 \begin{problem}{V2}
   Determine if
-  \(\begin{bmatrix} 4 \\ -1 \\ 6 \\ -7 \end{bmatrix}\)
+  \(\begin{bmatrix} 0 \\ -1 \\ 6 \\ -7 \end{bmatrix}\)
   belongs to the span of the set
   \(\left\{
     \begin{bmatrix} 2 \\ 0 \\ -1 \\ 5 \end{bmatrix},
@@ -70,126 +76,86 @@ c \odot (x_1,y_1) &= (cx_1, c^2y_1)
 \end{problem}
 
 \begin{problem}{V3}
-Does
-\(
-  \operatorname{span}\left\{
-    \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix},
-    \begin{bmatrix} 3 \\ 12 \\ -9 \end{bmatrix},
-    \begin{bmatrix} 1 \\ 4 \\ -3 \end{bmatrix},
-    \begin{bmatrix} -4 \\ 2 \\ -8 \end{bmatrix}
-  \right\} = \IR^3
-\)?
+Determine if the vectors  $\begin{bmatrix} -3 \\ 1 \\ 1 \end{bmatrix}$,$\begin{bmatrix} 5 \\ -1 \\ -2 \end{bmatrix}$,$\begin{bmatrix}2 \\ 0 \\ -1 \end{bmatrix}$, and $\begin{bmatrix} 0 \\ 2 \\ -1\end{bmatrix}$ span $\IR^3$
 \end{problem}
 
-\begin{problem}{V4} Let $W$ be the set of all polynomials of the form
-\(ax^3+bx\).  Determine if $W$ is a subspace of \(\P^3\).
+\begin{problem}{V4}
+Determine if the set of all lattice points, i.e. $\{(x,y)\ \big|\ \text{$x$ and $y$ are integers} \}$ is a subspace of $\IR^2$.
 \end{problem}
 
 \begin{problem}{S1}
-Determine if the set of vectors $\left\{ \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\}$ is  linearly dependent or linearly independent
+Determine if the set of vectors  $\left\{\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix}, \begin{bmatrix} 1 \\ 3 \\ -2 \end{bmatrix}\right\}$ is  linearly dependent or linearly independent
 \end{problem}
 
 \begin{problem}{S2}
-  Determine if the set \(\left\{
-    \begin{bmatrix} 3 & -1 \\ 2 &3 \end{bmatrix},
-    \begin{bmatrix} 2 & 0 \\ 2 & 4\end{bmatrix},
-    \begin{bmatrix} 1 & 4 \\ -1 & 8\end{bmatrix},
-    \begin{bmatrix} -1 & 3 \\ 0 & 4\end{bmatrix}
-  \right\}\) is a basis of $\IR^{2\times 2}$.
+Determine if the set $\left\{ x^3-3x^2+2x+2, -x^3+4x^2-x+1, -x^3+2x+1, 3x^2+3x+9 \right\}$ is a basis of $\P^3$ or not.
 \end{problem}
 
 \begin{problem}{S3}
-Let $W$ be the subspace of $\P^2$ given by $W = {\rm span} \left( \left\{  -3x^2-8x, x^2+2x+2, -x+3\right\} \right)$.   Find a basis for $W$.
+Let $W = {\rm span} \left( \left\{  \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\} \right)$.   Find a basis for $W$.
 \end{problem}
 
 \begin{problem}{S4}
-Let $W={\rm span}\left( \left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 4 \\ -2 \end{bmatrix},  \begin{bmatrix} 1 \\ 1 \\ 1 \\ -7 \end{bmatrix} \right\}\right)$.  Compute the dimension of $W$.
+  Let \(
+    W={\rm span}\left\{ 2x^2-x+3, 2x^2+2, -x^2+4x+1 \right\}\).
+  Find the dimension of \(W\).
 \end{problem}
 
 \begin{problem}{A1}
-Let $T: \IR^4 \rightarrow \IR^2$ be the linear transformation given by $$T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} \right) = \begin{bmatrix} x_1+3x_3 \\ 3x_2-x_3 \end{bmatrix}.$$ Write the matrix for $T$ with respect to the standard bases of $\IR^4$ and $\IR^2$.
+Let $T: \IR^3 \rightarrow \IR$ be the linear transformation given by $$T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3  \end{bmatrix} \right) = \begin{bmatrix} x_2+3x_3 \end{bmatrix}.$$ Write the matrix for $T$ with respect to the standard bases of $\IR^3$ and $\IR$.
 \end{problem}
 
 \begin{problem}{A2}
-Let $T: \IR^2 \rightarrow \IR^2$ be given by $T\left(\begin{bmatrix}x \\ y  \end{bmatrix} \right) = \begin{bmatrix} x+y \\ \sqrt{x}+\sqrt{y} \end{bmatrix}$.  Determine if $T$ is a linear transformation.
+Determine if the map $T: \P^6  \rightarrow \P^6$ given by $T(f) = f(x)-f(0)$ is a linear transformation or not.
 \end{problem}
 
 \begin{problem}{A3}
 Determine if each of the following linear transformations is injective (one-to-one) and/or surjective (onto).
 \begin{enumerate}[(a)]
-\item
-  \(S: \IR^2 \rightarrow \IR^3\) where
-  \(S(\vec e_1)=\begin{bmatrix}
-    2 \\
-    1 \\
-    0
-  \end{bmatrix}\) and
-  \(S(\vec e_2)=\begin{bmatrix}
-    1 \\
-    2 \\
-    1
-  \end{bmatrix}\).
-\item
-  \(T: \IR^3 \rightarrow \IR^2\) where
-  \(T(\vec e_1)=\begin{bmatrix}
-    2 \\
-    2
-  \end{bmatrix}\),
-  \(T(\vec e_2)=\begin{bmatrix}
-   1  \\
-   0
-  \end{bmatrix}\), and
-  \(T(\vec e_3)=\begin{bmatrix}
-    1 \\
-    1
-  \end{bmatrix}\).
+\item $S: \IR^2 \rightarrow \IR^4$ given by the standard matrix $\begin{bmatrix} 2 & 1 \\ 1 & 2 \\ 0 & 1 \\ 3 & -3 \end{bmatrix}$.
+\item $T: \IR^4 \rightarrow \IR^3$ given by the standard matrix $\begin{bmatrix} 2 & 3 & -1 & 1 \\ -1 & 1 & 1 & 1 \\ 4 & 7 & -1 & 5 \end{bmatrix}$
 \end{enumerate}
 \end{problem}
 
 \begin{problem}{A4}
-Let $T: \IR^{2\times 2} \rightarrow \IR^3$ be the linear map given by $T\left(\begin{bmatrix} x & y \\ z & w \end{bmatrix} \right) = \begin{bmatrix}  8x-3y-z+4w \\ y+3z-4w \\ -7x+3y+2z-5w\end{bmatrix} $.
+Let $T: \P^3 \rightarrow \P^3$ be the linear transformation given by $$T\left( ax^3+bx^2+cx+d \right)  = (a+3b+3c+7d)x^3 + (a+3b-c-d)x^2+  (2a+6b+3c+8d)x+  (a+3b-2c-3d)$$
 Compute a basis for the kernel and a basis for the image of $T$.
 \end{problem}
 
 \begin{problem}{M1}
 Let
 \begin{align*}
-A &= \begin{bmatrix} 2 & 3 \\ 0 & 1 \end{bmatrix} & B&= \begin{bmatrix} 3 & 1 & 0 \end{bmatrix} & C&= \begin{bmatrix} 0 & -1 & 4 \\ 1 & -1 & 2 \end{bmatrix}
+A &= \begin{bmatrix} 0 & 0 & -1 & -1 \\ 1 & 3 & 7 & 2 \end{bmatrix} & B &= \begin{bmatrix} 0 & 1 & 7 & 7 \\ -1 & -2 & 0 & 4 \\ 0 & 0 & 1 & 5 \end{bmatrix} & C&=\begin{bmatrix} 3 & 2 \\ 0 & 1 \\ -2 & -1 \end{bmatrix}
 \end{align*}
-
 Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and compute it.
 \end{problem}
 
-\begin{problem}{M2} Determine if the matrix $\begin{bmatrix} 1 & 3 & -1 \\ 2 & 7 & 0 \\ -1 & -1 & 5 \end{bmatrix}$ is invertible.
+\begin{problem}{M2}
+Determine if the matrix $\begin{bmatrix} 3 & -1 & 0 & 4 \\ 2 & 1 & 1 & -1 \\ 0 & 1 & 1 & 3 \\ 1 & -2 & 0 & 0 \end{bmatrix}$ is invertible.
 \end{problem}
 
 \begin{problem}{M3}
-  Find the inverse of the matrix
-  \(\begin{bmatrix}
-    4 & -1 & -8  \\
-    2 & 1 & 3  \\
-    1 & 1 & 4
-  \end{bmatrix}\).
+Find the inverse of the matrix $\begin{bmatrix} 3 & -1 & 0  \\ 2 & 1 & 1  \\ 0 & 1 & 1   \end{bmatrix}$.
 \end{problem}
 
 \begin{problem}{G1}
 Compute the determinant of the matrix
 \[
   \begin{bmatrix}
-    0 & -4 & 1 & 1 \\
-    0 & 1 & 0 & 1 \\
-    -2 & 3 & -1 & 1 \\
+    1 & 3 & 2 & 4 \\
     5 & 0 & -4 & 0 \\
+    -2 & 3 & -1 & 1 \\
+    0 & 1 & 0 & 1
   \end{bmatrix}
 .\]
 \end{problem}
 
 \begin{problem}{G2}
-Compute the eigenvalues, along with their algebraic multiplicities, of the matrix $ \begin{bmatrix} 9 & -3 & 2 \\ 23 & -8 & 5 \\  2 & -1 & 1 \end{bmatrix}$.
+Compute the eigenvalues, along with their algebraic multiplicities, of the matrix $ \begin{bmatrix} 9 & -3 & 2 \\ 19 & -6 & 5 \\ -5 & 2 & 0 \end{bmatrix}$.
 \end{problem}
 
 \begin{problem}{G3}
-Compute the eigenspace associated to the eigenvalue $2$ in the matrix $\begin{bmatrix} -1 & 1 & 0 \\ -9 & 5 & 0 \\ 15 & -5 & 2 \end{bmatrix}$.
+Compute the eigenspace of the eigenvalue $-1$ in the matrix $\begin{bmatrix} 4 & -2 & -1 \\ 15 & -7 & -3 \\ -5 & 2 & 0 \end{bmatrix}$.
 \end{problem}
 
 \begin{problem}{G4}

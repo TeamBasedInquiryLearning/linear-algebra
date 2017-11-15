@@ -11,175 +11,180 @@
 \begin{problem}{E1}
 Write an augmented matrix corresponding to the following system of linear equations.
 \begin{align*}
-x+3y-4z &= 5 \\
-3x+9y+z &= 0 \\
-x-z &= 1
+x_1+4x_3 &= 1 \\
+x_2-x_3 &= 7 \\
+x_1-x_2+3x_3 &= -1
 \end{align*}
 \end{problem}
 \begin{solution}
 \[
 \begin{bmatrix}[ccc|c]
-1 & 3 & -4 & 5 \\
-3 & 9 & 1 & 0 \\
-1 & 0 & -1 & 1
+1 & 0 & 4 & 1 \\
+0 & 1 & -1 & 7 \\
+1 & -1 & 3 & -1
 \end{bmatrix}
 \]
 \end{solution}
 
 \begin{problem}{E2}
 Put the following matrix in reduced row echelon form.
-$$\begin{bmatrix}[ccc|c] -3 & 1 & 0 & 2 \\ -8 & 2 & -1 & 6 \\ 0 & 2 & 3 & -2 \end{bmatrix}$$
+$$\begin{bmatrix}-3 & 5 & 2 & 0 \\ 1 & -1 & 0 & 2 \\ 1 & -2 & -1 & -1 \end{bmatrix}$$
 \end{problem}
 \begin{solution}
-$$\begin{bmatrix}[ccc|c]
--3 & 1 & 0 & 2 \\
- -8 & 2 & -1 & 6 \\
- 0 & 2 & 3 & -2
+\begin{align*}
+\begin{bmatrix}
+-3 & 5 & 2 & 0 \\
+ 1 & -1 & 0 & 2 \\
+ 1 & -2 & -1 & -1
+\end{bmatrix} &\sim
+\begin{bmatrix}
+ 1 & -1 & 0 & 2 \\
+-3 & 5 & 2 & 0 \\
+ 1 & -2 & -1 & -1
 \end{bmatrix} \sim
-\begin{bmatrix}[ccc|c]
-1 & -\frac{1}{3} & 0 & -\frac{2}{3} \\
- -8 & 2 & -1 & 6 \\
- 0 & 2 & 3 & -2
+\begin{bmatrix}
+ 1 & -1 & 0 & 2 \\
+ 0 & 2 & 2 & 6 \\
+ 0 & -1 & -1 & -3
 \end{bmatrix} \sim
-\begin{bmatrix}[ccc|c]
-1 & -\frac{1}{3} & 0 & -\frac{2}{3} \\
- 0 & -\frac{2}{3} & -1 & \frac{2}{3} \\
- 0 & 2 & 3 & -2
-\end{bmatrix} $$
-$$\sim
-\begin{bmatrix}[ccc|c]
-1 & -\frac{1}{3} & 0 & -\frac{2}{3} \\
- 0 & 1 & \frac{3}{2} & -1 \\
- 0 & 2 & 3 & -2
-\end{bmatrix} \sim
-\begin{bmatrix}[ccc|c]
-1 & 0 & \frac{1}{2} & -1 \\
- 0 & 1 & \frac{3}{2} & -1 \\
+\begin{bmatrix}
+ 1 & -1 & 0 & 2 \\
+ 0 & 1 & 1 & 3 \\
+ 0 & -1 & -1 & -3
+\end{bmatrix} \\ &\sim
+\begin{bmatrix}
+ 1 & 0 & 1 & 5 \\
+ 0 & 1 & 1 & 3 \\
  0 & 0 & 0 & 0
-\end{bmatrix}$$
+\end{bmatrix}
+\end{align*}
 \end{solution}
 
 \begin{problem}{E3}
-Solve the following linear system.
+Find the solution set for the following system of linear equations.
 \begin{align*}
-3x+2y+z &= 7 \\
-x+y+z &= 1 \\
--2x+3z &= -11
+2x_1+3x_2-5x_3+14x_4 &= 8 \\
+x_1+x_2-x_3+5x_4&= 3
+\end{align*}
+\end{problem}
+\begin{solution}
+Let \(A =
+  \begin{bmatrix}[cccc|c]
+    2 & 3 & -5 & 14 & 8 \\
+    1 & 1 & -1 & 5 & 3
+  \end{bmatrix}
+\), so \(\RREF A =
+  \begin{bmatrix}[cccc|c]
+    1 & 0 & 2 & 1 & 1 \\
+    0 & 1 & -3 & 4 & 2 \\
+  \end{bmatrix}
+\). It follows that the solution set is given by \(
+  \begin{bmatrix}
+    1 - 2a - b \\
+    2 + 3a - 4b \\
+    a \\
+    b
+  \end{bmatrix}
+\) for all real numbers \(a,b\).
+\end{solution}
+
+\begin{problem}{E4}
+Find a basis for the solution set to the homogeneous system of equations
+given by
+\begin{align*}
+3x+2y+z &= 0 \\
+x+y+z &= 0
 \end{align*}
 \end{problem}
 \begin{solution}
 Let \(A =
   \begin{bmatrix}[ccc|c]
-    3 & 2 & 1 & 7 \\
-    1 & 1 & 1 & 1 \\
-    -2 & 0 & 3 & 11
+    3 & 2 & 1 & 0 \\
+    1 & 1 & 1 & 0
   \end{bmatrix}
 \), so \(\RREF A =
   \begin{bmatrix}[ccc|c]
-    1 & 0 & 0 & 4 \\
-    0 & 1 & 0 & -2 \\
-    0 & 0 & 1 & -1
+    1 & 0 & -1 & 0 \\
+    0 & 1 & 2 & 0
   \end{bmatrix}
-\). It follows that the system has exactly one solution:
-\(\begin{bmatrix}
-  4 & -2 & -1
-\end{bmatrix}\)
-\end{solution}
-\begin{problem}{E4}
-Find a basis for the solution set to the system of equations
-\begin{align*}
-x+2y-3z &= 0 \\
-2x+y-4z &= 0 \\
-3y -2z & = 0 \\
-x -y -z &= 0
-\end{align*}
-\end{problem}
-\begin{solution}
-$$\RREF \left(\begin{bmatrix} 1 & 2 & -3 \\ 2 & 1 & -4 \\ 0 & 3 & -2 \\ 1 & -1 & -1 \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & -\frac{5}{3} \\ 0 & 1 & -\frac{2}{3} \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
-Then the solution set is
-$$\left\{ \begin{bmatrix} \frac{5}{3}a \\ \frac{2}{3}a \\ a \end{bmatrix} \bigg|\ a \in \IR \right\}$$
-So a basis is $\left\{ \begin{bmatrix} \frac{5}{3} \\ \frac{2}{3} \\ 1 \end{bmatrix} \right\}$ or $\left\{ \begin{bmatrix} 5 \\  2 \\ 3 \end{bmatrix} \right\}$.
+\).
+It follows that the basis for the solution set is given by \(\left\{
+  \begin{bmatrix}
+    1 \\
+    -2 \\
+    1
+  \end{bmatrix}
+\right\}\).
 \end{solution}
 
 \begin{problem}{V1}
 Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
 (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
-c \odot (x_1,y_1) &= (c^2x_1, c^3y_1)
+c \odot (x_1,y_1) &= (0, cy_1)
 \end{align*}
 \begin{enumerate}[(a)]
-\item Show that scalar multiplication \textbf{distributes scalars} over
-      vector addition:
-      \(c\odot((x_1,y_1) \oplus (x_2,y_2))=
-      c\odot(x_1,y_1) \oplus c\odot(x_2,y_2)\).
+\item Show that scalar multiplication
+      \textbf{distributes vectors} over scalar addition:
+      \((c+d)\odot(x,y)=
+      c\odot(x,y) \oplus d\odot(x,y)\).
 \item Determine if $V$ is a vector space or not.  Justify your answer.
 \end{enumerate}
 \end{problem}
 \begin{solution}
-Let $(x_1,y_1), (x_2,y_2) \in V$ and let $c \in \IR$.
-\begin{align*}
-c \odot \left( (x_1,y_1) \oplus (x_2,y_2) \right) &= c \odot (x_1+x_2,y_1+y_2) \\
-&= (c^2(x_1+x_2), c^3(y_1+y_2) ) \\
-&= (c^2x_1,c^3y_1) \oplus (c^2x_2,c^3y_2) \\
-&= c \odot (x_1,y_1) \oplus c \odot (x_2,y_2)
-\end{align*}
-However, $V$ is not a vector space, as the other distributive law fails:
-$$(c+d) \odot (x_1,y_1) = ( (c+d)^2 x_1, (c+d)^3 y_1) \neq ((c^2+d^2)x_1, (c^3+d^3)y_1) = c \odot (x_1,y_1) \oplus d \odot (x_1,y_1).$$
+Let $(x_1,y_1) \in V$, and let $c,d \in \IR$.  Then
+$$(c+d)\odot (x_1,y_1)=(0, (c+d)y_1) = (0,cy_1) \oplus (0,dy_1) = c \odot (x_1,y_1) \oplus d \odot (x_1,y_1).$$
+However, $V$ is not a vector space, as $1 \odot (x_1,y_1) = (0,y_1) \neq (x_1,y_1)$.
 \end{solution}
 
 
 \begin{problem}{V2}
-Determine if  $\begin{bmatrix} 0 \\ 0 \\ 2 \end{bmatrix}$ can be written as a linear combination of the vectors $\begin{bmatrix} -1 \\ -9 \\ 15 \end{bmatrix}$ and $\begin{bmatrix} 1 \\ 5 \\ -5 \end{bmatrix}$.
+Determine if $\begin{bmatrix}0 \\ -1 \\ 2 \\ 6 \end{bmatrix}$ can be written as a linear combination of the vectors $\begin{bmatrix} 3 \\ -1 \\ -1 \\ 0 \end{bmatrix}$ and $\begin{bmatrix} -1 \\ 0 \\ 1 \\ 2 \end{bmatrix}$.
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix}[cc|c] -1 & 1 & 0 \\ -9 & 5 & 0 \\ 15 & -5 & 2 \end{bmatrix} \right) = \begin{bmatrix}[cc|c] 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
-Since this system has no solution, $\begin{bmatrix} 0 \\ 0 \\ 2 \end{bmatrix}$ cannot be written as a linear combination of the vectors $\begin{bmatrix} -1 \\ -9 \\ 15 \end{bmatrix}$ and $\begin{bmatrix} 1 \\ 5 \\ -5 \end{bmatrix}$.
+$$\RREF\left(\left[\begin{array}{cc|c} 3 & -1 & 0 \\ -1 & 0 & -1 \\ -1 & 1 & 2 \\ 0 & 2 & 6\end{array} \right] \right)= \left[ \begin{array}{cc|c} 1 & 0 & 1 \\ 0 & 1 & 3 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array} \right]$$
 
+Since this system has a solution, $\begin{bmatrix}0 \\ -1 \\ 2 \\ 6 \end{bmatrix}$ can be written as a linear combination of the vectors $\begin{bmatrix} 3 \\ -1 \\ -1 \\ 0 \end{bmatrix}$ and $\begin{bmatrix} -1 \\ 0 \\ 1 \\ 2 \end{bmatrix}$, namely
+$$\begin{bmatrix}0 \\ -1 \\ 2 \\ 6 \end{bmatrix}=\begin{bmatrix} 3 \\ -1 \\ -1 \\ 0 \end{bmatrix}+3\begin{bmatrix} -1 \\ 0 \\ 1 \\ 2 \end{bmatrix}.$$
 \end{solution}
-
 
 \begin{problem}{V3}
-Determine if the vectors $\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}$, $\begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}$, and $\begin{bmatrix}1 \\ 2 \\ 0 \\ 1 \end{bmatrix}$ span $\IR^4$.
+Determine if the vectors $\begin{bmatrix} 1 \\ 0 \\ 2 \\1 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 1 \\ 0 \\ -3 \end{bmatrix}$,$\begin{bmatrix} 0 \\ 3 \\ 0 \\ -2 \end{bmatrix}$, and $\begin{bmatrix}-1 \\ 1 \\ -1 \\ -1 \end{bmatrix}$ span $\IR^4$.
 \end{problem}
 \begin{solution}
-$$\RREF\left( \begin{bmatrix} 2 & 3 & 0 & 1 \\ 0 & 1 & 0 & 2 \\ -2 & 3 & 1 & 0 \\ 0 & 6 & 1 & 1\end{bmatrix} \right) = \begin{bmatrix}1 & 0 & 0 & -\frac{5}{2} \\ 0 & 1 & 0 & 2 \\ 0 & 0 & 1 & -11\\ 0 & 0 & 0 & 0  \end{bmatrix} $$
-Since there is a zero row, the vectors do not span $\IR^4$.
+$$\RREF\left(\begin{bmatrix}1 & 3 & 0 & -1 \\ 0 & 1 & 3 & 1 \\ 2 & 0 & 0 & -1 \\ 1 & -3 & -2 & -1 \end{bmatrix} \right) =\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
+Since every row contains a pivot, the vectors span $\IR^4$.
 \end{solution}
 
-\begin{problem}{V4} Let $W$ be the set of all polynomials of even degree.  Determine if $W$ is a subspace of the vector space of all polynomials.
+\begin{problem}{V4}
+Determine if the set of all lattice points, i.e. $\{(x,y)\ \big|\ \text{$x$ and $y$ are integers} \}$ is a subspace of $\IR^2$.
 \end{problem}
 \begin{solution}
-$W$ is closed under scalar multiplication, but not under addition.  For example, $x-x^2$ and $x^2$ are both in $W$, but $(x-x^2)+(x^2)=x \notin W$.
+This set is closed under addition, but not under scalar multiplication so it is not a subspace.
 \end{solution}
-
 
 \begin{problem}{S1}
-Determine if the set of matrices $\left\{\begin{bmatrix} 3 & -1 \\ 0 & 4 \end{bmatrix}, \begin{bmatrix} 1  & 2 \\ -2 & 1 \end{bmatrix}, \begin{bmatrix} 3 & -8 \\ 6 & 5 \end{bmatrix} \right\}$  is linearly dependent or linearly independent.
+Determine if the set of vectors $\left\{ \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\}$ is  linearly dependent or linearly independent
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix} 3 & 1 & 3 \\ -1 & 2 & -8 \\ 0 & -2 & 6 \\ 4 & 1 & 5 \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 2 \\ 0 & 1 & -3 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
-Since the reduced row echelon form has a nonpivot column, the vectors are linearly dependent.
+$$\RREF\left( \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{3}{2} \\ 0 & 0 & 0 \end{bmatrix}$$
+This has a non pivot column, therefore the set is linearly dependent.
 \end{solution}
+
 \begin{problem}{S2}
-  Determine if the set \(\left\{
-    \begin{bmatrix} 3 & -1 \\ 2 &3 \end{bmatrix},
-    \begin{bmatrix} 2 & 0 \\ 2 & 4\end{bmatrix},
-    \begin{bmatrix} 1 & 4 \\ -1 & 8\end{bmatrix},
-    \begin{bmatrix} -1 & 3 \\ 0 & 4\end{bmatrix}
-  \right\}\) is a basis of $\IR^{2\times 2}$.
+  Determine if the set $\left\{ 2x^2-x+3, 2x^2+2, -x^2+4x+1 \right\}$
+  is a basis of $\P^2$.
 \end{problem}
 \begin{solution}
   \[\RREF\left(
     \begin{bmatrix}
-      3 & 2 & 1 & -1\\
-      -1 & 0 & 4 & 3\\
-      2 & 2 & -1 & 0\\
-      3 & 4 & 8 & 4\\
+      2 & 2 & -1 \\
+      -1 & 0 & 4 \\
+      3 & 2 & 1
     \end{bmatrix} \right)= \begin{bmatrix}
-      1 & 0 & 0 & 0 \\
-      0 & 1 & 0 & 0 \\
-      0 & 0 & 1 & 0 \\
-      0 & 0 & 0 & 1
+      1 & 0 &0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
     \end{bmatrix}
   \]
 Since the resulting matrix is the identity matrix, it is a basis.
@@ -187,22 +192,13 @@ Since the resulting matrix is the identity matrix, it is a basis.
 
 
 \begin{problem}{S3}
-Let $W={\rm span}\left( \left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 4 \\ -2 \end{bmatrix},  \begin{bmatrix} 1 \\ 1 \\ 1 \\ -7 \end{bmatrix} \right\}\right)$.  Find a basis of $W$.
-\end{problem}
-\begin{solution}
-$$ \RREF \left( \begin{bmatrix} 1 & 2 & 3 & 1 \\ -1 & 0 & -1 & 1 \\ 3 & 1 & 4 & 1 \\ -3 & 1 & -2 & -7 \end{bmatrix} \right) =  \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-Then  $\left\{ \begin{bmatrix} 1 \\ -1 \\ 3 \\ -3 \end{bmatrix},\begin{bmatrix} 2 \\ 0 \\ 1 \\ 1 \end{bmatrix},   \begin{bmatrix} 1 \\ 1 \\ 1 \\ -7 \end{bmatrix} \right\}$ is a basis for $W$.
-\end{solution}
-
-
-\begin{problem}{S4}
 Let \(
   W={\rm span}\left\{
     \begin{bmatrix} 2 \\ 0 \\ 2 \\ 1 \end{bmatrix},
     \begin{bmatrix} 3 \\ 1 \\ -1 \\ 1 \end{bmatrix},
     \begin{bmatrix} 0 \\ 2 \\ -8 \\ -1 \end{bmatrix}
   \right\}
-\). Find the dimension of \(W\).
+\). Find a basis for this vector space.
 \end{problem}
 \begin{solution}
 \[
@@ -219,135 +215,133 @@ Let \(
     0 & 0 & 0
   \end{bmatrix}
 \]
-Since it has two pivot columns, its dimension is \(2\).
+Thus \(\left\{
+  \begin{bmatrix} 2 \\ 0 \\ 2 \\ 1 \end{bmatrix},
+  \begin{bmatrix} 3 \\ 1 \\ -1 \\ 1 \end{bmatrix}
+\right\}\) is a basis of $W$.
+\end{solution}
+\begin{problem}{S4}
+Let $W$ be the subspace of $\P_3$ given by $W={\rm span}\left( \left\{ x^3-x^2+3x-3, 2x^3+x+1, 3x^3-x^2+4x-2, x^3+x^2+x-7\right\}\right)$.  Compute the dimension of $W$.
+\end{problem}
+\begin{solution}
+$$ \RREF \left( \begin{bmatrix} 1 & 2 & 3 & 1 \\ -1 & 0 & -1 & 1 \\ 3 & 1 & 4 & 1 \\ -3 & 1 & -2 & -7 \end{bmatrix} \right) =  \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
+This has 3 pivot columns so $\dim(W)=3$.
 \end{solution}
 
 
 \begin{problem}{A1}
-Let $T: \IR^3\rightarrow \IR^4$ be the linear transformation given by $$T\left(\begin{bmatrix} x \\ y \\ z \\  \end{bmatrix} \right) = \begin{bmatrix} -3x+y \\ -8x+2y-z \\ 2y+3z \\ 7x \end{bmatrix}.$$  Write the matrix for $T$ with respect to the standard bases of $\IR^3$ and $\IR^4$.
+Let $T: \IR^3\rightarrow \IR^4$ be the linear transformation given by $$T\left(\begin{bmatrix} x \\ y \\ z \\  \end{bmatrix} \right) = \begin{bmatrix} -3x+y \\ -8x+2y-z \\ 7x+2y+3z \\ 0 \end{bmatrix}.$$  Write the matrix for $T$ with respect to the standard bases of $\IR^3$ and $\IR^4$.
 \end{problem}
 \begin{solution}
-$$\begin{bmatrix} 3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3 \\ 7 & 0 & 0 \end{bmatrix}$$
+$$\begin{bmatrix} 3 & 1 & 0 \\ -8 & 2 & -1 \\ 7 & 2 & 3 \\ 0 & 0 & 0 \end{bmatrix}$$
 \end{solution}
 
 \begin{problem}{A2}
-Determine if the map $T: \P^6  \rightarrow \P^7$ given by $T(f) = xf(x)-f(1)$ is a linear transformation or not.
+Determine if the map $T: \P^6  \rightarrow \P^6$ given by $T(f) = f(x)-f(0)$ is a linear transformation or not.
 \end{problem}
 
 \begin{problem}{A3}
 Determine if each of the following linear transformations is injective (one-to-one) and/or surjective (onto).
 \begin{enumerate}[(a)]
-\item $S: \IR^2 \rightarrow \IR^2$ given by the standard matrix $\begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$.
-\item $T: \IR^4 \rightarrow \IR^3$ given by the standard matrix $\begin{bmatrix} 2 & 3 & -1 & -2 \\ 0 & 1 & 4 & 1 \\ 2 & 1 & -7 & -4 \end{bmatrix}$
+\item $S: \IR^2 \rightarrow \IR^4$ given by the standard matrix $\begin{bmatrix} 2 & 1 \\ 1 & 2 \\ 0 & 1 \\ 3 & -3 \end{bmatrix}$.
+\item $T: \IR^4 \rightarrow \IR^3$ given by the standard matrix $\begin{bmatrix} 2 & 3 & -1 & 1 \\ -1 & 1 & 1 & 1 \\ 4 & 7 & -1 & 5 \end{bmatrix}$
 \end{enumerate}
 \end{problem}
 \begin{solution}
 \begin{enumerate}[(a)]
-\item $ \RREF\begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}=\begin{bmatrix}1 & 0 \\ 0 & 1 \end{bmatrix}$.  Since each column is a pivot column, $S$ is injective.  Since there is no zero row, $S$ is surjective.
+\item $ \begin{bmatrix} 2 & 1 \\ 1 & 2 \\ 0 & 1 \\ 3 & -3 \end{bmatrix}=\begin{bmatrix}1 & 0 \\ 0 & 1 \\ 0 & 0 \\ 0 & 0  \end{bmatrix}$.  Since each column is a pivot column, $S$ is injective.  Since there a no zero row, $S$ is not surjective.
 \item Since $\dim \IR^4 > \dim \IR^3$, $T$ is not injective.
-$$\RREF\left(\begin{bmatrix} 2 & 3 & -1 & -2 \\ 0 & 1 & 3 & 1 \\ 2 & 1 & -7 & -4 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0 & 0 & -\frac{5}{2} \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 0\end{bmatrix}$$
-Since there are no zero rows, $T$ is surjective.
+$$\RREF\left(\begin{bmatrix} 2 & 3 & -1 & 1 \\ -1 & 1 & 1 & 1 \\ 4 & 7 & -1 & 5 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0  & 0 & 2 \\ 0 & 1 & 0 & 0  \\ 0 & 0 & 1 & 3 \end{bmatrix}$$
+Since there is not a zero row, $T$ is surjective.
 \end{enumerate}
 \end{solution}
 
 \begin{problem}{A4}
-Let $T: \IR^{2\times 2} \rightarrow \IR^3$ be the linear map given by \(
-  T\left(\begin{bmatrix} a & b \\ x & y \end{bmatrix} \right) =
+Let $T: \IR^3 \rightarrow \IR^3$ be the linear map given by \(
+  T\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix} \right) =
   \begin{bmatrix}
-    a+x \\ 0 \\ b+y
+    8x-3y-z \\
+    y+3z \\
+    -7x+3y+2z
   \end{bmatrix}
 \). Compute a basis for the kernel and a basis for the image of $T$.
 \end{problem}
 \begin{solution}
-Rewrite as \(
-  T'\left(\begin{bmatrix} a \\ b \\ x \\ y \end{bmatrix} \right) =
-  \begin{bmatrix}
-    a+x \\ 0 \\ b+y
-  \end{bmatrix}
-\).
 \[
   \RREF \left( \begin{bmatrix}
-    1 & 0 & 1 & 0 \\
-    0 & 0 & 0 & 0 \\
-    0 & 1 & 0 & 1
+    8 & -3 & -1 \\
+    0 & 1 & 3 \\
+    -7 & 3 & 2
   \end{bmatrix} \right) = \begin{bmatrix}
-    1 & 0 & 1 & 0 \\
-    0 & 0 & 0 & 0 \\
-    0 & 1 & 0 & 1
+    1 & 0 & 1 \\
+    0 & 1 & 3 \\
+    0 & 0 & 0
   \end{bmatrix}
 \]
 
 Thus \(\left\{
-  \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},
-  \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+  \begin{bmatrix} 8 \\ 0 \\ -7 \end{bmatrix},
+  \begin{bmatrix} -3 \\ 1 \\ 3 \end{bmatrix}
 \right\} \) is a basis for the image, and \(\left\{
-  \begin{bmatrix} -1 & 0 \\ 1 & 0 \end{bmatrix},
-  \begin{bmatrix} 0 & -1 \\ 0 & 1 \end{bmatrix}
+  \begin{bmatrix} -1 \\ -3 \\ 1 \end{bmatrix}
 \right\} \) is a basis for the kernel.
 \end{solution}
+
+
 \begin{problem}{M1}
 Let 
 \begin{align*}
-A &= \begin{bmatrix} 0 & 0 & -1 & -1 \\ 1 & 3 & 7 & 2 \end{bmatrix} & B &= \begin{bmatrix} 0 & 1 & 7 & 7 \\ -1 & -2 & 0 & 4 \\ 0 & 0 & 1 & 5 \end{bmatrix} & C&=\begin{bmatrix} 3 & 2 \\ 0 & 1 \\ -2 & -1 \end{bmatrix}
+A &= \begin{bmatrix} 3 \\ 5 \\ -1  \end{bmatrix} & B &= \begin{bmatrix} 2 & -1 \\ 0 & 4 \\ 3 & 1 \end{bmatrix} & C&=\begin{bmatrix} 1 & -1 & 3 & -3 \\ 2 & 1 & -1 & 2 \end{bmatrix}
 \end{align*}
 Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and compute it.
 \end{problem}
 \begin{solution}
-$CA$ is the only one that can be computed, and 
-$$CA = \begin{bmatrix} 2 & 6 & 11 & 1 \\ 1 & 3 & 7 & 2 \\ -1 & -3 & -5 & 0 \end{bmatrix}$$
+$BC$ is the only one that can be computed, and
+$$BC=\begin{bmatrix} 0 & -3 & 7 & -8 \\ 8 & 4 & -4 & 8 \\ 5 & -2 & 8 & -7 \end{bmatrix}$$
 \end{solution}
 
-
-
 \begin{problem}{M2}
-Determine if the matrix $\begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix}$ is invertible.
+Determine if the matrix $\begin{bmatrix} 3 & -1 & 0 & 4 \\ 2 & 1 & 1 & 1 \\ 0 & 1 & 1 & -1 \\ 1 & -2 & 0 & 3 \end{bmatrix}$ is invertible.
 \end{problem}
 \begin{solution}
-$$\RREF \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix} = \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{3}{2} \\ 0 & 0 & 0 \end{bmatrix}$$
-Since it is not equivalent to the identity matrix, it is not invertible.
+$$\RREF \begin{bmatrix} 3 & -1 & 0 & 4 \\ 2 & 1 & 1 & 1 \\ 0 & 1 & 1 & -1 \\ 1 & -2 & 0 & 3 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & -1 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
+This matrix is not row equivalent to the identity matrix, so it is not invertible.
 \end{solution}
 
 
 \begin{problem}{M3}
   Find the inverse of the matrix
   \(\begin{bmatrix}
-    4 & -1 & -8  \\
-    2 & 1 & 3  \\
+    3 & 1 & 3  \\
+    2 & -1 & -6  \\
     1 & 1 & 4
   \end{bmatrix}\).
 \end{problem}
 \begin{solution}
 \(\begin{bmatrix}[ccc|ccc]
-  4 & -1 & -8 & 1 & 0 & 0  \\
-  2 & 1 & 3   & 0 & 1 & 0 \\
-  1 & 1 & 4   & 0 & 0 & 1
+  3 & 1 & 3 & 1 & 0 & 0 \\
+  2 & -1 & -6 & 0 & 1 & 0 \\
+  1 & 1 & 4 & 0 & 0 & 1
 \end{bmatrix}\sim\begin{bmatrix}[ccc|ccc]
-  1 & 0 & 0 & 1 & -4 & 5 \\
-  0 & 1 & 0 & -5 & 24 & -28 \\
-  0 & 0 & 1 & 1 & -5 & 6
+  1 & 0 & 0 & 2 & -1 & -3  \\
+  0 & 1 & 0 & -14 & 9 & 24  \\
+  0 & 0 & 1 & 3 & -2 & -5
 \end{bmatrix}\). Thus the inverse is
 \(\begin{bmatrix}
-  1 & -4 & 5  \\
-  -5 & 24 & -28  \\
-  1 & -5 & 6
+  2 & -1 & -3  \\
+  -14 & 9 & 24  \\
+  3 & -2 & -5
 \end{bmatrix}\).
 \end{solution}
 
 
 \begin{problem}{G1}
-Compute the determinant of the matrix
-\[
-  \begin{bmatrix}
-    0 & -4 & 1 & 1 \\
-    -2 & 3 & -1 & 1 \\
-    0 & 1 & 0 & 1 \\
-    5 & 0 & -4 & 0 \\
-  \end{bmatrix}
-.\]
+Compute the determinant of the matrix $\begin{bmatrix} 8 & 5 & 3 & 0 \\ 3 & 2 & 1 & 1 \\ 5 & -3 & 1 & -2 \\ -1 & 2 & 0 & 1\end{bmatrix} $.
 \end{problem}
 \begin{solution}
-\(-55\).
+$-1$.
 \end{solution}
+
 \begin{problem}{G2}
 Let $A= \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix}$.
 List the eigenvalues of $A$ along with their algebraic multiplicities.
@@ -369,14 +363,14 @@ So $A$ has eigenvalues $0$ (with multiplicity 1) and $1$ (with algebraic multipl
 
 
 \begin{problem}{G3}
-Compute the eigenspace associated to the eigenvalue $2$ in the matrix $\begin{bmatrix} -1 & 1 & 0 \\ -9 & 5 & 0 \\ 15 & -5 & 2 \end{bmatrix}$.
+Compute the eigenspace of the eigenvalue $-1$ in the matrix $\begin{bmatrix} 4 & -2 & -1 \\ 15 & -7 & -3 \\ -5 & 2 & 0 \end{bmatrix}$. 
 \end{problem}
-
 \begin{solution}
-The eigenspace is the solution space of the system $(B-2I)X=0$.
-$$\RREF(B-2I)=\RREF\left(\begin{bmatrix} -3 & 1 & 0 \\ -9 & 3 & 0 \\ 15 & - 5 & 0 \end{bmatrix} \right) = \begin{bmatrix} 1 & -\frac{1}{3} & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
-So the system simplifies to $x-\frac{y}{3}=0$, or $3x=y$.  Thus the eigenspace is $$E_2 = {\rm span}\left( \left\{ \begin{bmatrix} 1 \\ 3 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1\end{bmatrix} \right\} \right)$$
+$$\RREF\left(A+I\right) = \begin{bmatrix} 1 & - \frac{2}{5} & -\frac{1}{5} \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
+So the eigenspace is spanned by $\begin{bmatrix} 2 \\5 \\  0 \end{bmatrix}$ and $\begin{bmatrix} 1 \\ 0 \\ 5 \end{bmatrix}$.
 \end{solution}
+
+
 \begin{problem}{G4}
 Compute the geometric multiplicity of the eigenvalue $-1$ in the matrix $\begin{bmatrix} 4 & -2 & -1 \\ 15 & -7 & -3 \\ -5 & 2 & 0 \end{bmatrix}$.  \end{problem}
 \begin{solution}
