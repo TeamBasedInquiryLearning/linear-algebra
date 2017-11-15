@@ -63,51 +63,21 @@ determinants; since \(\det(A)=\det(A^T)\), we can also use row operations:
 \end{fact}
 
 \begin{activity}{10}
-  Complete the following determinant computation:
-    \begin{align*}
-    \det\begin{bmatrix} 4 & 5 \\ 2 & 3 \end{bmatrix}
-  &=
-    \unknown
-    \det\begin{bmatrix} 2 & 3 \\ 4 & 5 \end{bmatrix}
-  \\ &=
-    \unknown
-    \det\begin{bmatrix} 1 & 3/2 \\ 4 & 5 \end{bmatrix}
-  \\ &=
-    \unknown
-    \det\begin{bmatrix} 1 & 3/2 \\ 0 & -1 \end{bmatrix}
-  \\ &=
-    \unknown
-    \det\begin{bmatrix} 1 & 3/2 \\ 0 & 1 \end{bmatrix}
-  \\ &=
-    \unknown
-    \det\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
-  \\ &=
-    \unknown
-    \end{align*}
+  Compute the determinant of $\begin{bmatrix} 2 & 4 \\ 2 & 3 \end{bmatrix}$ by row reducing it to a nicer matrix. \\
+
+\ \\
+
+  For example, $\det \begin{bmatrix} 2 & 4 \\ 2 & 3 \end{bmatrix} = 2 \det \begin{bmatrix} 1 & 2 \\ 2 & 3 \end{bmatrix}$.
+
 \end{activity}
 
 \begin{fact}
   This same process allows us to prove a more convenient formula:
     \begin{align*}
-    \det\begin{bmatrix} a & b \\ c & d \end{bmatrix}
-  &=
-    a
-    \det\begin{bmatrix} 1 & b/a \\ c & d \end{bmatrix}
-  \\ &=
-    a
-    \det\begin{bmatrix} 1 & b/a \\ 0 & d-bc/a \end{bmatrix}
-  \\ &=
-    a(d-bc/a)
-    \det\begin{bmatrix} 1 & b/a \\ 0 & 1 \end{bmatrix}
-  \\ &=
-    (ad-bc)
-    \det\begin{bmatrix} 1 & b/a \\ 0 & 1 \end{bmatrix}
-  \\ &=
-    (ad-bc)
-    \det\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
-  \\ &=
-    ad-bc
+    \det\begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad-bc
     \end{align*}
+
+In higher dimensions, the formulas become unreasonable.  For example, the formula for $4\times4$ matrices has 24 terms!
 \end{fact}
 
 
@@ -182,6 +152,8 @@ Therefore the same holds for the transpose:
     5 & 11 & 1
   \end{bmatrix}
 \]
+
+Geometrically, this is the fact that if the height is 1, the base $\times$ height formula reduces to the area/volume/etc. of the $n-1$ dimensional base.
 \end{fact}
 
 % \begin{activity}{5}
@@ -292,113 +264,81 @@ Therefore the same holds for the transpose:
 
 
 \begin{activity}{5}
-  Complete the following computation of
-  $\det \begin{bmatrix} 0 & 3 & -2 \\ 1 & 5 & 12 \\ 0 & 2 & -1 \end{bmatrix}$:
+  Compute  $\det \begin{bmatrix} 1 & 0 & 0 \\ 1 & 5 & 12 \\ 3 & 2 & -1 \end{bmatrix}$.
+\end{activity}
 
-  \begin{align*}
-    \det \begin{bmatrix} 0 & 3 & -2 \\ 1 & 5 & 12 \\ 0 & 2 & -1 \end{bmatrix}
-  &=
-    \unknown
-    \det \begin{bmatrix} 1 & 5 & 12 \\ 0 & 3 & -2 \\ 0 & 2 & -1 \end{bmatrix}
-  \\ &=
-    \unknown
-    \det \begin{bmatrix} \unknown & \unknown \\ \unknown & \unknown \end{bmatrix}
-  \\ &=
-    \unknown
-  \end{align*}
+\begin{activity}{5}
+  Compute   $\det \begin{bmatrix} 0 & 3 & -2 \\ 1 & 5 & 12 \\ 0 & 2 & -1 \end{bmatrix}$.
+  \ \\
+  \begin{multicols}{3}
+  \begin{enumerate}[(a)]
+  \item $-1$
+  \item $0$
+  \item $1$
+  \end{enumerate}
+  \end{multicols}
 \end{activity}
 
 \begin{activity}{10}
-  Complete the following computation of
-  $\det \begin{bmatrix} 2 & 2 & 3 \\ 1 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}$:
+  Compute $\det \begin{bmatrix} 1 & 2 & 3 \\ 1 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}$
 
-  \begin{align*}
-    \det \begin{bmatrix} 2 & 2 & 3 \\ 1 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}
-  &=
-    \unknown\det \begin{bmatrix} 1 & 2 & 3 \\ 0 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}+
-    \unknown\det \begin{bmatrix} 0 & 2 & 3 \\ 1 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}
-  \\ &=
-    \unknown
-    \det \begin{bmatrix} \unknown & \unknown \\ \unknown & \unknown \end{bmatrix}+
-    \unknown
-    \det \begin{bmatrix} \unknown & \unknown \\ \unknown & \unknown \end{bmatrix}
-  \\ &=
-    \unknown
-  \end{align*}
-\end{activity}
+\ \\
+
+  {\em Hint:} $\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}$.
+
+  \begin{multicols}{4}
+  \begin{enumerate}[(a)]
+  \item $3$
+  \item $6$
+  \item $9$
+  \item $12$
+  \end{enumerate}
+  \end{multicols}
+  \end{activity}
 
 \begin{activity}{15}
-  Complete the following computation of
-  $\det \begin{bmatrix} 2 & 3 & 5 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 2 & 0 & 3 \\ -1 & -1 & 2 & 2 \end{bmatrix}$:
+  Compute  $\det \begin{bmatrix} 2 & 3 & 5 & 0 \\ 0 & 3 & 2 & 0 \\ 1 & 2 & 0 & 3 \\ -1 & -1 & 2 & 2 \end{bmatrix}$.
 
-  \begin{align*}
-    \det \begin{bmatrix} 2 & 3 & 5 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 2 & 0 & 3 \\ -1 & -1 & 2 & 2 \end{bmatrix}
-  &=
-    \det \begin{bmatrix} 2 & 3 & \unknown & 0 \\ 0 & 1 & 0 & 0 \\ 1 & 2 & \unknown & 3 \\ -1 & -1 & \unknown & 2 \end{bmatrix}
-  \\ &=
-    \det \begin{bmatrix} \unknown & \unknown & \unknown \\\unknown & \unknown & \unknown \\\unknown & \unknown & \unknown  \end{bmatrix}
-  \\ &=
-    \dots
-  \end{align*}
 \end{activity}
 
 \begin{observation}
-  To reduce the dimension of an arbitrary determinant, one may always use
-  linearity to split up a chosen row/column, as seen for the top row in
-  this example:
+\newcommand{\tikzmark}[2]{\tikz[overlay,remember picture,baseline] \node [anchor=base] (#1) {$#2$};}
+
+\newcommand{\DrawVLine}[3][]{%
+  \begin{tikzpicture}[overlay,remember picture]
+    \draw[#1] (#2.north) -- (#3.south);
+  \end{tikzpicture}
+}
+\newcommand{\DrawHLine}[3][]{%
+  \begin{tikzpicture}[overlay,remember picture]
+    \draw[#1] (#2.west) -- (#3.east);
+  \end{tikzpicture}
+}
 
   \begin{align*}
-    \det \begin{bmatrix} 2 & 3 & 5  \\ 0 & 1 & -1  \\ 1 & 2 & 0  \end{bmatrix}
-  &=
-    2\det \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & -1 \\ 1 & 2 & 0 \end{bmatrix}
-    +3\det \begin{bmatrix} 0 & 1 & 0 \\ 0 & 1 & -1 \\ 1 & 2 & 0 \end{bmatrix}
-    +5\det \begin{bmatrix} 0 & 0 & 1 \\ 0 & 1 & -1 \\ 1 & 2 & 0 \end{bmatrix}
-  \\ &=
-    2\det \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & -1 \\ 1 & 2 & 0 \end{bmatrix}
-    -3\det \begin{bmatrix} 1 & 0 & 0 \\ 1 & 0 & -1 \\ 2 & 1 & 0 \end{bmatrix}
-    -5\det \begin{bmatrix} 1 & 0 & 0 \\ -1 & 1 & 0 \\ 0 & 2 & 1 \end{bmatrix}
-  \\ &=
-    2\det \begin{bmatrix}  1 & -1 \\  2 & 0 \end{bmatrix}
-    -3\det \begin{bmatrix}  0 & -1 \\ 1 & 0 \end{bmatrix}
-    -5\det \begin{bmatrix}  1 & 0 \\ 2 & 1 \end{bmatrix}
-  \\ &=
-    2(2)-3(1)-5(1) = -4
-  \end{align*}
+\det \begin{bmatrix} 2 & 3 & 5 & 0 \\ 0 & 3 & 2 & 0 \\ 1 & 2 & 0 & 3 \\ -1 & -1 & 2 & 2 \end{bmatrix} &= 
+(-1) (0) \det \begin{bmatrix} \tikzmark{topA}{2} & 3 & 5 & 0 \\ \tikzmark{leftA}{0} & 3 & 2 & \tikzmark{rightA}{0} \\ 1 & 2 & 0 & 3 \\ \tikzmark{bottomA}{-1} & -1 & 2 & 2 \end{bmatrix}
++(1)(3) \det \begin{bmatrix} 2 & \tikzmark{topB}{3} & 5 & 0 \\ \tikzmark{leftB}{0} & 3 & 2 & \tikzmark{rightB}{0} \\ 1 & 2 & 0 & 3 \\ -1 & \tikzmark{bottomB}{-1} & 2 & 2 \end{bmatrix} +  \\
+&\phantom{xx} (-1)(2) \det \begin{bmatrix} 2 & 3 & \tikzmark{topC}{5} & 0 \\ \tikzmark{leftC}{0} & 3 & 2 & \tikzmark{rightC}{0} \\ 1 & 2 & 0 & 3 \\ -1 & -1 & \tikzmark{bottomC}{2} & 2 \end{bmatrix} 
++ (1)(0) \det \begin{bmatrix} 2 & 3 & 5 & \tikzmark{topD}{0} \\ \tikzmark{leftD}{0} & 3 & 2 & \tikzmark{rightD}{0} \\ 1 & 2 & 0 & 3 \\ -1 & -1 & 2 & \tikzmark{bottomD}{2} \end{bmatrix}  \\
+&= 3 \det \begin{bmatrix}2 & 5 & 0 \\ 1 & 0 & 3 \\ -1 & 2 & 2 \end{bmatrix} +(-1)(2) \det \begin{bmatrix} 2 & 3 & 0 \\ 1 & 2 & 3 \\ -1 & -1 & 2 \end{bmatrix}
+\end{align*}
+\DrawHLine[red,thick]{leftA}{rightA}
+\DrawVLine[red,thick]{topA}{bottomA}
+\DrawHLine[red,thick]{leftB}{rightB}
+\DrawVLine[red,thick]{topB}{bottomB}
+\DrawHLine[red,thick]{leftC}{rightC}
+\DrawVLine[red,thick]{topC}{bottomC}
+\DrawHLine[red,thick]{leftD}{rightD}
+\DrawVLine[red,thick]{topD}{bottomD}
+
+This technique is called \term{Laplace expansion} or \term{cofactor expansion}.
   \end{observation}
 
-  \begin{observation}
-  Note that choosing rows/columns containing zeros can save some writing:
+\begin{activity}{10}
+  Compute  $\det \begin{bmatrix} 1 & 2 & 1 & 0 \\ 0 & 3 & 2 & -1 \\ 1 & 2 & 0 & 3 \\ -1 & -3 & 2 & -2 \end{bmatrix}$.
 
-  \begin{align*}
-    \det \begin{bmatrix} 2 & 3 & 5  \\ 0 & 1 & -1  \\ 1 & 2 & 0  \end{bmatrix}
-  &=
-    2\det \begin{bmatrix} 1 & 3 & 5 \\ 0 & 1 & -1 \\ 0 & 2 & 0 \end{bmatrix}
-    +\det \begin{bmatrix} 0 & 3 & 5  \\ 0 & 1 & -1  \\ 1 & 2 & 0  \end{bmatrix}
-  \\ &=
-    2\det \begin{bmatrix} 1 & 3 & 5 \\ 0 & 1 & -1 \\ 0 & 2 & 0 \end{bmatrix}
-    -\det \begin{bmatrix} 1 & 2 & 0  \\ 0 & 1 & -1  \\  0 & 3 & 5 \end{bmatrix}
-  \\ &=
-    2\det \begin{bmatrix}  1 & -1 \\  2 & 0 \end{bmatrix}
-    -\det \begin{bmatrix}  1 & -1 \\ 3 & 5 \end{bmatrix}
-  \\ &=
-    2(2)-(8)=-4
-  \end{align*}
-\end{observation}
+\end{activity}
 
-\begin{observation}
-And using row/column operations can save even more work:
-
-\begin{align*}
-  \det \begin{bmatrix} 2 & 3 & 5  \\ 0 & 1 & -1  \\ 1 & 2 & 0  \end{bmatrix}
-&=
-  -\det \begin{bmatrix} 1 & 2 & 0  \\ 0 & 1 & -1  \\ 2 & 3 & 5  \end{bmatrix}
-\\ &=
-  -\det \begin{bmatrix} 1 & 2 & 0  \\ 0 & 1 & -1  \\ 0 & -1 & 5  \end{bmatrix}
-\\ &=
-  -\det \begin{bmatrix} 1 & -1  \\ -1 & 5  \end{bmatrix}
-\\ &=
-  -(5-1)=-4
-\end{align*}
-\end{observation}
 
 \end{applicationActivities}
