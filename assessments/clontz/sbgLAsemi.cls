@@ -137,14 +137,25 @@
 	%\vfill
 }
 
+\RequirePackage{tikz}
 
 \AtBeginDocument{%
-\begin{flushright}
-Name: \underline{\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}\\
+\begin{center}
+\begin{tikzpicture}[x=1in,y=1in]
+  \draw[color=black!20] (0,0) rectangle (4.5,1);
+  \draw[color=black!20] (0,0.67) -- (4.5,0.66);
+  \draw[color=black!20] (0,0.33) -- (4.5,0.33);
+
+  \node[anchor=west] at (0.1,0.83) {Name:};
+  \node[anchor=west] at (0.1,0.5) {J\#:};
+  \node[anchor=west] at (0.1,0.17) {Date:};
+
+  \node[anchor=west] at (4.7,0.5) {Dr. Clontz};
+\end{tikzpicture}
 \ \\
 %\@coursetitle\ -- \@courselabel \\
 %\@semester
-\end{flushright}
+\end{center}
 {
 	{\bf \@Title} \hfill \@coursetitle\ -- \@courselabel \\
 	{\bf\ifthenelse{\equal{\@version}{}}{\phantom{xx}}{Version \@version}} \hfill \@semester \\
