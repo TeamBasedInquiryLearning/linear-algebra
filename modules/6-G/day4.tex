@@ -25,8 +25,8 @@ Let  $A=\begin{bmatrix}0 & -1 \\ 1 & 0 \end{bmatrix}$.
     Compute the eigenvalues of $A$.
   \end{subactivity}
   \begin{subactivity}
-     Sketch a picture of the transformation of the unit square.
-     What about this picture reveals that \(A\) has no eigenvectors?
+     Sketch a picture of the transformation of the unit square. 
+     What about this picture reveals that \(A\) has no real eigenvectors?
    \end{subactivity}
 \end{activity}
 
@@ -42,10 +42,13 @@ Let  $A=\begin{bmatrix}0 & -1 \\ 1 & 0 \end{bmatrix}$.
 \end{activity}
 
 \begin{observation}
-  An \(n\times n\) matrix may have anywhere between \(0\) and \(n\)
-  real-valued eigenvalues. But if complex eigenvalues are included,
-  then every \(n\times n\) matrix has \(n\) eigenvalues (counting
+  An \(n\times n\) matrix may have  between \(0\) and \(n\)
+  real-valued eigenvalues. But the Fundamental Theorem of Algebra implies that if complex eigenvalues are included,
+  then every \(n\times n\) matrix has exactly \(n\) eigenvalues (counting
   algebraic multiplicites).
+
+
+
 \end{observation}
 
 \begin{activity}{5}
@@ -75,11 +78,15 @@ Let  $A=\begin{bmatrix}0 & -1 \\ 1 & 0 \end{bmatrix}$.
 \begin{activity}{5}
   The matrix
   $B=\begin{bmatrix} -3 & -9 & 5 \\ -2 & -2 & 2 \\ -7 & -13 & 9 \end{bmatrix}$
-  has characteristc polynomial \(-\lambda(\lambda-2)^2\).
+  has characteristic polynomial \(-\lambda(\lambda-2)^2\).
 
   Find the dimension of the eigenspace of $B$ associated to the
   eigenvalue $2$ (the dimension of the kernel of \(B-2I\)).
 \end{activity}
+
+\begin{observation}
+In the first example, the (2 dimensional) plane spanned by $\begin{bmatrix} 1 \\ 0 \\ 1\end{bmatrix}$ and $\begin{bmatrix} 4 \\ -2 \\ 0 \end{bmatrix}$ was preserved.  In the second example, only the (one dimensional) line spanned by $\begin{bmatrix} 1 \\ 0 \\ 1\end{bmatrix}$ is preserved. 
+\end{observation}
 
 \begin{definition}
 While the \term{algebraic multiplicity} of an eigenvalue is its multiplicity as
@@ -90,8 +97,10 @@ eigenspace.
 
 \begin{fact}
   As we've seen, the geometric multiplicity may be different than
-  its algebraic multiplicity, but it cannot exceed it.
-\end{fact}
+  its algebraic multiplicity, but it cannot exceed it.  
+  \ \\
+  This fact is explored deeper and explained in Math 316, Linear Algebra II  
+  \end{fact}
 
 % \begin{activity}{5} How are the algebraic and geometric multiplicities related?
 % \begin{enumerate}[(a)]
