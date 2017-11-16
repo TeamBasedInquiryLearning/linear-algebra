@@ -5,9 +5,10 @@
 
 \begin{activity}{10}
 
-{\bf A \$700,000,000,000 problem: }
+\textbf{A \$700,000,000,000 Problem:}
 
-In the picture below, each circle represents a webpage, and an arrow is a link to a different webpage.
+In the picture below, each circle represents a webpage, and each arrow
+represents a link from one page to another.
 
 \begin{center}
 \begin{tikzpicture}
@@ -39,19 +40,33 @@ In the picture below, each circle represents a webpage, and an arrow is a link t
 \end{tikzpicture}
 \end{center}
 
-Rank the 7 webpages from most imporant to least important.
+Based on how these pages link to each other,
+write a list of the 7 webpages in order from
+most imporant to least important.
 \end{activity}
 
 \begin{observation}
-{\bf The \$700,000,000,000 idea:} 
-\begin{itemize} 
-\item A webpage is important if important webpages link to it.
-\item A webpage should divide its importance equally among the pages that link to it.
-\end{itemize}
+\textbf{Two \$700,000,000,000 Ideas:}
+
+\begin{enumerate}
+\item
+If a webpage is important, there should be other important webpages that
+link to it.
+
+\item
+If a webpage links out to fewer pages, then its links are more valuable.
+\end{enumerate}
 \end{observation}
 
-\begin{observation}
-A simple example:
+\begin{example}
+Consider this small network with only three pages.
+
+\begin{multicols}{2}
+% \begin{align*}
+% x_1 &\Leftarrow x_2 \\
+% x_2 &\Leftarrow \frac{1}{2}x_1+ x_3 \\
+% x_3 &\Leftarrow \frac{1}{2} x_1
+% \end{align*}
 \begin{center}
 \begin{tikzpicture}
 \begin{scope}[every node/.style={circle,thick,draw}]
@@ -69,29 +84,102 @@ A simple example:
 \end{tikzpicture}
 \end{center}
 
-\begin{multicols}{2}
-\begin{align*}
-x_1 &\Leftarrow x_2 \\
-x_2 &\Leftarrow \frac{1}{2}x_1+ x_3 \\
-x_3 &\Leftarrow \frac{1}{2} x_1
-\end{align*}
+Each column of the following \term{transition matrix}
+describes the percentage of links out from the corresponding page
+into the pages corresponding to each row.
 
-Transition matrix:
-$$A=\begin{bmatrix} 0 & 1 & 0 \\ \frac{1}{2} & 0 & 1 \\ \frac{1}{2} & 0 & 0 \end{bmatrix}$$
+\[
+  A
+    =
+  \begin{bmatrix}
+    0\% & 100\% & 0\% \\
+    50\% & 0\% & 100\% \\
+    50\% & 0\% & 0\%
+  \end{bmatrix}
+    =
+  \begin{bmatrix}
+    0 & 1 & 0 \\
+    \frac{1}{2} & 0 & 1 \\
+    \frac{1}{2} & 0 & 0
+  \end{bmatrix}
+\]
 \end{multicols}
-\end{observation}
+\end{example}
+
+\begin{activity}{5}
+  Suppose \(x_i\) measures the importance of webpage \(i\), and
+  \(\vec{x}=\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}\).
+  Then we may compute the product \(A\vec x\) as follows:
+
+  \begin{multicols}{2}
+  \begin{center}
+  \begin{tikzpicture}[scale=0.5]
+  \begin{scope}[every node/.style={circle,thick,draw}]
+      \node (1) at (0,4) {1};
+      \node (2) at (0,0) {2};
+      \node (3) at (4,0) {3};
+  \end{scope}
+
+  \begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+      \draw [->] (1) edge[bend right=30] (2);
+      \draw [->] (1) edge (3);
+  	\path [->] (2) edge[bend right=30] (1);
+      \draw [->] (3) edge (2);
+  \end{scope}
+  \end{tikzpicture}
+  \end{center}
+
+  \[
+    A\vec{x}
+      =
+    \begin{bmatrix}
+      0 & 1 & 0 \\
+      \frac{1}{2} & 0 & 1 \\
+      \frac{1}{2} & 0 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1 \\ x_2 \\ x_3
+    \end{bmatrix}
+      =
+    \begin{bmatrix}
+      x_2 \\
+      \frac{x_1}{2}+x_3 \\
+      \frac{x_1}{2}
+    \end{bmatrix}
+  \]
+  \end{multicols}
+
+Since each row represents the total value of incoming links to a webpage,
+the resulting vector \(A\vec{x}\) should describe
+the importance of each webpage, which was defined as \(\vec{x}\).
+
+Since \(A\vec{x}\) and \(\vec{x}\) should be the same vector,
+\(\vec{x}\) must be...
+
+\begin{enumerate}[a)]
+  \item The downward diagonal of \(A\)
+  \item The upward diagonal of \(A\)
+  \item An eigenvector of \(A\) corresponding to \(\lambda=1\)
+\end{enumerate}
+\end{activity}
 
 \begin{fact}
-This is called a \term{Markov chain model}.  We can think about iteratively moving importance from webpages to each other by repeatedly multiplying by $A$.
+% This is called a \term{Markov chain model}.  We can think about iteratively moving importance from webpages to each other by repeatedly multiplying by $A$.
+The \term{steady state vector} for a matrix \(A\) is an eigenvector
+satisfying \(A\vec{x}=\vec{x}\).
 
-The {\bf steady state vector} will be a vector satisfying $A\vec{x}=\vec{x}$.
+As we've just demonstrated, a steady state vector for the transition matrix
+describes the importance of each webpage in the network.
 
 Thus, the \$700,000,000,000 problem is an eigenvector problem!
 \end{fact}
 
 \begin{activity}{10}
-Find an eigenvector associated to the eigenvalue $1$ for our small example
+Find a steady state vector (an eigenvector associated to the eigenvalue $1$)
+for the following network's transition matrix \(A\).
+
 \begin{multicols}{2}
+\begin{center}
 \begin{tikzpicture}[scale=0.75]
 \begin{scope}[every node/.style={circle,thick,draw}]
     \node (1) at (0,4) {1};
@@ -102,18 +190,46 @@ Find an eigenvector associated to the eigenvalue $1$ for our small example
 \begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
     \draw [->] (1) edge[bend right=30] (2);
     \draw [->] (1) edge (3);
-	\path [->] (2) edge[bend right=30] (1);
+  \path [->] (2) edge[bend right=30] (1);
     \draw [->] (3) edge (2);
 \end{scope}
 \end{tikzpicture}
+\end{center}
 
-$$A=\begin{bmatrix} 0 & 1 & 0 \\ \frac{1}{2} & 0 & 1 \\ \frac{1}{2} & 0 & 0 \end{bmatrix}$$
+\[
+  A
+    =
+  \begin{bmatrix}
+    0 & 1 & 0 \\
+    \frac{1}{2} & 0 & 1 \\
+    \frac{1}{2} & 0 & 0
+  \end{bmatrix}
+\]
 \end{multicols}
 \end{activity}
 
-\begin{fact}
-The eigenvector $\begin{bmatrix} 2 \\ 2 \\1 \end{bmatrix}$ tells us webpages $1$ and $2$ are equally important, and both twice as important as webpage 3.
+\begin{observation}
+Row-reducing
+\(
+  A-I
+    =
+  \begin{bmatrix}
+    -1 & 1 & 0 \\
+    \frac{1}{2} & -1 & 1 \\
+    \frac{1}{2} & 0 & -1
+  \end{bmatrix}
+    \sim
+  \begin{bmatrix}
+    1 & 0 & -2 \\
+    0 & 1 & -2 \\
+    0 & 0 & 0
+  \end{bmatrix}
+\)
+yields the basic eigenvector \(\begin{bmatrix} 2 \\ 2 \\1 \end{bmatrix}\).
 
+Therefore, we may conclude that pages \(1\) and \(2\) are equally important,
+and both pages are twice as important as page \(3\).
+\begin{center}
 \begin{tikzpicture}[scale=0.75]
 \begin{scope}[every node/.style={circle,thick,draw}]
     \node (1) at (0,4) {1};
@@ -124,17 +240,19 @@ The eigenvector $\begin{bmatrix} 2 \\ 2 \\1 \end{bmatrix}$ tells us webpages $1$
 \begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
     \draw [->] (1) edge[bend right=30] (2);
     \draw [->] (1) edge (3);
-	\path [->] (2) edge[bend right=30] (1);
+  \path [->] (2) edge[bend right=30] (1);
     \draw [->] (3) edge (2);
 \end{scope}
 \end{tikzpicture}
-\end{fact}
+\end{center}
+\end{observation}
 
 
 \begin{activity}{10}
-Write the $7 \times 7$ transition matrix for the website graph below.
+Complete the $7 \times 7$ transition matrix for the following network.
+\begin{multicols}{2}
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.6]
 \begin{scope}[every node/.style={circle,thick,draw}]
     \node (1) at (0,4) {1};
     \node (2) at (0,0) {2};
@@ -162,57 +280,81 @@ Write the $7 \times 7$ transition matrix for the website graph below.
 \end{scope}
 \end{tikzpicture}
 \end{center}
+
+\[
+  A
+    =
+  \begin{bmatrix}
+    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+    \frac{1}{2} & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+    \frac{1}{2} & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown
+  \end{bmatrix}
+\]
+\end{multicols}
 \end{activity}
 
 \begin{activity}{10}
-Find the \term{page rank vector}, i.e. an eigenvector associated to $1$ for the transition matrix
+Find a steady state vector for the transition matrix.
 
 \begin{multicols}{2}
-$$A=\begin{bmatrix} 
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (3,0) {3};
+    \node (4) at (3,4) {4};
+    \node (5) at (6,4) {5};
+    \node (6) at (10,4) {6} ;
+    \node (7) at (6,0) {7} ;
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (4);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (2) edge (3);
+    \draw [->] (3) edge (4);
+    \draw [->] (3) edge (7);
+    \draw [->] (4) edge (2);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (5) edge (7);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (7);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\[
+A=\begin{bmatrix}
 0 & \frac{1}{2} & 0 & 0 & 0 & 0 & 0 \\
 \frac{1}{2} & 0 & 0 & 1 & 0 & 0 & \frac{1}{2} \\
 0 & \frac{1}{2} & 0 & 0 & 0 & 0 & 0 \\
 \frac{1}{2} & 0 & \frac{1}{2} & 0 & 0 & 0 & \frac{1}{2} \\
 0 & 0 & 0 & 0 & 0 & \frac{1}{2} & 0 \\
 0 & 0 & 0 & 0 & \frac{1}{2} & 0 & 0 \\
-0 & 0 & \frac{1}{2} & 0 & \frac{1}{2} & \frac{1}{2} & 0 
-\end{bmatrix}$$
-
-\begin{tikzpicture}[scale=0.5]
-\begin{scope}[every node/.style={circle,thick,draw}]
-    \node (1) at (0,4) {1};
-    \node (2) at (0,0) {2};
-    \node (3) at (3,0) {3};
-    \node (4) at (3,4) {4};
-    \node (5) at (6,4) {5};
-    \node (6) at (10,4) {6} ;
-    \node (7) at (6,0) {7} ;
-\end{scope}
-
-\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
-    \draw [->] (1) edge[bend right=30] (2);
-    \draw [->] (1) edge (4);
-	\path [->] (2) edge[bend right=30] (1);
-    \draw [->] (2) edge (3);
-    \draw [->] (3) edge (4);
-    \draw [->] (3) edge (7);
-    \draw [->] (4) edge (2);
-    \draw [->] (5) edge[bend right=30] (6);
-    \draw [->] (5) edge (7);
-    \draw [->] (6) edge[bend right=30] (5);
-    \draw [->] (6) edge (7);
-    \draw [->] (7) edge (4);
-    \draw [->] (7) edge[bend left=30] (2);
-\end{scope}
-\end{tikzpicture}
+0 & 0 & \frac{1}{2} & 0 & \frac{1}{2} & \frac{1}{2} & 0
+\end{bmatrix}
+\]
 \end{multicols}
 
 Which webpage is most important?
 \end{activity}
 
 \begin{observation}
+Since a steady state vector for the network is given by \(\vec x\),
+it's reasonable to consider page \(2\) as the most important page.
+
+\parbox{\textwidth}{
 \begin{multicols}{2}
-\begin{tikzpicture}[scale=0.5]
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
 \begin{scope}[every node/.style={circle,thick,draw}]
     \node (1) at (0,4) {1};
     \node (2) at (0,0) {2};
@@ -239,10 +381,13 @@ Which webpage is most important?
     \draw [->] (7) edge[bend left=30] (2);
 \end{scope}
 \end{tikzpicture}
-
-The page rank vector is $$\begin{bmatrix} 2 \\ 4 \\2 \\ 2.5 \\ 0 \\ 0 \\ 1\end{bmatrix}$$
-\end{multicols}
-
+\end{center}
+\[
+  \vec{x}
+    =
+  \begin{bmatrix} 2 \\ 4 \\2 \\ 2.5 \\ 0 \\ 0 \\ 1\end{bmatrix}
+\]
+\end{multicols}}
 \end{observation}
 
 \end{applicationActivities}
