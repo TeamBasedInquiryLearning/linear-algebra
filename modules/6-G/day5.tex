@@ -46,27 +46,24 @@ most imporant to least important.
 \end{activity}
 
 \begin{observation}
-\textbf{Two \$700,000,000,000 Ideas:}
+\textbf{The \$700,000,000,000 Idea:} \\
+Links are endorsements.
 
 \begin{enumerate}
 \item
-If a webpage is important, there should be other important webpages that
-link to it.
+%If a webpage is important, there should be other important webpages that link to it.
+A webpage is important if it is linked to (endorsed) by important pages.
 
-\item
-If a webpage links out to fewer pages, then its links are more valuable.
+\item 
+%If a webpage links out to fewer pages, then its links are more valuable.
+A webpage distributes its importance equally among all the pages it links to (endorses).
 \end{enumerate}
 \end{observation}
 
 \begin{example}
-Consider this small network with only three pages.
+Consider this small network with only three pages.  Let $x_1, x_2, x_3$ be the importance of the three pages respectively.
 
 \begin{multicols}{2}
-% \begin{align*}
-% x_1 &\Leftarrow x_2 \\
-% x_2 &\Leftarrow \frac{1}{2}x_1+ x_3 \\
-% x_3 &\Leftarrow \frac{1}{2} x_1
-% \end{align*}
 \begin{center}
 \begin{tikzpicture}
 \begin{scope}[every node/.style={circle,thick,draw}]
@@ -79,38 +76,33 @@ Consider this small network with only three pages.
     \draw [->] (1) edge[bend right=30] (2);
     \draw [->] (1) edge (3);
 	\path [->] (2) edge[bend right=30] (1);
-    \draw [->] (3) edge (2);
+   \draw [->] (3) edge (2);
 \end{scope}
 \end{tikzpicture}
 \end{center}
 
-Each column of the following \term{transition matrix}
-describes the percentage of links out from the corresponding page
-into the pages corresponding to each row.
+\begin{enumerate}
+\item $x_1$ splits its endorsement in half between $x_2$ and $x_3$
+\item $x_2$ sends all of its endorsement to $x_1$
+\item $x_3$ sends all of its endorsement to $x_2$.
+\end{enumerate}
 
-\[
-  A
-    =
-  \begin{bmatrix}
-    0\% & 100\% & 0\% \\
-    50\% & 0\% & 100\% \\
-    50\% & 0\% & 0\%
-  \end{bmatrix}
-    =
-  \begin{bmatrix}
-    0 & 1 & 0 \\
-    \frac{1}{2} & 0 & 1 \\
-    \frac{1}{2} & 0 & 0
-  \end{bmatrix}
-\]
+This corresponds to the \term{page rank system}
+\scalebox{0.8}{\parbox{.5\linewidth}{
+\begin{align*}
+x_1 &= x_2 \\
+x_2 &= \frac{1}{2} x_1+x_3 \\
+x_3 &= \frac{1}{2} x_1
+\end{align*}
+}}
 \end{multicols}
 \end{example}
 
-\begin{activity}{5}
-  Suppose \(x_i\) measures the importance of webpage \(i\), and
-  \(\vec{x}=\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}\).
-  Then we may compute the product \(A\vec x\) as follows:
 
+
+
+
+\begin{example}
   \begin{multicols}{2}
   \begin{center}
   \begin{tikzpicture}[scale=0.5]
@@ -128,55 +120,57 @@ into the pages corresponding to each row.
   \end{scope}
   \end{tikzpicture}
   \end{center}
+\scalebox{0.8}{\parbox{.5\linewidth}{
+\begin{align*}
+x_1 &= x_2 \\
+x_2 &= \frac{1}{2} x_1+x_3 \\
+x_3 &= \frac{1}{2} x_1
+\end{align*}
+}}
 
-  \[
-    A\vec{x}
-      =
-    \begin{bmatrix}
-      0 & 1 & 0 \\
-      \frac{1}{2} & 0 & 1 \\
-      \frac{1}{2} & 0 & 0
-    \end{bmatrix}
-    \begin{bmatrix}
-      x_1 \\ x_2 \\ x_3
-    \end{bmatrix}
-      =
-    \begin{bmatrix}
-      x_2 \\
-      \frac{x_1}{2}+x_3 \\
-      \frac{x_1}{2}
-    \end{bmatrix}
-  \]
-  \end{multicols}
+\end{multicols}
+  
 
-Since each row represents the total value of incoming links to a webpage,
-the resulting vector \(A\vec{x}\) should describe
-the importance of each webpage, which was defined as \(\vec{x}\).
 
-Since \(A\vec{x}\) and \(\vec{x}\) should be the same vector,
-\(\vec{x}\) must be...
+We can summarize the left hand side of the system in the vector $\vect{x}=\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$ and the right hand side in following \term{page rank matrix}.
+% , in which the columns describes the percentage of links out from the corresponding page into the pages corresponding to each row.
 
-\begin{enumerate}[a)]
-  \item The downward diagonal of \(A\)
-  \item The upward diagonal of \(A\)
-  \item An eigenvector of \(A\) corresponding to \(\lambda=1\)
+\[
+  A
+    =
+  \begin{bmatrix}
+    0\% & 100\% & 0\% \\
+    50\% & 0\% & 100\% \\
+    50\% & 0\% & 0\%
+  \end{bmatrix}
+    =
+  \begin{bmatrix}
+    0 & 1 & 0 \\
+    \frac{1}{2} & 0 & 1 \\
+    \frac{1}{2} & 0 & 0
+  \end{bmatrix}
+\]
+
+Thus, the page rank system can be summarized as $A\vec{x}=\vec{x}$.  \\
+
+\end{example}
+
+\begin{activity}{5}
+A \term{page rank vector} for a page rank matrix \(A\) is a vector $\vec{x}$
+satisfying \(A\vec{x}=\vec{x}\).\\
+
+\ \\
+Thus, the \$700,000,000,000 problem is what kind of problem?
+\begin{enumerate}[(a)]
+\item A determinant problem
+\item An eigenvalue problem
+\item An eigenvector problem
 \end{enumerate}
 \end{activity}
 
-\begin{fact}
-% This is called a \term{Markov chain model}.  We can think about iteratively moving importance from webpages to each other by repeatedly multiplying by $A$.
-The \term{steady state vector} for a matrix \(A\) is an eigenvector
-satisfying \(A\vec{x}=\vec{x}\).
-
-As we've just demonstrated, a steady state vector for the transition matrix
-describes the importance of each webpage in the network.
-
-Thus, the \$700,000,000,000 problem is an eigenvector problem!
-\end{fact}
-
 \begin{activity}{10}
-Find a steady state vector (an eigenvector associated to the eigenvalue $1$)
-for the following network's transition matrix \(A\).
+Find a page rank vector (an eigenvector associated to the eigenvalue $1$)
+for the following network's page rank matrix \(A\).
 
 \begin{multicols}{2}
 \begin{center}
@@ -249,8 +243,7 @@ and both pages are twice as important as page \(3\).
 
 
 \begin{activity}{10}
-Complete the $7 \times 7$ transition matrix for the following network.
-\begin{multicols}{2}
+Compute the $7 \times 7$ page rank matrix for the following network.
 \begin{center}
 \begin{tikzpicture}[scale=0.6]
 \begin{scope}[every node/.style={circle,thick,draw}]
@@ -281,24 +274,25 @@ Complete the $7 \times 7$ transition matrix for the following network.
 \end{tikzpicture}
 \end{center}
 
-\[
-  A
-    =
-  \begin{bmatrix}
-    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
-    \frac{1}{2} & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
-    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
-    \frac{1}{2} & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
-    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
-    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
-    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown
-  \end{bmatrix}
-\]
-\end{multicols}
+%\[
+%  A
+%    =
+%  \begin{bmatrix}
+%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+%    \frac{1}{2} & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+%    \frac{1}{2} & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown
+%  \end{bmatrix}
+%\]
+
+For example, since website $1$ distributes its endorsement equally between $2$ and $4$, the first column is $\begin{bmatrix} 0 \\ \frac{1}{2} \\ 0 \\ \frac{1}{2} \\ 0 \\ 0 \\ 0 \end{bmatrix}$.
 \end{activity}
 
 \begin{activity}{10}
-Find a steady state vector for the transition matrix.
+Find a page rank vector for the transition matrix.
 
 \begin{multicols}{2}
 \begin{center}
