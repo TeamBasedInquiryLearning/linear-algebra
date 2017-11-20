@@ -12,22 +12,23 @@
 \begin{problem}{M1}
 Let 
 \begin{align*}
-A &= \begin{bmatrix} 3 \\ 5 \\ -1  \end{bmatrix} & B &= \begin{bmatrix} 2 & -1 \\ 0 & 4 \\ 3 & 1 \end{bmatrix} & C&=\begin{bmatrix} 1 & -1 & 3 & -3 \\ 2 & 1 & -1 & 2 \end{bmatrix}
+A &= \begin{bmatrix} 2 & 3 \\ 0 & 1 \end{bmatrix} & B&= \begin{bmatrix} 3 & 1 & 0 \end{bmatrix} & C&= \begin{bmatrix} 0 & -1 & 4 \\ 1 & -1 & 2 \end{bmatrix}
 \end{align*}
+
 Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and compute it.
 \end{problem}
 \begin{solution}
-$BC$ is the only one that can be computed, and
-$$BC=\begin{bmatrix} 0 & -3 & 7 & -8 \\ 8 & 4 & -4 & 8 \\ 5 & -2 & 8 & -7 \end{bmatrix}$$
+$AC$ is the only one that can be computed, and 
+$$AC = \begin{bmatrix} 3 & -5 & 11 \\ 1 & -1 & 2 \end{bmatrix}$$
 \end{solution}
 
 \begin{problem}{M2}
-Determine if the matrix $\begin{bmatrix} 3 & -1 & 0 & 4 \\ 2 & 1 & 1 & 1 \\ 0 & 1 & 1 & -1 \\ 1 & -2 & 0 & 3 \end{bmatrix}$ is invertible.
+Determine if the matrix $\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}$ is invertible.
 \end{problem}
 \begin{solution}
-$$\RREF \begin{bmatrix} 3 & -1 & 0 & 4 \\ 2 & 1 & 1 & 1 \\ 0 & 1 & 1 & -1 \\ 1 & -2 & 0 & 3 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & -1 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
-This matrix is not row equivalent to the identity matrix, so it is not invertible.
+The second column is a multiple of the first, so it is not invertible.
 \end{solution}
+
 
 
 \begin{extract}\newpage\end{extract}
@@ -58,28 +59,19 @@ This matrix is not row equivalent to the identity matrix, so it is not invertibl
 
 
 \begin{problem}{G2} 
-Compute the eigenvalues, along with their algebraic multiplicities, of the matrix $ \begin{bmatrix} 8 & -3 & -1 \\ 21 & -8 & -3 \\ -7 & 3 & 2\end{bmatrix}$.
+Compute the eigenvalues, along with their algebraic multiplicities, of the matrix $ \begin{bmatrix} 9 & -3 & 2 \\ 23 & -8 & 5 \\  -1 & 0 & 0 \end{bmatrix}$.
 \end{problem}
 \begin{solution}
-\begin{align*}
-\det(A-\lambda I) &= (8-\lambda) \det \begin{bmatrix} -8-\lambda & -3 \\ 3 & 2-\lambda \end{bmatrix}-(-3) \det \begin{bmatrix} 21 & -3 \\ -7 & 2-\lambda \end{bmatrix} +(-1) \det \begin{bmatrix} 21 & -8-\lambda \\ -7 & 3 \end{bmatrix} \\
-&=(8-\lambda)\left(\lambda ^2+6\lambda-7\right)+3\left(-21\lambda + 21 \right)-\left(-7\lambda +7 \right) \\
-&=(\lambda -1) \left( (8-\lambda)(\lambda+7)-63+7 \right) \\
-&= (\lambda-1)(\lambda -\lambda ^2) \\
-&= -\lambda (\lambda-1)^2
-\end{align*}
-So the eigenvalues are $0$ (with algebraic multiplicity 1) and $1$ (with algebraic multiplicity 2).
+1 with algebraic multiplicy 2, and -1 with algebraic multiplicity 1.
 \end{solution}
-
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{G3}
-Compute the eigenspace associated to the eigenvalue $2$ in the matrix $\begin{bmatrix} -1 & 1 & 0 \\ -9 & 5 & 0 \\ 15 & -5 & 2 \end{bmatrix}$.
+Compute the eigenspace of the eigenvalue $-1$ in the matrix $\begin{bmatrix} 4 & -2 & -1 \\ 15 & -7 & -3 \\ -5 & 2 & 0 \end{bmatrix}$. 
 \end{problem}
-
 \begin{solution}
-The eigenspace is the solution space of the system $(B-2I)X=0$.
-$$\RREF(B-2I)=\RREF\left(\begin{bmatrix} -3 & 1 & 0 \\ -9 & 3 & 0 \\ 15 & - 5 & 0 \end{bmatrix} \right) = \begin{bmatrix} 1 & -\frac{1}{3} & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
-So the system simplifies to $x-\frac{y}{3}=0$, or $3x=y$.  Thus the eigenspace is $$E_2 = {\rm span}\left( \left\{ \begin{bmatrix} 1 \\ 3 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1\end{bmatrix} \right\} \right)$$
+$$\RREF\left(A+I\right) = \begin{bmatrix} 1 & - \frac{2}{5} & -\frac{1}{5} \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
+So the eigenspace is spanned by $\begin{bmatrix} 2 \\5 \\  0 \end{bmatrix}$ and $\begin{bmatrix} 1 \\ 0 \\ 5 \end{bmatrix}$.
 \end{solution}
+
 \end{document}
