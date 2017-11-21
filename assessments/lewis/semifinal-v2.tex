@@ -2,7 +2,7 @@
 %% This is file, `semifinal-v2.tex',
 %% generated with the extract package.
 %% 
-%% Generated on :  2017/11/20,9:43
+%% Generated on :  2017/11/21,16:43
 %% From source  :  semifinal-v2_solutions.tex
 %% Using options:  active,generate=semifinal-v2,extract-env={problem}
 %% 
@@ -14,15 +14,12 @@
 \begin{document}
 
 \begin{problem}{E1}
-Write a system of linear equations corresponding to the following
-augmented matrix.
-\[
-\begin{bmatrix}[cccc|c]
-3 & -1 & 0 & 1 & 5 \\
--1 & 9 & 1 & -7 & 0 \\
-1 & 0 & -1 & 0 & -3
-\end{bmatrix}
-\]
+Write an augmented matrix corresponding to the following system of linear equations.
+\begin{align*}
+x_1+4x_3 &= 1 \\
+x_2-x_3 &= 7 \\
+x_1-x_2+3x_3 &= -1
+\end{align*}
 \end{problem}
 
 \begin{problem}{E2}
@@ -38,35 +35,33 @@ Find \(\RREF A\), where
 \end{problem}
 
 \begin{problem}{E3}
-Solve the following linear system.
+Find the solution set for the following system of linear equations.
 \begin{align*}
-3x+2y+z &= 7 \\
-x+y+z &= 1 \\
--2x+3z &= -11
+2x_1+3x_2-5x_3+14x_4 &= 8 \\
+x_1+x_2-x_3+5x_4&= 3
 \end{align*}
 \end{problem}
 
 \begin{problem}{E4}
-Find a basis for the solution set to the homogeneous system of equations
-given by
+Find a basis for the solution set of the system of equations
 \begin{align*}
-3x+2y+z &= 0 \\
-x+y+z &= 0
+x+2y+3z+w &= 0 \\
+3x-y+z+w &= 0 \\
+2x-3y-2z &= 0
 \end{align*}
 \end{problem}
 
 \begin{problem}{V1}
-Let $V$ be the set of all polynomials with the operations, for any $f, g \in V$, $c \in \IR$,
+Let $V$ be the set of all pairs of real numbers with the operations, for any $(x_1,y_1), (x_2,y_2) \in V$, $c \in \IR$,
 \begin{align*}
-f \oplus g &= f^\prime + g^\prime \\
-c \odot f &= c f^\prime
+(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
+c \odot (x_1,y_1) &= (c^2x_1, c^3y_1)
 \end{align*}
-(here $f^\prime$ denotes the derivative of $f$).
 \begin{enumerate}[(a)]
 \item Show that scalar multiplication \textbf{distributes scalars} over
       vector addition:
-      \(c\odot(f \oplus g)=
-      c\odot f \oplus c\odot g\).
+      \(c\odot((x_1,y_1) \oplus (x_2,y_2))=
+      c\odot(x_1,y_1) \oplus c\odot(x_2,y_2)\).
 \item Determine if $V$ is a vector space or not.  Justify your answer.
 \end{enumerate}
 \end{problem}
@@ -83,7 +78,7 @@ c \odot f &= c f^\prime
 \end{problem}
 
 \begin{problem}{V3}
-Determine if the vectors  $\begin{bmatrix} 8 \\ 21 \\ -7 \end{bmatrix}$, $\begin{bmatrix} -3 \\ -8 \\ 3 \end{bmatrix}$, $\begin{bmatrix} -1 \\ -3 \\ 2 \end{bmatrix}$, and $\begin{bmatrix} 4 \\ 11 \\ -5 \end{bmatrix}$ span $\IR^3$.
+Determine if the vectors $\begin{bmatrix} 2 \\ 0 \\ -2 \\ 0 \end{bmatrix}$, $\begin{bmatrix} 3 \\ 1 \\ 3 \\ 6 \end{bmatrix}$, $\begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}$, and $\begin{bmatrix}1 \\ 2 \\ 0 \\ 1 \end{bmatrix}$ span $\IR^4$.
 \end{problem}
 
 \begin{problem}{V4}
@@ -91,19 +86,26 @@ Determine if $\left\{ \begin{bmatrix} x \\ y \\ 0 \\ z \end{bmatrix}\  \bigg|\ x
 \end{problem}
 
 \begin{problem}{S1}
-Determine if the set of vectors $\left\{ \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\}$ is  linearly dependent or linearly independent
+Determine if the set of vectors $\left\{ \begin{bmatrix} -3 \\ 8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\}$ is  linearly dependent or linearly independent
 \end{problem}
 
 \begin{problem}{S2}
-Determine if the set $\left\{ x^3-3x^2+2x+2, -x^3+4x^2-x+1, -x^3+2x+1, 3x^2+3x+9 \right\}$ is a basis of $\P^3$ or not.
+Determine if the set $\left\{ x^3-x, x^2+x+1, x^3-x^2+2, 2x^2-1 \right\}$ is a basis of $\P^3$.
 \end{problem}
 
 \begin{problem}{S3}
-Let $W$ be the subspace of $\P^2$ given by $W = {\rm span} \left( \left\{  -3x^2-8x, x^2+2x+2, -x+3\right\} \right)$.   Find a basis for $W$.
+Let \(
+  W={\rm span}\left\{
+    \begin{bmatrix} 2 & 0 \\ -2 & 0 \end{bmatrix},
+    \begin{bmatrix} 3 & 1 \\ 3 & 6 \end{bmatrix},
+    \begin{bmatrix} 0 & 0 \\ 1 & 1 \end{bmatrix},
+    \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix}
+  \right\}
+\). Find a basis for this vector space.
 \end{problem}
 
 \begin{problem}{S4}
-Let $W = {\rm span} \left( \left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ 3 \\ 6 \\ 3 \end{bmatrix}, \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}, \begin{bmatrix} 7 \\ -1 \\ 8 \\ -3 \end{bmatrix} \right\} \right)$.  Find the dimension of $W$.
+Let $W = {\rm span} \left( \left\{  \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ -1 \\ 3 \end{bmatrix} \right\} \right)$.  Compute the dimension of $W$.
 \end{problem}
 
 \begin{problem}{A1}
@@ -111,58 +113,51 @@ Let $T: \IR^3\rightarrow \IR^4$ be the linear transformation given by $$T\left(\
 \end{problem}
 
 \begin{problem}{A2}
-Determine if the map $T: \P  \rightarrow \P$ given by $T(f) = f^{\prime}-f^{\prime \prime}$ is a linear transformation or not.
+ Determine if $T: \IR^2 \rightarrow \IR^2$ given by $T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} e^{x} \\ e^y \end{bmatrix}$ is a linear transformation.
 \end{problem}
 
 \begin{problem}{A3}
 Determine if each of the following linear transformations is injective (one-to-one) and/or surjective (onto).
 \begin{enumerate}[(a)]
-\item $S: \IR^2 \rightarrow \IR^4$ given by the standard matrix $\begin{bmatrix} 2 & 1 \\ 1 & 2 \\ 0 & 1 \\ 3 & -3 \end{bmatrix}$.
-\item $T: \IR^4 \rightarrow \IR^3$ given by the standard matrix $\begin{bmatrix} 2 & 3 & -1 & 1 \\ -1 & 1 & 1 & 1 \\ 4 & 11 & -1 & 5 \end{bmatrix}$
+\item $S: \IR^2 \rightarrow \IR^2$ given by the standard matrix $\begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$.
+\item $T: \IR^4 \rightarrow \IR^3$ given by the standard matrix $\begin{bmatrix} 2 & 3 & -1 & -2 \\ 0 & 1 & 3 & 1 \\ 2 & 1 & -7 & -4 \end{bmatrix}$
 \end{enumerate}
 \end{problem}
 
 \begin{problem}{A4}
-Let $T: \IR^{2\times 2} \rightarrow \IR^3$ be the linear map given by \(
-  T\left(\begin{bmatrix} a & b \\ x & y \end{bmatrix} \right) =
-  \begin{bmatrix}
-    a+x \\ 0 \\ b+y
-  \end{bmatrix}
-\). Compute a basis for the kernel and a basis for the image of $T$.
+Let $T: \IR^4 \rightarrow \IR^3$ be the linear map given by $T\left(\begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix} \right) = \begin{bmatrix}  8x-3y-z+4w \\ y+3z-4w \\ -7x+3y+2z-5w\end{bmatrix} $.
+Compute a basis for the kernel and a basis for the image of $T$.
 \end{problem}
 
 \begin{problem}{M1}
 Let
 \begin{align*}
-A &= \begin{bmatrix} 2 & 3 \\ 0 & 1 \end{bmatrix} & B&= \begin{bmatrix} 3 & 1 & 0 \end{bmatrix} & C&= \begin{bmatrix} 3 & -1 & 4 \\ 1 & 0 & 2 \end{bmatrix}
-\end{align*}
-
+A &= \begin{bmatrix} 3 \\ 5 \\ -1  \end{bmatrix} & B&=\begin{bmatrix} 1 & -1 & 3 & -3 \\ 2 & 1 & -1 & 2 \end{bmatrix} & C &= \begin{bmatrix} 2 & -1 \\ 0 & 4 \\ 3 & 1 \end{bmatrix} \end{align*}
 Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and compute it.
 \end{problem}
 
 \begin{problem}{M2}
-Determine if the matrix $\begin{bmatrix} 3 & -1 & 0  \\ 2 & 1 & 1  \\ 0 & 1 & 1   \end{bmatrix}$ is invertible.
+Determine if the matrix $\begin{bmatrix} 3 & -1 & 0 & 4 \\ 2 & 1 & 1 & -1 \\ 0 & 1 & 1 & 3 \\ 1 & -2 & 0 & 0 \end{bmatrix}$ is invertible.
 \end{problem}
 
 \begin{problem}{M3}
-Find the inverse of the matrix $\begin{bmatrix} 8 & 5 & 3 & 0 \\ 3 & 2 & 1 & 1 \\ 5 & -3 & 1 & -2 \\ -1 & 2 & 0 & 1\end{bmatrix} $.
+Find the inverse of the matrix $\begin{bmatrix} 3 & -1 & 0  \\ 2 & 1 & 1  \\ 0 & 1 & 1   \end{bmatrix}$.
 \end{problem}
 
 \begin{problem}{G1}
-Compute the determinant of the matrix $\begin{bmatrix} 2 & 3 & 0 & 1 \\ -1 & 3 & 1 & 4 \\ 0 & 2 & 0 & 3 \\ 1 & -1 & 3 & 5 \end{bmatrix}$.
+Compute the determinant of the matrix $\begin{bmatrix} 3 & -1 & 0  & 7 \\ 2 & 1 & 1 & -1  \\ 0 & 1 & 1 & 3 \\ 0 & 0 & 0 & 1   \end{bmatrix}$.
 \end{problem}
 
 \begin{problem}{G2}
-Let $A= \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix}$.
-List the eigenvalues of $A$ along with their algebraic multiplicities.
+Compute the eigenvalues, along with their algebraic multiplicities, of the matrix $ \begin{bmatrix} 8 & -3 & -1 \\ 21 & -8 & -3 \\ -7 & 3 & 2\end{bmatrix}$.
 \end{problem}
 
 \begin{problem}{G3}
-Find the eigenspace associated to the eigenvalue $2$ in the matrix $A=\begin{bmatrix} 2 & 0 & 0 & 0 \\ 0 & 2 & 0 & 0 \\ -1 & 0 & 1 & -1 \\ 1 & 0 & 1 & 3 \end{bmatrix}$.
+Find the eigenspace associated to the eigenvalue $1$ in the matrix $A=\begin{bmatrix} 8 & -3 & -1 \\ 21 & -8 & -3 \\ -7 & 3  & 2 \end{bmatrix}$
 \end{problem}
 
 \begin{problem}{G4}
-Compute the geometric multiplicity of the eigenvalue $2$ in the matrix $\begin{bmatrix} -1 & 1 & 0 \\ -9 & 5 & 0 \\ 15 & -5 & 2 \end{bmatrix}$.
+Compute the geometric multiplicity of the eigenvalue $-1$ in the matrix $\begin{bmatrix} 4 & -2 & -1 \\ 15 & -7 & -3 \\ -5 & 2 & 0 \end{bmatrix}$.  
 \end{problem}
 
 \end{document}

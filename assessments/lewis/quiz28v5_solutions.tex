@@ -22,35 +22,38 @@ $$BC=\begin{bmatrix} 0 & -3 & 7 & -8 \\ 8 & 4 & -4 & 8 \\ 5 & -2 & 8 & -7 \end{b
 \end{solution}
 
 \begin{problem}{M2}
-Determine if the matrix $\begin{bmatrix} 3 & -1 & 0 & 4 \\ 2 & 1 & 1 & -1 \\ 0 & 1 & 1 & 3 \\ 1 & -2 & 0 & 0 \end{bmatrix}$ is invertible.
+Determine if the matrix $\begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix}$ is invertible.
 \end{problem}
 \begin{solution}
-This matrix is row equivalent to the identity matrix, so it is invertible.
+$$\RREF \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix} = \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{3}{2} \\ 0 & 0 & 0 \end{bmatrix}$$
+Since it is not equivalent to the identity matrix, it is not invertible.
 \end{solution}
+
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{M3}
-Compute the inverse of the matrix $\begin{bmatrix} 1 & 2 & 3 & 0 \\ 0 & -1 & 4 & -2 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$.
+Find the inverse of the matrix $\begin{bmatrix} 3 & -1 & 0  \\ 2 & 1 & 1  \\ 0 & 1 & 1   \end{bmatrix}$.
 \end{problem}
 \begin{solution}
-$$\RREF(A|I) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 &0 & 1 & 2 & -11 & 37 \\ 0 & 1 & 0 & 0 & 0 & -1 & 4 & -14 \\ 0 & 0 & 1 & 0 & 0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix}$$
-So the inverse is $\begin{bmatrix}  1 & 2 & -11 & 37 \\ 0 & -1 & 4 & -14 \\  0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$
+$$\begin{bmatrix} 3 & -1 & 0  \\ 2 & 1 & 1  \\ 0 & 1 & 1   \end{bmatrix}^{-1} = \begin{bmatrix} 0 & \frac{1}{2} & -\frac{1}{2} \\ -1 & \frac{3}{2} & -\frac{3}{2} \\ 1 & -\frac{3}{2} & \frac{5}{2}\end{bmatrix}$$
 \end{solution}
 
 
-\begin{problem}{G2} 
-Compute the eigenvalues, along with their algebraic multiplicities, of the matrix $ \begin{bmatrix} 8 & -3 & 2 \\ 15 & -5 & 5 \\ -3 & 2 & 1 \end{bmatrix}$.
+
+\begin{problem}{G2}
+Compute the eigenvalues, along with their algebraic multiplicities, of the matrix $ \begin{bmatrix} 8 & -3 & 2 \\ 23 & -9 & 5 \\ -7 & 2 & -3 \end{bmatrix}$.
 \end{problem}
 \begin{solution}
-The eigenvalues are $0$ with multiplicity 1 and $2$, with algebraic multiplicity 2.
+The eigenvalues are $0$ (with algebraic multiplicity 1)
+and $-2$ (with algebraic multiplicity 2).
 \end{solution}
 
 \begin{extract}\newpage\end{extract}
 \begin{problem}{G3}
-Find the eigenspace associated to the eigenvalue $1$ in the matrix $A=\begin{bmatrix} 8 & -3 & -1 \\ 21 & -8 & -3 \\ -7 & 3  & 2 \end{bmatrix}$
+Find the eigenspace associated to the eigenvalue $2$ in the matrix $A=\begin{bmatrix}8 & -3 & 2 \\ 15 & -5 & 5 \\ -3 & 2 & 1\end{bmatrix}$
 \end{problem}
 \begin{solution}
-The eigenspace is spanned by $\begin{bmatrix} \frac{3}{7} \\ 1 \\ 0 \end{bmatrix}$ and $\begin{bmatrix}\frac{1}{7} \\ 0 \\ 1 \end{bmatrix}$.
+The eigenspace is spanned by $\begin{bmatrix} -\frac{1}{3} \\ 0 \\ 1 \end{bmatrix}$.
 \end{solution}
 
 \end{document}
