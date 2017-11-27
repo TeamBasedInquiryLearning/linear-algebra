@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 #Produce notes and slides
 pdflatex course-slides.tex
 
@@ -20,3 +21,4 @@ for file in course-notes*.tex ; do pdflatex $file ; done
 # for file in reassessment-form-*.tex ; do pdflatex $file ; done
 # for file in calendar-*.tex ; do pdflatex $file ; done
 # pdflatex homework-problems.tex
+# pdflatex facilitator-notes.tex
