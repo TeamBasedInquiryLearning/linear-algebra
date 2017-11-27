@@ -87,56 +87,80 @@
 \NewEnviron{activity}[1]{
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
+  \par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup
   \textbf{Activity \theClassDayCounter.\theActivityCounter} \textit{(#1 min)}
   \BODY
   \begin{center}
     \rule{6.5in}{0.2pt}
   \end{center}
+  \par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd
 }
 
 \NewEnviron{remark}{
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
+  \par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup
   \textbf{Remark \theClassDayCounter.\theActivityCounter}
   \BODY
 
   \vspace{1em}
+  \par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd
 }
 
 \NewEnviron{fact}{
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
+  \par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup
   \textbf{Fact \theClassDayCounter.\theActivityCounter}
   \BODY
 
   \vspace{1em}
+  \par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd
 }
 
 \NewEnviron{observation}{
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
+  \par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup
   \textbf{Observation \theClassDayCounter.\theActivityCounter}
   \BODY
 
   \vspace{1em}
-}
+  \par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd
+  }
 
 \NewEnviron{example}{
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
+  \par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup
   \textbf{Example \theClassDayCounter.\theActivityCounter}
   \BODY
 
   \vspace{1em}
+  \par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd
 }
 
 \NewEnviron{definition}{
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
+  \par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup
   \textbf{Definition \theClassDayCounter.\theActivityCounter}
   \BODY
 
   \vspace{1em}
+  \par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd
 }
 
 
