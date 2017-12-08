@@ -4,7 +4,7 @@
 \usepackage{fancyhdr}
 
 %%%Page layout setup%%%
-\newcommand{\header}{Unknown Header}
+\newcommand{\header}{Linear Algebra}
 \newcommand{\setHeader}[1]{\renewcommand{\header}{#1}}
 
 \pagestyle{fancy}
@@ -21,14 +21,14 @@
   \newpage
   \renewcommand{\moduleLetter}{#1}
   \setHeader{Module \moduleLetter{}: #2}
+  \section*{Module \moduleLetter{}: #2}
   \BODY
-  \newpage
 }
 
 
 \NewEnviron{readinessAssuranceOutcomes}{
   \newpage
-  \section*{Readiness Assurance Outcomes}
+  \subsection*{Readiness Assurance Outcomes}
 
   Before beginning this module, each student should be able to...
   \begin{itemize}
@@ -37,17 +37,21 @@
 }
 
 
-\NewEnviron{moduleStandards}{
-  \newpage
-  \section*{Standards for this Module}
+\newcommand{\moduleQuestion}[1]{
+  \subsection*{Standards for this Module}
 
-  At the end of this module, students will be able to...
-  \begin{itemize}
-    \BODY
-  \end{itemize}
+  \textbf{#1}
 }
-
-\newcommand{\standardList}[1]{\textbf{(Standard(s) #1)}}
+\NewEnviron{moduleStandards}{
+  At the end of this module, students will be able to...
+  \begin{enumerate}[\bf \moduleLetter{}1.]
+    \BODY
+  \end{enumerate}
+}
+\newcommand{\standard}[3]{
+  \item \textbf{#1.}
+        ...#3
+}
 
 \NewEnviron{readinessAssuranceResources}{
   \subsection*{Readiness Assurance Resources}
@@ -60,7 +64,7 @@
 
 \NewEnviron{readinessAssuranceTest}{
   \newpage
-  \section*{Readiness Assurance Test}
+  \subsection*{Readiness Assurance Test}
   Choose the most appropriate response for each question.
   \begin{enumerate}[1)]
     \BODY
@@ -76,10 +80,9 @@
 
 
 \NewEnviron{applicationActivities}[2]{
-  \newpage
-  \setcounter{ClassDayCounter}{#2}
+  \renewcommand{\modulePart}{#1}
   \setcounter{ActivityCounter}{0}
-  \section*{Application Activities - Module \moduleLetter{} Part #1 - Class Day \theClassDayCounter}
+  \subsection*{Module \moduleLetter{} Part \modulePart{}}
 
   \BODY
 }
@@ -89,7 +92,7 @@
   \setcounter{SubactivityCounter}{0}
   \par\nobreak\vfil\penalty0\vfilneg
    \vtop\bgroup
-  \textbf{Activity \theClassDayCounter.\theActivityCounter} \textit{(#1 min)}
+  \textbf{Activity \moduleLetter{}.\modulePart{}.\theActivityCounter} \textit{(#1 min)}
   \BODY
   \begin{center}
     \rule{6.5in}{0.2pt}
@@ -103,7 +106,7 @@
   \setcounter{SubactivityCounter}{0}
   \par\nobreak\vfil\penalty0\vfilneg
    \vtop\bgroup
-  \textbf{Remark \theClassDayCounter.\theActivityCounter}
+  \textbf{Remark \moduleLetter{}.\modulePart{}.\theActivityCounter}
   \BODY
 
   \vspace{1em}
@@ -116,7 +119,7 @@
   \setcounter{SubactivityCounter}{0}
   \par\nobreak\vfil\penalty0\vfilneg
    \vtop\bgroup
-  \textbf{Fact \theClassDayCounter.\theActivityCounter}
+  \textbf{Fact \moduleLetter{}.\modulePart{}.\theActivityCounter}
   \BODY
 
   \vspace{1em}
@@ -129,7 +132,7 @@
   \setcounter{SubactivityCounter}{0}
   \par\nobreak\vfil\penalty0\vfilneg
    \vtop\bgroup
-  \textbf{Observation \theClassDayCounter.\theActivityCounter}
+  \textbf{Observation \moduleLetter{}.\modulePart{}.\theActivityCounter}
   \BODY
 
   \vspace{1em}
@@ -142,7 +145,7 @@
   \setcounter{SubactivityCounter}{0}
   \par\nobreak\vfil\penalty0\vfilneg
    \vtop\bgroup
-  \textbf{Example \theClassDayCounter.\theActivityCounter}
+  \textbf{Example \moduleLetter{}.\modulePart{}.\theActivityCounter}
   \BODY
 
   \vspace{1em}
@@ -155,7 +158,7 @@
   \setcounter{SubactivityCounter}{0}
   \par\nobreak\vfil\penalty0\vfilneg
    \vtop\bgroup
-  \textbf{Definition \theClassDayCounter.\theActivityCounter}
+  \textbf{Definition \moduleLetter{}.\modulePart{}.\theActivityCounter}
   \BODY
 
   \vspace{1em}
