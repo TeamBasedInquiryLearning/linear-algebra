@@ -27,8 +27,10 @@
 \NewEnviron{module}[2]{
   \newpage
   \renewcommand{\moduleLetter}{#1}
+  \setcounter{SectionCounter}{0}
   \setHeader{Module \moduleLetter{}: #2}
-  \section*{Module \moduleLetter{}: #2}
+  \section*{\header}
+  \addcontentsline{toc}{chapter}{\header}
   \BODY
 }
 
@@ -92,6 +94,7 @@
 
   \newpage
   \subsection*{Section \moduleLetter{}.\theSectionCounter}
+  \addcontentsline{toc}{section}{Section \moduleLetter{}.\theSectionCounter}
 
   \BODY
 }
