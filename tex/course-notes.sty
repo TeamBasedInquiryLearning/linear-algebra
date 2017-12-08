@@ -87,11 +87,11 @@
 
 
 \NewEnviron{applicationActivities}[2]{
-  \renewcommand{\modulePart}{#1}
+  \stepcounter{SectionCounter}
   \setcounter{ActivityCounter}{0}
 
   \newpage
-  \subsection*{Module \moduleLetter{} Part \modulePart{}}
+  \subsection*{Section \moduleLetter{}.\theSectionCounter}
 
   \BODY
 }
@@ -100,7 +100,7 @@
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
   \preventPageBreaks
-  \textbf{Activity \moduleLetter{}.\modulePart{}.\theActivityCounter} \textit{(\(\sim\)#1 min)}
+  \textbf{Activity \moduleLetter{}.\theSectionCounter.\theActivityCounter} \textit{(\(\sim\)#1 min)}
   \BODY
   \begin{center}
     \rule{6.5in}{0.2pt}
@@ -112,7 +112,7 @@
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
   \preventPageBreaks
-  \textbf{Remark \moduleLetter{}.\modulePart{}.\theActivityCounter}
+  \textbf{Remark \moduleLetter{}.\theSectionCounter.\theActivityCounter}
   \BODY
 
   \vspace{1em}
@@ -123,7 +123,7 @@
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
   \preventPageBreaks
-  \textbf{Fact \moduleLetter{}.\modulePart{}.\theActivityCounter}
+  \textbf{Fact \moduleLetter{}.\theSectionCounter.\theActivityCounter}
   \BODY
 
   \vspace{1em}
@@ -134,7 +134,7 @@
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
   \preventPageBreaks
-  \textbf{Observation \moduleLetter{}.\modulePart{}.\theActivityCounter}
+  \textbf{Observation \moduleLetter{}.\theSectionCounter.\theActivityCounter}
   \BODY
 
   \vspace{1em}
@@ -145,7 +145,7 @@
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
   \preventPageBreaks
-  \textbf{Example \moduleLetter{}.\modulePart{}.\theActivityCounter}
+  \textbf{Example \moduleLetter{}.\theSectionCounter.\theActivityCounter}
   \BODY
 
   \vspace{1em}
@@ -156,7 +156,7 @@
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
   \preventPageBreaks
-  \textbf{Definition \moduleLetter{}.\modulePart{}.\theActivityCounter}
+  \textbf{Definition \moduleLetter{}.\theSectionCounter.\theActivityCounter}
   \BODY
 
   \vspace{1em}
