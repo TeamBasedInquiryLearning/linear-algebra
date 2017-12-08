@@ -82,6 +82,8 @@
 \NewEnviron{applicationActivities}[2]{
   \renewcommand{\modulePart}{#1}
   \setcounter{ActivityCounter}{0}
+
+  \newpage
   \subsection*{Module \moduleLetter{} Part \modulePart{}}
 
   \BODY
@@ -92,7 +94,7 @@
   \setcounter{SubactivityCounter}{0}
   \par\nobreak\vfil\penalty0\vfilneg
    \vtop\bgroup
-  \textbf{Activity \moduleLetter{}.\modulePart{}.\theActivityCounter} \textit{(#1 min)}
+  \textbf{Activity \moduleLetter{}.\modulePart{}.\theActivityCounter} \textit{(\(\sim\)#1 min)}
   \BODY
   \begin{center}
     \rule{6.5in}{0.2pt}
