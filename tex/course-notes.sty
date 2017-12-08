@@ -16,6 +16,13 @@
 
 \setlength{\parindent}{0pt}
 
+\newcommand{\preventPageBreaks}{
+  \par\nobreak\vfil\penalty0\vfilneg\vtop\bgroup
+}
+\newcommand{\allowPageBreaks}{
+  \par\xdef\tpd{\the\prevdepth}\egroup\prevdepth=\tpd
+}
+
 
 \NewEnviron{module}[2]{
   \newpage
@@ -92,80 +99,68 @@
 \NewEnviron{activity}[1]{
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
-  \par\nobreak\vfil\penalty0\vfilneg
-   \vtop\bgroup
+  \preventPageBreaks
   \textbf{Activity \moduleLetter{}.\modulePart{}.\theActivityCounter} \textit{(\(\sim\)#1 min)}
   \BODY
   \begin{center}
     \rule{6.5in}{0.2pt}
   \end{center}
-  \par\xdef\tpd{\the\prevdepth}\egroup
-   \prevdepth=\tpd
+  \allowPageBreaks
 }
 
 \NewEnviron{remark}{
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
-  \par\nobreak\vfil\penalty0\vfilneg
-   \vtop\bgroup
+  \preventPageBreaks
   \textbf{Remark \moduleLetter{}.\modulePart{}.\theActivityCounter}
   \BODY
 
   \vspace{1em}
-  \par\xdef\tpd{\the\prevdepth}\egroup
-   \prevdepth=\tpd
+  \allowPageBreaks
 }
 
 \NewEnviron{fact}{
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
-  \par\nobreak\vfil\penalty0\vfilneg
-   \vtop\bgroup
+  \preventPageBreaks
   \textbf{Fact \moduleLetter{}.\modulePart{}.\theActivityCounter}
   \BODY
 
   \vspace{1em}
-  \par\xdef\tpd{\the\prevdepth}\egroup
-   \prevdepth=\tpd
+  \allowPageBreaks
 }
 
 \NewEnviron{observation}{
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
-  \par\nobreak\vfil\penalty0\vfilneg
-   \vtop\bgroup
+  \preventPageBreaks
   \textbf{Observation \moduleLetter{}.\modulePart{}.\theActivityCounter}
   \BODY
 
   \vspace{1em}
-  \par\xdef\tpd{\the\prevdepth}\egroup
-   \prevdepth=\tpd
+  \allowPageBreaks
   }
 
 \NewEnviron{example}{
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
-  \par\nobreak\vfil\penalty0\vfilneg
-   \vtop\bgroup
+  \preventPageBreaks
   \textbf{Example \moduleLetter{}.\modulePart{}.\theActivityCounter}
   \BODY
 
   \vspace{1em}
-  \par\xdef\tpd{\the\prevdepth}\egroup
-   \prevdepth=\tpd
+  \allowPageBreaks
 }
 
 \NewEnviron{definition}{
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
-  \par\nobreak\vfil\penalty0\vfilneg
-   \vtop\bgroup
+  \preventPageBreaks
   \textbf{Definition \moduleLetter{}.\modulePart{}.\theActivityCounter}
   \BODY
 
   \vspace{1em}
-  \par\xdef\tpd{\the\prevdepth}\egroup
-   \prevdepth=\tpd
+  \allowPageBreaks
 }
 
 
