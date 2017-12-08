@@ -1,5 +1,5 @@
 #!/bin/bash
-for i in `ls modules/*/readiness.tex`
+for i in `ls modules/*/readiness/outcomes.tex`
 do
 	j=${i%.tex}
 	pdflatex -jobname=$j readiness-materials.tex

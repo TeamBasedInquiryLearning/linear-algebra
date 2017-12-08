@@ -1,0 +1,217 @@
+
+
+
+\begin{applicationActivities}{2}{4}
+
+\begin{definition}
+  The following \term{row operations} produce equivalent
+  augmented matrices:
+  \begin{enumerate}
+    \item Swap two rows.
+    \item Multiply a row by a nonzero constant.
+    \item Add a constant multiple of one row to another row.
+  \end{enumerate}
+  Whenever two matrices \(A,B\) are equivalent (so whenever we do any of
+  these operations), we write \(A\sim B\).
+\end{definition}
+
+\begin{activity}{10}
+  Consider the following two linear systems.
+  \begin{multicols}{2}\noindent
+    \begin{alignat*}{4}
+      3x_1 &\,-\,& 2x_2 &\,+\,& 13x_3 &\,=\,& 6 \\
+      2x_1 &\,-\,& 2x_2 &\,+\,& 10x_3 &\,=\,& 2 \\
+     -1x_1 &\,+\,& 3x_2 &\,-\,&  6x_3 &\,=\,& 11
+    \end{alignat*}
+    \begin{alignat*}{4}
+       x_1 &\,-\,&  x_2  &\,+\,&  5x_3 &\,=\,& 1 \\
+           &\, \,&  x_2 &\,-\,&  2x_3 &\,=\,& 3 \\
+           &\, \,&      &\, \,&   x_3 &\,=\,& 2
+    \end{alignat*}
+  \end{multicols}
+  \begin{subactivity}
+    Show these are equivalent by converting the first system to an augmented
+    matrix, and then performing the following row operations to obtain
+    an augmented matrix equivalent to the second system.
+    \begin{multicols}{2}\noindent
+    \begin{enumerate}
+      \item Swap \(R_1\) (first row) and \(R_2\) (second row).
+      \item Multiply \(R_2\) by \(\frac{1}{2}\).
+      \item Add \(R_1\) to \(R_3\).
+      \item Add \(-3R_1\) to \(R_2\).
+      \item Add \(-2R_2\) to \(R_3\).
+      \item Multiply \(R_3\) by \(\frac{1}{3}\).
+    \end{enumerate}
+    \end{multicols}
+  \end{subactivity}
+  \begin{subactivity}
+    Which linear system would you rather solve?
+  \end{subactivity}
+\end{activity}
+
+\begin{definition}
+  The \term{leading term} of a matrix row is its first nonzero term.
+  A matrix is in \term{row echelon form} if all leading terms are \(1\),
+  the leading term of every row
+  is farther right than every leading term on a higher row, and all zero
+  rows are at the bottom of the matrix. Examples:
+  \begin{multicols}{3}\noindent
+    \[
+      \begin{bmatrix}[ccc|c]
+        1 & -1 &  5 & 1 \\
+        0 &  1 & -2 & 3 \\
+        0 &  0 &  1 & 2
+      \end{bmatrix}
+    \]
+    \[
+      \begin{bmatrix}[ccc|c]
+        1 & -1 &  5 & 1 \\
+        0 &  0 &  1 & 3 \\
+        0 &  0 &  0 & 1
+      \end{bmatrix}
+    \]
+    \[
+      \begin{bmatrix}[ccc|c]
+        1 & -1 &  5 & 1 \\
+        0 &  0 &  1 & 3 \\
+        0 &  0 &  0 & 0
+      \end{bmatrix}
+    \]
+  \end{multicols}
+\end{definition}
+
+\begin{activity}{10}
+  Find your own sequence of row operations to manipulate the matrix
+  \[
+    \begin{bmatrix}[ccc|c]
+      3 & -2 & 13 & 6 \\
+      2 & -2 & 10 & 2 \\
+      -1 & 3 & -6 & 11
+    \end{bmatrix}
+  \]
+  into row echelon form. (Note that row echelon form is not unique.)
+
+  The most efficient way to do this is by circling \term{pivot positions}
+  in your matrix:
+  \begin{enumerate}
+    \item Circle the top-left-most cell that (a) is below any existing pivot
+    positions and (b) has a nonzero term either in that position or below it.
+    \item Ignoring any rows above this pivot position, use row operations
+    to change the value of your pivot position to \(1\), and the terms below
+    it to \(0\).
+    \item Repeat these two steps as often as possible.
+  \end{enumerate}
+\end{activity}
+
+\begin{activity}{10}
+  Solve this simplifed linear system:
+    \begin{alignat*}{4}
+       x_1 &\,-\,&  x_2  &\,+\,&  5x_3 &\,=\,& 1 \\
+           &\, \,&  x_2 &\,-\,&  2x_3 &\,=\,& 3 \\
+           &\, \,&      &\, \,&   x_3 &\,=\,& 2
+    \end{alignat*}
+\end{activity}
+
+\begin{observation}
+  The consise standard form of the solution to this linear system
+  corresponds to a simplified row echelon form matrix:
+  \begin{multicols}{2}\noindent
+    \begin{alignat*}{4}
+       x_1 &\, \,&      &\, \,&       &\,=\,& -2 \\
+           &\, \,&  x_2 &\, \,&       &\,=\,& 7 \\
+           &\, \,&      &\, \,&   x_3 &\,=\,& 2
+    \end{alignat*}
+    \[
+      \begin{bmatrix}[ccc|c]
+        1 & 0 & 0 & -2 \\
+        0 & 1 & 0 & 7 \\
+        0 & 0 & 1 & 2
+      \end{bmatrix}
+    \]
+  \end{multicols}
+\end{observation}
+
+\begin{definition}
+  A matrix is in \term{reduced row echelon form} if it is in row echelon form
+  and all terms above leading terms are \(0\). Examples:
+  \begin{multicols}{3}\noindent
+    \[
+      \begin{bmatrix}[ccc|c]
+        1 & 0 & 0 & -2 \\
+        0 & 1 & 0 & 7 \\
+        0 & 0 & 1 & 2
+      \end{bmatrix}
+    \]
+    \[
+      \begin{bmatrix}[ccc|c]
+        1 & 0 & -2 & 0 \\
+        0 & 1 & 3 & 0 \\
+        0 & 0 & 0 & 1
+      \end{bmatrix}
+    \]
+    \[
+      \begin{bmatrix}[ccc|c]
+        1 & 3 & 0 & -2 \\
+        0 & 0 & 1 & 7 \\
+        0 & 0 & 0 & 0
+      \end{bmatrix}
+    \]
+  \end{multicols}
+\end{definition}
+
+\begin{activity}{10}
+  Show that the following two linear systems:
+  \begin{multicols}{2}\noindent
+    \begin{alignat*}{4}
+       x_1 &\,-\,&  x_2  &\,+\,&  5x_3 &\,=\,& 1 \\
+           &\, \,&  x_2 &\,-\,&  2x_3 &\,=\,& 3 \\
+           &\, \,&      &\, \,&   x_3 &\,=\,& 2
+    \end{alignat*}
+      \begin{alignat*}{4}
+         x_1 &\, \,&      &\, \,&       &\,=\,& -2 \\
+             &\, \,&  x_2 &\, \,&       &\,=\,& 7 \\
+             &\, \,&      &\, \,&   x_3 &\,=\,& 2
+      \end{alignat*}
+  \end{multicols}
+  are equivalent by converting the first system to an augmented matrix,
+  and then zeroing out all terms above pivot positions (the leading terms).
+\end{activity}
+
+\begin{remark}
+  We may verify that \(\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=
+  \begin{bmatrix}-2\\7\\2\end{bmatrix}\) is a solution to the
+  original linear system
+    \begin{alignat*}{4}
+      3x_1 &\,-\,& 2x_2 &\,+\,& 13x_3 &\,=\,& 6 \\
+      2x_1 &\,-\,& 2x_2 &\,+\,& 10x_3 &\,=\,& 2 \\
+     -1x_1 &\,+\,& 3x_2 &\,-\,&  6x_3 &\,=\,& 11
+    \end{alignat*}
+  by plugging the solution into each equation.
+\end{remark}
+
+\begin{fact}
+  Every augmented matrix \(A\) reduces to a unique reduced row echelon form
+  matrix. This matrix is denoted as \(\RREF(A)\).
+\end{fact}
+
+\begin{activity}{10}
+  Consider the following matrix.
+  \[
+    A = \begin{bmatrix}[ccc|c]
+      1 & 2 & 3 & 1\\
+      2 & 4 & 8 & 0
+    \end{bmatrix}
+  \]
+  \begin{subactivity}
+    Find \(\RREF(A)\).
+  \end{subactivity}
+  \begin{subactivity}
+    How many solutions does the corresponding linear system have?
+  \end{subactivity}
+\end{activity}
+
+
+
+
+
+\end{applicationActivities}

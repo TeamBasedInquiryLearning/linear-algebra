@@ -1,0 +1,108 @@
+
+
+
+\begin{applicationActivities}{2}{18}
+
+\begin{definition}
+Let $T: V \rightarrow W$ be a linear transformation.
+$T$ is called \term{injective} or \term{one-to-one} if $T$ does not map two distinct values to the same place.  More precisely, $T$ is injective if $T(\vec{v}) \neq T(\vec{w})$ whenever $\vec{v} \neq \vec{w}$.
+%$T$ is called \term{surjective} or \term{onto} if every element of $W$ is mapped to by an element of $V$.  More precisely, for every $\vec{w} \in W$, there is some $v \in V$ with $T(\vec{v})=\vec{w}$.
+\end{definition}
+
+\begin{activity}{5}
+Let $T: \IR^2 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix}x \\ y \end{bmatrix} \right) = \begin{bmatrix} x \\ y \\ 0 \end{bmatrix}.$$
+The standard matrix of $T$ is thus $\begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}$. \\
+Is $T$ injective?
+\end{activity}
+
+\begin{activity}{5}
+Let $T: \IR^3 \rightarrow \IR^2$ be given by $$T\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix} \right) = \begin{bmatrix} x \\ y \end{bmatrix}.$$  The standard matrix of $T$ is thus $\begin{bmatrix} 1 & 0 &0  \\ 0 & 1 & 0 \end{bmatrix}$.\\
+Is $T$ injective?
+\end{activity}
+
+\begin{definition}
+Let $T: V \rightarrow W$ be a linear transformation.
+$T$ is called \term{surjective} or \term{onto} if every element of $W$ is mapped to by an element of $V$.  More precisely, for every $\vec{w} \in W$, there is some $\vec{v} \in V$ with $T(\vec{v})=\vec{w}$.
+\end{definition}
+
+\begin{activity}{5}
+Let $T: \IR^2 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix}x \\ y \end{bmatrix} \right) = \begin{bmatrix} x \\ y \\ 0 \end{bmatrix}.$$
+The standard matrix of $T$ is thus $\begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}$. \\
+Is $T$ surjective?
+\end{activity}
+
+\begin{activity}{5}
+Let $T: \IR^3 \rightarrow \IR^2$ be given by $$T\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix} \right) = \begin{bmatrix} x \\ y \end{bmatrix}.$$  The standard matrix of $T$ is thus $\begin{bmatrix} 1 & 0 &0  \\ 0 & 1 & 0 \end{bmatrix}$.\\
+Is $T$ surjective?
+\end{activity}
+
+
+\begin{definition}
+Let $T: V \rightarrow W$ be a linear transformation.  The \term{kernel} of $T$
+is an important subspace of \(V\) defined by
+\[
+\ker T = \left\{ \vec{v} \in V\ \big|\ T(\vec{v})=\vec{0}\right\}
+\]
+\end{definition}
+
+\begin{activity}{5}
+Let $T: \IR^2 \rightarrow \IR^3$ be given by the standard matrix $\begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}$.  Find the kernel of $T$.
+\end{activity}
+
+\begin{activity}{5}
+Let $T: \IR^3 \rightarrow \IR^2$ be given by the standard matrix $\begin{bmatrix} 1 & 0 &0  \\ 0 & 1 & 0 \end{bmatrix}$.  Find the kernel of $T$.
+\end{activity}
+
+
+
+\begin{activity}{10}
+Let $T: \IR^3 \rightarrow \IR^2$ be the linear transformation given by the standard matrix $A=\begin{bmatrix} 3 & 4 & -1 \\ 1 & 2 & 1 \end{bmatrix}$.
+\begin{subactivity}
+Write a system of equations whose solution set is the kernel.
+\end{subactivity}
+\begin{subactivity}
+Use $\RREF(A)$ to solve the system of equations and find the kernel of \(T\).
+\end{subactivity}
+\begin{subactivity}
+Find a basis for the kernel of $T$.
+\end{subactivity}
+\end{activity}
+
+
+\begin{definition}
+Let $T: V \rightarrow W$ be a linear transformation.
+The \term{image} of $T$ is an important subspace of \(W\) defined by
+\[
+\Im T = \left\{ \vec{w} \in W\ \big|\ \text{there is some }v\in V \text{ with } T(\vec{v})=\vec{w}\right\}
+\]
+\end{definition}
+
+\begin{activity}{5}
+Let $T: \IR^2 \rightarrow \IR^3$ be given by the standard matrix $\begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}$.  Find the image of $T$.
+\end{activity}
+
+\begin{activity}{5}
+Let $T: \IR^3 \rightarrow \IR^2$ be given by the standard matrix $\begin{bmatrix} 1 & 0 &0  \\ 0 & 1 & 0 \end{bmatrix}$.  Find the image of $T$.
+\end{activity}
+
+
+\begin{activity}{10}
+Let $T: \IR^3 \rightarrow \IR^2$ be the linear transformation given by the standard matrix $A=\begin{bmatrix} 3 & 4 & -1 \\ 1 & 2 & 1 \end{bmatrix}$.
+\begin{subactivity}
+Find a convenient set of vectors \(S\subseteq\IR^2\) such that \(\vspan S=\Im T\).
+\end{subactivity}
+\begin{subactivity}
+Find a convenient basis for the image of $T$.
+\end{subactivity}
+\end{activity}
+
+\begin{observation}
+Let $T: V \rightarrow W$ be a linear transformation with corresponding matrix $A$.
+
+\begin{itemize}
+\item If $A$ is a matrix corresponding to $T$, the kernel is the solution set of the homogeneous system with coefficients given by $A$.
+\item If $A$ is a matrix corresponding to $T$, the image is the span of the columns of $A$.
+\end{itemize}
+\end{observation}
+
+\end{applicationActivities}
