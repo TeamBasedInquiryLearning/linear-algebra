@@ -16,7 +16,7 @@ for file in course-notes*.tex ; do pdflatex $file ; done
 # #Produce syllabus and forms
 # for file in day1-slides-*.tex ; do pdflatex $file ; done
 # for file in syllabus-*.tex ; do pdflatex $file ; done
-for file in standards-*.tex ; do pdflatex $file ; done
+# for file in standards-*.tex ; do pdflatex $file ; done
 # for file in homework-report-*.tex ; do pdflatex $file ; done
 # for file in reassessment-form-*.tex ; do pdflatex $file ; done
 # for file in calendar-*.tex ; do pdflatex $file ; done

@@ -30,20 +30,7 @@ a_1s_1+a_2s_2+\dots+a_ns_n=b
 .\]
 \end{definition}
 
-\begin{observation}
-The linear equation \(3x-5y=-2\) may be graphed as a line in the \(xy\) plane.
 
-\begin{center}
-\begin{tikzpicture}[scale=0.3]
-\draw[thin,gray,<->] (-5,0) -- (5,0);
-\draw[thin,gray,<->] (0,-5) -- (0,5);
-\draw[thick,blue] (-5,-2.6) -- (5,3.4);
-% \draw[thick,red] (-5,-3.67) -- (5,3);
-\end{tikzpicture}
-\end{center}
-
-The linear equation \(x+2y-z=4\) may be graphed as a plane in \(xyz\) space.
-\end{observation}
 
 \begin{remark}
 In previous classes you likely assumed \(x=x_1\), \(y=x_2\), and \(z=x_3\).
@@ -120,21 +107,6 @@ in the system).
   \textbf{inconsistent}.
 \end{fact}
 
-\begin{activity}{5}
-  Consider the following graphs representing linear systems of two variables.
-  Label each graph with \textbf{consistent with one solution},
-  \textbf{consistent with infinitely-many solutions}, or
-  \textbf{inconsistent}.
-  \begin{multicols}{4}
-  \begin{center}
-    \systemWithInfinitelyManySolutions
-    \systemWithOneSolutionB
-    \systemWithNoSolutions
-    \systemWithOneSolutionA
-  \end{center}
-  \end{multicols}
-\end{activity}
-
 \begin{activity}{10}
   All inconsistent linear systems contain a logical \term{contradiction}.
   Find a contradiction in this system.
@@ -152,39 +124,19 @@ in the system).
   \end{align*}
 \begin{subactivity}
   Find three different solutions
-  \(
-    \begin{bmatrix}
-      x_1 \\
-      x_2
-    \end{bmatrix}=
-    \begin{bmatrix}
-      r_1 \\
-      r_2
-    \end{bmatrix},
-    \begin{bmatrix}
-      s_1 \\
-      s_2
-    \end{bmatrix},
-    \begin{bmatrix}
-      t_1 \\
-      t_2
-    \end{bmatrix}
-  \)
   for this system.
 \end{subactivity}
 \begin{subactivity}
   Let \(x_2=a\) where \(a\) is an arbitrary real number, then find an
-  expression for \(x_1\) in terms of \(a\). Use this to describe \textit{all}
+  expression for \(x_1\) in terms of \(a\). Use this to write \textit{all}
   solutions (the \term{solution set})
   \(
-    \begin{bmatrix}
-      x_1 \\
-      x_2
-    \end{bmatrix}=
-    \begin{bmatrix}
+    \left\{
+	\begin{bmatrix}
       ? \\
       a
-    \end{bmatrix}
+    \end{bmatrix} \,\middle|\, a \in \IR 
+	\right\}
   \)
   for the linear system in terms of \(a\).
 \end{subactivity}
@@ -206,37 +158,15 @@ in the system).
   \end{alignat*}
   Describe the solution set
   \[
-    \begin{bmatrix}
-      x_1 \\
-      x_2 \\
-      x_3 \\
-      x_4
-    \end{bmatrix}=
-    \begin{bmatrix}
+  	\left\{
+	\begin{bmatrix}
       ? \\
       a \\
       ? \\
       b
-    \end{bmatrix}=
-    \begin{bmatrix}
-      t_1 \\
-      0 \\
-      t_3 \\
-      0
-    \end{bmatrix}+
-    a\begin{bmatrix}
-      ? \\
-      1 \\
-      ? \\
-      0
-    \end{bmatrix}+
-    b\begin{bmatrix}
-      ? \\
-      0 \\
-      ? \\
-      1
-    \end{bmatrix}
-  \] to the linear system
+	\end{bmatrix} \,\middle|\, a,b \in \IR \right\}
+  \] 
+  to the linear system
   by setting \(x_2=a\) and \(x_4=b\), and then solving for \(x_1\) and
   \(x_3\).
 \end{activity}
@@ -301,7 +231,7 @@ in the system).
   solution set.
 
   For example, both of these systems have a single solution:
-  \((x_1,x_2)=(1,1)\).
+  \(\begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 1 \\ 1\end{bmatrix}\).
 
   \begin{multicols}{2}\noindent
     \begin{alignat*}{3}
