@@ -1,0 +1,180 @@
+%!TEX root =../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
+
+\begin{applicationActivities}{0}{2}
+
+\begin{definition}
+A \term{linear equation} is an equation of the variables \(x_i\) of the form
+\[
+a_1x_1+a_2x_2+\dots+a_nx_n=b
+.\]
+A \term{solution}
+for a linear equation is expressed in terms of the Euclidean vectors
+\[
+  \begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+  \end{bmatrix}=
+  \begin{bmatrix}
+    s_1 \\
+    s_2 \\
+    \vdots \\
+    s_n
+  \end{bmatrix}
+\]
+and must satisfy
+\[
+a_1s_1+a_2s_2+\dots+a_ns_n=b
+.\]
+\end{definition}
+
+
+
+\begin{remark}
+In previous classes you likely assumed \(x=x_1\), \(y=x_2\), and \(z=x_3\).
+However, since this course often deals with equations of four or more
+variables, we will almost always write our variables as \(x_i\).
+\end{remark}
+
+\begin{definition}
+A \term{system of linear equations} (or a \term{linear system} for short)
+is a collection of one or more linear equations.
+  \begin{alignat*}{5}
+    a_{11}x_1 &\,+\,& a_{12}x_2 &\,+\,& \dots  &\,+\,& a_{1n}x_n &\,=\,& b_1 \\
+    a_{21}x_1 &\,+\,& a_{22}x_2 &\,+\,& \dots  &\,+\,& a_{2n}x_n &\,=\,& b_2 \\
+     \vdots&  &\vdots&   &&  &\vdots&&\vdots  \\
+    a_{m1}x_1 &\,+\,& a_{m2}x_2 &\,+\,& \dots  &\,+\,& a_{mn}x_n &\,=\,& b_m
+  \end{alignat*}
+A \term{solution}
+\[
+  \begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+  \end{bmatrix}=
+  \begin{bmatrix}
+    s_1 \\
+    s_2 \\
+    \vdots \\
+    s_n
+  \end{bmatrix}
+\]
+for a linear system satisfies
+\[
+a_{i1}s_1+a_{i2}s_2+\dots+a_{in}s_n=b_i
+\]
+for \(1\leq i\leq m\) (that is, the solution satisfies all equations
+in the system).
+\end{definition}
+
+\begin{remark}
+  When variables in a large linear system are missing, we prefer to
+  write the system in one of the following standard forms:
+
+  \begin{multicols}{3}\noindent
+    Original linear system:
+    \begin{alignat*}{2}
+       x_1 + 3x_3 &\,=\,& 3 \\
+      3x_1 - 2x_2 + 4x_3 &\,=\,& 0 \\
+      -x_2 +  x_3 &\,=\,& -2
+    \end{alignat*}
+    Verbose standard form:
+    \begin{alignat*}{4}
+      1x_1 &\,+\,& 0x_2 &\,+\,& 3x_3 &\,=\,& 3 \\
+      3x_1 &\,-\,& 2x_2 &\,+\,& 4x_3 &\,=\,& 0 \\
+      0x_1 &\,-\,& 1x_2 &\,+\,& 1x_3 &\,=\,& -2
+    \end{alignat*}
+    Concise standard form:
+    \begin{alignat*}{4}
+       x_1 &     &      &\,+\,& 3x_3 &\,=\,& 3 \\
+      3x_1 &\,-\,& 2x_2 &\,+\,& 4x_3 &\,=\,& 0 \\
+           &\,-\,&  x_2 &\,+\,&  x_3 &\,=\,& -2
+    \end{alignat*}
+  \end{multicols}
+\end{remark}
+
+\begin{definition}
+  A linear system is \term{consistent} if there exists a solution for the
+  system. Otherwise it is \term{inconsistent}.
+\end{definition}
+
+\begin{fact}
+  All linear systems are either \textbf{consistent with one solution},
+  \textbf{consistent with infinitely-many solutions}, or
+  \textbf{inconsistent}.
+\end{fact}
+
+\begin{activity}{10}
+  All inconsistent linear systems contain a logical \term{contradiction}.
+  Find a contradiction in this system.
+  \begin{align*}
+  -x_1+2x_2  &=  5 \\
+  2x_1-4x_2  &=  6
+  \end{align*}
+\end{activity}
+
+\begin{activity}{10}
+  Consider the following consistent linear system.
+  \begin{align*}
+  -x_1+2x_2  &= -3 \\
+  2x_1-4x_2  &=  6
+  \end{align*}
+\begin{subactivity}
+  Find three different solutions
+  for this system.
+\end{subactivity}
+\begin{subactivity}
+  Let \(x_2=a\) where \(a\) is an arbitrary real number, then find an
+  expression for \(x_1\) in terms of \(a\). Use this to write \textit{all}
+  solutions (the \term{solution set})
+  \(
+    \left\{
+	\begin{bmatrix}
+      ? \\
+      a
+    \end{bmatrix} \,\middle|\, a \in \IR 
+	\right\}
+  \)
+  for the linear system in terms of \(a\).
+\end{subactivity}
+\end{activity}
+
+% \begin{remark}
+%   The solution set of a consistent linear system with infinitely many solutions
+%   may be described by setting each
+%   certain variable equal to an arbitrary parameter, and expressing the
+%   other variables in terms of those parameters. (Later we will learn
+%   how to do this methodically.)
+% \end{remark}
+
+\begin{activity}{10}
+  Consider the following linear system.
+  \begin{alignat*}{5}
+    x_1 &\,+\,& 2x_2 &\, \,&     &\,-\,&  x_4 &\,=\,& 3 \\
+        &\, \,&      &\, \,& x_3 &\,+\,& 4x_4 &\,=\,& -2
+  \end{alignat*}
+  Describe the solution set
+  \[
+  	\left\{
+	\begin{bmatrix}
+      ? \\
+      a \\
+      ? \\
+      b
+	\end{bmatrix} \,\middle|\, a,b \in \IR \right\}
+  \] 
+  to the linear system
+  by setting \(x_2=a\) and \(x_4=b\), and then solving for \(x_1\) and
+  \(x_3\).
+\end{activity}
+
+\begin{observation}
+  Solving linear systems of two variables by graphing or substitution is
+  reasonable for two-variable systems, but these simple techniques
+  won't cut it for equations with
+  more than two variables or more than two equations.
+\end{observation}
+\end{applicationActivities}
