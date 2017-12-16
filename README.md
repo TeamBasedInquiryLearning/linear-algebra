@@ -3,6 +3,12 @@
 Source files and built PDFs for running a Team-Based Inquiry Learning
 linear algebra course.
 
+## For instructors
+
+All the needed materials are available in the PDF folder.
+See `facilitator-notes.pdf` for more information on implementing
+these materials in your classroom.
+
 ## Development
 
 All source files are located within `./tex`. These files are designed
