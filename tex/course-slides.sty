@@ -1,0 +1,166 @@
+\usepackage{tbil-la}
+
+\usetheme{Hannover}
+\usecolortheme{rose}
+%Center frame titles
+\setbeamertemplate{frametitle}[default][center]
+
+\title{Linear Algebra}
+\author{Clontz \& Lewis}
+
+\resetcounteronoverlays{SectionCounter}
+\resetcounteronoverlays{ActivityCounter}
+\resetcounteronoverlays{SubactivityCounter}
+
+
+\NewEnviron{module}[2]{
+  \renewcommand{\moduleLetter}{#1}
+  \section{Module \moduleLetter{}}
+  \setcounter{SectionCounter}{0}
+  \begin{frame}% see https://tex.stackexchange.com/a/178803
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+      \usebeamerfont{title}
+      Module \moduleLetter{}: #2
+    \end{beamercolorbox}
+    \vfill
+  \end{frame}
+  \BODY
+}
+
+\newcommand{\moduleQuestion}[1]{
+  \begin{frame}
+    \vfill
+    \textbf{\Large #1}
+    \vfill
+  \end{frame}
+}
+
+\NewEnviron{moduleStandards}{
+  \begin{frame}
+    At the end of this module, students will be able to...
+    \begin{enumerate}[\bf \moduleLetter{}1.]
+      \BODY
+    \end{enumerate}
+  \end{frame}
+}
+\newcommand{\standard}[3]{
+  \item \textbf{#1.}
+        ...#3
+}
+\newcommand{\listOfStandards}[1]{\textbf{#1}}
+
+\NewEnviron{readinessAssuranceOutcomes}{
+  \begin{frame}
+    \textbf{Readiness Assurance Outcomes}
+
+    Before beginning this module, each student should be able to...
+    \begin{itemize}
+      \BODY
+    \end{itemize}
+  \end{frame}
+}
+
+\NewEnviron{readinessAssuranceResources}{
+  \begin{frame}
+    The following resources will help you prepare for this module.
+    \begin{itemize}
+      \BODY
+    \end{itemize}
+  \end{frame}
+}
+
+
+\NewEnviron{readinessAssuranceTest}{}
+
+
+\NewEnviron{readinessAssuranceTestChoices}{}
+
+
+\NewEnviron{applicationActivities}[2]{
+  \stepcounter{SectionCounter}
+  \setcounter{ActivityCounter}{0}
+  \subsection{Section \moduleLetter{}.\theSectionCounter}
+  \begin{frame}% see https://tex.stackexchange.com/a/178803
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+      \usebeamerfont{title}
+      Module \moduleLetter{} Section \theSectionCounter
+    \end{beamercolorbox}
+    \vfill
+  \end{frame}
+  \BODY
+}
+
+
+
+\NewEnviron{activity}[1]{
+  \stepcounter{ActivityCounter}
+  \setcounter{SubactivityCounter}{0}
+  \begin{frame}
+  \textbf{Activity \moduleLetter{}.\theSectionCounter.\theActivityCounter} \textit{(\(\sim\)#1 min)}
+
+  \BODY
+  \end{frame}
+}
+
+\NewEnviron{remark}{
+  \stepcounter{ActivityCounter}
+  \begin{frame}
+  \textbf{Remark \moduleLetter{}.\theSectionCounter.\theActivityCounter}
+
+  \BODY
+  \end{frame}
+}
+
+\RenewEnviron{fact}{ % has to be renewed because beamer defines this by default
+  \stepcounter{ActivityCounter}
+  \begin{frame}
+  \textbf{Fact \moduleLetter{}.\theSectionCounter.\theActivityCounter}
+
+  \BODY
+  \end{frame}
+}
+
+\NewEnviron{observation}{
+  \stepcounter{ActivityCounter}
+  \begin{frame}
+  \textbf{Observation \moduleLetter{}.\theSectionCounter.\theActivityCounter}
+
+  \BODY
+  \end{frame}
+}
+
+\RenewEnviron{example}{ % has to be renewed because beamer defines this by default
+  \stepcounter{ActivityCounter}
+  \begin{frame}
+  \textbf{Example \moduleLetter{}.\theSectionCounter.\theActivityCounter}
+
+  \BODY
+  \end{frame}
+}
+
+\RenewEnviron{definition}{ % has to be renewed because beamer defines this by default
+  \stepcounter{ActivityCounter}
+  \begin{frame}
+  \textbf{Definition \moduleLetter{}.\theSectionCounter.\theActivityCounter}
+
+  \BODY
+  \end{frame}
+}
+
+
+
+\NewEnviron{subactivity}{
+  \stepcounter{SubactivityCounter}
+
+  \pause
+  \textit{Part \theSubactivityCounter:}
+  \BODY
+}
+
+\NewEnviron{TBLnote}{}
+
+\newcommand{\smallSlideText}{\small}

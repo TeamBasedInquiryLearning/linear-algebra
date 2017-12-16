@@ -1,0 +1,380 @@
+
+
+
+\begin{applicationActivities}{5}{29}
+
+\begin{activity}{10}
+
+\textbf{A \$700,000,000,000 Problem:}
+
+In the picture below, each circle represents a webpage, and each arrow
+represents a link from one page to another.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+    \node (4) at (4,4) {4};
+    \node (5) at (6,4) {5};
+    \node (6) at (10,4) {6} ;
+    \node (7) at (6,0) {7} ;
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (4);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (2) edge (3);
+    \draw [->] (3) edge (4);
+    \draw [->] (3) edge (7);
+    \draw [->] (4) edge (2);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (5) edge (7);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (7);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+Based on how these pages link to each other,
+write a list of the 7 webpages in order from
+most imporant to least important.
+\end{activity}
+
+\begin{observation}
+\textbf{The \$700,000,000,000 Idea:} \\
+Links are endorsements.
+
+\begin{enumerate}
+\item
+A webpage is important if it is linked to (endorsed) by important pages.
+
+\item
+A webpage distributes its importance equally among all the pages it links to
+(endorses).
+\end{enumerate}
+\end{observation}
+
+\begin{example}
+Consider this small network with only three pages.  Let $x_1, x_2, x_3$ be the importance of the three pages respectively.
+
+\begin{multicols}{2}
+\begin{center}
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (3);
+	\path [->] (2) edge[bend right=30] (1);
+   \draw [->] (3) edge (2);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\columnbreak
+
+\begin{enumerate}
+\item $x_1$ splits its endorsement in half between $x_2$ and $x_3$
+\item $x_2$ sends all of its endorsement to $x_1$
+\item $x_3$ sends all of its endorsement to $x_2$.
+\end{enumerate}
+
+This corresponds to the \term{page rank system}
+\begin{alignat*}{4}
+  && x_2 && &=& x_1 \\
+\frac{1}{2} x_1&& &+&x_3 &=& x_2 \\
+\frac{1}{2} x_1&& && &=& x_3
+\end{alignat*}
+\end{multicols}
+\end{example}
+
+
+
+
+
+\begin{example}
+  \begin{multicols}{2}
+  \begin{center}
+  \begin{tikzpicture}[scale=0.5]
+  \begin{scope}[every node/.style={circle,thick,draw}]
+      \node (1) at (0,4) {1};
+      \node (2) at (0,0) {2};
+      \node (3) at (4,0) {3};
+  \end{scope}
+
+  \begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+      \draw [->] (1) edge[bend right=30] (2);
+      \draw [->] (1) edge (3);
+  	\path [->] (2) edge[bend right=30] (1);
+      \draw [->] (3) edge (2);
+  \end{scope}
+  \end{tikzpicture}
+  \end{center}
+  \columnbreak
+  \begin{alignat*}{4}
+    && x_2 && &=& x_1 \\
+  \frac{1}{2} x_1&& &+&x_3 &=& x_2 \\
+  \frac{1}{2} x_1&& && &=& x_3
+  \end{alignat*}
+
+\end{multicols}
+
+We can summarize the left hand side of the system by putting its coefficients
+into a \term{page rank matrix}
+\(
+  A
+    =
+  \begin{bmatrix}
+    0 & 1 & 0 \\
+    \frac{1}{2} & 0 & 1 \\
+    \frac{1}{2} & 0 & 0
+  \end{bmatrix}
+\), and store the right hand side of the system as the vector
+\(\vect{x}=\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\).
+
+Thus, computing the imporance of pages on a network is equivalent to solving
+the matrix equation \(A\vec{x}=\vec{x}\).
+
+\end{example}
+
+\begin{activity}{5}
+A \term{page rank vector} for a page rank matrix \(A\) is a vector $\vec{x}$
+satisfying \(A\vec{x}=\vec{x}\). This vector describes the relative
+importance of webpages on the network described by \(A\).
+
+Thus, the \$700,000,000,000 problem is what kind of problem?
+\begin{enumerate}[(a)]
+\item A bijection problem
+\item A calculus problem
+\item A determinant problem
+\item An eigenvector problem
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{10}
+Find a page rank vector \(\vec{x}\) satisfying \(A\vec{x}=\vec{x}\)
+(an eigenvector associated to the eigenvalue \(1\))
+for the following network's page rank matrix \(A\).
+
+\begin{multicols}{2}
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (3);
+  \path [->] (2) edge[bend right=30] (1);
+    \draw [->] (3) edge (2);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\[
+  A
+    =
+  \begin{bmatrix}
+    0 & 1 & 0 \\
+    \frac{1}{2} & 0 & 1 \\
+    \frac{1}{2} & 0 & 0
+  \end{bmatrix}
+\]
+\end{multicols}
+\end{activity}
+
+\begin{observation}
+Row-reducing
+\(
+  A-I
+    =
+  \begin{bmatrix}
+    -1 & 1 & 0 \\
+    \frac{1}{2} & -1 & 1 \\
+    \frac{1}{2} & 0 & -1
+  \end{bmatrix}
+    \sim
+  \begin{bmatrix}
+    1 & 0 & -2 \\
+    0 & 1 & -2 \\
+    0 & 0 & 0
+  \end{bmatrix}
+\)
+yields the basic eigenvector \(\begin{bmatrix} 2 \\ 2 \\1 \end{bmatrix}\).
+
+Therefore, we may conclude that pages \(1\) and \(2\) are equally important,
+and both pages are twice as important as page \(3\).
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (3);
+  \path [->] (2) edge[bend right=30] (1);
+    \draw [->] (3) edge (2);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\end{observation}
+
+
+\begin{activity}{10}
+Compute the $7 \times 7$ page rank matrix for the following network.
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (3,0) {3};
+    \node (4) at (3,4) {4};
+    \node (5) at (6,4) {5};
+    \node (6) at (10,4) {6} ;
+    \node (7) at (6,0) {7} ;
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (4);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (2) edge (3);
+    \draw [->] (3) edge (4);
+    \draw [->] (3) edge (7);
+    \draw [->] (4) edge (2);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (5) edge (7);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (7);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+%\[
+%  A
+%    =
+%  \begin{bmatrix}
+%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+%    \frac{1}{2} & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+%    \frac{1}{2} & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
+%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown
+%  \end{bmatrix}
+%\]
+
+For example, since website $1$ distributes its endorsement equally between $2$ and $4$, the first column is $\begin{bmatrix} 0 \\ \frac{1}{2} \\ 0 \\ \frac{1}{2} \\ 0 \\ 0 \\ 0 \end{bmatrix}$.
+\end{activity}
+
+\begin{activity}{10}
+Find a page rank vector for the transition matrix.
+
+\begin{multicols}{2}
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (3,0) {3};
+    \node (4) at (3,4) {4};
+    \node (5) at (6,4) {5};
+    \node (6) at (10,4) {6} ;
+    \node (7) at (6,0) {7} ;
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (4);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (2) edge (3);
+    \draw [->] (3) edge (4);
+    \draw [->] (3) edge (7);
+    \draw [->] (4) edge (2);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (5) edge (7);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (7);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\[
+A=\begin{bmatrix}
+0 & \frac{1}{2} & 0 & 0 & 0 & 0 & 0 \\
+\frac{1}{2} & 0 & 0 & 1 & 0 & 0 & \frac{1}{2} \\
+0 & \frac{1}{2} & 0 & 0 & 0 & 0 & 0 \\
+\frac{1}{2} & 0 & \frac{1}{2} & 0 & 0 & 0 & \frac{1}{2} \\
+0 & 0 & 0 & 0 & 0 & \frac{1}{2} & 0 \\
+0 & 0 & 0 & 0 & \frac{1}{2} & 0 & 0 \\
+0 & 0 & \frac{1}{2} & 0 & \frac{1}{2} & \frac{1}{2} & 0
+\end{bmatrix}
+\]
+\end{multicols}
+
+Which webpage is most important?
+\end{activity}
+
+\begin{observation}
+Since a page rank vector for the network is given by \(\vec x\),
+it's reasonable to consider page \(2\) as the most important page.
+
+\parbox{\textwidth}{
+\begin{multicols}{2}
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (3,0) {3};
+    \node (4) at (3,4) {4};
+    \node (5) at (6,4) {5};
+    \node (6) at (10,4) {6} ;
+    \node (7) at (6,0) {7} ;
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (4);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (2) edge (3);
+    \draw [->] (3) edge (4);
+    \draw [->] (3) edge (7);
+    \draw [->] (4) edge (2);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (5) edge (7);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (7);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\[
+  \vec{x}
+    =
+  \begin{bmatrix} 2 \\ 4 \\2 \\ 2.5 \\ 0 \\ 0 \\ 1\end{bmatrix}
+\]
+\end{multicols}}
+\end{observation}
+
+\end{applicationActivities}

@@ -1,0 +1,185 @@
+\usepackage{tbil-la}
+
+\usepackage[left=1in,right=1in,top=1in,bottom=1.1in,includeheadfoot]{geometry}
+\usepackage{fancyhdr}
+
+%%%Page layout setup%%%
+\newcommand{\header}{Linear Algebra}
+\newcommand{\setHeader}[1]{\renewcommand{\header}{#1}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{\header}
+\rfoot{Page \thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\setlength{\parindent}{0pt}
+
+\newcommand{\preventPageBreaks}{
+  \par\nobreak\vfil\penalty0\vfilneg\vtop\bgroup
+}
+\newcommand{\allowPageBreaks}{
+  \par\xdef\tpd{\the\prevdepth}\egroup\prevdepth=\tpd
+}
+
+
+\NewEnviron{module}[2]{
+  \newpage
+  \renewcommand{\moduleLetter}{#1}
+  \setcounter{SectionCounter}{0}
+  \setHeader{Module \moduleLetter{}: #2}
+  \section*{\header}
+  \addcontentsline{toc}{chapter}{\header}
+  \BODY
+}
+
+\newcommand{\moduleQuestion}[1]{
+  \subsection*{Standards for this Module}
+
+  \textbf{#1}
+}
+
+\NewEnviron{moduleStandards}{
+  At the end of this module, students will be able to...
+  \begin{enumerate}[\bf \moduleLetter{}1.]
+    \BODY
+  \end{enumerate}
+}
+\newcommand{\standard}[3]{
+  \item \textbf{#1.}
+        ...#3
+}
+\newcommand{\listOfStandards}[1]{\textbf{#1}}
+
+
+\NewEnviron{readinessAssuranceOutcomes}{
+  \subsection*{Readiness Assurance Outcomes}
+
+  Before beginning this module, each student should be able to...
+  \begin{itemize}
+    \BODY
+  \end{itemize}
+}
+
+
+\NewEnviron{readinessAssuranceResources}{
+  \subsection*{Readiness Assurance Resources}
+  The following resources will help you prepare for this module.
+  \begin{itemize}
+    \BODY
+  \end{itemize}
+}
+
+
+\NewEnviron{readinessAssuranceTest}{
+  \newpage
+  \subsection*{Readiness Assurance Test}
+  Choose the most appropriate response for each question.
+  \begin{enumerate}[1)]
+    \BODY
+  \end{enumerate}
+}
+
+
+\NewEnviron{readinessAssuranceTestChoices}{
+  \begin{enumerate}[(a)]
+    \BODY
+  \end{enumerate}
+}
+
+
+\NewEnviron{applicationActivities}[2]{
+  \stepcounter{SectionCounter}
+  \setcounter{ActivityCounter}{0}
+
+  \newpage
+  \subsection*{Section \moduleLetter{}.\theSectionCounter}
+  \addcontentsline{toc}{section}{Section \moduleLetter{}.\theSectionCounter}
+
+  \BODY
+}
+
+\NewEnviron{activity}[1]{
+  \stepcounter{ActivityCounter}
+  \setcounter{SubactivityCounter}{0}
+  \preventPageBreaks
+  \textbf{Activity \moduleLetter{}.\theSectionCounter.\theActivityCounter} \textit{(\(\sim\)#1 min)}
+  \BODY
+
+  \vspace{1em}
+  \allowPageBreaks
+}
+
+\NewEnviron{remark}{
+  \stepcounter{ActivityCounter}
+  \setcounter{SubactivityCounter}{0}
+  \preventPageBreaks
+  \textbf{Remark \moduleLetter{}.\theSectionCounter.\theActivityCounter}
+  \BODY
+
+  \vspace{1em}
+  \allowPageBreaks
+}
+
+\NewEnviron{fact}{
+  \stepcounter{ActivityCounter}
+  \setcounter{SubactivityCounter}{0}
+  \preventPageBreaks
+  \textbf{Fact \moduleLetter{}.\theSectionCounter.\theActivityCounter}
+  \BODY
+
+  \vspace{1em}
+  \allowPageBreaks
+}
+
+\NewEnviron{observation}{
+  \stepcounter{ActivityCounter}
+  \setcounter{SubactivityCounter}{0}
+  \preventPageBreaks
+  \textbf{Observation \moduleLetter{}.\theSectionCounter.\theActivityCounter}
+  \BODY
+
+  \vspace{1em}
+  \allowPageBreaks
+  }
+
+\NewEnviron{example}{
+  \stepcounter{ActivityCounter}
+  \setcounter{SubactivityCounter}{0}
+  \preventPageBreaks
+  \textbf{Example \moduleLetter{}.\theSectionCounter.\theActivityCounter}
+  \BODY
+
+  \vspace{1em}
+  \allowPageBreaks
+}
+
+\NewEnviron{definition}{
+  \stepcounter{ActivityCounter}
+  \setcounter{SubactivityCounter}{0}
+  \preventPageBreaks
+  \textbf{Definition \moduleLetter{}.\theSectionCounter.\theActivityCounter}
+  \BODY
+
+  \vspace{1em}
+  \allowPageBreaks
+}
+
+
+\NewEnviron{subactivity}{
+  \stepcounter{SubactivityCounter}
+
+  \textit{Part \theSubactivityCounter:}
+  \BODY
+}
+
+%This is for making instructor notes about running the activity (e.g. card sort, gallery walk...)
+\NewEnviron{TBLnote}{
+  \textcolor{blue}{
+    \textbf{(Instructor Note:)}
+    \BODY
+  }
+}
+
+\newcommand{\smallSlideText}{}
