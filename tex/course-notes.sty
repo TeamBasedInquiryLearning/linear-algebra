@@ -34,22 +34,12 @@
   \BODY
 }
 
-
-\NewEnviron{readinessAssuranceOutcomes}{
-  \subsection*{Readiness Assurance Outcomes}
-
-  Before beginning this module, each student should be able to...
-  \begin{itemize}
-    \BODY
-  \end{itemize}
-}
-
-
 \newcommand{\moduleQuestion}[1]{
   \subsection*{Standards for this Module}
 
   \textbf{#1}
 }
+
 \NewEnviron{moduleStandards}{
   At the end of this module, students will be able to...
   \begin{enumerate}[\bf \moduleLetter{}1.]
@@ -61,6 +51,17 @@
         ...#3
 }
 \newcommand{\listOfStandards}[1]{\textbf{#1}}
+
+
+\NewEnviron{readinessAssuranceOutcomes}{
+  \subsection*{Readiness Assurance Outcomes}
+
+  Before beginning this module, each student should be able to...
+  \begin{itemize}
+    \BODY
+  \end{itemize}
+}
+
 
 \NewEnviron{readinessAssuranceResources}{
   \subsection*{Readiness Assurance Resources}
@@ -105,9 +106,8 @@
   \preventPageBreaks
   \textbf{Activity \moduleLetter{}.\theSectionCounter.\theActivityCounter} \textit{(\(\sim\)#1 min)}
   \BODY
-  \begin{center}
-    \rule{6.5in}{0.2pt}
-  \end{center}
+
+  \vspace{1em}
   \allowPageBreaks
 }
 
@@ -183,4 +183,3 @@
 }
 
 \newcommand{\smallSlideText}{}
-\newcommand{\pause}{}

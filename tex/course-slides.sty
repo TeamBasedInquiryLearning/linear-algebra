@@ -6,25 +6,17 @@
 \setbeamertemplate{frametitle}[default][center]
 
 \title{Linear Algebra}
-\author{University of South Alabama}
+\author{Clontz \& Lewis}
 
-\resetcounteronoverlays{ClassDayCounter}
+\resetcounteronoverlays{SectionCounter}
 \resetcounteronoverlays{ActivityCounter}
 \resetcounteronoverlays{SubactivityCounter}
-
-\NewEnviron{readinessAssuranceOutcomes}{
-  \begin{frame}
-    Before beginning this module, each student should be able to...
-    \begin{itemize}
-      \BODY
-    \end{itemize}
-  \end{frame}
-}
 
 
 \NewEnviron{module}[2]{
   \renewcommand{\moduleLetter}{#1}
   \section{Module \moduleLetter{}}
+  \setcounter{SectionCounter}{0}
   \begin{frame}% see https://tex.stackexchange.com/a/178803
     \vfill
     \centering
@@ -37,17 +29,38 @@
   \BODY
 }
 
+\newcommand{\moduleQuestion}[1]{
+  \begin{frame}
+    \vfill
+    \textbf{\Large #1}
+    \vfill
+  \end{frame}
+}
 
 \NewEnviron{moduleStandards}{
   \begin{frame}
     At the end of this module, students will be able to...
+    \begin{enumerate}[\bf \moduleLetter{}1.]
+      \BODY
+    \end{enumerate}
+  \end{frame}
+}
+\newcommand{\standard}[3]{
+  \item \textbf{#1.}
+        ...#3
+}
+\newcommand{\listOfStandards}[1]{\textbf{#1}}
+
+\NewEnviron{readinessAssuranceOutcomes}{
+  \begin{frame}
+    \textbf{Readiness Assurance Outcomes}
+
+    Before beginning this module, each student should be able to...
     \begin{itemize}
       \BODY
     \end{itemize}
   \end{frame}
 }
-
-\newcommand{\standardList}[1]{\textbf{(Standard(s) #1)}}
 
 \NewEnviron{readinessAssuranceResources}{
   \begin{frame}
@@ -66,17 +79,15 @@
 
 
 \NewEnviron{applicationActivities}[2]{
-  \setcounter{ClassDayCounter}{#2}
+  \stepcounter{SectionCounter}
   \setcounter{ActivityCounter}{0}
-  \subsection{Part #1 (Day \theClassDayCounter)}
+  \subsection{Section \moduleLetter{}.\theSectionCounter}
   \begin{frame}% see https://tex.stackexchange.com/a/178803
     \vfill
     \centering
     \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
       \usebeamerfont{title}
-      Application Activities -
-      Module \moduleLetter{} Part #1 -
-      Class Day \theClassDayCounter\par%
+      Module \moduleLetter{} Section \theSectionCounter
     \end{beamercolorbox}
     \vfill
   \end{frame}
@@ -89,7 +100,7 @@
   \stepcounter{ActivityCounter}
   \setcounter{SubactivityCounter}{0}
   \begin{frame}
-  \textbf{Activity \theClassDayCounter.\theActivityCounter}
+  \textbf{Activity \moduleLetter{}.\theSectionCounter.\theActivityCounter} \textit{(\(\sim\)#1 min)}
 
   \BODY
   \end{frame}
@@ -98,16 +109,16 @@
 \NewEnviron{remark}{
   \stepcounter{ActivityCounter}
   \begin{frame}
-  \textbf{Remark \theClassDayCounter.\theActivityCounter}
+  \textbf{Remark \moduleLetter{}.\theSectionCounter.\theActivityCounter}
 
   \BODY
   \end{frame}
 }
 
-\RenewEnviron{fact}{ % beamer defines this, because who cares about separation of concerns amirite
+\RenewEnviron{fact}{ % has to be renewed because beamer defines this by default
   \stepcounter{ActivityCounter}
   \begin{frame}
-  \textbf{Fact \theClassDayCounter.\theActivityCounter}
+  \textbf{Fact \moduleLetter{}.\theSectionCounter.\theActivityCounter}
 
   \BODY
   \end{frame}
@@ -116,25 +127,25 @@
 \NewEnviron{observation}{
   \stepcounter{ActivityCounter}
   \begin{frame}
-  \textbf{Observation \theClassDayCounter.\theActivityCounter}
+  \textbf{Observation \moduleLetter{}.\theSectionCounter.\theActivityCounter}
 
   \BODY
   \end{frame}
 }
 
-\RenewEnviron{example}{ % beamer defines this, because who cares about separation of concerns amirite
+\RenewEnviron{example}{ % has to be renewed because beamer defines this by default
   \stepcounter{ActivityCounter}
   \begin{frame}
-  \textbf{Example \theClassDayCounter.\theActivityCounter}
+  \textbf{Example \moduleLetter{}.\theSectionCounter.\theActivityCounter}
 
   \BODY
   \end{frame}
 }
 
-\RenewEnviron{definition}{ % beamer defines this, because who cares about separation of concerns amirite
+\RenewEnviron{definition}{ % has to be renewed because beamer defines this by default
   \stepcounter{ActivityCounter}
   \begin{frame}
-  \textbf{Definition \theClassDayCounter.\theActivityCounter}
+  \textbf{Definition \moduleLetter{}.\theSectionCounter.\theActivityCounter}
 
   \BODY
   \end{frame}
