@@ -15,7 +15,7 @@
 }
 
 
-\begin{applicationActivities}{2}{4}
+\begin{applicationActivities}
 
 \begin{fact}
   Every augmented matrix \(A\) reduces to a unique reduced row echelon form
@@ -45,11 +45,11 @@ Consider the (simpler) system from the previous problem:
 	     	 & &x_3 &= -1
 	\end{alignat*}
 \begin{subactivity}
-Let $x_1=a$ and write the solution set in the form 
+Let $x_1=a$ and write the solution set in the form
 \( \left\{ \begin{bmatrix} a \\ ? \\ ? \end{bmatrix} \,\middle|\, a \in \IR \right\} \)
 \end{subactivity}
 \begin{subactivity}
-Let $x_2=b$ and write the solution set in the form 
+Let $x_2=b$ and write the solution set in the form
 \( \left\{ \begin{bmatrix} ? \\ b \\ ? \end{bmatrix} \,\middle|\, b \in \IR \right\} \)
 \end{subactivity}
 \begin{subactivity}
@@ -65,7 +65,7 @@ If a matrix is in reduced row echelon form, a \term{pivot} is an entry satisfyin
 \item Everything else in the same column is zero.
 \end{enumerate}
 
-For example, the pivots are circled in 
+For example, the pivots are circled in
 
 \[\begin{bmatrix}[ccc|c] \circledNumber{1} & 2 & 0 & 4 \\ 0 & 0 & \circledNumber{1} & -1 \end{bmatrix}\]
 \end{definition}
@@ -94,7 +94,7 @@ Find the solution set for the system
 -x_1&\,+\,&x_2&\,+\,&3x_3&\,-\,&x_4&\,+\,&2x_5 &\,=\,& -3 \\
 x_1&\,-\,&2x_2&\,-\,&x_3&\,+\,&x_4&\,+\,&x_5 &\,=\,& 2
 \end{alignat*}
-by assigning letters to the free variables and solving for the bounded variables. 
+by assigning letters to the free variables and solving for the bounded variables.
 \end{activity}
 
 \begin{observation}
@@ -130,12 +130,12 @@ The horizontal and vertical forces must balance at each of the five intersecting
 Apply basic trig:
 \begin{align*}
 F_{1,v}&=F_1 \sin(60^\circ) \\ F_{1,h}&=F_1\cos(60^\circ)
-\end{align*} 
+\end{align*}
 
 thus
 \begin{align*}
 F_1 \sin(60^\circ)+N_{1,v} &= 0 \\
-F_1 \cos(60^\circ)+N_{1,h}+F_2 &= 0 
+F_1 \cos(60^\circ)+N_{1,h}+F_2 &= 0
 \end{align*}
 \end{multicols}
 
@@ -146,7 +146,7 @@ We adhere to the convention that a compression force on a strut is positive, whi
 Consider the truss pictured below with two fixed anchor points and a 10000 N load (assume all triangles are equilateral).
 \drawtruss
 
-From the bottom left node we obtained 2 equations in the four variables 
+From the bottom left node we obtained 2 equations in the four variables
 \begin{itemize}
 \item $F_{1}$ (compression force on strut one)
 \item $N_{1,v}$ and $N_{1,h}$ (horizontal and vertical components of the normal force from the left anchor)
@@ -161,7 +161,7 @@ Determine how many total equations there will be after accounting for all of the
 
 \begin{activity}{10}
 \drawtruss[0.8]
-The resulting system is 
+The resulting system is
 \begin{alignat*}{12}
 N_{1,v} &\,\,& &\,\,& &\,\,& &\,+\,& (\sin(60^\circ))F_1 &\,\,& &\,\,& &\,\,& &\,\,& &\,\,& &\,\,& &\,=\,& 0 \\
         &\,\,& N_{1,h} &\,\,& &\,\,& &\,+\,& (\cos(60^\circ))F_1 &\,+\,&F_2 &\,\,& &\,\,& &\,\,& &\,\,& &\,\,& &\,=\,& 0 \\
@@ -172,7 +172,7 @@ N_{1,v} &\,\,& &\,\,& &\,\,& &\,+\,& (\sin(60^\circ))F_1 &\,\,& &\,\,& &\,\,& &\
         &\,\,&         &\,\,& &\,\,& &\,\,&                     &\,\,& &\,\,&                   &\,\,& &\,-\,& (\sin(60^\circ))F_5&\,\,& &\,-\,& (\sin(60^\circ))F_7&\,=\,& 0 \\
         &\,\,&         &\,\,& &\,\,& &\,\,&                     &\,\,& &\,\,&                   &\,-\,&F_4 &\,-\,& (\cos(60^\circ))F_5&\,\,& &\,+\,& (\cos(60^\circ))F_7&\,=\,& 0 \\
         &\,\,&         &\,\,& N_{2,v} &\,\,& &\,\,&                     &\,\,& &\,\,&                   &\,\,& &\,\,&                    &\,\,& &\,+\,& (\sin(60^\circ))F_7&\,=\,& 0 \\
-        &\,\,&         &\,\,& &\,\,&N_{2,h} &\,\,&                     &\,\,& &\,\,&                   &\,\,&    &\,\,&                    &\,-\,& F_6 &\,-\,& (\cos(60^\circ))F_7&\,=\,& 0 
+        &\,\,&         &\,\,& &\,\,&N_{2,h} &\,\,&                     &\,\,& &\,\,&                   &\,\,&    &\,\,&                    &\,-\,& F_6 &\,-\,& (\cos(60^\circ))F_7&\,=\,& 0
 \end{alignat*}
 Solve this system to determine which struts are compressed and which are in tension.
 \end{activity}
