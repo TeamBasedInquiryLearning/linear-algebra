@@ -1,9 +1,11 @@
 #!/bin/bash
 
-#Produce notes and slides
 (
   cd ./tex
   for file in *.tex; do
+    pdflatex $file
+  done
+  for file in handouts/*/*.tex; do
     pdflatex $file
   done
   for file in *.pdf; do
