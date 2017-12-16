@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage{amsmath,ifthen,amsthm,amssymb,enumerate}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+\newenvironment{problem}[1]
+{
+	\textbf{#1.}
+	\ignorespaces
+}{
+
+}
+
+\newenvironment{solution}
+{
+	\textit{Solution.}
+	\ignorespaces
+}{
+	\qed
+
+	\vspace{1em}
+}
+
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\let\Im\relax\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\RREF}{RREF}
+\DeclareMathOperator{\vspan}{span}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\newcommand{\startModule}[1]
+{
+	\section*{Module #1}
+	\addcontentsline{toc}{section}{Module #1}
+}
+\newcommand{\startStandard}[1]
+{
+	\subsection*{Standard #1}
+	\addcontentsline{toc}{subsection}{Standard #1}
+}
+
+\begin{document}
+\begin{flushleft}
+
+\startModule{E}
+\startStandard{E1}
+\input{modules/1-E/exercises/E1.tex} \newpage
+\startStandard{E2}
+\input{modules/1-E/exercises/E2.tex} \newpage
+\startStandard{E3}
+\input{modules/1-E/exercises/E3.tex} \newpage
+\startStandard{E4}
+\input{modules/1-E/exercises/E4.tex} \newpage
+
+\startModule{V}
+\startStandard{V1}
+\input{modules/2-V/exercises/V1.tex} \newpage
+\startStandard{V2}
+\input{modules/2-V/exercises/V2.tex} \newpage
+\startStandard{V3}
+\input{modules/2-V/exercises/V3.tex} \newpage
+\startStandard{V4}
+\input{modules/2-V/exercises/V4.tex} \newpage
+
+
+
+\startModule{S}
+\startStandard{S1}
+\input{modules/3-S/exercises/S1.tex} \newpage
+\startStandard{S2}
+\input{modules/3-S/exercises/S2.tex} \newpage
+\startStandard{S3}
+\input{modules/3-S/exercises/S3.tex} \newpage
+\startStandard{S4}
+\input{modules/3-S/exercises/S4.tex} \newpage
+
+
+
+\startModule{A}
+\startStandard{A1}
+\input{modules/4-A/exercises/A1.tex} \newpage
+\startStandard{A2}
+\input{modules/4-A/exercises/A2.tex} \newpage
+\startStandard{A3}
+\input{modules/4-A/exercises/A3.tex} \newpage
+\startStandard{A4}
+\input{modules/4-A/exercises/A4.tex} \newpage
+
+
+
+\startModule{M}
+\startStandard{M1}
+\input{modules/5-M/exercises/M1.tex} \newpage
+\startStandard{M2}
+\input{modules/5-M/exercises/M2.tex} \newpage
+\startStandard{M3}
+\input{modules/5-M/exercises/M3.tex} \newpage
+
+
+\startModule{G}
+\startStandard{G1}
+\input{modules/6-G/exercises/G1.tex} \newpage
+\startStandard{G2}
+\input{modules/6-G/exercises/G2.tex} \newpage
+\startStandard{G3}
+\input{modules/6-G/exercises/G3.tex} \newpage
+\startStandard{G4}
+\input{modules/6-G/exercises/G4.tex}
+
+\end{flushleft}
+\end{document}
