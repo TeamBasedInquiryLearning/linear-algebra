@@ -1,7 +1,7 @@
+%!TEX root =../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
 
-
-
-\begin{applicationActivities}{1}{3}
+\begin{applicationActivities}{0}{2}
 
 \begin{definition}
 A \term{linear equation} is an equation of the variables \(x_i\) of the form
@@ -30,20 +30,7 @@ a_1s_1+a_2s_2+\dots+a_ns_n=b
 .\]
 \end{definition}
 
-\begin{observation}
-The linear equation \(3x-5y=-2\) may be graphed as a line in the \(xy\) plane.
 
-\begin{center}
-\begin{tikzpicture}[scale=0.3]
-\draw[thin,gray,<->] (-5,0) -- (5,0);
-\draw[thin,gray,<->] (0,-5) -- (0,5);
-\draw[thick,blue] (-5,-2.6) -- (5,3.4);
-% \draw[thick,red] (-5,-3.67) -- (5,3);
-\end{tikzpicture}
-\end{center}
-
-The linear equation \(x+2y-z=4\) may be graphed as a plane in \(xyz\) space.
-\end{observation}
 
 \begin{remark}
 In previous classes you likely assumed \(x=x_1\), \(y=x_2\), and \(z=x_3\).
@@ -120,21 +107,6 @@ in the system).
   \textbf{inconsistent}.
 \end{fact}
 
-\begin{activity}{5}
-  Consider the following graphs representing linear systems of two variables.
-  Label each graph with \textbf{consistent with one solution},
-  \textbf{consistent with infinitely-many solutions}, or
-  \textbf{inconsistent}.
-  \begin{multicols}{4}
-  \begin{center}
-    \systemWithInfinitelyManySolutions
-    \systemWithOneSolutionB
-    \systemWithNoSolutions
-    \systemWithOneSolutionA
-  \end{center}
-  \end{multicols}
-\end{activity}
-
 \begin{activity}{10}
   All inconsistent linear systems contain a logical \term{contradiction}.
   Find a contradiction in this system.
@@ -152,39 +124,19 @@ in the system).
   \end{align*}
 \begin{subactivity}
   Find three different solutions
-  \(
-    \begin{bmatrix}
-      x_1 \\
-      x_2
-    \end{bmatrix}=
-    \begin{bmatrix}
-      r_1 \\
-      r_2
-    \end{bmatrix},
-    \begin{bmatrix}
-      s_1 \\
-      s_2
-    \end{bmatrix},
-    \begin{bmatrix}
-      t_1 \\
-      t_2
-    \end{bmatrix}
-  \)
   for this system.
 \end{subactivity}
 \begin{subactivity}
   Let \(x_2=a\) where \(a\) is an arbitrary real number, then find an
-  expression for \(x_1\) in terms of \(a\). Use this to describe \textit{all}
+  expression for \(x_1\) in terms of \(a\). Use this to write \textit{all}
   solutions (the \term{solution set})
   \(
-    \begin{bmatrix}
-      x_1 \\
-      x_2
-    \end{bmatrix}=
-    \begin{bmatrix}
+    \left\{
+	\begin{bmatrix}
       ? \\
       a
-    \end{bmatrix}
+    \end{bmatrix} \,\middle|\, a \in \IR 
+	\right\}
   \)
   for the linear system in terms of \(a\).
 \end{subactivity}
@@ -206,37 +158,15 @@ in the system).
   \end{alignat*}
   Describe the solution set
   \[
-    \begin{bmatrix}
-      x_1 \\
-      x_2 \\
-      x_3 \\
-      x_4
-    \end{bmatrix}=
-    \begin{bmatrix}
+  	\left\{
+	\begin{bmatrix}
       ? \\
       a \\
       ? \\
       b
-    \end{bmatrix}=
-    \begin{bmatrix}
-      t_1 \\
-      0 \\
-      t_3 \\
-      0
-    \end{bmatrix}+
-    a\begin{bmatrix}
-      ? \\
-      1 \\
-      ? \\
-      0
-    \end{bmatrix}+
-    b\begin{bmatrix}
-      ? \\
-      0 \\
-      ? \\
-      1
-    \end{bmatrix}
-  \] to the linear system
+	\end{bmatrix} \,\middle|\, a,b \in \IR \right\}
+  \] 
+  to the linear system
   by setting \(x_2=a\) and \(x_4=b\), and then solving for \(x_1\) and
   \(x_3\).
 \end{activity}
@@ -247,110 +177,4 @@ in the system).
   won't cut it for equations with
   more than two variables or more than two equations.
 \end{observation}
-
-\begin{remark}
-  The only important information in a linear system are its coefficients and
-  constants.
-
-  \begin{multicols}{3}\noindent
-    Original linear system:
-    \begin{alignat*}{2}
-       x_1 + 3x_3 &\,=\,& 3 \\
-      3x_1 - 2x_2 + 4x_3 &\,=\,& 0 \\
-      -x_2 +  x_3 &\,=\,& -2
-    \end{alignat*}
-    Verbose standard form:
-    \begin{alignat*}{4}
-      1x_1 &\,+\,& 0x_2 &\,+\,& 3x_3 &\,=\,& 3 \\
-      3x_1 &\,-\,& 2x_2 &\,+\,& 4x_3 &\,=\,& 0 \\
-      0x_1 &\,-\,& 1x_2 &\,+\,& 1x_3 &\,=\,& -2
-    \end{alignat*}
-    Coefficients/constants:
-    \begin{alignat*}{4}
-       1 &     &  0 &\,\,& 3 &\,|\,& 3 \\
-       3 &\, \,& -2 &\,\,& 4 &\,|\,& 0 \\
-       0 &\, \,& -1 &\,\,& 1 &\,|\,& -2
-    \end{alignat*}
-  \end{multicols}
-\end{remark}
-
-\begin{definition}
-  A system of \(m\) linear equations with \(n\) variables is often represented
-  by writing its coefficients and constants in an \term{augmented matrix}.
-  \begin{multicols}{2}\noindent
-  \begin{alignat*}{5}
-    a_{11}x_1 &\,+\,& a_{12}x_2 &\,+\,& \dots  &\,+\,& a_{1n}x_n &\,=\,& b_1 \\
-    a_{21}x_1 &\,+\,& a_{22}x_2 &\,+\,& \dots  &\,+\,& a_{2n}x_n &\,=\,& b_2 \\
-     \vdots&  &\vdots&   &&  &\vdots&&\vdots  \\
-    a_{m1}x_1 &\,+\,& a_{m2}x_2 &\,+\,& \dots  &\,+\,& a_{mn}x_n &\,=\,& b_m
-  \end{alignat*}
-  \[
-    \begin{bmatrix}[cccc|c]
-      a_{11} & a_{12} & \cdots & a_{1n} & b_1\\
-      a_{21} & a_{22} & \cdots & a_{2n} & b_2\\
-      \vdots & \vdots & \ddots & \vdots & \vdots\\
-      a_{m1} & a_{m2} & \cdots & a_{mn} & b_m
-    \end{bmatrix}
-  \]
-  \end{multicols}
-\end{definition}
-
-\begin{definition}
-  Two systems of linear equations (and their corresponding augmented
-  matrices) are said to be \term{equivalent} if they have the same
-  solution set.
-
-  For example, both of these systems have a single solution:
-  \((x_1,x_2)=(1,1)\).
-
-  \begin{multicols}{2}\noindent
-    \begin{alignat*}{3}
-      3x_1 &\,-\,& 2x_2 &\,=\,& 1 \\
-      x_1 &\,+\,& 4x_2 &\,=\,& 5 \\
-    \end{alignat*}
-    \begin{alignat*}{3}
-      3x_1 &\,-\,& 2x_2 &\,=\,& 1 \\
-      4x_1 &\,+\,& 2x_2 &\,=\,& 6 \\
-    \end{alignat*}
-  \end{multicols}
-
-  Therefore these augmented matrices are equivalent:
-
-  \begin{multicols}{2}\noindent
-    \[
-      \begin{bmatrix}[cc|c]
-        3 & -2 & 1\\
-        1 &  4 & 5\\
-      \end{bmatrix}
-    \]
-    \[
-      \begin{bmatrix}[cc|c]
-        3 & -2 & 1\\
-        4 &  2 & 6\\
-      \end{bmatrix}
-    \]
-  \end{multicols}
-\end{definition}
-
-\begin{activity}{10}
-  Following are six procedures used to manipulate an augmented matrix.
-  Label the procedures that would result in an equivalent augmented
-  matrix as \textbf{valid}, and label the procedures that would
-  change the solution set of the corresponding linear system as
-  \textbf{invalid}.
-  \begin{multicols}{2}
-    \begin{enumerate}[a)]
-      \item Swap two rows.
-      \item Swap two columns.
-      \item Add a constant to every term in a row.
-      \item Multiply a row by a nonzero constant.
-      \item Add a constant multiple of one row to another row.
-      \item Replace a column with zeros.
-    \end{enumerate}
-  \end{multicols}
-  \begin{TBLnote}
-    This activity could be ran as a card sort.
-  \end{TBLnote}
-\end{activity}
-
 \end{applicationActivities}
