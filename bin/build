@@ -8,11 +8,17 @@
   for file in handouts/*/*.tex; do
     pdflatex $file
   done
+  for file in rats/*.tex; do
+    pdflatex $file
+  done
   for file in *.pdf; do
     mv $file ../pdf/$file
   done
   cd ../pdf
   for file in handout-*.pdf; do
     mv $file handouts/$file
+  done
+  for file in rat-*.pdf; do
+    mv $file rats/$file
   done
 )
