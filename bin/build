@@ -3,7 +3,7 @@
 (
   cd ./tex
   for file in *.tex; do
-    pdflatex $file
+    pdflatex $file; pdflatex $file #twice for table of contents
   done
   for file in handouts/*/*.tex; do
     pdflatex $file
