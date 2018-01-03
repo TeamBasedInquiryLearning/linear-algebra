@@ -40,8 +40,8 @@
 
 \newcommand{\term}{\textbf}
 
-\newcommand{\systemWithOneSolutionA}{
-\begin{tikzpicture}[scale=0.25]
+\newcommand{\systemWithOneSolutionA}[1][0.25]{
+\begin{tikzpicture}[scale=#1]
 \draw[thin,gray,<->] (-5,0) -- (5,0);
 \draw[thin,gray,<->] (0,-5) -- (0,5);
 \draw[thick,blue] (-5,4.5) -- (5,-0.5);
@@ -49,8 +49,8 @@
 \end{tikzpicture}
 }
 
-\newcommand{\systemWithOneSolutionB}{
-\begin{tikzpicture}[scale=0.25]
+\newcommand{\systemWithOneSolutionB}[1][0.25]{
+\begin{tikzpicture}[scale=#1]
 \draw[thin,gray,<->] (-5,0) -- (5,0);
 \draw[thin,gray,<->] (0,-5) -- (0,5);
 \draw[thick,blue] (-5,-3) -- (5,-0.5);
@@ -58,16 +58,16 @@
 \end{tikzpicture}
 }
 
-\newcommand{\systemWithInfinitelyManySolutions}{
-\begin{tikzpicture}[scale=0.25]
+\newcommand{\systemWithInfinitelyManySolutions}[1][0.25]{
+\begin{tikzpicture}[scale=#1]
 \draw[thin,gray,<->] (-5,0) -- (5,0);
 \draw[thin,gray,<->] (0,-5) -- (0,5);
 \draw[thick,purple] (-3,5) -- (5,-3);
 \end{tikzpicture}
 }
 
-\newcommand{\systemWithNoSolutions}{
-\begin{tikzpicture}[scale=0.25]
+\newcommand{\systemWithNoSolutions}[1][0.25]{
+\begin{tikzpicture}[scale=#1]
 \draw[thin,gray,<->] (-5,0) -- (5,0);
 \draw[thin,gray,<->] (0,-5) -- (0,5);
 \draw[thick,blue] (3,-5) -- (1,5);
