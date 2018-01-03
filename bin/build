@@ -2,6 +2,9 @@
 
 (
   cd ./tex
+  if [ ! -d aux]; then
+  	mkdir aux
+  fi
   for file in *.tex; do
     pdflatex -output-directory aux $file 
 	pdflatex -output-directory aux $file #twice for table of contents
