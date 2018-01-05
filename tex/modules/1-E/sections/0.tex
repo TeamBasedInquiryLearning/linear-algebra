@@ -1,4 +1,4 @@
-%!TEX root =../../course-notes.tex
+%!TEX root =../../../course-notes.tex
 % ^ leave for LaTeXTools build functionality
 
 \begin{applicationActivities}
@@ -8,15 +8,8 @@ A \term{linear equation} is an equation of the variables \(x_i\) of the form
 \[
 a_1x_1+a_2x_2+\dots+a_nx_n=b
 .\]
-A \term{solution}
-for a linear equation is expressed in terms of the Euclidean vectors
+A \term{solution} for a linear equation is a Euclidean vector
 \[
-  \begin{bmatrix}
-    x_1 \\
-    x_2 \\
-    \vdots \\
-    x_n
-  \end{bmatrix}=
   \begin{bmatrix}
     s_1 \\
     s_2 \\
@@ -24,18 +17,20 @@ for a linear equation is expressed in terms of the Euclidean vectors
     s_n
   \end{bmatrix}
 \]
-and must satisfy
+that satisfies
 \[
 a_1s_1+a_2s_2+\dots+a_ns_n=b
-.\]
+\]
+(that is, a Euclidean vector that can be plugged into the equation).
 \end{definition}
 
 
 
 \begin{remark}
-In previous classes you likely assumed \(x=x_1\), \(y=x_2\), and \(z=x_3\).
+In previous classes you likely used the variables \(x,y,z\) in equations.
 However, since this course often deals with equations of four or more
-variables, we will almost always write our variables as \(x_i\).
+variables, we will often write our variables as \(x_i\), and assume
+\(x=x_1,y=x_2,z=x_3,w=x_4\) when convenient.
 \end{remark}
 
 \begin{definition}
@@ -47,27 +42,25 @@ is a collection of one or more linear equations.
      \vdots&  &\vdots&   &&  &\vdots&&\vdots  \\
     a_{m1}x_1 &\,+\,& a_{m2}x_2 &\,+\,& \dots  &\,+\,& a_{mn}x_n &\,=\,& b_m
   \end{alignat*}
-A \term{solution}
+Its \term{solution set} is given by
 \[
-  \begin{bmatrix}
-    x_1 \\
-    x_2 \\
-    \vdots \\
-    x_n
-  \end{bmatrix}=
-  \begin{bmatrix}
-    s_1 \\
-    s_2 \\
-    \vdots \\
-    s_n
-  \end{bmatrix}
-\]
-for a linear system satisfies
-\[
-a_{i1}s_1+a_{i2}s_2+\dots+a_{in}s_n=b_i
-\]
-for \(1\leq i\leq m\) (that is, the solution satisfies all equations
-in the system).
+  \left\{
+    \begin{bmatrix}
+      s_1 \\
+      s_2 \\
+      \vdots \\
+      s_n
+    \end{bmatrix}
+  \,\middle|\,
+    \begin{bmatrix}
+      s_1 \\
+      s_2 \\
+      \vdots \\
+      s_n
+    \end{bmatrix}
+    \text{ is a solution to all equations in the system}
+  \right\}
+.\]
 \end{definition}
 
 \begin{remark}
@@ -97,19 +90,35 @@ in the system).
 \end{remark}
 
 \begin{definition}
-  A linear system is \term{consistent} if there exists a solution for the
-  system. Otherwise it is \term{inconsistent}.
+  A linear system is \term{consistent} if its solution set
+  is non-empty (that is, there exists a solution for the
+  system). Otherwise it is \term{inconsistent}.
 \end{definition}
 
 \begin{fact}
-  All linear systems are either \textbf{consistent with one solution},
-  \textbf{consistent with infinitely-many solutions}, or
-  \textbf{inconsistent}.
+  All linear systems are one of the following:
+  \begin{itemize}
+    \item \textbf{Consistent with one solution}:
+          its solution set contains a single vector, e.g.
+          \(\left\{\begin{bmatrix}1\\2\\3\end{bmatrix}\right\}\)
+    \item \textbf{Consistent with infinitely-many solutions}:
+          its solution set contains infinitely many vectors, e.g.
+          \(
+            \left\{
+              \begin{bmatrix}1\\a\\3-a\end{bmatrix}
+            \,\middle|\,
+              a\in\IR
+            \right\}
+          \)
+    \item \textbf{Inconsistent}:
+          its solution set is the empty set \(\{\}=\emptyset\)
+  \end{itemize}
 \end{fact}
 
 \begin{activity}{10}
   All inconsistent linear systems contain a logical \term{contradiction}.
-  Find a contradiction in this system.
+  Find a contradiction in this system to show that its solution set
+  is \(\emptyset\).
   \begin{align*}
   -x_1+2x_2  &=  5 \\
   2x_1-4x_2  &=  6
@@ -128,27 +137,19 @@ in the system).
 \end{subactivity}
 \begin{subactivity}
   Let \(x_2=a\) where \(a\) is an arbitrary real number, then find an
-  expression for \(x_1\) in terms of \(a\). Use this to write \textit{all}
-  solutions (the \term{solution set})
+  expression for \(x_1\) in terms of \(a\). Use this to write
+  the solution set
   \(
     \left\{
 	\begin{bmatrix}
-      ? \\
+      \unknown \\
       a
     \end{bmatrix} \,\middle|\, a \in \IR
 	\right\}
   \)
-  for the linear system in terms of \(a\).
+  for the linear system.
 \end{subactivity}
 \end{activity}
-
-% \begin{remark}
-%   The solution set of a consistent linear system with infinitely many solutions
-%   may be described by setting each
-%   certain variable equal to an arbitrary parameter, and expressing the
-%   other variables in terms of those parameters. (Later we will learn
-%   how to do this methodically.)
-% \end{remark}
 
 \begin{activity}{10}
   Consider the following linear system.
@@ -160,9 +161,9 @@ in the system).
   \[
   	\left\{
 	\begin{bmatrix}
-      ? \\
+      \unknown \\
       a \\
-      ? \\
+      \unknown \\
       b
 	\end{bmatrix} \,\middle|\, a,b \in \IR \right\}
   \]
@@ -174,7 +175,15 @@ in the system).
 \begin{observation}
   Solving linear systems of two variables by graphing or substitution is
   reasonable for two-variable systems, but these simple techniques
-  won't cut it for equations with
-  more than two variables or more than two equations.
+  won't usually cut it for equations with
+  more than two variables or more than two equations. For example,
+  \begin{alignat*}{5}
+    -2x_1 &\,-\,& 4x_2 &\,+\,&  x_3 &\,-\,&  4x_4 &\,=\,& -8 \\
+      x_1 &\,+\,& 2x_2 &\,+\,& 2x_3 &\,+\,& 12x_4 &\,=\,& -1 \\
+      x_1 &\,+\,& 2x_2 &\,+\,&  x_3 &\,+\,&  8x_4 &\,=\,&  1 \\
+  \end{alignat*}
+  has the exact same solution set as the system in the previous
+  activity, but we'll want to learn new techniques
+  to compute these solutions efficiently.
 \end{observation}
 \end{applicationActivities}
