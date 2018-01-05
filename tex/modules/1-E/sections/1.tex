@@ -1,5 +1,5 @@
-
-
+%!TEX root =../../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
 
 \begin{applicationActivities}
 
@@ -52,13 +52,38 @@
   \end{multicols}
 \end{definition}
 
+\begin{example}
+  The corresopnding augmented matrix for this system is obtained by
+  simply writing the coefficients and constants in matrix form.
+
+  \begin{multicols}{2}
+    Linear system:
+    \begin{alignat*}{2}
+       x_1 + 3x_3 &\,=\,& 3 \\
+      3x_1 - 2x_2 + 4x_3 &\,=\,& 0 \\
+      -x_2 +  x_3 &\,=\,& -2
+    \end{alignat*}
+
+    \columnbreak
+
+    Augmented matrix:
+    \[
+      \begin{bmatrix}[ccc|c]
+        1 & 0 & 3 & 3 \\
+        3 & -2 & 4 & 0 \\
+        0 & -1 & 1 & -2
+      \end{bmatrix}
+    \]
+  \end{multicols}
+\end{example}
+
 \begin{definition}
   Two systems of linear equations (and their corresponding augmented
   matrices) are said to be \term{equivalent} if they have the same
   solution set.
 
-  For example, both of these systems have a single solution:
-  \(\begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 1 \\ 1\end{bmatrix}\).
+  For example, both of these systems share the same solution set
+  \(\left\{ \begin{bmatrix} 1 \\ 1\end{bmatrix}\right\}\).
 
   \begin{multicols}{2}\noindent
     \begin{alignat*}{3}
@@ -92,7 +117,7 @@
 \begin{activity}{10}
   Following are seven procedures used to manipulate an augmented matrix.
   Label the procedures that would result in an equivalent augmented
-  matrix as \textbf{valid}, and label the procedures that would
+  matrix as \textbf{valid}, and label the procedures that might
   change the solution set of the corresponding linear system as
   \textbf{invalid}.
   \begin{multicols}{2}
@@ -100,7 +125,7 @@
       \item Swap two rows.
       \item Swap two columns.
       \item Add a constant to every term in a row.
-      \item Multiply a row by a nonzero constant.
+      \item Multiply a row by a nonzero constant. \columnbreak
       \item Add a constant multiple of one row to another row.
       \item Replace a column with zeros.
       \item Replace a row with zeros.
@@ -117,8 +142,17 @@
   augmented matrices:
   \begin{enumerate}
     \item Swap two rows.
+    % \begin{itemize}
+    %   \item (swap the order of two equations in the system)
+    % \end{itemize}
     \item Multiply a row by a nonzero constant.
+    % \begin{itemize}
+    %   \item (multiply both sides of an equation by a nonzero constant)
+    % \end{itemize}
     \item Add a constant multiple of one row to another row.
+    % \begin{itemize}
+    %   \item (add a multiple of one equation to another)
+    % \end{itemize}
   \end{enumerate}
   Whenever two matrices \(A,B\) are equivalent (so whenever we do any of
   these operations), we write \(A\sim B\).
@@ -126,7 +160,7 @@
 
 \begin{activity}{10}
   Consider the following (equivalent) linear systems.
-  \begin{multicols}{3}%\noindent
+  \begin{multicols}{3}%
   \begin{enumerate}[(A)]
     \item \[
 		\begin{alignedat}{4}
@@ -148,7 +182,7 @@
 		\begin{alignedat}{4}
    		  x_1 &\,-\,& 2x_2 &\,+\,& 2x_3 &\,=\,& 7 \\
    		   & &  & & 2x_3 &\,=\,& 6 \\
-   		   & & &\,-\,&2x_3 &\,=\,& -6 
+   		   & & &\,-\,&2x_3 &\,=\,& -6
    		\end{alignedat}
 	\]
 
@@ -156,7 +190,7 @@
 		\begin{alignedat}{4}
    		  x_1 &\,-\,& 2x_2 &\,+\,& 2x_3 &\,=\,& 7 \\
    		   & &  & & x_3 &\,=\,& 3 \\
-   		   & & &\,-\,&2x_3 &\,=\,& -6 
+   		   & & &\,-\,&2x_3 &\,=\,& -6
    		\end{alignedat}
 	\]
 
@@ -164,7 +198,7 @@
 		\begin{alignedat}{4}
    		  x_1 &\,-\,& 2x_2 &&  &\,=\,& 1 \\
    		   & &  &\,\,\, & x_3 &\,=\,& 3 \\
-   		   & & &&0 &\,=\,& 0 
+   		   & & &&0 &\,=\,& 0
    		\end{alignedat}
 	\]
 
@@ -178,10 +212,11 @@
 	\end{enumerate}
     \end{multicols}
   \begin{subactivity}
-    Rank the six linear systems from easiest to solve to hardest to solve.
+    Rank the six linear systems from hardest to solve to easiest to solve.
   \end{subactivity}
   \begin{subactivity}
-	Determine the row operation used in each step transforming the hardest system into the easiest.
+	  Determine the row operation necessary in each step to transform the hardest
+    system's augmented matrix into the easiest.
   \end{subactivity}
 \end{activity}
 
@@ -190,35 +225,35 @@ We can rewrite the previous in terms of augmented matrices
 \[
 	\begin{alignedat}{3}
 		\begin{bmatrix}[ccc|c] -2 & 4 & -2 & -8 \\ 1 & -2 & 2 & 7 \\ 3 & -6 & 4 & 15 \end{bmatrix} & \sim &
-		\begin{bmatrix}[ccc|c] \circledNumber{1} & -2 & 2 & 7 \\ -2 & 4 & -2 & -8 \\ 3 & -6 & 4 & 15 \end{bmatrix} &\sim& 
-		\begin{bmatrix}[ccc|c] \circledNumber{1} & -2 & 2 & 7 \\ 0 & 0 & 2 & 6 \\ 3 & - 6 & 4 & 15 \end{bmatrix} \sim \\
+		\begin{bmatrix}[ccc|c] \circledNumber{1} & -2 & 2 & 7 \\ -2 & 4 & -2 & -8 \\ 3 & -6 & 4 & 15 \end{bmatrix} &\sim&
+		\begin{bmatrix}[ccc|c] \circledNumber{1} & -2 & 2 & 7 \\ 0 & 0 & 2 & 6 \\ 3 & - 6 & 4 & 15 \end{bmatrix} \\
+ \sim
 		\begin{bmatrix}[ccc|c] \circledNumber{1} & -2 & 2 & 7 \\ 0 & 0 & 2 & 6 \\ 0 & 0 & -2 & -6 \end{bmatrix}  &\sim&
 		\begin{bmatrix}[ccc|c] \circledNumber{1} & -2 & 2 & 7 \\ 0 & 0 & \circledNumber{1} & 3 \\ 0 & 0 & -2 & -6 \end{bmatrix}  &\sim&
-		\begin{bmatrix}[ccc|c] \circledNumber{1} & -2 & 0 & 1 \\ 0 & 0 & \circledNumber{1} & 3 \\ 0 & 0 & 0 & 0 \end{bmatrix} \phantom{\sim} 
+		\begin{bmatrix}[ccc|c] \circledNumber{1} & -2 & 0 & 1 \\ 0 & 0 & \circledNumber{1} & 3 \\ 0 & 0 & 0 & 0 \end{bmatrix}
  	\end{alignedat}
 \]
 
-We simplify our system by
+This system was simplified by doing the following:
 \begin{enumerate}
 \item Simplifying one column at a time, moving left to right;
-\item Once we have a \(1\) in a \term{pivot position}, we zero out above and below.
-\item We can always follow this procedure to put a matrix in \term{reduced row echelon form}, or \term{RREF}.
+\item Identifying a circled \term{pivot position}, changing its value to \(1\)
+      and zeroing out above and below.
+\item Continually marking pivots left-to-right until the matrix is
+      in our simplified form.
 \end{enumerate}
 \end{observation}
-
-\begin{remark}
-It is important to understand the \term{Gauss-Jordan elimination} algorithm that converts a matrix into reduced row echelon form, but in practice we don't do this by hand; we use technology to do this for us.
-\end{remark}
 
 \begin{activity}{10}
 A matrix is in \term{reduced row echelon form} (\term{RREF}) if
 \begin{enumerate}
-\item The leading term of each nonzero row is a 1 (these will be called \term{pivots})
-\item Each column containing a pivot is zero except for the pivot
+\item The leading term of each nonzero row is a 1, called a \term{pivot}.
+\item Each term above or below a pivot is zero.
 \item All rows of zeroes are at the bottom of the matrix.
 \end{enumerate}
 
-Determine which of the following matrices are in RREF:
+Label each of the following matrices as RREF or not RREF, and circle the
+pivots in the RREF examples.
 \begin{multicols}{3}
 \begin{enumerate}[(A)]
 \item \[ \begin{bmatrix}[ccc|c] 1 & 0 & 0 & 3 \\ 0 & 0 & 1 & -1 \\ 0 & 0 & 0 & 0 \end{bmatrix}\]
@@ -232,7 +267,16 @@ Determine which of the following matrices are in RREF:
 \end{activity}
 
 \begin{remark}
-Before the next class, work at least five practice problems putting matrices into reduced row echelon form.  You can view a video example at TODO
+It is important to understand the \term{Gauss-Jordan elimination} algorithm
+that converts a matrix into reduced row echelon form.
+A video outlining how to perform the Gauss-Jordan Elimination algorithm
+by hand is available at \url{https://youtu.be/Cq0Nxk2dhhU}.
+Practicing several exercises outside of class using this method is
+recommended.
+
+In the next section, we will learn to use technology to perform this
+operation for us, as will be expected when applying row-reduced
+matrices to solve other problems.
 \end{remark}
 
 
