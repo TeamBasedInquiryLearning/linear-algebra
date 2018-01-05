@@ -1,26 +1,38 @@
+%!TEX root =../../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
+
 \begin{applicationActivities}
 
 
 \begin{activity}{10}
+Free browser-based technologies for mathematical computation
+are available online.
 \begin{itemize}
-\item Go to {\tt http://www.cocalc.com} and create an account.
-\item Create a project titled ``Linear Algebra Team X'' with your appropriate team number.  Add all team members as collaborators.
+\item Go to \url{http://www.cocalc.com} and create an account.
+\item Create a project titled ``Linear Algebra Team X'' with your appropriate
+      team number.  Add all team members as collaborators.
 \item Open the project and click on ``New''
-\item Give it an appropriate name such as ``Class E2 workbook''.  Make a new Jupyter notebook.
+\item Give it an appropriate name such as ``Class E.2 workbook''.  Make a new
+      Jupyter notebook.
 \item Click on ``Kernel'' and make sure ``Octave'' is selected.
-\item Type {\tt A=[1 3 4 ; 2 5 7]} to store the matrix $\begin{bmatrix} 1 & 3 & 4 \\ 2 & 5 & 7\end{bmatrix}$ in the variable $A$; hold shift when you press enter.
-\item Type {\tt rref(A)} to compute the reduced row echelon form of $A$.
+\item Type \texttt{A=[1 3 4 ; 2 5 7]} and press \texttt{Shift+Enter}
+      to store the matrix
+      \(\begin{bmatrix} 1 & 3 & 4 \\ 2 & 5 & 7\end{bmatrix}\)
+      in the variable $A$.
+\item Type \texttt{rref(A)} and press \texttt{Shift+Enter}
+      to compute the reduced row echelon form of $A$.
 \end{itemize}
 \end{activity}
 
 \begin{remark}
-If you need to find the reduced row echelon form of a matrix during class, you should feel free to use CoCalc/Octave.
-\ \\
-\ \\
-You can change a cell from ``Code'' to ``Markdown'' or ``Raw'' to put comments around your calculations such as Activity numbers.
+If you need to find the reduced row echelon form of a matrix during class, you
+are encouraged to use CoCalc's Octave interpreter.
+
+You can change a cell from ``Code'' to ``Markdown'' or ``Raw'' to put comments
+around your calculations such as Activity numbers.
 \end{remark}
 
-\begin{activity}{8}
+\begin{activity}{10}
 Consider the system of equations.
  \[
 		\begin{alignedat}{4}
@@ -30,10 +42,13 @@ Consider the system of equations.
    		\end{alignedat}
 \]
 
-Convert this to an augmented matrix, use CoCalc to compute the reduced row echelon form, and convert back to a simpler system of equations to solve this system.  Write your solution on your whiteboard.
+Convert this to an augmented matrix and use CoCalc to compute its
+reduced row echelon form. Write these on your whiteboard, and use
+them to write a simpler yet equivalent linear system of equations.
+Then find its solution set.
 \end{activity}
 
-\begin{activity}{7}
+\begin{activity}{10}
 Consider our system of equations from above.
  \[
 		\begin{alignedat}{4}
@@ -43,19 +58,21 @@ Consider our system of equations from above.
    		\end{alignedat}
 \]
 
-Convert this to an augmented matrix, use CoCalc to compute the reduced row echelon form, and convert back to a simpler system of equations to solve this system.  Write your solution on your whiteboard.
+Convert this to an augmented matrix and use CoCalc to compute its
+reduced row echelon form. Write these on your whiteboard, and use
+them to write a simpler yet equivalent linear system of equations.
+Then find its solution set.
 \end{activity}
 
 \begin{activity}{10}
-  Consider the following matrix.
-  \[
-    A = \begin{bmatrix}[ccc|c]
-      1 & 2 & 3 & 1\\
-      2 & 4 & 8 & 0
-    \end{bmatrix}
-  \]
+  Consider the following linear system.
+  	\begin{alignat*}{4}
+  		x_1 &+ 2x_2 &+ 3x_3 &= 1\\
+  	  2x_1 &+ 4x_2 &+ 8x_3 &= 0
+  	\end{alignat*}
   \begin{subactivity}
-    Find \(\RREF(A)\) (Use CoCalc).
+    Find its corresponding augmented matrix \(A\) and
+    use CoCalc to find \(\RREF(A)\).
   \end{subactivity}
   \begin{subactivity}
     How many solutions does the corresponding linear system have?
@@ -63,52 +80,53 @@ Convert this to an augmented matrix, use CoCalc to compute the reduced row echel
 \end{activity}
 
 \begin{activity}{10}
-Consider the (simpler) system from the previous problem:
+Consider the simple linear system equivalent to the system
+from the previous problem:
 	\begin{alignat*}{3}
 		x_1 &+ 2x_2 & &= 4\\
 	     	 & &x_3 &= -1
 	\end{alignat*}
 \begin{subactivity}
-Let $x_1=a$ and write the solution set in the form
-\( \left\{ \begin{bmatrix} a \\ ? \\ ? \end{bmatrix} \,\middle|\, a \in \IR \right\} \)
+Let \(x_1=a\) and write the solution set in the form
+\(
+  \left\{
+    \begin{bmatrix} a \\ \unknown \\ \unknown \end{bmatrix}
+  \,\middle|\,
+    a \in \IR
+  \right\}
+\).
 \end{subactivity}
 \begin{subactivity}
-Let $x_2=b$ and write the solution set in the form
-\( \left\{ \begin{bmatrix} ? \\ b \\ ? \end{bmatrix} \,\middle|\, b \in \IR \right\} \)
+Let \(x_2=b\) and write the solution set in the form
+\(
+  \left\{
+    \begin{bmatrix} \unknown \\ b \\ \unknown \end{bmatrix}
+  \,\middle|\,
+    b \in \IR
+  \right\}
+\).
 \end{subactivity}
 \begin{subactivity}
-Which of these was easier?  What features of the RREF matrix \[\begin{bmatrix}[ccc|c] 1 & 2 & 0 & 4 \\ 0 & 0 & 1 & -1 \end{bmatrix}\] cause this?
+Which of these was easier?  What features of the RREF matrix
+\(
+  \begin{bmatrix}[ccc|c]
+    \circledNumber{1} & 2 & 0 & 4 \\
+    0 & 0 & \circledNumber{1} & -1
+  \end{bmatrix}
+\) caused this?
 \end{subactivity}
 \end{activity}
 
 \begin{definition}
-If a matrix is in reduced row echelon form, a \term{pivot} is an entry satisfying
-\begin{enumerate}[1.]
-\item It is $1$
-\item Everything else in the same row but to the left of it is zero
-\item Everything else in the same column is zero.
-\end{enumerate}
+Recall that the pivots of a matrix in \(\RREF\) form are the leading
+\(1\)s in each non-zero row.
 
-For example, the pivots are circled in
+The pivot columns in an augmented matrix correspond to the
+\term{bound variables} in the system of equations.
+The remaining variables are called \term{free variables}.
 
-\[\begin{bmatrix}[ccc|c] \circledNumber{1} & 2 & 0 & 4 \\ 0 & 0 & \circledNumber{1} & -1 \end{bmatrix}\]
-\end{definition}
-
-
-\begin{activity}{5}
-Circle the pivots in each matrix below.
-\begin{multicols}{2}
-\[ \begin{bmatrix}[cccc|c] 1 & 1 & 0 & 0 & 2 \\ 0 & 0 & 1 & 0 &  0 \\ 0 & 0 & 0 &  1 & 1 \end{bmatrix} \]
-\[ \begin{bmatrix}[cccc|c] 1 & 1 & 0 & 1 & 0 \\ 0 & 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 0  & 0 \end{bmatrix} \]
-\[ \begin{bmatrix}[ccc|c] 1 & 0 & 1 & 2 \\ 0 & 1 & 0 & 1 \end{bmatrix} \]
-\[ \begin{bmatrix}[ccc|c] 1 & 0 & 0 & 2 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix} \]
-\end{multicols}
-\end{activity}
-
-\begin{definition}
-The pivots in a matrix correspond to \term{bound variables} in the system of equations.  The remaining variables are called \term{free variables}.
-
-To efficiently solve a system in RREF form, assign letters to free variables and solve for the bound variables.
+To efficiently solve a system in RREF form, we may assign letters to free
+variables and solve for the bound variables.
 \end{definition}
 
 \begin{activity}{10}
@@ -118,7 +136,8 @@ Find the solution set for the system
 -x_1&\,+\,&x_2&\,+\,&3x_3&\,-\,&x_4&\,+\,&2x_5 &\,=\,& -3 \\
 x_1&\,-\,&2x_2&\,-\,&x_3&\,+\,&x_4&\,+\,&x_5 &\,=\,& 2
 \end{alignat*}
-by assigning letters to the free variables and solving for the bounded variables.
+by assigning letters to the free variables and solving for the bound variables
+in the simplified system given by row-reducing its augmented matrix.
 \end{activity}
 
 \begin{observation}
@@ -128,11 +147,39 @@ The solution set to the system
 -x_1&\,+\,&x_2&\,+\,&3x_3&\,-\,&x_4&\,+\,&2x_5 &\,=\,& -3 \\
 x_1&\,-\,&2x_2&\,-\,&x_3&\,+\,&x_4&\,+\,&x_5 &\,=\,& 2
 \end{alignat*}
-is \[\left\{ \begin{bmatrix} 1+5a+2b \\ 1+2a+3b \\ a \\3+3b \\ b \end{bmatrix}\,\middle|\, a,b\in \IR\right\}.\]
+may be written as
+\[
+  \left\{
+    \begin{bmatrix}
+      1+5a+2b \\
+      1+2a+3b \\
+      a \\
+      3+3b \\
+      b
+    \end{bmatrix}
+  \,\middle|\,
+    a,b\in \IR
+  \right\}
+.\]
 \end{observation}
 
 \begin{remark}
-You should always use set-builder notation to describe the solution set of a linear system.
+Don't forget to correctly express the solution set of a linear system,
+using set-builder notation for consistent systems with
+infintely many solutions.
+  \begin{itemize}
+  \item \textbf{Consistent with one solution}: e.g.
+        \(\left\{\begin{bmatrix}1\\2\\3\end{bmatrix}\right\}\)
+  \item \textbf{Consistent with infinitely-many solutions}: e.g.
+        \(
+          \left\{
+            \begin{bmatrix}1\\2-3a\\a\end{bmatrix}
+          \,\middle|\,
+            a\in\IR
+          \right\}
+        \)
+  \item \textbf{Inconsistent}: \(\emptyset\)
+  \end{itemize}
 \end{remark}
 
 \end{applicationActivities}
