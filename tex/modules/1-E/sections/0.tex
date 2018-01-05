@@ -44,14 +44,15 @@ is a collection of one or more linear equations.
   \end{alignat*}
 Its \term{solution set} is given by
 \[
-  \left\{
+  \setBuilder
+  {
     \begin{bmatrix}
       s_1 \\
       s_2 \\
       \vdots \\
       s_n
     \end{bmatrix}
-  \,\middle|\,
+  }{
     \begin{bmatrix}
       s_1 \\
       s_2 \\
@@ -59,7 +60,7 @@ Its \term{solution set} is given by
       s_n
     \end{bmatrix}
     \text{ is a solution to all equations in the system}
-  \right\}
+  }
 .\]
 \end{definition}
 
@@ -100,15 +101,16 @@ Its \term{solution set} is given by
   \begin{itemize}
     \item \textbf{Consistent with one solution}:
           its solution set contains a single vector, e.g.
-          \(\left\{\begin{bmatrix}1\\2\\3\end{bmatrix}\right\}\)
+          \(\setList{\begin{bmatrix}1\\2\\3\end{bmatrix}}\)
     \item \textbf{Consistent with infinitely-many solutions}:
           its solution set contains infinitely many vectors, e.g.
           \(
-            \left\{
+            \setBuilder
+            {
               \begin{bmatrix}1\\2-3a\\a\end{bmatrix}
-            \,\middle|\,
+            }{
               a\in\IR
-            \right\}
+            }
           \)
     \item \textbf{Inconsistent}:
           its solution set is the empty set \(\{\}=\emptyset\)
@@ -140,12 +142,15 @@ Its \term{solution set} is given by
   expression for \(x_1\) in terms of \(a\). Use this to write
   the solution set
   \(
-    \left\{
-	\begin{bmatrix}
-      \unknown \\
-      a
-    \end{bmatrix} \,\middle|\, a \in \IR
-	\right\}
+    \setBuilder
+    {
+    	\begin{bmatrix}
+        \unknown \\
+        a
+      \end{bmatrix}
+    }{
+      a \in \IR
+	  }
   \)
   for the linear system.
 \end{subactivity}
@@ -159,13 +164,17 @@ Its \term{solution set} is given by
   \end{alignat*}
   Describe the solution set
   \[
-  	\left\{
-	\begin{bmatrix}
-      \unknown \\
-      a \\
-      \unknown \\
-      b
-	\end{bmatrix} \,\middle|\, a,b \in \IR \right\}
+  	\setBuilder
+    {
+    	\begin{bmatrix}
+          \unknown \\
+          a \\
+          \unknown \\
+          b
+    	\end{bmatrix}
+    }{
+      a,b \in \IR
+    }
   \]
   to the linear system
   by setting \(x_2=a\) and \(x_4=b\), and then solving for \(x_1\) and

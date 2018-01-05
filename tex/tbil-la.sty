@@ -23,6 +23,8 @@
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\RREF}{\operatorname{RREF}}
 \newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
 
 %%%Custom Counters%%%
 \newcommand{\moduleLetter}{X}
@@ -78,9 +80,6 @@
 \newcommand{\vectorSpaceProperties}{
 \begin{multicols}{2}
 \begin{itemize}
-  % \item \textbf{Well-defined addition.}
-  %
-  %       \(\vect v+\vect w\) belongs to \(V\).
   \item \textbf{Addition associativity.}
 
         \(\vect u+(\vect v+\vect w)=
@@ -97,10 +96,6 @@
 
         There exists some \(-\vect v\)
         where \(\vect v+(-\vect v)=\vect 0\).
-  % \item \textbf{Well-defined scalar multipication.}
-  %
-  %       \(a\vect v\) belongs to
-  %       \(V\).
   \item \textbf{Scalar multiplication associativity.}
 
         \(a(b\vect v)=(ab)\vect v\).
@@ -152,79 +147,3 @@
 \end{itemize}
 \end{multicols}
 }
-
-
-%This markup is for defining specific commands that vary depending on section.
-\newcommand{\sem}{Fall 2017}
-
-\newbool{TR}
-\newbool{TBL}
-
-\newcommand{\course}{Math 237}
-\newcommand{\courseSection}{%
-  \ifbool{TR}{%
-    \ifbool{TBL}{102}{103}%
-  }{%
-    \ifbool{TBL}{501}{101}%
-  }%
-}
-\newcommand{\prof}{%
-  \ifbool{TR}{%
-    Dr. Drew Lewis%
-  }{%
-    Dr. Steven Clontz%
-  }%
-}
-\newcommand{\profemail}{%
-  \ifbool{TR}{%
-    \texttt{drewlewis@southalabama.edu}%
-  }{%
-    \texttt{sclontz@southalabama.edu}%
-  }%
-}
-\newcommand{\profoffice}{%
-  \ifbool{TR}{%
-    MSPB (ILB) 439%
-  }{%
-    MSPB (ILB) 314%
-  }%
-}
-\newcommand{\profhours}{%
-  \ifbool{TR}{%
-    \begin{minipage}{0.3\textwidth}\ \\M 8-9,2-3; T 11-12; W 8-9 \\ R 2-3; F 12:30-1:30\end{minipage}%
-  }{%
-    W 10:30-3:30, 5:00-6:00%
-  }%
-}
-\newcommand{\tbltime}{%
-  \ifbool{TR}{%
-    TR 9:30-10:45 COMM 0160%
-  }{%
-    MW 6:00-7:15 COMM 0160%
-  }%
-}
-\newcommand{\lecturetime}{%
-  \ifbool{TR}{%
-    TR 12:30-1:45 MSPB (ILB) 350%
-  }{%
-    MW 3:35-4:50 MSPB (ILB) 360%
-  }%
-}
-\newcommand{\classtime}{\ifbool{TBL}{\tbltime}{\lecturetime}}
-
-\newcommand*{\TakeFourierOrnament}[1]{{%
-\fontencoding{U}\fontfamily{futs}\selectfont\char#1}}
-\newcommand*{\danger}{\TakeFourierOrnament{66}}
-
-\newcommand{\masteryMark}{\ifbool{TR}{\textbf{M}}{\checkmark}}
-\newcommand{\minorMark}{\textbf{*}}
-\newcommand{\reattemptMark}{\ifbool{TR}{\textbf{R}}{\danger}}
-\newcommand{\noMark}{\ifbool{TR}{\textbf{N}}{\(\times\)}}
-
-
-% Make sure to include one of the following lines after
-% \usepackage{tbil-la} as appropriate:
-  % \booltrue{TR}\booltrue{TBL}   %Drew's TR TBL
-  % \booltrue{TR}\boolfalse{TBL}  %Drew's TR lecture
-  % \boolfalse{TR}\booltrue{TBL}  %Steven's MW TBL
-  % \boolfalse{TR}\boolfalse{TBL} %Steven's MW lecture
