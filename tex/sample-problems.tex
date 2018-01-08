@@ -1,0 +1,159 @@
+\documentclass{article}
+\usepackage{tbil-la}
+\usepackage[top=1in,bottom=1in,right=1in,left=1in]{geometry}
+
+\newcommand*{\stdList}{}
+%Problem environment -- takes an argument which is the standard
+\newenvironment{problem}[1]
+%before
+{
+	\begin{flushleft}
+	%{\bfseries \arabic{problem} .}
+	%Problem numbering by standard
+	{\bfseries {#1}. }
+	\ignorespaces
+}
+%after
+{
+	\end{flushleft}
+}
+
+\newenvironment{solution}
+%before
+{
+	\ignorespaces
+	{\bf Solution: }
+}
+%after
+{
+	\ignorespacesafterend
+	\begin{flushright}
+	{\bfseries \qed}
+	\end{flushright}
+}
+
+
+
+\begin{document}
+
+\begin{center}
+\Large \textbf{Sample Assessment Problems}
+\end{center}
+
+This document contains one problem and solution for each standard.  
+The goal is to give you an idea of what the problems will look like, 
+and what the expectations for a complete solution are.
+
+\begin{problem}{E1}
+Write a system of linear equations corresponding to the following
+augmented matrix.
+\[
+\begin{bmatrix}[cccc|c]
+3 & 2 & 0 & 1 & 1 \\
+-1 & -4 & 1 & -7 & 0 \\
+0 & 1 & -1 & 0 & -2
+\end{bmatrix}
+\]
+\end{problem}
+\begin{solution}
+\begin{alignat*}{5}
+3x_1 &\,+\,& 2x_2 &\,\,& &\,+\,&x_4 &= 1 \\
+-x_1 &\,-\,& 4x_2 &\,+\,&x_3&\,-\,&7x_4 &= 0 \\
+&\,\,& x_2 &\,-\,&x_3 &\,\,&  &= -2
+\end{alignat*}
+\end{solution}
+
+\begin{problem}{E2}
+Put the following matrix in reduced row echelon form.
+\[
+	\begin{bmatrix}
+	0 & 3 & 1 & 2 \\
+	1 & 2 & -1 & -3 \\
+	2 & 4 & -1 & -1
+	\end{bmatrix}
+\]
+\end{problem}
+\begin{solution}
+\begin{alignat*}{4}
+	\begin{bmatrix}
+	0 & 3 & 1 & 2 \\
+	1 & 2 & -1 & -3 \\
+	2 & 4 & -1 & -1
+	\end{bmatrix}
+	&\sim&
+	\begin{bmatrix}
+	\circledNumber{1} & 2 & -1 & -3 \\
+	0 & 3 & 1 & 2 \\
+	2 & 4 & -1 & -1
+	\end{bmatrix}
+	&\sim&
+	\begin{bmatrix}
+	\circledNumber{1} & 2 & -1 & -3 \\
+	0 & 3 & 1 & 2 \\
+	0 & 0 & 1 & 5 
+	\end{bmatrix}
+	&\sim&
+	\begin{bmatrix}
+	\circledNumber{1} & 2 & -1 & -3 \\
+	0 & \circledNumber{1} & \frac{1}{3} & \frac{2}{3} \\
+	0 & 0 & 1 & 5 
+	\end{bmatrix} \\
+	&\sim&
+	\begin{bmatrix}
+	\circledNumber{1} & 0 & -\frac{5}{3} & -\frac{13}{3} \\
+	0 & \circledNumber{1} & \frac{1}{3} & \frac{2}{3} \\
+	0 & 0 & \circledNumber{1} & 5 
+	\end{bmatrix}
+	&\sim&
+	\begin{bmatrix}
+	\circledNumber{1} & 0 & -\frac{5}{3} & -\frac{13}{3} \\
+	0 & \circledNumber{1} & 0 & -1 \\
+	0 & 0 & \circledNumber{1} & 5 
+	\end{bmatrix}
+	&\sim&
+	\begin{bmatrix}
+	\circledNumber{1} & 0 & 0 & 4 \\
+	0 & \circledNumber{1} & 0 & -1 \\
+	0 & 0 & \circledNumber{1} & 5 
+	\end{bmatrix}
+\end{alignat*}
+\end{solution}
+
+\begin{problem}{E3}
+Find the solution set for the following system of linear equations.
+\begin{alignat*}{4}
+2x&\,+\,&4y&\,+\,&z &= 5 \\
+x&\,+\,&2y &\,\,& &= 3
+\end{alignat*}
+\end{problem}
+\begin{solution}
+\[
+  \RREF \left(\begin{bmatrix}[ccc|c] 2 & 4 & 1 & 5 \\ 1 & 2 & 0 & 3 \end{bmatrix} \right) = 
+  \begin{bmatrix}[ccc|c] 1 & 2 & 0 & 3 \\ 0 & 0 & 1 & -1\end{bmatrix}
+\]
+This corresponds to the system 
+\begin{alignat*}{2}
+x\,+\,2y&\,\,&  &= 3 \\
+  &\,\,& z&= -1
+\end{alignat*}
+Since the $y$-column is a non-pivot column, it is a free variable, so we let $y=a$; then we have 
+\begin{alignat*}{3}
+x&\,+\,&2y&\,\,&  &= 3 \\
+ &\,\,&y &\,\,& &=a \\
+ &\,\,& &\,\,& z&= -1
+\end{alignat*}
+and thus 
+\begin{align*}
+x&= 3-2a \\
+y&= a \\
+z&= -1
+\end{align*}
+So the solution set is
+\[
+  \left\{ \begin{bmatrix} 3-2a \\ a \\ -1 \end{bmatrix} \,\middle|\, a \in \IR \right\}
+\]
+\end{solution}
+
+
+
+\end{document}
