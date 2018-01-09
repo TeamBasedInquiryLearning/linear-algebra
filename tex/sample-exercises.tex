@@ -161,5 +161,152 @@ So the solution set is
 \end{solution}
 
 
+\begin{problem}{V1}
+Let \(V\) be the set of all polynomials, together with the operations \(\oplus\) and \(\odot\) defined by, for all polynomials \(f(x),g(x)\) and scalars \(c \in \IR\):
+\begin{align*}
+f(x) \oplus g(x) &= xf(x)+xg(x) \\
+c\odot f(x) &= cf(x)
+\end{align*}
+\begin{enumerate}[(a)]
+\item Show that scalar multiplication distributes over vector addition, i.e. \[c\odot \left(f(x)\oplus g(x) \right) = c \odot f(x) \oplus c \odot g(x).\]
+\item Show that addition is not associative, i.e. for all polynomials $f(x),g(x),h(x)$, \[\left( f(x) \oplus g(x) \right) \oplus h(x) \neq f(x) \oplus \left( g(x) \oplus h(x) \right) .\]
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item
+Compute
+\begin{align*}
+	c \odot \left(f(x) \oplus g(x) \right) 
+	&= c \odot \left(xf(x)+xg(x)\right) \\
+	&= c\left(xf(x)+xg(x) \right) \\
+	&= cxf(x)+cxg(x) 
+\end{align*}
+and
+\begin{align*}
+	c\odot f(x) \oplus c \odot g(x) 
+	&= (cf(x)) \oplus (cg(x))\\
+	&= xcf(x)+xcg(x)
+\end{align*}
+Since these are the same, we have shown \(c\odot \left(f(x)\oplus g(x) \right) = c \odot f(x) \oplus c \odot g(x).\)
+\item
+Compute
+\begin{align*}
+	\left( f(x) \oplus g(x) \right) \oplus h(x) 
+	&=\left(xf(x)+xg(x) \right) \oplus h(x)\\
+	&= x\left(xf(x)+xg(x)\right)+xh(x) \\
+	&= x^2f(x)+x^2g(x)+xh(x)
+\end{align*}
+and 
+\begin{align*}
+	f(x) \oplus \left( g(x) \oplus h(x) \right) 
+	&=f(x) \oplus \left(xg(x)+xh(x)\right) \\
+	&=xf(x)+x\left(xg(x)+xh(x)\right) \\
+	&=xf(x)+x^2g(x)+x^2h(x)
+\end{align*}
+
+
+Since $x^2f(x)+x^2g(x)+xh(x)\neq xf(x)+x^2g(x)+x^2h(x)$, we have shown \(\left( f(x) \oplus g(x) \right) \oplus h(x) \neq f(x) \oplus \left( g(x) \oplus h(x) \right) .\)
+\end{enumerate}
+\end{solution}
+
+\begin{problem}
+Let \(V\) be the set of all non-negative real numbers with the operations \(\oplus\) and \(\odot\) given by, for all $x,y \in V$ and $c \in \IR$,
+\begin{align*}
+x \oplus y &= x+y \\
+c \odot x &= |c|x
+\end{align*}
+
+\begin{enumerate}[(a)]
+\item List the 8 defining properties of a vector space.
+\item Determine which of the 8 hold for $V$ with these operations, and conclude whether $V$ is a vector space or not.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item The eight properties are
+	\begin{enumerate}[1)]
+		\item Addition is associative, i.e. \((x\oplus y)\oplus z = x\oplus (y \oplus z)\) for all \(x,y,z \in V\).
+		\item Addition is commutative, i.e. \(x\oplus y = y \oplus x\) for all \(x,y \in V\).
+		\item There exists a zero element, i.e. an element \(0 \in V\) such that for all \(x \in V\), \(x\oplus 0 = x\).
+		\item Additive inverses exist, i.e. for every \(x \in V\) there is an element \(-x \in V\) such that \(x \oplus (-x) = 0 \)
+		\item Scalar multiplication is associative, i.e. for each \(c,d \in \IR\) and \(x \in V\), \(c\odot (d\odot x) = (cd) \odot x\).
+		\item \(1\) is the multiplicative identity, i.e. for all \(x \in V\), \(1 \odot x = x \).
+		\item Scalar multiplication distributes over vector addition, i.e. for all \(x,y \in V\) and \(c \in \IR\), \(c\odot(x\oplus y) = c\odot x \oplus c \odot y\)
+		\item Scalar addition distributes over scalar multiplication, i.e. for all \(x \in V\) and \(c,d \in \IR\), \( (c+d)\odot x = c\odot x \oplus d \odot x \)
+	\end{enumerate}
+\item \(V\) is not a vector space, as only six properties hold: it does not have additive inverses, and scalar addition does not distribute over scalar multiplication.
+\end{enumerate}
+\end{solution}
+
+\begin{problem}{V3}
+Determine if \(\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \) is a linear combination of the vectors 
+\(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
+\(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
+\(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \).
+\end{problem}
+\begin{solution}
+
+We compute 
+\[ \RREF
+	\begin{bmatrix}[ccc|c] 
+	1 & 3 & 1 & 3 \\ 
+	0 & 2 & 1 & -1 \\ 
+	1 & -1 & -1 & 2 
+	\end{bmatrix}
+	=
+	\begin{bmatrix}[ccc|c]
+	1 & 0 & -\frac{1}{2} & 0 \\
+	0 & 1 & \frac{1}{2} & 0 \\
+	0 & 0 & 0 & 1
+	\end{bmatrix}
+\]
+Since this corresponds to an inconsistent system of equations, \(\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \) is \textbf{not} a linear combination of \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
+\(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
+\(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \).
+
+\end{solution}
+
+\begin{problem}{V4}
+Determine if  the vectors 
+\(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
+\(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
+\(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \) span \(\IR^3\).
+\end{problem}
+\begin{solution}
+
+We compute 
+\[ \RREF
+	\begin{bmatrix}[ccc] 
+	1 & 3 & 1  \\ 
+	0 & 2 & 1  \\ 
+	1 & -1 & -1 
+	\end{bmatrix}
+	=
+	\begin{bmatrix}[ccc]
+	1 & 0 & -\frac{1}{2} \\
+	0 & 1 & \frac{1}{2} \\
+	0 & 0 & 0
+	\end{bmatrix}
+\]
+Since the last row lacks a pivot, the vectors \textbf{do not span} \(\IR^3\).
+\end{solution}
+
+\begin{problem}{V5}
+Determine if the set \[W = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{ x+y=3z+2}\]
+is a subspace of \(\IR^3\).
+\end{problem}
+\begin{solution}
+Let \(\begin{bmatrix} x_1 \\y_1 \\ z_1 \end{bmatrix}, \begin{bmatrix} x_2 \\y_2 \\ z_2 \end{bmatrix} \in W\) (so we know \(x_1+y_1=3z_1+2\) and \(x_2+y_2=3z_2+2\).  We compute 
+\[  
+\begin{bmatrix} x_1 \\y_1 \\ z_1 \end{bmatrix} 
++\begin{bmatrix} x_2 \\y_2 \\ z_2 \end{bmatrix}
+=\begin{bmatrix} x_1+x_2 \\y_1+y_2 \\ z_1+z_2 \end{bmatrix}
+\]
+
+However, \[ (x_1+x_2)+(y_1+y_2) = (x_1+y_1)+(x_2+y_2) = (3z_1+2)+(3z_2+2)=3z_1+3z_2+4 \neq 3(z_1+z_2)+2.\]
+Thus, \(W\) is not closed under addition, so it is not a subspace.
+\end{solution}
+
 
 \end{document}
