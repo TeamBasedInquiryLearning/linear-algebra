@@ -234,33 +234,29 @@ We can rewrite the previous in terms of augmented matrices
  	\end{alignedat}
 \]
 
-This system was simplified by doing the following:
-\begin{enumerate}
-\item Simplifying one column at a time, moving left to right;
-\item Identifying a circled \term{pivot position}, changing its value to \(1\)
-      and zeroing out above and below.
-\item Continually marking pivots left-to-right until the matrix is
-      in our simplified form.
-\end{enumerate}
+The system was simplified by changing as many numbers in the matrix to
+\(0\) and \(1\) as possible. This simplest matrix equivalent to a given matrix
+is called its ``reduced row echelon form''.
 \end{observation}
 
 \begin{activity}{10}
 A matrix is in \term{reduced row echelon form} (\term{RREF}) if
 \begin{enumerate}
-\item The leading term of each nonzero row is a 1, called a \term{pivot}.
+\item The leading term (first nonzero term) of each nonzero row is a 1.
+      Call these terms \term{pivots}.
+\item Each pivot is to the right of every higher pivot.
 \item Each term above or below a pivot is zero.
 \item All rows of zeroes are at the bottom of the matrix.
 \end{enumerate}
 
-Label each of the following matrices as RREF or not RREF, and circle the
-pivots in the RREF examples.
+Circle the leading terms in each example, and label it as RREF or not RREF.
 \begin{multicols}{3}
 \begin{enumerate}[(A)]
 \item \[ \begin{bmatrix}[ccc|c] 1 & 0 & 0 & 3 \\ 0 & 0 & 1 & -1 \\ 0 & 0 & 0 & 0 \end{bmatrix}\]
 \item \[ \begin{bmatrix}[ccc|c] 1 & 2 & 4 & 3 \\ 0 & 0 & 1 & -1 \\ 0 & 0 & 0 & 0 \end{bmatrix}\]
 \item \[ \begin{bmatrix}[ccc|c] 0 & 0 & 0 & 0 \\ 1 & 2 & 0 & 3 \\ 0 & 0 & 1 & -1  \end{bmatrix}\]
-\item \[ \begin{bmatrix}[ccc|c] 1 & 0 & 2 & -3 \\ 0 & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 \end{bmatrix}\]
-\item \[ \begin{bmatrix}[ccc|c] 1 & 0 & 0 & 4 \\ 0 & 1 & 0 & 7 \\ 0 & 0 & 0 & 0 \end{bmatrix}\]
+\item \[ \begin{bmatrix}[ccc|c] 1 & 0 & 2 & -3 \\ 0 & 3 & 3 & -3 \\ 0 & 0 & 0 & 0 \end{bmatrix}\]
+\item \[ \begin{bmatrix}[ccc|c] 0 & 1 & 0 & 7 \\ 1 & 0 & 0 & 4 \\ 0 & 0 & 0 & 0 \end{bmatrix}\]
 \item \[ \begin{bmatrix}[ccc|c] 1 & 0 & 0 & 4 \\ 0 & 1 & 0 & 7 \\ 0 & 0 & 1 & 0 \end{bmatrix}\]
 \end{enumerate}
 \end{multicols}
