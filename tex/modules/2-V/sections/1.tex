@@ -1,6 +1,3 @@
-
-
-
 \begin{applicationActivities}
 \begin{definition}
   A \textbf{vector space} \(V\) is any collection of mathematical objects with
@@ -10,6 +7,22 @@
 
   \vectorSpaceProperties
 \end{definition}
+
+\begin{remark}
+  The following sets are examples of vector spaces, with the usual/natural
+  operations for addition and scalar multiplication.
+  \begin{itemize}
+    \item \(\IR^n\): Euclidean vectors with \(n\) components.
+    \item \(\IR^\infty\): Sequences of real numbers \((v_1,v_2,\dots)\).
+    \item \(\IR^{m\times n}\): Matrices of real numbers with \(m\) rows and
+          \(n\) columns.
+    \item \(\IC\): Complex numbers.
+    \item \(\P^n\): Polynomials of degree \(n\) or less.
+    \item \(\P\): Polynomials of any degree.
+    \item \(C(\IR)\): Real-valued continuous functions.
+  \end{itemize}
+\end{remark}
+
 
 \begin{activity}{25}
   Consider the following set that models motion along the curve
@@ -33,12 +46,12 @@
             \vect v\oplus\vect u\).
       \item \textbf{Addition identity.}
 
-            There exists some \(\vect 0\)
-            where \(\vect v\oplus\vect 0=\vect v\).
+            There exists some \(\vect z\)
+            where \(\vect v\oplus\vect z=\vect v\).
       \item \textbf{Addition inverse.}
 
             There exists some \(-\vect v\)
-            where \(\vect v\oplus(-\vect v)=\vect 0\).
+            where \(\vect v\oplus(-\vect v)=\vect z\).
       \item \textbf{Scalar multiplication associativity.}
 
             \(a\odot(b\odot\vect v)=(ab)\odot\vect v\).
@@ -61,6 +74,85 @@
   \end{subactivity}
 \end{activity}
 
+
+\begin{activity}{10}
+  Let \(V=\setBuilder{(a,b)}{a,b\in\IR}\), where
+  \(\begin{bmatrix} a_1 \\ a_2 \end{bmatrix})\oplus \begin{bmatrix}b_1 \\ b_2\end{bmatrix}=
+  \begin{bmatrix}a_1+b_1+a_2+b_2 \\ a_1^2+b_1^2\end{bmatrix}\) and \(c\odot \begin{bmatrix} a_1 \\ a_2\end{bmatrix}=\begin{bmatrix} a_1^c \\ a_2+c\end{bmatrix}\). Show that
+  this is not a vector space by finding a counterexample
+  that does not satisfy one of the vector space properties.
+
+  \vectorSpacePropertiesO
+\end{activity}
+
+\begin{definition}
+  A \term{linear combination} of a set of vectors
+  \(\{\vect v_1,\vect v_2,\dots,\vect v_m\}\) is given by
+  \(c_1\vect v_1+c_2\vect v_2+\dots+c_m\vect v_m\) for any choice of
+  scalar multiples \(c_1,c_2,\dots,c_m\).
+
+	\ \\
+	\ \\
+
+  For example, we say $\begin{bmatrix}3 \\0 \\ 5\end{bmatrix}$ is a linear combination of the vectors $\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}$ and $\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}$ since $$\begin{bmatrix} 3 \\ 0 \\ 5 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} + 1\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}$$
+\end{definition}
+
+\begin{definition}
+  The \term{span} of a set of vectors is the collection of all linear
+  combinations of that set:
+  \[
+    \vspan\{\vect v_1,\vect v_2,\dots,\vect v_m\} =
+    \setBuilder{c_1\vect v_1+c_2\vect v_2+\dots+c_m\vect v_m}{ 
+    c_i\text{ is a real number}}
+  \]
+\end{definition}
+
+\begin{activity}{10}
+  Consider \(\vspan\left\{\begin{bmatrix}1\\2\end{bmatrix}\right\}\).
+  \begin{subactivity}
+    Sketch
+    \(c\begin{bmatrix}1\\2\end{bmatrix}\) in the \(xy\) plane
+    for \(c=1,3,0,-2\).
+  \end{subactivity}
+  \begin{subactivity}
+    Sketch a representation of all the vectors given by
+    \(\vspan\left\{\begin{bmatrix}1\\2\end{bmatrix}\right\}\)
+    in the \(xy\) plane.
+  \end{subactivity}
+\end{activity}
+
+
+
+
+
+\begin{activity}{10}
+  Consider \(\vspan\left\{\begin{bmatrix}1\\2\end{bmatrix},
+  \begin{bmatrix}-1\\1\end{bmatrix}\right\}\).
+  \begin{subactivity}
+    Sketch the following linear combinations in the \(xy\) plane:
+    \(1\begin{bmatrix}1\\2\end{bmatrix}+
+    0\begin{bmatrix}-1\\1\end{bmatrix}\),
+    \(0\begin{bmatrix}1\\2\end{bmatrix}+
+    1\begin{bmatrix}-1\\1\end{bmatrix}\),
+    \(2\begin{bmatrix}1\\2\end{bmatrix}+
+    0\begin{bmatrix}-1\\1\end{bmatrix}\),
+    \(2\begin{bmatrix}1\\2\end{bmatrix}+
+    1\begin{bmatrix}-1\\1\end{bmatrix}\).
+  \end{subactivity}
+  \begin{subactivity}
+    Sketch a representation of all the vectors given by
+    \(\vspan\left\{\begin{bmatrix}1\\2\end{bmatrix},
+     \begin{bmatrix}-1\\1\end{bmatrix}\right\}\)
+    in the \(xy\) plane.
+  \end{subactivity}
+\end{activity}
+
+\begin{activity}{5}
+    Sketch a representation of all the vectors given by
+    \(\vspan\left\{\begin{bmatrix}6\\-4\end{bmatrix},
+     \begin{bmatrix}-2\\3\end{bmatrix}\right\}\)
+    in the \(xy\) plane.
+\end{activity}
 
 
 \end{applicationActivities}
