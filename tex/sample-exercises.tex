@@ -309,4 +309,34 @@ Thus, \(W\) is not closed under addition, so it is not a subspace.
 \end{solution}
 
 
+\begin{problem}{S1}
+Determine if the vectors 
+\( \begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix} \) ,
+\( \begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix} \) ,
+\( \begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix} \) , and
+\( \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \) 
+are linearly dependent or linearly independent.
+\end{problem}
+\begin{solution}
+Compute 
+\[\RREF \begin{bmatrix} 3 & -1 & 0 & 2 \\ 2 & 1 & 1 & 5 \\ 1 & 2 & -1 & 1 \\ 0 & 3 & 1 & 5 \end{bmatrix} = 
+\begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \end{bmatrix}.\]
+Since the fourth column is not a pivot column, the vectors are linearly dependent.
+\end{solution}
+
+\begin{problem}{S2}
+Determine if the set \[ \left\{
+ \begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix} ,
+ \begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix} ,
+ \begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix} ,
+ \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \right\} \] 
+is a basis of $\IR^4$ or not.
+\end{problem}
+\begin{solution}
+Compute 
+\[\RREF \begin{bmatrix} 3 & -1 & 0 & 2 \\ 2 & 1 & 1 & 5 \\ 1 & 2 & -1 & 1 \\ 0 & 3 & 1 & 5 \end{bmatrix} = 
+\begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \end{bmatrix}.\]
+Since the fourth column is not a pivot column, the vectors are linearly dependent and thus not a basis.  Alternatively, since the fourth row is all zeroes, the vectors do not span $\IR^4$ and thus are not a basis.
+\end{solution}
+
 \end{document}
