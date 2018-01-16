@@ -2,6 +2,8 @@
 \usepackage{tbil-la}
 \usepackage[top=1in,bottom=1in,right=1in,left=1in]{geometry}
 
+\parindent=0pt
+
 %Problem environment -- takes an argument which is the standard
 \newenvironment{problem}[1]
 %before
@@ -162,14 +164,24 @@ So the solution set is
 
 
 \begin{problem}{V1}
-Let \(V\) be the set of all polynomials, together with the operations \(\oplus\) and \(\odot\) defined by, for all polynomials \(f(x),g(x)\) and scalars \(c \in \IR\):
+Let \(V\) be the set of all polynomials, together with the operations
+\(\oplus\) and \(\odot\) defined by the following for all polynomials
+\(f(x),g(x)\) and scalars \(c \in \IR\):
 \begin{align*}
 f(x) \oplus g(x) &= xf(x)+xg(x) \\
 c\odot f(x) &= cf(x)
 \end{align*}
 \begin{enumerate}[(a)]
-\item Show that scalar multiplication distributes over vector addition, i.e. \[c\odot \left(f(x)\oplus g(x) \right) = c \odot f(x) \oplus c \odot g(x).\]
-\item Show that addition is not associative, i.e. for all polynomials $f(x),g(x),h(x)$, \[\left( f(x) \oplus g(x) \right) \oplus h(x) \neq f(x) \oplus \left( g(x) \oplus h(x) \right) .\]
+\item Show that scalar distribution
+\[c\odot \left(f(x)\oplus g(x) \right) = c \odot f(x) \oplus c \odot g(x)\]
+holds.
+\item Show that addition associativity
+\[
+	\left( f(x) \oplus g(x) \right) \oplus h(x)
+=
+	f(x) \oplus \left( g(x) \oplus h(x) \right)
+\]
+fails.
 \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -177,82 +189,110 @@ c\odot f(x) &= cf(x)
 \item
 Compute
 \begin{align*}
-	c \odot \left(f(x) \oplus g(x) \right) 
+	c \odot \left(f(x) \oplus g(x) \right)
 	&= c \odot \left(xf(x)+xg(x)\right) \\
 	&= c\left(xf(x)+xg(x) \right) \\
-	&= cxf(x)+cxg(x) 
+	&= cxf(x)+cxg(x)
 \end{align*}
 and
 \begin{align*}
-	c\odot f(x) \oplus c \odot g(x) 
+	c\odot f(x) \oplus c \odot g(x)
 	&= (cf(x)) \oplus (cg(x))\\
 	&= xcf(x)+xcg(x)
 \end{align*}
-Since these are the same, we have shown \(c\odot \left(f(x)\oplus g(x) \right) = c \odot f(x) \oplus c \odot g(x).\)
+Since these are the same, we have shown that
+\(c\odot \left(f(x)\oplus g(x) \right) = c \odot f(x) \oplus c \odot g(x)\)
+holds.
 \item
-Compute
+Suppose \(f(x)=1\), \(g(x)=2\), and \(h(x)=3\). Then
 \begin{align*}
-	\left( f(x) \oplus g(x) \right) \oplus h(x) 
-	&=\left(xf(x)+xg(x) \right) \oplus h(x)\\
-	&= x\left(xf(x)+xg(x)\right)+xh(x) \\
-	&= x^2f(x)+x^2g(x)+xh(x)
+	\left( f(x) \oplus g(x) \right) \oplus h(x)
+	&=\left(x+2x \right) \oplus 3\\
+	&=3x \oplus 3\\
+	&= 3x^2+3x
 \end{align*}
-and 
+and
 \begin{align*}
-	f(x) \oplus \left( g(x) \oplus h(x) \right) 
-	&=f(x) \oplus \left(xg(x)+xh(x)\right) \\
-	&=xf(x)+x\left(xg(x)+xh(x)\right) \\
-	&=xf(x)+x^2g(x)+x^2h(x)
+	f(x) \oplus \left( g(x) \oplus h(x) \right)
+	&=1 \oplus \left(2x+3x\right) \\
+	&=1 \oplus 5x \\
+	&=x + 5x^2
 \end{align*}
 
 
-Since $x^2f(x)+x^2g(x)+xh(x)\neq xf(x)+x^2g(x)+x^2h(x)$, we have shown \(\left( f(x) \oplus g(x) \right) \oplus h(x) \neq f(x) \oplus \left( g(x) \oplus h(x) \right) .\)
+Since \(3x^2+3x\not=x+5x^2\), we have shown
+\(
+	\left( f(x) \oplus g(x) \right) \oplus h(x)
+=
+	f(x) \oplus \left( g(x) \oplus h(x) \right)
+\)
+fails.
 \end{enumerate}
 \end{solution}
 
-\begin{problem}
-Let \(V\) be the set of all non-negative real numbers with the operations \(\oplus\) and \(\odot\) given by, for all $x,y \in V$ and $c \in \IR$,
-\begin{align*}
-x \oplus y &= x+y \\
-c \odot x &= |c|x
-\end{align*}
+\begin{problem}{V2}
+	Let \(V\) be the set of all non-negative real numbers with the operations
+	\(\oplus\) and \(\odot\) given by, for all \(x,y \in V\) and \(c \in \IR\),
+	\begin{align*}
+	x \oplus y &= x+y \\
+	c \odot x &= |c|x
+	\end{align*}
 
-\begin{enumerate}[(a)]
-\item List the 8 defining properties of a vector space.
-\item Determine which of the 8 hold for $V$ with these operations, and conclude whether $V$ is a vector space or not.
-\end{enumerate}
-\end{problem}
+	List the 8 defining properties of a vector space, and label each as
+	``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
+	\(V\) is a vector space or not.
+	\end{problem}
 \begin{solution}
-\begin{enumerate}[(a)]
-\item The eight properties are
 	\begin{enumerate}[1)]
-		\item Addition is associative, i.e. \((x\oplus y)\oplus z = x\oplus (y \oplus z)\) for all \(x,y,z \in V\).
-		\item Addition is commutative, i.e. \(x\oplus y = y \oplus x\) for all \(x,y \in V\).
-		\item There exists a zero element, i.e. an element \(0 \in V\) such that for all \(x \in V\), \(x\oplus 0 = x\).
-		\item Additive inverses exist, i.e. for every \(x \in V\) there is an element \(-x \in V\) such that \(x \oplus (-x) = 0 \)
-		\item Scalar multiplication is associative, i.e. for each \(c,d \in \IR\) and \(x \in V\), \(c\odot (d\odot x) = (cd) \odot x\).
-		\item \(1\) is the multiplicative identity, i.e. for all \(x \in V\), \(1 \odot x = x \).
-		\item Scalar multiplication distributes over vector addition, i.e. for all \(x,y \in V\) and \(c \in \IR\), \(c\odot(x\oplus y) = c\odot x \oplus c \odot y\)
-		\item Scalar addition distributes over scalar multiplication, i.e. for all \(x \in V\) and \(c,d \in \IR\), \( (c+d)\odot x = c\odot x \oplus d \odot x \)
+		\item Addition associativity:
+					\((x\oplus y)\oplus z = x\oplus (y \oplus z)\)
+					for all \(x,y,z \in V\).
+					\textbf{TRUE}
+		\item Addition commutivity:
+					\(x\oplus y = y \oplus x\)
+					for all \(x,y \in V\).
+					\textbf{TRUE}
+		\item Addition identity:
+		 			there exists an element \(z \in V\) such that for all \(x \in V\),
+					\(x\oplus z = x\).
+					\textbf{TRUE}
+		\item Addition inverses:
+					for every \(x \in V\) there is an element \(-x \in V\) such that
+					\(x \oplus (-x) = z \).
+					\textbf{FALSE}
+		\item Scalar multiplication associativity:
+					for each \(c,d \in \IR\) and \(x \in V\),
+					\(c\odot (d\odot x) = (cd) \odot x\).
+					\textbf{TRUE}
+		\item Scalar multiplication identity:
+					for all \(x \in V\), \(1 \odot x = x \).
+					\textbf{TRUE}
+		\item Scalar distribution:
+					for all \(x,y \in V\) and \(c \in \IR\),
+					\(c\odot(x\oplus y) = c\odot x \oplus c \odot y\).
+					\textbf{TRUE}
+		\item Vector distribution:
+					for all \(x \in V\) and \(c,d \in \IR\),
+					\( (c+d)\odot x = c\odot x \oplus d \odot x \)
+					\textbf{FALSE}
 	\end{enumerate}
-\item \(V\) is not a vector space, as only six properties hold: it does not have additive inverses, and scalar addition does not distribute over scalar multiplication.
-\end{enumerate}
+Since at least one property fails, \(V\) is not a vector space.
 \end{solution}
 
 \begin{problem}{V3}
-Determine if \(\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \) is a linear combination of the vectors 
+Determine if \(\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \) is a linear combination of the vectors
 \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
 \(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
 \(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \).
 \end{problem}
 \begin{solution}
 
-We compute 
+We compute
 \[ \RREF
-	\begin{bmatrix}[ccc|c] 
-	1 & 3 & 1 & 3 \\ 
-	0 & 2 & 1 & -1 \\ 
-	1 & -1 & -1 & 2 
+	\begin{bmatrix}[ccc|c]
+	1 & 3 & 1 & 3 \\
+	0 & 2 & 1 & -1 \\
+	1 & -1 & -1 & 2
 	\end{bmatrix}
 	=
 	\begin{bmatrix}[ccc|c]
@@ -268,19 +308,19 @@ Since this corresponds to an inconsistent system of equations, \(\begin{bmatrix}
 \end{solution}
 
 \begin{problem}{V4}
-Determine if  the vectors 
+Determine if  the vectors
 \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
 \(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
 \(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \) span \(\IR^3\).
 \end{problem}
 \begin{solution}
 
-We compute 
+We compute
 \[ \RREF
-	\begin{bmatrix}[ccc] 
-	1 & 3 & 1  \\ 
-	0 & 2 & 1  \\ 
-	1 & -1 & -1 
+	\begin{bmatrix}[ccc]
+	1 & 3 & 1  \\
+	0 & 2 & 1  \\
+	1 & -1 & -1
 	\end{bmatrix}
 	=
 	\begin{bmatrix}[ccc]
@@ -293,33 +333,75 @@ Since the last row lacks a pivot, the vectors \textbf{do not span} \(\IR^3\).
 \end{solution}
 
 \begin{problem}{V5}
-Determine if the set \[W = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{ x+y=3z+2}\]
-is a subspace of \(\IR^3\).
+Consider the following two sets of Euclidean vectors.
+\[
+	W = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y=3z}
+\]
+\[
+	U = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y=3z+2}
+\]
+Show that one of these sets is a subspace of \(\IR^3\), and
+that one of the sets is not.
 \end{problem}
 \begin{solution}
-Let \(\begin{bmatrix} x_1 \\y_1 \\ z_1 \end{bmatrix}, \begin{bmatrix} x_2 \\y_2 \\ z_2 \end{bmatrix} \in W\) (so we know \(x_1+y_1=3z_1+2\) and \(x_2+y_2=3z_2+2\).  We compute 
-\[  
-\begin{bmatrix} x_1 \\y_1 \\ z_1 \end{bmatrix} 
+Let
+\(
+	\begin{bmatrix} x_1 \\y_1 \\ z_1 \end{bmatrix},
+	\begin{bmatrix} x_2 \\y_2 \\ z_2 \end{bmatrix} \in W
+\),
+so we know \(x_1+y_1=3z_1\) and \(x_2+y_2=3z_2\).
+Consider
+\[
+\begin{bmatrix} x_1 \\y_1 \\ z_1 \end{bmatrix}
 +\begin{bmatrix} x_2 \\y_2 \\ z_2 \end{bmatrix}
 =\begin{bmatrix} x_1+x_2 \\y_1+y_2 \\ z_1+z_2 \end{bmatrix}
+.\]
+Since
+\[
+	(x_1+x_2)+(y_1+y_2) = (x_1+y_1)+(x_2+y_2) = 3z_1+3z_2=3(z_1+z_2)
 \]
+we see that \(W\) is closed under vector addition.
+Now consider
+\[
+c\begin{bmatrix} x_1 \\y_1 \\ z_1 \end{bmatrix}
+=\begin{bmatrix} cx_1 \\cy_1 \\ cz_1 \end{bmatrix}
+.\]
+Since
+\[cx_1+cx_2 = c(x_1+x_2)=c(3z_1)=3(cz_1)\]
+we see that \(W\) is closed under scalar multiplication. Therefore \(W\)
+is a subspace of \(\IR^3\).
 
-However, \[ (x_1+x_2)+(y_1+y_2) = (x_1+y_1)+(x_2+y_2) = (3z_1+2)+(3z_2+2)=3z_1+3z_2+4 \neq 3(z_1+z_2)+2.\]
-Thus, \(W\) is not closed under addition, so it is not a subspace.
+However, note that
+\(
+	\begin{bmatrix} 0 \\ 5 \\ 1 \end{bmatrix},
+	\begin{bmatrix} 1 \\ 4 \\ 1 \end{bmatrix}
+\)
+are vectors in \(U\) since \(0+5=3(1)+2\) and \(1+5=3(1)+2\).
+But
+\[
+	\begin{bmatrix} 0 \\ 5 \\ 1 \end{bmatrix}
+		+
+	\begin{bmatrix} 1 \\ 4 \\ 1 \end{bmatrix}
+		=
+	\begin{bmatrix} 1 \\ 9 \\ 2 \end{bmatrix}
+\]
+does not belong to \(U\) since \(1+9\not=3(2)+2\).
+Since \(U\) is not closed under vector addition, \(U\) is not a subspace
+of \(\IR^3\).
 \end{solution}
 
 
 \begin{problem}{S1}
-Determine if the vectors 
+Determine if the vectors
 \( \begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix} \) ,
 \( \begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix} \) ,
 \( \begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix} \) , and
-\( \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \) 
+\( \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \)
 are linearly dependent or linearly independent.
 \end{problem}
 \begin{solution}
-Compute 
-\[\RREF \begin{bmatrix} 3 & -1 & 0 & 2 \\ 2 & 1 & 1 & 5 \\ 1 & 2 & -1 & 1 \\ 0 & 3 & 1 & 5 \end{bmatrix} = 
+Compute
+\[\RREF \begin{bmatrix} 3 & -1 & 0 & 2 \\ 2 & 1 & 1 & 5 \\ 1 & 2 & -1 & 1 \\ 0 & 3 & 1 & 5 \end{bmatrix} =
 \begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \end{bmatrix}.\]
 Since the fourth column is not a pivot column, the vectors are linearly dependent.
 \end{solution}
@@ -329,21 +411,26 @@ Determine if the set \[ \left\{
  \begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix} ,
  \begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix} ,
  \begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix} ,
- \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \right\} \] 
+ \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \right\} \]
 is a basis of $\IR^4$ or not.
 \end{problem}
 \begin{solution}
-Compute 
-\[\RREF \begin{bmatrix} 3 & -1 & 0 & 2 \\ 2 & 1 & 1 & 5 \\ 1 & 2 & -1 & 1 \\ 0 & 3 & 1 & 5 \end{bmatrix} = 
+Compute
+\[\RREF \begin{bmatrix} 3 & -1 & 0 & 2 \\ 2 & 1 & 1 & 5 \\ 1 & 2 & -1 & 1 \\ 0 & 3 & 1 & 5 \end{bmatrix} =
 \begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \end{bmatrix}.\]
-Since the fourth column is not a pivot column, the vectors are linearly dependent and thus not a basis.  Alternatively, since the fourth row is all zeroes, the vectors do not span $\IR^4$ and thus are not a basis.
+Since the fourth column is not a pivot column, the vectors are linearly
+dependent and thus not a basis.
+
+(Alternate solution:
+since the fourth row not a pivot row, the vectors do not span
+\(\IR^4\) and thus are not a basis.)
 \end{solution}
 
 
 \begin{problem}{S3}
 Find a basis for $W$, the subspace of $\IR^4$ given by
 \[
-	W = \vspan \left\{ 
+	W = \vspan \left\{
 	\begin{bmatrix} 1 \\ -3 \\ -1 \\ 2 \end{bmatrix} ,
 	\begin{bmatrix} 1 \\ 0 \\ 1 \\ -2 \end{bmatrix} ,
 	\begin{bmatrix} 3 \\ -6 \\ -1 \\ 2 \end{bmatrix} ,
@@ -353,26 +440,26 @@ Find a basis for $W$, the subspace of $\IR^4$ given by
 \]
 \end{problem}
 \begin{solution}
-Observe that 
-\[ \RREF 
+Observe that
+\[ \RREF
 		\begin{bmatrix}
 		1 & 1 & 3 & 1 & 2 \\
 		-3 & 0 & -6 & 6 & 3 \\
 		-1 & 1 & -1 & 1 & 0 \\
-		2 & -2 & 2 & -1 & 1 
-		\end{bmatrix} = 
-		\begin{bmatrix} 
-		1 & 0 & 2 & 0 & 1 \\ 
+		2 & -2 & 2 & -1 & 1
+		\end{bmatrix} =
+		\begin{bmatrix}
+		1 & 0 & 2 & 0 & 1 \\
 		0 & 1 & 1 & 0 & 0 \\
 		0 & 0 & 0 & 1 & 1 \\
 		0 & 0 & 0 & 0 & 0
-		\end{bmatrix}  
+		\end{bmatrix}
 \]
-has pivot columns in the first, second, and fourth columns, and therefore 
-\[\left\{ 
+has pivot columns in the first, second, and fourth columns, and therefore
+\[\left\{
 	\begin{bmatrix} 1 \\ -3 \\ -1 \\ 2 \end{bmatrix} ,
 	\begin{bmatrix} 1 \\ 0 \\ 1 \\ -2 \end{bmatrix} ,
-	\begin{bmatrix} 1 \\ 6 \\ 1 \\ -1 \end{bmatrix} 
+	\begin{bmatrix} 1 \\ 6 \\ 1 \\ -1 \end{bmatrix}
 	\right\}
 \]
 is a basis of $W$.
@@ -381,7 +468,7 @@ is a basis of $W$.
 \begin{problem}{S4}
 Find the dimension of $W$, the subspace of $\IR^4$ given by
 \[
-	W = \vspan \left\{ 
+	W = \vspan \left\{
 	\begin{bmatrix} 1 \\ -3 \\ -1 \\ 2 \end{bmatrix} ,
 	\begin{bmatrix} 1 \\ 0 \\ 1 \\ -2 \end{bmatrix} ,
 	\begin{bmatrix} 3 \\ -6 \\ -1 \\ 2 \end{bmatrix} ,
@@ -391,20 +478,20 @@ Find the dimension of $W$, the subspace of $\IR^4$ given by
 \]
 \end{problem}
 \begin{solution}
-Observe that 
-\[ \RREF 
+Observe that
+\[ \RREF
 		\begin{bmatrix}
 		1 & 1 & 3 & 1 & 2 \\
 		-3 & 0 & -6 & 6 & 3 \\
 		-1 & 1 & -1 & 1 & 0 \\
-		2 & -2 & 2 & -1 & 1 
-		\end{bmatrix} = 
-		\begin{bmatrix} 
-		1 & 0 & 2 & 0 & 1 \\ 
+		2 & -2 & 2 & -1 & 1
+		\end{bmatrix} =
+		\begin{bmatrix}
+		1 & 0 & 2 & 0 & 1 \\
 		0 & 1 & 1 & 0 & 0 \\
 		0 & 0 & 0 & 1 & 1 \\
 		0 & 0 & 0 & 0 & 0
-		\end{bmatrix}  
+		\end{bmatrix}
 \]
 has three pivot columns, and therefore \(\dim W = 3\).
 \end{solution}
@@ -414,54 +501,66 @@ Determine if the polynomials \(3x^3+2x^2+x\), \(-x^3+x^2+2x+3\), \(x^2-x+1\), an
 are linearly dependent or linearly independent.
 \end{problem}
 \begin{solution}
-Compute 
-\[\RREF \begin{bmatrix} 3 & -1 & 0 & 2 \\ 2 & 1 & 1 & 5 \\ 1 & 2 & -1 & 1 \\ 0 & 3 & 1 & 5 \end{bmatrix} = 
+This question is equivalent to asking if the Euclidean vectors
+\[
+	\begin{bmatrix} 3\\2\\1\\0\end{bmatrix},
+	\begin{bmatrix} -1\\1\\2\\3\end{bmatrix},
+	\begin{bmatrix} 0\\1\\-1\\1\end{bmatrix},
+	\begin{bmatrix} 2\\5\\1\\5\end{bmatrix}
+\]
+are linearly dependent or linearly independent.
+
+Compute
+\[\RREF \begin{bmatrix} 3 & -1 & 0 & 2 \\ 2 & 1 & 1 & 5 \\ 1 & 2 & -1 & 1 \\ 0 & 3 & 1 & 5 \end{bmatrix} =
 \begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \end{bmatrix}.\]
-Since the fourth column is not a pivot column, the polynomials are linearly dependent.
+Since the fourth column is not a pivot column, the Euclidean vectors
+(and therefore the polynomials) are linearly dependent.
 \end{solution}
 
 \begin{problem}{S6}
 Find a basis for the solution set of the homogeneous system of equations
-\begin{alignat}{6}
-x_1 &\,\,& x_2 &\,+\,& 3x_3 &\,+\,& x_4 &\,+\,& 2x_5 &=& 0 \\
+\begin{alignat*}{6}
+x_1 &\,+\,& x_2 &\,+\,& 3x_3 &\,+\,& x_4 &\,+\,& 2x_5 &=& 0 \\
 -3x_1 &\,\,&  &\,-\,& 6x_3 &\,+\,&6 x_4 &\,+\,& 3x_5 &=& 0 \\
 -x_1 &\,+\,& x_2 &\,-\,& x_3 &\,+\,& x_4 &\,\,&  &=& 0 \\
 2x_1 &\,-\,& 2x_2 &\,+\,& 2x_3 &\,-\,& x_4 &\,+\,& x_5 &=& 0 .
-\end{alignat}
+\end{alignat*}
 \end{problem}
 \begin{solution}
-Observe that 
-\[ \RREF 
+Observe that
+\[ \RREF
 		\begin{bmatrix}[ccccc|c]
 		1 & 1 & 3 & 1 & 2 & 0\\
 		-3 & 0 & -6 & 6 & 3 & 0\\
 		-1 & 1 & -1 & 1 & 0 & 0\\
-		2 & -2 & 2 & -1 & 1& 0 
-		\end{bmatrix} = 
+		2 & -2 & 2 & -1 & 1& 0
+		\end{bmatrix} =
 		\begin{bmatrix}[ccccc|c]
-		1 & 0 & 2 & 0 & 1 &0\\ 
+		1 & 0 & 2 & 0 & 1 &0\\
 		0 & 1 & 1 & 0 & 0 &0\\
 		0 & 0 & 0 & 1 & 1 &0\\
 		0 & 0 & 0 & 0 & 0&0
-		\end{bmatrix}  
+		\end{bmatrix}
 \]
 
-Letting $x_3=a$ and $x_5=b$ (since those correspond to the non-pivot columns), this is equivalent to the system 
+Letting \(x_3=a\) and \(x_5=b\)
+(since those correspond to the non-pivot columns),
+this is equivalent to the system
 
-\begin{alignat}{6}
-x_1 &\,+\,&  &\,+\,& 2x_3 &\,+\,&  &\,\,& x_5 &=& 0 \\
+\begin{alignat*}{6}
+x_1 &\,\,&  &\,+\,& 2x_3 &\,\,&  &\,+\,& x_5 &=& 0 \\
  &\,\,& x_2 &\,+\,& x_3 &\,\,& &\,\,&  &=& 0 \\
  &\,\,&  &\,\,& x_3 &\,\,&  &\,\,&  &=& a \\
  &\,\,&  &\,\,&  &\,\,& x_4 &\,+\,& x_5 &=& 0 \\
  &\,\,&  &\,\,&  &\,\,&  &\,\,& x_5 &=& b \\
-\end{alignat}
+\end{alignat*}
 
-Thus, the solution set is 
+Thus, the solution set is
 \[ \setBuilder{\begin{bmatrix} -2a-b \\ -a \\ a \\ -b \\ b \end{bmatrix}}{a,b \in \IR} .\]
 
 Since we can write \[\begin{bmatrix} -2a-b \\ -a \\ a \\ -b \\ b \end{bmatrix} = a \begin{bmatrix} -2 \\ -1 \\ 1 \\ 0 \\ 0 \end{bmatrix} + b \begin{bmatrix} -1 \\ 0 \\ 0 \\ -1 \\ 1 \end{bmatrix}, \]
-a basis for the solution space is 
-\[ \left \{ \begin{bmatrix} -2 \\ -1 \\ 1 \\ 0 \\ 0 \end{bmatrix} , \begin{bmatrix} -1 \\ 0 \\ 0 \\ -1 \\ 1 \end{bmatrix} \right\}\]
+a basis for the solution space is
+\[ \left \{ \begin{bmatrix} -2 \\ -1 \\ 1 \\ 0 \\ 0 \end{bmatrix} , \begin{bmatrix} -1 \\ 0 \\ 0 \\ -1 \\ 1 \end{bmatrix} \right\}.\]
 \end{solution}
 
 
