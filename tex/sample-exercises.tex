@@ -8,29 +8,29 @@
 \newenvironment{problem}[1]
 %before
 {
-	\begin{flushleft}
-	%{\bfseries \arabic{problem} .}
-	%Problem numbering by standard
-	\textbf{#1}.
-	\ignorespaces
+  \begin{flushleft}
+  %{\bfseries \arabic{problem} .}
+  %Problem numbering by standard
+  \textbf{#1}.
+  \ignorespaces
 }
 %after
 {
-	\end{flushleft}
+  \end{flushleft}
 }
 
 \newenvironment{solution}
 %before
 {
-	\ignorespaces
-	\textbf{Solution:}
+  \ignorespaces
+  \textbf{Solution:}
 }
 %after
 {
-	\ignorespacesafterend
-	\begin{flushright}
-	{\bfseries \qed}
-	\end{flushright}
+  \ignorespacesafterend
+  \begin{flushright}
+  {\bfseries \qed}
+  \end{flushright}
 }
 
 
@@ -67,56 +67,56 @@ augmented matrix.
 \begin{problem}{E2}
 Put the following matrix in reduced row echelon form.
 \[
-	\begin{bmatrix}
-	0 & 3 & 1 & 2 \\
-	1 & 2 & -1 & -3 \\
-	2 & 4 & -1 & -1
-	\end{bmatrix}
+  \begin{bmatrix}
+  0 & 3 & 1 & 2 \\
+  1 & 2 & -1 & -3 \\
+  2 & 4 & -1 & -1
+  \end{bmatrix}
 \]
 \end{problem}
 \begin{solution}
 \begin{alignat*}{4}
-	\begin{bmatrix}
-	0 & 3 & 1 & 2 \\
-	1 & 2 & -1 & -3 \\
-	2 & 4 & -1 & -1
-	\end{bmatrix}
-	&\sim&
-	\begin{bmatrix}
-	\circledNumber{1} & 2 & -1 & -3 \\
-	0 & 3 & 1 & 2 \\
-	2 & 4 & -1 & -1
-	\end{bmatrix}
-	&\sim&
-	\begin{bmatrix}
-	\circledNumber{1} & 2 & -1 & -3 \\
-	0 & 3 & 1 & 2 \\
-	0 & 0 & 1 & 5
-	\end{bmatrix}
-	&\sim&
-	\begin{bmatrix}
-	\circledNumber{1} & 2 & -1 & -3 \\
-	0 & \circledNumber{1} & \frac{1}{3} & \frac{2}{3} \\
-	0 & 0 & 1 & 5
-	\end{bmatrix} \\
-	&\sim&
-	\begin{bmatrix}
-	\circledNumber{1} & 0 & -\frac{5}{3} & -\frac{13}{3} \\
-	0 & \circledNumber{1} & \frac{1}{3} & \frac{2}{3} \\
-	0 & 0 & \circledNumber{1} & 5
-	\end{bmatrix}
-	&\sim&
-	\begin{bmatrix}
-	\circledNumber{1} & 0 & -\frac{5}{3} & -\frac{13}{3} \\
-	0 & \circledNumber{1} & 0 & -1 \\
-	0 & 0 & \circledNumber{1} & 5
-	\end{bmatrix}
-	&\sim&
-	\begin{bmatrix}
-	\circledNumber{1} & 0 & 0 & 4 \\
-	0 & \circledNumber{1} & 0 & -1 \\
-	0 & 0 & \circledNumber{1} & 5
-	\end{bmatrix}
+  \begin{bmatrix}
+  0 & 3 & 1 & 2 \\
+  1 & 2 & -1 & -3 \\
+  2 & 4 & -1 & -1
+  \end{bmatrix}
+  &\sim&
+  \begin{bmatrix}
+  \circledNumber{1} & 2 & -1 & -3 \\
+  0 & 3 & 1 & 2 \\
+  2 & 4 & -1 & -1
+  \end{bmatrix}
+  &\sim&
+  \begin{bmatrix}
+  \circledNumber{1} & 2 & -1 & -3 \\
+  0 & 3 & 1 & 2 \\
+  0 & 0 & 1 & 5
+  \end{bmatrix}
+  &\sim&
+  \begin{bmatrix}
+  \circledNumber{1} & 2 & -1 & -3 \\
+  0 & \circledNumber{1} & \frac{1}{3} & \frac{2}{3} \\
+  0 & 0 & 1 & 5
+  \end{bmatrix} \\
+  &\sim&
+  \begin{bmatrix}
+  \circledNumber{1} & 0 & -\frac{5}{3} & -\frac{13}{3} \\
+  0 & \circledNumber{1} & \frac{1}{3} & \frac{2}{3} \\
+  0 & 0 & \circledNumber{1} & 5
+  \end{bmatrix}
+  &\sim&
+  \begin{bmatrix}
+  \circledNumber{1} & 0 & -\frac{5}{3} & -\frac{13}{3} \\
+  0 & \circledNumber{1} & 0 & -1 \\
+  0 & 0 & \circledNumber{1} & 5
+  \end{bmatrix}
+  &\sim&
+  \begin{bmatrix}
+  \circledNumber{1} & 0 & 0 & 4 \\
+  0 & \circledNumber{1} & 0 & -1 \\
+  0 & 0 & \circledNumber{1} & 5
+  \end{bmatrix}
 \end{alignat*}
 \end{solution}
 
@@ -130,9 +130,9 @@ x&\,+\,&2y &\,\,& &= 3
 \begin{solution}
 \[
   \RREF \left(
-		\begin{bmatrix}[ccc|c] 2 & 4 & 1 & 5 \\ 1 & 2 & 0 & 3 \end{bmatrix}
-	\right)
-		=
+    \begin{bmatrix}[ccc|c] 2 & 4 & 1 & 5 \\ 1 & 2 & 0 & 3 \end{bmatrix}
+  \right)
+    =
   \begin{bmatrix}[ccc|c] 1 & 2 & 0 & 3 \\ 0 & 0 & 1 & -1\end{bmatrix}
 \]
 This corresponds to the system
@@ -155,10 +155,10 @@ z&= -1
 So the solution set is
 \[
   \setBuilder{
-		\begin{bmatrix} 3-2a \\ a \\ -1 \end{bmatrix}
-	}{
-		a \in \IR
-	}
+    \begin{bmatrix} 3-2a \\ a \\ -1 \end{bmatrix}
+  }{
+    a \in \IR
+  }
 \]
 \end{solution}
 
@@ -177,9 +177,9 @@ c\odot f(x) &= cf(x)
 holds.
 \item Show that addition associativity
 \[
-	\left( f(x) \oplus g(x) \right) \oplus h(x)
+  \left( f(x) \oplus g(x) \right) \oplus h(x)
 =
-	f(x) \oplus \left( g(x) \oplus h(x) \right)
+  f(x) \oplus \left( g(x) \oplus h(x) \right)
 \]
 fails.
 \end{enumerate}
@@ -189,16 +189,16 @@ fails.
 \item
 Compute
 \begin{align*}
-	c \odot \left(f(x) \oplus g(x) \right)
-	&= c \odot \left(xf(x)+xg(x)\right) \\
-	&= c\left(xf(x)+xg(x) \right) \\
-	&= cxf(x)+cxg(x)
+  c \odot \left(f(x) \oplus g(x) \right)
+  &= c \odot \left(xf(x)+xg(x)\right) \\
+  &= c\left(xf(x)+xg(x) \right) \\
+  &= cxf(x)+cxg(x)
 \end{align*}
 and
 \begin{align*}
-	c\odot f(x) \oplus c \odot g(x)
-	&= (cf(x)) \oplus (cg(x))\\
-	&= xcf(x)+xcg(x)
+  c\odot f(x) \oplus c \odot g(x)
+  &= (cf(x)) \oplus (cg(x))\\
+  &= xcf(x)+xcg(x)
 \end{align*}
 Since these are the same, we have shown that
 \(c\odot \left(f(x)\oplus g(x) \right) = c \odot f(x) \oplus c \odot g(x)\)
@@ -206,76 +206,76 @@ holds.
 \item
 Suppose \(f(x)=1\), \(g(x)=2\), and \(h(x)=3\). Then
 \begin{align*}
-	\left( f(x) \oplus g(x) \right) \oplus h(x)
-	&=\left(x+2x \right) \oplus 3\\
-	&=3x \oplus 3\\
-	&= 3x^2+3x
+  \left( f(x) \oplus g(x) \right) \oplus h(x)
+  &=\left(x+2x \right) \oplus 3\\
+  &=3x \oplus 3\\
+  &= 3x^2+3x
 \end{align*}
 and
 \begin{align*}
-	f(x) \oplus \left( g(x) \oplus h(x) \right)
-	&=1 \oplus \left(2x+3x\right) \\
-	&=1 \oplus 5x \\
-	&=x + 5x^2
+  f(x) \oplus \left( g(x) \oplus h(x) \right)
+  &=1 \oplus \left(2x+3x\right) \\
+  &=1 \oplus 5x \\
+  &=x + 5x^2
 \end{align*}
 
 
 Since \(3x^2+3x\not=x+5x^2\), we have shown
 \(
-	\left( f(x) \oplus g(x) \right) \oplus h(x)
+  \left( f(x) \oplus g(x) \right) \oplus h(x)
 =
-	f(x) \oplus \left( g(x) \oplus h(x) \right)
+  f(x) \oplus \left( g(x) \oplus h(x) \right)
 \)
 fails.
 \end{enumerate}
 \end{solution}
 
 \begin{problem}{V2}
-	Let \(V\) be the set of all non-negative real numbers with the operations
-	\(\oplus\) and \(\odot\) given by, for all \(x,y \in V\) and \(c \in \IR\),
-	\begin{align*}
-	x \oplus y &= x+y \\
-	c \odot x &= |c|x
-	\end{align*}
+  Let \(V\) be the set of all non-negative real numbers with the operations
+  \(\oplus\) and \(\odot\) given by, for all \(x,y \in V\) and \(c \in \IR\),
+  \begin{align*}
+  x \oplus y &= x+y \\
+  c \odot x &= |c|x
+  \end{align*}
 
-	List the 8 defining properties of a vector space, and label each as
-	``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
-	\(V\) is a vector space or not.
-	\end{problem}
+  List the 8 defining properties of a vector space, and label each as
+  ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
+  \(V\) is a vector space or not.
+  \end{problem}
 \begin{solution}
-	\begin{enumerate}[1)]
-		\item Addition associativity:
-					\((x\oplus y)\oplus z = x\oplus (y \oplus z)\)
-					for all \(x,y,z \in V\).
-					\textbf{TRUE}
-		\item Addition commutivity:
-					\(x\oplus y = y \oplus x\)
-					for all \(x,y \in V\).
-					\textbf{TRUE}
-		\item Addition identity:
-		 			there exists an element \(z \in V\) such that for all \(x \in V\),
-					\(x\oplus z = x\).
-					\textbf{TRUE}
-		\item Addition inverses:
-					for every \(x \in V\) there is an element \(-x \in V\) such that
-					\(x \oplus (-x) = z \).
-					\textbf{FALSE}
-		\item Scalar multiplication associativity:
-					for each \(c,d \in \IR\) and \(x \in V\),
-					\(c\odot (d\odot x) = (cd) \odot x\).
-					\textbf{TRUE}
-		\item Scalar multiplication identity:
-					for all \(x \in V\), \(1 \odot x = x \).
-					\textbf{TRUE}
-		\item Scalar distribution:
-					for all \(x,y \in V\) and \(c \in \IR\),
-					\(c\odot(x\oplus y) = c\odot x \oplus c \odot y\).
-					\textbf{TRUE}
-		\item Vector distribution:
-					for all \(x \in V\) and \(c,d \in \IR\),
-					\( (c+d)\odot x = c\odot x \oplus d \odot x \)
-					\textbf{FALSE}
-	\end{enumerate}
+  \begin{enumerate}[1)]
+    \item Addition associativity:
+          \((x\oplus y)\oplus z = x\oplus (y \oplus z)\)
+          for all \(x,y,z \in V\).
+          \textbf{TRUE}
+    \item Addition commutivity:
+          \(x\oplus y = y \oplus x\)
+          for all \(x,y \in V\).
+          \textbf{TRUE}
+    \item Addition identity:
+           there exists an element \(z \in V\) such that for all \(x \in V\),
+          \(x\oplus z = x\).
+          \textbf{TRUE}
+    \item Addition inverses:
+          for every \(x \in V\) there is an element \(-x \in V\) such that
+          \(x \oplus (-x) = z \).
+          \textbf{FALSE}
+    \item Scalar multiplication associativity:
+          for each \(c,d \in \IR\) and \(x \in V\),
+          \(c\odot (d\odot x) = (cd) \odot x\).
+          \textbf{TRUE}
+    \item Scalar multiplication identity:
+          for all \(x \in V\), \(1 \odot x = x \).
+          \textbf{TRUE}
+    \item Scalar distribution:
+          for all \(x,y \in V\) and \(c \in \IR\),
+          \(c\odot(x\oplus y) = c\odot x \oplus c \odot y\).
+          \textbf{TRUE}
+    \item Vector distribution:
+          for all \(x \in V\) and \(c,d \in \IR\),
+          \( (c+d)\odot x = c\odot x \oplus d \odot x \)
+          \textbf{FALSE}
+  \end{enumerate}
 Since at least one property fails, \(V\) is not a vector space.
 \end{solution}
 
@@ -289,17 +289,17 @@ Determine if \(\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \) is a linear combina
 
 We compute
 \[ \RREF
-	\begin{bmatrix}[ccc|c]
-	1 & 3 & 1 & 3 \\
-	0 & 2 & 1 & -1 \\
-	1 & -1 & -1 & 2
-	\end{bmatrix}
-	=
-	\begin{bmatrix}[ccc|c]
-	1 & 0 & -\frac{1}{2} & 0 \\
-	0 & 1 & \frac{1}{2} & 0 \\
-	0 & 0 & 0 & 1
-	\end{bmatrix}
+  \begin{bmatrix}[ccc|c]
+  1 & 3 & 1 & 3 \\
+  0 & 2 & 1 & -1 \\
+  1 & -1 & -1 & 2
+  \end{bmatrix}
+  =
+  \begin{bmatrix}[ccc|c]
+  1 & 0 & -\frac{1}{2} & 0 \\
+  0 & 1 & \frac{1}{2} & 0 \\
+  0 & 0 & 0 & 1
+  \end{bmatrix}
 \]
 Since this corresponds to an inconsistent system of equations, \(\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \) is \textbf{not} a linear combination of \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
 \(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
@@ -317,17 +317,17 @@ Determine if  the vectors
 
 We compute
 \[ \RREF
-	\begin{bmatrix}[ccc]
-	1 & 3 & 1  \\
-	0 & 2 & 1  \\
-	1 & -1 & -1
-	\end{bmatrix}
-	=
-	\begin{bmatrix}[ccc]
-	1 & 0 & -\frac{1}{2} \\
-	0 & 1 & \frac{1}{2} \\
-	0 & 0 & 0
-	\end{bmatrix}
+  \begin{bmatrix}[ccc]
+  1 & 3 & 1  \\
+  0 & 2 & 1  \\
+  1 & -1 & -1
+  \end{bmatrix}
+  =
+  \begin{bmatrix}[ccc]
+  1 & 0 & -\frac{1}{2} \\
+  0 & 1 & \frac{1}{2} \\
+  0 & 0 & 0
+  \end{bmatrix}
 \]
 Since the last row lacks a pivot, the vectors \textbf{do not span} \(\IR^3\).
 \end{solution}
@@ -335,10 +335,10 @@ Since the last row lacks a pivot, the vectors \textbf{do not span} \(\IR^3\).
 \begin{problem}{V5}
 Consider the following two sets of Euclidean vectors.
 \[
-	W = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y=3z}
+  W = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y=3z}
 \]
 \[
-	U = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y=3z+2}
+  U = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y=3z+2}
 \]
 Show that one of these sets is a subspace of \(\IR^3\), and
 that one of the sets is not.
@@ -346,8 +346,8 @@ that one of the sets is not.
 \begin{solution}
 Let
 \(
-	\begin{bmatrix} x_1 \\y_1 \\ z_1 \end{bmatrix},
-	\begin{bmatrix} x_2 \\y_2 \\ z_2 \end{bmatrix} \in W
+  \begin{bmatrix} x_1 \\y_1 \\ z_1 \end{bmatrix},
+  \begin{bmatrix} x_2 \\y_2 \\ z_2 \end{bmatrix} \in W
 \),
 so we know \(x_1+y_1=3z_1\) and \(x_2+y_2=3z_2\).
 Consider
@@ -358,7 +358,7 @@ Consider
 .\]
 Since
 \[
-	(x_1+x_2)+(y_1+y_2) = (x_1+y_1)+(x_2+y_2) = 3z_1+3z_2=3(z_1+z_2)
+  (x_1+x_2)+(y_1+y_2) = (x_1+y_1)+(x_2+y_2) = 3z_1+3z_2=3(z_1+z_2)
 \]
 we see that \(W\) is closed under vector addition.
 Now consider
@@ -373,17 +373,17 @@ is a subspace of \(\IR^3\).
 
 However, note that
 \(
-	\begin{bmatrix} 0 \\ 5 \\ 1 \end{bmatrix},
-	\begin{bmatrix} 1 \\ 4 \\ 1 \end{bmatrix}
+  \begin{bmatrix} 0 \\ 5 \\ 1 \end{bmatrix},
+  \begin{bmatrix} 1 \\ 4 \\ 1 \end{bmatrix}
 \)
 are vectors in \(U\) since \(0+5=3(1)+2\) and \(1+5=3(1)+2\).
 But
 \[
-	\begin{bmatrix} 0 \\ 5 \\ 1 \end{bmatrix}
-		+
-	\begin{bmatrix} 1 \\ 4 \\ 1 \end{bmatrix}
-		=
-	\begin{bmatrix} 1 \\ 9 \\ 2 \end{bmatrix}
+  \begin{bmatrix} 0 \\ 5 \\ 1 \end{bmatrix}
+    +
+  \begin{bmatrix} 1 \\ 4 \\ 1 \end{bmatrix}
+    =
+  \begin{bmatrix} 1 \\ 9 \\ 2 \end{bmatrix}
 \]
 does not belong to \(U\) since \(1+9\not=3(2)+2\).
 Since \(U\) is not closed under vector addition, \(U\) is not a subspace
@@ -430,37 +430,37 @@ since the fourth row not a pivot row, the vectors do not span
 \begin{problem}{S3}
 Find a basis for $W$, the subspace of $\IR^4$ given by
 \[
-	W = \vspan \left\{
-	\begin{bmatrix} 1 \\ -3 \\ -1 \\ 2 \end{bmatrix} ,
-	\begin{bmatrix} 1 \\ 0 \\ 1 \\ -2 \end{bmatrix} ,
-	\begin{bmatrix} 3 \\ -6 \\ -1 \\ 2 \end{bmatrix} ,
-	\begin{bmatrix} 1 \\ 6 \\ 1 \\ -1 \end{bmatrix} ,
-	\begin{bmatrix} 2 \\ 3 \\ 0 \\ 1 \end{bmatrix}
-	\right\} .
+  W = \vspan \left\{
+  \begin{bmatrix} 1 \\ -3 \\ -1 \\ 2 \end{bmatrix} ,
+  \begin{bmatrix} 1 \\ 0 \\ 1 \\ -2 \end{bmatrix} ,
+  \begin{bmatrix} 3 \\ -6 \\ -1 \\ 2 \end{bmatrix} ,
+  \begin{bmatrix} 1 \\ 6 \\ 1 \\ -1 \end{bmatrix} ,
+  \begin{bmatrix} 2 \\ 3 \\ 0 \\ 1 \end{bmatrix}
+  \right\} .
 \]
 \end{problem}
 \begin{solution}
 Observe that
 \[ \RREF
-		\begin{bmatrix}
-		1 & 1 & 3 & 1 & 2 \\
-		-3 & 0 & -6 & 6 & 3 \\
-		-1 & 1 & -1 & 1 & 0 \\
-		2 & -2 & 2 & -1 & 1
-		\end{bmatrix} =
-		\begin{bmatrix}
-		1 & 0 & 2 & 0 & 1 \\
-		0 & 1 & 1 & 0 & 0 \\
-		0 & 0 & 0 & 1 & 1 \\
-		0 & 0 & 0 & 0 & 0
-		\end{bmatrix}
+    \begin{bmatrix}
+    1 & 1 & 3 & 1 & 2 \\
+    -3 & 0 & -6 & 6 & 3 \\
+    -1 & 1 & -1 & 1 & 0 \\
+    2 & -2 & 2 & -1 & 1
+    \end{bmatrix} =
+    \begin{bmatrix}
+    1 & 0 & 2 & 0 & 1 \\
+    0 & 1 & 1 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 1 \\
+    0 & 0 & 0 & 0 & 0
+    \end{bmatrix}
 \]
 has pivot columns in the first, second, and fourth columns, and therefore
 \[\left\{
-	\begin{bmatrix} 1 \\ -3 \\ -1 \\ 2 \end{bmatrix} ,
-	\begin{bmatrix} 1 \\ 0 \\ 1 \\ -2 \end{bmatrix} ,
-	\begin{bmatrix} 1 \\ 6 \\ 1 \\ -1 \end{bmatrix}
-	\right\}
+  \begin{bmatrix} 1 \\ -3 \\ -1 \\ 2 \end{bmatrix} ,
+  \begin{bmatrix} 1 \\ 0 \\ 1 \\ -2 \end{bmatrix} ,
+  \begin{bmatrix} 1 \\ 6 \\ 1 \\ -1 \end{bmatrix}
+  \right\}
 \]
 is a basis of $W$.
 \end{solution}
@@ -468,30 +468,30 @@ is a basis of $W$.
 \begin{problem}{S4}
 Find the dimension of $W$, the subspace of $\IR^4$ given by
 \[
-	W = \vspan \left\{
-	\begin{bmatrix} 1 \\ -3 \\ -1 \\ 2 \end{bmatrix} ,
-	\begin{bmatrix} 1 \\ 0 \\ 1 \\ -2 \end{bmatrix} ,
-	\begin{bmatrix} 3 \\ -6 \\ -1 \\ 2 \end{bmatrix} ,
-	\begin{bmatrix} 1 \\ 6 \\ 1 \\ -1 \end{bmatrix} ,
-	\begin{bmatrix} 2 \\ 3 \\ 0 \\ 1 \end{bmatrix}
-	\right\} .
+  W = \vspan \left\{
+  \begin{bmatrix} 1 \\ -3 \\ -1 \\ 2 \end{bmatrix} ,
+  \begin{bmatrix} 1 \\ 0 \\ 1 \\ -2 \end{bmatrix} ,
+  \begin{bmatrix} 3 \\ -6 \\ -1 \\ 2 \end{bmatrix} ,
+  \begin{bmatrix} 1 \\ 6 \\ 1 \\ -1 \end{bmatrix} ,
+  \begin{bmatrix} 2 \\ 3 \\ 0 \\ 1 \end{bmatrix}
+  \right\} .
 \]
 \end{problem}
 \begin{solution}
 Observe that
 \[ \RREF
-		\begin{bmatrix}
-		1 & 1 & 3 & 1 & 2 \\
-		-3 & 0 & -6 & 6 & 3 \\
-		-1 & 1 & -1 & 1 & 0 \\
-		2 & -2 & 2 & -1 & 1
-		\end{bmatrix} =
-		\begin{bmatrix}
-		1 & 0 & 2 & 0 & 1 \\
-		0 & 1 & 1 & 0 & 0 \\
-		0 & 0 & 0 & 1 & 1 \\
-		0 & 0 & 0 & 0 & 0
-		\end{bmatrix}
+    \begin{bmatrix}
+    1 & 1 & 3 & 1 & 2 \\
+    -3 & 0 & -6 & 6 & 3 \\
+    -1 & 1 & -1 & 1 & 0 \\
+    2 & -2 & 2 & -1 & 1
+    \end{bmatrix} =
+    \begin{bmatrix}
+    1 & 0 & 2 & 0 & 1 \\
+    0 & 1 & 1 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 1 \\
+    0 & 0 & 0 & 0 & 0
+    \end{bmatrix}
 \]
 has three pivot columns, and therefore \(\dim W = 3\).
 \end{solution}
@@ -503,10 +503,10 @@ are linearly dependent or linearly independent.
 \begin{solution}
 This question is equivalent to asking if the Euclidean vectors
 \[
-	\begin{bmatrix} 3\\2\\1\\0\end{bmatrix},
-	\begin{bmatrix} -1\\1\\2\\3\end{bmatrix},
-	\begin{bmatrix} 0\\1\\-1\\1\end{bmatrix},
-	\begin{bmatrix} 2\\5\\1\\5\end{bmatrix}
+  \begin{bmatrix} 3\\2\\1\\0\end{bmatrix},
+  \begin{bmatrix} -1\\1\\2\\3\end{bmatrix},
+  \begin{bmatrix} 0\\1\\-1\\1\end{bmatrix},
+  \begin{bmatrix} 2\\5\\1\\5\end{bmatrix}
 \]
 are linearly dependent or linearly independent.
 
@@ -529,18 +529,18 @@ x_1 &\,+\,& x_2 &\,+\,& 3x_3 &\,+\,& x_4 &\,+\,& 2x_5 &=& 0 \\
 \begin{solution}
 Observe that
 \[ \RREF
-		\begin{bmatrix}[ccccc|c]
-		1 & 1 & 3 & 1 & 2 & 0\\
-		-3 & 0 & -6 & 6 & 3 & 0\\
-		-1 & 1 & -1 & 1 & 0 & 0\\
-		2 & -2 & 2 & -1 & 1& 0
-		\end{bmatrix} =
-		\begin{bmatrix}[ccccc|c]
-		1 & 0 & 2 & 0 & 1 &0\\
-		0 & 1 & 1 & 0 & 0 &0\\
-		0 & 0 & 0 & 1 & 1 &0\\
-		0 & 0 & 0 & 0 & 0&0
-		\end{bmatrix}
+    \begin{bmatrix}[ccccc|c]
+    1 & 1 & 3 & 1 & 2 & 0\\
+    -3 & 0 & -6 & 6 & 3 & 0\\
+    -1 & 1 & -1 & 1 & 0 & 0\\
+    2 & -2 & 2 & -1 & 1& 0
+    \end{bmatrix} =
+    \begin{bmatrix}[ccccc|c]
+    1 & 0 & 2 & 0 & 1 &0\\
+    0 & 1 & 1 & 0 & 0 &0\\
+    0 & 0 & 0 & 1 & 1 &0\\
+    0 & 0 & 0 & 0 & 0&0
+    \end{bmatrix}
 \]
 
 Letting \(x_3=a\) and \(x_5=b\)
