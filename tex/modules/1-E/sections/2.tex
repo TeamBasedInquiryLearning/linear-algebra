@@ -8,7 +8,7 @@
 Free browser-based technologies for mathematical computation
 are available online.
 \begin{itemize}
-\item Go to \url{http://www.cocalc.com} and create an account.
+\item Go to \url{http://cocalc.com} and create an account.
 \item Create a project titled ``Linear Algebra Team X'' with your appropriate
       team number.  Add all team members as collaborators.
 \item Open the project and click on ``New''
@@ -128,10 +128,15 @@ Recall that the pivots of a matrix in \(\RREF\) form are the leading
 \vspace{0.2in}
 
 The pivot columns in an augmented matrix correspond to the
-\term{bound variables} in the system of equations.
-The remaining variables are called \term{free variables}.
+\term{bound variables} in the system of equations (\(x_1,x_3\) below).
+The remaining variables are called \term{free variables} (\(x_2\) below).
 
-\vspace{0.2in}
+\[
+  \begin{bmatrix}[ccc|c]
+    \circledNumber{1} & 2 & 0 & 4 \\
+    0 & 0 & \circledNumber{1} & -1
+  \end{bmatrix}
+\]
 
 To efficiently solve a system in RREF form, we may assign letters to free
 variables and solve for the bound variables.
@@ -144,8 +149,10 @@ Find the solution set for the system
 -x_1&\,+\,&x_2&\,+\,&3x_3&\,-\,&x_4&\,+\,&2x_5 &\,=\,& -3 \\
 x_1&\,-\,&2x_2&\,-\,&x_3&\,+\,&x_4&\,+\,&x_5 &\,=\,& 2
 \end{alignat*}
-by assigning letters to the free variables and solving for the bound variables
-in the simplified system given by row-reducing its augmented matrix.
+by row-reducing its augmented matrix, and then
+assigning letters to the free variables (given by non-pivot columns)
+and solving for the bound variables (given by pivot columns) in
+the corresponding linear system.
 \end{activity}
 
 \begin{observation}
