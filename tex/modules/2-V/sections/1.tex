@@ -1,12 +1,15 @@
+%!TEX root =../../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
 \begin{applicationActivities}
-\begin{definition}
-  A \textbf{vector space} \(V\) is any collection of mathematical objects with
+\begin{remark}
+  Last time, we defined a \textbf{vector space} \(V\) to be any collection of
+  mathematical objects with
   associated addition and scalar multiplication operations that satisfy
   the following properties. Let \(\vect u,\vect v,\vect w\) belong to \(V\),
   and let \(a,b\) be scalar numbers.
 
   \vectorSpaceProperties
-\end{definition}
+\end{remark}
 
 \begin{remark}
   The following sets are examples of vector spaces, with the usual/natural
@@ -14,7 +17,7 @@
   \begin{itemize}
     \item \(\IR^n\): Euclidean vectors with \(n\) components.
     \item \(\IR^\infty\): Sequences of real numbers \((v_1,v_2,\dots)\).
-    \item \(\IR^{m\times n}\): Matrices of real numbers with \(m\) rows and
+    \item \(M_{m,n}\): Matrices of real numbers with \(m\) rows and
           \(n\) columns.
     \item \(\IC\): Complex numbers.
     \item \(\P^n\): Polynomials of degree \(n\) or less.
@@ -24,16 +27,16 @@
 \end{remark}
 
 
-\begin{activity}{25}
+\begin{observation}
   Consider the following set that models motion along the curve
-  \(y=e^x\). Let \(V=\{(x,y):y=e^x\}\). Let vector addition be defined by
-  \((x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)\), and
-  let scalar multiplication be defined by
-  \(c\odot (x,y)=(cx,y^c)\).
+  \(y=e^x\). Let \(V=\setBuilder{(x,y)}{y=e^x}\) have operations defined by
+  \[
+    (x,y)\oplus (z,w)=(x+z,yw)
+      \hspace{3em}
+    c\odot (x,y)=(cx,y^c)
+  .\]
 
-  \begin{subactivity}
-    Which of the vector space properties are satisfied by \(V\) paired with
-    these operations?
+  It may be proven that \(V\) satisifes all eight properties of a vector space.
     \begin{multicols}{2}
     \begin{itemize}
       \item \textbf{Addition associativity.}
@@ -67,22 +70,44 @@
             \((a+b)\odot\vect v=(a\odot\vect v)\oplus (b\odot\vect v)\).
     \end{itemize}
     \end{multicols}
-  \end{subactivity}
-
-  \begin{subactivity}
-    Is \(V\) a vector space?
-  \end{subactivity}
-\end{activity}
+\end{observation}
 
 
 \begin{activity}{10}
-  Let \(V=\setBuilder{(a,b)}{a,b\in\IR}\), where
-  \(\begin{bmatrix} a_1 \\ a_2 \end{bmatrix}\oplus \begin{bmatrix}b_1 \\ b_2\end{bmatrix}=
-  \begin{bmatrix}a_1+b_1+a_2+b_2 \\ a_1^2+b_1^2\end{bmatrix}\) and \(c\odot \begin{bmatrix} a_1 \\ a_2\end{bmatrix}=\begin{bmatrix} a_1^c \\ a_2+c\end{bmatrix}\). Show that
-  this is not a vector space by finding a counterexample
-  that does not satisfy one of the vector space properties.
+  Show that \(V=\setBuilder{(x,y)}{y=e^x}\) with operations defined by
+  \[
+    (x,y)\oplus (z,w)=(x+z,yw)
+      \hspace{3em}
+    c\odot (x,y)=(cx,y^c)
+  \]
+  satisfies the distribution rule
+  \[(a+b)\odot\vect v=(a\odot\vect v)\oplus (b\odot\vect v)\]
+  by letting \(\vec v=(x,y)\) and simplifying both sides.
+\end{activity}
 
-  \vectorSpacePropertiesO
+
+\begin{activity}{15}
+  Let \(V=\setBuilder{(x,y)}{x,y\in\IR}\) have operations defined by
+  \[
+    (x,y)\oplus (z,w)=(x+y+z+w,x^2+z^2)
+      \hspace{3em}
+    c\odot (x,y)=(x^c,y+c-1)
+  .\]
+
+  \begin{subactivity}
+    Show that the scalar multiplication identity holds by
+    simplifying \(1\odot(x,y)\) to \((x,y)\).
+  \end{subactivity}
+
+  \begin{subactivity}
+    Show that the addition identity property fails by
+    showing that \((0,-1)\oplus\vec z=(0,-1)\oplus(z_1,z_2)\)
+    can never equal \((0,-1)\).
+  \end{subactivity}
+
+  \begin{subactivity}
+    Can \(V\) be a vector space?
+  \end{subactivity}
 \end{activity}
 
 \begin{definition}
@@ -91,10 +116,9 @@
   \(c_1\vect v_1+c_2\vect v_2+\dots+c_m\vect v_m\) for any choice of
   scalar multiples \(c_1,c_2,\dots,c_m\).
 
-	\ \\
-	\ \\
+	\vspace{2em}
 
-  For example, we say $\begin{bmatrix}3 \\0 \\ 5\end{bmatrix}$ is a linear combination of the vectors $\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}$ and $\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}$ since $$\begin{bmatrix} 3 \\ 0 \\ 5 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} + 1\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}$$
+  For example, we can say $\begin{bmatrix}3 \\0 \\ 5\end{bmatrix}$ is a linear combination of the vectors $\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}$ and $\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}$ since $$\begin{bmatrix} 3 \\ 0 \\ 5 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} + 1\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}$$
 \end{definition}
 
 \begin{definition}
@@ -102,8 +126,8 @@
   combinations of that set:
   \[
     \vspan\{\vect v_1,\vect v_2,\dots,\vect v_m\} =
-    \setBuilder{c_1\vect v_1+c_2\vect v_2+\dots+c_m\vect v_m}{ 
-    c_i\text{ is a real number}}.
+    \setBuilder{c_1\vect v_1+c_2\vect v_2+\dots+c_m\vect v_m}{
+    c_i\in\IR}.
   \]
 \end{definition}
 
@@ -111,11 +135,13 @@
   Consider \(\vspan\left\{\begin{bmatrix}1\\2\end{bmatrix}\right\}\).
   \begin{subactivity}
     Sketch
-    \(c\begin{bmatrix}1\\2\end{bmatrix}\) in the \(xy\) plane
-    for \(c=1,3,0,-2\).
+    \(1\begin{bmatrix}1\\2\end{bmatrix}\),
+    \(3\begin{bmatrix}1\\2\end{bmatrix}\),
+    \(0\begin{bmatrix}1\\2\end{bmatrix}\),
+    and \(-2\begin{bmatrix}1\\2\end{bmatrix}\) in the \(xy\) plane.
   \end{subactivity}
   \begin{subactivity}
-    Sketch a representation of all the vectors given by
+    Sketch a representation of all the vectors belonging to
     \(\vspan\left\{\begin{bmatrix}1\\2\end{bmatrix}\right\}\)
     in the \(xy\) plane.
   \end{subactivity}
@@ -129,18 +155,24 @@
   Consider \(\vspan\left\{\begin{bmatrix}1\\2\end{bmatrix},
   \begin{bmatrix}-1\\1\end{bmatrix}\right\}\).
   \begin{subactivity}
-    Sketch the following linear combinations in the \(xy\) plane:
-    \(1\begin{bmatrix}1\\2\end{bmatrix}+
-    0\begin{bmatrix}-1\\1\end{bmatrix}\),
-    \(0\begin{bmatrix}1\\2\end{bmatrix}+
-    1\begin{bmatrix}-1\\1\end{bmatrix}\),
-    \(2\begin{bmatrix}1\\2\end{bmatrix}+
-    0\begin{bmatrix}-1\\1\end{bmatrix}\),
-    \(2\begin{bmatrix}1\\2\end{bmatrix}+
-    1\begin{bmatrix}-1\\1\end{bmatrix}\).
+    Sketch the following linear combinations in the \(xy\) plane.
+    \[
+    1\begin{bmatrix}1\\2\end{bmatrix}+
+    0\begin{bmatrix}-1\\1\end{bmatrix}\hspace{3em}
+    0\begin{bmatrix}1\\2\end{bmatrix}+
+    1\begin{bmatrix}-1\\1\end{bmatrix}\hspace{3em}
+    1\begin{bmatrix}1\\2\end{bmatrix}+
+    1\begin{bmatrix}-1\\1\end{bmatrix}
+    \]
+    \[
+    2\begin{bmatrix}1\\2\end{bmatrix}+
+    0\begin{bmatrix}-1\\1\end{bmatrix}\hspace{3em}
+    2\begin{bmatrix}1\\2\end{bmatrix}+
+    1\begin{bmatrix}-1\\1\end{bmatrix}
+    \]
   \end{subactivity}
   \begin{subactivity}
-    Sketch a representation of all the vectors given by
+    Sketch a representation of all the vectors belonging to
     \(\vspan\left\{\begin{bmatrix}1\\2\end{bmatrix},
      \begin{bmatrix}-1\\1\end{bmatrix}\right\}\)
     in the \(xy\) plane.
@@ -148,7 +180,7 @@
 \end{activity}
 
 \begin{activity}{5}
-    Sketch a representation of all the vectors given by
+    Sketch a representation of all the vectors belonging to
     \(\vspan\left\{\begin{bmatrix}6\\-4\end{bmatrix},
      \begin{bmatrix}-2\\3\end{bmatrix}\right\}\)
     in the \(xy\) plane.

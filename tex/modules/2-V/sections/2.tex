@@ -1,6 +1,5 @@
-
-
-
+%!TEX root =../../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
 \begin{applicationActivities}
 
 
@@ -10,22 +9,22 @@
   \(\begin{bmatrix}-1\\-6\\1\end{bmatrix}\) belongs to
   \(\vspan\left\{\begin{bmatrix}1\\0\\-3\end{bmatrix},
   \begin{bmatrix}-1\\-3\\2\end{bmatrix}\right\}\) exactly when
-  the vector equation
+  there exists a solution to the vector equation
   \(x_1\begin{bmatrix}1\\0\\-3\end{bmatrix}+
   x_2\begin{bmatrix}-1\\-3\\2\end{bmatrix}
-  =\begin{bmatrix}-1\\-6\\1\end{bmatrix}\) holds for some scalars
-  \(x_1,x_2\).
+  =\begin{bmatrix}-1\\-6\\1\end{bmatrix}\).
+
   \begin{subactivity}
     Reinterpret this vector equation as a system of linear equations.
   \end{subactivity}
 
   \begin{subactivity}
-    Solve this system. (Remember, you should use CoCalc to help
-    find \(\RREF\).)
-
+    Find its solution set, using CoCalc.com to find \(\RREF\) of its
+    corresponding augmented matrix.
   \end{subactivity}
+
   \begin{subactivity}
-    Given this solution, does
+    Given this solution set, does
     \(\begin{bmatrix}-1\\-6\\1\end{bmatrix}\) belong to
     \(\vspan\left\{\begin{bmatrix}1\\0\\-3\end{bmatrix},
     \begin{bmatrix}-1\\-3\\2\end{bmatrix}\right\}\)?
@@ -38,13 +37,15 @@
   the linear system corresponding to
   \([\vect v_1\,\dots\,\vect v_n \,|\, \vect b]\)
   is consistent.
-\end{fact}
 
-\begin{remark}
-  To determine if \(\vect b\) belongs to
-  \(\vspan\{\vect v_1,\dots,\vect v_n\}\), find
-  \(\RREF[\vect v_1\,\dots\,\vect v_n \,|\, \vect b]\).
-\end{remark}
+  \vspace{1em}
+
+  Put another way, \(\vect b\) belongs to
+  \(\vspan\{\vect v_1,\dots,\vect v_n\}\) exactly when
+  \(\RREF[\vect v_1\,\dots\,\vect v_n \,|\, \vect b]\)
+  doesn't have a row \([0\,\cdots\,0\,|\,1]\)
+  representing the contradiction \(0=1\).
+\end{fact}
 
 \begin{activity}{10}
   Determine if
@@ -64,13 +65,16 @@
 
 
 \begin{activity}{10}
-  Does \(f(y)=3y^3-2y^2+y+5\) belong to
+  Does the third-degree polynomial \(3y^3-2y^2+y+5\) in \(\P^3\) belong to
   \(\vspan\{y^3-3y+2,-y^3-3y^2+2y+2\}\)?
   \begin{subactivity}
-  	Reinterpret this question as a system of linear equations.
+  	Reinterpret this question as an equivalent exercise involving Euclidean
+    vectors in \(\IR^4\). (Hint: What four numbers must you know to write
+    any polynomial in \(\P^3\)?)
   \end{subactivity}
-  \begin{subactivity} 
-	Solve this system to answer the original question.
+  \begin{subactivity}
+  	Solve this equivalent exercise, and use its solution to answer the original
+    question.
   \end{subactivity}
 \end{activity}
 
