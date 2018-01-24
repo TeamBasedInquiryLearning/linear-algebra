@@ -2,28 +2,35 @@
 % ^ leave for LaTeXTools build functionality
 \begin{applicationActivities}
 
-\begin{fact}
-	Recall these definitions from last class: 
+\begin{remark}
+	Recall these definitions from last class:
 \begin{itemize}
-	\item 
-  A \term{linear combination} of a set of vectors
-  \(\{\vect v_1,\vect v_2,\dots,\vect v_m\}\) is given by
-  \(c_1\vect v_1+c_2\vect v_2+\dots+c_m\vect v_m\) for any choice of
-  scalar multiples \(c_1,c_2,\dots,c_m\).
-
-	\vspace{2em}
-
-  For example, we can say \(\begin{bmatrix}3 \\0 \\ 5\end{bmatrix}\) is a linear combination of the vectors \(\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}\) and \(\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}\) since \[\begin{bmatrix} 3 \\ 0 \\ 5 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} + 1\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}\]
+	\item
+  A \term{linear combination} of vectors is given by adding scalar
+  multiples of those vectors, such as:
+  \[
+    \begin{bmatrix} 3 \\ 0 \\ 5 \end{bmatrix} =
+    2 \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} +
+    1\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}
+  \]
 
 \item The \term{span} of a set of vectors is the collection of all linear
-  combinations of that set:
+  combinations of that set, such as:
   \[
-    \vspan\{\vect v_1,\vect v_2,\dots,\vect v_m\} =
-    \setBuilder{c_1\vect v_1+c_2\vect v_2+\dots+c_m\vect v_m}{
-    c_i\in\IR}.
+    \vspan\setList
+    {
+      \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix},
+      \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}
+    } = \setBuilder
+    {
+      a\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}+
+      b\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}
+    }{
+      a,b\in\IR
+    }
   \]
  \end{itemize}
-\end{fact}
+\end{remark}
 
 
 \begin{activity}{15}
@@ -92,7 +99,7 @@
   \begin{subactivity}
   	Reinterpret this question as an equivalent exercise involving Euclidean
     vectors in \(\IR^4\). (Hint: What four numbers must you know to write
-    any polynomial in \(\P^3\)?)
+    a \(\P^3\) polynomial?)
   \end{subactivity}
   \begin{subactivity}
   	Solve this equivalent exercise, and use its solution to answer the original

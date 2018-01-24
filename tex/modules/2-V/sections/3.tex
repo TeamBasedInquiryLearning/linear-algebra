@@ -1,5 +1,5 @@
-
-
+%!TEX root =../../../course-notes.tex
+% ^ leave for LaTeXTools build functionality
 
 \begin{applicationActivities}
 
@@ -51,12 +51,16 @@
 \end{fact}
 
 \begin{activity}{15}
-  Find a vector \(\begin{bmatrix}a\\b\\c\end{bmatrix}\)
+  Choose a vector \(\begin{bmatrix}\unknown\\\unknown\\\unknown\end{bmatrix}\)
   in \(\IR^3\) that is not in
   \(\vspan\left\{\begin{bmatrix}1\\-1\\0\end{bmatrix},
-  \begin{bmatrix}-2\\0\\1\end{bmatrix}\right\}\) by ensuring
-  \(\begin{bmatrix}[cc|c]1&-2&a\\-1&0&b\\0&1&c\end{bmatrix}\sim
-  \begin{bmatrix}[cc|c]1&0&0\\0&1&0\\0&0&1\end{bmatrix}\).
+  \begin{bmatrix}-2\\0\\1\end{bmatrix}\right\}\) by using CoCalc to verify that
+  \(
+    \RREF
+    \begin{bmatrix}[cc|c]1&-2&\unknown\\-1&0&\unknown\\0&1&\unknown\end{bmatrix}
+      =
+    \begin{bmatrix}[cc|c]1&0&0\\0&1&0\\0&0&1\end{bmatrix}
+  \).
   (Why does this work?)
 \end{activity}
 
@@ -98,6 +102,7 @@
   .\]
   Does
   \(\P^3=\vspan S\)?
+  (Hint: first rewrite the question so it is about Euclidean vectors.)
   % \begin{subactivity}
   % Find a vector in \(\IR^4\) that is not in \(\vspan S\).
   % \end{subactivity}
@@ -115,7 +120,7 @@ Does \(M_{2,2} = \vspan S\)?
 
 \begin{activity}{10}
 Let \(\vec{v}_1, \vec{v}_2, \vec{v}_3 \in \IR^7\) be three vectors, and suppose \(\vec{w}\) is another vector with \(\vec{w} \in \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\}\).  What can you conclude about \( \vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \) ?
-\begin{enumerate}[(A)]
+\begin{enumerate}[(a)]
 \item \( \vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \) is larger than \( \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \).
 \item \( \vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\}  = \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \).
 \item \( \vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \) is smaller than \( \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \).
