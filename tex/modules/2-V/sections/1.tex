@@ -36,25 +36,26 @@
   \begin{subactivity}
   Show that $V$ satisfies the vector distributive property
   \[(a+b)\odot\vect v=(a\odot\vect v)\oplus (b\odot\vect v)\]
-  by letting \(\vec v=(x,y)\) and simplifying both sides.
+  by letting \(\vec v=(x,y)\) and showing both sides simplify to the same
+  expression.
   \end{subactivity}
   \begin{subactivity}%optional
-  Show that $V$ contains an additive identy element, i.e. there is an element \(\vect{z} \in V\) 
-  such that for any \(\vect{v}\in V\), \(\vect{v}\oplus\vect{z}=\vect{v}\)
+  Show that $V$ contains an additive identity element by choosing
+  \(\vect{z}=(\unknown,\unknown)\) such that
+  \(\vect{v}\oplus\vect{z}=(x,y)\oplus(\unknown,\unknown)=\vect{v}\)
+  for any \(\vect{v}=(x,y)\in V\).
   \end{subactivity}
 \end{activity}
 
 
-\begin{fact}
-  Consider the following set 
-  \(y=e^x\). Let \(V=\setBuilder{(x,y)}{y=e^x}\) with operations defined by
+\begin{remark}
+  It turns out \(V=\setBuilder{(x,y)}{y=e^x}\) with operations defined by
   \[
     (x,y)\oplus (z,w)=(x+z,yw)
       \hspace{3em}
     c\odot (x,y)=(cx,y^c)
-  .\]
-
-  It turns out \(V\) satisifes all eight properties.
+  \]
+  satisifes all eight properties.
     \begin{multicols}{2}
     \begin{itemize}
       \item \textbf{Addition associativity.}
@@ -89,7 +90,7 @@
     \end{itemize}
     \end{multicols}
 	Thus, \(V\) is a vector space.
-\end{fact}
+\end{remark}
 
 
 
@@ -110,7 +111,8 @@
 
   \begin{subactivity}
     Show that the addition identity property fails by
-    showing that there is no vector \(\vect{z}=(z_1,z_2)\) for which \((0,-1)\oplus\vec z=(0,-1)\).
+    showing that \((0,-1)\oplus\vec z\not=(0,-1)\) no matter how
+    \(\vec z=(z_1,z_2)\) is chosen.
   \end{subactivity}
 
   \begin{subactivity}
@@ -137,6 +139,24 @@
     \setBuilder{c_1\vect v_1+c_2\vect v_2+\dots+c_m\vect v_m}{
     c_i\in\IR}.
   \]
+
+	\vspace{2em}
+
+  For example:
+
+  \[
+    \vspan\setList
+    {
+      \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix},
+      \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}
+    } = \setBuilder
+    {
+      a\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}+
+      b\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}
+    }{
+      a,b\in\IR
+    }
+  \]
 \end{definition}
 
 \begin{activity}{10}
@@ -150,7 +170,11 @@
   \end{subactivity}
   \begin{subactivity}
     Sketch a representation of all the vectors belonging to
-    \(\vspan\left\{\begin{bmatrix}1\\2\end{bmatrix}\right\}\)
+    \(
+      \vspan\setList{\begin{bmatrix}1\\2\end{bmatrix}}
+        =
+      \setBuilder{a\begin{bmatrix}1\\2\end{bmatrix}}{a\in\IR}
+    \)
     in the \(xy\) plane.
   \end{subactivity}
 \end{activity}
@@ -173,10 +197,10 @@
     1\begin{bmatrix}-1\\1\end{bmatrix}
     \]
     \[
-    2\begin{bmatrix}1\\2\end{bmatrix}+
-    0\begin{bmatrix}-1\\1\end{bmatrix}\hspace{3em}
-    2\begin{bmatrix}1\\2\end{bmatrix}+
-    1\begin{bmatrix}-1\\1\end{bmatrix}
+    -2\begin{bmatrix}1\\2\end{bmatrix}+
+    1\begin{bmatrix}-1\\1\end{bmatrix}\hspace{3em}
+    -1\begin{bmatrix}1\\2\end{bmatrix}+
+    -2\begin{bmatrix}-1\\1\end{bmatrix}
     \]
   \end{subactivity}
   \begin{subactivity}
@@ -190,7 +214,7 @@
 \begin{activity}{5}
     Sketch a representation of all the vectors belonging to
     \(\vspan\left\{\begin{bmatrix}6\\-4\end{bmatrix},
-     \begin{bmatrix}-2\\3\end{bmatrix}\right\}\)
+     \begin{bmatrix}-3\\2\end{bmatrix}\right\}\)
     in the \(xy\) plane.
 \end{activity}
 
