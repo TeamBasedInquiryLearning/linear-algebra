@@ -5,8 +5,8 @@
   Last time, we defined a \textbf{vector space} \(V\) to be any collection of
   mathematical objects with
   associated addition and scalar multiplication operations that satisfy
-  the following properties. Let \(\vect u,\vect v,\vect w\) belong to \(V\),
-  and let \(a,b\) be scalar numbers.
+  the following eight properties for all \(\vect u,\vect v,\vect w\) in \(V\),
+  and all scalars (i.e. real numbers) \(a,b\).
 
   \vectorSpaceProperties
 \end{remark}
@@ -26,17 +26,35 @@
   \end{itemize}
 \end{remark}
 
+\begin{activity}{20}
+  Consider the set \(V=\setBuilder{(x,y)}{y=e^x}\) with operations defined by
+  \[
+    (x,y)\oplus (z,w)=(x+z,yw)
+      \hspace{3em}
+    c\odot (x,y)=(cx,y^c)
+  \]
+  \begin{subactivity}
+  Show that $V$ satisfies the vector distributive property
+  \[(a+b)\odot\vect v=(a\odot\vect v)\oplus (b\odot\vect v)\]
+  by letting \(\vec v=(x,y)\) and simplifying both sides.
+  \end{subactivity}
+  \begin{subactivity}%optional
+  Show that $V$ contains an additive identy element, i.e. there is an element \(\vect{z} \in V\) 
+  such that for any \(\vect{v}\in V\), \(\vect{v}+\vect{z}=\vect{v}\)
+  \end{subactivity}
+\end{activity}
 
-\begin{observation}
-  Consider the following set that models motion along the curve
-  \(y=e^x\). Let \(V=\setBuilder{(x,y)}{y=e^x}\) have operations defined by
+
+\begin{fact}
+  Consider the following set 
+  \(y=e^x\). Let \(V=\setBuilder{(x,y)}{y=e^x}\) with operations defined by
   \[
     (x,y)\oplus (z,w)=(x+z,yw)
       \hspace{3em}
     c\odot (x,y)=(cx,y^c)
   .\]
 
-  It may be proven that \(V\) satisifes all eight properties of a vector space.
+  It turns out \(V\) satisifes all eight properties.
     \begin{multicols}{2}
     \begin{itemize}
       \item \textbf{Addition associativity.}
@@ -70,20 +88,11 @@
             \((a+b)\odot\vect v=(a\odot\vect v)\oplus (b\odot\vect v)\).
     \end{itemize}
     \end{multicols}
-\end{observation}
+	Thus, \(V\) is a vector space.
+\end{fact}
 
 
-\begin{activity}{10}
-  Show that \(V=\setBuilder{(x,y)}{y=e^x}\) with operations defined by
-  \[
-    (x,y)\oplus (z,w)=(x+z,yw)
-      \hspace{3em}
-    c\odot (x,y)=(cx,y^c)
-  \]
-  satisfies the distribution rule
-  \[(a+b)\odot\vect v=(a\odot\vect v)\oplus (b\odot\vect v)\]
-  by letting \(\vec v=(x,y)\) and simplifying both sides.
-\end{activity}
+
 
 
 \begin{activity}{15}
@@ -118,7 +127,7 @@
 
 	\vspace{2em}
 
-  For example, we can say $\begin{bmatrix}3 \\0 \\ 5\end{bmatrix}$ is a linear combination of the vectors $\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}$ and $\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}$ since $$\begin{bmatrix} 3 \\ 0 \\ 5 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} + 1\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}$$
+  For example, we can say \(\begin{bmatrix}3 \\0 \\ 5\end{bmatrix}\) is a linear combination of the vectors \(\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}\) and \(\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}\) since \[\begin{bmatrix} 3 \\ 0 \\ 5 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} + 1\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}\]
 \end{definition}
 
 \begin{definition}
