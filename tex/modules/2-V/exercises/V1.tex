@@ -13,25 +13,25 @@ c \odot x &= cx-3(c-1)
 
 
 \begin{problem}{V1}
-Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,y_1), (x_2,y_2) \in V\), \(c\in \IR\),
+Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,x_2), (y_1,y_2) \in V\), \(c\in \IR\),
 \begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2+2x_1x_2) \\
-c \odot (x_1,y_1) &= (cx_1, cy_1)
+(x_1,x_2) \oplus (y_1,y_2) &= (x_1+y_1,x_2+y_2+2x_1y_1) \\
+c \odot (x_1,x_2) &= (cx_1, cx_2)
 \end{align*}
 \begin{enumerate}[(a)]
 \item Show that the vector \textbf{addition} \(\oplus\) is \textbf{associative}:
       \((x_1,y_1) \oplus ((x_2,y_2) \oplus (x_3,y_3))=((x_1,y_1)\oplus (x_2,y_2))\oplus (x_3,y_3)\) for all \((x_1,y_1), (x_2,y_2), (x_3,y_3) \in V\).
-\item Show that scalar multiplication does not distribute over scalar addition, i.e. for some scalars \(a,b \in \IR\) and \((x_1,y_1) \in V\), \( (a+b) \odot x \neq a\odot x \oplus b \odot x\).
+\item Show that scalar multiplication does not distribute over scalar addition, i.e. for some scalars \(a,b \in \IR\) and \((x_1,y_1) \in V\), \( (a+b) \odot (x_1,y_1) \neq a\odot (x_1,y_1) \oplus b \odot (x_2,y_2) \).
 \end{enumerate}
 \end{problem}
 
 
 
 \begin{problem}{V1}
-Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,y_1), (x_2,y_2) \in V\), \(c\in \IR\),
+Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,x_2), (y_1,y_2) \in V\), \(c\in \IR\),
 \begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2-1,y_1+y_2-1) \\
-c \odot (x_1,y_1) &= (cx_1, cy_1)
+(x_1,x_2) \oplus (y_1,y_2) &= (x_1+y_1-1,x_2+y_2-1) \\
+c \odot (x_1,x_2) &= (cx_1, cx_2)
 \end{align*}
 \begin{enumerate}[(a)]
 \item Show that this vector space has an \textbf{additive identity} element, i.e. an element
@@ -41,40 +41,37 @@ c \odot (x_1,y_1) &= (cx_1, cy_1)
 \end{problem}
 
 \begin{problem}{V1}
-Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,y_1), (x_2,y_2) \in V\), \(c\in \IR\),
+Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,x_2), (y_1,y_2) \in V\), \(c\in \IR\),
 \begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
+(x_1,x_2) \oplus (y_1,y_2) &= (x_1+y_1,x_2+y_2) \\
 c \odot (x_1,y_1) &= (0, cy_1)
 \end{align*}
 \begin{enumerate}[(a)]
-\item Show that scalar multiplication
-      distributes over scalar addition, i.e. for every \(c,d \in \IR\) and \( (x,y) \in V\),
-      \((c+d)\odot(x,y)=
-      c\odot(x,y) \oplus d\odot(x,y)\).
+\item Show that \textbf{scalar multiplication
+      distributes over scalar addition}, i.e. that  
+      \((c+d)\odot(x_1,x_2)=
+      c\odot(x_1,x_2) \oplus d\odot(x_1,x_2)\) for every \(c,d \in \IR\) and \( (x_1,x_2) \in V\).
 \item Show that 1 is not a scalar multiplicative identity.
 \end{enumerate}
 \end{problem}
 
 
-% \begin{problem}{V1}
-% Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,x_2), (y_1,y_2) \in V\), \(c\in \IR\),
-% \begin{align*}
-% (x_1,x_2) \oplus (y_1,y_2) &= (x_1+y_1,x_2+y_2) \\
-% c \odot (x_1,x_2) &= (c^2x_1, c^3x_2)
-% \end{align*}
-% \begin{enumerate}[(a)]
-% \item Show that scalar multiplication distributes over
-%       vector addition, i.e. for all \(c \in \IR\) and \( (x_1,x_2), (y_1,y_2) \in V\)
-%       \(c\odot((x_1,x_2) \oplus (y_1,y_2))=
-%       c\odot(x_1,x_2) \oplus c\odot(y_1,y_2)\).
-% \item Show that scalar multiplication does not distribute over
-%       scalar addition, i.e. for some \(c,d \in \IR\) and \( (x_1,x_2)\in V\)
-%       \((c+d)\odot(x_1,x_2)\neq c\odot(x_1,x_2) \oplus d\odot(x_1,x_2)\).
-% \end{enumerate}
-% \end{problem}
-% \begin{solution}
-%
-% \end{solution}
+ \begin{problem}{V1}
+ Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,x_2), (y_1,y_2) \in V\), \(c\in \IR\),
+ \begin{align*}
+ (x_1,x_2) \oplus (y_1,y_2) &= (x_1+y_1,x_2+y_2) \\
+ c \odot (x_1,x_2) &= (c^2x_1, c^3x_2)
+ \end{align*}
+ \begin{enumerate}[(a)]
+ \item Show that \textbf{scalar multiplication distributes over
+       vector addition}, i.e. that
+       \(c\odot((x_1,x_2) \oplus (y_1,y_2))=
+       c\odot(x_1,x_2) \oplus c\odot(y_1,y_2)\) for all \(c \in \IR\) and \( (x_1,x_2), (y_1,y_2) \in V\).
+ \item Show that scalar multiplication does not distribute over
+       scalar addition, i.e. for some \(c,d \in \IR\) and \( (x_1,x_2)\in V\)
+       \((c+d)\odot(x_1,x_2)\neq c\odot(x_1,x_2) \oplus d\odot(x_1,x_2)\).
+ \end{enumerate}
+\end{problem}
 %
 %
 % \begin{problem}{V1}
@@ -101,18 +98,27 @@ c \odot (x_1,y_1) &= (0, cy_1)
 % \end{solution}
 %
 %
-% \begin{problem}{V1}
-% Let \(V\) be the set of all real numbers with the operations, for any \(x,y\in V\), \(c\in \IR\),
-% \begin{align*}
-% x \oplus y &= \sqrt{x^2+y^2} \\
-% c \odot x &= c x
-% \end{align*}
-% \begin{enumerate}[(a)]
-% \item Show that the vector addition \(\oplus\) is associative, i.e. for all \(x,y,z \in V\),
-%       \(x \oplus (y \oplus z)=(x\oplus y)\oplus z\).
-% \item  Show that there is no additive identity element.
-% \end{enumerate}
-% \end{problem}
-% \begin{solution}
-%
-% \end{solution}
+ \begin{problem}{V1}
+ Let \(V\) be the set of all real numbers with the operations, for any \(x,y\in V\), \(c\in \IR\),
+ \begin{align*}
+ x \oplus y &= \sqrt{x^2+y^2} \\
+ c \odot x &= c x
+ \end{align*}
+ \begin{enumerate}[(a)]
+ \item Show that the \textbf{vector addition \(\oplus\) is associative}, i.e. that \(x \oplus (y \oplus z)=(x\oplus y)\oplus z\) for all \(x,y,z \in V\).
+       
+ \item  Show that there is no additive identity element, i.e. there is no element \(\mathbf{z} \in V\) such that \(x \oplus \mathbf{z} = x\) for all \(x \in V\).
+ \end{enumerate}
+ \end{problem} 
+ 
+ \begin{problem}{V1}
+ Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,x_2), (y_1,y_2) \in V\), \(c\in \IR\),
+ \begin{align*}
+ (x_1,x_2) \oplus (y_1,y_2) &= (x_1+y_1,x_2y_2) \\
+ c \odot (x_1,x_2) &= (cx_1, cx_2)
+ \end{align*}
+ \begin{enumerate}[(a)]
+ \item Show that there is an \textbf{additive identity element}, i.e. an element \(\mathbf{z} \in V\) such that \(\mathbf{z}\oplus(x_1,x_2) = (x_1,x_2)\) for any \( (x_1,x_2) \in V\).
+\item Show that scalar multiplication does not distribute over vector addition, i.e. for some \(a \in \IR\) and \( (x_1,x_2), (y_1,y_2) \in V\), that \(a \odot \left( (x_1,x_2)\oplus (y_1,y_2) \right) \neq a \odot (x_1,x_2) \oplus a \odot (y_1,y_2) \).
+ \end{enumerate}
+\end{problem}

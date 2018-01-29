@@ -15,10 +15,10 @@ All properties are TRUE, so \(V\) is a vector space.
 
 
 \begin{problem}{V2}
-Let \(V\) be the set of all points on the parabola \(y=x^2\) with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
+Let \(V=\setBuilder{ (x_1,x_2)}{x_1^2=x_2}\) with the operations, for any \((x_1,x_2), (y_1,y_2) \in V,c \in \IR\),
 \begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2+2x_1x_2) \\
-c \odot (x_1,y_1) &= (cx_1, c^2y_1)
+(x_1,x_2) \oplus (y_1,y_2) &= (x_1+y_1,x_2+y_2+2x_1y_1) \\
+c \odot (x_1,x_2) &= (cx_1, c^2x_2)
 \end{align*}
   List the 8 defining properties of a vector space, and label each as
   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
@@ -31,10 +31,10 @@ All properties are TRUE, so \(V\) is a vector space.
 
 
 \begin{problem}{V2}
-Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
+Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,x_2), (y_1,y_2) \in V,c \in \IR\),
 \begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2+2x_1x_2) \\
-c \odot (x_1,y_1) &= (cx_1, c^2y_1)
+(x_1,x_2) \oplus (y_1,y_2) &= (x_1+y_1,x_2+y_2+2x_1y_1) \\
+c \odot (x_1,x_2) &= (cx_1, c^2x_2)
 \end{align*}
   List the 8 defining properties of a vector space, and label each as
   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
@@ -47,10 +47,10 @@ vector distribution.
 \end{solution}
 
 \begin{problem}{V2}
-Let \(V\) be the  set of all points on the parabola \(y=x^2\) with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
+Let \(V=\setBuilder{ (x_1,x_2)}{x_1^2=x_2}\) with the operations, for any \((x_1,x_2), (y_1,y_2) \in V,c \in \IR\),
 \begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1-x_2,y_1+y_2-2x_1x_2) \\
-c \odot (x_1,y_1) &= (cx_1, c^2y_1)
+(x_1,x_2) \oplus (y_1,y_2) &= (x_1-y_1,x_2+y_2-2x_1y_1) \\
+c \odot (x_1,x_2) &= (cx_1, c^2x_2)
 \end{align*}
   List the 8 defining properties of a vector space, and label each as
   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
@@ -63,53 +63,67 @@ addition commutivity, addition associativity, vector distribution.
 \end{solution}
 
 
-% \begin{problem}{V2}
-% Let \(V\) be the set of all points on the line \(x+y=2\) with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
-% \begin{align*}
-% (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2-1,y_1+y_2-1) \\
-% c \odot (x_1,y_1) &= (cx_1-(c-1), cy_1-(c-1))
-% \end{align*}
+ \begin{problem}{V2}
+ Let \(V\) be the set of all points on the line \(x+y=2\) with the operations, for any \((x_1,x_2), (y_1,y_2) \in V,c \in \IR\),
+ \begin{align*}
+ (x_1,x_2) \oplus (y_1,y_2) &= (x_1+y_1-1,x_2+y_2-1) \\
+ c \odot (x_1,x_2) &= (cx_1-(c-1), cx_2-(c-1))
+ \end{align*}
+
+   List the 8 defining properties of a vector space, and label each as
+   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
+   \(V\) is a vector space or not.
+
+ \end{problem}
+ \begin{solution}
+ \(V\) is a vector space.
+ \end{solution}
 %
-%   List the 8 defining properties of a vector space, and label each as
-%   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
-%   \(V\) is a vector space or not.
+ \begin{problem}{V2}
+ Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,x_2), (y_1,y_2) \in V,c \in \IR\),
+ \begin{align*}
+ (x_1,x_2) \oplus (y_1,y_2) &= (x_1+y_1,x_2+y_2) \\
+ c \odot (x_1,x_2) &= (0, cx_2)
+ \end{align*}
+
+   List the 8 defining properties of a vector space, and label each as
+   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
+   \(V\) is a vector space or not.
+ \end{problem}
+ \begin{solution}
+ Not a vector space as the following properties are FALSE: 1 is not a scalar multiplicative identity.
+ \end{solution}
+ 
+ \begin{problem}{V2}
+ Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,x_2), (y_1,y_2) \in V,c \in \IR\),
+ \begin{align*}
+ (x_1,x_2) \oplus (y_1,y_2) &= (x_1+y_1,x_2+y_2) \\
+ c \odot (x_1,x_2) &= (c, cx_2)
+ \end{align*}
+
+   List the 8 defining properties of a vector space, and label each as
+   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
+   \(V\) is a vector space or not.
+ \end{problem}
+ \begin{solution}
+ Not a vector space as the following properties are FALSE: scalar multiplication does not distribute over vector addition.
+ \end{solution}
 %
-% \end{problem}
-% \begin{solution}
-% \(V\) is a vector space.
-% \end{solution}
 %
-% \begin{problem}{V2}
-% Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
-% \begin{align*}
-% (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
-% c \odot (x_1,y_1) &= (0, cy_1)
-% \end{align*}
-%
-%   List the 8 defining properties of a vector space, and label each as
-%   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
-%   \(V\) is a vector space or not.
-% \end{problem}
-% \begin{solution}
-% \(V\) is not a vector space, as \(1 \odot (x_1,y_1) = (0,y_1) \neq (x_1,y_1)\).
-% \end{solution}
-%
-%
-% \begin{problem}{V2}
-% Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
-% \begin{align*}
-% (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
-% c \odot (x_1,y_1) &= (c^2x_1, c^3y_1)
-% \end{align*}
-%
-%   List the 8 defining properties of a vector space, and label each as
-%   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
-%   \(V\) is a vector space or not.
-% \end{problem}
-% \begin{solution}
-% \(V\) is not a vector space, as the  distributive law fails:
-% \[(c+d) \odot (x_1,y_1) = ( (c+d)^2 x_1, (c+d)^3 y_1) \neq ((c^2+d^2)x_1, (c^3+d^3)y_1) = c \odot (x_1,y_1) \oplus d \odot (x_1,y_1).\]
-% \end{solution}
+ \begin{problem}{V2}
+ Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,x_2), (y_1,y_2) \in V,c \in \IR\),
+ \begin{align*}
+ (x_1,x_2) \oplus (y_1,y_2) &= (x_1+y_1,x_2+y_2) \\
+ c \odot (x_1,x_2) &= (c^2x_1, c^3x_2)
+ \end{align*}
+
+   List the 8 defining properties of a vector space, and label each as
+   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
+   \(V\) is a vector space or not.
+ \end{problem}
+ \begin{solution}
+ Not a vector space as the following properties are FALSE: scalar multiplication does not distribute over vector addition, scalar multiplication does not distribute over scalar addition..
+ \end{solution}
 %
 %
 % \begin{problem}{V2}
