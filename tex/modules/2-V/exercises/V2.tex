@@ -10,7 +10,7 @@ c \odot x &= cx-3(c-1)
   \(V\) is a vector space or not.
 \end{problem}
 \begin{solution}
-\(V\) is a vector space.
+All properties are TRUE, so \(V\) is a vector space.
 \end{solution}
 
 
@@ -26,11 +26,28 @@ c \odot (x_1,y_1) &= (cx_1, c^2y_1)
 
 \end{problem}
 \begin{solution}
-Not a vector space
+All properties are TRUE, so \(V\) is a vector space.
+\end{solution}
+
+
+\begin{problem}{V2}
+Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
+\begin{align*}
+(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2+2x_1x_2) \\
+c \odot (x_1,y_1) &= (cx_1, c^2y_1)
+\end{align*}
+  List the 8 defining properties of a vector space, and label each as
+  ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
+  \(V\) is a vector space or not.
+
+\end{problem}
+\begin{solution}
+Not a vector space as the following properties are FALSE:
+vector distribution.
 \end{solution}
 
 \begin{problem}{V2}
-Let \(V\) be the set of all points on the parabola \(y=x^2\) with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
+Let \(V\) be the  set of all points on the parabola \(y=x^2\) with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
 \begin{align*}
 (x_1,y_1) \oplus (x_2,y_2) &= (x_1-x_2,y_1+y_2-2x_1x_2) \\
 c \odot (x_1,y_1) &= (cx_1, c^2y_1)
@@ -41,88 +58,89 @@ c \odot (x_1,y_1) &= (cx_1, c^2y_1)
 
 \end{problem}
 \begin{solution}
-Not a vector space as addition is not commutative.
+Not a vector space as the following properties are FALSE:
+addition commutivity, addition associativity, vector distribution.
 \end{solution}
 
 
-\begin{problem}{V2}
-Let \(V\) be the set of all points on the line \(x+y=2\) with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
-\begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2-1,y_1+y_2-1) \\
-c \odot (x_1,y_1) &= (cx_1-(c-1), cy_1-(c-1))
-\end{align*}
-
-  List the 8 defining properties of a vector space, and label each as
-  ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
-  \(V\) is a vector space or not.
-
-\end{problem}
-\begin{solution}
-\(V\) is a vector space.
-\end{solution}
-
-\begin{problem}{V2}
-Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
-\begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
-c \odot (x_1,y_1) &= (0, cy_1)
-\end{align*}
-
-  List the 8 defining properties of a vector space, and label each as
-  ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
-  \(V\) is a vector space or not.
-\end{problem}
-\begin{solution}
-\(V\) is not a vector space, as \(1 \odot (x_1,y_1) = (0,y_1) \neq (x_1,y_1)\).
-\end{solution}
-
-
-\begin{problem}{V2}
-Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
-\begin{align*}
-(x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
-c \odot (x_1,y_1) &= (c^2x_1, c^3y_1)
-\end{align*}
-
-  List the 8 defining properties of a vector space, and label each as
-  ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
-  \(V\) is a vector space or not.
-\end{problem}
-\begin{solution}
-\(V\) is not a vector space, as the  distributive law fails:
-\[(c+d) \odot (x_1,y_1) = ( (c+d)^2 x_1, (c+d)^3 y_1) \neq ((c^2+d^2)x_1, (c^3+d^3)y_1) = c \odot (x_1,y_1) \oplus d \odot (x_1,y_1).\]
-\end{solution}
-
-
-\begin{problem}{V2}
-Let \(V\) be the set of all polynomials with the operations, for any \(f, g \in V,c \in \IR\),
-\begin{align*}
-f \oplus g &= f^\prime + g^\prime \\
-c \odot f &= c f^\prime
-\end{align*}
-
-(here \(f^\prime\) denotes the derivative of \(f\)).
-
-  List the 8 defining properties of a vector space, and label each as
-  ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
-  \(V\) is a vector space or not.
-
-\end{problem}
-\begin{solution}
-This is not a vector space, as there is no zero vector.  Additionally, \(1 \odot f \neq f\) for any nonzero polynomial \(f\).
-\end{solution}
-
-
-\begin{problem}{V2}
-Let \(V\) be the set of all real numbers with the operations, for any \(x, y \in V\), \(c \in \IR\),
-\begin{align*}
-x \oplus y &= \sqrt{x^2+y^2} \\
-c \odot x &= c x
-\end{align*}
-  List the 8 defining properties of a vector space, and label each as
-  ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
-  \(V\) is a vector space or not.
-\end{problem}
-\begin{solution}
-This is not a vector space, as there is no zero vector.
-\end{solution}
+% \begin{problem}{V2}
+% Let \(V\) be the set of all points on the line \(x+y=2\) with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
+% \begin{align*}
+% (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2-1,y_1+y_2-1) \\
+% c \odot (x_1,y_1) &= (cx_1-(c-1), cy_1-(c-1))
+% \end{align*}
+%
+%   List the 8 defining properties of a vector space, and label each as
+%   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
+%   \(V\) is a vector space or not.
+%
+% \end{problem}
+% \begin{solution}
+% \(V\) is a vector space.
+% \end{solution}
+%
+% \begin{problem}{V2}
+% Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
+% \begin{align*}
+% (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
+% c \odot (x_1,y_1) &= (0, cy_1)
+% \end{align*}
+%
+%   List the 8 defining properties of a vector space, and label each as
+%   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
+%   \(V\) is a vector space or not.
+% \end{problem}
+% \begin{solution}
+% \(V\) is not a vector space, as \(1 \odot (x_1,y_1) = (0,y_1) \neq (x_1,y_1)\).
+% \end{solution}
+%
+%
+% \begin{problem}{V2}
+% Let \(V\) be the set of all pairs of real numbers with the operations, for any \((x_1,y_1), (x_2,y_2) \in V,c \in \IR\),
+% \begin{align*}
+% (x_1,y_1) \oplus (x_2,y_2) &= (x_1+x_2,y_1+y_2) \\
+% c \odot (x_1,y_1) &= (c^2x_1, c^3y_1)
+% \end{align*}
+%
+%   List the 8 defining properties of a vector space, and label each as
+%   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
+%   \(V\) is a vector space or not.
+% \end{problem}
+% \begin{solution}
+% \(V\) is not a vector space, as the  distributive law fails:
+% \[(c+d) \odot (x_1,y_1) = ( (c+d)^2 x_1, (c+d)^3 y_1) \neq ((c^2+d^2)x_1, (c^3+d^3)y_1) = c \odot (x_1,y_1) \oplus d \odot (x_1,y_1).\]
+% \end{solution}
+%
+%
+% \begin{problem}{V2}
+% Let \(V\) be the set of all polynomials with the operations, for any \(f, g \in V,c \in \IR\),
+% \begin{align*}
+% f \oplus g &= f^\prime + g^\prime \\
+% c \odot f &= c f^\prime
+% \end{align*}
+%
+% (here \(f^\prime\) denotes the derivative of \(f\)).
+%
+%   List the 8 defining properties of a vector space, and label each as
+%   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
+%   \(V\) is a vector space or not.
+%
+% \end{problem}
+% \begin{solution}
+% This is not a vector space, as there is no zero vector.  Additionally, \(1 \odot f \neq f\) for any nonzero polynomial \(f\).
+% \end{solution}
+%
+%
+% \begin{problem}{V2}
+% Let \(V\) be the set of all real numbers with the operations, for any \(x, y \in V\), \(c \in \IR\),
+% \begin{align*}
+% x \oplus y &= \sqrt{x^2+y^2} \\
+% c \odot x &= c x
+% \end{align*}
+%   List the 8 defining properties of a vector space, and label each as
+%   ``TRUE'' or ``FALSE'' as they apply to \(V\). Based on these, conclude whether
+%   \(V\) is a vector space or not.
+% \end{problem}
+% \begin{solution}
+% This is not a vector space, as there is no zero vector.
+% \end{solution}
