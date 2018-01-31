@@ -3,31 +3,39 @@
 
 \begin{applicationActivities}
 
-\begin{fact}
-  To compute a basis for the subspace \(\vspan\{\vect v_1,\dots,\vect v_m\}\),
+\begin{observation}
+  Recall from last class: to compute a basis for the subspace \(\vspan\{\vect v_1,\dots,\vect v_m\}\),
   simply remove the vectors corresponding to the non-pivot columns of
   \(\RREF[\vect v_1\,\dots\,\vect v_m]\).
-\end{fact}
+\end{observation}
 
 \begin{activity}{10}
-  Find all subsets of \(S=\left\{
+  Let 
+  \begin{align*}
+  S=\left\{
   \begin{bmatrix}2\\3\\0\\1\end{bmatrix},
   \begin{bmatrix}2\\0\\1\\-1\end{bmatrix},
   \begin{bmatrix}2\\-3\\2\\-3\end{bmatrix},
   \begin{bmatrix}1\\5\\-1\\0\end{bmatrix}
+  \right\} & & \text{and}  & &
+  T=\left\{
+  \begin{bmatrix}2\\0\\1\\-1\end{bmatrix},
+  \begin{bmatrix}2\\-3\\2\\-3\end{bmatrix},
+  \begin{bmatrix}1\\5\\-1\\0\end{bmatrix},
+  \begin{bmatrix}2\\3\\0\\1\end{bmatrix}
   \right\}
-  \) that are a basis for \(\vspan S\) by changing the order
-  of the vectors in \(S\).
+  \end{align*}
+  \begin{subactivity}
+  Find a basis for \(\vspan S\)
+  \end{subactivity}
+  \begin{subactivity}
+  Find a basis for \(\vspan T\)
+  \end{subactivity}
 \end{activity}
 
-\begin{activity}{10}
-  Assume \(\vect w_1\not=\vect w_2\) are distinct vectors in \(V\),
-  which has a basis containing a single vector: \(\{\vect v\}\).
-  Could \(\{\vect w_1,\vect w_2\}\) be a basis?
-\end{activity}
 
 \begin{fact}
-  All bases for a vector space are the same size.
+  A vector space has a lot of bases, but all bases for a given vector space must be the same size.
 \end{fact}
 
 \begin{definition}
@@ -81,46 +89,6 @@
 	\) \\
 \end{tabular}
 \end{activity}
-
-\begin{activity}{5}
-  What is the dimension of the vector space of \(7\)th-degree (or less)
-  polynomials \(\P^7\)?
-  \begin{multicols}{4}
-    \begin{enumerate}[a)]
-      \item 6
-      \item 7
-      \item 8
-      \item infinite
-    \end{enumerate}
-  \end{multicols}
-\end{activity}
-
-\begin{activity}{5}
-  What is the dimension of the vector space of all polynomials
-  \(\P\)?
-  \begin{multicols}{4}
-    \begin{enumerate}[a)]
-      \item 6
-      \item 7
-      \item 8
-      \item infinite
-    \end{enumerate}
-  \end{multicols}
-\end{activity}
-
-\begin{observation}
-  Several interesting vector spaces are infinite-dimensional:
-  \begin{itemize}
-    \item The space of polynomials \(\P\) (consider the set
-          \(\{1,x,x^2,x^3,\dots\}\)).
-    \item The space of continuous functions \(C(\IR)\) (which contains
-          all polynomials, in addition to other functions like
-          \(e^x=1+x+x^2/2+x^3/3+\dots\)).
-    \item The space of real number sequences \(\IR^\infty\) (consider
-          the set \(\{(1,0,0,\dots),(0,1,0,\dots),(0,0,1,\dots),\dots\}\)).
-  \end{itemize}
-\end{observation}
-
 \begin{fact}
   Every vector space with finite dimension, that is, every
   vector space with a basis of the form
@@ -135,5 +103,85 @@
     \end{bmatrix}
   \]
 \end{fact}
+
+\begin{observation}
+  Several interesting vector spaces are infinite-dimensional:
+  \begin{itemize}
+    \item The space of polynomials \(\P\) (consider the set
+          \(\{1,x,x^2,x^3,\dots\}\)).
+    \item The space of continuous functions \(C(\IR)\) (which contains
+          all polynomials, in addition to other functions like
+          \(e^x\)).
+    \item The space of real number sequences \(\IR^\infty\) (consider
+          the set \(\{(1,0,0,\dots),(0,1,0,\dots),(0,0,1,\dots),\dots\}\)).
+  \end{itemize}
+\end{observation}
+
+\begin{definition}
+A \textbf{homogeneous} system of linear equations is one of the form
+\[x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0} .\]
+
+\vspace{1em}
+Note that if \(\begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} \) and \(\begin{bmatrix} b_1 \\ \vdots \\ b_n \end{bmatrix} \) are solutions, so is  \(\begin{bmatrix} a_1 +b_1\\ \vdots \\ a_n+b_n \end{bmatrix} \)  i.e. if
+\[a_1 \vec{v}_1+\cdots+a_n \vec{v}_n = \vec{0} \]
+and
+\[b_1 \vec{v}_1+\cdots+b_n \vec{v}_n = \vec{0} \]
+then
+\[(a_1 + b_1) \vec{v}_1+\cdots+(a_n+b_n) \vec{v}_n = \vec{0} .\]
+
+Similarly, if \(c \in \IR\), \(\begin{bmatrix} ca_1 \\ \vdots \\ ca_n \end{bmatrix} \) is a solution.
+\vspace{1em}
+Thus the solution set of a homogeneous system is a subspace.
+\end{definition}
+
+\begin{activity}{10}
+Consider the homogeneous system of equations 
+\begin{alignat*}{5}
+x_1&\,+\,&2x_2&\,\,& &\,+\,& x_4 &=& 0 \\
+2x_1&\,+\,&4x_2&\,-\,&x_3 &\,-\,&2 x_4 &=& 0 \\
+3x_1&\,+\,&6x_2&\,-\,&x_3 &\,-\,& x_4 &=& 0 \\
+\end{alignat*}
+\begin{subactivity}
+Find the solution set.
+\end{subactivity}
+\begin{subactivity}
+Rewrite the solution set in the form \[\setBuilder{ a \begin{bmatrix} ? \\ ? \\ ? \\ ?\end{bmatrix} + b \begin{bmatrix} ? \\ ? \\ ? \\ ? \end{bmatrix} }{a,b \in \IR}\].
+\end{subactivity}
+\begin{subactivity}
+Find a basis for the solution set.
+\end{subactivity}
+\end{activity}
+
+\begin{activity}{10}
+Consider the homogeneous system of equations 
+\begin{alignat*}{5}
+x_1&\,-\,&3x_2&\,+\,& 2x_3&\,\,&  &=& 0 \\
+2x_1&\,-\,&6x_2&\,+\,&4x_3 &\,+\,&3 x_4 &=& 0 \\
+-2x_1&\,+\,&6x_2&\,-\,&4x_3 &\,-\,&4 x_4 &=& 0 \\
+\end{alignat*}
+
+Find a basis for the solution set.
+\end{activity}
+
+\begin{activity}{5}
+Suppose \(W\) is a subspace of \(\P^8\), and you know that the set \(\{ x^3+x, x^2+1, x^4-x \}\) is a linearly independent subset of \(W\).  What can you conclude about \(W\)?
+\begin{enumerate}[(a)]
+\item The dimension of \(W\) is no more than 3
+\item The dimension of \(W\) is  3
+\item The dimension of \(W\) is  at least 3
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{5}
+Suppose \(W\) is a subspace of \(\P^8\), and you know that \(W\) is spanned by the six vectors \[\{ x^4-x,x^3+x,x^3+x+1,x^4+2x,x^3,2x+1\}\]
+Without doing any calculation, what can you conclude about \(W\)?
+\begin{enumerate}[(a)]
+\item The dimension of \(W\) is no more than 6
+\item The dimension of \(W\) is  6
+\item The dimension of \(W\) is  at least 6
+\end{enumerate}
+\end{activity}
+
+
 
 \end{applicationActivities}
