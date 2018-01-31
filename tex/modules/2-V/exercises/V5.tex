@@ -1,91 +1,146 @@
 \begin{problem}{V5}
-Determine if the set of all lattice points, i.e. \(\{(x,y)\ \big|\ \text{\(x\) and \(y\) are integers} \}\) is a subspace of \(\IR^2\).
+Consider the following two sets of Euclidean vectors.
+\[
+  W = \setBuilder{\begin{bmatrix} x \\ y \end{bmatrix}}{x,y \text{ are integers}}
+\hspace{3em}
+  U = \setBuilder{\begin{bmatrix} x \\ y \end{bmatrix}}{x=y}
+\]
+Show that one of these sets is a subspace of \(\IR^2\), and
+that one of the sets is not.
 \end{problem}
 \begin{solution}
-This set is closed under addition, but not under scalar multiplication so it is not a subspace.
+\(W\) is not a subspace; for example, \(\begin{bmatrix} 1 \\ 1 \end{bmatrix}\)
+belongs to \(W\) while \(\frac{1}{2}\begin{bmatrix} 1 \\ 1 \end{bmatrix}\)
+does not.
+
+\(U\) is a subspace.
 \end{solution}
 
 \begin{problem}{V5}
-Determine if \(\left\{ \begin{bmatrix} x \\ y \\ 0 \\ z \end{bmatrix}\  \bigg|\ x,y,z \in \IR\right\}\)  a subspace of \(\IR^4\).
+Consider the following two sets of Euclidean vectors.
+\[
+  W = \setBuilder{\begin{bmatrix} x \\ y \\ 0 \\ z \end{bmatrix}}{x,y,z\in\IR}
+\hspace{3em}
+  U = \setBuilder{\begin{bmatrix} x \\ y \\ 1 \\ z \end{bmatrix}}{x,y,z\in\IR}
+\]
+Show that one of these sets is a subspace of \(\IR^4\), and
+that one of the sets is not.
 \end{problem}
 \begin{solution}
-It is closed under addition and scalar multiplication, so it is a subspace.  Alternatively, it is the image of the linear transformation from \(\IR^3 \rightarrow \IR^4\) given by \[\begin{bmatrix} x \\ y \\ z \end{bmatrix} \mapsto  \begin{bmatrix} x \\ y \\ 0 \\ z \end{bmatrix}.\]
+\(U\) is not a subspace; for example, it doesn't contain the zero vector.
+
+\(W\) is a subspace.
 \end{solution}
 
 
-\begin{problem}{V5} Let \(W\) be the set of all polynomials of even degree.  Determine if \(W\) is a subspace of the vector space of all polynomials.
+
+
+\begin{problem}{V5}
+Consider the following two sets of Euclidean vectors.
+\[
+  W = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y+z=1}
+\hspace{3em}
+  U = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y+z=0}
+\]
+Show that one of these sets is a subspace of \(\IR^3\), and
+that one of the sets is not.
 \end{problem}
 \begin{solution}
-\(W\) is closed under scalar multiplication, but not under addition.  For example, \(x-x^2\) and \(x^2\) are both in \(W\), but \((x-x^2)+(x^2)=x \notin W\).
+\(W\) is not a subspace; for example, it doesn't contain the zero vector.
+
+\(U\) is a subspace.
 \end{solution}
 
 
-\begin{problem}{V5} Let \(W\) be the set of all polynomials of the form
-\(ax^3+bx\).  Determine if \(W\) is a subspace of \(\P^3\).
+\begin{problem}{V5}
+Consider the following two sets of Euclidean vectors.
+\[
+  W = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y=3z}
+\hspace{3em}
+  U = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y=3,z\in\IR}
+\]
+Show that one of these sets is a subspace of \(\IR^3\), and
+that one of the sets is not.
 \end{problem}
 \begin{solution}
-Yes because \(s(a_1x^3+b_1x)+t(a_2x^3+b_2x)=
-(sa_1+ta_2)x^3+(sb_1+tb_2)x\) also belongs to \(W\).
-Alternately, yes because \(W\) is isomorphic to \(\IR^2\).
+\(U\) is not a subspace; for example, it doesn't contain the zero vector.
+
+\(W\) is a subspace.
+\end{solution}
+
+\begin{problem}{V5}
+Consider the following two sets of Euclidean vectors.
+\[
+  W = \setBuilder{\begin{bmatrix} x \\ y \end{bmatrix}}{x+y=0}
+\hspace{3em}
+  U = \setBuilder{\begin{bmatrix} x \\ y \end{bmatrix}}{xy=0}
+\]
+Show that one of these sets is a subspace of \(\IR^2\), and
+that one of the sets is not.
+\end{problem}
+\begin{solution}
+\(U\) is not a subspace; for example, \(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\)
+and \(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\) belong to \(U\) while
+\(\begin{bmatrix} 1 \\ 0 \end{bmatrix}+\begin{bmatrix} 0 \\ 1 \end{bmatrix}\)
+does not.
+
+\(W\) is a subspace.
+\end{solution}
+
+\begin{problem}{V5}
+Consider the following two sets of Euclidean vectors.
+\[
+  W = \setBuilder{\begin{bmatrix} x \\ y \end{bmatrix}}{x=y}
+\hspace{3em}
+  U = \setBuilder{\begin{bmatrix} x \\ y \end{bmatrix}}{|x|=|y|}
+\]
+Show that one of these sets is a subspace of \(\IR^2\), and
+that one of the sets is not.
+\end{problem}
+\begin{solution}
+\(U\) is not a subspace; for example, \(\begin{bmatrix} 1 \\ 1 \end{bmatrix}\)
+and \(\begin{bmatrix} 1 \\ -1 \end{bmatrix}\) belong to \(U\) while
+\(\begin{bmatrix} 1 \\ 1 \end{bmatrix}+\begin{bmatrix} 1 \\ -1 \end{bmatrix}\)
+does not.
+
+\(W\) is a subspace.
+\end{solution}
+
+\begin{problem}{V5}
+Consider the following two sets of Euclidean vectors.
+\[
+  W = \setBuilder{\begin{bmatrix} x \\ y \end{bmatrix}}{y=2x}
+\hspace{3em}
+  U = \setBuilder{\begin{bmatrix} x \\ y \end{bmatrix}}{y=x^2}
+\]
+Show that one of these sets is a subspace of \(\IR^2\), and
+that one of the sets is not.
+\end{problem}
+\begin{solution}
+\(U\) is not a subspace; for example, \(\begin{bmatrix} 1 \\ 1 \end{bmatrix}\)
+and \(\begin{bmatrix} 2 \\ 4 \end{bmatrix}\) belong to \(U\) while
+\(\begin{bmatrix} 1 \\ 1 \end{bmatrix}+\begin{bmatrix} 2 \\ 4 \end{bmatrix}\)
+does not.
+
+\(W\) is a subspace.
 \end{solution}
 
 
-\begin{problem}{V5} Let \(W\) be the set of all \(\IR^3\) vectors
-\(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\)
-satisfying \(x+y+z=1\) (this forms a plane).
-Determine if \(W\) is a subspace of \(\IR^3\).
+\begin{problem}{V5}
+Consider the following two sets of Euclidean vectors.
+\[
+  W = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{z=2xy}
+\hspace{3em}
+  U = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{z=2x+y}
+\]
+Show that one of these sets is a subspace of \(\IR^3\), and
+that one of the sets is not.
 \end{problem}
 \begin{solution}
-No, because \(\mathbf{0}\) does not belong to \(W\).
-\end{solution}
+\(W\) is not a subspace; for example,
+\(\begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix}\) belongs to \(W\) while
+\(\begin{bmatrix} 2 \\ 2 \\ 4 \end{bmatrix}\)
+does not.
 
-
-\begin{problem}{V5} Let \(W= \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y+z=0}\) (this forms a plane).
-Determine if \(W\) is a subspace of \(\IR^3\).
-\end{problem}
-\begin{solution}
-Yes, because \(z=-x-y\) and
-\(
-  a\begin{bmatrix} x_1 \\ y_1 \\ -x_1-y_1 \end{bmatrix}+
-  b\begin{bmatrix} x_2 \\ y_2 \\ -x_2-y_2 \end{bmatrix}=
-  \begin{bmatrix}
-    ax_1+bx_2 \\
-    ay_1+by_2 \\
-    -(ax_1+bx_2)-(ay_1+by_2)
-  \end{bmatrix}
-\).
-Alternately, yes because \(W\) is isomorphic to \(\IR^2\).
-\end{solution}
-
-\begin{problem}{V5} Let \(W= \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y=3z}\) (this forms a plane).
-Determine if \(W\) is a subspace of \(\IR^3\).
-\end{problem}
-\begin{solution}
-Yes.
-\end{solution}
-
-\begin{problem}{V5} Let \(W= \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y=3}\) (this forms a plane).
-Determine if \(W\) is a subspace of \(\IR^3\).
-\end{problem}
-\begin{solution}
-No.
-\end{solution}
-
-\begin{problem}{V5} Let \(W\) be the set of all complex numbers
-that are purely real (i.e of the form \(a+0i\))  or purely imaginary (i.e. of the form \(0+bi\)).
-Determine if \(W\) is a subspace of \(\IC\).
-\end{problem}
-\begin{solution}
-No, because \(1\) is purely real and \(i\) is purely imaginary, but
-the linear combination \(1+i\) is neither.
-\end{solution}
-
-
-\begin{problem}{V5} Let \(W\) be the set of all complex numbers \(a+bi\)
-satisfying  \(a=2b\).
-Determine if \(W\) is a subspace of \(\IC\).
-\end{problem}
-\begin{solution}
-Yes, because \(c(2b_1+b_1i)+d(2b_2+b_2i)=2(cb_1+db_2)+(cb_1+db_2)i\) belongs to
-\(W\). Alternately, yes because \(W\) is isomorphic to \(\IR\).
+\(U\) is a subspace.
 \end{solution}
