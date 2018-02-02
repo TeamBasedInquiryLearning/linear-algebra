@@ -37,37 +37,37 @@ pdf/sample-exercises.pdf: tex/sample-exercises.tex
 #slides
 pdf/slides/slides-1-E.pdf: tex/tbil-la.sty tex/course-slides.sty  \
 							tex/modules/1-E/sections/*.tex 
-	cd tex; pdflatex --output-directory=aux slides/slides-1-E.tex \
+	cd tex; pdflatex --output-directory=aux slides/slides-1-E.tex; \
 	mv aux/slides-1-E.pdf ../pdf/slides
 
 pdf/slides/slides-2-V.pdf: tex/tbil-la.sty tex/course-slides.sty  \
 							tex/modules/2-V/sections/*.tex 
-	cd tex; pdflatex --output-directory=aux slides/slides-2-V.tex \
+	cd tex; pdflatex --output-directory=aux slides/slides-2-V.tex; \
 	mv aux/slides-2-V.pdf ../pdf/slides
 	
 pdf/slides/slides-3-S.pdf: tex/tbil-la.sty tex/course-slides.sty  \
 							tex/modules/3-S/sections/*.tex 
-	cd tex; pdflatex --output-directory=aux slides/slides-3-S.tex \
+	cd tex; pdflatex --output-directory=aux slides/slides-3-S.tex; \
 	mv aux/slides-3-S.pdf ../pdf/slides
 	
 pdf/slides/slides-4-A.pdf: tex/tbil-la.sty tex/course-slides.sty  \
 							tex/modules/4-A/sections/*.tex 
-	cd tex; pdflatex --output-directory=aux slides/slides-4-A.tex \
+	cd tex; pdflatex --output-directory=aux slides/slides-4-A.tex; \
 	mv aux/slides-4-A.pdf ../pdf/slides
 	
 pdf/slides/slides-5-M.pdf: tex/tbil-la.sty tex/course-slides.sty  \
 							tex/modules/5-M/sections/*.tex 
-	cd tex; pdflatex --output-directory=aux slides/slides-5-M.tex \
+	cd tex; pdflatex --output-directory=aux slides/slides-5-M.tex; \
 	mv aux/slides-5-M.pdf ../pdf/slides
 
 pdf/slides/slides-6-G.pdf: tex/tbil-la.sty tex/course-slides.sty  \
 							tex/modules/6-G/sections/*.tex 
-	cd tex; pdflatex --output-directory=aux slides/slides-6-G.tex \
+	cd tex; pdflatex --output-directory=aux slides/slides-6-G.tex; \
 	mv aux/slides-6-G.pdf ../pdf/slides
 	
 pdf/slides/slides-7-X.pdf: tex/tbil-la.sty tex/course-slides.sty  \
 							tex/modules/7-X/sections/*.tex 
-	cd tex; pdflatex --output-directory=aux slides/slides-7-X.tex \
+	cd tex; pdflatex --output-directory=aux slides/slides-7-X.tex; \
 	mv aux/slides-7-X.pdf ../pdf/slides
 	
 	
