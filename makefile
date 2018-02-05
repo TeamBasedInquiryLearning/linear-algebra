@@ -1,6 +1,7 @@
 all: pdf/rats/rat-*.pdf pdf/slides/slides*pdf pdf/course-notes.pdf \
 	pdf/course-slides.pdf pdf/standards.pdf \
 	pdf/exercise-library.pdf pdf/homework.pdf pdf/sample-exercises.pdf \
+	pdf/facilitator-notes.pdf \
 	
 
 pdf/course-notes.pdf: tex/course-notes.sty tex/tbil-la.sty tex/course-notes.tex \
