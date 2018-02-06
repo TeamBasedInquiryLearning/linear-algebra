@@ -2,6 +2,7 @@ all: pdf/rats/rat-*.pdf pdf/slides/slides*pdf pdf/course-notes.pdf \
 	pdf/course-slides.pdf pdf/standards.pdf \
 	pdf/exercise-library.pdf pdf/homework.pdf pdf/sample-exercises.pdf \
 	pdf/facilitator-notes.pdf \
+	pdf/handouts/handout-*.pdf
 	
 
 pdf/course-notes.pdf: tex/course-notes.sty tex/tbil-la.sty tex/course-notes.tex \
@@ -101,6 +102,22 @@ pdf/rats/rat-*.pdf: tex/modules/*/readiness/test.tex tex/rats/rat-*.tex
 	cd aux; \
 	for file in rat*.pdf; do \
 		mv $$file ../../pdf/rats/$$file; \
+	done;
+		
+#Handouts
+pdf/handouts/handout-*.pdf: tex/handouts/*/handout-*.tex \
+							tex/handouts/course-notes-handouts.sty \
+							tex/course-notes.sty \
+							tex/modules/*/readiness/outcomes.tex \
+							tex/modules/*/readiness/resources.tex \
+							tex/modules/*/sections/*.tex 	
+	cd tex; \
+	for file in handouts/*/handout*.tex; do \
+		pdflatex --output-directory aux $$file; \
+	done;\
+	cd aux; \
+	for file in handout*.pdf; do \
+		mv $$file ../../pdf/handouts/$$file; \
 	done;
 		
 
