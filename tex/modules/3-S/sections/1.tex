@@ -1,6 +1,3 @@
-
-
-
 \begin{applicationActivities}
 
 \begin{activity}{10}
@@ -9,12 +6,12 @@
     S=\left\{
   \begin{bmatrix}2\\3\\1\end{bmatrix},
   \begin{bmatrix}1\\1\\4\end{bmatrix}
-  \right\} & & 
+  \right\} & &
     T=\left\{
   \begin{bmatrix}2\\3\\1\end{bmatrix},
-  \begin{bmatrix}1\\1\\4\end{bmatrix}, 
+  \begin{bmatrix}1\\1\\4\end{bmatrix},
   \begin{bmatrix}-1\\0\\-11\end{bmatrix}
-  \right\} 
+  \right\}
   \end{align*}
   Which of the following is true?
 
@@ -23,7 +20,7 @@
 	\item \(\vspan S\) and \(\vspan T\) are the same size.
 	\item \(\vspan S\) is smaller than \(\vspan T\).
 	\end{enumerate}
-	
+
 \end{activity}
 
 \begin{definition}
@@ -31,16 +28,30 @@
   in the set belongs to the span of the others. Otherwise, we say the set
   is \term{linearly independent}.
 
-  \vspace{1em}
+  \begin{center}
+  \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)},scale=0.4]
+    \draw[->] (0,0,0) -- (6,0,0);
+    \draw[->] (0,0,0) -- (0,6,0);
+    \draw[->] (0,0,0) -- (0,0,6);
+    \draw[fill=purple!20,fill opacity=0.5]
+      (-2,-2,2) -- (6,-2,-2) -- (2,2,-2) -- (-6,2,2) -- (-2,-2,2);
+    \draw[thick,blue,->] (0,0,0) -- (1,-1,0);
+    \draw[thick,red,->] (0,0,0) -- (-2,0,1);
+    \draw[thick,purple,->] (0,0,0) -- (1,1,-1);
+  \end{tikzpicture}
+  \end{center}
 
   You can think of linearly dependent sets as containing a redundant vector,
-  in the sense that you can drop a vector out without reducing the span of the set.
+  in the sense that you can drop a vector out without reducing the span of the set. In the above image, all three vectors lay on the same planar subspace,
+  but only two vectors are needed to span the plane, so the set is
+  linearly dependent.
 \end{definition}
 
 \begin{activity}{10}
-  Suppose \(3\vect v_1-5\vect v_2=\vect v_3\), so the set
-  \(\{\vect v_1,\vect v_2,\vect v_3\}\) is linearly dependent.
-  Which of the following is true of the vector equation \(x_1\vect v_1+x_2\vect v_2+x_3\vect v_3=\vect 0\) ?
+  Let \(\vect u,\vect v,\vect w\) be vectors in \(\mathbb R^n\).
+  Suppose \(3\vect u-5\vect v=\vect w\), so the set
+  \(\{\vect u,\vect v,\vect w\}\) is linearly dependent.
+  Which of the following is true of the vector equation \(x\vect u+y\vect v+z\vect w=\vect 0\) ?
   \begin{enumerate}[(A)]
   \item It is consistent with one solution
   \item It is consistent with infinitely many solutions
@@ -49,8 +60,9 @@
 \end{activity}
 
 \begin{fact}
-  The set \(\{\vect v_1,\dots\vect v_n\}\) is linearly dependent if and only
-  if \(x_1\vect v_1+\dots+x_n\vect v_n=\vect 0\) is consistent with
+  For any vector space,
+  the set \(\{\vect v_1,\dots\vect v_n\}\) is linearly dependent if and only
+  if \(x_1\vect v_1+\dots+x_n\vect v_n=\vect z\) is consistent with
   infinitely many solutions.
 \end{fact}
 
@@ -108,7 +120,9 @@ What is the largest number of vectors in \(\IR^4\) that can form a linearly inde
 \end{activity}
 
 \begin{activity}{5}
-What is the largest number of vectors in \(\P^4\) that can form a linearly independent set?
+What is the largest number of vectors in
+\[\P^4=\setBuilder{ax^4+bx^3+cx^2+dx+e}{a,b,c,d,e\in\IR}\]
+that can form a linearly independent set?
 \begin{enumerate}[(a)]
 \item \(3\)
 \item \(4\)
@@ -118,7 +132,9 @@ What is the largest number of vectors in \(\P^4\) that can form a linearly indep
 \end{activity}
 
 \begin{activity}{5}
-What is the largest number of vectors in \(\P\) that can form a linearly independent set?
+What is the largest number of vectors in
+\[\P=\setBuilder{f(x)}{f(x)\text{ is any polynomial}}\]
+that can form a linearly independent set?
 \begin{enumerate}[(a)]
 \item \(3\)
 \item \(4\)
