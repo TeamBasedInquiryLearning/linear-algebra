@@ -37,29 +37,30 @@
 
   \vspace{1em}
 
-  For example, in many Calculus 3 courses, vectors often expressed in
-  their component form
-
+  For example, in many calculus courses, vectors in \(\IR^3\)
+  are often expressed in their component form
   \[
     (3,-2,4)=\begin{bmatrix}3 \\ -2 \\ 4\end{bmatrix}
   \]
-
   or in their standard basic vector form
-
   \[
     3\vec e_1-2\vec e_2+4\vec e_3 = 3\hat\imath-2\hat\jmath+4\hat k
   .\]
+  Since every vector in \(\IR^3\) can be uniquely described as a linear
+  combination of the vectors in \(\setList{\vec e_1,\vec e_2,\vec e_3}\),
+  this set is indeed a basis.
 \end{observation}
 
 
 
 \begin{activity}{15}
-  Label each of the sets \(A,B,C,D,E\) as:
+  Label each of the sets \(A,B,C,D,E\) as
   \begin{itemize}
      \item SPANS \(\IR^4\) or DOES NOT SPAN \(\IR^4\)
      \item LINEARLY INDEPENDENT or LINEARLY DEPENDENT
      \item BASIS FOR \(\IR^4\) or NOT A BASIS FOR \(\IR^4\)
   \end{itemize}
+  by finding \(\RREF\) for their corresponding matrices.
   \begin{center}
     \begin{tabular}{cc}
   	\(A=\left\{
@@ -109,7 +110,7 @@
 \begin{activity}{10}
   If \(\{\vect v_1,\vect v_2,\vect v_3,\vect v_4\}\) is a basis for
   \(\IR^4\), that means \(\RREF[\vect v_1\,\vect v_2\,\vect v_3\,\vect v_4]\)
-  doesn't have a column without a pivot position, and doesn't have a
+  doesn't have a non-pivot column, and doesn't have a
   row of zeros. What is \(\RREF[\vect v_1\,\vect v_2\,\vect v_3\,\vect v_4]\)?
 
   \[
@@ -176,17 +177,17 @@ the planar subspace.
   \) of \(\IR^4\).
 
   \begin{subactivity}
-    Use \(\RREF\begin{bmatrix}
+    Mark the part of \(\RREF\begin{bmatrix}
     2&2&2&1\\
     3&0&-3&5\\
     0&1&2&-1\\
     1&-1&-3&0
-    \end{bmatrix}\) to identify a vector that causes the spanning set
-    for \(W\) to be linearly dependent.
+    \end{bmatrix}\) that shows that \(W\)'s spanning set
+    is linearly dependent.
   \end{subactivity}
 
   \begin{subactivity}
-    Find a basis for \(W\) by removing a vector from the spanning set
+    Find a basis for \(W\) by removing a vector from its spanning set
     to make it linearly independent.
   \end{subactivity}
 \end{activity}
