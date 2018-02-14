@@ -420,9 +420,10 @@ Compute
 Since the fourth column is not a pivot column, the vectors are linearly
 dependent and thus not a basis.
 
-(Alternate solution:
-since the fourth row not a pivot row, the vectors do not span
-\(\IR^4\) and thus are not a basis.)
+(Alternate solutions:
+Since the fourth row not a pivot row, the vectors do not span
+\(\IR^4\) and thus are not a basis. Or since the resulting matrix is not
+the identity matrix, the vectors do not form a basis.)
 \end{solution}
 
 
@@ -563,47 +564,50 @@ a basis for the solution space is
 \end{solution}
 
 \begin{problem}{A1}
-Determine if $T: M_{2,2} \rightarrow \IR$ given by $T\left(\begin{bmatrix} a & b \\ c & d \end{bmatrix} \right) = 3a-2b+4d$ is a linear transformation or not.
+Consider the following maps of polynomials \(S: \P \rightarrow \P\)
+and \(T:\P\rightarrow\P\) defined by
+\[S(f)= f-3x \text{ and }T(f) = f-3f'.\]
+Show that one of these maps is a linear transformation, and that the other
+map is not.
 \end{problem}
 \begin{solution}
-\begin{align*}
-	T \left(\begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix} \right) + 
-	T \left(\begin{bmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{bmatrix} \right) &= 
-	3a_{11}-2a_{12}+4a_{22} + 3b_{11}-2b_{12}+4b_{22} \\ 
-	T \left(\begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix}  + 
-	\begin{bmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{bmatrix} \right) &= 
-	T \left(\begin{bmatrix} a_{11}+b_{11} & a_{12}+b_{12} \\ a_{21}+b_{21} & a_{22}+b_{22} \end{bmatrix} \right)= 
-	3(a_{11}+b_{11})-2(a_{12}+b_{12})+4(a_{22}+b_{22})
-\end{align*}
+\(S\) is not a linear transformation because \(S(0)=-3x\not=0\).
 
-\[ 
-	cT \left(\begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix} \right) = 
-	c\left(3a_{11}-2a_{12}+4a_{22}\right) =
-	3ca_{11}-2ca_{12}+4ca_{22}= 
-	T \left(\begin{bmatrix} ca_{11} & ca_{12} \\ ca_{21} & ca_{22} \end{bmatrix} \right)= 
-	T \left(c\begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix}\right)
+As for \(T\),
+\[
+  T(f+g)=(f+g)-3(f+g)'=(f-3f')+(g-3g')
 \]
-Since \(T\) respects both addition and scalar multiplication, it is a linear transformation.
+\[
+  T(f)+T(g)=(f-3f')+(g-3g')
+\]
+\[
+	T(cf)=(cf)-3(cf)'=cf-3cf'
+\]
+\[
+	cT(f)=c(f-3f')=cf-3cf'
+\]
+Since \(T\) preserves both addition and scalar multiplication,
+\(T\) is a linear transformation.
 \end{solution}
 
 \begin{problem}{A2}
-Let $T: \IR^3\rightarrow \IR^4$ be the linear transformation given by $$T\left(\begin{bmatrix} x \\ y \\ z \\  \end{bmatrix} \right) = \begin{bmatrix} -x+y \\ -x+3y-z \\ 7x+y+3z \\ 0 \end{bmatrix}.$$  
+Let $T: \IR^3\rightarrow \IR^4$ be the linear transformation given by $$T\left(\begin{bmatrix} x \\ y \\ z \\  \end{bmatrix} \right) = \begin{bmatrix} -x+y \\ -x+3y-z \\ 7x+y+3z \\ 0 \end{bmatrix}.$$
 \begin{enumerate}[(a)]
-\item Write the matrix for $T$ with respect to the standard bases of $\IR^3$ and $\IR^4$.
+\item Write the standard matrix for \(T\).
 \item Compute \( T\left( \begin{bmatrix} 1 \\ 1 \\ 3 \end{bmatrix} \right) \)
 \end{enumerate}
 \end{problem}
 
 \begin{solution}
 \begin{enumerate}[(a)]
-\item Since 
+\item Since
 \begin{align*}
 T\left(\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\right) &= \begin{bmatrix} -1 \\ -1 \\ 7 \\0\end{bmatrix} &
 T\left(\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}\right) &= \begin{bmatrix} 1 \\ 3 \\ 1 \\0 \end{bmatrix}  &
 T\left(\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\right) &= \begin{bmatrix} 0 \\ -1 \\ 3 \\ 0  \end{bmatrix}
 \end{align*}
 The standard matrix is \( \begin{bmatrix} -1 & 1 & 0 \\ -1 & 3 & -1 \\ 7 & 1 & 3  \\ 0 & 0 & 0 \end{bmatrix} \).
-\item \( T\left( \begin{bmatrix}-2 \\ 0 \\ 3 \end{bmatrix} \right)  = \begin{bmatrix} 0 \\ -1 \\ 11 \\ 0 \end{bmatrix}\)
+\item \( T\left( \begin{bmatrix}-2 \\ 0 \\ 3 \end{bmatrix} \right)  = \begin{bmatrix} 2 \\ -1 \\ -5 \\ 0 \end{bmatrix}\)
 \end{enumerate}
 \end{solution}
 
@@ -617,29 +621,57 @@ Determine if each of the following linear transformations is injective (one-to-o
 \begin{solution}
 \begin{enumerate}[(a)]
 \item $ \RREF\begin{bmatrix} 1 & 1 \\ -1 & 0 \end{bmatrix}=\begin{bmatrix}1 & 0 \\ 0 & 1 \end{bmatrix}$.  Since each column is a pivot column, $S$ is injective.  Since there is no zero row, $S$ is surjective.
-\item $$\RREF\left(\begin{bmatrix}1 & 3 & 2 & -3 \\ 2 & 4 & 6 & -10 \\ 1 & 6 & -1 & 3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0 & 5 & -9 \\ 0 & 1 & -1 & 2 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-Since there is a row of zeroes, the image of \(T\) does not span \(\IR^3\), so \(T\) is not surjective.  Since there are non-pivot columns, \(T\) is not injective either.  Alternatively, since $\dim \IR^4 > \dim \IR^3$, $T$ is not injective.
+\item $$\RREF\begin{bmatrix}1 & 3 & 2 & -3 \\ 2 & 4 & 6 & -10 \\ 1 & 6 & -1 & 3 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 5 & -9 \\ 0 & 1 & -1 & 2 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
+Since there is a row of zeroes, the image of \(T\) does not span \(\IR^3\), so \(T\) is not surjective.  Since there are non-pivot columns, \(T\) is not injective either.
+%Alternatively, since $\dim \IR^4 > \dim \IR^3$, $T$ is not injective.
 
 \end{enumerate}
 \end{solution}
 
 
+% \begin{problem}{A4}
+% Let $T: \P^3 \rightarrow \P^2$ be the linear transformation given by
+% \[T\left( ax^3+bx^2+cx+d \right)  = (a+3b+2c-3d)x^2 + (2a+4b+6c-10d)x+  (a+6b-c+3d).\]
+% Compute a basis for the kernel and a basis for the image of $T$.
+% \end{problem}
+% \begin{solution}
+% First, write down the standard matrix with respect to the ordered bases \(\{x^3,x^2,x,1\} \) and \(\{x^2,x,1\}\), namely \[A=\begin{bmatrix}1 & 3 & 2 & -3 \\ 2 & 4 & 6 & -10 \\ 1 & 6 & -1 & 3 \end{bmatrix}.\]
+% Then we compute
+% \[\RREF\left(A\right) = \begin{bmatrix} 1 & 0 & 5 & -9 \\ 0 & 1 & -1 & 2 \\ 0 & 0 & 0 & 0\end{bmatrix}.\]
+%
+% The kernel is given by solution set of the corresponding homogeneous system of equations translated back to polynomials i.e.
+% \[ \ker T = \setBuilder{  (-5a+9b)x^3 + (a-2b)x^2 + ax + b }{a,b \in \IR} \]
+% Then a basis for the kernel is
+% $$\left\{ -5x^3+x^2+x, 9x^3-2bx^2+b \right\}.$$
+% A basis for the image is given by the polynomials corresponding to pivot columns, namely
+% $$\left\{  x^2+2x+1, 3x^2+4x+6\right\}. $$
+% \end{solution}
 \begin{problem}{A4}
-Let $T: \P^3 \rightarrow \P^2$ be the linear transformation given by 
-\[T\left( ax^3+bx^2+cx+d \right)  = (a+3b+2c-3d)x^2 + (2a+4b+6c-10d)x+  (a+6b-c+3d).\]
-Compute a basis for the kernel and a basis for the image of $T$.
+Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by
+\[
+  T\left(\begin{bmatrix}x\\y\\z\\w\end{bmatrix} \right) =
+  \begin{bmatrix}
+    x+3y+2z-3w \\
+    2x+4y+6z-10w \\
+    x+6y-z+3w
+  \end{bmatrix}
+\]
+Compute a basis for the kernel and a basis for the image of \(T\).
 \end{problem}
 \begin{solution}
-First, write down the standard matrix with respect to the ordered bases \(\{x^3,x^2,x,1\} \) and \(\{x^2,x,1\}\), namely \[A=\begin{bmatrix}1 & 3 & 2 & -3 \\ 2 & 4 & 6 & -10 \\ 1 & 6 & -1 & 3 \end{bmatrix}.\]
-Then we compute
+First, we note the standard matrix
+\[A=\begin{bmatrix}1 & 3 & 2 & -3 \\ 2 & 4 & 6 & -10 \\ 1 & 6 & -1 & 3 \end{bmatrix}\]
+and compute
 \[\RREF\left(A\right) = \begin{bmatrix} 1 & 0 & 5 & -9 \\ 0 & 1 & -1 & 2 \\ 0 & 0 & 0 & 0\end{bmatrix}.\]
 
-The kernel is given by solution set of the corresponding homogeneous system of equations translated back to polynomials i.e. 
-\[ \ker T = \setBuilder{  (-5a+9b)x^3 + (a-2b)x^2 + ax + b }{a,b \in \IR} \]
-Then a basis for the kernel is
-$$\left\{ -5x^3+x^2+x, 9x^3-2bx^2+b \right\}.$$
-A basis for the image is given by the polynomials corresponding to pivot columns, namely
-$$\left\{  x^2+2x+1, 3x^2+4x+6\right\}. $$
+The kernel is given by solution set of the corresponding homogeneous system of equations
+\[ \ker T = \setBuilder{\begin{bmatrix}-5a+9b \\ a-2b \\ a \\ b \end{bmatrix}}{a,b \in \IR} \]
+so a basis for the kernel is
+\[\setList{\begin{bmatrix}-5 \\ 1 \\ 1 \\ 0 \end{bmatrix},
+\begin{bmatrix}9 \\ -2 \\ 0 \\ 1 \end{bmatrix}}.\]
+A basis for the image is given by the pivot columns, namely
+\[\setList{\begin{bmatrix}1\\2\\1 \end{bmatrix},
+\begin{bmatrix}3\\4\\6 \end{bmatrix}}.\]
 \end{solution}
 
 \begin{problem}{M1}
@@ -648,10 +680,12 @@ Let
 A &= \begin{bmatrix} 1 & -3 \\ 0 & 1 \end{bmatrix} & B&= \begin{bmatrix} 4 & 1 & 2 \end{bmatrix} & C&= \begin{bmatrix} 0 & 1 & 3 \\ 1 & -2 & 5 \end{bmatrix}
 \end{align*}
 
-Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and compute it.
+Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and show how to compute it.
 \end{problem}
 \begin{solution}
-\(AC\) is the only one that can be computed.
+\(AC\) is the only one that can be computed, since \(A\) is \(2\times 2\)
+and \(C\) is \(2\times 3\). Thus \(AC\) will be the \(2\times 3\) matrix
+given by
 \begin{align*}
 AC\left( \vec{e}_1 \right) &= A \left( \begin{bmatrix} 0 \\ 1 \end{bmatrix} \right) = 0 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + 1\begin{bmatrix} -3 \\ 1 \end{bmatrix} = \begin{bmatrix} -3 \\ 1 \end{bmatrix} \\
 AC\left( \vec{e}_2 \right) &= A \left( \begin{bmatrix} 1 \\ -2 \end{bmatrix} \right) = 1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} -2\begin{bmatrix} -3 \\ 1 \end{bmatrix} = \begin{bmatrix} 7 \\ -2 \end{bmatrix} \\
@@ -665,32 +699,41 @@ $$AC = \begin{bmatrix} -3 & 7 & -12 \\ 1 & -2 & 5 \end{bmatrix}.$$
 Determine if the matrix \(\begin{bmatrix}1 & 3 & 2  \\ 2 & 4 & 6  \\ 1 & 6 & -1 \end{bmatrix}\) is invertible or not.
 \end{problem}
 \begin{solution}
-We compute 
+We compute
 \[\RREF\left(\begin{bmatrix}1 & 3 & 2  \\ 2 & 4 & 6  \\ 1 & 6 & -1 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0 & 5 \\ 0 & 1 & -1 \\ 0 & 0 & 0 \end{bmatrix}.\]
-Since this is not the identity matrix, the matrix is not invertible.  Alternatively, one might notice that the second row is a multiple of the first row, which means it is similar to a matrix with a row of zeroes, which is not invertible, so it is not invertible either.
+Since this is not the identity matrix, the matrix is not invertible.
 \end{solution}
 
 \begin{problem}{M3}
-Compute the inverse of the matrix $\begin{bmatrix} 1 & 2 & 3 & 5 \\ 0 & -1 & 4 & -2 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$.
+Show how to compute the inverse of the matrix
+\(\begin{bmatrix}
+1 & 2 & 3 & 5 \\ 0 & -1 & 4 & -2 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 0 & 1
+\end{bmatrix}\).
 \end{problem}
 \begin{solution}
-$$\RREF\left(\begin{bmatrix}[cccc|cccc] 1 & 2 & 3 & 5 & 1 & 0 & 0 & 0  \\ 0 & -1 & 4 & -2 & 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 3 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix}\right) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 &0 & 1 & 2 & -11 & 32 \\ 0 & 1 & 0 & 0 & 0 & -1 & 4 & -14 \\ 0 & 0 & 1 & 0 & 0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix}$$
-So the inverse is $\begin{bmatrix}  1 & 2 & -11 & 32 \\ 0 & -1 & 4 & -14 \\  0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$
+\[\RREF\left(\begin{bmatrix}[cccc|cccc] 1 & 2 & 3 & 5 & 1 & 0 & 0 & 0  \\ 0 & -1 & 4 & -2 & 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 3 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix}\right) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 &0 & 1 & 2 & -11 & 32 \\ 0 & 1 & 0 & 0 & 0 & -1 & 4 & -14 \\ 0 & 0 & 1 & 0 & 0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix}\]
+So the inverse is \(\begin{bmatrix}  1 & 2 & -11 & 32 \\ 0 & -1 & 4 & -14 \\  0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 \end{bmatrix}\).
 \end{solution}
 
 
-\begin{problem}{G1} 
-Let \(A \in M_{4,4}\).
+\begin{problem}{G1}
+Consider the row operation \(R_2-4R_1\to R_2\) applied as follows to show
+\(A\sim B\):
+\[
+A=\begin{bmatrix}1&2&3\\4&5&6\\7&8&9\end{bmatrix}
+  \sim
+\begin{bmatrix}1&2&3\\4-4&5-8&6-12\\7&8&9\end{bmatrix}=B
+\]
 \begin{enumerate}[(a)]
-\item Write a matrix \(R\) such that \(RA\) is the result of adding three times
-		the fourth row of \(A\) to the second row of \(A\).
-\item How are \(\det(RA)\) and \(\det(A)\) related?
+\item Find a matrix \(R\) such that \(B=RA\).
+\item Without computing either determinant,
+      simplify the value of \(\det(B)\) in terms of \(\det(A)\).
 \end{enumerate}
 \end{problem}
 \begin{solution}
 \begin{enumerate}
-\item \(R= \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 3 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}\)
-\item \(\det(RA) = \det A\)
+\item \(R= \begin{bmatrix} 1 & 0 & 0 \\ -4 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}\)
+\item \(\det B =\det(RA)= \det(R)\det(A)=1\det A=\det A\)
 \end{enumerate}
 \end{solution}
 
@@ -707,7 +750,7 @@ We first apply a row operation (subtract row three from row 2), and then perform
  &\phantom{=} (1) \left( (1) \det \begin{bmatrix} 1 & 1 \\ 1 & 2 \end{bmatrix} - (3) \det \begin{bmatrix} 1 & 1 \\ -3 & 2 \end{bmatrix} \right) \\
  &= (-1)\left( (1)(-8)-(1)(-14)+(-3)(10) \right) + (1) \left( (1)(1)-(3)(5) \right) \\
  &= (-1) \left( -8+14-30 \right) + (1) \left(1-15 \right) \\
- &=10 
+ &=10
  \end{align*}
 
 \end{solution}
