@@ -97,7 +97,7 @@ Let \(T : \IR^2 \rightarrow \IR^4\) be given by
 \[
   T\left(\begin{bmatrix} x \\ y \end{bmatrix} \right)
 =
-  \begin{bmatrix} x+y \\ x^2 \\ y+3 \\ y-2x \end{bmatrix}
+  \begin{bmatrix} x+y \\ x^2 \\ y+3 \\ y-2^x \end{bmatrix}
 \]
 
 To show that \(T\) is not linear, we only need to find one
@@ -120,65 +120,51 @@ counterexample.
     \begin{bmatrix} 2 \\ 3\end{bmatrix}
   \right)
 =
-  \begin{bmatrix} 1 \\ 0 \\ 4 \\ 1 \end{bmatrix} +
-  \begin{bmatrix} 5 \\ 4 \\ 6 \\ -1 \end{bmatrix} =
-  \begin{bmatrix} 6 \\ 4 \\ 10 \\ 0 \end{bmatrix}
+  \begin{bmatrix} 1 \\ 0 \\ 4 \\ -1 \end{bmatrix} +
+  \begin{bmatrix} 5 \\ 4 \\ 6 \\ -5 \end{bmatrix}
+=
+  \begin{bmatrix} 6 \\ 4 \\ 10 \\ -6 \end{bmatrix}
 \]
 
 Since the resulting vectors are different,
 \(T\) is a linear transformation.
 \end{example}
 
-\begin{activity}{5}
-Show that \(T : \IR^2 \rightarrow \IR^4\) defined by
-\[
-  T\left(\begin{bmatrix} x \\ y \end{bmatrix} \right)
-=
-  \begin{bmatrix} x+y \\ x^2 \\ y+3 \\ y-2x \end{bmatrix}
-\]
-is not linear by showing that
-\(
-  2T\left(\begin{bmatrix} 1 \\ 1 \end{bmatrix} \right)
-\not=
-  T\left(2\begin{bmatrix} 1 \\ 1 \end{bmatrix} \right)
-\).
-\end{activity}
-
 \begin{fact}
 A map between Euclidean spaces \(T:\IR^n\to\IR^m\) is linear
 exactly when every component of the output is a linear combination
 of the variables of \(\IR^n\).
-\end{fact}
 
-\begin{example}
-You can quickly identify
+\vspace{1em}
+
+For example, the following map is definitely linear
+because \(x-z\) and \(3y\) are linear combinations of \(x,y,z\):
 \[
   T\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix} \right)
 =
   \begin{bmatrix} x-z \\ 3y \end{bmatrix}
+=
+  \begin{bmatrix} 1x+0y-1z \\ 0x+3y+0z \end{bmatrix}
 \]
-as linear because \(x-z\) and \(3y\) are linear combinations
-of \(x,y,z\).
 
-But
+But this map is not linear because \(x^2\), \(y+3\), and \(y-2^x\)
+are not linear combinations (even though \(x+y\) is):
 \[
   T\left(\begin{bmatrix} x \\ y \end{bmatrix} \right)
 =
-  \begin{bmatrix} x+y \\ x^2 \\ y+3 \\ y-2x \end{bmatrix}
+  \begin{bmatrix} x+y \\ x^2 \\ y+3 \\ y-2^x \end{bmatrix}
 \]
-cannot be linear because \(x^2\) and \(y+3\) are not linear
-combinations of \(x,y\) (even though \(x+y\) and \(y-2x\) are).
-\end{example}
+\end{fact}
 
-\begin{activity}{3}
+\begin{activity}{5}
   Recall the following rules from calculus, where \(D:\P\to\P\)
-  is the derivative map defined by \(D(f)=\frac{df}{dx}\) for each
+  is the derivative map defined by \(D(f(x))=f'(x)\) for each
   polynomial \(f\).
   \[
-    D(f+g)=\frac{df}{dx}+\frac{dg}{dx}
+    D(f+g)=f'(x)+g'(x)
   \]
   \[
-    D(cf)=c\frac{df}{dx}
+    D(cf(x))=cf'(x)
   \]
   What can we conclude from these rules?
   \begin{enumerate}[a)]
@@ -189,25 +175,71 @@ combinations of \(x,y\) (even though \(x+y\) and \(y-2x\) are).
 \end{activity}
 
 
-\begin{activity}{12}
-Consider the following two polynomial maps.
+\begin{activity}{10}
+Let the polynomial maps \(S: \P^4 \rightarrow \P^3\)
+and \(T: \P^4 \rightarrow \P^3\) be defined by
 
-\[S: \P^4 \rightarrow \P^3 \text{ given by } S(f(x)) = 2f'(x)-f''(x)\]
-\[T: \P^2 \rightarrow \P^2 \text{ given by } T(f(x)) = f'(x)+x^2\]
+\[S(f(x)) = 2f'(x)-f''(x) \hspace{3em} T(f(x)) = f'(x)+x^3\]
+
+Compute \(S(x^4+x)\), \(S(x^4)+S(x)\), \(T(x^4+x)\), and \(T(x^4)+T(x)\).
+Which of these maps is definitely not linear?
+\end{activity}
+
+
+\begin{fact}
+If \(L:V\to W\) is linear, then \(L(\vec z)=L(0\vec v)=0L(\vec v)=\vec z\)
+where \(\vec z\) is the additive identity of the vector spaces \(V,W\).
+
+\vspace{1em}
+
+Put another way, an easy way to prove that a map like
+\(T(f(x)) = f'(x)+x^3\) can't be linear is because
+\[T(0)=\frac{d}{dx}[0]+x^3=0+x^3=x^3\not=0.\]
+\end{fact}
+
+\begin{activity}{15}
+Continue to consider \(S: \P^4 \rightarrow \P^3\) defined by
+
+\[S(f(x)) = 2f'(x)-f''(x)\]
 
 \begin{subactivity}
-  Compare \(S(x^2+x)\) with \(S(x^2)+S(x)\), and
-  compare \(T(x^2+x)\) with \(T(x^2)+T(x)\). Which of these maps
-  is definitely not linear?
+  Verify that
+  \[S(f(x)+g(x))=2f'(x)+2g'(x)-f''(x)-g''(x)\]
+  is equal to \(S(f(x))+S(g(x))\) for all polynomials \(f,g\).
 \end{subactivity}
 \begin{subactivity}
-  Verify that \(S(f+g)=2f'(x)+2g'(x)-f''(x)-g''(x)\) is equal
-  to \(S(f)+S(g)\) for all polynomials \(f,g\).
-\end{subactivity}
-\begin{subactivity}
-  Verify that \(S(cf)=cS(f)\) for all real numbers \(c\) and polynomials \(f\).
-  Is \(S\) linear?
+  Verify that \(S(cf(x))\) is equal to \(cS(f(x))\) for all real numbers \(c\)
+  and polynomials \(f\). Is \(S\) linear?
 \end{subactivity}
 \end{activity}
+
+
+\begin{activity}{20}
+Let the polynomial maps \(S: \P \rightarrow \P\)
+and \(T: \P \rightarrow \P\) be defined by
+
+\[S(f(x)) = (f(x))^2 \hspace{3em} T(f(x)) = 3xf(x^2)\]
+
+\begin{subactivity}
+Show that \(S(x+1)\not= S(x)+S(1)\) to verify that \(S\) is not linear.
+\end{subactivity}
+\begin{subactivity}
+Prove that \(T\) is linear by verifying that \(T(f(x)+g(x))=T(f(x))+T(g(x))\)
+and \(T(cf(x))=cT(f(x))\).
+\end{subactivity}
+\end{activity}
+
+\begin{observation}
+  Note that \(S\) in the previous activity is not linear,
+  even though \(S(0)=(0)^2=0\). So showing \(S(0)=0\) isn't enough
+  to prove a map is linear.
+
+  \vspace{1em}
+
+  This is a similar situation to proving a subset is a subspace:
+  if the subset doesn't contain \(\vec z\), then
+  the subset isn't a subspace. But if the subset contains \(\vec z\),
+  you cannot conclude anything.
+\end{observation}
 
 \end{applicationActivities}
