@@ -566,25 +566,26 @@ a basis for the solution space is
 \begin{problem}{A1}
 Consider the following maps of polynomials \(S: \P \rightarrow \P\)
 and \(T:\P\rightarrow\P\) defined by
-\[S(f)= f-3x \text{ and }T(f) = f-3f'.\]
+\[S(f(x))= f(x)-3x \text{ and }T(f(x)) = f(x)-3f'(x).\]
 Show that one of these maps is a linear transformation, and that the other
 map is not.
 \end{problem}
 \begin{solution}
 \(S\) is not a linear transformation because \(S(0)=-3x\not=0\).
+(Alternate reason: \(S(x+1)=1-2x\) but \(S(x)+S(1)=1-5x\).)
 
 As for \(T\),
 \[
-  T(f+g)=(f+g)-3(f+g)'=(f-3f')+(g-3g')
+  T(f(x)+g(x))=(f(x)+g(x))-3(f(x)+g(x))'=f(x)-3f'(x)+g(x)-3g'(x)
 \]
 \[
-  T(f)+T(g)=(f-3f')+(g-3g')
+  T(f(x))+T(g(x))=(f(x)-3f'(x))+(g(x)-3g'(x))=f(x)-3f'(x)+g(x)-3g'(x)
 \]
 \[
-	T(cf)=(cf)-3(cf)'=cf-3cf'
+	T(cf(x))=(cf(x))-3(cf(x))'=cf(x)-3cf'(x)
 \]
 \[
-	cT(f)=c(f-3f')=cf-3cf'
+	cT(f(x))=c(f(x)-3f'(x))=cf(x)-3cf'(x)
 \]
 Since \(T\) preserves both addition and scalar multiplication,
 \(T\) is a linear transformation.
