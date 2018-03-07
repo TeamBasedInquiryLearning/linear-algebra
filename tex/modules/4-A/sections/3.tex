@@ -9,22 +9,22 @@ $T$ is called \term{injective} or \term{one-to-one} if $T$ does not map two dist
 
 \begin{center}
 \begin{tikzpicture}[x=0.15in,y=0.15in]
-  \begin{scope}[shift={(0,0)}]
+  \begin{scope}[shift={(0,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1)
+          node[anchor=south east] {\(\vec v\)};
+    \draw[thick,-latex,red] (0,0) -- (1.5,-2)
+          node[anchor=south west] {\(\vec w\)};
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,0)}]
     \draw (0,0) -- (3,0);
     \draw (0,0) -- (0,3);
     \draw (0,0) -- (-2,-1);
     \draw[thick,-latex,blue] (0,0) -- (2,1)
-          node[anchor=south west] {\(\vec v\)};
+          node[anchor=south west] {\(T(\vec v)\)};
     \draw[thick,-latex,red] (0,0) -- (1,2)
-          node[anchor=south west] {\(\vec w\)};
-  \end{scope}
-  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,0.5)}]
-    \draw (-2,0) -- (2,0);
-    \draw (0,-2) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (-1.5,1)
-          node[anchor=south east] {\(T(\vec v)\)};
-    \draw[thick,-latex,red] (0,0) -- (1.5,-2)
           node[anchor=south west] {\(T(\vec w)\)};
   \end{scope}
   \node[anchor=north] at (5,-1) {injective};
@@ -41,7 +41,7 @@ $T$ is called \term{injective} or \term{one-to-one} if $T$ does not map two dist
           node[anchor=south west] {\(\vec w\)};
   \end{scope}
   \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,0.5)}]
+  \begin{scope}[shift={(9,1)}]
     \draw (-2,0) -- (2,0);
     \draw (0,-2) -- (0,2);
     \draw[thick,-latex,purple] (0,0) -- (0.5,2)
@@ -118,14 +118,14 @@ using \(T\) to transform a vector in \(\IR^3\)?)
 As we will see, it's no coincidence that the \(\RREF\) of the
 injective map's standard matrix
 \[
-  \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}
-\]
-has a non-pivot column. Similarly, the \(\RREF\) of the surjective map's
-standard matrix
-\[
   \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}
 \]
-has a non-pivot (zero) row.
+has all pivot columns. Similarly, the \(\RREF\) of the surjective map's
+standard matrix
+\[
+  \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}
+\]
+has all pivot (zero) rows.
 \end{observation}
 
 
@@ -205,8 +205,13 @@ Set
 \(
   T\left(\begin{bmatrix}x\\y\\z\end{bmatrix}\right)
     =
+  \begin{bmatrix}
+    \unknown+\unknown+\unknown \\
+    \unknown+\unknown+\unknown
+  \end{bmatrix}
+    =
   \begin{bmatrix}0\\0\end{bmatrix}
-\) to find a system of equations whose solution set is the kernel.
+\) to find a linear system of equations whose solution set is the kernel.
 \end{subactivity}
 \begin{subactivity}
 Use $\RREF(A)$ to solve this homogeneous system of equations and find a basis
