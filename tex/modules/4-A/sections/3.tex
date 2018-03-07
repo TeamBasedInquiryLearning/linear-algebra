@@ -5,7 +5,9 @@
 
 \begin{definition}
 Let $T: V \rightarrow W$ be a linear transformation.
-$T$ is called \term{injective} or \term{one-to-one} if $T$ does not map two distinct values to the same place.  More precisely, $T$ is injective if $T(\vec{v}) \neq T(\vec{w})$ whenever $\vec{v} \neq \vec{w}$.
+$T$ is called \term{injective} or \term{one-to-one} if $T$ does not map two
+distinct vectors to the same place.  More precisely, $T$ is injective if
+$T(\vec{v}) \neq T(\vec{w})$ whenever $\vec{v} \neq \vec{w}$.
 
 \begin{center}
 \begin{tikzpicture}[x=0.15in,y=0.15in]
@@ -347,7 +349,7 @@ the set of all vectors that are the result of using \(T\) to transform
 \begin{enumerate}[a)]
 \item \(\setBuilder{\begin{bmatrix}0 \\ 0\\a\end{bmatrix}}{a\in\IR}\)
 \item \(\setBuilder{\begin{bmatrix}a \\ b\\0\end{bmatrix}}{a,b\in\IR}\)
-\item \(\setList{\begin{bmatrix}1\\1\\0\end{bmatrix}}\)
+\item \(\setList{\begin{bmatrix}0\\0\\0\end{bmatrix}}\)
 \item \(\IR^3\)
 \end{enumerate}
 \end{activity}
@@ -367,7 +369,7 @@ the set of all vectors that are the result of using \(T\) to transform
 \(\IR^3\) vectors?
 \begin{enumerate}[a)]
 \item \(\setBuilder{\begin{bmatrix}a \\ a\end{bmatrix}}{a\in\IR}\)
-\item \(\setList{\begin{bmatrix}1\\0\end{bmatrix}}\)
+\item \(\setList{\begin{bmatrix}0\\0\end{bmatrix}}\)
 \item \(\IR^2\)
 \end{enumerate}
 \end{activity}
@@ -402,7 +404,7 @@ the set of vectors
 \end{activity}
 
 
-\begin{activity}{5}
+\begin{observation}
 Let $T: \IR^4 \rightarrow \IR^3$ be the linear transformation given by the
 standard matrix
 \[
@@ -411,19 +413,31 @@ standard matrix
   \begin{bmatrix} 3 & 4 & 7 & 1\\ -1 & 1 & 0 & 2 \\ 2 & 1 & 3 & -1 \end{bmatrix}
 .\]
 
-Remove vectors from the set
-\[
+Since the set
+\(
   \setList{
     \begin{bmatrix}3\\-1\\2\end{bmatrix},
     \begin{bmatrix}4\\1\\1\end{bmatrix},
     \begin{bmatrix}7\\0\\3\end{bmatrix},
     \begin{bmatrix}1\\2\\-1\end{bmatrix}
   }
+\)
+spans \(\Im T\), we can obtain a basis for \(\Im T\) by finding
+\(
+  \RREF A
+    =
+  \begin{bmatrix} 1 & 0 & 1 & -1\\ 0 & 1 & 1 & 1 \\ 0 & 0 & 0 & 0 \end{bmatrix}
+\)
+and only using the vectors corresponding to pivot columns:
+\[
+  \setList{
+    \begin{bmatrix}3\\-1\\2\end{bmatrix},
+    \begin{bmatrix}4\\1\\1\end{bmatrix}
+  }
 \]
-spanning \(\Im T\) to get a basis for \(\Im T\).
-\end{activity}
+\end{observation}
 
-\begin{observation}
+\begin{fact}
 Let  $T:\IR^n\to\IR^m$ be a linear transformation with standard matrix $A$.
 
 \begin{itemize}
@@ -434,6 +448,19 @@ Use the coefficients of its free variables to get a basis for the kernel.
 the vectors creating non-pivot columns in \(\RREF A\) to get a basis
 for the image.
 \end{itemize}
-\end{observation}
+\end{fact}
+
+
+\begin{activity}{10}
+Let $T: \IR^3 \rightarrow \IR^4$ be the linear transformation given by the
+standard matrix
+\[
+  A
+    =
+  \begin{bmatrix} 1 & -3 & 2\\ 2 & -6 & 0 \\ 0 & 0 & 1 \\ -1 & 3 & 1 \end{bmatrix}
+.\]
+
+Find a basis for the kernel and a basis for the image of \(T\).
+\end{activity}
 
 \end{applicationActivities}
