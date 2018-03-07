@@ -76,13 +76,65 @@ Let $T: \IR^2 \rightarrow \IR^3$ be given by
     \text{with standard matrix }
   \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}
 \]
-Is $T$ injective? (That is, do different vectors always transform into
-different vectors?)
+Is $T$ injective? If not, find two different vectors
+\(\vec v,\vec w\in\IR^3\) such that \(T(\vec v)=T(\vec w)\).
 \end{activity}
 
 \begin{definition}
 Let $T: V \rightarrow W$ be a linear transformation.
 $T$ is called \term{surjective} or \term{onto} if every element of $W$ is mapped to by an element of $V$.  More precisely, for every $\vec{w} \in W$, there is some $\vec{v} \in V$ with $T(\vec{v})=\vec{w}$.
+\begin{center}
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (1,2);
+    \draw[thick,-latex,blue] (0,0) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (1,-1);
+    \draw[thick,-latex,blue] (0,0) -- (-2,3);
+    \draw[thick,-latex,blue] (0,0) -- (-3,-2);
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,-2);
+    \fill[color=blue, opacity=0.5] (-2,-2) rectangle (2,2);
+  \end{scope}
+  \node[anchor=north] at (5,-2) {surjective};
+\end{tikzpicture}
+\hspace{3em}
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,-2);
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-2.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (-0.5,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2.5,-0.5);
+    \fill[color=blue, opacity=0.5] (-2,-2) -- (3,-1) -- (2,2) -- (-3,1) -- (-2,-2);
+  \end{scope}
+  \node[anchor=north] at (5,-2) {not surjective};
+\end{tikzpicture}
+\end{center}
 \end{definition}
 
 \begin{activity}{3}
@@ -95,9 +147,8 @@ Let $T: \IR^2 \rightarrow \IR^3$ be given by
     \text{with standard matrix }
   \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}
 \]
-Find a vector in \(\IR^3\) that
+Show that \(T\) is not surjective by finding a vector in \(\IR^3\) that
 \(T\left(\begin{bmatrix}x \\ y \end{bmatrix} \right)\) can never equal.
-Is $T$ surjective?
 \end{activity}
 
 \begin{activity}{2}
@@ -110,8 +161,8 @@ Let $T: \IR^3 \rightarrow \IR^2$ be given by
     \text{with standard matrix }
   \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}
 \]
-Is $T$ surjective? (That is, can every vector in \(\IR^2\) be obtained by
-using \(T\) to transform a vector in \(\IR^3\)?)
+Is $T$ surjective? If not, find a vector in \(\IR^2\) that
+\(T\left(\begin{bmatrix}x \\ y \\z\end{bmatrix} \right)\) can never equal.
 \end{activity}
 
 \begin{observation}
@@ -226,6 +277,58 @@ The \term{image} of $T$ is an important subspace of \(W\) defined by
 \[
 \Im T = \left\{ \vec{w} \in W\ \big|\ \text{there is some }\vec v\in V \text{ with } T(\vec{v})=\vec{w}\right\}
 \]
+In the examples below, the left example's image is all of \(\IR^2\), but the
+right example's image is a planar subspace of \(\IR^3\).
+\begin{center}
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (1,2);
+    \draw[thick,-latex,blue] (0,0) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (1,-1);
+    \draw[thick,-latex,blue] (0,0) -- (-2,3);
+    \draw[thick,-latex,blue] (0,0) -- (-3,-2);
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,-2);
+    \fill[color=blue, opacity=0.5] (-2,-2) rectangle (2,2);
+  \end{scope}
+\end{tikzpicture}
+\hspace{3em}
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,-2);
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-2.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (-0.5,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2.5,-0.5);
+    \fill[color=blue, opacity=0.5] (-2,-2) -- (3,-1) -- (2,2) -- (-3,1) -- (-2,-2);
+  \end{scope}
+\end{tikzpicture}
+\end{center}
 \end{definition}
 
 \begin{activity}{5}
@@ -281,7 +384,8 @@ standard matrix
   \begin{bmatrix}T(\vec e_1)&T(\vec e_2)&T(\vec e_3)&T(\vec e_4)\end{bmatrix}
 .\]
 
-Thus the set of vectors
+Since \(T(\vec v)=T(x_1\vec e_1+x_2\vec e_2+x_3\vec e_3+x_4\vec e_4)\),
+the set of vectors
 \[
   \setList{
     \begin{bmatrix}3\\-1\\2\end{bmatrix},
@@ -298,7 +402,7 @@ Thus the set of vectors
 \end{activity}
 
 
-\begin{activity}{10}
+\begin{activity}{5}
 Let $T: \IR^4 \rightarrow \IR^3$ be the linear transformation given by the
 standard matrix
 \[
@@ -325,7 +429,10 @@ Let  $T:\IR^n\to\IR^m$ be a linear transformation with standard matrix $A$.
 \begin{itemize}
 \item The kernel of \(T\) is the solution set of the homogeneous system given
 by the augmented matrix $\begin{bmatrix}[c|c]A&\vec 0\end{bmatrix}$.
-\item The image of \(T\) is the span of the columns of \(A\).
+Use the coefficients of its free variables to get a basis for the kernel.
+\item The image of \(T\) is the span of the columns of \(A\). Remove
+the vectors creating non-pivot columns in \(\RREF A\) to get a basis
+for the image.
 \end{itemize}
 \end{observation}
 
