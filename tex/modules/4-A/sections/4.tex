@@ -56,7 +56,7 @@ recognized by its \term{trivial} kernel.
 
 \begin{activity}{5}
 Let $T: \IR^5 \rightarrow \IR^5$ be a linear transformation where
-$\Im T$ is spanned less than five vectors.
+$\Im T$ is spanned by four vectors.
 What can you conclude?
 \begin{enumerate}[(a)]
 \item \(T\) is injective
@@ -159,8 +159,10 @@ one group that means \(T\) is \textbf{injective}, and one group that means
   What can you immediately conclude about the linear map \(T:\IR^5\to\IR^3\)?
   \begin{enumerate}[a)]
     \item Its standard matrix has more columns than rows, so \(T\) is not
+    \item Its standard matrix has more columns than rows, so \(T\) is 
     injective.
     \item Its standard matrix has more rows than columns, so \(T\) is not
+    \item Its standard matrix has more rows than columns, so \(T\) is 
     surjective.
   \end{enumerate}
 \end{activity}
@@ -169,8 +171,10 @@ one group that means \(T\) is \textbf{injective}, and one group that means
   What can you immediately conclude about the linear map \(T:\IR^2\to\IR^7\)?
   \begin{enumerate}[a)]
     \item Its standard matrix has more columns than rows, so \(T\) is not
+    \item Its standard matrix has more columns than rows, so \(T\) is 
     injective.
     \item Its standard matrix has more rows than columns, so \(T\) is not
+    \item Its standard matrix has more rows than columns, so \(T\) is 
     surjective.
   \end{enumerate}
 \end{activity}
@@ -184,7 +188,7 @@ one group that means \(T\) is \textbf{injective}, and one group that means
   Basically, a linear transformation cannot reduce dimension without collapsing
   vectors into each other, and a linear transformation cannot
   increase the dimension of its image.
-  \begin{center}
+  \begin{multicols}{2}
   \begin{tikzpicture}[x=0.15in,y=0.15in]
     \begin{scope}[shift={(0,0)}]
       \draw (0,0) -- (3,0);
@@ -204,7 +208,7 @@ one group that means \(T\) is \textbf{injective}, and one group that means
     \end{scope}
     \node[anchor=north] at (5,-1) {not injective, \(3>2\)};
   \end{tikzpicture}
-  \hspace{3em}
+
   \begin{tikzpicture}[x=0.15in,y=0.15in]
     \begin{scope}[shift={(0,1)}]
       \draw (-2,0) -- (2,0);
@@ -229,7 +233,7 @@ one group that means \(T\) is \textbf{injective}, and one group that means
     \end{scope}
     \node[anchor=north] at (5,-2) {not surjective, \(2<3\)};
   \end{tikzpicture}
-  \end{center}
+  \end{multicols}
   But these results do \textbf{not} reverse. For example,
   \(T:\IR^5\to\IR^4\) might not be surjective, even though \(5\not<4\).
 \end{fact}
