@@ -1,7 +1,38 @@
 \begin{applicationActivities}
 
+\begin{observation}
+Recall that
+  to quickly compute \(T(\vec v)\) from its standard matrix \(A\),
+  compute the \textbf{dot product} (defined in Calculus 3) of each matrix row
+  with the vector. For example, if \(T\) has the standard matrix
+  \[
+    A = \begin{bmatrix} 1 & 2 & 3 \\ 0 & 1 & -2 \\ 2 & -1 & 0 \end{bmatrix}
+  \]
+  then for \(\vec v=\begin{bmatrix}3\\0\\-2\end{bmatrix}\) we may write
+  \[
+    T(\vec v)
+      =
+    A\vec v
+      =
+    \begin{bmatrix} 1 & 2 & 3 \\ 0 & 1 & -2 \\ 2 & -1 & 0 \end{bmatrix}
+    \begin{bmatrix}3\\0\\-2\end{bmatrix}
+      =
+    \begin{bmatrix}
+      1(3)+2(0)+3(-2)\\
+      0(3)+1(0)-2(-2)\\
+      2(3)-1(0)+0(-2)
+    \end{bmatrix}
+      =
+    \begin{bmatrix}
+      -3\\
+      4\\
+      6
+    \end{bmatrix}
+  .\]
+\end{observation}
+
 \begin{activity}{5}
-Let $T: \IR^3 \rightarrow \IR^2$ be given by the standard matrix $B=\begin{bmatrix} 2 & 1 & -3 \\ 5 & -3 & 4 \end{bmatrix}$ and $S: \IR^2 \rightarrow \IR^4$ be given by the standard matrix $A=\begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}$.
+Let $T: \IR^3 \rightarrow \IR^2$ be given by the \(2\times 3\) standard matrix $B=\begin{bmatrix} 2 & 1 & -3 \\ 5 & -3 & 4 \end{bmatrix}$ and $S: \IR^2 \rightarrow \IR^4$ be given by the \(4\times 2\) standard matrix $A=\begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}$.
 
 What is the domain of the composition map $S \circ T$?
 \begin{enumerate}[(a)]
@@ -12,8 +43,8 @@ What is the domain of the composition map $S \circ T$?
 \end{enumerate}
 \end{activity}
 
-\begin{activity}{2}
-Let $T: \IR^3 \rightarrow \IR^2$ be given by the standard matrix $B=\begin{bmatrix} 2 & 1 & -3 \\ 5 & -3 & 4 \end{bmatrix}$ and $S: \IR^2 \rightarrow \IR^4$ be given by the standard matrix $A=\begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}$.
+\begin{activity}{3}
+Let $T: \IR^3 \rightarrow \IR^2$ be given by the \(2\times 3\) standard matrix $B=\begin{bmatrix} 2 & 1 & -3 \\ 5 & -3 & 4 \end{bmatrix}$ and $S: \IR^2 \rightarrow \IR^4$ be given by the \(4\times 2\) standard matrix $A=\begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}$.
 
 What is the codomain of the composition map $S \circ T$?
 \begin{enumerate}[(a)]
@@ -25,145 +56,167 @@ What is the codomain of the composition map $S \circ T$?
 \end{activity}
 
 \begin{activity}{2}
-Let $T: \IR^3 \rightarrow \IR^2$ be given by thestandard  matrix $B=\begin{bmatrix} 2 & 1 & -3 \\ 5 & -3 & 4 \end{bmatrix}$ and $S: \IR^2 \rightarrow \IR^4$ be given by the standard matrix $A=\begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}$.
+Let $T: \IR^3 \rightarrow \IR^2$ be given by the \(2\times 3\) standard matrix $B=\begin{bmatrix} 2 & 1 & -3 \\ 5 & -3 & 4 \end{bmatrix}$ and $S: \IR^2 \rightarrow \IR^4$ be given by the \(4\times 2\) standard matrix $A=\begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}$.
 
-The standard matrix of $S \circ T$ will lie in which matrix space?
+What size will the standard matrix of $S \circ T:\IR^3\to\IR^4$ be?
+(Rows \(\times\) Columns)
+\begin{multicols}{3}
 \begin{enumerate}[(a)]
-\item $4 \times 3$ matrices
-\item $4 \times 2$ matrices
-\item $3 \times 2$ matrices
-\item $2 \times 3$ matrices
-\item $2 \times 4$ matrices
-\item $3 \times 4$ matrices
-%\item $M_{4,3}$
-%\item $M_{4,2}$
-%\item $M_{3,2}$
-%\item $M_{2,3}$
-%\item $M_{2,4}$
-%\item $M_{3,4}$
+\item $4 \times 3$
+\item $4 \times 2$
+\item $3 \times 4$
+\item $3 \times 2$
+\item $2 \times 4$
+\item $2 \times 3$
 \end{enumerate}
+\end{multicols}
 \end{activity}
 
 \begin{activity}{15}
-Let $T: \IR^3 \rightarrow \IR^2$ be given by the standard matrix $B=\begin{bmatrix} 2 & 1 & -3 \\ 5 & -3 & 4 \end{bmatrix}$ and $S: \IR^2 \rightarrow \IR^4$ be given by the standard matrix $A=\begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}$.
+Let $T: \IR^3 \rightarrow \IR^2$ be given by the \(2\times 3\) standard matrix $B=\begin{bmatrix} 2 & 1 & -3 \\ 5 & -3 & 4 \end{bmatrix}$ and $S: \IR^2 \rightarrow \IR^4$ be given by the \(4\times 2\) standard matrix $A=\begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}$.
 
 \begin{subactivity}
-Compute $(S \circ T)(\vec{e}_1)$
+Compute
+\[
+  (S \circ T)(\vec{e}_1)
+    =
+  S(T(\vec{e}_1))
+    =
+  S\left(\begin{bmatrix} 2 \\ 5\end{bmatrix}\right)
+    =
+  \begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}
+  \begin{bmatrix} 2 \\ 5\end{bmatrix}
+    =
+  \begin{bmatrix}\unknown\\\unknown\\\unknown\\\unknown\end{bmatrix}
+\]
+using the dot product of each matrix row with the vector.
 \end{subactivity}
 \begin{subactivity}
-Compute  $(S \circ T)(\vec{e}_2)$
+Compute
+\(
+  (S \circ T)(\vec{e}_2)
+\).
 \end{subactivity}
 \begin{subactivity}
-Compute $(S \circ T)(\vec{e}_3)$.
+Compute
+\(
+  (S \circ T)(\vec{e}_3)
+\).
 \end{subactivity}
 \begin{subactivity}
-Find the standard matrix of $S \circ T$.
+Find the \(4\times 3\) standard matrix of $S \circ T:\IR^3\to\IR^4$.
 \end{subactivity}
-\end{activity}
-
-
-\begin{activity}{2}
-Let $T: \IR^2 \rightarrow \IR^3$ be given by the matrix $B=\begin{bmatrix} 2 & 3 \\ 1 & -1 \\ 0 & -1 \end{bmatrix}$ and $S: \IR^3 \rightarrow \IR^2$ be given by the matrix $A=\begin{bmatrix} -4 & -2 & 3 \\ 0 & 1 & 1 \end{bmatrix}$.
-
-What is the domain of the composition map $S \circ T$?
-\begin{enumerate}[(a)]
-\item $\IR$
-\item $\IR^2$
-\item $\IR^3$
-\item $\IR^4$
-\end{enumerate}
-\end{activity}
-
-\begin{activity}{2}
-Let $T: \IR^2 \rightarrow \IR^3$ be given by the matrix $B=\begin{bmatrix} 2 & 3 \\ 1 & -1 \\ 0 & -1 \end{bmatrix}$ and $S: \IR^3 \rightarrow \IR^2$ be given by the matrix $A=\begin{bmatrix} -4 & -2 & 3 \\ 0 & 1 & 1 \end{bmatrix}$.
-
-What is the codomain of the composition map $S \circ T$?
-\begin{enumerate}[(a)]
-\item $\IR$
-\item $\IR^2$
-\item $\IR^3$
-\item $\IR^4$
-\end{enumerate}
-\end{activity}
-
-\begin{activity}{2}
-Let $T: \IR^2 \rightarrow \IR^3$ be given by the matrix $B=\begin{bmatrix} 2 & 3 \\ 1 & -1 \\ 0 & -1 \end{bmatrix}$ and $S: \IR^3 \rightarrow \IR^2$ be given by the matrix $A=\begin{bmatrix} -4 & -2 & 3 \\ 0 & 1 & 1 \end{bmatrix}$.
-
-The standard matrix of $S \circ T$ will lie in which matrix space?
-\begin{enumerate}[(a)]
-%\item $M_{2,2}$
-%\item $M_{2,3}$
-%\item $M_{3,2}$
-%\item $M_{3,3}$
-\item $2 \times 2$ matrices
-\item $2 \times 3$ matrices
-\item $3 \times 2$ matrices
-\item $3 \times 3$ matrices
-\end{enumerate}
-\end{activity}
-
-%\begin{activity}{5}
-%Let $T: \IR^2 \rightarrow \IR^3$ be given by the matrix $B=\begin{bmatrix} 2 & 3 \\ 1 & -1 \\ 0 & -1 \end{bmatrix}$ and $S: \IR^3 \rightarrow \IR^2$ be given by the matrix $A=\begin{bmatrix} -4 & -2 & 3 \\ 0 & 1 & 1 \end{bmatrix}$.
-%
-%Compute $(S \circ T)(\vec{e}_1)$ and $(S \circ T)(\vec{e}_2)$
-%\end{activity}
-
-\begin{activity}{10}
-Let $T: \IR^2 \rightarrow \IR^3$ be given by the matrix $B=\begin{bmatrix} 2 & 3 \\ 1 & -1 \\ 0 & -1 \end{bmatrix}$ and $S: \IR^3 \rightarrow \IR^2$ be given by the matrix $A=\begin{bmatrix} -4 & -2 & 3 \\ 0 & 1 & 1 \end{bmatrix}$.
-
-Find the standard matrix of $S \circ T$.
-\end{activity}
-
-%\begin{activity}{2}
-%Let $T: \IR^1 \rightarrow \IR^4$ be given by the matrix $B=\begin{bmatrix} 3 \\\ -2 \\ 1 \\ -1\end{bmatrix}$ and $S: \IR^4 \rightarrow \IR^1$ be given by the matrix $A=\begin{bmatrix}2 & 3 & 2 & 5 \end{bmatrix}$.
-%
-%The matrix corresponding to $S \circ T$ will lie in which matrix space?
-%\begin{enumerate}[(a)]
-%\item $M_{1,1}$
-%\item $M_{1,4}$
-%\item $M_{4,1}$
-%\item $M_{4,4}$
-%\end{enumerate}
-%\end{activity}
-
-\begin{activity}{5}
-Let $T: \IR^1 \rightarrow \IR^4$ be given by the matrix $B=\begin{bmatrix} 3 \\\ -2 \\ 1 \\ -1\end{bmatrix}$ and $S: \IR^4 \rightarrow \IR^1$ be given by the matrix $A=\begin{bmatrix}2 & 3 & 2 & 5 \end{bmatrix}$.
-
-  Find the standard matrix of $S \circ T$ .
 \end{activity}
 
 \begin{definition}
-We define the product of a $m \times n$ matrix $A$ and a $n \times k$ matrix $B$ to be the $m \times k$ standard matrix (denoted $AB$) of the composition map of the two corresponding linear functions.
+We define the \term{product} \(AB\) of a $m \times n$ matrix $A$ and a
+$n \times k$
+matrix $B$ to be the $m \times k$ standard matrix of the composition map of the
+two corresponding linear functions.
+
+\vspace{1em}
+
+For the previous activity, \(S\) had a \(4\times \circledNumber{2}\) matrix and
+\(T\) had a \(\circledNumber{2}\times 3\) matrix, so \(S\circ T\) had a
+\(4\times 3\) standard matrix:
+\[
+  AB
+    =
+  \begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}
+  \begin{bmatrix} 2 & 1 & -3 \\ 5 & -3 & 4 \end{bmatrix}
+\]
+\[
+    =
+  \left[
+  \begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}
+  \begin{bmatrix} 2 \\ 5\end{bmatrix}
+    \hspace{1em}
+  \begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}
+  \begin{bmatrix} 1 \\ -3\end{bmatrix}
+    \hspace{1em}
+  \begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}
+  \begin{bmatrix} -3 \\ 4\end{bmatrix}
+  \right]
+    =
+  \begin{bmatrix}
+    12 & -5 & 5 \\
+    5 & -3 & 4 \\
+    31 & -12 & 11 \\
+    -12 & 5 & -5
+  \end{bmatrix}
+\].
 \end{definition}
 
-\begin{fact}
-If $AB$ is defined, $BA$ need not be defined, and if it is defined, it is in general different from $AB$.
-\end{fact}
+\begin{observation}
+  Each cell of a matrix product is found by taking the dot product
+  of a first matrix row and a second matrix column. Since
+  \(3(-3)+5(4)=11\):
+  \[
+    AB
+      =
+    \begin{bmatrix} 1 & 2 \\ 0 & 1 \\ \circledNumber{3} & \circledNumber{5} \\ -1 & -2 \end{bmatrix}
+    \begin{bmatrix} 2 & 1 & \circledNumber{-3} \\ 5 & -3 & \circledNumber{4} \end{bmatrix}
+      =
+    \begin{bmatrix}
+      12 & -5 & 5 \\
+      5 & -3 & 4 \\
+      31 & -12 & \circledNumber{11} \\
+      -12 & 5 & -5
+    \end{bmatrix}
+  \]
+\end{observation}
+
+
 
 \begin{activity}{10}
-Let $A=\begin{bmatrix} 3 & 1 & -1 \\ 2 & 0 & 4  \end{bmatrix}$ and $B=\begin{bmatrix} a & b \\ c & d\\ e & f \end{bmatrix}$.  Compute $AB$.
+Let $T: \IR^2 \rightarrow \IR^3$ be given by the matrix $B=\begin{bmatrix} 2 & 3 \\ 1 & -1 \\ 0 & -1 \end{bmatrix}$ and $S: \IR^3 \rightarrow \IR^2$ be given by the matrix $A=\begin{bmatrix} -4 & -2 & 3 \\ 0 & 1 & 1 \end{bmatrix}$.
+
+Find the standard matrix \(BA\) of $T \circ S$.
 \end{activity}
 
+\begin{activity}{5}
+Let $T: \IR^2 \rightarrow \IR^3$ be given by the matrix $B=\begin{bmatrix} 2 & 3 \\ 1 & -1 \\ 0 & -1 \end{bmatrix}$ and $S: \IR^3 \rightarrow \IR^2$ be given by the matrix $A=\begin{bmatrix} -4 & -2 & 3 \\ 0 & 1 & 1 \end{bmatrix}$.
+
+Find the standard matrix \(AB\) of $S \circ T$.
+\end{activity}
 
 \begin{activity}{5}
-Let $A=\begin{bmatrix} 3 & 1 & -1 \\ 2 & 0 & 4 \\ -1 & 3 & 5 \end{bmatrix}$ and $X=\begin{bmatrix} x \\ y \\ z \end{bmatrix}$.
-Compute $AX$
+Matrix multiplication only makes sense if the first matrix has as many
+columns as the second matrix has rows. Label each of these matrices
+with \textbf{rows \(\times\) columns}, and then figure out which of
+the products \(AB,AC,BA,BC,CA,CB\) can actually be computed.
+
+\[
+  A = \begin{bmatrix}1&0&-3\\3&2&1\end{bmatrix}
+    \hspace{2em}
+  B = \begin{bmatrix}2&2&1&0&1\\1&1&1&-1&0\\0&0&3&2&1\\-1&5&7&2&1\end{bmatrix}
+    \hspace{2em}
+  C = \begin{bmatrix}2&2\\0&-1\\3&1\\4&0\end{bmatrix}
+\]
 \end{activity}
 
 \begin{observation}
-Consider the  system of equations
+Note that an \(\IR^n\) vector acts exactly the same as an \(n\times 1\)
+matrix, so we will use them interchangablely, as follows.
+
+\begin{align*}
+A&=\begin{bmatrix} 3 & 1 & -1 \\ 2 & 0 & 4 \\ -1 & 3 & 5  \end{bmatrix} & X=\vec{x}&=\begin{bmatrix} x  \\ y \\ z  \end{bmatrix} & B=\vec{b} &= \begin{bmatrix} 5 \\ -7 \\ 2 \end{bmatrix}
+\end{align*}
+
+So we may study the linear system
 \begin{align*}
 3x+y-z &= 5 \\ 2x+4z &= -7 \\ -x+3y+5z &=2
 \end{align*}
-
-We can interpret this as a \term{matrix equation} $AX=B$ where
-\begin{align*}
-A&=\begin{bmatrix} 3 & 1 & -1 \\ 2 & 0 & 4 \\ -1 & 3 & 5  \end{bmatrix} & X&=\begin{bmatrix} x  \\ y \\ z  \end{bmatrix} & B &= \begin{bmatrix} 5 \\ -7 \\ 2 \end{bmatrix}
-\end{align*}
-
-For this reason, we will swap out the use of Euclidean vectors
-\(\vect x\in\IR^n\) and \(n\times 1\) matrices \(X\) whenever it is
-convenient.
+as both a vector equation \(A\vec{x}=\vec{b}\) and a matrix equation
+\(AX=B\):
+\[
+  \begin{bmatrix} 3 & 1 & -1 \\ 2 & 0 & 4 \\ -1 & 3 & 5  \end{bmatrix}
+  \begin{bmatrix} x  \\ y \\ z  \end{bmatrix}
+    =
+  \begin{bmatrix} 5 \\ -7 \\ 2 \end{bmatrix}
+\]
 \end{observation}
+
+
 
 \end{applicationActivities}
