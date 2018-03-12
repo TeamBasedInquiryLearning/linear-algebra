@@ -159,10 +159,10 @@ one group that means \(T\) is \textbf{injective}, and one group that means
   What can you immediately conclude about the linear map \(T:\IR^5\to\IR^3\)?
   \begin{enumerate}[a)]
     \item Its standard matrix has more columns than rows, so \(T\) is not
-    \item Its standard matrix has more columns than rows, so \(T\) is 
+    \item Its standard matrix has more columns than rows, so \(T\) is
     injective.
     \item Its standard matrix has more rows than columns, so \(T\) is not
-    \item Its standard matrix has more rows than columns, so \(T\) is 
+    \item Its standard matrix has more rows than columns, so \(T\) is
     surjective.
   \end{enumerate}
 \end{activity}
@@ -171,10 +171,10 @@ one group that means \(T\) is \textbf{injective}, and one group that means
   What can you immediately conclude about the linear map \(T:\IR^2\to\IR^7\)?
   \begin{enumerate}[a)]
     \item Its standard matrix has more columns than rows, so \(T\) is not
-    \item Its standard matrix has more columns than rows, so \(T\) is 
+    \item Its standard matrix has more columns than rows, so \(T\) is
     injective.
     \item Its standard matrix has more rows than columns, so \(T\) is not
-    \item Its standard matrix has more rows than columns, so \(T\) is 
+    \item Its standard matrix has more rows than columns, so \(T\) is
     surjective.
   \end{enumerate}
 \end{activity}
@@ -188,52 +188,52 @@ one group that means \(T\) is \textbf{injective}, and one group that means
   Basically, a linear transformation cannot reduce dimension without collapsing
   vectors into each other, and a linear transformation cannot
   increase the dimension of its image.
-  \begin{multicols}{2}
-  \begin{tikzpicture}[x=0.15in,y=0.15in]
-    \begin{scope}[shift={(0,0)}]
-      \draw (0,0) -- (3,0);
-      \draw (0,0) -- (0,3);
-      \draw (0,0) -- (-2,-1);
-      \draw[thick,-latex,blue] (0,0) -- (2,1)
-            node[anchor=south west] {\(\vec v\)};
-      \draw[thick,-latex,red] (0,0) -- (1,2)
-            node[anchor=south west] {\(\vec w\)};
-    \end{scope}
-    \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-    \begin{scope}[shift={(9,1)}]
-      \draw (-2,0) -- (2,0);
-      \draw (0,-2) -- (0,2);
-      \draw[thick,-latex,purple] (0,0) -- (0.5,2)
-            node[anchor=south west] {\(T(\vec v)=T(\vec w)\)};
-    \end{scope}
-    \node[anchor=north] at (5,-1) {not injective, \(3>2\)};
-  \end{tikzpicture}
-
-  \begin{tikzpicture}[x=0.15in,y=0.15in]
-    \begin{scope}[shift={(0,1)}]
-      \draw (-2,0) -- (2,0);
-      \draw (0,-2) -- (0,2);
-      \draw[thick,-latex,blue] (0,0) -- (0.5,2);
-      \draw[thick,-latex,blue] (0,0) -- (2,1);
-      \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
-      \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
-      \draw[thick,-latex,blue] (0,0) -- (2,-2);
-    \end{scope}
-    \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-    \begin{scope}[shift={(9,0)}]
-      \draw (0,0) -- (3,0);
-      \draw (0,0) -- (0,3);
-      \draw (0,0) -- (-2,-1);
-      \draw[thick,-latex,blue] (0,0) -- (0.5,1.5);
-      \draw[thick,-latex,blue] (0,0) -- (2,1);
-      \draw[thick,-latex,blue] (0,0) -- (-2.5,1);
-      \draw[thick,-latex,blue] (0,0) -- (-0.5,-1.5);
-      \draw[thick,-latex,blue] (0,0) -- (2.5,-0.5);
-      \fill[color=blue, opacity=0.5] (-2,-2) -- (3,-1) -- (2,2) -- (-3,1) -- (-2,-2);
-    \end{scope}
-    \node[anchor=north] at (5,-2) {not surjective, \(2<3\)};
-  \end{tikzpicture}
-  \end{multicols}
+  \begin{center}
+    \begin{tikzpicture}[x=0.15in,y=0.15in]
+      \begin{scope}[shift={(0,0)}]
+        \draw (0,0) -- (3,0);
+        \draw (0,0) -- (0,3);
+        \draw (0,0) -- (-2,-1);
+        \draw[thick,-latex,blue] (0,0) -- (2,1)
+              node[anchor=south west] {\(\vec v\)};
+        \draw[thick,-latex,red] (0,0) -- (1,2)
+              node[anchor=south west] {\(\vec w\)};
+      \end{scope}
+      \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+      \begin{scope}[shift={(9,1)}]
+        \draw (-2,0) -- (2,0);
+        \draw (0,-2) -- (0,2);
+        \draw[thick,-latex,purple] (0,0) -- (0.5,2)
+              node[anchor=south west] {\(T(\vec v)=T(\vec w)\)};
+      \end{scope}
+      \node[anchor=north] at (5,-1) {not injective, \(3>2\)};
+    \end{tikzpicture}
+    \hspace{3em}
+    \begin{tikzpicture}[x=0.15in,y=0.15in]
+      \begin{scope}[shift={(0,1)}]
+        \draw (-2,0) -- (2,0);
+        \draw (0,-2) -- (0,2);
+        \draw[thick,-latex,blue] (0,0) -- (0.5,2);
+        \draw[thick,-latex,blue] (0,0) -- (2,1);
+        \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
+        \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
+        \draw[thick,-latex,blue] (0,0) -- (2,-2);
+      \end{scope}
+      \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+      \begin{scope}[shift={(9,0)}]
+        \draw (0,0) -- (3,0);
+        \draw (0,0) -- (0,3);
+        \draw (0,0) -- (-2,-1);
+        \draw[thick,-latex,blue] (0,0) -- (0.5,1.5);
+        \draw[thick,-latex,blue] (0,0) -- (2,1);
+        \draw[thick,-latex,blue] (0,0) -- (-2.5,1);
+        \draw[thick,-latex,blue] (0,0) -- (-0.5,-1.5);
+        \draw[thick,-latex,blue] (0,0) -- (2.5,-0.5);
+        \fill[color=blue, opacity=0.5] (-2,-2) -- (3,-1) -- (2,2) -- (-3,1) -- (-2,-2);
+      \end{scope}
+      \node[anchor=north] at (5,-2) {not surjective, \(2<3\)};
+    \end{tikzpicture}
+    \end{center}
   But these results do \textbf{not} reverse. For example,
   \(T:\IR^5\to\IR^4\) might not be surjective, even though \(5\not<4\).
 \end{fact}
@@ -259,7 +259,7 @@ for all \(\vect b \in \IR^m\).
   is bijective is to show that \(\RREF(A)\) is the identity matrix.
 \end{observation}
 
-\begin{activity}{5}
+\begin{activity}{3}
 Let $T: \IR^3 \rightarrow \IR^3$ be given by the standard matrix $$A=\begin{bmatrix} 2&1&-1 \\ 4&1&1 \\ 6&2&1\end{bmatrix}.$$ Which of the following must be true?
 \begin{enumerate}[(a)]
 \item $T$ is neither injective nor surjective
@@ -269,7 +269,7 @@ Let $T: \IR^3 \rightarrow \IR^3$ be given by the standard matrix $$A=\begin{bmat
 \end{enumerate}
 \end{activity}
 
-\begin{activity}{5}
+\begin{activity}{3}
 Let $T: \IR^3 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y  \\ z \end{bmatrix} \right) = \begin{bmatrix} 2x+y-z \\ 4x+y+z \\ 6x+2y\end{bmatrix}.$$   Which of the following must be true?
 \begin{enumerate}[(a)]
 \item $T$ is neither injective nor surjective
@@ -279,5 +279,24 @@ Let $T: \IR^3 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y  \\
 \end{enumerate}
 \end{activity}
 
+\begin{activity}{3}
+Let $T: \IR^2 \rightarrow \IR^3$ be given by $$T\left(\begin{bmatrix} x \\ y \end{bmatrix} \right) = \begin{bmatrix} 2x+3y \\ x-y \\ x+3y\end{bmatrix}.$$  Which of the following must be true?
+\begin{enumerate}[(a)]
+\item $T$ is neither injective nor surjective
+\item $T$ is injective but not surjective
+\item $T$ is surjective but not injective
+\item $T$ is bijective.
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{3}
+Let $T: \IR^3 \rightarrow \IR^2$ be given by $$T\left(\begin{bmatrix} x \\ y  \\ z \end{bmatrix} \right) = \begin{bmatrix} 2x+y-z \\ 4x+y+z\end{bmatrix}.$$  Which of the following must be true?
+\begin{enumerate}[(a)]
+\item $T$ is neither injective nor surjective
+\item $T$ is injective but not surjective
+\item $T$ is surjective but not injective
+\item $T$ is bijective.
+\end{enumerate}
+\end{activity}
 
 \end{applicationActivities}
