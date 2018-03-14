@@ -4,7 +4,7 @@
 Let \(T: V \rightarrow W\).  We have previously defined the following
 terms.
 \begin{itemize}
-\item  \(T\) is called \term{injective} or \term{one-to-one} if \(T\) does not map two distinct vectors to the same place.
+\item  \(T\) is called \term{injective} or \term{one-to-one} if \(T\) always maps  distinct vectors to different places.
 \item \(T\) is called \term{surjective} or \term{onto} if every element of \(W\) is mapped to by some element of \(V\).
 \item The \term{kernel} of \(T\) is the set of all vectors in \(V\) that are mapped to $\vec{z}\in W$.  It is a subspace of \(V\).
 \item The \term{image} of \(T\) is the set of all vectors in \(W\) that are mapped to by something in \(V\).  It is a subspace of \(W\).
@@ -55,7 +55,7 @@ recognized by its \term{trivial} kernel.
 \end{fact}
 
 \begin{activity}{5}
-Let $T: \IR^5 \rightarrow \IR^5$ be a linear transformation where
+Let $T: \IR^4 \rightarrow \IR^5$ be a linear transformation where
 $\Im T$ is spanned by four vectors.
 What can you conclude?
 \begin{enumerate}[(a)]
@@ -135,7 +135,7 @@ one group that means \(T\) is \textbf{injective}, and one group that means
 \item The columns of $A$ are linearly independent.
 \item Every column of $\RREF(A)$ has a pivot.
 \item Every row of $\RREF(A)$ has a pivot.
-\item The image of \(T\) equals its codomain: \(\Im T=\IR^m\).
+\item The image of \(T\) equals its codomain, i.e. \(\Im T=\IR^m\).
 \item The system of linear equations given by the augmented matrix $\begin{bmatrix}[c|c]A & \vec{b} \end{bmatrix}$ has a solution for all $\vec{b} \in \IR^m$.
 \item The system of linear equations given by the augmented matrix $\begin{bmatrix}[c|c] A & \vec{0} \end{bmatrix}$ has exactly one solution.
 \end{enumerate}
@@ -147,16 +147,16 @@ one group that means \(T\) is \textbf{injective}, and one group that means
 
 \begin{observation}
   The easiest way to show that the linear map with standard matrix \(A\)
-  is injective is to show that \(\RREF(A)\) has all pivot columns.
+  is injective is to show that \(\RREF(A)\) has a pivot in each column.
 
   \vspace{1em}
 
   The easiest way to show that the linear map with standard matrix \(A\)
-  is surjective is to show that \(\RREF(A)\) has all pivot rows.
+  is surjective is to show that \(\RREF(A)\) has a pivot in each row.
 \end{observation}
 
 \begin{activity}{3}
-  What can you immediately conclude about the linear map \(T:\IR^5\to\IR^3\)?
+  What can you immediately conclude (i.e. without computing a RREF) about the linear map \(T:\IR^3\to\IR^2\) with standard matrix \(\begin{bmatrix} 2 & 3 \\ 1 & -1 \\ -3 & 3 \end{bmatrix}\)?
   \begin{enumerate}[a)]
     \item Its standard matrix has more columns than rows, so \(T\) is not
     injective.
@@ -170,7 +170,7 @@ one group that means \(T\) is \textbf{injective}, and one group that means
 \end{activity}
 
 \begin{activity}{2}
-  What can you immediately conclude about the linear map \(T:\IR^2\to\IR^7\)?
+  What can you immediately conclude (i.e. without computing a RREF) about the linear map \(T:\IR^2\to\IR^3\) with standard matrix \(\begin{bmatrix} 3 & 1 & -1 \\ 1 & 2 & 4 \end{bmatrix}\)?
   \begin{enumerate}[a)]
     \item Its standard matrix has more columns than rows, so \(T\) is not
     injective.
@@ -243,18 +243,28 @@ one group that means \(T\) is \textbf{injective}, and one group that means
 \end{fact}
 
 
-\begin{definition}
-If \(T: V \rightarrow W\) is both injective and surjective, it is called \term{bijective}.
-\end{definition}
+\begin{activity}{5}
+Suppose \(T: \IR^n \rightarrow \IR^m\) with standard matrix \(A\) is both injective and surjective (we call such maps \term{bijective}).
+\begin{subactivity}
+ How many pivot columns must \(A\) have?
+\end{subactivity}
+\begin{subactivity}
+How many pivot rows must \(A\) have?
+\end{subactivity}
+\begin{subactivity}
+What can you conclude about \(m\) and \(n\)?
+\end{subactivity}
+\end{activity}
+
 
 \begin{activity}{5}
-Let $T: \IR^n \rightarrow \IR^m$ be a bijective linear map with
+Let $T: \IR^n \rightarrow \IR^n$ be a bijective linear map with
 standard matrix $A$. Label each of the following as true or false.
 \begin{enumerate}[(a)]
-\item The columns of $A$ form a basis for $\IR^m$
+\item The columns of $A$ form a basis for $\IR^n$
 \item $\RREF(A)$ is the identity matrix.
 \item The system of linear equations given by the augmented matrix $\begin{bmatrix}[c|c] A & \vec{b} \end{bmatrix}$ has exactly one solution
-for all \(\vect b \in \IR^m\).
+for each \(\vect b \in \IR^n\).
 \end{enumerate}
 \end{activity}
 
@@ -302,23 +312,5 @@ Let $T: \IR^3 \rightarrow \IR^2$ be given by $$T\left(\begin{bmatrix} x \\ y  \\
 \item $T$ is bijective.
 \end{enumerate}
 \end{activity}
-
-\begin{observation}
-For \(T:\IR^n\to\IR^m\) where \(n=m\), exactly one of these must hold:
-\begin{itemize}
-\item $T$ is bijective.
-\item $T$ is neither injective nor surjective
-\end{itemize}
-For \(T:\IR^n\to\IR^m\) where \(n<m\), exactly one of these must hold:
-\begin{itemize}
-\item $T$ is injective, but not surjective
-\item $T$ is neither injective nor surjective
-\end{itemize}
-For \(T:\IR^n\to\IR^m\) where \(n>m\), exactly one of these must hold:
-\begin{itemize}
-\item $T$ is surjective, but not injective
-\item $T$ is neither injective nor surjective
-\end{itemize}
-\end{observation}
 
 \end{applicationActivities}
