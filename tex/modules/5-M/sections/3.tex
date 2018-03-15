@@ -1,5 +1,26 @@
 \begin{applicationActivities}
 
+\begin{activity}{15}
+Let $T: \IR^n \rightarrow \IR^m$ be a linear map with standard matrix $A$.
+Sort the following items into groups of statements about $T$.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item $T$ is injective (i.e. one-to-one)
+\item $T$ is surjective (i.e. onto)
+\item $T$ is bijective (i.e. both injective and surjective)
+\item $AX=B$ has a solution for all $m \times 1$ matrices $B$
+\item $AX=B$ has a unique solution for all $m \times 1$ matrices $B$
+\item $AX=0$ has a unique solution.
+\item The columns of $A$ span $\IR^m$
+\item The columns of $A$ are linearly independent
+\item The columns of $A$ are a basis of $\IR^m$
+\item Every column of $\RREF(A)$ has a pivot
+\item Every row of $\RREF(A)$ has a pivot
+\item $m=n$ and $\RREF(A)=I$
+\end{enumerate}
+\end{multicols}
+\end{activity}
+
 \begin{definition}
   Let $T: \IR^n \rightarrow \IR^n$ be a linear map with standard matrix $A$.
 \begin{itemize}
@@ -10,31 +31,13 @@
 \end{itemize}
 \end{definition}
 
-\begin{activity}{10}
-  Let \(T:\IR^2\to\IR^2\) be the bijective linear map defined by
-  \(T\left(\begin{bmatrix}x\\y\end{bmatrix}\right)=\begin{bmatrix} 2x -3y \\ -3x + 5y\end{bmatrix}\). It can be shown that \(T\) is bijective and
-  has the inverse map
-  \(T^{-1}\left(\begin{bmatrix}x\\y\end{bmatrix}\right)=\begin{bmatrix} 5x+ 3y \\ 3x + 2y\end{bmatrix}\).
-  \begin{subactivity}
-    Compute \((T^{-1}\circ T)\left(\begin{bmatrix}-2\\1\end{bmatrix}\right)\).
-  \end{subactivity}
-  \begin{subactivity}
-    If \(A\) is the standard matrix for \(T\) and \(A^{-1}\) is the
-    standard matrix for \(T^{-1}\), what must \(A^{-1}A\) be?
-  \end{subactivity}
-\end{activity}
-
-\begin{observation}
-  \(T^{-1}\circ T=T\circ T^{-1}\) is the identity map for any bijective
-  linear transformation \(T\). Therefore
-  \(A^{-1}A=AA^{-1}=I\) is the identity matrix for any invertible matrix
-  \(A\).
-\end{observation}
-
 
 \begin{activity}{20}
-  Let \(T: \IR^3 \rightarrow \IR^3\) be given by the matrix
+  Let \(T: \IR^3 \rightarrow \IR^3\) be the linear transformation given by the standard matrix
   \(A=\begin{bmatrix} 2 & -1 & -6 \\ 2 & 1 & 3 \\ 1 & 1 & 4 \end{bmatrix}\).
+  \begin{subactivity}
+  Write an augmented matrix representing the system of equations given by $T(X)=\vec{e}_1$ (or in matrix form, \(AX=\begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix}\) ).
+  \end{subactivity}
   \begin{subactivity}
   Solve $T(X)=\vec{e}_1$ to find $T^{-1}(\vec{e}_1)$.
   \end{subactivity}
@@ -67,18 +70,40 @@ by row reducing the matrix \([A\,|\,I]\) at once.
 \end{observation}
 
 
-\begin{activity}{10}
+\begin{activity}{5}
   Find the inverse \(A^{-1}\) of the matrix
   \(A=\begin{bmatrix} 1 & 3 \\ 0 & -2 \end{bmatrix}\)
   by row-reducing \([A\,|\,I]\).
 \end{activity}
 
-\begin{activity}{10}
+\begin{activity}{5}
 Is the matrix $\begin{bmatrix} 2 & 3 & 1 \\ -1 & -4 & 2 \\ 0 & -5 & 5 \end{bmatrix}$ invertible? Give a reason for your answer.
 \end{activity}
 
 \begin{observation}
  A matrix $A \in \IR^{n \times n}$ is invertible if and only if $\RREF(A) = I_n$.
 \end{observation}
+
+\begin{activity}{10}
+  Let \(T:\IR^2\to\IR^2\) be the bijective linear map defined by
+  \(T\left(\begin{bmatrix}x\\y\end{bmatrix}\right)=\begin{bmatrix} 2x -3y \\ -3x + 5y\end{bmatrix}\). It can be shown that \(T\) is bijective and
+  has the inverse map
+  \(T^{-1}\left(\begin{bmatrix}x\\y\end{bmatrix}\right)=\begin{bmatrix} 5x+ 3y \\ 3x + 2y\end{bmatrix}\).
+  \begin{subactivity}
+    Compute \((T^{-1}\circ T)\left(\begin{bmatrix}-2\\1\end{bmatrix}\right)\).
+  \end{subactivity}
+  \begin{subactivity}
+    If \(A\) is the standard matrix for \(T\) and \(A^{-1}\) is the
+    standard matrix for \(T^{-1}\), what must \(A^{-1}A\) be?
+  \end{subactivity}
+\end{activity}
+
+\begin{observation}
+  \(T^{-1}\circ T=T\circ T^{-1}\) is the identity map for any bijective
+  linear transformation \(T\). Therefore
+  \(A^{-1}A=AA^{-1}=I\) is the identity matrix for any invertible matrix
+  \(A\).
+\end{observation}
+
 
 \end{applicationActivities}

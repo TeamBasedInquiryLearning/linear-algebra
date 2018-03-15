@@ -1,5 +1,32 @@
 \begin{applicationActivities}
 
+\begin{observation}
+Recall that if \(T: \IR^n \rightarrow \IR^k\) is a linear map with standard matrix \(B \in M_{k,n}\) and \(S: \IR^k \rightarrow \IR^m\) is a linear map with standard matrix \(A \in M_{m,k}\), the product matrix \(AB \in M_{m,n}\) is defined to be the standard matrix of the composition map \[S \circ T: \IR^n \rightarrow \IR^m.\]
+\end{observation}
+
+
+\begin{activity}{5}
+Matrix multiplication only makes sense if the first matrix has as many
+columns as the second matrix has rows. Label each of these matrices
+with \textbf{rows \(\times\) columns}, and then figure out which of
+the products \(AB,AC,BA,BC,CA,CB\) can actually be computed.
+
+\[
+  A = \begin{bmatrix}1&0&-3\\3&2&1\end{bmatrix}
+    \hspace{2em}
+  B = \begin{bmatrix}2&2&1&0&1\\1&1&1&-1&0\\0&0&3&2&1\\-1&5&7&2&1\end{bmatrix}
+    \hspace{2em}
+  C = \begin{bmatrix}2&2\\0&-1\\3&1\\4&0\end{bmatrix}
+\]
+\end{activity}
+
+
+
+
+\begin{activity}{10}
+Let \(B=\begin{bmatrix}1 & 0  & 2 \\ 0 & 1 0 \\ 0 & 0 & 1 \end{bmatrix}\), and let \(A=\begin{bmatrix} 2 & 7 & -1 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}\).  Compute the product \(BA\).
+\end{activity}
+
 \begin{activity}{5}
 Let $A=\begin{bmatrix} 2 & 7 & -1 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}$.  Find a $3 \times 3$ matrix $I$ such that $IA=A$, that is,
 \[
@@ -29,7 +56,7 @@ It has a $1$ on each diagonal element and a $0$ in every other position.
   \]
 \end{fact}
 
-\begin{activity}{15}
+\begin{activity}{20}
 Each row operation can be interpreted as a type of matrix multiplication.
 \begin{subactivity}
 Tweak the identity matrix slightly to create a matrix that
@@ -56,7 +83,7 @@ Create a matrix that adds $5$ times the third row of $A$ to the first row:
  \begin{bmatrix} ? & ? & ? \\ ? & ? & ? \\ ? & ? & ? \end{bmatrix}
  \begin{bmatrix} 2 & 7 & -1 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}
 =
- \begin{bmatrix} 2+5 & 7+5 & -1-5 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}
+ \begin{bmatrix} 2+5(1) & 7+5(1) & -1+5(-1) \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}
 \]
 \end{subactivity}
 \end{activity}
@@ -70,55 +97,8 @@ of matrix multiplication.
 \end{fact}
 
 
-\begin{activity}{15}
-Let $T: \IR^n \rightarrow \IR^m$ be a linear map with standard matrix $A$.
-Sort the following items into groups of statements about $T$.
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
-\item $T$ is injective (i.e. one-to-one)
-\item $T$ is surjective (i.e. onto)
-\item $T$ is bijective (i.e. both injective and surjective)
-\item $AX=B$ has a solution for all $m \times 1$ matrices $B$
-\item $AX=B$ has a unique solution for all $m \times 1$ matrices $B$
-\item $AX=0$ has a unique solution.
-\item The columns of $A$ span $\IR^m$
-\item The columns of $A$ are linearly independent
-\item The columns of $A$ are a basis of $\IR^m$
-\item Every column of $\RREF(A)$ has a pivot
-\item Every row of $\RREF(A)$ has a pivot
-\item $m=n$ and $\RREF(A)=I$
-\end{enumerate}
-\end{multicols}
-\end{activity}
 
-\begin{activity}{5}
-Let $T: \IR^n \rightarrow \IR^m$ be a linear map with matrix $A$.
-If $T$ is injective, which of the following cannot be true?
-\begin{enumerate}[(a)]
-\item $A$ has strictly more columns than rows
-\item $A$ has the same number of rows as columns (i.e. $A$ is square)
-\item $A$ has strictly more rows than columns
-\end{enumerate}
-\end{activity}
 
-\begin{activity}{5}
-Let $T: \IR^n \rightarrow \IR^m$ be a linear map with matrix $A$.
-If $T$ is surjective, which of the following cannot be true?
-\begin{enumerate}[(a)]
-\item $A$ has strictly more columns than rows
-\item $A$ has the same number of rows as columns (i.e. $A$ is square)
-\item $A$ has strictly more rows than columns
-\end{enumerate}
-\end{activity}
 
-\begin{activity}{5}
-Let $T: \IR^n \rightarrow \IR^m$ be a linear map with matrix $A$.
-If $T$ is bijective, which of the following cannot be true?
-\begin{enumerate}[(a)]
-\item $A$ has strictly more columns than rows
-\item $A$ has the same number of rows as columns (i.e. $A$ is square)
-\item $A$ has strictly more rows than columns
-\end{enumerate}
-\end{activity}
 
 \end{applicationActivities}
