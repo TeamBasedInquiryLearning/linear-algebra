@@ -10,10 +10,11 @@
 
 \subsection*{Introduction}
 
-These notes are for a one semester, 3-hour sophomore-level Linear Algebra course.  Teams should have at minimum 5 people to ensure a sufficiently sized team factoring in absences.  Each team should be provided with a vertical, ideally non-permanent surface for their work, such as a whiteboard or chalkboard.  A vertical surface encourages collaboration and discussion, and discourages individual work on paper.  These notes have been field-tested at a large regional public university in classes with 10-35 students, with each ``part'' designed to fill one 50-60 minute class period.
+These notes are for a one semester, 3-hour sophomore-level Linear Algebra course.  Teams should have at minimum 5 people to ensure a sufficiently sized team factoring in absences.  Each team should be provided with a vertical, ideally non-permanent surface for their work, such as a whiteboard or chalkboard.  A vertical surface encourages collaboration and discussion, and discourages individual work on paper.  These notes have been field-tested at a large regional public university in classes with 10-35 students, with each ``part'' designed to fill one 50-60 minute class period.  The notes (formatted as slides) are also distributed to the students for use during class and for review purposes; thus, there are ``facts'', ``definitions'', and ``observations'' sprinkled in for reference use, but the bulk of class time is spent on the application activities.  Each application activity has an estimated time listed with it; these add up to 50-60 minutes per day.
 
-The course consists of 6 modules, listed below; here they are optimized for 29 75-minute class days with 60 minutes each day devoted to application activity, and the remaining 15 minutes for assessment.  Additionally, there is an introduction day (labeled Module I) for the first day of class, and two days of applied activities (labeled Module 7-X) for the end of the semester, though these lack readiness assurance processes and are not full modules. 
+The course consists of 6 modules, listed below; here they are optimized for 28 75-minute class days with 60 minutes each day devoted to application activity, and the remaining 15 minutes for assessment. 
 
+\subsubsection*{Module Listing}
 \begin{enumerate}
 \item [1-E] Systems of Equations
 \item [2-V] Vector Spaces
@@ -24,7 +25,7 @@ The course consists of 6 modules, listed below; here they are optimized for 29 7
 \end{enumerate}
 
 \subsection*{Module 1-E: Systems of Linear Equations}
-This module explores how to solve arbitrarily large systems of linear equations.  We emphasize how to write the solution set using set-builder notation, and introduce the students to CoCalc (using the Octave kernel) to perform computation (the choice of Octave is somewhat arbitrary but motivated by request of our engineering faculty, who use Matlab).  
+This module explores how to solve arbitrarily large systems of linear equations.  We emphasize how to write the solution set using set-builder notation, and introduce the students to CoCalc (using the Octave kernel) to perform computation.  The choice of Octave here is somewhat arbitrary but motivated by request of our engineering faculty, who use Matlab; instructors are encouraged to adapt the materials to use the technology best suited to their instructional context.  
 
 RAT answers (IF-AT card B005, 1-10):
 \begin{multicols}{10}
@@ -89,8 +90,94 @@ We continue our exploration of span by addressing the question of when a set of 
 This section introduces subspaces, typically a very tricky concept for students.  Several examples are presented as activities with decreasing amounts of scaffolding.
 
 \subsection*{Module 3-S: Structure of vector spaces}
+This module is a further exploration of the structure of vector spaces.  Instructors pressed for time could combine this with the previous module and omit the readiness assurance for this module.  The key idea introduced is that of linear independence, which leads to the notion of a basis.  
+
+RAT answers (IF-AT card B005, 21-30):
+\begin{multicols}{10}
+\begin{enumerate}[1)]
+\setcounter{enumi}{20}
+\item D
+\item D
+\item A
+\item C
+\item B
+\item B
+\item B
+\item C
+\item C
+\item A
+\end{enumerate}
+\end{multicols}
+\subsubsection*{Part 1}
+This section introduces the notion of linear independence, motivated by trying to describe a subspace as efficiently as possible.  Students explore how to test for linear independence in 1.3.  Activities 1.9-S.1.11 presage the notion of dimension.  
+
+\subsubsection*{Part 2}
+This part introduces students to the vocabulary to go along with their intuition developed in Part 1, namely the definitions of basis and subspace.  Activity 2.10 gives some students trouble, as they are tempted to insert the polynomials into a matrix as rows rather than columns.  The instructor is advised to use the reporting phase to draw students' attention to the parallels with the previous activity; in most classes, at least one team will have made this observation and just needs a small prompt to explain to the rest of the class.  
+
+\subsubsection*{Part 3}
+This section ties the previous two together by illuminating to students that the answer to the question of ``How can we efficiently describe a subspace'' is to compute a basis.  Activity 3.2 is meant to highlight that (nontrivial) subspaces have (infinitely) many bases.  Instructors are advised to comment when discussing Fact 3.4 that a simple argument on the size of a matrix shows that two bases of a finite dimensional vector space have the same size.  We then give students the definition of dimension, and point out how it matches their geometric intuition.  Activity 3.12 walks students through computing a basis of the solution space of a homogeneous system of equations; this arises naturally in Module A (in computing the kernel of a linear transformation) and in Module G (in computing an eigenspace).  Activities 3.15 and 3.16 usually elicit a lively inter-team discussion, as students' understanding of linear independence and span is still in a formative stage at this point.
+
 \subsection*{Module 4-A: Algebraic properties of linear maps}
+This module introduces the fundamental notion of a linear transformation, and studies them from an algebraic perspective.   Part 1 is entirely devoted to allowing students to grapple with the definition.  In section 2, students discover how a linear map is completely determined by its action on a basis, and we introduce the (nonstandard) definition of a standard matrix.  Parts 3 and 4 are devoted to exploring the notions of injectivity and surjectivity.
+
+RAT answers (IF-AT card B005, 31-40):
+\begin{multicols}{10}
+\begin{enumerate}[1)]
+\setcounter{enumi}{30}
+\item A
+\item B
+\item B
+\item D
+\item C
+\item D
+\item B
+\item D
+\item D
+\item C
+\end{enumerate}
+\end{multicols}
+\subsubsection*{Part 1}
+Many students at this level have great difficulty understanding how to show statements involving arbitrary objects; for this reason, in 1.3 we begin by walking through an explicit example of showing a map is a linear transformation.  Instructors whose students have completed an introduction to proofs course could likely omit this.  
+
+\subsubsection*{Part 2}
+Part 2 is devoted to allowing students to discover the standard matrix.  Activity 2.5 usually generates a good discussion on the differences between (b) and (c).  
+
+\subsubsection*{Part 3}
+This section introduces students to the notions of injectivity and surjectivity.  The scaffolding in activities 3.2-3.6 is crucial (as we have found out the hard way).  Some teams will try to make observation 3.7 on their own in the course of these activities.  The notions of kernel and image are then introduced, and students discover that they already know how to compute them.
+
+\subsubsection*{Part 4}
+This section is devoted to a deeper study of injectivity and surjectivity.  Activity 4.6 is the crucial activity here; instructors must be sure to allot at least 15 minutes for the teams to sort the statements, and likely 5-10 minutes for reporting and discussion.  We often facilitate reporting on this activity by (after students have sorted the statements into two lists on their whiteboards) asking which statements were easiest to sort; the answer is typically A and F.  Teams will almost always have paired B-E and C-D together, which is our next point of discussion; finally, we move to the most difficult, G and H.  Many classes will deduce Fact 4.10 on their own during the discussion of Activities 4.8 and 4.9.  Activity 4.11 serves as a good barometer of where teams are at.  Teams keeping up with everything will, when presented with only Part 1, deduce all 3 parts in about a minute; teams that are lagging in their understanding will need closer to 5 minutes for all three parts.  When discussing Activity 4.12, instructors are advised to point out how we will use property (c) in the next module to construct inverse maps.  Some classes, due to extended discussion on Activity 4.6, do not have time for Activities 4.14-4.17; we advise instructors that it is more important to spend the time on 4.6.
+
 \subsection*{Module 5-M: Algebraic structure of matrices}
+This module introduces students to matrix multiplication and invertible matrices, motivated through the lens of linear transformations.  Many students at this level have seen matrix multiplication in an algorithmic sense (i.e. compute the dot product of rows with columns); we avoid this in favor of emphasizing that the raison d'\^{e}tre of matrix multiplication is the composition of linear transformations.
+
+
+RAT answers (IF-AT card B005, 41-50):
+\begin{multicols}{10}
+\begin{enumerate}[1)]
+\setcounter{enumi}{40}
+\item B
+\item B
+\item C
+\item B
+\item C
+\item A
+\item D
+\item A
+\item C
+\item B
+\end{enumerate}
+\end{multicols}
+
+
+\subsubsection*{Part 1}
+This section develops matrix multiplication as the standard matrix corresponding to the composition of two linear transformations.  The readiness assurance process is crucial here to make sure students can proceed through Activities 1.1-1.4.  Activity 1.4 is carefully  scaffolded to encourage students to view matrix multiplication as taking appropriate linear combinations of columns. 
+
+\subsubsection*{Part 2}
+Activity 2.2 ideally belongs with part 1, but there is rarely time for it.  The bulk of this part is devoted to students' discovering that row operations can be viewed as matrix multiplication.  This will be crucial in Module G in developing geometric intuition for the determinant.
+
+\subsubsection*{Part 3}
+This part is devoted to the notion of invertibility.  Activity 3.1 is a callback to Activity A.4.6 and A.4.12.   After the definition of invertibility, Activity 3.3. shows students that they already know how to compute the standard matrix of the inverse map.  
 
 \subsection*{Module 6-G: Geometric properties of linear maps}
 
