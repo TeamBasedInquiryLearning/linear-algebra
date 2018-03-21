@@ -401,7 +401,7 @@ are linearly dependent or linearly independent.
 \begin{solution}
 Compute
 \[\RREF \begin{bmatrix} 3 & -1 & 0 & 2 \\ 2 & 1 & 1 & 5 \\ 1 & 2 & -1 & 1 \\ 0 & 3 & 1 & 5 \end{bmatrix} =
-\begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \end{bmatrix}.\]
+\begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \end{bmatrix}.\] discuss those blurred linres and
 Since the fourth column is not a pivot column, the vectors are linearly dependent.
 \end{solution}
 
@@ -608,7 +608,21 @@ T\left(\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}\right) &= \begin{bmatrix} 1 \\ 
 T\left(\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\right) &= \begin{bmatrix} 0 \\ -1 \\ 3 \\ 0  \end{bmatrix}
 \end{align*}
 The standard matrix is \( \begin{bmatrix} -1 & 1 & 0 \\ -1 & 3 & -1 \\ 7 & 1 & 3  \\ 0 & 0 & 0 \end{bmatrix} \).
-\item \( T\left( \begin{bmatrix}-2 \\ 0 \\ 3 \end{bmatrix} \right)  = \begin{bmatrix} 2 \\ -1 \\ -5 \\ 0 \end{bmatrix}\)
+\item \(
+T\left(\begin{bmatrix} -2 \\ 0 \\ 3 \\  \end{bmatrix} \right) =
+\begin{bmatrix} -(-2)+(0) \\ -(-2)+3(0)-(3) \\ 7(-2)+(0)+3(3) \\ 0\end{bmatrix}
+  =
+\begin{bmatrix} 2 \\ -1 \\ -5 \\ 0 \end{bmatrix}
+\)
+
+Alternatively,
+\(
+\begin{bmatrix} -1 & 1 & 0 \\ -1 & 3 & -1 \\ 7 & 1 & 3  \\ 0 & 0 & 0 \end{bmatrix}
+\begin{bmatrix} -2 \\ 0 \\ 3 \end{bmatrix} =
+\begin{bmatrix} -1(-2)+1(0)+0(3) \\ -1(-2)+3(0)-1(3) \\ 7(-2)+1(0)+3(3) \\ 0(-2)+0(0)+0(3)\end{bmatrix}
+  =
+\begin{bmatrix} 2 \\ -1 \\ -5 \\ 0 \end{bmatrix}
+\).
 \end{enumerate}
 \end{solution}
 
