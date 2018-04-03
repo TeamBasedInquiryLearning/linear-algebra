@@ -12,18 +12,16 @@ transforms the unit square.
 \draw[thin,gray,<->] (0,-4)-- (0,4);
 \draw[thick,blue,->] (0,0) -- node[below] {$A_1 \vec{e}_1= \begin{bmatrix}2 \\ 0 \end{bmatrix}$}++ (2,0);
 \draw[thick,blue,->] (0,0) -- node[left] {$A_1 \vec{e}_2 = \begin{bmatrix} 0 \\ 3 \end{bmatrix}$}++(0,3);
-\draw[thick,dashed,red,->] (0,0) -- ++(1,0);
-\draw[thick,dashed,red,->] (0,0) -- ++(0,1);
+\draw[thick,red,->] (0,0) -- ++(1,0);
+\draw[thick,red,->] (0,0) -- ++(0,1);
 \draw[blue,dashed] (2,0) -- (2,3) -- (0,3);
 \draw[red,dashed] (1,0) -- (1,1) -- (0,1);
 \end{tikzpicture}
 \end{center}
 
 \begin{enumerate}[(a)]
+\item What are the lengths of \(A_1\vec e_1\) and \(A_2\vec e_2\)?
 \item What is the area of the transformed unit square?
-\item Find two vectors that were stretched/compressed by the
-      transformation (not sheared),
-      and compute how much those vectors were stretched/compressed.
 \end{enumerate}
 
 \end{activity}
@@ -32,174 +30,169 @@ transforms the unit square.
 \begin{activity}{5}
 The image below illustrates how the linear transformation
 $T_2 : \IR^2 \rightarrow \IR^2$ given by the
-standard matrix $A_2 = \begin{bmatrix} 3 & 3 \\ 0 & 2 \end{bmatrix}$.
+standard matrix $A_2 = \begin{bmatrix} 2 & 3 \\ 0 & 4 \end{bmatrix}$.
 transforms the unit square.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \draw[thin,gray,<->] (-4,0)-- (4,0);
 \draw[thin,gray,<->] (0,-4)-- (0,4);
-\draw[thick,blue,->] (0,0) -- node[below] {$A_2 \vec{e}_1= \begin{bmatrix}3 \\ 0 \end{bmatrix}$}++ (3,0);
-\draw[thick,blue,->] (0,0) -- ++(3,2) node[above] {$A_2 \vec{e}_2 = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$};
-\draw[thick,dashed,red,->] (0,0) -- ++(1,0);
-\draw[thick,dashed,red,->] (0,0) -- ++(0,1);
-\draw[blue,dashed] (3,0) -- (6,2) -- (3,2);
+\draw[thick,blue,->] (0,0) -- node[below] {$A_2 \vec{e}_1= \begin{bmatrix}2 \\ 0 \end{bmatrix}$}++ (2,0);
+\draw[thick,blue,->] (0,0) -- ++(3,4) node[above] {$A_2 \vec{e}_2 = \begin{bmatrix} 3 \\ 4 \end{bmatrix}$};
+\draw[thick,red,->] (0,0) -- ++(1,0);
+\draw[thick,red,->] (0,0) -- ++(0,1);
+\draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
 \draw[red,dashed] (1,0) -- (1,1) -- (0,1);
 \end{tikzpicture}
 \end{center}
 
 \begin{enumerate}[(a)]
+\item What are the lengths of \(A_1\vec e_1\) and \(A_2\vec e_2\)?
 \item What is the area of the transformed unit square?
-\item Find at least one vector that was stretched/compressed by the
-      transformation (not sheared),
-      and compute how much those vectors were stretched/compressed.
 \end{enumerate}
 \end{activity}
 
 \begin{observation}
-  It's possible to find two non-parallel vectors that are stretched by the
-  transformation given by \(A_2\):
-  % \(A_2\begin{bmatrix}1\\0\end{bmatrix}=3\begin{bmatrix}1\\0\end{bmatrix}\)
-  % and
-  % \(A_2\begin{bmatrix}-1\\1/3\end{bmatrix}=2\begin{bmatrix}-1\\1/3\end{bmatrix}\)
+  It is possible to find two nonparallel vectors that are scaled but not rotated by
+  the linear map given by \(A_2\).
+
+\begin{multicols}{2}
+  \[A_2\vec e_1=\begin{bmatrix} 2 & 3 \\ 0 & 4 \end{bmatrix}\begin{bmatrix}1\\0\end{bmatrix}
+  =\begin{bmatrix}2\\0\end{bmatrix}=2\vec e_1\]
+
+  \[
+    A_2\begin{bmatrix}\frac{3}{4}\\\frac{1}{2}\end{bmatrix}
+      =
+    \begin{bmatrix} 2 & 3 \\ 0 & 4 \end{bmatrix}\begin{bmatrix}\frac{3}{4}\\\frac{1}{2}\end{bmatrix}
+      =
+    \begin{bmatrix}3\\2\end{bmatrix}
+      =
+    4\begin{bmatrix}\frac{3}{4}\\\frac{1}{2}\end{bmatrix}
+  \]
+
+\columnbreak
 
   \begin{center}
   \begin{tikzpicture}[scale=0.5]
   \draw[thin,gray,<->] (-4,0)-- (4,0);
   \draw[thin,gray,<->] (0,-4)-- (0,4);
-  \draw[thick,blue,->] (0,0) -- node[below] {$A_2\begin{bmatrix}1\\0\end{bmatrix}=3\begin{bmatrix}1\\0\end{bmatrix}$}++ (3,0);
-  \draw[thick,blue,->] (0,0) -- ++(-2,0.67) node[above] {$A_2\begin{bmatrix}-1\\1/3\end{bmatrix}=2\begin{bmatrix}-1\\1/3\end{bmatrix}$};
+  \draw[thick,blue,->] (0,0) -- node[below] {$A_2\begin{bmatrix}1\\0\end{bmatrix}=2\begin{bmatrix}1\\0\end{bmatrix}$}++ (2,0);
+  \draw[thick,blue,->] (0,0) -- ++(3,2) node[above] {$A_2\begin{bmatrix}\frac{3}{4}\\\frac{1}{2}\end{bmatrix}=4\begin{bmatrix}\frac{3}{4}\\\frac{1}{2}\end{bmatrix}$};
   \draw[thick,red,->] (0,0) -- (1,0);
-  \draw[thick,red,->] (0,0) -- (-1,0.33);
+  \draw[thick,red,->] (0,0) -- (0.75,0.5);
+  \draw[red,dashed] (1,0) -- (1.75,0.5) -- (0.75,0.5);
+  \draw[blue,dashed] (2,0) -- (5,2) -- (3,2);
   \end{tikzpicture}
   \end{center}
+\end{multicols}
 
   The process for finding such vectors will be covered later in this module.
 \end{observation}
 
 
-\begin{activity}{5}
-Consider the linear transformation given by the standard matrix
- $A_3 = \begin{bmatrix} 1 & -1 \\ 1 & 1 \end{bmatrix}$.
-
-\begin{enumerate}[(a)]
-\item Sketch the transformation of the unit square
-      (the parallelogram given by the columns of the standard matrix).
-\item Compute the area of the transformed unit square.
-\end{enumerate}
-\end{activity}
-
-
-\begin{activity}{5}
-Consider the linear transformation given by the standard matrix
- $A_4 = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$.
-
-\begin{enumerate}[(a)]
-\item Sketch the transformation of the unit square.
-\item Compute the area of the transformed unit square.
-\end{enumerate}
-\end{activity}
-
-\begin{activity}{5}
-Consider the linear transformation given by the standard matrix
- $A_5 = \begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix}$.
-
-\begin{enumerate}[(a)]
-\item Sketch the transformation of the unit square.
-\item Compute the area of the transformed unit square.
-\end{enumerate}
-\end{activity}
-
+\begin{observation}
+  Notice that while a linear map can transform vectors in various ways,
+  linear maps always transform parallelograms into parallelograms,
+  and these areas are always transformed by the same factor: in the case of
+  \(A_2=\begin{bmatrix} 2 & 3 \\ 0 & 4 \end{bmatrix}\),
+  this factor is \(8\).
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\draw[thin,gray,<->] (-4,0)-- (4,0);
+\draw[thin,gray,<->] (0,-4)-- (0,4);
+\draw[thick,blue,->] (0,0) -- node[below] {$A_2 \vec{e}_1= \begin{bmatrix}2 \\ 0 \end{bmatrix}$}++ (2,0);
+\draw[thick,blue,->] (0,0) -- ++(3,4) node[above] {$A_2 \vec{e}_2 = \begin{bmatrix} 3 \\ 4 \end{bmatrix}$};
+\draw[thick,red,->] (0,0) -- ++(1,0);
+\draw[thick,red,->] (0,0) -- ++(0,1);
+\draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
+\draw[red,dashed] (1,0) -- (1,1) -- (0,1);
+\end{tikzpicture}
+  \begin{tikzpicture}[scale=0.5]
+  \draw[thin,gray,<->] (-4,0)-- (4,0);
+  \draw[thin,gray,<->] (0,-4)-- (0,4);
+  \draw[thick,blue,->] (0,0) -- node[below] {$A_2\begin{bmatrix}1\\0\end{bmatrix}=2\begin{bmatrix}1\\0\end{bmatrix}$}++ (2,0);
+  \draw[thick,blue,->] (0,0) -- ++(3,2) node[above] {$A_2\begin{bmatrix}\frac{3}{4}\\\frac{1}{2}\end{bmatrix}=4\begin{bmatrix}\frac{3}{4}\\\frac{1}{2}\end{bmatrix}$};
+  \draw[thick,red,->] (0,0) -- (1,0);
+  \draw[thick,red,->] (0,0) -- (0.75,0.5);
+  \draw[red,dashed] (1,0) -- (1.75,0.5) -- (0.75,0.5);
+  \draw[blue,dashed] (2,0) -- (5,2) -- (3,2);
+  \end{tikzpicture}
+\end{center}
+Since this change in area is always the same for a given linear map,
+it will be equal to the value of the transformed unit square (which
+begins with area \(1\)).
+\end{observation}
 
 \begin{remark}
-The area of the transformed unit square measures the factor by which
-all areas are transformed by a linear transformation.
-
 We will define the \term{determinant} of a square matrix \(A\),
-or \(\det(A)\) for short, to be this factor. But
-what properties must this function satisfy?
+or \(\det(A)\) for short, to be the factor by which \(A\) scales areas, 
+but we first need to figure out the properties it must satisfy. 
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\draw[thin,gray,<->] (-4,0)-- (4,0);
+\draw[thin,gray,<->] (0,-4)-- (0,4);
+\draw[thick,blue,->] (0,0) -- node[below] {$A_2 \vec{e}_1= \begin{bmatrix}2 \\ 0 \end{bmatrix}$}++ (2,0);
+\draw[thick,blue,->] (0,0) -- ++(3,4) node[above] {$A_2 \vec{e}_2 = \begin{bmatrix} 3 \\ 4 \end{bmatrix}$};
+\draw[thick,red,->] (0,0) -- ++(1,0);
+\draw[thick,red,->] (0,0) -- ++(0,1);
+\draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
+\draw[red,dashed] (1,0) -- (1,1) -- (0,1);
+\end{tikzpicture}
+  \begin{tikzpicture}[scale=0.5]
+  \draw[thin,gray,<->] (-4,0)-- (4,0);
+  \draw[thin,gray,<->] (0,-4)-- (0,4);
+  \draw[thick,blue,->] (0,0) -- node[below] {$A_2\begin{bmatrix}1\\0\end{bmatrix}=2\begin{bmatrix}1\\0\end{bmatrix}$}++ (2,0);
+  \draw[thick,blue,->] (0,0) -- ++(3,2) node[above] {$A_2\begin{bmatrix}\frac{3}{4}\\\frac{1}{2}\end{bmatrix}=4\begin{bmatrix}\frac{3}{4}\\\frac{1}{2}\end{bmatrix}$};
+  \draw[thick,red,->] (0,0) -- (1,0);
+  \draw[thick,red,->] (0,0) -- (0.75,0.5);
+  \draw[red,dashed] (1,0) -- (1.75,0.5) -- (0.75,0.5);
+  \draw[blue,dashed] (2,0) -- (5,2) -- (3,2);
+  \end{tikzpicture}
+\end{center}
 \end{remark}
 
-% \begin{activity}{5}
-% Label each of the four pictures with the most appropriate of the
-% following four expressions.
+%\begin{activity}{5}
+%Consider the linear transformation given by the standard matrix
+% $A_3 = \begin{bmatrix} 1 & -1 \\ 1 & 1 \end{bmatrix}$.
 %
-% \begin{center}
-% \begin{minipage}{0.8\textwidth}
-% \begin{align*}
-% \det([\vec{e}_1\,\vec{e}_2]) &&
-% \det([\vec{v}\,\vec{v}]) &&
-% \det([c\vec{v}\,\vec{w}])  &&
-% \det([\vec{u}+\vec{v}\,\vec{w}])
-% \end{align*}
-%
-%
-% \begin{multicols}{2}
-% \begin{center}
-% \begin{tikzpicture}[scale=0.8]
-% \draw[thin,gray,<->] (-1,0)-- (3,0);
-% \draw[thin,gray,<->] (0,-1)-- (0,3);
-% \draw[thick,blue,->] (0,0) -- node[below] {$\vec{e}_1$} (1,0);
-% \draw[thick,blue,->] (0,0) -- node[left] {$\vec{e}_2$} (0,1);
-% \draw[thick,blue,->] (1,0) -- (1,1);
-% \draw[thick,blue,->] (0,1) -- (1,1);
-% \end{tikzpicture}
-% \end{center}
-%
-% \begin{center}
-% \begin{tikzpicture}[scale=0.5]
-% \draw[thin,gray,<->] (-1,0)-- (4,0);
-% \draw[thin,gray,<->] (0,-1)-- (0,4);
-% \draw[thick,blue,->] (0,0) -- node[below] {$\vec{v}$} (3,2);
-% \end{tikzpicture}
-% \end{center}
+%\begin{enumerate}[(a)]
+%\item Sketch the transformation of the unit square:
+%      the parallelogram given by the columns
+%      \(\begin{bmatrix}1\\1\end{bmatrix}\),
+%      \(\begin{bmatrix}-1\\1\end{bmatrix}\) of the standard matrix.
+%\item Compute the area of the transformed unit square.
+%\end{enumerate}
+%\end{activity}
 %
 %
-% \begin{center}
-% \begin{tikzpicture}[scale=0.5]
-% \draw[thin,gray,<->] (-1,0)-- (6,0);
-% \draw[thin,gray,<->] (0,-1)-- (0,6);
-% \draw[very thick,red,->] (0,0) -- node[below right] {$c\vec{v}$}  (4,2);
-% \draw[very thick,red,->] (1,3) -- (5,5);
-% \draw[thick,blue,->] (0,0) -- node[below] {$\vec{v}$} (3,1.5);
-% \draw[thick,blue,->] (0,0) -- node[left] {$\vec{w}$} (1,3);
-% \draw[green,very thick,dashed] (1,3) -- (2,1);
-% \draw[thick,blue,->] (3,1.5) -- (4,4.5);
-% \draw[thick,blue,->] (1,3) -- (4,4.5);
+%\begin{activity}{5}
+%Consider the linear transformation given by the standard matrix
+% $A_4 = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$.
 %
+%\begin{enumerate}[(a)]
+%\item Sketch the transformation of the unit square.
+%\item Compute the area of the transformed unit square.
+%\end{enumerate}
+%\end{activity}
 %
-% \draw[thick,blue,->] (4,2) -- (5,5);
-% \end{tikzpicture}
-% \end{center}
+%\begin{activity}{5}
+%Consider the linear transformation given by the standard matrix
+% $A_5 = \begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix}$.
 %
-% \begin{center}
-% \begin{tikzpicture}[scale=0.5]
-% \draw[thin,gray,<->] (-1,0)-- (6,0);
-% \draw[thin,gray,<->] (0,-1)-- (0,6);
-% \draw[thick,blue,->] (0,0) -- node[below] {$\vec{u}$} (2,1);
-% \draw[thick,blue,->] (0,0) -- node[left] {$\vec{w}$} (1,3);
-% \draw[thick,blue,->] (2,1) -- node [below] {$\vec{v}$}(3,2);
-% \draw[thick,blue,->] (2,1) -- (3,4);
-% \draw[thick,blue,->] (3,2) -- (4,5);
-% \draw[thick,blue,->] (1,3) -- (3,4);
-% \draw[thick,blue,->] (3,4) -- (4,5);
-% \draw[thick,red,->] (0,0) --  (3,2) node[above,right] {$\vec{u}+\vec{v}$};
-% \draw[thick,red,->] (1,3) -- (4,5);
-% \end{tikzpicture}
-% \end{center}
-%
-% \end{multicols}
-% \end{minipage}
-% \end{center}
-%
-% \end{activity}
+%\begin{enumerate}[(a)]
+%\item Sketch the transformation of the unit square.
+%\item Compute the area of the transformed unit square.
+%\end{enumerate}
+%\end{activity}
+
+
 
 
 \begin{activity}{2}
 The transformation of the unit square by the
 standard matrix \([\vec{e}_1\hspace{0.5em} \vec{e}_2]=\begin{bmatrix}1&0\\0&1\end{bmatrix}=I\) is illustrated below.
-What is $\det([\vec{e}_1\hspace{0.5em} \vec{e}_2])=\det(I)$, that is, by what
-factor has the area of the unit square been scaled?
+What is $\det([\vec{e}_1\hspace{0.5em} \vec{e}_2])=\det(I)$, the
+area of the transformed unit square shown here?
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \draw[thin,gray,<->] (-1,0)-- (3,0);
@@ -222,8 +215,8 @@ factor has the area of the unit square been scaled?
 The transformation of the unit square by the
 standard matrix \([\vec{v}\hspace{0.5em} \vec{v}]\) is illustrated below: both
 \(T(\vec{e}_1)=T(\vect{e}_2)=\vec{v}\).
-What is \(\det([\vec{v}\hspace{0.5em} \vec{v}])\), that is, by what factor has
-area been scaled?
+What is \(\det([\vec{v}\hspace{0.5em} \vec{v}])\), 
+the area of the transformed unit square shown here?
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \draw[thin,gray,<->] (-1,0)-- (4,0);
@@ -302,16 +295,17 @@ $\det([\vec{u}\hspace{0.5em} \vec{w}])$ and $\det([\vec{v}\hspace{0.5em} \vec{w}
 
 \begin{definition}
 The \term{determinant} is the unique function
-\(\det:\IR^{n\times n}\to\IR\) satisfying the following three properties:
+\(\det:M_{n,n}\to\IR\) satisfying these  properties:
 \begin{enumerate}
 \item [P1:] $\det(I)=1$
-\item [P2:] $\det([\vec{v}_1\hspace{0.5em}\vec{v}_2\hspace{0.5em}
-\cdots\hspace{0.5em}\vec{v}_n])=0$ whenever two columns of the matrix are identical.
+\item [P2:] $\det(A)=0$ whenever two columns of the matrix are identical.
 \item[P3:]
-\(\det[\cdots\hspace{0.5em}c\vec{v}+d\vec{w}\hspace{0.5em}\cdots]=
-c\det[\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}\cdots]+
-d\det[\cdots\hspace{0.5em}\vec{w}\hspace{0.5em}\cdots]\), assuming
-all other columns are equal.
+\(\det[\cdots\hspace{0.5em}c\vec{v}\hspace{0.5em}\cdots]=
+c\det[\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}\cdots]\), assuming no other columns change.
+\item[P4:]
+\(\det[\cdots\hspace{0.5em}\vec{v}+\vec{w}\hspace{0.5em}\cdots]=
+\det[\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}\cdots]+
+\det[\cdots\hspace{0.5em}\vec{w}\hspace{0.5em}\cdots]\), assuming no other columns change.
 \end{enumerate}
 \end{definition}
 
@@ -335,47 +329,47 @@ all other columns are equal.
 % \end{activity}
 
 \begin{observation}
-%Multiples of columns may be may be added to other
-%columns without affecting the value of a determinant.
-%  \begin{align*}
-%  \det([\vec{v}\hspace{1em}\vec{w}])
-%&=
-%  \det([\vec{v}\hspace{1em}\vec{w}])+
-%  c\cdot 0
-%\\ &=
-%  \det([\vec{v}\hspace{1em}\vec{w}])+
-%  c\det([\vec{w}\hspace{1em}\vec{w}])
-%\\ &=
-%  \det([\vec{v}\hspace{1em}\vec{w}])+
-%  \det([c\vec{w}\hspace{1em}\vec{w}])
-%\\ &=
-%  \det([\vec{v}+c\vec{w}\hspace{1em}\vec{w}])
-%  \end{align*}
 What happens if we had a multiple of one column to another?
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.5]
 \draw[thin,gray,<->] (-1,0)-- (8,0);
 \draw[thin,gray,<->] (0,-1)-- (0,6);
 \draw[very thick,blue,->] (0,0) -- node[below right] {$\vec{v}$}  (3,1);
 \draw[very thick,blue,->] (0,0) -- node[left] {$\vec{w}$} (1,2);
 \draw[dashed,blue,->] (1,2) -- (4,3);
 \draw[dashed,blue,->] (3,1) -- (4,3);
-\draw[thick,red,->] (0,0) -- node[above left] {$\vec{w}+c\vec{v}$} (5.5,3.5);
+\draw[thick,red,->] (0,0) -- (5.5,3.5) node[above] {$\vec{w}+c\vec{v}$};
 \draw[dashed,red,->] (3,1) -- (8.5,4.5);
-\draw[dashed,red,->] (5.5,3.5) -- (8.5,4.5);
+\draw[dashed,blue,->] (5.5,3.5) -- (8.5,4.5);
 \draw[thin,dashed,gray] (3,1) -- (2.5,2.5);
 \draw[thin,dashed,gray] (4,3) -- (5.5,3.5);
 \end{tikzpicture}
 \end{center}
 
-The base of both parallelograms is $\vec{v}$, while the height has not changed.  Thus
-$$\det ([\vec{v}\hspace{1em}\vec{w}+c\vec{v}]) = \det ([\vec{v} \hspace{1em} \vec{w}])$$
+The base of both parallelograms is $\vec{v}$, while the height has not changed,
+so the determinant does not change either. This also
+follows from the properties of the determinant:  
+  \begin{align*}
+  \det([\vec{v}+c\vec{w}\hspace{1em}\vec{w}])
+&=
+  \det([\vec{v}\hspace{1em}\vec{w}])+
+  \det([c\vec{w}\hspace{1em}\vec{w}])
+\\ &=
+  \det([\vec{v}\hspace{1em}\vec{w}])+
+  c\det([\vec{w}\hspace{1em}\vec{w}])
+\\ &=
+  \det([\vec{v}\hspace{1em}\vec{w}])+
+  c\cdot 0
+\\ &=
+  \det([\vec{v}\hspace{1em}\vec{w}])
+  \end{align*}
 \end{observation}
 
 \begin{observation}
-Swapping columns can be obtained from a sequence of adding column multiples.
-  \begin{align*}
+Columns may be swapped by adding/subtracting columns from one another,
+which we've just seen doesn't change the determinant.  
+\begin{align*}
   \det([\vec{v}\hspace{1em}\vec{w}])
 &=
   \det([\vec{v}+\vec{w}\hspace{1em}\vec{w}])
@@ -436,12 +430,137 @@ positive.
 
 \begin{fact}
 Since the transformation given by the standard matrix \(AB\) is obtained
-by applying the transformations given by \(A\) and \(B\), it follows that \[\det(AB)=\det(A)\det(B)\]
-%
-% \ \\
-%
-% In particular, a matrix is invertible if and only if its determinant is nonzero.
+by applying the transformations given by \(A\) and \(B\), it follows that 
+\[\det(AB)=\det(A)\det(B)\]
 \end{fact}
+
+\begin{remark}
+Recall that row operations may be produced by matrix multiplication.
+\begin{itemize}
+\item \(
+  \begin{bmatrix}
+  c & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}A
+\): multiply the first row of \(A\) by \(c\).
+\item \(
+  \begin{bmatrix}
+  0 & 1 & 0 \\
+  1 & 0 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}A
+\): swap the first and second row of \(A\).
+\item \(
+  \begin{bmatrix}
+  1 & 0 & c \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}A
+\): add \(c\) times the third row to the first row of \(A\)
+\end{itemize}
+\end{remark}
+
+
+\begin{fact}
+Row operation matrix determinants may be computed by manipulating columns
+to reduce each matrix to the identity:
+\begin{itemize}
+\item \(\det
+  \begin{bmatrix}
+  c & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+    =
+  c\det
+  \begin{bmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+    =
+  c
+\)
+\item \(\det
+  \begin{bmatrix}
+  0 & 1 & 0 \\
+  1 & 0 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+    =
+  -1\det
+  \begin{bmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+    =
+  -1
+\)
+\item \(\det
+  \begin{bmatrix}
+  1 & 0 & c \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+    =
+  \det
+  \begin{bmatrix}
+  1 & 0 & c-c \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+    =
+  1
+\)
+\end{itemize}
+\end{fact}
+
+\begin{activity}{5}
+Consider the row operation \(R_1+4R_3\to R_1\) applied as follows to show
+\(A\sim B\):
+\[
+A=\begin{bmatrix}1&2&3\\4&5&6\\7&8&9\end{bmatrix}
+  \sim
+\begin{bmatrix}1+4(7)&2+4(8)&3+4(9)\\4&5&6\\7&8&9\end{bmatrix}=B
+\]
+\begin{enumerate}[(a)]
+\item Find a matrix \(R\) such that \(B=RA\), by applying the same row operation to 
+\(I=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}\).
+\item Find \(\det R\).
+\item If \(C \in M_{3,3}\) is a matrix with \(\det(C)= -3\), find 
+\[\det(RC)=\det(R)\det(C).\]
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{5}
+Consider the row operation \(R_1\leftrightarrow R_3\) applied as follows to show
+\(A\sim B\):
+\[
+A=\begin{bmatrix}1&2&3\\4&5&6\\7&8&9\end{bmatrix}
+  \sim
+\begin{bmatrix}7&8&9\\4&5&6\\1&2&3\end{bmatrix}=B
+\]
+\begin{enumerate}[(a)]
+\item Find a matrix \(R\) such that \(B=RA\), by applying the same row operation to \(I\).
+\item If \(C \in M_{3,3}\) is a matrix with \(\det(C)= 5\), find \(\det(RC)\).
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{5}
+Consider the row operation \(3R_2\to R_2\) applied as follows to show
+\(A\sim B\):
+\[
+A=\begin{bmatrix}1&2&3\\4&5&6\\7&8&9\end{bmatrix}
+  \sim
+\begin{bmatrix}1&2&3\\3(4)&3(5)&3(6)\\7&8&9\end{bmatrix}=B
+\]
+\begin{enumerate}[(a)]
+\item Find a matrix \(R\) such that \(B=RA\)
+\item If \(C \in M_{3,3}\) is a matrix with \(\det(C)= -7\), find \(\det(RC)\).
+\end{enumerate}
+\end{activity}
 
 
 \end{applicationActivities}

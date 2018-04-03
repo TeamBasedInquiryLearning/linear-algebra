@@ -1,5 +1,21 @@
 \begin{applicationActivities}
 
+\begin{fact}
+Since the row operation matrices may be obtained with column operations,
+we can also use row operations to simplify determinants.
+\begin{enumerate}
+\item Multiplying rows by scalars:
+  \(\det\begin{bmatrix}\vdots\\cR\\\vdots\end{bmatrix}=
+  c\det\begin{bmatrix}\vdots\\R\\\vdots\end{bmatrix}\)
+\item Swapping two rows:
+  \(\det\begin{bmatrix}\vdots\\R\\\vdots\\S\\\vdots\end{bmatrix}=
+  -\det\begin{bmatrix}\vdots\\S\\\vdots\\R\\\vdots\end{bmatrix}\)
+\item Adding multiples of rows to other rows:
+  \(\det\begin{bmatrix}\vdots\\R\\\vdots\\S\\\vdots\end{bmatrix}=
+  \det\begin{bmatrix}\vdots\\R+cS\\\vdots\\S\\\vdots\end{bmatrix}\)
+\end{enumerate}
+\end{fact}
+
 \begin{definition}
   The \term{transpose} of a matrix is given by rewriting its columns as
   rows and vice versa:
@@ -18,8 +34,8 @@
 \end{definition}
 
 \begin{fact}
-It is possible to prove that the determinant of a matrix and its
-transpose are the same.
+Since row and column operations both affect determinants the same way,
+the determinant of a matrix and its transpose are the same.
 For example, let \(A=\begin{bmatrix}3 & 3 \\ 0 & 2\end{bmatrix}\),
 so \(A^T=\begin{bmatrix}3 & 0 \\ 3 & 2\end{bmatrix}\); both matrices
 scale the unit square by \(6\), even though the parallelograms are not
@@ -41,22 +57,6 @@ congruent.
   \draw[thick,blue,->] (0,0) -- ++(0,2) node[left] {$A^T \vec{e}_2 = \begin{bmatrix} 0 \\ 2 \end{bmatrix}$};
   \end{tikzpicture}
 \end{center}
-\end{fact}
-
-\begin{fact}
-We previously figured out that column operations can be used to simplify
-determinants; since \(\det(A)=\det(A^T)\), we can also use row operations:
-\begin{enumerate}
-\item Multiplying rows by scalars:
-  \(\det\begin{bmatrix}\vdots\\cR\\\vdots\end{bmatrix}=
-  c\det\begin{bmatrix}\vdots\\R\\\vdots\end{bmatrix}\)
-\item Swapping two rows:
-  \(\det\begin{bmatrix}\vdots\\R\\\vdots\\S\\\vdots\end{bmatrix}=
-  -\det\begin{bmatrix}\vdots\\S\\\vdots\\R\\\vdots\end{bmatrix}\)
-\item Adding multiples of rows to other rows:
-  \(\det\begin{bmatrix}\vdots\\R\\\vdots\\S\\\vdots\end{bmatrix}=
-  \det\begin{bmatrix}\vdots\\R+cS\\\vdots\\S\\\vdots\end{bmatrix}\)
-\end{enumerate}
 \end{fact}
 
 \begin{activity}{10}
