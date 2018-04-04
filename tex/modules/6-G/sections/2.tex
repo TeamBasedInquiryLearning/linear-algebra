@@ -1,8 +1,80 @@
 \begin{applicationActivities}
 
+\begin{remark}
+  Recall that the column versions of the three row-reducing operations
+  a matrix may be used to simplify a determinant:
+  \begin{enumerate}[(a)]
+  \item Multiplying columns by scalars:
+        \[c\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em} \cdots])=
+        \det([\cdots\hspace{0.5em}c\vec{v}\hspace{0.5em} \cdots])\]
+  \item Swapping two columns:
+        \[\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])=
+        -\det([\cdots\hspace{0.5em}\vec{w}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{v}\hspace{0.5em} \cdots])\]
+  \item Adding a multiple of a column to another column:
+        \[\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])=
+        \det([\cdots\hspace{0.5em}\vec{v}+c\vec{w}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])\]
+  \end{enumerate}
+\end{remark}
+\begin{remark}
+The determinants of row operation matrices may be computed
+by manipulating columns to reduce each matrix to the identity:
+\begin{itemize}
+\item Scaling a row: \(\det
+  \begin{bmatrix}
+  c & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+    =
+  c\det
+  \begin{bmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+    =
+  c
+\)
+\item Swapping rows: \(\det
+  \begin{bmatrix}
+  0 & 1 & 0 \\
+  1 & 0 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+    =
+  -1\det
+  \begin{bmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+    =
+  -1
+\)
+\item Adding a row multiple to another row: \(\det
+  \begin{bmatrix}
+  1 & 0 & c \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+    =
+  \det
+  \begin{bmatrix}
+  1 & 0 & c-1c \\
+  0 & 1 & 0-0c \\
+  0 & 0 & 1-0c
+  \end{bmatrix}
+    =
+  \det(I)=1
+\)
+\end{itemize}
+\end{remark}
 \begin{fact}
-Since the row operation matrices may be obtained with column operations,
-we can also use row operations to simplify determinants.
+Thus we can also use row operations to simplify determinants:
 \begin{enumerate}
 \item Multiplying rows by scalars:
   \(\det\begin{bmatrix}\vdots\\cR\\\vdots\end{bmatrix}=
@@ -16,97 +88,138 @@ we can also use row operations to simplify determinants.
 \end{enumerate}
 \end{fact}
 
-\begin{definition}
-  The \term{transpose} of a matrix is given by rewriting its columns as
-  rows and vice versa:
-  \[
-    \begin{bmatrix}
-      1 & 2 & 3 \\
-      4 & 5 & 6
-    \end{bmatrix}^T
-  =
-    \begin{bmatrix}
-      1 & 4  \\
-      2 & 5  \\
-      3 & 6
-    \end{bmatrix}
-  \]
-\end{definition}
-
-\begin{fact}
-Since row and column operations both affect determinants the same way,
-the determinant of a matrix and its transpose are the same.
-For example, let \(A=\begin{bmatrix}3 & 3 \\ 0 & 2\end{bmatrix}\),
-so \(A^T=\begin{bmatrix}3 & 0 \\ 3 & 2\end{bmatrix}\); both matrices
-scale the unit square by \(6\), even though the parallelograms are not
-congruent.
-
-\begin{center}
-  \begin{tikzpicture}[scale=0.5]
-  \draw[thin,gray,<->] (-1,0)-- (4,0);
-  \draw[thin,gray,<->] (0,-1)-- (0,4);
-  \draw[blue,dashed] (0,0) -- (3,0) -- (6,2) -- (3,2) -- (0,0);
-  \draw[thick,blue,->] (0,0) -- node[below] {$A \vec{e}_1= \begin{bmatrix}3 \\ 0 \end{bmatrix}$}++ (3,0);
-  \draw[thick,blue,->] (0,0) -- ++(3,2) node[above] {$A \vec{e}_2 = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$};
-  \end{tikzpicture}
-  \begin{tikzpicture}[scale=0.5]
-  \draw[thin,gray,<->] (-1,0)-- (4,0);
-  \draw[thin,gray,<->] (0,-1)-- (0,4);
-  \draw[blue,dashed] (0,0) -- (3,3) -- (3,5) -- (0,2) -- (0,0);
-  \draw[thick,blue,->] (0,0) -- node[right] {$A^T \vec{e}_1= \begin{bmatrix}3 \\ 3 \end{bmatrix}$}++ (3,3);
-  \draw[thick,blue,->] (0,0) -- ++(0,2) node[left] {$A^T \vec{e}_2 = \begin{bmatrix} 0 \\ 2 \end{bmatrix}$};
-  \end{tikzpicture}
-\end{center}
-\end{fact}
+%\begin{definition}
+%  The \term{transpose} of a matrix is given by rewriting its columns as
+%  rows and vice versa:
+%  \[
+%    \begin{bmatrix}
+%      1 & 2 & 3 \\
+%      4 & 5 & 6
+%    \end{bmatrix}^T
+%  =
+%    \begin{bmatrix}
+%      1 & 4  \\
+%      2 & 5  \\
+%      3 & 6
+%    \end{bmatrix}
+%  \]
+%\end{definition}
+%
+%\begin{fact}
+%Since row and column operations both affect determinants the same way,
+%the determinant of a matrix and its transpose are the same.
+%For example, let \(A=\begin{bmatrix}3 & 3 \\ 0 & 2\end{bmatrix}\),
+%so \(A^T=\begin{bmatrix}3 & 0 \\ 3 & 2\end{bmatrix}\); both matrices
+%scale the unit square by \(6\), even though the parallelograms are not
+%congruent.
+%
+%\begin{center}
+%  \begin{tikzpicture}[scale=0.5]
+%  \draw[thin,gray,<->] (-1,0)-- (4,0);
+%  \draw[thin,gray,<->] (0,-1)-- (0,4);
+%  \draw[blue,dashed] (0,0) -- (3,0) -- (6,2) -- (3,2) -- (0,0);
+%  \draw[thick,blue,->] (0,0) -- node[below] {$A \vec{e}_1= \begin{bmatrix}3 \\ 0 \end{bmatrix}$}++ (3,0);
+%  \draw[thick,blue,->] (0,0) -- ++(3,2) node[above] {$A \vec{e}_2 = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$};
+%  \end{tikzpicture}
+%  \begin{tikzpicture}[scale=0.5]
+%  \draw[thin,gray,<->] (-1,0)-- (4,0);
+%  \draw[thin,gray,<->] (0,-1)-- (0,4);
+%  \draw[blue,dashed] (0,0) -- (3,3) -- (3,5) -- (0,2) -- (0,0);
+%  \draw[thick,blue,->] (0,0) -- node[right] {$A^T \vec{e}_1= \begin{bmatrix}3 \\ 3 \end{bmatrix}$}++ (3,3);
+%  \draw[thick,blue,->] (0,0) -- ++(0,2) node[left] {$A^T \vec{e}_2 = \begin{bmatrix} 0 \\ 2 \end{bmatrix}$};
+%  \end{tikzpicture}
+%\end{center}
+%\end{fact}
 
 \begin{activity}{10}
-  Compute the determinant of $\begin{bmatrix} 2 & 4 \\ 2 & 3 \end{bmatrix}$ by row reducing it to a nicer matrix. \\
+  Compute the determinant of \(\begin{bmatrix} 2 & 4 \\ 2 & 3 \end{bmatrix}\) 
+  by manipulating its rows and columns to simplify the matrix to \(I\):
 
-\ \\
-
-  For example, $\det \begin{bmatrix} 2 & 4 \\ 2 & 3 \end{bmatrix} = 2 \det \begin{bmatrix} 1 & 2 \\ 2 & 3 \end{bmatrix}$.
-
+  \begin{align*}
+    \det\begin{bmatrix} 2 & 4 \\ 2 & 3 \end{bmatrix}
+      &=
+    \unknown \det \begin{bmatrix} 1 & 2 \\ 2 & 3 \end{bmatrix}\\
+      &\vdots\\
+      &=
+    \unknown \det \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}\\
+      &=
+    \unknown
+  \end{align*}
 \end{activity}
 
 \begin{fact}
-  This same process allows us to prove a more convenient formula:
+  Applying that same process to a generalized \(2\times 2\)
+  matrix gives us a convenient formula:
     \begin{align*}
-    \det\begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad-bc
+    \det\begin{bmatrix} a & b \\ c & d \end{bmatrix}
+  &=
+    a
+    \det\begin{bmatrix} 1 & b/a \\ c & d \end{bmatrix}
+  \\ &=
+    a
+    \det\begin{bmatrix} 1 & b/a \\ 0 & d-bc/a \end{bmatrix}
+  \\ &=
+    a(d-bc/a)
+    \det\begin{bmatrix} 1 & b/a \\ 0 & 1 \end{bmatrix}
+  \\ &=
+    (ad-bc)
+    \det\begin{bmatrix} 1 & b/a \\ 0 & 1 \end{bmatrix}
+  \\ &=
+    (ad-bc)
+    \det\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
+  \\ 
+    \det\begin{bmatrix} a & b \\ c & d \end{bmatrix}
+  &=
+    ad-bc
     \end{align*}
-
-In higher dimensions, the formulas become unreasonable.  For example, the formula for $4\times4$ matrices has 24 terms!
 \end{fact}
+
+\begin{remark}
+In higher dimensions, the formulas become unreasonable.  
+For example, part of the formula for \(4\times4\) matrices looks like this:
+\[
+  \det\begin{bmatrix}
+    a_{11} & a_{12} & a_{13} & a_{14} \\
+    a_{21} & a_{22} & a_{23} & a_{24} \\
+    a_{31} & a_{32} & a_{33} & a_{34} \\
+    a_{41} & a_{42} & a_{43} & a_{44}
+  \end{bmatrix}
+    =
+  a_{11}(a_{22}(a_{33}a_{44}-a_{43}a_{34})-a_{23}(a_{32}a_{44}-a_{42}a_{34})+\dots)+\dots
+\]
+So instead, we will learn how to simplify determinants into
+smaller determinants.
+\end{remark}
 
 
 \begin{activity}{5}
   The following image illustrates the transformation of the unit cube
   by the matrix
-  $\begin{bmatrix} 3 & 1 & 0 \\  1 & 1 & 0 \\  0 & 0 & 1\end{bmatrix}$.
+  $\begin{bmatrix} 3 & 1 & 0 \\  1 & 1 & 1 \\  0 & 0 & 1\end{bmatrix}$.
 
   \begin{center}
   \begin{tikzpicture}
+  \fill[purple!50!white] (0,0,0) -- (1,0,1) -- (4,0,2) -- (3,0,1) -- (0,0,0);
   \draw[thin,gray,->] (0,0,0) -- (3,0,0);
   \draw[thin,gray,->] (0,0,0) -- (0,2,0);
   \draw[thin,gray,->] (0,0,0) -- (0,0,2);
   %(y,z,x)
-  \draw[blue] (0,1,0) -- (1,1,1);
-  \draw[blue] (0,1,0) -- (3,1,1);
-  \draw[blue] (3,0,1) -- (4,0,2);
-  \draw[blue] (3,0,1) -- (3,1,1);
-  \draw[blue] (1,0,1) -- (4,0,2);
-  \draw[blue] (1,0,1) -- (1,1,1);
-  \draw[blue] (1,1,1) -- (4,1,2);
-  \draw[blue] (4,0,2) -- (4,1,2);
-  \draw[blue] (3,1,1) -- (4,1,2);
+  \draw[blue] (1,0,1) -- (4,0,2) -- (3,0,1);
+  \draw[blue] (1,1,0) -- (2,1,1) -- (5,1,2) -- (4,1,1) -- (1,1,0);
+  \draw[blue] (1,0,1) -- +(1,1,0);
+  \draw[blue] (4,0,2) -- +(1,1,0);
+  \draw[blue] (3,0,1) -- +(1,1,0);
 
-  \draw[purple,thick,->] (0,0,0) -- (0,1,0)
-    node[left]{\tiny$\begin{bmatrix} 0 \\ 0 \\ 1\end{bmatrix}$};
+  \draw[purple,thick,->] (0,0,0) -- (1,1,0)
+    node[above left]{\tiny$\begin{bmatrix} 0 \\ 1 \\ 1\end{bmatrix}$};
   \draw[purple,thick,->] (0,0,0) -- (1,0,1)
     node[below]{\tiny$\begin{bmatrix} 1 \\ 1 \\ 0\end{bmatrix}$};
   \draw[purple,thick,->] (0,0,0) -- (3,0,1)
-    node[right]{\tiny$\begin{bmatrix} 3 \\ 1 \\ 0\end{bmatrix}$};
+    node[above right]{\tiny$\begin{bmatrix} 3 \\ 1 \\ 0\end{bmatrix}$};
+  \draw[purple,dashed,very thick] (0,0,0) -- node[left] {\tiny\(h=1\)} (0,1,0);
   \end{tikzpicture}
   \end{center}
+  Recall that \(V=Bh\).
 This volume is equal to which of the following areas?
 \begin{multicols}{4}
 \begin{enumerate}[(a)]
@@ -119,29 +232,16 @@ This volume is equal to which of the following areas?
 \end{activity}
 
 \begin{fact}
-If column $i$ of a matrix is $\vec{e}_i$, then both column and row $i$
+If row \(i\) contains all zeros except for a \(1\) on the diagonal, 
+then both column and row \(i\)
 may be removed without changing the value of the determinant.
-For example, the second column of the following matrix is \(\vec e_2\), so:
 \[
   \det \begin{bmatrix}
-    3 & 0 & -1 & 5 \\
-    2 & 1 & 4 & 0 \\
-    -1 & 0 & 1 & 11 \\
-    3 & 0 & 0 & 1
-  \end{bmatrix} =
-  \det \begin{bmatrix}
-    3 & -1 & 5 \\
-    -1 & 1 & 11 \\
-    3 & 0 & 1
-  \end{bmatrix}
-\]
-Therefore the same holds for the transpose:
-\[
-  \det \begin{bmatrix}
-    3 & 2 & -1 & 3 \\
-    0 & 1 & 0 & 0 \\
-    -1 & 4 & 1 & 0 \\
-    5 & 0 & 11 & 1
+    3 & \textcolor{red}{2} & -1 & 3 \\
+    \textcolor{red}{0} & \textcolor{red}{1} 
+      & \textcolor{red}{0} & \textcolor{red}{0} \\
+    -1 & \textcolor{red}{4} & 1 & 0 \\
+    5 & \textcolor{red}{0} & 11 & 1
   \end{bmatrix} =
   \det \begin{bmatrix}
     3 & -1 & 3 \\
@@ -149,8 +249,23 @@ Therefore the same holds for the transpose:
     5 & 11 & 1
   \end{bmatrix}
 \]
-
-Geometrically, this is the fact that if the height is 1, the base $\times$ height formula reduces to the area/volume/etc. of the $n-1$ dimensional base.
+Since row and column operations affect the determinants in the same
+way, the same technique works for a column of all zeros except for
+a \(1\) on the diagonal.
+\[
+  \det \begin{bmatrix}
+    3 & \textcolor{red}{0} & -1 & 5 \\
+    \textcolor{red}{2} & \textcolor{red}{1} & \textcolor{red}{4} & 
+       \textcolor{red}{0} \\
+    -1 & \textcolor{red}{0} & 1 & 11 \\
+    3 & \textcolor{red}{0} & 0 & 1
+  \end{bmatrix} =
+  \det \begin{bmatrix}
+    3 & -1 & 5 \\
+    -1 & 1 & 11 \\
+    3 & 0 & 1
+  \end{bmatrix}
+\] 
 \end{fact}
 
 % \begin{activity}{5}
@@ -261,44 +376,97 @@ Geometrically, this is the fact that if the height is 1, the base $\times$ heigh
 
 
 \begin{activity}{5}
-  Compute  $\det \begin{bmatrix} 1 & 0 & 0 \\ 1 & 5 & 12 \\ 3 & 2 & -1 \end{bmatrix}$.
+  Compute  $\det \begin{bmatrix} 1 & 0 & 0 \\ 1 & 5 & 12 \\ 3 & 2 & -1 \end{bmatrix}$
+  by doing the following:
+  \begin{itemize}
+  \item Reduce its dimension by eliminating a row and column.
+  \item Use the formula for \(2\times 2\) determinants.
+  \end{itemize}
 \end{activity}
 
 \begin{activity}{5}
-  Compute   $\det \begin{bmatrix} 0 & 3 & -2 \\ 1 & 5 & 12 \\ 0 & 2 & -1 \end{bmatrix}$.
-  \ \\
-  \begin{multicols}{3}
-  \begin{enumerate}[(a)]
-  \item $-1$
-  \item $0$
-  \item $1$
-  \end{enumerate}
-  \end{multicols}
+  Compute \(\det \begin{bmatrix} 0 & 3 & -2 \\ 2 & 5 & 12 \\ 0 & 2 & -1 \end{bmatrix}\)
+  by first doing the following:
+  \begin{itemize}
+    \item Factor out a \(2\) from a column.
+    \item Swap rows to put a \(1\) on the diagonal.
+  \end{itemize}
+\end{activity}
+
+\begin{activity}{5}
+  Compute \(\det \begin{bmatrix} 4 & -2 & 2 \\ 3 & 1 & 4 \\ 1 & -1 & 3\end{bmatrix}\)
+  by first doing the following:
+  \begin{itemize}
+    \item Add the middle row to the bottom row.
+    \item Add a multiple of the middle row to the top row.
+  \end{itemize}
 \end{activity}
 
 \begin{activity}{10}
-  Compute $\det \begin{bmatrix} 1 & 2 & 3 \\ 1 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}$
-
-\ \\
-
-  {\em Hint:} $\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}$.
-
-  \begin{multicols}{4}
-  \begin{enumerate}[(a)]
-  \item $3$
-  \item $6$
-  \item $9$
-  \item $12$
-  \end{enumerate}
-  \end{multicols}
-  \end{activity}
-
-\begin{activity}{15}
-  Compute  $\det \begin{bmatrix} 2 & 3 & 5 & 0 \\ 0 & 3 & 2 & 0 \\ 1 & 2 & 0 & 3 \\ -1 & -1 & 2 & 2 \end{bmatrix}$.
-
+  Compute \(\det \begin{bmatrix} 1 & 2 & 3 \\ 1 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}\)
+  by first doing the following:
+  \begin{itemize}
+    \item Expand the first column into the sum of two determinants:
+    \(
+      \det \begin{bmatrix} 1 & 2 & 3 \\ 0 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}   
+      +\det \begin{bmatrix} 0 & 2 & 3 \\ 1 & -2 & -5 \\ 0 & 3 & 3 \end{bmatrix}   
+    \) 
+  \end{itemize}
 \end{activity}
 
 \begin{observation}
+Row/column operations can be used to add zeroes and reduce dimension
+in large matrices.
+
+\begin{align*}
+    \det\begin{bmatrix} 
+      2 & 3 & 5 & 0 \\ 
+      0 & 3 & 2 & 0 \\ 
+      1 & 2 & 0 & 3 \\ 
+      -1 & -1 & 2 & 2 
+    \end{bmatrix}
+  &=
+    -\det\begin{bmatrix}
+      1 & 2 & 0 & 3 \\ 
+      0 & 3 & 2 & 0 \\ 
+      2 & 3 & 5 & 0 \\ 
+      -1 & -1 & 2 & 2 
+    \end{bmatrix}
+  \\&=
+    -\det\begin{bmatrix}
+      \textcolor{red}{1} & \textcolor{red}{2} & 
+         \textcolor{red}{0} & \textcolor{red}{3} \\ 
+      \textcolor{red}{0} & 3 & 2 & 0 \\ 
+      \textcolor{red}{2-2} & 3-4 & 5-0 & 0-6 \\ 
+      \textcolor{red}{-1+1} & -1+2 & 2+0 & 2+3 
+    \end{bmatrix}
+  \\&=
+    -\det\begin{bmatrix}
+      3 & 2 & 0 \\ 
+      -1 & 5 & -6 \\ 
+      1 & 2 & 5 
+    \end{bmatrix}
+   = \dots
+\end{align*} 
+\end{observation}
+
+\begin{activity}{10}
+  Compute 
+  \(
+    \det\begin{bmatrix} 
+      2 & 3 & 5 & 0 \\ 
+      0 & 3 & 2 & 0 \\ 
+      1 & 2 & 0 & 3 \\ 
+      -1 & -1 & 2 & 2 
+    \end{bmatrix}
+  \) by using any combination of row/column operations.
+\end{activity}
+
+\begin{observation}
+Larger matrices can be whittled down by using a technique called
+\term{Laplace expansion} or \term{cofactor expansion} on
+\textit{any} row or column.
+
 \newcommand{\tikzmark}[2]{\tikz[overlay,remember picture,baseline] \node [anchor=base] (#1) {$#2$};}
 
 \newcommand{\DrawVLine}[3][]{%
@@ -314,11 +482,12 @@ Geometrically, this is the fact that if the height is 1, the base $\times$ heigh
 
   \begin{align*}
 \det \begin{bmatrix} 2 & 3 & 5 & 0 \\ 0 & 3 & 2 & 0 \\ 1 & 2 & 0 & 3 \\ -1 & -1 & 2 & 2 \end{bmatrix} &=
-(-1) (0) \det \begin{bmatrix} \tikzmark{topA}{2} & 3 & 5 & 0 \\ \tikzmark{leftA}{0} & 3 & 2 & \tikzmark{rightA}{0} \\ 1 & 2 & 0 & 3 \\ \tikzmark{bottomA}{-1} & -1 & 2 & 2 \end{bmatrix}
-+(1)(3) \det \begin{bmatrix} 2 & \tikzmark{topB}{3} & 5 & 0 \\ \tikzmark{leftB}{0} & 3 & 2 & \tikzmark{rightB}{0} \\ 1 & 2 & 0 & 3 \\ -1 & \tikzmark{bottomB}{-1} & 2 & 2 \end{bmatrix} +  \\
-&\phantom{xx} (-1)(2) \det \begin{bmatrix} 2 & 3 & \tikzmark{topC}{5} & 0 \\ \tikzmark{leftC}{0} & 3 & 2 & \tikzmark{rightC}{0} \\ 1 & 2 & 0 & 3 \\ -1 & -1 & \tikzmark{bottomC}{2} & 2 \end{bmatrix}
-+ (1)(0) \det \begin{bmatrix} 2 & 3 & 5 & \tikzmark{topD}{0} \\ \tikzmark{leftD}{0} & 3 & 2 & \tikzmark{rightD}{0} \\ 1 & 2 & 0 & 3 \\ -1 & -1 & 2 & \tikzmark{bottomD}{2} \end{bmatrix}  \\
-&= 3 \det \begin{bmatrix}2 & 5 & 0 \\ 1 & 0 & 3 \\ -1 & 2 & 2 \end{bmatrix} +(-1)(2) \det \begin{bmatrix} 2 & 3 & 0 \\ 1 & 2 & 3 \\ -1 & -1 & 2 \end{bmatrix}
+- 0 \det \begin{bmatrix} \tikzmark{topA}{2} & 3 & 5 & 0 \\ \tikzmark{leftA}{0} & 3 & 2 & \tikzmark{rightA}{0} \\ 1 & 2 & 0 & 3 \\ \tikzmark{bottomA}{-1} & -1 & 2 & 2 \end{bmatrix}
++ 3 \det \begin{bmatrix} 2 & \tikzmark{topB}{3} & 5 & 0 \\ \tikzmark{leftB}{0} & 3 & 2 & \tikzmark{rightB}{0} \\ 1 & 2 & 0 & 3 \\ -1 & \tikzmark{bottomB}{-1} & 2 & 2 \end{bmatrix}   \\
+&\phantom{=} - 2 \det \begin{bmatrix} 2 & 3 & \tikzmark{topC}{5} & 0 \\ \tikzmark{leftC}{0} & 3 & 2 & \tikzmark{rightC}{0} \\ 1 & 2 & 0 & 3 \\ -1 & -1 & \tikzmark{bottomC}{2} & 2 \end{bmatrix}
++ 0 \det \begin{bmatrix} 2 & 3 & 5 & \tikzmark{topD}{0} \\ \tikzmark{leftD}{0} & 3 & 2 & \tikzmark{rightD}{0} \\ 1 & 2 & 0 & 3 \\ -1 & -1 & 2 & \tikzmark{bottomD}{2} \end{bmatrix}  \\
+&= 3 \det \begin{bmatrix}2 & 5 & 0 \\ 1 & 0 & 3 \\ -1 & 2 & 2 \end{bmatrix} -2 \det \begin{bmatrix} 2 & 3 & 0 \\ 1 & 2 & 3 \\ -1 & -1 & 2 \end{bmatrix} \\
+&= \dots
 \end{align*}
 \DrawHLine[red,thick]{leftA}{rightA}
 \DrawVLine[red,thick]{topA}{bottomA}
@@ -329,12 +498,20 @@ Geometrically, this is the fact that if the height is 1, the base $\times$ heigh
 \DrawHLine[red,thick]{leftD}{rightD}
 \DrawVLine[red,thick]{topD}{bottomD}
 
-This technique is called \term{Laplace expansion} or \term{cofactor expansion}.
+Notice that the diagonal entry \(3\) got a \(+\), and that \(-\)
+signs alternate outward due to the omitted column swaps.
   \end{observation}
 
 \begin{activity}{10}
-  Compute  $\det \begin{bmatrix} 1 & 2 & 1 & 0 \\ 0 & 3 & 2 & -1 \\ 1 & 2 & 0 & 3 \\ -1 & -3 & 2 & -2 \end{bmatrix}$.
-
+  Compute 
+  \(
+    \det\begin{bmatrix} 
+      1 & 2 & 1 & 0 \\ 
+      0 & 3 & 2 & -1 \\ 
+      1 & 2 & 0 & 3 \\ 
+      -1 & -3 & 2 & -2 
+    \end{bmatrix}
+  \).
 \end{activity}
 
 
