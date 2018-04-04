@@ -8,6 +8,7 @@ transforms the unit square.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
+\fill[red!50!white] (0,0) rectangle (1,1);`
 \draw[thin,gray,<->] (-4,0)-- (4,0);
 \draw[thin,gray,<->] (0,-4)-- (0,4);
 \draw[thick,blue,->] (0,0) -- node[below] {$A_1 \vec{e}_1= \begin{bmatrix}2 \\ 0 \end{bmatrix}$}++ (2,0);
@@ -20,7 +21,7 @@ transforms the unit square.
 \end{center}
 
 \begin{enumerate}[(a)]
-\item What are the lengths of \(A_1\vec e_1\) and \(A_2\vec e_2\)?
+\item What are the lengths of \(A_1\vec e_1\) and \(A_1\vec e_2\)?
 \item What is the area of the transformed unit square?
 \end{enumerate}
 
@@ -35,6 +36,7 @@ transforms the unit square.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
+\fill[red!50!white] (0,0) rectangle (1,1);
 \draw[thin,gray,<->] (-4,0)-- (4,0);
 \draw[thin,gray,<->] (0,-4)-- (0,4);
 \draw[thick,blue,->] (0,0) -- node[below] {$A_2 \vec{e}_1= \begin{bmatrix}2 \\ 0 \end{bmatrix}$}++ (2,0);
@@ -47,7 +49,7 @@ transforms the unit square.
 \end{center}
 
 \begin{enumerate}[(a)]
-\item What are the lengths of \(A_1\vec e_1\) and \(A_2\vec e_2\)?
+\item What are the lengths of \(A_2\vec e_1\) and \(A_2\vec e_2\)?
 \item What is the area of the transformed unit square?
 \end{enumerate}
 \end{activity}
@@ -74,6 +76,7 @@ transforms the unit square.
 
   \begin{center}
   \begin{tikzpicture}[scale=0.5]
+  \fill[red!50!white] (0,0) -- (1,0) -- (1.75,0.5) -- (0.75,0.5) -- (0,0);
   \draw[thin,gray,<->] (-4,0)-- (4,0);
   \draw[thin,gray,<->] (0,-4)-- (0,4);
   \draw[thick,blue,->] (0,0) -- node[below] {$A_2\begin{bmatrix}1\\0\end{bmatrix}=2\begin{bmatrix}1\\0\end{bmatrix}$}++ (2,0);
@@ -98,6 +101,7 @@ transforms the unit square.
   this factor is \(8\).
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
+\fill[red!50!white] (0,0) rectangle (1,1);
 \draw[thin,gray,<->] (-4,0)-- (4,0);
 \draw[thin,gray,<->] (0,-4)-- (0,4);
 \draw[thick,blue,->] (0,0) -- node[below] {$A_2 \vec{e}_1= \begin{bmatrix}2 \\ 0 \end{bmatrix}$}++ (2,0);
@@ -108,6 +112,7 @@ transforms the unit square.
 \draw[red,dashed] (1,0) -- (1,1) -- (0,1);
 \end{tikzpicture}
   \begin{tikzpicture}[scale=0.5]
+  \fill[red!50!white] (0,0) -- (1,0) -- (1.75,0.5) -- (0.75,0.5) -- (0,0);
   \draw[thin,gray,<->] (-4,0)-- (4,0);
   \draw[thin,gray,<->] (0,-4)-- (0,4);
   \draw[thick,blue,->] (0,0) -- node[below] {$A_2\begin{bmatrix}1\\0\end{bmatrix}=2\begin{bmatrix}1\\0\end{bmatrix}$}++ (2,0);
@@ -129,6 +134,7 @@ or \(\det(A)\) for short, to be the factor by which \(A\) scales areas,
 but we first need to figure out the properties it must satisfy. 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
+\fill[red!50!white] (0,0) rectangle (1,1);
 \draw[thin,gray,<->] (-4,0)-- (4,0);
 \draw[thin,gray,<->] (0,-4)-- (0,4);
 \draw[thick,blue,->] (0,0) -- node[below] {$A_2 \vec{e}_1= \begin{bmatrix}2 \\ 0 \end{bmatrix}$}++ (2,0);
@@ -139,6 +145,7 @@ but we first need to figure out the properties it must satisfy.
 \draw[red,dashed] (1,0) -- (1,1) -- (0,1);
 \end{tikzpicture}
   \begin{tikzpicture}[scale=0.5]
+  \fill[red!50!white] (0,0) -- (1,0) -- (1.75,0.5) -- (0.75,0.5) -- (0,0);
   \draw[thin,gray,<->] (-4,0)-- (4,0);
   \draw[thin,gray,<->] (0,-4)-- (0,4);
   \draw[thick,blue,->] (0,0) -- node[below] {$A_2\begin{bmatrix}1\\0\end{bmatrix}=2\begin{bmatrix}1\\0\end{bmatrix}$}++ (2,0);
@@ -195,12 +202,13 @@ What is $\det([\vec{e}_1\hspace{0.5em} \vec{e}_2])=\det(I)$, the
 area of the transformed unit square shown here?
 \begin{center}
 \begin{tikzpicture}[scale=1]
+\fill[red!50!white] (0,0) rectangle (1,1);
 \draw[thin,gray,<->] (-1,0)-- (3,0);
 \draw[thin,gray,<->] (0,-1)-- (0,3);
 \draw[thick,blue,->] (0,0) -- node[below] {$\vec{e}_1=\begin{bmatrix}1 \\ 0 \end{bmatrix}$} (1,0);
 \draw[thick,blue,->] (0,0) -- node[left] {$\vec{e}_2=\begin{bmatrix} 0 \\ 1 \end{bmatrix}$} (0,1);
-\draw[thick,blue,->] (1,0) -- (1,1);
-\draw[thick,blue,->] (0,1) -- (1,1);
+\draw[dashed,blue] (1,0) -- (1,1);
+\draw[dashed,blue] (0,1) -- (1,1);
 \end{tikzpicture}
 \end{center}
   \begin{enumerate}[a)]
@@ -218,7 +226,8 @@ standard matrix \([\vec{v}\hspace{0.5em} \vec{v}]\) is illustrated below: both
 What is \(\det([\vec{v}\hspace{0.5em} \vec{v}])\), 
 the area of the transformed unit square shown here?
 \begin{center}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=0.8]
+\fill[red!50!white] (0,0) rectangle (1,1);
 \draw[thin,gray,<->] (-1,0)-- (4,0);
 \draw[thin,gray,<->] (0,-1)-- (0,4);
 \draw[thick,blue,->] (0,0) -- node[below] {$\vec{v}$} (3,2);
@@ -329,7 +338,9 @@ c\det[\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}\cdots]\), assuming no other colu
 % \end{activity}
 
 \begin{observation}
-What happens if we had a multiple of one column to another?
+The determinant must also satisfy other properties.
+Consider \(\det([\vec v+c\vec w\hspace{1em}\vec w])\) and
+\(\det([\vec v\hspace{1em}\vec w])\).
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
@@ -348,8 +359,8 @@ What happens if we had a multiple of one column to another?
 \end{center}
 
 The base of both parallelograms is $\vec{v}$, while the height has not changed,
-so the determinant does not change either. This also
-follows from the properties of the determinant:  
+so the determinant does not change either. This can be proven using the
+other properties of the determinant:
   \begin{align*}
   \det([\vec{v}+c\vec{w}\hspace{1em}\vec{w}])
 &=
@@ -389,6 +400,42 @@ So swapping two columns results in a negation of the
 determinant.  Therefore, determinants represent a \textit{signed} area, since they are not always
 positive.
 \end{observation}
+
+\begin{remark}
+Swapping columns may be thought of as a reflection, which is represented by a negative
+determinant. For example, the following matrices transform the unit square into
+the same parallelogram, but the second matrix reflects its orientation.
+\[
+  A_2=\begin{bmatrix}2&3\\0&4\end{bmatrix}\hspace{2em}
+  B_2=\begin{bmatrix}3&2\\4&0\end{bmatrix}
+\]
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\fill[red!50!white] (0,0) rectangle (1,1);
+\draw[thin,gray,<->] (-4,0)-- (4,0);
+\draw[thin,gray,<->] (0,-4)-- (0,4);
+\draw[thick,blue,->] (0,0) -- node[below] {$A_2 \vec{e}_1= \begin{bmatrix}2 \\ 0 \end{bmatrix}$}++ (2,0);
+\draw[thick,blue,->] (0,0) -- ++(3,4) node[above] {$A_2 \vec{e}_2 = \begin{bmatrix} 3 \\ 4 \end{bmatrix}$};
+\draw[thick,red,->] (0,0) -- ++(1,0);
+\draw[thick,red,->] (0,0) -- ++(0,1);
+\draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
+\draw[red,dashed] (1,0) -- (1,1) -- (0,1);
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.5]
+\fill[red!50!white] (0,0) rectangle (1,1);
+\draw[thin,gray,<->] (-4,0)-- (4,0);
+\draw[thin,gray,<->] (0,-4)-- (0,4);
+\draw[thick,blue,->] (0,0) -- node[below] {$B_2 \vec{e}_2= \begin{bmatrix}2 \\ 0 \end{bmatrix}$}++ (2,0);
+\draw[thick,blue,->] (0,0) -- ++(3,4) node[above] {$B_2 \vec{e}_1 = \begin{bmatrix} 3 \\ 4 \end{bmatrix}$};
+\draw[thick,red,->] (0,0) -- ++(1,0);
+\draw[thick,red,->] (0,0) -- ++(0,1);
+\draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
+\draw[red,dashed] (1,0) -- (1,1) -- (0,1);
+\end{tikzpicture}
+\end{center}
+
+\end{remark}
+
 
 
 
@@ -437,36 +484,36 @@ by applying the transformations given by \(A\) and \(B\), it follows that
 \begin{remark}
 Recall that row operations may be produced by matrix multiplication.
 \begin{itemize}
-\item \(
+\item Multiply the first row of \(A\) by \(c\): \(
   \begin{bmatrix}
   c & 0 & 0 \\
   0 & 1 & 0 \\
   0 & 0 & 1
   \end{bmatrix}A
-\): multiply the first row of \(A\) by \(c\).
-\item \(
+\)
+\item Swap the first and second row of \(A\): \(
   \begin{bmatrix}
   0 & 1 & 0 \\
   1 & 0 & 0 \\
   0 & 0 & 1
   \end{bmatrix}A
-\): swap the first and second row of \(A\).
-\item \(
+\)
+\item Add \(c\) times the third row to the first row of \(A\): \(
   \begin{bmatrix}
   1 & 0 & c \\
   0 & 1 & 0 \\
   0 & 0 & 1
   \end{bmatrix}A
-\): add \(c\) times the third row to the first row of \(A\)
+\)
 \end{itemize}
 \end{remark}
 
 
 \begin{fact}
-Row operation matrix determinants may be computed by manipulating columns
-to reduce each matrix to the identity:
+The determinants of row operation matrices may be computed
+by manipulating columns to reduce each matrix to the identity:
 \begin{itemize}
-\item \(\det
+\item Scaling a row: \(\det
   \begin{bmatrix}
   c & 0 & 0 \\
   0 & 1 & 0 \\
@@ -482,7 +529,7 @@ to reduce each matrix to the identity:
     =
   c
 \)
-\item \(\det
+\item Swapping rows: \(\det
   \begin{bmatrix}
   0 & 1 & 0 \\
   1 & 0 & 0 \\
@@ -498,7 +545,7 @@ to reduce each matrix to the identity:
     =
   -1
 \)
-\item \(\det
+\item Adding a row multiple to another row: \(\det
   \begin{bmatrix}
   1 & 0 & c \\
   0 & 1 & 0 \\
@@ -507,12 +554,12 @@ to reduce each matrix to the identity:
     =
   \det
   \begin{bmatrix}
-  1 & 0 & c-c \\
-  0 & 1 & 0 \\
-  0 & 0 & 1
+  1 & 0 & c-1c \\
+  0 & 1 & 0-0c \\
+  0 & 0 & 1-0c
   \end{bmatrix}
     =
-  1
+  \det(I)=1
 \)
 \end{itemize}
 \end{fact}
@@ -528,7 +575,7 @@ A=\begin{bmatrix}1&2&3\\4&5&6\\7&8&9\end{bmatrix}
 \begin{enumerate}[(a)]
 \item Find a matrix \(R\) such that \(B=RA\), by applying the same row operation to 
 \(I=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}\).
-\item Find \(\det R\).
+\item Find \(\det R\) by comparing with the previous slide.
 \item If \(C \in M_{3,3}\) is a matrix with \(\det(C)= -3\), find 
 \[\det(RC)=\det(R)\det(C).\]
 \end{enumerate}
@@ -557,7 +604,7 @@ A=\begin{bmatrix}1&2&3\\4&5&6\\7&8&9\end{bmatrix}
 \begin{bmatrix}1&2&3\\3(4)&3(5)&3(6)\\7&8&9\end{bmatrix}=B
 \]
 \begin{enumerate}[(a)]
-\item Find a matrix \(R\) such that \(B=RA\)
+\item Find a matrix \(R\) such that \(B=RA\).
 \item If \(C \in M_{3,3}\) is a matrix with \(\det(C)= -7\), find \(\det(RC)\).
 \end{enumerate}
 \end{activity}
