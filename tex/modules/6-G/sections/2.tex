@@ -107,12 +107,13 @@ Thus we can also use row operations to simplify determinants:
 \end{activity}
 
 \begin{observation}
-This is manageable in the $2 \times 2$ case, but we saw in Module E that for larger matrices, row reducing all
-the way to the identity can be a chore!
+This is manageable in the \(2 \times 2\) case, 
+but as you learned in Module E,
+row-reducing larger matrices by hand can be a chore!
 
 \vspace{1em}
 
-So we will explore some more techniques in the next few slides.
+So, let's explore some other techniques to simplify things.
 \end{observation}
 
 
@@ -216,16 +217,16 @@ a \(1\) on the diagonal.
   Compute \(\det \begin{bmatrix} 4 & -2 & 2 \\ 3 & 1 & 4 \\ 1 & -1 & 3\end{bmatrix}\)
   by first doing the following:
   \begin{itemize}
-  	\item Use two row or column operations to create two zeroes in the same row or column.
-    \item Factor a constant out if needed.
-    \item Swap rows or columns if needed.
+    \item Use row/column operations to create two zeroes in the same row or column.
+    \item Factor/swap as needed to get a row/column of all zeroes except 
+      a \(1\) on the diagonal.
   \end{itemize}
 \end{activity}
 
 
 \begin{observation}
-Row/column operations can be used to add zeroes and reduce dimension
-in large matrices.
+This same process of using row/column operations to introduce zeros
+and reduce dimension works on determinants of all sizes.
 
 \begin{align*}
     \det\begin{bmatrix} 
@@ -272,16 +273,26 @@ in large matrices.
 \end{activity}
 
 \begin{observation}
-Another option is to take advantage of the fact that the determinant is linear in each row or column.  This approach is called
+Another option is to take advantage of the fact that the determinant is linear 
+in each row or column.  This approach is called
 \term{Laplace expansion} or \term{cofactor expansion}. 
 
-For example, since $\begin{bmatrix} 1 & 2 & 4 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \end{bmatrix}+2\begin{bmatrix} 0 & 1 &  0 \end{bmatrix}+4\begin{bmatrix} 0  & 0 & 1 \end{bmatrix}$,
+For example, since 
+\textcolor{blue}{\(
+  \begin{bmatrix} 1 & 2 & 4 \end{bmatrix} 
+= 
+  1\begin{bmatrix} 1 & 0 & 0 \end{bmatrix}
++
+  2\begin{bmatrix} 0 & 1 &  0 \end{bmatrix}
++
+  4\begin{bmatrix} 0  & 0 & 1 \end{bmatrix}
+\)},
 
   \begin{align*}
-\det \begin{bmatrix} 2 & 3 & 5  \\ -1 & 3 & 5 \\ 1 & 2 & 4 \end{bmatrix} &=
-1\det \begin{bmatrix} 2 & 3 & 5  \\ -1 & 3 & 5 \\ 1 & 0 & 0 \end{bmatrix} +
-2\det \begin{bmatrix} 2 & 3 & 5  \\ -1 & 3 & 5 \\ 0 & 1 & 0 \end{bmatrix} +
-4\det \begin{bmatrix} 2 & 3 & 5  \\ -1 & 3 & 5 \\ 0 & 0 & 1 \end{bmatrix} \\
+\det \begin{bmatrix} 2 & 3 & 5  \\ -1 & 3 & 5 \\ \textcolor{blue}{1} & \textcolor{blue}{2} & \textcolor{blue}{4} \end{bmatrix} &=
+\textcolor{blue}{1}\det \begin{bmatrix} 2 & 3 & 5  \\ -1 & 3 & 5 \\ \textcolor{blue}{1} & \textcolor{blue}{0} & \textcolor{blue}{0} \end{bmatrix} +
+\textcolor{blue}{2}\det \begin{bmatrix} 2 & 3 & 5  \\ -1 & 3 & 5 \\ \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{0} \end{bmatrix} +
+\textcolor{blue}{4}\det \begin{bmatrix} 2 & 3 & 5  \\ -1 & 3 & 5 \\ \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{1} \end{bmatrix} \\
 &= -1\det \begin{bmatrix}  5 & 3 & 2 \\ 5 & 3 & -1 \\ 0 & 0 & 1 \end{bmatrix} 
 -2\det \begin{bmatrix} 2 & 5 & 3  \\ -1 & 5 & 3 \\ 0 & 0 & 1 \end{bmatrix} +
 4\det \begin{bmatrix} 2 & 3 & 5  \\ -1 & 3 & 5 \\ 0 & 0 & 1 \end{bmatrix} \\
@@ -293,16 +304,35 @@ For example, since $\begin{bmatrix} 1 & 2 & 4 \end{bmatrix} = \begin{bmatrix} 1 
 \end{observation}
 
 \begin{observation}
-Applying Laplace expansion to a $2 \times 2$ matrix yields the usual formula:
-$$\det \begin{bmatrix} a & b \\ c & d \end{bmatrix}=a\det \begin{bmatrix} 1 & 0 \\ c & d \end{bmatrix} + b \det \begin{bmatrix} 0 & 1 \\ c & d \end{bmatrix} = ad-bc.$$
+Applying Laplace expansion to a \(2 \times 2\) matrix yields a short formula:
+\[
+  \det \begin{bmatrix} a & b \\ c & d \end{bmatrix}
+=
+  a\det \begin{bmatrix} 1 & 0 \\ c & d \end{bmatrix} 
++ 
+  b \det \begin{bmatrix} 0 & 1 \\ c & d \end{bmatrix} 
+= 
+  ad-bc
+.\]
 
 \vspace{1em}
 
-One can similarly obtain a formula (with six terms) in the $3 \times 3$ case, but other methods are almost always more efficient.
+There are formulas for the determinants of larger matrices,
+but they can be pretty tedious to use. For example, writing out a
+formula for a \(4\times 4\) determinant would require 24 different terms!
 
-\vspace{1em}
+\[
+   \det\begin{bmatrix}
+     a_{11} & a_{12} & a_{13} & a_{14} \\
+     a_{21} & a_{22} & a_{23} & a_{24} \\
+     a_{31} & a_{32} & a_{33} & a_{34} \\
+     a_{41} & a_{42} & a_{43} & a_{44}
+   \end{bmatrix}
+     =
+   a_{11}(a_{22}(a_{33}a_{44}-a_{43}a_{34})-a_{23}(a_{32}a_{44}-a_{42}a_{34})+\dots)+\dots
+\]
 
-In the $4\times 4$ case, any formula must have 24 terms!
+So this is why we either use Laplace expansion or row/column operations directly.
 \end{observation}
 
 \begin{activity}{10}
@@ -320,10 +350,10 @@ In the $4\times 4$ case, any formula must have 24 terms!
 \begin{activity}{5}
 Based on what we've done today, which technique is easier for computing determinants?
 \begin{enumerate}[(a)]
-\item Row reducing all the way to the identity
-\item Doing row and/or column operations and then reducing the dimension
-\item Laplace expansion
-\item Some other technique (be prepared to describe it)
+\item Memorizing formulas.
+\item Using row/column operations.
+\item Laplace expansion.
+\item Some other technique (be prepared to describe it).
 \end{enumerate}
 \end{activity}
 
