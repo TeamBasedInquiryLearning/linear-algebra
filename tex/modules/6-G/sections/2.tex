@@ -5,8 +5,8 @@
   a matrix may be used to simplify a determinant:
   \begin{enumerate}[(a)]
   \item Multiplying columns by scalars:
-        \[c\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em} \cdots])=
-        \det([\cdots\hspace{0.5em}c\vec{v}\hspace{0.5em} \cdots])\]
+        \[\det([\cdots\hspace{0.5em}c\vec{v}\hspace{0.5em} \cdots])=
+        c\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em} \cdots])\]
   \item Swapping two columns:
         \[\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}
         \cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])=
@@ -90,31 +90,41 @@ Thus we can also use row operations to simplify determinants:
 
 
 
-\begin{activity}{10}
-  Compute the determinant of \(\begin{bmatrix} 2 & 4 \\ 2 & 3 \end{bmatrix}\) 
-  by manipulating its rows and columns to simplify the matrix to \(I\):
+\begin{observation}
+  So we may compute the determinant of \(\begin{bmatrix} 2 & 4 \\ 2 & 3 \end{bmatrix}\) 
+  by manipulating its rows/columns to reduce the matrix to \(I\):
 
   \begin{align*}
     \det\begin{bmatrix} 2 & 4 \\ 2 & 3 \end{bmatrix}
       &=
-    \unknown \det \begin{bmatrix} 1 & 2 \\ 2 & 3 \end{bmatrix}\\
-      &\vdots\\
+    2 \det \begin{bmatrix} 1 & 2 \\ 2 & 3 \end{bmatrix}\\
       &=
-    \unknown \det \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}\\
+    2 \det \begin{bmatrix} 1 & 2 \\ 2-2(1) & 3-2(2)\end{bmatrix}=
+    2 \det \begin{bmatrix} 1 & 2 \\ 0 & -1 \end{bmatrix}\\
       &=
-    \unknown
+    2(-1) \det \begin{bmatrix} 1 & -2 \\ 0 & +1 \end{bmatrix}=
+    -2 \det \begin{bmatrix} 1 & -2 \\ 0 & 1 \end{bmatrix}\\
+      &=
+    -2 \det \begin{bmatrix} 1+2(0) & -2+2(1) \\ 0 & 1\end{bmatrix}
+      =
+    -2 \det \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}\\
+      &=
+    -2\det I = -2(1) = -2
   \end{align*}
-\end{activity}
+\end{observation}
 
-\begin{observation}
-This is manageable in the \(2 \times 2\) case, 
-but as you learned in Module E,
-row-reducing larger matrices by hand can be a chore!
+\begin{remark}
+While a formula might make this \(2\times 2\) determinant easier,
+memorizing a formula for \(3\times 3\), \(4\times 4\), or larger determinants
+is difficult. So we will start by focusing on how to use row/column operations
+on \(3\times 3\) determinants.
 
 \vspace{1em}
-
-So, let's explore some other techniques to simplify things.
-\end{observation}
+ 
+But rather than always turning the original matrix into \(I\),
+let's figure out how to turn the determinant of a larger matrix
+into the determinant of a smaller matrix.
+\end{remark}
 
 
 
@@ -145,8 +155,9 @@ So, let's explore some other techniques to simplify things.
   \draw[purple,dashed,very thick] (0,0,0) -- node[left] {\tiny\(h=1\)} (0,1,0);
   \end{tikzpicture}
   \end{center}
-  Recall that \(V=Bh\).
-This volume is equal to which of the following areas?
+  Recall that for this solid \(V=Bh\), where \(h\) is the height of the solid 
+  and \(B\) is the area of its parallelogram base.
+  So what must its volume be?
 \begin{multicols}{4}
 \begin{enumerate}[(a)]
 \item $\det \begin{bmatrix} 3 & 1 \\ 1 & 1 \end{bmatrix}$
@@ -158,7 +169,8 @@ This volume is equal to which of the following areas?
 \end{activity}
 
 \begin{fact}
-If row \(i\) contains all zeros except for a \(1\) on the diagonal, 
+If row \(i\) contains all zeros except for a \(1\) on the 
+main (upper-left to lower-right) diagonal, 
 then both column and row \(i\)
 may be removed without changing the value of the determinant.
 \[
@@ -177,7 +189,7 @@ may be removed without changing the value of the determinant.
 \]
 Since row and column operations affect the determinants in the same
 way, the same technique works for a column of all zeros except for
-a \(1\) on the diagonal.
+a \(1\) on the main diagonal.
 \[
   \det \begin{bmatrix}
     3 & \textcolor{red}{0} & -1 & 5 \\
@@ -196,67 +208,75 @@ a \(1\) on the diagonal.
 
 
 \begin{activity}{5}
-  Compute  $\det \begin{bmatrix} 1 & 0 & 0 \\ 1 & 5 & 12 \\ 3 & 2 & -1 \end{bmatrix}$
-  by doing the following:
-  \begin{itemize}
-  \item Reduce its dimension by eliminating a row and column.
-  \item Evaluate the resulting \(2\times 2\) determinant.
-  \end{itemize}
+  Remove an appropriate row and column of  
+  $\det \begin{bmatrix} 1 & 0 & 0 \\ 1 & 5 & 12 \\ 3 & 2 & -1 \end{bmatrix}$
+  to simplify the determinant to a \(2\times 2\) determinant.
 \end{activity}
 
 \begin{activity}{5}
-  Compute \(\det \begin{bmatrix} 0 & 3 & -2 \\ 2 & 5 & 12 \\ 0 & 2 & -1 \end{bmatrix}\)
-  by first doing the following:
+  Simplify
+  \(\det \begin{bmatrix} 0 & 3 & -2 \\ 2 & 5 & 12 \\ 0 & 2 & -1 \end{bmatrix}\)
+  to a multiple of a \(2\times 2\) determinant by first doing the following:
   \begin{itemize}
     \item Factor out a \(2\) from a column.
-    \item Swap rows or columns to put a \(1\) on the diagonal.
+    \item Swap rows or columns to put a \(1\) on the main diagonal.
   \end{itemize}
 \end{activity}
 
 \begin{activity}{5}
-  Compute \(\det \begin{bmatrix} 4 & -2 & 2 \\ 3 & 1 & 4 \\ 1 & -1 & 3\end{bmatrix}\)
-  by first doing the following:
+  Simplify
+  \(\det \begin{bmatrix} 4 & -2 & 2 \\ 3 & 1 & 4 \\ 1 & -1 & 3\end{bmatrix}\)
+  to a multiple of a \(2\times 2\) determinant by first doing the following:
   \begin{itemize}
     \item Use row/column operations to create two zeroes in the same row or column.
     \item Factor/swap as needed to get a row/column of all zeroes except 
-      a \(1\) on the diagonal.
+      a \(1\) on the main diagonal.
   \end{itemize}
 \end{activity}
 
 
 \begin{observation}
-This same process of using row/column operations to introduce zeros
-and reduce dimension works on determinants of all sizes.
+Using row/column operations, you can introduce zeros
+and reduce dimension to whittle down the determinant of a large
+matrix to a determinant of a smaller matrix.
 
 \begin{align*}
     \det\begin{bmatrix} 
-      2 & 3 & 5 & 0 \\ 
-      0 & 3 & 2 & 0 \\ 
-      1 & 2 & 0 & 3 \\ 
-      -1 & -1 & 2 & 2 
+      4 & 3 & 0 & 1 \\ 
+      2 & -2 & 4 & 0 \\ 
+      -1 & 4 & 1 & 5 \\ 
+      2 & 8 & 0 & 3 
     \end{bmatrix}
   &=
-    -\det\begin{bmatrix}
-      1 & 2 & 0 & 3 \\ 
-      0 & 3 & 2 & 0 \\ 
-      2 & 3 & 5 & 0 \\ 
-      -1 & -1 & 2 & 2 
+    \det\begin{bmatrix} 
+      4 & 3 & \textcolor{red}{0} & 1 \\ 
+      6 & -18 & \textcolor{red}{0} & -20 \\ 
+      \textcolor{red}{-1} & \textcolor{red}{4} & 
+        \textcolor{red}{1} & \textcolor{red}{5} \\ 
+      2 & 8 & \textcolor{red}{0} & 3 
     \end{bmatrix}
-  \\&=
-    -\det\begin{bmatrix}
-      \textcolor{red}{1} & \textcolor{red}{2} & 
-         \textcolor{red}{0} & \textcolor{red}{3} \\ 
-      \textcolor{red}{0} & 3 & 2 & 0 \\ 
-      \textcolor{red}{2-2} & 3-4 & 5-0 & 0-6 \\ 
-      \textcolor{red}{-1+1} & -1+2 & 2+0 & 2+3 
+  =
+    \det\begin{bmatrix} 
+      4 & 3 & 1 \\ 
+      6 & -18 & -20 \\ 
+      2 & 8 & 3 
     \end{bmatrix}
-  \\&=
-    -\det\begin{bmatrix}
-      3 & 2 & 0 \\ 
-      -1 & 5 & -6 \\ 
-      1 & 2 & 5 
+  \\&=\dots=
+    -2\det\begin{bmatrix}
+      \textcolor{red}{1} & \textcolor{red}{3} & \textcolor{red}{4} \\ 
+      \textcolor{red}{0} & 21 & 43 \\ 
+      \textcolor{red}{0} & -1 & -10 
     \end{bmatrix}
-   = \dots
+  =
+    -2\det\begin{bmatrix} 21 & 43 \\ -1 & -10 \end{bmatrix}
+  \\&= \dots=
+    -2\det\begin{bmatrix}
+      -167 & \textcolor{red}{21} \\
+      \textcolor{red}{0} & \textcolor{red}{1}
+    \end{bmatrix}
+   = -2\det[-167]
+  \\&=-2(-167)\det(I)=
+    334
 \end{align*} 
 \end{observation}
 
@@ -306,13 +326,19 @@ For example, since
 \begin{observation}
 Applying Laplace expansion to a \(2 \times 2\) matrix yields a short formula:
 \[
-  \det \begin{bmatrix} a & b \\ c & d \end{bmatrix}
+  \det \begin{bmatrix} \textcolor{blue}{a} & \textcolor{blue}{b} \\ c & d \end{bmatrix}
+=
+  \textcolor{blue}{a}\det \begin{bmatrix} \textcolor{blue}{1} & \textcolor{blue}{0} \\ 
+    c & d \end{bmatrix} 
++ 
+  \textcolor{blue}{b} \det \begin{bmatrix} \textcolor{blue}{0} & \textcolor{blue}{1} \\ 
+    c & d \end{bmatrix} 
 =
   a\det \begin{bmatrix} \textcolor{red}{1} & \textcolor{red}{0} \\ 
     \textcolor{red}{c} & d \end{bmatrix} 
-+ 
-  b \det \begin{bmatrix} \textcolor{red}{0} & \textcolor{red}{1} \\ 
-    c & \textcolor{red}{d} \end{bmatrix} 
+-
+  b \det \begin{bmatrix} \textcolor{red}{1} & \textcolor{red}{0} \\ 
+    \textcolor{red}{d} & c \end{bmatrix} 
 = 
   ad-bc
 .\]
