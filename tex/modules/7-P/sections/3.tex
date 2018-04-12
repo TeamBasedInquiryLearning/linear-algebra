@@ -1,7 +1,7 @@
 
 \newcommand{\drawtruss}[1][1]{%
 \begin{center}
-\begin{tikzpicture}[scale=#1]
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
 \draw (0,0) -- node[left,magenta]{$1$} (1,1.71) -- node[right,magenta]{$3$} (2,0) -- node[above,magenta]{$2$} cycle;
 \draw (2,0) -- node[left,magenta]{$5$} (3,1.71) -- node[above,magenta]{$4$} (1,1.71) -- cycle;
 \draw (3,1.71) -- node[right,magenta]{$7$}  (4,0) -- node[above,magenta]{$6$} (2,0) -- cycle;
@@ -19,35 +19,40 @@
 Consider the truss pictured below with two fixed anchor points and a 10000 N load (assume all triangles are equilateral).
 \drawtruss
 
-The horizontal and vertical forces must balance at each of the five intersecting nodes.  For example, at the bottom left node
-\begin{multicols}{4}
-\begin{tikzpicture}
-\draw [thick, magenta,->] (0,0) -- node[left]{$F_1$} (1,1.71);
-\draw [thick, magenta,->] (0,0) -- node[below]{$F_2$} (2,0);
-\draw [thick, blue,->] (0,0) -- node[below right]{$N_1$} (1,1);
+The horizontal and vertical forces must balance at each  node.  For example, at the bottom left node there are 3 forces acting.
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+\draw [thick, magenta,->] (0,0) -- node[left]{$\vec{F}_1$} (1,1.71);
+\draw [thick, magenta,->] (0,0) -- node[below]{$\vec{F}_2$} (2,0);
+\draw [thick, blue,->] (0,0) -- node[right]{$\vec{N}_1$} (1,1);
 \end{tikzpicture}
+\end{center}
 
-\begin{tikzpicture}
-\draw [thick, magenta,->] (0,0) -- node[above left]{$F_{1,v}$} (0,1.71);
-\draw [thick, magenta,->] (0,0) -- node[below]{$F_{1,h}$} (1,0);
-\draw [thick, magenta,->] (0,0) -- node[below right]{$F_2$} (2,0);
-\draw [thick, blue,->] (0,0) -- node[left]{$N_{1,v}$} (0,1);
-\draw [thick, blue,->] (0,0) -- node[above right]{$N_{1,h}$} (1,0);
+We adhere to the convention that a compression force on a strut is positive, while a negative force represents tension.
+\end{observation}
+
+\begin{observation}
+\drawtruss[0.8]
+We decompose the first node into vertical and horizontal forces:
+\begin{multicols}{2}
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+\draw [thick, magenta,->] (0,0) -- node[left]{$\vec{F}_1$} (1,1.71);
+\draw [thick, magenta,->] (0,0) -- node[below]{$\vec{F}_2$} (2,0);
+\draw [thick, blue,->] (0,0) -- node[right]{$\vec{N}_1$} (1,1);
 \end{tikzpicture}
-
-Apply basic trig:
+\end{center}
+%
 \begin{align*}
-F_{1,v}&=F_1 \sin(60^\circ) \\ F_{1,h}&=F_1\cos(60^\circ)
+\vec{F}_1 &= F_1\begin{bmatrix} \cos(60^\circ) \\ \sin(60^\circ) \end{bmatrix} \\
+\vec{N}_1 &= \begin{bmatrix} N_{1,h} \\ N_{1,v} \end{bmatrix}
 \end{align*}
+\end{multicols}
 
-thus
 \begin{align*}
 F_1 \sin(60^\circ)+N_{1,v} &= 0 \\
 F_1 \cos(60^\circ)+N_{1,h}+F_2 &= 0
 \end{align*}
-\end{multicols}
-
-We adhere to the convention that a compression force on a strut is positive, while a negative force represents tension.
 \end{observation}
 
 \begin{activity}{10}
@@ -68,8 +73,10 @@ Determine how many total equations there will be after accounting for all of the
 
 
 \begin{activity}{10}
-\drawtruss[0.8]
+\drawtruss[0.5]
 The resulting system is
+\scalebox{0.8}{
+\begin{minipage}{0.8\linewidth}
 \begin{alignat*}{12}
 N_{1,v} &\,\,& &\,\,& &\,\,& &\,+\,& (\sin(60^\circ))F_1 &\,\,& &\,\,& &\,\,& &\,\,& &\,\,& &\,\,& &\,=\,& 0 \\
         &\,\,& N_{1,h} &\,\,& &\,\,& &\,+\,& (\cos(60^\circ))F_1 &\,+\,&F_2 &\,\,& &\,\,& &\,\,& &\,\,& &\,\,& &\,=\,& 0 \\
@@ -82,20 +89,26 @@ N_{1,v} &\,\,& &\,\,& &\,\,& &\,+\,& (\sin(60^\circ))F_1 &\,\,& &\,\,& &\,\,& &\
         &\,\,&         &\,\,& N_{2,v} &\,\,& &\,\,&                     &\,\,& &\,\,&                   &\,\,& &\,\,&                    &\,\,& &\,+\,& (\sin(60^\circ))F_7&\,=\,& 0 \\
         &\,\,&         &\,\,& &\,\,&N_{2,h} &\,\,&                     &\,\,& &\,\,&                   &\,\,&    &\,\,&                    &\,-\,& F_6 &\,-\,& (\cos(60^\circ))F_7&\,=\,& 0
 \end{alignat*}
+\end{minipage}
+}
+
 Solve this system to determine which struts are compressed and which are in tension.
 \end{activity}
 
 \begin{observation}
+\drawtruss[0.8]
 The determined part of the solution is
 \begin{align*}
 N_{1,v}=N_{2,v}&=5000 \\
 F_1=F_4=F_7&=-5882.4 \\
-F_3=F_5=5882.4
+F_3=F_5&=5882.4
 \end{align*}
 
 So struts 1,4,7 are in tension, while struts 3 and 5 are compressed.
 
 The forces on struts 2 and 6 (and the horizontal normal forces) are not strictly determined in this setting.
 \end{observation}
+
+
 
 \end{applicationActivities}
