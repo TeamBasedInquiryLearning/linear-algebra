@@ -99,30 +99,28 @@ Thus we can also use row operations to simplify determinants:
       &=
     2 \det \begin{bmatrix} 1 & 2 \\ 2 & 3 \end{bmatrix}\\
       &=
-    2 \det \begin{bmatrix} 1 & 2 \\ 2-2(1) & 3-2(2)\end{bmatrix}=
+    %2 \det \begin{bmatrix} 1 & 2 \\ 2-2(1) & 3-2(2)\end{bmatrix}=
     2 \det \begin{bmatrix} 1 & 2 \\ 0 & -1 \end{bmatrix}\\
       &=
-    2(-1) \det \begin{bmatrix} 1 & -2 \\ 0 & +1 \end{bmatrix}=
+    %2(-1) \det \begin{bmatrix} 1 & -2 \\ 0 & +1 \end{bmatrix}=
     -2 \det \begin{bmatrix} 1 & -2 \\ 0 & 1 \end{bmatrix}\\
       &=
-    -2 \det \begin{bmatrix} 1+2(0) & -2+2(1) \\ 0 & 1\end{bmatrix}
-      =
+    %-2 \det \begin{bmatrix} 1+2(0) & -2+2(1) \\ 0 & 1\end{bmatrix} =
     -2 \det \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}\\
       &=
-    -2\det I = -2(1) = -2
+    %-2\det I = 
+	%-2(1) = 
+	-2
   \end{align*}
 \end{observation}
 
 \begin{remark}
-While a formula might make this \(2\times 2\) determinant easier,
-memorizing a formula for \(3\times 3\), \(4\times 4\), or larger determinants
-is difficult. So we will start by focusing on how to use row/column operations
-on \(3\times 3\) determinants.
+So we see that row reducing all the way into RREF gives us a method of computing determinants!
 
 \vspace{1em}
- 
-But rather than always turning the original matrix into \(I\),
-let's figure out how to turn the determinant of a larger matrix
+
+However, we learned in module E that this can be tedious for large matrices.  Thus, we will try
+to figure out how to turn the determinant of a larger matrix
 into the determinant of a smaller matrix.
 \end{remark}
 
@@ -324,7 +322,7 @@ For example, since
 \end{observation}
 
 \begin{observation}
-Applying Laplace expansion to a \(2 \times 2\) matrix yields a short formula:
+Applying Laplace expansion to a \(2 \times 2\) matrix yields a short formula you may have seen:
 \[
   \det \begin{bmatrix} \textcolor{blue}{a} & \textcolor{blue}{b} \\ c & d \end{bmatrix}
 =
