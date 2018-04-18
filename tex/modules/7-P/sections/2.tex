@@ -5,6 +5,8 @@
 
 \textbf{A \$700,000,000,000 Problem:}
 
+\vspace{1em}
+
 In the picture below, each circle represents a webpage, and each arrow
 represents a link from one page to another.
 
@@ -45,6 +47,9 @@ most imporant to least important.
 
 \begin{observation}
 \textbf{The \$700,000,000,000 Idea:} \\
+
+\vspace{1em}
+
 Links are endorsements.
 
 \begin{enumerate}
@@ -99,10 +104,10 @@ This corresponds to the \term{page rank system}
 
 
 
-\begin{example}
+\begin{observation}
   \begin{multicols}{2}
   \begin{center}
-  \begin{tikzpicture}[scale=0.5]
+  \begin{tikzpicture}[scale=0.75]
   \begin{scope}[every node/.style={circle,thick,draw}]
       \node (1) at (0,4) {1};
       \node (2) at (0,0) {2};
@@ -123,11 +128,16 @@ This corresponds to the \term{page rank system}
   \frac{1}{2} x_1&& &+&x_3 &=& x_2 \\
   \frac{1}{2} x_1&& && &=& x_3
   \end{alignat*}
-
+  \[
+    \begin{bmatrix}0&1&0\\\frac{1}{2}&0&\frac{1}{2}\\\frac{1}{2}&0&0\end{bmatrix}
+    \begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+  =
+    \begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+  \]
 \end{multicols}
 
-We can summarize the left hand side of the system by putting its coefficients
-into a \term{page rank matrix}
+By writing this linear system in terms of matrix multiplication, we obtain the
+\term{page rank matrix}
 \(
   A
     =
@@ -136,32 +146,37 @@ into a \term{page rank matrix}
     \frac{1}{2} & 0 & 1 \\
     \frac{1}{2} & 0 & 0
   \end{bmatrix}
-\), and store the right hand side of the system as the vector
+\) and page rank vector
 \(\vect{x}=\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\).
 
 Thus, computing the imporance of pages on a network is equivalent to solving
-the matrix equation \(A\vec{x}=\vec{x}\).
+the matrix equation \(A\vec{x}=1\vec{x}\).
 
-\end{example}
+\end{observation}
 
 \begin{activity}{5}
-A \term{page rank vector} for a page rank matrix \(A\) is a vector $\vec{x}$
-satisfying \(A\vec{x}=\vec{x}\). This vector describes the relative
-importance of webpages on the network described by \(A\).
-
-Thus, the \$700,000,000,000 problem is what kind of problem?
+Thus, our \$700,000,000,000 problem is what kind of problem?
+  \[
+    \begin{bmatrix}0&1&0\\\frac{1}{2}&0&\frac{1}{2}\\\frac{1}{2}&0&0\end{bmatrix}
+    \begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+  =
+    1\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+  \]
 \begin{enumerate}[(a)]
+\item An antiderivative problem
 \item A bijection problem
-\item A calculus problem
+\item A cofactoring problem
 \item A determinant problem
 \item An eigenvector problem
 \end{enumerate}
 \end{activity}
 
 \begin{activity}{10}
-Find a page rank vector \(\vec{x}\) satisfying \(A\vec{x}=\vec{x}\)
-(an eigenvector associated to the eigenvalue \(1\))
+Find a page rank vector \(\vec{x}\) satisfying \(A\vec{x}=1\vec{x}\)
 for the following network's page rank matrix \(A\).
+
+That is, find the eigenspace associated with \(\lambda=1\) for the matrix
+\(A\), and choose a vector from that eigenspace.
 
 \begin{multicols}{2}
 \begin{center}
@@ -233,7 +248,7 @@ and both pages are twice as important as page \(3\).
 \end{observation}
 
 
-\begin{activity}{10}
+\begin{activity}{5}
 Compute the $7 \times 7$ page rank matrix for the following network.
 \begin{center}
 \begin{tikzpicture}[scale=0.6]
@@ -264,20 +279,6 @@ Compute the $7 \times 7$ page rank matrix for the following network.
 \end{scope}
 \end{tikzpicture}
 \end{center}
-
-%\[
-%  A
-%    =
-%  \begin{bmatrix}
-%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
-%    \frac{1}{2} & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
-%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
-%    \frac{1}{2} & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
-%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
-%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown \\
-%    0 & \unknown & \unknown & \unknown & \unknown & \unknown & \unknown
-%  \end{bmatrix}
-%\]
 
 For example, since website $1$ distributes its endorsement equally between $2$ and $4$, the first column is $\begin{bmatrix} 0 \\ \frac{1}{2} \\ 0 \\ \frac{1}{2} \\ 0 \\ 0 \\ 0 \end{bmatrix}$.
 \end{activity}
@@ -373,6 +374,47 @@ it's reasonable to consider page \(2\) as the most important page.
   \begin{bmatrix} 2 \\ 4 \\2 \\ 2.5 \\ 0 \\ 0 \\ 1\end{bmatrix}
 \]
 \end{multicols}}
+
+Based upon this page rank vector,
+here is a complete ranking of all seven pages from most important to least important:
+\[
+  2, 4, 1, 3, 7, 5, 6
+\]
 \end{observation}
+
+
+\begin{activity}{10}
+Given the following diagram,
+use a page rank vector to rank the pages \(1\) through \(7\) in order
+from most important to least important.
+\begin{center}
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4)  {1};
+    \node (2) at (3,4)  {2};
+    \node (3) at (6,4)  {3};
+    \node (4) at (10,4) {4};
+    \node (5) at (0,0)  {5};
+    \node (6) at (3,0)  {6};
+    \node (7) at (6,0)  {7} ;
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge (2);
+    \draw [->] (1) edge (5);
+    \draw [->] (2) edge (5);
+    \draw [->] (2) edge[bend left=30] (7);
+    \draw [->] (3) edge[bend right=30] (1);
+    \draw [->] (3) edge (2);
+    \draw [->] (4) edge (3);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (2);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\end{activity}
 
 \end{applicationActivities}
