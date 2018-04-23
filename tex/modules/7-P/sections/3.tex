@@ -2,7 +2,9 @@
 \newcommand{\drawtruss}[1][1]{%
 \begin{center}
 \begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
-\draw (0,0) -- node[left,magenta]{$1$} (1,1.71) -- node[right,magenta]{$3$} (2,0) -- node[above,magenta]{$2$} cycle;
+\draw (0,0) node[left,magenta]{A} -- 
+      (1,1.71) node[left,magenta]{D} -- 
+      (2,0) node[above,magenta]{B} -- cycle;
 \draw (2,0) -- node[left,magenta]{$5$} (3,1.71) -- node[above,magenta]{$4$} (1,1.71) -- cycle;
 \draw (3,1.71) -- node[right,magenta]{$7$}  (4,0) -- node[above,magenta]{$6$} (2,0) -- cycle;
 \draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
@@ -15,11 +17,28 @@
 
 \begin{applicationActivities}
 
+\begin{example}
+In engineering, a \term{truss} is a structure designed from several beams
+of material called \term{struts}, assembled to behave as a single object.
+
+\begin{center}
+\includegraphics[width=0.8\linewidth]{media/truss.jpg}
+\end{center}
+\end{example}
+
 \begin{activity}{10}
-Consider the truss pictured below with two fixed anchor points and a 10000 N load (assume all triangles are equilateral).
+Consider the representation of a simple truss pictured below.
+All of the seven struts are of equal length, affixed to two anchor points
+with a \(10000 N\) load applied to the center of its base.
+
 \drawtruss
 
-Which strut will have the greatest force placed on it?
+Which of the following must hold?
+\begin{enumerate}[a)]
+\item All of the struts will experience compression.
+\item All of the struts will experience tension.
+\item Some of the struts will be compressed, and others will be tensioned.
+\end{enumerate}
 \end{activity}
 
 \begin{observation}
