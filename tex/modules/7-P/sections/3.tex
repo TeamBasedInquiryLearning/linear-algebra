@@ -1,19 +1,36 @@
-
-\newcommand{\drawtruss}[1][1]{%
+\newcommand{\drawtruss}[2][1]{%
 \begin{center}
 \begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
-\draw (0,0) node[left,magenta]{A} -- 
-      (1,1.71) node[left,magenta]{D} -- 
-      (2,0) node[above,magenta]{B} -- cycle;
-\draw (2,0) -- node[left,magenta]{$5$} (3,1.71) -- node[above,magenta]{$4$} (1,1.71) -- cycle;
-\draw (3,1.71) -- node[right,magenta]{$7$}  (4,0) -- node[above,magenta]{$6$} (2,0) -- cycle;
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
 \draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
 \draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
-\draw[thick,red,->] (2,0) --node[right]{10000 N} (2,-0.75);
+\draw[thick,red,->] (2,0) -- (2,-0.75);
+#2
 \end{tikzpicture}
 \end{center}
 }
-
+\newcommand{\trussCompletion}{%
+\draw [thick, blue,->] (0,0) -- (0.5,0.5);
+\draw [thick, blue,->] (4,0) -- (3.5,0.5);
+\draw [thick, magenta,<->] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,<->] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,<->] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,->] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,<-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,->] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,<-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{%
+\draw [thick, blue,->] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,->] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,->] (0,0) -- (0.5,0);
+}
 
 \begin{applicationActivities}
 
@@ -29,100 +46,218 @@ of material called \term{struts}, assembled to behave as a single object.
 \begin{activity}{10}
 Consider the representation of a simple truss pictured below.
 All of the seven struts are of equal length, affixed to two anchor points
-with a \(10000 N\) load applied to the center of its base.
+applying a normal force to nodes \(C\) and \(E\), and
+with a \(10000 N\) load applied to the node given by \(D\).
 
-\drawtruss
+\drawtruss{}
 
-Which of the following must hold?
+Which of the following must hold for the truss to be stable?
 \begin{enumerate}[a)]
 \item All of the struts will experience compression.
 \item All of the struts will experience tension.
-\item Some of the struts will be compressed, and others will be tensioned.
+\item Some of the struts will be compressed, but others will be tensioned.
 \end{enumerate}
 \end{activity}
 
 \begin{observation}
-Consider the truss pictured below with two fixed anchor points and a 10000 N load (assume all triangles are equilateral).
+Since the forces must balance at each node for the truss to be stable,
+some of the struts will be compressed, while others will be tensioned. 
+
+\drawtruss{\trussCompletion}
+
+By finding vector equations that must hold at each node, we may
+determine many of the forces at play.
+\end{observation}
+
+\begin{remark}
+For example, at the bottom left node there are 3 forces acting.
+
+\drawtruss{\trussCForces}
+
+Let \(\vec F_{CA}\) be the force on \(C\) given by the compression/tension
+of the strut \(CA\), let \(\vec F_{CD}\) be defined similarly, and let
+\(\vec N_C\) be the normal force of the anchor point on \(C\).
+
+\vspace{1em}
+
+For the truss to be stable, we must have
+\[
+\vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+.\]
+\end{remark}
+
+\begin{activity}{10}
+Using the conventions of the previous slide, and where \(\vec L\)
+represents the load vector on node \(D\), find four more vector equations
+that must be satisfied for each of the other four nodes of the truss.
+
 \drawtruss
 
-The horizontal and vertical forces must balance at each  node.  For example, at the bottom left node there are 3 forces acting.
-\begin{center}
-\begin{tikzpicture}[scale=0.8]
-\draw [thick, magenta,->] (0,0) -- node[left]{$\vec{F}_1$} (1,1.71);
-\draw [thick, magenta,->] (0,0) -- node[below]{$\vec{F}_2$} (2,0);
-\draw [thick, blue,->] (0,0) -- node[right]{$\vec{N}_1$} (1,1);
-\end{tikzpicture}
-\end{center}
+\[
+A: \unknown
+\]
+\[
+B: \unknown
+\]
+\[
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+\]
+\[D:\unknown\]
+\[E:\unknown\]
+\end{activity}
 
-We adhere to the convention that a compression force on a strut is positive, while a negative force represents tension.
+\begin{remark}
+The five vector equations may be written as follows.
+
+\drawtruss
+
+\[
+A: \vec F_{AC}+\vec F_{AD}+\vec F_{AB}=\vec 0
+\]
+\[
+B: \vec F_{BC}+\vec F_{BD}+\vec F_{BE}=\vec 0
+\]
+\[
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+\]
+\[
+D: \vec F_{DC}+\vec F_{DA}+\vec F_{DB} +\vec F_{DE}+\vec L=\vec 0
+\]
+\[
+E: \vec F_{EB}+\vec F_{ED}+\vec N_E=\vec 0
+\]
+\end{remark}
+
+\begin{observation}
+\drawtruss{}
+
+Each vector may be treated as an \(\IR^2\) vector by
+decomposing its magnitude into vertical and horizontal components.
+Note that \(\vec F_{CA}\) must have the same magnitude (and opposite
+direction) as \(\vec F_{AC}\).
+
+\[
+  \vec{F}_{CA}
+    = 
+  x\begin{bmatrix} \cos(60^\circ) \\ \sin(60^\circ) \end{bmatrix}
+    =
+  x\begin{bmatrix} 1/2 \\ \sqrt{3}/2\end{bmatrix}
+\]
+
+\[
+  \vec{F}_{AC}
+    = 
+  x\begin{bmatrix} \cos(-120^\circ) \\ \sin(-120^\circ) \end{bmatrix}
+    =
+  x\begin{bmatrix} -1/2 \\ -\sqrt{3}/2\end{bmatrix}
+\]
+\end{observation}
+
+\begin{activity}{5}
+To write a linear system that models the truss under consideration,
+how many variables will be required?
+
+\drawtruss{}
+
+\begin{enumerate}[a)]
+\item \(7\): \(5\) from the nodes, \(2\) from the anchors
+\item \(10\): \(7\) from the struts, \(2\) from the anchors, \(1\) from the load
+\item \(11\): \(7\) from the struts, \(4\) from the anchors
+\item \(13\): \(5\) from the nodes, \(7\) from the struts, \(1\) from the load
+\end{enumerate}
+\end{activity}
+
+\begin{observation}
+Since the angles for each strut are known,
+one variable may be used to represent each.
+
+\drawtruss{}
+
+For example:
+
+\[
+\vec F_{AB}=-\vec F_{BA}=x_1\begin{bmatrix}\cos(0)\\\sin(0)\end{bmatrix}
+=x_1\begin{bmatrix}1\\0\end{bmatrix}
+\]
+\[
+\vec F_{BE}=-\vec F_{EB}=x_5\begin{bmatrix}\cos(-60^\circ)\\\sin(-60^\circ)\end{bmatrix}
+=x_5\begin{bmatrix}1/2\\-\sqrt{3}/2\end{bmatrix}
+\]
+
+
 \end{observation}
 
 \begin{observation}
-\drawtruss[0.8]
-We decompose the first node into vertical and horizontal forces:
-\begin{multicols}{2}
-\begin{center}
-\begin{tikzpicture}[scale=0.8]
-\draw [thick, magenta,->] (0,0) -- node[left]{$\vec{F}_1$} (1,1.71);
-\draw [thick, magenta,->] (0,0) -- node[below]{$\vec{F}_2$} (2,0);
-\draw [thick, blue,->] (0,0) -- node[right]{$\vec{N}_1$} (1,1);
-\end{tikzpicture}
-\end{center}
-%
-\begin{align*}
-\vec{F}_1 &= F_1\begin{bmatrix} \cos(60^\circ) \\ \sin(60^\circ) \end{bmatrix} \\
-\vec{N}_1 &= \begin{bmatrix} N_{1,h} \\ N_{1,v} \end{bmatrix}
-\end{align*}
-\end{multicols}
+Since the angle of the normal forces for each anchor point are unknown,
+two variables may be used to represent each.
 
-\begin{align*}
-F_1 \sin(60^\circ)+N_{1,v} &= 0 \\
-F_1 \cos(60^\circ)+N_{1,h}+F_2 &= 0
-\end{align*}
+\drawtruss{}
+
+\[
+\vec N_C=\begin{bmatrix}y_1\\y_2\end{bmatrix}
+\]
+\[
+\vec N_D=\begin{bmatrix}y_3\\y_4\end{bmatrix}
+\]
+
+The load vector is constant.
+
+\[
+\vec L = \begin{bmatrix}0\\-10000\end{bmatrix}
+\]
+
 \end{observation}
 
-\begin{activity}{10}
-Consider the truss pictured below with two fixed anchor points and a 10000 N load (assume all triangles are equilateral).
-\drawtruss
+\begin{remark}
+Using the approximation \(\sqrt{3}/2\approx 0.866\), each of the five vector
+equations found previously may be rewritten as two linear equations:
+one for the horizontal component and one for the vertical.
 
-From the bottom left node we obtained 2 equations in the four variables
-\begin{itemize}
-\item $F_{1}$ (compression force on strut one)
-\item $N_{1,v}$ and $N_{1,h}$ (horizontal and vertical components of the normal force from the left anchor)
-\item $F_2$ (compression force on strut 2).
-\end{itemize}
+\drawtruss{}
 
-\begin{subactivity}
-Determine how many total equations there will be after accounting for all of the nodes, and and list all of the variables.  You do not need to actually determine all of the equations.
-\end{subactivity}
-\end{activity}
-
-
-\begin{activity}{10}
-\drawtruss[0.5]
-The resulting system is
-\scalebox{0.8}{
-\begin{minipage}{0.8\linewidth}
-\begin{alignat*}{12}
-N_{1,v} &\,\,& &\,\,& &\,\,& &\,+\,& (\sin(60^\circ))F_1 &\,\,& &\,\,& &\,\,& &\,\,& &\,\,& &\,\,& &\,=\,& 0 \\
-        &\,\,& N_{1,h} &\,\,& &\,\,& &\,+\,& (\cos(60^\circ))F_1 &\,+\,&F_2 &\,\,& &\,\,& &\,\,& &\,\,& &\,\,& &\,=\,& 0 \\
-        &\,\,&         &\,\,& &\,\,& &\,-\,& (\sin(60^\circ))F_1 &\,\,& &\,-\,&(\sin(60^\circ)F_3 &\,\,& &\,\,& &\,\,& &\,\,& &\,=\,& 0 \\
-        &\,\,&         &\,\,& &\,\,& &\,-\,& (\cos(60^\circ))F_1 &\,\,& &\,+\,&(\cos(60^\circ)F_3 &\,+\,&F_4 &\,\,& &\,\,& &\,\,& &\,=\,& 0 \\
-        &\,\,&         &\,\,& &\,\,& &\,\,&                     &\,\,& &\,\,&(\sin(60^\circ)F_3 &\,\,& &\,+\,& (\sin(60^\circ))F_5&\,\,& &\,\,& &\,=\,& 10000 \\
-        &\,\,&         &\,\,& &\,\,& &\,\,&                     &\,-\,& F_2&\,-\,&(\cos(60^\circ)F_3 &\,\,& &\,+\,& (\cos(60^\circ))F_5&\,+\,&F_6 &\,\,& &\,=\,& 0 \\
-        &\,\,&         &\,\,& &\,\,& &\,\,&                     &\,\,& &\,\,&                   &\,\,& &\,-\,& (\sin(60^\circ))F_5&\,\,& &\,-\,& (\sin(60^\circ))F_7&\,=\,& 0 \\
-        &\,\,&         &\,\,& &\,\,& &\,\,&                     &\,\,& &\,\,&                   &\,-\,&F_4 &\,-\,& (\cos(60^\circ))F_5&\,\,& &\,+\,& (\cos(60^\circ))F_7&\,=\,& 0 \\
-        &\,\,&         &\,\,& N_{2,v} &\,\,& &\,\,&                     &\,\,& &\,\,&                   &\,\,& &\,\,&                    &\,\,& &\,+\,& (\sin(60^\circ))F_7&\,=\,& 0 \\
-        &\,\,&         &\,\,& &\,\,&N_{2,h} &\,\,&                     &\,\,& &\,\,&                   &\,\,&    &\,\,&                    &\,-\,& F_6 &\,-\,& (\cos(60^\circ))F_7&\,=\,& 0
+\[
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+\]
+\begin{alignat*}{5}
+0.5x_2   &+& 1x_6 &+& y_1 &&      &=& 0\\
+0.866x_2 &&       &&      &+& y_2 &=& 0
 \end{alignat*}
-\end{minipage}
-}
+\end{remark}
 
-Solve this system to determine which struts are compressed and which are in tension.
+\begin{activity}{10}
+Using the approximation \(\sqrt{3}/2\approx 0.866\),
+write two linear equations that represent the forces at node \(D\),
+where the magnitude of compression/tension on strut \(AD\) is \(x_3\),
+\(BD\) is \(x_4\), \(CD\) is \(x_6\), and \(DE\) is \(x_7\).
+
+\drawtruss{}
+
+\[
+D:\vec F_{DA}+\vec F_{DB}+\vec F_{DC}+\vec F_{DE}=-\vec L
+\]
+
 \end{activity}
 
 \begin{observation}
-\drawtruss[0.8]
+The full augmented matrix given by the ten equations in this linear system
+is given below, where the columns correspond to \(x_1,\dots,x_7,y_1,\dots,y_4\).
+
+\drawtruss{}
+
+\[
+\begin{bmatrix}[ccccccccccc|c]
+1&-0.5&0.5&0&0&0&0&0&0&0&0&0\\
+0&-0.866&-0.866&0&0&0&0&0&0&0&0&0\\
+-1&0&0&-0.5&0.5&0&0&0&0&0&0&0\\
+0&0&0&-0.866&-0.866&0&0&0&0&0&0&0\\
+0&0.5&0&0&0&1&0&1&0&0&0&0\\
+0&0.866&0&0&0&0&0&0&1&0&0&0\\
+\end{bmatrix}
+\]
+\end{observation}
+
+\begin{observation}
+\drawtruss[0.8]{\trussCompletion}
 The determined part of the solution is
 \begin{align*}
 N_{1,v}=N_{2,v}&=5000 \\
@@ -130,7 +265,8 @@ F_1=F_4=F_7&=-5882.4 \\
 F_3=F_5&=5882.4
 \end{align*}
 
-So struts 1,4,7 are in tension, while struts 3 and 5 are compressed.
+So struts 1,4,7 are always in tension, while struts 3 and 5 are 
+always compressed.
 
 The forces on struts 2 and 6 (and the horizontal normal forces) are not strictly determined in this setting.
 \end{observation}
