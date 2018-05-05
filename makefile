@@ -19,7 +19,7 @@ pdf/course-slides.pdf: tex/course-slides.sty tex/tbil-la.sty tex/course-slides.t
 	pdflatex --output-directory=aux course-slides.tex; \
 	mv aux/course-slides.pdf ../pdf
 
-pdf/standards.pdf: tex/tbil-la.sty tex/standards.tex
+pdf/standards.pdf: tex/tbil-la.sty tex/standards.tex tex/modules/*/standards.tex
 	cd tex; pdflatex --output-directory=aux standards.tex; \
 	mv aux/standards.pdf ../pdf
 
