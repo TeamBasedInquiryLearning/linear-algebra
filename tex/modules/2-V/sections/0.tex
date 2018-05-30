@@ -7,69 +7,47 @@
 % include ca=b, unique equidistant, nonzero orthogonal
 
 \begin{activity}{20}\smallSlideText
-Consider each of the following vector properties. Label each property
-with \(\IR^1\), \(\IR^2\), and/or \(\IR^3\) if that property holds for
-Euclidean vectors/scalars \(\vec u,\vec v,\vec w\) of that dimension.
+Consider each of the following properties of the real numbers
+\(\IR^1\). Label each property as \textbf{valid} if the property also
+holds for two-dimensional Euclidean vectors 
+\(\vec u,\vec v,\vec w\in\IR^2\) and scalars \(a,b\in\IR\),
+and \textbf{invalid} if it does not.
 \begin{multicols}{2}
 \begin{enumerate}
-  \item \textbf{Addition associativity.}
-
-        \(\vec u+(\vec v+\vec w)=
+  \item \(\vec u+(\vec v+\vec w)=
         (\vec u+\vec v)+\vec w\).
-  \item \textbf{Addition commutivity.}
-
-        \(\vec u+\vec v=
+  \item \(\vec u+\vec v=
         \vec v+\vec u\).
-  \item \textbf{Addition identity.}
-
-        There exists some \(\vec z\)
+  \item There exists some \(\vec z\)
         where \(\vec v+\vec z=\vec v\).
-  \item \textbf{Addition inverse.}
-
-        There exists some \(-\vec v\)
+  \item There exists some \(-\vec v\)
         where \(\vec v+(-\vec v)=\vec z\).
-  \item \textbf{Addition midpoint uniqueness.}
-
-        There exists a unique \(\vec m\) where the distance from
-        \(\vec u\) to \(\vec m\) equals the distance from \(\vec m\)
-        to \(\vec v\).
-  \item \textbf{Scalar multiplication associativity.}
-
-        \(a(b\vec v)=(ab)\vec v\).
-  \item \textbf{Scalar multiplication identity.}
-
-        \(1\vec v=\vec v\).
-  \item \textbf{Scalar multiplication relativity.}
-
-        There exists some scalar \(c\) where either \(c\vec v=\vec w\)
-        or \(c\vec w=\vec v\).
-  \item \textbf{Scalar distribution.}
-
-        \(a(\vec u+\vec v)=a\vec u+a\vec v\).
-  \item \textbf{Vector distribution.}
-
-        \((a+b)\vec v=a\vec v+b\vec v\).
-  \item \textbf{Orthogonality.}
-
-        There exists a non-zero vector \(\vec n\) such that
-        \(\vec n\) is orthogonal to both \(\vec u\) and \(\vec v\).
-  \item \textbf{Bidimensionality.}
-
-        \(\vec v=a\vec i+b\vec j\) for some value of \(a,b\).
+  \item If \(\vec u\not=\vec v\), then \(\frac{1}{2}(\vec u+\vec v)\)
+        is the only vector equally distant from both \(\vec u\) and \(\vec v\)
+  \item \(a(b\vec v)=(ab)\vec v\).
+  \item \(1\vec v=\vec v\).
+  \item If \(\vec u\not=\vec 0\), then there exists some scalar \(c\) 
+        such that \(c\vec u=\vec v\).
+  \item \(a(\vec u+\vec v)=a\vec u+a\vec v\).
+  \item \((a+b)\vec v=a\vec v+b\vec v\).
 \end{enumerate}
 \end{multicols}
 \end{activity}
 
 \begin{definition}
   A \term{vector space} \(V\) is any collection of mathematical objects with
-  associated addition and scalar multiplication operations that satisfy
-  the following properties. Let \(\vec u,\vec v,\vec w\) belong to \(V\),
-  and let \(a,b\) be scalar numbers.
+  associated addition \(\oplus\) and scalar multiplication \(\odot\)
+  operations that satisfy the following properties. 
+  Let \(\vec u,\vec v,\vec w\) belong to \(V\), and let \(a,b\) be scalar numbers.
 
   \vectorSpaceProperties
 
-  Any \term{Euclidean vector space} \(\IR^n\) satisfies all eight
-  requirements regardless of the value of \(n\),
+  Every \term{Euclidean vector space}
+  \[
+    \IR^n=\setBuilder{\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix}}{x_1,x_2,\dots,x_n\in\IR}
+  \] 
+  satisfies all eight requirements for the usual definitions of addition
+  and scalar multiplication,
   but we will also study other types of vector spaces.
 \end{definition}
 

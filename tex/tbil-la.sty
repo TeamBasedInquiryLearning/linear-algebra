@@ -1,9 +1,9 @@
 \usepackage{enumerate,amssymb,tikz,amsmath,amsthm,multicol,hyperref,environ,etoolbox,graphicx}
 \usetikzlibrary{arrows.meta}
 
+\usepackage{accents}
 
-
-\renewcommand{\vec}{\mathbf}
+\renewcommand{\vec}[1]{\mathbf{\accentset{\rightharpoonup}{#1}}}
 \newcommand{\vect}{\vec} %SC used \vect while DL used \vec
 
 \newcommand{\circledNumber}[1]{ % https://tex.stackexchange.com/a/7045
@@ -81,35 +81,19 @@
 \newcommand{\vectorSpaceProperties}{
 \begin{multicols}{2}
 \begin{itemize}
-  \item \textbf{Addition is associative.}
-
-        \(\vect u+(\vect v+\vect w)=
-        (\vect u+\vect v)+\vect w\).
-  \item \textbf{Addition is commutative.}
-
-        \(\vect u+\vect v=
-        \vect v+\vect u\).
-  \item \textbf{Additive identity exists.}
-
-        There exists some \(\vect z\)
-        where \(\vect v+\vect z=\vect v\).
-  \item \textbf{Additive inverses exist.}
-
-        There exists some \(-\vect v\)
-        where \(\vect v+(-\vect v)=\vect z\).
+  \item \(\vect u\oplus(\vect v\oplus\vect w)=
+        (\vect u\oplus\vect v)\oplus\vect w\).
+  \item \(\vect u\oplus\vect v=
+        \vect v\oplus\vect u\).
+  \item There exists some \(\vect z\)
+        where \(\vect v\oplus\vect z=\vect v\).
+  \item There exists some \(-\vect v\)
+        where \(\vect v\oplus(-\vect v)=\vect z\).
   \columnbreak
-  \item \textbf{Scalar multiplication is associative.}
-
-        \(a(b\vect v)=(ab)\vect v\).
-  \item \textbf{$1$ is a scalar multiplicative identity.}
-
-        \(1\vect v=\vect v\).
-  \item \textbf{Scalar multiplication distributes over vector addition.}
-
-        \(a(\vect u+\vect v)=a\vect u+a\vect v\).
-  \item \textbf{Scalar multiplication distributes over scalar addition.}
-
-        \((a+b)\vect v=a\vect v+b\vect v\).
+  \item \(a\odot(b\odot\vect v)=(ab)\odot\vect v\).
+  \item \(1\odot\vect v=\vect v\).
+  \item \(a\odot(\vect u\oplus\vect v)=a\odot\vect u\oplus a\odot\vect v\).
+  \item \((a+ b)\odot\vect v=a\vect v\oplus b\vect v\).
 \end{itemize}
 \end{multicols}
 }

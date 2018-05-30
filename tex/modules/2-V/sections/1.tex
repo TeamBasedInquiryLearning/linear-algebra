@@ -2,7 +2,7 @@
 % ^ leave for LaTeXTools build functionality
 \begin{applicationActivities}
 \begin{remark}
-  Last time, we defined a \textbf{vector space} \(V\) to be any collection of
+  Previously, we defined a \textbf{vector space} \(V\) to be any collection of
   mathematical objects with
   associated addition and scalar multiplication operations that satisfy
   the following eight properties for all \(\vec u,\vec v,\vec w\) in \(V\),
@@ -12,14 +12,39 @@
 \end{remark}
 
 \begin{remark}
-  The following sets are examples of vector spaces, with the usual/natural
+  Every Euclidean space \(\IR^n\) is a vector space, but there are other
+  examples of vector spaces as well. 
+
+  \vspace{1em}
+  
+  For example, consider the
+  set \(\IC\) of complex numbers with the usual defintions of
+  addition and scalar multiplication, and let 
+  \(\vec u=a+b\mathbf{i}\), \(\vec v=c+d\mathbf{i}\), and \(\vec w=e+f\mathbf{i}\). Then
+
+  \begin{align*}
+    \vec u+(\vec v+\vec w)
+      &=
+    (a+b\mathbf{i})+((c+d\mathbf{i})+(e+f\mathbf{i}))
+      \\&=
+    a+b+c+d\mathbf{i}+e\mathbf{i}+f\mathbf{i}
+      \\&=
+    ((a+b\mathbf{i})+(c+d\mathbf{i}))+(e+f\mathbf{i})
+      \\&=
+    (\vec u+\vec v)+\vec w
+  \end{align*}
+
+  All eight properties can be verified in this way.
+\end{remark}
+
+\begin{remark}
+  The following sets are just a few examples of vector spaces, with the usual/natural
   operations for addition and scalar multiplication.
   \begin{itemize}
     \item \(\IR^n\): Euclidean vectors with \(n\) components.
-    \item \(\IR^\infty\): Sequences of real numbers \((v_1,v_2,\dots)\).
+    \item \(\IC\): Complex numbers.
     \item \(M_{m,n}\): Matrices of real numbers with \(m\) rows and
           \(n\) columns.
-    \item \(\IC\): Complex numbers.
     \item \(\P^n\): Polynomials of degree \(n\) or less.
     \item \(\P\): Polynomials of any degree.
     \item \(C(\IR)\): Real-valued continuous functions.
@@ -34,16 +59,16 @@
     c\odot (x,y)=(cx,y^c)
   \]
   \begin{subactivity}
-  Show that $V$ satisfies the vector distributive property
+  Show that \(V\) satisfies the distribution property
   \[(a+b)\odot\vec v=(a\odot\vec v)\oplus (b\odot\vec v)\]
-  by letting \(\vec v=(x,y)\) and showing both sides simplify to the same
+  by substituting \(\vec v=(x,y)\) and showing both sides simplify to the same
   expression.
   \end{subactivity}
   \begin{subactivity}%optional
-  Show that $V$ contains an additive identity element by choosing
-  \(\vec{z}=(\unknown,\unknown)\) such that
-  \(\vec{v}\oplus\vec{z}=(x,y)\oplus(\unknown,\unknown)=\vec{v}\)
-  for any \(\vec{v}=(x,y)\in V\).
+  Show that \(V\) contains an additive identity element satisfying
+  \[(x,y)+\vec{z}=(x,y)\]
+  for all \((x,y)\in V\)
+  by choosing appropriate values for \(\vec{z}=(\unknown,\unknown)\). 
   \end{subactivity}
 \end{activity}
 
@@ -56,40 +81,10 @@
     c\odot (x,y)=(cx,y^c)
   \]
   satisifes all eight properties.
-    \begin{multicols}{2}
-    \begin{itemize}
-      \item \textbf{Addition associativity.}
 
-            \(\vec u\oplus(\vec v\oplus\vec w)=
-            (\vec u\oplus\vec v)\oplus\vec w\).
-      \item \textbf{Addition commutivity.}
+  \vectorSpaceProperties
 
-            \(\vec u\oplus\vec v=
-            \vec v\oplus\vec u\).
-      \item \textbf{Addition identity.}
-
-            There exists some \(\vec z\)
-            where \(\vec v\oplus\vec z=\vec v\).
-      \item \textbf{Addition inverse.}
-
-            There exists some \(-\vec v\)
-            where \(\vec v\oplus(-\vec v)=\vec z\).
-      \item \textbf{Scalar multiplication associativity.}
-
-            \(a\odot(b\odot\vec v)=(ab)\odot\vec v\).
-      \item \textbf{Scalar multiplication identity.}
-
-            \(1\odot\vec v=\vec v\).
-      \item \textbf{Scalar distribution.}
-
-            \(a\odot(\vec u\oplus\vec v)=
-            (a\odot\vec u)\oplus (a\odot\vec v)\).
-      \item \textbf{Vector distribution.}
-
-            \((a+b)\odot\vec v=(a\odot\vec v)\oplus (b\odot\vec v)\).
-    \end{itemize}
-    \end{multicols}
-	Thus, \(V\) is a vector space.
+  Thus, \(V\) is a vector space.
 \end{remark}
 
 
@@ -105,18 +100,21 @@
   .\]
 
   \begin{subactivity}
-    Show that the scalar multiplication identity holds by
-    simplifying \(1\odot(x,y)\) to \((x,y)\).
+    Show that \(1\) an the scalar multiplication identity satisfying
+    \[1\odot(x,y)=(x,y)\]
+    by simplifying \(1\odot(x,y)\) to \((x,y)\).
   \end{subactivity}
 
   \begin{subactivity}
-    Show that the addition identity property fails by
-    showing that \((0,-1)\oplus\vec z\not=(0,-1)\) no matter how
+    Show that there cannot exist an addition identity property satisfying
+    \[\vec v\oplus \vec z=\vec v\]
+    for all vectors \(\vec v\in V\)
+    by showing that \((0,-1)\oplus\vec z\not=(0,-1)\) no matter how
     \(\vec z=(z_1,z_2)\) is chosen.
   \end{subactivity}
 
   \begin{subactivity}
-    Can \(V\) be a vector space?
+    Is \(V\) a vector space?
   \end{subactivity}
 \end{activity}
 
@@ -128,7 +126,14 @@
 
 	\vspace{2em}
 
-  For example, we can say \(\begin{bmatrix}3 \\0 \\ 5\end{bmatrix}\) is a linear combination of the vectors \(\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}\) and \(\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}\) since \[\begin{bmatrix} 3 \\ 0 \\ 5 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} + 1\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}\]
+  For example, we can say \(\begin{bmatrix}3 \\0 \\ 5\end{bmatrix}\) 
+  is a linear combination of the vectors \(\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}\) 
+  and \(\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}\) since 
+  \[
+    \begin{bmatrix} 3 \\ 0 \\ 5 \end{bmatrix} = 
+    2 \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} + 
+    1\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}
+  \]
 \end{definition}
 
 \begin{definition}
@@ -163,10 +168,13 @@
   Consider \(\vspan\left\{\begin{bmatrix}1\\2\end{bmatrix}\right\}\).
   \begin{subactivity}
     Sketch
-    \(1\begin{bmatrix}1\\2\end{bmatrix}\),
-    \(3\begin{bmatrix}1\\2\end{bmatrix}\),
-    \(0\begin{bmatrix}1\\2\end{bmatrix}\),
-    and \(-2\begin{bmatrix}1\\2\end{bmatrix}\) in the \(xy\) plane.
+
+    \(1\begin{bmatrix}1\\2\end{bmatrix}=\begin{bmatrix}1\\2\end{bmatrix}\),
+    \hfill\(3\begin{bmatrix}1\\2\end{bmatrix}=\begin{bmatrix}3\\6\end{bmatrix}\),
+    \hfill\(0\begin{bmatrix}1\\2\end{bmatrix}=\begin{bmatrix}0\\0\end{bmatrix}\),
+    \hfill and \(-2\begin{bmatrix}1\\2\end{bmatrix}=\begin{bmatrix}-2\\-4\end{bmatrix}\) 
+
+    in the \(xy\) plane.
   \end{subactivity}
   \begin{subactivity}
     Sketch a representation of all the vectors belonging to
