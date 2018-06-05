@@ -1,3 +1,4 @@
+%IF-AT Form B002 21-30
 \begin{readinessAssuranceTest}
 \setcounter{enumi}{30}
 \item Which of the following is a solution to the system of linear equations
@@ -7,11 +8,11 @@
       -x-y+9z   &= -10
       \end{align*}
 
-%A
+%B
 \begin{multicols}{4}
 \begin{readinessAssuranceTestChoices}
-\item $\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}$
 \item $\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}$
+\item $\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}$%correct
 \item $\begin{bmatrix} 0 \\ 1 \\ -1 \end{bmatrix}$
 \item $\begin{bmatrix} 1 \\ -1 \\ 1 \end{bmatrix}$
 \end{readinessAssuranceTestChoices}
@@ -25,11 +26,11 @@
       -2x-4y+3z+5w &= 0
       \end{align*}
 
-%B
+%A
 \begin{multicols}{4}
 \begin{readinessAssuranceTestChoices}
+\item $\left\{ \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -2 \\ 0 \\ -3 \\ 1 \end{bmatrix} \right\}$%correct
 \item $\left\{ \begin{bmatrix} 1 \\ 2 \\ 0 \\ 2 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ 3 \end{bmatrix} \right\}$
-\item $\left\{ \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -2 \\ 0 \\ -3 \\ 1 \end{bmatrix} \right\}$
 \item $\left\{ \begin{bmatrix} 2 \\ -1 \\ 3 \\ -1 \end{bmatrix} \right\}$
 \item $\left\{ \begin{bmatrix} 1 \\ 2 \\ 1 \\ 5 \end{bmatrix} \right\}$
 \end{readinessAssuranceTestChoices}
@@ -37,31 +38,31 @@
 
 
 \item Determine which property applies to the set of vectors $$\left\{ \begin{bmatrix}  1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \right\} \subset \IR^3.$$
-%B
+%C
 \begin{readinessAssuranceTestChoices}
 \item It does not span and is linearly dependent
-\item It does not span and is linearly independent %correct
 \item It spans but it is linearly dependent
+\item It does not span and is linearly independent %correct
 \item It is a basis of $\IR^3$.
 \end{readinessAssuranceTestChoices}
 
 
 \item Determine which property applies to the set of vectors $$\left\{ \begin{bmatrix}  1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} , \begin{bmatrix} 1 \\ 1 \\ 3 \end{bmatrix} \right\}\subset \IR^3.$$
-%D
-\begin{readinessAssuranceTestChoices}
-\item It does not span and is linearly dependent
-\item It does not span and is linearly independent
-\item It spans but it is linearly dependent
-\item It is a basis of $\IR^3$. %Correct
-\end{readinessAssuranceTestChoices}
-
-
-\item Determine which property applies to the set of vectors $$\left\{ \begin{bmatrix}  1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -2 \\ 0 \\ -2 \end{bmatrix} , \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} , \begin{bmatrix} 3 \\ 3 \\ -3 \end{bmatrix}\right\}\subset \IR^3.$$
 %C
 \begin{readinessAssuranceTestChoices}
 \item It does not span and is linearly dependent
 \item It does not span and is linearly independent
+\item It is a basis of $\IR^3$. %Correct
+\item It spans but it is linearly dependent
+\end{readinessAssuranceTestChoices}
+
+
+\item Determine which property applies to the set of vectors $$\left\{ \begin{bmatrix}  1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -2 \\ 0 \\ -2 \end{bmatrix} , \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} , \begin{bmatrix} 3 \\ 3 \\ -3 \end{bmatrix}\right\}\subset \IR^3.$$
+%B
+\begin{readinessAssuranceTestChoices}
+\item It does not span and is linearly dependent
 \item It spans but it is linearly dependent %correct
+\item It does not span and is linearly independent
 \item It is a basis of $\IR^3$.
 \end{readinessAssuranceTestChoices}
 
@@ -76,40 +77,45 @@
 \end{readinessAssuranceTestChoices}
 
 
-\item Suppose $\vec{v}_1, \ldots, \vec{v}_n \in \IR^5$ and you know that every vector in ${\rm span} \left\{ \vec{v}_1, \ldots, \vec{v}_n\right\}$ can be written uniquely as a linear combination of the vectors $\{\vec{v}_1, \ldots, \vec{v}_n\}$.  What can you conclude about $n$?
+\item Suppose \(S\) is a set of \(\IR^5\) vectors, and you know that every vector in
+      \(\vspan S\) can be written uniquely as a linear combination of the vectors
+      in \(S\).  What can you conclude about \(S\)?
 %B
 \begin{readinessAssuranceTestChoices}
-\item $n \geq 5$
-\item $n \leq 5$
-\item $n=5$
-\item $n$ could be any positive integer
+\item \(S\) has exactly \(5\) vectors
+\item \(S\) has at most \(5\) vectors
+\item \(S\) has at least \(5\) vectors
+\item \(S\) could have any number of vectors
 \end{readinessAssuranceTestChoices}
 
-\item Suppose you know that every vector in $\IR^5$ can be written as a linear combination of the vectors $\{\vec{v}_1, \ldots, \vec{v}_n\}$.  What can you conclude about $n$?
-%D
-\begin{readinessAssuranceTestChoices}
-\item $n=5$
-\item $n$ could be any positive integer
-\item $n \leq 5$
-\item $n \geq 5$
-\end{readinessAssuranceTestChoices}
-
-\item Suppose you know that every vector in $\IR^5$ can be written uniquely as a linear combination of the vectors $\{\vec{v}_1, \ldots, \vec{v}_n\}$.  What can you conclude about $n$?
-%D
-\begin{readinessAssuranceTestChoices}
-\item $n$ could be any positive integer
-\item $n \leq 5$
-\item $n \geq 5$
-\item $n=5$
-\end{readinessAssuranceTestChoices}
-
-\item Suppose you know that every vector in $\IR^5$ can be written uniquely as a linear combination of the vectors $\{\vec{v}_1, \ldots, \vec{v}_n\}$.  What can you conclude about the set $\{\vec{v}_1, \ldots, \vec{v}_n\}$?
+\item Suppose you know that every vector in \(\IR^5\) can be written as a linear combination of 
+      the vectors in a set \(S\).  What can you conclude about \(S\)?
 %C
 \begin{readinessAssuranceTestChoices}
-\item It does not span and is linearly dependent
-\item It does not span and is linearly independent
-\item It is a basis of $\IR^5$.
-\item It spans but it is linearly dependent
+\item \(S\) has exactly \(5\) vectors
+\item \(S\) has at most \(5\) vectors
+\item \(S\) has at least \(5\) vectors
+\item \(S\) could have any number of vectors
+\end{readinessAssuranceTestChoices}
+
+\item Suppose you know that every vector in \(\IR^5\) can be \textit{uniquely}
+      written as a linear combination of 
+      the vectors in a set \(S\).  What can you conclude about \(S\)?
+%A
+\begin{readinessAssuranceTestChoices}
+\item \(S\) has exactly \(5\) vectors
+\item \(S\) has at most \(5\) vectors
+\item \(S\) has at least \(5\) vectors
+\item \(S\) could have any number of vectors
+\end{readinessAssuranceTestChoices}
+
+\item What else can you conclude about \(S\) from the previous question?
+%A
+\begin{readinessAssuranceTestChoices}
+\item \(S\) is a basis of \(\IR^5\).
+\item \(S\) does not span \(\IR^5\) and is linearly dependent
+\item \(S\) does not span \(\IR^5\) and is linearly independent
+\item \(S\) spans \(\IR^5\) but it is linearly dependent
 \end{readinessAssuranceTestChoices}
 
 \end{readinessAssuranceTest}
