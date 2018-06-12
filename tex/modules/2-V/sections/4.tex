@@ -30,7 +30,7 @@
 
 
 \begin{fact}
-  Any sub\textbf{set} \(S\) of a vector space \(V\) satisfies the eight
+  Any nonempty sub\textbf{set} \(S\) of a vector space \(V\) satisfies the eight
   vector space properties automatically, since it is a collection of known
   vectors.
 
@@ -58,8 +58,9 @@ Let \(S=\setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{ x+2y+z=0}\).
 \end{subactivity}
 \begin{subactivity}
   Let \(\vec{v}=\begin{bmatrix} x \\ y \\ z \end{bmatrix}\in S\), so
-  \(x+2y+z=0\). Show that \(c\vec v\) also belongs to \(S\) for any
-  \(c\in\IR\).
+  \(x+2y+z=0\). Show that \(c\vec v=\begin{bmatrix}cx\\cy\\cz\end{bmatrix}\) 
+  also belongs to \(S\) for any \(c\in\IR\) by verifying
+  an appropriate equation.
 \end{subactivity}
 \begin{subactivity}
   Is \(S\) is a subspace of \(\IR^3\)?
@@ -76,67 +77,52 @@ Is \(S\) a subspace of \(\IR^3\)?
 
 \begin{remark}
 Since \(0\) is a scalar and \(0\vec{v}=\vec{z}\) for any vector \(\vec{v}\), a
-set that is closed under scalar multiplication must contain the zero vector
+nonempty set that is closed under scalar multiplication must contain the zero vector
 \(\vec{z}\) for that vector space.
 
 \vspace{1em}
 
-Put another way, an easy way to check that a subset isn't a subspace is to
-show it doesn't contain \(\vec 0\).
+Put another way, you can check any of the following to show that a
+nonempty subset \(W\) isn't a subspace:
+
+\begin{itemize}
+  \item Show that \(\vec 0\not\in W\). 
+  \item Find \(\vec u,\vec v\in W\) such that \(\vec u+\vec v\not\in W\).
+  \item Find \(c\in\IR,\vec v\in W\) such that \(c\vec v\not\in W\).
+\end{itemize}
+
+If you cannot do any of these, then \(W\) can be proven to be a subspace
+by doing the following:
+\begin{itemize}
+  \item Prove that \(\vec u+\vec v\in W\) whenever \(\vec u,\vec v\in W\).
+  \item Prove that \(c\vec v\in W\) whenever \(c\in\IR,\vec v\in W\).
+\end{itemize}
 \end{remark}
 
-\begin{activity}{10}
-  Consider these two subsets of \(\IR^4\):
+\begin{activity}{20}
+  Consider these subsets of \(\IR^4\):
   \[
+    R=
+    \setBuilder{ \begin{bmatrix}x\\y\\z\end{bmatrix}}{y=z+1}
+    \hspace{2em}
     S=
-    \setBuilder{ \begin{bmatrix}a\\b\\-b\\-a\end{bmatrix}}{a,b\text{ are real numbers}}
-    \hspace{3em}
+    \setBuilder{ \begin{bmatrix}x\\y\\z\end{bmatrix}}{y=|z|}
+    \hspace{2em}
     T=
-    \setBuilder{ \begin{bmatrix}a\\b\\b-1\\a-1\end{bmatrix}}{a,b\text{ are real numbers}}
+    \setBuilder{ \begin{bmatrix}x\\y\\z\end{bmatrix}}{z=xy}
   \]
   \begin{subactivity}
-  Which set is not a subspace of \(\IR^4\)?
+  Show \(R\) isn't a subspace by showing that \(\vec 0\not\in R\).
   \end{subactivity}
   \begin{subactivity}
-  Is the set of polynomials
-  \[S=
-    \setBuilder{ ax^3+bx^2+(b-1)x+(a-1)}{a,b\text{ are real numbers}}
-  \]
-  a subspace of \(\P^3\)?
-\end{subactivity}
+  Show \(S\) isn't a subspace by finding two vectors \(\vec u,\vec v\in S\)
+  such that \(\vec u+\vec v\not\in S\).
+  \end{subactivity}
+  \begin{subactivity}
+  Show \(T\) isn't a subspace by finding a vector \(\vec v\in T\)
+  such that \(2\vec v\not\in T\).
+  \end{subactivity}
 \end{activity}
-
-\begin{activity}{10}
-  Consider the subset \(A\) of \(\IR^2\) where at least one coordinate of
-  each vector is \(0\).
-  \begin{center}
-    \begin{tikzpicture}[scale=0.25]
-    \draw[thin,gray,<->] (-5,0) -- (5,0);
-    \draw[thin,gray,<->] (0,-5) -- (0,5);
-    \draw[thick,blue] (-4.8,0) -- (4.8,0);
-    \draw[thick,blue] (0,-4.8) -- (0,4.8);
-    \end{tikzpicture}
-  \end{center}
-
-This set contains \(\vec 0\), and
-it's not hard to show that for every \(\vec v\) in \(A\) and scalar \(c\in\IR\),
-\(c\vec v\) is also in \(A\). Is \(A\) a subspace of \(\IR^2\)? Why?
-
-  \begin{instructorNote}
-    Sketch the sum of two vectors on different axes to give a geometrical
-    argument.
-  \end{instructorNote}
-\end{activity}
-
-% \begin{activity}{10}
-%   Prove that \(P=\setBuilder{ax^2+b}{a,b \in \IR}\) is a subspace
-%   of the vector space of all degree-two polynomials by showing it is closed under addition and scalar multiplication.
-% \end{activity}
-%
-% \begin{activity}{10}
-% Let \(P=\setBuilder{x}{x\in\IR\text{ and }x>0}\) be the set of all positive
-% real numbers.  Determine if \(P\) is a subspace of \(\IR\) or not.
-% \end{activity}
 
 
 

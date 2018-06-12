@@ -3,7 +3,7 @@
 
 \begin{applicationActivities}
 
-
+%TODO add observation that 1 vector spans a line.
 
 \begin{activity}{5}
   How many vectors are required to span \(\IR^2\)?
@@ -66,9 +66,10 @@
 
 \begin{fact}
   The set \(\{\vect v_1,\dots,\vect v_m\}\) fails to span all of \(\IR^n\)
-  exactly when \(\RREF[\vect v_1\,\dots\,\vect v_m]\) has a row of zeros:
+  exactly when \(\RREF[\vect v_1\,\dots\,\vect v_m]\) has a non-pivot row of zeros.
   \[\begin{bmatrix}[cc]1&-2\\-1&0\\0&1\end{bmatrix}\sim
-  \begin{bmatrix}[cc]1&0\\0&1\\0&0\end{bmatrix}\Rightarrow
+  \begin{bmatrix}[cc]1&0\\0&1\\0&0\end{bmatrix}\]
+  \[\Rightarrow
   \begin{bmatrix}[cc|c]1&-2&a\\-1&0&b\\0&1&c\end{bmatrix}\sim
   \begin{bmatrix}[cc|c]1&0&0\\0&1&0\\0&0&1\end{bmatrix}
   \text{for some choice of vector} \begin{bmatrix} a \\ b \\ c \end{bmatrix} \]
