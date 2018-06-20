@@ -9,7 +9,7 @@ satisfies
 \item \(T(c\vec{v}) = cT(\vec{v})\)
       for any \(c \in \IR,\vec{v} \in V\).
 \end{enumerate}
-In other words, a map is linear when vecor space operations
+In other words, a map is linear when vector space operations
 can be applied before or after the transformation without affecting the result.
 \end{remark}
 
@@ -98,19 +98,21 @@ and
 =
   \begin{bmatrix} -3 \\ 2 \end{bmatrix}
 \).
-Do you have enough information to compute
-\(T(\vec{v})\) for \textit{any} \(\vec v\in\IR^3\)?
+
+What piece of information would help you compute \(T\left(\begin{bmatrix}0\\4\\-1\end{bmatrix}\right)\)?
+\begin{multicols}{2}
 \begin{enumerate}[(a)]
-\item Yes.
-\item No, exactly one more piece of information is needed.
-\item No, an infinite amount of information would be necessary to compute
-      the transformation of infinitely-many vectors.
+\item The value of \(T\left(\begin{bmatrix} 0\\-4\\0\end{bmatrix}\right)\).
+\item The value of \(T\left(\begin{bmatrix} 0\\1\\0\end{bmatrix}\right)\).
+\item The value of \(T\left(\begin{bmatrix} 1\\1\\1\end{bmatrix}\right)\).
+\item Any of the above.
 \end{enumerate}
+\end{multicols}
 \end{activity}
 
 \begin{fact}
 Consider any basis \(\{\vec b_1,\dots,\vec b_n\}\) for $V$.  Since every
-vector \(\vec v\) can be written \textit{uniquely} as a linear combination of
+vector \(\vec v\) can be written as a linear combination of
 basis vectors, \(x_1\vec b_1+\dots+ x_n\vec b_n\), we may compute
 \(T(\vec v)\) as follows:
 
@@ -222,22 +224,18 @@ Find the standard matrix for \(T\).
     \begin{bmatrix} 3  & -2 & -1  \\ 4 & 5 & 2 \\ 0 & -2 & 1 \end{bmatrix}
   .\]
 
+\begin{subactivity}
 Compute $T\left(\begin{bmatrix} x\\ y \\ z \end{bmatrix} \right) $.
-\end{activity}
-
-\begin{activity}{5}
-  Let $T: \IR^3 \rightarrow \IR^3$ be the linear transformation given by the standard matrix
-  \[
-    \begin{bmatrix} 3  & -2 & -1  \\ 4 & 5 & 2 \\ 0 & -2 & 1 \end{bmatrix}
-  .\]
-
+\end{subactivity}
+\begin{subactivity}
 Compute $T\left(\begin{bmatrix} 1\\ 2 \\ 3 \end{bmatrix} \right) $.
+\end{subactivity}
 \end{activity}
 
 \begin{fact}
   To quickly compute \(T(\vec v)\) from its standard matrix \(A\),
-  compute the \textbf{dot product} (defined in Calculus 3) of each matrix row
-  with the vector. For example, if \(T\) has the standard matrix
+  multiply and add the entries of each row of \(A\) with the vector \(\vec v\).
+  For example, if \(T\) has the standard matrix
   \[
     A = \begin{bmatrix} 1 & 2 & 3 \\ 0 & 1 & -2 \\ 2 & -1 & 0 \end{bmatrix}
   \]

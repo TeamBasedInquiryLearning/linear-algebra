@@ -197,6 +197,27 @@ Put another way, an easy way to prove that a map like
 \[T(0)=\frac{d}{dx}[0]+x^3=0+x^3=x^3\not=0.\]
 \end{fact}
 
+\begin{observation}
+Showing \(L:V\to W\) is not a linear transformation can be done by finding an example
+for any one of the following.
+
+\begin{itemize}
+\item Show \(L(\vec z)\not=\vec z\) (where \(\vec z\) is the additive identity of \(L\) and \(W\)).
+\item Find \(\vec v,\vec w\in V\) such that \(L(\vec v+\vec w)\not=L(\vec v)+L(\vec w)\).
+\item Find \(\vec v\in V\) and \(c\in \IR\) such that \(L(c\vec v)\not=cL(\vec v)\).
+\end{itemize}
+
+Otherwise, \(L\) can be shown to be linear by proving the following in general.
+
+\begin{itemize}
+\item For all \(\vec v,\vec w\in V\), \(L(\vec v+\vec w)\not=L(\vec v)+L(\vec w)\).
+\item For all \(\vec v\in V\) and \(c\in \IR\), \(L(c\vec v)\not=cL(\vec v)\).
+\end{itemize}
+
+Note the similarities between this process and showing that a subset of a vector
+space is/isn't a subspace. 
+\end{observation}
+
 \begin{activity}{15}
 Continue to consider \(S: \P^4 \rightarrow \P^3\) defined by
 
@@ -209,7 +230,10 @@ Continue to consider \(S: \P^4 \rightarrow \P^3\) defined by
 \end{subactivity}
 \begin{subactivity}
   Verify that \(S(cf(x))\) is equal to \(cS(f(x))\) for all real numbers \(c\)
-  and polynomials \(f\). Is \(S\) linear?
+  and polynomials \(f\). 
+\end{subactivity}
+\begin{subactivity}
+  Is \(S\) linear?
 \end{subactivity}
 \end{activity}
 
@@ -221,25 +245,13 @@ and \(T: \P \rightarrow \P\) be defined by
 \[S(f(x)) = (f(x))^2 \hspace{3em} T(f(x)) = 3xf(x^2)\]
 
 \begin{subactivity}
-Show that \(S(x+1)\not= S(x)+S(1)\) to verify that \(S\) is not linear.
+Note that \(S(0)=0\) and \(T(0)=0\). So instead,
+show that \(S(x+1)\not= S(x)+S(1)\) to verify that \(S\) is not linear.
 \end{subactivity}
 \begin{subactivity}
 Prove that \(T\) is linear by verifying that \(T(f(x)+g(x))=T(f(x))+T(g(x))\)
 and \(T(cf(x))=cT(f(x))\).
 \end{subactivity}
 \end{activity}
-
-\begin{observation}
-  Note that \(S\) in the previous activity is not linear,
-  even though \(S(0)=(0)^2=0\). So showing \(S(0)=0\) isn't enough
-  to prove a map is linear.
-
-  \vspace{1em}
-
-  This is a similar situation to proving a subset is a subspace:
-  if the subset doesn't contain \(\vec z\), then
-  the subset isn't a subspace. But if the subset contains \(\vec z\),
-  you cannot conclude anything.
-\end{observation}
 
 \end{applicationActivities}
