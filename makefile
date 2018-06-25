@@ -55,13 +55,6 @@ pdf/slides/slides-2-V.pdf: tex/tbil-la.sty tex/course-slides.sty  \
 	pdflatex --output-directory=aux slides/slides-2-V.tex; \
 	mv aux/slides-2-V.pdf ../pdf/slides
 
-pdf/slides/slides-3-S.pdf: tex/tbil-la.sty tex/course-slides.sty  \
-							tex/modules/3-S/sections/*.tex
-	cd tex; \
-	pdflatex --output-directory=aux slides/slides-3-S.tex; \
-	pdflatex --output-directory=aux slides/slides-3-S.tex; \
-	mv aux/slides-3-S.pdf ../pdf/slides
-
 pdf/slides/slides-4-A.pdf: tex/tbil-la.sty tex/course-slides.sty  \
 							tex/modules/4-A/sections/*.tex
 	cd tex; \
