@@ -1,209 +1,232 @@
-\begin{problem}{A4}
-Let $T: \IR^4\rightarrow \IR^4$ be the linear transformation given by $$T\left(\begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix} \right) = \begin{bmatrix} x+3y+3z+7w \\ x+3y-z-w \\ 2x+6y+3z+8w \\ x+3y-2z-3w \end{bmatrix}$$
-Compute a basis for the kernel and a basis for the image of $T$.
+\begin{problem}{A3}
+Determine if the following linear maps are injective (one-to-one) and/or surjective (onto).
+\begin{enumerate}[(a)]
+\item $S: \IR^2 \rightarrow \IR^3$ given by $S\left(\begin{bmatrix} x \\ y  \end{bmatrix} \right) = \begin{bmatrix} 3x+2y \\ x-y \\ x+4y \end{bmatrix} $
+\item $T: \IR^3 \rightarrow \IR^3$ given by $T\left(\begin{bmatrix} x \\ y \\ z  \end{bmatrix} \right) = \begin{bmatrix} x+y+z \\ 2y+3z \\ x-y-2z \end{bmatrix} $
+\end{enumerate}
 \end{problem}
+
 \begin{solution}
-
-$$\RREF\left(\begin{bmatrix} 1 & 3 & 3 & 7 \\ 1 & 3 & -1 & -1 \\ 2 & 6 & 3 & 8 \\ 1 & 3 & -2 & -3 \end{bmatrix}\right) = \begin{bmatrix} 1 & 3 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
-
-Then a basis for the kernel is
-$$\left\{ \begin{bmatrix} -3 \\ 1 \\ 0 \\ 0 \end{bmatrix} , \begin{bmatrix} -1\\0 \\ -2 \\ 1 \end{bmatrix} \right\}$$
-and a basis for the image is
-$$\left\{ \begin{bmatrix} 1 \\ 1 \\ 2 \\ 1 \end{bmatrix} , \begin{bmatrix} 3 \\ -1 \\ 3 \\ -2 \end{bmatrix}\right\} $$
+\begin{enumerate}[(a)]
+\item $$\RREF\left( \begin{bmatrix} 1 &  1 & 1 \\ 0  & 2 & 3 \\ 1  & -1 & -2 \end{bmatrix} \right) = \begin{bmatrix} 1 &  0 & -\frac{1}{2} \\ 0  & 1 & \frac{3}{2} \\ 0& 0 & 0  \end{bmatrix}$$
+Since there is a nonpivot column, $T$ is not injective.  Since there is a zero row, $T$ is not surjective.
+\item $$\RREF \left( \begin{bmatrix} 3 & 2 \\ 1 & -1 \\ 1 & 4 \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}$$
+Since all columns are pivot columns, $S$ is injective.  Since there is a zero row, $S$ is not surjective.
+\end{enumerate}
 \end{solution}
 
 
 
-\begin{problem}{A4}
-Let $T: \IR^3\rightarrow \IR^3$ be the linear transformation given by $$T\left(\begin{bmatrix} x \\ y \\ z \\  \end{bmatrix} \right) = \begin{bmatrix} -3x+y \\ -8x+2y-z \\ 2y+3z \end{bmatrix}$$
-Compute a basis for the kernel and a basis for the image of $T$.
+\begin{problem}{A3}
+Determine if each of the following linear transformations is injective (one-to-one) and/or surjective (onto).
+\begin{enumerate}[(a)]
+\item $S: \IR^3 \rightarrow \IR^3$ given by $T\left(\begin{bmatrix} x \\ y \\ z  \end{bmatrix} \right) = \begin{bmatrix} x+y+z \\ 2y+3z \\ x-y-2z \end{bmatrix} $
+\item $T: \IR^2 \rightarrow \IR^3$ given by $S\left(\begin{bmatrix} x \\ y  \end{bmatrix} \right) = \begin{bmatrix} 3x+2y \\ x-y \\ x+4y \end{bmatrix} $
+\end{enumerate}
 \end{problem}
 \begin{solution}
-Let $A= \begin{bmatrix}-3 & 1 & 0 \\ -8 & 2 & -1 \\ 0 & 2 & 3\end{bmatrix}$, and compute $\RREF(A) = \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{3}{2} \\ 0 & 0 & 0 \end{bmatrix}$.  Then a basis for the image is its columns, $$\left\{ \begin{bmatrix} -3 \\ -8 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix} \right\}$$
-And the kernel is the solution set of $AX=0$, so a basis would be
-$$\left\{\begin{bmatrix} 1 \\ 3 \\ -2 \end{bmatrix} \right\}$$
+\begin{enumerate}[(a)]
+\item $$\RREF\left( \begin{bmatrix} 1 &  1 & 1 \\ 0  & 2 & 3 \\ 1  & -1 & -2 \end{bmatrix} \right) = \begin{bmatrix} 1 &  0 & -\frac{1}{2} \\ 0  & 1 & \frac{3}{2} \\ 0& 0 & 0  \end{bmatrix}$$
+Since there is a nonpivot column, $S$ is not injective.  Since there is a zero row, $S$ is not surjective.
+\item $$\RREF \left( \begin{bmatrix} 3 & 2 \\ 1 & -1 \\ 1 & 4 \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}$$
+Since all columns are pivot columns, $T$ is injective.  Since there is a zero row, $T$ is not surjective.
+\end{enumerate}
 \end{solution}
 
 
-\begin{problem}{A4}
-Let $T: \IR^4 \rightarrow \IR^3$ be the linear map given by $T\left(\begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix} \right) = \begin{bmatrix}  8x-3y-z+4w \\ y+3z-4w \\ -7x+3y+2z-5w\end{bmatrix} $.
-Compute a basis for the kernel and a basis for the image of $T$.
+
+\begin{problem}{A3}
+Determine if each of the following linear transformations is injective (one-to-one) and/or surjective (onto).
+\begin{enumerate}[(a)]
+\item $S: \IR^2 \rightarrow \IR^2$ given by the standard matrix $\begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$.
+\item $T: \IR^4 \rightarrow \IR^3$ given by the standard matrix $\begin{bmatrix} 2 & 3 & -1 & -2 \\ 0 & 1 & 3 & 1 \\ 2 & 1 & -7 & -4 \end{bmatrix}$
+\end{enumerate}
 \end{problem}
 \begin{solution}
-$$\RREF \left( \begin{bmatrix} 8 & -3 & -1 & 4 \\ 0 & 1 & 3 & -4 \\ -7 & 3 & 2 & -5 \end{bmatrix} \right) = \begin{bmatrix} 1 & 0 & 1 & -1 \\ 0 & 1 & 3 & -4 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
-
-Thus \(\left\{ \begin{bmatrix} 8 \\ 0 \\ -7 \end{bmatrix}, \begin{bmatrix} -3 \\ 1 \\ 3 \end{bmatrix} \right\}\) is a basis for the image, and \( \left\{ \begin{bmatrix} 1 \\ 3 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 4 \\ 0 \\ 1 \end{bmatrix} \right\} \) is a basis for the kernel.
+\begin{enumerate}[(a)]
+\item $ \RREF\begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}=\begin{bmatrix}1 & 0 \\ 0 & 1 \end{bmatrix}$.  Since each column is a pivot column, $S$ is injective.  Since there is no zero row, $S$ is surjective.
+\item Since $\dim \IR^4 > \dim \IR^3$, $T$ is not injective.
+$$\RREF\left(\begin{bmatrix} 2 & 3 & -1 & -2 \\ 0 & 1 & 3 & 1 \\ 2 & 1 & -7 & -4 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0 & -5 & -\frac{5}{2} \\ 0 & 1 & 3 & 1 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
+Since there are only two pivot columns, $T$ is not surjective.
+\end{enumerate}
 \end{solution}
 
 
-\begin{problem}{A4}
-Let $T: \IR^3 \rightarrow \IR^3$ be the linear map given by \(
-  T\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix} \right) =
-  \begin{bmatrix}
-    8x-3y-z \\
-    y+3z \\
-    -7x+3y+2z
-  \end{bmatrix}
-\). Compute a basis for the kernel and a basis for the image of $T$.
+\begin{problem}{A3}
+Determine if each of the following linear transformations is injective (one-to-one) and/or surjective (onto).
+\begin{enumerate}[(a)]
+\item $S: \IR^2 \rightarrow \IR^2$ given by the standard matrix $\begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$.
+\item $T: \IR^4 \rightarrow \IR^3$ given by the standard matrix $\begin{bmatrix} 2 & 3 & -1 & -2 \\ 0 & 1 & 4 & 1 \\ 2 & 1 & -7 & -4 \end{bmatrix}$
+\end{enumerate}
 \end{problem}
 \begin{solution}
-\[
-  \RREF \left( \begin{bmatrix}
-    8 & -3 & -1 \\
-    0 & 1 & 3 \\
-    -7 & 3 & 2
-  \end{bmatrix} \right) = \begin{bmatrix}
-    1 & 0 & 1 \\
-    0 & 1 & 3 \\
-    0 & 0 & 0
-  \end{bmatrix}
-\]
-
-Thus \(\left\{
-  \begin{bmatrix} 8 \\ 0 \\ -7 \end{bmatrix},
-  \begin{bmatrix} -3 \\ 1 \\ 3 \end{bmatrix}
-\right\} \) is a basis for the image, and \(\left\{
-  \begin{bmatrix} -1 \\ -3 \\ 1 \end{bmatrix}
-\right\} \) is a basis for the kernel.
+\begin{enumerate}[(a)]
+\item $ \RREF\begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}=\begin{bmatrix}1 & 0 \\ 0 & 1 \end{bmatrix}$.  Since each column is a pivot column, $S$ is injective.  Since there is no zero row, $S$ is surjective.
+\item Since $\dim \IR^4 > \dim \IR^3$, $T$ is not injective.
+$$\RREF\left(\begin{bmatrix} 2 & 3 & -1 & -2 \\ 0 & 1 & 3 & 1 \\ 2 & 1 & -7 & -4 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0 & 0 & -\frac{5}{2} \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 0\end{bmatrix}$$
+Since there are no zero rows, $T$ is surjective.
+\end{enumerate}
 \end{solution}
 
-
-\begin{problem}{A4}
-Let $T: \IR^3 \rightarrow \IR^3$ be the linear map given by the standard matrix
-\(
-  \begin{bmatrix}
-    1 & 2 & 5 \\
-    0 & -2 & -4 \\
-    -3 & 1 & -1
-  \end{bmatrix}
-\). Compute a basis for the kernel and a basis for the image of $T$.
+\begin{problem}{A3}
+Determine if each of the following linear transformations is injective (one-to-one) and/or surjective (onto).
+\begin{enumerate}[(a)]
+\item $S: \IR^2 \rightarrow \IR^4$ given by the standard matrix $\begin{bmatrix} 2 & 1 \\ 1 & 2 \\ 0 & 1 \\ 3 & -3 \end{bmatrix}$.
+\item $T: \IR^4 \rightarrow \IR^3$ given by the standard matrix $\begin{bmatrix} 2 & 3 & -1 & 1 \\ -1 & 1 & 1 & 1 \\ 4 & 11 & -1 & 5 \end{bmatrix}$
+\end{enumerate}
 \end{problem}
 \begin{solution}
-\[
-  \RREF \left( \begin{bmatrix}
-    1 & 2 & 5 \\
-    0 & -2 & -4 \\
-    -3 & 1 & -1
-  \end{bmatrix} \right) = \begin{bmatrix}
-    1 & 0 & 1 \\
-    0 & 1 & 2 \\
-    0 & 0 & 0
-  \end{bmatrix}
-\]
-
-Thus \(\left\{
-  \begin{bmatrix} 1 \\ 0 \\ -3 \end{bmatrix},
-  \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
-\right\} \) is a basis for the image, and \(\left\{
-  \begin{bmatrix} -1 \\ -2 \\ 1 \end{bmatrix}
-\right\} \) is a basis for the kernel.
+\begin{enumerate}[(a)]
+\item $ \begin{bmatrix} 2 & 1 \\ 1 & 2 \\ 0 & 1 \\ 3 & -3 \end{bmatrix}=\begin{bmatrix}1 & 0 \\ 0 & 1 \\ 0 & 0 \\ 0 & 0  \end{bmatrix}$.  Since each column is a pivot column, $S$ is injective.  Since there a no zero row, $S$ is not surjective.
+\item Since $\dim \IR^4 > \dim \IR^3$, $T$ is not injective.
+$$\RREF\left(\begin{bmatrix} 2 & 3 & -1 & 1 \\ -1 & 1 & 1 & 1 \\ 4 & 11 & -1 & 5 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0  & -\frac{4}{5} & -\frac{2}{5} \\ 0 & 1 & \frac{1}{5} & \frac{3}{5} \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
+Since there is a zero row, $T$ is not surjective.
+\end{enumerate}
 \end{solution}
 
-
-\begin{problem}{A4}
-Let $T: \IR^4 \rightarrow \IR^2$ be the linear map given by the standard matrix
-\(
-  \begin{bmatrix}
-    1 & 2 & 5 & -1 \\
-    0 & -2 & -4 & 2
-  \end{bmatrix}
-\). Compute a basis for the kernel and a basis for the image of $T$.
+\begin{problem}{A3}
+Determine if each of the following linear transformations is injective (one-to-one) and/or surjective (onto).
+\begin{enumerate}[(a)]
+\item $S: \IR^2 \rightarrow \IR^4$ given by the standard matrix $\begin{bmatrix} 2 & 1 \\ 1 & 2 \\ 0 & 1 \\ 3 & -3 \end{bmatrix}$.
+\item $T: \IR^4 \rightarrow \IR^3$ given by the standard matrix $\begin{bmatrix} 2 & 3 & -1 & 1 \\ -1 & 1 & 1 & 1 \\ 4 & 7 & -1 & 5 \end{bmatrix}$
+\end{enumerate}
 \end{problem}
 \begin{solution}
-\[
-  \RREF \left( \begin{bmatrix}
-    1 & 2 & 5 & -1 \\
-    0 & -2 & -4 & 2
-  \end{bmatrix} \right) = \begin{bmatrix}
-    1 & 0 & 1 & 1 \\
-    0 & 1 & 2 & -1
-  \end{bmatrix}
-\]
-
-Thus \(\left\{
-  \begin{bmatrix} 1 \\ 0  \end{bmatrix},
-  \begin{bmatrix} 2 \\ -2 \end{bmatrix}
-\right\} \) is a basis for the image, and \(\left\{
-  \begin{bmatrix} -1 \\ -2 \\ 1 \\ 0 \end{bmatrix},
-  \begin{bmatrix} -1 \\ 1 \\ 0 \\ 1 \end{bmatrix}
-\right\} \) is a basis for the kernel.
+\begin{enumerate}[(a)]
+\item $ \begin{bmatrix} 2 & 1 \\ 1 & 2 \\ 0 & 1 \\ 3 & -3 \end{bmatrix}=\begin{bmatrix}1 & 0 \\ 0 & 1 \\ 0 & 0 \\ 0 & 0  \end{bmatrix}$.  Since each column is a pivot column, $S$ is injective.  Since there a no zero row, $S$ is not surjective.
+\item Since $\dim \IR^4 > \dim \IR^3$, $T$ is not injective.
+$$\RREF\left(\begin{bmatrix} 2 & 3 & -1 & 1 \\ -1 & 1 & 1 & 1 \\ 4 & 7 & -1 & 5 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0  & 0 & 2 \\ 0 & 1 & 0 & 0  \\ 0 & 0 & 1 & 3 \end{bmatrix}$$
+Since there is not a zero row, $T$ is surjective.
+\end{enumerate}
 \end{solution}
 
-
-\begin{problem}{A4}
-Let $T: \IR^2 \rightarrow \IR^5$ be the linear map given by the standard matrix
-\(
-  \begin{bmatrix}
-    3 & 1 \\
-    0 & 0 \\
-    -6 & -2 \\
-    1 & \frac{1}{3} \\
-    9 & 3
-  \end{bmatrix}
-\). Compute a basis for the kernel and a basis for the image of $T$.
+\begin{problem}{A3}
+Determine if each of the following linear transformations is injective (one-to-one) and/or surjective (onto).
+\begin{enumerate}[(a)]
+\item
+  \(S: \IR^2 \rightarrow \IR^3\) where
+  \(S(\vec e_1)=\begin{bmatrix}
+    2 \\
+    1 \\
+    0
+  \end{bmatrix}\) and
+  \(S(\vec e_2)=\begin{bmatrix}
+    1 \\
+    2 \\
+    1
+  \end{bmatrix}\).
+\item
+  \(T: \IR^3 \rightarrow \IR^2\) where
+  \(T(\vec e_1)=\begin{bmatrix}
+    2 \\
+    2
+  \end{bmatrix}\),
+  \(T(\vec e_2)=\begin{bmatrix}
+   1  \\
+   0
+  \end{bmatrix}\), and
+  \(T(\vec e_3)=\begin{bmatrix}
+    1 \\
+    1
+  \end{bmatrix}\).
+\end{enumerate}
 \end{problem}
 \begin{solution}
-\[
-  \RREF \left(\begin{bmatrix}
-    3 & 1 \\
-    0 & 0 \\
-    -6 & -2 \\
-    1 & \frac{1}{3} \\
-    9 & 3
-  \end{bmatrix} \right) = \begin{bmatrix}
-    1 & \frac{1}{3} \\
-    0 & 0 \\
-    0 & 0 \\
-    0 & 0 \\
+\begin{enumerate}[(a)]
+\item
+  \(\RREF\begin{bmatrix}
+    2 & 1 \\
+    1 & 2 \\
+    0 & 1
+  \end{bmatrix}=\begin{bmatrix}
+    1 & 0 \\
+    0 & 1 \\
     0 & 0
-  \end{bmatrix}
-\]
-
-Thus \(\left\{
-\begin{bmatrix}
-  3  \\
-  0  \\
-  -6 \\
-  1 \\
-  9 \\
-\end{bmatrix}
-\right\} \) is a basis for the image, and \(\left\{
-  \begin{bmatrix} -\frac{1}{3} \\ 1\end{bmatrix}
-\right\} \) is a basis for the kernel.
+  \end{bmatrix}\).
+  The map is injective since every column has a pivot, but is not surjective
+  because there is a row without a pivot.
+\item
+  \(\RREF\begin{bmatrix}
+    2 & 1 & 1 \\
+    2 & 0 & 1
+  \end{bmatrix}=\begin{bmatrix}
+    1 & 0 & 1/2 \\
+    0 & 1 & 0 
+  \end{bmatrix}\).
+  The map is not injective since there is a column without a pivot,
+  but it is surjective because every row has a pivot.
+\end{enumerate}
 \end{solution}
 
-\begin{problem}{A4}
-Let $T: \IR^4 \rightarrow \IR^3$ be the linear map given by the standard matrix
-\(
-  \begin{bmatrix}
-    2 & 1 & 0 & 3 \\
-    -4 & -2 & 0 & 5 \\
-    -2 & -1 & 0 & 0
-  \end{bmatrix}
-\). Compute a basis for the kernel and a basis for the image of $T$.
+\begin{problem}{A3}
+Determine if each of the following linear transformations is injective (one-to-one) and/or surjective (onto).
+\begin{enumerate}[(a)]
+\item
+  \(S: \IR^4 \rightarrow \IR^3\) where
+  \(S(\vec e_1)=\begin{bmatrix}
+    2  \\
+    1 \\
+    0
+  \end{bmatrix}\),
+  \(S(\vec e_2)=\begin{bmatrix}
+    1  \\
+    2\\
+    1
+  \end{bmatrix}\),
+  \(S(\vec e_3)=\begin{bmatrix}
+    0  \\
+    -1 \\
+    0
+  \end{bmatrix}\), and
+  \(S(\vec e_4)=\begin{bmatrix}
+    3 \\
+    2\\
+    1
+  \end{bmatrix}\),
+\item
+  \(T: \IR^3 \rightarrow \IR^3\) where
+  \(T(\vec e_1)=\begin{bmatrix}
+    2  \\
+    2 \\
+    1\\
+  \end{bmatrix}\),
+  \(T(\vec e_2)=\begin{bmatrix}
+     1 \\
+     0 \\
+     4 \\
+  \end{bmatrix}\), and
+  \(T(\vec e_3)=\begin{bmatrix}
+     1 \\
+     2 \\
+     -3 \\
+  \end{bmatrix}\).
+\end{enumerate}
 \end{problem}
 \begin{solution}
-\[
-  \RREF \left(\begin{bmatrix}
+\begin{enumerate}[(a)]
+\item
+  \(\RREF\begin{bmatrix}
     2 & 1 & 0 & 3 \\
-    -4 & -2 & 0 & 5 \\
-    -2 & -1 & 0 & 0
-  \end{bmatrix} \right) = \begin{bmatrix}
-    1 & \frac{1}{2} & 0 & 0 \\
-    0 & 0 & 0 & 1 \\
-    0 & 0 & 0 & 0
-  \end{bmatrix}
-\]
-
-Thus \(\left\{
-\begin{bmatrix}
-  2 \\ -4 \\ -2
-\end{bmatrix},
-\begin{bmatrix}
-  3 \\ 5 \\ 0
-\end{bmatrix}
-\right\} \) is a basis for the image, and \(\left\{
-  \begin{bmatrix} -\frac{1}{2} \\ 1 \\ 0 \\ 0\end{bmatrix},
-  \begin{bmatrix} 0 \\ 0 \\ 1 \\ 0\end{bmatrix}
-\right\} \) is a basis for the kernel.
+    1 & 2 & -1 & 2\\
+    0 & 1 & 0 & 1
+  \end{bmatrix}=\begin{bmatrix}
+    1 & 0 & 0 & 1\\
+    0 & 1 & 0 & 1\\
+    0 & 0 & 1 & 1
+  \end{bmatrix}\).
+  The map is not injective since it has a column without pivot,
+  but it is surjective because every row has a pivot.
+\item
+  \(\RREF\begin{bmatrix}
+    2 & 1 & 1 \\
+    2 & 0 & 2 \\
+    1 & 4 & -3
+  \end{bmatrix}=\begin{bmatrix}
+    1 & 0 & 1 \\
+    0 & 1 & -1 \\
+    0 & 0 & 0
+  \end{bmatrix}\).
+  The map is not injective since there is a column without a pivot,
+  and it is not surjective because there is a row without a pivot.
+\end{enumerate}
 \end{solution}

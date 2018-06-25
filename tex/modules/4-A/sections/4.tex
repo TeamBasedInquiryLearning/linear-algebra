@@ -4,10 +4,10 @@
 Let \(T: V \rightarrow W\).  We have previously defined the following
 terms.
 \begin{itemize}
-\item  \(T\) is called \term{injective} or \term{one-to-one} if \(T\) always maps  distinct vectors to different places.
-\item \(T\) is called \term{surjective} or \term{onto} if every element of \(W\) is mapped to by some element of \(V\).
 \item The \term{kernel} of \(T\) is the set of all vectors in \(V\) that are mapped to $\vec{z}\in W$.  It is a subspace of \(V\).
 \item The \term{image} of \(T\) is the set of all vectors in \(W\) that are mapped to by something in \(V\).  It is a subspace of \(W\).
+\item  \(T\) is called \term{injective} or \term{one-to-one} if \(T\) always maps  distinct vectors to different places.
+\item \(T\) is called \term{surjective} or \term{onto} if every element of \(W\) is mapped to by some element of \(V\).
 \end{itemize}
 \end{observation}
 
@@ -55,7 +55,7 @@ recognized by its \term{trivial} kernel.
 \end{fact}
 
 \begin{activity}{5}
-Let $T: \IR^4 \rightarrow \IR^5$ be a linear transformation where
+Let $T: V \rightarrow \IR^5$ be a linear transformation where
 $\Im T$ is spanned by four vectors.
 What can you conclude?
 \begin{enumerate}[(a)]
@@ -130,7 +130,7 @@ one group that means \(T\) is \textbf{injective}, and one group that means
 \(T\) is \textbf{surjective}.
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
-\item The kernel of \(T\) is trivial: \(\ker T=\{\vec 0\}\).
+\item The kernel of \(T\) is trivial, i.e. \(\ker T=\{\vec 0\}\).
 \item The columns of $A$ span $\IR^m$.
 \item The columns of $A$ are linearly independent.
 \item Every column of $\RREF(A)$ has a pivot.
@@ -156,7 +156,9 @@ one group that means \(T\) is \textbf{injective}, and one group that means
 \end{observation}
 
 \begin{activity}{3}
-  What can you immediately conclude (i.e. without computing a RREF) about the linear map \(T:\IR^2\to\IR^3\) with standard matrix \(\begin{bmatrix} 2 & 3 \\ 1 & -1 \\ -3 & 3 \end{bmatrix}\)?
+  What can you conclude about the linear map 
+  \(T:\IR^2\to\IR^3\) with standard matrix 
+  \(\begin{bmatrix} a & b \\ c & d \\ e & f \end{bmatrix}\)?
   \begin{enumerate}[a)]
     \item Its standard matrix has more columns than rows, so \(T\) is not
     injective.
@@ -170,7 +172,8 @@ one group that means \(T\) is \textbf{injective}, and one group that means
 \end{activity}
 
 \begin{activity}{2}
-  What can you immediately conclude (i.e. without computing a RREF) about the linear map \(T:\IR^3\to\IR^2\) with standard matrix \(\begin{bmatrix} 3 & 1 & -1 \\ 1 & 2 & 4 \end{bmatrix}\)?
+  What can you conclude about the linear map \(T:\IR^3\to\IR^2\) with standard matrix 
+  \(\begin{bmatrix} a & b & c \\ d & e & f \end{bmatrix}\)?
   \begin{enumerate}[a)]
     \item Its standard matrix has more columns than rows, so \(T\) is not
     injective.
@@ -191,7 +194,7 @@ one group that means \(T\) is \textbf{injective}, and one group that means
   \end{itemize}
   Basically, a linear transformation cannot reduce dimension without collapsing
   vectors into each other, and a linear transformation cannot
-  increase the dimension of its image.
+  increase dimension from its domain to its image.
   \begin{center}
     \begin{tikzpicture}[x=0.12in,y=0.12in]
       \begin{scope}[shift={(0,0)}]
@@ -244,15 +247,22 @@ one group that means \(T\) is \textbf{injective}, and one group that means
 
 
 \begin{activity}{5}
-Suppose \(T: \IR^n \rightarrow \IR^m\) with standard matrix \(A\) is both injective and surjective (we call such maps \term{bijective}).
-\begin{subactivity}
- How many pivot columns must \(A\) have?
-\end{subactivity}
+Suppose \(T: \IR^n \rightarrow \IR^4\) with standard matrix 
+\(A=\begin{bmatrix}
+  a_{11}&a_{12}&\cdots&a_{1n}\\
+  a_{21}&a_{22}&\cdots&a_{2n}\\
+  a_{31}&a_{32}&\cdots&a_{3n}\\
+  a_{41}&a_{42}&\cdots&a_{4n}\\
+\end{bmatrix}\) is both 
+injective and surjective (we call such maps \term{bijective}).
 \begin{subactivity}
 How many pivot rows must \(A\) have?
 \end{subactivity}
 \begin{subactivity}
-What can you conclude about \(m\) and \(n\)?
+ How many columns must \(A\) have?
+\end{subactivity}
+\begin{subactivity}
+What is \(A\)?
 \end{subactivity}
 \end{activity}
 
@@ -261,8 +271,8 @@ What can you conclude about \(m\) and \(n\)?
 Let $T: \IR^n \rightarrow \IR^n$ be a bijective linear map with
 standard matrix $A$. Label each of the following as true or false.
 \begin{enumerate}[(a)]
-\item The columns of $A$ form a basis for $\IR^n$
 \item $\RREF(A)$ is the identity matrix.
+\item The columns of $A$ form a basis for $\IR^n$
 \item The system of linear equations given by the augmented matrix $\begin{bmatrix}[c|c] A & \vec{b} \end{bmatrix}$ has exactly one solution
 for each \(\vect b \in \IR^n\).
 \end{enumerate}
