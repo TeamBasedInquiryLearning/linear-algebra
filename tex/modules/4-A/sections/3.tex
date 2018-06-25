@@ -4,185 +4,6 @@
 \begin{applicationActivities}
 
 \begin{definition}
-Let $T: V \rightarrow W$ be a linear transformation.
-$T$ is called \term{injective} or \term{one-to-one} if $T$ does not map two
-distinct vectors to the same place.  More precisely, $T$ is injective if
-$T(\vec{v}) \neq T(\vec{w})$ whenever $\vec{v} \neq \vec{w}$.
-
-\begin{center}
-\begin{tikzpicture}[x=0.15in,y=0.15in]
-  \begin{scope}[shift={(0,1)}]
-    \draw (-2,0) -- (2,0);
-    \draw (0,-2) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (-1.5,1)
-          node[anchor=south east] {\(\vec v\)};
-    \draw[thick,-latex,red] (0,0) -- (1.5,-2)
-          node[anchor=south west] {\(\vec w\)};
-  \end{scope}
-  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,0)}]
-    \draw (0,0) -- (3,0);
-    \draw (0,0) -- (0,3);
-    \draw (0,0) -- (-2,-1);
-    \draw[thick,-latex,blue] (0,0) -- (2,1)
-          node[anchor=south west] {\(T(\vec v)\)};
-    \draw[thick,-latex,red] (0,0) -- (1,2)
-          node[anchor=south west] {\(T(\vec w)\)};
-  \end{scope}
-  \node[anchor=north] at (5,-1) {injective};
-\end{tikzpicture}
-\hspace{3em}
-\begin{tikzpicture}[x=0.15in,y=0.15in]
-  \begin{scope}[shift={(0,0)}]
-    \draw (0,0) -- (3,0);
-    \draw (0,0) -- (0,3);
-    \draw (0,0) -- (-2,-1);
-    \draw[thick,-latex,blue] (0,0) -- (2,1)
-          node[anchor=south west] {\(\vec v\)};
-    \draw[thick,-latex,red] (0,0) -- (1,2)
-          node[anchor=south west] {\(\vec w\)};
-  \end{scope}
-  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,1)}]
-    \draw (-2,0) -- (2,0);
-    \draw (0,-2) -- (0,2);
-    \draw[thick,-latex,purple] (0,0) -- (0.5,2)
-          node[anchor=south west] {\(T(\vec v)=T(\vec w)\)};
-  \end{scope}
-  \node[anchor=north] at (5,-1) {not injective};
-\end{tikzpicture}
-\end{center}
-\end{definition}
-
-\begin{activity}{3}
-Let $T: \IR^3 \rightarrow \IR^2$ be given by
-\[
-  T\left(\begin{bmatrix}x \\ y\\z \end{bmatrix} \right)
-    =
-  \begin{bmatrix} x \\ y \end{bmatrix}
-    \hspace{3em}
-    \text{with standard matrix }
-  \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}
-\]
-Show that \(T\) is not injective by finding two different vectors
-\(\vec v,\vec w\in\IR^3\) such that \(T(\vec v)=T(\vec w)\).
-\end{activity}
-
-\begin{activity}{2}
-Let $T: \IR^2 \rightarrow \IR^3$ be given by
-\[
-  T\left(\begin{bmatrix}x \\ y \end{bmatrix} \right)
-    =
-  \begin{bmatrix} x \\ y \\ 0 \end{bmatrix}
-    \hspace{3em}
-    \text{with standard matrix }
-  \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}
-\]
-Is $T$ injective? If not, find two different vectors
-\(\vec v,\vec w\in\IR^3\) such that \(T(\vec v)=T(\vec w)\).
-\end{activity}
-
-\begin{definition}
-Let $T: V \rightarrow W$ be a linear transformation.
-$T$ is called \term{surjective} or \term{onto} if every element of $W$ is mapped to by an element of $V$.  More precisely, for every $\vec{w} \in W$, there is some $\vec{v} \in V$ with $T(\vec{v})=\vec{w}$.
-\begin{center}
-\begin{tikzpicture}[x=0.15in,y=0.15in]
-  \begin{scope}[shift={(0,0)}]
-    \draw (0,0) -- (3,0);
-    \draw (0,0) -- (0,3);
-    \draw (0,0) -- (-2,-1);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (1,2);
-    \draw[thick,-latex,blue] (0,0) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (1,-1);
-    \draw[thick,-latex,blue] (0,0) -- (-2,3);
-    \draw[thick,-latex,blue] (0,0) -- (-3,-2);
-  \end{scope}
-  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,1)}]
-    \draw (-2,0) -- (2,0);
-    \draw (0,-2) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
-    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2,-2);
-    \fill[color=blue, opacity=0.5] (-2,-2) rectangle (2,2);
-  \end{scope}
-  \node[anchor=north] at (5,-2) {surjective};
-\end{tikzpicture}
-\hspace{3em}
-\begin{tikzpicture}[x=0.15in,y=0.15in]
-  \begin{scope}[shift={(0,1)}]
-    \draw (-2,0) -- (2,0);
-    \draw (0,-2) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
-    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2,-2);
-  \end{scope}
-  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,0)}]
-    \draw (0,0) -- (3,0);
-    \draw (0,0) -- (0,3);
-    \draw (0,0) -- (-2,-1);
-    \draw[thick,-latex,blue] (0,0) -- (0.5,1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (-2.5,1);
-    \draw[thick,-latex,blue] (0,0) -- (-0.5,-1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2.5,-0.5);
-    \fill[color=blue, opacity=0.5] (-2,-2) -- (3,-1) -- (2,2) -- (-3,1) -- (-2,-2);
-  \end{scope}
-  \node[anchor=north] at (5,-2) {not surjective};
-\end{tikzpicture}
-\end{center}
-\end{definition}
-
-\begin{activity}{3}
-Let $T: \IR^2 \rightarrow \IR^3$ be given by
-\[
-  T\left(\begin{bmatrix}x \\ y \end{bmatrix} \right)
-    =
-  \begin{bmatrix} x \\ y \\ 0 \end{bmatrix}
-    \hspace{3em}
-    \text{with standard matrix }
-  \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}
-\]
-Show that \(T\) is not surjective by finding a vector in \(\IR^3\) that
-\(T\left(\begin{bmatrix}x \\ y \end{bmatrix} \right)\) can never equal.
-\end{activity}
-
-\begin{activity}{2}
-Let $T: \IR^3 \rightarrow \IR^2$ be given by
-\[
-  T\left(\begin{bmatrix}x \\ y\\z \end{bmatrix} \right)
-    =
-  \begin{bmatrix} x \\ y \end{bmatrix}
-    \hspace{3em}
-    \text{with standard matrix }
-  \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}
-\]
-Is $T$ surjective? If not, find a vector in \(\IR^2\) that
-\(T\left(\begin{bmatrix}x \\ y \\z\end{bmatrix} \right)\) can never equal.
-\end{activity}
-
-\begin{observation}
-As we will see, it's no coincidence that the \(\RREF\) of the
-injective map's standard matrix
-\[
-  \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}
-\]
-has all pivot columns. Similarly, the \(\RREF\) of the surjective map's
-standard matrix
-\[
-  \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}
-\]
-has a pivot in each row.
-\end{observation}
-
-
-\begin{definition}
 Let $T: V \rightarrow W$ be a linear transformation.  The \term{kernel} of $T$
 is an important subspace of \(V\) defined by
 \[
@@ -223,7 +44,7 @@ the set of all vectors that transform into \(\vec 0\)?
 \begin{enumerate}[a)]
 \item \(\setBuilder{\begin{bmatrix}a \\ a\end{bmatrix}}{a\in\IR}\)
 \item \(\setList{\begin{bmatrix}0\\0\end{bmatrix}}\)
-\item \(\IR^2\)
+\item \(\IR^2=\setBuilder{\begin{bmatrix}x \\ y\end{bmatrix}}{x,y\in\IR}\)
 \end{enumerate}
 \end{activity}
 
@@ -239,15 +60,15 @@ Let $T: \IR^3 \rightarrow \IR^2$ be given by
 \]
 Which of these subspaces of \(\IR^3\) describes \(\ker T\),
 the set of all vectors that transform into \(\vec 0\)?
+\begin{multicols}{2}
 \begin{enumerate}[a)]
 \item \(\setBuilder{\begin{bmatrix}0 \\ 0\\ a\end{bmatrix}}{a\in\IR}\)
 \item \(\setBuilder{\begin{bmatrix}a \\ a\\ 0\end{bmatrix}}{a\in\IR}\)
 \item \(\setList{\begin{bmatrix}0\\0\\0\end{bmatrix}}\)
-\item \(\IR^3\)
+\item \(\IR^3=\setBuilder{\begin{bmatrix}x \\ y\\z\end{bmatrix}}{x,y,z\in\IR}\)
 \end{enumerate}
+\end{multicols}
 \end{activity}
-
-
 
 \begin{activity}{10}
 Let $T: \IR^3 \rightarrow \IR^2$ be the linear transformation given by the
@@ -346,12 +167,14 @@ Let $T: \IR^2 \rightarrow \IR^3$ be given by
 Which of these subspaces of \(\IR^3\) describes \(\Im T\),
 the set of all vectors that are the result of using \(T\) to transform
 \(\IR^2\) vectors?
+\begin{multicols}{2}
 \begin{enumerate}[a)]
-\item \(\setBuilder{\begin{bmatrix}0 \\ 0\\a\end{bmatrix}}{a\in\IR}\)
-\item \(\setBuilder{\begin{bmatrix}a \\ b\\0\end{bmatrix}}{a,b\in\IR}\)
+\item \(\setBuilder{\begin{bmatrix}0 \\ 0\\ a\end{bmatrix}}{a\in\IR}\)
+\item \(\setBuilder{\begin{bmatrix}a \\ b\\ 0\end{bmatrix}}{a,b\in\IR}\)
 \item \(\setList{\begin{bmatrix}0\\0\\0\end{bmatrix}}\)
-\item \(\IR^3\)
+\item \(\IR^3=\setBuilder{\begin{bmatrix}x \\ y\\z\end{bmatrix}}{x,y,z\in\IR}\)
 \end{enumerate}
+\end{multicols}
 \end{activity}
 
 \begin{activity}{5}
@@ -370,7 +193,7 @@ the set of all vectors that are the result of using \(T\) to transform
 \begin{enumerate}[a)]
 \item \(\setBuilder{\begin{bmatrix}a \\ a\end{bmatrix}}{a\in\IR}\)
 \item \(\setList{\begin{bmatrix}0\\0\end{bmatrix}}\)
-\item \(\IR^2\)
+\item \(\IR^2=\setBuilder{\begin{bmatrix}x \\ y\end{bmatrix}}{x,y\in\IR}\)
 \end{enumerate}
 \end{activity}
 
@@ -462,5 +285,248 @@ standard matrix
 
 Find a basis for the kernel and a basis for the image of \(T\).
 \end{activity}
+\begin{definition}
+Let $T: V \rightarrow W$ be a linear transformation.
+$T$ is called \term{injective} or \term{one-to-one} if $T$ does not map two
+distinct vectors to the same place.  More precisely, $T$ is injective if
+$T(\vec{v}) \neq T(\vec{w})$ whenever $\vec{v} \neq \vec{w}$.
+
+\begin{center}
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1)
+          node[anchor=south east] {\(\vec v\)};
+    \draw[thick,-latex,red] (0,0) -- (1.5,-2)
+          node[anchor=south west] {\(\vec w\)};
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (2,1)
+          node[anchor=south west] {\(T(\vec v)\)};
+    \draw[thick,-latex,red] (0,0) -- (1,2)
+          node[anchor=south west] {\(T(\vec w)\)};
+  \end{scope}
+  \node[anchor=north] at (5,-1) {injective};
+\end{tikzpicture}
+\hspace{3em}
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (2,1)
+          node[anchor=south west] {\(\vec v\)};
+    \draw[thick,-latex,red] (0,0) -- (1,2)
+          node[anchor=south west] {\(\vec w\)};
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,purple] (0,0) -- (0.5,2)
+          node[anchor=south west] {\(T(\vec v)=T(\vec w)\)};
+  \end{scope}
+  \node[anchor=north] at (5,-1) {not injective};
+\end{tikzpicture}
+\end{center}
+\end{definition}
+
+\begin{activity}{3}
+Let $T: \IR^3 \rightarrow \IR^2$ be given by
+\[
+  T\left(\begin{bmatrix}x \\ y\\z \end{bmatrix} \right)
+    =
+  \begin{bmatrix} x \\ y \end{bmatrix}
+    \hspace{3em}
+    \text{with standard matrix }
+  \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}
+\]
+Is \(T\) injective?
+\begin{enumerate}[a)]
+\item Yes, because \(T(\vec v)=T(\vec w)\) whenever \(\vec v=\vec w\).
+\item Yes, because \(T(\vec v)\not=T(\vec w)\) whenever \(\vec v\not=\vec w\).
+\item No, because 
+  \(
+    T\left(\begin{bmatrix}0\\0\\1\end{bmatrix}\right)
+      \not=
+    T\left(\begin{bmatrix}0\\0\\2\end{bmatrix}\right)
+  \)
+\item No, because 
+  \(
+    T\left(\begin{bmatrix}0\\0\\1\end{bmatrix}\right)
+      =
+    T\left(\begin{bmatrix}0\\0\\2\end{bmatrix}\right)
+  \)
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{2}
+Let $T: \IR^2 \rightarrow \IR^3$ be given by
+\[
+  T\left(\begin{bmatrix}x \\ y \end{bmatrix} \right)
+    =
+  \begin{bmatrix} x \\ y \\ 0 \end{bmatrix}
+    \hspace{3em}
+    \text{with standard matrix }
+  \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}
+\]
+\begin{enumerate}[a)]
+\item Yes, because \(T(\vec v)=T(\vec w)\) whenever \(\vec v=\vec w\).
+\item Yes, because \(T(\vec v)\not=T(\vec w)\) whenever \(\vec v\not=\vec w\).
+\item No, because 
+  \(
+    T\left(\begin{bmatrix}1\\2\end{bmatrix}\right)
+      \not=
+    T\left(\begin{bmatrix}3\\4\end{bmatrix}\right)
+  \)
+\item No, because 
+  \(
+    T\left(\begin{bmatrix}1\\2\end{bmatrix}\right)
+      =
+    T\left(\begin{bmatrix}3\\4\end{bmatrix}\right)
+  \)
+\end{enumerate}
+\end{activity}
+
+\begin{definition}
+Let $T: V \rightarrow W$ be a linear transformation.
+$T$ is called \term{surjective} or \term{onto} if every element of $W$ is mapped to by an element of $V$.  More precisely, for every $\vec{w} \in W$, there is some $\vec{v} \in V$ with $T(\vec{v})=\vec{w}$.
+\begin{center}
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (1,2);
+    \draw[thick,-latex,blue] (0,0) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (1,-1);
+    \draw[thick,-latex,blue] (0,0) -- (-2,3);
+    \draw[thick,-latex,blue] (0,0) -- (-3,-2);
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,-2);
+    \fill[color=blue, opacity=0.5] (-2,-2) rectangle (2,2);
+  \end{scope}
+  \node[anchor=north] at (5,-2) {surjective};
+\end{tikzpicture}
+\hspace{3em}
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,-2);
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-2.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (-0.5,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2.5,-0.5);
+    \fill[color=blue, opacity=0.5] (-2,-2) -- (3,-1) -- (2,2) -- (-3,1) -- (-2,-2);
+  \end{scope}
+  \node[anchor=north] at (5,-2) {not surjective};
+\end{tikzpicture}
+\end{center}
+\end{definition}
+
+\begin{activity}{3}
+Let $T: \IR^2 \rightarrow \IR^3$ be given by
+\[
+  T\left(\begin{bmatrix}x \\ y \end{bmatrix} \right)
+    =
+  \begin{bmatrix} x \\ y \\ 0 \end{bmatrix}
+    \hspace{3em}
+    \text{with standard matrix }
+  \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}
+\]
+Is \(T\) surjective?
+\begin{enumerate}[a)]
+\item Yes, because for every \(\vec w=\begin{bmatrix}x\\y\\z\end{bmatrix}\in\IR^3\),
+there exists \(\vec v=\begin{bmatrix}x\\y\end{bmatrix}\in\IR^2\) such that
+\(T(\vec v)=\vec w\).
+\item No, because 
+  \(
+    T\left(\begin{bmatrix}x\\y\end{bmatrix}\right)
+  \)
+can never equal
+  \(
+  \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}
+  \).
+\item No, because 
+  \(
+    T\left(\begin{bmatrix}x\\y\end{bmatrix}\right)
+  \)
+can never equal
+  \(
+  \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
+  \).
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{2}
+Let $T: \IR^3 \rightarrow \IR^2$ be given by
+\[
+  T\left(\begin{bmatrix}x \\ y\\z \end{bmatrix} \right)
+    =
+  \begin{bmatrix} x \\ y \end{bmatrix}
+    \hspace{3em}
+    \text{with standard matrix }
+  \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}
+\]
+Is \(T\) surjective?
+\begin{enumerate}[a)]
+\item Yes, because for every \(\vec w=\begin{bmatrix}x\\y\end{bmatrix}\in\IR^2\),
+there exists \(\vec v=\begin{bmatrix}x\\y\\42\end{bmatrix}\in\IR^3\) such that
+\(T(\vec v)=\vec w\).
+\item Yes, because for every \(\vec w=\begin{bmatrix}x\\y\end{bmatrix}\in\IR^2\),
+there exists \(\vec v=\begin{bmatrix}0\\0\\z\end{bmatrix}\in\IR^3\) such that
+\(T(\vec v)=\vec w\).
+\item No, because 
+  \(
+    T\left(\begin{bmatrix}x\\y\\z\end{bmatrix}\right)
+  \)
+can never equal
+  \(
+  \begin{bmatrix} 3\\-2 \end{bmatrix}
+  \).
+\end{enumerate}
+\end{activity}
+
+\begin{observation}
+As we will see, it's no coincidence that the \(\RREF\) of the
+injective map's standard matrix
+\[
+  \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}
+\]
+has all pivot columns. Similarly, the \(\RREF\) of the surjective map's
+standard matrix
+\[
+  \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}
+\]
+has a pivot in each row.
+\end{observation}
+
+
 
 \end{applicationActivities}
