@@ -1,338 +1,163 @@
 \begin{problem}{M4}
-Consider the two row operations 
-\(R_2-4R_1\to R_2\) and \(\frac{1}{3}R_2\to R_2\)
-applied as follows to show \(A\sim B\):
-\begin{align*}
-A
-  =
-\begin{bmatrix}
-1&2&3\\
-4&5&6\\
-7&8&9
-\end{bmatrix}
-  &\sim
-\begin{bmatrix}
-1&2&3\\
-4-4(1)&5-4(2)&6-4(3)\\
-7&8&9
-\end{bmatrix}
-  =
-\begin{bmatrix}
-1&2&3\\
-0&-3&-6\\
-7&8&9
-\end{bmatrix}
-  \\&\sim
-\begin{bmatrix}
-1&2&3\\
--\frac{1}{3}(0)&-\frac{1}{3}(-3)&-\frac{1}{3}(-6)\\
-7&8&9
-\end{bmatrix}
-  =
-\begin{bmatrix}
-1&2&3\\
-0&1&2\\
-7&8&9
-\end{bmatrix}
-  = 
-B
-\end{align*}
-Express these row operations as matrix multiplication
-by expressing \(B\) as the product of two matrices and \(A\).
+Show how to find the inverse of the matrix $\begin{bmatrix} 8 & 5 & 3 & 0 \\ 3 & 2 & 1 & 1 \\ 5 & -3 & 1 & -2 \\ -1 & 2 & 0 & 1\end{bmatrix} $.
 \end{problem}
 \begin{solution}
-\[
-B
-  =
-\begin{bmatrix}
-  1&0&0\\
-  0&\frac{1}{3}&0\\
-  0&0&1
-\end{bmatrix}
-\begin{bmatrix}
-  1&0&0\\
-  -4&1&0\\
-  0&0&1
-\end{bmatrix}
-A
-\]
+$$\RREF \left(\begin{bmatrix}[cccc|cccc] 8 & 5 & 3 & 0 & 1 & 0 & 0 & 0\\ 3 & 2 & 1 & 1 & 0 & 1 & 0 & 0 \\ 5 & -3 & 1 & -2 & 0 & 0 & 1 & 0 \\ -1 & 2 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix} \right) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 & 0 & 1 & 2 & -5 & 12 \\ 0 &  1 & 0 & 0 & 1 & 1 & -4 & -9 \\ 0 & 0 & 1 & 0 & -4 & -7 & 20 & 47 \\ 0 & 0 & 0 & 1 & -1 & 0 & 3 & 7 \end{bmatrix}$$
+
+So the inverse is $\begin{bmatrix} 1 & 2 & -5 & 12 \\  1 & 1 & -4 & -9 \\  -4 & -7 & 20 & 47 \\-1 & 0 & 3 & 7 \end{bmatrix}$.
 \end{solution}
 
 
 \begin{problem}{M4}
-Consider the two row operations 
-\(R_1\leftrightarrow R_2\) and \(R_3+R_1\to R_3\)
-applied as follows to show \(A\sim B\):
-\begin{align*}
-A
-  =
-\begin{bmatrix}
-0&3&-1\\
-1&2&3\\
--1&4&5
-\end{bmatrix}
-  &\sim
-\begin{bmatrix}
-1&2&3\\
-0&3&-1\\
--1&4&5
-\end{bmatrix}
-  \\&\sim
-\begin{bmatrix}
-1&2&3\\
-0&3&-1\\
--1+1&4+2&5+3
-\end{bmatrix}
-  =
-\begin{bmatrix}
-1&2&3\\
-0&3&-1\\
-0&6&8
-\end{bmatrix}
-  = 
-B
-\end{align*}
-Express these row operations as matrix multiplication
-by expressing \(B\) as the product of two matrices and \(A\).
+Compute the inverse of the matrix $\begin{bmatrix} 1 & 2 & 3 & 0 \\ 0 & -1 & 4 & -2 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$.
 \end{problem}
 \begin{solution}
-\[
-B
-  =
-\begin{bmatrix}
-  1&0&0\\
-  0&1&0\\
-  1&0&1
-\end{bmatrix}
-\begin{bmatrix}
-  0&1&0\\
-  1&0&0\\
-  0&0&1
-\end{bmatrix}
-A
-\]
+$$\RREF(A|I) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 &0 & 1 & 2 & -11 & 37 \\ 0 & 1 & 0 & 0 & 0 & -1 & 4 & -14 \\ 0 & 0 & 1 & 0 & 0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix}$$
+So the inverse is $\begin{bmatrix}  1 & 2 & -11 & 37 \\ 0 & -1 & 4 & -14 \\  0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 \end{bmatrix}$
 \end{solution}
 
 
 \begin{problem}{M4}
-Consider the two row operations 
-\(\frac{1}{2} R_3\to R_3\) and \(R_1\leftrightarrow R_3\)
-applied as follows to show \(A\sim B\):
-\begin{align*}
-A
-  =
-\begin{bmatrix}
--3&4&0\\
--7&2&3\\
-2&-8&6
-\end{bmatrix}
-  &\sim
-\begin{bmatrix}
--3&4&0\\
--7&2&3\\
-\frac{1}{2}(2)&\frac{1}{2}(-8)&\frac{1}{2}(6)
-\end{bmatrix}
-  =
-\begin{bmatrix}
--3&4&0\\
--7&2&3\\
-1&-4&3
-\end{bmatrix}
-  \\&\sim
-\begin{bmatrix}
-1&-4&3\\
--7&2&3\\
--3&4&0
-\end{bmatrix}
-  =
-B
-\end{align*}
-Express these row operations as matrix multiplication
-by expressing \(B\) as the product of two matrices and \(A\).
+  Show how to find the inverse of the matrix $\begin{bmatrix} 6 & 0 & 1 \\ -14 & 3 & -4 \\ -23 & 4 & -6\end{bmatrix}$.
 \end{problem}
 \begin{solution}
-\[
-B
-  =
-\begin{bmatrix}
-  0&0&1\\
-  0&1&0\\
-  1&0&0
-\end{bmatrix}
-\begin{bmatrix}
-  1&0&0\\
-  0&1&0\\
-  0&0&\frac{1}{2}
-\end{bmatrix}
-A
-\]
+$$\begin{bmatrix} 6 & 0 & 1 \\ -14 & 3 & -4 \\ -23 & 4 & -6\end{bmatrix}^{-1} = \begin{bmatrix} -2 & 4 & -3 \\ 8 & -13 & 10 \\ 13 & -24 & 18 \end{bmatrix}$$
 \end{solution}
 
 \begin{problem}{M4}
-Consider the two row operations 
-\(R_1\leftrightarrow R_3\) and \(3 R_2\to R_2\)
-applied as follows to show \(A\sim B\):
-\begin{align*}
-A
-  =
-\begin{bmatrix}
--3&4&0\\
--7&2&3\\
-2&-8&6
-\end{bmatrix}
-  &\sim
-\begin{bmatrix}
-2&-8&6\\
--7&2&3\\
--3&4&0\\
-\end{bmatrix}
-  \\&\sim
-\begin{bmatrix}
-2&-8&6\\
-3(-7)&3(2)&3(3)\\
--3&4&0\\
-\end{bmatrix}
-  =
-\begin{bmatrix}
-2&-8&6\\
--21&6&9\\
--3&4&0
-\end{bmatrix}
-  =
-B
-\end{align*}
-Express these row operations as matrix multiplication
-by expressing \(B\) as the product of two matrices and \(A\).
+Show how to find the inverse of the matrix $\begin{bmatrix} 3 & -1 & 0  \\ 2 & 1 & 1  \\ 0 & 1 & 1   \end{bmatrix}$.
 \end{problem}
 \begin{solution}
-\[
-B
-  =
-\begin{bmatrix}
-  1&0&0\\
-  0&3&0\\
-  0&0&1
-\end{bmatrix}
-\begin{bmatrix}
-  0&0&1\\
-  0&1&0\\
-  1&0&0
-\end{bmatrix}
-A
-\]
+$$\begin{bmatrix} 3 & -1 & 0  \\ 2 & 1 & 1  \\ 0 & 1 & 1   \end{bmatrix}^{-1} = \begin{bmatrix} 0 & \frac{1}{2} & -\frac{1}{2} \\ -1 & \frac{3}{2} & -\frac{3}{2} \\ 1 & -\frac{3}{2} & \frac{5}{2}\end{bmatrix}$$
 \end{solution}
 
+
+
 \begin{problem}{M4}
-Consider the two row operations 
-\(-2R_1\to R_1\) and \(R_3+2R_1\to R_3\)
-applied as follows to show \(A\sim B\):
-\begin{align*}
-A
-  =
-\begin{bmatrix}
--\frac{1}{2}&0&3\\
--4&2&3\\
--2&5&0
-\end{bmatrix}
-  &\sim
-\begin{bmatrix}
--2(-\frac{1}{2})&-2(0)&-2(3)\\
--4&2&3\\
--2&5&0
-\end{bmatrix}
-  =
-\begin{bmatrix}
-1&0&-6\\
--4&2&3\\
--2&5&0
-\end{bmatrix}
-  \\&\sim
-\begin{bmatrix}
-1&0&-6\\
--4&2&3\\
--2+2(1)&5+2(0)&0+2(-6)
-\end{bmatrix}
-  =
-\begin{bmatrix}
-1&0&-6\\
--4&2&3\\
-0&5&-12
-\end{bmatrix}
-  = 
-B
-\end{align*}
-Express these row operations as matrix multiplication
-by expressing \(B\) as the product of two matrices and \(A\).
+  Show how to find the inverse of the matrix
+  \(\begin{bmatrix}
+    4 & -1 & -8  \\
+    2 & 1 & 3  \\
+    1 & 1 & 4
+  \end{bmatrix}\).
 \end{problem}
 \begin{solution}
-\[
-B
-  =
-\begin{bmatrix}
-  1&0&0\\
-  0&1&0\\
-  2&0&1
-\end{bmatrix}
-\begin{bmatrix}
-  -2&0&0\\
-  0&1&0\\
-  0&0&1
-\end{bmatrix}
-A
-\]
+\(\begin{bmatrix}[ccc|ccc]
+  4 & -1 & -8 & 1 & 0 & 0  \\
+  2 & 1 & 3   & 0 & 1 & 0 \\
+  1 & 1 & 4   & 0 & 0 & 1
+\end{bmatrix}\sim\begin{bmatrix}[ccc|ccc]
+  1 & 0 & 0 & 1 & -4 & 5 \\
+  0 & 1 & 0 & -5 & 24 & -28 \\
+  0 & 0 & 1 & 1 & -5 & 6
+\end{bmatrix}\). Thus the inverse is
+\(\begin{bmatrix}
+  1 & -4 & 5  \\
+  -5 & 24 & -28  \\
+  1 & -5 & 6
+\end{bmatrix}\).
 \end{solution}
 
 
 \begin{problem}{M4}
-Consider the two row operations 
-\(R_2-4R_3\to R_2\) and \(R_1\leftrightarrow R_3\)
-applied as follows to show \(A\sim B\):
-\begin{align*}
-A
-  =
-\begin{bmatrix}
-0&3&-1\\
--4&2&3\\
--1&4&5
-\end{bmatrix}
-  &\sim
-\begin{bmatrix}
-0&3&-1\\
--4-4(-1)&2-4(4)&3-4(5)\\
--1&4&5
-\end{bmatrix}
-  =
-\begin{bmatrix}
-0&3&-1\\
-0&-14&-17\\
--1&4&5
-\end{bmatrix}
-  \\&\sim
-\begin{bmatrix}
--1&4&5\\
-0&-14&-17\\
-0&3&-1\\
-\end{bmatrix}
-  = 
-B
-\end{align*}
-Express these row operations as matrix multiplication
-by expressing \(B\) as the product of two matrices and \(A\).
+  Show how to find the inverse of the matrix
+  \(\begin{bmatrix}
+    1 & -4 & 5  \\
+    -5 & 24 & -28  \\
+    1 & -5 & 6
+  \end{bmatrix}\).
 \end{problem}
 \begin{solution}
-\[
-B
-  =
-\begin{bmatrix}
-  0&0&1\\
-  0&1&0\\
-  1&0&0
-\end{bmatrix}
-\begin{bmatrix}
-  1&0&0\\
-  0&1&-4\\
-  0&0&1
-\end{bmatrix}
-A
-\]
+\(\begin{bmatrix}[ccc|ccc]
+  1 & -4 & 5 & 1 & 0 & 0  \\
+  -5 & 24 & -28 & 0 & 1 & 0 \\
+  1 & -5 & 6 & 0 & 0 & 1
+\end{bmatrix}\sim\begin{bmatrix}[ccc|ccc]
+  1 & 0 & 0 & 4 & -1 & -8  \\
+  0 & 1 & 0 & 2 & 1 & 3  \\
+  0 & 0 & 1 & 1 & 1 & 4
+\end{bmatrix}\). Thus the inverse is
+\(\begin{bmatrix}
+  4 & -1 & -8  \\
+  2 & 1 & 3  \\
+  1 & 1 & 4
+\end{bmatrix}\).
+\end{solution}
+
+
+\begin{problem}{M4}
+  Show how to find the inverse of the matrix
+  \(\begin{bmatrix}
+    3 & 1 & 3  \\
+    2 & -1 & -6  \\
+    1 & 1 & 4
+  \end{bmatrix}\).
+\end{problem}
+\begin{solution}
+\(\begin{bmatrix}[ccc|ccc]
+  3 & 1 & 3 & 1 & 0 & 0 \\
+  2 & -1 & -6 & 0 & 1 & 0 \\
+  1 & 1 & 4 & 0 & 0 & 1
+\end{bmatrix}\sim\begin{bmatrix}[ccc|ccc]
+  1 & 0 & 0 & 2 & -1 & -3  \\
+  0 & 1 & 0 & -14 & 9 & 24  \\
+  0 & 0 & 1 & 3 & -2 & -5
+\end{bmatrix}\). Thus the inverse is
+\(\begin{bmatrix}
+  2 & -1 & -3  \\
+  -14 & 9 & 24  \\
+  3 & -2 & -5
+\end{bmatrix}\).
+\end{solution}
+
+
+\begin{problem}{M4}
+  Show how to find the inverse of the matrix
+  \(\begin{bmatrix}
+    3 & 1 & 3  \\
+    2 & -1 & -6  \\
+    1 & 1 & 4
+  \end{bmatrix}\).
+\end{problem}
+\begin{solution}
+\(\begin{bmatrix}[ccc|ccc]
+  3 & 1 & 3 & 1 & 0 & 0 \\
+  2 & -1 & -6 & 0 & 1 & 0 \\
+  1 & 1 & 4 & 0 & 0 & 1
+\end{bmatrix}\sim\begin{bmatrix}[ccc|ccc]
+  1 & 0 & 0 & 2 & -1 & -3  \\
+  0 & 1 & 0 & -14 & 9 & 24  \\
+  0 & 0 & 1 & 3 & -2 & -5
+\end{bmatrix}\). Thus the inverse is
+\(\begin{bmatrix}
+  2 & -1 & -3  \\
+  -14 & 9 & 24  \\
+  3 & -2 & -5
+\end{bmatrix}\).
+\end{solution}
+
+
+\begin{problem}{M4}
+  Show how to find the inverse of the matrix
+  \(\begin{bmatrix}
+    2 & -1 & -3  \\
+    -14 & 9 & 24  \\
+    3 & -2 & -5
+  \end{bmatrix}\).
+\end{problem}
+\begin{solution}
+  \(\begin{bmatrix}[ccc|ccc]
+    2 & -1 & -3 & 1 & 0 & 0 \\
+    -14 & 9 & 24 & 0 & 1 & 0 \\
+    3 & -2 & -5 & 0 & 0 & 1
+  \end{bmatrix}\sim\begin{bmatrix}[ccc|ccc]
+    1 & 0 & 0 & 3 & 1 & 3  \\
+    0 & 1 & 0 & 2 & -1 & -6  \\
+    0 & 0 & 1 & 1 & 1 & 4
+  \end{bmatrix}\). Thus the inverse is
+  \(\begin{bmatrix}
+    3 & 1 & 3  \\
+    2 & -1 & -6  \\
+    1 & 1 & 4
+  \end{bmatrix}\).
 \end{solution}
