@@ -1,40 +1,75 @@
 \begin{applicationActivities}
 
-\begin{observation}
-Recall that if \(T: \IR^n \rightarrow \IR^k\) is a linear map with standard matrix \(B \in M_{k,n}\) and \(S: \IR^k \rightarrow \IR^m\) is a linear map with standard matrix \(A \in M_{m,k}\), the product matrix \(AB \in M_{m,n}\) is defined to be the standard matrix of the composition map \[S \circ T: \IR^n \rightarrow \IR^m.\]
-\end{observation}
+\begin{remark}
+Recall that the \term{product} \(AB\) of a 
+\(m \times n\) matrix \(A\) and an \(n \times k\)
+matrix \(B\) is the \(m \times k\) 
+standard matrix of the composition map of the
+two corresponding linear functions.
 
+\vspace{1em}
 
-\begin{activity}{5}
-Matrix multiplication only makes sense if the first matrix has as many
-columns as the second matrix has rows. Label each of these matrices
-with \textbf{rows \(\times\) columns}, and then figure out which of
-the products \(AB,AC,BA,BC,CA,CB\) can actually be computed.
-
+For example, if \(S\) has a 
+\(4\times \circledNumber{2}\) matrix \(A\) and
+\(T\) has a \(\circledNumber{2}\times 3\) matrix 
+\(B\), then \(S\circ T\) has a
+\(4\times 3\) standard matrix:
 \[
-  A = \begin{bmatrix}1&0&-3\\3&2&1\end{bmatrix}
-    \hspace{2em}
-  B = \begin{bmatrix}2&2&1&0&1\\1&1&1&-1&0\\0&0&3&2&1\\-1&5&7&2&1\end{bmatrix}
-    \hspace{2em}
-  C = \begin{bmatrix}2&2\\0&-1\\3&1\\4&0\end{bmatrix}
+  AB
+    =
+  \begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}
+  \begin{bmatrix} 2 & 1 & -3 \\ 5 & -3 & 4 \end{bmatrix}
 \]
-\end{activity}
+\[
+    =
+  \left[
+  (S \circ T)(\vec{e}_1) \hspace{1em}
+  (S\circ T)(\vec{e}_2) \hspace{1em}
+  (S \circ T)(\vec{e}_3)
+  \right]
+    =
+  \begin{bmatrix}
+    12 & -5 & 5 \\
+    5 & -3 & 4 \\
+    31 & -12 & 11 \\
+    -12 & 5 & -5
+  \end{bmatrix}
+.\]
+\end{remark}
 
 
 
 
-\begin{activity}{10}
-Let \(B=\begin{bmatrix}1 & 0  & 2 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}\), and let \(A=\begin{bmatrix} 2 & 7 & -1 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}\).  Compute the product \(BA\).
+
+
+\begin{activity}{15}
+Let \(B=\begin{bmatrix} 3 & -4 & 0 \\ 2 & 0 & -1 \\ 0 & -3 & 3 \end{bmatrix}\), 
+and let \(A=\begin{bmatrix} 2 & 7 & -1 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}\).  
+\begin{subactivity}
+  Compute the product \(BA\) by hand.
+\end{subactivity}
+\begin{subactivity}
+  Check your work using technology. Using Octave:
+  \begin{itemize}
+    \item \texttt{ B = sym([3 -4 0 ; 2 0 -1 ; 0 -3 3]) }
+    \item \texttt{ A = sym([2 7 -1 ; 0 3 2  ; 1 1 -1]) }
+    \item \texttt{ B*A }
+  \end{itemize}
+\end{subactivity}
 \end{activity}
 
 \begin{activity}{5}
-Let $A=\begin{bmatrix} 2 & 7 & -1 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}$.  Find a $3 \times 3$ matrix $I$ such that $IA=A$, that is,
+Let \(A=\begin{bmatrix} 2 & 7 & -1 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}\).  
+Find a \(3 \times 3\) matrix \(B\) such that \(BA=A\), that is,
 \[
-  \begin{bmatrix} \unknown & \unknown & \unknown \\ \unknown & \unknown & \unknown \\ \unknown & \unknown & \unknown \end{bmatrix}
+  \begin{bmatrix} \unknown & \unknown & \unknown \\ 
+  \unknown & \unknown & \unknown 
+  \\ \unknown & \unknown & \unknown \end{bmatrix}
   \begin{bmatrix} 2 & 7 & -1 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}
 =
   \begin{bmatrix} 2 & 7 & -1 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}
 \]
+Check your guess using technology.
 \end{activity}
 
 \begin{definition}
@@ -57,10 +92,10 @@ It has a $1$ on each diagonal element and a $0$ in every other position.
 \end{fact}
 
 \begin{activity}{20}
-Each row operation can be interpreted as a type of matrix multiplication.
+Tweaking the identity matrix slightly allows us to write row operations
+in terms of matrix multiplication.
 \begin{subactivity}
-Tweak the identity matrix slightly to create a matrix that
-doubles the third row of $A$:
+Create a matrix that doubles the third row of \(A\):
 \[
  \begin{bmatrix} \unknown & \unknown & \unknown \\ \unknown & \unknown & \unknown \\ \unknown & \unknown & \unknown \end{bmatrix}
  \begin{bmatrix} 2 & 7 & -1 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}
@@ -69,7 +104,7 @@ doubles the third row of $A$:
 \]
 \end{subactivity}
 \begin{subactivity}
-  Create a matrix that swaps the second and third rows of $A$:
+  Create a matrix that swaps the second and third rows of \(A\):
   \[
    \begin{bmatrix} \unknown & \unknown & \unknown \\ \unknown & \unknown & \unknown \\ \unknown & \unknown & \unknown \end{bmatrix}
    \begin{bmatrix} 2 & 7 & -1 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}
@@ -78,7 +113,7 @@ doubles the third row of $A$:
   \]
 \end{subactivity}
 \begin{subactivity}
-Create a matrix that adds $5$ times the third row of $A$ to the first row:
+Create a matrix that adds \(5\) times the third row of \(A\) to the first row:
 \[
  \begin{bmatrix} \unknown & \unknown & \unknown \\ \unknown & \unknown & \unknown \\ \unknown & \unknown & \unknown \end{bmatrix}
  \begin{bmatrix} 2 & 7 & -1 \\ 0 & 3 & 2 \\ 1 & 1 & -1 \end{bmatrix}
@@ -91,10 +126,87 @@ Create a matrix that adds $5$ times the third row of $A$ to the first row:
 \begin{fact}
 If \(R\) is the result of applying a row operation to \(I\), then
 \(RA\) is the result of applying the same row operation to \(A\).
+\begin{itemize}
+\item Scaling a row: \(R=
+  \begin{bmatrix}
+  c & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+\)
+\item Swapping rows: \(R=
+  \begin{bmatrix}
+  0 & 1 & 0 \\
+  1 & 0 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+\)
+\item Adding a row multiple to another row: \(R=
+  \begin{bmatrix}
+  1 & 0 & c \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+  \end{bmatrix}
+\)
+\end{itemize}
 
-This means that for any matrix $A$, we can find a series of matrices $R_1, \ldots, R_k$ corresponding to the row operations such that $$R_1 R_2 \cdots R_k A = \RREF(A).$$ That is, row reduction can be thought of as the result
-of matrix multiplication.
+Such matrices can be chained together to emulate multiple row operations.
+In particular,
+\[\RREF(A)=R_k\dots R_2R_1A\]
+for some sequence of matrices \(R_1,R_2,\dots,R_k\).
 \end{fact}
+
+\begin{activity}{10}
+Consider the two row operations 
+\(R_2\leftrightarrow R_3\) and \(R_1+R_3\to R_1\)
+applied as follows to show \(A\sim B\):
+\begin{align*}
+A
+  =
+\begin{bmatrix}
+-1&4&5\\
+0&3&-1\\
+1&2&3\\
+\end{bmatrix}
+  &\sim
+\begin{bmatrix}
+-1&4&5\\
+1&2&3\\
+0&3&-1\\
+\end{bmatrix}
+  \\&\sim
+\begin{bmatrix}
+-1+1&4+2&5+3\\
+1&2&3\\
+0&3&-1\\
+\end{bmatrix}
+  =
+\begin{bmatrix}
+0&6&8\\
+1&2&3\\
+0&3&-1\\
+\end{bmatrix}
+  = 
+B
+\end{align*}
+Express these row operations as matrix multiplication
+by expressing \(B\) as the product of two matrices and \(A\):
+\[
+B =
+\begin{bmatrix}
+\unknown&\unknown&\unknown\\
+\unknown&\unknown&\unknown\\
+\unknown&\unknown&\unknown
+\end{bmatrix}
+\begin{bmatrix}
+\unknown&\unknown&\unknown\\
+\unknown&\unknown&\unknown\\
+\unknown&\unknown&\unknown
+\end{bmatrix}
+A
+\]
+Check your work using technology.
+\end{activity}
 
 
 

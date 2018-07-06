@@ -23,53 +23,26 @@
 The determinants of row operation matrices may be computed
 by manipulating columns to reduce each matrix to the identity:
 \begin{itemize}
-\item Scaling a row: \(\det
-  \begin{bmatrix}
-  c & 0 & 0 \\
-  0 & 1 & 0 \\
-  0 & 0 & 1
-  \end{bmatrix}
-    =
-  c\det
+\item Scaling a row: \(  
   \begin{bmatrix}
   1 & 0 & 0 \\
-  0 & 1 & 0 \\
+  0 & c & 0 \\
   0 & 0 & 1
   \end{bmatrix}
-    =
-  c
 \)
-\item Swapping rows: \(\det
+\item Swapping rows: \(
   \begin{bmatrix}
   0 & 1 & 0 \\
   1 & 0 & 0 \\
   0 & 0 & 1
   \end{bmatrix}
-    =
-  -1\det
-  \begin{bmatrix}
-  1 & 0 & 0 \\
-  0 & 1 & 0 \\
-  0 & 0 & 1
-  \end{bmatrix}
-    =
-  -1
 \)
-\item Adding a row multiple to another row: \(\det
+\item Adding a row multiple to another row: \(
   \begin{bmatrix}
-  1 & 0 & c \\
-  0 & 1 & 0 \\
+  1 & 0 & 0 \\
+  0 & 1 & c \\
   0 & 0 & 1
   \end{bmatrix}
-    =
-  \det
-  \begin{bmatrix}
-  1 & 0 & c-1c \\
-  0 & 1 & 0-0c \\
-  0 & 0 & 1-0c
-  \end{bmatrix}
-    =
-  \det(I)=1
 \)
 \end{itemize}
 \end{remark}

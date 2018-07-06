@@ -71,14 +71,14 @@ Compute
 \).
 \end{subactivity}
 \begin{subactivity}
-Find the \(4\times 3\) standard matrix of $S \circ T:\IR^3\to\IR^4$.
+Write the \(4\times 3\) standard matrix of $S \circ T:\IR^3\to\IR^4$.
 \end{subactivity}
 \end{activity}
 
 \begin{definition}
-We define the \term{product} \(AB\) of a $m \times n$ matrix $A$ and a
-$n \times k$
-matrix $B$ to be the $m \times k$ standard matrix of the composition map of the
+We define the \term{product} \(AB\) of a \(m \times n\) matrix \(A\) and a
+\(n \times k\)
+matrix \(B\) to be the \(m \times k\) standard matrix of the composition map of the
 two corresponding linear functions.
 
 \vspace{1em}
@@ -95,7 +95,9 @@ For the previous activity, \(S\) had a \(4\times \circledNumber{2}\) matrix and
 \[
     =
   \left[
-  (S \circ T)(\vec{e}_1) (S\circ T)(\vec{e}_2) (S \circ T)(\vec{e}_3)
+  (S \circ T)(\vec{e}_1) \hspace{1em}
+  (S\circ T)(\vec{e}_2) \hspace{1em}
+  (S \circ T)(\vec{e}_3)
   \right]
     =
   \begin{bmatrix}
@@ -109,44 +111,46 @@ For the previous activity, \(S\) had a \(4\times \circledNumber{2}\) matrix and
 
 
 
+\begin{activity}{15}
+Let \(S: \IR^3 \rightarrow \IR^2\) be given by the matrix 
+\(A=\begin{bmatrix} -4 & -2 & 3 \\ 0 & 1 & 1 \end{bmatrix}\)
+and \(T: \IR^2 \rightarrow \IR^3\) be given by the matrix
+\(B=\begin{bmatrix} 2 & 3 \\ 1 & -1 \\ 0 & -1 \end{bmatrix}\).
+
+\begin{subactivity}
+Write the dimensions (rows \(\times\) columns)
+for \(A\), \(B\), \(AB\), and \(BA\).
+\end{subactivity}
+\begin{subactivity}
+Find the standard matrix \(AB\) of \(S \circ T\).
+\end{subactivity}
+\begin{subactivity}
+FInd the standard matrix \(BA\) of \(T \circ S\).
+\end{subactivity}
+\end{activity}
+
+
 \begin{activity}{10}
-Let $T: \IR^2 \rightarrow \IR^3$ be given by the matrix $B=\begin{bmatrix} 2 & 3 \\ 1 & -1 \\ 0 & -1 \end{bmatrix}$ and $S: \IR^3 \rightarrow \IR^2$ be given by the matrix $A=\begin{bmatrix} -4 & -2 & 3 \\ 0 & 1 & 1 \end{bmatrix}$.
+Consider the following three matrices.
 
-Find the standard matrix \(AB\) of $S \circ T$.
-\end{activity}
-
-\begin{activity}{5}
-Let $T: \IR^2 \rightarrow \IR^3$ be given by the matrix $B=\begin{bmatrix} 2 & 3 \\ 1 & -1 \\ 0 & -1 \end{bmatrix}$ and $S: \IR^3 \rightarrow \IR^2$ be given by the matrix $A=\begin{bmatrix} -4 & -2 & 3 \\ 0 & 1 & 1 \end{bmatrix}$.
-
-Find the standard matrix \(BA\) of $T \circ S$.
-\end{activity}
-
-\begin{activity}{10}
-Let \(T: \IR^4 \rightarrow \IR^2\) be given by the matrix \(B=\begin{bmatrix} 3 & 2 & 5 & -4 \\  -1 & -3  & 1 & 2 \end{bmatrix} \) and let \(S: \IR^2 \rightarrow \IR^3\) be given by the matrix \(A = \begin{bmatrix} 3 & 1 \\ -1 & 2 \\ -4 & 2 \end{bmatrix}\).  Compute \(AB\), the standard matrix of the composition \(S \circ T\).
-\end{activity}
-
-\begin{observation}
-Note that an \(\IR^n\) vector acts exactly the same as an \(n\times 1\)
-matrix, so we will use them interchangablely, as follows.
-
-\begin{align*}
-A&=\begin{bmatrix} 3 & 1 & -1 \\ 2 & 0 & 4 \\ -1 & 3 & 5  \end{bmatrix} & X=\vec{x}&=\begin{bmatrix} x  \\ y \\ z  \end{bmatrix} & B=\vec{b} &= \begin{bmatrix} 5 \\ -7 \\ 2 \end{bmatrix}
-\end{align*}
-
-So we may study the linear system
-\begin{align*}
-3x+y-z &= 5 \\ 2x+4z &= -7 \\ -x+3y+5z &=2
-\end{align*}
-as both a vector equation \(A\vec{x}=\vec{b}\) and a matrix equation
-\(AX=B\):
 \[
-  \begin{bmatrix} 3 & 1 & -1 \\ 2 & 0 & 4 \\ -1 & 3 & 5  \end{bmatrix}
-  \begin{bmatrix} x  \\ y \\ z  \end{bmatrix}
-    =
-  \begin{bmatrix} 5 \\ -7 \\ 2 \end{bmatrix}
+  A = \begin{bmatrix}1&0&-3\\3&2&1\end{bmatrix}
+    \hspace{2em}
+  B = \begin{bmatrix}2&2&1&0&1\\1&1&1&-1&0\\0&0&3&2&1\\-1&5&7&2&1\end{bmatrix}
+    \hspace{2em}
+  C = \begin{bmatrix}2&2\\0&-1\\3&1\\4&0\end{bmatrix}
 \]
-\end{observation}
 
+\begin{subactivity}
+Label each of these matrices
+with its number of rows \(\times\) columns.
+\end{subactivity}
+\begin{subactivity} 
+Only one of the matrix products
+\(AB,AC,BA,BC,CA,CB\) can actually be computed.
+Compute it.
+\end{subactivity}
+\end{activity}
 
 
 \end{applicationActivities}

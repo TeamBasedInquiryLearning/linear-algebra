@@ -7,9 +7,9 @@ Sort the following items into three groups of statements: a group that means
 and a group that means \(T\) is \textbf{bijective}.
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
-\item $AX=B$ has a solution for all $m \times 1$ matrices $B$
-\item $AX=B$ has a unique solution for all $m \times 1$ matrices $B$
-\item $AX=0$ has a unique solution.
+\item \(A\vec x=\vec b\) has a solution for all \(\vec b\in\IR^m\)
+\item \(A\vec x=\vec b\) has a unique solution for all \(\vec b\in\IR^m\)
+\item \(A\vec x=\vec 0\) has a unique solution.
 \item The columns of $A$ span $\IR^m$
 \item The columns of $A$ are linearly independent
 \item The columns of $A$ are a basis of $\IR^m$
@@ -23,8 +23,10 @@ and a group that means \(T\) is \textbf{bijective}.
 \begin{definition}
   Let $T: \IR^n \rightarrow \IR^n$ be a linear map with standard matrix $A$.
 \begin{itemize}
-\item  If $T$ is a bijection and $B$ is any $\IR^n$ vector, then $T(X)=AX=B$ has a unique solution $X$.
-\item So we may define an \term{inverse map} $T^{-1} : \IR^n \rightarrow \IR^n$ by setting $T^{-1}(B)=X$ to be this unique solution.
+\item  If $T$ is a bijection and \(\vec b\) is any $\IR^n$ vector, 
+  then $T(\vec x)=A\vec x=\vec b$ has a unique solution.
+\item So we may define an \term{inverse map} $T^{-1} : \IR^n \rightarrow \IR^n$ 
+  by setting $T^{-1}(\vec b)$ to be this unique solution.
 \item Let $A^{-1}$ be the standard matrix for $T^{-1}$. We call $A^{-1}$ the
 \term{inverse matrix} of $A$, so we also say that $A$ is \term{invertible}.
 \end{itemize}
@@ -35,19 +37,20 @@ and a group that means \(T\) is \textbf{bijective}.
   Let \(T: \IR^3 \rightarrow \IR^3\) be the linear transformation given by the standard matrix
   \(A=\begin{bmatrix} 2 & -1 & -6 \\ 2 & 1 & 3 \\ 1 & 1 & 4 \end{bmatrix}\).
   \begin{subactivity}
-  Write an augmented matrix representing the system of equations given by $T(X)=\vec{e}_1$ (or in matrix form, \(AX=\begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix}\) ).
+  Write an augmented matrix representing the system of equations given by \(T(\vec x)=\vec{e}_1\),
+  that is, \(A\vec x=\begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix}\).
   \end{subactivity}
   \begin{subactivity}
-  Solve $T(X)=\vec{e}_1$ to find $T^{-1}(\vec{e}_1)$.
+  Solve \(T(\vec x)=\vec{e}_1\) to find \(T^{-1}(\vec{e}_1)\).
   \end{subactivity}
   \begin{subactivity}
-   Solve $T(X)=\vec{e}_2$ to find $T^{-1}(\vec{e}_2)$.
+   Solve \(T(\vec x)=\vec{e}_2\) to find \(T^{-1}(\vec{e}_2)\).
   \end{subactivity}
   \begin{subactivity}
-   Solve $T(X)=\vec{e}_3$ to find $T^{-1}(\vec{e}_3)$.
+   Solve \(T(\vec x)=\vec{e}_3\) to find \(T^{-1}(\vec{e}_3)\).
   \end{subactivity}
   \begin{subactivity}
-  Compute $A^{-1}$, the standard matrix for $T^{-1}$.
+   Write \(A^{-1}\), the standard matrix for \(T^{-1}\).
   \end{subactivity}
 \end{activity}
 
