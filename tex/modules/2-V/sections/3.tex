@@ -3,11 +3,30 @@
 
 \begin{applicationActivities}
 
-%TODO add observation that 1 vector spans a line.
+\begin{observation}
+Any single non-zero vector/number \(x\) in \(\IR^1\) spans \(\IR^1\),
+since \(\IR^1=\setBuilder{cx}{c\in\IR}\).
+
+\begin{center}
+\begin{tikzpicture}
+\draw[<->] (-3,0) -- (3,0);
+\draw[thick,->,blue] (0,0) -- (2,0) node[above] {x};
+\draw (0,-0.2) -- (0,0.2) node[above] {0};
+\end{tikzpicture}
+\end{center}
+\end{observation}
+
 
 \begin{activity}{5}
   How many vectors are required to span \(\IR^2\)?
   Sketch a drawing in the \(xy\) plane to support your answer.
+  \begin{center}
+  \begin{tikzpicture}[scale=0.5]
+    \draw[<->] (-4,0) -- (4,0);
+    \draw[<->] (0,-4) -- (0,4);
+  \end{tikzpicture}
+  \end{center}
+  
   \begin{enumerate}[(a)]
   \item $1$
   \item $2$
@@ -19,6 +38,14 @@
 
 \begin{activity}{5}
   How many vectors are required to span \(\IR^3\)?
+  \begin{center}
+  \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)},scale=0.4]
+    \draw[->] (0,0,0) -- (6,0,0);
+    \draw[->] (0,0,0) -- (0,6,0);
+    \draw[->] (0,0,0) -- (0,0,6);
+  \end{tikzpicture}
+  \end{center}
+
   \begin{enumerate}[(a)]
   \item $1$
   \item $2$
@@ -51,10 +78,10 @@
 \end{fact}
 
 \begin{activity}{15}
-  Choose a vector \(\begin{bmatrix}\unknown\\\unknown\\\unknown\end{bmatrix}\)
+  Choose any vector \(\begin{bmatrix}\unknown\\\unknown\\\unknown\end{bmatrix}\)
   in \(\IR^3\) that is not in
   \(\vspan\left\{\begin{bmatrix}1\\-1\\0\end{bmatrix},
-  \begin{bmatrix}-2\\0\\1\end{bmatrix}\right\}\) by using CoCalc to verify that
+  \begin{bmatrix}-2\\0\\1\end{bmatrix}\right\}\) by using technology to verify that
   \(
     \RREF
     \begin{bmatrix}[cc|c]1&-2&\unknown\\-1&0&\unknown\\0&1&\unknown\end{bmatrix}
@@ -86,10 +113,6 @@
   \).
   Does
   \(\IR^4=\vspan S\)?
-  % \begin{subactivity}
-  % Find a linear combination of vectors in \(S\) that equals
-  % \(\begin{bmatrix}-1\\10\\7\\14\end{bmatrix}\).
-  % \end{subactivity}
 \end{activity}
 
 \begin{activity}{10}
@@ -105,9 +128,6 @@
   Does
   \(\P^3=\vspan S\)?
   (Hint: first rewrite the question so it is about Euclidean vectors.)
-  % \begin{subactivity}
-  % Find a vector in \(\IR^4\) that is not in \(\vspan S\).
-  % \end{subactivity}
 \end{activity}
 
 \begin{activity}{5}
