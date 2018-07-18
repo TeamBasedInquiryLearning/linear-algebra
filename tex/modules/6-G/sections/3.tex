@@ -11,11 +11,14 @@
 
 \vspace{1em}
 
-  Compute \(\det(M)\) and \(\det(M^{-1})\)
-  using the formula
-\[
-  \det\begin{bmatrix}a & b \\ c & d\end{bmatrix}=ad-bc
-\]
+  Which of the following is equal to \(\det(M)\det(M^{-1})\)?
+
+\begin{enumerate}[a)]
+\item \(-1\)
+\item \(0\)
+\item \(1\)
+\item \(4\)
+\end{enumerate}
 \end{activity}
 
 \begin{fact}
@@ -105,18 +108,18 @@ Finding the eigenvalues \(\lambda\) that satisfy
 for some nontrivial eigenvector \(\vec x\) is equivalent to finding 
 nonzero solutions for the matrix equation
 \[
-  A\vec x-(\lambda I)\vec x =\vec 0
+  (A-\lambda I)\vec x =\vec 0
 .\]
 Which of the following must be true for any eigenvalue?
 \begin{enumerate}[(a)]
-\item The kernel of the transformation with standard matrix \(A-\lambda I\)
-must contain the zero vector, so \(A-\lambda I\) is invertible.
-\item The kernel of the transformation with standard matrix \(A-\lambda I\)
-must contain a nonzero vector, so \(A-\lambda I\) is not invertible.
-\item The image of the transformation with standard matrix \(A-\lambda I\)
-must contain the zero vector, so \(A-\lambda I\) is invertible.
-\item The image of the transformation with standard matrix \(A-\lambda I\)
-must contain a nonzero vector, so \(A-\lambda I\) is invertible.
+\item The \textbf{kernel} of the transformation with standard matrix \(A-\lambda I\)
+must contain \textbf{the zero vector}, so \(A-\lambda I\) is \textbf{invertible}.
+\item The \textbf{kernel} of the transformation with standard matrix \(A-\lambda I\)
+must contain \textbf{a non-zero vector}, so \(A-\lambda I\) is \textbf{not invertible}.
+\item The \textbf{image} of the transformation with standard matrix \(A-\lambda I\)
+must contain \textbf{the zero vector}, so \(A-\lambda I\) is \textbf{invertible}.
+\item The \textbf{image} of the transformation with standard matrix \(A-\lambda I\)
+must contain \textbf{a non-zero vector}, so \(A-\lambda I\) is \textbf{not invertible}.
 \end{enumerate}
 \end{activity}
 
@@ -160,8 +163,9 @@ and its eigenvalues are the solutions to \(\lambda^2-5\lambda-2=0\).
 \end{definition}
 
 \begin{activity}{10}
-  Compute $\det(A-\lambda I)$ to find the characteristic polynomial of
-  $A=\begin{bmatrix} 6 & -2 & 1 \\ 17 & -5 & 5 \\ -4 & 2 & 1 \end{bmatrix}$.
+  Compute $\det(A-\lambda I)$ using co-factor expansion or another technique
+  to find the characteristic polynomial of
+  \(A=\begin{bmatrix} 6 & -2 & 1 \\ 0 & -5 & 0 \\ -4 & 2 & 1 \end{bmatrix}\).
 \end{activity}
 
 \begin{activity}{10}
@@ -170,7 +174,7 @@ Let $A = \begin{bmatrix} 5 & 2 \\ -3 & -2 \end{bmatrix}$.
 Compute $\det (A-\lambda I)$ to determine the characteristic polynomial of $A$.
 \end{subactivity}
 \begin{subactivity}
-Factor this characteristic polynomial to determine the eigenvalues of $A$.
+Set this characteristic polynomial equal to zero and factor to determine the eigenvalues of $A$.
 \end{subactivity}
 \end{activity}
 
@@ -206,7 +210,7 @@ to find all the eigenvectors \(\vec x\) such that \(A\vec x=-2\vec x\).
 Find a basis for the eigenspace for the matrix
 \(
   \begin{bmatrix}
-    3 & -6 & 1 \\ -1 & 4 & 2 \\ 3 & -9 & 4
+    5 & -2 & 0 & 4 \\ 6 & -2 & 1 & 5 \\ -2 & 1 & 2 & -3 \\ 4 & 5 & -3 & 6
   \end{bmatrix}
 \)
 associated with the eigenvalue \(1\).
