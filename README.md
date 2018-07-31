@@ -3,6 +3,15 @@
 Source files and built PDFs for running a Team-Based Inquiry Learning
 linear algebra course.
 
+By [Steven Clontz](https://clontz.org) and 
+[Drew Lewis](https://twitter.com/siwelwerd).
+
+## Read this first!
+
+This repo is still a work-in-progress. However, feel free to use it
+as-is or adapt these materials for your course. 
+Contact us using a link above if you do!
+
 ## For instructors
 
 All the needed materials are available in the PDF folder.
