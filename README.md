@@ -12,6 +12,9 @@ This repo is still a work-in-progress. However, feel free to use it
 as-is or adapt these materials for your course. 
 Contact us using a link above if you do!
 
+---
+
+
 ## For instructors
 
 All the needed materials are available in the PDF folder.
