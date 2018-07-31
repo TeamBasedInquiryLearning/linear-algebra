@@ -6,72 +6,80 @@ In geology, a \term{phase} is any physically separable material in the system, s
 
 \vspace{1em}
 
-A \term{component} is a chemical compound necessary to make up the phases; for historical reasons these are usually oxides such as Calcium Oxide (${\rm CaO}$) or Silicone Dioxide (${\rm SiO_2}$).
+A \term{component} is a chemical compound necessary to make up the phases; these are usually oxides such as Calcium Oxide (${\rm CaO}$) or Silicone Dioxide (${\rm SiO_2}$).
 
 \vspace{1em}
 
-In a typical problem, a geologist knows how to build each phase from the components, and is interested in determining reactions among the different phases.
+In a typical application, a geologist knows how to build each phase from the components, and is interested in determining reactions among the different phases.
 \end{definition}
 
-\begin{activity}{5}
-Consider the 3 components $\vec{c}_1={\rm CaO}$, $\vec{c}_2={\rm MgO}$, and $\vec{c}_3={\rm SiO_2}$, and the 5 phases
+\begin{observation}
+Consider the 3 components 
+\[\vec{c}_1={\rm CaO} \hspace{1em} \vec{c}_2={\rm MgO} \hspace{1em} \text{and } \vec{c}_3={\rm SiO_2}\]
+and the 5 phases:
 \begin{align*}
 \vec{p}_1 &= {\rm Ca_3MgSi_2O_8} & \vec{p}_2 &= {\rm CaMgSiO_4} & \vec{p}_3 &= {\rm CaSiO_3} \\
 \vec{p}_4 &= {\rm CaMgSi_2O_6} & \vec{p}_5 &= {\rm Ca_2MgSi_2O_7}
 \end{align*}
 
-Geologists will know
+Geologists already know (or can easily deduce) that
 \begin{align*}
 \vec{p}_1 &= 3\vec{c}_1 + \vec{c}_2 + 2 \vec{c}_3 & \vec{p}_2 &= \vec{c}_1 +\vec{c}_2 + \vec{c}_3  &
 \vec{p}_3 &= \vec{c}_1 + 0\vec{c}_2 +  \vec{c}_3 \\
 \vec{p}_4 &= \vec{c}_1 +\vec{c}_2 + 2\vec{c}_3 &  \vec{p}_5 &= 2\vec{c}_1 + \vec{c}_2 + 2 \vec{c}_3 
 \end{align*}
-or more compactly,
-$$ \vec{p}_1 = \begin{bmatrix} 3 \\ 1 \\ 2 \end{bmatrix},
+since, for example:
+\[
+\vec c_1+\vec c_3 = \mathrm{CaO} + \mathrm{SiO_2} = \mathrm{CaSiO_3} = \vec p_3  
+\]
+\end{observation}
+
+\begin{activity}{5}
+To study this vector space, each of the three components \(\vec c_1,\vec c_2,\vec c_3\) may be considered
+as the three components of a Euclidean vector.
+\[ \vec{p}_1 = \begin{bmatrix} 3 \\ 1 \\ 2 \end{bmatrix},
 \vec{p}_2 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix},
 \vec{p}_3 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix},
 \vec{p}_4 = \begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix},
-\vec{p}_5 = \begin{bmatrix} 2 \\ 1 \\ 2 \end{bmatrix}.$$
+\vec{p}_5 = \begin{bmatrix} 2 \\ 1 \\ 2 \end{bmatrix}.\]
 
-Determine if the 5 phases are linearly dependent or linearly independent.
+Determine if the set of phases is linearly dependent or linearly independent.
 \end{activity}
 
 \begin{activity}{15}
-Recall our five phases:
-\begin{align*}
-\vec{p}_1 &= 3\vec{c}_1 + \vec{c}_2 + 2 \vec{c}_3 & \vec{p}_2 &= \vec{c}_1 +\vec{c}_2 + \vec{c}_3  &
-\vec{p}_3 &= \vec{c}_1 + 0\vec{c}_2 +  \vec{c}_3 \\
-\vec{p}_4 &= \vec{c}_1 +\vec{c}_2 + 2\vec{c}_3 &  \vec{p}_5 &= 2\vec{c}_1 + \vec{c}_2 + 2 \vec{c}_3 
-\end{align*}
-or more compactly,
-$$ \vec{p}_1 = \begin{bmatrix} 3 \\ 1 \\ 2 \end{bmatrix},
-\vec{p}_2 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix},
-\vec{p}_3 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix},
-\vec{p}_4 = \begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix},
-\vec{p}_5 = \begin{bmatrix} 2 \\ 1 \\ 2 \end{bmatrix}.$$
+Geologists are interested in knowing all the possible chemical reactions among the 5 phases:
+\[ \vec{p}_1 = \mathrm{Ca_3MgSi_2O_8} = \begin{bmatrix} 3 \\ 1 \\ 2 \end{bmatrix} \hspace{1em}
+\vec{p}_2 = \mathrm{CaMgSiO_4} = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} \hspace{1em}
+\vec{p}_3 = \mathrm{CaSiO_3} =  \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}\]
+\[\vec{p}_4 = \mathrm{CaMgSi_2O_6} = \begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix} \hspace{1em}
+\vec{p}_5 = \mathrm{Ca_2MgSi_2O_7} = \begin{bmatrix} 2 \\ 1 \\ 2 \end{bmatrix}.\]
 
-Geologists want to find chemical reactions among the 5 phases; that is, they want to find numbers $x_1,x_2,x_3,x_4,x_5$ such that $$x_1\vec{p}_1+x_2\vec{p}_2+x_3\vec{p_3}+x_4\vec{p}_4+x_5\vec{p}_5 = 0.$$
+That is, they want to find numbers \(x_1,x_2,x_3,x_4,x_5\) such that 
+\[x_1\vec{p}_1+x_2\vec{p}_2+x_3\vec{p_3}+x_4\vec{p}_4+x_5\vec{p}_5 = 0.\]
 
 \begin{subactivity}
-Set up  a system of equations that gives these chemical equations.
+Set up a system of equations equivalent to this vector equation.
 \end{subactivity}
 \begin{subactivity}
-Find a basis for the solution set.
+Find a basis for its solution space.
 \end{subactivity}
 \begin{subactivity}
-Interpret each basis vector as a chemical equation. 
+Interpret each basis vector as a vector equation and a chemical equation.
 \end{subactivity}
 
 \end{activity}
 
 \begin{activity}{10}
-We found two basis vector $\begin{bmatrix} -1 \\ 2 \\ 2 \\ -1 \\ 0 \end{bmatrix}$ and $\begin{bmatrix} 0 \\ 1 \\ 1 \\ 0 \\ -1 \end{bmatrix}$, corresponding to two chemical equations
+We found two basis vectors 
+\(\begin{bmatrix} 1 \\ -2 \\ -2 \\ 1 \\ 0 \end{bmatrix}\) and 
+\(\begin{bmatrix} 0 \\ -1 \\ -1 \\ 0 \\ 1 \end{bmatrix}\), 
+corresponding to the vector and chemical equations
 \begin{align*}
 2\vec{p}_2 + 2 \vec{p}_3 &= \vec{p}_1 + \vec{p}_4 & 2{\rm CaMgSiO_4}+2{\rm CaSiO_3}&={\rm Ca_3MgSi_2O_8}+{\rm CaMgSi_2O_6}\\
 \vec{p}_2 +\vec{p}_3 &= \vec{p}_5 &  {\rm CaMgSiO_4} + {\rm CaSiO_3} &= {\rm Ca_2MgSi_2O_7}
 \end{align*}
 
-Find a chemical equation among the five phases that does not involve $\vec{p}_2 = {\rm CaMgSiO_4}$.
+Combine the basis vectors to produce a chemical equation among the five phases that does not involve \(\vec{p}_2 = {\rm CaMgSiO_4}\).
 \end{activity}
 
 
