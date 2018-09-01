@@ -31,9 +31,9 @@ pdf/facilitator-notes.pdf: tex/facilitator-notes.tex
 	cd tex; pdflatex --output-directory=aux facilitator-notes.tex; \
 	mv aux/facilitator-notes.pdf ../pdf
 
-pdf/homework.pdf: tex/tbil-la.sty tex/homework.tex
-	cd tex; pdflatex --output-directory=aux homework.tex; \
-	mv aux/homework.pdf ../pdf
+#pdf/homework.pdf: tex/tbil-la.sty tex/homework.tex
+#	cd tex; pdflatex --output-directory=aux homework.tex; \
+#	mv aux/homework.pdf ../pdf
 
 pdf/sample-exercises.pdf: tex/sample-exercises.tex
 	cd tex; pdflatex --output-directory=aux sample-exercises.tex; \
