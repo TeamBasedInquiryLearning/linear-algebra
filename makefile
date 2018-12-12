@@ -4,6 +4,8 @@ all: pdf/rats/rat-*.pdf pdf/slides/slides*pdf pdf/course-notes.pdf \
 	pdf/facilitator-notes.pdf \
 	pdf/handouts/handout-*.pdf
 
+slides: pdf/slides/slides-1-E.pdf pdf/slides/slides-2-V.pdf pdf/slides/slides-4-A.pdf \
+		pdf/slides/slides-5-M.pdf pdf/slides/slides-6-G.pdf pdf/slides/slides-7-P.pdf
 
 pdf/course-notes.pdf: tex/course-notes.sty tex/tbil-la.sty tex/course-notes.tex \
 						tex/modules/*/sections/*.tex

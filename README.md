@@ -31,6 +31,7 @@ be built by running `make`.
 
 During development, it's recommended to run (e.g.) `make pdf/slides-1-E.pdf`
 to build only the appropriate piece of the project for testing purposes.
+A `make slides` command is provided that will make only the individual module slides.
 
 When possible, run the global `make` build as its own commit so that content
 changes aren't hidden within a large build. 
