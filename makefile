@@ -1,6 +1,6 @@
 all: pdf/rats/rat-*.pdf pdf/slides/slides*pdf pdf/course-notes.pdf \
 	pdf/course-slides.pdf pdf/standards.pdf \
-	pdf/exercise-library.pdf pdf/homework.pdf pdf/sample-exercises.pdf \
+	pdf/exercise-library.pdf pdf/sample-exercises.pdf \
 	pdf/facilitator-notes.pdf \
 	pdf/handouts/handout-*.pdf
 
