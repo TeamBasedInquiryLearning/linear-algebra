@@ -1,4 +1,5 @@
 \usepackage{tbil-la}
+\usepackage{ifthen}
 
 \usetheme[hideothersubsections]{Hannover}
 \usecolortheme{rose}
@@ -12,11 +13,16 @@
 \resetcounteronoverlays{ActivityCounter}
 \resetcounteronoverlays{SubactivityCounter}
 
+\newcounter{FirstActivity}
+\newcounter{LastActivity}
 
 \NewEnviron{module}[2]{
   \renewcommand{\moduleLetter}{#1}
   \section{Module \moduleLetter{}}
   \setcounter{SectionCounter}{0}
+  \setcounter{ActivityCounter}{0}
+	\setcounter{FirstActivity}{0}
+	\setcounter{LastActivity}{1000}
   \begin{frame}% see https://tex.stackexchange.com/a/178803
     \vfill
     \centering
@@ -78,9 +84,9 @@
 \NewEnviron{readinessAssuranceTestChoices}{}
 
 
-\NewEnviron{applicationActivities}{
-  \setcounter{ActivityCounter}{0}
-  \subsection{Section \moduleLetter{}.\theSectionCounter}
+\newcommand{\newModuleSection}{%
+  \stepcounter{SectionCounter}
+  \subsection{Section \theSectionCounter}%
   \begin{frame}% see https://tex.stackexchange.com/a/178803
     \vfill
     \centering
@@ -90,65 +96,98 @@
     \end{beamercolorbox}
     \vfill
   \end{frame}
+}
+
+%Legacy Environment
+\NewEnviron{applicationActivities}{
   \BODY
-  \stepcounter{SectionCounter}
+}
+
+
+
+\newcommand{\includeActivities}[3]{%
+\setcounter{FirstActivity}{#1}
+\setcounter{LastActivity}{#2}
+#3
+\setcounter{ActivityCounter}{0}
+}
+
+\newcommand{\activityCheck}[1]{%
+\ifnum \value{ActivityCounter} < \value{FirstActivity}
+\else
+	\ifnum \value{ActivityCounter} > \value{LastActivity}
+	\else
+		#1
+	\fi
+\fi
 }
 
 
 
 \NewEnviron{activity}[1]{
   \stepcounter{ActivityCounter}
-  \setcounter{SubactivityCounter}{0}
-  \begin{frame}
-  \textbf{Activity \moduleLetter{}.\theSectionCounter.\theActivityCounter} \textit{(\(\sim\)#1 min)}
-
-  \BODY
-  \end{frame}
+	\activityCheck{%
+		\setcounter{SubactivityCounter}{0}
+		\begin{frame}
+		\textbf{Activity \moduleLetter{}.\theActivityCounter} \textit{(\(\sim\)#1 min)}
+		\BODY
+		\end{frame}
+	}
 }
 
 \NewEnviron{remark}{
   \stepcounter{ActivityCounter}
-  \begin{frame}
-  \textbf{Remark \moduleLetter{}.\theSectionCounter.\theActivityCounter}
+  \activityCheck{%
+	  \begin{frame}
+	  \textbf{Remark \moduleLetter{}.\theActivityCounter}
 
-  \BODY
-  \end{frame}
+	  \BODY
+	  \end{frame}
+  }
 }
 
 \RenewEnviron{fact}{ % has to be renewed because beamer defines this by default
   \stepcounter{ActivityCounter}
-  \begin{frame}
-  \textbf{Fact \moduleLetter{}.\theSectionCounter.\theActivityCounter}
+  \activityCheck{%
+	  \begin{frame}
+	  \textbf{Fact \moduleLetter{}.\theActivityCounter}
 
-  \BODY
-  \end{frame}
+		\BODY
+	  \end{frame}
+	}
 }
 
 \NewEnviron{observation}{
   \stepcounter{ActivityCounter}
-  \begin{frame}
-  \textbf{Observation \moduleLetter{}.\theSectionCounter.\theActivityCounter}
+  \activityCheck{%
+	  \begin{frame}
+	  \textbf{Observation \moduleLetter{}.\theActivityCounter}
 
-  \BODY
-  \end{frame}
+	  \BODY
+	  \end{frame}
+  }
 }
 
 \RenewEnviron{example}{ % has to be renewed because beamer defines this by default
   \stepcounter{ActivityCounter}
-  \begin{frame}
-  \textbf{Example \moduleLetter{}.\theSectionCounter.\theActivityCounter}
-
-  \BODY
-  \end{frame}
+  \activityCheck{%
+	  \begin{frame}
+	  \textbf{Example \moduleLetter{}.\theActivityCounter}
+	
+	  \BODY
+	  \end{frame}
+  }
 }
 
 \RenewEnviron{definition}{ % has to be renewed because beamer defines this by default
   \stepcounter{ActivityCounter}
-  \begin{frame}
-  \textbf{Definition \moduleLetter{}.\theSectionCounter.\theActivityCounter}
+  \activityCheck{%
+	  \begin{frame}
+	  \textbf{Definition \moduleLetter{}.\theActivityCounter}
 
-  \BODY
-  \end{frame}
+	  \BODY
+	  \end{frame}
+   }
 }
 
 

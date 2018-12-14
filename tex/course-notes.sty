@@ -7,6 +7,9 @@
 \newcommand{\header}{Linear Algebra}
 \newcommand{\setHeader}[1]{\renewcommand{\header}{#1}}
 
+\newcounter{FirstActivity}
+\newcounter{LastActivity}
+
 \pagestyle{fancy}
 \fancyhf{}
 \chead{\header}
@@ -28,6 +31,10 @@
   \newpage
   \renewcommand{\moduleLetter}{#1}
   \setcounter{SectionCounter}{0}
+  \setcounter{SectionCounter}{0}
+  \setcounter{ActivityCounter}{0}
+  \setcounter{FirstActivity}{0}
+  \setcounter{LastActivity}{1000}
   \setHeader{Module \moduleLetter{}: #2}
   \section*{\header}
   \addcontentsline{toc}{chapter}{\header}
@@ -88,82 +95,114 @@
   \end{enumerate}
 }
 
-
-\NewEnviron{applicationActivities}{
-  \setcounter{ActivityCounter}{0}
-
+\newcommand{\newModuleSection}{%
+  \stepcounter{SectionCounter}
   \newpage
   \subsection*{Section \moduleLetter{}.\theSectionCounter}
-  \addcontentsline{toc}{section}{Section \moduleLetter{}.\theSectionCounter}
+  %\addcontentsline{toc}{section}{Section \moduleLetter{}.\theSectionCounter}
 
+}
+
+
+
+\newcommand{\includeActivities}[3]{%
+\setcounter{FirstActivity}{#1}
+\setcounter{LastActivity}{#2}
+#3
+\setcounter{ActivityCounter}{0}
+}
+
+\newcommand{\activityCheck}[1]{%
+\ifnum \value{ActivityCounter} < \value{FirstActivity}
+\else
+	\ifnum \value{ActivityCounter} > \value{LastActivity}
+	\else
+		#1
+	\fi
+\fi
+}
+
+
+\NewEnviron{applicationActivities}{
   \BODY
-  \stepcounter{SectionCounter}
 }
 
 \NewEnviron{activity}[1]{
   \stepcounter{ActivityCounter}
-  \setcounter{SubactivityCounter}{0}
-  \preventPageBreaks
-  \textbf{Activity \moduleLetter{}.\theSectionCounter.\theActivityCounter} \textit{(\(\sim\)#1 min)}
-  \BODY
+  \activityCheck{
+ 	 \setcounter{SubactivityCounter}{0}
+	  \preventPageBreaks
+	  \textbf{Activity \moduleLetter{}.\theActivityCounter} \textit{(\(\sim\)#1 min)}
+	  \BODY
 
-  \vspace{1em}
-  \allowPageBreaks
+  	\vspace{1em}
+  	\allowPageBreaks
+  }
 }
 
 \NewEnviron{remark}{
   \stepcounter{ActivityCounter}
-  \setcounter{SubactivityCounter}{0}
-  \preventPageBreaks
-  \textbf{Remark \moduleLetter{}.\theSectionCounter.\theActivityCounter}
-  \BODY
-
-  \vspace{1em}
-  \allowPageBreaks
+  \activityCheck{
+  	\setcounter{SubactivityCounter}{0}
+  	\preventPageBreaks
+  	\textbf{Remark \moduleLetter{}.\theActivityCounter}
+  	\BODY
+	
+  	\vspace{1em}
+  	\allowPageBreaks
+	}
 }
 
 \NewEnviron{fact}{
   \stepcounter{ActivityCounter}
-  \setcounter{SubactivityCounter}{0}
-  \preventPageBreaks
-  \textbf{Fact \moduleLetter{}.\theSectionCounter.\theActivityCounter}
-  \BODY
+  \activityCheck{
+  	\setcounter{SubactivityCounter}{0}
+  	\preventPageBreaks
+  	\textbf{Fact \moduleLetter{}.\theActivityCounter}
+  	\BODY
 
-  \vspace{1em}
-  \allowPageBreaks
+  	\vspace{1em}
+  	\allowPageBreaks
+  }
 }
 
 \NewEnviron{observation}{
   \stepcounter{ActivityCounter}
-  \setcounter{SubactivityCounter}{0}
-  \preventPageBreaks
-  \textbf{Observation \moduleLetter{}.\theSectionCounter.\theActivityCounter}
-  \BODY
-
-  \vspace{1em}
-  \allowPageBreaks
+  \activityCheck{
+  	\setcounter{SubactivityCounter}{0}
+  	\preventPageBreaks
+  	\textbf{Observation \moduleLetter{}.\theActivityCounter}
+  	\BODY
+	
+  	\vspace{1em}
+  	\allowPageBreaks
+	}
   }
 
 \NewEnviron{example}{
   \stepcounter{ActivityCounter}
-  \setcounter{SubactivityCounter}{0}
-  \preventPageBreaks
-  \textbf{Example \moduleLetter{}.\theSectionCounter.\theActivityCounter}
-  \BODY
+  \activityCheck{
+  	\setcounter{SubactivityCounter}{0}
+  	\preventPageBreaks
+  	\textbf{Example \moduleLetter{}.\theActivityCounter}
+  	\BODY
 
-  \vspace{1em}
-  \allowPageBreaks
+  	\vspace{1em}
+  	\allowPageBreaks
+	}
 }
 
 \NewEnviron{definition}{
   \stepcounter{ActivityCounter}
-  \setcounter{SubactivityCounter}{0}
-  \preventPageBreaks
-  \textbf{Definition \moduleLetter{}.\theSectionCounter.\theActivityCounter}
-  \BODY
-
-  \vspace{1em}
-  \allowPageBreaks
+  \activityCheck{
+  	\setcounter{SubactivityCounter}{0}
+  	\preventPageBreaks
+  	\textbf{Definition \moduleLetter{}.\theActivityCounter}
+  	\BODY
+	
+  	\vspace{1em}
+  	\allowPageBreaks
+	}
 }
 
 
