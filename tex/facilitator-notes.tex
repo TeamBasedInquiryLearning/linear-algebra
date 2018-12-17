@@ -12,19 +12,18 @@
 
 These notes are for a one semester, 3-hour sophomore-level Linear Algebra course.  Teams should have at minimum 5 people to ensure a sufficiently sized team factoring in absences.  Each team should be provided with a vertical, ideally non-permanent surface for their work, such as a whiteboard or chalkboard.  A vertical surface encourages collaboration and discussion, and discourages individual work on paper.  These notes have been field-tested at a large regional public university in classes with 10-35 students, with each ``part'' designed to fill one 50-60 minute class period.  The notes (formatted as slides) are also distributed to the students for use during class and for review purposes; thus, there are ``facts'', ``definitions'', and ``observations'' sprinkled in for reference use, but the bulk of class time is spent on the application activities.  Each application activity has an estimated time listed with it; these add up to 50-60 minutes per day.
 
-The course consists of 6 modules, listed below; here they are optimized for 27 75-minute class days with 60 minutes each day devoted to application activity, and the remaining 15 minutes for assessment. 
+The course consists of 5 modules, listed below, as well as a few extra days of applied activities (called Module P). The activities are split into sections optimized for 27 75-minute class days with 60 minutes each day devoted to application activity, and the remaining 15 minutes for assessment.  Should the instructor need or desire a different structuring, this can be achieved by modifying tex/modules/*/index.tex for the appropriate module.
 
 \subsubsection*{Module Listing}
 \begin{enumerate}
-\item [1-E] Systems of Equations
-\item [2-V] Vector Spaces
-\item [3-S] Structure of Vector Spaces
-\item [4-A] Algebraic Properties of Linear Maps
-\item [5-M] Algebraic Structure of Matrices
-\item [6-G] Geometric Properties of Linear Maps
+\item [E] Systems of Equations
+\item [V] Vector Spaces
+\item [A] Algebraic Properties of Linear Maps
+\item [M] Algebraic Structure of Matrices
+\item [G] Geometric Properties of Linear Maps
 \end{enumerate}
 
-\subsection*{Module 1-E: Systems of Linear Equations}
+\subsection*{Module E: Systems of Linear Equations}
 This module explores how to solve arbitrarily large systems of linear equations.  We emphasize how to write the solution set using set-builder notation, and introduce the students to CoCalc (using the Octave kernel) to perform computation.  The choice of Octave here is somewhat arbitrary but motivated by request of our engineering faculty, who use Matlab; instructors are encouraged to adapt the materials to use the technology best suited to their instructional context.  
 
 RAT answers (IF-AT card B002, 1-10):
@@ -54,7 +53,7 @@ We begin this part by quickly introducing augmented matrix notation.  We then be
 This part begins getting students familiar with an online computational environment emulating Matlab (we note that other instructional contexts may call for different choices in technology).  After getting the technology running and using it to solve a couple systems with no or one solution, we then explore the difference between free and bound variables in Activity E.2.6.
 
 
-\subsection*{Module 2-V: Introduction to vector spaces}
+\subsection*{Module V: Introduction to vector spaces}
 This module introduces students to abstract vector spaces.  After a motivating activity in part 0, we define vector spaces in part 1, characterizing them as ``things that act like Euclidean spaces''.  The notion of linear combinations and span are introduced and explored through parts 2 and 3, frequently working with vector spaces such as polynomials and matrices after initial examples about Euclidean spaces.  Part 4 introduces the important notion of a subspace.  Part 5 introduces linear independence, and Part 6 introduces the definition of a basis.  The final section ties a lot of these ideas together and explores how to efficiently describe a subspace by computing a basis.
 
 RAT answers (IF-AT card B002, 11-20):
@@ -99,7 +98,7 @@ This part introduces students to the vocabulary to go along with their intuition
 This section ties the previous two together by illuminating to students that the answer to the question of ``How can we efficiently describe a subspace'' is to compute a basis.  Activity 7.2 is meant to highlight that (nontrivial) subspaces have (infinitely) many bases.  Instructors are advised to comment when discussing Fact 7.4 that a simple argument on the size of a matrix shows that two bases of a finite dimensional vector space have the same size.  We then give students the definition of dimension, and point out how it matches their geometric intuition.  Activity 7.12 walks students through computing a basis of the solution space of a homogeneous system of equations; this arises naturally in Module A (in computing the kernel of a linear transformation) and in Module G (in computing an eigenspace).  Activities 7.15 and 7.16 usually elicit a lively inter-team discussion, as students' understanding of linear independence and span is still in a formative stage at this point.
 
 
-\subsection*{Module 4-A: Algebraic properties of linear maps}
+\subsection*{Module A: Algebraic properties of linear maps}
 This module introduces the fundamental notion of a linear transformation, and studies them from an algebraic perspective.   Part 1 is entirely devoted to allowing students to grapple with the definition.  In section 2, students discover how a linear map is completely determined by its action on a basis, and we introduce the (nonstandard) definition of a standard matrix.  Parts 3 and 4 are devoted to exploring the notions of injectivity and surjectivity.
 
 RAT answers (IF-AT card B002, 21-30):
@@ -161,7 +160,7 @@ Activity 2.2 ideally belongs with part 1, but there is rarely time for it.  The 
 \subsubsection*{Part 3}
 This part is devoted to the notion of invertibility.  Activity 3.1 is a callback to Activity A.4.6 and A.4.12.  After students compile their lists, we recommend asking them to circle the 3 that were easiest to categorize to help facilitate the inter-team discussion.   After the definition of invertibility, Activity 3.3 shows students that they already know how to compute the standard matrix of the inverse map.  Some students will view Activity 3.8 as a ``cruel trick'' after doing a needless calculation for part 1; we find the ``Aha!'' moment as students discover they did needless work invaluable in cementing the notion of an inverse map as ``undoing'' the original map.
 
-\subsection*{Module 6-G: Geometric properties of linear maps}
+\subsection*{Module G: Geometric properties of linear maps}
 
 This module explores the geometric properties of linear transformations, focusing on determinants, eigenvalues, and eigenvectors.  The readiness assurance outcomes include some basic high school geometry and algebra, as well as some outcomes of earlier modules concerning the algebraic properties of linear transformations.  The first two days are devoted to determinants, while the next two explore eigenvalues and eigenvectors.  The last day focuses on on a popular application of eigenvectors, namely Google's PageRank algorithm.
 

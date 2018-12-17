@@ -4,9 +4,18 @@
 \input{modules/5-M/readiness/outcomes.tex}
 \input{modules/5-M/readiness/resources.tex}
 
-\stepcounter{SectionCounter}
-\input{modules/5-M/sections/1.tex}
-\input{modules/5-M/sections/2.tex}
-\input{modules/5-M/sections/3.tex}
+
+
+\CatchFileDef{\activities}{modules/5-M/activities.tex}
+
+\newModuleSection
+\includeActivities{1}{7}{\activities}
+
+\newModuleSection
+\includeActivities{8}{15}{\activities}
+
+\newModuleSection
+\includeActivities{16}{24}{\activities}
+
 
 \end{module}

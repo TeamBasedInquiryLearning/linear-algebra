@@ -8,7 +8,7 @@ slides: pdf/slides/slides-1-E.pdf pdf/slides/slides-2-V.pdf pdf/slides/slides-4-
 		pdf/slides/slides-5-M.pdf pdf/slides/slides-6-G.pdf pdf/slides/slides-7-P.pdf
 
 pdf/course-notes.pdf: tex/course-notes.sty tex/tbil-la.sty tex/course-notes.tex \
-						tex/modules/*/sections/*.tex \
+						tex/modules/*/activities.tex \
 						tex/modules/*/activities.tex tex/modules/*/index.tex tex/modules/*/standards.tex
 	cd tex; \
 	pdflatex --output-directory=aux course-notes.tex; \
@@ -16,7 +16,7 @@ pdf/course-notes.pdf: tex/course-notes.sty tex/tbil-la.sty tex/course-notes.tex 
 	mv aux/course-notes.pdf ../pdf
 
 pdf/course-slides.pdf: tex/course-slides.sty tex/tbil-la.sty tex/course-slides.tex \
-						tex/modules/*/sections/*.tex \
+						tex/modules/*/activities.tex \
 						tex/modules/*/activities.tex tex/modules/*/index.tex tex/modules/*/standards.tex
 	cd tex; \
 	pdflatex --output-directory=aux course-slides.tex; \
@@ -46,7 +46,7 @@ pdf/sample-exercises.pdf: tex/sample-exercises.tex
 
 #slides
 pdf/slides/slides-1-E.pdf: tex/tbil-la.sty tex/course-slides.sty  \
-							tex/modules/1-E/sections/*.tex \
+							tex/modules/1-E/activities.tex \
 							tex/modules/1-E/index.tex
 	cd tex; \
 	pdflatex --output-directory=aux slides/slides-1-E.tex; \
@@ -54,7 +54,7 @@ pdf/slides/slides-1-E.pdf: tex/tbil-la.sty tex/course-slides.sty  \
 	mv aux/slides-1-E.pdf ../pdf/slides
 
 pdf/slides/slides-2-V.pdf: tex/tbil-la.sty tex/course-slides.sty  \
-							tex/modules/2-V/sections/*.tex \
+							tex/modules/2-V/activities.tex \
 							tex/modules/2-V/index.tex
 	cd tex; \
 	pdflatex --output-directory=aux slides/slides-2-V.tex; \
@@ -62,7 +62,7 @@ pdf/slides/slides-2-V.pdf: tex/tbil-la.sty tex/course-slides.sty  \
 	mv aux/slides-2-V.pdf ../pdf/slides
 
 pdf/slides/slides-4-A.pdf: tex/tbil-la.sty tex/course-slides.sty  \
-							tex/modules/4-A/sections/*.tex \
+							tex/modules/4-A/activities.tex \
 							tex/modules/4-A/index.tex
 	cd tex; \
 	pdflatex --output-directory=aux slides/slides-4-A.tex; \
@@ -70,7 +70,7 @@ pdf/slides/slides-4-A.pdf: tex/tbil-la.sty tex/course-slides.sty  \
 	mv aux/slides-4-A.pdf ../pdf/slides
 
 pdf/slides/slides-5-M.pdf: tex/tbil-la.sty tex/course-slides.sty  \
-							tex/modules/5-M/sections/*.tex \
+							tex/modules/5-M/activities.tex \
 							tex/modules/5-M/index.tex
 	cd tex; \
 	pdflatex --output-directory=aux slides/slides-5-M.tex; \
@@ -78,7 +78,7 @@ pdf/slides/slides-5-M.pdf: tex/tbil-la.sty tex/course-slides.sty  \
 	mv aux/slides-5-M.pdf ../pdf/slides
 
 pdf/slides/slides-6-G.pdf: tex/tbil-la.sty tex/course-slides.sty  \
-							tex/modules/6-G/sections/*.tex \
+							tex/modules/6-G/activities.tex \
 							tex/modules/6-G/index.tex
 	cd tex;\
 	pdflatex --output-directory=aux slides/slides-6-G.tex; \
@@ -113,7 +113,7 @@ pdf/handouts/handout-*.pdf: tex/handouts/*/handout-*.tex \
 							tex/course-notes.sty \
 							tex/modules/*/readiness/outcomes.tex \
 							tex/modules/*/readiness/resources.tex \
-							tex/modules/*/sections/*.tex
+							tex/modules/*/activities.tex
 	cd tex; \
 	for file in handouts/*/handout*.tex; do \
 		pdflatex --output-directory aux $$file; \

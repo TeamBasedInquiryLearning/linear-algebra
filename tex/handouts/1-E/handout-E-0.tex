@@ -2,10 +2,14 @@
 
 \usepackage{course-notes}
 \usepackage{handouts/course-notes-handouts}
+\CatchFileDef{\activities}{modules/1-E/activities.tex}{}
 
 \begin{document}
 \begin{module}{E}{Solving Systems of Linear Equations}
-\setcounter{SectionCounter}{0}
-\input{modules/1-E/sections/0.tex}
+
+\setcounter{SectionCounter}{-1}
+\newModuleSection
+\includeActivities{1}{10}{\activities}
+
 \end{module}
 \end{document}
