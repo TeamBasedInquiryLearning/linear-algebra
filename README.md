@@ -26,10 +26,13 @@ For developers and/or instructors who would like to partition the slides into
 sections without changing the repository, run the following commands:
 `git update-index --assume-unchanged tex/modules/*/index.tex`
 `git update-index --assume-unchanged pdf/course-slides-sectioned.pdf`
+`git update-index --assume-unchanged tex/slides/slides-*.tex`
+`git update-index --assume-unchanged pdf/slides/slides-*.pdf`
+
 
 Then, you can edit `tex/modules/*/index.tex` as you like to include different
 activities in different sections; resulting changes will be built to 
-`pdf/course-slides-sectioned.pdf`.
+`pdf/course-slides-sectioned.pdf` and `pdf/slides/slides-*.pdf`.  `pdf/course-slides.pdf` will retain the slides with no section labels.
 
 ## Development
 
