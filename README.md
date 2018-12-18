@@ -21,6 +21,16 @@ All the needed materials are available in the PDF folder.
 See `facilitator-notes.pdf` for more information on implementing
 these materials in your classroom.
 
+## Local sectioning
+For developers and/or instructors who would like to partition the slides into
+sections without changing the repository, run the following commands:
+`git update-index --assume-unchanged tex/modules/*/index.tex`
+`git update-index --assume-unchanged pdf/course-slides-sectioned.pdf`
+
+Then, you can edit `tex/modules/*/index.tex` as you like to include different
+activities in different sections; resulting changes will be built to 
+`pdf/course-slides-sectioned.pdf`.
+
 ## Development
 
 All source files are located within `./tex`. These files are designed
