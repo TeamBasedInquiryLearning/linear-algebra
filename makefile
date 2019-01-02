@@ -8,14 +8,14 @@ slides: pdf/slides/slides-1-E.pdf pdf/slides/slides-2-V.pdf pdf/slides/slides-4-
 		pdf/slides/slides-5-M.pdf pdf/slides/slides-6-G.pdf pdf/slides/slides-7-P.pdf
 
 pdf/course-notes.pdf: tex/course-notes.sty tex/tbil-la.sty tex/course-notes.tex \
-						tex/modules/*/activities.tex tex/modules/*/index.tex tex/modules/*/standards.tex
+						tex/modules/*/activities.tex tex/modules/*/standards.tex tex/index.tex
 	cd tex; \
 	pdflatex --output-directory=aux course-notes.tex; \
 	pdflatex --output-directory=aux course-notes.tex; \
 	mv aux/course-notes.pdf ../pdf
 
 pdf/course-slides.pdf: tex/course-slides.sty tex/tbil-la.sty tex/course-slides.tex \
-						tex/modules/*/activities.tex tex/modules/*/standards.tex
+						tex/modules/*/activities.tex tex/modules/*/standards.tex tex/index.tex
 	cd tex; \
 	pdflatex --output-directory=aux course-slides.tex; \
 	pdflatex --output-directory=aux course-slides.tex; \
