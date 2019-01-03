@@ -34,9 +34,11 @@ pdf/standards.pdf: tex/tbil-la.sty tex/standards.tex tex/modules/*/standards.tex
 	cd tex; pdflatex --output-directory=aux standards.tex; \
 	mv aux/standards.pdf ../pdf
 
-pdf/exercise-library.pdf: tex/exercise-library.tex tex/modules/*/exercises/*.tex
-	cd tex; pdflatex --output-directory=aux exercise-library.tex; \
-	mv aux/exercise-library.pdf ../pdf
+pdf/exercise-library.pdf: tex/exercise-library_solutions.tex tex/modules/*/exercises/*.tex
+	cd tex; pdflatex --output-directory=aux exercise-library_solutions.tex; \
+	mv aux/exercise-library_solutions.pdf ../pdf; \
+	cd aux; pdflatex exercise-library.tex; \
+	mv exercise-library.pdf ../../pdf
 
 pdf/facilitator-notes.pdf: tex/facilitator-notes.tex
 	cd tex; pdflatex --output-directory=aux facilitator-notes.tex; \

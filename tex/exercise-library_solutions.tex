@@ -1,4 +1,16 @@
 \documentclass{article}
+
+\usepackage{xstring}
+
+%Process jobname to automatically generate quiz from quiz with solution file.
+\let\Xfile\empty
+\StrBefore*{\jobname}{_}[\Xfile]
+\edef\XXfile{\Xfile.tex}
+
+%This tells extract package to only copy problem environment to quiz
+\usepackage[active,generate=\Xfile,extract-env={problem},extract-cmdline={startModule,startStandard}]{extract}
+
+\begin{extract*}
 \usepackage{amsmath,ifthen,amsthm,amssymb,enumerate}
 \usepackage[margin=1in]{geometry}
 \usepackage[colorlinks=true,linkcolor=blue]{hyperref}
@@ -50,9 +62,10 @@
 	\subsection*{Standard #1}
 	\addcontentsline{toc}{subsection}{Standard #1}
 }
+\end{extract*}
 
 \begin{document}
-\begin{flushleft}
+\extractline* \begin{flushleft}
 
 \startModule{E}
 \startStandard{E1}
@@ -116,5 +129,5 @@
 \startStandard{G4}
 \input{modules/6-G/exercises/G4.tex}
 
-\end{flushleft}
+\extractline* \end{flushleft}
 \end{document}
