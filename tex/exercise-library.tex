@@ -3,9 +3,11 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[colorlinks=true,linkcolor=blue]{hyperref}
 
+\newcounter{problem}
 \newenvironment{problem}[1]
 {
-	\textbf{#1.}
+	\stepcounter{problem}
+	\textbf{#1.\theproblem}
 	\ignorespaces
 }{
 
@@ -44,6 +46,7 @@
 }
 \newcommand{\startStandard}[1]
 {
+	\setcounter{problem}{0}
 	\subsection*{Standard #1}
 	\addcontentsline{toc}{subsection}{Standard #1}
 }
