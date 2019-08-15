@@ -1432,6 +1432,9 @@ Find its solution set (a subspace of \(\IR^4\)).
 \begin{subactivity}
 Rewrite this solution space in the form \[\setBuilder{ a \begin{bmatrix} \unknown \\ \unknown \\ \unknown \\ \unknown\end{bmatrix} + b \begin{bmatrix} \unknown \\ \unknown \\ \unknown \\ \unknown \end{bmatrix} }{a,b \in \IR}.\]
 \end{subactivity}
+\begin{subactivity}
+Rewrite this solution space in the form \[\vspan\left\{\begin{bmatrix} \unknown \\ \unknown \\ \unknown \\ \unknown\end{bmatrix}, \begin{bmatrix} \unknown \\ \unknown \\ \unknown \\ \unknown \end{bmatrix}\right\}.\]
+\end{subactivity}
 \end{activity}
 
 \begin{fact}
@@ -1447,7 +1450,8 @@ Rewrite this solution space in the form \[\setBuilder{ a \begin{bmatrix} \unknow
       b \begin{bmatrix} -1 \\ 0 \\ -4 \\ 1 \end{bmatrix}
     }{
       a,b \in \IR
-    }
+    } = \vspan\left\{ \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0\end{bmatrix}, 
+					 \begin{bmatrix} -1 \\ 0 \\ -4 \\ 1 \end{bmatrix} \right\}
   \]
   is the solution space for a homoegeneous system, then
   \[
@@ -1470,6 +1474,16 @@ x_1&\,-\,&3x_2&\,+\,& 2x_3&\,\,&  &=& 0 \\
 Find a basis for its solution space.
 \end{activity}
 
+\begin{activity}{10}
+Consider the homogeneous system of equations
+\begin{alignat*}{5}
+2x_1&\,+\,&4x_2&\,+\,& 2x_3&\,-\,&4x_4  &=& 0 \\
+-2x_1&\,-\,&4x_2&\,+\,&x_3 &\,+\,& x_4 &=& 0 \\
+3x_1&\,+\,&6x_2&\,-\,&x_3 &\,-\,&4 x_4 &=& 0 \\
+\end{alignat*}
+
+Find a basis for its solution space.
+\end{activity}
 
 \begin{activity}{5}
 Consider the homogeneous system of equations
@@ -1481,3 +1495,9 @@ x_1&\,+\,&6x_2&\,-\,&4x_3 &=& 0 \\
 
 Find a basis for its solution space.
 \end{activity}
+
+\begin{observation}
+The basis of the trivial vector space is the empty set.  You can denote this as either \(\emptyset\) or \(\{\}\).
+\vfill
+Thus, if \(\vec{0}\) is the only solution of a homogeneous system, the basis of the solution space is  \(\emptyset\).
+\end{observation}
