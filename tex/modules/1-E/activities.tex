@@ -462,21 +462,80 @@ Circle the leading terms in each example, and label it as RREF or not RREF.
 \end{activity}
 
 \begin{remark}
-It is important to understand the \term{Gauss-Jordan elimination} algorithm
-that converts a matrix (augmented or not) into reduced row echelon form.
+In practice, if we simply need to convert a matrix into reduced row echelon form, 
+we use technology to do so.
+\vfill
+However, it is also important to understand the \term{Gauss-Jordan elimination} algorithm
+that a computer or calculator uses to convert a matrix (augmented or not) into reduced row echelon form.
+Understanding this algorithm will help us better understand how to interpret the results
+in many applications we use it for in Module V.
+\end{remark}
 
-\vspace{1em}
+\begin{activity}{8}
+Consider the matrix
+\[\begin{bmatrix}[ccc]1 & 0 & 3 \\ 2 & 1 & 1 \\ 0 & -1 & 4\end{bmatrix}.\]
+Which row operation is the best choice for the first move in converting to RREF?
+\begin{enumerate}[(a)]
+\item Add row 3 to row 2 (\(R_2+R_3 \rightarrow R_2\))
+\item Add row 2 to row 3 (\(R_3+R_2 \rightarrow R_3\))
+\item Add -1 row 1 to row 2 (\(R_2-R_1 \rightarrow R_2\))
+\item Add -2 row 1 to row 2 (\(R_2-2R_1 \rightarrow R_2\))
+\end{enumerate}
+\end{activity}
 
-A video outlining how to perform the Gauss-Jordan Elimination algorithm
+\begin{activity}{7}
+Consider the matrix
+\[\begin{bmatrix}[ccc]2 & 5 & -1 \\ 3 & 5 & 1 \\ 1 & -2 & 0 \end{bmatrix}.\]
+Which row operation is the best choice for the first move in converting to RREF?
+\begin{enumerate}[(a)]
+\item Add row 1 to  row 2 (\(R_2+R_1 \rightarrow R_2\))
+\item Add -1 row 1 to  row 2 (\(R_2-R_1 \rightarrow R_2\))
+\item Swap rows 1 and 3 (\( R_1 \leftrightarrow R_3\))
+\item Multiply row 1 by \(\frac{1}{2}\) (\(\frac{1}{2} R_1 \rightarrow R_1\))
+\item Add -1 row 3 to row 1 (\(R_1-R_3 \rightarrow R_1\))
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{5}
+Consider the matrix
+\[\begin{bmatrix}[ccc]1 & 1 & 3 \\ 0 & 0 & 4 \\ 0 & 0 & 2 \end{bmatrix}.\]
+Which row operation is the best choice for the first move in converting to RREF?
+\begin{enumerate}[(a)]
+\item Add row 1 to  row 2 (\(R_2+R_1 \rightarrow R_2\))
+\item Add -1 row 1 to  row 2 (\(R_2-R_1 \rightarrow R_2\))
+\item Add -1 row 3 to  row 1 (\(R_1-R_3 \rightarrow R_1\))
+\item Add -2 row 3 to  row 2 (\(R_2-2R_3 \rightarrow R_2\))
+\item Multiply row 3 by \(\frac{1}{2}\) (\(\frac{1}{2} R_3 \rightarrow R_3\))
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{10}
+Consider the matrix
+\[\begin{bmatrix}[ccc]2 & 1 & 0 \\ 1 & 0 & 0 \\ 3 & -1 & 1 \end{bmatrix}.\]
+\vfill
+Perform three row operations to produce a matrix closer to RREF.
+\end{activity}
+
+\begin{activity}{10}
+Consider the matrix
+\[A=\begin{bmatrix}[cccc]2 & 1 & 3 \\ 1 & 0 & 2 \\ -1 & 3 & -5 \end{bmatrix}.\]
+\vfill
+Compute \(\RREF(A)\).
+\end{activity}
+
+\begin{activity}{10}
+Consider the matrix
+\[A=\begin{bmatrix}[cccc] 2 & 4 & 2 & -4 \\ -2 & -4 & 1 & 1 \\ 3 & 6 & -1 & -4 \end{bmatrix}.\]
+\vfill
+Compute \(\RREF(A)\).
+\end{activity}
+
+\begin{remark}
+A video example of how to perform the Gauss-Jordan Elimination algorithm
 by hand is available at \url{https://youtu.be/Cq0Nxk2dhhU}.
-Practicing several exercises outside of class using this method is
+\vfill
+Practicing several exercises on your own using this method is strongly
 recommended.
-
-\vspace{1em}
-
-In the next section, we will learn to use technology to perform this
-operation for us, as will be expected when applying row-reduced
-matrices to solve other problems.
 \end{remark}
 
 
