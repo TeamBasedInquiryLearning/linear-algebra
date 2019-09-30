@@ -86,37 +86,43 @@ Put the following matrix in reduced row echelon form.
   \circledNumber{1} & 2 & -1 & -3 \\
   0 & 3 & 1 & 2 \\
   2 & 4 & -1 & -1
-  \end{bmatrix}
+  \end{bmatrix} 
+  &\hspace{1in} \text{Swap Rows 1 and 2}& \\
   &\sim&
   \begin{bmatrix}
   \circledNumber{1} & 2 & -1 & -3 \\
   0 & 3 & 1 & 2 \\
   0 & 0 & 1 & 5
   \end{bmatrix}
+  &\hspace{1in} \text{Add \(-2\) Row 1 to Row 3}& \\
   &\sim&
   \begin{bmatrix}
   \circledNumber{1} & 2 & -1 & -3 \\
   0 & \circledNumber{1} & \frac{1}{3} & \frac{2}{3} \\
   0 & 0 & 1 & 5
-  \end{bmatrix} \\
+  \end{bmatrix} 
+  &\hspace{1in} \text{Multiply Row 3 by \(\frac{1}{3}\)}& \\
   &\sim&
   \begin{bmatrix}
   \circledNumber{1} & 0 & -\frac{5}{3} & -\frac{13}{3} \\
   0 & \circledNumber{1} & \frac{1}{3} & \frac{2}{3} \\
   0 & 0 & \circledNumber{1} & 5
   \end{bmatrix}
+  &\hspace{1in} \text{Add \(-2\) Row 2 to Row 1}& \\
   &\sim&
   \begin{bmatrix}
   \circledNumber{1} & 0 & -\frac{5}{3} & -\frac{13}{3} \\
   0 & \circledNumber{1} & 0 & -1 \\
   0 & 0 & \circledNumber{1} & 5
   \end{bmatrix}
+  &\hspace{1in} \text{Add \(-\frac{1}{3}\) Row 3 to Row 2}& \\
   &\sim&
   \begin{bmatrix}
   \circledNumber{1} & 0 & 0 & 4 \\
   0 & \circledNumber{1} & 0 & -1 \\
   0 & 0 & \circledNumber{1} & 5
   \end{bmatrix}
+  &\hspace{1in} \text{Add \(\frac{5}{3}\) Row 3 to Row 1}& \\
 \end{alignat*}
 \end{solution}
 
@@ -198,7 +204,25 @@ Since these are the same, we have shown that
 \(c\odot \left(f(x)\oplus g(x) \right) = c \odot f(x) \oplus c \odot g(x)\)
 holds.
 \item
-Suppose \(f(x)=1\), \(g(x)=2\), and \(h(x)=3\). Then
+To disprove a property, we can do it in general, or for particular polynomials. For the first way, 
+let \(f(x), g(x), h(x) \in V\) be polynomials. Then we compute
+\begin{align*}
+f(x)\oplus \left(g(x)\oplus h(x) \right) &= f(x) \oplus \left( xg(x)+xh(x) \right) \\
+&= xf(x)+x\left(xg(x)+xh(x)\right) \\
+&= xf(x)+x^2g(x)+x^2h(x) 
+\end{align*}
+and
+\begin{align*}
+\left(f(x)\oplus g(x)\right) \oplus h(x)  &=  \left( xf(x)+xg(x) \right) \oplus h(x) \\
+&= x\left(xf(x)+xg(x)\right)+xh(x) \\
+&= x^2f(x)+x^2g(x)+xh(x).
+\end{align*}
+Since \( xf(x)+x^2g(x)+x^2h(x) \neq x^2f(x)+x^2g(x)+xh(x)\) for all polynomials \(f(x), g(x), h(x)\), we see that 
+the addition defined by \(\oplus\) is not associative, so \(V\) is not a vector space.
+
+
+If instead we wanted to disprove the associative property by using particular polynomials, we can 
+let \(f(x)=1\), \(g(x)=2\), and \(h(x)=3\). Then
 \begin{align*}
   \left( f(x) \oplus g(x) \right) \oplus h(x)
   &=\left(x+2x \right) \oplus 3\\
@@ -215,13 +239,12 @@ and
 
 
 Since \(3x^2+3x\not=x+5x^2\), we have shown
-that the vector property
+that addition is not associative, i.e.
 \(
   \left( f(x) \oplus g(x) \right) \oplus h(x)
-=
-  f(x) \oplus \left( g(x) \oplus h(x) \right)
+\neq
+  f(x) \oplus \left( g(x) \oplus h(x) \right).
 \)
-fails.
 \end{enumerate}
 \end{solution}
 
@@ -277,7 +300,8 @@ We compute
   0 & 0 & 0
   \end{bmatrix}
 \]
-Since the last row lacks a pivot, the vectors do not span \(\IR^3\).
+Since the last row lacks a pivot, there is some vector in \(\IR^3\) that upon augmenting this matrix will produce
+an inconsistent system. That vector will not be in the span of these three vectos, so the vectors do not span \(\IR^3\).
 \end{solution}
 
 \begin{problem}{V4}
@@ -291,8 +315,7 @@ Show that one of these sets is a subspace of \(\IR^3\), and
 that one of the sets is not.
 \end{problem}
 \begin{solution}
-First consider \(\vec 0\). Since \(0+0=3(0)\), we see that
-\(\vec 0\in W\). But since \(0+0\not=3(0)+2\),
+First we will show \(U\) is not a subspace.  Since \(0+0\not=3(0)+2\),
 we see that \(\vec 0\not\in U\). Therefore \(U\) is not a subspace.
 
 To show that \(W\) is a subspace, let
@@ -309,20 +332,21 @@ Consider
 +\begin{bmatrix} x_2 \\y_2 \\ z_2 \end{bmatrix}
 =\begin{bmatrix} x_1+x_2 \\y_1+y_2 \\ z_1+z_2 \end{bmatrix}
 .\]
-Since
+To see if \(\vec{v}+\vec{w} \in W\), we need to check if \( (x_1+x_2)+(y_1+y_2) = 3(z_1+z_2)\).
+We compute
 \[
   (x_1+x_2)+(y_1+y_2) = (x_1+y_1)+(x_2+y_2) = 3z_1+3z_2=3(z_1+z_2)
 \]
-we see that \(\vec v+\vec w\in W\), so \(W\) is closed under vector addition.
+and we see that \(\vec v+\vec w\in W\), so \(W\) is closed under vector addition.
 
 Now consider
 \[
 c\vec v
 =\begin{bmatrix} cx_1 \\cy_1 \\ cz_1 \end{bmatrix}
 .\]
-Since
+Similarly, to check that \(c\vec{v} \in W\), we need to check if \(cx_1+cy_1=3(cz_1)\), so we compute
 \[cx_1+cx_2 = c(x_1+x_2)=c(3z_1)=3(cz_1)\]
-we see that \(c\vec v\in W\), so \(W\) is closed under scalar 
+and we see that \(c\vec v\in W\), so \(W\) is closed under scalar 
 multiplication. Therefore \(W\) is a subspace of \(\IR^3\).
 \end{solution}
 
@@ -339,7 +363,8 @@ are linearly dependent or linearly independent.
 Compute
 \[\RREF \begin{bmatrix} 3 & -1 & 0 & 2 \\ 2 & 1 & 1 & 5 \\ 1 & 2 & -1 & 1 \\ 0 & 3 & 1 & 5 \end{bmatrix} =
 \begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \end{bmatrix}.\] 
-Since the fourth column is not a pivot column, the vectors are linearly dependent.
+Since the fourth column is not a pivot column, the system augmented with the zero vector has a nontrivial solution.
+Thus the vectors are linearly dependent.
 \end{solution}
 
 \begin{problem}{V6}
@@ -392,7 +417,7 @@ Observe that
     0 & 0 & 0 & 0 & 0
     \end{bmatrix}
 \]
-has pivot columns in the first, second, and fourth columns, and therefore
+has pivot columns in the first, second, and fourth columns, and therefore removing the corresponding vectors shows
 \[\left\{
   \begin{bmatrix} 1 \\ -3 \\ -1 \\ 2 \end{bmatrix} ,
   \begin{bmatrix} 1 \\ 0 \\ 1 \\ -2 \end{bmatrix} ,
@@ -430,7 +455,7 @@ Observe that
     0 & 0 & 0 & 0 & 0
     \end{bmatrix}
 \]
-has three pivot columns, and therefore \(\dim W = 3\).
+has three pivot columns, so a basis of \(W\) has three elements, and therefore \(\dim W = 3\).
 \end{solution}
 
 \begin{problem}{V9}
@@ -458,7 +483,7 @@ Since the fourth column is not a pivot column, a basis for \(W'\) is given by
   \setList{
   \begin{bmatrix} 3\\2\\1\\0\end{bmatrix},
   \begin{bmatrix} -1\\1\\2\\3\end{bmatrix},
-  \begin{bmatrix} 0\\1\\-1\\1\end{bmatrix},
+  \begin{bmatrix} 0\\1\\-1\\1\end{bmatrix}
   }
 \]
 
@@ -614,10 +639,10 @@ Determine if each of the following linear transformations is injective (one-to-o
 \end{problem}
 \begin{solution}
 \begin{enumerate}[(a)]
-\item $ \RREF\begin{bmatrix} 1 & 1 \\ -1 & 0 \end{bmatrix}=\begin{bmatrix}1 & 0 \\ 0 & 1 \end{bmatrix}$.  Since each column is a pivot column, $S$ is injective.  Since there is no zero row, $S$ is surjective.
+\item $ \RREF\begin{bmatrix} 1 & 1 \\ -1 & 0 \end{bmatrix}=\begin{bmatrix}1 & 0 \\ 0 & 1 \end{bmatrix}$.  Since each column is a pivot column, $S$ is injective.  Since each row has a pivot, $S$ is surjective.
 (Alternatively, since the result is the identity matrix, \(S\) is bijective.)
 \item $$\RREF\begin{bmatrix}1 & 3 & 2 & -3 \\ 2 & 4 & 6 & -10 \\ 1 & 6 & -1 & 3 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 5 & -9 \\ 0 & 1 & -1 & 2 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-Since there is a row of zeroes, the span of the columns does not equal \(\IR^3\), so \(T\) is not surjective.  Since there are non-pivot columns, \(T\) is not injective either.
+Since the third row lacks a pivot, the span of the columns does not equal \(\IR^3\), so \(T\) is not surjective.  Since there are non-pivot columns, \(T\) is not injective either.
 (Alternatively, since $\dim \IR^4 > \dim \IR^3$, $T$ is not injective.)
 \end{enumerate}
 \end{solution}
@@ -651,7 +676,7 @@ Determine if the matrix \(\begin{bmatrix}1 & 3 & 2  \\ 2 & 4 & 6  \\ 1 & 6 & -1 
 \begin{solution}
 We compute
 \[\RREF\left(\begin{bmatrix}1 & 3 & 2  \\ 2 & 4 & 6  \\ 1 & 6 & -1 \end{bmatrix}\right) = \begin{bmatrix} 1 & 0 & 5 \\ 0 & 1 & -1 \\ 0 & 0 & 0 \end{bmatrix}.\]
-Since its \(\RREF\) is not the identity matrix, the matrix is not invertible.
+Since its \(\RREF\) is not the identity matrix, the linear map is not bijective and thus the matrix is not invertible.
 \end{solution}
 
 \begin{problem}{M3}
@@ -744,17 +769,18 @@ the determinant to a \(3\times 3\) matrix and then applying a formula:
 Find the eigenvalues of the matrix \(\begin{bmatrix} -2 & -2 \\ 10 & 7 \end{bmatrix} \).
 \end{problem}
 \begin{solution}
-Compute
+Compute the characteristic polynomial: 
 \[\det(A-\lambda I) = \det \begin{bmatrix} -2 - \lambda & -2 \\ 10 & 7-\lambda \end{bmatrix} = (-2-\lambda)(7-\lambda)+20 = \lambda ^2 -5\lambda +6 = (\lambda -2)(\lambda -3)\]
-The eigenvalues are the roots of the characteristic polynomial, $2$ and $3$.
+The eigenvalues are the roots of the characteristic polynomial, namely $2$ and $3$.
 \end{solution}
 
 \begin{problem}{G4}
 Find a basis for the eigenspace associated to the eigenvalue $3$ in the matrix \[\begin{bmatrix} -7 & -8 & 2 \\ 8 & 9 & -1 \\ \frac{13}{2} & 5 & 2 \end{bmatrix}.\]
 \end{problem}
 \begin{solution}
-\[\RREF(A-3I) = \RREF \begin{bmatrix} -7-3 & -8 & 2 \\ 8 & 9-3 & -1 \\ \frac{13}{2} & 5 & 2-3 \end{bmatrix} = \RREF \begin{bmatrix} -10 & -8 & 2 \\ 8 & 6 & -1 \\ \frac{13}{2} & 5 & -1 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 1 \\ 0 & 1 & -\frac{3}{2} \\ 0 & 0 & 0 \end{bmatrix}\]
-The eigenspace associated to $3$ is the kernel of $A-3I$, namely  \[\setBuilder{\begin{bmatrix} -a \\ \frac{3}{2} a \\ a \end{bmatrix}}{a \in \IR}\]
+The eigenspace associated to $3$ is the kernel of $A-3I$, so we compute
+\[\RREF(A-3I) = \RREF \begin{bmatrix} -7-3 & -8 & 2 \\ 8 & 9-3 & -1 \\ \frac{13}{2} & 5 & 2-3 \end{bmatrix} = \RREF \begin{bmatrix} -10 & -8 & 2 \\ 8 & 6 & -1 \\ \frac{13}{2} & 5 & -1 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 1 \\ 0 & 1 & -\frac{3}{2} \\ 0 & 0 & 0 \end{bmatrix}.\]
+Thus we see the kernel is \[\setBuilder{\begin{bmatrix} -a \\ \frac{3}{2} a \\ a \end{bmatrix}}{a \in \IR}\]
 which has a basis of \(\left\{ \begin{bmatrix} -1 \\ \frac{3}{2} \\ 1 \end{bmatrix} \right\}\).
 \end{solution}
 
