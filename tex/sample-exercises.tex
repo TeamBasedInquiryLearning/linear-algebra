@@ -134,12 +134,15 @@ x&\,+\,&2y &\,\,& &= 3
 \end{alignat*}
 \end{problem}
 \begin{solution}
+First, note that this system corresponds to the matrix 
+\( \left( \begin{bmatrix}[ccc|c] 2 & 4 & 1 & 5 \\ 1 & 2 & 0 & 3 \end{bmatrix} \right)\).
+Then we compute (using technology) 
 \[
   \RREF \left(
     \begin{bmatrix}[ccc|c] 2 & 4 & 1 & 5 \\ 1 & 2 & 0 & 3 \end{bmatrix}
   \right)
     =
-  \begin{bmatrix}[ccc|c] 1 & 2 & 0 & 3 \\ 0 & 0 & 1 & -1\end{bmatrix}
+  \begin{bmatrix}[ccc|c] 1 & 2 & 0 & 3 \\ 0 & 0 & 1 & -1\end{bmatrix}.
 \]
 This corresponds to the system
 \begin{alignat*}{2}
@@ -170,18 +173,17 @@ So the solution set is
 
 
 \begin{problem}{V1}
-Let \(V\) be the set of all polynomials, together with the operations
-\(\oplus\) and \(\odot\) defined by the following for all polynomials
-\(f(x),g(x)\) and scalars \(c \in \IR\):
+Let \(V\) be the set of all pairs of numbers \((x,y)\in \IR^2\), together with the operations
+\(\oplus\) and \(\odot\) defined by the following for all vectors \((x_1,y_1), (x_2,y_2) \in \IR^2)\) and scalars \(c \in \IR\):
 \begin{align*}
-f(x) \oplus g(x) &= xf(x)+xg(x) \\
-c\odot f(x) &= cf(x)
+(x_1,x_2) \oplus (y_1,y_2) &= (2x_1+2y_1,2x_2+2y_2) \\
+c\odot (x_1,x_2) &= (cx_1,c^2x_2)
 \end{align*}
 \begin{enumerate}[(a)]
-\item Show that distribution property
-\[c\odot \left(f(x)\oplus g(x) \right) = c \odot f(x) \oplus c \odot g(x)\]
+\item Show that scalar multiplication distributes over vector addition, i.e. 
+\[c\odot \left((x_1,x_2) \oplus (y_1,y_2) \right) = c \odot (x_1,x_2) \oplus c \odot (y_1,y_2)\]
 holds.
-\item Show why \(V\) is not a vector space.
+\item Explain why \(V\) nonetheless is not a vector space.
 \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -189,62 +191,37 @@ holds.
 \item
 Compute
 \begin{align*}
-  c \odot \left(f(x) \oplus g(x) \right)
-  &= c \odot \left(xf(x)+xg(x)\right) \\
-  &= c\left(xf(x)+xg(x) \right) \\
-  &= cxf(x)+cxg(x)
+  c \odot \left((x_1,x_2) \oplus (y_1,y_2) \right)
+  &= c \odot (2x_1+2y_1,2x_2+2y_2) \\
+  &= (c(2x_1+2y_1),c^2(2x_2+2y_2)) \\
+  &= (2cx_1+2cy_1,2c^2x_2+2c^2y_2)
 \end{align*}
 and
 \begin{align*}
-  c\odot f(x) \oplus c \odot g(x)
-  &= (cf(x)) \oplus (cg(x))\\
-  &= xcf(x)+xcg(x)
+  c\odot (x_1,x_2) \oplus c \odot (y_1,y_2) 
+  &= (cx_1,c^2x_2) \oplus (cy_1,c^2y_2)\\
+  &= (2cx_1+2cy_1,2c^2x_2+2c^2y_2).
 \end{align*}
 Since these are the same, we have shown that
-\(c\odot \left(f(x)\oplus g(x) \right) = c \odot f(x) \oplus c \odot g(x)\)
-holds.
+\(c\odot \left((x_1,x_2) \oplus (y_1,y_2) \right) = c \odot (x_1,x_2) \oplus c \odot (y_1,y_2)\).
 \item
-To disprove a property, we can do it in general, or for particular polynomials. For the first way, 
-let \(f(x), g(x), h(x) \in V\) be polynomials. Then we compute
-\begin{align*}
-f(x)\oplus \left(g(x)\oplus h(x) \right) &= f(x) \oplus \left( xg(x)+xh(x) \right) \\
-&= xf(x)+x\left(xg(x)+xh(x)\right) \\
-&= xf(x)+x^2g(x)+x^2h(x) 
-\end{align*}
-and
-\begin{align*}
-\left(f(x)\oplus g(x)\right) \oplus h(x)  &=  \left( xf(x)+xg(x) \right) \oplus h(x) \\
-&= x\left(xf(x)+xg(x)\right)+xh(x) \\
-&= x^2f(x)+x^2g(x)+xh(x).
-\end{align*}
-Since \( xf(x)+x^2g(x)+x^2h(x) \neq x^2f(x)+x^2g(x)+xh(x)\) for all polynomials \(f(x), g(x), h(x)\), we see that 
-the addition defined by \(\oplus\) is not associative, so \(V\) is not a vector space.
 
-
-If instead we wanted to disprove the associative property by using particular polynomials, we can 
-let \(f(x)=1\), \(g(x)=2\), and \(h(x)=3\). Then
+To show \(V\) is not a vector space, we must show that it fails one of the 8 defining properties of vector spaces. We will show that scalar multiplication does not distribute over scalar addition, i.e.
+\[ (c+d)\odot(x_1,x_2) \neq c \odot(x_1,x_2) \oplus d\odot(x_1,x_2) \]
+for all scalars \(c,d \in \IR\) and vectors \((x_1,x_2)\in \IR^2\).
+First, we compute
 \begin{align*}
-  \left( f(x) \oplus g(x) \right) \oplus h(x)
-  &=\left(x+2x \right) \oplus 3\\
-  &=3x \oplus 3\\
-  &= 3x^2+3x
+(c+d)\odot(x_1,x_2) &= ((c+d)x_1,(c+d)^2x_2) \\
+&= ( (c+d)x_1, (c^2+2cd+d^2)x_2).
 \end{align*}
-and
+Then we compute
 \begin{align*}
-  f(x) \oplus \left( g(x) \oplus h(x) \right)
-  &=1 \oplus \left(2x+3x\right) \\
-  &=1 \oplus 5x \\
-  &=x + 5x^2
+c\odot (x_1,x_2) \oplus d\odot(x_1,x_2) &= (cx_1,c^2x_2) \oplus (dx_1,d^2x_2) \\
+&= ( 2cx_1+2dx_2, 2c^2x^2+2d^2x_2).
 \end{align*}
-
-
-Since \(3x^2+3x\not=x+5x^2\), we have shown
-that addition is not associative, i.e.
-\(
-  \left( f(x) \oplus g(x) \right) \oplus h(x)
-\neq
-  f(x) \oplus \left( g(x) \oplus h(x) \right).
-\)
+Thus, we see that 
+\( (c+d)\odot(x_1,x_2) \neq c \odot(x_1,x_2) \oplus d\odot(x_1,x_2) \)
+, and therefor \(V\) is not a vector space.
 \end{enumerate}
 \end{solution}
 
@@ -256,8 +233,24 @@ Determine if \(\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \) is a linear combina
 \(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \).
 \end{problem}
 \begin{solution}
+By definition, the statement 
+\[\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \text{ is a linear combination of the vectors }
+\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix},\ 
+\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix},\ \text{and} 
+\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \] 
+is equivalent to the statement
+\[\text{There exists a solution to the system of equations } 
+x_1\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} +
+x_2\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} +
+x_3\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} =
+\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix}.\]
 
-We compute
+This system corresponds to the augmented matrix 
+  \(\begin{bmatrix}[ccc|c]
+  1 & 3 & 1 & 3 \\
+  0 & 2 & 1 & -1 \\
+  1 & -1 & -1 & 2
+  \end{bmatrix}\).  Therefore, we compute
 \[ \RREF
   \begin{bmatrix}[ccc|c]
   1 & 3 & 1 & 3 \\
@@ -269,9 +262,16 @@ We compute
   1 & 0 & -\frac{1}{2} & 0 \\
   0 & 1 & \frac{1}{2} & 0 \\
   0 & 0 & 0 & 1
-  \end{bmatrix}
+  \end{bmatrix}.
 \]
-Since this corresponds to an inconsistent system of equations, \(\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \) is 
+Since this corresponds to an inconsistent system of equations, the system of equations
+\[
+x_1\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} +
+x_2\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} +
+x_3\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} =
+\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \]
+has no solution, and therefore 
+\(\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \) is 
 not a linear combination of \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
 \(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
 \(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \).
@@ -285,6 +285,16 @@ Determine if  the vectors
 \(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \) span \(\IR^3\).
 \end{problem}
 \begin{solution}
+By definition, the statement
+\[\text{The vectors }\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} ,\ 
+\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix}, \text{ and }
+\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}  \text{ span } \IR^3\]
+is equivalent to the statement
+\[\text{For every }\vec{v} \in \IR^3,\text{ the system }
+x_1\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}+  
+x_2 \begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix}+
+x_3\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}=\vec{v}\text{ has a solution.}\]
+
 
 We compute
 \[ \RREF
@@ -300,54 +310,84 @@ We compute
   0 & 0 & 0
   \end{bmatrix}
 \]
-Since the last row lacks a pivot, there is some vector in \(\IR^3\) that upon augmenting this matrix will produce
+Since the last row lacks a pivot, there is some vector \(\vec{v} \in \IR^3\) that upon augmenting this matrix will produce
 an inconsistent system. That vector will not be in the span of these three vectos, so the vectors do not span \(\IR^3\).
 \end{solution}
 
 \begin{problem}{V4}
 Consider the following two sets of Euclidean vectors.
 \[
-  W = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y=3z}
+  W = \setBuilder{\begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix} }{x+y=3z+2w}
 \hspace{3em}
-  U = \setBuilder{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}{x+y=3z+2}
+  U = \setBuilder{\begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix}}{x+y=3z+w^2}
 \]
 Show that one of these sets is a subspace of \(\IR^3\), and
 that one of the sets is not.
 \end{problem}
 \begin{solution}
-First we will show \(U\) is not a subspace.  Since \(0+0\not=3(0)+2\),
-we see that \(\vec 0\not\in U\). Therefore \(U\) is not a subspace.
 
 To show that \(W\) is a subspace, let
 \(
-  \vec v=\begin{bmatrix} x_1 \\y_1 \\ z_1 \end{bmatrix}\in W
+  \vec v=\begin{bmatrix} x_1 \\y_1 \\ z_1 \\ w_1 \end{bmatrix}\in W
 \) and
 \(
-  \vec w=\begin{bmatrix} x_2 \\y_2 \\ z_2 \end{bmatrix} \in W
+  \vec w=\begin{bmatrix} x_2 \\y_2 \\ z_2 \\ w_2 \end{bmatrix} \in W
 \),
-so we know \(x_1+y_1=3z_1\) and \(x_2+y_2=3z_2\).
+so we know that \(x_1+y_1=3z_1+2w_1\) and \(x_2+y_2=3z_2+2w_2\).
 Consider
 \[
-\begin{bmatrix} x_1 \\y_1 \\ z_1 \end{bmatrix}
-+\begin{bmatrix} x_2 \\y_2 \\ z_2 \end{bmatrix}
-=\begin{bmatrix} x_1+x_2 \\y_1+y_2 \\ z_1+z_2 \end{bmatrix}
+\begin{bmatrix} x_1 \\y_1 \\ z_1 \\ w_1\end{bmatrix}
++\begin{bmatrix} x_2 \\y_2 \\ z_2 \\ w_2 \end{bmatrix}
+=\begin{bmatrix} x_1+x_2 \\y_1+y_2 \\ z_1+z_2 \\w_1+w_2 \end{bmatrix}
 .\]
-To see if \(\vec{v}+\vec{w} \in W\), we need to check if \( (x_1+x_2)+(y_1+y_2) = 3(z_1+z_2)\).
+To see if \(\vec{v}+\vec{w} \in W\), we need to check if \( (x_1+x_2)+(y_1+y_2) = 3(z_1+z_2)+2(w_1+w_2)\).
 We compute
-\[
-  (x_1+x_2)+(y_1+y_2) = (x_1+y_1)+(x_2+y_2) = 3z_1+3z_2=3(z_1+z_2)
-\]
-and we see that \(\vec v+\vec w\in W\), so \(W\) is closed under vector addition.
+  \begin{align*}
+  (x_1+x_2)+(y_1+y_2) &= (x_1+y_1)+(x_2+y_2) &\text{by regrouping} \\
+  &= (3z_1+2w_1)+(3z_2+2w_2) & \text{since \(\vec{v},\vec{w} \in W\)} \\
+  &=3(z_1+z_2)+2(w_1+w_2) & \text{by regrouping.}
+  \end{align*}
+Thus \(\vec v+\vec w\in W\), so \(W\) is closed under vector addition.
 
 Now consider
 \[
 c\vec v
-=\begin{bmatrix} cx_1 \\cy_1 \\ cz_1 \end{bmatrix}
+=\begin{bmatrix} cx_1 \\cy_1 \\ cz_1 \\ cw_1 \end{bmatrix}
 .\]
-Similarly, to check that \(c\vec{v} \in W\), we need to check if \(cx_1+cy_1=3(cz_1)\), so we compute
-\[cx_1+cx_2 = c(x_1+x_2)=c(3z_1)=3(cz_1)\]
+Similarly, to check that \(c\vec{v} \in W\), we need to check if \(cx_1+cy_1=3(cz_1)+2(cw_1)\), so we compute
+\begin{align*}
+cx_1+cy_1 & = c(x_1+y_1) &\text{by factoring} \\
+&=c(3z_1+2w_1) &\text{since \(\vec{v} \in W\)}\\
+&=3(cz_1)+2(cw_1) &\text{by regrouping}
+\end{align*}
 and we see that \(c\vec v\in W\), so \(W\) is closed under scalar 
 multiplication. Therefore \(W\) is a subspace of \(\IR^3\).
+
+Now, to show \(U\) is not a subspace, we will show that it is not closed under vector addition.
+Now let 
+\(
+  \vec v=\begin{bmatrix} x_1 \\y_1 \\ z_1 \\ w_1 \end{bmatrix}\in U
+\) and
+\(
+  \vec w=\begin{bmatrix} x_2 \\y_2 \\ z_2 \\ w_2 \end{bmatrix} \in U
+\),
+so we know that \(x_1+y_1=3z_1+w_1^2\) and \(x_2+y_2=3z_2+w_2^2\).
+Consider
+\[\vec{v}+\vec{w}=
+\begin{bmatrix} x_1 \\y_1 \\ z_1 \\ w_1\end{bmatrix}
++\begin{bmatrix} x_2 \\y_2 \\ z_2 \\ w_2 \end{bmatrix}
+=\begin{bmatrix} x_1+x_2 \\y_1+y_2 \\ z_1+z_2 \\w_1+w_2 \end{bmatrix}
+.\]
+To see if \(\vec{v}+\vec{w} \in U\), we need to check if \( (x_1+x_2)+(y_1+y_2) = 3(z_1+z_2)+(w_1+w_2)^2\).
+We compute
+\begin{align*}
+  (x_1+x_2)+(y_1+y_2) &= (x_1+y_1)+(x_2+y_2) &\text{by regrouping} \\
+  &= (3z_1+w_1^2)+(3z_2+w_2^2) &\text{since \(\vec{v},\vec{w} \in W\)}\\
+  &=3(z_1+z_2)+(w_1^2+w_2^2) &\text{by regrouping}
+\end{align*}
+and thus \(\vec v+\vec w\in W\) \textbf{only when} \(w_1^2+w_2^2=(w_1+w_2)^2\). Since this is not true in general, \(W\) is not closed under vector addition, and thus cannot be a subspace.
+
+
 \end{solution}
 
 
@@ -360,10 +400,21 @@ Determine if the vectors
 are linearly dependent or linearly independent.
 \end{problem}
 \begin{solution}
-Compute
-\[\RREF \begin{bmatrix} 3 & -1 & 0 & 2 \\ 2 & 1 & 1 & 5 \\ 1 & 2 & -1 & 1 \\ 0 & 3 & 1 & 5 \end{bmatrix} =
-\begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \end{bmatrix}.\] 
-Since the fourth column is not a pivot column, the system augmented with the zero vector has a nontrivial solution.
+The vectors 
+\( \begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix} \) ,
+\( \begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix} \) ,
+\( \begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix} \) , and
+\( \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \) are linearly independent precisely when the system of equations 
+\[ x_1\begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix} +
+ x_2\begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix} +
+ x_3\begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix}+ 
+ x_4\begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} =\vec{0}\]
+has a unique solution (namely, \(\vec{0}\)). 
+
+Converting this system to the corresponding augmented matrix and row reducing, we have
+\[\RREF \begin{bmatrix}{cccc|c} 3 & -1 & 0 & 2 & 0 \\ 2 & 1 & 1 & 5 & 0 \\ 1 & 2 & -1 & 1 & 0 \\ 0 & 3 & 1 & 5 & 0\end{bmatrix} =
+\begin{bmatrix} 1 & 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1& 0  \\ 0 & 0 & 1 & 2& 0  \\ 0 & 0 & 0 & 0& 0  \end{bmatrix}.\] 
+Since the fourth column is not a pivot column, the system  has (infinitely many) nontrivial solutions.
 Thus the vectors are linearly dependent.
 \end{solution}
 
@@ -380,12 +431,12 @@ Compute
 \[\RREF \begin{bmatrix} 3 & -1 & 0 & 2 \\ 2 & 1 & 1 & 5 \\ 1 & 2 & -1 & 1 \\ 0 & 3 & 1 & 5 \end{bmatrix} =
 \begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 0 \end{bmatrix}.\]
 Since the fourth column is not a pivot column, the vectors are linearly
-dependent and thus not a basis.
+dependent and thus not a basis of \(\IR^4\).
 
 (Alternate solutions:
 Since the fourth row not a pivot row, the vectors do not span
-\(\IR^4\) and thus are not a basis. Or since the resulting matrix is not
-the identity matrix, the vectors do not form a basis.)
+\(\IR^4\) and thus are not a basis of \(\IR^4\). Or since the resulting matrix is not
+the identity matrix, the vectors do not form a basis of \(\IR^4\).)
 \end{solution}
 
 
@@ -542,29 +593,38 @@ a basis for the solution space is
 \begin{problem}{A1}
 Consider the following maps of polynomials \(S: \P \rightarrow \P\)
 and \(T:\P\rightarrow\P\) defined by
-\[S(f(x))= f(x)-3x \text{ and }T(f(x)) = f(x)-3f'(x).\]
+\[S(f(x))= 3xf(x) \text{ and }T(f(x)) = 3f'(x)f(x).\]
 Show that one of these maps is a linear transformation, and that the other
 map is not.
 \end{problem}
 \begin{solution}
-\(S\) is not a linear transformation because \(S(0)=-3x\not=0\).
-(Alternate reason: \(S(x+1)=1-2x\) but \(S(x)+S(1)=1-5x\).)
+To show \(S\) is a linear transformation, we must show two things:
+\begin{align*}
+&S\left(f(x)+g(x)\right)=S(f(x))+s(g(x)) \\
+&S(cf(x)) = cS(f(x))
+\end{align*}
 
-As for \(T\),
-\[
-  T(f(x)+g(x))=(f(x)+g(x))-3(f(x)+g(x))'=f(x)-3f'(x)+g(x)-3g'(x)
-\]
-\[
-  T(f(x))+T(g(x))=(f(x)-3f'(x))+(g(x)-3g'(x))=f(x)-3f'(x)+g(x)-3g'(x)
-\]
-\[
-	T(cf(x))=(cf(x))-3(cf(x))'=cf(x)-3cf'(x)
-\]
-\[
-	cT(f(x))=c(f(x)-3f'(x))=cf(x)-3cf'(x)
-\]
-Since \(T\) preserves both addition and scalar multiplication,
-\(T\) is a linear transformation.
+To show \(S\) respects addition, we compute
+\begin{align*}
+S\left(f(x)+g(x)\right) &= 3x\left(f(x)+g(x)\right) & \text{by definition of \(S\)} \\
+&= 3xf(x)+3xg(x) & \text{by distributing}
+\end{align*}
+But note that \(S(f(x))=3xf(x)\) and \(S(g(x))=3xg(x)\), so we have \(S(f(x)+g(x))=S(f(x))+S(g(x))\).
+
+For the second part, we compute
+\begin{align*}
+S\left(cf(x)\right) &= 3x\left(cf(x)\right) & \text{by definition of \(S\)} \\
+&= 3cxf(x) & \text{rewriting the multiplication.}
+\end{align*}
+But note that \(cS(f(x))=c(3xf(x))=3cxf(x)\) as well, so we have \(S(cf(x))=cS(f(x))\).  Now, since \(S\) respects both addition and scalar multiplication, we can conclude \(S\) is a linear transformation.
+
+As for \(T\), we compute
+  \begin{align*}
+  T(f(x)+g(x))& =3 (f(x)+g(x))'(f(x)+g(x)) &\text{by definition of \(T\)} \\
+  &= 3(f'(x)+g'(x))(f(x)+g(x)) & \text{since the derivative is linear} \\
+  &= 3f(x)f'(x)+3f(x)g'(x)+3f'(x)g(x)+3g(x)g'(x) &\text{by distributing}
+  \end{align*}
+However, note that \(T(f(x))+T(g(x))=3f'(x)f(x)+3g'(x)g(x)\), so we see that \(T(f(x)+g(x)) \neq T(f(x))+T(g(x))\), so \(T\) does not respect addition and is therefore not a linear transformation.
 \end{solution}
 
 \begin{problem}{A2}
