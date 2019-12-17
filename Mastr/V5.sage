@@ -5,11 +5,11 @@ class V5(MastrExercise):
 
   def generate(self):
 	
-	#Pick 3 vectors in R4
-	vec1 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
-	vec2 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
-	vec3 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
-	vec4 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
+	#Pick 4 vectors in R5
+	vec1 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
+	vec2 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
+	vec3 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
+	vec4 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
 
 	#Pick if yes a linear combination or no
 	independent = choice([false,true])
@@ -22,13 +22,12 @@ class V5(MastrExercise):
 			if choice([false,true]):
 				vec3 = randrange(-5,5)*vec1+randrange(-5,5)*vec2
 			vec4 = randrange(-5,5)*vec1+randrange(-5,5)*vec2+randrange(-5,5)*vec3
+
+	A=column_matrix([vec1, vec2, vec3, vec4])
+	if rank(A)<4:
+		independent = false
 	else:
-		A=column_matrix([vec1, vec2, vec3, vec4])
-		while rank(A)<4:
-			vec2 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
-			vec3 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
-			vec4 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
-			A=column_matrix([vec1, vec2, vec3, vec4])
+		independent = true
 	
 	latex.matrix_delimiters("[", "]")	
 	return {
