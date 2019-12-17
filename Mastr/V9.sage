@@ -30,7 +30,7 @@ class V9(MastrExercise):
 	if poly==true:
 		R=PolynomialRing(QQ,'x')
 		vspace="\mathcal{P}^3"
-		v1 = latex(vec1[0]+vec1[1]*x+vec1[2]*x^2+vec1[3]*x^3)
+		v1 = vec1[0]+vec1[1]*x+vec1[2]*x^2+vec1[3]*x^3
 		v2 = vec2[0]+vec2[1]*x+vec2[2]*x^2+vec2[3]*x^3
 		v3 = vec3[0]+vec3[1]*x+vec3[2]*x^2+vec3[3]*x^3
 		v4 = vec4[0]+vec4[1]*x+vec4[2]*x^2+vec4[3]*x^3
@@ -38,7 +38,7 @@ class V9(MastrExercise):
 		v6 = vec6[0]+vec6[1]*x+vec6[2]*x^2+vec6[3]*x^3
 	else:
 		vspace="M_{2,2}"
-		v1="\\begin{bmatrix}"+ latex(vec1[0])+" & "+ latex(vec1[1]) +" \\\\ "+ latex(vec1[2]) +" & "+latex(vec1[3]) +"\\end{bmatrix}"
+		v1=matrix([[vec1[0],vec1[1]],[vec1[2],vec1[3]]])
 		v2=matrix([[vec2[0],vec2[1]],[vec2[2],vec2[3]]])
 		v3=matrix([[vec3[0],vec3[1]],[vec3[2],vec3[3]]])
 		v4=matrix([[vec4[0],vec4[1]],[vec4[2],vec4[3]]])
@@ -59,7 +59,7 @@ class V9(MastrExercise):
 
 	
 	return {
-	  "vlist": v1+", "+latex(v2)+", "+latex(v3)+", "+latex(v4)+", "+latex(v5)+", "+latex(v6),
+	  "vlist": latex(v1)+", "+latex(v2)+", "+latex(v3)+", "+latex(v4)+", "+latex(v5)+", "+latex(v6),
       "basis": basis,
 	  "vecspace": vspace
     }
