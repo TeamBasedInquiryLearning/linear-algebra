@@ -18,13 +18,13 @@ class V9(MastrExercise):
 		vec3 = randrange(-5,5)*vec1+randrange(-5,5)*vec2
 
 	if choice([false,true]):
-		vec4 = randrange(-5,5)*vec1+randrange(-5,5)*vec2+randrange(-5,5)*vec3
+		vec4 = randrange(-3,3)*vec1+randrange(-3,3)*vec2+randrange(-3,3)*vec3
 
 	if choice([false,true]):
-		vec5 = randrange(-5,5)*vec1+randrange(-5,5)*vec2+randrange(-5,5)*vec3
+		vec5 = randrange(-3,3)*vec1+randrange(-3,3)*vec2+randrange(-3,3)*vec3
 
 	if choice([false,true]):
-		vec6 = randrange(-5,5)*vec1+randrange(-5,5)*vec2+randrange(-5,5)*vec4
+		vec6 = randrange(-3,3)*vec1+randrange(-3,3)*vec2+randrange(-3,3)*vec4
 	
 	poly = choice([false, true])
 	if poly==true:
