@@ -5,30 +5,36 @@ class V8(MastrExercise):
 
   def generate(self):
 	
-	#Pick 5 vectors in R5
-	vec1 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
-	vec2 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
-	vec3 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
-	vec4 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
-	vec5 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
+	#Pick some  vectors in R4
+	n=choice([4,5,6])
+	vec=[]
+	for i in range(0,n):
+		vec.append( vector([ randrange(-4,4), randrange(-4,4), randrange(-4,4), randrange(-4,4), randrange(-4,4)]))
 
 	#Build some vectors as linear combos
 	if choice([false,true]):
-		vec3 = randrange(-5,5)*vec1+randrange(-5,5)*vec2
-
+		vec[2] = randrange(-5,5)*vec[0]+randrange(-5,5)*vec[1]
 	if choice([false,true]):
-		vec4 = randrange(-5,5)*vec1+randrange(-5,5)*vec2+randrange(-5,5)*vec3
+		vec[3] = randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]+randrange(-3,3)*vec[2]
+	if n>4 and choice([false,true]):
+		vec[4] = randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]+randrange(-3,3)*vec[2]+randrange(-3,3)*vec[3]
+	if n>5 and choice([false,true]):
+		vec[5] = randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]+randrange(-3,3)*vec[2]+randrange(-3,3)*vec[3]
 
-	if choice([false,true]):
-		vec5 = randrange(-5,5)*vec1+randrange(-5,5)*vec2+randrange(-5,5)*vec3
 
 
-	A = column_matrix([vec1,vec2,vec3,vec4,vec5])
+	A = matrix(vec).transpose()
+	latex.matrix_delimiters("[", "]")	
+	veclist = ""
+	for i in range(0,n):
+		veclist+=latex(column_matrix(vec[i]))
+		if i<n-1:
+			veclist+=", "
+
 	dim = len(A.pivots())
 
-	latex.matrix_delimiters("[", "]")
 	
 	return {
-		  "vlist": latex(column_matrix(vec1))+", "+latex(column_matrix(vec2))+", "+latex(column_matrix(vec3))+", "+latex(column_matrix(vec4))+", "+latex(column_matrix(vec5)),
-      "dim": dim
+		  "vlist": veclist,
+		  "dim": dim
     }
