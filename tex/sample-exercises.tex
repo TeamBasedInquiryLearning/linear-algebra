@@ -227,7 +227,7 @@ Thus, we see that
 
 
 \begin{problem}{V2}
-Determine if \(\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \) is a linear combination of the vectors
+Explain why the vector \(\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \) is or is not a linear combination of the vectors
 \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
 \(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
 \(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \).
@@ -279,10 +279,10 @@ not a linear combination of \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
 \end{solution}
 
 \begin{problem}{V3}
-Determine if  the vectors
+Explain why  the vectors
 \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
 \(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
-\(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \) span \(\IR^3\).
+\(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \) span or don't span \(\IR^3\).
 \end{problem}
 \begin{solution}
 By definition, the statement
@@ -392,7 +392,7 @@ and thus \(\vec v+\vec w\in W\) \textbf{only when} \(w_1^2+w_2^2=(w_1+w_2)^2\). 
 
 
 \begin{problem}{V5}
-Determine if the vectors
+Explain why the vectors
 \( \begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix} \) ,
 \( \begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix} \) ,
 \( \begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix} \) , and
@@ -419,12 +419,12 @@ Thus the vectors are linearly dependent.
 \end{solution}
 
 \begin{problem}{V6}
-Determine if the set \[ \left\{
+Explain why the vectors \[
  \begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix} ,
  \begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix} ,
  \begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix} ,
- \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \right\} \]
-is a basis of \(\IR^4\) or not.
+ \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix}  \]
+are or are not a basis of \(\IR^4\).
 \end{problem}
 \begin{solution}
 Compute
@@ -441,7 +441,7 @@ the identity matrix, the vectors do not form a basis of \(\IR^4\).)
 
 
 \begin{problem}{V7}
-Find a basis for \(W\), the subspace of \(\IR^4\) given by
+Find a basis for the subspace 
 \[
   W = \vspan \left\{
   \begin{bmatrix} 1 \\ -3 \\ -1 \\ 2 \end{bmatrix} ,
@@ -479,7 +479,7 @@ is a basis of \(W\).
 \end{solution}
 
 \begin{problem}{V8}
-Find the dimension of \(W\), the subspace of \(\IR^4\) given by
+Explain how to find the dimension of 
 \[
   W = \vspan \left\{
   \begin{bmatrix} 1 \\ -3 \\ -1 \\ 2 \end{bmatrix} ,
@@ -510,9 +510,8 @@ has three pivot columns, so a basis of \(W\) has three elements, and therefore \
 \end{solution}
 
 \begin{problem}{V9}
-Find a basis for the subspace
-\[W=\vspan\setList{3x^3+2x^2+x,-x^3+x^2+2x+3,x^2-x+1,2x^3+5x^2+x+5}\]
-of \(\P^3\).
+Find a basis for the subspace of \(\P^3\)
+\[W=\vspan\setList{3x^3+2x^2+x,-x^3+x^2+2x+3,x^2-x+1,2x^3+5x^2+x+5}.\]
 \end{problem}
 \begin{solution}
 This question is equivalent to finding a basis for the subspace
@@ -691,19 +690,17 @@ A basis for the image is given by the pivot columns, namely
 \end{solution}
 
 \begin{problem}{A4}
-Determine if each of the following linear transformations is injective (one-to-one) and/or surjective (onto).
+Let $T: \IR^4 \rightarrow \IR^3$ be the linear transformation given by the standard matrix $\begin{bmatrix} 1 & 3 & 2 & -3 \\ 2 & 4 & 6 & -10 \\ 1 & 6 & -1 & 3 \end{bmatrix}$.
 \begin{enumerate}[(a)]
-\item $S: \IR^2 \rightarrow \IR^2$ given by the standard matrix $\begin{bmatrix} 1 & 1 \\ -1 & 0 \end{bmatrix}$.
-\item $T: \IR^4 \rightarrow \IR^3$ given by the standard matrix $\begin{bmatrix} 1 & 3 & 2 & -3 \\ 2 & 4 & 6 & -10 \\ 1 & 6 & -1 & 3 \end{bmatrix}$
+\item Explain why \(T\) is or is not injective.
+\item Explain why \(T\) is or is not surjective.
 \end{enumerate}
 \end{problem}
 \begin{solution}
+Compute \[\RREF\begin{bmatrix}1 & 3 & 2 & -3 \\ 2 & 4 & 6 & -10 \\ 1 & 6 & -1 & 3 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 5 & -9 \\ 0 & 1 & -1 & 2 \\ 0 & 0 & 0 & 0\end{bmatrix}.\]
 \begin{enumerate}[(a)]
-\item $ \RREF\begin{bmatrix} 1 & 1 \\ -1 & 0 \end{bmatrix}=\begin{bmatrix}1 & 0 \\ 0 & 1 \end{bmatrix}$.  Since each column is a pivot column, $S$ is injective.  Since each row has a pivot, $S$ is surjective.
-(Alternatively, since the result is the identity matrix, \(S\) is bijective.)
-\item $$\RREF\begin{bmatrix}1 & 3 & 2 & -3 \\ 2 & 4 & 6 & -10 \\ 1 & 6 & -1 & 3 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 5 & -9 \\ 0 & 1 & -1 & 2 \\ 0 & 0 & 0 & 0\end{bmatrix}$$
-Since the third row lacks a pivot, the span of the columns does not equal \(\IR^3\), so \(T\) is not surjective.  Since there are non-pivot columns, \(T\) is not injective either.
-(Alternatively, since $\dim \IR^4 > \dim \IR^3$, $T$ is not injective.)
+\item Note that the third and fourth columns are non-pivot columns, which means \(\ker T\) contains infinitely many vectors, so \(T\) is not injective.
+\item Since the third row lacks a pivot, the image (i.e. the span of the columns) is a 2-dimensional subspace (and thus does not equal \(\IR^3\)), so \(T\) is not surjective.
 \end{enumerate}
 \end{solution}
 
@@ -731,7 +728,7 @@ $$AC = \begin{bmatrix} -3 & 7 & -12 \\ 1 & -2 & 5 \end{bmatrix}.$$
 \end{solution}
 
 \begin{problem}{M2}
-Determine if the matrix \(\begin{bmatrix}1 & 3 & 2  \\ 2 & 4 & 6  \\ 1 & 6 & -1 \end{bmatrix}\) is invertible or not.
+Explain why the matrix \(\begin{bmatrix}1 & 3 & 2  \\ 2 & 4 & 6  \\ 1 & 6 & -1 \end{bmatrix}\) is or is not invertible.
 \end{problem}
 \begin{solution}
 We compute
