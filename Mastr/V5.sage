@@ -5,32 +5,38 @@ class V5(MastrExercise):
 
   def generate(self):
 	
-	#Pick 4 vectors in R5
-	vec1 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
-	vec2 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
-	vec3 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
-	vec4 = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
+	#Pick 3 vectors in R5
+	n=choice([4,5])
+	vec=[]
+	for i in range(0,n):
+		vec.append(vector([ randrange(-6,6), randrange(-6,6), randrange(-6,6), randrange(-6,6), randrange(-6,6)]))
 
 	#Pick if yes a linear combination or no
 	independent = choice([false,true])
 
 	#If dependent, Generate the 4th vector and sometimes the 3rd vector
 	if independent==0:
+		d = choice( range(3,n))
+		vec[d]=randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]+randrange(-3,3)*vec[2]
 		if choice([false,true]):
-			vec3 = randrange(-5,5)*vec1+randrange(-5,5)*vec2
-		else:
-			if choice([false,true]):
-				vec3 = randrange(-5,5)*vec1+randrange(-5,5)*vec2
-			vec4 = randrange(-5,5)*vec1+randrange(-5,5)*vec2+randrange(-5,5)*vec3
+			d = choice( range(2,n))
+			vec[d]=randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]
 
-	A=column_matrix([vec1, vec2, vec3, vec4])
-	if rank(A)<4:
+	A=matrix(vec).transpose()
+	if rank(A)<n:
 		independent = false
 	else:
 		independent = true
 	
 	latex.matrix_delimiters("[", "]")	
+	veclist = ""
+	for i in range(0,n):
+		veclist+=latex(column_matrix(vec[i]))
+		if i<n-1:
+			veclist+=", "
+		if i==n-2:
+			veclist+="\\text{ and }"
 	return {
       "independent": independent,
-	  "vlist": latex(column_matrix(vec1))+", "+latex(column_matrix(vec2))+", "+latex(column_matrix(vec3))+", \\text{and }"+latex(column_matrix(vec4))
-    }
+	  "vlist": veclist
+	}
