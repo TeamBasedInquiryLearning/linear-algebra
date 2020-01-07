@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ "$1" == "" ]; then
+  echo "path to mastr should be provided"
+  exit 1
+fi
+
+FILES=mastr/*.sage
+
+for file in $FILES
+do
+  sage $1/mastr.sage ${file::-5} build
+  ruby $1/mastr.rb ${file::-5} build
+done
