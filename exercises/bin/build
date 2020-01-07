@@ -5,7 +5,11 @@ if [ "$1" == "" ]; then
   exit 1
 fi
 
-FILES=mastr/*.sage
+if [ "$2" == "" ]; then
+  FILES=mastr/*.sage
+else
+  FILES=$2.sage
+fi
 
 for file in $FILES
 do
