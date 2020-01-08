@@ -28,14 +28,32 @@ class E3(MastrExercise):
     constants = rref.column(-1)
     free_vars = [var("a"), var("b"), var("c"), var("d")]
 
-    # TODO
-    solution = []
-    for c in range(0,columns-1):
-      if c in rref.pivots():
-        solution.append(1)
-      else:
-        solution.append(0)
-    solution_tex = latex(vector(solution))
+    # get solution
+    if columns-1 in A.pivots():
+      # a pivot in the last column represents a contradiction
+      solution_tex = '\emptyset'
+    else:
+      # get particular solution
+      part_sol = []
+      abbr_part_sol = list(rref.column(-1))
+      for i in range(0,columns-1):
+        if i in A.pivots():
+          part_sol.append(abbr_part_sol.pop(0))
+        else:
+          part_sol.append(0)
+      sol = column_matrix(QQ,part_sol)
+      # add span of homogeneous general solution
+      used_free_vars = []
+      for v in A.delete_columns([columns-1]).right_kernel(basis='pivot').basis():
+        free_var = free_vars.pop(0)
+        used_free_vars.append(latex(free_var))
+        sol += free_var*column_matrix(v)
+      solution_tex = '\left\{'+latex(sol)
+      if len(used_free_vars)>0:
+        solution_tex += "\\middle|"
+        solution_tex += ",".join(used_free_vars)
+        solution_tex += "\\in \\mathbb{R}"
+      solution_tex += '\\right\}'
 
 
 
