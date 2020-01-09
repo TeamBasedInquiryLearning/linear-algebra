@@ -16,16 +16,19 @@ class G1(MastrExercise):
     scale_op = latex(rs[row])+"\\to "+latex(scale*rs[row])
     # random row swapping
     rows = sample([0,1,2],2)
+    shuffle(rows)
     swap_matrix = identity_matrix(3).with_swapped_rows(rows[0],rows[1])
     swap_op = latex(rs[rows[0]])+"\\leftrightarrow "+latex(rs[rows[1]])
     # random row adding 
     rows = sample([0,1,2],2)
+    shuffle(rows)
     scale = randrange(2,6)*choice([-1,1])
     add_matrix = identity_matrix(3).with_added_multiple_of_row(rows[0],rows[1],scale)
     add_op = latex(rs[rows[0]])+"\\to "+latex(rs[rows[0]]+scale*rs[rows[1]])
 
     #choose two random ops
     ops = sample([0,1,2],2)
+    shuffle(ops)
     row_op1 = [scale_op,swap_op,add_op][ops[0]]
     mat1    = [scale_matrix,swap_matrix,add_matrix][ops[0]]
     row_op2 = [scale_op,swap_op,add_op][ops[1]]
