@@ -1,5 +1,6 @@
 <exercise>
   <title><%= _title %> (ver. <%= _seed %>)</title>
+  <% if swapped %>
   <statement>
     <p>
       Let <m><%=domain_range%></m> be the transformation given by
@@ -15,4 +16,21 @@
     <me><%= matrix %></me>
     <me><%= trans_of_v_eval %></me>
   </answer>
+  <% else %>
+  <statement>
+    <p>
+      Let <m><%=domain_range%></m> be the transformation given by the standard matrix
+    </p>
+    <me><%=matrix%></me>
+    <p>
+      First expand <m><%=transformation2%></m>.
+      Then show how to evaluate <m><%=trans_of_v%></m>.
+    </p>
+  </statement>
+
+  <answer>
+    <me><%= transformation %></me>
+    <me><%= trans_of_v_eval %></me>
+  </answer>
+  <% end %>
 </exercise>

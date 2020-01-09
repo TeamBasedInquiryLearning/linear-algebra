@@ -14,6 +14,7 @@ class A2(MastrExercise):
 
     # construct transformation
     transformation = "T\\left("+latex(column_matrix(xs))+"\\right)="+latex(column_matrix(A*xs))
+    transformation2 = "T\\left("+latex(column_matrix(xs))+"\\right)"
 
     # give transformation domain,range
     domain_range = "T:\\mathbb R^{"+str(columns)+"}\\to\\mathbb R^{"+str(rows)+"}"
@@ -22,14 +23,19 @@ class A2(MastrExercise):
     v = column_matrix([randrange(-8,9) for _ in range(0,columns)])
     trans_of_v = "T\\left("+latex(v)+"\\right)"
     trans_of_v_eval = A*v
+
+    # swap versions
+    swapped = choice([True,False])
     
 
     latex.matrix_delimiters("[", "]")    
     return {
       "transformation": transformation,
+      "transformation2": transformation2,
       "matrix": latex(A),
       "domain_range": domain_range,
       "trans_of_v": trans_of_v,
       "trans_of_v_eval": latex(trans_of_v_eval),
+      "swapped": swapped,
     }
 
