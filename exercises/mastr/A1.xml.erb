@@ -1,0 +1,22 @@
+<exercise>
+  <title><%= _title %> (ver. <%= _seed %>)</title>
+  <statement>
+    <p>
+      Explain why one of the following polynomial transformations is linear,
+      and why the other is not.
+    </p>
+    <% if swapped %>
+      <me>S(<%=f_letter%>(x))=<%=nonlinear_trans%>\hspace{3em}T(<%=f_letter%>(x))=<%=linear_trans%></me>
+    <% else %>
+      <me>S(<%=f_letter%>(x))=<%=linear_trans%>\hspace{3em}T(<%=f_letter%>(x))=<%=nonlinear_trans%></me>
+    <% end %>
+  </statement>
+
+  <answer>
+    <% if swapped %>
+      <p><m>S</m> is non-linear, and <m>T</m> is linear.</p>
+    <% else %>
+      <p><m>S</m> is linear, and <m>T</m> is non-linear.</p>
+    <% end %>
+  </answer>
+</exercise>

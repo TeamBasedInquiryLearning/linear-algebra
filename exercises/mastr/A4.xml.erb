@@ -1,0 +1,23 @@
+<exercise>
+  <title><%= _title %> (ver. <%= _seed %>)</title>
+  <statement>
+    <p>
+      Let <m><%=domain_range%></m> be the transformation given by the standard matrix
+    </p>
+    <me><%=matrix%></me>
+    <p>
+      (a) Explain why <m>T</m> is or is not surjective.
+    </p>
+    <p>
+      (b) Explain why <m>T</m> is or is not injective.
+    </p>
+  </statement>
+
+  <answer>
+    <me><%= rref %></me>
+    <p>
+      The transformation is <% unless surjective %>not <% end %> surjective and
+      <% unless injective %>not <% end %> injective.
+    </p>
+  </answer>
+</exercise>
