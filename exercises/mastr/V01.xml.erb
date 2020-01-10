@@ -1,13 +1,31 @@
 <exercise>
   <title><%= _title %> (ver. <%= _seed %>)</title>
   <statement>
-    <p>Let <m>V</m> be <%= set %>  together with the operations <md><mrow><%=oplus%></mrow><mrow><%=otimes%></mrow></md></p>
-	<p>(a) Show that <%=trueproperty%></p>
-	<p>(b) Show that <m>V</m> nonetheless is not a vector space.</p>
+    <p>version <%=n%></p>
+    <p>
+      Let <m>V</m> be the set of all pairs <m>(x,y)</m> of real numbers
+      together with the following operations.
+    </p>
+    <md><mrow><%=oplus%></mrow><mrow><%=otimes%></mrow></md>
+    <p>
+      (a) Show that <%=trueproperty%>, that is:
+    </p>
+    <me>
+      <%=truetex%>.
+    </me>
+    <p>
+      (b) Explain why <m>V</m> nonetheless is not a vector space.
+    </p>
   </statement>
   <answer>
-  <p> <m>V</m> is not a vector space because the following properties do not hold: <%= falseproperties %>
-	
-  </p>
+    <p>
+      <m>V</m> is not a vector space, which may be shown by demonstrating that
+      any one of the following properties do not hold:
+    </p>
+    <% falseproperties.each do |prop| %>
+      <p>
+        - <%= prop %>
+      </p>
+    <% end %>
   </answer>
 </exercise>
