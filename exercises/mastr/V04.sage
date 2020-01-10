@@ -8,16 +8,12 @@ class V04(MastrExercise):
 
 	dim = choice([2,3,4])
 	vectorspace="\mathbb{R}^" + str(dim)
-	leftstring="""=\left\{ \left\[\\begin{array}{c} x \\\\ y \\\\"""
+	leftstring="""\left\{ \left[\\begin{array}{c} x \\\\ y \\\\"""
 	if( dim > 2 ):
 		leftstring+= "z \\\\ "
 	if( dim > 3 ):
 		leftstring+= "w \\\\ "
-	leftstring+= """\end{array}\\right\] \,\middle|\,"""
-
-	whichsub = choice([1,2])
-	subspace="W_"+str(whichsub)
-	notsubspace="W_"+str(3-whichsub)
+	leftstring+= """\end{array}\\right] \,\middle|\,"""
 
 	if( dim == 2):
 		subspacestring = choice([ str(randrange(1,8))+"x + " + str(randrange(1,8))+"y = 0",
@@ -54,14 +50,12 @@ class V04(MastrExercise):
 
 		
 	#Write sets in order subspace, not subspace
-	vsets=[subspace+leftstring+subspacestring, notsubspace+leftstring+notsubspacestring]
-	#Swap order if W2 is the subspace
-	if(whichsub==2):
-		vsets.reverse()
+	vsets=[leftstring+subspacestring, leftstring+notsubspacestring]
+	#Randomly swap order so 2nd is subspace
+	swapped = choice([True,False])
 
 	return {
-      "vsets": vsets,
+	  "vsets": vsets,
 	  "vectorspace": vectorspace,
-	  "subspace": subspace,
-	  "notsubspace": notsubspace
+	  "swapped": swapped
     }
