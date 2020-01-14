@@ -14,7 +14,10 @@ class E1(MastrExercise):
     A = random_matrix(QQ,rows,columns,algorithm='echelonizable',rank=number_of_pivots,upper_bound=9)
 
     # construct variables
-    xs=vector([var("x_"+str(i+1)) for i in range(0,columns-1)])
+    xs=choice([
+      vector([var("x_"+str(i+1)) for i in range(0,columns-1)]),
+      vector([var("x"),var("y"),var("z"),var("zw",latex_name="w")][0:columns-1]),
+    ])
 
     # construct system
     system="<md>"
@@ -24,10 +27,14 @@ class E1(MastrExercise):
     system+="</md>"
    
     A.subdivide([],[columns-1]) 
+
+    #randomly swap exercise query
+    swapped = choice([True,False])
     
     latex.matrix_delimiters("[", "]")    
     return {
       "system": system,
       "matrix": latex(A),
+      "swapped": swapped,
     }
 
