@@ -127,7 +127,7 @@ Put the following matrix in reduced row echelon form.
 \end{solution}
 
 \begin{problem}{E3}
-Find the solution set for the following system of linear equations.
+Show how to find the solution set for the following system of linear equations.
 \begin{alignat*}{4}
 2x&\,+\,&4y&\,+\,&z &= 5 \\
 x&\,+\,&2y &\,\,& &= 3
@@ -279,7 +279,7 @@ not a linear combination of \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
 \end{solution}
 
 \begin{problem}{V3}
-Explain why  the vectors
+Explain why the set vectors
 \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
 \(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
 \(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \) span or don't span \(\IR^3\).
@@ -321,8 +321,8 @@ Consider the following two sets of Euclidean vectors.
 \hspace{3em}
   U = \setBuilder{\begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix}}{x+y=3z+w^2}
 \]
-Show that one of these sets is a subspace of \(\IR^3\), and
-that one of the sets is not.
+Explain why one of these sets is a subspace of \(\IR^3\), and
+why the other is not.
 \end{problem}
 \begin{solution}
 
@@ -392,12 +392,13 @@ and thus \(\vec v+\vec w\in W\) \textbf{only when} \(w_1^2+w_2^2=(w_1+w_2)^2\). 
 
 
 \begin{problem}{V5}
-Explain why the vectors
-\( \begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix} \) ,
-\( \begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix} \) ,
-\( \begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix} \) , and
-\( \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \)
-are linearly dependent or linearly independent.
+Explain why the set of vectors
+\[\left\{
+ \begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix}  ,
+ \begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix}  ,
+ \begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix}  , 
+ \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \right\}\]
+is linearly dependent or linearly independent.
 \end{problem}
 \begin{solution}
 The vectors 
@@ -415,16 +416,16 @@ Converting this system to the corresponding augmented matrix and row reducing, w
 \[\RREF \begin{bmatrix}{cccc|c} 3 & -1 & 0 & 2 & 0 \\ 2 & 1 & 1 & 5 & 0 \\ 1 & 2 & -1 & 1 & 0 \\ 0 & 3 & 1 & 5 & 0\end{bmatrix} =
 \begin{bmatrix} 1 & 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1& 0  \\ 0 & 0 & 1 & 2& 0  \\ 0 & 0 & 0 & 0& 0  \end{bmatrix}.\] 
 Since the fourth column is not a pivot column, the system  has (infinitely many) nontrivial solutions.
-Thus the vectors are linearly dependent.
+Thus the set of  vectors is linearly dependent.
 \end{solution}
 
 \begin{problem}{V6}
-Explain why the vectors \[
+Explain why the set of vectors \[ \left\{
  \begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix} ,
  \begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix} ,
  \begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix} ,
- \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix}  \]
-are or are not a basis of \(\IR^4\).
+ \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \right\} \]
+is or is not a basis of \(\IR^4\).
 \end{problem}
 \begin{solution}
 Compute
@@ -436,7 +437,7 @@ dependent and thus not a basis of \(\IR^4\).
 (Alternate solutions:
 Since the fourth row not a pivot row, the vectors do not span
 \(\IR^4\) and thus are not a basis of \(\IR^4\). Or since the resulting matrix is not
-the identity matrix, the vectors do not form a basis of \(\IR^4\).)
+the identity matrix, the set of vectors is not a basis of \(\IR^4\).)
 \end{solution}
 
 
@@ -593,7 +594,7 @@ a basis for the solution space is
 Consider the following maps of polynomials \(S: \P \rightarrow \P\)
 and \(T:\P\rightarrow\P\) defined by
 \[S(f(x))= 3xf(x) \text{ and }T(f(x)) = 3f'(x)f(x).\]
-Show that one of these maps is a linear transformation, and that the other
+Explain why one of these maps is a linear transformation, and why the other
 map is not.
 \end{problem}
 \begin{solution}
@@ -671,7 +672,7 @@ Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by
     x+6y-z+3w
   \end{bmatrix}
 \]
-Compute a basis for the kernel and a basis for the image of \(T\).
+Show how to compute a basis for the kernel and a basis for the image of \(T\).
 \end{problem}
 \begin{solution}
 First, we note the standard matrix
@@ -752,20 +753,31 @@ So the inverse is \(\begin{bmatrix}  1 & 2 & -11 & 32 \\ 0 & -1 & 4 & -14 \\  0 
 
 \begin{problem}{G1}
 \begin{enumerate}[(a)]
-\item Find \(3 \times 3\) matrices \(S\) and \(T\) whose left multiplication represents the row operations \(R_2-4R_1 \to R_2\) and \(R_3 \leftrightarrow R_2\), respectively.
-\item If \(A \in M_{3,3}\) is a matrix with \(\det A = 12\), find the determinant of \(STA\). 
+\item Give a \(3\times 3\) matrix \(P\) that may be used to perform the row
+      operation \({R_3} \to R_3+4 \, {R_1} \).
+\item Give a \(3\times 3\) matrix \(Q\) that may be used to perform the row
+      operation \({R_1} \to -4 \, {R_1}\).
+\item Suppose \(A\) is a \(3\times 3\) matrix with determinant \(-5\).
+      Use matrix multiplication to describe the matrix obtained by applying 
+        \({R_3} \to 4 \, {R_1} + {R_3}\) and then \({R_1} \to -4 \, {R_1}\)
+      to \(A\) (note the order).
+\item Finally, explain how to find the determinant of the matrix described in (c).
+
 \end{enumerate}
 \end{problem}
 \begin{solution}
 \begin{enumerate}
 \item 
-\(S=\begin{bmatrix} 1 & 0 & 0 \\ -4 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}\) and \(T=\begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix}\)
-\item \(\det (STA) = \det(S) \det(T) \det(A) = (1) (-1) (12) = -12\).
+\(P=\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 4 & 0 & 1 \end{bmatrix}\)
+\item
+\(Q=\begin{bmatrix} -4 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}\)
+\item \( QPA\)
+\item \(\det (QPA) = \det(Q) \det(P) \det(A) = (-4) (1) (-5) = 20\).
 \end{enumerate}
 \end{solution}
 
 \begin{problem}{G2}
-Find the determinant of the matrix
+Show how to compute the determinant of the matrix
 \[
   A
     =
@@ -823,7 +835,7 @@ the determinant to a \(3\times 3\) matrix and then applying a formula:
 \end{solution}
 
 \begin{problem}{G3}
-Find the eigenvalues of the matrix \(\begin{bmatrix} -2 & -2 \\ 10 & 7 \end{bmatrix} \).
+Explain how to find the eigenvalues of the matrix \(\begin{bmatrix} -2 & -2 \\ 10 & 7 \end{bmatrix} \).
 \end{problem}
 \begin{solution}
 Compute the characteristic polynomial: 
@@ -832,7 +844,7 @@ The eigenvalues are the roots of the characteristic polynomial, namely $2$ and $
 \end{solution}
 
 \begin{problem}{G4}
-Find a basis for the eigenspace associated to the eigenvalue $3$ in the matrix \[\begin{bmatrix} -7 & -8 & 2 \\ 8 & 9 & -1 \\ \frac{13}{2} & 5 & 2 \end{bmatrix}.\]
+Explain how to find a basis for the eigenspace associated to the eigenvalue $3$ in the matrix \[\begin{bmatrix} -7 & -8 & 2 \\ 8 & 9 & -1 \\ \frac{13}{2} & 5 & 2 \end{bmatrix}.\]
 \end{problem}
 \begin{solution}
 The eigenspace associated to $3$ is the kernel of $A-3I$, so we compute
