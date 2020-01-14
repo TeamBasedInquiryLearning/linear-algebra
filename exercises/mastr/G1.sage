@@ -38,7 +38,8 @@ class G1(MastrExercise):
     orig_det = randrange(2,6)*choice([-1,1])
     new_det = orig_det*mat1.determinant()*mat2.determinant()
 
-    
+    #randomly swap order of ops
+    swapped = choice([True,False])
 
     latex.matrix_delimiters("[", "]")    
     return {
@@ -48,5 +49,6 @@ class G1(MastrExercise):
       "mat2": latex(mat2),
       "orig_det": latex(orig_det),
       "new_det": latex(new_det),
+      "swapped": swapped
     }
 
