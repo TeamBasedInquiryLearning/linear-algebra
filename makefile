@@ -15,7 +15,7 @@ pdf/course-notes.pdf: tex/course-notes.sty tex/tbil-la.sty tex/course-notes.tex 
 	mv aux/course-notes.pdf ../pdf
 
 pdf/course-slides.pdf: tex/course-slides.sty tex/tbil-la.sty tex/course-slides.tex \
-						tex/modules/*/activities.tex tex/modules/*/standards.tex tex/index.tex
+						tex/modules/*/activities.tex tex/modules/*/standards.tex tex/index.tex  tex/modules/0-I/index.tex
 	cd tex; \
 	pdflatex --output-directory=aux course-slides.tex; \
 	pdflatex --output-directory=aux course-slides.tex; \
