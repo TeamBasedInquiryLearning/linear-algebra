@@ -34,8 +34,6 @@ class V05(MastrExercise):
 		veclist+=latex(column_matrix(vec[i]))
 		if i<n-1:
 			veclist+=", "
-		if i==n-2:
-			veclist+="\\text{ and }"
 	return {
       "independent": independent,
 	  "vlist": veclist
