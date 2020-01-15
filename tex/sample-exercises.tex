@@ -3,6 +3,7 @@
 \usepackage[top=1in,bottom=1in,right=1in,left=1in]{geometry}
 
 \parindent=0pt
+\setlength{\parskip}{1em}
 
 %Problem environment -- takes an argument which is the standard
 \newenvironment{problem}[1]
@@ -173,55 +174,69 @@ So the solution set is
 
 
 \begin{problem}{V1}
-Let \(V\) be the set of all pairs of numbers \((x,y)\in \IR^2\), together with the operations
-\(\oplus\) and \(\odot\) defined by the following for all vectors \((x_1,y_1), (x_2,y_2) \in \IR^2)\) and scalars \(c \in \IR\):
+Let \(V\) be the set of all pairs of numbers \((x,y)\) of real numbers together with the following operations:
 \begin{align*}
-(x_1,x_2) \oplus (y_1,y_2) &= (2x_1+2y_1,2x_2+2y_2) \\
-c\odot (x_1,x_2) &= (cx_1,c^2x_2)
+(x_1,y_2) \oplus (x_2,y_2) &= (2x_1+2x_2,2y_1+2y_2) \\
+c\odot (x,y) &= (cx,c^2y)
 \end{align*}
 \begin{enumerate}[(a)]
-\item Show that scalar multiplication distributes over vector addition, i.e. 
-\[c\odot \left((x_1,x_2) \oplus (y_1,y_2) \right) = c \odot (x_1,x_2) \oplus c \odot (y_1,y_2)\]
-holds.
+\item Show that scalar multiplication distributes over vector addition:
+\[c\odot \left((x_1,y_1) \oplus (x_2,y_2) \right) = c \odot (x_1,y_1) \oplus c \odot (x_2,y_2)\]
 \item Explain why \(V\) nonetheless is not a vector space.
 \end{enumerate}
 \end{problem}
 \begin{solution}
 \begin{enumerate}[(a)]
 \item
-Compute
+We compute both sides:
 \begin{align*}
-  c \odot \left((x_1,x_2) \oplus (y_1,y_2) \right)
-  &= c \odot (2x_1+2y_1,2x_2+2y_2) \\
-  &= (c(2x_1+2y_1),c^2(2x_2+2y_2)) \\
-  &= (2cx_1+2cy_1,2c^2x_2+2c^2y_2)
+  c \odot \left((x_1,y_1) \oplus (x_2,y_2) \right)
+  &= c \odot (2x_1+2x_2,2y_1+2y_2) \\
+  &= (c(2x_1+2x_2),c^2(2y_1+2y_2)) \\
+  &= (2cx_1+2cx_2,2c^2y_1+2c^2y_2)
 \end{align*}
 and
 \begin{align*}
-  c\odot (x_1,x_2) \oplus c \odot (y_1,y_2) 
-  &= (cx_1,c^2x_2) \oplus (cy_1,c^2y_2)\\
-  &= (2cx_1+2cy_1,2c^2x_2+2c^2y_2).
+  c\odot (x_1,y_1) \oplus c \odot (x_2,y_2) 
+  &= (cx_1,c^2y_1) \oplus (cx_2,c^2y_2)\\
+  &= (2cx_1+2cx_2,2c^2y_1+2c^2y_2)
 \end{align*}
-Since these are the same, we have shown that
-\(c\odot \left((x_1,x_2) \oplus (y_1,y_2) \right) = c \odot (x_1,x_2) \oplus c \odot (y_1,y_2)\).
+Since these are the same, we have shown that the property holds.
 \item
 
-To show \(V\) is not a vector space, we must show that it fails one of the 8 defining properties of vector spaces. We will show that scalar multiplication does not distribute over scalar addition, i.e.
-\[ (c+d)\odot(x_1,x_2) \neq c \odot(x_1,x_2) \oplus d\odot(x_1,x_2) \]
-for all scalars \(c,d \in \IR\) and vectors \((x_1,x_2)\in \IR^2\).
+To show \(V\) is not a vector space, we must show that it fails one of the 8 defining properties of vector spaces.
+We will show that scalar multiplication does not distribute over scalar addition, i.e., there are values
+such that
+\[ (c+d)\odot(x,y) \neq c \odot(x,y) \oplus d\odot(x,y) \]
+
+\textit{(Solution method 1)}
 First, we compute
 \begin{align*}
-(c+d)\odot(x_1,x_2) &= ((c+d)x_1,(c+d)^2x_2) \\
-&= ( (c+d)x_1, (c^2+2cd+d^2)x_2).
+(c+d)\odot(x,y) &= ((c+d)x,(c+d)^2y) \\
+&= ( (c+d)x, (c^2+2cd+d^2)y).
 \end{align*}
 Then we compute
 \begin{align*}
-c\odot (x_1,x_2) \oplus d\odot(x_1,x_2) &= (cx_1,c^2x_2) \oplus (dx_1,d^2x_2) \\
-&= ( 2cx_1+2dx_2, 2c^2x^2+2d^2x_2).
+c\odot (x,y) \oplus d\odot(x,y) &= (cx,c^2y) \oplus (dx,d^2y) \\
+&= ( 2cx+2dx, 2c^2y+2d^2y).
 \end{align*}
-Thus, we see that 
-\( (c+d)\odot(x_1,x_2) \neq c \odot(x_1,x_2) \oplus d\odot(x_1,x_2) \)
-, and therefor \(V\) is not a vector space.
+Since \((c+d)x\not=2cx+2dy\) when \(c,d,x,y=1\), the property fails to hold.
+
+\textit{(Solution method 2)} When we let \(c,d,x,y=1\), we may simplify both sides as follows.
+
+\begin{align*}
+(c+d)\odot(x,y) &= 2\odot(1,1) \\
+&= (2\cdot1,2^2\cdot1)\\
+&=(2,4)
+\end{align*}
+\begin{align*}
+c\odot (x,y) \oplus d\odot(x,y) &= 1\odot(1,1)\oplus 1\odot(1,1) \\
+&= (1\cdot1,1^2\cdot1)\oplus(1\cdot1,1^2\cdot1)\\
+&= (1,1)\oplus(1,1)\\
+&= (2\cdot1+2\cdot1,2\cdot1+2\cdot1)\\
+&= (4,4)\\
+\end{align*}
+Since these ordered pairs are different, the property fails to hold.
 \end{enumerate}
 \end{solution}
 
@@ -279,7 +294,7 @@ not a linear combination of \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
 \end{solution}
 
 \begin{problem}{V3}
-Explain why the set vectors
+Explain why the vectors
 \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
 \(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
 \(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \) span or don't span \(\IR^3\).
@@ -311,7 +326,7 @@ We compute
   \end{bmatrix}
 \]
 Since the last row lacks a pivot, there is some vector \(\vec{v} \in \IR^3\) that upon augmenting this matrix will produce
-an inconsistent system. That vector will not be in the span of these three vectos, so the vectors do not span \(\IR^3\).
+an inconsistent system. That vector will not be in the span of these three vectors, so the vectors do not span \(\IR^3\).
 \end{solution}
 
 \begin{problem}{V4}
@@ -364,7 +379,9 @@ and we see that \(c\vec v\in W\), so \(W\) is closed under scalar
 multiplication. Therefore \(W\) is a subspace of \(\IR^3\).
 
 Now, to show \(U\) is not a subspace, we will show that it is not closed under vector addition.
-Now let 
+
+
+\textit{(Solution Method 1)} Now let 
 \(
   \vec v=\begin{bmatrix} x_1 \\y_1 \\ z_1 \\ w_1 \end{bmatrix}\in U
 \) and
@@ -385,7 +402,23 @@ We compute
   &= (3z_1+w_1^2)+(3z_2+w_2^2) &\text{since \(\vec{v},\vec{w} \in W\)}\\
   &=3(z_1+z_2)+(w_1^2+w_2^2) &\text{by regrouping}
 \end{align*}
-and thus \(\vec v+\vec w\in W\) \textbf{only when} \(w_1^2+w_2^2=(w_1+w_2)^2\). Since this is not true in general, \(W\) is not closed under vector addition, and thus cannot be a subspace.
+and thus \(\vec v+\vec w\in U\) \textbf{only when} \(w_1^2+w_2^2=(w_1+w_2)^2\).
+Since this is not true in general, \(U\) is not closed under vector addition, and thus cannot be a subspace.
+
+\textit{(Solution Method 2)}
+Note that the vector
+\(
+  \vec v=\begin{bmatrix} 0\\1\\0\\1\end{bmatrix} 
+\)
+belongs to \(U\) since \(0+1=3(0)+1^2\).
+However, the vector
+\(
+  2\vec v=\begin{bmatrix} 0\\2\\0\\2\end{bmatrix} 
+\)
+does not belong to \(U\) since \(0+2\not=3(0)+2^2\).
+Therefore \(U\) is not closed under scalar multiplication,
+and thus is not a subspace.
+
 
 
 \end{solution}
@@ -412,11 +445,11 @@ The vectors
  x_4\begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} =\vec{0}\]
 has a unique solution (namely, \(\vec{0}\)). 
 
-Converting this system to the corresponding augmented matrix and row reducing, we have
-\[\RREF \begin{bmatrix}{cccc|c} 3 & -1 & 0 & 2 & 0 \\ 2 & 1 & 1 & 5 & 0 \\ 1 & 2 & -1 & 1 & 0 \\ 0 & 3 & 1 & 5 & 0\end{bmatrix} =
-\begin{bmatrix} 1 & 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1& 0  \\ 0 & 0 & 1 & 2& 0  \\ 0 & 0 & 0 & 0& 0  \end{bmatrix}.\] 
-Since the fourth column is not a pivot column, the system  has (infinitely many) nontrivial solutions.
-Thus the set of  vectors is linearly dependent.
+Converting the left side of this system to the corresponding matrix and row reducing, we have
+\[\RREF \left[\begin{array}{cccc} 3 & -1 & 0 & 2  \\ 2 & 1 & 1 & 5  \\ 1 & 2 & -1 & 1  \\ 0 & 3 & 1 & 5 \end{array}\right] =
+\left[\begin{array}{cccc} 1 & 0 & 0 & 1  \\ 0 & 1 & 0 & 1  \\ 0 & 0 & 1 & 2  \\ 0 & 0 & 0 & 0  \end{array}\right].\] 
+Since the fourth column is not a pivot column, the system has (infinitely many) nontrivial solutions.
+Thus the set of vectors is linearly dependent.
 \end{solution}
 
 \begin{problem}{V6}
@@ -452,6 +485,7 @@ Find a basis for the subspace
   \begin{bmatrix} 2 \\ 3 \\ 0 \\ 1 \end{bmatrix}
   \right\} .
 \]
+Be sure to explain why your subspace is a basis.
 \end{problem}
 \begin{solution}
 Observe that
@@ -469,7 +503,9 @@ Observe that
     0 & 0 & 0 & 0 & 0
     \end{bmatrix}
 \]
-has pivot columns in the first, second, and fourth columns, and therefore removing the corresponding vectors shows
+If we remove the vectors yielding non-pivot columns, the resulting
+set will span the same vectors while being linearly independent.
+Therefore
 \[\left\{
   \begin{bmatrix} 1 \\ -3 \\ -1 \\ 2 \end{bmatrix} ,
   \begin{bmatrix} 1 \\ 0 \\ 1 \\ -2 \end{bmatrix} ,
@@ -492,7 +528,9 @@ Explain how to find the dimension of
 \]
 \end{problem}
 \begin{solution}
-Observe that
+The dimension of a space is equal to how many vectors belong
+to any basis for the space.
+So since
 \[ \RREF
     \begin{bmatrix}
     1 & 1 & 3 & 1 & 2 \\
@@ -507,12 +545,13 @@ Observe that
     0 & 0 & 0 & 0 & 0
     \end{bmatrix}
 \]
-has three pivot columns, so a basis of \(W\) has three elements, and therefore \(\dim W = 3\).
+has three pivot columns, any basis of \(W\) has three elements, and therefore \(\dim W = 3\).
 \end{solution}
 
 \begin{problem}{V9}
 Find a basis for the subspace of \(\P^3\)
 \[W=\vspan\setList{3x^3+2x^2+x,-x^3+x^2+2x+3,x^2-x+1,2x^3+5x^2+x+5}.\]
+Be sure to explain why your result is a basis.
 \end{problem}
 \begin{solution}
 This question is equivalent to finding a basis for the subspace
@@ -545,7 +584,7 @@ Thus a basis for \(W\) is given by
 \end{solution}
 
 \begin{problem}{V10}
-Find a basis for the solution set of the homogeneous system of equations
+Explain how to find a basis for the solution set of the homogeneous system of equations
 \begin{alignat*}{6}
 x_1 &\,+\,& x_2 &\,+\,& 3x_3 &\,+\,& x_4 &\,+\,& 2x_5 &=& 0 \\
 -3x_1 &\,\,&  &\,-\,& 6x_3 &\,+\,&6 x_4 &\,+\,& 3x_5 &=& 0 \\
@@ -618,20 +657,32 @@ S\left(cf(x)\right) &= 3x\left(cf(x)\right) & \text{by definition of \(S\)} \\
 \end{align*}
 But note that \(cS(f(x))=c(3xf(x))=3cxf(x)\) as well, so we have \(S(cf(x))=cS(f(x))\).  Now, since \(S\) respects both addition and scalar multiplication, we can conclude \(S\) is a linear transformation.
 
+\textit{(Solution method 1)}
 As for \(T\), we compute
   \begin{align*}
   T(f(x)+g(x))& =3 (f(x)+g(x))'(f(x)+g(x)) &\text{by definition of \(T\)} \\
   &= 3(f'(x)+g'(x))(f(x)+g(x)) & \text{since the derivative is linear} \\
   &= 3f(x)f'(x)+3f(x)g'(x)+3f'(x)g(x)+3g(x)g'(x) &\text{by distributing}
   \end{align*}
-However, note that \(T(f(x))+T(g(x))=3f'(x)f(x)+3g'(x)g(x)\), so we see that \(T(f(x)+g(x)) \neq T(f(x))+T(g(x))\), so \(T\) does not respect addition and is therefore not a linear transformation.
+However, note that \(T(f(x))+T(g(x))=3f'(x)f(x)+3g'(x)g(x)\), which is not
+always the same polynomial (for example, when \(f(x)=g(x)=x\)). 
+So we see that \(T(f(x)+g(x)) \neq T(f(x))+T(g(x))\),
+so \(T\) does not respect addition and is therefore not a linear transformation.
+
+\textit{(Solution method 2)}
+As for \(T\), we may choose the polynomial \(f(x)=x\) and scalar \(c=2\). Then
+\[T(cf(x))=T(2x)=3(2x)'(2x)=3(2)(2x)=12x.\]
+
+But on the other hand, \[cT(f(x))=2T(x)=2(3)(2x)'(2x)=2(3)(2)(2x)=24x.\]
+Since this isn't the same polynomial, \(T\) does not preserve multiplication
+and is therefore not a linear transformation. 
 \end{solution}
 
 \begin{problem}{A2}
 Let $T: \IR^3\rightarrow \IR^4$ be the linear transformation given by $$T\left(\begin{bmatrix} x \\ y \\ z \\  \end{bmatrix} \right) = \begin{bmatrix} -x+y \\ -x+3y-z \\ 7x+y+3z \\ 0 \end{bmatrix}.$$
 \begin{enumerate}[(a)]
-\item Write the standard matrix for \(T\).
-\item Compute \( T\left( \begin{bmatrix} -2 \\ 0 \\ 3 \end{bmatrix} \right) \)
+\item Explain how to find the standard matrix for \(T\).
+\item Explain how to find \( T\left( \begin{bmatrix} -2 \\ 0 \\ 3 \end{bmatrix} \right) \)
 \end{enumerate}
 \end{problem}
 
@@ -672,7 +723,7 @@ Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by
     x+6y-z+3w
   \end{bmatrix}
 \]
-Show how to compute a basis for the kernel and a basis for the image of \(T\).
+Show how to compute a basis for the image and a basis for the kernel of \(T\).
 \end{problem}
 \begin{solution}
 First, we note the standard matrix
@@ -680,14 +731,15 @@ First, we note the standard matrix
 and compute
 \[\RREF\left(A\right) = \begin{bmatrix} 1 & 0 & 5 & -9 \\ 0 & 1 & -1 & 2 \\ 0 & 0 & 0 & 0\end{bmatrix}.\]
 
-The kernel is given by solution set of the corresponding homogeneous system of equations
+A basis for the image is given by the pivot columns, namely
+\[\setList{\begin{bmatrix}1\\2\\1 \end{bmatrix},
+\begin{bmatrix}3\\4\\6 \end{bmatrix}}.\]
+
+The kernel is the solution set of the corresponding homogeneous system of equations
 \[ \ker T = \setBuilder{\begin{bmatrix}-5a+9b \\ a-2b \\ a \\ b \end{bmatrix}}{a,b \in \IR} \]
 so a basis for the kernel is
 \[\setList{\begin{bmatrix}-5 \\ 1 \\ 1 \\ 0 \end{bmatrix},
 \begin{bmatrix}9 \\ -2 \\ 0 \\ 1 \end{bmatrix}}.\]
-A basis for the image is given by the pivot columns, namely
-\[\setList{\begin{bmatrix}1\\2\\1 \end{bmatrix},
-\begin{bmatrix}3\\4\\6 \end{bmatrix}}.\]
 \end{solution}
 
 \begin{problem}{A4}
@@ -708,12 +760,11 @@ Compute \[\RREF\begin{bmatrix}1 & 3 & 2 & -3 \\ 2 & 4 & 6 & -10 \\ 1 & 6 & -1 & 
 
 
 \begin{problem}{M1}
-Let
+Of the following three matrices, only two may be multiplied.
 \begin{align*}
 A &= \begin{bmatrix} 1 & -3 \\ 0 & 1 \end{bmatrix} & B&= \begin{bmatrix} 4 & 1 & 2 \end{bmatrix} & C&= \begin{bmatrix} 0 & 1 & 3 \\ 1 & -2 & 5 \end{bmatrix}
 \end{align*}
-
-Exactly one of the six products $AB$, $AC$, $BA$, $BC$, $CA$, $CB$ can be computed.  Determine which one, and show how to compute it.
+Explain which two may be multiplied and why. Then show how to find their product.
 \end{problem}
 \begin{solution}
 \(AC\) is the only one that can be computed, since \(A\) is \(2\times 2\)
@@ -739,11 +790,12 @@ Since its \(\RREF\) is not the identity matrix, the linear map is not bijective 
 
 \begin{problem}{M3}
 Show how to compute the inverse of the matrix
-\(\begin{bmatrix}
+\(A=\begin{bmatrix}
 1 & 2 & 3 & 5 \\ 0 & -1 & 4 & -2 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 0 & 1
 \end{bmatrix}\).
 \end{problem}
 \begin{solution}
+To find the matrix \(A^{-1}\) where \(AA^{-1}=I\), we need to solve the augmented matrix \([A|I]\).
 \[\RREF\left(\begin{bmatrix}[cccc|cccc] 1 & 2 & 3 & 5 & 1 & 0 & 0 & 0  \\ 0 & -1 & 4 & -2 & 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 3 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix}\right) = \begin{bmatrix}[cccc|cccc] 1 & 0 & 0 &0 & 1 & 2 & -11 & 32 \\ 0 & 1 & 0 & 0 & 0 & -1 & 4 & -14 \\ 0 & 0 & 1 & 0 & 0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \end{bmatrix}\]
 So the inverse is \(\begin{bmatrix}  1 & 2 & -11 & 32 \\ 0 & -1 & 4 & -14 \\  0 & 0 & 1 & -3 \\ 0 & 0 & 0 & 1 \end{bmatrix}\).
 \end{solution}

@@ -23,6 +23,7 @@ class A1(MastrExercise):
     # some non-linear
     nonlinear_terms = [
       f^randrange(2,4),
+      f*fp,
       x^randrange(0,4),
     ]
     shuffle(nonlinear_terms)
