@@ -170,9 +170,9 @@ The space of \term{\(m \times n\) matrices}
 \begin{activity}{15}
   Let \(V=\setBuilder{(x,y)}{x,y\in\IR}\) have operations defined by
   \[
-    (x,y)\oplus (z,w)=(x+y+z+w,x^2+z^2)
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+y_1+x_2+y_2,x_1^2+x_2^2)
       \hspace{3em}
-    c\odot (x,y)=(x^c,y+c-1)
+    c\odot (x_1,y_1)=(x_1^c,y_1+c-1)
   .\]
 
   \begin{subactivity}
@@ -183,13 +183,39 @@ The space of \term{\(m \times n\) matrices}
   \begin{subactivity}
     Show that \(V\) does not have an additive identity element by showing that 
 	\((0,-1)\oplus\vec z\not=(0,-1)\) no matter how
-    \(\vec z=(z_1,z_2)\) is chosen.
+    \(\vec z=(z,w)\) is chosen.
   \end{subactivity}
 
   \begin{subactivity}
     Is \(V\) a vector space?
   \end{subactivity}
 \end{activity}
+
+\begin{activity}{15}
+  Let \(V=\setBuilder{(x,y)}{x,y\in\IR}\) have operations defined by
+  \[
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1+3y_2)
+      \hspace{3em}
+    c\odot (x_1,y_1)=(cx_1,cy_1)
+  .\]
+
+  \begin{subactivity}
+    Show that scalar multiplication distributes over vector addition, i.e.
+	\[ c \odot \left( (x_1,y_1) \oplus (x_2,y_2) \right) = c\odot (x_1,y_1) \oplus c\odot (x_2,y_2)\]
+	for \textbf{all} \(c\in \IR,\, (x_1,y_1),(x_2,y_2) \in V\). 
+\end{subactivity}
+
+  \begin{subactivity}
+    Show that vector addition is not associative, i.e. 
+  \[ (x_1,y_1) \oplus \left((x_2,y_2) \oplus (x_3,y_3)\right) \neq \left((x_1,y_1)\oplus (x_2,y_2)\right) \oplus (x_3,y_3)\]
+  for \textbf{some} vectors \( (x_1,y_1), (x_2,y_2), (x_3,y_3) \in V\).
+  \end{subactivity}
+
+  \begin{subactivity}
+    Is \(V\) a vector space?
+  \end{subactivity}
+\end{activity}
+
 
 \begin{definition}
   A \term{linear combination} of a set of vectors
@@ -407,15 +433,16 @@ The space of \term{\(m \times n\) matrices}
 \end{activity}
 
 \begin{activity}{5}
+  Does the polynomial  \(x^2+x+1\) belong to
+  \(\vspan\{x^2-x,x+1, x^2-1\}\)?
+\end{activity}
+
+\begin{activity}{5}
   Does the matrix \(\begin{bmatrix}3&-2\\1&5\end{bmatrix}\) belong to
   \(\vspan\left\{\begin{bmatrix}1&0\\-3&2\end{bmatrix},
   \begin{bmatrix}-1&-3\\2&2\end{bmatrix}\right\}\)?
 \end{activity}
 
-\begin{activity}{5}
-  Does the complex number \(2i\) belong to
-  \(\vspan\{-3+i,6-2i\}\)?
-\end{activity}
 
 
 \begin{observation}
