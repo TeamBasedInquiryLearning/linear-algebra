@@ -13,7 +13,7 @@ class G1(MastrExercise):
     row = randrange(0,3)
     scale = randrange(2,6)*choice([-1,1])
     scale_matrix = identity_matrix(3).with_rescaled_row(row,scale)
-    scale_op = latex(rs[row])+"\\to "+latex(scale*rs[row])
+    scale_op = latex(scale*rs[row])+"\\to "+latex(rs[row])
     # random row swapping
     rows = sample([0,1,2],2)
     shuffle(rows)
@@ -24,7 +24,7 @@ class G1(MastrExercise):
     shuffle(rows)
     scale = randrange(2,6)*choice([-1,1])
     add_matrix = identity_matrix(3).with_added_multiple_of_row(rows[0],rows[1],scale)
-    add_op = latex(rs[rows[0]])+"\\to "+latex(rs[rows[0]]+scale*rs[rows[1]])
+    add_op = latex(rs[rows[0]]+scale*rs[rows[1]])+"\\to "+latex(rs[rows[0]])
 
     #choose two random ops
     ops = sample([0,1,2],2)
