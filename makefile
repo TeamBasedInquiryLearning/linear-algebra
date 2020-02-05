@@ -2,7 +2,8 @@ all: pdf/rats/rat-*.pdf pdf/slides/slides*pdf pdf/course-notes.pdf \
 	pdf/course-slides.pdf pdf/course-slides-sectioned.pdf pdf/standards.pdf \
 	pdf/exercise-library.pdf pdf/sample-exercises.pdf \
 	pdf/facilitator-notes.pdf \
-	pdf/handouts/handout-*.pdf
+	pdf/handouts/handout-*.pdf \
+	pdf/definitions.pdf
 
 slides: pdf/slides/slides-1-E.pdf pdf/slides/slides-2-V.pdf pdf/slides/slides-4-A.pdf \
 		pdf/slides/slides-5-M.pdf pdf/slides/slides-6-G.pdf pdf/slides/slides-7-P.pdf
@@ -13,6 +14,13 @@ pdf/course-notes.pdf: tex/course-notes.sty tex/tbil-la.sty tex/course-notes.tex 
 	pdflatex --output-directory=aux course-notes.tex; \
 	pdflatex --output-directory=aux course-notes.tex; \
 	mv aux/course-notes.pdf ../pdf
+
+pdf/definitions.pdf: tex/definitions.tex tex/tbil-la.sty tex/course-notes.tex \
+						tex/modules/*/activities.tex
+	cd tex; \
+	pdflatex --output-directory=aux definitions.tex; \
+	pdflatex --output-directory=aux definitions.tex; \
+	mv aux/definitions.pdf ../pdf
 
 pdf/course-slides.pdf: tex/course-slides.sty tex/tbil-la.sty tex/course-slides.tex \
 						tex/modules/*/activities.tex tex/modules/*/standards.tex tex/index.tex  tex/modules/0-I/index.tex

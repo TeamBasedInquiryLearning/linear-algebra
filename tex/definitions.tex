@@ -1,0 +1,61 @@
+\documentclass{article}[12pt]
+
+\usepackage{course-notes}
+
+\renewcommand{\moduleQuestion}[1]{}
+\RenewEnviron{module}[2]{
+  \renewcommand{\moduleLetter}{#1}
+
+  \setHeader{Module \moduleLetter{}: #2}
+  \section*{\header}
+  \addcontentsline{toc}{chapter}{\header}
+  \BODY
+  \newpage
+}
+\RenewEnviron{moduleStandards}{}
+\RenewEnviron{readinessAssuranceOutcomes}{}
+\RenewEnviron{readinessAssuranceResources}{}
+\RenewEnviron{readinessAssuranceTest}{}
+\RenewEnviron{readinessAssuranceTestChoices}{}
+\RenewEnviron{activity}{}
+\RenewEnviron{remark}{}
+\RenewEnviron{fact}{}
+\RenewEnviron{observation}{}
+\RenewEnviron{example}{}
+\RenewEnviron{subactivity}{}
+\RenewEnviron{instructorNote}{}
+
+\RenewEnviron{definition}{
+  	\preventPageBreaks
+  	\textbf{Definition: }
+  	\BODY
+  	\allowPageBreaks
+  	\vspace{0.2in}
+}
+
+\begin{document}
+
+
+\begin{module}{E}{Solving Systems of Linear Equations}
+\input{modules/1-E/activities.tex}
+\end{module}
+
+\begin{module}{V}{Vector Spaces}
+\input{modules/2-V/activities.tex}
+\end{module}
+
+\begin{module}{A}{Algebraic Properties of Linear Maps}
+\input{modules/4-A/activities.tex}
+\end{module}
+
+\begin{module}{M}{Understanding Matrices Algebraically}
+\input{modules/5-M/activities.tex}
+\end{module}
+
+\begin{module}{G}{Geometry of Linear Maps}
+\input{modules/6-G/activities.tex}
+\end{module}
+
+
+
+\end{document}
