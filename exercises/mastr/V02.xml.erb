@@ -1,8 +1,11 @@
 <exercise>
   <title><%= _title %> (ver. <%= _seed %>)</title>
   <statement>
-    <p>Explain why the vector <m><%= combovector %></m>  is or is not a linear 
+    <p>Explain why the vector <m><%= combovector %></m>  
+	<%if lcphrasing %> is or is not a linear 
 	combination of the vectors <me><%=veclist%>.</me>
+	<% else %> does or does not belong to <me>{\rm span}\,\left\{ <%=veclist%> \right\}.</me>
+	<% end %>
 	</p>
   </statement>
   <answer>

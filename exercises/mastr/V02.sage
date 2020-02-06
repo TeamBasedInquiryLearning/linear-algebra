@@ -11,6 +11,9 @@ class V02(MastrExercise):
 	for i in range(0,n):
 		vec.append(vector([ randrange(-5,5), randrange(-3,3), randrange(-5,5), randrange(-3,3)]))
 
+	#Flip a coin on phrasing question as linear combination or span
+	lcphrase = choice([false,true])
+
 	#Pick if yes a linear combination or no
 	lincombo = choice([false,true])
 
@@ -41,11 +44,12 @@ class V02(MastrExercise):
 		veclist+=latex(column_matrix(vec[i]))
 		if i<n-1:
 			veclist+=", "
-		if i==n-2:
+		if i==n-2 and lcphrase:
 			veclist+="\\text{ and }"
 	
 	return {
       "lc": lincombo,
+	  "lcphrasing": lcphrase,
 	  "veclist": veclist,
 	  "combovector": latex(column_matrix(combovector))
     }
