@@ -48,8 +48,8 @@ class V02(MastrExercise):
 			veclist+="\\text{ and }"
 	
 	return {
-      "lc": lincombo,
+	  "lc": lincombo,
 	  "lcphrasing": lcphrase,
 	  "veclist": veclist,
 	  "combovector": latex(column_matrix(combovector))
-    }
+	}

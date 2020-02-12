@@ -1,19 +1,21 @@
 <exercise>
   <title><%= _title %> (ver. <%= _seed %>)</title>
   <statement>
-    <p>Explain why the vector <m><%= combovector %></m>  
-	<%if lcphrasing %> is or is not a linear 
-	combination of the vectors <me><%=veclist%>.</me>
-	<% else %> does or does not belong to <me>{\rm span}\,\left\{ <%=veclist%> \right\}.</me>
-	<% end %>
-	</p>
+    <p>
+      Explain why the vector <m><%= combovector %></m>  
+      <%if lcphrasing %>
+        is or is not a linear 
+        combination of the vectors <me><%=veclist%>.</me>
+      <% else %>
+        does or does not belong to <me>{\rm span}\,\left\{ <%=veclist%> \right\}.</me>
+      <% end %>
+    </p>
   </statement>
   <answer>
-  <p> <m><%= combovector %></m> 
-  	<% if lc  %> is <% else %> is not <% end %> 
-	a linear combination of the vectors <m><%=veclist%></m>.
-
-	
-  </p>
+    <p>
+      The given vector
+      <% if lc  %> IS <% else %> is NOT <% end %>
+      a linear combination of the other vectors.
+    </p>
   </answer>
 </exercise>
