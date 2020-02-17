@@ -4,39 +4,28 @@ class V03(MastrExercise):
     return "V3 - Spanning sets"
 
   def generate(self):
-	
-	#Pick How many vectors in R4
-	n=choice([4,5,6])
-	vec=[]
-	for i in range(0,n):
-		vec.append(vector([ randrange(-5,5),randrange(-5,5), randrange(-5,5),randrange(-5,5)]))
+    latex.matrix_delimiters("[", "]")
+    # create a 4x4 or 3x5 matrix
+    rows = randrange(3,5)
+    columns = 8-rows
+    # 50% spans, 50% fails to span
+    num_pivots = rows-choice([0,1])
 
-	#Pick if yes a spanning set or no
-	span = choice([false,true])
+    #start with nice RREF
+    A = random_matrix(QQ,rows,columns,algorithm='echelonizable',rank=num_pivots,upper_bound=9)
 
-	#If they should not span, generate columns 3 or 4 through n.
-	if span==false:
-		if choice([false,true]):
-			vec[2] = randrange(-3,3)*vec[0]+randrange(-4,4)*vec[1]
-		for i in range (3,n):
-			vec[3] = randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]+randrange(-3,3)*vec[2]
-	
-	#Constructor uses vecs as rows
-	A=matrix(vec).transpose()
-	if rank(A)<4:
-		span = false
-	else:
-		span = true
-	
-	latex.matrix_delimiters("[", "]")	
-	veclist = ""
-	for i in range(0,n):
-		veclist+=latex(column_matrix(vec[i]))
-		if i<n-1:
-			veclist+=", "
-		if i==n-2:
-			veclist+="\\text{ and }"
-	return {
-      "spans": span,
-	  "vlist": veclist
-	}
+    # check if last column is linear combo of others
+    set_spans = (num_pivots == rows)
+
+    # describe set
+    vector_set = ",".join([latex(column_matrix(A.column(j))) for j in range(0,columns)])
+    vector_set = "\\left\\{"+vector_set+"\\right\\}"
+
+
+    return {
+      "matrix": latex(A),
+      "rref": latex(A.echelon_form()),
+      "set_spans": set_spans,
+      "vector_set": vector_set,
+      "dimension": rows,
+    }

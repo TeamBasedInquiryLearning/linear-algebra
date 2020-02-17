@@ -4,37 +4,28 @@ class V05(MastrExercise):
     return "V5 - Linear Independence"
 
   def generate(self):
-	
-	#Pick 3 vectors in R5
-	n=choice([4,5])
-	vec=[]
-	for i in range(0,n):
-		vec.append(vector([ randrange(-6,6), randrange(-6,6), randrange(-6,6), randrange(-6,6), randrange(-6,6)]))
+    latex.matrix_delimiters("[", "]")
+    # create a 4x4 or 5x3 matrix
+    rows = randrange(4,6)
+    columns = 8-rows
+    # 50% independent, 50% dependent
+    num_pivots = columns-choice([0,1])
 
-	#Pick if yes a linear combination or no
-	independent = choice([false,true])
+    #start with nice RREF
+    A = random_matrix(QQ,rows,columns,algorithm='echelonizable',rank=num_pivots,upper_bound=9)
 
-	#If dependent, Generate the 4th vector and sometimes the 3rd vector
-	if independent==0:
-		d = choice( range(3,n))
-		vec[d]=randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]+randrange(-3,3)*vec[2]
-		if choice([false,true]):
-			d = choice( range(2,n))
-			vec[d]=randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]
+    # check if independent
+    set_is_independent = (num_pivots == columns)
 
-	A=matrix(vec).transpose()
-	if rank(A)<n:
-		independent = false
-	else:
-		independent = true
-	
-	latex.matrix_delimiters("[", "]")	
-	veclist = ""
-	for i in range(0,n):
-		veclist+=latex(column_matrix(vec[i]))
-		if i<n-1:
-			veclist+=", "
-	return {
-      "independent": independent,
-	  "vlist": veclist
-	}
+    # describe set
+    vector_set = ",".join([latex(column_matrix(A.column(j))) for j in range(0,columns)])
+    vector_set = "\\left\\{"+vector_set+"\\right\\}"
+
+
+    return {
+      "matrix": latex(A),
+      "rref": latex(A.echelon_form()),
+      "set_is_independent": set_is_independent,
+      "vector_set": vector_set,
+      "dimension": rows,
+    }

@@ -2,19 +2,20 @@
   <title><%= _title %> (ver. <%= _seed %>)</title>
   <statement>
     <p>
-      Explain why the vector <m><%= combovector %></m>  
-      <%if lcphrasing %>
-        is or is not a linear 
-        combination of the vectors <me><%=veclist%>.</me>
+      Explain why the vector <m><%= combo_vector %></m>  
+      <%if span_notation %>
+        does or does not belong to <me>\textrm{span}<%=vector_set%>.</me>
       <% else %>
-        does or does not belong to <me>{\rm span}\,\left\{ <%=veclist%> \right\}.</me>
+        is or is not a linear 
+        combination of the vectors <me><%=vector_list%>.</me>
       <% end %>
     </p>
   </statement>
   <answer>
+    <me><%=matrix%>\sim<%=rref%></me>
     <p>
       The given vector
-      <% if lc  %> IS <% else %> is NOT <% end %>
+      <% if is_linear_combo  %> IS <% else %> is NOT <% end %>
       a linear combination of the other vectors.
     </p>
   </answer>

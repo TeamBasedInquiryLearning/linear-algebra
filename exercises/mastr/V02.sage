@@ -4,52 +4,40 @@ class V02(MastrExercise):
     return "V2 - Linear Combinations"
 
   def generate(self):
-	
-	#Pick how many vectors in R4
-	n = choice([3,4,5])
-	vec=[]
-	for i in range(0,n):
-		vec.append(vector([ randrange(-5,5), randrange(-3,3), randrange(-5,5), randrange(-3,3)]))
+    latex.matrix_delimiters("[", "]")
+    # create a 4x4 or 3x5 matrix
+    rows = randrange(3,5)
+    columns = 8-rows
 
-	#Flip a coin on phrasing question as linear combination or span
-	lcphrase = choice([false,true])
+    #start with nice RREF
+    A = random_matrix(QQ,rows,columns,algorithm='echelonizable',rank=rows-1,upper_bound=9)
+    #half the time, adjust one term of the last column to make it unlikely to be
+    #a linear combo of previous columns
+    if choice([True,False]):
+      row = randrange(0,rows)
+      A[row,-1] = A[row,-1]+choice([-1,1])
+    combo_vector = A.column(-1)
 
-	#Pick if yes a linear combination or no
-	lincombo = choice([false,true])
+    # check if last column is linear combo of others
+    is_linear_combo = (columns-1 not in A.pivots())
 
-	combovector=[]
+    # two ways to describe other columns
+    vector_set = ",".join([latex(column_matrix(A.column(j))) for j in range(0,columns-1)])
+    vector_set = "\\left\\{"+vector_set+"\\right\\}"
+    vector_list = ",".join([latex(column_matrix(A.column(j))) for j in range(0,columns-2)])
+    vector_list = vector_list + ",\\text{ and }"+latex(column_matrix(A.column(columns-2)))
 
-	#Generate additional vecor
-	if lincombo==1:
-		combovector=randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]+randrange(-3,3)*vec[2]
-	else:
-		combovector = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
-		#Sometimes make 3rd column a dependency
-		if choice([false,true]):
-			vec[2]=randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]
-		#Make sure at columns 4 and 5 are dependencies
-		if n>3:
-			vec[3]=randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]+randrange(-3,3)*vec[2]
-		if n>4:
-			vec[4]=randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]+randrange(-3,3)*vec[2]
+    # flip coin for span notation or not
+    span_notation = choice([True,False])
 
-		A=column_matrix([vec[0],vec[1],vec[2]])
-		while 3 not in A.augment(combovector).pivots():
-			combovector = vector([ randrange(-10,10), randrange(-10,10), randrange(-10,10), randrange(-10,10)])
 
-	latex.matrix_delimiters("[", "]")	
-	latex.matrix_column_alignment("c")	
-	veclist=""
-	for i in range(0,n):
-		veclist+=latex(column_matrix(vec[i]))
-		if i<n-1:
-			veclist+=", "
-		if i==n-2 and lcphrase:
-			veclist+="\\text{ and }"
-	
-	return {
-	  "lc": lincombo,
-	  "lcphrasing": lcphrase,
-	  "veclist": veclist,
-	  "combovector": latex(column_matrix(combovector))
-	}
+    A.subdivide([],[columns-1])
+    return {
+      "matrix": latex(A),
+      "rref": latex(A.echelon_form()),
+      "is_linear_combo": is_linear_combo,
+      "span_notation": span_notation,
+      "vector_list": vector_list,
+      "vector_set": vector_set,
+      "combo_vector": latex(column_matrix(combo_vector))
+    }

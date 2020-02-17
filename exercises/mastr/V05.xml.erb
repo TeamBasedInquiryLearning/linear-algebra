@@ -1,11 +1,17 @@
 <exercise>
   <title><%= _title %> (ver. <%= _seed %>)</title>
   <statement>
-    <p>Explain why the set of vectors <m>\left\{<%= vlist %>\right\}</m> is linearly dependent or linearly independent.	</p>
+    <p>
+      Explain why the set of vectors
+      <me><%= vector_set %></me>
+      is linearly dependent or linearly independent.
+    </p>
   </statement>
   <answer>
-  <p> The set <m>\left\{<%= vlist %>\right\}</m> is 
-  	<% if independent  %> linearly independent <% else %> linearly dependent <% end %> .
-  </p>
+    <me><%= matrix %>\sim<%= rref %></me>
+    <p>
+      The set is linearly
+      <% if set_is_independent  %>INDEPENDENT<% else %>DEPENDENT<% end %>.
+    </p>
   </answer>
 </exercise>
