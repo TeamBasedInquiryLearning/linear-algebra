@@ -4,43 +4,27 @@ class V06(MastrExercise):
     return "V6 - Basis verification"
 
   def generate(self):
-	
-	#Pick n vectors in Rn
-	n=choice([3,4,5])
-	vec=[]
-	for i in range(0,n):
-		v=[]
-		for _ in range(0,n):
-			v.append(randrange(-5,5))
-		vec.append(vector(v))
+    latex.matrix_delimiters("[", "]")
+    # create a 4x4 matrix
+    rows = 4
+    columns = 8-rows
+    # 50% basis, 50% not
+    num_pivots = columns-choice([0,1])
 
-	#Pick if yes a basis combination or not
-	basis = choice([false,true])
+    #start with nice RREF
+    A = random_matrix(QQ,rows,columns,algorithm='echelonizable',rank=num_pivots,upper_bound=9)
 
-	#If dependent, Generate the 3, 4, 5th vector sometimes 
-	if basis==0:
-		if choice([false,true]):
-			vec[2] = randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]
-		if n>3 and choice([false,true]):
-			vec[3] = randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]+randrange(-3,3)*vec[2]
-		if n>4 and choice([false,true]):
-			vec[4] = randrange(-3,3)*vec[0]+randrange(-3,3)*vec[1]+randrange(-3,3)*vec[3]
+    # check if basis
+    set_is_basis = (num_pivots == columns)
 
-	A=matrix(vec).transpose()
-	if rank(A)<n:
-		basis=false
-	else:
-		basis=true
-	
-	latex.matrix_delimiters("[", "]")	
-	veclist = ""
-	for i in range(0,n):
-		veclist+=latex(column_matrix(vec[i]))
-		if i<n-1:
-			veclist+=", "
+    # describe set
+    vector_set = ",".join([latex(column_matrix(A.column(j))) for j in range(0,columns)])
+    vector_set = "\\left\\{"+vector_set+"\\right\\}"
 
-	return {
-      "basis": basis,
-	  "vlist": veclist,
-	  "dim": str(n)
-	}
+
+    return {
+      "matrix": latex(A),
+      "rref": latex(A.echelon_form()),
+      "set_is_basis": set_is_basis,
+      "vector_set": vector_set,
+    }

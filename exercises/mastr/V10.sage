@@ -17,19 +17,18 @@ class V10(MastrExercise):
     xs=vector([var("x_"+str(i+1)) for i in range(0,columns)])
 
     # construct system
-    system="<md>"
+    system=""
     for r in A.rows():
       system+="<mrow>"+latex(r*xs)+"&=0</mrow>"
-    system+="</md>"
 
     #Find basis
-    basis=""
-    for v in A.right_kernel(basis='pivot').basis():
-      basis+= latex(column_matrix(v))
-      basis+= ", "
+    basis = ",".join([latex(column_matrix(v)) for v in A.right_kernel(basis='pivot').basis()])
+    basis = "\\left\\{" + basis + "\\right\\}"
     
     latex.matrix_delimiters("[", "]")    
     return {
+      "matrix": latex(A),
+      "rref": latex(A.echelon_form()),
       "system": system, 
-      "basis": basis
+      "basis_set": basis
     }

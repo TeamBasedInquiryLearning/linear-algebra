@@ -1,11 +1,18 @@
 <exercise>
   <title><%= _title %> (ver. <%= _seed %>)</title>
   <statement>
-    <p>Explain why the set of vectors <m>\left\{<%= vlist %>\right\}</m> is or is not a basis of <m>\mathbb{R}^<%=dim%></m>.</p>
+    <p>
+      Explain why the set of vectors
+      <me><%= vector_set %></me>
+      is or is not a basis of <m>\mathbb{R}^4</m>.
+    </p>
   </statement>
   <answer>
-  <p> The set <m>\left\{<%= vlist %>\right\}</m> 
-  	<% if basis  %> is <% else %> is not <% end %> a basis of <m>\mathbb{R}^<%=dim%></m>.
-  </p>
+    <me><%= matrix %>\sim<%= rref %></me>
+    <p>
+      The set 
+      <% if set_is_basis  %> IS <% else %> is NOT <% end %>
+      a basis of <m>\mathbb{R}^4</m>.
+    </p>
   </answer>
 </exercise>
