@@ -6,20 +6,30 @@ class V04(MastrExercise):
   def generate(self):
     latex.matrix_delimiters("[", "]")    
     
-    v = vector([var("x"),var("y")])
+    x=var("x")
+    y=var("y")
+    z=var("z")
+    v=vector([x,y,z])
     leftstring="\left\{"+latex(column_matrix(v))+"\hspace{0.2em}\middle|\hspace{0.2em}"
+    a=choice([-1,1])*randrange(1,6)
+    b=choice([-1,1])*randrange(1,6)
+    c=choice([-1,1])*randrange(1,6)
+    p=randrange(2,4)
   
+    xs=[x,y,z]
+    shuffle(xs)
     subspacestring = latex(choice([
-      (choice([-1,1])*randrange(1,8)*v[0]+choice([-1,1])*randrange(1,8)*v[1] == 0),
-      (choice([-1,1])*randrange(2,8)*v[0]==choice([-1,1])*randrange(1,7)*v[1])
+      (a*xs[0]+b*xs[1]==c*xs[2]),
+      (a*xs[0]==b*xs[1]+c*xs[2]),
+      (a*xs[1]+b*xs[0]+c*xs[2]==0),
     ]))
     notsubspacestring = latex(choice([
-      (v[0]^randrange(2,4)+choice([-1,1])*randrange(1,8)*v[1] == 0),
-      (v[0]^randrange(2,4)==choice([-1,1])*randrange(1,8)*v[1]),
-      (randrange(2,8)*v[0]*v[1]^randrange(2,4) == 0),
-      (randrange(2,8)*v[0]==v[1]^randrange(2,4)),
-      (randrange(1,8)*abs(v[0])==v[1]),
-      (randrange(1,8)*abs(v[1])==v[0]),
+      (xs[0]^p+a*xs[1]==b*xs[2]),
+      (xs[0]^p+a*xs[1]+b*xs[2]==0),
+      (a*xs[0]*xs[1]+b*xs[2]==0),
+      (a*xs[0]*xs[2]==b*xs[1]),
+      (a*abs(xs[2])==b*xs[0]+c*xs[1]),
+      (a*xs[0]+b*abs(xs[1])+c*xs[2]==0),
     ]))
     
     subspacestring = leftstring+subspacestring+ " \\right\}"
