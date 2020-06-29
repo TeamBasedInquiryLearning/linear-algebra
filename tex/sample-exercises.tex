@@ -313,23 +313,42 @@ not a linear combination of \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
 \end{solution}
 
 \begin{problem}{V3}
-Explain why the vectors
-\(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
-\(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
-\(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \) span or don't span \(\IR^3\).
+Consider the statement
+
+\begin{center}\begin{minipage}{0.8\textwidth}
+The set of vectors
+\(\left\{\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} ,
+\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} , 
+\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \right\}\) \textbf{does not} span \(\IR^3\).
+\end{minipage}\end{center}
+
+\begin{enumerate}[(a)]
+\item Write an equivalent statement using a vector equation.
+\item Explain why your statement is true or false.
+\end{enumerate}
 \end{problem}
+
 \begin{solution}
-By definition, the statement
-\[\text{The vectors }\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} ,\ 
-\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix}, \text{ and }
-\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}  \text{ span } \IR^3\]
+\begin{enumerate}[(a)]
+\item By definition, the statement
+
+\begin{center}\begin{minipage}{0.8\textwidth}
+The set of vectors
+\(\left\{\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} ,
+\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} , 
+\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \right\}\) \textbf{does not} span \(\IR^3\).
+\end{minipage}\end{center}
+
 is equivalent to the statement
-\[\text{For every }\vec{v} \in \IR^3,\text{ the system }
-x_1\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}+  
+
+\begin{center}\begin{minipage}{0.8\textwidth}
+There is some \(\vec{v} \in \IR^3\) for which the vector equation
+\(x_1\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}+  
 x_2 \begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix}+
-x_3\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}=\vec{v}\text{ has a solution.}\]
+x_3\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix}=\vec{v}\) does not have a solution.
+\end{minipage}\end{center}
 
-
+\item 
 We compute
 \[ \RREF
   \begin{bmatrix}[ccc]
@@ -346,7 +365,9 @@ We compute
 \]
 Since the last row lacks a pivot, there is some vector \(\vec{v} \in \IR^3\) that upon augmenting this matrix will produce
 an inconsistent system. That vector will not be in the span of these three vectors, so the vectors do not span \(\IR^3\).
+\end{enumerate}
 \end{solution}
+
 
 \begin{problem}{V4}
 Consider the following two sets of Euclidean vectors.
@@ -444,31 +465,51 @@ and thus is not a subspace.
 
 
 \begin{problem}{V5}
-Explain why the set of vectors
-\[\left\{
+Consider the statement
+
+\begin{center}\begin{minipage}{0.8\textwidth}
+The set of vectors
+\(\left\{
  \begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix}  ,
  \begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix}  ,
  \begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix}  , 
- \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \right\}\]
-is linearly dependent or linearly independent.
+ \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \right\}\)
+is linearly dependent.
+\end{minipage}\end{center}
+\begin{enumerate}[(a)]
+\item Write an equivalent statement using a vector equation.
+\item Explain why your statement is true or false.
+\end{enumerate}
 \end{problem}
 \begin{solution}
-The vectors 
-\( \begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix} \) ,
-\( \begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix} \) ,
-\( \begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix} \) , and
-\( \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \) are linearly independent precisely when the system of equations 
-\[ x_1\begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix} +
+\begin{enumerate}[(a)]
+\item 
+The statement
+\begin{center}\begin{minipage}{0.8\textwidth}
+The set of vectors
+\(\left\{
+ \begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix}  ,
+ \begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix}  ,
+ \begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix}  , 
+ \begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} \right\}\)
+is linearly dependent.
+\end{minipage}\end{center}
+is equivalent to the statement
+\begin{center}\begin{minipage}{0.8\textwidth}
+The vector equation
+\( x_1\begin{bmatrix} 3 \\ 2 \\ 1 \\ 0 \end{bmatrix} +
  x_2\begin{bmatrix} -1 \\ 1 \\ 2 \\ 3 \end{bmatrix} +
  x_3\begin{bmatrix} 0 \\ 1 \\ -1 \\ 1 \end{bmatrix}+ 
- x_4\begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} =\vec{0}\]
-has a unique solution (namely, \(\vec{0}\)). 
+ x_4\begin{bmatrix} 2 \\ 5 \\ 1 \\ 5 \end{bmatrix} =\vec{0}\)
+has (infintely many) nontrivial solutions. 
+\end{minipage}\end{center}
 
-Converting the left side of this system to the corresponding matrix and row reducing, we have
+\item Converting the left side of this system to the corresponding matrix and row reducing, we have
 \[\RREF \left[\begin{array}{cccc} 3 & -1 & 0 & 2  \\ 2 & 1 & 1 & 5  \\ 1 & 2 & -1 & 1  \\ 0 & 3 & 1 & 5 \end{array}\right] =
 \left[\begin{array}{cccc} 1 & 0 & 0 & 1  \\ 0 & 1 & 0 & 1  \\ 0 & 0 & 1 & 2  \\ 0 & 0 & 0 & 0  \end{array}\right].\] 
 Since the fourth column is not a pivot column, the system has (infinitely many) nontrivial solutions.
 Thus the set of vectors is linearly dependent.
+\end{enumerate}
 \end{solution}
 
 \begin{problem}{V6}
