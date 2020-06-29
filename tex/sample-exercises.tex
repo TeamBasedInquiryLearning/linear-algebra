@@ -47,22 +47,29 @@ The goal is to give you an idea of what the exercises might look like,
 and what the expectations for a complete solution are.
 
 \begin{problem}{E1}
-Write a system of linear equations corresponding to the following
-augmented matrix.
-\[
+Consider the scalar system of equations 
+\begin{alignat*}{5}
+3x_1 &\,+\,& 2x_2 &\,\,& &\,+\,&x_4 &= 1 \\
+-x_1 &\,-\,& 4x_2 &\,+\,&x_3&\,-\,&7x_4 &= 0 \\
+&\,\,& x_2 &\,-\,&x_3 &\,\,&  &= -2
+\end{alignat*}
+\begin{enumerate}[(a)]
+\item Rewrite this system as a vector equation.
+\item Write an augmented matrix corresponding to this system.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item
+\[ x_1\begin{bmatrix} 3 \\ -1 \\ 0 \end{bmatrix} + x_2 \begin{bmatrix}2 \\ -4 \\ 1 \end{bmatrix}+x_3 \begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} + x_4 \begin{bmatrix} 1 \\ -7 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \\ -2 \end{bmatrix} \]
+\item \[
 \begin{bmatrix}[cccc|c]
 3 & 2 & 0 & 1 & 1 \\
 -1 & -4 & 1 & -7 & 0 \\
 0 & 1 & -1 & 0 & -2
 \end{bmatrix}
 \]
-\end{problem}
-\begin{solution}
-\begin{alignat*}{5}
-3x_1 &\,+\,& 2x_2 &\,\,& &\,+\,&x_4 &= 1 \\
--x_1 &\,-\,& 4x_2 &\,+\,&x_3&\,-\,&7x_4 &= 0 \\
-&\,\,& x_2 &\,-\,&x_3 &\,\,&  &= -2
-\end{alignat*}
+\end{enumerate}
 \end{solution}
 
 \begin{problem}{E2}
@@ -242,25 +249,37 @@ Since these ordered pairs are different, the property fails to hold.
 
 
 \begin{problem}{V2}
-Explain why the vector \(\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \) is or is not a linear combination of the vectors
+Consider the statement
+\begin{center}\begin{minipage}{0.8\textwidth}
+The vector \(\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \) is a linear combination of the vectors
 \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
 \(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
 \(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \).
+\end{minipage}\end{center}
+\begin{enumerate}[(a)]
+\item Write an equivalent statement using a vector equation.
+\item Explain why your statement is true or false.
+\end{enumerate}
 \end{problem}
 \begin{solution}
-By definition, the statement 
-\[\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \text{ is a linear combination of the vectors }
-\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix},\ 
-\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix},\ \text{and} 
-\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \] 
+\begin{enumerate}[(a)]
+\item By definition, the statement 
+\begin{center}\begin{minipage}{0.8\textwidth}
+The vector \(\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix} \) is a linear combination of the vectors
+\(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
+\(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
+\(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \).
+\end{minipage}\end{center}
 is equivalent to the statement
-\[\text{There exists a solution to the system of equations } 
-x_1\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} +
+\begin{center}\begin{minipage}{0.8\textwidth}
+There exists a solution to the vector equation
+\(x_1\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} +
 x_2\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} +
 x_3\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} =
-\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix}.\]
+\begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix}.\)
+\end{minipage}\end{center}
 
-This system corresponds to the augmented matrix 
+\item This vector equation corresponds to the augmented matrix 
   \(\begin{bmatrix}[ccc|c]
   1 & 3 & 1 & 3 \\
   0 & 2 & 1 & -1 \\
@@ -279,7 +298,7 @@ This system corresponds to the augmented matrix
   0 & 0 & 0 & 1
   \end{bmatrix}.
 \]
-Since this corresponds to an inconsistent system of equations, the system of equations
+Since this corresponds to an inconsistent system of equations, the vector equation
 \[
 x_1\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} +
 x_2\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} +
@@ -290,7 +309,7 @@ has no solution, and therefore
 not a linear combination of \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \),
 \(\begin{bmatrix} 3 \\ 2 \\ -1 \end{bmatrix} \), and
 \(\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \).
-
+\end{enumerate}
 \end{solution}
 
 \begin{problem}{V3}
