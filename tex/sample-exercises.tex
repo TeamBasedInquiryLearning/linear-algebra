@@ -73,16 +73,33 @@ Consider the scalar system of equations
 \end{solution}
 
 \begin{problem}{E2}
-Put the following matrix in reduced row echelon form.
-\[
+\begin{enumerate}[(a)]
+\item Show that 
+\[\RREF 
   \begin{bmatrix}
   0 & 3 & 1 & 2 \\
   1 & 2 & -1 & -3 \\
   2 & 4 & -1 & -1
   \end{bmatrix}
+  = \begin{bmatrix}
+  1 & 0 & 0 & 4 \\
+  0 & {1} & 0 & -1 \\
+  0 & 0 & {1} & 5
+  \end{bmatrix}
 \]
+\item
+Explain why the matrix 
+\(\begin{bmatrix}
+1 & 1 & 0 & 3 \\
+0 & 1 & 1 & 1 \\
+0 & 0 & 0 & 0
+\end{bmatrix}\)
+is \textbf{not} in reduced row echelon form.
+\end{enumerate}
 \end{problem}
 \begin{solution}
+\begin{enumerate}[(a)]
+\item
 \begin{alignat*}{4}
   \begin{bmatrix}
   0 & 3 & 1 & 2 \\
@@ -132,6 +149,13 @@ Put the following matrix in reduced row echelon form.
   \end{bmatrix}
   &\hspace{1in} \text{Add \(\frac{5}{3}\) Row 3 to Row 1}& \\
 \end{alignat*}
+\item Circling our pivots, we see that each pivot is a 1, they are in a descending staircase pattern, and the row(s) of zeroes is at the bottom. However, there is not a zero above the second pivot.
+\(\begin{bmatrix}
+\circledNumber{1} & 1 & 0 & 3 \\
+0 & \circledNumber{1} & 1 & 1 \\
+0 & 0 & 0 & 0
+\end{bmatrix}\)
+\end{enumerate}
 \end{solution}
 
 \begin{problem}{E3}
@@ -870,13 +894,13 @@ So the inverse is \(\begin{bmatrix}  1 & 2 & -11 & 32 \\ 0 & -1 & 4 & -14 \\  0 
 
 
 \begin{problem}{M4}
+Let \(A\) be a \(4\times4\) matrix.
 \begin{enumerate}[(a)]
-\item Give a \(3\times 3\) matrix \(P\) that may be used to perform the row
+\item Give a \(4\times 4\) matrix \(P\) that may be used to perform the row
       operation \({R_3} \to R_3+4 \, {R_1} \).
-\item Give a \(3\times 3\) matrix \(Q\) that may be used to perform the row
+\item Give a \(4\times 4\) matrix \(Q\) that may be used to perform the row
       operation \({R_1} \to -4 \, {R_1}\).
-\item Suppose \(A\) is a \(3\times 3\) matrix with determinant \(-5\).
-      Use matrix multiplication to describe the matrix obtained by applying 
+\item Use matrix multiplication to describe the matrix obtained by applying 
         \({R_3} \to 4 \, {R_1} + {R_3}\) and then \({R_1} \to -4 \, {R_1}\)
       to \(A\) (note the order).
 \end{enumerate}
@@ -884,9 +908,9 @@ So the inverse is \(\begin{bmatrix}  1 & 2 & -11 & 32 \\ 0 & -1 & 4 & -14 \\  0 
 \begin{solution}
 \begin{enumerate}
 \item 
-\(P=\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 4 & 0 & 1 \end{bmatrix}\)
+\(P=\begin{bmatrix} 1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0 \\ 4 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}\)
 \item
-\(Q=\begin{bmatrix} -4 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}\)
+\(Q=\begin{bmatrix} -4 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0\\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1\end{bmatrix}\)
 \item \( QPA\)
 \end{enumerate}
 \end{solution}
