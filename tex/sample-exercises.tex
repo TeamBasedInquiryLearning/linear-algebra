@@ -85,7 +85,7 @@ Consider the scalar system of equations
   1 & 0 & 0 & 4 \\
   0 & {1} & 0 & -1 \\
   0 & 0 & {1} & 5
-  \end{bmatrix}
+  \end{bmatrix}.
 \]
 \item
 Explain why the matrix 
@@ -149,12 +149,13 @@ is \textbf{not} in reduced row echelon form.
   \end{bmatrix}
   &\hspace{1in} \text{Add \(\frac{5}{3}\) Row 3 to Row 1}& \\
 \end{alignat*}
-\item Circling our pivots, we see that each pivot is a 1, they are in a descending staircase pattern, and the row(s) of zeroes is at the bottom. However, there is not a zero above the second pivot.
+\item Circling our pivots, 
 \(\begin{bmatrix}
 \circledNumber{1} & 1 & 0 & 3 \\
 0 & \circledNumber{1} & 1 & 1 \\
 0 & 0 & 0 & 0
 \end{bmatrix}\)
+we see that each pivot is a 1, they are in a descending staircase pattern, and the row(s) of zeroes is at the bottom. However, there is not a zero above the second pivot, so it is not in reduced row echelon form.
 \end{enumerate}
 \end{solution}
 
@@ -181,17 +182,17 @@ This corresponds to the system
 x\,+\,2y&\,\,&  &= 3 \\
   &\,\,& z&= -1
 \end{alignat*}
-Since the $y$-column is a non-pivot column, it is a free variable, so we let $y=a$; then we have
+Since the \(y\)-column is a non-pivot column, it is a free variable, so we let \(y=a\); then we have
 \begin{alignat*}{3}
 x&\,+\,&2y&\,\,&  &= 3 \\
  &\,\,&y &\,\,& &=a \\
- &\,\,& &\,\,& z&= -1
+ &\,\,& &\,\,& z&= -1.
 \end{alignat*}
 and thus
 \begin{align*}
 x&= 3-2a \\
 y&= a \\
-z&= -1
+z&= -1.
 \end{align*}
 So the solution set is
 \[
@@ -199,7 +200,7 @@ So the solution set is
     \begin{bmatrix} 3-2a \\ a \\ -1 \end{bmatrix}
   }{
     a \in \IR
-  }
+  }.
 \]
 \end{solution}
 
@@ -760,7 +761,7 @@ and is therefore not a linear transformation.
 \begin{enumerate}[(a)]
 \item Find the standard matrix for the linear transformation \(T: \IR^3\rightarrow \IR^4\) given by \[T\left(\begin{bmatrix} x \\ y \\ z \\  \end{bmatrix} \right) = \begin{bmatrix} -x+y \\ -x+3y-z \\ 7x+y+3z \\ 0 \end{bmatrix}.\]
 \item Let \(S: \IR^4 \rightarrow \IR^3\) be the linear transformation given by the standard matrix \[\begin{bmatrix} 2 & 3 & 4 & 1 \\ 0 & 1 & -1 & -1 \\ 3 & -2 & -2 & 4 \end{bmatrix}.\]
-Compute  \( S\left( \begin{bmatrix} -2 \\ 1 \\ 3 \\ 2\end{bmatrix} \right) \)
+Compute  \( S\left( \begin{bmatrix} -2 \\ 1 \\ 3 \\ 2\end{bmatrix} \right) \).
 \end{enumerate}
 \end{problem}
 
@@ -776,7 +777,7 @@ the standard matrix for \(T\) is \( \begin{bmatrix} -1 & 1 & 0 \\ -1 & 3 & -1 \\
 \item \[
 S\left(\begin{bmatrix} -2 \\ 1 \\ 3 \\ 2 \end{bmatrix} \right) = -2S(\vec{e}_1)+S(\vec{e}_2)+3S(\vec{e_3})+2S(\vec{e_4})
 = -2 \begin{bmatrix} 2 \\ 0 \\ 3 \end{bmatrix} + \begin{bmatrix} 3 \\ 1 \\ -2 \end{bmatrix} + 3 \begin{bmatrix} 4 \\ -1 \\ -2 \end{bmatrix}+2\begin{bmatrix} 1 \\ -1 \\ 4 \end{bmatrix} 
-= \begin{bmatrix} 13 \\ -4 \\ -6\end{bmatrix} \]
+= \begin{bmatrix} 13 \\ -4 \\ -6\end{bmatrix}. \]
 \end{enumerate}
 \end{solution}
 
@@ -793,7 +794,7 @@ Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by
 \begin{enumerate}[(a)]
 \item Explain how to find the image of \(T\) and the kernel of \(T\). 
 \item Explain how to find a basis of the image of \(T\) and a basis of the kernel of \(T\). 
-\item Verify that the rank-nullity theorem holds for \(T\).
+\item Explain how to find the rank and nullity of T, and why the rank-nullity theorem holds for T.
 \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -833,7 +834,7 @@ so a basis for the kernel is
 \end{solution}
 
 \begin{problem}{A4}
-Let $T: \IR^4 \rightarrow \IR^3$ be the linear transformation given by the standard matrix $\begin{bmatrix} 1 & 3 & 2 & -3 \\ 2 & 4 & 6 & -10 \\ 1 & 6 & -1 & 3 \end{bmatrix}$.
+Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by the standard matrix \(\begin{bmatrix} 1 & 3 & 2 & -3 \\ 2 & 4 & 6 & -10 \\ 1 & 6 & -1 & 3 \end{bmatrix}\).
 \begin{enumerate}[(a)]
 \item Explain why \(T\) is or is not injective.
 \item Explain why \(T\) is or is not surjective.
@@ -866,7 +867,7 @@ AC\left( \vec{e}_2 \right) &= A \left( \begin{bmatrix} 1 \\ -2 \end{bmatrix} \ri
 AC\left( \vec{e}_3 \right) &= A \left( \begin{bmatrix} 3 \\ 5 \end{bmatrix} \right) = 3 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + 5\begin{bmatrix} -3 \\ 1 \end{bmatrix} = \begin{bmatrix} -12 \\ 5 \end{bmatrix} \\
 \end{align*}
 Thus
-$$AC = \begin{bmatrix} -3 & 7 & -12 \\ 1 & -2 & 5 \end{bmatrix}.$$
+\[AC = \begin{bmatrix} -3 & 7 & -12 \\ 1 & -2 & 5 \end{bmatrix}.\]
 \end{solution}
 
 \begin{problem}{M2}
@@ -923,6 +924,14 @@ Let \(A\) be a \(4 \times 4\) matrix with determinant \(-7\).
 \item Let \(D\) be the matrix obtained from \(A\) by applying the row operation \(R_3 \leftrightarrow R_4\). What is \(\det(D)\)?
 \end{enumerate}
 \end{problem}
+
+\begin{solution}
+\begin{enumerate}[(a)]
+\item Adding a multiple of one row to another row does not change the determinant, so \(\det(B)=\det(A)=-7\).
+\item Scaling a row scales the determinant by the same factor, so so \(\det(B)=-3\det(A)=-3(-7)=21\).
+\item Swaping rows changes the sign of the determinant, so \(\det(B)=-\det(A)=7\).
+\end{enumerate}
+\end{solution}
 
 \begin{problem}{G2}
 Show how to compute the determinant of the matrix
@@ -988,14 +997,14 @@ Explain how to find the eigenvalues of the matrix \(\begin{bmatrix} -2 & -2 \\ 1
 \begin{solution}
 Compute the characteristic polynomial: 
 \[\det(A-\lambda I) = \det \begin{bmatrix} -2 - \lambda & -2 \\ 10 & 7-\lambda \end{bmatrix} = (-2-\lambda)(7-\lambda)+20 = \lambda ^2 -5\lambda +6 = (\lambda -2)(\lambda -3)\]
-The eigenvalues are the roots of the characteristic polynomial, namely $2$ and $3$.
+The eigenvalues are the roots of the characteristic polynomial, namely \(2\) and \(3\).
 \end{solution}
 
 \begin{problem}{G4}
-Explain how to find a basis for the eigenspace associated to the eigenvalue $3$ in the matrix \[\begin{bmatrix} -7 & -8 & 2 \\ 8 & 9 & -1 \\ \frac{13}{2} & 5 & 2 \end{bmatrix}.\]
+Explain how to find a basis for the eigenspace associated to the eigenvalue \(3\) in the matrix \[\begin{bmatrix} -7 & -8 & 2 \\ 8 & 9 & -1 \\ \frac{13}{2} & 5 & 2 \end{bmatrix}.\]
 \end{problem}
 \begin{solution}
-The eigenspace associated to $3$ is the kernel of $A-3I$, so we compute
+The eigenspace associated to \(3\) is the kernel of \(A-3I\), so we compute
 \[\RREF(A-3I) = \RREF \begin{bmatrix} -7-3 & -8 & 2 \\ 8 & 9-3 & -1 \\ \frac{13}{2} & 5 & 2-3 \end{bmatrix} = \RREF \begin{bmatrix} -10 & -8 & 2 \\ 8 & 6 & -1 \\ \frac{13}{2} & 5 & -1 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 1 \\ 0 & 1 & -\frac{3}{2} \\ 0 & 0 & 0 \end{bmatrix}.\]
 Thus we see the kernel is \[\setBuilder{\begin{bmatrix} -a \\ \frac{3}{2} a \\ a \end{bmatrix}}{a \in \IR}\]
 which has a basis of \(\left\{ \begin{bmatrix} -1 \\ \frac{3}{2} \\ 1 \end{bmatrix} \right\}\).
