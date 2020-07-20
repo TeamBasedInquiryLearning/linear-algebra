@@ -361,61 +361,58 @@ Its \term{solution set} is given by
   Consider the following (equivalent) linear systems.
   \begin{multicols}{3}%
   \begin{enumerate}[(A)]
-    \item \[
+    \item 
+	\[
 		\begin{alignedat}{4}
-   		  -2x_1 &\,+\,& 4x_2 &\,-\,& 2x_3 &\,=\,& -8 \\
-   		  x_1 &\,-\,& 2x_2 &\,+\,& 2x_3 &\,=\,& 7 \\
-   		  3x_1 &\,-\, & 6x_2 &\,+\,&  4x_3 &\,=\,&  15
+   		  x &\,+\,& 2y  &\,+\,& z &\,=\,& 3 \\  
+   		  -x &\,-\,& y  &\,+\,& z &\,=\,& 1 \\  
+   		  2x &\,+\,& 5y  &\,+\,& 3z &\,=\,& 7   
+   		\end{alignedat}
+	\]
+
+    \item 
+	\[
+		\begin{alignedat}{4}
+   		  2x &\,+\,& 5y  &\,+\,& 3z &\,=\,& 7 \\  
+   		  -x &\,-\,& y  &\,+\,& z &\,=\,& 1 \\  
+   		  x &\,+\,& 2y  &\,+\,& z &\,=\,& 3  
    		\end{alignedat}
 	\]
 
     \item \[
 		\begin{alignedat}{4}
-   		  x_1 &\,-\,& 2x_2 &\,+\,& 2x_3 &\,=\,& 7 \\
-   		  -2x_1 &\,+\,& 4x_2 &\,-\,& 2x_3 &\,=\,& -8 \\
-   		  3x_1 &\,-\, & 6x_2 &\,+\,&  4x_3 &\,=\,&  15
+   		  x & &   &\,-\,& z &\,=\,& 1 \\  
+   		   & & y  &\,+\,& z &\,=\,& 1 \\  
+   		   & & y  &\,+\,& 2z &\,=\,& 4   
    		\end{alignedat}
 	\]
 
     \item \[
 		\begin{alignedat}{4}
-   		  x_1 &\,-\,& 2x_2 &\,+\,& 2x_3 &\,=\,& 7 \\
-   		   & &  & & 2x_3 &\,=\,& 6 \\
-   		   & & &\,-\,&2x_3 &\,=\,& -6
+   		  x &\,+\,& 2y  &\,+\,& z &\,=\,& 3 \\  
+   		   & & y  &\,+\,& z &\,=\,& 1 \\  
+   		  2x &\,+\,& 5y  &\,+\,& 3z &\,=\,& 7   
    		\end{alignedat}
 	\]
 
     \item \[
 		\begin{alignedat}{4}
-   		  x_1 &\,-\,& 2x_2 &\,+\,& 2x_3 &\,=\,& 7 \\
-   		   & &  & & x_3 &\,=\,& 3 \\
-   		   & & &\,-\,&2x_3 &\,=\,& -6
+   		  x & &   &\,-\,& z &\,=\,& 1 \\  
+   		   & & y  &\,+\,& z &\,=\,& 1 \\  
+   		   & &   & & z &\,=\,& 3   
    		\end{alignedat}
 	\]
 
     \item \[
 		\begin{alignedat}{4}
-   		  x_1 &\,-\,& 2x_2 &&  &\,=\,& 1 \\
-   		   & &  &\,\,\, & x_3 &\,=\,& 3 \\
-   		   & & &&0 &\,=\,& 0
-   		\end{alignedat}
-	\]
-
-    \item \[
-		\begin{alignedat}{4}
-   		  x_1 &\,-\,& 2x_2 &\,+\,& 2x_3 &\,=\,& 7 \\
-   		   &\,&  && 2x_3 &\,=\,& 6 \\
-   		  3x_1 &\,-\, & 6x_2 &\,+\,&  4x_3 &\,=\,&  15
+   		  x &\,+\,& 2y  &\,+\,& z &\,=\,& 3 \\  
+   		   & & y  &\,+\,& z &\,=\,& 1 \\  
+   		   & & y  &\,+\,& 2z &\,=\,& 4   
    		\end{alignedat}
 	\]
 	\end{enumerate}
     \end{multicols}
-  \begin{subactivity}
-  	Find a solution to one of these systems.
-	\end{subactivity}
-  \begin{subactivity}
-    Rank the six linear systems from most complicated to simplest.
-  \end{subactivity}
+   Rank the six linear systems from most complicated to simplest.
 \end{activity}
 
 
@@ -423,13 +420,12 @@ Its \term{solution set} is given by
 We can rewrite the previous in terms of  equivalences of augmented matrices
 \[
 	\begin{alignedat}{3}
-		\begin{bmatrix}[ccc|c] -2 & 4 & -2 & -8 \\ 1 & -2 & 2 & 7 \\ 3 & -6 & 4 & 15 \end{bmatrix} & \sim &
-		\begin{bmatrix}[ccc|c] \circledNumber{1} & -2 & 2 & 7 \\ -2 & 4 & -2 & -8 \\ 3 & -6 & 4 & 15 \end{bmatrix} &\sim&
-		\begin{bmatrix}[ccc|c] \circledNumber{1} & -2 & 2 & 7 \\ 0 & 0 & 2 & 6 \\ 3 & - 6 & 4 & 15 \end{bmatrix} \\
- \sim
-		\begin{bmatrix}[ccc|c] \circledNumber{1} & -2 & 2 & 7 \\ 0 & 0 & 2 & 6 \\ 0 & 0 & -2 & -6 \end{bmatrix}  &\sim&
-		\begin{bmatrix}[ccc|c] \circledNumber{1} & -2 & 2 & 7 \\ 0 & 0 & \circledNumber{1} & 3 \\ 0 & 0 & -2 & -6 \end{bmatrix}  &\sim&
-		\begin{bmatrix}[ccc|c] \circledNumber{1} & -2 & 0 & 1 \\ 0 & 0 & \circledNumber{1} & 3 \\ 0 & 0 & 0 & 0 \end{bmatrix}
+		\begin{bmatrix}[ccc|c] 2 & 5 & 1 3 & 7 \\ -1 & -1 & 1 & 1 \\ 1 & 2 & 1 & 3 \end{bmatrix} & \sim &
+		\begin{bmatrix}[ccc|c] \circledNumber{1} & 2 & 1 & 3 \\ -1 & -1 & 1 & 1 \\ 2 & 5 & 1 & 3  \end{bmatrix} & \sim &
+		\begin{bmatrix}[ccc|c] \circledNumber{1} & 2 & 1 & 3 \\ 0 & 1 & 1 & 1 \\ 2 & 5 & 1 & 3  \end{bmatrix} \sim  \\
+		\begin{bmatrix}[ccc|c] \circledNumber{1} & 2 & 1 & 3 \\ 0 & \circledNumber{1} & 1 & 1 \\ 0 & 1 & 2 & 4  \end{bmatrix} & \sim &
+		\begin{bmatrix}[ccc|c] \circledNumber{1} & 0 & -1 & 1 \\ 0 & \circledNumber{1} & 1 & 1 \\ 0 & 1 & 2 & 4  \end{bmatrix} & \sim &
+		\begin{bmatrix}[ccc|c] \circledNumber{1} & 0 & -1 & 1 \\ 0 & \circledNumber{1} & 1 & 1 \\ 0 & 0 & \circledNumber{1} & 3  \end{bmatrix} 
  	\end{alignedat}
 \]
 
@@ -438,8 +434,21 @@ We can rewrite the previous in terms of  equivalences of augmented matrices
 
 \end{activity}
 
-\begin{activity}{15}
+\begin{definition}
 A matrix is in \term{reduced row echelon form} (\term{RREF}) if
+\begin{enumerate}
+\item The leading term (first nonzero term) of each nonzero row is a 1.
+      Call these terms \term{pivots}.
+\item Each pivot is to the right of every higher pivot.
+\item Each term above or below a pivot is zero.
+\item All rows of zeroes are at the bottom of the matrix.
+\end{enumerate}
+\vfill
+Every matrix has a unique reduced row echelon form. If \(A\) is a matrix, we write \(\RREF(A)\) for the reduced row echelon form of that matrix.
+\end{definition}
+
+\begin{activity}{15}
+Recall that a matrix is in \term{reduced row echelon form} (\term{RREF}) if
 \begin{enumerate}
 \item The leading term (first nonzero term) of each nonzero row is a 1.
       Call these terms \term{pivots}.
@@ -480,39 +489,37 @@ in many applications we use it for in Module V.
 
 \begin{activity}{8}
 Consider the matrix
-\[\begin{bmatrix}[ccc]1 & 0 & 3 \\ 2 & 1 & 1 \\ 0 & -1 & 4\end{bmatrix}.\]
+\[\begin{bmatrix}[cccc]2 & 6 & -1 & 6  \\ 1 & 3 & -1 & 2 \\ -1 & -3 & 2 & 0 \end{bmatrix}.\]
 Which row operation is the best choice for the first move in converting to RREF?
 \begin{enumerate}[(a)]
 \item Add row 3 to row 2 (\(R_2+R_3 \rightarrow R_2\))
 \item Add row 2 to row 3 (\(R_3+R_2 \rightarrow R_3\))
-\item Add -1 row 1 to row 2 (\(R_2-R_1 \rightarrow R_2\))
-\item Add -2 row 1 to row 2 (\(R_2-2R_1 \rightarrow R_2\))
+\item Swap row 1 to row 2 (\(R_1 \leftrightarrow R_2\))
+\item Add -2 row 2 to row 1 (\(R_1-2R_2 \rightarrow R_1\))
 \end{enumerate}
 \end{activity}
 
 \begin{activity}{7}
 Consider the matrix
-\[\begin{bmatrix}[ccc]2 & 5 & -1 \\ 3 & 5 & 1 \\ 1 & -2 & 0 \end{bmatrix}.\]
-Which row operation is the best choice for the first move in converting to RREF?
+\[\begin{bmatrix}[cccc] \circledNumber{1} & 3 & -1 & 2 \\ 2 & 6 & -1 & 6 \\ -1 & -3 & 2 & 0 \end{bmatrix}.\]
+Which row operation is the best choice for the next move in converting to RREF?
 \begin{enumerate}[(a)]
-\item Add row 1 to  row 2 (\(R_2+R_1 \rightarrow R_2\))
-\item Add -1 row 1 to  row 2 (\(R_2-R_1 \rightarrow R_2\))
-\item Swap rows 1 and 3 (\( R_1 \leftrightarrow R_3\))
-\item Multiply row 1 by \(\frac{1}{2}\) (\(\frac{1}{2} R_1 \rightarrow R_1\))
-\item Add -1 row 3 to row 1 (\(R_1-R_3 \rightarrow R_1\))
+\item Add row 1 to  row 3 (\(R_3+R_1 \rightarrow R_3\))
+\item Add -2 row 1 to  row 2 (\(R_2-2R_1 \rightarrow R_2\))
+\item Add 2 row 2 to row 3 (\(R_3+2R_2 \rightarrow R_3\))
+\item Add 2 row 3 to row 2 (\(R_2+2R_3 \rightarrow R_2\))
 \end{enumerate}
 \end{activity}
 
 \begin{activity}{5}
 Consider the matrix
-\[\begin{bmatrix}[ccc]1 & 1 & 3 \\ 0 & 0 & 4 \\ 0 & 0 & 2 \end{bmatrix}.\]
-Which row operation is the best choice for the first move in converting to RREF?
+\[\begin{bmatrix}[cccc]\circledNumber{1} & 3 & -1 & 2  \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 1 & 2 \end{bmatrix}.\]
+Which row operation is the best choice for the next move in converting to RREF?
 \begin{enumerate}[(a)]
-\item Add row 1 to  row 2 (\(R_2+R_1 \rightarrow R_2\))
-\item Add -1 row 1 to  row 2 (\(R_2-R_1 \rightarrow R_2\))
-\item Add -1 row 3 to  row 1 (\(R_1-R_3 \rightarrow R_1\))
-\item Add -2 row 3 to  row 2 (\(R_2-2R_3 \rightarrow R_2\))
-\item Multiply row 3 by \(\frac{1}{2}\) (\(\frac{1}{2} R_3 \rightarrow R_3\))
+\item Add row 1 to row 2 (\(R_2+R_1 \rightarrow R_2\))
+\item Add -1 row 3 to  row 2 (\(R_2-R_3 \rightarrow R_2\))
+\item Add -1 row 2 to  row 3 (\(R_3-R_2 \rightarrow R_3\))
+\item Add row 2 to row 1 (\(R_1+R_2 \rightarrow R_1\))
 \end{enumerate}
 \end{activity}
 
@@ -520,12 +527,17 @@ Which row operation is the best choice for the first move in converting to RREF?
 Consider the matrix
 \[\begin{bmatrix}[ccc]2 & 1 & 0 \\ 1 & 0 & 0 \\ 3 & -1 & 1 \end{bmatrix}.\]
 \vfill
+\begin{subactivity}
 Perform three row operations to produce a matrix closer to RREF.
+\end{subactivity}
+\begin{subactivity}
+Finish putting it in RREF.
+\end{subactivity}
 \end{activity}
 
 \begin{activity}{10}
 Consider the matrix
-\[A=\begin{bmatrix}[cccc]2 & 1 & 3 \\ 1 & 0 & 2 \\ -1 & 3 & -5 \end{bmatrix}.\]
+\[A=\begin{bmatrix}[cccc]2 & 3 & 2 & 3 \\ -2 & 1 & 6 & 1 \\ -1 & -3 & -4 & 1 \end{bmatrix}.\]
 \vfill
 Compute \(\RREF(A)\).
 \end{activity}
