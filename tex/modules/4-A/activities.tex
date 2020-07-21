@@ -627,16 +627,11 @@ the set of all vectors that transform into \(\vec 0\)?
 \begin{activity}{10}
 Let \(T: \IR^3 \rightarrow \IR^2\) be the linear transformation given by the
 standard matrix
-\[A=\begin{bmatrix} 3 & 4 & -1 \\ 1 & 2 & 1 \end{bmatrix}.\]
+\[T\left( \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} 3x+4y-z \\ x+2y+z \end{bmatrix}\right)\]
 \begin{subactivity}
 Set
 \(
   T\left(\begin{bmatrix}x\\y\\z\end{bmatrix}\right)
-    =
-  \begin{bmatrix}
-    \unknown+\unknown+\unknown \\
-    \unknown+\unknown+\unknown
-  \end{bmatrix}
     =
   \begin{bmatrix}0\\0\end{bmatrix}
 \) to find a linear system of equations whose solution set is the kernel.
@@ -846,6 +841,50 @@ standard matrix
 
 Find a basis for the kernel and a basis for the image of \(T\).
 \end{activity}
+
+\begin{activity}{5}
+Let \(T: \IR^n \rightarrow \IR^m\) be a linear transformation with standard matrix \(A\).
+Which of the following is equal to the dimension of the kernel of \(T\)?
+\begin{enumerate}[(a)]
+\item The number of pivot columns
+\item The number of non-pivot columns
+\item The number of pivot rows
+\item The number of non-pivot rows
+\end{enumerate}
+\end{activity}
+
+\begin{activity}{5}
+Let \(T: \IR^n \rightarrow \IR^m\) be a linear transformation with standard matrix \(A\).
+Which of the following is equal to the dimension of the image of \(T\)?
+\begin{enumerate}[(a)]
+\item The number of pivot columns
+\item The number of non-pivot columns
+\item The number of pivot rows
+\item The number of non-pivot rows
+\end{enumerate}
+\end{activity}
+
+\begin{observation}
+Combining these with the observation that the number of columns is the dimension of the domain of \(T\), we have the \term{rank-nullity theorem}:
+\vfill
+\begin{minipage}{0.8\textwidth}
+The dimension of the domain of \(T\) equals \(\dim(\ker T)+\dim(\Im T)\).
+\end{minipage}
+\vfill
+The dimension of the image is called the \term{rank} of \(T\) (or \(A\)) and the dimension of the kernel is called the \term{nullity}. 
+\end{observation}
+
+\begin{activity}{10}
+Let \(T: \IR^3 \rightarrow \IR^4\) be the linear transformation given by the
+standard matrix
+\[
+  A
+    =
+  \begin{bmatrix} 1 & -3 & 2\\ 2 & -6 & 0 \\ 0 & 0 & 1 \\ -1 & 3 & 1 \end{bmatrix}
+.\]
+Verify that the rank-nullity theorem holds for \(T\).
+\end{activity}
+
 \begin{definition}
 Let \(T: V \rightarrow W\) be a linear transformation.
 \(T\) is called \term{injective} or \term{one-to-one} if \(T\) does not map two
