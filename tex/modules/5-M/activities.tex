@@ -1,26 +1,30 @@
+\begin{observation}
+If \(T: \IR^n \rightarrow \IR^m\) and \(S: \IR^m \rightarrow \IR^k\) are linear maps, then the composition map \(S\circ T\) is a linear map from \(\IR^n \rightarrow \IR^k\).
+\vfill
+\begin{center}
+\begin{tikzcd}[ampersand replacement=\&]
+\IR^n \arrow[rr, bend right, "S\circ T"']  \arrow[r,"T"] \& \IR^m  \arrow[r,"S"]  \&\IR^k 
+\end{tikzcd}
+\end{center}
+\vfill
+Recall that for a vector, \(\vec{v} \in \IR^n\), the composition is computed as \( (S \circ T)(\vec{v})=S(T(\vec{v}))\).
+\end{observation}
+
+
 \begin{activity}{5}
 Let \(T: \IR^3 \rightarrow \IR^2\) be given by the \(2\times 3\) standard matrix \(B=\begin{bmatrix} 2 & 1 & -3 \\ 5 & -3 & 4 \end{bmatrix}\) and \(S: \IR^2 \rightarrow \IR^4\) be given by the \(4\times 2\) standard matrix \(A=\begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}\).
 
-What is the domain of the composition map \(S \circ T\)?
+What are the domain and codomain of the composition map \(S \circ T\)?
 \begin{enumerate}[(a)]
-\item \(\IR\)
-\item \(\IR^2\)
-\item \(\IR^3\)
-\item \(\IR^4\)
+\item The domain is \(\IR ^2\) and the codomain is \(\IR^3\)
+\item The domain is \(\IR ^3\) and the codomain is \(\IR^2\)
+\item The domain is \(\IR ^2\) and the codomain is \(\IR^4\)
+\item The domain is \(\IR ^3\) and the codomain is \(\IR^4\)
+\item The domain is \(\IR ^4\) and the codomain is \(\IR^3\)
+\item The domain is \(\IR ^4\) and the codomain is \(\IR^2\)
 \end{enumerate}
 \end{activity}
 
-\begin{activity}{3}
-Let \(T: \IR^3 \rightarrow \IR^2\) be given by the \(2\times 3\) standard matrix \(B=\begin{bmatrix} 2 & 1 & -3 \\ 5 & -3 & 4 \end{bmatrix}\) and \(S: \IR^2 \rightarrow \IR^4\) be given by the \(4\times 2\) standard matrix \(A=\begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}\).
-
-What is the codomain of the composition map \(S \circ T\)?
-\begin{enumerate}[(a)]
-\item \(\IR\)
-\item \(\IR^2\)
-\item \(\IR^3\)
-\item \(\IR^4\)
-\end{enumerate}
-\end{activity}
 
 \begin{activity}{2}
 Let \(T: \IR^3 \rightarrow \IR^2\) be given by the \(2\times 3\) standard matrix \(B=\begin{bmatrix} 2 & 1 & -3 \\ 5 & -3 & 4 \end{bmatrix}\) and \(S: \IR^2 \rightarrow \IR^4\) be given by the \(4\times 2\) standard matrix \(A=\begin{bmatrix} 1 & 2 \\ 0 & 1 \\ 3 & 5 \\ -1 & -2 \end{bmatrix}\).
@@ -80,8 +84,9 @@ two corresponding linear functions.
 
 \vspace{1em}
 
-For the previous activity, \(S\) had a \(4\times \circledNumber{2}\) matrix and
-\(T\) had a \(\circledNumber{2}\times 3\) matrix, so \(S\circ T\) had a
+For the previous activity, 
+\(T\) was a map \(\IR^3 \rightarrow \IR^2\), and 
+\(S\) was a map \(\IR^2 \rightarrow \IR^4\), so \(S \circ T\) gave a map \(\IR^3 \rightarrow \IR^4\) with a
 \(4\times 3\) standard matrix:
 \[
   AB
@@ -139,8 +144,7 @@ Consider the following three matrices.
 \]
 
 \begin{subactivity}
-Label each of these matrices
-with its number of rows \(\times\) columns.
+Find the domain and codomain of each of the three linear maps corresponding to \(A\), \(B)\), and \(C\).
 \end{subactivity}
 \begin{subactivity} 
 Only one of the matrix products
@@ -160,11 +164,9 @@ two corresponding linear functions.
 
 \vspace{1em}
 
-For example, if \(S\) has a 
-\(4\times \circledNumber{2}\) matrix \(A\) and
-\(T\) has a \(\circledNumber{2}\times 3\) matrix 
-\(B\), then \(S\circ T\) has a
-\(4\times 3\) standard matrix:
+For example, if  \(T\) was a map \(\IR^3 \rightarrow \IR^2\), and 
+\(S\) was a map \(\IR^2 \rightarrow \IR^4\), then \(S \circ T\) gave a map \(\IR^3 \rightarrow \IR^4\) with a
+\(4\times 3\) standard matrix, such as:
 \[
   AB
     =
