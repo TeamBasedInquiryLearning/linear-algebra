@@ -157,6 +157,17 @@
 	}
 }
 
+\NewEnviron{quickcheck}{ 
+  \stepcounter{ActivityCounter}
+  \activityCheck{%
+	  \begin{frame}
+	  \textbf{Quick Check \moduleLetter{}.\theActivityCounter}
+
+		\BODY
+	  \end{frame}
+	}
+}
+
 \NewEnviron{observation}{
   \stepcounter{ActivityCounter}
   \activityCheck{%

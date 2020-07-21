@@ -166,6 +166,20 @@
   }
 }
 
+\NewEnviron{quickcheck}{
+  \stepcounter{ActivityCounter}
+  \activityCheck{
+  	\setcounter{SubactivityCounter}{0}
+  	\preventPageBreaks
+  	\textbf{Quick Check \moduleLetter{}.\theActivityCounter}
+  	\BODY
+
+  	\vspace{1em}
+  	\allowPageBreaks
+  }
+}
+
+
 \NewEnviron{observation}{
   \stepcounter{ActivityCounter}
   \activityCheck{
