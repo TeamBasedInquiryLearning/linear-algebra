@@ -386,20 +386,20 @@ The space of \(m \times n\)\term{matrices}
 \end{activity}
 
 \begin{fact}
-  A vector \(\vect b\) belongs to
-  \(\vspan\{\vect v_1,\dots,\vect v_n\}\) if and only if
+  A vector \(\vec b\) belongs to
+  \(\vspan\{\vec v_1,\dots,\vec v_n\}\) if and only if
 	the vector equation \(x_1 \vec{v}_1+\cdots+x_n \vec{v_n}=\vec{b}\) is consistent.
 \end{fact}
 
 \begin{quickcheck}
 The following are all equivalent statements:
 \begin{itemize}
-\item The vector \(\vec{b}\) belongs to \(\vspan\{\vect v_1,\dots,\vect v_n\}\).
+\item The vector \(\vec{b}\) belongs to \(\vspan\{\vec v_1,\dots,\vec v_n\}\).
 \item The vector equation \(x_1 \vec{v}_1+\cdots+x_n \vec{v_n}=\vec{b}\) is consistent.
 \item The linear system corresponding to
-  \([\vect v_1\,\dots\,\vect v_n \,|\, \vect b]\)
+  \([\vec v_1\,\dots\,\vec v_n \,|\, \vec b]\)
   is consistent.
-\item  \(\RREF[\vect v_1\,\dots\,\vect v_n \,|\, \vect b]\)
+\item  \(\RREF[\vec v_1\,\dots\,\vec v_n \,|\, \vec b]\)
   doesn't have a row \([0\,\cdots\,0\,|\,1]\)
   representing the contradiction \(0=1\).
 \end{itemize}
@@ -542,12 +542,12 @@ since \(\IR^1=\setBuilder{cx}{c\in\IR}\).
 \end{activity}
 
 \begin{fact}
-  The set \(\{\vect v_1,\dots,\vect v_m\}\) fails to span all of \(\IR^n\)
+  The set \(\{\vec v_1,\dots,\vec v_m\}\) fails to span all of \(\IR^n\)
   exactly when the vector equation
 	\[ x_1 \vec{v}_1 + \cdots x_m\vec{v}_m = \vec{w} \]
   is inconsistent for \textbf{some} vector \(\vec{w}\).
   \vfill
-  Note that this happens exactly when \(\RREF[\vect v_1\,\dots\,\vect v_m]\) has a non-pivot row of zeros.
+  Note that this happens exactly when \(\RREF[\vec v_1\,\dots\,\vec v_m]\) has a non-pivot row of zeros.
   \[\begin{bmatrix}[cc]1&-2\\-1&0\\0&1\end{bmatrix}\sim
   \begin{bmatrix}[cc]1&0\\0&1\\0&0\end{bmatrix}\]
   \[\Rightarrow
@@ -808,10 +808,10 @@ Let \(W\) be a subspace of a vector space \(V\).  How are \(\vspan W\) and \(W\)
 \end{definition}
 
 \begin{activity}{10}
-  Let \(\vect u,\vect v,\vect w\) be vectors in \(\mathbb R^n\).
-  Suppose \(3\vect u-5\vect v=\vect w\), so the set
-  \(\{\vect u,\vect v,\vect w\}\) is linearly dependent.
-  Which of the following is true of the vector equation \(x\vect u+y\vect v+z\vect w=\vect 0\) ?
+  Let \(\vec{v}_1,\vec{v}_2,\vec{v}_3 \) be vectors in \(\mathbb R^n\).
+  Suppose \(3\vec{v}_1-5\vec{v}_2=\vec{v}_3\), so the set
+  \(\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}\) is linearly dependent.
+  Which of the following is true of the vector equation \(x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3=\vec{0}\) ?
   \begin{enumerate}[(A)]
   \item It is consistent with one solution
   \item It is consistent with infinitely many solutions
@@ -821,8 +821,8 @@ Let \(W\) be a subspace of a vector space \(V\).  How are \(\vspan W\) and \(W\)
 
 \begin{fact}
   For any vector space,
-  the set \(\{\vect v_1,\dots\vect v_n\}\) is linearly dependent if and only
-  if the vector equation \(x_1\vect v_1+\dots+x_n\vect v_n=\vect z\) is consistent with
+  the set \(\{\vec v_1,\dots\vec v_n\}\) is linearly dependent if and only
+  if the vector equation \(x_1\vec v_1+\dots+x_n\vec v_n=\vec{0}\) is consistent with
   infinitely many solutions.
 \end{fact}
 
@@ -850,8 +850,8 @@ Let \(W\) be a subspace of a vector space \(V\).  How are \(\vspan W\) and \(W\)
 
 \begin{quickcheck}
   A set of Euclidean vectors
-  \(\{\vect v_1,\dots\vect v_n\}\) is linearly dependent if and only
-  if \(\RREF\begin{bmatrix}\vect v_1&\dots&\vect v_n\end{bmatrix}\)
+  \(\{\vec v_1,\dots\vec v_n\}\) is linearly dependent if and only
+  if \(\RREF\begin{bmatrix}\vec v_1&\dots&\vec v_n\end{bmatrix}\)
   has a column without a pivot position.
 \end{quickcheck}
 
@@ -861,12 +861,12 @@ Let \(W\) be a subspace of a vector space \(V\).  How are \(\vspan W\) and \(W\)
   
   \begin{itemize}
   \item A set of \(\IR^m\) vectors
-  \(\{\vect v_1,\dots\vect v_n\}\) is linearly independent if and only
-  if \(\RREF\begin{bmatrix}\vect v_1&\dots&\vect v_n\end{bmatrix}\)
+  \(\{\vec v_1,\dots\vec v_n\}\) is linearly independent if and only
+  if \(\RREF\begin{bmatrix}\vec v_1&\dots&\vec v_n\end{bmatrix}\)
   has all pivot columns.
   \item A set of \(\IR^m\) vectors
-  \(\{\vect v_1,\dots\vect v_n\}\) spans \(\IR^m\) if and only
-  if \(\RREF\begin{bmatrix}\vect v_1&\dots&\vect v_n\end{bmatrix}\)
+  \(\{\vec v_1,\dots\vec v_n\}\) spans \(\IR^m\) if and only
+  if \(\RREF\begin{bmatrix}\vec v_1&\dots&\vec v_n\end{bmatrix}\)
   has all pivot rows.
   \end{itemize}
 \end{observation}
@@ -1040,13 +1040,13 @@ vectors that can form a linearly independent set?
 \end{activity}
 
 \begin{activity}{10}
-  If \(\{\vect v_1,\vect v_2,\vect v_3,\vect v_4\}\) is a basis for
-  \(\IR^4\), that means \(\RREF[\vect v_1\,\vect v_2\,\vect v_3\,\vect v_4]\)
+  If \(\{\vec v_1,\vec v_2,\vec v_3,\vec v_4\}\) is a basis for
+  \(\IR^4\), that means \(\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]\)
   doesn't have a non-pivot column, and doesn't have a
-  row of zeros. What is \(\RREF[\vect v_1\,\vect v_2\,\vect v_3\,\vect v_4]\)?
+  row of zeros. What is \(\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]\)?
 
   \[
-    \RREF[\vect v_1\,\vect v_2\,\vect v_3\,\vect v_4]
+    \RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]
       =
     \begin{bmatrix}
       \unknown & \unknown & \unknown & \unknown \\
@@ -1058,9 +1058,9 @@ vectors that can form a linearly independent set?
 \end{activity}
 
 \begin{fact}
-  The set \(\{\vect v_1,\dots,\vect v_m\}\) is a basis for \(\IR^n\) if and
+  The set \(\{\vec v_1,\dots,\vec v_m\}\) is a basis for \(\IR^n\) if and
   only if \(m=n\) and
-  \(\RREF[\vect v_1\,\dots\,\vect v_n]=
+  \(\RREF[\vec v_1\,\dots\,\vec v_n]=
   \begin{bmatrix}
     1&0&\dots&0\\
     0&1&\dots&0\\
@@ -1125,15 +1125,15 @@ the planar subspace.
 \end{activity}
 
 \begin{fact}
-  Let \(S=\{\vect v_1,\dots,\vect v_m\}\). The easiest basis describing
+  Let \(S=\{\vec v_1,\dots,\vec v_m\}\). The easiest basis describing
   \(\vspan S\) is the set of vectors in \(S\) given by the pivot columns
-  of \(\RREF[\vect v_1\,\dots\,\vect v_m]\).
+  of \(\RREF[\vec v_1\,\dots\,\vec v_m]\).
 
   \vspace{1em}
 
   Put another way, to compute a basis for the subspace \(\vspan S\),
   simply remove the vectors corresponding to the non-pivot columns of
-  \(\RREF[\vect v_1\,\dots\,\vect v_m]\).
+  \(\RREF[\vec v_1\,\dots\,\vec v_m]\).
   For example, since
   \[
     \RREF
@@ -1186,9 +1186,9 @@ Let \(W\) be the subspace of \(\P^3\) given by
 
 \begin{observation}
   In the previous section, we learned that
-  computing a basis for the subspace \(\vspan\{\vect v_1,\dots,\vect v_m\}\),
+  computing a basis for the subspace \(\vspan\{\vec v_1,\dots,\vec v_m\}\),
   is as simple as removing the vectors corresponding to the non-pivot columns of
-  \(\RREF[\vect v_1\,\dots\,\vect v_m]\).
+  \(\RREF[\vec v_1\,\dots\,\vec v_m]\).
 
   \vspace{1em}
 
@@ -1370,12 +1370,12 @@ Let \(W\) be the subspace of \(\P^3\) given by
 \begin{fact}
   Every vector space with finite dimension, that is, every
   vector space \(V\) with a basis of the form
-  \(\{\vect v_1,\vect v_2,\dots,\vect v_n\}\) is said to be
+  \(\{\vec v_1,\vec v_2,\dots,\vec v_n\}\) is said to be
   \term{isomorphic} to a Euclidean space \(\IR^n\), since there exists
   a natural correspondance between vectors in \(V\) and vectors in \(\IR^n\):
 
   \[
-    c_1\vect v_1+c_2\vect v_2+\dots+c_n\vect v_n
+    c_1\vec v_1+c_2\vec v_2+\dots+c_n\vec v_n
     \leftrightarrow
     \begin{bmatrix}
       c_1\\c_2\\\vdots\\c_n
@@ -1515,7 +1515,7 @@ Rewrite this solution space in the form \[\vspan\left\{\begin{bmatrix} \unknown 
     } = \vspan\left\{ \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0\end{bmatrix}, 
 					 \begin{bmatrix} -1 \\ 0 \\ -4 \\ 1 \end{bmatrix} \right\}
   \]
-  is the solution space for a homoegeneous system, then
+  is the solution space for a homogeneous system, then
   \[
     \setList{
       \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0\end{bmatrix},
@@ -1526,7 +1526,14 @@ Rewrite this solution space in the form \[\vspan\left\{\begin{bmatrix} \unknown 
 \end{fact}
 
 \begin{activity}{10}
-Consider the homogeneous system of equations
+Consider the homogeneous vector equation
+\[ 
+   x_1 \begin{bmatrix} 2 \\ -2 \\ 3 \end{bmatrix}+
+   x_2 \begin{bmatrix} 4 \\ -4 \\ 6 \end{bmatrix}+
+   x_3 \begin{bmatrix} 2 \\ 1 \\ -1 \end{bmatrix}+
+   x_4 \begin{bmatrix} -4 \\ 1 \\ -4 \end{bmatrix}=
+       \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
+\]
 \begin{alignat*}{5}
 x_1&\,-\,&3x_2&\,+\,& 2x_3&\,\,&  &=& 0 \\
 2x_1&\,-\,&6x_2&\,+\,&4x_3 &\,+\,&3 x_4 &=& 0 \\
