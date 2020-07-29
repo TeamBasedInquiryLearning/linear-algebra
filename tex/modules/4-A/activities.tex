@@ -484,57 +484,13 @@ Find the standard matrix for \(T\).
   .\]
 
 \begin{subactivity}
-Compute \(T\left(\begin{bmatrix} x\\ y \\ z \end{bmatrix} \right) \).
+Compute \(T\left(\begin{bmatrix} 1\\ 2 \\ 3 \end{bmatrix} \right) \).
 \end{subactivity}
 \begin{subactivity}
-Compute \(T\left(\begin{bmatrix} 1\\ 2 \\ 3 \end{bmatrix} \right) \).
+Compute \(T\left(\begin{bmatrix} x\\ y \\ z \end{bmatrix} \right) \).
 \end{subactivity}
 \end{activity}
 
-\begin{fact}
-  To quickly compute \(T(\vec v)\) from its standard matrix \(A\),
-  multiply and add the entries of each row of \(A\) with the vector \(\vec v\).
-  For example, if \(T\) has the standard matrix
-  \[
-    A = \begin{bmatrix} 1 & 2 & 3 \\ 0 & 1 & -2 \\ 2 & -1 & 0 \end{bmatrix}
-  \]
-  then for \(\vec v=\begin{bmatrix}x\\y\\z\end{bmatrix}\) we will write
-  \[
-    T(\vec v)
-      =
-    A\vec v
-      =
-    \begin{bmatrix} 1 & 2 & 3 \\ 0 & 1 & -2 \\ 2 & -1 & 0 \end{bmatrix}
-    \begin{bmatrix}x\\y\\z\end{bmatrix}
-      =
-    \begin{bmatrix}
-      1x+2y+3z\\
-      0x+1y-2z\\
-      2x-1y+0z
-    \end{bmatrix}
-  \]
-  and for \(\vec v=\begin{bmatrix}3\\0\\-2\end{bmatrix}\) we will write
-  \[
-    T(\vec v)
-      =
-    A\vec v
-      =
-    \begin{bmatrix} 1 & 2 & 3 \\ 0 & 1 & -2 \\ 2 & -1 & 0 \end{bmatrix}
-    \begin{bmatrix}3\\0\\-2\end{bmatrix}
-      =
-    \begin{bmatrix}
-      1(3)+2(0)+3(-2)\\
-      0(3)+1(0)-2(-2)\\
-      2(3)-1(0)+0(-2)
-    \end{bmatrix}
-      =
-    \begin{bmatrix}
-      -3\\
-      4\\
-      6
-    \end{bmatrix}
-  .\]
-\end{fact}
 
 \begin{activity}{15}
   Compute the following linear transformations of vectors given their
@@ -1276,15 +1232,15 @@ one group that means \(T\) is \textbf{injective}, and one group that means
 \end{instructorNote}
 \end{activity}
 
-\begin{observation}
-  The easiest way to show that the linear map with standard matrix \(A\)
-  is injective is to show that \(\RREF(A)\) has a pivot in each column.
+\begin{quickcheck}
+  The easiest way to determine if the linear map with standard matrix \(A\)
+  is injective is to see if \(\RREF(A)\) has a pivot in each column.
 
   \vspace{1em}
 
-  The easiest way to show that the linear map with standard matrix \(A\)
-  is surjective is to show that \(\RREF(A)\) has a pivot in each row.
-\end{observation}
+  The easiest way to determine if the linear map with standard matrix \(A\)
+  is surjective is to see if \(\RREF(A)\) has a pivot in each row.
+\end{quickcheck}
 
 \begin{activity}{3}
   What can you conclude about the linear map 
