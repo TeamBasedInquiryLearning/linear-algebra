@@ -22,6 +22,13 @@ pdf/definitions.pdf: tex/definitions.tex tex/tbil-la.sty tex/course-notes.tex \
 	pdflatex --output-directory=aux definitions.tex; \
 	mv aux/definitions.pdf ../pdf
 
+pdf/activities.pdf: tex/activities.tex tex/tbil-la.sty tex/course-notes.tex \
+						tex/modules/*/activities.tex
+	cd tex; \
+	pdflatex --output-directory=aux activities.tex; \
+	pdflatex --output-directory=aux activities.tex; \
+	mv aux/activities.pdf ../pdf
+
 pdf/course-slides.pdf: tex/course-slides.sty tex/tbil-la.sty tex/course-slides.tex \
 						tex/modules/*/activities.tex tex/modules/*/standards.tex tex/index.tex  tex/modules/0-I/index.tex
 	cd tex; \
