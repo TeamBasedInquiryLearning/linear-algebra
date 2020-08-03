@@ -64,4 +64,20 @@ removed by running `git clean -fX`.
 - Unless necessary, limit lines to 80 characters for clean `git diff`s.
 
 
+## Exercises
+
+Exercises are now tracked at <https://github.com/StevenClontz/masterit-tbil-la>.
+To use them in this repo, either clone a copy into an `exercises` folder:
+
+```
+git clone git@github.com:StevenClontz/masterit-tbil-la.git exercises
+```
+
+Or if they already live on your computer (perhaps inside a MasterIt installation)
+you can symlink them like so:
+
+```
+ln -s path/to/your/masterit-tbil-la exercises
+```
+
 [allman]: https://en.wikipedia.org/wiki/Indentation_style#Allman_style
