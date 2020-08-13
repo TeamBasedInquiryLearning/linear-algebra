@@ -1,0 +1,440 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="E1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Linear Systems, Vector Equations, and Augmented Matrices (E1)</title>
+    <definition>
+        <statement>
+            <p>
+A <term>linear equation</term> is an equation of the variables <m>x_i</m> of the form
+<me>
+a_1x_1+a_2x_2+\dots+a_nx_n=b
+</me>.
+            </p>
+            <p>
+A <term>solution</term> for a linear equation is a Euclidean vector
+<me>
+  \begin{bmatrix}
+    s_1 \\
+    s_2 \\
+    \vdots \\
+    s_n
+  \end{bmatrix}
+</me>
+that satisfies
+<me>
+a_1s_1+a_2s_2+\dots+a_ns_n=b
+</me>
+(that is, a Euclidean vector that can be plugged into the equation).
+            </p>
+        </statement>
+    </definition>
+
+
+<remark>
+    <p>
+In previous classes you likely used the variables <m>x,y,z</m> in equations.
+However, since this course often deals with equations of four or more
+variables, we will often write our variables as <m>x_i</m>, and assume
+<m>x=x_1,y=x_2,z=x_3,w=x_4</m> when convenient.
+        </p>
+</remark>
+
+<definition>
+<statment>
+    <p>
+        A <term>system of linear equations</term> (or a <term>linear system</term> for short)
+is a collection of one or more linear equations.
+        <md alignment="alignat" alignat-columns="5">
+            <mrow>
+    a_{11}x_1 &amp;\,+\,&amp; a_{12}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{1n}x_n &amp;\,=\,&amp; b_1 
+            </mrow>
+            <mrow>
+    a_{21}x_1 &amp;\,+\,&amp; a_{22}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{2n}x_n &amp;\,=\,&amp; b_2
+            </mrow>
+            <mrow>
+     \vdots&amp;  &amp;\vdots&amp;   &amp;&amp;  &amp;\vdots&amp;&amp;\vdots  
+            </mrow>
+            <mrow>
+    a_{m1}x_1 &amp;\,+\,&amp; a_{m2}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{mn}x_n &amp;\,=\,&amp; b_m
+            </mrow>
+        </md>
+    </p><p>
+        Its <term>solution set</term> is given by
+<me>
+  \setBuilder
+  {
+    \begin{bmatrix}
+      s_1 \\
+      s_2 \\
+      \vdots \\
+      s_n
+    \end{bmatrix}
+  }{
+    \begin{bmatrix}
+      s_1 \\
+      s_2 \\
+      \vdots \\
+      s_n
+    \end{bmatrix}
+    \text{is a solution to all equations in the system}
+  }
+</me>.
+    </p></statment></definition>
+
+<remark>
+    <p>
+  When variables in a large linear system are missing, we prefer to
+  write the system in one of the following standard forms:
+    </p>
+    <sidebyside widths="33% 33% 33%" margins="auto" valign="middle">
+        <p>
+    Original linear system:
+            <md alignment="alignat" alignat-columns="2">
+                <mrow>
+       x_1 + 3x_3 &amp;\,=\,&amp; 3
+                </mrow>
+                <mrow>
+      3x_1 - 2x_2 + 4x_3 &amp;\,=\,&amp; 0
+                </mrow>
+                <mrow>
+      -x_2 +  x_3 &amp;\,=\,&amp; -2
+                </mrow>
+            </md>
+        </p>
+        <p>
+    Verbose standard form:
+            <md alignment="alignat" alignat-columns="4">
+                <mrow>
+      1x_1 &amp;\,+\,&amp; 0x_2 &amp;\,+\,&amp; 3x_3 &amp;\,=\,&amp; 3
+                </mrow>
+                <mrow>
+      3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 4x_3 &amp;\,=\,&amp; 0
+                </mrow>
+                <mrow>
+      0x_1 &amp;\,-\,&amp; 1x_2 &amp;\,+\,&amp; 1x_3 &amp;\,=\,&amp; -2
+                </mrow>
+            </md>
+        </p>
+        <p>
+    Concise standard form:
+            <md alignment="alignat" alignat-columns="4">
+                <mrow>
+       x_1 &amp;     &amp;      &amp;\,+\,&amp; 3x_3 &amp;\,=\,&amp; 3
+                </mrow>
+                <mrow>
+      3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 4x_3 &amp;\,=\,&amp; 0
+                </mrow>
+                <mrow>
+           &amp;\,-\,&amp;  x_2 &amp;\,+\,&amp;  x_3 &amp;\,=\,&amp; -2
+                </mrow>
+            </md>
+        </p>
+    </sidebyside>
+</remark>
+
+    <remark>
+        <p>
+It will often be convenient to think of a system of equations as a vector equation.
+        </p>
+        <p>
+By applying vector operations and equating components, it is straightforward to see that the vector equation
+<me> x_1 \begin{bmatrix} 1 \\ 3 \\ 0 \end{bmatrix}+ x_2 \begin{bmatrix} 0 \\ -2 \\ -1 \end{bmatrix} + x_3 \begin{bmatrix} 3 \\ 4 \\1 \end{bmatrix} = \begin{bmatrix} 3 \\ 0 \\ -2 \end{bmatrix}</me>
+is equivalent to the system of equations
+            <md alignment="alignat" alignat-columns="4">
+                <mrow>
+   x_1 &amp;     &amp;      &amp;\,+\,&amp; 3x_3 &amp;\,=\,&amp; 3
+                </mrow>
+                <mrow>
+  3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 4x_3 &amp;\,=\,&amp; 0
+                </mrow>
+                <mrow>
+       &amp;\,-\,&amp;  x_2 &amp;\,+\,&amp;  x_3 &amp;\,=\,&amp; -2
+                </mrow>
+            </md>
+        </p>
+    </remark>
+
+
+    <definition>
+        <statement>
+            <p>
+A linear system is <term>consistent</term> if its solution set
+  is non-empty (that is, there exists a solution for the
+system). Otherwise it is <term>inconsistent</term>.
+            </p>
+        </statement>
+    </definition>
+
+    <fact>
+        <statement>
+            <p>
+  All linear systems are one of the following:
+            </p>
+            <ol>
+    <li><em>Consistent with one solution:</em>
+          its solution set contains a single vector, e.g.
+          <m>\setList{\begin{bmatrix}1\\2\\3\end{bmatrix}}</m>
+                </li>
+                <li>
+                    <em>Consistent with infinitely-many solutions</em>:
+          its solution set contains infinitely many vectors, e.g.
+          <m>
+            \setBuilder
+            {
+              \begin{bmatrix}1\\2-3a\\a\end{bmatrix}
+            }{
+              a\in\IR
+            }
+          </m>
+                </li>
+                <li><em>Inconsistent</em>:
+          its solution set is the empty set <m>\{\}=\emptyset</m>
+                </li>
+            </ol>
+        </statement>
+    </fact>
+
+    <activity tbil-time="10">
+        <statement>
+            <p>
+All inconsistent linear systems contain a logical <term>contradiction</term>.
+  Find a contradiction in this system to show that its solution set
+  is <m>\emptyset</m>.
+            </p>
+            <md>
+            <mrow>
+  -x_1+2x_2  &amp;=  5
+                </mrow>
+                <mrow>
+  2x_1-4x_2  &amp;=  6
+                </mrow>
+            </md>
+        </statement>
+    </activity>
+
+    <activity tbil-time="10">
+        <introduction>
+        <p>
+  Consider the following consistent linear system.
+            </p>
+            <md>
+                <mrow>
+  -x_1+2x_2  &amp;= -3
+                </mrow>
+                <mrow>
+  2x_1-4x_2  &amp;=  6
+                </mrow>
+            </md>
+        </introduction>
+        <task>
+            <p>
+  Find three different solutions
+  for this system.
+            </p>
+        </task>
+        <task>
+            <p>
+  Let <m>x_2=a</m> where <m>a</m> is an arbitrary real number, then find an
+  expression for <m>x_1</m> in terms of <m>a</m>. Use this to write
+  the solution set
+  <m>
+    \setBuilder
+    {
+    	\begin{bmatrix}
+        \unknown \\
+        a
+      \end{bmatrix}
+    }{
+      a \in \IR
+	  }
+  </m>
+  for the linear system.
+            </p>
+        </task>
+    </activity>
+
+    <activity tbil-time="10">
+        <statement>
+            <p>
+  Consider the following linear system.
+            </p>
+            <md alignment="alignat" alignat-columns="5">
+                <mrow>
+    x_1 &amp;\,+\,&amp; 2x_2 &amp;\, \,&amp;     &amp;\,-\,&amp;  x_4 &amp;\,=\,&amp; 3
+                </mrow>
+                <mrow>
+        &amp;\, \,&amp;      &amp;\, \,&amp; x_3 &amp;\,+\,&amp; 4x_4 &amp;\,=\,&amp; -2
+                </mrow>
+            </md>
+            <p>
+  Describe the solution set
+  <me>
+  	\setBuilder
+    {
+    	\begin{bmatrix}
+          \unknown \\
+          a \\
+          \unknown \\
+          b
+    	\end{bmatrix}
+    }{
+      a,b \in \IR
+    }
+  </me>
+  to the linear system
+  by setting <m>x_2=a</m> and <m>x_4=b</m>, and then solving for <m>x_1</m> and
+  <m>x_3</m>.
+            </p>
+        </statement>
+    </activity>
+
+    <observation>
+        <p>
+  Solving linear systems of two variables by graphing or substitution is
+  reasonable for two-variable systems, but these simple techniques
+  won't usually cut it for equations with
+  more than two variables or more than two equations. For example,
+            <md alignment="alignat" alignat-columns="5">
+                <mrow>
+    -2x_1 &amp;\,-\,&amp; 4x_2 &amp;\,+\,&amp;  x_3 &amp;\,-\,&amp;  4x_4 &amp;\,=\,&amp; -8
+                </mrow>
+                <mrow>
+      x_1 &amp;\,+\,&amp; 2x_2 &amp;\,+\,&amp; 2x_3 &amp;\,+\,&amp; 12x_4 &amp;\,=\,&amp; -1
+                </mrow>
+                <mrow>
+      x_1 &amp;\,+\,&amp; 2x_2 &amp;\,+\,&amp;  x_3 &amp;\,+\,&amp;  8x_4 &amp;\,=\,&amp;  1
+                </mrow>
+            </md>
+  has the exact same solution set as the system in the previous
+  activity, but we'll want to learn new techniques
+  to compute these solutions efficiently.
+        </p>
+    </observation>
+
+    <remark>
+        <p>
+  The only important information in a linear system are its coefficients and
+  constants.
+        </p>
+        <sidebyside widths="33% 33% 33%" margins="auto" valign="middle">
+            <p>
+    Original linear system:
+            <md alignment="alignat" alignat-columns="2">
+                <mrow>
+       x_1 + 3x_3 &amp;\,=\,&amp; 3
+                </mrow>
+                <mrow>
+      3x_1 - 2x_2 + 4x_3 &amp;\,=\,&amp; 0
+                </mrow>
+                <mrow>
+      -x_2 +  x_3 &amp;\,=\,&amp; -2
+                </mrow>
+            </md>
+        </p>
+        <p>
+    Verbose standard form:
+            <md alignment="alignat" alignat-columns="4">
+                <mrow>
+      1x_1 &amp;\,+\,&amp; 0x_2 &amp;\,+\,&amp; 3x_3 &amp;\,=\,&amp; 3
+                </mrow>
+                <mrow>
+      3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 4x_3 &amp;\,=\,&amp; 0
+                </mrow>
+                <mrow>
+      0x_1 &amp;\,-\,&amp; 1x_2 &amp;\,+\,&amp; 1x_3 &amp;\,=\,&amp; -2
+                </mrow>
+            </md>
+        </p>
+        <p>
+    Coefficients/constants:
+            <md alignment="alignat" alignat-columns="4">
+                <mrow>
+       1 &amp;     &amp;  0 &amp;\,\,&amp; 3 &amp;\,|\,&amp; 3
+                </mrow>
+                <mrow>
+       3 &amp;\, \,&amp; -2 &amp;\,\,&amp; 4 &amp;\,|\,&amp; 0
+                </mrow>
+                <mrow>
+       0 &amp;\, \,&amp; -1 &amp;\,\,&amp; 1 &amp;\,|\,&amp; -2
+                </mrow>
+            </md>
+        </p>
+        </sidebyside>
+    </remark>
+
+    <definition>
+        <statement>
+            <p>
+  A system of <m>m</m> linear equations with <m>n</m> variables is often represented
+    by writing its coefficients and constants in an <term>augmented matrix</term>.
+            </p>
+            <md alignment="alignat" alignat-columns="4">
+                <mrow>
+    a_{11}x_1 &amp;\,+\,&amp; a_{12}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{1n}x_n &amp;\,=\,&amp; b_1
+                </mrow>
+                <mrow>
+    a_{21}x_1 &amp;\,+\,&amp; a_{22}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{2n}x_n &amp;\,=\,&amp; b_2
+                </mrow>
+                <mrow>
+     \vdots&amp;  &amp;\vdots&amp;   &amp;&amp;  &amp;\vdots&amp;&amp;\vdots
+                </mrow>
+                <mrow>
+    a_{m1}x_1 &amp;\,+\,&amp; a_{m2}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{mn}x_n &amp;\,=\,&amp; b_m
+                </mrow>
+            </md>
+            <me>
+    \left[\begin{array}{cccc|c}
+      a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} &amp; b_1\\
+      a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} &amp; b_2\\
+      \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\\
+      a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; b_m
+    \end{array}\right]
+            </me>
+        </statement>
+    </definition>
+
+    <example>
+        <statement>
+        <p>
+  The corresponding augmented matrix for this system is obtained by
+  simply writing the coefficients and constants in matrix form.
+        </p>
+            <p>
+    Linear system:
+            <md alignment="alignat" alignat-columns="2">
+                <mrow>
+       x_1 + 3x_3 &amp;\,=\,&amp; 3
+                </mrow>
+                <mrow>
+      3x_1 - 2x_2 + 4x_3 &amp;\,=\,&amp; 0
+                </mrow>
+                <mrow>
+      -x_2 +  x_3 &amp;\,=\,&amp; -2
+                </mrow>
+            </md>
+        </p>
+        <p>
+    Vector equation:
+<me> x_1 \begin{bmatrix} 1 \\ 3 \\ 0 \end{bmatrix}+ x_2 \begin{bmatrix} 0 \\ -2 \\ -1 \end{bmatrix} + x_3 \begin{bmatrix} 3 \\ 4 \\1 \end{bmatrix} = \begin{bmatrix} 3 \\ 0 \\ -2 \end{bmatrix}</me>
+        </p>
+        <p>
+    Augmented matrix:
+    <me>
+      \left[\begin{array}{ccc|c}
+        1 &amp; 0 &amp; 3 &amp; 3 \\
+        3 &amp; -2 &amp; 4 &amp; 0 \\
+        0 &amp; -1 &amp; 1 &amp; -2
+      \end{array}\right]
+    </me>
+        </p>
+        </statement>
+    </example>
+
+    <exercises>
+        <xi:include href="../exercises/E1/0000.ptx"/>
+        <xi:include href="../exercises/E1/0001.ptx"/>
+        <xi:include href="../exercises/E1/0002.ptx"/>
+        <xi:include href="../exercises/E1/0003.ptx"/>
+        <xi:include href="../exercises/E1/0004.ptx"/>
+        <p><em>Additional exercises available at <url href="https://checkit.clontz.org/banks/tbil-la/E1/">checkit.clontz.org</url>.</em></p>
+    </exercises>
+</section>
