@@ -1,6 +1,10 @@
-all: pdf/rats/rat-*.pdf pdf/slides/slides*pdf pdf/course-notes.pdf \
-	pdf/course-slides.pdf pdf/course-slides-sectioned.pdf pdf/standards.pdf \
-	pdf/exercise-library.pdf pdf/sample-exercises.pdf \
+all: pdf/rats/rat-*.pdf \
+        pdf/slides/slides*pdf \
+        pdf/course-notes.pdf \
+	pdf/course-slides.pdf \
+        pdf/course-slides-sectioned.pdf \
+        pdf/standards.pdf \
+	pdf/sample-exercises.pdf \
 	pdf/facilitator-notes.pdf \
 	pdf/handouts/handout-*.pdf \
 	pdf/definitions.pdf
@@ -49,19 +53,10 @@ pdf/standards.pdf: tex/tbil-la.sty tex/standards.tex tex/modules/*/standards.tex
 	cd tex; pdflatex --output-directory=aux standards.tex; \
 	mv aux/standards.pdf ../pdf
 
-pdf/exercise-library.pdf: tex/exercise-library_solutions.tex tex/modules/*/exercises/*.tex
-	cd tex; pdflatex --output-directory=aux exercise-library_solutions.tex; \
-	mv aux/exercise-library_solutions.pdf ../pdf; \
-	cd aux; pdflatex exercise-library.tex; \
-	mv exercise-library.pdf ../../pdf
-
 pdf/facilitator-notes.pdf: tex/facilitator-notes.tex
 	cd tex; pdflatex --output-directory=aux facilitator-notes.tex; \
 	mv aux/facilitator-notes.pdf ../pdf
 
-#pdf/homework.pdf: tex/tbil-la.sty tex/homework.tex
-#	cd tex; pdflatex --output-directory=aux homework.tex; \
-#	mv aux/homework.pdf ../pdf
 
 pdf/sample-exercises.pdf: tex/sample-exercises.tex
 	cd tex; pdflatex --output-directory=aux sample-exercises.tex; \
