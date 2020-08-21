@@ -80,4 +80,6 @@ you can symlink them like so:
 ln -s path/to/your/masterit-tbil-la exercises
 ```
 
+Built versions of these exercises are currently available at <https://checkit.clontz.org/banks/tbil-la/>
+
 [allman]: https://en.wikipedia.org/wiki/Indentation_style#Allman_style
