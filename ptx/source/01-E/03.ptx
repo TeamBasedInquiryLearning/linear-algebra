@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="E3" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Solving Linear Systems (E3)</title>
+<activity tbil-time='10'>
+    <statement>
+        <p>
+Free browser-based technologies for mathematical computation
+are available online.
+        </p>
+<ul>
+<li><p>
+     Go to <url href="https://sagecell.sagemath.org/"/>.
+    </p>
+</li>
+<li>
+    <p>Type <c>A=Matrix([[1,3,4],[2,5,7]])</c> 
+      to store the matrix
+      <m>\left[\begin{array}{} 1 &amp; 3 &amp; 2 \\ 2 &amp; 5 &amp; 7 \end{array}\right]</m>
+      in the variable <m>A</m>. Then add the line <c>show(A)</c> and use the <kbd>Evaluate</kbd> button
+      to preview it.
+    </p>
+</li>
+<li><p>Add the line <c>show(A.rref())</c> and use <kbd>Evaluate</kbd>
+      to compute the reduced row echelon form of <m>A</m>.
+    </p>
+</li>
+</ul>
+    <p>
+     Since the vertical bar in an augmented matrix does not affect
+          row operations, the <m>\RREF</m> of
+      <m>\left[\begin{array}{cc|c} 1 &amp; 3 &amp; 2 \\ 2 &amp; 5 &amp; 7 \end{array}\right]</m>
+          may be computed in the same way.
+    </p>
+    </statement>
+</activity>
+
+<!--
+<remark>
+We will frequently need to know the reduced row echelon form of matrices 
+during class, so feel free to use Octave-Online.net to compute RREF
+efficiently.
+
+\vspace{1em}
+
+You may alternatively use the calculator you will use during assessments.
+Be sure to use fractions mode to compute exact solutions rather
+than floating-point approximations. 
+</remark>
+
+<activity tbil-time='10'>
+Consider the system of equations.
+ <me>
+        <md alignat-columns='4'>
+             3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 13x_3 &amp;\,=\,&amp; 6 \\
+             2x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 10x_3 &amp;\,=\,&amp; 2 \\
+             -x_1 &amp;\,+\,&amp; 3x_2 &amp;\,-\,&amp;  6x_3 &amp;\,=\,&amp; 11
+           </md>
+</me>
+
+<task>
+Convert this to an augmented matrix and use technology to compute its
+reduced row echelon form:
+<me>
+  \RREF
+  \left[\begin{array}{ccc|c}
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+  \end{array}\right]
+=
+  \left[\begin{array}{ccc|c}
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+  \end{array}\right]
+</me>
+</task>
+<task>
+Use the <m>\RREF</m> matrix to write a linear system equivalent
+to the original system. Then find its solution set.
+</task>
+</activity>
+
+<activity tbil-time='10'>
+Consider the vector equation
+ <me> x_1 \left[\begin{array} 3 \\ 2\\ -1 \end{array}\right]+x_2 \left[\begin{array}-2 \\ -2 \\ 0 \end{array}\right]+x_3\left[\begin{array} 13 \\ 10 \\ -3 \end{array}\right]=\left[\begin{array} 6 \\ 2 \\ 1 \end{array}\right]</me>
+<task>
+Convert this to an augmented matrix and use technology to compute its
+reduced row echelon form:
+<me>
+  \RREF
+  \left[\begin{array}{ccc|c}
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+  \end{array}\right]
+=
+  \left[\begin{array}{ccc|c}
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+  \end{array}\right]
+</me>
+</task>
+<task>
+Use the <m>\RREF</m> matrix to write a linear system equivalent
+to the original system. Then find its solution set.
+</task>
+</activity>
+
+<activity tbil-time='10'>
+  Consider the following linear system.
+      <md alignat-columns='4'>
+          x_1 &amp;+ 2x_2 &amp;+ 3x_3 &amp;= 1\\
+        2x_1 &amp;+ 4x_2 &amp;+ 8x_3 &amp;= 0
+      </md>
+  <task>
+    Find its corresponding augmented matrix <m>A</m> and
+    use technology to find <m>\RREF(A)</m>.
+  </task>
+  <task>
+    How many solutions do these linear systems have?
+  </task>
+</activity>
+
+<activity tbil-time='10'>
+Consider the simple linear system equivalent to the system
+from the previous activity:
+    <md alignat-columns='3'>
+        x_1 &amp;+ 2x_2 &amp; &amp;= 4\\
+              &amp; &amp;\phantom{+}x_3 &amp;= -1
+    </md>
+<task>
+Let <m>x_1=a</m> and write the solution set in the form
+<m>
+  \setBuilder
+  {
+    \left[\begin{array} a \\ \unknown \\ \unknown \end{array}\right]
+  }{
+    a \in \IR
+  }
+</m>.
+</task>
+<task>
+Let <m>x_2=b</m> and write the solution set in the form
+<m>
+  \setBuilder
+  {
+    \left[\begin{array} \unknown \\ b \\ \unknown \end{array}\right]
+  }{
+    b \in \IR
+  }
+</m>.
+</task>
+<task>
+Which of these was easier?  What features of the RREF matrix
+<m>
+  \left[\begin{array}{ccc|c}
+    \circledNumber{1} &amp; 2 &amp; 0 &amp; 4 \\
+    0 &amp; 0 &amp; \circledNumber{1} &amp; -1
+  \end{array}\right]
+</m> caused this?
+</task>
+</activity>
+
+<definition>
+Recall that the pivots of a matrix in <m>\RREF</m> form are the leading
+<m>1</m>s in each non-zero row.
+
+\vspace{0.2in}
+
+The pivot columns in an augmented matrix correspond to the
+<term>bound variables</term> in the system of equations (<m>x_1,x_3</m> below).
+The remaining variables are called <term>free variables</term> (<m>x_2</m> below).
+
+<me>
+  \left[\begin{array}{ccc|c}
+    \circledNumber{1} &amp; 2 &amp; 0 &amp; 4 \\
+    0 &amp; 0 &amp; \circledNumber{1} &amp; -1
+  \end{array}\right]
+</me>
+
+To efficiently solve a system in RREF form, assign letters to the free
+variables, and then solve for the bound variables.
+</definition>
+
+<activity tbil-time='10'>
+Find the solution set for the system
+<md alignat-columns='6'>
+2x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;6x_3&amp;\,+\,&amp;x_4&amp;\,-\,&amp;x_5&amp;\,=\,&amp;3 \\
+-x_1&amp;\,+\,&amp;x_2&amp;\,+\,&amp;3x_3&amp;\,-\,&amp;x_4&amp;\,+\,&amp;2x_5 &amp;\,=\,&amp; -3 \\
+x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;x_3&amp;\,+\,&amp;x_4&amp;\,+\,&amp;x_5 &amp;\,=\,&amp; 2
+</md>
+by row-reducing its augmented matrix, and then
+assigning letters to the free variables (given by non-pivot columns)
+and solving for the bound variables (given by pivot columns) in
+the corresponding linear system.
+</activity>
+
+<observation>
+The solution set to the system
+<md alignat-columns='6'>
+2x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;6x_3&amp;\,+\,&amp;x_4&amp;\,-\,&amp;x_5&amp;\,=\,&amp;3 \\
+-x_1&amp;\,+\,&amp;x_2&amp;\,+\,&amp;3x_3&amp;\,-\,&amp;x_4&amp;\,+\,&amp;2x_5 &amp;\,=\,&amp; -3 \\
+x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;x_3&amp;\,+\,&amp;x_4&amp;\,+\,&amp;x_5 &amp;\,=\,&amp; 2
+</md>
+may be written as
+<me>
+  \setBuilder
+  {
+    \left[\begin{array}
+      1+5a+2b \\
+      1+2a+3b \\
+      a \\
+      3+3b \\
+      b
+    \end{array}\right]
+  }{
+    a,b\in \IR
+  }
+.</me>
+</observation>
+
+<remark>
+Don't forget to correctly express the solution set of a linear system,
+using set-builder notation for consistent systems with
+infintely many solutions.
+  <ul>
+  </li>
+<li> <em>Consistent with one solution</em>: e.g.
+        <m>\setList{ \left[\begin{array}1\\2\\3\end{array}\right] }</m>
+  </li>
+<li> <em>Consistent with infinitely-many solutions</em>: e.g.
+        <m>
+          \setBuilder
+          {
+            \left[\begin{array}1\\2-3a\\a\end{array}\right]
+          }{
+            a\in\IR
+          }
+        </m>
+  </li>
+<li> <em>Inconsistent</em>: <m>\emptyset</m> or <m>\{\}</m>
+  </ul>
+</remark>
+
+
+-->
+</section>
