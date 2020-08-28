@@ -1,0 +1,1428 @@
+
+
+
+<definition>
+  A <term>linear combination</term> of a set of vectors
+  <m>\{\vec v_1,\vec v_2,\dots,\vec v_m\}</m> is given by
+  <m>c_1\vec v_1+c_2\vec v_2+\dots+c_m\vec v_m</m> for any choice of
+  scalar multiples <m>c_1,c_2,\dots,c_m</m>.
+
+	\vspace{2em}
+
+  For example, we can say <m>\left[\begin{array}3 \\0 \\ 5\end{array}\right]</m> 
+  is a linear combination of the vectors <m>\left[\begin{array} 1 \\ -1 \\ 2 \end{array}\right]</m> 
+  and <m>\left[\begin{array} 1 \\ 2 \\ 1 \end{array}\right]</m> since 
+  <me>
+    \left[\begin{array} 3 \\ 0 \\ 5 \end{array}\right] = 
+    2 \left[\begin{array} 1 \\ -1 \\ 2 \end{array}\right] + 
+    1\left[\begin{array} 1 \\ 2 \\ 1 \end{array}\right]
+  </me>
+</definition>
+
+<definition>
+  The <term>span</term> of a set of vectors is the collection of all linear
+  combinations of that set:
+  <me>
+    \vspan\{\vec v_1,\vec v_2,\dots,\vec v_m\} =
+    \setBuilder{c_1\vec v_1+c_2\vec v_2+\dots+c_m\vec v_m}{
+    c_i\in\IR}.
+  </me>
+
+	\vspace{2em}
+
+  For example:
+
+  <me>
+    \vspan\setList
+    {
+      \left[\begin{array} 1 \\ -1 \\ 2 \end{array}\right],
+      \left[\begin{array} 1 \\ 2 \\ 1 \end{array}\right]
+    } = \setBuilder
+    {
+      a\left[\begin{array} 1 \\ -1 \\ 2 \end{array}\right]+
+      b\left[\begin{array} 1 \\ 2 \\ 1 \end{array}\right]
+    }{
+      a,b\in\IR
+    }
+  </me>
+</definition>
+
+<activity tbil-time='10'>
+  Consider <m>\vspan\left\{\left[\begin{array}1\\2\end{array}\right]\right\}</m>.
+  <task>
+    Sketch
+
+    <m>1\left[\begin{array}1\\2\end{array}\right]=\left[\begin{array}1\\2\end{array}\right]</m>,
+    \hfill<m>3\left[\begin{array}1\\2\end{array}\right]=\left[\begin{array}3\\6\end{array}\right]</m>,
+    \hfill<m>0\left[\begin{array}1\\2\end{array}\right]=\left[\begin{array}0\\0\end{array}\right]</m>,
+    \hfill and <m>-2\left[\begin{array}1\\2\end{array}\right]=\left[\begin{array}-2\\-4\end{array}\right]</m> 
+
+    in the <m>xy</m> plane.
+  </task>
+  <task>
+    Sketch a representation of all the vectors belonging to
+    <m>
+      \vspan\setList{\left[\begin{array}1\\2\end{array}\right]}
+        =
+      \setBuilder{a\left[\begin{array}1\\2\end{array}\right]}{a\in\IR}
+    </m>
+    in the <m>xy</m> plane.
+  </task>
+</activity>
+
+
+
+
+
+<activity tbil-time='10'>
+  Consider <m>\vspan\left\{\left[\begin{array}1\\2\end{array}\right],
+  \left[\begin{array}-1\\1\end{array}\right]\right\}</m>.
+  <task>
+    Sketch the following linear combinations in the <m>xy</m> plane.
+    <me>
+    1\left[\begin{array}1\\2\end{array}\right]+
+    0\left[\begin{array}-1\\1\end{array}\right]\hspace{3em}
+    0\left[\begin{array}1\\2\end{array}\right]+
+    1\left[\begin{array}-1\\1\end{array}\right]\hspace{3em}
+    1\left[\begin{array}1\\2\end{array}\right]+
+    1\left[\begin{array}-1\\1\end{array}\right]
+    </me>
+    <me>
+    -2\left[\begin{array}1\\2\end{array}\right]+
+    1\left[\begin{array}-1\\1\end{array}\right]\hspace{3em}
+    -1\left[\begin{array}1\\2\end{array}\right]+
+    -2\left[\begin{array}-1\\1\end{array}\right]
+    </me>
+  </task>
+  <task>
+    Sketch a representation of all the vectors belonging to
+    <m>\vspan\left\{\left[\begin{array}1\\2\end{array}\right],
+     \left[\begin{array}-1\\1\end{array}\right]\right\}</m>
+    in the <m>xy</m> plane.
+  </task>
+</activity>
+
+<activity tbil-time='5'>
+    Sketch a representation of all the vectors belonging to
+    <m>\vspan\left\{\left[\begin{array}6\\-4\end{array}\right],
+     \left[\begin{array}-3\\2\end{array}\right]\right\}</m>
+    in the <m>xy</m> plane.
+</activity>
+
+<remark>
+	Recall these definitions from last class:
+<ul>
+	</li>
+<li>
+  A <term>linear combination</term> of vectors is given by adding scalar
+  multiples of those vectors, such as:
+  <me>
+    \left[\begin{array} 3 \\ 0 \\ 5 \end{array}\right] =
+    2 \left[\begin{array} 1 \\ -1 \\ 2 \end{array}\right] +
+    1\left[\begin{array} 1 \\ 2 \\ 1 \end{array}\right]
+  </me>
+
+</li>
+<li> The <term>span</term> of a set of vectors is the collection of all linear
+  combinations of that set, such as:
+  <me>
+    \vspan\setList
+    {
+      \left[\begin{array} 1 \\ -1 \\ 2 \end{array}\right],
+      \left[\begin{array} 1 \\ 2 \\ 1 \end{array}\right]
+    } = \setBuilder
+    {
+      a\left[\begin{array} 1 \\ -1 \\ 2 \end{array}\right]+
+      b\left[\begin{array} 1 \\ 2 \\ 1 \end{array}\right]
+    }{
+      a,b\in\IR
+    }
+  </me>
+ </ul>
+</remark>
+
+
+<activity tbil-time='15'>
+  The vector
+  <m>\left[\begin{array}-1\\-6\\1\end{array}\right]</m> belongs to
+  <m>\vspan\left\{\left[\begin{array}1\\0\\-3\end{array}\right],
+  \left[\begin{array}-1\\-3\\2\end{array}\right]\right\}</m> exactly when
+  there exists a solution to the vector equation
+  <m>x_1\left[\begin{array}1\\0\\-3\end{array}\right]+
+  x_2\left[\begin{array}-1\\-3\\2\end{array}\right]
+  =\left[\begin{array}-1\\-6\\1\end{array}\right]</m>.
+
+  <task>
+    Reinterpret this vector equation as a system of linear equations.
+  </task>
+
+  <task>
+    Find its solution set, using technology to find <m>\RREF</m> of its
+    corresponding augmented matrix.
+  </task>
+
+  <task>
+    Given this solution set, does
+    <m>\left[\begin{array}-1\\-6\\1\end{array}\right]</m> belong to
+    <m>\vspan\left\{\left[\begin{array}1\\0\\-3\end{array}\right],
+    \left[\begin{array}-1\\-3\\2\end{array}\right]\right\}</m>?
+  </task>
+</activity>
+
+<fact>
+  A vector <m>\vec b</m> belongs to
+  <m>\vspan\{\vec v_1,\dots,\vec v_n\}</m> if and only if
+	the vector equation <m>x_1 \vec{v}_1+\cdots+x_n \vec{v_n}=\vec{b}</m> is consistent.
+</fact>
+
+\begin{quickcheck}
+The following are all equivalent statements:
+<ul>
+</li>
+<li> The vector <m>\vec{b}</m> belongs to <m>\vspan\{\vec v_1,\dots,\vec v_n\}</m>.
+</li>
+<li> The vector equation <m>x_1 \vec{v}_1+\cdots+x_n \vec{v_n}=\vec{b}</m> is consistent.
+</li>
+<li> The linear system corresponding to
+  <m>[\vec v_1\,\dots\,\vec v_n \,|\, \vec b]</m>
+  is consistent.
+</li>
+<li>  <m>\RREF[\vec v_1\,\dots\,\vec v_n \,|\, \vec b]</m>
+  doesn't have a row <m>[0\,\cdots\,0\,|\,1]</m>
+  representing the contradiction <m>0=1</m>.
+</ul>
+\end{quickcheck}
+
+<activity tbil-time='10'>
+  Determine if
+  <m>\left[\begin{array}3\\-2\\1 \\ 5\end{array}\right]</m> belongs to
+  <m>\vspan\left\{\left[\begin{array}1\\0\\-3 \\ 2\end{array}\right],
+  \left[\begin{array}-1\\-3\\2 \\ 2\end{array}\right]\right\}</m>
+  by solving an appropriate vector equation.
+</activity>
+
+
+
+
+
+<activity tbil-time='5'>
+  Determine if
+  <m>\left[\begin{array}-1\\-9\\0\end{array}\right]</m> belongs to
+  <m>\vspan\left\{\left[\begin{array}1\\0\\-3\end{array}\right],
+  \left[\begin{array}-1\\-3\\2\end{array}\right]\right\}</m>
+  by solving an appropriate vector equation.
+</activity>
+
+
+<activity tbil-time='10'>
+  Does the third-degree polynomial <m>3y^3-2y^2+y+5</m> in <m>\P^3</m> belong to
+  <m>\vspan\{y^3-3y+2,-y^3-3y^2+2y+2\}</m>?
+  <task>
+  	Reinterpret this question as a question about the solution(s) of a polynomial equation.
+  </task>
+  <task>
+  	Answer this equivalent question, and use its solution to answer the original
+    question.
+  </task>
+</activity>
+
+<activity tbil-time='5'>
+  Does the polynomial  <m>x^2+x+1</m> belong to
+  <m>\vspan\{x^2-x,x+1, x^2-1\}</m>?
+</activity>
+
+<activity tbil-time='5'>
+  Does the matrix <m>\left[\begin{array}3&amp;-2\\1&amp;5\end{array}\right]</m> belong to
+  <m>\vspan\left\{\left[\begin{array}1&amp;0\\-3&amp;2\end{array}\right],
+  \left[\begin{array}-1&amp;-3\\2&amp;2\end{array}\right]\right\}</m>?
+  <task>
+  	Reinterpret this question as a question about the solution(s) of a matrix equation.
+  </task>
+  <task>
+  	Answer this equivalent question, and use its solution to answer the original
+    question.
+  </task>
+</activity>
+
+
+<observation>
+Any single non-zero vector/number <m>x</m> in <m>\IR^1</m> spans <m>\IR^1</m>,
+since <m>\IR^1=\setBuilder{cx}{c\in\IR}</m>.
+
+\begin{center}
+\begin{tikzpicture}
+\draw[<->] (-3,0) -- (3,0);
+\draw[thick,->,blue] (0,0) -- (2,0) node[above] {x};
+\draw (0,-0.2) -- (0,0.2) node[above] {0};
+\end{tikzpicture}
+\end{center}
+</observation>
+
+
+<activity tbil-time='5'>
+  How many vectors are required to span <m>\IR^2</m>?
+  Sketch a drawing in the <m>xy</m> plane to support your answer.
+  \begin{center}
+  \begin{tikzpicture}[scale=0.5]
+    \draw[<->] (-4,0) -- (4,0);
+    \draw[<->] (0,-4) -- (0,4);
+  \end{tikzpicture}
+  \end{center}
+  
+  <ol>[(a)]
+  </li>
+<li> <m>1</m>
+  </li>
+<li> <m>2</m>
+  </li>
+<li> <m>3</m>
+  </li>
+<li> <m>4</m>
+  </li>
+<li> Infinitely Many
+  </ol>
+</activity>
+
+<activity tbil-time='5'>
+  How many vectors are required to span <m>\IR^3</m>?
+  \begin{center}
+  \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)},scale=0.4]
+    \draw[->] (0,0,0) -- (6,0,0);
+    \draw[->] (0,0,0) -- (0,6,0);
+    \draw[->] (0,0,0) -- (0,0,6);
+  \end{tikzpicture}
+  \end{center}
+
+  <ol>[(a)]
+  </li>
+<li> <m>1</m>
+  </li>
+<li> <m>2</m>
+  </li>
+<li> <m>3</m>
+  </li>
+<li> <m>4</m>
+  </li>
+<li> Infinitely Many
+  </ol>
+</activity>
+
+<fact>
+  At least <m>n</m> vectors are required to span <m>\IR^n</m>.
+
+  \begin{center}
+  \begin{tikzpicture}[scale=0.5]
+    \draw[<->] (-4,0) -- (4,0);
+    \draw[<->] (0,-4) -- (0,4);
+    \draw[blue!50] (2,-4) -- (-2,4);
+    \draw[thick,blue,->] (0,0) -- (1,-2);
+  \end{tikzpicture}
+  \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)},scale=0.4]
+    \draw[->] (0,0,0) -- (6,0,0);
+    \draw[->] (0,0,0) -- (0,6,0);
+    \draw[->] (0,0,0) -- (0,0,6);
+    \draw[fill=purple!20,fill opacity=0.5]
+      (-2,-2,2) -- (6,-2,-2) -- (2,2,-2) -- (-6,2,2) -- (-2,-2,2);
+    \draw[thick,blue,->] (0,0,0) -- (1,-1,0);
+    \draw[thick,red,->] (0,0,0) -- (-2,0,1);
+  \end{tikzpicture}
+  \end{center}
+</fact>
+
+<activity tbil-time='15'>
+  Choose any vector <m>\left[\begin{array}\unknown\\\unknown\\\unknown\end{array}\right]</m>
+  in <m>\IR^3</m> that is not in
+  <m>\vspan\left\{\left[\begin{array}1\\-1\\0\end{array}\right],
+  \left[\begin{array}-2\\0\\1\end{array}\right]\right\}</m> by using technology to verify that
+  <m>
+    \RREF
+    \left[\begin{array}{cc|c}1&amp;-2&amp;\unknown\\-1&amp;0&amp;\unknown\\0&amp;1&amp;\unknown\end{array}\right]
+      =
+    \left[\begin{array}{cc|c}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{array}\right]
+  </m>.
+  (Why does this work?)
+</activity>
+
+<fact>
+  The set <m>\{\vec v_1,\dots,\vec v_m\}</m> fails to span all of <m>\IR^n</m>
+  exactly when the vector equation
+	<me> x_1 \vec{v}_1 + \cdots x_m\vec{v}_m = \vec{w} </me>
+  is inconsistent for <em>some</em> vector <m>\vec{w}</m>.
+  \vfill
+  Note that this happens exactly when <m>\RREF[\vec v_1\,\dots\,\vec v_m]</m> has a non-pivot row of zeros.
+  <me>\left[\begin{array}{cc}1&amp;-2\\-1&amp;0\\0&amp;1\end{array}\right]\sim
+  \left[\begin{array}{cc}1&amp;0\\0&amp;1\\0&amp;0\end{array}\right]</me>
+  <me>\Rightarrow
+  \left[\begin{array}{cc|c}1&amp;-2&amp;a\\-1&amp;0&amp;b\\0&amp;1&amp;c\end{array}\right]\sim
+  \left[\begin{array}{cc|c}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{array}\right]
+  \text{for some choice of vector} \left[\begin{array} a \\ b \\ c \end{array}\right] </me>
+</fact>
+
+<activity tbil-time='5'>
+  Consider the set of vectors <m>S=\left\{
+  \left[\begin{array}2\\3\\0\\-1\end{array}\right],
+  \left[\begin{array}1\\-4\\3\\0\end{array}\right],
+  \left[\begin{array}1\\7\\-3\\-1\end{array}\right],
+  \left[\begin{array}0\\3\\5\\7\end{array}\right],
+  \left[\begin{array}3\\13\\7\\16\end{array}\right]
+  \right\}
+  </m>.
+  Does
+  <m>\IR^4=\vspan S</m>?
+	<task>Rewrite this as a question about the solutions to a vector equation.
+	</task>
+	<task>Answer your new question, and use this to answer the original question.
+	</task>
+</activity>
+
+<activity tbil-time='10'>
+  Consider the set of third-degree polynomials 
+  \begin{align*}
+  S=\{
+  &amp;2x^3+3x^2-1,
+  2x^3+3,
+  3x^3+13x^2+7x+16, \\
+  &amp;-x^3+10x^2+7x+14,
+  4x^3+3x^2+2 \} .
+  \end{align*}
+  Does
+  <m>\P^3=\vspan S</m>?
+	<task>Rewrite this as a question about the solutions to a polynomial equation.
+	</task>
+	<task>Answer your new question, and use this to answer the original question.
+	</task>
+</activity>
+
+<activity tbil-time='5'>
+Consider the set of matrices
+<me> S = \left\{
+		\left[\begin{array} 1 &amp; 3 \\ 0 &amp; 1 \end{array}\right],
+		\left[\begin{array} 1 &amp; -1 \\ 1 &amp; 0 \end{array}\right],
+		\left[\begin{array} 1 &amp; 0 \\ 0 &amp; 2 \end{array}\right]
+		\right\} </me>
+Does <m>M_{2,2} = \vspan S</m>?
+	<task>Rewrite this as a question about the solutions to a matrix equation.
+	</task>
+	<task>Answer your new question, and use this to answer the original question.
+	</task>
+</activity>
+
+<activity tbil-time='5'>
+Let <m>\vec{v}_1, \vec{v}_2, \vec{v}_3 \in \IR^7</m> be three vectors, and suppose <m>\vec{w}</m> is another vector with <m>\vec{w} \in \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\}</m>.  What can you conclude about <m> \vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} </m> ?
+<ol>[(a)]
+</li>
+<li> <m> \vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} </m> is larger than <m> \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} </m>.
+</li>
+<li> <m> \vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\}  = \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} </m>.
+</li>
+<li> <m> \vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} </m> is smaller than <m> \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} </m>.
+</ol>
+</activity>
+
+
+
+
+<definition>
+  A subset of a vector space is called a <term>subspace</term> if it is
+  a vector space on its own.
+
+  \vspace{1em}
+
+  For example, the span of these two vectors forms a planar subspace
+  inside of the larger vector space <m>\IR^3</m>.
+
+  \begin{center}
+  \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)},scale=0.4]
+    \draw[->] (0,0,0) -- (6,0,0);
+    \draw[->] (0,0,0) -- (0,6,0);
+    \draw[->] (0,0,0) -- (0,0,6);
+    \draw[fill=purple!20,fill opacity=0.5]
+      (-2,-2,2) -- (6,-2,-2) -- (2,2,-2) -- (-6,2,2) -- (-2,-2,2);
+    \draw[thick,blue,->] (0,0,0) -- (1,-1,0);
+    \draw[thick,red,->] (0,0,0) -- (-2,0,1);
+  \end{tikzpicture}
+  \end{center}
+</definition>
+
+
+
+<fact>
+  Any sub<em>set</em> <m>S</m> of a vector space <m>V</m> that contains
+  the additive identity <m>\vec 0</m> satisfies the eight
+  vector space properties automatically, since it is a collection of known
+  vectors.
+
+  \vspace{1em}
+
+  However, to verify that it's a sub<em>space</em>, we need to check that
+  addition and multiplication still make sense using only vectors from <m>S</m>.
+  So we need to check two things:
+
+  <ul>
+  </li>
+<li> The set is <term>closed under addition</term>: for any <m>\vec{x},\vec{y} \in S</m>, the sum <m>\vec{x}+\vec{y}</m> is also in <m>S</m>.
+  </li>
+<li> The set is <term>closed under scalar multiplication</term>: for any <m>\vec{x} \in S</m> and scalar <m>c \in \IR</m>, the product <m>c\vec{x}</m> is also in <m>S</m>.
+</ul>
+</fact>
+
+<activity tbil-time='15'>
+Let <m>S=\setBuilder{\left[\begin{array} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}</m>.
+
+<task>
+  Let <m>\vec{v}=\left[\begin{array} x \\ y \\ z \end{array}\right]</m> and
+  <m>\vec{w} = \left[\begin{array} a \\ b \\ c \end{array}\right] </m> be vectors in <m>S</m>,
+  so <m>x+2y+z=0</m> and <m>a+2b+c=0</m>. Show that
+  <m>\vec v+\vec w = \left[\begin{array} x+a \\ y+b \\ z+c \end{array}\right]</m>
+  also belongs to <m>S</m> by verifying that <m>(x+a)+2(y+b)+(z+c)=0</m>.
+</task>
+<task>
+  Let <m>\vec{v}=\left[\begin{array} x \\ y \\ z \end{array}\right]\in S</m>, so
+  <m>x+2y+z=0</m>. Show that <m>c\vec v=\left[\begin{array}cx\\cy\\cz\end{array}\right]</m> 
+  also belongs to <m>S</m> for any <m>c\in\IR</m> by verifying
+  an appropriate equation.
+</task>
+<task>
+  Is <m>S</m> is a subspace of <m>\IR^3</m>?
+</task>
+</activity>
+
+<activity tbil-time='10'>
+Let <m>S=\setBuilder{\left[\begin{array} x \\ y \\ z \end{array}\right]}{ x+2y+z=4}</m>.
+Choose a vector
+<m>\vec v=\left[\begin{array} \unknown\\\unknown\\\unknown \end{array}\right]</m> in <m>S</m>
+and a real number <m>c=\unknown</m>, and show that <m>c\vec v</m> isn't in <m>S</m>.
+Is <m>S</m> a subspace of <m>\IR^3</m>?
+</activity>
+
+<remark>
+Since <m>0</m> is a scalar and <m>0\vec{v}=\vec{z}</m> for any vector <m>\vec{v}</m>, a
+nonempty set that is closed under scalar multiplication must contain the zero vector
+<m>\vec{z}</m> for that vector space.
+
+\vspace{1em}
+
+Put another way, you can check any of the following to show that a
+nonempty subset <m>W</m> isn't a subspace:
+
+<ul>
+  </li>
+<li> Show that <m>\vec 0\not\in W</m>. 
+  </li>
+<li> Find <m>\vec u,\vec v\in W</m> such that <m>\vec u+\vec v\not\in W</m>.
+  </li>
+<li> Find <m>c\in\IR,\vec v\in W</m> such that <m>c\vec v\not\in W</m>.
+</ul>
+
+If you cannot do any of these, then <m>W</m> can be proven to be a subspace
+by doing the following:
+<ul>
+  </li>
+<li> Prove that <m>\vec u+\vec v\in W</m> whenever <m>\vec u,\vec v\in W</m>.
+  </li>
+<li> Prove that <m>c\vec v\in W</m> whenever <m>c\in\IR,\vec v\in W</m>.
+</ul>
+</remark>
+
+<activity tbil-time='20'>
+  Consider these subsets of <m>\IR^3</m>:
+  <me>
+    R=
+    \setBuilder{ \left[\begin{array}x\\y\\z\end{array}\right]}{y=z+1}
+    \hspace{2em}
+    S=
+    \setBuilder{ \left[\begin{array}x\\y\\z\end{array}\right]}{y=|z|}
+    \hspace{2em}
+    T=
+    \setBuilder{ \left[\begin{array}x\\y\\z\end{array}\right]}{z=xy}
+  </me>
+  <task>
+  Show <m>R</m> isn't a subspace by showing that <m>\vec 0\not\in R</m>.
+  </task>
+  <task>
+  Show <m>S</m> isn't a subspace by finding two vectors <m>\vec u,\vec v\in S</m>
+  such that <m>\vec u+\vec v\not\in S</m>.
+  </task>
+  <task>
+  Show <m>T</m> isn't a subspace by finding a vector <m>\vec v\in T</m>
+  such that <m>2\vec v\not\in T</m>.
+  </task>
+</activity>
+
+
+
+<activity tbil-time='5'>
+Let <m>W</m> be a subspace of a vector space <m>V</m>.  How are <m>\vspan W</m> and <m>W</m> related?
+<ol>[(a)]
+</li>
+<li> <m>\vspan W</m> is bigger than <m>W</m>
+</li>
+<li> <m>\vspan W</m> is the same as <m>W</m>
+</li>
+<li> <m>\vspan W</m> is smaller than <m>W</m>
+</ol>
+</activity>
+
+<fact>
+  If <m>S</m> is any subset of a vector space <m>V</m>, then
+  since <m>\vspan S</m> collects all possible linear combinations,
+  <m>\vspan S</m> is automatically a subspace of <m>V</m>.
+
+  \vspace{1em}
+
+  In fact, <m>\vspan S</m> is always the smallest
+  subspace of <m>V</m> that contains all the vectors in <m>S</m>.
+</fact>
+
+
+<activity tbil-time='10'>
+  Consider the two sets
+  \begin{align*}
+    S=\left\{
+  \left[\begin{array}2\\3\\1\end{array}\right],
+  \left[\begin{array}1\\1\\4\end{array}\right]
+  \right\} &amp; &amp;
+    T=\left\{
+  \left[\begin{array}2\\3\\1\end{array}\right],
+  \left[\begin{array}1\\1\\4\end{array}\right],
+  \left[\begin{array}-1\\0\\-11\end{array}\right]
+  \right\}
+  \end{align*}
+  Which of the following is true?
+
+	<ol>[(A)]
+	</li>
+<li> <m>\vspan S</m> is bigger than <m>\vspan T</m>.
+	</li>
+<li> <m>\vspan S</m> and <m>\vspan T</m> are the same size.
+	</li>
+<li> <m>\vspan S</m> is smaller than <m>\vspan T</m>.
+	</ol>
+
+</activity>
+
+<definition>
+  We say that a set of vectors is <term>linearly dependent</term> if one vector
+  in the set belongs to the span of the others. Otherwise, we say the set
+  is <term>linearly independent</term>.
+
+  \begin{center}
+  \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)},scale=0.4]
+    \draw[->] (0,0,0) -- (6,0,0);
+    \draw[->] (0,0,0) -- (0,6,0);
+    \draw[->] (0,0,0) -- (0,0,6);
+    \draw[fill=purple!20,fill opacity=0.5]
+      (-2,-2,2) -- (6,-2,-2) -- (2,2,-2) -- (-6,2,2) -- (-2,-2,2);
+    \draw[thick,blue,->] (0,0,0) -- (1,-1,0);
+    \draw[thick,red,->] (0,0,0) -- (-2,0,1);
+    \draw[thick,purple,->] (0,0,0) -- (1,1,-1);
+  \end{tikzpicture}
+  \end{center}
+
+  You can think of linearly dependent sets as containing a redundant vector,
+  in the sense that you can drop a vector out without reducing the span of the set. In the above image, all three vectors lay on the same planar subspace,
+  but only two vectors are needed to span the plane, so the set is
+  linearly dependent.
+</definition>
+
+<activity tbil-time='10'>
+  Let <m>\vec{v}_1,\vec{v}_2,\vec{v}_3 </m> be vectors in <m>\mathbb R^n</m>.
+  Suppose <m>3\vec{v}_1-5\vec{v}_2=\vec{v}_3</m>, so the set
+  <m>\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}</m> is linearly dependent.
+  Which of the following is true of the vector equation <m>x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3=\vec{0}</m> ?
+  <ol>[(A)]
+  </li>
+<li> It is consistent with one solution
+  </li>
+<li> It is consistent with infinitely many solutions
+  </li>
+<li> It is inconsistent.
+  </ol>
+</activity>
+
+<fact>
+  For any vector space,
+  the set <m>\{\vec v_1,\dots\vec v_n\}</m> is linearly dependent if and only
+  if the vector equation <m>x_1\vec v_1+\dots+x_n\vec v_n=\vec{0}</m> is consistent with
+  infinitely many solutions.
+</fact>
+
+<activity tbil-time='10'>
+  Find
+  <me>\RREF\left[\begin{array}{ccccc|c}
+  2&amp;2&amp;3&amp;-1&amp;4&amp;0\\
+  3&amp;0&amp;13&amp;10&amp;3&amp;0\\
+  0&amp;0&amp;7&amp;7&amp;0&amp;0\\
+  -1&amp;3&amp;16&amp;14&amp;1&amp;0
+  \end{array}\right]
+  </me>
+  and mark the part of the matrix that demonstrates that
+  <me>S=\left\{
+  \left[\begin{array}2\\3\\0\\-1\end{array}\right],
+  \left[\begin{array}2\\0\\0\\3\end{array}\right],
+  \left[\begin{array}3\\13\\7\\16\end{array}\right],
+  \left[\begin{array}-1\\10\\7\\14\end{array}\right],
+  \left[\begin{array}4\\3\\0\\1\end{array}\right]
+  \right\}
+  </me>
+  is linearly dependent (the part that shows its linear system has
+  infinitely many solutions).
+</activity>
+
+\begin{quickcheck}
+  A set of Euclidean vectors
+  <m>\{\vec v_1,\dots\vec v_n\}</m> is linearly dependent if and only
+  if <m>\RREF\left[\begin{array}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]</m>
+  has a column without a pivot position.
+\end{quickcheck}
+
+
+<observation>
+  Compare the following results:
+  
+  <ul>
+  </li>
+<li> A set of <m>\IR^m</m> vectors
+  <m>\{\vec v_1,\dots\vec v_n\}</m> is linearly independent if and only
+  if <m>\RREF\left[\begin{array}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]</m>
+  has all pivot columns.
+  </li>
+<li> A set of <m>\IR^m</m> vectors
+  <m>\{\vec v_1,\dots\vec v_n\}</m> spans <m>\IR^m</m> if and only
+  if <m>\RREF\left[\begin{array}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]</m>
+  has all pivot rows.
+  </ul>
+</observation>
+
+<activity tbil-time='5'>
+  Is the set of Euclidean vectors <m>\left\{
+  \left[\begin{array}-4\\2\\3\\0\\-1\end{array}\right],
+  \left[\begin{array}1\\2\\0\\0\\3\end{array}\right],
+  \left[\begin{array}1\\10\\10\\2\\6\end{array}\right],
+  \left[\begin{array}3\\4\\7\\2\\1\end{array}\right]
+  \right\}</m> linearly dependent or linearly independent?
+<task>
+Reinterpret this question as an appropriate question about solutions to a vector equation.
+</task>
+<task> 
+Use the solution to this question to answer the original question.
+</task>
+</activity>
+
+<activity tbil-time='10'>
+  Is the set of polynomials <m>\left\{
+  x^3+1,x^2+2x,x^2+7x+4
+  \right\}</m> linearly dependent or linearly independent?
+<task>
+Reinterpret this question as an appropriate question about solutions to a polynomial equation.
+</task>
+<task> 
+Use the solution to this question to answer the original question.
+</task>
+</activity>
+
+<activity tbil-time='5'>
+What is the largest number of <m>\IR^4</m> vectors that can form a linearly independent set?
+<ol>[(a)]
+</li>
+<li> <m>3</m>
+</li>
+<li> <m>4</m>
+</li>
+<li> <m>5</m>
+</li>
+<li> You can have infinitely many vectors and still be linearly independent.
+</ol>
+</activity>
+
+<activity tbil-time='5'>
+What is the largest number of 
+<me>\P^4=\setBuilder{ax^4+bx^3+cx^2+dx+e}{a,b,c,d,e\in\IR}</me>
+vectors that can form a linearly independent set?
+<ol>[(a)]
+</li>
+<li> <m>3</m>
+</li>
+<li> <m>4</m>
+</li>
+<li> <m>5</m>
+</li>
+<li> You can have infinitely many vectors and still be linearly independent.
+</ol>
+</activity>
+
+<activity tbil-time='5'>
+What is the largest number of 
+<me>\P=\setBuilder{f(x)}{f(x)\text{ is any polynomial}}</me>
+vectors that can form a linearly independent set?
+<ol>[(a)]
+</li>
+<li> <m>3</m>
+</li>
+<li> <m>4</m>
+</li>
+<li> <m>5</m>
+</li>
+<li> You can have infinitely many vectors and still be linearly independent.
+</ol>
+</activity>
+
+
+
+
+
+
+<definition>
+  A <term>basis</term> is a linearly independent set that spans a vector space.
+
+  \vspace{1em}
+
+  The <term>standard basis</term> of <m>\IR^n</m> is the set <m>\{\vec{e}_1, \ldots, \vec{e}_n\}</m> where
+  \begin{align*}
+  \vec{e}_1 &amp;= \left[\begin{array}1 \\ 0 \\ 0 \\ \vdots \\ 0 \\  0 \end{array}\right] &amp;
+  \vec{e}_2 &amp;= \left[\begin{array}0 \\ 1 \\ 0 \\ \vdots \\ 0 \\ 0 \end{array}\right] &amp;
+  \cdots &amp; &amp;
+  \vec{e}_n = \left[\begin{array}0 \\ 0 \\ 0 \\ \vdots \\ 0 \\ 1 \end{array}\right]
+  \end{align*}
+
+  \vspace{1em}
+
+  For <m>\IR^3</m>, these are the vectors
+  <m>
+    \vec e_1=\hat\imath=\left[\begin{array}1 \\ 0 \\ 0\end{array}\right],
+    \vec e_2=\hat\jmath=\left[\begin{array}0 \\ 1 \\ 0\end{array}\right],
+  </m> and <m>
+    \vec e_3=\hat k=\left[\begin{array}0 \\ 0 \\ 1\end{array}\right]
+  </m>.
+
+  </definition>
+
+<observation>
+  A basis may be thought of as a collection of building blocks for a vector
+  space,  since every vector in the space can be expressed as a unique linear
+  combination of basis vectors.
+
+  \vspace{1em}
+
+  For example, in many calculus courses, vectors in <m>\IR^3</m>
+  are often expressed in their component form
+  <me>
+    (3,-2,4)=\left[\begin{array}3 \\ -2 \\ 4\end{array}\right]
+  </me>
+  or in their standard basic vector form
+  <me>
+    3\vec e_1-2\vec e_2+4\vec e_3 = 3\hat\imath-2\hat\jmath+4\hat k
+  .</me>
+  Since every vector in <m>\IR^3</m> can be uniquely described as a linear
+  combination of the vectors in <m>\setList{\vec e_1,\vec e_2,\vec e_3}</m>,
+  this set is indeed a basis.
+</observation>
+
+
+
+<activity tbil-time='15'>
+  Label each of the sets <m>A,B,C,D,E</m> as
+  <ul>
+     </li>
+<li> SPANS <m>\IR^4</m> or DOES NOT SPAN <m>\IR^4</m>
+     </li>
+<li> LINEARLY INDEPENDENT or LINEARLY DEPENDENT
+     </li>
+<li> BASIS FOR <m>\IR^4</m> or NOT A BASIS FOR <m>\IR^4</m>
+  </ul>
+  by finding <m>\RREF</m> for their corresponding matrices.
+  \begin{center}
+    \begin{tabular}{cc}
+  	<m>A=\left\{
+      \left[\begin{array}1\\0\\0\\0\end{array}\right],
+      \left[\begin{array}0\\1\\0\\0\end{array}\right],
+      \left[\begin{array}0\\0\\1\\0\end{array}\right],
+      \left[\begin{array}0\\0\\0\\1\end{array}\right]
+      \right\}
+      </m>   &amp;
+
+    <m>B=\left\{
+      \left[\begin{array}2\\3\\0\\-1\end{array}\right],
+      \left[\begin{array}2\\0\\0\\3\end{array}\right],
+      \left[\begin{array}4\\3\\0\\2\end{array}\right],
+      \left[\begin{array}-3\\0\\1\\3\end{array}\right]
+      \right\}
+      </m>  \\
+
+
+      <m>C=\left\{
+      \left[\begin{array}2\\3\\0\\-1\end{array}\right],
+      \left[\begin{array}2\\0\\0\\3\end{array}\right],
+      \left[\begin{array}3\\13\\7\\16\end{array}\right],
+      \left[\begin{array}-1\\10\\7\\14\end{array}\right],
+      \left[\begin{array}4\\3\\0\\2\end{array}\right]
+      \right\}
+      </m> &amp;
+
+  	<m>D=\left\{
+      \left[\begin{array}2\\3\\0\\-1\end{array}\right],
+      \left[\begin{array}4\\3\\0\\2\end{array}\right],
+      \left[\begin{array}-3\\0\\1\\3\end{array}\right],
+      \left[\begin{array}3\\6\\1\\5\end{array}\right]
+      \right\}
+      </m> \\
+
+     <m>E=\left\{
+      \left[\begin{array}5\\3\\0\\-1\end{array}\right],
+      \left[\begin{array}-2\\1\\0\\3\end{array}\right],
+      \left[\begin{array}4\\5\\1\\3\end{array}\right]
+      \right\}
+      </m>  &amp;
+    \end{tabular}
+  \end{center}
+</activity>
+
+<activity tbil-time='10'>
+  If <m>\{\vec v_1,\vec v_2,\vec v_3,\vec v_4\}</m> is a basis for
+  <m>\IR^4</m>, that means <m>\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]</m>
+  doesn't have a non-pivot column, and doesn't have a
+  row of zeros. What is <m>\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]</m>?
+
+  <me>
+    \RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]
+      =
+    \left[\begin{array}
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+    \end{array}\right]
+  </me>
+</activity>
+
+\begin{quickcheck}
+  The set <m>\{\vec v_1,\dots,\vec v_m\}</m> is a basis for <m>\IR^n</m> if and
+  only if <m>m=n</m> and
+  <m>\RREF[\vec v_1\,\dots\,\vec v_n]=
+  \left[\begin{array}
+    1&amp;0&amp;\dots&amp;0\\
+    0&amp;1&amp;\dots&amp;0\\
+    \vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+    0&amp;0&amp;\dots&amp;1
+  \end{array}\right]
+  </m>.
+
+  That is, a basis for <m>\IR^n</m> must have exactly <m>n</m> vectors and
+  its square matrix must row-reduce to the so-called <term>identity matrix</term>
+  containing all zeros except for a downward diagonal of ones.
+  (We will learn where the identity matrix gets its name in a later module.)
+\end{quickcheck}
+
+<observation>
+Recall that a <term>subspace</term> of a vector space is a subset that is itself a vector space.
+
+\vspace{1em}
+
+One easy way to construct a subspace is to take the span of set,
+but a linearly dependent set contains ``redundant'' vectors. For example,
+only two of the three vectors in the following image are needed to span
+the planar subspace.
+
+\begin{center}
+\begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)},scale=0.4]
+  \draw[->] (0,0,0) -- (6,0,0);
+  \draw[->] (0,0,0) -- (0,6,0);
+  \draw[->] (0,0,0) -- (0,0,6);
+  \draw[fill=purple!20,fill opacity=0.5]
+    (-2,-2,2) -- (6,-2,-2) -- (2,2,-2) -- (-6,2,2) -- (-2,-2,2);
+  \draw[thick,blue,->] (0,0,0) -- (1,-1,0);
+  \draw[thick,red,->] (0,0,0) -- (-2,0,1);
+  \draw[thick,purple,->] (0,0,0) -- (1,1,-1);
+\end{tikzpicture}
+\end{center}
+</observation>
+
+<activity tbil-time='10'>
+  Consider the subspace of <m>\IR^4</m> given by <m>W=\vspan\left\{
+  \left[\begin{array}2\\3\\0\\1\end{array}\right],
+  \left[\begin{array}2\\0\\1\\-1\end{array}\right],
+  \left[\begin{array}2\\-3\\2\\-3\end{array}\right],
+  \left[\begin{array}1\\5\\-1\\0\end{array}\right]
+  \right\}
+  </m>.
+
+  <task>
+    Mark the part of <m>\RREF\left[\begin{array}
+    2&amp;2&amp;2&amp;1\\
+    3&amp;0&amp;-3&amp;5\\
+    0&amp;1&amp;2&amp;-1\\
+    1&amp;-1&amp;-3&amp;0
+    \end{array}\right]</m> that shows that <m>W</m>'s spanning set
+    is linearly dependent.
+  </task>
+
+  <task>
+    Find a basis for <m>W</m> by removing a vector from its spanning set
+    to make it linearly independent.
+  </task>
+</activity>
+
+<fact>
+  Let <m>S=\{\vec v_1,\dots,\vec v_m\}</m>. The easiest basis describing
+  <m>\vspan S</m> is the set of vectors in <m>S</m> given by the pivot columns
+  of <m>\RREF[\vec v_1\,\dots\,\vec v_m]</m>.
+
+  \vspace{1em}
+
+  Put another way, to compute a basis for the subspace <m>\vspan S</m>,
+  simply remove the vectors corresponding to the non-pivot columns of
+  <m>\RREF[\vec v_1\,\dots\,\vec v_m]</m>.
+  For example, since
+  <me>
+    \RREF
+    \left[\begin{array}
+      1 &amp; 2 &amp; 3 \\
+      0 &amp; -2 &amp; -2 \\
+      -3 &amp; 1 &amp; -2
+    \end{array}\right]
+      =
+    \left[\begin{array}
+      \circledNumber{1} &amp; 0 &amp; 1 \\
+      0 &amp; \circledNumber{1} &amp; 1 \\
+      0 &amp; 0 &amp; 0
+    \end{array}\right]
+  </me>
+  the subspace
+  <m>
+    W=\vspan\setList{
+      \left[\begin{array}1\\0\\-3\end{array}\right],
+      \left[\begin{array}2\\-2\\1\end{array}\right],
+      \left[\begin{array}3\\-2\\-2\end{array}\right]
+    }
+  </m>
+  has
+  <m>
+    \setList{
+      \left[\begin{array}1\\0\\-3\end{array}\right],
+      \left[\begin{array}2\\-2\\1\end{array}\right]
+    }
+  </m>
+  as a basis.
+</fact>
+
+<activity tbil-time='10'>
+Let <m>W</m> be the subspace of <m>\IR^4</m> given by
+ <me>W = \vspan \left\{
+ \left[\begin{array} 1 \\ 3 \\ 1 \\ -1 \end{array}\right],
+ \left[\begin{array} 2 \\ -1 \\ 1 \\ 2 \end{array}\right],
+ \left[\begin{array} 4 \\ 5 \\ 3 \\ 0 \end{array}\right],
+ \left[\begin{array} 3 \\ 2 \\ 2 \\ 1 \end{array}\right]
+ \right\}. </me>
+ Find a basis for <m>W</m>.
+</activity>
+
+<activity tbil-time='10'>
+Let <m>W</m> be the subspace of <m>\P^3</m> given by
+ <me>W = \vspan \left\{x^3+3x^2+x-1, 2x^3-x^2+x+2, 4x^3+5x^2+3x, 3x^3+2x^2+2x+1 \right\} </me>
+ Find a basis for <m>W</m>.
+</activity>
+
+<activity tbil-time='10'>
+Let <m>W</m> be the subspace of <m>M_{2,2}</m> given by
+ <me>W = \vspan \left\{
+ \left[\begin{array} 1 &amp; 3 \\ 1  &amp; -1 \end{array}\right],
+ \left[\begin{array} 2 &amp; -1 \\ 1  &amp; 2 \end{array}\right],
+ \left[\begin{array} 4 &amp; 5 \\ 3  &amp; 0 \end{array}\right],
+ \left[\begin{array} 3 &amp; 2 \\ 2  &amp; 1 \end{array}\right]
+ \right\}. </me>
+ Find a basis for <m>W</m>.
+</activity>
+
+<observation>
+  In the previous section, we learned that
+  computing a basis for the subspace <m>\vspan\{\vec v_1,\dots,\vec v_m\}</m>,
+  is as simple as removing the vectors corresponding to the non-pivot columns of
+  <m>\RREF[\vec v_1\,\dots\,\vec v_m]</m>.
+
+  \vspace{1em}
+
+  For example, since
+  <me>
+    \RREF
+    \left[\begin{array}
+      1 &amp; 2 &amp; 3 \\
+      0 &amp; -2 &amp; -2 \\
+      -3 &amp; 1 &amp; -2
+    \end{array}\right]
+      =
+    \left[\begin{array}
+      \circledNumber{1} &amp; 0 &amp; 1 \\
+      0 &amp; \circledNumber{1} &amp; 1 \\
+      0 &amp; 0 &amp; 0
+    \end{array}\right]
+  </me>
+  the subspace
+  <m>
+    W=\vspan\setList{
+      \left[\begin{array}1\\0\\-3\end{array}\right],
+      \left[\begin{array}2\\-2\\1\end{array}\right],
+      \left[\begin{array}3\\-2\\-2\end{array}\right]
+    }
+  </m>
+  has
+  <m>
+    \setList{
+      \left[\begin{array}1\\0\\-3\end{array}\right],
+      \left[\begin{array}2\\-2\\1\end{array}\right]
+    }
+  </m>
+  as a basis.
+</observation>
+
+<activity tbil-time='10'>
+  Let
+  \begin{align*}
+  S=\left\{
+  \left[\begin{array}2\\3\\0\\1\end{array}\right],
+  \left[\begin{array}2\\0\\1\\-1\end{array}\right],
+  \left[\begin{array}2\\-3\\2\\-3\end{array}\right],
+  \left[\begin{array}1\\5\\-1\\0\end{array}\right]
+  \right\} &amp; &amp; \text{and}  &amp; &amp;
+  T=\left\{
+  \left[\begin{array}2\\0\\1\\-1\end{array}\right],
+  \left[\begin{array}2\\-3\\2\\-3\end{array}\right],
+  \left[\begin{array}1\\5\\-1\\0\end{array}\right],
+  \left[\begin{array}2\\3\\0\\1\end{array}\right]
+  \right\}
+  \end{align*}
+  <task>
+  Find a basis for <m>\vspan S</m>.
+  </task>
+  <task>
+  Find a basis for <m>\vspan T</m>.
+  </task>
+</activity>
+
+<observation>
+  Even though we found different bases for them,
+  <m>\vspan S</m> and <m>\vspan T</m> are exactly the same subspace of <m>\IR^4</m>,
+  since
+  <me>
+    S=\left\{
+    \left[\begin{array}2\\3\\0\\1\end{array}\right],
+    \left[\begin{array}2\\0\\1\\-1\end{array}\right],
+    \left[\begin{array}2\\-3\\2\\-3\end{array}\right],
+    \left[\begin{array}1\\5\\-1\\0\end{array}\right]
+    \right\}
+      =
+    \left\{
+    \left[\begin{array}2\\0\\1\\-1\end{array}\right],
+    \left[\begin{array}2\\-3\\2\\-3\end{array}\right],
+    \left[\begin{array}1\\5\\-1\\0\end{array}\right],
+    \left[\begin{array}2\\3\\0\\1\end{array}\right]
+    \right\}=T
+  </me>
+</observation>
+
+
+<fact>
+  Any non-trivial vector space has infinitely-many different bases, but all
+  the bases for a given vector space are exactly the same size.
+
+  \vspace{1em}
+
+  For example,
+  <me>
+    \setList{\vec e_1,\vec e_2,\vec e_3}
+      \text{ and }
+    \setList{
+      \left[\begin{array}1\\0\\0\end{array}\right],
+      \left[\begin{array}0\\1\\0\end{array}\right],
+      \left[\begin{array}1\\1\\1\end{array}\right]
+    }
+      \text{ and }
+    \setList{
+      \left[\begin{array}1\\0\\-3\end{array}\right],
+      \left[\begin{array}2\\-2\\1\end{array}\right],
+      \left[\begin{array}3\\-2\\5\end{array}\right]
+    }
+  </me>
+  are all valid bases for <m>\IR^3</m>, and they all contain three vectors.
+</fact>
+
+<definition>
+  The <term>dimension</term> of a vector space is equal to the size
+  of any basis for the vector space.
+
+  \vspace{1em}
+
+  As you'd expect, <m>\IR^n</m> has dimension <m>n</m>.
+  For example, <m>\IR^3</m> has dimension <m>3</m> because any basis for <m>\IR^3</m>
+  such as
+  <me>
+    \setList{\vec e_1,\vec e_2,\vec e_3}
+      \text{ and }
+    \setList{
+      \left[\begin{array}1\\0\\0\end{array}\right],
+      \left[\begin{array}0\\1\\0\end{array}\right],
+      \left[\begin{array}1\\1\\1\end{array}\right]
+    }
+      \text{ and }
+    \setList{
+      \left[\begin{array}1\\0\\-3\end{array}\right],
+      \left[\begin{array}2\\-2\\1\end{array}\right],
+      \left[\begin{array}3\\-2\\5\end{array}\right]
+    }
+  </me>
+  contains exactly three vectors.
+</definition>
+
+<activity tbil-time='10'>
+  Find the dimension of each subspace of <m>\IR^4</m> by finding
+  <m>\RREF</m> for each corresponding matrix.
+
+  \begin{center}
+	\begin{tabular}{ll}
+
+     <m>\vspan\left\{
+    \left[\begin{array}2\\3\\0\\-1\end{array}\right],
+    \left[\begin{array}2\\0\\0\\3\end{array}\right],
+    \left[\begin{array}4\\3\\0\\2\end{array}\right],
+    \left[\begin{array}-3\\0\\1\\3\end{array}\right]
+    \right\}
+    </m>
+
+ &amp;
+     <m>\vspan\left\{
+    \left[\begin{array}2\\3\\0\\-1\end{array}\right],
+    \left[\begin{array}2\\0\\0\\3\end{array}\right],
+    \left[\begin{array}3\\13\\7\\16\end{array}\right],
+    \left[\begin{array}-1\\10\\7\\14\end{array}\right],
+    \left[\begin{array}4\\3\\0\\2\end{array}\right]
+    \right\}
+    </m>
+ \\
+     <m>\vspan\left\{
+    \left[\begin{array}2\\3\\0\\-1\end{array}\right],
+    \left[\begin{array}4\\3\\0\\2\end{array}\right],
+    \left[\begin{array}-3\\0\\1\\3\end{array}\right],
+    \left[\begin{array}3\\6\\1\\5\end{array}\right]
+    \right\}
+    </m>
+
+ &amp;
+     <m>\vspan\left\{
+    \left[\begin{array}5\\3\\0\\-1\end{array}\right],
+    \left[\begin{array}-2\\1\\0\\3\end{array}\right],
+    \left[\begin{array}4\\5\\1\\3\end{array}\right]
+    \right\}
+	</m>
+\end{tabular}
+\end{center}
+</activity>
+
+<fact>
+  Every vector space with finite dimension, that is, every
+  vector space <m>V</m> with a basis of the form
+  <m>\{\vec v_1,\vec v_2,\dots,\vec v_n\}</m> is said to be
+  <term>isomorphic</term> to a Euclidean space <m>\IR^n</m>, since there exists
+  a natural correspondance between vectors in <m>V</m> and vectors in <m>\IR^n</m>:
+
+  <me>
+    c_1\vec v_1+c_2\vec v_2+\dots+c_n\vec v_n
+    \leftrightarrow
+    \left[\begin{array}
+      c_1\\c_2\\\vdots\\c_n
+    \end{array}\right]
+  </me>
+</fact>
+
+<observation>
+  We've already been taking advantage of the previous fact by converting
+  polynomials and matrices into Euclidean vectors. Since <m>\P^3</m>
+  and <m>M_{2,2}</m> are both four-dimensional:
+
+  <me>
+    4x^3+0x^2-1x+5
+    \leftrightarrow
+    \left[\begin{array}
+      4\\0\\-1\\5
+    \end{array}\right]
+    \leftrightarrow
+    \left[\begin{array}
+      4&amp;0\\-1&amp;5
+    \end{array}\right]
+  </me>
+</observation>
+
+<activity tbil-time='5'>
+Suppose <m>W</m> is a subspace of <m>\P^8</m>, and you know that
+ the set <m>\{ x^3+x, x^2+1, x^4-x \}</m> is a linearly independent subset of <m>W</m>.
+What can you conclude about <m>W</m>?
+<ol>[(a)]
+</li>
+<li> The dimension of <m>W</m> is at most 3.
+</li>
+<li> The dimension of <m>W</m> is exactly 3.
+</li>
+<li> The dimension of <m>W</m> is at least 3.
+</ol>
+</activity>
+
+<activity tbil-time='5'>
+Suppose <m>W</m> is a subspace of <m>\P^8</m>, and you know that
+ <m>W</m> is spanned by the six vectors <me>\{ x^4-x,x^3+x,x^3+x+1,x^4+2x,x^3,2x+1\}.</me>
+What can you conclude about <m>W</m>?
+<ol>[(a)]
+</li>
+<li> The dimension of <m>W</m> is at most 6.
+</li>
+<li> The dimension of <m>W</m> is exactly 6.
+</li>
+<li> The dimension of <m>W</m> is at least 6.
+</ol>
+</activity>
+
+<observation>
+  The space of polynomials <m>\P</m> (of \textit{any} degree)
+  has the basis <m>\{1,x,x^2,x^3,\dots\}</m>,
+  so it is a natural example of an infinite-dimensional vector space.
+
+  \vspace{1em}
+
+  Since <m>\P</m> and other infinite-dimensional spaces cannot be treated as
+  an isomorphic finite-dimensional Euclidean space <m>\IR^n</m>, vectors in
+  such spaces cannot be studied by converting them into Euclidean vectors.
+  Fortunately, most of the examples we will be
+  interested in for this course will be finite-dimensional.
+</observation>
+
+<definition>
+A <term>homogeneous</term> system of linear equations is one of the form:
+  <md alignat-columns='5'>
+    a_{11}x_1 &amp;\,+\,&amp; a_{12}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{1n}x_n &amp;\,=\,&amp; 0 \\
+    a_{21}x_1 &amp;\,+\,&amp; a_{22}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{2n}x_n &amp;\,=\,&amp; 0 \\
+     \vdots&amp;  &amp;\vdots&amp;   &amp;&amp;  &amp;\vdots&amp;&amp;\vdots  \\
+    a_{m1}x_1 &amp;\,+\,&amp; a_{m2}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{mn}x_n &amp;\,=\,&amp; 0
+  </md>
+
+  This system is equivalent to the vector equation:
+  <me>x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0}</me>
+  and the augmented matrix:
+  <me>
+    \left[\begin{array}{cccc|c}
+      a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} &amp; 0\\
+      a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} &amp; 0\\
+      \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\\
+      a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; 0
+    \end{array}\right]
+  </me>
+</definition>
+
+<activity tbil-time='5'>
+Note that if <m>\left[\begin{array} a_1 \\ \vdots \\ a_n \end{array}\right] </m> and
+<m>\left[\begin{array} b_1 \\ \vdots \\ b_n \end{array}\right] </m> are solutions to
+<m>x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0}</m>
+so is  <m>\left[\begin{array} a_1 +b_1\\ \vdots \\ a_n+b_n \end{array}\right] </m>, since
+<me>a_1 \vec{v}_1+\cdots+a_n \vec{v}_n = \vec{0}
+\text{ and }
+b_1 \vec{v}_1+\cdots+b_n \vec{v}_n = \vec{0} </me>
+implies
+<me>(a_1 + b_1) \vec{v}_1+\cdots+(a_n+b_n) \vec{v}_n = \vec{0} .</me>
+
+Similarly, if <m>c \in \IR</m>, <m>\left[\begin{array} ca_1 \\ \vdots \\ ca_n \end{array}\right] </m> is a solution.
+Thus the solution set of a homogeneous system is...
+<sidebyside>{3}
+<ol>[a)]
+  </li>
+<li> A basis for <m>\IR^n</m>.
+  </li>
+<li> A subspace of <m>\IR^n</m>.
+  </li>
+<li> The empty set.
+</ol>
+</sidebyside>
+</activity>
+
+<activity tbil-time='10'>
+Consider the homogeneous system of equations
+<md alignat-columns='5'>
+x_1&amp;\,+\,&amp;2x_2&amp;\,\,&amp; &amp;\,+\,&amp; x_4 &amp;=&amp; 0 \\
+2x_1&amp;\,+\,&amp;4x_2&amp;\,-\,&amp;x_3 &amp;\,-\,&amp;2 x_4 &amp;=&amp; 0 \\
+3x_1&amp;\,+\,&amp;6x_2&amp;\,-\,&amp;x_3 &amp;\,-\,&amp; x_4 &amp;=&amp; 0 \\
+</md>
+<task>
+Find its solution set (a subspace of <m>\IR^4</m>).
+</task>
+<task>
+Rewrite this solution space in the form <me>\setBuilder{ a \left[\begin{array} \unknown \\ \unknown \\ \unknown \\ \unknown\end{array}\right] + b \left[\begin{array} \unknown \\ \unknown \\ \unknown \\ \unknown \end{array}\right] }{a,b \in \IR}.</me>
+</task>
+<task>
+Rewrite this solution space in the form <me>\vspan\left\{\left[\begin{array} \unknown \\ \unknown \\ \unknown \\ \unknown\end{array}\right], \left[\begin{array} \unknown \\ \unknown \\ \unknown \\ \unknown \end{array}\right]\right\}.</me>
+</task>
+</activity>
+
+<fact>
+  The coefficients of the free variables in the solution set of a linear system
+  always yield linearly independent vectors.
+
+  \vspace{1em}
+
+  Thus if
+  <me>
+    \setBuilder{
+      a \left[\begin{array} -2 \\ 1 \\ 0 \\ 0\end{array}\right] +
+      b \left[\begin{array} -1 \\ 0 \\ -4 \\ 1 \end{array}\right]
+    }{
+      a,b \in \IR
+    } = \vspan\left\{ \left[\begin{array} -2 \\ 1 \\ 0 \\ 0\end{array}\right], 
+					 \left[\begin{array} -1 \\ 0 \\ -4 \\ 1 \end{array}\right] \right\}
+  </me>
+  is the solution space for a homogeneous system, then
+  <me>
+    \setList{
+      \left[\begin{array} -2 \\ 1 \\ 0 \\ 0\end{array}\right],
+      \left[\begin{array} -1 \\ 0 \\ -4 \\ 1 \end{array}\right]
+    }
+  </me>
+  is a basis for the solution space.
+</fact>
+
+
+
+<activity tbil-time='10'>
+Consider the homogeneous system of equations
+<md alignat-columns='5'>
+2x_1&amp;\,+\,&amp;4x_2&amp;\,+\,&amp; 2x_3&amp;\,-\,&amp;4x_4  &amp;=&amp; 0 \\
+-2x_1&amp;\,-\,&amp;4x_2&amp;\,+\,&amp;x_3 &amp;\,+\,&amp; x_4 &amp;=&amp; 0 \\
+3x_1&amp;\,+\,&amp;6x_2&amp;\,-\,&amp;x_3 &amp;\,-\,&amp;4 x_4 &amp;=&amp; 0 \\
+</md>
+
+Find a basis for its solution space.
+</activity>
+
+<activity tbil-time='10'>
+Consider the homogeneous vector equation
+<me> 
+   x_1 \left[\begin{array} 2 \\ -2 \\ 3 \end{array}\right]+
+   x_2 \left[\begin{array} 4 \\ -4 \\ 6 \end{array}\right]+
+   x_3 \left[\begin{array} 2 \\ 1 \\ -1 \end{array}\right]+
+   x_4 \left[\begin{array} -4 \\ 1 \\ -4 \end{array}\right]=
+       \left[\begin{array} 0 \\ 0 \\ 0 \end{array}\right]
+</me>
+
+
+Find a basis for its solution space.
+</activity>
+
+<activity tbil-time='5'>
+Consider the homogeneous system of equations
+<md alignat-columns='5'>
+x_1&amp;\,-\,&amp;3x_2&amp;\,+\,&amp; 2x_3  &amp;=&amp; 0 \\
+2x_1&amp;\,+\,&amp;6x_2&amp;\,+\,&amp;4x_3  &amp;=&amp; 0 \\
+x_1&amp;\,+\,&amp;6x_2&amp;\,-\,&amp;4x_3 &amp;=&amp; 0 \\
+</md>
+
+Find a basis for its solution space.
+</activity>
+
+<observation>
+The basis of the trivial vector space is the empty set.  You can denote this as either <m>\emptyset</m> or <m>\{\}</m>.
+\vfill
+Thus, if <m>\vec{0}</m> is the only solution of a homogeneous system, the basis of the solution space is  <m>\emptyset</m>.
+</observation>
