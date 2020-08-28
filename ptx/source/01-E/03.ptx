@@ -34,28 +34,38 @@ are available online.
     </statement>
 </activity>
 
-<!--
-<remark>
+<!--<remark>
+    <p>
 We will frequently need to know the reduced row echelon form of matrices 
 during class, so feel free to use Octave-Online.net to compute RREF
 efficiently.
-
-\vspace{1em}
-
+    </p>
+    <p>
 You may alternatively use the calculator you will use during assessments.
 Be sure to use fractions mode to compute exact solutions rather
-than floating-point approximations. 
-</remark>
+than floating-point approximations.
+    </p>
+</remark>-->
 
 <activity tbil-time='10'>
-Consider the system of equations.
+    <introduction>
+        <p>
+Consider the following system of equations.
+        </p>
  <me>
         <md alignat-columns='4'>
-             3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 13x_3 &amp;\,=\,&amp; 6 \\
-             2x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 10x_3 &amp;\,=\,&amp; 2 \\
+<mrow>
+             3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 13x_3 &amp;\,=\,&amp; 6
+</mrow>
+<mrow>
+             2x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 10x_3 &amp;\,=\,&amp; 2
+</mrow>
+<mrow>
              -x_1 &amp;\,+\,&amp; 3x_2 &amp;\,-\,&amp;  6x_3 &amp;\,=\,&amp; 11
+</mrow>
            </md>
 </me>
+    </introduction>
 
 <task>
 Convert this to an augmented matrix and use technology to compute its
@@ -82,11 +92,22 @@ to the original system. Then find its solution set.
 </activity>
 
 <activity tbil-time='10'>
+    <introduction>
+    <p>
 Consider the vector equation
- <me> x_1 \left[\begin{array} 3 \\ 2\\ -1 \end{array}\right]+x_2 \left[\begin{array}-2 \\ -2 \\ 0 \end{array}\right]+x_3\left[\begin{array} 13 \\ 10 \\ -3 \end{array}\right]=\left[\begin{array} 6 \\ 2 \\ 1 \end{array}\right]</me>
+    </p>
+ <me>
+     x_1 \left[\begin{array}{c} 3 \\ 2\\ -1 \end{array}\right]
+     +x_2 \left[\begin{array}{c}-2 \\ -2 \\ 0 \end{array}\right]
+     +x_3\left[\begin{array}{c} 13 \\ 10 \\ -3 \end{array}\right]
+     =\left[\begin{array}{c} 6 \\ 2 \\ 1 \end{array}\right]
+    </me>
+    </introduction>
 <task>
+    <p>
 Convert this to an augmented matrix and use technology to compute its
 reduced row echelon form:
+    </p>
 <me>
   \RREF
   \left[\begin{array}{ccc|c}
@@ -103,56 +124,82 @@ reduced row echelon form:
 </me>
 </task>
 <task>
+    <p>
 Use the <m>\RREF</m> matrix to write a linear system equivalent
 to the original system. Then find its solution set.
+    </p>
 </task>
 </activity>
 
 <activity tbil-time='10'>
+    <introduction>
+        <p>
   Consider the following linear system.
-      <md alignat-columns='4'>
-          x_1 &amp;+ 2x_2 &amp;+ 3x_3 &amp;= 1\\
+        </p>
+      <md alignat-columns='4' alignment="alignat">
+          <mrow>
+          x_1 &amp;+ 2x_2 &amp;+ 3x_3 &amp;= 1</mrow>
+        <mrow>
         2x_1 &amp;+ 4x_2 &amp;+ 8x_3 &amp;= 0
+        </mrow>
       </md>
+    </introduction>
   <task>
+      <p>
     Find its corresponding augmented matrix <m>A</m> and
     use technology to find <m>\RREF(A)</m>.
+      </p>
   </task>
   <task>
+      <p>
     How many solutions do these linear systems have?
+      </p>
   </task>
 </activity>
 
 <activity tbil-time='10'>
+    <introduction>
+        <p>
 Consider the simple linear system equivalent to the system
 from the previous activity:
-    <md alignat-columns='3'>
-        x_1 &amp;+ 2x_2 &amp; &amp;= 4\\
+        </p>
+    <md alignat-columns='3' alignment="alignat">
+        <mrow>
+        x_1 &amp;+ 2x_2 &amp; &amp;= 4
+        </mrow>
+        <mrow>
               &amp; &amp;\phantom{+}x_3 &amp;= -1
+        </mrow>
     </md>
+    </introduction>
 <task>
+    <p>
 Let <m>x_1=a</m> and write the solution set in the form
 <m>
   \setBuilder
   {
-    \left[\begin{array} a \\ \unknown \\ \unknown \end{array}\right]
+    \left[\begin{array}{c} a \\ \unknown \\ \unknown \end{array}\right]
   }{
     a \in \IR
   }
 </m>.
+    </p>
 </task>
 <task>
+    <p>
 Let <m>x_2=b</m> and write the solution set in the form
 <m>
   \setBuilder
   {
-    \left[\begin{array} \unknown \\ b \\ \unknown \end{array}\right]
+    \left[\begin{array}{c} \unknown \\ b \\ \unknown \end{array}\right]
   }{
     b \in \IR
   }
 </m>.
+    </p>
 </task>
 <task>
+    <p>
 Which of these was easier?  What features of the RREF matrix
 <m>
   \left[\begin{array}{ccc|c}
@@ -160,55 +207,77 @@ Which of these was easier?  What features of the RREF matrix
     0 &amp; 0 &amp; \circledNumber{1} &amp; -1
   \end{array}\right]
 </m> caused this?
+    </p>
 </task>
 </activity>
 
 <definition>
+    <statement>
+        <p>
 Recall that the pivots of a matrix in <m>\RREF</m> form are the leading
 <m>1</m>s in each non-zero row.
-
-\vspace{0.2in}
-
+        </p>
+        <p>
 The pivot columns in an augmented matrix correspond to the
 <term>bound variables</term> in the system of equations (<m>x_1,x_3</m> below).
 The remaining variables are called <term>free variables</term> (<m>x_2</m> below).
-
+        </p>
 <me>
   \left[\begin{array}{ccc|c}
     \circledNumber{1} &amp; 2 &amp; 0 &amp; 4 \\
     0 &amp; 0 &amp; \circledNumber{1} &amp; -1
   \end{array}\right]
 </me>
-
+        <p>
 To efficiently solve a system in RREF form, assign letters to the free
 variables, and then solve for the bound variables.
+        </p>
+    </statement>
 </definition>
 
 <activity tbil-time='10'>
+    <statement>
+        <p>
 Find the solution set for the system
-<md alignat-columns='6'>
-2x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;6x_3&amp;\,+\,&amp;x_4&amp;\,-\,&amp;x_5&amp;\,=\,&amp;3 \\
--x_1&amp;\,+\,&amp;x_2&amp;\,+\,&amp;3x_3&amp;\,-\,&amp;x_4&amp;\,+\,&amp;2x_5 &amp;\,=\,&amp; -3 \\
+<md alignat-columns='6' alignment="alignat">
+    <mrow>
+2x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;6x_3&amp;\,+\,&amp;x_4&amp;\,-\,&amp;x_5&amp;\,=\,&amp;3 
+    </mrow>
+    <mrow>
+-x_1&amp;\,+\,&amp;x_2&amp;\,+\,&amp;3x_3&amp;\,-\,&amp;x_4&amp;\,+\,&amp;2x_5 &amp;\,=\,&amp; -3 
+    </mrow>
+    <mrow>
 x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;x_3&amp;\,+\,&amp;x_4&amp;\,+\,&amp;x_5 &amp;\,=\,&amp; 2
+    </mrow>
 </md>
 by row-reducing its augmented matrix, and then
 assigning letters to the free variables (given by non-pivot columns)
 and solving for the bound variables (given by pivot columns) in
 the corresponding linear system.
+        </p>
+    </statement>
 </activity>
 
 <observation>
+    <statement>
+        <p>
 The solution set to the system
-<md alignat-columns='6'>
-2x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;6x_3&amp;\,+\,&amp;x_4&amp;\,-\,&amp;x_5&amp;\,=\,&amp;3 \\
--x_1&amp;\,+\,&amp;x_2&amp;\,+\,&amp;3x_3&amp;\,-\,&amp;x_4&amp;\,+\,&amp;2x_5 &amp;\,=\,&amp; -3 \\
+<md alignat-columns='6' alignment="alignat">
+    <mrow>
+2x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;6x_3&amp;\,+\,&amp;x_4&amp;\,-\,&amp;x_5&amp;\,=\,&amp;3 
+    </mrow>
+    <mrow>
+-x_1&amp;\,+\,&amp;x_2&amp;\,+\,&amp;3x_3&amp;\,-\,&amp;x_4&amp;\,+\,&amp;2x_5 &amp;\,=\,&amp; -3 
+    </mrow>
+    <mrow>
 x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;x_3&amp;\,+\,&amp;x_4&amp;\,+\,&amp;x_5 &amp;\,=\,&amp; 2
+    </mrow>
 </md>
 may be written as
 <me>
   \setBuilder
   {
-    \left[\begin{array}
+    \left[\begin{array}{c}
       1+5a+2b \\
       1+2a+3b \\
       a \\
@@ -218,32 +287,48 @@ may be written as
   }{
     a,b\in \IR
   }
-.</me>
+</me>.
+        </p>
+    </statement>
 </observation>
 
 <remark>
-Don't forget to correctly express the solution set of a linear system,
-using set-builder notation for consistent systems with
-infintely many solutions.
+    <p>
+Don't forget to correctly express the solution set of a linear system.
+Systems with zero or one solutions may be written by listing their elements,
+        while systems with infinitely-many solutions may be written using
+        set-builder notation.
+    </p>
   <ul>
+<li><p> <em>Consistent with one solution</em>: e.g.
+        <m>\setList{ \left[\begin{array}{c}1\\2\\3\end{array}\right] }</m>
+    </p>
   </li>
-<li> <em>Consistent with one solution</em>: e.g.
-        <m>\setList{ \left[\begin{array}1\\2\\3\end{array}\right] }</m>
-  </li>
-<li> <em>Consistent with infinitely-many solutions</em>: e.g.
+<li> <p>
+    <em>Consistent with infinitely-many solutions</em>: e.g.
         <m>
           \setBuilder
           {
-            \left[\begin{array}1\\2-3a\\a\end{array}\right]
+            \left[\begin{array}{c}1\\2-3a\\a\end{array}\right]
           }{
             a\in\IR
           }
         </m>
+    </p>
   </li>
-<li> <em>Inconsistent</em>: <m>\emptyset</m> or <m>\{\}</m>
+<li><p> <em>Inconsistent</em>: <m>\emptyset</m> or <m>\{\}</m>
+    </p>
+  </li>
   </ul>
 </remark>
 
+    <exercises>
+        <xi:include href="../exercises/E3/0000.ptx"/>
+        <xi:include href="../exercises/E3/0001.ptx"/>
+        <xi:include href="../exercises/E3/0002.ptx"/>
+        <xi:include href="../exercises/E3/0003.ptx"/>
+        <xi:include href="../exercises/E3/0004.ptx"/>
+        <p><em>Additional exercises available at <url href="https://checkit.clontz.org/banks/tbil-la/E3/">checkit.clontz.org</url>.</em></p>
+    </exercises>
 
--->
 </section>
