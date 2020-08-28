@@ -2,7 +2,7 @@ import lxml
 import re
 
 # Read in all activities for module
-with open("../tex/modules/2-V/activities.tex") as tex_file:
+with open("../tex/modules/6-G/activities.tex") as tex_file:
     tex_source = tex_file.read()
 
 def command_to_ptx(s,old,new):
@@ -43,5 +43,5 @@ tex_source = env_to_ptx(tex_source,"subactivity","task")
 tex_source = env_to_ptx(tex_source,"alignat*","md","alignat-columns")
 tex_source = env_to_ptx(tex_source,"alignedat","md","alignat-columns")
 tex_source = env_to_ptx(tex_source,"multicols","sidebyside")
-with open("source/02-V/01.ptx","w") as outfile:
+with open("source/05-G/raw.ptx","w") as outfile:
     print(tex_source,file=outfile)

@@ -1,0 +1,514 @@
+<observation>
+If <m>T: \IR^n \rightarrow \IR^m</m> and <m>S: \IR^m \rightarrow \IR^k</m> are linear maps, then the composition map <m>S\circ T</m> is a linear map from <m>\IR^n \rightarrow \IR^k</m>.
+\vfill
+\begin{center}
+\begin{tikzcd}[ampersand replacement=\&amp;]
+\IR^n \arrow[rr, bend right, "S\circ T"']  \arrow[r,"T"] \&amp; \IR^m  \arrow[r,"S"]  \&amp;\IR^k 
+\end{tikzcd}
+\end{center}
+\vfill
+Recall that for a vector, <m>\vec{v} \in \IR^n</m>, the composition is computed as <m> (S \circ T)(\vec{v})=S(T(\vec{v}))</m>.
+</observation>
+
+
+<activity tbil-time='5'>
+Let <m>T: \IR^3 \rightarrow \IR^2</m> be given by the <m>2\times 3</m> standard matrix <m>B=\left[\begin{array} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]</m> and <m>S: \IR^2 \rightarrow \IR^4</m> be given by the <m>4\times 2</m> standard matrix <m>A=\left[\begin{array} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]</m>.
+
+What are the domain and codomain of the composition map <m>S \circ T</m>?
+<ol>[(a)]
+</li>
+<li> The domain is <m>\IR ^2</m> and the codomain is <m>\IR^3</m>
+</li>
+<li> The domain is <m>\IR ^3</m> and the codomain is <m>\IR^2</m>
+</li>
+<li> The domain is <m>\IR ^2</m> and the codomain is <m>\IR^4</m>
+</li>
+<li> The domain is <m>\IR ^3</m> and the codomain is <m>\IR^4</m>
+</li>
+<li> The domain is <m>\IR ^4</m> and the codomain is <m>\IR^3</m>
+</li>
+<li> The domain is <m>\IR ^4</m> and the codomain is <m>\IR^2</m>
+</ol>
+</activity>
+
+
+<activity tbil-time='2'>
+Let <m>T: \IR^3 \rightarrow \IR^2</m> be given by the <m>2\times 3</m> standard matrix <m>B=\left[\begin{array} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]</m> and <m>S: \IR^2 \rightarrow \IR^4</m> be given by the <m>4\times 2</m> standard matrix <m>A=\left[\begin{array} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]</m>.
+
+What size will the standard matrix of <m>S \circ T:\IR^3\to\IR^4</m> be?
+(Rows <m>\times</m> Columns)
+<sidebyside>{3}
+<ol>[(a)]
+</li>
+<li> <m>4 \times 3</m>
+</li>
+<li> <m>4 \times 2</m>
+</li>
+<li> <m>3 \times 4</m>
+</li>
+<li> <m>3 \times 2</m>
+</li>
+<li> <m>2 \times 4</m>
+</li>
+<li> <m>2 \times 3</m>
+</ol>
+</sidebyside>
+</activity>
+
+<activity tbil-time='15'>
+Let <m>T: \IR^3 \rightarrow \IR^2</m> be given by the <m>2\times 3</m> standard matrix <m>B=\left[\begin{array} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]</m> and <m>S: \IR^2 \rightarrow \IR^4</m> be given by the <m>4\times 2</m> standard matrix <m>A=\left[\begin{array} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]</m>.
+
+<task>
+Compute
+<me>
+  (S \circ T)(\vec{e}_1)
+    =
+  S(T(\vec{e}_1))
+    =
+  S\left(\left[\begin{array} 2 \\ 5\end{array}\right]\right)
+        =
+  \left[\begin{array}\unknown\\\unknown\\\unknown\\\unknown\end{array}\right].
+</me>
+
+</task>
+<task>
+Compute
+<m>
+  (S \circ T)(\vec{e}_2)
+</m>.
+</task>
+<task>
+Compute
+<m>
+  (S \circ T)(\vec{e}_3)
+</m>.
+</task>
+<task>
+Write the <m>4\times 3</m> standard matrix of <m>S \circ T:\IR^3\to\IR^4</m>.
+</task>
+</activity>
+
+<definition>
+We define the <term>product</term> <m>AB</m> of a <m>m \times n</m> matrix <m>A</m> and a
+<m>n \times k</m>
+matrix <m>B</m> to be the <m>m \times k</m> standard matrix of the composition map of the
+two corresponding linear functions.
+
+\vspace{1em}
+
+For the previous activity, 
+<m>T</m> was a map <m>\IR^3 \rightarrow \IR^2</m>, and 
+<m>S</m> was a map <m>\IR^2 \rightarrow \IR^4</m>, so <m>S \circ T</m> gave a map <m>\IR^3 \rightarrow \IR^4</m> with a
+<m>4\times 3</m> standard matrix:
+<me>
+  AB
+    =
+  \left[\begin{array} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]
+  \left[\begin{array} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]
+</me>
+<me>
+    =
+  \left[
+  (S \circ T)(\vec{e}_1) \hspace{1em}
+  (S\circ T)(\vec{e}_2) \hspace{1em}
+  (S \circ T)(\vec{e}_3)
+  \right]
+    =
+  \left[\begin{array}
+    12 &amp; -5 &amp; 5 \\
+    5 &amp; -3 &amp; 4 \\
+    31 &amp; -12 &amp; 11 \\
+    -12 &amp; 5 &amp; -5
+  \end{array}\right]
+.</me>
+</definition>
+
+
+
+<activity tbil-time='15'>
+Let <m>S: \IR^3 \rightarrow \IR^2</m> be given by the matrix 
+<m>A=\left[\begin{array} -4 &amp; -2 &amp; 3 \\ 0 &amp; 1 &amp; 1 \end{array}\right]</m>
+and <m>T: \IR^2 \rightarrow \IR^3</m> be given by the matrix
+<m>B=\left[\begin{array} 2 &amp; 3 \\ 1 &amp; -1 \\ 0 &amp; -1 \end{array}\right]</m>.
+
+<task>
+Write the dimensions (rows <m>\times</m> columns)
+for <m>A</m>, <m>B</m>, <m>AB</m>, and <m>BA</m>.
+</task>
+<task>
+Find the standard matrix <m>AB</m> of <m>S \circ T</m>.
+</task>
+<task>
+FInd the standard matrix <m>BA</m> of <m>T \circ S</m>.
+</task>
+</activity>
+
+
+<activity tbil-time='10'>
+Consider the following three matrices.
+
+<me>
+  A = \left[\begin{array}1&amp;0&amp;-3\\3&amp;2&amp;1\end{array}\right]
+    \hspace{2em}
+  B = \left[\begin{array}2&amp;2&amp;1&amp;0&amp;1\\1&amp;1&amp;1&amp;-1&amp;0\\0&amp;0&amp;3&amp;2&amp;1\\-1&amp;5&amp;7&amp;2&amp;1\end{array}\right]
+    \hspace{2em}
+  C = \left[\begin{array}2&amp;2\\0&amp;-1\\3&amp;1\\4&amp;0\end{array}\right]
+</me>
+
+<task>
+Find the domain and codomain of each of the three linear maps corresponding to <m>A</m>, <m>B)</m>, and <m>C</m>.
+</task>
+<task> 
+Only one of the matrix products
+<m>AB,AC,BA,BC,CA,CB</m> can actually be computed.
+Compute it.
+</task>
+</activity>
+
+
+
+<remark>
+Recall that the <term>product</term> <m>AB</m> of a 
+<m>m \times n</m> matrix <m>A</m> and an <m>n \times k</m>
+matrix <m>B</m> is the <m>m \times k</m> 
+standard matrix of the composition map of the
+two corresponding linear functions.
+
+\vspace{1em}
+
+For example, if  <m>T</m> was a map <m>\IR^3 \rightarrow \IR^2</m>, and 
+<m>S</m> was a map <m>\IR^2 \rightarrow \IR^4</m>, then <m>S \circ T</m> gave a map <m>\IR^3 \rightarrow \IR^4</m> with a
+<m>4\times 3</m> standard matrix, such as:
+<me>
+  AB
+    =
+  \left[\begin{array} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]
+  \left[\begin{array} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]
+</me>
+<me>
+    =
+  \left[
+  (S \circ T)(\vec{e}_1) \hspace{1em}
+  (S\circ T)(\vec{e}_2) \hspace{1em}
+  (S \circ T)(\vec{e}_3)
+  \right]
+    =
+  \left[\begin{array}
+    12 &amp; -5 &amp; 5 \\
+    5 &amp; -3 &amp; 4 \\
+    31 &amp; -12 &amp; 11 \\
+    -12 &amp; 5 &amp; -5
+  \end{array}\right]
+.</me>
+</remark>
+
+
+
+
+
+
+<activity tbil-time='15'>
+Let <m>B=\left[\begin{array} 3 &amp; -4 &amp; 0 \\ 2 &amp; 0 &amp; -1 \\ 0 &amp; -3 &amp; 3 \end{array}\right]</m>, 
+and let <m>A=\left[\begin{array} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]</m>.  
+<task>
+  Compute the product <m>BA</m> by hand.
+</task>
+<task>
+  Check your work using technology. Using Octave:
+  <ul>
+    </li>
+<li> \texttt{ B = sym([3 -4 0 ; 2 0 -1 ; 0 -3 3]) }
+    </li>
+<li> \texttt{ A = sym([2 7 -1 ; 0 3 2  ; 1 1 -1]) }
+    </li>
+<li> \texttt{ B*A }
+  </ul>
+</task>
+</activity>
+
+<activity tbil-time='5'>
+Let <m>A=\left[\begin{array} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]</m>.  
+Find a <m>3 \times 3</m> matrix <m>B</m> such that <m>BA=A</m>, that is,
+<me>
+  \left[\begin{array} \unknown &amp; \unknown &amp; \unknown \\ 
+  \unknown &amp; \unknown &amp; \unknown 
+  \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+  \left[\begin{array} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+=
+  \left[\begin{array} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+</me>
+Check your guess using technology.
+</activity>
+
+<definition>
+The identity matrix <m>I_n</m> (or just <m>I</m> when <m>n</m> is obvious from context) is  the <m>n \times n</m> matrix <me>I_n = \left[\begin{array} 1 &amp; 0  &amp; \hdots &amp; 0 \\ 0 &amp; 1 &amp; \ddots &amp; \vdots  \\ \vdots &amp; \ddots &amp; \ddots &amp; 0 \\ 0 &amp; \hdots &amp; 0 &amp; 1 \end{array}\right].</me>
+It has a <m>1</m> on each diagonal element and a <m>0</m> in every other position.
+</definition>
+
+<fact>
+  For any square matrix <m>A</m>, <m>IA=AI=A</m>:
+
+  <me>
+    \left[\begin{array} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right]
+    \left[\begin{array} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+  =
+    \left[\begin{array} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+      \left[\begin{array} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right]
+  =
+    \left[\begin{array} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+  </me>
+</fact>
+
+<activity tbil-time='20'>
+Tweaking the identity matrix slightly allows us to write row operations
+in terms of matrix multiplication.
+<task>
+Create a matrix that doubles the third row of <m>A</m>:
+<me>
+ \left[\begin{array} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+ \left[\begin{array} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+=
+ \left[\begin{array} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 2 &amp; 2 &amp; -2 \end{array}\right]
+</me>
+</task>
+<task>
+  Create a matrix that swaps the second and third rows of <m>A</m>:
+  <me>
+   \left[\begin{array} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+   \left[\begin{array} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+  =
+  \left[\begin{array} 2 &amp; 7 &amp; -1 \\ 1 &amp; 1 &amp; -1 \\ 0 &amp; 3 &amp; 2 \end{array}\right]
+  </me>
+</task>
+<task>
+Create a matrix that adds <m>5</m> times the third row of <m>A</m> to the first row:
+<me>
+ \left[\begin{array} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+ \left[\begin{array} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+=
+ \left[\begin{array} 2+5(1) &amp; 7+5(1) &amp; -1+5(-1) \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+</me>
+</task>
+</activity>
+
+<fact>
+If <m>R</m> is the result of applying a row operation to <m>I</m>, then
+<m>RA</m> is the result of applying the same row operation to <m>A</m>.
+<ul>
+</li>
+<li> Scaling a row: <m>R=
+  \left[\begin{array}
+  c &amp; 0 &amp; 0 \\
+  0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{array}\right]
+</m>
+</li>
+<li> Swapping rows: <m>R=
+  \left[\begin{array}
+  0 &amp; 1 &amp; 0 \\
+  1 &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{array}\right]
+</m>
+</li>
+<li> Adding a row multiple to another row: <m>R=
+  \left[\begin{array}
+  1 &amp; 0 &amp; c \\
+  0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{array}\right]
+</m>
+</ul>
+
+Such matrices can be chained together to emulate multiple row operations.
+In particular,
+<me>\RREF(A)=R_k\dots R_2R_1A</me>
+for some sequence of matrices <m>R_1,R_2,\dots,R_k</m>.
+</fact>
+
+<activity tbil-time='10'>
+Consider the two row operations 
+<m>R_2\leftrightarrow R_3</m> and <m>R_1+R_2\to R_1</m>
+applied as follows to show <m>A\sim B</m>:
+\begin{align*}
+A
+  =
+\left[\begin{array}
+-1&amp;4&amp;5\\
+0&amp;3&amp;-1\\
+1&amp;2&amp;3\\
+\end{array}\right]
+  &amp;\sim
+\left[\begin{array}
+-1&amp;4&amp;5\\
+1&amp;2&amp;3\\
+0&amp;3&amp;-1\\
+\end{array}\right]
+  \\&amp;\sim
+\left[\begin{array}
+-1+1&amp;4+2&amp;5+3\\
+1&amp;2&amp;3\\
+0&amp;3&amp;-1\\
+\end{array}\right]
+  =
+\left[\begin{array}
+0&amp;6&amp;8\\
+1&amp;2&amp;3\\
+0&amp;3&amp;-1\\
+\end{array}\right]
+  = 
+B
+\end{align*}
+Express these row operations as matrix multiplication
+by expressing <m>B</m> as the product of two matrices and <m>A</m>:
+<me>
+B =
+\left[\begin{array}
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown
+\end{array}\right]
+\left[\begin{array}
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown
+\end{array}\right]
+A
+</me>
+Check your work using technology.
+</activity>
+
+
+
+
+<activity tbil-time='15'>
+Let <m>T: \IR^n \rightarrow \IR^m</m> be a linear map with standard matrix <m>A</m>.
+Sort the following items into three groups of statements: a group that means
+<m>T</m> is <em>injective</em>, a group that means <m>T</m> is <em>surjective</em>,
+and a group that means <m>T</m> is <em>bijective</em>.
+<sidebyside>{2}
+<ol>[(a)]
+</li>
+<li> <m>A\vec x=\vec b</m> has a solution for all <m>\vec b\in\IR^m</m>
+</li>
+<li> <m>A\vec x=\vec b</m> has a unique solution for all <m>\vec b\in\IR^m</m>
+</li>
+<li> <m>A\vec x=\vec 0</m> has a unique solution.
+</li>
+<li> The columns of <m>A</m> span <m>\IR^m</m>
+</li>
+<li> The columns of <m>A</m> are linearly independent
+</li>
+<li> The columns of <m>A</m> are a basis of <m>\IR^m</m>
+</li>
+<li> Every column of <m>\RREF(A)</m> has a pivot
+</li>
+<li> Every row of <m>\RREF(A)</m> has a pivot
+</li>
+<li> <m>m=n</m> and <m>\RREF(A)=I</m>
+</ol>
+</sidebyside>
+</activity>
+
+<activity tbil-time='5'>
+  Let <m>T: \IR^3 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix
+  <m>A=\left[\begin{array} 2 &amp; -1 &amp; 0 \\ 2 &amp; 1 &amp; 4 \\ 1 &amp; 1 &amp; 3 \end{array}\right]</m>.
+  
+  Write an augmented matrix representing the system of equations given by <m>T(\vec x)=\vec{0}</m>,
+  that is, <m>A\vec x=\left[\begin{array}0 \\ 0 \\ 0 \end{array}\right]</m>.
+  Then solve <m>T(\vec x)=\vec{0}</m> to find the kernel of <m>T</m>.
+</activity>
+
+
+<definition>
+  Let <m>T: \IR^n \rightarrow \IR^n</m> be a linear map with standard matrix <m>A</m>.
+<ul>
+</li>
+<li>  If <m>T</m> is a bijection and <m>\vec b</m> is any <m>\IR^n</m> vector, 
+  then <m>T(\vec x)=A\vec x=\vec b</m> has a unique solution.
+</li>
+<li> So we may define an <term>inverse map</term> <m>T^{-1} : \IR^n \rightarrow \IR^n</m> 
+  by setting <m>T^{-1}(\vec b)</m> to be this unique solution.
+</li>
+<li> Let <m>A^{-1}</m> be the standard matrix for <m>T^{-1}</m>. We call <m>A^{-1}</m> the
+<term>inverse matrix</term> of <m>A</m>, so we also say that <m>A</m> is <term>invertible</term>.
+</ul>
+</definition>
+
+
+<activity tbil-time='20'>
+  Let <m>T: \IR^3 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix
+  <m>A=\left[\begin{array} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]</m>.
+  <task>
+  Write an augmented matrix representing the system of equations given by <m>T(\vec x)=\vec{e}_1</m>,
+  that is, <m>A\vec x=\left[\begin{array}1 \\ 0 \\ 0 \end{array}\right]</m>.
+  Then solve <m>T(\vec x)=\vec{e}_1</m> to find <m>T^{-1}(\vec{e}_1)</m>.
+  </task>
+  <task>
+   Solve <m>T(\vec x)=\vec{e}_2</m> to find <m>T^{-1}(\vec{e}_2)</m>.
+  </task>
+  <task>
+   Solve <m>T(\vec x)=\vec{e}_3</m> to find <m>T^{-1}(\vec{e}_3)</m>.
+  </task>
+  <task>
+   Write <m>A^{-1}</m>, the standard matrix for <m>T^{-1}</m>.
+  </task>
+</activity>
+
+<observation>
+We could have solved these three systems simultaneously
+by row reducing the matrix <m>[A\,|\,I]</m> at once.
+<me>
+  \left[\begin{array}{ccc|ccc}
+    2 &amp; -1 &amp; -6 &amp; 1 &amp; 0 &amp; 0 \\
+    2 &amp; 1 &amp; 3 &amp; 0 &amp; 1 &amp; 0 \\
+    1 &amp; 1 &amp; 4 &amp; 0 &amp; 0 &amp; 1
+  \end{array}\right] \sim
+  \left[\begin{array}{ccc|ccc}
+    1 &amp; 0 &amp; 0 &amp; 1 &amp; -2 &amp; 3 \\
+    0 &amp; 1 &amp; 0 &amp; -5 &amp; 14 &amp; -18 \\
+    0 &amp; 0 &amp; 1 &amp; 1 &amp; -3 &amp; 4
+  \end{array}\right]
+</me>
+</observation>
+
+
+<activity tbil-time='5'>
+  Find the inverse <m>A^{-1}</m> of the matrix
+  <m>A=\left[\begin{array} 1 &amp; 3 \\ 0 &amp; -2 \end{array}\right]</m>
+  by row-reducing <m>[A\,|\,I]</m>.
+</activity>
+
+<activity tbil-time='5'>
+Is the matrix <m>\left[\begin{array} 2 &amp; 3 &amp; 1 \\ -1 &amp; -4 &amp; 2 \\ 0 &amp; -5 &amp; 5 \end{array}\right]</m> invertible? Give a reason for your answer.
+</activity>
+
+\begin{quickcheck}
+    An <m>n\times n</m> matrix <m>A</m> is invertible if and only if <m>\RREF(A) = I_n</m>.
+\end{quickcheck}
+
+<activity tbil-time='10'>
+  Let <m>T:\IR^2\to\IR^2</m> be the bijective linear map defined by
+  <m>T\left(\left[\begin{array}x\\y\end{array}\right]\right)=\left[\begin{array} 2x -3y \\ -3x + 5y\end{array}\right]</m>,
+  with the inverse map
+  <m>T^{-1}\left(\left[\begin{array}x\\y\end{array}\right]\right)=\left[\begin{array} 5x+ 3y \\ 3x + 2y\end{array}\right]</m>.
+  <task>
+    Compute <m>(T^{-1}\circ T)\left(\left[\begin{array}-2\\1\end{array}\right]\right)</m>.
+  </task>
+  <task>
+    If <m>A</m> is the standard matrix for <m>T</m> and <m>A^{-1}</m> is the
+    standard matrix for <m>T^{-1}</m>, find the <m>2\times 2</m> matrix 
+    <me>A^{-1}A=\left[\begin{array}\unknown&amp;\unknown\\\unknown&amp;\unknown\end{array}\right].</me>
+  </task>
+</activity>
+
+<observation>
+  <m>T^{-1}\circ T=T\circ T^{-1}</m> is the identity map for any bijective
+  linear transformation <m>T</m>. Therefore
+  <m>A^{-1}A=AA^{-1}=I</m> is the identity matrix for any invertible matrix
+  <m>A</m>.
+</observation>
+
+
+
