@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="V2" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Linear Combinations (V2)</title>
+
+<definition>
+    <statement>
+        <p>
+  A <term>linear combination</term> of a set of vectors
+  <m>\{\vec v_1,\vec v_2,\dots,\vec v_m\}</m> is given by
+  <m>c_1\vec v_1+c_2\vec v_2+\dots+c_m\vec v_m</m> for any choice of
+  scalar multiples <m>c_1,c_2,\dots,c_m</m>.
+        </p>
+        <p>
+  For example, we can say <m>\left[\begin{array}{c}3 \\0 \\ 5\end{array}\right]</m> 
+  is a linear combination of the vectors <m>\left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right]</m> 
+  and <m>\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]</m> since 
+  <me>
+    \left[\begin{array}{c} 3 \\ 0 \\ 5 \end{array}\right] = 
+    2 \left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right] + 
+    1\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]
+  </me>.
+        </p>
+    </statement>
+</definition>
+
+<definition>
+    <statement>
+        <p>
+  The <term>span</term> of a set of vectors is the collection of all linear
+  combinations of that set:
+  <me>
+    \vspan\{\vec v_1,\vec v_2,\dots,\vec v_m\} =
+    \setBuilder{c_1\vec v_1+c_2\vec v_2+\dots+c_m\vec v_m}{
+    c_i\in\IR}
+  </me>.
+        </p>
+        <p>
+  For example:
+  <me>
+    \vspan\setList
+    {
+      \left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right],
+      \left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]
+    } = \setBuilder
+    {
+      a\left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right]+
+      b\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]
+    }{
+      a,b\in\IR
+    }
+  </me>
+        </p>
+    </statement>
+</definition>
+
+<activity tbil-time='10'>
+    <introduction>
+        <p>
+  Consider <m>\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right]\right\}</m>.
+        </p>
+    </introduction>
+  <task>
+      <p>
+    Sketch
+    <m>1\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}1\\2\end{array}\right]</m>,
+    <m>3\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}3\\6\end{array}\right]</m>,
+    <m>0\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}0\\0\end{array}\right]</m>,
+    and <m>-2\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}-2\\-4\end{array}\right]</m> 
+    in the <m>xy</m> plane.
+      </p>
+  </task>
+  <task>
+      <p>
+    Sketch a representation of all the vectors belonging to
+    <m>
+      \vspan\setList{\left[\begin{array}{c}1\\2\end{array}\right]}
+        =
+      \setBuilder{a\left[\begin{array}{c}1\\2\end{array}\right]}{a\in\IR}
+    </m>
+    in the <m>xy</m> plane.
+      </p>
+  </task>
+</activity>
+
+
+
+
+
+<activity tbil-time='10'>
+    <introduction>
+        <p>
+  Consider <m>\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right],
+  \left[\begin{array}{c}-1\\1\end{array}\right]\right\}</m>.
+        </p>
+    </introduction>
+  <task>
+      <p>
+    Sketch the following linear combinations in the <m>xy</m> plane.
+    <me>
+    1\left[\begin{array}{c}1\\2\end{array}\right]+
+    0\left[\begin{array}{c}-1\\1\end{array}\right]\hspace{3em}
+    0\left[\begin{array}{c}1\\2\end{array}\right]+
+    1\left[\begin{array}{c}-1\\1\end{array}\right]\hspace{3em}
+    1\left[\begin{array}{c}1\\2\end{array}\right]+
+    1\left[\begin{array}{c}-1\\1\end{array}\right]
+    </me>
+    <me>
+    -2\left[\begin{array}{c}1\\2\end{array}\right]+
+    1\left[\begin{array}{c}-1\\1\end{array}\right]\hspace{3em}
+    -1\left[\begin{array}{c}1\\2\end{array}\right]+
+    -2\left[\begin{array}{c}-1\\1\end{array}\right]
+    </me>
+      </p>
+  </task>
+  <task>
+      <p>
+    Sketch a representation of all the vectors belonging to
+    <m>\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right],
+     \left[\begin{array}{c}-1\\1\end{array}\right]\right\}</m>
+    in the <m>xy</m> plane.
+      </p>
+  </task>
+</activity>
+
+<activity tbil-time='5'>
+    <statement>
+        <p>
+    Sketch a representation of all the vectors belonging to
+    <m>\vspan\left\{\left[\begin{array}{c}6\\-4\end{array}\right],
+     \left[\begin{array}{c}-3\\2\end{array}\right]\right\}</m>
+    in the <m>xy</m> plane.
+        </p>
+    </statement>
+</activity>
+
+
+<activity tbil-time='15'>
+    <statement>
+        <p>
+  The vector
+  <m>\left[\begin{array}{c}-1\\-6\\1\end{array}\right]</m> belongs to
+  <m>\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
+  \left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}</m> exactly when
+  there exists a solution to the vector equation
+  <m>x_1\left[\begin{array}{c}1\\0\\-3\end{array}\right]+
+  x_2\left[\begin{array}{c}-1\\-3\\2\end{array}\right]
+  =\left[\begin{array}{c}-1\\-6\\1\end{array}\right]</m>.
+        </p>
+    </statement>
+
+  <task>
+      <p>
+    Reinterpret this vector equation as a system of linear equations.
+      </p>
+  </task>
+
+  <task>
+      <p>
+    Find its solution set, using technology to find <m>\RREF</m> of its
+    corresponding augmented matrix.
+      </p>
+  </task>
+
+  <task>
+      <p>
+    Given this solution set, does
+    <m>\left[\begin{array}{c}-1\\-6\\1\end{array}\right]</m> belong to
+    <m>\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
+    \left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}</m>?
+      </p>
+  </task>
+</activity>
+
+<fact>
+    <statement>
+        <p>
+  A vector <m>\vec b</m> belongs to
+  <m>\vspan\{\vec v_1,\dots,\vec v_n\}</m> if and only if
+	the vector equation <m>x_1 \vec{v}_1+\cdots+x_n \vec{v_n}=\vec{b}</m> is consistent.
+        </p>
+    </statement>
+</fact>
+
+    <observation>
+        <statement>
+            <p>
+The following are all equivalent statements:
+            </p>
+<ul>
+<li>
+    <p>
+    The vector <m>\vec{b}</m> belongs to <m>\vspan\{\vec v_1,\dots,\vec v_n\}</m>.
+    </p>
+</li>
+<li>
+    <p>
+        The vector equation <m>x_1 \vec{v}_1+\cdots+x_n \vec{v}_n=\vec{b}</m> is consistent.
+    </p>
+</li>
+<li>
+    <p>
+    The linear system corresponding to
+  <m>\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]</m>
+  is consistent.
+    </p>
+</li>
+<li>
+   <p>
+    <m>\RREF\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]</m>
+  doesn't have a row <m>[0\,\cdots\,0\,|\,1]</m>
+  representing the contradiction <m>0=1</m>.
+    </p>
+</li>
+</ul>
+        </statement>
+    </observation>
+
+<activity tbil-time='10'>
+    <statement>
+        <p>
+  Determine if
+  <m>\left[\begin{array}{c}3\\-2\\1 \\ 5\end{array}\right]</m> belongs to
+  <m>\vspan\left\{\left[\begin{array}{c}1\\0\\-3 \\ 2\end{array}\right],
+  \left[\begin{array}{c}-1\\-3\\2 \\ 2\end{array}\right]\right\}</m>
+  by solving an appropriate vector equation.
+        </p>
+    </statement>
+</activity>
+
+
+
+
+
+<activity tbil-time='5'>
+    <statement>
+        <p>
+  Determine if
+  <m>\left[\begin{array}{c}-1\\-9\\0\end{array}\right]</m> belongs to
+  <m>\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
+  \left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}</m>
+  by solving an appropriate vector equation.
+        </p>
+    </statement>
+</activity>
+
+
+<activity tbil-time='10'>
+    <introduction>
+        <p>
+  Does the third-degree polynomial <m>3y^3-2y^2+y+5</m> in <m>\P^3</m> belong to
+  <m>\vspan\{y^3-3y+2,-y^3-3y^2+2y+2\}</m>?
+        </p>
+    </introduction>
+  <task>
+      <p>
+  	Reinterpret this question as a question about the solution(s) of a polynomial equation.
+      </p>
+  </task>
+  <task>
+      <p>
+  	Answer this equivalent question, and use its solution to answer the original
+    question.
+      </p>
+  </task>
+</activity>
+
+<activity tbil-time='5'>
+    <statement>
+        <p>
+  Does the polynomial  <m>x^2+x+1</m> belong to
+  <m>\vspan\{x^2-x,x+1, x^2-1\}</m>?
+        </p>
+    </statement>
+</activity>
+
+<activity tbil-time='5'>
+    <introduction>
+        <p>
+  Does the matrix <m>\left[\begin{array}{c}3&amp;-2\\1&amp;5\end{array}\right]</m> belong to
+  <m>\vspan\left\{\left[\begin{array}{c}1&amp;0\\-3&amp;2\end{array}\right],
+  \left[\begin{array}{c}-1&amp;-3\\2&amp;2\end{array}\right]\right\}</m>?
+        </p>
+    </introduction>
+  <task>
+      <p>
+  	Reinterpret this question as a question about the solution(s) of a matrix equation.
+      </p>
+  </task>
+  <task>
+      <p>
+  	Answer this equivalent question, and use its solution to answer the original
+    question.
+      </p>
+  </task>
+</activity>
+
+    <exercises>
+        <xi:include href="../exercises/V2/0000.ptx"/>
+        <xi:include href="../exercises/V2/0001.ptx"/>
+        <xi:include href="../exercises/V2/0002.ptx"/>
+        <xi:include href="../exercises/V2/0003.ptx"/>
+        <xi:include href="../exercises/V2/0004.ptx"/>
+        <p><em>Additional exercises available at <url href="https://checkit.clontz.org/banks/tbil-la/V2/">checkit.clontz.org</url>.</em></p>
+    </exercises>
+
+</section>
