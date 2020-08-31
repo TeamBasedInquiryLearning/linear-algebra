@@ -1,0 +1,849 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="G1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Row Operations and Determinants (G1)</title>
+
+<activity tbil-time='5'>
+    <introduction>
+        <p>
+The image below illustrates how the linear transformation
+<m>T : \IR^2 \rightarrow \IR^2</m> given by the
+standard matrix <m>A = \left[\begin{array}{cc} 2 &amp; 0 \\ 0 &amp; 3 \end{array}\right]</m>
+transforms the unit square.
+        </p>
+<cd>
+\begin{tikzpicture}[scale=0.5]
+\fill[red!50!white] (0,0) rectangle (1,1);`
+\draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
+\draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
+\draw[thick,blue,-&gt;] (0,0) -- node[below] {\(A \vec{e}_1= \left[\begin{array}{c}2 \\ 0 \end{array}\right]\)}++ (2,0);
+\draw[thick,blue,-&gt;] (0,0) -- node[left] {\(A \vec{e}_2 = \left[\begin{array}{c} 0 \\ 3 \end{array}\right]\)}++(0,3);
+\draw[thick,red,-&gt;] (0,0) -- ++(1,0);
+\draw[thick,red,-&gt;] (0,0) -- ++(0,1);
+\draw[blue,dashed] (2,0) -- (2,3) -- (0,3);
+\draw[red,dashed] (1,0) -- (1,1) -- (0,1);
+\end{tikzpicture}
+</cd>
+    </introduction>
+    <task><p>
+What are the lengths of <m>A\vec e_1</m> and <m>A\vec e_2</m>?
+        </p></task>
+    <task><p>
+What is the area of the transformed unit square?
+        </p></task>
+</activity>
+
+
+<activity tbil-time='5'>
+    <introduction>
+        <p>
+The image below illustrates how the linear transformation
+<m>S : \IR^2 \rightarrow \IR^2</m> given by the
+standard matrix <m>B = \left[\begin{array}{cc} 2 &amp; 3 \\ 0 &amp; 4 \end{array}\right]</m>.
+transforms the unit square.
+        </p>
+<cd>
+\begin{tikzpicture}[scale=0.5]
+\fill[red!50!white] (0,0) rectangle (1,1);
+\draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
+\draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
+\draw[thick,blue,-&gt;] (0,0) -- node[below] {\(B \vec{e}_1= \left[\begin{array}{c}2 \\ 0 \end{array}\right]\)}++ (2,0);
+\draw[thick,blue,-&gt;] (0,0) -- ++(3,4) node[above] {\(B \vec{e}_2 = \left[\begin{array}{c} 3 \\ 4 \end{array}\right]\)};
+\draw[thick,red,-&gt;] (0,0) -- ++(1,0);
+\draw[thick,red,-&gt;] (0,0) -- ++(0,1);
+\draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
+\draw[red,dashed] (1,0) -- (1,1) -- (0,1);
+\end{tikzpicture}
+</cd>
+    </introduction>
+    <task>
+        <p>
+What are the lengths of <m>B\vec e_1</m> and <m>B\vec e_2</m>?
+        </p>
+    </task>
+    <task>
+        <p>
+What is the area of the transformed unit square?
+        </p>
+    </task>
+</activity>
+
+<observation>
+    <statement>
+        <p>
+  It is possible to find two nonparallel vectors that are scaled but not rotated by
+  the linear map given by <m>B</m>.
+        </p>
+  <me>B\vec e_1=\left[\begin{array}{cc} 2 &amp; 3 \\ 0 &amp; 4 \end{array}\right]\left[\begin{array}{c}1\\0\end{array}\right]
+  =\left[\begin{array}{c}2\\0\end{array}\right]=2\vec e_1</me>
+
+  <me>
+    B\left[\begin{array}{c}\frac{3}{4}\\\frac{1}{2}\end{array}\right]
+      =
+    \left[\begin{array}{cc} 2 &amp; 3 \\ 0 &amp; 4 \end{array}\right]\left[\begin{array}{c}\frac{3}{4}\\\frac{1}{2}\end{array}\right]
+      =
+    \left[\begin{array}{c}3\\2\end{array}\right]
+      =
+    4\left[\begin{array}{c}\frac{3}{4}\\\frac{1}{2}\end{array}\right]
+  </me>
+  <cd>
+  \begin{tikzpicture}[scale=0.5]
+  \fill[red!50!white] (0,0) -- (1,0) -- (1.75,0.5) -- (0.75,0.5) -- (0,0);
+  \draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
+  \draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
+  \draw[thick,blue,-&gt;] (0,0) -- node[below] {\(B\left[\begin{array}{c}1\\0\end{array}\right]=2\left[\begin{array}{c}1\\0\end{array}\right]\)}++ (2,0);
+  \draw[thick,blue,-&gt;] (0,0) -- ++(3,2) node[above] {\(B\left[\begin{array}{c}\frac{3}{4}\\\frac{1}{2}\end{array}\right]=4\left[\begin{array}{c}\frac{3}{4}\\\frac{1}{2}\end{array}\right]\)};
+  \draw[thick,red,-&gt;] (0,0) -- (1,0);
+  \draw[thick,red,-&gt;] (0,0) -- (0.75,0.5);
+  \draw[red,dashed] (1,0) -- (1.75,0.5) -- (0.75,0.5);
+  \draw[blue,dashed] (2,0) -- (5,2) -- (3,2);
+  \end{tikzpicture}
+  </cd>
+        <p>
+  The process for finding such vectors will be covered later in this module.
+        </p>
+    </statement>
+</observation>
+
+
+<observation>
+    <statement>
+        <p>
+  Notice that while a linear map can transform vectors in various ways,
+  linear maps always transform parallelograms into parallelograms,
+  and these areas are always transformed by the same factor: in the case of
+  <m>B=\left[\begin{array}{cc} 2 &amp; 3 \\ 0 &amp; 4 \end{array}\right]</m>,
+  this factor is <m>8</m>.
+        </p>
+<cd>
+\begin{tikzpicture}[scale=0.5]
+\fill[red!50!white] (0,0) rectangle (1,1);
+\draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
+\draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
+\draw[thick,blue,-&gt;] (0,0) -- node[below] {\(B \vec{e}_1= \left[\begin{array}{c}2 \\ 0 \end{array}\right]\)}++ (2,0);
+\draw[thick,blue,-&gt;] (0,0) -- ++(3,4) node[above] {\(B \vec{e}_2 = \left[\begin{array}{c} 3 \\ 4 \end{array}\right]\)};
+\draw[thick,red,-&gt;] (0,0) -- ++(1,0);
+\draw[thick,red,-&gt;] (0,0) -- ++(0,1);
+\draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
+\draw[red,dashed] (1,0) -- (1,1) -- (0,1);
+\end{tikzpicture}
+  \begin{tikzpicture}[scale=0.5]
+  \fill[red!50!white] (0,0) -- (1,0) -- (1.75,0.5) -- (0.75,0.5) -- (0,0);
+  \draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
+  \draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
+  \draw[thick,blue,-&gt;] (0,0) -- node[below] {\(B\left[\begin{array}{c}1\\0\end{array}\right]=2\left[\begin{array}{c}1\\0\end{array}\right]\)}++ (2,0);
+  \draw[thick,blue,-&gt;] (0,0) -- ++(3,2) node[above] {\(B\left[\begin{array}{c}\frac{3}{4}\\\frac{1}{2}\end{array}\right]=4\left[\begin{array}{c}\frac{3}{4}\\\frac{1}{2}\end{array}\right]\)};
+  \draw[thick,red,-&gt;] (0,0) -- (1,0);
+  \draw[thick,red,-&gt;] (0,0) -- (0.75,0.5);
+  \draw[red,dashed] (1,0) -- (1.75,0.5) -- (0.75,0.5);
+  \draw[blue,dashed] (2,0) -- (5,2) -- (3,2);
+  \end{tikzpicture}
+</cd>
+        <p>
+Since this change in area is always the same for a given linear map,
+it will be equal to the value of the transformed unit square (which
+begins with area <m>1</m>).
+        </p>
+    </statement>
+</observation>
+
+<remark>
+    <p>
+We will define the <term>determinant</term> of a square matrix <m>A</m>,
+or <m>\det(A)</m> for short, to be the factor by which <m>A</m> scales areas.
+In order to figure out how to compute it, we first figure out the properties it must satisfy.
+    </p>
+<cd>
+\begin{tikzpicture}[scale=0.5]
+\fill[red!50!white] (0,0) rectangle (1,1);
+\draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
+\draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
+\draw[thick,blue,-&gt;] (0,0) -- node[below] {\(B \vec{e}_1= \left[\begin{array}{c}2 \\ 0 \end{array}\right]\)}++ (2,0);
+\draw[thick,blue,-&gt;] (0,0) -- ++(3,4) node[above] {\(B \vec{e}_2 = \left[\begin{array}{c} 3 \\ 4 \end{array}\right]\)};
+\draw[thick,red,-&gt;] (0,0) -- ++(1,0);
+\draw[thick,red,-&gt;] (0,0) -- ++(0,1);
+\draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
+\draw[red,dashed] (1,0) -- (1,1) -- (0,1);
+\end{tikzpicture}
+  \begin{tikzpicture}[scale=0.5]
+  \fill[red!50!white] (0,0) -- (1,0) -- (1.75,0.5) -- (0.75,0.5) -- (0,0);
+  \draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
+  \draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
+  \draw[thick,blue,-&gt;] (0,0) -- node[below] {\(B\left[\begin{array}{c}1\\0\end{array}\right]=2\left[\begin{array}{c}1\\0\end{array}\right]\)}++ (2,0);
+  \draw[thick,blue,-&gt;] (0,0) -- ++(3,2) node[above] {\(B\left[\begin{array}{c}\frac{3}{4}\\\frac{1}{2}\end{array}\right]=4\left[\begin{array}{c}\frac{3}{4}\\\frac{1}{2}\end{array}\right]\)};
+  \draw[thick,red,-&gt;] (0,0) -- (1,0);
+  \draw[thick,red,-&gt;] (0,0) -- (0.75,0.5);
+  \draw[red,dashed] (1,0) -- (1.75,0.5) -- (0.75,0.5);
+  \draw[blue,dashed] (2,0) -- (5,2) -- (3,2);
+  \end{tikzpicture}
+</cd>
+</remark>
+
+
+<activity tbil-time='2'>
+    <statement>
+        <p>
+The transformation of the unit square by the
+standard matrix <m>[\vec{e}_1\hspace{0.5em} \vec{e}_2]=\left[\begin{array}{cc}1&amp;0\\0&amp;1\end{array}\right]=I</m> is illustrated below.
+What is <m>\det([\vec{e}_1\hspace{0.5em} \vec{e}_2])=\det(I)</m>, the
+area of the transformed unit square shown here?
+        </p>
+<cd>
+\begin{tikzpicture}[scale=1]
+\fill[red!50!white] (0,0) rectangle (1,1);
+\draw[thin,gray,&lt;-&gt;] (-1,0)-- (3,0);
+\draw[thin,gray,&lt;-&gt;] (0,-1)-- (0,3);
+\draw[thick,blue,-&gt;] (0,0) -- node[below] {\(\vec{e}_1=\left[\begin{array}{c}1 \\ 0 \end{array}\right]\)} (1,0);
+\draw[thick,blue,-&gt;] (0,0) -- node[left] {\(\vec{e}_2=\left[\begin{array}{c} 0 \\ 1 \end{array}\right]\)} (0,1);
+\draw[dashed,blue] (1,0) -- (1,1);
+\draw[dashed,blue] (0,1) -- (1,1);
+\end{tikzpicture}
+</cd>
+  <ol label="a">
+<li><p> 0
+    </p></li>
+<li><p> 1
+    </p></li>
+<li><p> 2
+    </p></li>
+<li><p> 4
+    </p></li>
+  </ol>
+    </statement>
+</activity>
+
+<activity tbil-time='2'>
+    <statement>
+        <p>
+The transformation of the unit square by the
+standard matrix <m>[\vec{v}\hspace{0.5em} \vec{v}]</m> is illustrated below: both
+<m>T(\vec{e}_1)=T(\vec{e}_2)=\vec{v}</m>.
+What is <m>\det([\vec{v}\hspace{0.5em} \vec{v}])</m>, 
+the area of the transformed unit square shown here?
+        </p>
+<cd>
+\begin{tikzpicture}[scale=0.8]
+\fill[red!50!white] (0,0) rectangle (1,1);
+\draw[thin,gray,&lt;-&gt;] (-1,0)-- (4,0);
+\draw[thin,gray,&lt;-&gt;] (0,-1)-- (0,4);
+\draw[thick,blue,-&gt;] (0,0) -- node[below] {\(\vec{v}\)} (3,2);
+\end{tikzpicture}
+</cd>
+  <ol label="a">
+<li><p> 0
+    </p></li>
+<li><p> 1
+    </p></li>
+<li><p> 2
+    </p></li>
+<li><p> 4
+    </p></li>
+  </ol>
+    </statement>
+</activity>
+
+
+<activity tbil-time='5'>
+    <statement>
+        <p>
+The transformations of the unit square by the
+standard matrices <m>[\vec{v}\hspace{0.5em} \vec{w}]</m> and
+<m>[c\vec{v}\hspace{0.5em} \vec{w}]</m> are illustrated below.
+Describe the value of <m>\det([c\vec{v}\hspace{0.5em} \vec{w}])</m>.
+        </p>
+<cd>
+\begin{tikzpicture}[scale=0.8]
+\draw[thin,gray,&lt;-&gt;] (-1,0)-- (6,0);
+\draw[thin,gray,&lt;-&gt;] (0,-1)-- (0,6);
+\draw[thick,red,-&gt;] (0,0) -- node[below right] {\(c\vec{v}\)}  (4,2);
+\draw[thick,red,-&gt;] (1,3) -- (5,5);
+\draw[thick,blue,-&gt;] (0,0) -- node[below] {\(\vec{v}\)} (3,1.5);
+\draw[thick,purple,-&gt;] (0,0) -- node[left] {\(\vec{w}\)} (1,3);
+\draw[lightgray,very thick,dashed] (1,3) -- (2,1);
+\draw[thick,blue,-&gt;] (3,1.5) -- (4,4.5);
+\draw[thick,blue,-&gt;] (1,3) -- (4,4.5);
+\draw[thick,red,-&gt;] (4,2) -- (5,5);
+\end{tikzpicture}
+</cd>
+  <ol label="a">
+<li><p> <m>\det([\vec{v}\hspace{0.5em} \vec{w}])</m>
+    </p></li>
+<li><p> <m>\det([\vec{v}\hspace{0.5em} \vec{w}])+c\det([\vec{v}\hspace{0.5em} \vec{w}]</m>
+    </p></li>
+<li><p> <m>c\det([\vec{v}\hspace{0.5em} \vec{w}])</m>
+    </p></li>
+<li><p> Cannot be determined from this information.
+    </p></li>
+  </ol>
+    </statement>
+</activity>
+
+<activity tbil-time='5'>
+    <statement>
+        <p>
+The transformations of unit squares by the
+standard matrices <m>[\vec{u}\hspace{0.5em} \vec{w}]</m>, <m>[\vec{v}\hspace{0.5em} \vec{w}]</m> and
+<m>[\vec{u}+\vec{v}\hspace{0.5em} \vec{w}]</m> are illustrated below.
+Describe the value of <m>\det([\vec{u}+\vec{v}\hspace{0.5em} \vec{w}])</m>.
+        </p>
+<cd>
+\begin{tikzpicture}[scale=0.8]
+\draw[thin,gray,&lt;-&gt;] (-1,0)-- (6,0);
+\draw[thin,gray,&lt;-&gt;] (0,-1)-- (0,6);
+\draw[thick,blue,-&gt;] (0,0) -- node[below] {\(\vec{u}\)} (2,1);
+\draw[thick,purple,-&gt;] (0,0) -- node[left] {\(\vec{w}\)} (1,3);
+\draw[thick,blue,-&gt;] (2,1) -- node [below] {\(\vec{v}\)}(3,2);
+\draw[thick,purple,-&gt;] (2,1) -- (3,4);
+\draw[thick,purple,-&gt;] (3,2) -- (4,5);
+\draw[thick,blue,-&gt;] (1,3) -- (3,4);
+\draw[thick,blue,-&gt;] (3,4) -- (4,5);
+\draw[thick,red,-&gt;] (0,0) --  (3,2)node[above,right] {\(\vec{u}+\vec{v}\)};
+\draw[thick,red,-&gt;] (1,3) -- (4,5);
+\end{tikzpicture}
+</cd>
+  <ol label="a">
+<li><p>
+    <m>\det([\vec{u}\hspace{0.5em} \vec{w}])=\det([\vec{v}\hspace{0.5em} \vec{w}])</m>
+    </p></li>
+<li><p>
+    <m>\det([\vec{u}\hspace{0.5em} \vec{w}])+\det([\vec{v}\hspace{0.5em} \vec{w}])</m>
+    </p></li>
+<li><p>
+    <m>\det([\vec{u}\hspace{0.5em} \vec{w}])\det([\vec{v}\hspace{0.5em} \vec{w}])</m>
+    </p></li>
+<li><p> Cannot be determined from this information.
+    </p></li>
+  </ol>
+    </statement>
+</activity>
+
+
+<definition>
+    <statement>
+    <p>
+The <term>determinant</term> is the unique function
+<m>\det:M_{n,n}\to\IR</m> satisfying these  properties:
+    </p>
+<ol>
+<li><p> [P1:] <m>\det(I)=1</m>
+</p></li>
+<li><p> [P2:] <m>\det(A)=0</m> whenever two columns of the matrix are identical.
+</p></li>
+<li><p>[P3:]
+<m>\det[\cdots\hspace{0.5em}c\vec{v}\hspace{0.5em}\cdots]=
+c\det[\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}\cdots]</m>, assuming no other columns change.
+</p></li>
+<li><p>[P4:]
+<m>\det[\cdots\hspace{0.5em}\vec{v}+\vec{w}\hspace{0.5em}\cdots]=
+\det[\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}\cdots]+
+\det[\cdots\hspace{0.5em}\vec{w}\hspace{0.5em}\cdots]</m>, assuming no other columns change.
+</p></li>
+</ol>
+        <p>
+Note that these last two properties together can be phrased as ``The determinant is linear in each column.''
+        </p>
+    </statement>
+</definition>
+
+
+<observation>
+    <statement>
+        <p>
+The determinant must also satisfy other properties.
+Consider <m>\det([\vec v \hspace{1em}\vec w+c \vec{v}])</m> and
+<m>\det([\vec v\hspace{1em}\vec w])</m>.
+        </p>
+<cd>
+\begin{tikzpicture}[scale=0.5]
+\draw[thin,gray,&lt;-&gt;] (-1,0)-- (8,0);
+\draw[thin,gray,&lt;-&gt;] (0,-1)-- (0,6);
+\draw[very thick,blue,-&gt;] (0,0) -- node[below right] {\(\vec{v}\)}  (3,1);
+\draw[very thick,blue,-&gt;] (0,0) -- node[left] {\(\vec{w}\)} (1,2);
+\draw[dashed,blue,-&gt;] (1,2) -- (4,3);
+\draw[dashed,blue,-&gt;] (3,1) -- (4,3);
+\draw[thick,red,-&gt;] (0,0) -- (5.5,3.5) node[above] {\(\vec{w}+c\vec{v}\)};
+\draw[dashed,red,-&gt;] (3,1) -- (8.5,4.5);
+\draw[dashed,blue,-&gt;] (5.5,3.5) -- (8.5,4.5);
+\draw[thin,dashed,gray] (3,1) -- (2.5,2.5);
+\draw[thin,dashed,gray] (4,3) -- (5.5,3.5);
+\end{tikzpicture}
+</cd>
+<p>
+The base of both parallelograms is <m>\vec{v}</m>, while the height has not changed,
+so the determinant does not change either. This can also be proven using the
+other properties of the determinant:
+        </p>
+        <md>
+            <mrow>
+  \det([\vec{v}+c\vec{w}\hspace{1em}\vec{w}])
+&amp;=
+  \det([\vec{v}\hspace{1em}\vec{w}])+
+  \det([c\vec{w}\hspace{1em}\vec{w}])
+            </mrow>
+            <mrow>
+&amp;=
+  \det([\vec{v}\hspace{1em}\vec{w}])+
+  c\det([\vec{w}\hspace{1em}\vec{w}])
+            </mrow>
+            <mrow>
+&amp;=
+  \det([\vec{v}\hspace{1em}\vec{w}])+
+  c\cdot 0
+            </mrow>
+            <mrow>
+&amp;=
+  \det([\vec{v}\hspace{1em}\vec{w}])
+            </mrow>
+        </md>
+    </statement>
+</observation>
+
+<remark>
+    <p>
+Swapping columns may be thought of as a reflection, which is represented by a negative
+determinant. For example, the following matrices transform the unit square into
+the same parallelogram, but the second matrix reflects its orientation.
+    </p>
+<me>
+  A=\left[\begin{array}{cc}2&amp;3\\0&amp;4\end{array}\right]\hspace{1em}\det A=8\hspace{3em}
+  B=\left[\begin{array}{cc}3&amp;2\\4&amp;0\end{array}\right]\hspace{1em}\det B=-8
+</me>
+<cd>
+\begin{tikzpicture}[scale=0.5]
+\fill[red!50!white] (0,0) rectangle (1,1);
+\draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
+\draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
+\draw[thick,blue,-&gt;] (0,0) -- node[below] {\(A \vec{e}_1= \left[\begin{array}{c}2 \\ 0 \end{array}\right]\)}++ (2,0);
+\draw[thick,blue,-&gt;] (0,0) -- ++(3,4) node[above] {\(A \vec{e}_2 = \left[\begin{array}{c} 3 \\ 4 \end{array}\right]\)};
+\draw[thick,red,-&gt;] (0,0) -- ++(1,0);
+\draw[thick,red,-&gt;] (0,0) -- ++(0,1);
+\draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
+\draw[red,dashed] (1,0) -- (1,1) -- (0,1);
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.5]
+\fill[red!50!white] (0,0) rectangle (1,1);
+\draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
+\draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
+\draw[thick,blue,-&gt;] (0,0) -- node[below] {\(B \vec{e}_2= \left[\begin{array}{c}2 \\ 0 \end{array}\right]\)}++ (2,0);
+\draw[thick,blue,-&gt;] (0,0) -- ++(3,4) node[above] {\(B \vec{e}_1 = \left[\begin{array}{c} 3 \\ 4 \end{array}\right]\)};
+\draw[thick,red,-&gt;] (0,0) -- ++(1,0);
+\draw[thick,red,-&gt;] (0,0) -- ++(0,1);
+\draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
+\draw[red,dashed] (1,0) -- (1,1) -- (0,1);
+\end{tikzpicture}
+</cd>
+</remark>
+
+
+<observation>
+    <statement>
+        <p>
+The fact that swapping columns multiplies determinants by a negative
+may be verified by adding and subtracting columns.
+        </p>
+    <md>
+        <mrow>
+  \det([\vec{v}\hspace{1em}\vec{w}])
+&amp;=
+  \det([\vec{v}+\vec{w}\hspace{1em}\vec{w}])
+        </mrow>
+        <mrow>
+&amp;=
+  \det([\vec{v}+\vec{w}\hspace{1em}\vec{w}-(\vec{v}+\vec{w})])
+        </mrow>
+        <mrow>
+&amp;=
+  \det([\vec{v}+\vec{w}\hspace{1em}-\vec{v}])
+        </mrow>
+        <mrow>
+&amp;=
+  \det([\vec{v}+\vec{w}-\vec{v}\hspace{1em}-\vec{v}])
+        </mrow>
+        <mrow>
+&amp;=
+  \det([\vec{w}\hspace{1em}-\vec{v}])
+        </mrow>
+        <mrow>
+&amp;=
+  -\det([\vec{w}\hspace{1em}\vec{v}])
+        </mrow>
+    </md>
+    </statement>
+</observation>
+
+
+
+<fact>
+    <statement>
+        <p>
+  To summarize, we've shown that the column versions of the three row-reducing operations
+  a matrix may be used to simplify a determinant in the following way:
+        </p>
+  <ol label="a">
+<li><p> Multiplying a column by a scalar multiplies the
+        determinant by that scalar:
+        <me>c\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em} \cdots])=
+        \det([\cdots\hspace{0.5em}c\vec{v}\hspace{0.5em} \cdots])</me>
+  </p></li>
+<li><p> Swapping two columns changes the sign of the determinant:
+        <me>\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])=
+        -\det([\cdots\hspace{0.5em}\vec{w}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{v}\hspace{0.5em} \cdots])</me>
+  </p></li>
+<li><p> Adding a multiple of a column to another column does not
+        change the determinant:
+        <me>\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])=
+        \det([\cdots\hspace{0.5em}\vec{v}+c\vec{w}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])</me>
+  </p></li>
+  </ol>
+    </statement>
+</fact>
+
+<activity tbil-time='5'>
+    <statement>
+        <p>
+  The transformation given by the standard matrix <m>A</m> scales areas by
+  <m>4</m>, and the transformation given by the standard matrix <m>B</m> scales
+  areas by <m>3</m>. By what factor does the transformation given by the standard matrix
+  <m>AB</m> scale areas?
+        </p>
+<cd>
+\begin{tikzpicture}[x=0.2in,y=0.2in]
+\begin{scope}
+\fill[red] (0,0) -- (1,0) -- (1,1) -- (0,1) -- (0,0);
+\end{scope}
+\draw[-&gt;,thick] (2,1) to[bend left=30] node[above] {\(B\)} (3,1);
+\begin{scope}[shift={(3,-1)}]
+\fill[purple] (0,0) -- (2,1) -- (3,3) -- (1,2) -- (0,0);
+\end{scope}
+\draw[-&gt;,thick] (6.5,1) to[bend left=30] node[above] {\(A\)} (7.5,1);
+\begin{scope}[shift={(12,-3)}]
+\fill[blue] (0,0) -- (-4,5) -- (-1,7) -- (3,2) -- (0,0);
+\end{scope}
+\end{tikzpicture}
+</cd>
+  <ol label="a">
+<li><p> <m>1</m>
+  </p></li>
+<li><p> <m>7</m>
+  </p></li>
+<li><p> <m>12</m>
+  </p></li>
+<li><p> Cannot be determined
+  </p></li>
+  </ol>
+    </statement>
+</activity>
+
+<fact>
+    <statement>
+        <p>
+Since the transformation given by the standard matrix <m>AB</m> is obtained
+by applying the transformations given by <m>A</m> and <m>B</m>, it follows that
+<me>\det(AB)=\det(A)\det(B)=\det(B)\det(A)=\det(BA)</me>.
+        </p>
+    </statement>
+</fact>
+
+<remark>
+    <p>
+Recall that row operations may be produced by matrix multiplication.
+    </p>
+<ul>
+<li><p> Multiply the first row of <m>A</m> by <m>c</m>: <m>
+  \left[\begin{array}{cccc}
+  c &amp; 0 &amp; 0 &amp; 0\\
+  0 &amp; 1 &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{array}\right]A
+</m>
+</p></li>
+<li><p> Swap the first and second row of <m>A</m>: <m>
+  \left[\begin{array}{cccc}
+  0 &amp; 1 &amp; 0 &amp; 0\\
+  1 &amp; 0 &amp; 0 &amp; 0\\
+  0 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{array}\right]A
+</m>
+</p></li>
+<li><p> Add <m>c</m> times the third row to the first row of <m>A</m>: <m>
+  \left[\begin{array}{cccc}
+  1 &amp; 0 &amp; c &amp; 0 \\
+  0 &amp; 1 &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{array}\right]A
+</m>
+</p></li>
+</ul>
+</remark>
+
+
+<fact>
+    <statement>
+        <p>
+The determinants of row operation matrices may be computed
+by manipulating columns to reduce each matrix to the identity:
+        </p>
+<ul>
+<li><p> Scaling a row: <m>\det
+  \left[\begin{array}{cccc}
+  c &amp; 0 &amp; 0 &amp; 0\\
+  0 &amp; 1 &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{array}\right]
+    =
+  c\det
+  \left[\begin{array}{cccc}
+  1 &amp; 0 &amp; 0 &amp; 0\\
+  0 &amp; 1 &amp; 0 &amp; 0  \\
+  0 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{array}\right]
+    =
+  c
+</m>
+</p></li>
+<li><p> Swapping rows: <m>\det
+  \left[\begin{array}{cccc}
+  0 &amp; 1 &amp; 0 &amp; 0 \\
+  1 &amp; 0 &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{array}\right]
+    =
+  -1\det
+  \left[\begin{array}{cccc}
+  1 &amp; 0 &amp; 0 &amp; 0\\
+  0 &amp; 1 &amp; 0 &amp; 0\\
+  0 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{array}\right]
+    =
+  -1
+</m>
+</p></li>
+<li><p> Adding a row multiple to another row: <m>\det
+  \left[\begin{array}{cccc}
+  1 &amp; 0 &amp; c &amp; 0\\
+  0 &amp; 1 &amp; 0 &amp; 0\\
+  0 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{array}\right]
+    =
+  \det
+  \left[\begin{array}{cccc}
+  1 &amp; 0 &amp; c-1c &amp; 0\\
+  0 &amp; 1 &amp; 0-0c &amp; 0\\
+  0 &amp; 0 &amp; 1-0c &amp; 0 \\
+  0 &amp; 0 &amp; 0-0c &amp; 1
+  \end{array}\right]
+    =
+  \det(I)=1
+</m>
+</p></li>
+</ul>
+    </statement>
+</fact>
+
+<activity tbil-time='5'>
+    <statement>
+        <p>
+Consider the row operation <m>R_1+4R_3\to R_1</m> applied as follows to show
+<m>A\sim B</m>:
+        </p>
+<me>
+A=\left[\begin{array}{cccc}1&amp;2&amp;3 &amp; 4\\5&amp;6 &amp; 7 &amp; 8\\9 &amp; 10 &amp; 11 &amp; 12 \\ 13 &amp; 14 &amp; 15 &amp; 16\end{array}\right] 
+  \sim
+\left[\begin{array}{cccc}1+4(9)&amp;2+4(10)&amp;3+4(11) &amp; 4+4(12) \\5&amp;6 &amp; 6 &amp; 8\\9 &amp; 10 &amp; 11 &amp; 12 \\ 13 &amp; 14 &amp; 15 &amp; 16\end{array}\right]=B
+</me>
+<ol label="a">
+<li><p> Find a matrix <m>R</m> such that <m>B=RA</m>, by applying the same row operation to 
+<m>I=\left[\begin{array}{cccc}1&amp;0&amp;0&amp;0\\0&amp;1&amp;0&amp;0\\0&amp;0&amp;1&amp;0\\0&amp;0&amp;0&amp;1\end{array}\right]</m>.
+</p></li>
+<li><p> Find <m>\det R</m> by comparing with the previous slide.
+</p></li>
+<li><p> If <m>C \in M_{3,3}</m> is a matrix with <m>\det(C)= -3</m>, find 
+<me>\det(RC)=\det(R)\det(C).</me>
+</p></li>
+</ol>
+    </statement>
+</activity>
+
+<activity tbil-time='5'>
+    <statement>
+        <p>
+Consider the row operation <m>R_1\leftrightarrow R_3</m> applied as follows to show
+<m>A\sim B</m>:
+        </p>
+<me>
+A=\left[\begin{array}{cccc}1&amp;2&amp;3&amp;4\\5&amp;6&amp;7&amp;8\\9&amp;10&amp;11&amp;12 \\ 13 &amp; 14 &amp; 15 &amp; 16\end{array}\right]
+  \sim
+\left[\begin{array}{cccc}9&amp;10&amp;11&amp;12\\5&amp;6&amp;7&amp;8\\1&amp;2&amp;3&amp;4 \\ 13 &amp; 14 &amp; 15 &amp; 16\end{array}\right]=B
+</me>
+<ol label="a">
+<li><p> Find a matrix <m>R</m> such that <m>B=RA</m>, by applying the same row operation to <m>I</m>.
+</p></li>
+<li><p> If <m>C \in M_{3,3}</m> is a matrix with <m>\det(C)= 5</m>, find <m>\det(RC)</m>.
+</p></li>
+</ol>
+    </statement>
+</activity>
+
+<activity tbil-time='5'>
+    <statement>
+        <p>
+Consider the row operation <m>3R_2\to R_2</m> applied as follows to show
+<m>A\sim B</m>:
+        </p>
+<me>
+A=\left[\begin{array}{cccc}1&amp;2&amp;3&amp;4\\5&amp;6&amp;7&amp;8\\9&amp;10&amp;11&amp;12 \\ 13 &amp; 14 &amp; 15 &amp; 16\end{array}\right]
+  \sim
+\left[\begin{array}{cccc}1&amp;2&amp;3&amp;4\\3(5)&amp;3(6)&amp;3(7)&amp;3(8)\\9&amp;10&amp;11&amp;12 \\ 13 &amp; 14 &amp; 15 &amp; 16\end{array}\right]=B
+</me>
+<ol label="a">
+<li><p> Find a matrix <m>R</m> such that <m>B=RA</m>.
+</p></li>
+<li><p> If <m>C \in M_{3,3}</m> is a matrix with <m>\det(C)= -7</m>, find <m>\det(RC)</m>.
+</p></li>
+</ol>
+    </statement>
+</activity>
+
+<remark>
+    <p>
+  Recall that the column versions of the three row-reducing operations
+  a matrix may be used to simplify a determinant:
+    </p>
+  <ol label="a">
+<li><p> Multiplying columns by scalars:
+        <me>\det([\cdots\hspace{0.5em}c\vec{v}\hspace{0.5em} \cdots])=
+        c\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em} \cdots])</me>
+  </p></li>
+<li><p> Swapping two columns:
+        <me>\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])=
+        -\det([\cdots\hspace{0.5em}\vec{w}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{v}\hspace{0.5em} \cdots])</me>
+  </p></li>
+<li><p> Adding a multiple of a column to another column:
+        <me>\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])=
+        \det([\cdots\hspace{0.5em}\vec{v}+c\vec{w}\hspace{0.5em}
+        \cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])</me>
+  </p></li>
+  </ol>
+</remark>
+
+<remark>
+    <p>
+The determinants of row operation matrices may be computed
+by manipulating columns to reduce each matrix to the identity:
+    </p>
+<ul>
+<li><p> Scaling a row: <m>  
+  \left[\begin{array}{cccc}
+  1 &amp; 0 &amp; 0 &amp;0  \\
+  0 &amp; c &amp; 0 &amp;0\\
+  0 &amp; 0 &amp; 1 &amp;0 \\
+  0 &amp; 0 &amp; 0 &amp; 0
+  \end{array}\right]
+</m>
+</p></li>
+<li><p> Swapping rows: <m>
+  \left[\begin{array}{cccc}
+  0 &amp; 1 &amp; 0 &amp;0 \\
+  1 &amp; 0 &amp; 0 &amp; 0\\
+  0 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 0
+  \end{array}\right]
+</m>
+</p></li>
+<li><p> Adding a row multiple to another row: <m>
+  \left[\begin{array}{cccc}
+  1 &amp; 0 &amp; 0 &amp; 0\\
+  0 &amp; 1 &amp; c &amp; 0\\
+  0 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 0
+  \end{array}\right]
+</m>
+</p></li>
+</ul>
+</remark>
+
+<fact>
+    <statement>
+        <p>
+Thus we can also use row operations to simplify determinants:
+        </p>
+<ol>
+<li><p> Multiplying rows by scalars:
+  <m>\det\left[\begin{array}{c}\vdots\\cR\\\vdots\end{array}\right]=
+  c\det\left[\begin{array}{c}\vdots\\R\\\vdots\end{array}\right]</m>
+</p></li>
+<li><p> Swapping two rows:
+  <m>\det\left[\begin{array}{c}\vdots\\R\\\vdots\\S\\\vdots\end{array}\right]=
+  -\det\left[\begin{array}{c}\vdots\\S\\\vdots\\R\\\vdots\end{array}\right]</m>
+</p></li>
+<li><p> Adding multiples of rows to other rows:
+  <m>\det\left[\begin{array}{c}\vdots\\R\\\vdots\\S\\\vdots\end{array}\right]=
+  \det\left[\begin{array}{c}\vdots\\R+cS\\\vdots\\S\\\vdots\end{array}\right]</m>
+</p></li>
+</ol>
+    </statement>
+</fact>
+
+
+
+<observation>
+    <statement>
+        <p>
+  So we may compute the determinant of <m>\left[\begin{array}{cc} 2 &amp; 4 \\ 2 &amp; 3 \end{array}\right]</m> 
+  by manipulating its rows/columns to reduce the matrix to <m>I</m>:
+        </p>
+        <md>
+            <mrow>
+    \det\left[\begin{array}{cc} 2 &amp; 4 \\ 2 &amp; 3 \end{array}\right]
+      &amp;=
+    2 \det \left[\begin{array}{cc} 1 &amp; 2 \\ 2 &amp; 3 \end{array}\right]
+            </mrow>
+            <mrow>
+      &amp;=
+    %2 \det \left[\begin{array}{cc} 1 &amp; 2 \\ 2-2(1) &amp; 3-2(2)\end{array}\right]=
+    2 \det \left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; -1 \end{array}\right]
+            </mrow>
+            <mrow>
+      &amp;=
+    %2(-1) \det \left[\begin{array}{cc} 1 &amp; -2 \\ 0 &amp; +1 \end{array}\right]=
+    -2 \det \left[\begin{array}{cc} 1 &amp; -2 \\ 0 &amp; 1 \end{array}\right]
+            </mrow>
+            <mrow>
+      &amp;=
+    %-2 \det \left[\begin{array}{cc} 1+2(0) &amp; -2+2(1) \\ 0 &amp; 1\end{array}\right] =
+    -2 \det \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \end{array}\right]
+            </mrow>
+            <mrow>
+      &amp;=
+    %-2\det I = 
+    %-2(1) = 
+    -2
+            </mrow>
+        </md>
+    </statement>
+</observation>
+
+    <exercises>
+        <xi:include href="../exercises/G1/0000.ptx"/>
+        <xi:include href="../exercises/G1/0001.ptx"/>
+        <xi:include href="../exercises/G1/0002.ptx"/>
+        <xi:include href="../exercises/G1/0003.ptx"/>
+        <xi:include href="../exercises/G1/0004.ptx"/>
+        <p><em>Additional exercises available at <url href="https://checkit.clontz.org/banks/tbil-la/G1/">checkit.clontz.org</url>.</em></p>
+    </exercises>
+
+</section>

@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="M3" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>The Inverse of a Matrix (M3)</title>
+
+
+<activity tbil-time='15'>
+    <statement>
+        <p>
+Let <m>T: \IR^n \rightarrow \IR^m</m> be a linear map with standard matrix <m>A</m>.
+Sort the following items into three groups of statements: a group that means
+<m>T</m> is <em>injective</em>, a group that means <m>T</m> is <em>surjective</em>,
+and a group that means <m>T</m> is <em>bijective</em>.
+        </p>
+<ol label="a">
+<li><p> <m>A\vec x=\vec b</m> has a solution for all <m>\vec b\in\IR^m</m>
+</p></li>
+<li><p> <m>A\vec x=\vec b</m> has a unique solution for all <m>\vec b\in\IR^m</m>
+</p></li>
+<li><p> <m>A\vec x=\vec 0</m> has a unique solution.
+</p></li>
+<li><p> The columns of <m>A</m> span <m>\IR^m</m>
+</p></li>
+<li><p> The columns of <m>A</m> are linearly independent
+</p></li>
+<li><p> The columns of <m>A</m> are a basis of <m>\IR^m</m>
+</p></li>
+<li><p> Every column of <m>\RREF(A)</m> has a pivot
+</p></li>
+<li><p> Every row of <m>\RREF(A)</m> has a pivot
+</p></li>
+<li><p> <m>m=n</m> and <m>\RREF(A)=I</m>
+</p></li>
+</ol>
+    </statement>
+</activity>
+
+<activity tbil-time='5'>
+    <statement>
+        <p>
+  Let <m>T: \IR^3 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix
+  <m>A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; 0 \\ 2 &amp; 1 &amp; 4 \\ 1 &amp; 1 &amp; 3 \end{array}\right]</m>.
+        </p>
+        <p>
+  Write an augmented matrix representing the system of equations given by <m>T(\vec x)=\vec{0}</m>,
+  that is, <m>A\vec x=\left[\begin{array}{c}0 \\ 0 \\ 0 \end{array}\right]</m>.
+  Then solve <m>T(\vec x)=\vec{0}</m> to find the kernel of <m>T</m>.
+        </p>
+    </statement>
+</activity>
+
+<definition>
+    <statement>
+    <p>
+  Let <m>T: \IR^n \rightarrow \IR^n</m> be a linear map with standard matrix <m>A</m>.
+    </p>
+<ul>
+<li><p>  If <m>T</m> is a bijection and <m>\vec b</m> is any <m>\IR^n</m> vector, 
+  then <m>T(\vec x)=A\vec x=\vec b</m> has a unique solution.
+</p></li>
+<li><p> So we may define an <term>inverse map</term> <m>T^{-1} : \IR^n \rightarrow \IR^n</m> 
+  by setting <m>T^{-1}(\vec b)</m> to be this unique solution.
+</p></li>
+<li><p> Let <m>A^{-1}</m> be the standard matrix for <m>T^{-1}</m>. We call <m>A^{-1}</m> the
+<term>inverse matrix</term> of <m>A</m>, so we also say that <m>A</m> is <term>invertible</term>.
+</p></li>
+</ul>
+    </statement>
+</definition>
+
+
+<activity tbil-time='20'>
+    <introduction>
+        <p>
+  Let <m>T: \IR^3 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix
+  <m>A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]</m>.
+        </p>
+    </introduction>
+  <task>
+      <p>
+  Write an augmented matrix representing the system of equations given by <m>T(\vec x)=\vec{e}_1</m>,
+  that is, <m>A\vec x=\left[\begin{array}{c}1 \\ 0 \\ 0 \end{array}\right]</m>.
+  Then solve <m>T(\vec x)=\vec{e}_1</m> to find <m>T^{-1}(\vec{e}_1)</m>.
+      </p>
+  </task>
+  <task>
+      <p>
+   Solve <m>T(\vec x)=\vec{e}_2</m> to find <m>T^{-1}(\vec{e}_2)</m>.
+      </p>
+  </task>
+  <task>
+      <p>
+   Solve <m>T(\vec x)=\vec{e}_3</m> to find <m>T^{-1}(\vec{e}_3)</m>.
+      </p>
+  </task>
+  <task>
+      <p>
+   Write <m>A^{-1}</m>, the standard matrix for <m>T^{-1}</m>.
+      </p>
+  </task>
+</activity>
+
+<observation>
+    <statement>
+        <p>
+We could have solved these three systems simultaneously
+by row reducing the matrix <m>[A\,|\,I]</m> at once.
+<me>
+  \left[\begin{array}{ccc|ccc}
+    2 &amp; -1 &amp; -6 &amp; 1 &amp; 0 &amp; 0 \\
+    2 &amp; 1 &amp; 3 &amp; 0 &amp; 1 &amp; 0 \\
+    1 &amp; 1 &amp; 4 &amp; 0 &amp; 0 &amp; 1
+  \end{array}\right] \sim
+  \left[\begin{array}{ccc|ccc}
+    1 &amp; 0 &amp; 0 &amp; 1 &amp; -2 &amp; 3 \\
+    0 &amp; 1 &amp; 0 &amp; -5 &amp; 14 &amp; -18 \\
+    0 &amp; 0 &amp; 1 &amp; 1 &amp; -3 &amp; 4
+  \end{array}\right]
+</me>
+        </p>
+    </statement>
+</observation>
+
+
+<activity tbil-time='5'>
+    <statement>
+        <p>
+  Find the inverse <m>A^{-1}</m> of the matrix
+  <m>A=\left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; -2 \end{array}\right]</m>
+  by row-reducing <m>[A\,|\,I]</m>.
+        </p>
+    </statement>
+</activity>
+
+
+
+    <exercises>
+        <xi:include href="../exercises/M4/0000.ptx"/>
+        <xi:include href="../exercises/M4/0001.ptx"/>
+        <xi:include href="../exercises/M4/0002.ptx"/>
+        <xi:include href="../exercises/M4/0003.ptx"/>
+        <xi:include href="../exercises/M4/0004.ptx"/>
+        <p><em>Additional exercises available at <url href="https://checkit.clontz.org/banks/tbil-la/M4/">checkit.clontz.org</url>.</em></p>
+    </exercises>
+
+</section>

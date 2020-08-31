@@ -1,0 +1,378 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="V1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Vector Spaces (V1)</title>
+
+<observation>
+    <statement>
+        <p>
+Several properties of the real numbers, such as commutivity:
+<me>
+  x + y = y + x
+</me>
+also hold for Euclidean vectors with multiple components:
+<me>
+\left[\begin{array}{c}x_1\\x_2\end{array}\right]
++
+\left[\begin{array}{c}y_1\\y_2\end{array}\right]
+=
+\left[\begin{array}{c}y_1\\y_2\end{array}\right]
++
+\left[\begin{array}{c}x_1\\x_2\end{array}\right]
+</me>.
+        </p>
+    </statement>
+</observation>
+
+<activity tbil-time='20'>
+    <statement>
+    <p>
+Consider each of the following properties of the real numbers
+<m>\IR^1</m>. Label each property as <em>valid</em> if the property also
+holds for two-dimensional Euclidean vectors 
+<m>\vec u,\vec v,\vec w\in\IR^2</m> and scalars <m>a,b\in\IR</m>,
+and <em>invalid</em> if it does not.
+    </p>
+<ol>
+<li><p> <m>\vec u+(\vec v+\vec w)=
+        (\vec u+\vec v)+\vec w</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    <m>\vec u+\vec v=
+        \vec v+\vec u</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    There exists some <m>\vec z</m>
+        where <m>\vec v+\vec z=\vec v</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    There exists some <m>-\vec v</m>
+        where <m>\vec v+(-\vec v)=\vec z</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    If <m>\vec u\not=\vec v</m>, then <m>\frac{1}{2}(\vec u+\vec v)</m>
+        is the only vector equally distant from both <m>\vec u</m> and <m>\vec v</m>
+    </p>
+  </li>
+<li>
+    <p>
+    <m>a(b\vec v)=(ab)\vec v</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    <m>1\vec v=\vec v</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    If <m>\vec u\not=\vec 0</m>, then there exists some scalar <m>c</m> 
+        such that <m>c\vec u=\vec v</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    <m>a(\vec u+\vec v)=a\vec u+a\vec v</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    <m>(a+b)\vec v=a\vec v+b\vec v</m>.
+    </p>
+  </li>
+</ol>
+    </statement>
+</activity>
+
+<definition>
+    <statement>
+        <p>
+  A <term>vector space</term> <m>V</m> is any collection of mathematical objects with
+  associated addition <m>\oplus</m> and scalar multiplication <m>\odot</m>
+  operations that satisfy the following properties. 
+  Let <m>\vec u,\vec v,\vec w</m> belong to <m>V</m>, and let <m>a,b</m> be scalar numbers.
+        </p>
+<ol>
+<li><p> <m>\vec u\oplus (\vec v\oplus \vec w)=
+        (\vec u\oplus \vec v)\oplus \vec w</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    <m>\vec u\oplus \vec v=
+        \vec v\oplus \vec u</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    There exists some <m>\vec z</m>
+        where <m>\vec v\oplus \vec z=\vec v</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    There exists some <m>-\vec v</m>
+        where <m>\vec v\oplus (-\vec v)=\vec z</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    <m>a(b\odot\vec v)=(ab)\odot\vec v</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    <m>1\odot\vec v=\vec v</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    <m>a\odot(\vec u\oplus \vec v)=(a\odot\vec u)\oplus(a\odot\vec v)</m>.
+    </p>
+  </li>
+<li>
+    <p>
+    <m>(a+ b)\odot\vec v=(a\odot\vec v)\oplus(b\odot \vec v)</m>.
+    </p>
+  </li>
+</ol>
+
+    </statement>
+</definition>
+
+<observation>
+    <statement>
+        <p>
+  Every <term>Euclidean vector space</term>
+  <me>
+    \IR^n=\setBuilder{\left[\begin{array}{c}x_1\\x_2\\\vdots\\x_n\end{array}\right]}{x_1,x_2,\dots,x_n\in\IR}
+  </me>
+  satisfies all eight requirements for the usual definitions of addition
+  and scalar multiplication,
+  but we will also study other types of vector spaces.
+        </p>
+    </statement>
+</observation>
+
+<observation>
+    <statement>
+        <p>
+The space of <m>m \times n</m><term>matrices</term>
+  <me>
+    M_{m,n}=\setBuilder{\left[\begin{array}{c}a_{11}  &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+      a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+      \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+      a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} \end{array}\right]}
+      {a_{11},\ldots,a_{mn} \in\IR}
+  </me>
+  satisfies all eight requirements for component-wise addition
+  and scalar multiplication.
+        </p>
+    </statement>
+</observation>
+
+
+
+<remark>
+    <p>
+  Every Euclidean space <m>\IR^n</m> is a vector space, but there are other
+  examples of vector spaces as well. 
+    </p>
+    <p>
+  For example, consider the
+  set <m>\IC</m> of complex numbers with the usual defintions of
+  addition and scalar multiplication, and let 
+  <m>\vec u=a+b\mathbf{i}</m>, <m>\vec v=c+d\mathbf{i}</m>, and <m>\vec w=e+f\mathbf{i}</m>. Then
+    </p>
+    <md>
+        <mrow>
+    \vec u+(\vec v+\vec w)
+      &amp;=
+    (a+b\mathbf{i})+((c+d\mathbf{i})+(e+f\mathbf{i}))
+        </mrow>
+        <mrow>
+            &amp;=
+    (a+b\mathbf{i})+((c+e)+(d+f)\mathbf{i})
+	\\&amp;=(a+c+e)+(b+d+f)\mathbf{i}
+    \\&amp;=((a+c)+(b+d)\mathbf{i})+(e+f\mathbf{i})
+        </mrow>
+        <mrow>
+      &amp;=
+    (\vec u+\vec v)+\vec w
+        </mrow>
+    </md>
+    <p>
+  All eight properties can be verified in this way.
+    </p>
+</remark>
+
+<remark>
+    <p>
+  The following sets are just a few examples of vector spaces, with the usual/natural
+  operations for addition and scalar multiplication.
+    </p>
+  <ul>
+<li>
+    <p>
+    <m>\IR^n</m>: Euclidean vectors with <m>n</m> components.
+    </p>
+    </li>
+<li>
+    <p>
+    <m>\IC</m>: Complex numbers.
+    </p>
+    </li>
+<li>
+   <p>
+    <m>M_{m,n}</m>: Matrices of real numbers with <m>m</m> rows and
+          <m>n</m> columns.
+    </p>
+    </li>
+<li>
+    <p>
+    <m>\P^n</m>: Polynomials of degree <m>n</m> or less.
+    </p>
+    </li>
+<li>
+    <p>
+    <m>\P</m>: Polynomials of any degree.
+    </p>
+    </li>
+<li>
+    <p>
+    <m>C(\IR)</m>: Real-valued continuous functions.
+    </p>
+    </li>
+  </ul>
+</remark>
+
+<activity tbil-time='20'>
+    <introduction>
+    <p>
+  Consider the set <m>V=\setBuilder{(x,y)}{y=e^x}</m> with operations defined by
+  <me>
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+      \hspace{3em}
+    c\odot (x_1,y_1)=(cx_1,y_1^c)
+  </me>.
+    </p>
+    </introduction>
+  <task>
+      <p>
+  Show that <m>V</m> satisfies the distributive property
+  <me>(a+b)\odot (x_1,y_1)=\left(a\odot (x_1,y_1)\right)\oplus \left(b\odot (x_1,y_1)\right)</me>
+  by simplifying both sides and verifying they are the same
+  expression.
+      </p>
+  </task>
+  <task><!-- optional -->
+      <p>
+  Show that <m>V</m> contains an additive identity element satisfying
+  <me>(x_1,y_1)\oplus\vec{z}=(x_1,y_1)</me>
+  for all <m>(x_1,y_1)\in V</m>
+  by choosing appropriate values for <m>\vec{z}=(\unknown,\unknown)</m>.
+      </p>
+  </task>
+</activity>
+
+
+<remark>
+    <p>
+  It turns out <m>V=\setBuilder{(x,y)}{y=e^x}</m> with operations defined by
+  <me>
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+      \hspace{3em}
+    c\odot (x_1,y_1)=(cx_1,y_1^c)
+  </me>
+  satisifes all eight properties.
+    </p>
+    <p>
+  Thus, <m>V</m> is a vector space.
+    </p>
+</remark>
+
+
+
+
+
+<activity tbil-time='15'>
+    <introduction>
+        <p>
+  Let <m>V=\setBuilder{(x,y)}{x,y\in\IR}</m> have operations defined by
+  <me>
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+y_1+x_2+y_2,x_1^2+x_2^2)
+      \hspace{3em}
+    c\odot (x_1,y_1)=(x_1^c,y_1+c-1)
+  </me>.
+        </p>
+    </introduction>
+  <task>
+      <p>
+    Show that <m>1</m> is the scalar multiplication identity element
+	by simplifying <m>1\odot(x,y)</m> to <m>(x,y)</m>.
+      </p>
+  </task>
+  <task>
+      <p>
+    Show that <m>V</m> does not have an additive identity element by showing that 
+	<m>(0,-1)\oplus\vec z\not=(0,-1)</m> no matter how
+    <m>\vec z=(z,w)</m> is chosen.
+      </p>
+  </task>
+  <task>
+      <p>
+    Is <m>V</m> a vector space?
+      </p>
+  </task>
+</activity>
+
+<activity tbil-time='15'>
+    <introduction>
+        <p>
+  Let <m>V=\setBuilder{(x,y)}{x,y\in\IR}</m> have operations defined by
+  <me>
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1+3y_2)
+      \hspace{3em}
+    c\odot (x_1,y_1)=(cx_1,cy_1)
+  .</me>
+        </p>
+    </introduction>
+  <task>
+      <p>
+    Show that scalar multiplication distributes over vector addition, i.e.
+	<me> c \odot \left( (x_1,y_1) \oplus (x_2,y_2) \right) = c\odot (x_1,y_1) \oplus c\odot (x_2,y_2)</me>
+	for <em>all</em> <m>c\in \IR,\, (x_1,y_1),(x_2,y_2) \in V</m>. 
+      </p>
+</task>
+  <task>
+      <p>
+    Show that vector addition is not associative, i.e. 
+  <me> (x_1,y_1) \oplus \left((x_2,y_2) \oplus (x_3,y_3)\right) \neq \left((x_1,y_1)\oplus (x_2,y_2)\right) \oplus (x_3,y_3)</me>
+  for <em>some</em> vectors <m> (x_1,y_1), (x_2,y_2), (x_3,y_3) \in V</m>.
+      </p>
+  </task>
+  <task>
+      <p>
+    Is <m>V</m> a vector space?
+      </p>
+  </task>
+</activity>
+
+
+    <exercises>
+        <xi:include href="../exercises/V1/0000.ptx"/>
+        <xi:include href="../exercises/V1/0001.ptx"/>
+        <xi:include href="../exercises/V1/0002.ptx"/>
+        <xi:include href="../exercises/V1/0003.ptx"/>
+        <xi:include href="../exercises/V1/0004.ptx"/>
+        <p><em>Additional exercises available at <url href="https://checkit.clontz.org/banks/tbil-la/V1/">checkit.clontz.org</url>.</em></p>
+    </exercises>
+
+</section>

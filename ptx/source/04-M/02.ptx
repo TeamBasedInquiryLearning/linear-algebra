@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="M2" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Row Operations as Matrix Multiplication (M2)</title>
+
+
+<activity tbil-time='5'>
+    <statement>
+    <p>
+Let <m>A=\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]</m>.
+Find a <m>3 \times 3</m> matrix <m>B</m> such that <m>BA=A</m>, that is,
+<me>
+  \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ 
+  \unknown &amp; \unknown &amp; \unknown 
+  \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+  \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+=
+  \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+</me>
+Check your guess using technology.
+    </p>
+    </statement>
+</activity>
+
+<definition>
+    <statement>
+        <p>
+The identity matrix <m>I_n</m> (or just <m>I</m> when <m>n</m> is obvious from context) is
+the <m>n \times n</m> matrix
+<me>I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &amp; \ddots &amp; \vdots  \\
+\vdots &amp; \ddots &amp; \ddots &amp; 0 \\ 0 &amp; \cdots &amp; 0 &amp; 1 \end{array}\right].</me>
+It has a <m>1</m> on each diagonal element and a <m>0</m> in every other position.
+        </p>
+    </statement>
+</definition>
+
+<fact>
+    <statement>
+        <p>
+  For any square matrix <m>A</m>, <m>IA=AI=A</m>:
+  <me>
+    \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right]
+    \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+  =
+    \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+      \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right]
+  =
+    \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+  </me>
+        </p>
+    </statement>
+</fact>
+
+<activity tbil-time='20'>
+    <introduction>
+        <p>
+Tweaking the identity matrix slightly allows us to write row operations
+in terms of matrix multiplication.
+        </p>
+    </introduction>
+<task>
+    <p>
+Create a matrix that doubles the third row of <m>A</m>:
+<me>
+ \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+ \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+=
+ \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 2 &amp; 2 &amp; -2 \end{array}\right]
+</me>
+    </p>
+</task>
+<task>
+    <p>
+  Create a matrix that swaps the second and third rows of <m>A</m>:
+  <me>
+   \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+   \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+  =
+  \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 1 &amp; 1 &amp; -1 \\ 0 &amp; 3 &amp; 2 \end{array}\right]
+  </me>
+    </p>
+</task>
+<task>
+    <p>
+Create a matrix that adds <m>5</m> times the third row of <m>A</m> to the first row:
+<me>
+ \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+ \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+=
+ \left[\begin{array}{ccc} 2+5(1) &amp; 7+5(1) &amp; -1+5(-1) \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+</me>
+    </p>
+</task>
+</activity>
+
+<fact>
+    <statement>
+        <p>
+If <m>R</m> is the result of applying a row operation to <m>I</m>, then
+<m>RA</m> is the result of applying the same row operation to <m>A</m>.
+        </p>
+<ul>
+<li>
+    <p>
+    Scaling a row: <m>R=
+  \left[\begin{array}{ccc}
+  c &amp; 0 &amp; 0 \\
+  0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{array}\right]
+</m>
+    </p>
+</li>
+<li>
+    <p>
+    Swapping rows: <m>R=
+  \left[\begin{array}{ccc}
+  0 &amp; 1 &amp; 0 \\
+  1 &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{array}\right]
+</m>
+    </p>
+</li>
+<li>
+    <p>
+    Adding a row multiple to another row: <m>R=
+  \left[\begin{array}{ccc}
+  1 &amp; 0 &amp; c \\
+  0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{array}\right]
+</m>
+    </p>
+</li>
+</ul>
+        <p>
+Such matrices can be chained together to emulate multiple row operations.
+In particular,
+<me>\RREF(A)=R_k\dots R_2R_1A</me>
+for some sequence of matrices <m>R_1,R_2,\dots,R_k</m>.
+        </p>
+    </statement>
+</fact>
+
+<activity tbil-time='10'>
+    <statement>
+        <p>
+Consider the two row operations 
+<m>R_2\leftrightarrow R_3</m> and <m>R_1+R_2\to R_1</m>
+applied as follows to show <m>A\sim B</m>:
+        </p>
+        <md>
+            <mrow>
+A
+  =
+\left[\begin{array}{ccc}
+-1&amp;4&amp;5\\
+0&amp;3&amp;-1\\
+1&amp;2&amp;3\\
+\end{array}\right]
+  &amp;\sim
+\left[\begin{array}{ccc}
+-1&amp;4&amp;5\\
+1&amp;2&amp;3\\
+0&amp;3&amp;-1\\
+\end{array}\right]
+            </mrow>
+            <mrow>
+  &amp;\sim
+\left[\begin{array}{ccc}
+-1+1&amp;4+2&amp;5+3\\
+1&amp;2&amp;3\\
+0&amp;3&amp;-1\\
+\end{array}\right]
+  =
+\left[\begin{array}{ccc}
+0&amp;6&amp;8\\
+1&amp;2&amp;3\\
+0&amp;3&amp;-1\\
+\end{array}\right]
+  = 
+B
+            </mrow>
+        </md>
+        <p>
+Express these row operations as matrix multiplication
+by expressing <m>B</m> as the product of two matrices and <m>A</m>:
+<me>
+B =
+\left[\begin{array}{ccc}
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown
+\end{array}\right]
+\left[\begin{array}{ccc}
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown
+\end{array}\right]
+A
+</me>
+Check your work using technology.
+        </p>
+    </statement>
+</activity>
+
+
+
+
+
+    <exercises>
+        <xi:include href="../exercises/M2/0000.ptx"/>
+        <xi:include href="../exercises/M2/0001.ptx"/>
+        <xi:include href="../exercises/M2/0002.ptx"/>
+        <xi:include href="../exercises/M2/0003.ptx"/>
+        <xi:include href="../exercises/M2/0004.ptx"/>
+        <p><em>Additional exercises available at <url href="https://checkit.clontz.org/banks/tbil-la/M2/">checkit.clontz.org</url>.</em></p>
+    </exercises>
+
+</section>
