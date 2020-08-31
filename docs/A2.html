@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-08-31T01:26:30Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Standard Matrices (A2)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{enclose}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\circledNumber}[1]{\enclose{circle}{#1}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="A1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="A.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="A3.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="A1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="A.html" title="Up">Up</a><a class="next-button button toolbar-item" href="A3.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="E.html" data-scroll="E"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (E)</span></a><ul>
+<li><a href="E1.html" data-scroll="E1">Linear Systems, Vector Equations, and Augmented Matrices (E1)</a></li>
+<li><a href="E2.html" data-scroll="E2">Row Reduction of Matrices (E2)</a></li>
+<li><a href="E3.html" data-scroll="E3">Solving Linear Systems (E3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="V.html" data-scroll="V"><span class="codenumber">2</span> <span class="title">Vector Spaces (V)</span></a><ul>
+<li><a href="V1.html" data-scroll="V1">Vector Spaces (V1)</a></li>
+<li><a href="V2.html" data-scroll="V2">Linear Combinations (V2)</a></li>
+<li><a href="V3.html" data-scroll="V3">Spanning Sets (V3)</a></li>
+<li><a href="V4.html" data-scroll="V4">Subspaces (V4)</a></li>
+<li><a href="V5.html" data-scroll="V5">Linear Independence (V5)</a></li>
+<li><a href="V6.html" data-scroll="V6">Identifying a Basis (V6)</a></li>
+<li><a href="V7.html" data-scroll="V7">Subspace Basis and Dimension (V7)</a></li>
+<li><a href="V8.html" data-scroll="V8">Polynomial and Matrix Spaces (V8)</a></li>
+<li><a href="V9.html" data-scroll="V9">Homogeneous Linear Systems (V9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="A.html" data-scroll="A"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (A)</span></a><ul>
+<li><a href="A1.html" data-scroll="A1">Linear Transformations (A1)</a></li>
+<li><a href="A2.html" data-scroll="A2" class="active">Standard Matrices (A2)</a></li>
+<li><a href="A3.html" data-scroll="A3">Image and Kernel (A3)</a></li>
+<li><a href="A4.html" data-scroll="A4">Injective and Surjective Linear Maps (A4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="M.html" data-scroll="M"><span class="codenumber">4</span> <span class="title">Matrices (M)</span></a><ul>
+<li><a href="M1.html" data-scroll="M1">Matrices and Multiplication (M1)</a></li>
+<li><a href="M2.html" data-scroll="M2">Row Operations as Matrix Multiplication (M2)</a></li>
+<li><a href="M3.html" data-scroll="M3">The Inverse of a Matrix (M3)</a></li>
+<li><a href="M4.html" data-scroll="M4">Invertible Matrices (M4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="G.html" data-scroll="G"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (G)</span></a><ul>
+<li><a href="G1.html" data-scroll="G1">Row Operations and Determinants (G1)</a></li>
+<li><a href="G2.html" data-scroll="G2">Computing Determinants (G2)</a></li>
+<li><a href="G3.html" data-scroll="G3">Eigenvalues and Characteristic Polynomials (G3)</a></li>
+<li><a href="G4.html" data-scroll="G4">Eigenvectors and Eigenspaces (G4)</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="A2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Standard Matrices (A2)</span>
+</h2>
+<article class="remark remark-like" id="remark-12"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
+</h6>
+<p id="p-497">Recall that a linear map \(T:V\rightarrow W\) satisfies</p>
+<ol class="decimal">
+<li id="li-338"><p id="p-498">\(T(\vec{v}+\vec{w}) = T(\vec{v})+T(\vec{w})\) for any \(\vec{v},\vec{w} \in V\text{.}\)</p></li>
+<li id="li-339"><p id="p-499">\(T(c\vec{v}) = cT(\vec{v})\) for any \(c \in \IR,\vec{v} \in V\text{.}\)</p></li>
+</ol>
+<p id="p-500">In other words, a map is linear when vector space operations can be applied before or after the transformation without affecting the result.</p></article><article class="activity project-like" id="activity-71"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
+</h6>
+<p id="p-501">Suppose \(T: \IR^3 \rightarrow \IR^2\) is a linear map, and you know \(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
+=
+\left[\begin{array}{c} 2 \\ 1 \end{array}\right]\) and \(T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
+=
+\left[\begin{array}{c} -3 \\ 2 \end{array}\right]
+\text{.}\) Compute \(T\left(\left[\begin{array}{c} 3 \\ 0 \\ 0 \end{array}\right]\right)\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-340">\(\displaystyle \left[\begin{array}{c} 6 \\ 3\end{array}\right]\)</li>
+<li id="li-341">\(\displaystyle \left[\begin{array}{c} -9 \\ 6 \end{array}\right]\)</li>
+<li id="li-342">\(\displaystyle \left[\begin{array}{c} -4 \\ -2 \end{array}\right]\)</li>
+<li id="li-343">\(\displaystyle \left[\begin{array}{c} 6 \\ -4 \end{array}\right]\)</li>
+</ol></article><article class="activity project-like" id="activity-72"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
+</h6>
+<p id="p-502">Suppose \(T: \IR^3 \rightarrow \IR^2\) is a linear map, and you know \(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
+=
+\left[\begin{array}{c} 2 \\ 1 \end{array}\right]\) and \(T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
+=
+\left[\begin{array}{c} -3 \\ 2 \end{array}\right]
+\text{.}\) Compute \(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right]\right)\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-344"><p id="p-503">\(\displaystyle \left[\begin{array}{c} 2 \\ 1\end{array}\right]\)</p></li>
+<li id="li-345"><p id="p-504">\(\displaystyle \left[\begin{array}{c} 3 \\ -1 \end{array}\right]\)</p></li>
+<li id="li-346"><p id="p-505">\(\displaystyle \left[\begin{array}{c} -1 \\ 3 \end{array}\right]\)</p></li>
+<li id="li-347"><p id="p-506">\(\displaystyle \left[\begin{array}{c} 5 \\ -8 \end{array}\right]\)</p></li>
+</ol></article><article class="activity project-like" id="activity-73"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+</h6>
+<p id="p-507">Suppose \(T: \IR^3 \rightarrow \IR^2\) is a linear map, and you know \(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
+=
+\left[\begin{array}{c} 2 \\ 1 \end{array}\right]\) and \(T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
+=
+\left[\begin{array}{c} -3 \\ 2 \end{array}\right]
+\text{.}\) Compute \(T\left(\left[\begin{array}{c} -2 \\ 0 \\ -3 \end{array}\right]\right)\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-348"><p id="p-508">\(\displaystyle \left[\begin{array}{c} 2 \\ 1\end{array}\right]\)</p></li>
+<li id="li-349"><p id="p-509">\(\displaystyle \left[\begin{array}{c} 3 \\ -1 \end{array}\right]\)</p></li>
+<li id="li-350"><p id="p-510">\(\displaystyle \left[\begin{array}{c} -1 \\ 3 \end{array}\right]\)</p></li>
+<li id="li-351"><p id="p-511">\(\displaystyle \left[\begin{array}{c} 5 \\ -8 \end{array}\right]\)</p></li>
+</ol></article><article class="activity project-like" id="activity-74"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
+</h6>
+<p id="p-512">Suppose \(T: \IR^3 \rightarrow \IR^2\) is a linear map, and you know \(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
+=
+\left[\begin{array}{c} 2 \\ 1 \end{array}\right]\) and \(T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
+=
+\left[\begin{array}{c} -3 \\ 2 \end{array}\right]
+\text{.}\) What piece of information would help you compute \(T\left(\left[\begin{array}{c}0\\4\\-1\end{array}\right]\right)\text{?}\)</p>
+<ol class="lower-alpha">
+<li id="li-352"><p id="p-513">The value of \(T\left(\left[\begin{array}{c} 0\\-4\\0\end{array}\right]\right)\text{.}\)</p></li>
+<li id="li-353"><p id="p-514">The value of \(T\left(\left[\begin{array}{c} 0\\1\\0\end{array}\right]\right)\text{.}\)</p></li>
+<li id="li-354"><p id="p-515">The value of \(T\left(\left[\begin{array}{c} 1\\1\\1\end{array}\right]\right)\text{.}\)</p></li>
+<li id="li-355"><p id="p-516">Any of the above.</p></li>
+</ol></article><article class="fact theorem-like" id="fact-15"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
+</h6>
+<p id="p-517">Consider any basis \(\{\vec b_1,\dots,\vec b_n\}\) for \(V\text{.}\)  Since every vector \(\vec v\) can be written as a linear combination of basis vectors, \(x_1\vec b_1+\dots+ x_n\vec b_n\text{,}\) we may compute \(T(\vec v)\) as follows:</p>
+<div class="displaymath">
+\begin{equation*}
+T(\vec v)=T(x_1\vec b_1+\dots+ x_n\vec b_n)=
+x_1T(\vec b_1)+\dots+x_nT(\vec b_n)
+.
+\end{equation*}
+</div>
+<p id="p-518">Therefore any linear transformation \(T:V \rightarrow W\) can be defined by just describing the values of \(T(\vec b_i)\text{.}\)</p>
+<p id="p-519">Put another way, the images of the basis vectors <dfn class="terminology">determine</dfn> the transformation \(T\text{.}\)</p></article><article class="definition definition-like" id="definition-19"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+</h6>
+<p id="p-520">Since linear transformation \(T:\IR^n\to\IR^m\) is determined by the standard basis \(\{\vec e_1,\dots,\vec e_n\}\text{,}\) it's convenient to store this information in the \(m\times n\) <dfn class="terminology">standard matrix</dfn> \([T(\vec e_1) \,\cdots\, T(\vec e_n)]\text{.}\)</p>
+<p id="p-521">For example, let \(T: \IR^3 \rightarrow \IR^2\) be the linear map determined by the following values for \(T\) applied to the standard basis of \(\IR^3\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\scriptsize
+T\left(\vec e_1 \right)
+=
+T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
+=
+\left[\begin{array}{c} 3 \\ 2\end{array}\right]
+\hspace{2em}
+T\left(\vec e_2 \right)
+=
+T\left(\left[\begin{array}{c} 0 \\ 1 \\ 0 \end{array}\right] \right)
+=
+\left[\begin{array}{c} -1 \\ 4\end{array}\right]
+\hspace{2em}
+T\left(\vec e_3 \right)
+=
+T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
+=
+\left[\begin{array}{c} 5 \\ 0\end{array}\right]
+\end{equation*}
+</div>
+<p id="p-522">Then the standard matrix corresponding to \(T\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc}T(\vec e_1) &amp; T(\vec e_2) &amp; T(\vec e_3)\end{array}\right]
+=
+\left[\begin{array}{ccc}3 &amp; -1 &amp; 5 \\ 2 &amp; 4 &amp; 0 \end{array}\right]
+.
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-75"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span>
+</h6>
+<p id="p-523">Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by</p>
+<div class="displaymath">
+\begin{equation*}
+T\left(\vec e_1 \right)
+=
+\left[\begin{array}{c} 0 \\ 3 \\ -2\end{array}\right]
+\hspace{2em}
+T\left(\vec e_2 \right)
+=
+\left[\begin{array}{c} -3 \\ 0 \\ 1\end{array}\right]
+\hspace{2em}
+T\left(\vec e_3 \right)
+=
+\left[\begin{array}{c} 4 \\ -2 \\ 1\end{array}\right]
+\hspace{2em}
+T\left(\vec e_4 \right)
+=
+\left[\begin{array}{c} 2 \\ 0 \\ 0\end{array}\right]
+\end{equation*}
+</div>
+<p data-braille="continuation">Write the standard matrix \([T(\vec e_1) \,\cdots\, T(\vec e_n)]\) for \(T\text{.}\)</p></article><article class="activity project-like" id="activity-76"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.6</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-26">
+<p id="p-524">Let \(T: \IR^3 \rightarrow \IR^2\) be the linear transformation given by</p>
+<div class="displaymath">
+\begin{equation*}
+T\left(\left[\begin{array}{c} x\\ y \\ z \end{array}\right] \right) = \left[\begin{array}{c} x+3z \\ 2x-y-4z \end{array}\right]
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-61"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-525">Compute \(T(\vec e_1)\text{,}\) \(T(\vec e_2)\text{,}\) and \(T(\vec e_3)\text{.}\)</p></article><article class="task exercise-like" id="task-62"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-526">Find the standard matrix for \(T\text{.}\)</p></article></article><article class="fact theorem-like" id="fact-16"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
+</h6>
+<p id="p-527">Because every linear map \(T:\IR^m\to\IR^n\) has a linear combination of the variables in each component, and thus \(T(\vec e_i)\) yields exactly the coefficients of \(x_i\text{,}\) the standard matrix for \(T\) is simply an ordered list of the coefficients of the \(x_i\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+T\left(\left[\begin{array}{c}x\\y\\z\\w\end{array}\right]\right)
+=
+\left[\begin{array}{c}
+ax+by+cz+dw \\
+ex+fy+gz+hw
+\end{array}\right]
+\hspace{2em}
+A
+=
+\left[\begin{array}{cccc}
+a &amp; b &amp; c &amp; d \\
+e &amp; f &amp; g &amp; h
+\end{array}\right]
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-77"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.7</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-27">
+<p id="p-528">Let \(T: \IR^3 \rightarrow \IR^3\) be the linear transformation given by the standard matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc} 3  &amp; -2 &amp; -1  \\ 4 &amp; 5 &amp; 2 \\ 0 &amp; -2 &amp; 1 \end{array}\right]
+.
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-63"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-529">Compute \(T\left(\left[\begin{array}{c} 1\\ 2 \\ 3 \end{array}\right] \right) \text{.}\)</p></article><article class="task exercise-like" id="task-64"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-530">Compute \(T\left(\left[\begin{array}{c} x\\ y \\ z \end{array}\right] \right) \text{.}\)</p></article></article><article class="activity project-like" id="activity-78"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.8</span><span class="period">.</span>
+</h6>
+<p id="p-531">Compute the following linear transformations of vectors given their standard matrices.</p>
+<div class="displaymath">
+\begin{equation*}
+T_1\left(\left[\begin{array}{c}1\\2\end{array}\right]\right)
+\text{ for the standard matrix }
+A_1=\left[\begin{array}{cc}4&amp;3\\0&amp;-1\\1&amp;1\\3&amp;0\end{array}\right]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+T_2\left(\left[\begin{array}{c}1\\1\\0\\-3\end{array}\right]\right)
+\text{ for the standard matrix }
+A_2=\left[\begin{array}{cccc}4&amp;3&amp;0&amp;-1\\1&amp;1&amp;3&amp;0\end{array}\right]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+T_3\left(\left[\begin{array}{c}0\\-2\\0\end{array}\right]\right)
+\text{ for the standard matrix }
+A_3=\left[\begin{array}{ccc}4&amp;3&amp;0\\0&amp;-1&amp;3\\5&amp;1&amp;1\\3&amp;0&amp;0\end{array}\right]
+\end{equation*}
+</div></article><section class="exercises" id="exercises-14"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.2.1</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-66"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<ol class="lower-alpha">
+<li id="li-356">Find the standard matrix for the linear transformation \(S:\mathbb{R}^ 3  \to \mathbb{R}^ 2 \) given by<div class="displaymath">
+\begin{equation*}
+S\left(  \left[\begin{array}{c}
+x \\
+y \\
+z
+\end{array}\right]  \right) =  \left[\begin{array}{c}
+x + 5 \, y + 4 \, z \\
+y + z
+\end{array}\right] .
+\end{equation*}
+</div>
+</li>
+<li id="li-357">Let \(T:\mathbb{R}^ 4  \to \mathbb{R}^ 1 \) be the linear transformation given by the standard matrix<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cccc}
+1 &amp; -2 &amp; -2 &amp; 1
+\end{array}\right] .
+\end{equation*}
+</div>Compute \(T\left( \left[\begin{array}{c}
+7 \\
+4 \\
+-3 \\
+1
+\end{array}\right]  \right)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-66" id="answer-66"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-66"><div class="answer solution-like"><ol class="lower-alpha">
+<li id="li-358"><div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc}
+1 &amp; 5 &amp; 4 \\
+0 &amp; 1 &amp; 1
+\end{array}\right] 
+\end{equation*}
+</div></li>
+<li id="li-359"><div class="displaymath">
+\begin{equation*}
+T\left( \left[\begin{array}{c}
+7 \\
+4 \\
+-3 \\
+1
+\end{array}\right]  \right)= \left[\begin{array}{c}
+6
+\end{array}\right] 
+\end{equation*}
+</div></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-67"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<ol class="lower-alpha">
+<li id="li-360">Find the standard matrix for the linear transformation \(S:\mathbb{R}^ 4  \to \mathbb{R}^ 2 \) given by<div class="displaymath">
+\begin{equation*}
+S\left(  \left[\begin{array}{c}
+x_{1} \\
+x_{2} \\
+x_{3} \\
+x_{4}
+\end{array}\right]  \right) =  \left[\begin{array}{c}
+x_{1} - 2 \, x_{3} + x_{4} \\
+-5 \, x_{1} + x_{2} + 8 \, x_{3} - 2 \, x_{4}
+\end{array}\right] .
+\end{equation*}
+</div>
+</li>
+<li id="li-361">Let \(T:\mathbb{R}^ 4  \to \mathbb{R}^ 1 \) be the linear transformation given by the standard matrix<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cccc}
+1 &amp; 0 &amp; -1 &amp; 0
+\end{array}\right] .
+\end{equation*}
+</div>Compute \(T\left( \left[\begin{array}{c}
+1 \\
+-2 \\
+-7 \\
+-1
+\end{array}\right]  \right)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-67" id="answer-67"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-67"><div class="answer solution-like"><ol class="lower-alpha">
+<li id="li-362"><div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cccc}
+1 &amp; 0 &amp; -2 &amp; 1 \\
+-5 &amp; 1 &amp; 8 &amp; -2
+\end{array}\right] 
+\end{equation*}
+</div></li>
+<li id="li-363"><div class="displaymath">
+\begin{equation*}
+T\left( \left[\begin{array}{c}
+1 \\
+-2 \\
+-7 \\
+-1
+\end{array}\right]  \right)= \left[\begin{array}{c}
+8
+\end{array}\right] 
+\end{equation*}
+</div></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-68"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<ol class="lower-alpha">
+<li id="li-364">Find the standard matrix for the linear transformation \(S:\mathbb{R}^ 2  \to \mathbb{R}^ 4 \) given by<div class="displaymath">
+\begin{equation*}
+S\left(  \left[\begin{array}{c}
+x \\
+y
+\end{array}\right]  \right) =  \left[\begin{array}{c}
+2 \, x + 3 \, y \\
+x + 5 \, y \\
+-4 \, y \\
+-x + y
+\end{array}\right] .
+\end{equation*}
+</div>
+</li>
+<li id="li-365">Let \(T:\mathbb{R}^ 4  \to \mathbb{R}^ 1 \) be the linear transformation given by the standard matrix<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cccc}
+1 &amp; -1 &amp; 1 &amp; -2
+\end{array}\right] .
+\end{equation*}
+</div>Compute \(T\left( \left[\begin{array}{c}
+5 \\
+5 \\
+5 \\
+1
+\end{array}\right]  \right)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-68" id="answer-68"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-68"><div class="answer solution-like"><ol class="lower-alpha">
+<li id="li-366"><div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cc}
+2 &amp; 3 \\
+1 &amp; 5 \\
+0 &amp; -4 \\
+-1 &amp; 1
+\end{array}\right] 
+\end{equation*}
+</div></li>
+<li id="li-367"><div class="displaymath">
+\begin{equation*}
+T\left( \left[\begin{array}{c}
+5 \\
+5 \\
+5 \\
+1
+\end{array}\right]  \right)= \left[\begin{array}{c}
+3
+\end{array}\right] 
+\end{equation*}
+</div></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-69"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<ol class="lower-alpha">
+<li id="li-368">Find the standard matrix for the linear transformation \(S:\mathbb{R}^ 2  \to \mathbb{R}^ 4 \) given by<div class="displaymath">
+\begin{equation*}
+S\left(  \left[\begin{array}{c}
+x \\
+y
+\end{array}\right]  \right) =  \left[\begin{array}{c}
+5 \, y \\
+-2 \, x + 7 \, y \\
+-2 \, y \\
+-x + 8 \, y
+\end{array}\right] .
+\end{equation*}
+</div>
+</li>
+<li id="li-369">Let \(T:\mathbb{R}^ 2  \to \mathbb{R}^ 4 \) be the linear transformation given by the standard matrix<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cc}
+1 &amp; 7 \\
+0 &amp; 1 \\
+1 &amp; 7 \\
+-1 &amp; -2
+\end{array}\right] .
+\end{equation*}
+</div>Compute \(T\left( \left[\begin{array}{c}
+-4 \\
+1
+\end{array}\right]  \right)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-69" id="answer-69"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-69"><div class="answer solution-like"><ol class="lower-alpha">
+<li id="li-370"><div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cc}
+0 &amp; 5 \\
+-2 &amp; 7 \\
+0 &amp; -2 \\
+-1 &amp; 8
+\end{array}\right] 
+\end{equation*}
+</div></li>
+<li id="li-371"><div class="displaymath">
+\begin{equation*}
+T\left( \left[\begin{array}{c}
+-4 \\
+1
+\end{array}\right]  \right)= \left[\begin{array}{c}
+3 \\
+1 \\
+3 \\
+2
+\end{array}\right] 
+\end{equation*}
+</div></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-70"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<ol class="lower-alpha">
+<li id="li-372">Find the standard matrix for the linear transformation \(S:\mathbb{R}^ 4  \to \mathbb{R}^ 2 \) given by<div class="displaymath">
+\begin{equation*}
+S\left(  \left[\begin{array}{c}
+x_{1} \\
+x_{2} \\
+x_{3} \\
+x_{4}
+\end{array}\right]  \right) =  \left[\begin{array}{c}
+-x_{1} + 4 \, x_{2} + x_{3} - 7 \, x_{4} \\
+-x_{1} + 3 \, x_{2} - 5 \, x_{4}
+\end{array}\right] .
+\end{equation*}
+</div>
+</li>
+<li id="li-373">Let \(T:\mathbb{R}^ 2  \to \mathbb{R}^ 4 \) be the linear transformation given by the standard matrix<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cc}
+-1 &amp; -8 \\
+0 &amp; 1 \\
+1 &amp; 6 \\
+3 &amp; 8
+\end{array}\right] .
+\end{equation*}
+</div>Compute \(T\left( \left[\begin{array}{c}
+-3 \\
+8
+\end{array}\right]  \right)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-70" id="answer-70"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-70"><div class="answer solution-like"><ol class="lower-alpha">
+<li id="li-374"><div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cccc}
+-1 &amp; 4 &amp; 1 &amp; -7 \\
+-1 &amp; 3 &amp; 0 &amp; -5
+\end{array}\right] 
+\end{equation*}
+</div></li>
+<li id="li-375"><div class="displaymath">
+\begin{equation*}
+T\left( \left[\begin{array}{c}
+-3 \\
+8
+\end{array}\right]  \right)= \left[\begin{array}{c}
+-61 \\
+8 \\
+45 \\
+55
+\end{array}\right] 
+\end{equation*}
+</div></li>
+</ol></div></div>
+</div></article><p id="p-532"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/A2/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+</div>
+</body>
+</html>

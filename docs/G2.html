@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-08-31T01:26:33Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Computing Determinants (G2)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{enclose}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\circledNumber}[1]{\enclose{circle}{#1}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="G1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="G.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="G3.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="G1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="G.html" title="Up">Up</a><a class="next-button button toolbar-item" href="G3.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="E.html" data-scroll="E"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (E)</span></a><ul>
+<li><a href="E1.html" data-scroll="E1">Linear Systems, Vector Equations, and Augmented Matrices (E1)</a></li>
+<li><a href="E2.html" data-scroll="E2">Row Reduction of Matrices (E2)</a></li>
+<li><a href="E3.html" data-scroll="E3">Solving Linear Systems (E3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="V.html" data-scroll="V"><span class="codenumber">2</span> <span class="title">Vector Spaces (V)</span></a><ul>
+<li><a href="V1.html" data-scroll="V1">Vector Spaces (V1)</a></li>
+<li><a href="V2.html" data-scroll="V2">Linear Combinations (V2)</a></li>
+<li><a href="V3.html" data-scroll="V3">Spanning Sets (V3)</a></li>
+<li><a href="V4.html" data-scroll="V4">Subspaces (V4)</a></li>
+<li><a href="V5.html" data-scroll="V5">Linear Independence (V5)</a></li>
+<li><a href="V6.html" data-scroll="V6">Identifying a Basis (V6)</a></li>
+<li><a href="V7.html" data-scroll="V7">Subspace Basis and Dimension (V7)</a></li>
+<li><a href="V8.html" data-scroll="V8">Polynomial and Matrix Spaces (V8)</a></li>
+<li><a href="V9.html" data-scroll="V9">Homogeneous Linear Systems (V9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="A.html" data-scroll="A"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (A)</span></a><ul>
+<li><a href="A1.html" data-scroll="A1">Linear Transformations (A1)</a></li>
+<li><a href="A2.html" data-scroll="A2">Standard Matrices (A2)</a></li>
+<li><a href="A3.html" data-scroll="A3">Image and Kernel (A3)</a></li>
+<li><a href="A4.html" data-scroll="A4">Injective and Surjective Linear Maps (A4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="M.html" data-scroll="M"><span class="codenumber">4</span> <span class="title">Matrices (M)</span></a><ul>
+<li><a href="M1.html" data-scroll="M1">Matrices and Multiplication (M1)</a></li>
+<li><a href="M2.html" data-scroll="M2">Row Operations as Matrix Multiplication (M2)</a></li>
+<li><a href="M3.html" data-scroll="M3">The Inverse of a Matrix (M3)</a></li>
+<li><a href="M4.html" data-scroll="M4">Invertible Matrices (M4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="G.html" data-scroll="G"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (G)</span></a><ul>
+<li><a href="G1.html" data-scroll="G1">Row Operations and Determinants (G1)</a></li>
+<li><a href="G2.html" data-scroll="G2" class="active">Computing Determinants (G2)</a></li>
+<li><a href="G3.html" data-scroll="G3">Eigenvalues and Characteristic Polynomials (G3)</a></li>
+<li><a href="G4.html" data-scroll="G4">Eigenvectors and Eigenspaces (G4)</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="G2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Computing Determinants (G2)</span>
+</h2>
+<article class="remark remark-like" id="remark-18"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
+</h6>
+<p id="p-873">We've seen that row reducing all the way into RREF gives us a method of computing determinants.</p>
+<p id="p-874">However, we learned in module E that this can be tedious for large matrices.  Thus, we will try to figure out how to turn the determinant of a larger matrix into the determinant of a smaller matrix.</p></article><article class="activity project-like" id="activity-130"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
+</h6>
+<p id="p-875">The following image illustrates the transformation of the unit cube by the matrix \(\left[\begin{array}{ccc} 1 &amp; 1 &amp; 0 \\  1 &amp; 3 &amp; 1 \\  0 &amp; 0 &amp; 1\end{array}\right]\text{.}\)</p>
+<pre class="code-block tex2jax_ignore">
+  \begin{tikzpicture}
+  \fill[purple!50!white] (0,0,0) -- (1,0,1) -- (4,0,2) -- (3,0,1) -- (0,0,0);
+  \draw[thin,gray,-&gt;] (0,0,0) -- (3,0,0);
+  \draw[thin,gray,-&gt;] (0,0,0) -- (0,2,0);
+  \draw[thin,gray,-&gt;] (0,0,0) -- (0,0,2);
+  %(y,z,x)
+  \draw[blue] (1,0,1) -- (4,0,2) -- (3,0,1);
+  \draw[blue] (1,1,0) -- (2,1,1) -- (5,1,2) -- (4,1,1) -- (1,1,0);
+  \draw[blue] (1,0,1) -- +(1,1,0);
+  \draw[blue] (4,0,2) -- +(1,1,0);
+  \draw[blue] (3,0,1) -- +(1,1,0);
+
+  \draw[purple,thick,-&gt;] (0,0,0) -- (1,1,0)
+    node[above left]{\tiny\(\left[\begin{array}{c} 0 \\ 1 \\ 1\end{array}\right]\)};
+  \draw[purple,thick,-&gt;] (0,0,0) -- (1,0,1)
+    node[below]{\tiny\(\left[\begin{array}{c} 1 \\ 1 \\ 0\end{array}\right]\)};
+  \draw[purple,thick,-&gt;] (0,0,0) -- (3,0,1)
+    node[above left]{\tiny\(\left[\begin{array}{c} 1 \\ 3 \\ 0\end{array}\right]\)};
+  \draw[purple,dashed,very thick] (0,0,0) -- node[left] {\tiny\(h=1\)} (0,1,0);
+  \end{tikzpicture}
+  </pre>
+<p id="p-876">Recall that for this solid \(V=Bh\text{,}\) where \(h\) is the height of the solid and \(B\) is the area of its parallelogram base. So what must its volume be?</p>
+<ol class="lower-alpha">
+<li id="li-648"><p id="p-877">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 1 \\ 1 &amp; 3 \end{array}\right]\)</p></li>
+<li id="li-649"><p id="p-878">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 0 \\ 3 &amp; 1 \end{array}\right]\)</p></li>
+<li id="li-650"><p id="p-879">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 1 \\ 0 &amp; 1 \end{array}\right]\)</p></li>
+<li id="li-651"><p id="p-880">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; 0 \end{array}\right]\)</p></li>
+</ol></article><article class="fact theorem-like" id="fact-27"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+</h6>
+<p id="p-881">If row \(i\) contains all zeros except for a \(1\) on the main (upper-left to lower-right) diagonal, then both column and row \(i\) may be removed without changing the value of the determinant.</p>
+<div class="displaymath">
+\begin{equation*}
+\det \left[\begin{array}{cccc}
+3 &amp; {\color{red} 2} &amp; -1 &amp; 3 \\
+{\color{red} 0} &amp; {\color{red} 1} 
+&amp; {\color{red} 0} &amp; {\color{red} 0} \\
+-1 &amp; {\color{red} 4} &amp; 1 &amp; 0 \\
+5 &amp; {\color{red} 0} &amp; 11 &amp; 1
+\end{array}\right] =
+\det \left[\begin{array}{ccc}
+3 &amp; -1 &amp; 3 \\
+-1 &amp; 1 &amp; 0 \\
+5 &amp; 11 &amp; 1
+\end{array}\right]
+\end{equation*}
+</div>
+<p id="p-882">Since row and column operations affect the determinants in the same way, the same technique works for a column of all zeros except for a \(1\) on the main diagonal.</p>
+<div class="displaymath">
+\begin{equation*}
+\det \left[\begin{array}{cccc}
+3 &amp; {\color{red} 0} &amp; -1 &amp; 5 \\
+{\color{red} 2} &amp; {\color{red} 1} &amp; {\color{red} 4} &amp; 
+{\color{red} 0} \\
+-1 &amp; {\color{red} 0} &amp; 1 &amp; 11 \\
+3 &amp; {\color{red} 0} &amp; 0 &amp; 1
+\end{array}\right] =
+\det \left[\begin{array}{ccc}
+3 &amp; -1 &amp; 5 \\
+-1 &amp; 1 &amp; 11 \\
+3 &amp; 0 &amp; 1
+\end{array}\right]
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-131"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+</h6>
+<p id="p-883">Remove an appropriate row and column of \(\det \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 1 &amp; 5 &amp; 12 \\ 3 &amp; 2 &amp; -1 \end{array}\right]\) to simplify the determinant to a \(2\times 2\) determinant.</p></article><article class="activity project-like" id="activity-132"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-39"><p id="p-884">Simplify \(\det \left[\begin{array}{ccc} 0 &amp; 3 &amp; -2 \\ 2 &amp; 5 &amp; 12 \\ 0 &amp; 2 &amp; -1 \end{array}\right]\) to a multiple of a \(2\times 2\) determinant by first doing the following:</p></div>
+<article class="task exercise-like" id="task-94"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-885">Factor out a \(2\) from a column.</p></article><article class="task exercise-like" id="task-95"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-886">Swap rows or columns to put a \(1\) on the main diagonal.</p></article></article><article class="activity project-like" id="activity-133"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-40"><p id="p-887">Simplify \(\det \left[\begin{array}{ccc} 4 &amp; -2 &amp; 2 \\ 3 &amp; 1 &amp; 4 \\ 1 &amp; -1 &amp; 3\end{array}\right]\) to a multiple of a \(2\times 2\) determinant by first doing the following:</p></div>
+<article class="task exercise-like" id="task-96"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-888">Use row/column operations to create two zeroes in the same row or column.</p></article><article class="task exercise-like" id="task-97"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-889">Factor/swap as needed to get a row/column of all zeroes except a \(1\) on the main diagonal.</p></article></article><article class="observation remark-like" id="observation-31"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
+</h6>
+<p id="p-890">Using row/column operations, you can introduce zeros and reduce dimension to whittle down the determinant of a large matrix to a determinant of a smaller matrix.</p>
+<div class="displaymath">
+\begin{align*}
+\det\left[\begin{array}{cccc}
+4 &amp; 3 &amp; 0 &amp; 1 \\ 
+2 &amp; -2 &amp; 4 &amp; 0 \\ 
+-1 &amp; 4 &amp; 1 &amp; 5 \\ 
+2 &amp; 8 &amp; 0 &amp; 3 
+\end{array}\right]
+&amp;=
+\det\left[\begin{array}{cccc}
+4 &amp; 3 &amp; {\color{red} 0} &amp; 1 \\ 
+6 &amp; -18 &amp; {\color{red} 0} &amp; -20 \\ 
+{\color{red} -1} &amp; {\color{red} 4} &amp; 
+{\color{red} 1} &amp; {\color{red} 5} \\ 
+2 &amp; 8 &amp; {\color{red} 0} &amp; 3 
+\end{array}\right]
+=
+\det\left[\begin{array}{ccc}
+4 &amp; 3 &amp; 1 \\ 
+6 &amp; -18 &amp; -20 \\ 
+2 &amp; 8 &amp; 3 
+\end{array}\right]\\
+&amp;=\dots=
+-2\det\left[\begin{array}{ccc}
+{\color{red} 1} &amp; {\color{red} 3} &amp; {\color{red} 4} \\
+{\color{red} 0} &amp; 21 &amp; 43 \\ 
+{\color{red} 0} &amp; -1 &amp; -10 
+\end{array}\right]
+=
+-2\det\left[\begin{array}{cc} 21 &amp; 43 \\ -1 &amp; -10 \end{array}\right]\\
+&amp;= \dots=
+-2\det\left[\begin{array}{cc}
+-167 &amp; {\color{red}{21}} \\
+{\color{red} 0} &amp; {\color{red} 1}
+\end{array}\right]
+= -2\det[-167]\\
+&amp;=-2(-167)\det(I)=
+334
+\end{align*}
+</div></article><article class="activity project-like" id="activity-134"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span>
+</h6>
+<p id="p-891">Rewrite</p>
+<div class="displaymath">
+\begin{equation*}
+\det \left[\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; 1 \\ 3 &amp; 0 &amp; 1 &amp; 4
+\\ -2 &amp; 2 &amp; 3 &amp; 0 \\ -2 &amp; 0 &amp; -3 &amp; -3 \end{array}\right] 
+\end{equation*}
+</div>
+<p data-braille="continuation">as a multiple of a determinant of a \(3\times3\) matrix.</p></article><article class="activity project-like" id="activity-135"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
+</h6>
+<p id="p-892">Compute \(\det\left[\begin{array}{cccc}
+2 &amp; 3 &amp; 5 &amp; 0 \\ 
+0 &amp; 3 &amp; 2 &amp; 0 \\ 
+1 &amp; 2 &amp; 0 &amp; 3 \\ 
+-1 &amp; -1 &amp; 2 &amp; 2 
+\end{array}\right]\) by using any combination of row/column operations.</p></article><article class="observation remark-like" id="observation-32"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+</h6>
+<p id="p-893">Another option is to take advantage of the fact that the determinant is linear in each row or column.  This approach is called <dfn class="terminology">Laplace expansion</dfn> or <dfn class="terminology">cofactor expansion</dfn>.</p>
+<p id="p-894">For example, since \(\color{blue}{
+\left[\begin{array}{ccc} 1 &amp; 2 &amp; 4 \end{array}\right]
+=
+1\left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \end{array}\right]
++
+2\left[\begin{array}{ccc} 0 &amp; 1 &amp;  0 \end{array}\right]
++
+4\left[\begin{array}{ccc} 0  &amp; 0 &amp; 1 \end{array}\right]}
+\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+\det \left[\begin{array}{ccc} 2 &amp; 3 &amp; 5  \\ -1 &amp; 3 &amp; 5 \\ {\color{blue} 1} &amp; {\color{blue} 2} &amp; {\color{blue} 4} \end{array}\right] &amp;=
+{\color{blue} 1}\det \left[\begin{array}{ccc} 2 &amp; 3 &amp; 5  \\ -1 &amp; 3 &amp; 5 \\ {\color{blue} 1} &amp; {\color{blue} 0} &amp; {\color{blue} 0} \end{array}\right] +
+{\color{blue} 2}\det \left[\begin{array}{ccc} 2 &amp; 3 &amp; 5  \\ -1 &amp; 3 &amp; 5 \\ {\color{blue} 0} &amp; {\color{blue} 1} &amp; {\color{blue} 0} \end{array}\right] +
+{\color{blue} 4}\det \left[\begin{array}{ccc} 2 &amp; 3 &amp; 5  \\ -1 &amp; 3 &amp; 5 \\ {\color{blue} 0} &amp; {\color{blue} 0} &amp; {\color{blue} 1} \end{array}\right]\\
+&amp;= -1\det \left[\begin{array}{ccc}  5 &amp; 3 &amp; 2 \\ 5 &amp; 3 &amp; -1 \\ 0 &amp; 0 &amp; 1 \end{array}\right] 
+-2\det \left[\begin{array}{ccc} 2 &amp; 5 &amp; 3  \\ -1 &amp; 5 &amp; 3 \\ 0 &amp; 0 &amp; 1 \end{array}\right] +
+4\det \left[\begin{array}{ccc} 2 &amp; 3 &amp; 5  \\ -1 &amp; 3 &amp; 5 \\ 0 &amp; 0 &amp; 1 \end{array}\right]\\
+&amp;= -\det \left[\begin{array}{cc} 5 &amp; 3 \\ 5 &amp; 3 \end{array}\right] 
+-2 \det \left[\begin{array}{cc} 2 &amp; 5 \\ -1 &amp; 5 \end{array}\right]
++4 \det \left[\begin{array}{cc} 2 &amp; 3 \\ -1 &amp; 3 \end{array}\right]
+\end{align*}
+</div></article><article class="observation remark-like" id="observation-33"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span>
+</h6>
+<p id="p-895">Applying Laplace expansion to a \(2 \times 2\) matrix yields a short formula you may have seen:</p>
+<div class="displaymath">
+\begin{equation*}
+\det \left[\begin{array}{cc} {\color{blue} a} &amp; {\color{blue} b} \\ c &amp; d \end{array}\right]
+=
+{\color{blue} a}\det \left[\begin{array}{cc} {\color{blue} 1} &amp; {\color{blue} 0} \\ 
+c &amp; d \end{array}\right] 
++ 
+{\color{blue} b} \det \left[\begin{array}{cc} {\color{blue} 0} &amp; {\color{blue} 1} \\ 
+c &amp; d \end{array}\right] 
+=
+a\det \left[\begin{array}{cc} {\color{red} 1} &amp; {\color{red} 0} \\ 
+{\color{red} c} &amp; d \end{array}\right] 
+-
+b \det \left[\begin{array}{cc} {\color{red} 1} &amp; {\color{red} 0} \\ 
+{\color{red} d} &amp; c \end{array}\right] 
+= 
+ad-bc\text{.}
+\end{equation*}
+</div>
+<p id="p-896">There are formulas for the determinants of larger matrices, but they can be pretty tedious to use. For example, writing out a formula for a \(4\times 4\) determinant would require 24 different terms!</p>
+<div class="displaymath">
+\begin{equation*}
+\det\left[\begin{array}{cccc}
+a_{11} &amp; a_{12} &amp; a_{13} &amp; a_{14} \\
+a_{21} &amp; a_{22} &amp; a_{23} &amp; a_{24} \\
+a_{31} &amp; a_{32} &amp; a_{33} &amp; a_{34} \\
+a_{41} &amp; a_{42} &amp; a_{43} &amp; a_{44}
+\end{array}\right]
+=
+a_{11}(a_{22}(a_{33}a_{44}-a_{43}a_{34})-a_{23}(a_{32}a_{44}-a_{42}a_{34})+\dots)+\dots
+\end{equation*}
+</div>
+<p id="p-897">So this is why we either use Laplace expansion or row/column operations directly.</p></article><article class="activity project-like" id="activity-136"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
+</h6>
+<p id="p-898">Based on the previous activities, which technique is easier for computing determinants?</p>
+<ol class="lower-alpha">
+<li id="li-652"><p id="p-899">Memorizing formulas.</p></li>
+<li id="li-653"><p id="p-900">Using row/column operations.</p></li>
+<li id="li-654"><p id="p-901">Laplace expansion.</p></li>
+<li id="li-655"><p id="p-902">Some other technique (be prepared to describe it).</p></li>
+</ol></article><article class="activity project-like" id="activity-137"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.8</span><span class="period">.</span>
+</h6>
+<p id="p-903">Use your preferred technique to compute \(\det\left[\begin{array}{cccc}
+4 &amp; -3 &amp; 0 &amp; 0 \\ 
+1 &amp; -3 &amp; 2 &amp; -1 \\ 
+3 &amp; 2 &amp; 0 &amp; 3 \\ 
+0 &amp; -3 &amp; 2 &amp; -2 
+\end{array}\right]
+\text{.}\)</p></article><section class="exercises" id="exercises-22"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.2.1</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-106"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-904">Show how to compute the determinant of the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A= \left[\begin{array}{cccc}
+1 &amp; 3 &amp; -5 &amp; 0 \\
+2 &amp; -4 &amp; -2 &amp; 0 \\
+-3 &amp; 4 &amp; 2 &amp; -1 \\
+-4 &amp; 3 &amp; 0 &amp; -2
+\end{array}\right] .\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-106" id="answer-106"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-106"><div class="answer solution-like"><div class="displaymath">
+\begin{equation*}
+\operatorname{det}\  \left[\begin{array}{cccc}
+1 &amp; 3 &amp; -5 &amp; 0 \\
+2 &amp; -4 &amp; -2 &amp; 0 \\
+-3 &amp; 4 &amp; 2 &amp; -1 \\
+-4 &amp; 3 &amp; 0 &amp; -2
+\end{array}\right] = 28 
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-107"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-905">Show how to compute the determinant of the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A= \left[\begin{array}{cccc}
+1 &amp; 1 &amp; -3 &amp; 5 \\
+3 &amp; -2 &amp; -3 &amp; 6 \\
+0 &amp; -3 &amp; 6 &amp; -3 \\
+0 &amp; 0 &amp; 1 &amp; -2
+\end{array}\right] .\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-107" id="answer-107"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-107"><div class="answer solution-like"><div class="displaymath">
+\begin{equation*}
+\operatorname{det}\  \left[\begin{array}{cccc}
+1 &amp; 1 &amp; -3 &amp; 5 \\
+3 &amp; -2 &amp; -3 &amp; 6 \\
+0 &amp; -3 &amp; 6 &amp; -3 \\
+0 &amp; 0 &amp; 1 &amp; -2
+\end{array}\right] = 36 
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-108"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-906">Show how to compute the determinant of the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A= \left[\begin{array}{cccc}
+-5 &amp; -5 &amp; 1 &amp; -4 \\
+-1 &amp; 4 &amp; 0 &amp; 5 \\
+-2 &amp; 0 &amp; 2 &amp; 2 \\
+6 &amp; 5 &amp; 0 &amp; 6
+\end{array}\right] .\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-108" id="answer-108"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-108"><div class="answer solution-like"><div class="displaymath">
+\begin{equation*}
+\operatorname{det}\  \left[\begin{array}{cccc}
+-5 &amp; -5 &amp; 1 &amp; -4 \\
+-1 &amp; 4 &amp; 0 &amp; 5 \\
+-2 &amp; 0 &amp; 2 &amp; 2 \\
+6 &amp; 5 &amp; 0 &amp; 6
+\end{array}\right] = -62 
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-109"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-907">Show how to compute the determinant of the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A= \left[\begin{array}{cccc}
+-3 &amp; 0 &amp; -6 &amp; -2 \\
+3 &amp; 1 &amp; 0 &amp; -6 \\
+5 &amp; 0 &amp; -5 &amp; 2 \\
+2 &amp; -3 &amp; -6 &amp; 5
+\end{array}\right] .\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-109" id="answer-109"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-109"><div class="answer solution-like"><div class="displaymath">
+\begin{equation*}
+\operatorname{det}\  \left[\begin{array}{cccc}
+-3 &amp; 0 &amp; -6 &amp; -2 \\
+3 &amp; 1 &amp; 0 &amp; -6 \\
+5 &amp; 0 &amp; -5 &amp; 2 \\
+2 &amp; -3 &amp; -6 &amp; 5
+\end{array}\right] = -803 
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-110"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-908">Show how to compute the determinant of the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A= \left[\begin{array}{cccc}
+1 &amp; -5 &amp; 3 &amp; -1 \\
+0 &amp; -3 &amp; -1 &amp; 0 \\
+-5 &amp; -5 &amp; 1 &amp; 4 \\
+-5 &amp; 6 &amp; 2 &amp; -5
+\end{array}\right] .\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-110" id="answer-110"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-110"><div class="answer solution-like"><div class="displaymath">
+\begin{equation*}
+\operatorname{det}\  \left[\begin{array}{cccc}
+1 &amp; -5 &amp; 3 &amp; -1 \\
+0 &amp; -3 &amp; -1 &amp; 0 \\
+-5 &amp; -5 &amp; 1 &amp; 4 \\
+-5 &amp; 6 &amp; 2 &amp; -5
+\end{array}\right] = 710 
+\end{equation*}
+</div></div></div>
+</div></article><p id="p-909"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/G2/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+</div>
+</body>
+</html>

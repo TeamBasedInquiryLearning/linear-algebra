@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-08-31T01:26:27Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear Systems, Vector Equations, and Augmented Matrices (E1)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{enclose}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\circledNumber}[1]{\enclose{circle}{#1}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="E.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="E.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="E2.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="E.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="E.html" title="Up">Up</a><a class="next-button button toolbar-item" href="E2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="E.html" data-scroll="E"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (E)</span></a><ul>
+<li><a href="E1.html" data-scroll="E1" class="active">Linear Systems, Vector Equations, and Augmented Matrices (E1)</a></li>
+<li><a href="E2.html" data-scroll="E2">Row Reduction of Matrices (E2)</a></li>
+<li><a href="E3.html" data-scroll="E3">Solving Linear Systems (E3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="V.html" data-scroll="V"><span class="codenumber">2</span> <span class="title">Vector Spaces (V)</span></a><ul>
+<li><a href="V1.html" data-scroll="V1">Vector Spaces (V1)</a></li>
+<li><a href="V2.html" data-scroll="V2">Linear Combinations (V2)</a></li>
+<li><a href="V3.html" data-scroll="V3">Spanning Sets (V3)</a></li>
+<li><a href="V4.html" data-scroll="V4">Subspaces (V4)</a></li>
+<li><a href="V5.html" data-scroll="V5">Linear Independence (V5)</a></li>
+<li><a href="V6.html" data-scroll="V6">Identifying a Basis (V6)</a></li>
+<li><a href="V7.html" data-scroll="V7">Subspace Basis and Dimension (V7)</a></li>
+<li><a href="V8.html" data-scroll="V8">Polynomial and Matrix Spaces (V8)</a></li>
+<li><a href="V9.html" data-scroll="V9">Homogeneous Linear Systems (V9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="A.html" data-scroll="A"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (A)</span></a><ul>
+<li><a href="A1.html" data-scroll="A1">Linear Transformations (A1)</a></li>
+<li><a href="A2.html" data-scroll="A2">Standard Matrices (A2)</a></li>
+<li><a href="A3.html" data-scroll="A3">Image and Kernel (A3)</a></li>
+<li><a href="A4.html" data-scroll="A4">Injective and Surjective Linear Maps (A4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="M.html" data-scroll="M"><span class="codenumber">4</span> <span class="title">Matrices (M)</span></a><ul>
+<li><a href="M1.html" data-scroll="M1">Matrices and Multiplication (M1)</a></li>
+<li><a href="M2.html" data-scroll="M2">Row Operations as Matrix Multiplication (M2)</a></li>
+<li><a href="M3.html" data-scroll="M3">The Inverse of a Matrix (M3)</a></li>
+<li><a href="M4.html" data-scroll="M4">Invertible Matrices (M4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="G.html" data-scroll="G"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (G)</span></a><ul>
+<li><a href="G1.html" data-scroll="G1">Row Operations and Determinants (G1)</a></li>
+<li><a href="G2.html" data-scroll="G2">Computing Determinants (G2)</a></li>
+<li><a href="G3.html" data-scroll="G3">Eigenvalues and Characteristic Polynomials (G3)</a></li>
+<li><a href="G4.html" data-scroll="G4">Eigenvectors and Eigenspaces (G4)</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="E1"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Linear Systems, Vector Equations, and Augmented Matrices (E1)</span>
+</h2>
+<article class="definition definition-like" id="definition-1"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-1">A <dfn class="terminology">linear equation</dfn> is an equation of the variables \(x_i\) of the form</p>
+<div class="displaymath">
+\begin{equation*}
+a_1x_1+a_2x_2+\dots+a_nx_n=b\text{.}
+\end{equation*}
+</div>
+<p id="p-2">A <dfn class="terminology">solution</dfn> for a linear equation is a Euclidean vector</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+s_1 \\
+s_2 \\
+\vdots \\
+s_n
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">that satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+a_1s_1+a_2s_2+\dots+a_ns_n=b
+\end{equation*}
+</div>
+<p data-braille="continuation">(that is, a Euclidean vector that can be plugged into the equation).</p></article><article class="remark remark-like" id="remark-1"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h6>
+<p id="p-3">In previous classes you likely used the variables \(x,y,z\) in equations. However, since this course often deals with equations of four or more variables, we will often write our variables as \(x_i\text{,}\) and assume \(x=x_1,y=x_2,z=x_3,w=x_4\) when convenient.</p></article><article class="definition definition-like" id="definition-2"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-4">A <dfn class="terminology">system of linear equations</dfn> (or a <dfn class="terminology">linear system</dfn> for short) is a collection of one or more linear equations.</p>
+<div class="displaymath">
+\begin{alignat*}{5}
+a_{11}x_1 &amp;\,+\,&amp; a_{12}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{1n}x_n &amp;\,=\,&amp; b_1 \\
+a_{21}x_1 &amp;\,+\,&amp; a_{22}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{2n}x_n &amp;\,=\,&amp; b_2\\
+\vdots&amp;  &amp;\vdots&amp;   &amp;&amp;  &amp;\vdots&amp;&amp;\vdots  \\
+a_{m1}x_1 &amp;\,+\,&amp; a_{m2}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{mn}x_n &amp;\,=\,&amp; b_m
+\end{alignat*}
+</div>
+<p id="p-5">Its <dfn class="terminology">solution set</dfn> is given by</p>
+<div class="displaymath">
+\begin{equation*}
+\setBuilder
+{
+\begin{bmatrix}
+s_1 \\
+s_2 \\
+\vdots \\
+s_n
+\end{bmatrix}
+}{
+\begin{bmatrix}
+s_1 \\
+s_2 \\
+\vdots \\
+s_n
+\end{bmatrix}
+\text{is a solution to all equations in the system}
+}\text{.}
+\end{equation*}
+</div></article><article class="remark remark-like" id="remark-2"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h6>
+<p id="p-6">When variables in a large linear system are missing, we prefer to write the system in one of the following standard forms:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0.166666666666667%;margin-right:0.166666666666667%;">
+<div class="sbspanel" style="width:33.1103678929766%;justify-content:center;">
+<p id="p-7">Original linear system:</p>
+<div class="displaymath">
+\begin{alignat*}{2}
+x_1 + 3x_3 &amp;\,=\,&amp; 3\\
+3x_1 - 2x_2 + 4x_3 &amp;\,=\,&amp; 0\\
+-x_2 +  x_3 &amp;\,=\,&amp; -2
+\end{alignat*}
+</div>
+</div>
+<div class="sbspanel" style="width:33.1103678929766%;justify-content:center;">
+<p id="p-8">Verbose standard form:</p>
+<div class="displaymath">
+\begin{alignat*}{4}
+1x_1 &amp;\,+\,&amp; 0x_2 &amp;\,+\,&amp; 3x_3 &amp;\,=\,&amp; 3\\
+3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 4x_3 &amp;\,=\,&amp; 0\\
+0x_1 &amp;\,-\,&amp; 1x_2 &amp;\,+\,&amp; 1x_3 &amp;\,=\,&amp; -2
+\end{alignat*}
+</div>
+</div>
+<div class="sbspanel" style="width:33.1103678929766%;justify-content:center;">
+<p id="p-9">Concise standard form:</p>
+<div class="displaymath">
+\begin{alignat*}{4}
+x_1 &amp;     &amp;      &amp;\,+\,&amp; 3x_3 &amp;\,=\,&amp; 3\\
+3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 4x_3 &amp;\,=\,&amp; 0\\
+&amp;\,-\,&amp;  x_2 &amp;\,+\,&amp;  x_3 &amp;\,=\,&amp; -2
+\end{alignat*}
+</div>
+</div>
+</div></div></article><article class="remark remark-like" id="remark-3"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
+</h6>
+<p id="p-10">It will often be convenient to think of a system of equations as a vector equation.</p>
+<p id="p-11">By applying vector operations and equating components, it is straightforward to see that the vector equation</p>
+<div class="displaymath">
+\begin{equation*}
+x_1 \begin{bmatrix} 1 \\ 3 \\ 0 \end{bmatrix}+ x_2 \begin{bmatrix} 0 \\ -2 \\ -1 \end{bmatrix} + x_3 \begin{bmatrix} 3 \\ 4 \\1 \end{bmatrix} = \begin{bmatrix} 3 \\ 0 \\ -2 \end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">is equivalent to the system of equations</p>
+<div class="displaymath">
+\begin{alignat*}{4}
+x_1 &amp;     &amp;      &amp;\,+\,&amp; 3x_3 &amp;\,=\,&amp; 3\\
+3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 4x_3 &amp;\,=\,&amp; 0\\
+&amp;\,-\,&amp;  x_2 &amp;\,+\,&amp;  x_3 &amp;\,=\,&amp; -2
+\end{alignat*}
+</div></article><article class="definition definition-like" id="definition-3"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span>
+</h6>
+<p id="p-12">A linear system is <dfn class="terminology">consistent</dfn> if its solution set is non-empty (that is, there exists a solution for the system). Otherwise it is <dfn class="terminology">inconsistent</dfn>.</p></article><article class="fact theorem-like" id="fact-1"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span>
+</h6>
+<p id="p-13">All linear systems are one of the following:</p>
+<ol class="decimal">
+<li id="li-1">
+<em class="emphasis">Consistent with one solution:</em> its solution set contains a single vector, e.g. \(\setList{\begin{bmatrix}1\\2\\3\end{bmatrix}}\)</li>
+<li id="li-2">
+<em class="emphasis">Consistent with infinitely-many solutions</em>: its solution set contains infinitely many vectors, e.g. \(\setBuilder
+{
+\begin{bmatrix}1\\2-3a\\a\end{bmatrix}
+}{
+a\in\IR
+}\)</li>
+<li id="li-3">
+<em class="emphasis">Inconsistent</em>: its solution set is the empty set \(\{\}=\emptyset\)</li>
+</ol></article><article class="activity project-like" id="activity-1"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-14">All inconsistent linear systems contain a logical <dfn class="terminology">contradiction</dfn>. Find a contradiction in this system to show that its solution set is \(\emptyset\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+-x_1+2x_2  &amp;=  5\\
+2x_1-4x_2  &amp;=  6
+\end{align*}
+</div></article><article class="activity project-like" id="activity-2"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-1">
+<p id="p-15">Consider the following consistent linear system.</p>
+<div class="displaymath">
+\begin{align*}
+-x_1+2x_2  &amp;= -3\\
+2x_1-4x_2  &amp;=  6
+\end{align*}
+</div>
+</div>
+<article class="task exercise-like" id="task-1"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-16">Find three different solutions for this system.</p></article><article class="task exercise-like" id="task-2"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-17">Let \(x_2=a\) where \(a\) is an arbitrary real number, then find an expression for \(x_1\) in terms of \(a\text{.}\) Use this to write the solution set \(\setBuilder
+{
+\begin{bmatrix}
+\unknown \\
+a
+\end{bmatrix}
+}{
+a \in \IR
+}\) for the linear system.</p></article></article><article class="activity project-like" id="activity-3"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-18">Consider the following linear system.</p>
+<div class="displaymath">
+\begin{alignat*}{5}
+x_1 &amp;\,+\,&amp; 2x_2 &amp;\, \,&amp;     &amp;\,-\,&amp;  x_4 &amp;\,=\,&amp; 3\\
+&amp;\, \,&amp;      &amp;\, \,&amp; x_3 &amp;\,+\,&amp; 4x_4 &amp;\,=\,&amp; -2
+\end{alignat*}
+</div>
+<p id="p-19">Describe the solution set</p>
+<div class="displaymath">
+\begin{equation*}
+\setBuilder
+{
+\begin{bmatrix}
+\unknown \\
+a \\
+\unknown \\
+b
+\end{bmatrix}
+}{
+a,b \in \IR
+}
+\end{equation*}
+</div>
+<p data-braille="continuation">to the linear system by setting \(x_2=a\) and \(x_4=b\text{,}\) and then solving for \(x_1\) and \(x_3\text{.}\)</p></article><article class="observation remark-like" id="observation-1"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span>
+</h6>
+<p id="p-20">Solving linear systems of two variables by graphing or substitution is reasonable for two-variable systems, but these simple techniques won't usually cut it for equations with more than two variables or more than two equations. For example,</p>
+<div class="displaymath">
+\begin{alignat*}{5}
+-2x_1 &amp;\,-\,&amp; 4x_2 &amp;\,+\,&amp;  x_3 &amp;\,-\,&amp;  4x_4 &amp;\,=\,&amp; -8\\
+x_1 &amp;\,+\,&amp; 2x_2 &amp;\,+\,&amp; 2x_3 &amp;\,+\,&amp; 12x_4 &amp;\,=\,&amp; -1\\
+x_1 &amp;\,+\,&amp; 2x_2 &amp;\,+\,&amp;  x_3 &amp;\,+\,&amp;  8x_4 &amp;\,=\,&amp;  1
+\end{alignat*}
+</div>
+<p data-braille="continuation">has the exact same solution set as the system in the previous activity, but we'll want to learn new techniques to compute these solutions efficiently.</p></article><article class="remark remark-like" id="remark-4"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span>
+</h6>
+<p id="p-21">The only important information in a linear system are its coefficients and constants.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0.166666666666667%;margin-right:0.166666666666667%;">
+<div class="sbspanel" style="width:33.1103678929766%;justify-content:center;">
+<p id="p-22">Original linear system:</p>
+<div class="displaymath">
+\begin{alignat*}{2}
+x_1 + 3x_3 &amp;\,=\,&amp; 3\\
+3x_1 - 2x_2 + 4x_3 &amp;\,=\,&amp; 0\\
+-x_2 +  x_3 &amp;\,=\,&amp; -2
+\end{alignat*}
+</div>
+</div>
+<div class="sbspanel" style="width:33.1103678929766%;justify-content:center;">
+<p id="p-23">Verbose standard form:</p>
+<div class="displaymath">
+\begin{alignat*}{4}
+1x_1 &amp;\,+\,&amp; 0x_2 &amp;\,+\,&amp; 3x_3 &amp;\,=\,&amp; 3\\
+3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 4x_3 &amp;\,=\,&amp; 0\\
+0x_1 &amp;\,-\,&amp; 1x_2 &amp;\,+\,&amp; 1x_3 &amp;\,=\,&amp; -2
+\end{alignat*}
+</div>
+</div>
+<div class="sbspanel" style="width:33.1103678929766%;justify-content:center;">
+<p id="p-24">Coefficients/constants:</p>
+<div class="displaymath">
+\begin{alignat*}{4}
+1 &amp;     &amp;  0 &amp;\,\,&amp; 3 &amp;\,|\,&amp; 3\\
+3 &amp;\, \,&amp; -2 &amp;\,\,&amp; 4 &amp;\,|\,&amp; 0\\
+0 &amp;\, \,&amp; -1 &amp;\,\,&amp; 1 &amp;\,|\,&amp; -2
+\end{alignat*}
+</div>
+</div>
+</div></div></article><article class="definition definition-like" id="definition-4"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.10</span><span class="period">.</span>
+</h6>
+<p id="p-25">A system of \(m\) linear equations with \(n\) variables is often represented by writing its coefficients and constants in an <dfn class="terminology">augmented matrix</dfn>.</p>
+<div class="displaymath">
+\begin{alignat*}{4}
+a_{11}x_1 &amp;\,+\,&amp; a_{12}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{1n}x_n &amp;\,=\,&amp; b_1\\
+a_{21}x_1 &amp;\,+\,&amp; a_{22}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{2n}x_n &amp;\,=\,&amp; b_2\\
+\vdots&amp;  &amp;\vdots&amp;   &amp;&amp;  &amp;\vdots&amp;&amp;\vdots\\
+a_{m1}x_1 &amp;\,+\,&amp; a_{m2}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{mn}x_n &amp;\,=\,&amp; b_m
+\end{alignat*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cccc|c}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} &amp; b_1\\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} &amp; b_2\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\\
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; b_m
+\end{array}\right]
+\end{equation*}
+</div></article><article class="example example-like" id="example-1"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-1"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.11</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-1"><article class="example example-like"><p id="p-26">The corresponding augmented matrix for this system is obtained by simply writing the coefficients and constants in matrix form.</p>
+<p id="p-27">Linear system:</p>
+<div class="displaymath">
+\begin{alignat*}{2}
+x_1 + 3x_3 &amp;\,=\,&amp; 3\\
+3x_1 - 2x_2 + 4x_3 &amp;\,=\,&amp; 0\\
+-x_2 +  x_3 &amp;\,=\,&amp; -2
+\end{alignat*}
+</div>
+<p id="p-28">Vector equation:</p>
+<div class="displaymath">
+\begin{equation*}
+x_1 \begin{bmatrix} 1 \\ 3 \\ 0 \end{bmatrix}+ x_2 \begin{bmatrix} 0 \\ -2 \\ -1 \end{bmatrix} + x_3 \begin{bmatrix} 3 \\ 4 \\1 \end{bmatrix} = \begin{bmatrix} 3 \\ 0 \\ -2 \end{bmatrix}
+\end{equation*}
+</div>
+<p id="p-29">Augmented matrix:</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc|c}
+1 &amp; 0 &amp; 3 &amp; 3 \\
+3 &amp; -2 &amp; 4 &amp; 0 \\
+0 &amp; -1 &amp; 1 &amp; -2
+\end{array}\right]
+\end{equation*}
+</div></article></div>
+<section class="exercises" id="exercises-1"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">1.1.1</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-1"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-30">Consider the augmented matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc|c}
+-2 &amp; 5 &amp; 7 &amp; -6 \\
+-1 &amp; -1 &amp; 0 &amp; 4 \\
+2 &amp; 0 &amp; -2 &amp; -4 \\
+1 &amp; -1 &amp; -2 &amp; 0
+\end{array}\right] 
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-4">Write a system of scalar equations corresponding to this augmented matrix.</li>
+<li id="li-5">Write a vector equation corresponding to this augmented matrix.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1" id="answer-1"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like"><ol class="lower-alpha">
+<li id="li-6"><div class="displaymath">
+\begin{alignat*}{4}
+-2 \, x &amp;+&amp; 5 \, y &amp;+&amp; 7 \, z &amp;=&amp; -6\\
+-x &amp;-&amp; y &amp; &amp;  &amp;=&amp; 4\\
+2 \, x &amp; &amp;  &amp;-&amp; 2 \, z &amp;=&amp; -4\\
+x &amp;-&amp; y &amp;-&amp; 2 \, z &amp;=&amp; 0
+\end{alignat*}
+</div></li>
+<li id="li-7"><div class="displaymath">
+\begin{equation*}
+x_{1} \left[\begin{array}{c}
+-2 \\
+-1 \\
+2 \\
+1
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+5 \\
+-1 \\
+0 \\
+-1
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+7 \\
+0 \\
+-2 \\
+-2
+\end{array}\right] = \left[\begin{array}{c}
+-6 \\
+4 \\
+-4 \\
+0
+\end{array}\right] 
+\end{equation*}
+</div></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-31">Consider the vector equation.</p>
+<div class="displaymath">
+\begin{equation*}
+x_{1} \left[\begin{array}{c}
+-1 \\
+-1 \\
+0 \\
+0
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+-3 \\
+-4 \\
+-5 \\
+-3
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+2 \\
+2 \\
+0 \\
+0
+\end{array}\right] = \left[\begin{array}{c}
+-5 \\
+-6 \\
+-5 \\
+-3
+\end{array}\right] 
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-8">Write a system of scalar equations corresponding to this vector equation.</li>
+<li id="li-9">Write an augmented matrix corresponding to this vector equation.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2" id="answer-2"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2"><div class="answer solution-like"><ol class="lower-alpha">
+<li id="li-10"><div class="displaymath">
+\begin{alignat*}{4}
+-x_{1} &amp;-&amp; 3 \, x_{2} &amp;+&amp; 2 \, x_{3} &amp;=&amp; -5\\
+-x_{1} &amp;-&amp; 4 \, x_{2} &amp;+&amp; 2 \, x_{3} &amp;=&amp; -6\\
+&amp;-&amp; 5 \, x_{2} &amp; &amp;  &amp;=&amp; -5\\
+&amp;-&amp; 3 \, x_{2} &amp; &amp;  &amp;=&amp; -3
+\end{alignat*}
+</div></li>
+<li id="li-11"><div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc|c}
+-1 &amp; -3 &amp; 2 &amp; -5 \\
+-1 &amp; -4 &amp; 2 &amp; -6 \\
+0 &amp; -5 &amp; 0 &amp; -5 \\
+0 &amp; -3 &amp; 0 &amp; -3
+\end{array}\right] 
+\end{equation*}
+</div></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-3"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-32">Consider the vector equation.</p>
+<div class="displaymath">
+\begin{equation*}
+x_{1} \left[\begin{array}{c}
+-1 \\
+-1 \\
+1
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+-3 \\
+-3 \\
+3
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+-1 \\
+-2 \\
+2
+\end{array}\right] + x_{4} \left[\begin{array}{c}
+-2 \\
+-5 \\
+5
+\end{array}\right] = \left[\begin{array}{c}
+0 \\
+2 \\
+-2
+\end{array}\right] 
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-12">Write a system of scalar equations corresponding to this vector equation.</li>
+<li id="li-13">Write an augmented matrix corresponding to this vector equation.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-3" id="answer-3"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-3"><div class="answer solution-like"><ol class="lower-alpha">
+<li id="li-14"><div class="displaymath">
+\begin{alignat*}{5}
+-x &amp;-&amp; 3 \, y &amp;-&amp; z &amp;-&amp; 2 \, {w} &amp;=&amp; 0\\
+-x &amp;-&amp; 3 \, y &amp;-&amp; 2 \, z &amp;-&amp; 5 \, {w} &amp;=&amp; 2\\
+x &amp;+&amp; 3 \, y &amp;+&amp; 2 \, z &amp;+&amp; 5 \, {w} &amp;=&amp; -2
+\end{alignat*}
+</div></li>
+<li id="li-15"><div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cccc|c}
+-1 &amp; -3 &amp; -1 &amp; -2 &amp; 0 \\
+-1 &amp; -3 &amp; -2 &amp; -5 &amp; 2 \\
+1 &amp; 3 &amp; 2 &amp; 5 &amp; -2
+\end{array}\right] 
+\end{equation*}
+</div></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-4"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-33">Consider the system of equations</p>
+<div class="displaymath">
+\begin{alignat*}{5}
+&amp; &amp; x_{2} &amp;-&amp; 5 \, x_{3} &amp;+&amp; 3 \, x_{4} &amp;=&amp; 4\\
+-x_{1} &amp;-&amp; x_{2} &amp;+&amp; 3 \, x_{3} &amp; &amp;  &amp;=&amp; -3\\
+&amp; &amp;  &amp; &amp; x_{3} &amp;-&amp; x_{4} &amp;=&amp; -1
+\end{alignat*}
+</div>
+<ol class="lower-alpha">
+<li id="li-16">Write an augmented matrix corresponding to this system.</li>
+<li id="li-17">Write a vector equation corresponding to this system.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-4" id="answer-4"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-4"><div class="answer solution-like"><ol class="lower-alpha">
+<li id="li-18"><div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cccc|c}
+0 &amp; 1 &amp; -5 &amp; 3 &amp; 4 \\
+-1 &amp; -1 &amp; 3 &amp; 0 &amp; -3 \\
+0 &amp; 0 &amp; 1 &amp; -1 &amp; -1
+\end{array}\right] 
+\end{equation*}
+</div></li>
+<li id="li-19"><div class="displaymath">
+\begin{equation*}
+x_{1} \left[\begin{array}{c}
+0 \\
+-1 \\
+0
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+1 \\
+-1 \\
+0
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+-5 \\
+3 \\
+1
+\end{array}\right] + x_{4} \left[\begin{array}{c}
+3 \\
+0 \\
+-1
+\end{array}\right] = \left[\begin{array}{c}
+4 \\
+-3 \\
+-1
+\end{array}\right] 
+\end{equation*}
+</div></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-5"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-34">Consider the system of equations</p>
+<div class="displaymath">
+\begin{alignat*}{4}
+x &amp;+&amp; 3 \, y &amp;-&amp; 2 \, z &amp;=&amp; 3\\
+-2 \, x &amp;-&amp; 6 \, y &amp;+&amp; 5 \, z &amp;=&amp; -8\\
+-2 \, x &amp;-&amp; 6 \, y &amp;+&amp; 3 \, z &amp;=&amp; -4\\
+2 \, x &amp;+&amp; 6 \, y &amp;-&amp; 5 \, z &amp;=&amp; 8
+\end{alignat*}
+</div>
+<ol class="lower-alpha">
+<li id="li-20">Write an augmented matrix corresponding to this system.</li>
+<li id="li-21">Write a vector equation corresponding to this system.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-5" id="answer-5"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-5"><div class="answer solution-like"><ol class="lower-alpha">
+<li id="li-22"><div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc|c}
+1 &amp; 3 &amp; -2 &amp; 3 \\
+-2 &amp; -6 &amp; 5 &amp; -8 \\
+-2 &amp; -6 &amp; 3 &amp; -4 \\
+2 &amp; 6 &amp; -5 &amp; 8
+\end{array}\right] 
+\end{equation*}
+</div></li>
+<li id="li-23"><div class="displaymath">
+\begin{equation*}
+x_{1} \left[\begin{array}{c}
+1 \\
+-2 \\
+-2 \\
+2
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+3 \\
+-6 \\
+-6 \\
+6
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+-2 \\
+5 \\
+3 \\
+-5
+\end{array}\right] = \left[\begin{array}{c}
+3 \\
+-8 \\
+-4 \\
+8
+\end{array}\right] 
+\end{equation*}
+</div></li>
+</ol></div></div>
+</div></article><p id="p-35"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/E1/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+</div>
+</body>
+</html>

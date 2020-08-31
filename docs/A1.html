@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-08-31T01:26:30Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear Transformations (A1)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{enclose}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\circledNumber}[1]{\enclose{circle}{#1}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="A.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="A.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="A2.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="A.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="A.html" title="Up">Up</a><a class="next-button button toolbar-item" href="A2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="E.html" data-scroll="E"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (E)</span></a><ul>
+<li><a href="E1.html" data-scroll="E1">Linear Systems, Vector Equations, and Augmented Matrices (E1)</a></li>
+<li><a href="E2.html" data-scroll="E2">Row Reduction of Matrices (E2)</a></li>
+<li><a href="E3.html" data-scroll="E3">Solving Linear Systems (E3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="V.html" data-scroll="V"><span class="codenumber">2</span> <span class="title">Vector Spaces (V)</span></a><ul>
+<li><a href="V1.html" data-scroll="V1">Vector Spaces (V1)</a></li>
+<li><a href="V2.html" data-scroll="V2">Linear Combinations (V2)</a></li>
+<li><a href="V3.html" data-scroll="V3">Spanning Sets (V3)</a></li>
+<li><a href="V4.html" data-scroll="V4">Subspaces (V4)</a></li>
+<li><a href="V5.html" data-scroll="V5">Linear Independence (V5)</a></li>
+<li><a href="V6.html" data-scroll="V6">Identifying a Basis (V6)</a></li>
+<li><a href="V7.html" data-scroll="V7">Subspace Basis and Dimension (V7)</a></li>
+<li><a href="V8.html" data-scroll="V8">Polynomial and Matrix Spaces (V8)</a></li>
+<li><a href="V9.html" data-scroll="V9">Homogeneous Linear Systems (V9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="A.html" data-scroll="A"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (A)</span></a><ul>
+<li><a href="A1.html" data-scroll="A1" class="active">Linear Transformations (A1)</a></li>
+<li><a href="A2.html" data-scroll="A2">Standard Matrices (A2)</a></li>
+<li><a href="A3.html" data-scroll="A3">Image and Kernel (A3)</a></li>
+<li><a href="A4.html" data-scroll="A4">Injective and Surjective Linear Maps (A4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="M.html" data-scroll="M"><span class="codenumber">4</span> <span class="title">Matrices (M)</span></a><ul>
+<li><a href="M1.html" data-scroll="M1">Matrices and Multiplication (M1)</a></li>
+<li><a href="M2.html" data-scroll="M2">Row Operations as Matrix Multiplication (M2)</a></li>
+<li><a href="M3.html" data-scroll="M3">The Inverse of a Matrix (M3)</a></li>
+<li><a href="M4.html" data-scroll="M4">Invertible Matrices (M4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="G.html" data-scroll="G"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (G)</span></a><ul>
+<li><a href="G1.html" data-scroll="G1">Row Operations and Determinants (G1)</a></li>
+<li><a href="G2.html" data-scroll="G2">Computing Determinants (G2)</a></li>
+<li><a href="G3.html" data-scroll="G3">Eigenvalues and Characteristic Polynomials (G3)</a></li>
+<li><a href="G4.html" data-scroll="G4">Eigenvectors and Eigenspaces (G4)</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="A1"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Linear Transformations (A1)</span>
+</h2>
+<article class="definition definition-like" id="definition-17"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-449">A <dfn class="terminology">linear transformation</dfn> (also known as a <dfn class="terminology">linear map</dfn>) is a map between vector spaces that preserves the vector space operations. More precisely, if \(V\) and \(W\) are vector spaces, a map \(T:V\rightarrow W\) is called a linear transformation if</p>
+<ol class="decimal">
+<li id="li-328"><p id="p-450">\(T(\vec{v}+\vec{w}) = T(\vec{v})+T(\vec{w})\) for any \(\vec{v},\vec{w} \in V\text{.}\)</p></li>
+<li id="li-329"><p id="p-451">\(T(c\vec{v}) = cT(\vec{v})\) for any \(c \in \IR,\vec{v} \in V\text{.}\)</p></li>
+</ol>
+<p data-braille="continuation">In other words, a map is linear when vector space operations can be applied before or after the transformation without affecting the result.</p></article><article class="definition definition-like" id="definition-18"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h6>
+<p id="p-452">Given a linear transformation \(T:V\to W\text{,}\) \(V\) is called the <dfn class="terminology">domain</dfn> of \(T\) and \(W\) is called the <dfn class="terminology">co-domain</dfn> of \(T\text{.}\)</p>
+<pre class="code-block tex2jax_ignore">
+\begin{tikzpicture}[x=0.2in,y=0.2in]
+  \begin{scope}[shift={(0,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (2,1)
+          node[anchor=south west] {\(\vec v\)};
+    \node[anchor=west] at (-1,-1) {domain \(\IR^3\)};
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \node[anchor=south] at (5,4) {Linear transformation \(T:\IR^3\to\IR^2\)};
+  \begin{scope}[shift={(9,0.5)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,red] (0,0) -- (-1.5,1)
+          node[anchor=south east] {\(T(\vec v)\)};
+    \node[anchor=west] at (0,-1) {co-domain \(\IR^2\)};
+  \end{scope}
+\end{tikzpicture}
+    </pre></article><article class="example example-like" id="example-2"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-453">Let \(T : \IR^3 \rightarrow \IR^2\) be given by</p>
+<div class="displaymath">
+\begin{equation*}
+T\left(\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
+=
+\left[\begin{array}{c} x-z \\ 3y \end{array}\right]
+\end{equation*}
+</div>
+<p id="p-454">To show that \(T\) is linear, we must verify...</p>
+<div class="displaymath">
+\begin{equation*}
+T\left(
+\left[\begin{array}{c} x \\ y \\ z \end{array}\right] +
+\left[\begin{array}{c} u \\ v \\ w \end{array}\right]
+\right)
+=
+T\left(
+\left[\begin{array}{c} x+u \\ y+v \\ z+w \end{array}\right]
+\right) =
+\left[\begin{array}{c} (x+u)-(z+w) \\ 3(y+v) \end{array}\right]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+T\left(
+\left[\begin{array}{c} x \\ y \\ z \end{array}\right]
+\right) + T\left(
+\left[\begin{array}{c} u \\ v \\ w \end{array}\right]
+\right)
+=
+\left[\begin{array}{c} x-z \\ 3y \end{array}\right] +
+\left[\begin{array}{c} u-w \\ 3v \end{array}\right]=
+\left[\begin{array}{c} (x+u)-(z+w) \\ 3(y+v) \end{array}\right]
+\end{equation*}
+</div>
+<p data-braille="continuation">And also...</p>
+<div class="displaymath">
+\begin{equation*}
+T\left(c\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
+=
+T\left(\left[\begin{array}{c} cx \\ cy \\ cz \end{array}\right] \right)
+=
+\left[\begin{array}{c} cx-cz \\ 3cy \end{array}\right]
+\text{ and }
+cT\left(\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
+=
+c\left[\begin{array}{c} x-z \\ 3y \end{array}\right]
+=
+\left[\begin{array}{c} cx-cz \\ 3cy \end{array}\right]
+\end{equation*}
+</div>
+<p id="p-455">Therefore \(T\) is a linear transformation.</p></article></div>
+<article class="example example-like" id="example-3"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-3"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-3"><article class="example example-like"><p id="p-456">Let \(T : \IR^2 \rightarrow \IR^4\) be given by</p>
+<div class="displaymath">
+\begin{equation*}
+T\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right)
+=
+\left[\begin{array}{c} x+y \\ x^2 \\ y+3 \\ y-2^x \end{array}\right]
+\end{equation*}
+</div>
+<p id="p-457">To show that \(T\) is not linear, we only need to find one counterexample.</p>
+<div class="displaymath">
+\begin{equation*}
+T\left(
+\left[\begin{array}{c} 0 \\ 1 \end{array}\right] +
+\left[\begin{array}{c} 2 \\ 3 \end{array}\right]
+\right)
+=
+T\left(
+\left[\begin{array}{c} 2 \\ 4 \end{array}\right]
+\right) =
+\left[\begin{array}{c} 6 \\ 4 \\ 7 \\ 0 \end{array}\right]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+T\left(
+\left[\begin{array}{c} 0 \\ 1 \end{array}\right]
+\right) + T\left(
+\left[\begin{array}{c} 2 \\ 3\end{array}\right]
+\right)
+=
+\left[\begin{array}{c} 1 \\ 0 \\ 4 \\ -1 \end{array}\right] +
+\left[\begin{array}{c} 5 \\ 4 \\ 6 \\ -5 \end{array}\right]
+=
+\left[\begin{array}{c} 6 \\ 4 \\ 10 \\ -6 \end{array}\right]
+\end{equation*}
+</div>
+<p id="p-458">Since the resulting vectors are different, \(T\) is not a linear transformation.</p></article></div>
+<article class="fact theorem-like" id="fact-13"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
+</h6>
+<p id="p-459">A map between Euclidean spaces \(T:\IR^n\to\IR^m\) is linear exactly when every component of the output is a linear combination of the variables of \(\IR^n\text{.}\)</p>
+<p id="p-460">For example, the following map is definitely linear because \(x-z\) and \(3y\) are linear combinations of \(x,y,z\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+T\left(\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
+=
+\left[\begin{array}{c} x-z \\ 3y \end{array}\right]
+=
+\left[\begin{array}{c} 1x+0y-1z \\ 0x+3y+0z \end{array}\right]
+\end{equation*}
+</div>
+<p id="p-461">But this map is not linear because \(x^2\text{,}\) \(y+3\text{,}\) and \(y-2^x\) are not linear combinations (even though \(x+y\) is):</p>
+<div class="displaymath">
+\begin{equation*}
+T\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right)
+=
+\left[\begin{array}{c} x+y \\ x^2 \\ y+3 \\ y-2^x \end{array}\right]
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-67"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-462">Recall the following rules from calculus, where \(D:\P\to\P\) is the derivative map defined by \(D(f(x))=f'(x)\) for each polynomial \(f\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+D(f+g)=f'(x)+g'(x)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+D(cf(x))=cf'(x)
+\end{equation*}
+</div>
+<p id="p-463">What can we conclude from these rules?</p>
+<ol class="lower-alpha">
+<li id="li-330"><p id="p-464">\(\P\) is not a vector space</p></li>
+<li id="li-331"><p id="p-465">\(D\) is a linear map</p></li>
+<li id="li-332"><p id="p-466">\(D\) is not a linear map</p></li>
+</ol></article><article class="activity project-like" id="activity-68"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h6>
+<p id="p-467">Let the polynomial maps \(S: \P^4 \rightarrow \P^3\) and \(T: \P^4 \rightarrow \P^3\) be defined by</p>
+<div class="displaymath">
+\begin{equation*}
+S(f(x)) = 2f'(x)-f''(x) \hspace{3em} T(f(x)) = f'(x)+x^3\text{.}
+\end{equation*}
+</div>
+<p id="p-468">Compute \(S(x^4+x)\text{,}\) \(S(x^4)+S(x)\text{,}\) \(T(x^4+x)\text{,}\) and \(T(x^4)+T(x)\text{.}\) Which of these maps is definitely not linear?</p></article><article class="fact theorem-like" id="fact-14"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
+</h6>
+<p id="p-469">If \(L:V\to W\) is linear, then \(L(\vec z)=L(0\vec v)=0L(\vec v)=\vec z\) where \(\vec z\) is the additive identity of the vector spaces \(V,W\text{.}\)</p>
+<p id="p-470">Put another way, an easy way to prove that a map like \(T(f(x)) = f'(x)+x^3\) can't be linear is because</p>
+<div class="displaymath">
+\begin{equation*}
+T(0)=\frac{d}{dx}[0]+x^3=0+x^3=x^3\not=0.
+\end{equation*}
+</div></article><article class="observation remark-like" id="observation-16"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span>
+</h6>
+<p id="p-471">Showing \(L:V\to W\) is not a linear transformation can be done by finding an example for any one of the following.</p>
+<ul class="disc">
+<li id="li-333"><p id="p-472">Show \(L(\vec z)\not=\vec z\) (where \(\vec z\) is the additive identity of \(L\) and \(W\)).</p></li>
+<li id="li-334"><p id="p-473">Find \(\vec v,\vec w\in V\) such that \(L(\vec v+\vec w)\not=L(\vec v)+L(\vec w)\text{.}\)</p></li>
+<li id="li-335"><p id="p-474">Find \(\vec v\in V\) and \(c\in \IR\) such that \(L(c\vec v)\not=cL(\vec v)\text{.}\)</p></li>
+</ul>
+<p id="p-475">Otherwise, \(L\) can be shown to be linear by proving the following in general.</p>
+<ul class="disc">
+<li id="li-336"><p id="p-476">For all \(\vec v,\vec w\in V\text{,}\) \(L(\vec v+\vec w)=L(\vec v)+L(\vec w)\text{.}\)</p></li>
+<li id="li-337"><p id="p-477">For all \(\vec v\in V\) and \(c\in \IR\text{,}\) \(L(c\vec v)=cL(\vec v)\text{.}\)</p></li>
+</ul>
+<p id="p-478">Note the similarities between this process and showing that a subset of a vector space is/isn't a subspace.</p></article><article class="activity project-like" id="activity-69"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-24">
+<p id="p-479">Continue to consider \(S: \P^4 \rightarrow \P^3\) defined by</p>
+<div class="displaymath">
+\begin{equation*}
+S(f(x)) = 2f'(x)-f''(x)
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-56"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-480">Verify that</p>
+<div class="displaymath">
+\begin{equation*}
+S(f(x)+g(x))=2f'(x)+2g'(x)-f''(x)-g''(x)
+\end{equation*}
+</div>
+<p data-braille="continuation">is equal to \(S(f(x))+S(g(x))\) for all polynomials \(f,g\text{.}\)</p></article><article class="task exercise-like" id="task-57"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-481">Verify that \(S(cf(x))\) is equal to \(cS(f(x))\) for all real numbers \(c\) and polynomials \(f\text{.}\)</p></article><article class="task exercise-like" id="task-58"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-482">Is \(S\) linear?</p></article></article><article class="activity project-like" id="activity-70"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-25">
+<p id="p-483">Let the polynomial maps \(S: \P \rightarrow \P\) and \(T: \P \rightarrow \P\) be defined by</p>
+<div class="displaymath">
+\begin{equation*}
+S(f(x)) = (f(x))^2 \hspace{3em} T(f(x)) = 3xf(x^2)
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-59"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-484">Note that \(S(0)=0\) and \(T(0)=0\text{.}\) So instead, show that \(S(x+1)\not= S(x)+S(1)\) to verify that \(S\) is not linear.</p></article><article class="task exercise-like" id="task-60"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-485">Prove that \(T\) is linear by verifying that \(T(f(x)+g(x))=T(f(x))+T(g(x))\) and \(T(cf(x))=cT(f(x))\text{.}\)</p></article></article><section class="exercises" id="exercises-13"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.1.1</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-61"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-486">Consider the following maps of polynomials \(S:\mathcal{P}\rightarrow\mathcal{P}\) and \(T:\mathcal{P}\rightarrow\mathcal{P}\) defined by</p>
+<div class="displaymath">
+\begin{align*}
+S(g(x))= 2 \, g'\left(5\right) + 4 \, g'\left(x\right)  &amp; \text{and} &amp; T(g)= 4 \, g\left(x\right) g'\left(x\right) + g\left(x\right) .
+\end{align*}
+</div>
+<p data-braille="continuation">Explain why one these maps is a linear transformation and why the other map is not.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-61" id="answer-61"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-61"><div class="answer solution-like"><p id="p-487">\(S\) is linear and \(T\) is not linear.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-62"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-488">Consider the following maps of polynomials \(S:\mathcal{P}\rightarrow\mathcal{P}\) and \(T:\mathcal{P}\rightarrow\mathcal{P}\) defined by</p>
+<div class="displaymath">
+\begin{align*}
+S(h(x))= 4 \, h\left(x\right) h'\left(x\right) + h'\left(-3\right)  &amp; \text{and} &amp; T(h)= 2 \, x^{3} h\left(x\right) - 3 \, h\left(x\right) .
+\end{align*}
+</div>
+<p data-braille="continuation">Explain why one these maps is a linear transformation and why the other map is not.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-62" id="answer-62"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-62"><div class="answer solution-like"><p id="p-489">\(S\) is not linear and \(T\) is linear.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-63"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-490">Consider the following maps of polynomials \(S:\mathcal{P}\rightarrow\mathcal{P}\) and \(T:\mathcal{P}\rightarrow\mathcal{P}\) defined by</p>
+<div class="displaymath">
+\begin{align*}
+S(f(x))= 2 \, f\left(x^{3}\right) - 4 \, f'\left(2\right)  &amp; \text{and} &amp; T(f)= 2 \, f\left(-1\right) + 4 .
+\end{align*}
+</div>
+<p data-braille="continuation">Explain why one these maps is a linear transformation and why the other map is not.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-63" id="answer-63"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-63"><div class="answer solution-like"><p id="p-491">\(S\) is linear and \(T\) is not linear.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-64"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-492">Consider the following maps of polynomials \(S:\mathcal{P}\rightarrow\mathcal{P}\) and \(T:\mathcal{P}\rightarrow\mathcal{P}\) defined by</p>
+<div class="displaymath">
+\begin{align*}
+S(f(x))= 5 \, x^{2} f\left(x\right) - 5 \, f\left(-2\right)  &amp; \text{and} &amp; T(f)= 2 \, f\left(x\right) f'\left(x\right) + 2 \, f'\left(x\right) .
+\end{align*}
+</div>
+<p data-braille="continuation">Explain why one these maps is a linear transformation and why the other map is not.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-64" id="answer-64"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-64"><div class="answer solution-like"><p id="p-493">\(S\) is linear and \(T\) is not linear.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-65"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-494">Consider the following maps of polynomials \(S:\mathcal{P}\rightarrow\mathcal{P}\) and \(T:\mathcal{P}\rightarrow\mathcal{P}\) defined by</p>
+<div class="displaymath">
+\begin{align*}
+S(h(x))= h\left(-5\right) - 5 \, h\left(x\right)  &amp; \text{and} &amp; T(h)= -5 \, h\left(x\right) h'\left(x\right) + 4 \, h'\left(x\right) .
+\end{align*}
+</div>
+<p data-braille="continuation">Explain why one these maps is a linear transformation and why the other map is not.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-65" id="answer-65"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-65"><div class="answer solution-like"><p id="p-495">\(S\) is linear and \(T\) is not linear.</p></div></div>
+</div></article><p id="p-496"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/A1/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+</div>
+</body>
+</html>

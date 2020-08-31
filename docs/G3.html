@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-08-31T01:26:33Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Eigenvalues and Characteristic Polynomials (G3)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{enclose}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\circledNumber}[1]{\enclose{circle}{#1}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="G2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="G.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="G4.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="G2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="G.html" title="Up">Up</a><a class="next-button button toolbar-item" href="G4.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="E.html" data-scroll="E"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (E)</span></a><ul>
+<li><a href="E1.html" data-scroll="E1">Linear Systems, Vector Equations, and Augmented Matrices (E1)</a></li>
+<li><a href="E2.html" data-scroll="E2">Row Reduction of Matrices (E2)</a></li>
+<li><a href="E3.html" data-scroll="E3">Solving Linear Systems (E3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="V.html" data-scroll="V"><span class="codenumber">2</span> <span class="title">Vector Spaces (V)</span></a><ul>
+<li><a href="V1.html" data-scroll="V1">Vector Spaces (V1)</a></li>
+<li><a href="V2.html" data-scroll="V2">Linear Combinations (V2)</a></li>
+<li><a href="V3.html" data-scroll="V3">Spanning Sets (V3)</a></li>
+<li><a href="V4.html" data-scroll="V4">Subspaces (V4)</a></li>
+<li><a href="V5.html" data-scroll="V5">Linear Independence (V5)</a></li>
+<li><a href="V6.html" data-scroll="V6">Identifying a Basis (V6)</a></li>
+<li><a href="V7.html" data-scroll="V7">Subspace Basis and Dimension (V7)</a></li>
+<li><a href="V8.html" data-scroll="V8">Polynomial and Matrix Spaces (V8)</a></li>
+<li><a href="V9.html" data-scroll="V9">Homogeneous Linear Systems (V9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="A.html" data-scroll="A"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (A)</span></a><ul>
+<li><a href="A1.html" data-scroll="A1">Linear Transformations (A1)</a></li>
+<li><a href="A2.html" data-scroll="A2">Standard Matrices (A2)</a></li>
+<li><a href="A3.html" data-scroll="A3">Image and Kernel (A3)</a></li>
+<li><a href="A4.html" data-scroll="A4">Injective and Surjective Linear Maps (A4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="M.html" data-scroll="M"><span class="codenumber">4</span> <span class="title">Matrices (M)</span></a><ul>
+<li><a href="M1.html" data-scroll="M1">Matrices and Multiplication (M1)</a></li>
+<li><a href="M2.html" data-scroll="M2">Row Operations as Matrix Multiplication (M2)</a></li>
+<li><a href="M3.html" data-scroll="M3">The Inverse of a Matrix (M3)</a></li>
+<li><a href="M4.html" data-scroll="M4">Invertible Matrices (M4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="G.html" data-scroll="G"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (G)</span></a><ul>
+<li><a href="G1.html" data-scroll="G1">Row Operations and Determinants (G1)</a></li>
+<li><a href="G2.html" data-scroll="G2">Computing Determinants (G2)</a></li>
+<li><a href="G3.html" data-scroll="G3" class="active">Eigenvalues and Characteristic Polynomials (G3)</a></li>
+<li><a href="G4.html" data-scroll="G4">Eigenvectors and Eigenspaces (G4)</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="G3"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">Eigenvalues and Characteristic Polynomials (G3)</span>
+</h2>
+<article class="activity project-like" id="activity-138"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-910">An invertible matrix \(M\) and its inverse \(M^{-1}\) are given below:</p>
+<div class="displaymath">
+\begin{equation*}
+M=\left[\begin{array}{cc}1&amp;2\\3&amp;4\end{array}\right]
+\hspace{2em}
+M^{-1}=\left[\begin{array}{cc}-2&amp;1\\3/2&amp;-1/2\end{array}\right]
+\end{equation*}
+</div>
+<p id="p-911">Which of the following is equal to \(\det(M)\det(M^{-1})\text{?}\)</p>
+<ol class="lower-alpha">
+<li id="li-656"><p id="p-912">\(\displaystyle -1\)</p></li>
+<li id="li-657"><p id="p-913">\(\displaystyle 0\)</p></li>
+<li id="li-658"><p id="p-914">\(\displaystyle 1\)</p></li>
+<li id="li-659"><p id="p-915">\(\displaystyle 4\)</p></li>
+</ol></article><article class="fact theorem-like" id="fact-28"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-916">For every invertible matrix \(M\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\det(M)\det(M^{-1})= \det(I)=1
+\end{equation*}
+</div>
+<p data-braille="continuation">so \(\det(M^{-1})=\frac{1}{\det(M)}\text{.}\)</p>
+<p id="p-917">Furthermore, a square matrix \(M\) is invertible if and only if \(\det(M)\not=0\text{.}\)</p></article><article class="observation remark-like" id="observation-34"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span>
+</h6>
+<p id="p-918">Consider the linear transformation \(A : \IR^2 \rightarrow \IR^2\) given by the matrix \(A = \left[\begin{array}{cc} 2 &amp; 2 \\ 0 &amp; 3 \end{array}\right]\text{.}\)</p>
+<pre class="code-block tex2jax_ignore">
+\begin{tikzpicture}[scale=0.75]
+\fill[red!50] (0,0) rectangle (1,1);
+\draw[thin,gray,&lt;-&gt;] (-1,0)-- (4,0);
+\draw[thin,gray,&lt;-&gt;] (0,-1)-- (0,4);
+\draw[thick,blue,-&gt;] (0,0) -- node[below right] {\(A \vec{e}_1\)}++ (2,0);
+\draw[thick,red,-&gt;] (0,0) -- node[below] {\(\vec{e}_1\)}++ (1,0);
+\draw[thick,blue,-&gt;] (0,0) -- node[above left] {\(A \vec{e}_2\)}++(2,3);
+\draw[thick,red,-&gt;] (0,0) -- node[left] {\(\vec{e}_2\)}++ (0,1);
+\draw[blue,dashed] (2,0) -- (4,3) -- (2,3);
+\draw[purple!50!blue,thick,-&gt;] (0,0) -- (6,3);
+\draw[purple!50!red,thick,-&gt;] (0,0) -- (2,1);
+\end{tikzpicture}
+</pre>
+<p id="p-919">It is easy to see geometrically that</p>
+<div class="displaymath">
+\begin{equation*}
+A\left[\begin{array}{c}1 \\ 0 \end{array}\right] = 
+\left[\begin{array}{cc} 2 &amp; 2 \\ 0 &amp; 3 \end{array}\right]\left[\begin{array}{c}1 \\ 0 \end{array}\right]=
+\left[\begin{array}{c}2 \\ 0 \end{array}\right]= 
+2 \left[\begin{array}{c}1 \\ 0 \end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p id="p-920">It is less obvious (but easily checked once you find it) that</p>
+<div class="displaymath">
+\begin{equation*}
+A\left[\begin{array}{c} 2 \\ 1 \end{array}\right] = 
+\left[\begin{array}{cc} 2 &amp; 2 \\ 0 &amp; 3 \end{array}\right]\left[\begin{array}{c}2 \\ 1 \end{array}\right]=
+\left[\begin{array}{c} 6 \\ 3 \end{array}\right] = 
+3\left[\begin{array}{c} 2 \\ 1 \end{array}\right]\text{.}
+\end{equation*}
+</div></article><article class="definition definition-like" id="definition-28"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.3.3</span><span class="period">.</span>
+</h6>
+<p id="p-921">Let \(A \in M_{n,n}\text{.}\) An <dfn class="terminology">eigenvector</dfn> for \(A\) is a vector \(\vec{x} \in \IR^n\) such that \(A\vec{x}\) is parallel to \(\vec{x}\text{.}\)</p>
+<pre class="code-block tex2jax_ignore">
+\begin{tikzpicture}[scale=0.75]
+\fill[gray!50] (0,0) rectangle (1,1);
+\draw[thin,gray,&lt;-&gt;] (-1,0)-- (4,0);
+\draw[thin,gray,&lt;-&gt;] (0,-1)-- (0,4);
+\draw[thick,blue,-&gt;] (0,0) -- node[below right] {\(A \vec{e}_1=2\vec e_1\)}++ (2,0);
+\draw[thick,red,-&gt;] (0,0) -- node[below] {\(\vec{e}_1\)}++ (1,0);
+\draw[thick,gray,-&gt;] (0,0) -- node[above left] {\(A \vec{e}_2\)}++(2,3);
+\draw[thick,gray,-&gt;] (0,0) -- node[left] {\(\vec{e}_2\)}++ (0,1);
+\draw[gray,dashed] (2,0) -- (4,3) -- (2,3);
+\draw[purple!50!blue,thick,-&gt;] (0,0) -- (6,3) 
+  node [below right] {\(
+   A\left[\begin{array}{c}2\\1\end{array}\right]
+     =
+   3\left[\begin{array}{c}2\\1\end{array}\right]
+  \)};
+\draw[purple!50!red,thick,-&gt;] (0,0) -- (2,1)
+  node [above] {\(\left[\begin{array}{c}2\\1\end{array}\right]\)};
+\end{tikzpicture}
+</pre>
+<p id="p-922">In other words, \(A\vec{x}=\lambda \vec{x}\) for some scalar \(\lambda\text{.}\) If \(\vec x\not=\vec 0\text{,}\) then we say \(\vec x\) is a <dfn class="terminology">nontrivial eigenvector</dfn> and we call this \(\lambda\) an <dfn class="terminology">eigenvalue</dfn> of \(A\text{.}\)</p></article><article class="activity project-like" id="activity-139"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span>
+</h6>
+<p id="p-923">Finding the eigenvalues \(\lambda\) that satisfy</p>
+<div class="displaymath">
+\begin{equation*}
+A\vec x=\lambda\vec x=\lambda(I\vec x)=(\lambda I)\vec x
+\end{equation*}
+</div>
+<p data-braille="continuation">for some nontrivial eigenvector \(\vec x\) is equivalent to finding nonzero solutions for the matrix equation</p>
+<div class="displaymath">
+\begin{equation*}
+(A-\lambda I)\vec x =\vec 0\text{.}
+\end{equation*}
+</div>
+<p id="p-924">Which of the following must be true for any eigenvalue?</p>
+<ol class="lower-alpha">
+<li id="li-660"><p id="p-925">The <em class="emphasis">kernel</em> of the transformation with standard matrix \(A-\lambda I\) must contain <em class="emphasis">the zero vector</em>, so \(A-\lambda I\) is <em class="emphasis">invertible</em>.</p></li>
+<li id="li-661"><p id="p-926">The <em class="emphasis">kernel</em> of the transformation with standard matrix \(A-\lambda I\) must contain <em class="emphasis">a non-zero vector</em>, so \(A-\lambda I\) is <em class="emphasis">not invertible</em>.</p></li>
+<li id="li-662"><p id="p-927">The <em class="emphasis">image</em> of the transformation with standard matrix \(A-\lambda I\) must contain <em class="emphasis">the zero vector</em>, so \(A-\lambda I\) is <em class="emphasis">invertible</em>.</p></li>
+<li id="li-663"><p id="p-928">The <em class="emphasis">image</em> of the transformation with standard matrix \(A-\lambda I\) must contain <em class="emphasis">a non-zero vector</em>, so \(A-\lambda I\) is <em class="emphasis">not invertible</em>.</p></li>
+</ol></article><article class="fact theorem-like" id="fact-29"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.3.4</span><span class="period">.</span>
+</h6>
+<p id="p-929">The eigenvalues \(\lambda\) for a matrix \(A\) are the values that make \(A-\lambda I\) non-invertible.</p>
+<p id="p-930">Thus the eigenvalues \(\lambda\) for a matrix \(A\) are the solutions to the equation</p>
+<div class="displaymath">
+\begin{equation*}
+\det(A-\lambda I)=0.
+\end{equation*}
+</div></article><article class="definition definition-like" id="definition-29"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.3.5</span><span class="period">.</span>
+</h6>
+<p id="p-931">The expression \(\det(A-\lambda I)\) is called <dfn class="terminology">characteristic polynomial</dfn> of \(A\text{.}\)</p>
+<p id="p-932">For example, when \(A=\left[\begin{array}{cc}1 &amp; 2 \\ 3 &amp; 4\end{array}\right]\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+A-\lambda I=
+\left[\begin{array}{cc}1 &amp; 2 \\ 3 &amp; 4\end{array}\right]-
+\left[\begin{array}{cc}\lambda &amp; 0 \\ 0 &amp; \lambda\end{array}\right]=
+\left[\begin{array}{cc}1-\lambda &amp; 2 \\ 3 &amp; 4-\lambda\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p id="p-933">Thus the characteristic polynomial of \(A\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\det\left[\begin{array}{cc}1-\lambda &amp; 2 \\ 3 &amp; 4-\lambda\end{array}\right]
+=
+(1-\lambda)(4-\lambda)-(2)(3)
+=
+\lambda^2-5\lambda-2
+\end{equation*}
+</div>
+<p data-braille="continuation">and its eigenvalues are the solutions to \(\lambda^2-5\lambda-2=0\text{.}\)</p></article><article class="activity project-like" id="activity-140"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.3</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-41"><p id="p-934">Let \(A = \left[\begin{array}{cc} 5 &amp; 2 \\ -3 &amp; -2 \end{array}\right]\text{.}\)</p></div>
+<article class="task exercise-like" id="task-98"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-935">Compute \(\det (A-\lambda I)\) to determine the characteristic polynomial of \(A\text{.}\)</p></article><article class="task exercise-like" id="task-99"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-936">Set this characteristic polynomial equal to zero and factor to determine the eigenvalues of \(A\text{.}\)</p></article></article><article class="activity project-like" id="activity-141"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.4</span><span class="period">.</span>
+</h6>
+<p id="p-937">Find all the eigenvalues for the matrix \(A=\left[\begin{array}{cc} 3 &amp; -3 \\ 2 &amp; -4 \end{array}\right]\text{.}\)</p></article><article class="activity project-like" id="activity-142"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.5</span><span class="period">.</span>
+</h6>
+<p id="p-938">Find all the eigenvalues for the matrix \(A=\left[\begin{array}{cc} 1 &amp; -4 \\ 0 &amp; 5 \end{array}\right]\text{.}\)</p></article><article class="activity project-like" id="activity-143"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.6</span><span class="period">.</span>
+</h6>
+<p id="p-939">Find all the eigenvalues for the matrix \(A=\left[\begin{array}{ccc} 3 &amp; -3 &amp; 1 \\ 0 &amp; -4 &amp; 2 \\ 0 &amp; 0 &amp; 7 \end{array}\right]\text{.}\)</p></article><section class="exercises" id="exercises-23"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.3.1</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-111"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-940">Explain how to find the eigenvalues of the matrix \(\left[\begin{array}{cc}
+2 &amp; 2 \\
+-14 &amp; -9
+\end{array}\right] \text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-111" id="answer-111"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-111"><div class="answer solution-like">
+<p id="p-941">The characteristic polynomial of \(\left[\begin{array}{cc}
+2 &amp; 2 \\
+-14 &amp; -9
+\end{array}\right] \) is \(\lambda^{2} + 7 \lambda + 10 \text{.}\)</p>
+<p id="p-942">The eigenvalues of \(\left[\begin{array}{cc}
+2 &amp; 2 \\
+-14 &amp; -9
+\end{array}\right] \) are \(-2 \) and \(-5 \text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-112"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-943">Explain how to find the eigenvalues of the matrix \(\left[\begin{array}{cc}
+6 &amp; 2 \\
+-3 &amp; 1
+\end{array}\right] \text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-112" id="answer-112"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-112"><div class="answer solution-like">
+<p id="p-944">The characteristic polynomial of \(\left[\begin{array}{cc}
+6 &amp; 2 \\
+-3 &amp; 1
+\end{array}\right] \) is \(\lambda^{2} - 7 \lambda + 12 \text{.}\)</p>
+<p id="p-945">The eigenvalues of \(\left[\begin{array}{cc}
+6 &amp; 2 \\
+-3 &amp; 1
+\end{array}\right] \) are \(4 \) and \(3 \text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-113"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-946">Explain how to find the eigenvalues of the matrix \(\left[\begin{array}{cc}
+-2 &amp; 1 \\
+6 &amp; 3
+\end{array}\right] \text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-113" id="answer-113"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-113"><div class="answer solution-like">
+<p id="p-947">The characteristic polynomial of \(\left[\begin{array}{cc}
+-2 &amp; 1 \\
+6 &amp; 3
+\end{array}\right] \) is \(\lambda^{2} - \lambda - 12 \text{.}\)</p>
+<p id="p-948">The eigenvalues of \(\left[\begin{array}{cc}
+-2 &amp; 1 \\
+6 &amp; 3
+\end{array}\right] \) are \(-3 \) and \(4 \text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-114"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-949">Explain how to find the eigenvalues of the matrix \(\left[\begin{array}{cc}
+-4 &amp; 1 \\
+5 &amp; 0
+\end{array}\right] \text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-114" id="answer-114"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-114"><div class="answer solution-like">
+<p id="p-950">The characteristic polynomial of \(\left[\begin{array}{cc}
+-4 &amp; 1 \\
+5 &amp; 0
+\end{array}\right] \) is \(\lambda^{2} + 4 \lambda - 5 \text{.}\)</p>
+<p id="p-951">The eigenvalues of \(\left[\begin{array}{cc}
+-4 &amp; 1 \\
+5 &amp; 0
+\end{array}\right] \) are \(-5 \) and \(1 \text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-115"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-952">Explain how to find the eigenvalues of the matrix \(\left[\begin{array}{cc}
+5 &amp; 2 \\
+-10 &amp; -7
+\end{array}\right] \text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-115" id="answer-115"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-115"><div class="answer solution-like">
+<p id="p-953">The characteristic polynomial of \(\left[\begin{array}{cc}
+5 &amp; 2 \\
+-10 &amp; -7
+\end{array}\right] \) is \(\lambda^{2} + 2 \lambda - 15 \text{.}\)</p>
+<p id="p-954">The eigenvalues of \(\left[\begin{array}{cc}
+5 &amp; 2 \\
+-10 &amp; -7
+\end{array}\right] \) are \(3 \) and \(-5 \text{.}\)</p>
+</div></div>
+</div></article><p id="p-955"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/G3/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+</div>
+</body>
+</html>
