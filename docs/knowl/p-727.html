@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-08-31T03:45:44Z       *-->
+<!--*       on 2020-09-01T08:34:58-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,15 +15,26 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Create a matrix that adds \(5\) times the third row of \(A\) to the first row:</p>
+<p>Applying Laplace expansion to a \(2 \times 2\) matrix yields a short formula you may have seen:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
-\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+\det \left[\begin{array}{cc} {\color{blue} a} &amp; {\color{blue} b} \\ c &amp; d \end{array}\right]
 =
-\left[\begin{array}{ccc} 2+5(1) &amp; 7+5(1) &amp; -1+5(-1) \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+{\color{blue} a}\det \left[\begin{array}{cc} {\color{blue} 1} &amp; {\color{blue} 0} \\ 
+c &amp; d \end{array}\right] 
++ 
+{\color{blue} b} \det \left[\begin{array}{cc} {\color{blue} 0} &amp; {\color{blue} 1} \\ 
+c &amp; d \end{array}\right] 
+=
+a\det \left[\begin{array}{cc} {\color{red} 1} &amp; {\color{red} 0} \\ 
+{\color{red} c} &amp; d \end{array}\right] 
+-
+b \det \left[\begin{array}{cc} {\color{red} 1} &amp; {\color{red} 0} \\ 
+{\color{red} d} &amp; c \end{array}\right] 
+= 
+ad-bc\text{.}
 \end{equation*}
 </div>
-<span class="incontext"><a href="M2.html#p-727">in-context</a></span>
+<span class="incontext"><a href="G2.html#p-727">in-context</a></span>
 </body>
 </html>
