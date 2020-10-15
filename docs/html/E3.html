@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-10-15T08:40:14-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Solving Linear Systems (E3)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{enclose}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\circledNumber}[1]{\enclose{circle}{#1}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="E2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="E.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="V.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="E2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="E.html" title="Up">Up</a><a class="next-button button toolbar-item" href="V.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="E.html" data-scroll="E"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (E)</span></a><ul>
+<li><a href="E1.html" data-scroll="E1">Linear Systems, Vector Equations, and Augmented Matrices (E1)</a></li>
+<li><a href="E2.html" data-scroll="E2">Row Reduction of Matrices (E2)</a></li>
+<li><a href="E3.html" data-scroll="E3" class="active">Solving Linear Systems (E3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="V.html" data-scroll="V"><span class="codenumber">2</span> <span class="title">Vector Spaces (V)</span></a><ul>
+<li><a href="V1.html" data-scroll="V1">Vector Spaces (V1)</a></li>
+<li><a href="V2.html" data-scroll="V2">Linear Combinations (V2)</a></li>
+<li><a href="V3.html" data-scroll="V3">Spanning Sets (V3)</a></li>
+<li><a href="V4.html" data-scroll="V4">Subspaces (V4)</a></li>
+<li><a href="V5.html" data-scroll="V5">Linear Independence (V5)</a></li>
+<li><a href="V6.html" data-scroll="V6">Identifying a Basis (V6)</a></li>
+<li><a href="V7.html" data-scroll="V7">Subspace Basis and Dimension (V7)</a></li>
+<li><a href="V8.html" data-scroll="V8">Polynomial and Matrix Spaces (V8)</a></li>
+<li><a href="V9.html" data-scroll="V9">Homogeneous Linear Systems (V9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="A.html" data-scroll="A"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (A)</span></a><ul>
+<li><a href="A1.html" data-scroll="A1">Linear Transformations (A1)</a></li>
+<li><a href="A2.html" data-scroll="A2">Standard Matrices (A2)</a></li>
+<li><a href="A3.html" data-scroll="A3">Image and Kernel (A3)</a></li>
+<li><a href="A4.html" data-scroll="A4">Injective and Surjective Linear Maps (A4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="M.html" data-scroll="M"><span class="codenumber">4</span> <span class="title">Matrices (M)</span></a><ul>
+<li><a href="M1.html" data-scroll="M1">Matrices and Multiplication (M1)</a></li>
+<li><a href="M2.html" data-scroll="M2">Row Operations as Matrix Multiplication (M2)</a></li>
+<li><a href="M3.html" data-scroll="M3">The Inverse of a Matrix (M3)</a></li>
+<li><a href="M4.html" data-scroll="M4">Invertible Matrices (M4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="G.html" data-scroll="G"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (G)</span></a><ul>
+<li><a href="G1.html" data-scroll="G1">Row Operations and Determinants (G1)</a></li>
+<li><a href="G2.html" data-scroll="G2">Computing Determinants (G2)</a></li>
+<li><a href="G3.html" data-scroll="G3">Eigenvalues and Characteristic Polynomials (G3)</a></li>
+<li><a href="G4.html" data-scroll="G4">Eigenvectors and Eigenspaces (G4)</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="E3"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Solving Linear Systems (E3)</span>
+</h2>
+<article class="activity project-like" id="activity-14"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-70">Free browser-based technologies for mathematical computation are available online.</p>
+<ul class="disc">
+<li id="li-86"><p id="p-71">Go to <a class="external" href="https://sagecell.sagemath.org/" target="_blank"><code class="code-inline tex2jax_ignore">https://sagecell.sagemath.org/</code></a>.</p></li>
+<li id="li-87"><p id="p-72">Type <code class="code-inline tex2jax_ignore">A=Matrix([[1,3,4],[2,5,7]])</code> to store the matrix \(\left[\begin{array}{} 1 &amp; 3 &amp; 2 \\ 2 &amp; 5 &amp; 7 \end{array}\right]\) in the variable \(A\text{.}\) Then add the line <code class="code-inline tex2jax_ignore">show(A)</code> and use the <kbd class="kbdkey">Evaluate</kbd> button to preview it.</p></li>
+<li id="li-88"><p id="p-73">Add the line <code class="code-inline tex2jax_ignore">show(A.rref())</code> and use <kbd class="kbdkey">Evaluate</kbd> to compute the reduced row echelon form of \(A\text{.}\)</p></li>
+</ul>
+<p id="p-74">Since the vertical bar in an augmented matrix does not affect row operations, the \(\RREF\) of \(\left[\begin{array}{cc|c} 1 &amp; 3 &amp; 2 \\ 2 &amp; 5 &amp; 7 \end{array}\right]\) may be computed in the same way.</p></article><article class="activity project-like" id="activity-15"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-3">
+<p id="p-75">Consider the following system of equations.</p>
+<div class="displaymath">
+\begin{align*}
+3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 13x_3 &amp;\,=\,&amp; 6\\
+2x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 10x_3 &amp;\,=\,&amp; 2\\
+-x_1 &amp;\,+\,&amp; 3x_2 &amp;\,-\,&amp;  6x_3 &amp;\,=\,&amp; 11
+\end{align*}
+</div>
+</div>
+<article class="task exercise-like" id="task-5"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-76">Convert this to an augmented matrix and use technology to compute its reduced row echelon form:</p>
+<div class="displaymath">
+\begin{equation*}
+\RREF
+\left[\begin{array}{ccc|c}
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\end{array}\right]
+=
+\left[\begin{array}{ccc|c}
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\end{array}\right]
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-6"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-77">Use the \(\RREF\) matrix to write a linear system equivalent to the original system. Then find its solution set.</p></article></article><article class="activity project-like" id="activity-16"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-4">
+<p id="p-78">Consider the vector equation</p>
+<div class="displaymath">
+\begin{equation*}
+x_1 \left[\begin{array}{c} 3 \\ 2\\ -1 \end{array}\right]
++x_2 \left[\begin{array}{c}-2 \\ -2 \\ 0 \end{array}\right]
++x_3\left[\begin{array}{c} 13 \\ 10 \\ -3 \end{array}\right]
+=\left[\begin{array}{c} 6 \\ 2 \\ 1 \end{array}\right]
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-7"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-79">Convert this to an augmented matrix and use technology to compute its reduced row echelon form:</p>
+<div class="displaymath">
+\begin{equation*}
+\RREF
+\left[\begin{array}{ccc|c}
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\end{array}\right]
+=
+\left[\begin{array}{ccc|c}
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\end{array}\right]
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-8"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-80">Use the \(\RREF\) matrix to write a linear system equivalent to the original system. Then find its solution set.</p></article></article><article class="activity project-like" id="activity-17"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-5">
+<p id="p-81">Consider the following linear system.</p>
+<div class="displaymath">
+\begin{alignat*}{4}
+x_1 &amp;+ 2x_2 &amp;+ 3x_3 &amp;= 1\\
+2x_1 &amp;+ 4x_2 &amp;+ 8x_3 &amp;= 0
+\end{alignat*}
+</div>
+</div>
+<article class="task exercise-like" id="task-9"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-82">Find its corresponding augmented matrix \(A\) and use technology to find \(\RREF(A)\text{.}\)</p></article><article class="task exercise-like" id="task-10"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-83">How many solutions do these linear systems have?</p></article></article><article class="activity project-like" id="activity-18"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-6">
+<p id="p-84">Consider the simple linear system equivalent to the system from the previous activity:</p>
+<div class="displaymath">
+\begin{alignat*}{3}
+x_1 &amp;+ 2x_2 &amp; &amp;= 4\\
+&amp; &amp;\phantom{+}x_3 &amp;= -1
+\end{alignat*}
+</div>
+</div>
+<article class="task exercise-like" id="task-11"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-85">Let \(x_1=a\) and write the solution set in the form \(\setBuilder
+{
+\left[\begin{array}{c} a \\ \unknown \\ \unknown \end{array}\right]
+}{
+a \in \IR
+}
+\text{.}\)</p></article><article class="task exercise-like" id="task-12"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-86">Let \(x_2=b\) and write the solution set in the form \(\setBuilder
+{
+\left[\begin{array}{c} \unknown \\ b \\ \unknown \end{array}\right]
+}{
+b \in \IR
+}
+\text{.}\)</p></article><article class="task exercise-like" id="task-13"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-87">Which of these was easier?  What features of the RREF matrix \(\left[\begin{array}{ccc|c}
+\circledNumber{1} &amp; 2 &amp; 0 &amp; 4 \\
+0 &amp; 0 &amp; \circledNumber{1} &amp; -1
+\end{array}\right]\) caused this?</p></article></article><article class="definition definition-like" id="definition-8"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-88">Recall that the pivots of a matrix in \(\RREF\) form are the leading \(1\)s in each non-zero row.</p>
+<p id="p-89">The pivot columns in an augmented matrix correspond to the <dfn class="terminology">bound variables</dfn> in the system of equations (\(x_1,x_3\) below). The remaining variables are called <dfn class="terminology">free variables</dfn> (\(x_2\) below).</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc|c}
+\circledNumber{1} &amp; 2 &amp; 0 &amp; 4 \\
+0 &amp; 0 &amp; \circledNumber{1} &amp; -1
+\end{array}\right]
+\end{equation*}
+</div>
+<p id="p-90">To efficiently solve a system in RREF form, assign letters to the free variables, and then solve for the bound variables.</p></article><article class="activity project-like" id="activity-19"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span>
+</h6>
+<p id="p-91">Find the solution set for the system</p>
+<div class="displaymath">
+\begin{alignat*}{6}
+2x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;6x_3&amp;\,+\,&amp;x_4&amp;\,-\,&amp;x_5&amp;\,=\,&amp;3 \\
+-x_1&amp;\,+\,&amp;x_2&amp;\,+\,&amp;3x_3&amp;\,-\,&amp;x_4&amp;\,+\,&amp;2x_5 &amp;\,=\,&amp; -3 \\
+x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;x_3&amp;\,+\,&amp;x_4&amp;\,+\,&amp;x_5 &amp;\,=\,&amp; 2
+\end{alignat*}
+</div>
+<p data-braille="continuation">by row-reducing its augmented matrix, and then assigning letters to the free variables (given by non-pivot columns) and solving for the bound variables (given by pivot columns) in the corresponding linear system.</p></article><article class="observation remark-like" id="observation-2"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
+</h6>
+<p id="p-92">The solution set to the system</p>
+<div class="displaymath">
+\begin{alignat*}{6}
+2x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;6x_3&amp;\,+\,&amp;x_4&amp;\,-\,&amp;x_5&amp;\,=\,&amp;3 \\
+-x_1&amp;\,+\,&amp;x_2&amp;\,+\,&amp;3x_3&amp;\,-\,&amp;x_4&amp;\,+\,&amp;2x_5 &amp;\,=\,&amp; -3 \\
+x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;x_3&amp;\,+\,&amp;x_4&amp;\,+\,&amp;x_5 &amp;\,=\,&amp; 2
+\end{alignat*}
+</div>
+<p data-braille="continuation">may be written as</p>
+<div class="displaymath">
+\begin{equation*}
+\setBuilder
+{
+\left[\begin{array}{c}
+1+5a+2b \\
+1+2a+3b \\
+a \\
+3+3b \\
+b
+\end{array}\right]
+}{
+a,b\in \IR
+}\text{.}
+\end{equation*}
+</div></article><article class="remark remark-like" id="remark-7"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
+</h6>
+<p id="p-93">Don't forget to correctly express the solution set of a linear system. Systems with zero or one solutions may be written by listing their elements, while systems with infinitely-many solutions may be written using set-builder notation.</p>
+<ul class="disc">
+<li id="li-89"><p id="p-94"><em class="emphasis">Consistent with one solution</em>: e.g. \(\setList{ \left[\begin{array}{c}1\\2\\3\end{array}\right] }\)</p></li>
+<li id="li-90"><p id="p-95"><em class="emphasis">Consistent with infinitely-many solutions</em>: e.g. \(\setBuilder
+{
+\left[\begin{array}{c}1\\2-3a\\a\end{array}\right]
+}{
+a\in\IR
+}\)</p></li>
+<li id="li-91"><p id="p-96"><em class="emphasis">Inconsistent</em>: \(\emptyset\) or \(\{\}\)</p></li>
+</ul></article><section class="exercises" id="exercises-3"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">1.3.1</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-11"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-97">Show how to find the solution set for the following system of linear equations.</p>
+<div class="displaymath">
+\begin{alignat*}{5}
+x_{1} &amp;-&amp; 2 \, x_{2} &amp;-&amp; x_{3} &amp;+&amp; 3 \, x_{4} &amp;=&amp; 4\\
+2 \, x_{1} &amp;-&amp; 3 \, x_{2} &amp;-&amp; 3 \, x_{3} &amp;+&amp; 5 \, x_{4} &amp;=&amp; 6\\
+&amp;-&amp; 3 \, x_{2} &amp;+&amp; 3 \, x_{3} &amp;+&amp; 3 \, x_{4} &amp;=&amp; 6
+\end{alignat*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-11" id="answer-11"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-11"><div class="answer solution-like">
+<div class="displaymath">
+\begin{equation*}
+\mathrm{RREF} \left[\begin{array}{cccc|c}
+1 &amp; -2 &amp; -1 &amp; 3 &amp; 4 \\
+2 &amp; -3 &amp; -3 &amp; 5 &amp; 6 \\
+0 &amp; -3 &amp; 3 &amp; 3 &amp; 6
+\end{array}\right]  =  \left[\begin{array}{cccc|c}
+1 &amp; 0 &amp; -3 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; -1 &amp; -1 &amp; -2 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right] 
+\end{equation*}
+</div>
+<p id="p-98">The solution set is \(\left\{ \left[\begin{array}{c}
+3 \, a - b \\
+a + b - 2 \\
+a \\
+b
+\end{array}\right] \middle|\,a\text{\texttt{,}}b\in\mathbb{R}\right\} \)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-12"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-99">Show how to find the solution set for the following system of linear equations.</p>
+<div class="displaymath">
+\begin{alignat*}{4}
+x_{1} &amp; &amp;  &amp;-&amp; x_{3} &amp;=&amp; 4\\
+x_{1} &amp;+&amp; x_{2} &amp; &amp;  &amp;=&amp; 3\\
+x_{1} &amp;+&amp; x_{2} &amp;+&amp; x_{3} &amp;=&amp; -2\\
+&amp; &amp;  &amp; &amp; x_{3} &amp;=&amp; -4
+\end{alignat*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-12" id="answer-12"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-12"><div class="answer solution-like">
+<div class="displaymath">
+\begin{equation*}
+\mathrm{RREF} \left[\begin{array}{ccc|c}
+1 &amp; 0 &amp; -1 &amp; 4 \\
+1 &amp; 1 &amp; 0 &amp; 3 \\
+1 &amp; 1 &amp; 1 &amp; -2 \\
+0 &amp; 0 &amp; 1 &amp; -4
+\end{array}\right]  =  \left[\begin{array}{ccc|c}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right] 
+\end{equation*}
+</div>
+<p id="p-100">The solution set is \(\left\{\right\} \)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-13"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-101">Show how to find the solution set for the following system of linear equations.</p>
+<div class="displaymath">
+\begin{alignat*}{4}
+4 \, x_{1} &amp;+&amp; x_{2} &amp;+&amp; 7 \, x_{3} &amp;=&amp; 6\\
+-5 \, x_{1} &amp;-&amp; 4 \, x_{2} &amp;-&amp; 6 \, x_{3} &amp;=&amp; -2\\
+-x_{1} &amp;+&amp; x_{2} &amp;-&amp; 3 \, x_{3} &amp;=&amp; -4\\
+-3 \, x_{1} &amp; &amp;  &amp;-&amp; 6 \, x_{3} &amp;=&amp; -6
+\end{alignat*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-13" id="answer-13"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-13"><div class="answer solution-like">
+<div class="displaymath">
+\begin{equation*}
+\mathrm{RREF} \left[\begin{array}{ccc|c}
+4 &amp; 1 &amp; 7 &amp; 6 \\
+-5 &amp; -4 &amp; -6 &amp; -2 \\
+-1 &amp; 1 &amp; -3 &amp; -4 \\
+-3 &amp; 0 &amp; -6 &amp; -6
+\end{array}\right]  =  \left[\begin{array}{ccc|c}
+1 &amp; 0 &amp; 2 &amp; 2 \\
+0 &amp; 1 &amp; -1 &amp; -2 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right] 
+\end{equation*}
+</div>
+<p id="p-102">The solution set is \(\left\{ \left[\begin{array}{c}
+-2 \, a + 2 \\
+a - 2 \\
+a
+\end{array}\right] \middle|\,a\in\mathbb{R}\right\} \)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-14"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-103">Show how to find the solution set for the following system of linear equations.</p>
+<div class="displaymath">
+\begin{alignat*}{4}
+x_{1} &amp;-&amp; x_{2} &amp;-&amp; x_{3} &amp;=&amp; -6\\
+&amp; &amp; x_{2} &amp;-&amp; 3 \, x_{3} &amp;=&amp; 4\\
+&amp; &amp;  &amp; &amp; 0 &amp;=&amp; 1\\
+&amp; &amp; 2 \, x_{2} &amp;-&amp; 6 \, x_{3} &amp;=&amp; 7
+\end{alignat*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-14" id="answer-14"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-14"><div class="answer solution-like">
+<div class="displaymath">
+\begin{equation*}
+\mathrm{RREF} \left[\begin{array}{ccc|c}
+1 &amp; -1 &amp; -1 &amp; -6 \\
+0 &amp; 1 &amp; -3 &amp; 4 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 2 &amp; -6 &amp; 7
+\end{array}\right]  =  \left[\begin{array}{ccc|c}
+1 &amp; 0 &amp; -4 &amp; 0 \\
+0 &amp; 1 &amp; -3 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right] 
+\end{equation*}
+</div>
+<p id="p-104">The solution set is \(\left\{\right\} \)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-15"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-105">Show how to find the solution set for the following vector equation</p>
+<div class="displaymath">
+\begin{equation*}
+x_{1} \left[\begin{array}{c}
+-3 \\
+0 \\
+-1 \\
+-2
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+-1 \\
+1 \\
+0 \\
+-1
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+7 \\
+-5 \\
+3 \\
+7
+\end{array}\right] = \left[\begin{array}{c}
+1 \\
+6 \\
+0 \\
+-2
+\end{array}\right] .
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-15" id="answer-15"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-15"><div class="answer solution-like">
+<div class="displaymath">
+\begin{equation*}
+\mathrm{RREF} \left[\begin{array}{ccc|c}
+-3 &amp; -1 &amp; 7 &amp; 1 \\
+0 &amp; 1 &amp; -5 &amp; 6 \\
+-1 &amp; 0 &amp; 3 &amp; 0 \\
+-2 &amp; -1 &amp; 7 &amp; -2
+\end{array}\right]  =  \left[\begin{array}{ccc|c}
+1 &amp; 0 &amp; 0 &amp; -3 \\
+0 &amp; 1 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; -1 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right] 
+\end{equation*}
+</div>
+<p id="p-106">The solution set is \(\left\{ \left[\begin{array}{c}
+-3 \\
+1 \\
+-1
+\end{array}\right] \right\} \)</p>
+</div></div>
+</div></article><p id="p-107"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/E3/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+</div>
+</body>
+</html>
