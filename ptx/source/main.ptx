@@ -2,8 +2,7 @@
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude">
   <docinfo>
     <macros>
-\require{enclose}
-\newcommand{\circledNumber}[1]{\enclose{circle}{#1}}
+\newcommand{\circledNumber}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
@@ -16,38 +15,50 @@
     </macros>
     <latex-image-preamble>
 \usepackage{tikz}
-\newcommand{\require}[1]{}
-\newcommand{\enclose}[2]{\fbox{#2}}
       </latex-image-preamble>
   </docinfo>
   <book xml:id="linear-algebra-for-team-based-inquiry-learning">
     <title>Linear Algebra for Team-Based Inquiry Learning</title>
+
       <frontmatter xml:id="frontmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
-
     <titlepage>
-
         <author>
             <personname>Steven Clontz</personname>
             <department>Department of Mathematics and Statistics</department>
             <institution>University of South Alabama</institution>
             <email>steven.clontz@gmail.com</email>
         </author>
-
         <author>
             <personname>Drew Lewis</personname>
             <department>Department of Mathematics and Statistics</department>
             <institution>University of South Alabama</institution>
             <email>drewlewis@southalabama.edu</email>
         </author>
-
         <date><today /></date>
-
     </titlepage>
       </frontmatter>
+
     <xi:include href="01-E/main.ptx"/>
     <xi:include href="02-V/main.ptx"/>
     <xi:include href="03-A/main.ptx"/>
     <xi:include href="04-M/main.ptx"/>
     <xi:include href="05-G/main.ptx"/>
+
+    <backmatter xml:id="backmatter">
+  <title>Back Matter</title>
+
+        <appendix>
+            <title>Appendix</title>
+    <xi:include href="meta/sample-exercises.ptx"/>
+        </appendix>
+
+  <colophon>
+    <p>
+      This book was authored in <pretext />, and is the first book of the NSF-funded
+      <url href="https://sites.google.com/southalabama.edu/tbil">TBIL Resource Library</url>.
+    </p>
+  </colophon>
+</backmatter>
+
   </book>
 </pretext>

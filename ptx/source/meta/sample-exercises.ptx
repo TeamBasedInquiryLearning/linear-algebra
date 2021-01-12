@@ -1,0 +1,1116 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="sample-exercises" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Sample Exercises with Solutions</title>
+    <p>
+Here we model one exercise and solution for each learning objective.
+The goal is to give you an idea of what the expectations for a complete solution
+look like for each learning objective.
+    </p>
+
+    <exercise>
+        <title>E1 Example</title>
+        <statement>
+            <p>
+Consider the scalar system of equations 
+    <md alignment="alignat" alignat-columns="5">
+    <mrow>
+3x_1 &amp;\,+\,&amp; 2x_2 &amp;\,\,&amp; &amp;\,+\,&amp;x_4 &amp;= 1 </mrow><mrow>
+-x_1 &amp;\,-\,&amp; 4x_2 &amp;\,+\,&amp;x_3&amp;\,-\,&amp;7x_4 &amp;= 0 </mrow><mrow>
+        &amp;\,\,&amp; x_2 &amp;\,-\,&amp;x_3 &amp;\,\,&amp;  &amp;= -2</mrow>
+    </md>
+            </p>
+            <ol>
+                <li>
+Rewrite this system as a vector equation.
+                </li>
+                <li>
+Write an augmented matrix corresponding to this system.
+                </li>
+            </ol>
+        </statement>
+        <solution>
+            <ol>
+                <li>
+<me> x_1\left[\begin{array}{c} 3 \\ -1 \\ 0 \end{array}{}\right] +
+    x_2 \left[\begin{array}{c}2 \\ -4 \\ 1 \end{array}{}\right]+
+    x_3 \left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}{}\right] 
+    + x_4 \left[\begin{array}{c} 1 \\ -7 \\ 0 \end{array}{}\right] 
+    = \left[\begin{array}{c} 1 \\ 0 \\ -2 \end{array}{}\right] </me>
+                </li>
+                <li>
+<me>
+\left[\begin{array}{cccc|c}
+3 &amp; 2 &amp; 0 &amp; 1 &amp; 1 \\
+-1 &amp; -4 &amp; 1 &amp; -7 &amp; 0 \\
+0 &amp; 1 &amp; -1 &amp; 0 &amp; -2
+\end{array}\right]
+</me>
+                </li>
+            </ol>
+        </solution>
+</exercise>
+
+<exercise><title>E2 Example</title>
+<statement>
+    <ol>
+        <li>
+            <p>
+Show that 
+<me>\RREF 
+  \left[\begin{array}{c}
+  0 &amp; 3 &amp; 1 &amp; 2 \\
+  1 &amp; 2 &amp; -1 &amp; -3 \\
+  2 &amp; 4 &amp; -1 &amp; -1
+  \end{array}\right]
+  = \left[\begin{array}{c}
+  1 &amp; 0 &amp; 0 &amp; 4 \\
+  0 &amp; {1} &amp; 0 &amp; -1 \\
+  0 &amp; 0 &amp; {1} &amp; 5
+  \end{array}\right].
+</me>
+            </p>
+        </li>
+        <li>
+            <p>
+Explain why the matrix 
+<m>\left[\begin{array}{ccc}
+1 &amp; 1 &amp; 0 &amp; 3 \\
+0 &amp; 1 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]</m>
+is \textbf{not} in reduced row echelon form.
+            </p>
+        </li>
+    </ol>
+</statement>
+<solution>
+    <ol>
+        <li>
+    <md alignment="alignat" alignat-columns="4">
+    <mrow>
+  \left[\begin{array}{cccc}
+  0 &amp; 3 &amp; 1 &amp; 2 \\
+  1 &amp; 2 &amp; -1 &amp; -3 \\
+  2 &amp; 4 &amp; -1 &amp; -1
+  \end{array}\right]
+  &amp;\sim&amp;
+  \left[\begin{array}{cccc}
+  \circledNumber{1} &amp; 2 &amp; -1 &amp; -3 \\
+  0 &amp; 3 &amp; 1 &amp; 2 \\
+  2 &amp; 4 &amp; -1 &amp; -1
+  \end{array}\right] 
+        &amp;\hspace{0.2in} \text{Swap Rows 1 and 2}&amp; </mrow><mrow>
+  &amp;\sim&amp;
+  \left[\begin{array}{cccc}
+  \circledNumber{1} &amp; 2 &amp; -1 &amp; -3 \\
+  0 &amp; 3 &amp; 1 &amp; 2 \\
+  0 &amp; 0 &amp; 1 &amp; 5
+  \end{array}\right]
+  &amp;\hspace{0.2in} \text{Add <m>-2</m> Row 1 to Row 3}&amp; </mrow><mrow>
+  &amp;\sim&amp;
+  \left[\begin{array}{cccc}
+  \circledNumber{1} &amp; 2 &amp; -1 &amp; -3 \\
+  0 &amp; \circledNumber{1} &amp; \frac{1}{3} &amp; \frac{2}{3} \\
+  0 &amp; 0 &amp; 1 &amp; 5
+  \end{array}\right] 
+  &amp;\hspace{0.2in} \text{Multiply Row 3 by <m>\frac{1}{3}</m>}&amp; </mrow><mrow>
+  &amp;\sim&amp;
+  \left[\begin{array}{cccc}
+  \circledNumber{1} &amp; 0 &amp; -\frac{5}{3} &amp; -\frac{13}{3} \\
+  0 &amp; \circledNumber{1} &amp; \frac{1}{3} &amp; \frac{2}{3} \\
+  0 &amp; 0 &amp; \circledNumber{1} &amp; 5
+  \end{array}\right]
+        &amp;\hspace{0.2in} \text{Add <m>-2</m> Row 2 to Row 1}&amp; </mrow><mrow>
+  &amp;\sim&amp;
+  \left[\begin{array}{cccc}
+  \circledNumber{1} &amp; 0 &amp; -\frac{5}{3} &amp; -\frac{13}{3} \\
+  0 &amp; \circledNumber{1} &amp; 0 &amp; -1 \\
+  0 &amp; 0 &amp; \circledNumber{1} &amp; 5
+  \end{array}\right]
+  &amp;\hspace{0.2in} \text{Add <m>-\frac{1}{3}</m> Row 3 to Row 2}&amp; </mrow><mrow>
+  &amp;\sim&amp;
+  \left[\begin{array}{cccc}
+  \circledNumber{1} &amp; 0 &amp; 0 &amp; 4 \\
+  0 &amp; \circledNumber{1} &amp; 0 &amp; -1 \\
+  0 &amp; 0 &amp; \circledNumber{1} &amp; 5
+  \end{array}\right]
+  &amp;\hspace{0.2in} \text{Add <m>\frac{5}{3}</m> Row 3 to Row 1}&amp; </mrow>
+                </md>
+        </li>
+        <li>
+            <p>
+Circling our pivots, 
+<m>\left[\begin{array}{cccc}
+\circledNumber{1} &amp; 1 &amp; 0 &amp; 3 \\
+0 &amp; \circledNumber{1} &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]</m>
+we see that each pivot is a 1, they are in a descending staircase pattern, and the row(s) of zeroes is at the bottom. However, there is not a zero above the second pivot, so it is not in reduced row echelon form.
+            </p>
+        </li>
+    </ol>
+</solution>
+</exercise>
+
+<exercise><title>E3 Example</title>
+<statement>
+Show how to find the solution set for the following system of linear equations.
+    <md alignment="alignat" alignat-columns="4">
+        <mrow>
+2x&amp;\,+\,&amp;4y&amp;\,+\,&amp;z &amp;= 5 
+        </mrow>
+        <mrow>
+x&amp;\,+\,&amp;2y &amp;\,\,&amp; &amp;= 3
+        </mrow>
+    </md>
+</statement>
+<solution>
+    <p>
+First, note that this system corresponds to the matrix 
+<m> \left( \left[\begin{array}{ccc|c} 2 &amp; 4 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; 0 &amp; 3 \end{array}\right] \right)</m>.
+Then we compute (using technology) 
+<me>
+  \RREF \left(
+    \left[\begin{array}{ccc|c} 2 &amp; 4 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; 0 &amp; 3 \end{array}\right]
+  \right)
+    =
+  \left[\begin{array}{ccc|c} 1 &amp; 2 &amp; 0 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; -1\end{array}\right].
+</me>
+This corresponds to the system
+    <md alignment="alignat" alignat-columns="2">
+        <mrow>
+x\,+\,2y&amp;\,\,&amp;  &amp;= 3 
+        </mrow>
+        <mrow>
+  &amp;\,\,&amp; z&amp;= -1
+        </mrow>
+        </md>
+        </p>
+    <p>
+Since the <m>y</m>-column is a non-pivot column, it is a free variable, so we let <m>y=a</m>; then we have
+    <md alignment="alignat" alignat-columns="2">
+        <mrow>
+x&amp;\,+\,&amp;2y&amp;\,\,&amp;  &amp;= 3
+        </mrow>
+        <mrow>
+ &amp;\,\,&amp;y &amp;\,\,&amp; &amp;=a
+        </mrow>
+        <mrow>
+ &amp;\,\,&amp; &amp;\,\,&amp; z&amp;= -1.
+        </mrow>
+        </md>
+and thus
+        <md>
+            <mrow>
+x&amp;= 3-2a
+            </mrow>
+            <mrow>
+y&amp;= a
+            </mrow>
+            <mrow>
+z&amp;= -1
+            </mrow>
+        </md>
+So the solution set is
+<me>
+  \setBuilder{
+    \left[\begin{array}{c} 3-2a \\ a \\ -1 \end{array}\right]
+  }{
+    a \in \IR
+  }.
+</me>
+    </p>
+</solution>
+</exercise>
+
+
+<exercise><title>V1 Example</title>
+<statement>
+Let <m>V</m> be the set of all pairs of numbers <m>(x,y)</m> of real numbers together with the following operations:
+\begin{align*}
+(x_1,y_1) \oplus (x_2,y_2) &amp;= (2x_1+2x_2,2y_1+2y_2) \\
+c\odot (x,y) &amp;= (cx,c^2y)
+\end{align*}
+\begin{enumerate}[(a)]
+\item Show that scalar multiplication distributes over vector addition:
+<me>c\odot \left((x_1,y_1) \oplus (x_2,y_2) \right) = c \odot (x_1,y_1) \oplus c \odot (x_2,y_2)</me>
+\item Explain why <m>V</m> nonetheless is not a vector space.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item
+We compute both sides:
+\begin{align*}
+  c \odot \left((x_1,y_1) \oplus (x_2,y_2) \right)
+  &amp;= c \odot (2x_1+2x_2,2y_1+2y_2) \\
+  &amp;= (c(2x_1+2x_2),c^2(2y_1+2y_2)) \\
+  &amp;= (2cx_1+2cx_2,2c^2y_1+2c^2y_2)
+\end{align*}
+and
+\begin{align*}
+  c\odot (x_1,y_1) \oplus c \odot (x_2,y_2) 
+  &amp;= (cx_1,c^2y_1) \oplus (cx_2,c^2y_2)\\
+  &amp;= (2cx_1+2cx_2,2c^2y_1+2c^2y_2)
+\end{align*}
+Since these are the same, we have shown that the property holds.
+\item
+
+To show <m>V</m> is not a vector space, we must show that it fails one of the 8 defining properties of vector spaces.
+We will show that scalar multiplication does not distribute over scalar addition, i.e., there are values
+such that
+<me> (c+d)\odot(x,y) \neq c \odot(x,y) \oplus d\odot(x,y) </me>
+
+\textit{(Solution method 1)}
+First, we compute
+\begin{align*}
+(c+d)\odot(x,y) &amp;= ((c+d)x,(c+d)^2y) \\
+&amp;= ( (c+d)x, (c^2+2cd+d^2)y).
+\end{align*}
+Then we compute
+\begin{align*}
+c\odot (x,y) \oplus d\odot(x,y) &amp;= (cx,c^2y) \oplus (dx,d^2y) \\
+&amp;= ( 2cx+2dx, 2c^2y+2d^2y).
+\end{align*}
+Since <m>(c+d)x\not=2cx+2dy</m> when <m>c,d,x,y=1</m>, the property fails to hold.
+
+\textit{(Solution method 2)} When we let <m>c,d,x,y=1</m>, we may simplify both sides as follows.
+
+\begin{align*}
+(c+d)\odot(x,y) &amp;= 2\odot(1,1) \\
+&amp;= (2\cdot1,2^2\cdot1)\\
+&amp;=(2,4)
+\end{align*}
+\begin{align*}
+c\odot (x,y) \oplus d\odot(x,y) &amp;= 1\odot(1,1)\oplus 1\odot(1,1) \\
+&amp;= (1\cdot1,1^2\cdot1)\oplus(1\cdot1,1^2\cdot1)\\
+&amp;= (1,1)\oplus(1,1)\\
+&amp;= (2\cdot1+2\cdot1,2\cdot1+2\cdot1)\\
+&amp;= (4,4)\\
+\end{align*}
+Since these ordered pairs are different, the property fails to hold.
+\end{enumerate}
+</statement>
+<solution>
+</solution>
+</exercise>
+
+
+<exercise><title>V2 Example</title>
+<statement>
+Consider the statement
+\begin{center}\begin{minipage}{0.8\textwidth}
+The vector <m>\left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right] </m> is a linear combination of the vectors
+<m>\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] </m>,
+<m>\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] </m>, and
+<m>\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] </m>.
+\end{minipage}\end{center}
+\begin{enumerate}[(a)]
+\item Write an equivalent statement using a vector equation.
+\item Explain why your statement is true or false.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item By definition, the statement 
+\begin{center}\begin{minipage}{0.8\textwidth}
+The vector <m>\left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right] </m> is a linear combination of the vectors
+<m>\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] </m>,
+<m>\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] </m>, and
+<m>\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] </m>.
+\end{minipage}\end{center}
+is equivalent to the statement
+\begin{center}\begin{minipage}{0.8\textwidth}
+There exists a solution to the vector equation
+<m>x_1\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] +
+x_2\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] +
+x_3\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] =
+\left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right].</m>
+\end{minipage}\end{center}
+
+\item This vector equation corresponds to the augmented matrix 
+  <m>\left[\begin{array}{ccc|c}
+  1 &amp; 3 &amp; 1 &amp; 3 \\
+  0 &amp; 2 &amp; 1 &amp; -1 \\
+  1 &amp; -1 &amp; -1 &amp; 2
+  \end{array}\right]</m>.  Therefore, we compute
+<me> \RREF
+  \left[\begin{array}{ccc|c}
+  1 &amp; 3 &amp; 1 &amp; 3 \\
+  0 &amp; 2 &amp; 1 &amp; -1 \\
+  1 &amp; -1 &amp; -1 &amp; 2
+  \end{array}\right]
+  =
+  \left[\begin{array}{ccc|c}
+  1 &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
+  0 &amp; 1 &amp; \frac{1}{2} &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{array}\right].
+</me>
+Since this corresponds to an inconsistent system of equations, the vector equation
+<me>
+x_1\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] +
+x_2\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] +
+x_3\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] =
+\left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right] </me>
+has no solution, and therefore 
+<m>\left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right] </m> is 
+not a linear combination of <m>\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] </m>,
+<m>\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] </m>, and
+<m>\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] </m>.
+\end{enumerate}
+</statement>
+<solution>
+</solution>
+</exercise>
+
+<exercise><title>V3 Example</title>
+<statement>
+Consider the statement
+
+\begin{center}\begin{minipage}{0.8\textwidth}
+The set of vectors
+<m>\left\{\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] ,
+\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] , 
+\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] \right\}</m> \textbf{does not} span <m>\IR^3</m>.
+\end{minipage}\end{center}
+
+\begin{enumerate}[(a)]
+\item Write an equivalent statement using a vector equation.
+\item Explain why your statement is true or false.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\begin{enumerate}[(a)]
+\item By definition, the statement
+
+\begin{center}\begin{minipage}{0.8\textwidth}
+The set of vectors
+<m>\left\{\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] ,
+\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] , 
+\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] \right\}</m> \textbf{does not} span <m>\IR^3</m>.
+\end{minipage}\end{center}
+
+is equivalent to the statement
+
+\begin{center}\begin{minipage}{0.8\textwidth}
+There is some <m>\vec{v} \in \IR^3</m> for which the vector equation
+<m>x_1\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right]+  
+x_2 \left[\begin{array} 3 \\ 2 \\ -1 \end{array}\right]+
+x_3\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right]=\vec{v}</m> does not have a solution.
+\end{minipage}\end{center}
+
+\item 
+We compute
+<me> \RREF
+  \left[\begin{array}{ccc}
+  1 &amp; 3 &amp; 1  \\
+  0 &amp; 2 &amp; 1  \\
+  1 &amp; -1 &amp; -1
+  \end{array}\right]
+  =
+  \left[\begin{array}{ccc}
+  1 &amp; 0 &amp; -\frac{1}{2} \\
+  0 &amp; 1 &amp; \frac{1}{2} \\
+  0 &amp; 0 &amp; 0
+  \end{array}\right]
+</me>
+Since the last row lacks a pivot, there is some vector <m>\vec{v} \in \IR^3</m> that upon augmenting this matrix will produce
+an inconsistent system. That vector will not be in the span of these three vectors, so the vectors do not span <m>\IR^3</m>.
+\end{enumerate}
+</statement>
+<solution>
+</solution>
+</exercise>
+
+
+<exercise><title>V4 Example</title>
+<statement>
+Consider the following two sets of Euclidean vectors.
+<me>
+  W = \setBuilder{\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right] }{x+y=3z+2w}
+\hspace{3em}
+  U = \setBuilder{\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right]}{x+y=3z+w^2}
+</me>
+Explain why one of these sets is a subspace of <m>\IR^3</m>, and
+why the other is not.
+\end{problem}
+\begin{solution}
+
+To show that <m>W</m> is a subspace, let
+<m>
+  \vec v=\left[\begin{array}{c} x_1 \\y_1 \\ z_1 \\ w_1 \end{array}\right]\in W
+</m> and
+<m>
+  \vec w=\left[\begin{array}{c} x_2 \\y_2 \\ z_2 \\ w_2 \end{array}\right] \in W
+</m>,
+so we know that <m>x_1+y_1=3z_1+2w_1</m> and <m>x_2+y_2=3z_2+2w_2</m>.
+Consider
+<me>
+\left[\begin{array}{c} x_1 \\y_1 \\ z_1 \\ w_1\end{array}\right]
++\left[\begin{array}{c} x_2 \\y_2 \\ z_2 \\ w_2 \end{array}\right]
+=\left[\begin{array}{c} x_1+x_2 \\y_1+y_2 \\ z_1+z_2 \\w_1+w_2 \end{array}\right]
+.</me>
+To see if <m>\vec{v}+\vec{w} \in W</m>, we need to check if <m> (x_1+x_2)+(y_1+y_2) = 3(z_1+z_2)+2(w_1+w_2)</m>.
+We compute
+  \begin{align*}
+  (x_1+x_2)+(y_1+y_2) &amp;= (x_1+y_1)+(x_2+y_2) &amp;\text{by regrouping} \\
+  &amp;= (3z_1+2w_1)+(3z_2+2w_2) &amp; \text{since <m>\vec{v},\vec{w} \in W</m>} \\
+  &amp;=3(z_1+z_2)+2(w_1+w_2) &amp; \text{by regrouping.}
+  \end{align*}
+Thus <m>\vec v+\vec w\in W</m>, so <m>W</m> is closed under vector addition.
+
+Now consider
+<me>
+c\vec v
+=\left[\begin{array}{c} cx_1 \\cy_1 \\ cz_1 \\ cw_1 \end{array}\right]
+.</me>
+Similarly, to check that <m>c\vec{v} \in W</m>, we need to check if <m>cx_1+cy_1=3(cz_1)+2(cw_1)</m>, so we compute
+\begin{align*}
+cx_1+cy_1 &amp; = c(x_1+y_1) &amp;\text{by factoring} \\
+&amp;=c(3z_1+2w_1) &amp;\text{since <m>\vec{v} \in W</m>}\\
+&amp;=3(cz_1)+2(cw_1) &amp;\text{by regrouping}
+\end{align*}
+and we see that <m>c\vec v\in W</m>, so <m>W</m> is closed under scalar 
+multiplication. Therefore <m>W</m> is a subspace of <m>\IR^3</m>.
+
+Now, to show <m>U</m> is not a subspace, we will show that it is not closed under vector addition.
+
+
+\textit{(Solution Method 1)} Now let 
+<m>
+  \vec v=\left[\begin{array}{c} x_1 \\y_1 \\ z_1 \\ w_1 \end{array}\right]\in U
+</m> and
+<m>
+  \vec w=\left[\begin{array}{c} x_2 \\y_2 \\ z_2 \\ w_2 \end{array}\right] \in U
+</m>,
+so we know that <m>x_1+y_1=3z_1+w_1^2</m> and <m>x_2+y_2=3z_2+w_2^2</m>.
+Consider
+<me>\vec{v}+\vec{w}=
+\left[\begin{array}{c} x_1 \\y_1 \\ z_1 \\ w_1\end{array}\right]
++\left[\begin{array}{c} x_2 \\y_2 \\ z_2 \\ w_2 \end{array}\right]
+=\left[\begin{array}{c} x_1+x_2 \\y_1+y_2 \\ z_1+z_2 \\w_1+w_2 \end{array}\right]
+.</me>
+To see if <m>\vec{v}+\vec{w} \in U</m>, we need to check if <m> (x_1+x_2)+(y_1+y_2) = 3(z_1+z_2)+(w_1+w_2)^2</m>.
+We compute
+\begin{align*}
+  (x_1+x_2)+(y_1+y_2) &amp;= (x_1+y_1)+(x_2+y_2) &amp;\text{by regrouping} \\
+  &amp;= (3z_1+w_1^2)+(3z_2+w_2^2) &amp;\text{since <m>\vec{v},\vec{w} \in W</m>}\\
+  &amp;=3(z_1+z_2)+(w_1^2+w_2^2) &amp;\text{by regrouping}
+\end{align*}
+and thus <m>\vec v+\vec w\in U</m> \textbf{only when} <m>w_1^2+w_2^2=(w_1+w_2)^2</m>.
+Since this is not true in general, <m>U</m> is not closed under vector addition, and thus cannot be a subspace.
+
+\textit{(Solution Method 2)}
+Note that the vector
+<m>
+  \vec v=\left[\begin{array}{c} 0\\1\\0\\1\end{array}\right] 
+</m>
+belongs to <m>U</m> since <m>0+1=3(0)+1^2</m>.
+However, the vector
+<m>
+  2\vec v=\left[\begin{array}{c} 0\\2\\0\\2\end{array}\right] 
+</m>
+does not belong to <m>U</m> since <m>0+2\not=3(0)+2^2</m>.
+Therefore <m>U</m> is not closed under scalar multiplication,
+and thus is not a subspace.
+
+
+
+</statement>
+<solution>
+</solution>
+</exercise>
+
+
+<exercise><title>V5 Example</title>
+<statement>
+Consider the statement
+
+\begin{center}\begin{minipage}{0.8\textwidth}
+The set of vectors
+<m>\left\{
+ \left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right]  ,
+ \left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right]  ,
+ \left[\begin{array}{c} 0 \\ 1 \\ -1 \\ 1 \end{array}\right]  , 
+ \left[\begin{array}{c} 2 \\ 5 \\ 1 \\ 5 \end{array}\right] \right\}</m>
+is linearly dependent.
+\end{minipage}\end{center}
+\begin{enumerate}[(a)]
+\item Write an equivalent statement using a vector equation.
+\item Explain why your statement is true or false.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item 
+The statement
+\begin{center}\begin{minipage}{0.8\textwidth}
+The set of vectors
+<m>\left\{
+ \left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right]  ,
+ \left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right]  ,
+ \left[\begin{array}{c} 0 \\ 1 \\ -1 \\ 1 \end{array}\right]  , 
+ \left[\begin{array}{c} 2 \\ 5 \\ 1 \\ 5 \end{array}\right] \right\}</m>
+is linearly dependent.
+\end{minipage}\end{center}
+is equivalent to the statement
+\begin{center}\begin{minipage}{0.8\textwidth}
+The vector equation
+<m> x_1\left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right] +
+ x_2\left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right] +
+ x_3\left[\begin{array}{c} 0 \\ 1 \\ -1 \\ 1 \end{array}\right]+ 
+ x_4\left[\begin{array}{c} 2 \\ 5 \\ 1 \\ 5 \end{array}\right] =\vec{0}</m>
+has (infintely many) nontrivial solutions. 
+\end{minipage}\end{center}
+
+\item Converting the left side of this system to the corresponding matrix and row reducing, we have
+<me>\RREF \left[\begin{array}{cccc} 3 &amp; -1 &amp; 0 &amp; 2  \\ 2 &amp; 1 &amp; 1 &amp; 5  \\ 1 &amp; 2 &amp; -1 &amp; 1  \\ 0 &amp; 3 &amp; 1 &amp; 5 \end{array}\right] =
+\left[\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 1  \\ 0 &amp; 1 &amp; 0 &amp; 1  \\ 0 &amp; 0 &amp; 1 &amp; 2  \\ 0 &amp; 0 &amp; 0 &amp; 0  \end{array}\right].</me> 
+Since the fourth column is not a pivot column, the system has (infinitely many) nontrivial solutions.
+Thus the set of vectors is linearly dependent.
+\end{enumerate}
+</statement>
+<solution>
+</solution>
+</exercise>
+
+<exercise><title>V6 Example</title>
+<statement>
+Consider the statement
+
+\begin{center}\begin{minipage}{0.8\textwidth}
+The set of vectors <m> \left\{
+ \left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right] ,
+ \left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right] ,
+ \left[\begin{array}{c} 0 \\ 1 \\ -1 \\ 1 \end{array}\right] ,
+ \left[\begin{array}{c} 2 \\ 5 \\ 1 \\ 5 \end{array}\right] \right\} </m>
+is a basis of <m>\IR^4</m>.
+\end{minipage}\end{center}
+\begin{enumerate}[(a)]
+\item Write an equivalent statement in terms of other vector properties.
+\item Explain why your statement is true or false.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item This statement is equivalent to the statement
+\begin{center}\begin{minipage}{0.8\textwidth}
+The set of vectors <m> \left\{
+ \left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right] ,
+ \left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right] ,
+ \left[\begin{array}{c} 0 \\ 1 \\ -1 \\ 1 \end{array}\right] ,
+ \left[\begin{array}{c} 2 \\ 5 \\ 1 \\ 5 \end{array}\right] \right\} </m>
+is both linearly independent and spans <m>\IR^4</m>.
+\end{minipage}\end{center}
+\item
+Compute
+<me>\RREF \left[\begin{array}{c} 3 &amp; -1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; 3 &amp; 1 &amp; 5 \end{array}\right] =
+\left[\begin{array}{c} 1 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right].</me>
+Since the fourth column is not a pivot column, the vectors are linearly
+dependent and thus not a basis of <m>\IR^4</m>.
+
+(Alternate solution:)
+Since the fourth row is not a pivot row, the vectors do not span
+<m>\IR^4</m> and thus are not a basis of <m>\IR^4</m>.
+\end{enumerate}
+</statement>
+<solution>
+</solution>
+</exercise>
+
+
+<exercise><title>V7 Example</title>
+<statement>
+Consider the subspace 
+<me>
+  W = \vspan \left\{
+  \left[\begin{array}{c} 1 \\ -3 \\ -1 \\ 2 \end{array}\right] ,
+  \left[\begin{array}{c} 1 \\ 0 \\ 1 \\ -2 \end{array}\right] ,
+  \left[\begin{array}{c} 3 \\ -6 \\ -1 \\ 2 \end{array}\right] ,
+  \left[\begin{array}{c} 1 \\ 6 \\ 1 \\ -1 \end{array}\right] ,
+  \left[\begin{array}{c} 2 \\ 3 \\ 0 \\ 1 \end{array}\right]
+  \right\} .
+</me>
+\begin{enumerate}[(a)]
+\item Explain how to find a basis of <m>W</m>.
+\item Explain how to find the dimension of <m>W</m>.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item Observe that
+<me> \RREF
+    \left[\begin{array}{ccccc}
+    1 &amp; 1 &amp; 3 &amp; 1 &amp; 2 \\
+    -3 &amp; 0 &amp; -6 &amp; 6 &amp; 3 \\
+    -1 &amp; 1 &amp; -1 &amp; 1 &amp; 0 \\
+    2 &amp; -2 &amp; 2 &amp; -1 &amp; 1
+    \end{array}\right] =
+    \left[\begin{array}{ccccc}
+    1 &amp; 0 &amp; 2 &amp; 0 &amp; 1 \\
+    0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \\
+    0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+    \end{array}\right]
+</me>
+If we remove the vectors yielding non-pivot columns, the resulting
+set will span the same vectors while being linearly independent.
+Therefore
+<me>\left\{
+  \left[\begin{array}{c} 1 \\ -3 \\ -1 \\ 2 \end{array}\right] ,
+  \left[\begin{array}{c} 1 \\ 0 \\ 1 \\ -2 \end{array}\right] ,
+  \left[\begin{array}{c} 1 \\ 6 \\ 1 \\ -1 \end{array}\right]
+  \right\}
+</me>
+is a basis of <m>W</m>. 
+\item Since this (and thus every other) basis has three vectors in it, the dimension of <m>W</m> is <m>3</m>.
+\end{enumerate}
+</statement>
+<solution>
+</solution>
+</exercise>
+
+<exercise><title>V8 Example</title>
+<statement>
+Consider the statment
+\begin{center}\begin{minipage}{0.8\textwidth}
+The set of polynomials <m>\setList{3x^3+2x^2+x,-x^3+x^2+2x+3,x^2-x+1,2x^3+5x^2+x+5}</m> is linearly independent.
+\end{minipage}\end{center}
+\begin{enumerate}[(a)]
+\item Write an equivalent statement using a polynomial equation.
+\item Explain why your statement is true or false.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item This statement is equivalent to the statement
+\begin{center}\begin{minipage}{0.8\textwidth}
+The polynomial equation <m> y_1(3x^3+2x^2+x) + y_2(-x^3+x^2+2x+3)+y_3(x^2-x+1)+y_4(2x^3+5x^2+x+5)=0</m> has no nontrivial solutions.
+\end{minipage}\end{center}
+\item
+This polynomial equation corresponds to the system of equations
+\begin{alignat*}{5}
+3y_1 &amp;-&amp; y_2 &amp; &amp; &amp;+&amp; 2y_4 &amp;=&amp; 0 \\
+2y_1 &amp;+&amp; y_2 &amp;+&amp; y_3 &amp;+&amp; 5y_4 &amp;=&amp; 0 \\
+ y_1 &amp;+&amp; 2y_2 &amp;-&amp; y_3 &amp;+&amp; y_4 &amp;=&amp; 0 \\
+&amp; &amp; 3y_2 &amp;+&amp; y_3 &amp;+&amp; 5y_4 &amp;=&amp; 0 
+\end{alignat*}
+which corresponds to the augmented matrix <m>\left[\begin{array}{cccc} 3 &amp; -1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; 3 &amp; 1 &amp; 5 \end{array}\right]</m>. So we compute
+<me>\RREF \left[\begin{array}{cccc} 3 &amp; -1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; 3 &amp; 1 &amp; 5 \end{array}\right] =
+\left[\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right].</me>
+Since the fourth column is not a pivot column, there are (infinitely many) nontrivial solutions. Thus, the set <m> \setList{3x^3+2x^2+x,-x^3+x^2+2x+3,x^2-x+1}</m> is linearly dependent.
+\end{enumerate}
+</statement>
+<solution>
+</solution>
+</exercise>
+
+<exercise><title>V9 Example</title>
+<statement>
+Consider the homogeneous system of equations
+\begin{alignat*}{6}
+x_1 &amp;\,+\,&amp; x_2 &amp;\,+\,&amp; 3x_3 &amp;\,+\,&amp; x_4 &amp;\,+\,&amp; 2x_5 &amp;=&amp; 0 \\
+-3x_1 &amp;\,\,&amp;  &amp;\,-\,&amp; 6x_3 &amp;\,+\,&amp;6 x_4 &amp;\,+\,&amp; 3x_5 &amp;=&amp; 0 \\
+-x_1 &amp;\,+\,&amp; x_2 &amp;\,-\,&amp; x_3 &amp;\,+\,&amp; x_4 &amp;\,\,&amp;  &amp;=&amp; 0 \\
+2x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 2x_3 &amp;\,-\,&amp; x_4 &amp;\,+\,&amp; x_5 &amp;=&amp; 0 .
+\end{alignat*}
+\begin{enumerate}[(a)]
+\item Find the solution space of the system.
+\item Find a basis of the solution space.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item Observe that
+<me> \RREF
+    \left[\begin{array}{ccccc|c}
+    1 &amp; 1 &amp; 3 &amp; 1 &amp; 2 &amp; 0\\
+    -3 &amp; 0 &amp; -6 &amp; 6 &amp; 3 &amp; 0\\
+    -1 &amp; 1 &amp; -1 &amp; 1 &amp; 0 &amp; 0\\
+    2 &amp; -2 &amp; 2 &amp; -1 &amp; 1&amp; 0
+    \end{array}\right] =
+    \left[\begin{array}{ccccc|c}
+    1 &amp; 0 &amp; 2 &amp; 0 &amp; 1 &amp;0\\
+    0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp;0\\
+    0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp;0\\
+    0 &amp; 0 &amp; 0 &amp; 0 &amp; 0&amp;0
+    \end{array}\right]
+</me>
+
+Letting <m>x_3=a</m> and <m>x_5=b</m>
+(since those correspond to the non-pivot columns),
+this is equivalent to the system
+
+\begin{alignat*}{6}
+x_1 &amp;\,\,&amp;  &amp;\,+\,&amp; 2x_3 &amp;\,\,&amp;  &amp;\,+\,&amp; x_5 &amp;=&amp; 0 \\
+ &amp;\,\,&amp; x_2 &amp;\,+\,&amp; x_3 &amp;\,\,&amp; &amp;\,\,&amp;  &amp;=&amp; 0 \\
+ &amp;\,\,&amp;  &amp;\,\,&amp; x_3 &amp;\,\,&amp;  &amp;\,\,&amp;  &amp;=&amp; a \\
+ &amp;\,\,&amp;  &amp;\,\,&amp;  &amp;\,\,&amp; x_4 &amp;\,+\,&amp; x_5 &amp;=&amp; 0 \\
+ &amp;\,\,&amp;  &amp;\,\,&amp;  &amp;\,\,&amp;  &amp;\,\,&amp; x_5 &amp;=&amp; b \\
+\end{alignat*}
+
+Thus, the solution set is
+<me> \setBuilder{\left[\begin{array}{c} -2a-b \\ -a \\ a \\ -b \\ b \end{array}\right]}{a,b \in \IR} .</me>
+
+\item Since we can write <me>\left[\begin{array}{c} -2a-b \\ -a \\ a \\ -b \\ b \end{array}\right] = a \left[\begin{array}{c} -2 \\ -1 \\ 1 \\ 0 \\ 0 \end{array}\right] + b \left[\begin{array}{c} -1 \\ 0 \\ 0 \\ -1 \\ 1 \end{array}\right], </me>
+a basis for the solution space is
+<me> \left \{ \left[\begin{array}{c} -2 \\ -1 \\ 1 \\ 0 \\ 0 \end{array}\right] , \left[\begin{array}{c} -1 \\ 0 \\ 0 \\ -1 \\ 1 \end{array}\right] \right\}.</me>
+\end{enumerate}
+</statement>
+<solution>
+</solution>
+</exercise>
+
+<exercise><title>A1 Example</title>
+<statement>
+Consider the following maps of polynomials <m>S: \P \rightarrow \P</m>
+and <m>T:\P\rightarrow\P</m> defined by
+<me>S(f(x))= 3xf(x) \text{ and }T(f(x)) = 3f'(x)f(x).</me>
+Explain why one of these maps is a linear transformation, and why the other
+map is not.
+\end{problem}
+\begin{solution}
+To show <m>S</m> is a linear transformation, we must show two things:
+\begin{align*}
+&amp;S\left(f(x)+g(x)\right)=S(f(x))+s(g(x)) \\
+&amp;S(cf(x)) = cS(f(x))
+\end{align*}
+
+To show <m>S</m> respects addition, we compute
+\begin{align*}
+S\left(f(x)+g(x)\right) &amp;= 3x\left(f(x)+g(x)\right) &amp; \text{by definition of <m>S</m>} \\
+&amp;= 3xf(x)+3xg(x) &amp; \text{by distributing}
+\end{align*}
+But note that <m>S(f(x))=3xf(x)</m> and <m>S(g(x))=3xg(x)</m>, so we have <m>S(f(x)+g(x))=S(f(x))+S(g(x))</m>.
+
+For the second part, we compute
+\begin{align*}
+S\left(cf(x)\right) &amp;= 3x\left(cf(x)\right) &amp; \text{by definition of <m>S</m>} \\
+&amp;= 3cxf(x) &amp; \text{rewriting the multiplication.}
+\end{align*}
+But note that <m>cS(f(x))=c(3xf(x))=3cxf(x)</m> as well, so we have <m>S(cf(x))=cS(f(x))</m>.  Now, since <m>S</m> respects both addition and scalar multiplication, we can conclude <m>S</m> is a linear transformation.
+
+\textit{(Solution method 1)}
+As for <m>T</m>, we compute
+  \begin{align*}
+  T(f(x)+g(x))&amp; =3 (f(x)+g(x))'(f(x)+g(x)) &amp;\text{by definition of <m>T</m>} \\
+  &amp;= 3(f'(x)+g'(x))(f(x)+g(x)) &amp; \text{since the derivative is linear} \\
+  &amp;= 3f(x)f'(x)+3f(x)g'(x)+3f'(x)g(x)+3g(x)g'(x) &amp;\text{by distributing}
+  \end{align*}
+However, note that <m>T(f(x))+T(g(x))=3f'(x)f(x)+3g'(x)g(x)</m>, which is not
+always the same polynomial (for example, when <m>f(x)=g(x)=x</m>). 
+So we see that <m>T(f(x)+g(x)) \neq T(f(x))+T(g(x))</m>,
+so <m>T</m> does not respect addition and is therefore not a linear transformation.
+
+\textit{(Solution method 2)}
+As for <m>T</m>, we may choose the polynomial <m>f(x)=x</m> and scalar <m>c=2</m>. Then
+<me>T(cf(x))=T(2x)=3(2x)'(2x)=3(2)(2x)=12x.</me>
+
+But on the other hand, <me>cT(f(x))=2T(x)=2(3)(x)'(x)=2(3)(1)(x)=6x.</me>
+Since this isn't the same polynomial, <m>T</m> does not preserve multiplication
+and is therefore not a linear transformation. 
+</statement>
+<solution>
+</solution>
+</exercise>
+
+<exercise><title>A2 Example</title>
+<statement>
+\begin{enumerate}[(a)]
+\item Find the standard matrix for the linear transformation <m>T: \IR^3\rightarrow \IR^4</m> given by <me>T\left(\left[\begin{array}{c} x \\ y \\ z \\  \end{array}\right] \right) = \left[\begin{array}{c} -x+y \\ -x+3y-z \\ 7x+y+3z \\ 0 \end{array}\right].</me>
+\item Let <m>S: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix <me>\left[\begin{array}{c} 2 &amp; 3 &amp; 4 &amp; 1 \\ 0 &amp; 1 &amp; -1 &amp; -1 \\ 3 &amp; -2 &amp; -2 &amp; 4 \end{array}\right].</me>
+Compute  <m> S\left( \left[\begin{array}{c} -2 \\ 1 \\ 3 \\ 2\end{array}\right] \right) </m>.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\begin{enumerate}[(a)]
+\item Since
+\begin{align*}
+T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0  \end{array}\right]\right) &amp;= \left[\begin{array}{c} -1 \\ -1 \\ 7 \\0\end{array}\right] &amp;
+T\left(\left[\begin{array}{c} 0 \\ 1 \\ 0 \end{array}\right]\right) &amp;= \left[\begin{array}{c} 1 \\ 3 \\ 1 \\0 \end{array}\right]  &amp;
+T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right]\right) &amp;= \left[\begin{array}{c} 0 \\ -1 \\ 3 \\ 0  \end{array}\right], 
+\end{align*}
+the standard matrix for <m>T</m> is <m> \left[\begin{array}{c} -1 &amp; 1 &amp; 0 \\ -1 &amp; 3 &amp; -1 \\ 7 &amp; 1 &amp; 3  \\ 0 &amp; 0 &amp; 0 \end{array}\right] </m>.
+\item <me>
+S\left(\left[\begin{array}{c} -2 \\ 1 \\ 3 \\ 2 \end{array}\right] \right) = -2S(\vec{e}_1)+S(\vec{e}_2)+3S(\vec{e_3})+2S(\vec{e_4})
+= -2 \left[\begin{array}{c} 2 \\ 0 \\ 3 \end{array}\right] + \left[\begin{array}{c} 3 \\ 1 \\ -2 \end{array}\right] + 3 \left[\begin{array}{c} 4 \\ -1 \\ -2 \end{array}\right]+2\left[\begin{array}{c} 1 \\ -1 \\ 4 \end{array}\right] 
+= \left[\begin{array}{c} 13 \\ -4 \\ -6\end{array}\right]. </me>
+\end{enumerate}
+</statement>
+<solution>
+</solution>
+</exercise>
+
+<exercise><title>A3 Example</title>
+<statement>
+Let <m>T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by
+<me>
+  T\left(\left[\begin{array}{c}x\\y\\z\\w\end{array}\right] \right) =
+  \left[\begin{array}{c}
+    x+3y+2z-3w \\
+    2x+4y+6z-10w \\
+    x+6y-z+3w
+  \end{array}\right]
+</me>
+\begin{enumerate}[(a)]
+\item Explain how to find the image of <m>T</m> and the kernel of <m>T</m>. 
+\item Explain how to find a basis of the image of <m>T</m> and a basis of the kernel of <m>T</m>. 
+\item Explain how to find the rank and nullity of T, and why the rank-nullity theorem holds for T.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item 
+<me> \Im(T) = T\left(\vspan\left\{\vec{e}_1,\vec{e}_2,\vec{e}_3,\vec{e_4}\right\}\right)
+= \vspan\left\{T(\vec{e}_1),T(\vec{e}_2),T(\vec{e}_3),T(\vec{e_4})\right\}
+= \vspan\left\{\left[\begin{array}{c}1 \\ 2 \\ 1 \end{array}\right], \left[\begin{array}{c} 3 \\ 4 \\ 6  \end{array}\right], \left[\begin{array}{c} 2 \\ 6 \\ -1 \end{array}\right], \left[\begin{array}{c} -3 \\ -10 \\ 3 \end{array}\right]\right\}.</me>
+
+The kernel is the solution set of the corresponding homogeneous system of equations, i.e.  
+\begin{alignat*}{5}
+x &amp;+&amp; 3y &amp;+&amp; 2z &amp;-&amp; 3w &amp;=&amp; 0 \\
+2x &amp;+&amp; 4y &amp;+&amp; 6z &amp;-&amp; 10w &amp;=&amp; 0 \\
+x &amp;+&amp; 6y &amp;-&amp; z &amp;+&amp; 3w &amp;=&amp; 0 .
+\end{alignat*}
+So we compute 
+<me>\RREF\left[\begin{array}{cccc|c} 1 &amp; 3 &amp; 2 &amp; -3 &amp; 0 \\ 2 &amp; 4 &amp; 6 &amp; -10 &amp;0 \\ 1 &amp; 6 &amp; -1 &amp; 3 &amp; 0 \end{array}\right]
+= \left[\begin{array}{cccc|c} 1 &amp; 0 &amp; 5 &amp; -9 &amp; 0 \\ 0 &amp; 1 &amp; -1 &amp; 2 &amp; 0  \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right].</me>
+Then, letting <m>z=a</m> and <m>w=b</m> we have
+<me> \ker T = \setBuilder{\left[\begin{array}{c}-5a+9b \\ a-2b \\ a \\ b \end{array}\right]}{a,b \in \IR}. </me>
+
+\item Since 
+<m>\Im(T) = \vspan\left\{\left[\begin{array}{c}1 \\ 2 \\ 1 \end{array}\right], \left[\begin{array}{c} 3 \\ 4 \\ 6  \end{array}\right], \left[\begin{array}{c} 2 \\ 6 \\ -1 \end{array}\right], \left[\begin{array}{c} -3 \\ -10 \\ 3 \end{array}\right]\right\}</m>, we simply need to find a linearly independent subset of these four spanning vectors. So we compute 
+<me>\RREF \left[\begin{array}{c}1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]
+= \left[\begin{array}{c} 1 &amp; 0 &amp; 5 &amp; -9 \\ 0 &amp; 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right].</me>
+Since the first two columns are pivot columns, they form a linearly independent spanning set, so a basis for <m>\Im T</m> is <m>\setList{\left[\begin{array}{c}1\\2\\1 \end{array}\right], \left[\begin{array}{c}3\\4\\6 \end{array}\right]}.</m>
+
+To find a basis for the kernel, note that 
+<me> \ker T = \setBuilder{\left[\begin{array}{c}-5a+9b \\ a-2b \\ a \\ b \end{array}\right]}{a,b \in \IR} 
+= \setBuilder{a \left[\begin{array}{c}-5 \\ 1 \\ 1  \\ 0 \end{array}\right]+b \left[\begin{array}{c} 9 \\ -2 \\ 0 \\ 1 \end{array}\right]}{a,b \in \IR}
+= \vspan\left\{ \left[\begin{array}{c} -5 \\ 1 \\ 1 \\ 0 \end{array}\right], \left[\begin{array}{c} 9 \\ -2 \\ 0 \\ 1 \end{array}\right]\right\}.</me>
+so a basis for the kernel is
+<me>\setList{\left[\begin{array}{c}-5 \\ 1 \\ 1 \\ 0 \end{array}\right],
+\left[\begin{array}{c}9 \\ -2 \\ 0 \\ 1 \end{array}\right]}.</me>
+\item The dimension of the image (the rank) is <m>2</m>, the dimension of the kernel (the nullity) is <m>2</m>, and the dimension of the domain of <m>T</m> is <m>4</m>, so we see <m>2+2=4</m>, which verifies that the sum of the rank and nullity of <m>T</m> is the dimension of the domain of <m>T</m>.
+\end{enumerate}
+</statement>
+<solution>
+</solution>
+</exercise>
+
+<exercise><title>A4 Example</title>
+<statement>
+Let <m>T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix <m>\left[\begin{array}{cccc} 1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]</m>.
+\begin{enumerate}[(a)]
+\item Explain why <m>T</m> is or is not injective.
+\item Explain why <m>T</m> is or is not surjective.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+Compute <me>\RREF\left[\begin{array}{cccc}1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right] = \left[\begin{array}{cccc} 1 &amp; 0 &amp; 5 &amp; -9 \\ 0 &amp; 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right].</me>
+\begin{enumerate}[(a)]
+\item Note that the third and fourth columns are non-pivot columns, which means <m>\ker T</m> contains infinitely many vectors, so <m>T</m> is not injective.
+\item Since there are only two pivots, the image (i.e. the span of the columns) is a 2-dimensional subspace (and thus does not equal <m>\IR^3</m>), so <m>T</m> is not surjective.
+\end{enumerate}
+</statement>
+<solution>
+</solution>
+</exercise>
+
+
+
+<exercise><title>M1 Example</title>
+<statement>
+Of the following three matrices, only two may be multiplied.
+\begin{align*}
+A &amp;= \left[\begin{array}{cc} 1 &amp; -3 \\ 0 &amp; 1 \end{array}\right] &amp; B&amp;= \left[\begin{array}{ccc} 4 &amp; 1 &amp; 2 \end{array}\right] &amp; C&amp;= \left[\begin{array}{ccc} 0 &amp; 1 &amp; 3 \\ 1 &amp; -2 &amp; 5 \end{array}\right]
+\end{align*}
+Explain which two may be multiplied and why. Then show how to find their product.
+\end{problem}
+\begin{solution}
+<m>AC</m> is the only one that can be computed, since <m>A</m> is <m>2\times 2</m>
+and <m>C</m> is <m>2\times 3</m>. Thus <m>AC</m> will be the <m>2\times 3</m> matrix
+given by
+\begin{align*}
+AC\left( \vec{e}_1 \right) &amp;= A \left( \left[\begin{array}{c} 0 \\ 1 \end{array}\right] \right) = 0 \left[\begin{array}{c} 1 \\ 0 \end{array}\right] + 1\left[\begin{array}{c} -3 \\ 1 \end{array}\right] = \left[\begin{array}{c} -3 \\ 1 \end{array}\right] \\
+AC\left( \vec{e}_2 \right) &amp;= A \left( \left[\begin{array}{c} 1 \\ -2 \end{array}\right] \right) = 1 \left[\begin{array}{c} 1 \\ 0 \end{array}\right] -2\left[\begin{array}{c} -3 \\ 1 \end{array}\right] = \left[\begin{array}{c} 7 \\ -2 \end{array}\right] \\
+AC\left( \vec{e}_3 \right) &amp;= A \left( \left[\begin{array}{c} 3 \\ 5 \end{array}\right] \right) = 3 \left[\begin{array}{c} 1 \\ 0 \end{array}\right] + 5\left[\begin{array}{c} -3 \\ 1 \end{array}\right] = \left[\begin{array}{c} -12 \\ 5 \end{array}\right] \\
+\end{align*}
+Thus
+<me>AC = \left[\begin{array}{ccc} -3 &amp; 7 &amp; -12 \\ 1 &amp; -2 &amp; 5 \end{array}\right].</me>
+</statement>
+<solution>
+</solution>
+</exercise>
+
+<exercise><title>M2 Example</title>
+<statement>
+Explain why the matrix <m>\left[\begin{array}{ccc}1 &amp; 3 &amp; 2  \\ 2 &amp; 4 &amp; 6  \\ 1 &amp; 6 &amp; -1 \end{array}\right]</m> is or is not invertible.
+\end{problem}
+\begin{solution}
+We compute
+<me>\RREF\left(\left[\begin{array}{ccc}1 &amp; 3 &amp; 2  \\ 2 &amp; 4 &amp; 6  \\ 1 &amp; 6 &amp; -1 \end{array}\right]\right) = \left[\begin{array}{ccc} 1 &amp; 0 &amp; 5 \\ 0 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 \end{array}\right].</me>
+Since its <m>\RREF</m> is not the identity matrix, the linear map is not bijective and thus the matrix is not invertible.
+</statement>
+<solution>
+</solution>
+</exercise>
+
+<exercise><title>M3 Example</title>
+<statement>
+Show how to compute the inverse of the matrix
+<m>A=\left[\begin{array}{cccc}
+1 &amp; 2 &amp; 3 &amp; 5 \\ 0 &amp; -1 &amp; 4 &amp; -2 \\ 0 &amp; 0 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]</m>.
+\end{problem}
+\begin{solution}
+To find the matrix <m>A^{-1}</m> where <m>AA^{-1}=I</m>, we need to solve the augmented matrix <m>[A|I]</m>.
+<me>\RREF\left(\left[\begin{array}{cccc|cccc} 1 &amp; 2 &amp; 3 &amp; 5 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\ 0 &amp; -1 &amp; 4 &amp; -2 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 3 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]\right) = \left[\begin{array}{cccc|cccc} 1 &amp; 0 &amp; 0 &amp;0 &amp; 1 &amp; 2 &amp; -11 &amp; 32 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 4 &amp; -14 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]</me>
+So the inverse is <m>\left[\begin{array}{cccc}  1 &amp; 2 &amp; -11 &amp; 32 \\ 0 &amp; -1 &amp; 4 &amp; -14 \\  0 &amp; 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]</m>.
+</statement>
+<solution>
+</solution>
+</exercise>
+
+
+
+
+<exercise><title>M4 Example</title>
+<statement>
+Let <m>A</m> be a <m>4\times4</m> matrix.
+\begin{enumerate}[(a)]
+\item Give a <m>4\times 4</m> matrix <m>P</m> that may be used to perform the row
+      operation <m>{R_3} \to R_3+4 \, {R_1} </m>.
+\item Give a <m>4\times 4</m> matrix <m>Q</m> that may be used to perform the row
+      operation <m>{R_1} \to -4 \, {R_1}</m>.
+\item Use matrix multiplication to describe the matrix obtained by applying 
+        <m>{R_3} \to 4 \, {R_1} + {R_3}</m> and then <m>{R_1} \to -4 \, {R_1}</m>
+      to <m>A</m> (note the order).
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}
+\item 
+<m>P=\left[\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 4 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]</m>
+\item
+<m>Q=\left[\begin{array}{cccc} -4 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1\end{array}\right]</m>
+\item <m> QPA</m>
+\end{enumerate}
+</statement>
+<solution>
+</solution>
+</exercise>
+
+<exercise><title>G1 Example</title>
+<statement>
+Let <m>A</m> be a <m>4 \times 4</m> matrix with determinant <m>-7</m>.
+\begin{enumerate}[(a)]
+\item Let <m>B</m> be the matrix obtained from <m>A</m> by applying the row operation <m>R_3 \to R_3+3R_4</m>. What is <m>\det(B)</m>?
+\item Let <m>C</m> be the matrix obtained from <m>A</m> by applying the row operation <m>R_2 \to -3R_2</m>. What is <m>\det(C)</m>?
+\item Let <m>D</m> be the matrix obtained from <m>A</m> by applying the row operation <m>R_3 \leftrightarrow R_4</m>. What is <m>\det(D)</m>?
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\begin{enumerate}[(a)]
+\item Adding a multiple of one row to another row does not change the determinant, so <m>\det(B)=\det(A)=-7</m>.
+\item Scaling a row scales the determinant by the same factor, so so <m>\det(B)=-3\det(A)=-3(-7)=21</m>.
+\item Swaping rows changes the sign of the determinant, so <m>\det(B)=-\det(A)=7</m>.
+\end{enumerate}
+</statement>
+<solution>
+</solution>
+</exercise>
+
+<exercise><title>G2 Example</title>
+<statement>
+Show how to compute the determinant of the matrix
+<me>
+  A
+    =
+  \left[\begin{array}{cccc}
+    1 &amp; 3 &amp; 0 &amp; -1 \\
+    1 &amp; 1 &amp; 2 &amp; 4 \\
+    1 &amp; 1 &amp; 1 &amp; 3 \\
+    -3 &amp; 1 &amp; 2 &amp; -5
+  \end{array}\right]
+</me>
+\end{problem}
+\begin{solution}
+Here is one possible solution, first applying a single row operation,
+ and then performing Laplace/cofactor expansions to reduce the determinant
+ to a linear combination of <m>2\times 2</m> determinants:
+
+ \begin{align*}
+\det
+   \left[\begin{array}{cccc}
+     1 &amp; 3 &amp; 0 &amp; -1 \\
+     1 &amp; 1 &amp; 2 &amp; 4 \\
+     1 &amp; 1 &amp; 1 &amp; 3 \\
+     -3 &amp; 1 &amp; 2 &amp; -5
+   \end{array}\right]
+ &amp;= \det \left[\begin{array}{cccc} 1 &amp; 3 &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; 3 \\ -3 &amp; 1 &amp; 2 &amp; -5 \end{array}\right] =
+ (-1) \det \left[\begin{array}{ccc} 1 &amp; 3 &amp; -1 \\ 1 &amp; 1 &amp; 3 \\ -3 &amp; 1 &amp; -5 \end{array}\right] + (1) \det \left[\begin{array}{ccc} 1 &amp; 3 &amp; 0 \\ 1 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 2 \end{array}\right] \\
+ &amp;= (-1) \left( (1) \det \left[\begin{array}{cc} 1 &amp; 3 \\ 1 &amp; -5 \end{array}\right] - (1) \det \left[\begin{array}{cc} 3 &amp; -1 \\ 1 &amp; -5 \end{array}\right] + (-3) \det \left[\begin{array}{cc} 3 &amp; -1 \\ 1 &amp; 3 \end{array}\right] \right) + \\
+ &amp;\phantom{==} (1) \left( (1) \det \left[\begin{array}{cc} 1 &amp; 1 \\ 1 &amp; 2 \end{array}\right] - (3) \det \left[\begin{array}{cc} 1 &amp; 1 \\ -3 &amp; 2 \end{array}\right] \right) \\
+ % &amp;= (-1)\left( (1)(-8)-(1)(-14)+(-3)(10) \right) + (1) \left( (1)(1)-(3)(5) \right) \\
+ &amp;= (-1) \left( -8+14-30 \right) + (1) \left(1-15 \right) \\
+ &amp;=10
+ \end{align*}
+
+Here is another possible solution, using row and column operations to first reduce
+the determinant to a <m>3\times 3</m> matrix and then applying a formula:
+\begin{align*}
+\det
+  \left[\begin{array}{cccc}
+    1 &amp; 3 &amp; 0 &amp; -1 \\
+    1 &amp; 1 &amp; 2 &amp; 4 \\
+    1 &amp; 1 &amp; 1 &amp; 3 \\
+    -3 &amp; 1 &amp; 2 &amp; -5
+  \end{array}\right]
+&amp;=
+\det \left[\begin{array}{cccc} 1 &amp; 3 &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; 3 \\ -3 &amp; 1 &amp; 2 &amp; -5 \end{array}\right] =
+\det \left[\begin{array}{cccc} 1 &amp; 3 &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 1 &amp; 2 \\ -3 &amp; 1 &amp; 2 &amp; -7 \end{array}\right] \\ &amp;=
+-\det \left[\begin{array}{cccc} 1 &amp; 3 &amp; 0 &amp; -1 \\ 1 &amp; 1 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ -3 &amp; 1 &amp; 2 &amp; -7 \end{array}\right] =
+-\det \left[\begin{array}{ccc} 1 &amp; 3 &amp; -1 \\ 1 &amp; 1 &amp; 2 \\ -3 &amp; 1  &amp; -7 \end{array}\right] \\  &amp;=
+-((-7-18-1)-(3+2-21)) \\
+ &amp;=10
+ \end{align*}
+
+
+
+</statement>
+<solution>
+</solution>
+</exercise>
+
+<exercise><title>G3 Example</title>
+<statement>
+Explain how to find the eigenvalues of the matrix <m>\left[\begin{array}{cc} -2 &amp; -2 \\ 10 &amp; 7 \end{array}\right] </m>.
+\end{problem}
+\begin{solution}
+Compute the characteristic polynomial: 
+<me>\det(A-\lambda I) = \det \left[\begin{array}{cc} -2 - \lambda &amp; -2 \\ 10 &amp; 7-\lambda \end{array}\right] = (-2-\lambda)(7-\lambda)+20 = \lambda ^2 -5\lambda +6 = (\lambda -2)(\lambda -3)</me>
+The eigenvalues are the roots of the characteristic polynomial, namely <m>2</m> and <m>3</m>.
+</statement>
+<solution>
+</solution>
+</exercise>
+
+    <exercise><title>G4 Example</title>
+<statement>
+Explain how to find a basis for the eigenspace associated to the eigenvalue <m>3</m> in the matrix <me>\left[\begin{array}{ccc} -7 &amp; -8 &amp; 2 \\ 8 &amp; 9 &amp; -1 \\ \frac{13}{2} &amp; 5 &amp; 2 \end{array}\right].</me>
+\end{problem}
+\begin{solution}
+The eigenspace associated to <m>3</m> is the kernel of <m>A-3I</m>, so we compute
+<me>\RREF(A-3I) = \RREF \left[\begin{array}{ccc} -7-3 &amp; -8 &amp; 2 \\ 8 &amp; 9-3 &amp; -1 \\ \frac{13}{2} &amp; 5 &amp; 2-3 \end{array}\right] = \RREF \left[\begin{array}{ccc} -10 &amp; -8 &amp; 2 \\ 8 &amp; 6 &amp; -1 \\ \frac{13}{2} &amp; 5 &amp; -1 \end{array}\right] = \left[\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; -\frac{3}{2} \\ 0 &amp; 0 &amp; 0 \end{array}\right].</me>
+Thus we see the kernel is <me>\setBuilder{\left[\begin{array}{c} -a \\ \frac{3}{2} a \\ a \end{array}\right]}{a \in \IR}</me>
+which has a basis of <m>\left\{ \left[\begin{array}{c} -1 \\ \frac{3}{2} \\ 1 \end{array}\right] \right\}</m>.
+</statement>
+<solution>
+</solution>
+</exercise>
+
+    </section>
