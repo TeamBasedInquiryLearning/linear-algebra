@@ -1,40 +1,64 @@
-# tbil-la
+# Linear Algebra for Team-Based Inquiry Learning
 
-Source files and built PDFs for running a Team-Based Inquiry Learning
-linear algebra course.
+Materials for teaching linear algebra using
+Team-Based Inquiry Learning, authored in
+[PreTeXt](https://pretextbook.org/). This is a part of the
+[NSF-funded TBIL Resource Library](https://sites.google.com/southalabama.edu/tbil).
 
-By [Steven Clontz](https://clontz.org) and 
-[Drew Lewis](https://twitter.com/siwelwerd).
+[Steven Clontz](https://clontz.org) and
+[Drew Lewis](https://twitter.com/siwelwerd) are the maintainers
+of this project.
 
-## Read this first!
+## For instructors and students
 
-This repo is still a work-in-progress. However, feel free to use it
-as-is or adapt these materials for your course. 
-Contact us using a link above if you do!
+A textbook of activities and sample exercises is available publicly at
+<https://teambasedinquirylearning.github.io/linear-algebra>.
+Randomized practice exercises are available publicly on the
+[CheckIt](https://checkit.clontz.org/#/banks/tbil-la) platform.
+
+Other materials, such as quizzes for the Readiness Assurance Process,
+are available in the PDF folder of this repository.
+
+## Authoring
+
+First install [Python 3.9](https://www.python.org/) and [pipenv](https://github.com/pypa/pipenv).
+
+Clone this repository to your machine, then `cd ptx` into the folder containing
+the PreTeXt project. `pipenv install` will install any necessary prerequisites.
+The PreTeXt source may be found in the `ptx/source` folder.
+
+```
+# Run this in the ptx folder to start the authoring environment after a successful pipenv install
+$ pipenv shell
+
+# To build HTML
+$ pretext build
+
+# To preview the built HTML in your browser
+$ pretext view
+
+# CoCalc users: To preview HTML
+$ pretext view --access=cocalc
+
+# To stop the authoring environment
+$ exit
+```
+
+## Using Git to track and publish changes
+
+Changes are tracked in the `main` Git branch, and the public website
+based on the `docs` folder. The result of `pretext build` creates
+files in the `ptx/output` folder which is not tracked by Git because PreTeXt
+changes thousands of files during each build.
+
+To publish changes from a `pretext build` to the public website,
+run `cp -r ptx/output/html/* docs/` from the root folder of this project,
+and make a single commit like `git add docs; git commit -m "update public site"`
+to the `main` branch that reflects only this change.
 
 ---
 
-
-## For instructors
-
-All the needed materials are available in the PDF folder.
-See `facilitator-notes.pdf` for more information on implementing
-these materials in your classroom.
-
-## Local sectioning
-For developers and/or instructors who would like to partition the slides into
-sections without changing the repository, run the following commands:
-`git update-index --assume-unchanged tex/modules/*/index.tex`
-`git update-index --assume-unchanged pdf/course-slides-sectioned.pdf`
-`git update-index --assume-unchanged tex/slides/slides-*.tex`
-`git update-index --assume-unchanged pdf/slides/slides-*.pdf`
-
-
-Then, you can edit `tex/modules/*/index.tex` as you like to include different
-activities in different sections; resulting changes will be built to 
-`pdf/course-slides-sectioned.pdf` and `pdf/slides/slides-*.pdf`.  `pdf/course-slides.pdf` will retain the slides with no section labels.
-
-## Development
+## Instructions for Deprecated LaTeX materials
 
 All source files are located within `./tex`. These files are designed
 to be built by `pdflatex` run from within this folder, so `.tex` files
@@ -63,23 +87,5 @@ removed by running `git clean -fX`.
 - Use `alignat` or `alignedat` environments for systems of equations.
 - Unless necessary, limit lines to 80 characters for clean `git diff`s.
 
-
-## Exercises
-
-Exercises are now tracked at <https://github.com/StevenClontz/masterit-tbil-la>.
-To use them in this repo, either clone a copy into an `exercises` folder:
-
-```
-git clone git@github.com:StevenClontz/masterit-tbil-la.git exercises
-```
-
-Or if they already live on your computer (perhaps inside a MasterIt installation)
-you can symlink them like so:
-
-```
-ln -s path/to/your/masterit-tbil-la exercises
-```
-
-Built versions of these exercises are currently available at <https://checkit.clontz.org/banks/tbil-la/>
 
 [allman]: https://en.wikipedia.org/wiki/Indentation_style#Allman_style
