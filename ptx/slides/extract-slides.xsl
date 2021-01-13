@@ -7,7 +7,6 @@
 <xsl:include href="pretext/xsl/pretext-common.xsl"/>
 
 <xsl:output method="xml" indent="yes"/>
-<xsl:strip-space elements="*"/>
 
 <!-- https://stackoverflow.com/a/6357859/1607849
 <xsl:variable name="slide-defaults">|<xsl:value-of select="pretext/docinfo/@slide-defaults"/>|</xsl:variable>-->
@@ -30,15 +29,17 @@
 </xsl:template>
 
 <xsl:template match="frontmatter">
-    <xsl:copy-of select="titlepage"/>
-    <xsl:copy-of select="abstract"/>
+    <frontmatter>
+        <xsl:copy-of select="titlepage"/>
+        <xsl:copy-of select="abstract"/>
+    </frontmatter>
 </xsl:template>
 
 <xsl:template match="chapter|section|activity" mode="slides-title">
     <title>
-        <xsl:apply-templates select="." mode="type-name"/>
-        <xsl:apply-templates select="." mode="serial-number"/>:
-        <xsl:apply-templates select="." mode="title"/>
+        <xsl:apply-templates select="." mode="type-name"/><xsl:text> </xsl:text>
+        <xsl:apply-templates select="." mode="number"/><xsl:if test="title">:
+        <xsl:value-of select="title"/></xsl:if>
     </title>
 </xsl:template>
 
@@ -52,23 +53,29 @@
 <xsl:template match="section">
     <section>
         <xsl:apply-templates select="." mode="slides-title"/>
-        <xsl:apply-templates select="activity"/>
+        <xsl:apply-templates select="activity|subsection"/>
     </section>
 </xsl:template>
 
+<xsl:template match="subsection">
+    <xsl:apply-templates select="activity"/>
+</xsl:template>
+
 <xsl:template match="activity">
-    <xsl:apply-templates select="." mode="slides-title"/>
-    <xsl:copy-of select="statement|introduction"/>
-    <xsl:if test="task">
-        <ol pause="yes">
-            <xsl:apply-templates select="task"/>
-        </ol>
-    </xsl:if>
+    <slide>
+        <xsl:apply-templates select="." mode="slides-title"/>
+        <xsl:copy-of select="statement/*|introduction/*"/>
+        <xsl:if test="task">
+            <ol pause="yes">
+                <xsl:apply-templates select="task"/>
+            </ol>
+        </xsl:if>
+    </slide>
 </xsl:template>
 
 <xsl:template match="task">
     <li>
-        <xsl:copy-of select="."/>
+        <xsl:copy-of select="*"/>
     </li>
 </xsl:template>
 
