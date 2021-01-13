@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-05T14:36:45-06:00       *-->
+<!--*       on 2021-01-13T19:23:32Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -57,8 +57,7 @@ MathJax.Hub.Config({
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{enclose}
-\newcommand{\circledNumber}[1]{\enclose{circle}{#1}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
@@ -88,7 +87,9 @@ MathJax.Hub.Config({
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul><li><a href="learning-outcomes.html" data-scroll="learning-outcomes">Learning Outcomes</a></li></ul>
+</li>
 <li class="link">
 <a href="E.html" data-scroll="E"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (E)</span></a><ul>
 <li><a href="E1.html" data-scroll="E1">Linear Systems, Vector Equations, and Augmented Matrices (E1)</a></li>
@@ -133,6 +134,11 @@ MathJax.Hub.Config({
 <li><a href="G4.html" data-scroll="G4">Eigenvectors and Eigenspaces (G4)</a></li>
 </ul>
 </li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="appendix-1.html" data-scroll="appendix-1"><span class="codenumber">A</span> <span class="title">Appendix</span></a><ul><li><a href="sample-exercises.html" data-scroll="sample-exercises">Sample Exercises with Solutions</a></li></ul>
+</li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="V4"><h2 class="heading hide-type">
@@ -141,8 +147,8 @@ MathJax.Hub.Config({
 <article class="definition definition-like" id="definition-12"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
 </h6>
-<p id="p-254">A subset of a vector space is called a <dfn class="terminology">subspace</dfn> if it is a vector space on its own.</p>
-<p id="p-255">For example, the span of these two vectors forms a planar subspace inside of the larger vector space \(\IR^3\text{.}\)</p>
+<p id="p-244">A subset of a vector space is called a <dfn class="terminology">subspace</dfn> if it is a vector space on its own.</p>
+<p id="p-245">For example, the span of these two vectors forms a planar subspace inside of the larger vector space \(\IR^3\text{.}\)</p>
 <pre class="code-block tex2jax_ignore">
   \begin{center}
   \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)},scale=0.4]
@@ -158,40 +164,40 @@ MathJax.Hub.Config({
         </pre></article><article class="fact theorem-like" id="fact-5"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
 </h6>
-<p id="p-256">Any sub<em class="emphasis">set</em> \(S\) of a vector space \(V\) that contains the additive identity \(\vec 0\) satisfies the eight vector space properties automatically, since it is a collection of known vectors.</p>
-<p id="p-257">However, to verify that it's a sub<em class="emphasis">space</em>, we need to check that addition and multiplication still make sense using only vectors from \(S\text{.}\) So we need to check two things:</p>
+<p id="p-246">Any sub<em class="emphasis">set</em> \(S\) of a vector space \(V\) that contains the additive identity \(\vec 0\) satisfies the eight vector space properties automatically, since it is a collection of known vectors.</p>
+<p id="p-247">However, to verify that it's a sub<em class="emphasis">space</em>, we need to check that addition and multiplication still make sense using only vectors from \(S\text{.}\) So we need to check two things:</p>
 <ul class="disc">
-<li id="li-183"><p id="p-258">The set is <dfn class="terminology">closed under addition</dfn>: for any \(\vec{x},\vec{y} \in S\text{,}\) the sum \(\vec{x}+\vec{y}\) is also in \(S\text{.}\)</p></li>
-<li id="li-184"><p id="p-259">The set is <dfn class="terminology">closed under scalar multiplication</dfn>: for any \(\vec{x} \in S\) and scalar \(c \in \IR\text{,}\) the product \(c\vec{x}\) is also in \(S\text{.}\)</p></li>
+<li id="li-136"><p id="p-248">The set is <dfn class="terminology">closed under addition</dfn>: for any \(\vec{x},\vec{y} \in S\text{,}\) the sum \(\vec{x}+\vec{y}\) is also in \(S\text{.}\)</p></li>
+<li id="li-137"><p id="p-249">The set is <dfn class="terminology">closed under scalar multiplication</dfn>: for any \(\vec{x} \in S\) and scalar \(c \in \IR\text{,}\) the product \(c\vec{x}\) is also in \(S\text{.}\)</p></li>
 </ul></article><article class="activity project-like" id="activity-40"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-17"><p id="p-260">Let \(S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}\text{.}\)</p></div>
+<div class="introduction" id="introduction-17"><p id="p-250">Let \(S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}\text{.}\)</p></div>
 <article class="task exercise-like" id="task-39"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-261">Let \(\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]\) and \(\vec{w} = \left[\begin{array}{c} a \\ b \\ c \end{array}\right] \) be vectors in \(S\text{,}\) so \(x+2y+z=0\) and \(a+2b+c=0\text{.}\) Show that \(\vec v+\vec w = \left[\begin{array}{c} x+a \\ y+b \\ z+c \end{array}\right]\) also belongs to \(S\) by verifying that \((x+a)+2(y+b)+(z+c)=0\text{.}\)</p></article><article class="task exercise-like" id="task-40"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-262">Let \(\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]\in S\text{,}\) so \(x+2y+z=0\text{.}\) Show that \(c\vec v=\left[\begin{array}{c}cx\\cy\\cz\end{array}\right]\) also belongs to \(S\) for any \(c\in\IR\) by verifying an appropriate equation.</p></article><article class="task exercise-like" id="task-41"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-263">Is \(S\) is a subspace of \(\IR^3\text{?}\)</p></article></article><article class="activity project-like" id="activity-41"><h6 class="heading">
+<p id="p-251">Let \(\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]\) and \(\vec{w} = \left[\begin{array}{c} a \\ b \\ c \end{array}\right] \) be vectors in \(S\text{,}\) so \(x+2y+z=0\) and \(a+2b+c=0\text{.}\) Show that \(\vec v+\vec w = \left[\begin{array}{c} x+a \\ y+b \\ z+c \end{array}\right]\) also belongs to \(S\) by verifying that \((x+a)+2(y+b)+(z+c)=0\text{.}\)</p></article><article class="task exercise-like" id="task-40"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-252">Let \(\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]\in S\text{,}\) so \(x+2y+z=0\text{.}\) Show that \(c\vec v=\left[\begin{array}{c}cx\\cy\\cz\end{array}\right]\) also belongs to \(S\) for any \(c\in\IR\) by verifying an appropriate equation.</p></article><article class="task exercise-like" id="task-41"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-253">Is \(S\) is a subspace of \(\IR^3\text{?}\)</p></article></article><article class="activity project-like" id="activity-41"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
 </h6>
-<p id="p-264">Let \(S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=4}\text{.}\) Choose a vector \(\vec v=\left[\begin{array}{c} \unknown\\\unknown\\\unknown \end{array}\right]\) in \(S\) and a real number \(c=\unknown\text{,}\) and show that \(c\vec v\) isn't in \(S\text{.}\) Is \(S\) a subspace of \(\IR^3\text{?}\)</p></article><article class="remark remark-like" id="remark-11"><h6 class="heading">
+<p id="p-254">Let \(S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=4}\text{.}\) Choose a vector \(\vec v=\left[\begin{array}{c} \unknown\\\unknown\\\unknown \end{array}\right]\) in \(S\) and a real number \(c=\unknown\text{,}\) and show that \(c\vec v\) isn't in \(S\text{.}\) Is \(S\) a subspace of \(\IR^3\text{?}\)</p></article><article class="remark remark-like" id="remark-11"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
 </h6>
-<p id="p-265">Since \(0\) is a scalar and \(0\vec{v}=\vec{z}\) for any vector \(\vec{v}\text{,}\) a nonempty set that is closed under scalar multiplication must contain the zero vector \(\vec{z}\) for that vector space.</p>
-<p id="p-266">Put another way, you can check any of the following to show that a nonempty subset \(W\) isn't a subspace:</p>
+<p id="p-255">Since \(0\) is a scalar and \(0\vec{v}=\vec{z}\) for any vector \(\vec{v}\text{,}\) a nonempty set that is closed under scalar multiplication must contain the zero vector \(\vec{z}\) for that vector space.</p>
+<p id="p-256">Put another way, you can check any of the following to show that a nonempty subset \(W\) isn't a subspace:</p>
 <ul class="disc">
-<li id="li-185"><p id="p-267">Show that \(\vec 0\not\in W\text{.}\)</p></li>
-<li id="li-186"><p id="p-268">Find \(\vec u,\vec v\in W\) such that \(\vec u+\vec v\not\in W\text{.}\)</p></li>
-<li id="li-187"><p id="p-269">Find \(c\in\IR,\vec v\in W\) such that \(c\vec v\not\in W\text{.}\)</p></li>
+<li id="li-138"><p id="p-257">Show that \(\vec 0\not\in W\text{.}\)</p></li>
+<li id="li-139"><p id="p-258">Find \(\vec u,\vec v\in W\) such that \(\vec u+\vec v\not\in W\text{.}\)</p></li>
+<li id="li-140"><p id="p-259">Find \(c\in\IR,\vec v\in W\) such that \(c\vec v\not\in W\text{.}\)</p></li>
 </ul>
-<p id="p-270">If you cannot do any of these, then \(W\) can be proven to be a subspace by doing the following:</p>
+<p id="p-260">If you cannot do any of these, then \(W\) can be proven to be a subspace by doing the following:</p>
 <ul class="disc">
-<li id="li-188"><p id="p-271">Prove that \(\vec u+\vec v\in W\) whenever \(\vec u,\vec v\in W\text{.}\)</p></li>
-<li id="li-189"><p id="p-272">Prove that \(c\vec v\in W\) whenever \(c\in\IR,\vec v\in W\text{.}\)</p></li>
+<li id="li-141"><p id="p-261">Prove that \(\vec u+\vec v\in W\) whenever \(\vec u,\vec v\in W\text{.}\)</p></li>
+<li id="li-142"><p id="p-262">Prove that \(c\vec v\in W\) whenever \(c\in\IR,\vec v\in W\text{.}\)</p></li>
 </ul></article><article class="activity project-like" id="activity-42"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-18">
-<p id="p-273">Consider these subsets of \(\IR^3\text{:}\)</p>
+<p id="p-263">Consider these subsets of \(\IR^3\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 R=
@@ -206,116 +212,24 @@ T=
 </div>
 </div>
 <article class="task exercise-like" id="task-42"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-274">Show \(R\) isn't a subspace by showing that \(\vec 0\not\in R\text{.}\)</p></article><article class="task exercise-like" id="task-43"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-275">Show \(S\) isn't a subspace by finding two vectors \(\vec u,\vec v\in S\) such that \(\vec u+\vec v\not\in S\text{.}\)</p></article><article class="task exercise-like" id="task-44"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-276">Show \(T\) isn't a subspace by finding a vector \(\vec v\in T\) such that \(2\vec v\not\in T\text{.}\)</p></article></article><article class="activity project-like" id="activity-43"><h6 class="heading">
+<p id="p-264">Show \(R\) isn't a subspace by showing that \(\vec 0\not\in R\text{.}\)</p></article><article class="task exercise-like" id="task-43"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-265">Show \(S\) isn't a subspace by finding two vectors \(\vec u,\vec v\in S\) such that \(\vec u+\vec v\not\in S\text{.}\)</p></article><article class="task exercise-like" id="task-44"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-266">Show \(T\) isn't a subspace by finding a vector \(\vec v\in T\) such that \(2\vec v\not\in T\text{.}\)</p></article></article><article class="activity project-like" id="activity-43"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
 </h6>
-<p id="p-277">Let \(W\) be a subspace of a vector space \(V\text{.}\)  How are \(\vspan W\) and \(W\) related?</p>
+<p id="p-267">Let \(W\) be a subspace of a vector space \(V\text{.}\)  How are \(\vspan W\) and \(W\) related?</p>
 <ol class="lower-alpha">
-<li id="li-190"><p id="p-278">\(\vspan W\) is bigger than \(W\)</p></li>
-<li id="li-191"><p id="p-279">\(\vspan W\) is the same as \(W\)</p></li>
-<li id="li-192"><p id="p-280">\(\vspan W\) is smaller than \(W\)</p></li>
+<li id="li-143"><p id="p-268">\(\vspan W\) is bigger than \(W\)</p></li>
+<li id="li-144"><p id="p-269">\(\vspan W\) is the same as \(W\)</p></li>
+<li id="li-145"><p id="p-270">\(\vspan W\) is smaller than \(W\)</p></li>
 </ol></article><article class="fact theorem-like" id="fact-6"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
 </h6>
-<p id="p-281">If \(S\) is any subset of a vector space \(V\text{,}\) then since \(\vspan S\) collects all possible linear combinations, \(\vspan S\) is automatically a subspace of \(V\text{.}\)</p>
-<p id="p-282">In fact, \(\vspan S\) is always the smallest subspace of \(V\) that contains all the vectors in \(S\text{.}\)</p></article><section class="exercises" id="exercises-7"><h3 class="heading hide-type">
+<p id="p-271">If \(S\) is any subset of a vector space \(V\text{,}\) then since \(\vspan S\) collects all possible linear combinations, \(\vspan S\) is automatically a subspace of \(V\text{.}\)</p>
+<p id="p-272">In fact, \(\vspan S\) is always the smallest subspace of \(V\) that contains all the vectors in \(S\text{.}\)</p></article><section class="exercises" id="exercises-7"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">2.4.1</span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-31"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-283">Consider the following two sets of Euclidean vectors:</p>
-<div class="displaymath">
-\begin{align*}
-\left\{ \left[\begin{array}{c}
-x \\
-y
-\end{array}\right] \middle|\,x^{3} + 7 \, y = 0\right\}  &amp; &amp;   \left\{ \left[\begin{array}{c}
-x \\
-y
-\end{array}\right] \middle|\,7 \, x + 5 \, y = 0\right\} 
-\end{align*}
-</div>
-<p id="p-284">Explain why one of these sets is a subspace of \(\mathbb{R}^ 2 \) and one is not.</p>
-<div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-31" id="answer-31"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-31"><div class="answer solution-like"><p id="p-285">\(U\) is a subspace of \(\mathbb{R}^ 2 \) and \(W\) is not.</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-32"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-286">Consider the following two sets of Euclidean vectors:</p>
-<div class="displaymath">
-\begin{align*}
-\left\{ \left[\begin{array}{c}
-x \\
-y \\
-z
-\end{array}\right] \middle|\,6 \, x = 5 \, y + 2 \, z\right\}  &amp; &amp;   \left\{ \left[\begin{array}{c}
-x \\
-y \\
-z
-\end{array}\right] \middle|\,y^{2} + 4 \, x = 4 \, z\right\} 
-\end{align*}
-</div>
-<p id="p-287">Explain why one of these sets is a subspace of \(\mathbb{R}^ 3 \) and one is not.</p>
-<div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-32" id="answer-32"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-32"><div class="answer solution-like"><p id="p-288">\(U\) is a subspace of \(\mathbb{R}^ 3 \) and \(W\) is not.</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-33"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-289">Consider the following two sets of Euclidean vectors:</p>
-<div class="displaymath">
-\begin{align*}
-\left\{ \left[\begin{array}{c}
-x \\
-y \\
-z \\
-w
-\end{array}\right] \middle|\,x^{2} + 5 \, y + 2 \, z = 4 \, w\right\}  &amp; &amp;   \left\{ \left[\begin{array}{c}
-x \\
-y \\
-z \\
-w
-\end{array}\right] \middle|\,3 \, w + 3 \, y = 6 \, x - 5 \, z\right\} 
-\end{align*}
-</div>
-<p id="p-290">Explain why one of these sets is a subspace of \(\mathbb{R}^ 4 \) and one is not.</p>
-<div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-33" id="answer-33"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-33"><div class="answer solution-like"><p id="p-291">\(U\) is a subspace of \(\mathbb{R}^ 4 \) and \(W\) is not.</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-34"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-292">Consider the following two sets of Euclidean vectors:</p>
-<div class="displaymath">
-\begin{align*}
-\left\{ \left[\begin{array}{c}
-x \\
-y \\
-z
-\end{array}\right] \middle|\,3 \, x + 7 \, y = 2 \, z\right\}  &amp; &amp;   \left\{ \left[\begin{array}{c}
-x \\
-y \\
-z
-\end{array}\right] \middle|\,y^{3} + 6 \, x = 3 \, z\right\} 
-\end{align*}
-</div>
-<p id="p-293">Explain why one of these sets is a subspace of \(\mathbb{R}^ 3 \) and one is not.</p>
-<div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-34" id="answer-34"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-34"><div class="answer solution-like"><p id="p-294">\(U\) is a subspace of \(\mathbb{R}^ 3 \) and \(W\) is not.</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-35"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-295">Consider the following two sets of Euclidean vectors:</p>
-<div class="displaymath">
-\begin{align*}
-\left\{ \left[\begin{array}{c}
-x \\
-y \\
-z \\
-w
-\end{array}\right] \middle|\,7 \, x^{3} y + 5 \, w z = 0\right\}  &amp; &amp;   \left\{ \left[\begin{array}{c}
-x \\
-y \\
-z \\
-w
-\end{array}\right] \middle|\,3 \, w + y = x - 5 \, z\right\} 
-\end{align*}
-</div>
-<p id="p-296">Explain why one of these sets is a subspace of \(\mathbb{R}^ 4 \) and one is not.</p>
-<div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-35" id="answer-35"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-35"><div class="answer solution-like"><p id="p-297">\(U\) is a subspace of \(\mathbb{R}^ 4 \) and \(W\) is not.</p></div></div>
-</div></article><p id="p-298"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/V4/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+<p id="p-273"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/V4/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
 </div>
 </body>
 </html>

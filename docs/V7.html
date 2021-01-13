@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-05T14:36:46-06:00       *-->
+<!--*       on 2021-01-13T19:23:33Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -57,8 +57,7 @@ MathJax.Hub.Config({
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{enclose}
-\newcommand{\circledNumber}[1]{\enclose{circle}{#1}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
@@ -88,7 +87,9 @@ MathJax.Hub.Config({
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul><li><a href="learning-outcomes.html" data-scroll="learning-outcomes">Learning Outcomes</a></li></ul>
+</li>
 <li class="link">
 <a href="E.html" data-scroll="E"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (E)</span></a><ul>
 <li><a href="E1.html" data-scroll="E1">Linear Systems, Vector Equations, and Augmented Matrices (E1)</a></li>
@@ -133,6 +134,11 @@ MathJax.Hub.Config({
 <li><a href="G4.html" data-scroll="G4">Eigenvectors and Eigenspaces (G4)</a></li>
 </ul>
 </li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="appendix-1.html" data-scroll="appendix-1"><span class="codenumber">A</span> <span class="title">Appendix</span></a><ul><li><a href="sample-exercises.html" data-scroll="sample-exercises">Sample Exercises with Solutions</a></li></ul>
+</li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="V7"><h2 class="heading hide-type">
@@ -141,8 +147,8 @@ MathJax.Hub.Config({
 <article class="observation remark-like" id="observation-11"><h6 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.7.1</span><span class="period">.</span>
 </h6>
-<p id="p-366">Recall that a <dfn class="terminology">subspace</dfn> of a vector space is a subset that is itself a vector space.</p>
-<p id="p-367">One easy way to construct a subspace is to take the span of set, but a linearly dependent set contains “redundant” vectors. For example, only two of the three vectors in the following image are needed to span the planar subspace.</p>
+<p id="p-321">Recall that a <dfn class="terminology">subspace</dfn> of a vector space is a subset that is itself a vector space.</p>
+<p id="p-322">One easy way to construct a subspace is to take the span of set, but a linearly dependent set contains “redundant” vectors. For example, only two of the three vectors in the following image are needed to span the planar subspace.</p>
 <pre class="code-block tex2jax_ignore">
 \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)},scale=0.4]
   \draw[-&gt;] (0,0,0) -- (6,0,0);
@@ -157,7 +163,7 @@ MathJax.Hub.Config({
         </pre></article><article class="activity project-like" id="activity-54"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.1</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-21"><p id="p-368">Consider the subspace of \(\IR^4\) given by \(W=\vspan\left\{
+<div class="introduction" id="introduction-21"><p id="p-323">Consider the subspace of \(\IR^4\) given by \(W=\vspan\left\{
 \left[\begin{array}{c}2\\3\\0\\1\end{array}\right],
 \left[\begin{array}{c}2\\0\\1\\-1\end{array}\right],
 \left[\begin{array}{c}2\\-3\\2\\-3\end{array}\right],
@@ -165,17 +171,17 @@ MathJax.Hub.Config({
 \right\}
 \text{.}\)</p></div>
 <article class="task exercise-like" id="task-49"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-369">Mark the part of \(\RREF\left[\begin{array}{cccc}
+<p id="p-324">Mark the part of \(\RREF\left[\begin{array}{cccc}
 2&amp;2&amp;2&amp;1\\
 3&amp;0&amp;-3&amp;5\\
 0&amp;1&amp;2&amp;-1\\
 1&amp;-1&amp;-3&amp;0
 \end{array}\right]\) that shows that \(W\)'s spanning set is linearly dependent.</p></article><article class="task exercise-like" id="task-50"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-370">Find a basis for \(W\) by removing a vector from its spanning set to make it linearly independent.</p></article></article><article class="fact theorem-like" id="fact-9"><h6 class="heading">
+<p id="p-325">Find a basis for \(W\) by removing a vector from its spanning set to make it linearly independent.</p></article></article><article class="fact theorem-like" id="fact-9"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.7.2</span><span class="period">.</span>
 </h6>
-<p id="p-371">Let \(S=\{\vec v_1,\dots,\vec v_m\}\text{.}\) The easiest basis describing \(\vspan S\) is the set of vectors in \(S\) given by the pivot columns of \(\RREF[\vec v_1\,\dots\,\vec v_m]\text{.}\)</p>
-<p id="p-372">Put another way, to compute a basis for the subspace \(\vspan S\text{,}\) simply remove the vectors corresponding to the non-pivot columns of \(\RREF[\vec v_1\,\dots\,\vec v_m]\text{.}\) For example, since</p>
+<p id="p-326">Let \(S=\{\vec v_1,\dots,\vec v_m\}\text{.}\) The easiest basis describing \(\vspan S\) is the set of vectors in \(S\) given by the pivot columns of \(\RREF[\vec v_1\,\dots\,\vec v_m]\text{.}\)</p>
+<p id="p-327">Put another way, to compute a basis for the subspace \(\vspan S\text{,}\) simply remove the vectors corresponding to the non-pivot columns of \(\RREF[\vec v_1\,\dots\,\vec v_m]\text{.}\) For example, since</p>
 <div class="displaymath">
 \begin{equation*}
 \RREF
@@ -202,7 +208,7 @@ MathJax.Hub.Config({
 }\) as a basis.</p></article><article class="activity project-like" id="activity-55"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.2</span><span class="period">.</span>
 </h6>
-<p id="p-373">Let \(W\) be the subspace of \(\IR^4\) given by</p>
+<p id="p-328">Let \(W\) be the subspace of \(\IR^4\) given by</p>
 <div class="displaymath">
 \begin{equation*}
 W = \vspan \left\{
@@ -216,7 +222,7 @@ W = \vspan \left\{
 <p data-braille="continuation">Find a basis for \(W\text{.}\)</p></article><article class="activity project-like" id="activity-56"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="period">.</span>
 </h6>
-<p id="p-374">Let \(W\) be the subspace of \(\P^3\) given by</p>
+<p id="p-329">Let \(W\) be the subspace of \(\P^3\) given by</p>
 <div class="displaymath">
 \begin{equation*}
 W = \vspan \left\{x^3+3x^2+x-1, 2x^3-x^2+x+2, 4x^3+5x^2+3x, 3x^3+2x^2+2x+1 \right\} 
@@ -225,7 +231,7 @@ W = \vspan \left\{x^3+3x^2+x-1, 2x^3-x^2+x+2, 4x^3+5x^2+3x, 3x^3+2x^2+2x+1 \righ
 <p data-braille="continuation">Find a basis for \(W\text{.}\)</p></article><article class="activity project-like" id="activity-57"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.4</span><span class="period">.</span>
 </h6>
-<p id="p-375">Let \(W\) be the subspace of \(M_{2,2}\) given by</p>
+<p id="p-330">Let \(W\) be the subspace of \(M_{2,2}\) given by</p>
 <div class="displaymath">
 \begin{equation*}
 W = \vspan \left\{
@@ -240,7 +246,7 @@ W = \vspan \left\{
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.5</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-22">
-<p id="p-376">Let</p>
+<p id="p-331">Let</p>
 <div class="displaymath">
 \begin{equation*}
 S=\left\{
@@ -264,11 +270,11 @@ T=\left\{
 </div>
 </div>
 <article class="task exercise-like" id="task-51"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-377">Find a basis for \(\vspan S\text{.}\)</p></article><article class="task exercise-like" id="task-52"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-378">Find a basis for \(\vspan T\text{.}\)</p></article></article><article class="observation remark-like" id="observation-12"><h6 class="heading">
+<p id="p-332">Find a basis for \(\vspan S\text{.}\)</p></article><article class="task exercise-like" id="task-52"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-333">Find a basis for \(\vspan T\text{.}\)</p></article></article><article class="observation remark-like" id="observation-12"><h6 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="period">.</span>
 </h6>
-<p id="p-379">Even though we found different bases for them, \(\vspan S\) and \(\vspan T\) are exactly the same subspace of \(\IR^4\text{,}\) since</p>
+<p id="p-334">Even though we found different bases for them, \(\vspan S\) and \(\vspan T\) are exactly the same subspace of \(\IR^4\text{,}\) since</p>
 <div class="displaymath">
 \begin{equation*}
 S=\left\{
@@ -288,8 +294,8 @@ S=\left\{
 </div></article><article class="fact theorem-like" id="fact-10"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.7.4</span><span class="period">.</span>
 </h6>
-<p id="p-380">Any non-trivial vector space has infinitely-many different bases, but all the bases for a given vector space are exactly the same size.</p>
-<p id="p-381">For example,</p>
+<p id="p-335">Any non-trivial vector space has infinitely-many different bases, but all the bases for a given vector space are exactly the same size.</p>
+<p id="p-336">For example,</p>
 <div class="displaymath">
 \begin{equation*}
 \setList{\vec e_1,\vec e_2,\vec e_3}
@@ -310,8 +316,8 @@ S=\left\{
 <p data-braille="continuation">are all valid bases for \(\IR^3\text{,}\) and they all contain three vectors.</p></article><article class="definition definition-like" id="definition-15"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.7.5</span><span class="period">.</span>
 </h6>
-<p id="p-382">The <dfn class="terminology">dimension</dfn> of a vector space is equal to the size of any basis for the vector space.</p>
-<p id="p-383">As you'd expect, \(\IR^n\) has dimension \(n\text{.}\) For example, \(\IR^3\) has dimension \(3\) because any basis for \(\IR^3\) such as</p>
+<p id="p-337">The <dfn class="terminology">dimension</dfn> of a vector space is equal to the size of any basis for the vector space.</p>
+<p id="p-338">As you'd expect, \(\IR^n\) has dimension \(n\text{.}\) For example, \(\IR^3\) has dimension \(3\) because any basis for \(\IR^3\) such as</p>
 <div class="displaymath">
 \begin{equation*}
 \setList{\vec e_1,\vec e_2,\vec e_3}
@@ -332,7 +338,7 @@ S=\left\{
 <p data-braille="continuation">contains exactly three vectors.</p></article><article class="activity project-like" id="activity-59"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.6</span><span class="period">.</span>
 </h6>
-<p id="p-384">Find the dimension of each subspace of \(\IR^4\) by finding \(\RREF\) for each corresponding matrix.</p>
+<p id="p-339">Find the dimension of each subspace of \(\IR^4\) by finding \(\RREF\) for each corresponding matrix.</p>
 <div class="displaymath">
 \begin{equation*}
 \vspan\left\{
@@ -375,382 +381,7 @@ S=\left\{
 </div></article><section class="exercises" id="exercises-10"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">2.7.1</span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-46"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-385">Consider the subspace</p>
-<div class="displaymath">
-\begin{equation*}
-W=\operatorname{span}  \left\{ \left[\begin{array}{c}
--4 \\
--4 \\
-1 \\
--2
-\end{array}\right] , \left[\begin{array}{c}
--3 \\
--2 \\
-3 \\
--3
-\end{array}\right] , \left[\begin{array}{c}
--7 \\
--6 \\
-4 \\
--5
-\end{array}\right] , \left[\begin{array}{c}
--4 \\
--2 \\
-3 \\
-3
-\end{array}\right] \right\} .
-\end{equation*}
-</div>
-<ol class="lower-alpha">
-<li id="li-256">Explain how to find a basis of \(W\text{.}\)</li>
-<li id="li-257">Explain how to find the dimension of \(W\text{.}\)</li>
-</ol>
-<div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-46" id="answer-46"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-46"><div class="answer solution-like">
-<div class="displaymath" id="p-386">
-\begin{equation*}
-\operatorname{RREF} \left[\begin{array}{cccc}
--4 &amp; -3 &amp; -7 &amp; -4 \\
--4 &amp; -2 &amp; -6 &amp; -2 \\
-1 &amp; 3 &amp; 4 &amp; 3 \\
--2 &amp; -3 &amp; -5 &amp; 3
-\end{array}\right] = \left[\begin{array}{cccc}
-1 &amp; 0 &amp; 1 &amp; 0 \\
-0 &amp; 1 &amp; 1 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1 \\
-0 &amp; 0 &amp; 0 &amp; 0
-\end{array}\right] 
-\end{equation*}
-</div>
-<ol class="lower-alpha">
-<li id="li-258">A basis of \(W\) is \(\left\{ \left[\begin{array}{c}
--4 \\
--4 \\
-1 \\
--2
-\end{array}\right] , \left[\begin{array}{c}
--3 \\
--2 \\
-3 \\
--3
-\end{array}\right] , \left[\begin{array}{c}
--4 \\
--2 \\
-3 \\
-3
-\end{array}\right] \right\} \text{.}\)</li>
-<li id="li-259">The dimension of \(W\) is \(3 \text{.}\)</li>
-</ol>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-47"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-387">Consider the subspace</p>
-<div class="displaymath">
-\begin{equation*}
-W=\operatorname{span}  \left\{ \left[\begin{array}{c}
--2 \\
-2 \\
-3 \\
--4
-\end{array}\right] , \left[\begin{array}{c}
-2 \\
--3 \\
--2 \\
--3
-\end{array}\right] , \left[\begin{array}{c}
-0 \\
--1 \\
--2 \\
-3
-\end{array}\right] , \left[\begin{array}{c}
--2 \\
-2 \\
-0 \\
-1
-\end{array}\right] , \left[\begin{array}{c}
-4 \\
--8 \\
--8 \\
-0
-\end{array}\right] \right\} .
-\end{equation*}
-</div>
-<ol class="lower-alpha">
-<li id="li-260">Explain how to find a basis of \(W\text{.}\)</li>
-<li id="li-261">Explain how to find the dimension of \(W\text{.}\)</li>
-</ol>
-<div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-47" id="answer-47"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-47"><div class="answer solution-like">
-<div class="displaymath" id="p-388">
-\begin{equation*}
-\operatorname{RREF} \left[\begin{array}{ccccc}
--2 &amp; 2 &amp; 0 &amp; -2 &amp; 4 \\
-2 &amp; -3 &amp; -1 &amp; 2 &amp; -8 \\
-3 &amp; -2 &amp; -2 &amp; 0 &amp; -8 \\
--4 &amp; -3 &amp; 3 &amp; 1 &amp; 0
-\end{array}\right] = \left[\begin{array}{ccccc}
-1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 1 &amp; 0 &amp; 0 &amp; 2 \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 2 \\
-0 &amp; 0 &amp; 0 &amp; 1 &amp; 0
-\end{array}\right] 
-\end{equation*}
-</div>
-<ol class="lower-alpha">
-<li id="li-262">A basis of \(W\) is \(\left\{ \left[\begin{array}{c}
--2 \\
-2 \\
-3 \\
--4
-\end{array}\right] , \left[\begin{array}{c}
-2 \\
--3 \\
--2 \\
--3
-\end{array}\right] , \left[\begin{array}{c}
-0 \\
--1 \\
--2 \\
-3
-\end{array}\right] , \left[\begin{array}{c}
--2 \\
-2 \\
-0 \\
-1
-\end{array}\right] \right\} \text{.}\)</li>
-<li id="li-263">The dimension of \(W\) is \(4 \text{.}\)</li>
-</ol>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-48"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-389">Consider the subspace</p>
-<div class="displaymath">
-\begin{equation*}
-W=\operatorname{span}  \left\{ \left[\begin{array}{c}
-3 \\
--3 \\
--2 \\
-2
-\end{array}\right] , \left[\begin{array}{c}
-0 \\
--2 \\
-0 \\
-1
-\end{array}\right] , \left[\begin{array}{c}
--1 \\
-2 \\
-3 \\
--4
-\end{array}\right] , \left[\begin{array}{c}
-3 \\
--3 \\
--2 \\
-2
-\end{array}\right] , \left[\begin{array}{c}
--1 \\
--3 \\
-0 \\
--4
-\end{array}\right] , \left[\begin{array}{c}
-1 \\
-3 \\
--2 \\
-2
-\end{array}\right] \right\} .
-\end{equation*}
-</div>
-<ol class="lower-alpha">
-<li id="li-264">Explain how to find a basis of \(W\text{.}\)</li>
-<li id="li-265">Explain how to find the dimension of \(W\text{.}\)</li>
-</ol>
-<div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-48" id="answer-48"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-48"><div class="answer solution-like">
-<div class="displaymath" id="p-390">
-\begin{equation*}
-\operatorname{RREF} \left[\begin{array}{cccccc}
-3 &amp; 0 &amp; -1 &amp; 3 &amp; -1 &amp; 1 \\
--3 &amp; -2 &amp; 2 &amp; -3 &amp; -3 &amp; 3 \\
--2 &amp; 0 &amp; 3 &amp; -2 &amp; 0 &amp; -2 \\
-2 &amp; 1 &amp; -4 &amp; 2 &amp; -4 &amp; 2
-\end{array}\right] = \left[\begin{array}{cccccc}
-1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; \frac{1}{43} \\
-0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -\frac{76}{43} \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; -\frac{28}{43} \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; -\frac{12}{43}
-\end{array}\right] 
-\end{equation*}
-</div>
-<ol class="lower-alpha">
-<li id="li-266">A basis of \(W\) is \(\left\{ \left[\begin{array}{c}
-3 \\
--3 \\
--2 \\
-2
-\end{array}\right] , \left[\begin{array}{c}
-0 \\
--2 \\
-0 \\
-1
-\end{array}\right] , \left[\begin{array}{c}
--1 \\
-2 \\
-3 \\
--4
-\end{array}\right] , \left[\begin{array}{c}
--1 \\
--3 \\
-0 \\
--4
-\end{array}\right] \right\} \text{.}\)</li>
-<li id="li-267">The dimension of \(W\) is \(4 \text{.}\)</li>
-</ol>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-49"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-391">Consider the subspace</p>
-<div class="displaymath">
-\begin{equation*}
-W=\operatorname{span}  \left\{ \left[\begin{array}{c}
-3 \\
-3 \\
-1 \\
--3
-\end{array}\right] , \left[\begin{array}{c}
--1 \\
--3 \\
-0 \\
--2
-\end{array}\right] , \left[\begin{array}{c}
--5 \\
--9 \\
--1 \\
--1
-\end{array}\right] , \left[\begin{array}{c}
-15 \\
-27 \\
-3 \\
-3
-\end{array}\right] , \left[\begin{array}{c}
-1 \\
--3 \\
-1 \\
--7
-\end{array}\right] \right\} .
-\end{equation*}
-</div>
-<ol class="lower-alpha">
-<li id="li-268">Explain how to find a basis of \(W\text{.}\)</li>
-<li id="li-269">Explain how to find the dimension of \(W\text{.}\)</li>
-</ol>
-<div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-49" id="answer-49"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-49"><div class="answer solution-like">
-<div class="displaymath" id="p-392">
-\begin{equation*}
-\operatorname{RREF} \left[\begin{array}{ccccc}
-3 &amp; -1 &amp; -5 &amp; 15 &amp; 1 \\
-3 &amp; -3 &amp; -9 &amp; 27 &amp; -3 \\
-1 &amp; 0 &amp; -1 &amp; 3 &amp; 1 \\
--3 &amp; -2 &amp; -1 &amp; 3 &amp; -7
-\end{array}\right] = \left[\begin{array}{ccccc}
-1 &amp; 0 &amp; -1 &amp; 3 &amp; 1 \\
-0 &amp; 1 &amp; 2 &amp; -6 &amp; 2 \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
-\end{array}\right] 
-\end{equation*}
-</div>
-<ol class="lower-alpha">
-<li id="li-270">A basis of \(W\) is \(\left\{ \left[\begin{array}{c}
-3 \\
-3 \\
-1 \\
--3
-\end{array}\right] , \left[\begin{array}{c}
--1 \\
--3 \\
-0 \\
--2
-\end{array}\right] \right\} \text{.}\)</li>
-<li id="li-271">The dimension of \(W\) is \(2 \text{.}\)</li>
-</ol>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-393">Consider the subspace</p>
-<div class="displaymath">
-\begin{equation*}
-W=\operatorname{span}  \left\{ \left[\begin{array}{c}
-0 \\
-0 \\
--2 \\
--2
-\end{array}\right] , \left[\begin{array}{c}
--4 \\
-1 \\
--1 \\
--1
-\end{array}\right] , \left[\begin{array}{c}
-12 \\
--3 \\
--1 \\
--1
-\end{array}\right] , \left[\begin{array}{c}
--4 \\
-1 \\
--1 \\
--1
-\end{array}\right] , \left[\begin{array}{c}
-2 \\
-2 \\
-3 \\
-2
-\end{array}\right] , \left[\begin{array}{c}
-16 \\
--4 \\
-10 \\
-10
-\end{array}\right] \right\} .
-\end{equation*}
-</div>
-<ol class="lower-alpha">
-<li id="li-272">Explain how to find a basis of \(W\text{.}\)</li>
-<li id="li-273">Explain how to find the dimension of \(W\text{.}\)</li>
-</ol>
-<div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-50" id="answer-50"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-50"><div class="answer solution-like">
-<div class="displaymath" id="p-394">
-\begin{equation*}
-\operatorname{RREF} \left[\begin{array}{cccccc}
-0 &amp; -4 &amp; 12 &amp; -4 &amp; 2 &amp; 16 \\
-0 &amp; 1 &amp; -3 &amp; 1 &amp; 2 &amp; -4 \\
--2 &amp; -1 &amp; -1 &amp; -1 &amp; 3 &amp; 10 \\
--2 &amp; -1 &amp; -1 &amp; -1 &amp; 2 &amp; 10
-\end{array}\right] = \left[\begin{array}{cccccc}
-1 &amp; 0 &amp; 2 &amp; 0 &amp; 0 &amp; -3 \\
-0 &amp; 1 &amp; -3 &amp; 1 &amp; 0 &amp; -4 \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
-\end{array}\right] 
-\end{equation*}
-</div>
-<ol class="lower-alpha">
-<li id="li-274">A basis of \(W\) is \(\left\{ \left[\begin{array}{c}
-0 \\
-0 \\
--2 \\
--2
-\end{array}\right] , \left[\begin{array}{c}
--4 \\
-1 \\
--1 \\
--1
-\end{array}\right] , \left[\begin{array}{c}
-2 \\
-2 \\
-3 \\
-2
-\end{array}\right] \right\} \text{.}\)</li>
-<li id="li-275">The dimension of \(W\) is \(3 \text{.}\)</li>
-</ol>
-</div></div>
-</div></article><p id="p-395"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/V7/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+<p id="p-340"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/V7/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
 </div>
 </body>
 </html>
