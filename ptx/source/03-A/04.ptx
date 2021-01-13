@@ -11,7 +11,9 @@ Let <m>T: V \rightarrow W</m> be a linear transformation.
 distinct vectors to the same place.  More precisely, <m>T</m> is injective if
 <m>T(\vec{v}) \neq T(\vec{w})</m> whenever <m>\vec{v} \neq \vec{w}</m>.
         </p>
-        <cd>
+        <figure>
+			<image width="75%">
+				<latex-image>
 \begin{tikzpicture}[x=0.15in,y=0.15in]
   \begin{scope}[shift={(0,1)}]
     \draw (-2,0) -- (2,0);
@@ -53,7 +55,10 @@ distinct vectors to the same place.  More precisely, <m>T</m> is injective if
   \end{scope}
   \node[anchor=north] at (5,-1) {not injective};
 \end{tikzpicture}
-        </cd>
+				</latex-image>
+			</image>
+			<caption>An injective transformation and a non-injective transformation</caption>
+        </figure>
     </statement>
 </definition>
 
@@ -161,7 +166,9 @@ Is <m>T</m> injective?
 Let <m>T: V \rightarrow W</m> be a linear transformation.
 <m>T</m> is called <term>surjective</term> or <term>onto</term> if every element of <m>W</m> is mapped to by an element of <m>V</m>.  More precisely, for every <m>\vec{w} \in W</m>, there is some <m>\vec{v} \in V</m> with <m>T(\vec{v})=\vec{w}</m>.
         </p>
-    <cd>
+    <figure>
+		<image width="75%">
+			<latex-image>
 \begin{tikzpicture}[x=0.15in,y=0.15in]
   \begin{scope}[shift={(0,0)}]
     \draw (0,0) -- (3,0);
@@ -212,7 +219,10 @@ Let <m>T: V \rightarrow W</m> be a linear transformation.
   \end{scope}
   \node[anchor=north] at (5,-2) {not surjective};
 \end{tikzpicture}
-    </cd>
+			</latex-image>
+		</image>
+		<caption>A surjective transformation and a non-surjective transformation</caption>
+    </figure>
     </statement>
 </definition>
 
@@ -367,7 +377,9 @@ A linear transformation <m>T</m> is injective <em>if and only if</em> <m>\ker T 
 Put another way, an injective linear transformation may be
 recognized by its <term>trivial</term> kernel.
         </p>
-        <cd>
+        <figure>
+			<image width="75%">
+				<latex-image>
 \begin{tikzpicture}[x=0.15in,y=0.15in]
   \begin{scope}[shift={(0,1)}]
     \draw (-2,0) -- (2,0);
@@ -392,7 +404,10 @@ recognized by its <term>trivial</term> kernel.
           node[anchor=south east] {\(T(\vec{0})=\vec{0}\)};
   \end{scope}
 \end{tikzpicture}
-        </cd>
+				</latex-image>
+			</image>
+			<caption>A linear transformation with trivial kernel, which is therefore injective</caption>
+        </figure>
     </statement>
 </fact>
 
@@ -435,7 +450,9 @@ A linear transformation <m>T:V \rightarrow W</m> is surjective <em>if and only i
 <m>\Im T = W</m>. Put another way, a surjective linear transformation may be
 recognized by its identical codomain and image.
         </p>
-    <cd>
+    <figure>
+		<image width="75%">
+			<latex-image>
 \begin{tikzpicture}[x=0.15in,y=0.15in]
   \begin{scope}[shift={(0,0)}]
     \draw (0,0) -- (3,0);
@@ -486,7 +503,10 @@ recognized by its identical codomain and image.
   \end{scope}
   \node[anchor=north] at (5,-2) {not surjective, \(\Im T\not=\IR^3\)};
 \end{tikzpicture}
-    </cd>
+			</latex-image>
+		</image>
+		<caption>A linear transformation with identical codomain and image, which is therefore surjective; and a linear transformation with an image smaller than the codomain <m>\IR^3</m>, which is therefore not surjective.</caption>
+    </figure>
     </statement>
 </fact>
 
@@ -596,7 +616,9 @@ one group that means <m>T</m> is <em>injective</em>, and one group that means
   vectors into each other, and a linear transformation cannot
   increase dimension from its domain to its image.
     </p>
-    <cd>
+    <figure>
+		<image width="75%">
+			<latex-image>
     \begin{tikzpicture}[x=0.12in,y=0.12in]
       \begin{scope}[shift={(0,0)}]
         \draw (0,0) -- (3,0);
@@ -641,7 +663,10 @@ one group that means <m>T</m> is <em>injective</em>, and one group that means
       \end{scope}
       \node[anchor=north] at (5,-2) {not surjective, \(2&lt;3\)};
     \end{tikzpicture}
-    </cd>
+			</latex-image>
+		</image>
+		<caption>A linear transformation whose domain has a larger dimension than its codomain, and is therefore not injective; and a linear transformation whose domain has a smaller dimension than its codomain, and is therefore not surjective.</caption>
+    </figure>
     <p>
   But dimension arguments <em>cannot</em> be used to prove a map <em>is</em>
   injective or surjective.
