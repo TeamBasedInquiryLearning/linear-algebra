@@ -985,87 +985,141 @@ a basis for the solution space is
 
 <example><title>A1</title>
 <statement>
+    <p>
 Consider the following maps of polynomials <m>S: \P \rightarrow \P</m>
 and <m>T:\P\rightarrow\P</m> defined by
 <me>S(f(x))= 3xf(x) \text{ and }T(f(x)) = 3f'(x)f(x).</me>
 Explain why one of these maps is a linear transformation, and why the other
 map is not.
-\end{problem}
-\begin{solution}
-To show <m>S</m> is a linear transformation, we must show two things:
-\begin{align*}
-&amp;S\left(f(x)+g(x)\right)=S(f(x))+s(g(x)) \\
-&amp;S(cf(x)) = cS(f(x))
-\end{align*}
-
-To show <m>S</m> respects addition, we compute
-\begin{align*}
-S\left(f(x)+g(x)\right) &amp;= 3x\left(f(x)+g(x)\right) &amp; \text{by definition of <m>S</m>} \\
-&amp;= 3xf(x)+3xg(x) &amp; \text{by distributing}
-\end{align*}
-But note that <m>S(f(x))=3xf(x)</m> and <m>S(g(x))=3xg(x)</m>, so we have <m>S(f(x)+g(x))=S(f(x))+S(g(x))</m>.
-
-For the second part, we compute
-\begin{align*}
-S\left(cf(x)\right) &amp;= 3x\left(cf(x)\right) &amp; \text{by definition of <m>S</m>} \\
-&amp;= 3cxf(x) &amp; \text{rewriting the multiplication.}
-\end{align*}
-But note that <m>cS(f(x))=c(3xf(x))=3cxf(x)</m> as well, so we have <m>S(cf(x))=cS(f(x))</m>.  Now, since <m>S</m> respects both addition and scalar multiplication, we can conclude <m>S</m> is a linear transformation.
-
-\textit{(Solution method 1)}
-As for <m>T</m>, we compute
-  \begin{align*}
-  T(f(x)+g(x))&amp; =3 (f(x)+g(x))'(f(x)+g(x)) &amp;\text{by definition of <m>T</m>} \\
-  &amp;= 3(f'(x)+g'(x))(f(x)+g(x)) &amp; \text{since the derivative is linear} \\
-  &amp;= 3f(x)f'(x)+3f(x)g'(x)+3f'(x)g(x)+3g(x)g'(x) &amp;\text{by distributing}
-  \end{align*}
-However, note that <m>T(f(x))+T(g(x))=3f'(x)f(x)+3g'(x)g(x)</m>, which is not
-always the same polynomial (for example, when <m>f(x)=g(x)=x</m>). 
-So we see that <m>T(f(x)+g(x)) \neq T(f(x))+T(g(x))</m>,
-so <m>T</m> does not respect addition and is therefore not a linear transformation.
-
-\textit{(Solution method 2)}
-As for <m>T</m>, we may choose the polynomial <m>f(x)=x</m> and scalar <m>c=2</m>. Then
-<me>T(cf(x))=T(2x)=3(2x)'(2x)=3(2)(2x)=12x.</me>
-
-But on the other hand, <me>cT(f(x))=2T(x)=2(3)(x)'(x)=2(3)(1)(x)=6x.</me>
-Since this isn't the same polynomial, <m>T</m> does not preserve multiplication
-and is therefore not a linear transformation. 
+    </p>
 </statement>
 <solution>
+    <p>
+To show <m>S</m> is a linear transformation, we must show two things:
+        <me>
+S\left(f(x)+g(x)\right)=S(f(x))+s(g(x))
+        </me>
+        <me>
+S(cf(x)) = cS(f(x))
+        </me>
+    </p>
+    <p>
+To show <m>S</m> respects addition, we compute
+        <md>
+            <mrow>
+S\left(f(x)+g(x)\right) &amp;= 3x\left(f(x)+g(x)\right) &amp; \text{by definition of <m>S</m>} \\
+            </mrow>
+            <mrow>
+&amp;= 3xf(x)+3xg(x) &amp; \text{by distributing}
+            </mrow>
+        </md>
+But note that <m>S(f(x))=3xf(x)</m> and <m>S(g(x))=3xg(x)</m>, so we have <m>S(f(x)+g(x))=S(f(x))+S(g(x))</m>.
+    </p>
+    <p>
+For the second part, we compute
+        <md>
+            <mrow>
+S\left(cf(x)\right) &amp;= 3x\left(cf(x)\right) &amp; \text{by definition of <m>S</m>} \\
+            </mrow>
+            <mrow>
+&amp;= 3cxf(x) &amp; \text{rewriting the multiplication.}
+            </mrow>
+        </md>
+But note that <m>cS(f(x))=c(3xf(x))=3cxf(x)</m> as well, so we have <m>S(cf(x))=cS(f(x))</m>.
+Now, since <m>S</m> respects both addition and scalar multiplication, we can conclude <m>S</m> is a linear transformation.
+    </p>
+    <ul>
+        <li>
+            <p>
+(Solution method 1)
+As for <m>T</m>, we compute
+                <md>
+                    <mrow>
+  T(f(x)+g(x))&amp; =3 (f(x)+g(x))'(f(x)+g(x)) &amp;\text{by definition of <m>T</m>}
+                    </mrow>
+                    <mrow>
+  &amp;= 3(f'(x)+g'(x))(f(x)+g(x)) &amp; \text{since the derivative is linear}
+                    </mrow>
+                    <mrow>
+  &amp;= 3f(x)f'(x)+3f(x)g'(x)+3f'(x)g(x)+3g(x)g'(x) &amp;\text{by distributing}
+                    </mrow>
+                </md>
+However, note that <m>T(f(x))+T(g(x))=3f'(x)f(x)+3g'(x)g(x)</m>, which is not
+always the same polynomial (for example, when <m>f(x)=g(x)=x</m>).
+So we see that <m>T(f(x)+g(x)) \neq T(f(x))+T(g(x))</m>,
+so <m>T</m> does not respect addition and is therefore not a linear transformation.
+            </p>
+        </li>
+        <li>
+            <p>
+(Solution method 2)
+As for <m>T</m>, we may choose the polynomial <m>f(x)=x</m> and scalar <m>c=2</m>. Then
+<me>T(cf(x))=T(2x)=3(2x)'(2x)=3(2)(2x)=12x.</me>
+            </p>
+            <p>
+But on the other hand, <me>cT(f(x))=2T(x)=2(3)(x)'(x)=2(3)(1)(x)=6x.</me>
+Since this isn't the same polynomial, <m>T</m> does not preserve multiplication
+and is therefore not a linear transformation.
+            </p>
+        </li>
+    </ul>
 </solution>
 </example>
 
 <example><title>A2</title>
 <statement>
-\begin{enumerate}[(a)]
-\item Find the standard matrix for the linear transformation <m>T: \IR^3\rightarrow \IR^4</m> given by <me>T\left(\left[\begin{array}{c} x \\ y \\ z \\  \end{array}\right] \right) = \left[\begin{array}{c} -x+y \\ -x+3y-z \\ 7x+y+3z \\ 0 \end{array}\right].</me>
-\item Let <m>S: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix <me>\left[\begin{array}{c} 2 &amp; 3 &amp; 4 &amp; 1 \\ 0 &amp; 1 &amp; -1 &amp; -1 \\ 3 &amp; -2 &amp; -2 &amp; 4 \end{array}\right].</me>
-Compute  <m> S\left( \left[\begin{array}{c} -2 \\ 1 \\ 3 \\ 2\end{array}\right] \right) </m>.
-\end{enumerate}
-\end{problem}
-
-\begin{solution}
-\begin{enumerate}[(a)]
-\item Since
-\begin{align*}
-T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0  \end{array}\right]\right) &amp;= \left[\begin{array}{c} -1 \\ -1 \\ 7 \\0\end{array}\right] &amp;
-T\left(\left[\begin{array}{c} 0 \\ 1 \\ 0 \end{array}\right]\right) &amp;= \left[\begin{array}{c} 1 \\ 3 \\ 1 \\0 \end{array}\right]  &amp;
-T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right]\right) &amp;= \left[\begin{array}{c} 0 \\ -1 \\ 3 \\ 0  \end{array}\right], 
-\end{align*}
-the standard matrix for <m>T</m> is <m> \left[\begin{array}{c} -1 &amp; 1 &amp; 0 \\ -1 &amp; 3 &amp; -1 \\ 7 &amp; 1 &amp; 3  \\ 0 &amp; 0 &amp; 0 \end{array}\right] </m>.
-\item <me>
-S\left(\left[\begin{array}{c} -2 \\ 1 \\ 3 \\ 2 \end{array}\right] \right) = -2S(\vec{e}_1)+S(\vec{e}_2)+3S(\vec{e_3})+2S(\vec{e_4})
-= -2 \left[\begin{array}{c} 2 \\ 0 \\ 3 \end{array}\right] + \left[\begin{array}{c} 3 \\ 1 \\ -2 \end{array}\right] + 3 \left[\begin{array}{c} 4 \\ -1 \\ -2 \end{array}\right]+2\left[\begin{array}{c} 1 \\ -1 \\ 4 \end{array}\right] 
-= \left[\begin{array}{c} 13 \\ -4 \\ -6\end{array}\right]. </me>
-\end{enumerate}
+    <ol>
+        <li>
+            <p>
+Find the standard matrix for the linear transformation <m>T: \IR^3\rightarrow \IR^4</m> given by
+<me>T\left(\left[\begin{array}{c} x \\ y \\ z \\  \end{array}\right] \right) = \left[\begin{array}{c} -x+y \\ -x+3y-z \\ 7x+y+3z \\ 0 \end{array}\right].</me>
+            </p>
+        </li>
+        <li>
+            <p>
+Let <m>S: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix
+<me>\left[\begin{array}{c} 2 &amp; 3 &amp; 4 &amp; 1 \\ 0 &amp; 1 &amp; -1 &amp; -1 \\ 3 &amp; -2 &amp; -2 &amp; 4 \end{array}\right].</me>
+Compute <m> S\left( \left[\begin{array}{c} -2 \\ 1 \\ 3 \\ 2\end{array}\right] \right) </m>.
+            </p>
+        </li>
+    </ol>
 </statement>
 <solution>
+    <ol>
+        <li>
+            <p>
+Since
+                <md>
+                    <mrow>
+T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0  \end{array}\right]\right) &amp;= \left[\begin{array}{c} -1 \\ -1 \\ 7 \\0\end{array}\right]
+                    </mrow>
+                    <mrow>
+T\left(\left[\begin{array}{c} 0 \\ 1 \\ 0 \end{array}\right]\right) &amp;= \left[\begin{array}{c} 1 \\ 3 \\ 1 \\0 \end{array}\right]
+                    </mrow>
+                    <mrow>
+T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right]\right) &amp;= \left[\begin{array}{c} 0 \\ -1 \\ 3 \\ 0  \end{array}\right],
+                    </mrow>
+                </md>
+the standard matrix for <m>T</m> is <m> \left[\begin{array}{c} -1 &amp; 1 &amp; 0 \\ -1 &amp; 3 &amp; -1 \\ 7 &amp; 1 &amp; 3  \\ 0 &amp; 0 &amp; 0 \end{array}\right] </m>.
+            </p>
+        </li>
+        <li>
+            <p>
+<me>
+S\left(\left[\begin{array}{c} -2 \\ 1 \\ 3 \\ 2 \end{array}\right] \right) = -2S(\vec{e}_1)+S(\vec{e}_2)+3S(\vec{e_3})+2S(\vec{e_4})
+                </me>
+                <me>
+= -2 \left[\begin{array}{c} 2 \\ 0 \\ 3 \end{array}\right] + \left[\begin{array}{c} 3 \\ 1 \\ -2 \end{array}\right] + 3 \left[\begin{array}{c} 4 \\ -1 \\ -2 \end{array}\right]+2\left[\begin{array}{c} 1 \\ -1 \\ 4 \end{array}\right] 
+= \left[\begin{array}{c} 13 \\ -4 \\ -6\end{array}\right]. </me>
+            </p>
+        </li>
+    </ol>
 </solution>
 </example>
 
 <example><title>A3</title>
 <statement>
+    <p>
 Let <m>T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by
 <me>
   T\left(\left[\begin{array}{c}x\\y\\z\\w\end{array}\right] \right) =
@@ -1075,67 +1129,127 @@ Let <m>T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by
     x+6y-z+3w
   \end{array}\right]
 </me>
-\begin{enumerate}[(a)]
-\item Explain how to find the image of <m>T</m> and the kernel of <m>T</m>. 
-\item Explain how to find a basis of the image of <m>T</m> and a basis of the kernel of <m>T</m>. 
-\item Explain how to find the rank and nullity of T, and why the rank-nullity theorem holds for T.
-\end{enumerate}
-\end{problem}
-\begin{solution}
-\begin{enumerate}[(a)]
-\item 
+    </p>
+    <ol>
+        <li>
+            <p>
+Explain how to find the image of <m>T</m> and the kernel of <m>T</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+Explain how to find a basis of the image of <m>T</m> and a basis of the kernel of <m>T</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+Explain how to find the rank and nullity of T, and why the rank-nullity theorem holds for T.
+            </p>
+        </li>
+    </ol>
+</statement>
+<solution>
+    <ol>
+        <li>
+            <p>
+                To find the image we compute
 <me> \Im(T) = T\left(\vspan\left\{\vec{e}_1,\vec{e}_2,\vec{e}_3,\vec{e_4}\right\}\right)
+                </me><me>
 = \vspan\left\{T(\vec{e}_1),T(\vec{e}_2),T(\vec{e}_3),T(\vec{e_4})\right\}
+                </me>
+                <me>
 = \vspan\left\{\left[\begin{array}{c}1 \\ 2 \\ 1 \end{array}\right], \left[\begin{array}{c} 3 \\ 4 \\ 6  \end{array}\right], \left[\begin{array}{c} 2 \\ 6 \\ -1 \end{array}\right], \left[\begin{array}{c} -3 \\ -10 \\ 3 \end{array}\right]\right\}.</me>
-
-The kernel is the solution set of the corresponding homogeneous system of equations, i.e.  
-\begin{alignat*}{5}
-x &amp;+&amp; 3y &amp;+&amp; 2z &amp;-&amp; 3w &amp;=&amp; 0 \\
-2x &amp;+&amp; 4y &amp;+&amp; 6z &amp;-&amp; 10w &amp;=&amp; 0 \\
+            </p>
+        </li>
+        <li>
+            <p>
+The kernel is the solution set of the corresponding homogeneous system of equations, i.e.
+                <md alignment="alignat" alignat-columns="5">
+                    <mrow>
+x &amp;+&amp; 3y &amp;+&amp; 2z &amp;-&amp; 3w &amp;=&amp; 0
+                    </mrow>
+                    <mrow>
+2x &amp;+&amp; 4y &amp;+&amp; 6z &amp;-&amp; 10w &amp;=&amp; 0
+                    </mrow>
+                    <mrow>
 x &amp;+&amp; 6y &amp;-&amp; z &amp;+&amp; 3w &amp;=&amp; 0 .
-\end{alignat*}
-So we compute 
+                    </mrow>
+                </md>
+So we compute
 <me>\RREF\left[\begin{array}{cccc|c} 1 &amp; 3 &amp; 2 &amp; -3 &amp; 0 \\ 2 &amp; 4 &amp; 6 &amp; -10 &amp;0 \\ 1 &amp; 6 &amp; -1 &amp; 3 &amp; 0 \end{array}\right]
 = \left[\begin{array}{cccc|c} 1 &amp; 0 &amp; 5 &amp; -9 &amp; 0 \\ 0 &amp; 1 &amp; -1 &amp; 2 &amp; 0  \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right].</me>
 Then, letting <m>z=a</m> and <m>w=b</m> we have
 <me> \ker T = \setBuilder{\left[\begin{array}{c}-5a+9b \\ a-2b \\ a \\ b \end{array}\right]}{a,b \in \IR}. </me>
-
-\item Since 
-<m>\Im(T) = \vspan\left\{\left[\begin{array}{c}1 \\ 2 \\ 1 \end{array}\right], \left[\begin{array}{c} 3 \\ 4 \\ 6  \end{array}\right], \left[\begin{array}{c} 2 \\ 6 \\ -1 \end{array}\right], \left[\begin{array}{c} -3 \\ -10 \\ 3 \end{array}\right]\right\}</m>, we simply need to find a linearly independent subset of these four spanning vectors. So we compute 
+            </p>
+        </li>
+        <li>
+            <p>
+Since
+<m>\Im(T) = \vspan\left\{\left[\begin{array}{c}1 \\ 2 \\ 1 \end{array}\right], \left[\begin{array}{c} 3 \\ 4 \\ 6  \end{array}\right],
+\left[\begin{array}{c} 2 \\ 6 \\ -1 \end{array}\right], \left[\begin{array}{c} -3 \\ -10 \\ 3 \end{array}\right]\right\}</m>,
+we simply need to find a linearly independent subset of these four spanning vectors. So we compute
 <me>\RREF \left[\begin{array}{c}1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]
 = \left[\begin{array}{c} 1 &amp; 0 &amp; 5 &amp; -9 \\ 0 &amp; 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right].</me>
-Since the first two columns are pivot columns, they form a linearly independent spanning set, so a basis for <m>\Im T</m> is <m>\setList{\left[\begin{array}{c}1\\2\\1 \end{array}\right], \left[\begin{array}{c}3\\4\\6 \end{array}\right]}.</m>
-
-To find a basis for the kernel, note that 
-<me> \ker T = \setBuilder{\left[\begin{array}{c}-5a+9b \\ a-2b \\ a \\ b \end{array}\right]}{a,b \in \IR} 
+Since the first two columns are pivot columns, they form a linearly independent spanning set, so a basis for <m>\Im T</m>
+is <m>\setList{\left[\begin{array}{c}1\\2\\1 \end{array}\right], \left[\begin{array}{c}3\\4\\6 \end{array}\right]}.</m>
+            </p>
+            <p>
+To find a basis for the kernel, note that
+<me> \ker T = \setBuilder{\left[\begin{array}{c}-5a+9b \\ a-2b \\ a \\ b \end{array}\right]}{a,b \in \IR}
+                </me><me>
 = \setBuilder{a \left[\begin{array}{c}-5 \\ 1 \\ 1  \\ 0 \end{array}\right]+b \left[\begin{array}{c} 9 \\ -2 \\ 0 \\ 1 \end{array}\right]}{a,b \in \IR}
+                </me><me>
 = \vspan\left\{ \left[\begin{array}{c} -5 \\ 1 \\ 1 \\ 0 \end{array}\right], \left[\begin{array}{c} 9 \\ -2 \\ 0 \\ 1 \end{array}\right]\right\}.</me>
 so a basis for the kernel is
 <me>\setList{\left[\begin{array}{c}-5 \\ 1 \\ 1 \\ 0 \end{array}\right],
 \left[\begin{array}{c}9 \\ -2 \\ 0 \\ 1 \end{array}\right]}.</me>
-\item The dimension of the image (the rank) is <m>2</m>, the dimension of the kernel (the nullity) is <m>2</m>, and the dimension of the domain of <m>T</m> is <m>4</m>, so we see <m>2+2=4</m>, which verifies that the sum of the rank and nullity of <m>T</m> is the dimension of the domain of <m>T</m>.
-\end{enumerate}
-</statement>
-<solution>
+            </p>
+        </li>
+        <li>
+            <p>
+The dimension of the image (the rank) is <m>2</m>, the dimension of the kernel (the nullity) is <m>2</m>,
+and the dimension of the domain of <m>T</m> is <m>4</m>, so we see <m>2+2=4</m>, which verifies that the sum
+of the rank and nullity of <m>T</m> is the dimension of the domain of <m>T</m>.
+            </p>
+        </li>
+    </ol>
 </solution>
 </example>
 
 <example><title>A4</title>
 <statement>
+    <p>
 Let <m>T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix <m>\left[\begin{array}{cccc} 1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]</m>.
-\begin{enumerate}[(a)]
-\item Explain why <m>T</m> is or is not injective.
-\item Explain why <m>T</m> is or is not surjective.
-\end{enumerate}
-\end{problem}
-\begin{solution}
-Compute <me>\RREF\left[\begin{array}{cccc}1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right] = \left[\begin{array}{cccc} 1 &amp; 0 &amp; 5 &amp; -9 \\ 0 &amp; 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right].</me>
-\begin{enumerate}[(a)]
-\item Note that the third and fourth columns are non-pivot columns, which means <m>\ker T</m> contains infinitely many vectors, so <m>T</m> is not injective.
-\item Since there are only two pivots, the image (i.e. the span of the columns) is a 2-dimensional subspace (and thus does not equal <m>\IR^3</m>), so <m>T</m> is not surjective.
-\end{enumerate}
+    </p>
+    <ol>
+        <li>
+            <p>
+Explain why <m>T</m> is or is not injective.
+            </p>
+        </li>
+        <li>
+            <p>
+Explain why <m>T</m> is or is not surjective.
+            </p>
+        </li>
+    </ol>
 </statement>
 <solution>
+    <p>
+Compute <me>\RREF\left[\begin{array}{cccc}1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right] = \left[\begin{array}{cccc} 1 &amp; 0 &amp; 5 &amp; -9 \\ 0 &amp; 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right].</me>
+    </p>
+    <ol>
+        <li>
+            <p>
+Note that the third and fourth columns are non-pivot columns, which means <m>\ker T</m> contains infinitely many vectors, so <m>T</m> is not injective.
+            </p>
+        </li>
+        <li>
+            <p>
+Since there are only two pivots, the image (i.e. the span of the columns) is a 2-dimensional subspace (and thus does not equal <m>\IR^3</m>), so <m>T</m> is not surjective.
+            </p>
+        </li>
+    </ol>
 </solution>
 </example>
 
@@ -1143,54 +1257,74 @@ Compute <me>\RREF\left[\begin{array}{cccc}1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 
 
 <example><title>M1</title>
 <statement>
+    <p>
 Of the following three matrices, only two may be multiplied.
-\begin{align*}
-A &amp;= \left[\begin{array}{cc} 1 &amp; -3 \\ 0 &amp; 1 \end{array}\right] &amp; B&amp;= \left[\begin{array}{ccc} 4 &amp; 1 &amp; 2 \end{array}\right] &amp; C&amp;= \left[\begin{array}{ccc} 0 &amp; 1 &amp; 3 \\ 1 &amp; -2 &amp; 5 \end{array}\right]
-\end{align*}
+    </p>
+    <md>
+        <mrow>
+A &amp;= \left[\begin{array}{cc} 1 &amp; -3 \\ 0 &amp; 1 \end{array}\right] &amp;
+B&amp;= \left[\begin{array}{ccc} 4 &amp; 1 &amp; 2 \end{array}\right] &amp;
+C&amp;= \left[\begin{array}{ccc} 0 &amp; 1 &amp; 3 \\ 1 &amp; -2 &amp; 5 \end{array}\right]
+        </mrow>
+    </md>
+    <p>
 Explain which two may be multiplied and why. Then show how to find their product.
-\end{problem}
-\begin{solution}
+    </p>
+</statement>
+<solution>
+    <p>
 <m>AC</m> is the only one that can be computed, since <m>A</m> is <m>2\times 2</m>
 and <m>C</m> is <m>2\times 3</m>. Thus <m>AC</m> will be the <m>2\times 3</m> matrix
 given by
-\begin{align*}
+    </p>
+    <md>
+        <mrow>
 AC\left( \vec{e}_1 \right) &amp;= A \left( \left[\begin{array}{c} 0 \\ 1 \end{array}\right] \right) = 0 \left[\begin{array}{c} 1 \\ 0 \end{array}\right] + 1\left[\begin{array}{c} -3 \\ 1 \end{array}\right] = \left[\begin{array}{c} -3 \\ 1 \end{array}\right] \\
+        </mrow>
+        <mrow>
 AC\left( \vec{e}_2 \right) &amp;= A \left( \left[\begin{array}{c} 1 \\ -2 \end{array}\right] \right) = 1 \left[\begin{array}{c} 1 \\ 0 \end{array}\right] -2\left[\begin{array}{c} -3 \\ 1 \end{array}\right] = \left[\begin{array}{c} 7 \\ -2 \end{array}\right] \\
+        </mrow>
+        <mrow>
 AC\left( \vec{e}_3 \right) &amp;= A \left( \left[\begin{array}{c} 3 \\ 5 \end{array}\right] \right) = 3 \left[\begin{array}{c} 1 \\ 0 \end{array}\right] + 5\left[\begin{array}{c} -3 \\ 1 \end{array}\right] = \left[\begin{array}{c} -12 \\ 5 \end{array}\right] \\
-\end{align*}
+        </mrow>
+    </md>
+    <p>
 Thus
 <me>AC = \left[\begin{array}{ccc} -3 &amp; 7 &amp; -12 \\ 1 &amp; -2 &amp; 5 \end{array}\right].</me>
-</statement>
-<solution>
+    </p>
 </solution>
 </example>
 
 <example><title>M2</title>
 <statement>
+    <p>
 Explain why the matrix <m>\left[\begin{array}{ccc}1 &amp; 3 &amp; 2  \\ 2 &amp; 4 &amp; 6  \\ 1 &amp; 6 &amp; -1 \end{array}\right]</m> is or is not invertible.
-\end{problem}
-\begin{solution}
+    </p>
+</statement>
+<solution>
+    <p>
 We compute
 <me>\RREF\left(\left[\begin{array}{ccc}1 &amp; 3 &amp; 2  \\ 2 &amp; 4 &amp; 6  \\ 1 &amp; 6 &amp; -1 \end{array}\right]\right) = \left[\begin{array}{ccc} 1 &amp; 0 &amp; 5 \\ 0 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 \end{array}\right].</me>
 Since its <m>\RREF</m> is not the identity matrix, the linear map is not bijective and thus the matrix is not invertible.
-</statement>
-<solution>
+    </p>
 </solution>
 </example>
 
 <example><title>M3</title>
 <statement>
+    <p>
 Show how to compute the inverse of the matrix
 <m>A=\left[\begin{array}{cccc}
 1 &amp; 2 &amp; 3 &amp; 5 \\ 0 &amp; -1 &amp; 4 &amp; -2 \\ 0 &amp; 0 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right]</m>.
-\end{problem}
-\begin{solution}
+    </p>
+</statement>
+<solution>
+    <p>
 To find the matrix <m>A^{-1}</m> where <m>AA^{-1}=I</m>, we need to solve the augmented matrix <m>[A|I]</m>.
 <me>\RREF\left(\left[\begin{array}{cccc|cccc} 1 &amp; 2 &amp; 3 &amp; 5 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\ 0 &amp; -1 &amp; 4 &amp; -2 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 3 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]\right) = \left[\begin{array}{cccc|cccc} 1 &amp; 0 &amp; 0 &amp;0 &amp; 1 &amp; 2 &amp; -11 &amp; 32 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 4 &amp; -14 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]</me>
 So the inverse is <m>\left[\begin{array}{cccc}  1 &amp; 2 &amp; -11 &amp; 32 \\ 0 &amp; -1 &amp; 4 &amp; -14 \\  0 &amp; 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]</m>.
-</statement>
-<solution>
+    </p>
 </solution>
 </example>
 
@@ -1199,53 +1333,99 @@ So the inverse is <m>\left[\begin{array}{cccc}  1 &amp; 2 &amp; -11 &amp; 32 \\ 
 
 <example><title>M4</title>
 <statement>
+    <p>
 Let <m>A</m> be a <m>4\times4</m> matrix.
-\begin{enumerate}[(a)]
-\item Give a <m>4\times 4</m> matrix <m>P</m> that may be used to perform the row
+    </p>
+    <ol>
+        <li>
+            <p>
+Give a <m>4\times 4</m> matrix <m>P</m> that may be used to perform the row
       operation <m>{R_3} \to R_3+4 \, {R_1} </m>.
-\item Give a <m>4\times 4</m> matrix <m>Q</m> that may be used to perform the row
+            </p>
+        </li>
+        <li>
+            <p>
+Give a <m>4\times 4</m> matrix <m>Q</m> that may be used to perform the row
       operation <m>{R_1} \to -4 \, {R_1}</m>.
-\item Use matrix multiplication to describe the matrix obtained by applying 
+            </p>
+        </li>
+        <li>
+            <p>
+Use matrix multiplication to describe the matrix obtained by applying 
         <m>{R_3} \to 4 \, {R_1} + {R_3}</m> and then <m>{R_1} \to -4 \, {R_1}</m>
       to <m>A</m> (note the order).
-\end{enumerate}
-\end{problem}
-\begin{solution}
-\begin{enumerate}
-\item 
-<m>P=\left[\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 4 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]</m>
-\item
-<m>Q=\left[\begin{array}{cccc} -4 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1\end{array}\right]</m>
-\item <m> QPA</m>
-\end{enumerate}
+            </p>
+        </li>
+    </ol>
 </statement>
 <solution>
+    <ol>
+        <li>
+            <p>
+<m>P=\left[\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 4 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]</m>
+            </p>
+        </li>
+        <li>
+            <p>
+<m>Q=\left[\begin{array}{cccc} -4 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1\end{array}\right]</m>
+            </p>
+        </li>
+        <li>
+            <p>
+<m>QPA</m>
+            </p>
+        </li>
+    </ol>
 </solution>
 </example>
 
 <example><title>G1</title>
 <statement>
+    <p>
 Let <m>A</m> be a <m>4 \times 4</m> matrix with determinant <m>-7</m>.
-\begin{enumerate}[(a)]
-\item Let <m>B</m> be the matrix obtained from <m>A</m> by applying the row operation <m>R_3 \to R_3+3R_4</m>. What is <m>\det(B)</m>?
-\item Let <m>C</m> be the matrix obtained from <m>A</m> by applying the row operation <m>R_2 \to -3R_2</m>. What is <m>\det(C)</m>?
-\item Let <m>D</m> be the matrix obtained from <m>A</m> by applying the row operation <m>R_3 \leftrightarrow R_4</m>. What is <m>\det(D)</m>?
-\end{enumerate}
-\end{problem}
-
-\begin{solution}
-\begin{enumerate}[(a)]
-\item Adding a multiple of one row to another row does not change the determinant, so <m>\det(B)=\det(A)=-7</m>.
-\item Scaling a row scales the determinant by the same factor, so so <m>\det(B)=-3\det(A)=-3(-7)=21</m>.
-\item Swaping rows changes the sign of the determinant, so <m>\det(B)=-\det(A)=7</m>.
-\end{enumerate}
+    </p>
+    <ol>
+        <li>
+            <p>
+Let <m>B</m> be the matrix obtained from <m>A</m> by applying the row operation <m>R_3 \to R_3+3R_4</m>. What is <m>\det(B)</m>?
+            </p>
+        </li>
+        <li>
+            <p>
+Let <m>C</m> be the matrix obtained from <m>A</m> by applying the row operation <m>R_2 \to -3R_2</m>. What is <m>\det(C)</m>?
+            </p>
+        </li>
+        <li>
+            <p>
+Let <m>D</m> be the matrix obtained from <m>A</m> by applying the row operation <m>R_3 \leftrightarrow R_4</m>. What is <m>\det(D)</m>?
+            </p>
+        </li>
+    </ol>
 </statement>
 <solution>
+    <ol>
+        <li>
+            <p>
+Adding a multiple of one row to another row does not change the determinant, so <m>\det(B)=\det(A)=-7</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+Scaling a row scales the determinant by the same factor, so so <m>\det(B)=-3\det(A)=-3(-7)=21</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+Swaping rows changes the sign of the determinant, so <m>\det(B)=-\det(A)=7</m>.
+            </p>
+        </li>
+    </ol>
 </solution>
 </example>
 
 <example><title>G2</title>
 <statement>
+    <p>
 Show how to compute the determinant of the matrix
 <me>
   A
@@ -1257,13 +1437,16 @@ Show how to compute the determinant of the matrix
     -3 &amp; 1 &amp; 2 &amp; -5
   \end{array}\right]
 </me>
-\end{problem}
-\begin{solution}
+    </p>
+</statement>
+<solution>
+    <p>
 Here is one possible solution, first applying a single row operation,
  and then performing Laplace/cofactor expansions to reduce the determinant
  to a linear combination of <m>2\times 2</m> determinants:
-
- \begin{align*}
+    </p>
+    <md>
+        <mrow>
 \det
    \left[\begin{array}{cccc}
      1 &amp; 3 &amp; 0 &amp; -1 \\
@@ -1272,17 +1455,30 @@ Here is one possible solution, first applying a single row operation,
      -3 &amp; 1 &amp; 2 &amp; -5
    \end{array}\right]
  &amp;= \det \left[\begin{array}{cccc} 1 &amp; 3 &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; 3 \\ -3 &amp; 1 &amp; 2 &amp; -5 \end{array}\right] =
- (-1) \det \left[\begin{array}{ccc} 1 &amp; 3 &amp; -1 \\ 1 &amp; 1 &amp; 3 \\ -3 &amp; 1 &amp; -5 \end{array}\right] + (1) \det \left[\begin{array}{ccc} 1 &amp; 3 &amp; 0 \\ 1 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 2 \end{array}\right] \\
- &amp;= (-1) \left( (1) \det \left[\begin{array}{cc} 1 &amp; 3 \\ 1 &amp; -5 \end{array}\right] - (1) \det \left[\begin{array}{cc} 3 &amp; -1 \\ 1 &amp; -5 \end{array}\right] + (-3) \det \left[\begin{array}{cc} 3 &amp; -1 \\ 1 &amp; 3 \end{array}\right] \right) + \\
- &amp;\phantom{==} (1) \left( (1) \det \left[\begin{array}{cc} 1 &amp; 1 \\ 1 &amp; 2 \end{array}\right] - (3) \det \left[\begin{array}{cc} 1 &amp; 1 \\ -3 &amp; 2 \end{array}\right] \right) \\
- % &amp;= (-1)\left( (1)(-8)-(1)(-14)+(-3)(10) \right) + (1) \left( (1)(1)-(3)(5) \right) \\
- &amp;= (-1) \left( -8+14-30 \right) + (1) \left(1-15 \right) \\
+ (-1) \det \left[\begin{array}{ccc} 1 &amp; 3 &amp; -1 \\ 1 &amp; 1 &amp; 3 \\ -3 &amp; 1 &amp; -5 \end{array}\right] + (1) \det \left[\begin{array}{ccc} 1 &amp; 3 &amp; 0 \\ 1 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 2 \end{array}\right]
+        </mrow>
+        <mrow>
+ &amp;= (-1) \left( (1) \det \left[\begin{array}{cc} 1 &amp; 3 \\ 1 &amp; -5 \end{array}\right] - (1) \det \left[\begin{array}{cc} 3 &amp; -1 \\ 1 &amp; -5 \end{array}\right] + (-3) \det \left[\begin{array}{cc} 3 &amp; -1 \\ 1 &amp; 3 \end{array}\right] \right) +
+        </mrow>
+        <mrow>
+ &amp;\phantom{==} (1) \left( (1) \det \left[\begin{array}{cc} 1 &amp; 1 \\ 1 &amp; 2 \end{array}\right] - (3) \det \left[\begin{array}{cc} 1 &amp; 1 \\ -3 &amp; 2 \end{array}\right] \right)
+        </mrow>
+        <mrow>
+ % &amp;= (-1)\left( (1)(-8)-(1)(-14)+(-3)(10) \right) + (1) \left( (1)(1)-(3)(5) \right)
+        </mrow>
+        <mrow>
+ &amp;= (-1) \left( -8+14-30 \right) + (1) \left(1-15 \right)
+        </mrow>
+        <mrow>
  &amp;=10
- \end{align*}
-
+        </mrow>
+    </md>
+    <p>
 Here is another possible solution, using row and column operations to first reduce
 the determinant to a <m>3\times 3</m> matrix and then applying a formula:
-\begin{align*}
+    </p>
+    <md>
+        <mrow>
 \det
   \left[\begin{array}{cccc}
     1 &amp; 3 &amp; 0 &amp; -1 \\
@@ -1292,44 +1488,52 @@ the determinant to a <m>3\times 3</m> matrix and then applying a formula:
   \end{array}\right]
 &amp;=
 \det \left[\begin{array}{cccc} 1 &amp; 3 &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; 3 \\ -3 &amp; 1 &amp; 2 &amp; -5 \end{array}\right] =
-\det \left[\begin{array}{cccc} 1 &amp; 3 &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 1 &amp; 2 \\ -3 &amp; 1 &amp; 2 &amp; -7 \end{array}\right] \\ &amp;=
--\det \left[\begin{array}{cccc} 1 &amp; 3 &amp; 0 &amp; -1 \\ 1 &amp; 1 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ -3 &amp; 1 &amp; 2 &amp; -7 \end{array}\right] =
--\det \left[\begin{array}{ccc} 1 &amp; 3 &amp; -1 \\ 1 &amp; 1 &amp; 2 \\ -3 &amp; 1  &amp; -7 \end{array}\right] \\  &amp;=
--((-7-18-1)-(3+2-21)) \\
+\det \left[\begin{array}{cccc} 1 &amp; 3 &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 1 &amp; 2 \\ -3 &amp; 1 &amp; 2 &amp; -7 \end{array}\right]
+        </mrow>
+        <mrow>
+&amp;=-\det \left[\begin{array}{cccc} 1 &amp; 3 &amp; 0 &amp; -1 \\ 1 &amp; 1 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ -3 &amp; 1 &amp; 2 &amp; -7 \end{array}\right] =
+-\det \left[\begin{array}{ccc} 1 &amp; 3 &amp; -1 \\ 1 &amp; 1 &amp; 2 \\ -3 &amp; 1  &amp; -7 \end{array}\right]
+        </mrow>
+        <mrow>
+ &amp;=-((-7-18-1)-(3+2-21))
+        </mrow>
+        <mrow>
  &amp;=10
- \end{align*}
-
-
-
-</statement>
-<solution>
+        </mrow>
+    </md>
 </solution>
 </example>
 
 <example><title>G3</title>
 <statement>
+    <p>
 Explain how to find the eigenvalues of the matrix <m>\left[\begin{array}{cc} -2 &amp; -2 \\ 10 &amp; 7 \end{array}\right] </m>.
-\end{problem}
-\begin{solution}
-Compute the characteristic polynomial: 
-<me>\det(A-\lambda I) = \det \left[\begin{array}{cc} -2 - \lambda &amp; -2 \\ 10 &amp; 7-\lambda \end{array}\right] = (-2-\lambda)(7-\lambda)+20 = \lambda ^2 -5\lambda +6 = (\lambda -2)(\lambda -3)</me>
-The eigenvalues are the roots of the characteristic polynomial, namely <m>2</m> and <m>3</m>.
+    </p>
 </statement>
 <solution>
+    <p>
+Compute the characteristic polynomial: 
+<me>\det(A-\lambda I) = \det \left[\begin{array}{cc} -2 - \lambda &amp; -2 \\ 10 &amp; 7-\lambda \end{array}\right]
+</me><me>= (-2-\lambda)(7-\lambda)+20 = \lambda ^2 -5\lambda +6 = (\lambda -2)(\lambda -3)</me>
+The eigenvalues are the roots of the characteristic polynomial, namely <m>2</m> and <m>3</m>.
+    </p>
 </solution>
 </example>
 
     <example><title>G4</title>
 <statement>
+    <p>
 Explain how to find a basis for the eigenspace associated to the eigenvalue <m>3</m> in the matrix <me>\left[\begin{array}{ccc} -7 &amp; -8 &amp; 2 \\ 8 &amp; 9 &amp; -1 \\ \frac{13}{2} &amp; 5 &amp; 2 \end{array}\right].</me>
-\end{problem}
-\begin{solution}
-The eigenspace associated to <m>3</m> is the kernel of <m>A-3I</m>, so we compute
-<me>\RREF(A-3I) = \RREF \left[\begin{array}{ccc} -7-3 &amp; -8 &amp; 2 \\ 8 &amp; 9-3 &amp; -1 \\ \frac{13}{2} &amp; 5 &amp; 2-3 \end{array}\right] = \RREF \left[\begin{array}{ccc} -10 &amp; -8 &amp; 2 \\ 8 &amp; 6 &amp; -1 \\ \frac{13}{2} &amp; 5 &amp; -1 \end{array}\right] = \left[\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; -\frac{3}{2} \\ 0 &amp; 0 &amp; 0 \end{array}\right].</me>
-Thus we see the kernel is <me>\setBuilder{\left[\begin{array}{c} -a \\ \frac{3}{2} a \\ a \end{array}\right]}{a \in \IR}</me>
-which has a basis of <m>\left\{ \left[\begin{array}{c} -1 \\ \frac{3}{2} \\ 1 \end{array}\right] \right\}</m>.
+    </p>
 </statement>
 <solution>
+    <p>
+The eigenspace associated to <m>3</m> is the kernel of <m>A-3I</m>, so we compute
+<me>\RREF(A-3I) = \RREF \left[\begin{array}{ccc} -7-3 &amp; -8 &amp; 2 \\ 8 &amp; 9-3 &amp; -1 \\ \frac{13}{2} &amp; 5 &amp; 2-3 \end{array}\right] =
+</me><me>\RREF \left[\begin{array}{ccc} -10 &amp; -8 &amp; 2 \\ 8 &amp; 6 &amp; -1 \\ \frac{13}{2} &amp; 5 &amp; -1 \end{array}\right] = \left[\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; -\frac{3}{2} \\ 0 &amp; 0 &amp; 0 \end{array}\right].</me>
+Thus we see the kernel is <me>\setBuilder{\left[\begin{array}{c} -a \\ \frac{3}{2} a \\ a \end{array}\right]}{a \in \IR}</me>
+which has a basis of <m>\left\{ \left[\begin{array}{c} -1 \\ \frac{3}{2} \\ 1 \end{array}\right] \right\}</m>.
+    </p>
 </solution>
 </example>
 
