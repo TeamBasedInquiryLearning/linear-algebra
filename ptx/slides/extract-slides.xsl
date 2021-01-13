@@ -35,7 +35,7 @@
     </frontmatter>
 </xsl:template>
 
-<xsl:template match="chapter|section|activity" mode="slides-title">
+<xsl:template match="*" mode="slides-title">
     <title>
         <xsl:apply-templates select="." mode="type-name"/><xsl:text> </xsl:text>
         <xsl:apply-templates select="." mode="number"/><xsl:if test="title">:
@@ -53,23 +53,30 @@
 <xsl:template match="section">
     <section>
         <xsl:apply-templates select="." mode="slides-title"/>
-        <xsl:apply-templates select="activity|subsection"/>
+        <xsl:apply-templates select="activity|definition|remark|fact|observation|example|subsection"/>
     </section>
 </xsl:template>
 
 <xsl:template match="subsection">
-    <xsl:apply-templates select="activity"/>
+    <xsl:apply-templates select="activity|definition|remark|fact|observation|example"/>
 </xsl:template>
 
-<xsl:template match="activity">
+<xsl:template match="activity|definition|remark|fact|observation|example">
     <slide>
         <xsl:apply-templates select="." mode="slides-title"/>
-        <xsl:copy-of select="statement/*|introduction/*"/>
-        <xsl:if test="task">
-            <ol pause="yes">
-                <xsl:apply-templates select="task"/>
-            </ol>
-        </xsl:if>
+        <xsl:choose>
+            <xsl:when test="statement|introduction">
+                <xsl:copy-of select="statement/*|introduction/*"/>
+                <xsl:if test="task">
+                    <ol pause="yes">
+                        <xsl:apply-templates select="task"/>
+                    </ol>
+                </xsl:if>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:copy-of select="*"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </slide>
 </xsl:template>
 
