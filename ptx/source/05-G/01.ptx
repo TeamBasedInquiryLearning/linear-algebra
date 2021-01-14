@@ -10,8 +10,10 @@ The image below illustrates how the linear transformation
 standard matrix <m>A = \left[\begin{array}{cc} 2 &amp; 0 \\ 0 &amp; 3 \end{array}\right]</m>
 transforms the unit square.
         </p>
-<cd>
-\begin{tikzpicture}[scale=0.5]
+<figure>
+	<image width="75%">
+		<latex-image>
+\begin{tikzpicture}
 \fill[red!50!white] (0,0) rectangle (1,1);`
 \draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
 \draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
@@ -22,7 +24,10 @@ transforms the unit square.
 \draw[blue,dashed] (2,0) -- (2,3) -- (0,3);
 \draw[red,dashed] (1,0) -- (1,1) -- (0,1);
 \end{tikzpicture}
-</cd>
+		</latex-image>
+	</image>
+	<caption>Transformation of the unit square by the matrix <m>A</m>.</caption>
+</figure>
     </introduction>
     <task><p>
 What are the lengths of <m>A\vec e_1</m> and <m>A\vec e_2</m>?
@@ -41,8 +46,10 @@ The image below illustrates how the linear transformation
 standard matrix <m>B = \left[\begin{array}{cc} 2 &amp; 3 \\ 0 &amp; 4 \end{array}\right]</m>
 transforms the unit square.
         </p>
-<cd>
-\begin{tikzpicture}[scale=0.5]
+<figure>
+	<image width="75%">
+		<latex-image>
+\begin{tikzpicture}
 \fill[red!50!white] (0,0) rectangle (1,1);
 \draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
 \draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
@@ -53,7 +60,10 @@ transforms the unit square.
 \draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
 \draw[red,dashed] (1,0) -- (1,1) -- (0,1);
 \end{tikzpicture}
-</cd>
+		</latex-image>
+	</image>
+	<caption>Transformation of the unit square by the matrix <m>B</m></caption>
+</figure>
     </introduction>
     <task>
         <p>
@@ -85,8 +95,10 @@ What is the area of the transformed unit square?
       =
     4\left[\begin{array}{c}\frac{3}{4}\\\frac{1}{2}\end{array}\right]
   </me>
-  <cd>
-  \begin{tikzpicture}[scale=0.5]
+  <figure>
+	<image width="75%">
+		<latex-image>
+  \begin{tikzpicture}
   \fill[red!50!white] (0,0) -- (1,0) -- (1.75,0.5) -- (0.75,0.5) -- (0,0);
   \draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
   \draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
@@ -97,7 +109,10 @@ What is the area of the transformed unit square?
   \draw[red,dashed] (1,0) -- (1.75,0.5) -- (0.75,0.5);
   \draw[blue,dashed] (2,0) -- (5,2) -- (3,2);
   \end{tikzpicture}
-  </cd>
+		</latex-image>
+	</image>
+	<caption>Certain vectors are stretched out without being rotated.</caption>
+  </figure>
         <p>
   The process for finding such vectors will be covered later in this module.
         </p>
@@ -114,8 +129,10 @@ What is the area of the transformed unit square?
   <m>B=\left[\begin{array}{cc} 2 &amp; 3 \\ 0 &amp; 4 \end{array}\right]</m>,
   this factor is <m>8</m>.
         </p>
-<cd>
-\begin{tikzpicture}[scale=0.5]
+<figure>
+	<image width="75%">
+		<latex-image>
+\begin{tikzpicture}[scale=0.7]
 \fill[red!50!white] (0,0) rectangle (1,1);
 \draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
 \draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
@@ -126,7 +143,7 @@ What is the area of the transformed unit square?
 \draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
 \draw[red,dashed] (1,0) -- (1,1) -- (0,1);
 \end{tikzpicture}
-  \begin{tikzpicture}[scale=0.5]
+  \begin{tikzpicture}[scale=0.7]
   \fill[red!50!white] (0,0) -- (1,0) -- (1.75,0.5) -- (0.75,0.5) -- (0,0);
   \draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
   \draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
@@ -137,7 +154,10 @@ What is the area of the transformed unit square?
   \draw[red,dashed] (1,0) -- (1.75,0.5) -- (0.75,0.5);
   \draw[blue,dashed] (2,0) -- (5,2) -- (3,2);
   \end{tikzpicture}
-</cd>
+		</latex-image>
+	</image>
+	<caption>A linear map transforming parallelograms into parallelograms.</caption>
+</figure>
         <p>
 Since this change in area is always the same for a given linear map,
 it will be equal to the value of the transformed unit square (which
@@ -148,12 +168,14 @@ begins with area <m>1</m>).
 
 <remark>
     <p>
-We will define the <term>determinant</term> of a square matrix <m>A</m>,
-or <m>\det(A)</m> for short, to be the factor by which <m>A</m> scales areas.
+We will define the <term>determinant</term> of a square matrix <m>B</m>,
+or <m>\det(B)</m> for short, to be the factor by which <m>B</m> scales areas.
 In order to figure out how to compute it, we first figure out the properties it must satisfy.
     </p>
-<cd>
-\begin{tikzpicture}[scale=0.5]
+<figure>
+	<image width="75%">
+		<latex-image>
+\begin{tikzpicture}[scale=0.7]
 \fill[red!50!white] (0,0) rectangle (1,1);
 \draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
 \draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
@@ -164,7 +186,7 @@ In order to figure out how to compute it, we first figure out the properties it 
 \draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
 \draw[red,dashed] (1,0) -- (1,1) -- (0,1);
 \end{tikzpicture}
-  \begin{tikzpicture}[scale=0.5]
+  \begin{tikzpicture}[scale=0.7]
   \fill[red!50!white] (0,0) -- (1,0) -- (1.75,0.5) -- (0.75,0.5) -- (0,0);
   \draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
   \draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
@@ -175,7 +197,10 @@ In order to figure out how to compute it, we first figure out the properties it 
   \draw[red,dashed] (1,0) -- (1.75,0.5) -- (0.75,0.5);
   \draw[blue,dashed] (2,0) -- (5,2) -- (3,2);
   \end{tikzpicture}
-</cd>
+		</latex-image>
+	</image>
+	<caption>The linear transformation <m>B</m> scaling areas by a constant factor, which we call the <term>determinant</term></caption>
+</figure>
 </remark>
 
 
@@ -187,8 +212,10 @@ standard matrix <m>[\vec{e}_1\hspace{0.5em} \vec{e}_2]=\left[\begin{array}{cc}1&
 What is <m>\det([\vec{e}_1\hspace{0.5em} \vec{e}_2])=\det(I)</m>, the
 area of the transformed unit square shown here?
         </p>
-<cd>
-\begin{tikzpicture}[scale=1]
+<figure>
+	<image width="75%">
+		<latex-image>
+\begin{tikzpicture}
 \fill[red!50!white] (0,0) rectangle (1,1);
 \draw[thin,gray,&lt;-&gt;] (-1,0)-- (3,0);
 \draw[thin,gray,&lt;-&gt;] (0,-1)-- (0,3);
@@ -197,7 +224,10 @@ area of the transformed unit square shown here?
 \draw[dashed,blue] (1,0) -- (1,1);
 \draw[dashed,blue] (0,1) -- (1,1);
 \end{tikzpicture}
-</cd>
+		</latex-image>
+	</image>
+	<caption>The transformation of the unit square by the identity matrix.</caption>
+</figure>
   <ol label="a">
 <li><p> 0
     </p></li>
@@ -220,14 +250,19 @@ standard matrix <m>[\vec{v}\hspace{0.5em} \vec{v}]</m> is illustrated below: bot
 What is <m>\det([\vec{v}\hspace{0.5em} \vec{v}])</m>, 
 the area of the transformed unit square shown here?
         </p>
-<cd>
-\begin{tikzpicture}[scale=0.8]
+<figure>
+	<image width="75%">
+		<latex-image>
+\begin{tikzpicture}
 \fill[red!50!white] (0,0) rectangle (1,1);
 \draw[thin,gray,&lt;-&gt;] (-1,0)-- (4,0);
 \draw[thin,gray,&lt;-&gt;] (0,-1)-- (0,4);
 \draw[thick,blue,-&gt;] (0,0) -- node[below] {\(\vec{v}\)} (3,2);
 \end{tikzpicture}
-</cd>
+		</latex-image>
+	</image>
+	<caption>Transformation of the unit square by a matrix with identical columns.</caption>
+</figure>
   <ol label="a">
 <li><p> 0
     </p></li>
@@ -250,8 +285,10 @@ standard matrices <m>[\vec{v}\hspace{0.5em} \vec{w}]</m> and
 <m>[c\vec{v}\hspace{0.5em} \vec{w}]</m> are illustrated below.
 Describe the value of <m>\det([c\vec{v}\hspace{0.5em} \vec{w}])</m>.
         </p>
-<cd>
-\begin{tikzpicture}[scale=0.8]
+<figure>
+	<image width="75%">
+		<latex-image>
+\begin{tikzpicture}
 \draw[thin,gray,&lt;-&gt;] (-1,0)-- (6,0);
 \draw[thin,gray,&lt;-&gt;] (0,-1)-- (0,6);
 \draw[thick,red,-&gt;] (0,0) -- node[below right] {\(c\vec{v}\)}  (4,2);
@@ -263,7 +300,10 @@ Describe the value of <m>\det([c\vec{v}\hspace{0.5em} \vec{w}])</m>.
 \draw[thick,blue,-&gt;] (1,3) -- (4,4.5);
 \draw[thick,red,-&gt;] (4,2) -- (5,5);
 \end{tikzpicture}
-</cd>
+		</latex-image>
+	</image>
+	<caption>Parallelogram spanned by <m>c\vec{v}</m> and <m>\vec{w}</m></caption>
+</figure>
   <ol label="a">
 <li><p> <m>\det([\vec{v}\hspace{0.5em} \vec{w}])</m>
     </p></li>
@@ -285,8 +325,10 @@ standard matrices <m>[\vec{u}\hspace{0.5em} \vec{w}]</m>, <m>[\vec{v}\hspace{0.5
 <m>[\vec{u}+\vec{v}\hspace{0.5em} \vec{w}]</m> are illustrated below.
 Describe the value of <m>\det([\vec{u}+\vec{v}\hspace{0.5em} \vec{w}])</m>.
         </p>
-<cd>
-\begin{tikzpicture}[scale=0.8]
+<figure>
+	<image width="75%">
+		<latex-image>
+\begin{tikzpicture}
 \draw[thin,gray,&lt;-&gt;] (-1,0)-- (6,0);
 \draw[thin,gray,&lt;-&gt;] (0,-1)-- (0,6);
 \draw[thick,blue,-&gt;] (0,0) -- node[below] {\(\vec{u}\)} (2,1);
@@ -299,7 +341,10 @@ Describe the value of <m>\det([\vec{u}+\vec{v}\hspace{0.5em} \vec{w}])</m>.
 \draw[thick,red,-&gt;] (0,0) --  (3,2)node[above,right] {\(\vec{u}+\vec{v}\)};
 \draw[thick,red,-&gt;] (1,3) -- (4,5);
 \end{tikzpicture}
-</cd>
+		</latex-image>
+	</image>
+	<caption>Parallelogram spanned by <m>\vec{u}+\vec{v}</m> and <m>\vec{w}</m></caption>
+</figure>
   <ol label="a">
 <li><p>
     <m>\det([\vec{u}\hspace{0.5em} \vec{w}])=\det([\vec{v}\hspace{0.5em} \vec{w}])</m>
@@ -352,8 +397,10 @@ The determinant must also satisfy other properties.
 Consider <m>\det([\vec v \hspace{1em}\vec w+c \vec{v}])</m> and
 <m>\det([\vec v\hspace{1em}\vec w])</m>.
         </p>
-<cd>
-\begin{tikzpicture}[scale=0.5]
+<figure>
+	<image width="75%">
+		<latex-image>
+\begin{tikzpicture}
 \draw[thin,gray,&lt;-&gt;] (-1,0)-- (8,0);
 \draw[thin,gray,&lt;-&gt;] (0,-1)-- (0,6);
 \draw[very thick,blue,-&gt;] (0,0) -- node[below right] {\(\vec{v}\)}  (3,1);
@@ -366,7 +413,10 @@ Consider <m>\det([\vec v \hspace{1em}\vec w+c \vec{v}])</m> and
 \draw[thin,dashed,gray] (3,1) -- (2.5,2.5);
 \draw[thin,dashed,gray] (4,3) -- (5.5,3.5);
 \end{tikzpicture}
-</cd>
+		</latex-image>
+	</image>
+	<caption>Parallelogram spanned by <m>\vec{w}+c\vec{v}</m> and <m>\vec{w}</m></caption>
+</figure>
 <p>
 The base of both parallelograms is <m>\vec{v}</m>, while the height has not changed,
 so the determinant does not change either. This can also be proven using the
@@ -407,8 +457,10 @@ the same parallelogram, but the second matrix reflects its orientation.
   A=\left[\begin{array}{cc}2&amp;3\\0&amp;4\end{array}\right]\hspace{1em}\det A=8\hspace{3em}
   B=\left[\begin{array}{cc}3&amp;2\\4&amp;0\end{array}\right]\hspace{1em}\det B=-8
 </me>
-<cd>
-\begin{tikzpicture}[scale=0.5]
+<figure>
+	<image width="75%">
+		<latex-image>
+\begin{tikzpicture}[scale=0.7]
 \fill[red!50!white] (0,0) rectangle (1,1);
 \draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
 \draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
@@ -419,7 +471,7 @@ the same parallelogram, but the second matrix reflects its orientation.
 \draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
 \draw[red,dashed] (1,0) -- (1,1) -- (0,1);
 \end{tikzpicture}
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[scale=0.7]
 \fill[red!50!white] (0,0) rectangle (1,1);
 \draw[thin,gray,&lt;-&gt;] (-4,0)-- (4,0);
 \draw[thin,gray,&lt;-&gt;] (0,-4)-- (0,4);
@@ -430,7 +482,10 @@ the same parallelogram, but the second matrix reflects its orientation.
 \draw[blue,dashed] (2,0) -- (5,4) -- (3,4);
 \draw[red,dashed] (1,0) -- (1,1) -- (0,1);
 \end{tikzpicture}
-</cd>
+		</latex-image>
+	</image>
+	<caption>Reflection of a parallelogram as a result of swapping columns.</caption>
+</figure>
 </remark>
 
 
@@ -509,7 +564,9 @@ may be verified by adding and subtracting columns.
   areas by <m>3</m>. By what factor does the transformation given by the standard matrix
   <m>AB</m> scale areas?
         </p>
-<cd>
+<figure>
+	<image width="75%">
+		<latex-image>
 \begin{tikzpicture}[x=0.2in,y=0.2in]
 \begin{scope}
 \fill[red] (0,0) -- (1,0) -- (1,1) -- (0,1) -- (0,0);
@@ -523,7 +580,10 @@ may be verified by adding and subtracting columns.
 \fill[blue] (0,0) -- (-4,5) -- (-1,7) -- (3,2) -- (0,0);
 \end{scope}
 \end{tikzpicture}
-</cd>
+		</latex-image>
+	</image>
+	<caption>Area changing under the composition of two linear maps</caption>
+</figure>
   <ol label="a">
 <li><p> <m>1</m>
   </p></li>
