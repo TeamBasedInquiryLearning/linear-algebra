@@ -1,0 +1,184 @@
+1
+00:00:00,425 --> 00:00:05,425
+In this video, we're going to see how to use row operations to simplify a determinant
+
+2
+00:00:05,425 --> 00:00:12,075
+calculation, so to compute the determinant of this three by three matrix,
+
+3
+00:00:12,075 --> 00:00:17,205
+we might look at this. And notice that the first row is entirely divisible by
+
+4
+00:00:17,205 --> 00:00:24,255
+two. So you might think that dividing the first row by two is going to simplify our calculations.
+
+5
+00:00:24,255 --> 00:00:29,895
+So. Really, what we want to do is think about a multiplication
+
+6
+00:00:29,895 --> 00:00:34,425
+operation. That is going to encompass this.
+
+7
+00:00:34,425 --> 00:00:42,755
+So really, what we would like to do, I mean, just write the second row  the same here.
+
+8
+00:00:42,755 --> 00:00:47,425
+We want to think about dividing that first row by two or maybe another way to
+
+9
+00:00:47,425 --> 00:00:53,335
+to say that is factoring a two out of there so that we'd really like this to be a one, two
+
+10
+00:00:53,335 --> 00:00:58,425
+and three. Now, in order to make this the same as what we had before,
+
+11
+00:00:58,425 --> 00:01:03,655
+factoring that two out, really multiplying this by a matrix
+
+12
+00:01:03,655 --> 00:01:09,065
+that multiplies the first row by two.
+
+13
+00:01:09,065 --> 00:01:15,425
+I mean, quickly check that the product of these two matrices is the original one.
+
+14
+00:01:15,425 --> 00:01:20,425
+Now we know that the determinant of a product is a product of the determinants. So we can quickly compute the determinant
+
+15
+00:01:20,425 --> 00:01:25,425
+of our diagonal matrix over here, which we know to be two.
+
+16
+00:01:25,425 --> 00:01:31,425
+And this would be two times the determinant of the simplermatrix.
+
+17
+00:01:31,425 --> 00:01:36,425
+1 2 3;  1 0 3 and 0 3 4.
+
+18
+00:01:36,425 --> 00:01:42,335
+Now, as
+
+19
+00:01:42,335 --> 00:01:47,425
+you get more proficient at this, you won't need to write down this intermediate step every single time and just jump straight
+
+20
+00:01:47,425 --> 00:01:53,045
+from the first one to the third one where you factor that 2 out. But in this video, I wanted to write it down explicitly
+
+21
+00:01:53,045 --> 00:01:58,225
+so we can see exactly what's going on. Now, the next
+
+22
+00:01:58,225 --> 00:02:03,595
+thing we might want to try and do is look at this first column and see
+
+23
+00:02:03,595 --> 00:02:08,665
+that if we subtracted, say, the first row from the second row, then our first column
+
+24
+00:02:08,665 --> 00:02:13,825
+would just be a standard basis vector. So in this case,
+
+25
+00:02:13,825 --> 00:02:18,875
+we want to do the same kind of thing. And write this as a product
+
+26
+00:02:18,875 --> 00:02:25,355
+of two matrices.
+
+27
+00:02:25,355 --> 00:02:31,085
+And so the result, we want to leave the first row and the third row alone. 0
+
+28
+00:02:31,085 --> 00:02:36,365
+3 4 and we want to subtract that first row from the second
+
+29
+00:02:36,365 --> 00:02:42,755
+row, which would leave us with a zero and a negative two and zero.
+
+30
+00:02:42,755 --> 00:02:48,785
+So interpreting that as a matrix multiplication.
+
+31
+00:02:48,785 --> 00:02:53,855
+Let's see. To make these the same, we have to have a positive one here
+
+32
+00:02:53,855 --> 00:02:59,425
+as the inverse of that subtraction operation.
+
+33
+00:02:59,425 --> 00:03:04,425
+Now, the good news is this matrix. On the left has a determinant of one
+
+34
+00:03:04,425 --> 00:03:11,425
+because it's representing that shearing operation. So we just end up with two times the determinnt.
+
+35
+00:03:11,425 --> 00:03:16,425
+1 2 3 ; 0 -2 0; and 0 3 4
+
+36
+00:03:16,425 --> 00:03:22,505
+And again, as soon as you start doing
+
+37
+00:03:22,505 --> 00:03:31,425
+a few of these, you're gonna be skipping this intermediate step here. So.
+
+38
+00:03:31,425 --> 00:03:36,425
+In general, what we might try and do is write down determinant of
+
+39
+00:03:36,425 --> 00:03:41,425
+2 4 6; 1 0 3;  0 3 4.
+
+40
+00:03:41,425 --> 00:03:47,425
+We would factor that 2 out of the first row.
+
+41
+00:03:47,425 --> 00:03:54,425
+So we'd have 1 2 3; 1 0 3; 0 3 4.
+
+42
+00:03:54,425 --> 00:04:02,215
+And then we would just do that row operation that we know does not alter the determinant.
+
+43
+00:04:02,215 --> 00:04:07,965
+First and third row are the same and we would have zero a negative two and
+
+44
+00:04:07,965 --> 00:04:13,575
+zero. So again, what's written in blue here is absolutely
+
+45
+00:04:13,575 --> 00:04:18,425
+OK. And then what we did in black was just kind of the very detailed
+
+46
+00:04:18,425 --> 00:04:21,078
+reasoning to go along with all that.
+

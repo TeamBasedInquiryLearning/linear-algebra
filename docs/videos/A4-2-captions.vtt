@@ -1,0 +1,256 @@
+1
+00:00:00,443 --> 00:00:04,803
+In this video, we're going to see how to determine if a given linear transformation
+
+2
+00:00:04,803 --> 00:00:10,803
+is injective or surjective. So let's start with
+
+3
+00:00:10,803 --> 00:00:15,803
+injective. So remember to test if or to figure out if a map is injective
+
+4
+00:00:15,803 --> 00:00:21,203
+or not, we want to figure out if different vectors go different places.
+
+5
+00:00:21,203 --> 00:00:25,803
+So what happens if we end up with two vectors,
+
+6
+00:00:25,803 --> 00:00:32,693
+T(v) and T(w) being the same?
+
+7
+00:00:32,693 --> 00:00:36,803
+So note that this is saying because T is linear
+
+8
+00:00:36,803 --> 00:00:42,713
+that T(v-w) is
+
+9
+00:00:42,713 --> 00:00:48,203
+equal to the zero vector.
+
+10
+00:00:48,203 --> 00:00:52,803
+So if different vectors are going to different places, we
+
+11
+00:00:52,803 --> 00:00:58,343
+should never have something going to the zero vector unless the v and w are the same
+
+12
+00:00:58,343 --> 00:01:03,803
+thing. In other words, T is going to be
+
+13
+00:01:03,803 --> 00:01:09,743
+injective exactly when the kernel
+
+14
+00:01:09,743 --> 00:01:21,803
+only contains the zero vector.
+
+15
+00:01:21,803 --> 00:01:27,303
+So if we want to determine if our map is injective or not, we proceed as if we're going
+
+16
+00:01:27,303 --> 00:01:32,343
+to write down a basis for the kernel. We don't have to actually write that down, but we do
+
+17
+00:01:32,343 --> 00:01:37,443
+have to observe how many things are going to be in it. Right. So the zero vector is
+
+18
+00:01:37,443 --> 00:01:42,843
+always in the kernel because every linear transformation maps the zero vector to the zero vector.
+
+19
+00:01:42,843 --> 00:01:47,803
+As soon as we can see that there are more things in the kernel, then we know our map is not
+
+20
+00:01:47,803 --> 00:01:52,803
+injective. If we see that zero is the only thing in the kernel that we know our
+
+21
+00:01:52,803 --> 00:01:58,263
+map is injective. So let's look at this example. I have
+
+22
+00:01:58,263 --> 00:02:03,483
+written down here and given my standard matrix written down there. If we wanted
+
+23
+00:02:03,483 --> 00:02:08,803
+to find the kernel of this linear transformation, we would think about the system of equations
+
+24
+00:02:08,803 --> 00:02:13,803
+producing zeros. So we would write down our
+
+25
+00:02:13,803 --> 00:02:19,053
+matrix going with the system, which is our standard matrix here and find it's reduced row echelon
+
+26
+00:02:19,053 --> 00:02:23,803
+form. So let's go ahead and
+
+27
+00:02:23,803 --> 00:02:29,803
+type this in the calculator. You end up with
+
+28
+00:02:29,803 --> 00:02:34,803
+1 2 0 0;  0 0 1 0;
+
+29
+00:02:34,803 --> 00:02:42,803
+0 0 0 1.
+
+30
+00:02:42,803 --> 00:02:50,543
+And now, I have actually done enough work to determine if this map is injective or not.
+
+31
+00:02:50,543 --> 00:02:55,643
+So the key observation here is that if I was going to write down the solution set, I would
+
+32
+00:02:55,643 --> 00:03:00,653
+need to know if I have any free variables or not. So if
+
+33
+00:03:00,653 --> 00:03:06,473
+I am looking at this matrix here, I see a non pivot column
+
+34
+00:03:06,473 --> 00:03:11,803
+which corresponds to a free variable and that free variable is going to correspond to having
+
+35
+00:03:11,803 --> 00:03:16,803
+infinitely many things in the solution set. So in this case we know that
+
+36
+00:03:16,803 --> 00:03:23,693
+we have a non pivot column. So column two
+
+37
+00:03:23,693 --> 00:03:30,803
+is a non pivot column.
+
+38
+00:03:30,803 --> 00:03:36,723
+Which tells us that the kernel of T has
+
+39
+00:03:36,723 --> 00:03:46,803
+infinitely many vectors.
+
+40
+00:03:46,803 --> 00:03:53,803
+So our map T is not.
+
+41
+00:03:53,803 --> 00:04:00,803
+injective.
+
+42
+00:04:00,803 --> 00:04:05,803
+All right, so that tells us if our map is injectiveor not, but we
+
+43
+00:04:05,803 --> 00:04:11,803
+also want to know if our map is surjective, which is a completely separate
+
+44
+00:04:11,803 --> 00:04:16,803
+question. So a map is going to be surjective when the image
+
+45
+00:04:16,803 --> 00:04:22,123
+fills up the entire codomain, in this case R^3. And we
+
+46
+00:04:22,123 --> 00:04:27,223
+know how to write down a basis for the image of our linear transformation. In this case, we would
+
+47
+00:04:27,223 --> 00:04:32,383
+take our columns that correspond to the pivot columns. So in this case, the first,
+
+48
+00:04:32,383 --> 00:04:37,393
+the third and the fourth column here. So I'm not going to write that
+
+49
+00:04:37,393 --> 00:04:48,643
+down. All right. I'm going to note is the dimension of the image.
+
+50
+00:04:48,643 --> 00:04:52,803
+So we have three pivot columns, which means I was going to write down three vectors in that basis
+
+51
+00:04:52,803 --> 00:04:58,803
+so the dimension of the image is three, which is the dimension
+
+52
+00:04:58,803 --> 00:05:04,803
+of the codomain in this case, R^3.
+
+53
+00:05:04,803 --> 00:05:09,803
+Let me emphasize here that this was the codomain
+
+54
+00:05:09,803 --> 00:05:14,803
+And the only three dimensional
+
+55
+00:05:14,803 --> 00:05:21,283
+subspace of a three dimensional space is the whole thing itself.
+
+56
+00:05:21,283 --> 00:05:25,803
+So this tells us that the image of T is actually equal
+
+57
+00:05:25,803 --> 00:05:32,803
+to all of the codomain . So therefore
+
+58
+00:05:32,803 --> 00:05:40,803
+this map T is surjective.
+
+59
+00:05:40,803 --> 00:05:48,373
+So we have determined that our map is not injective and it is surjective.
+
+60
+00:05:48,373 --> 00:05:52,803
+So one important point to note is that these are completely independent kinds of questions. There
+
+61
+00:05:52,803 --> 00:05:57,803
+are four different things that can happen. Your map can be both injective and surjective. It
+
+62
+00:05:57,803 --> 00:06:02,803
+could be injective, but not surjective. It could be not injective
+
+63
+00:06:02,803 --> 00:06:09,403
+and surjective like this one. Or it can be neither injective nor surjective.
+
+64
+00:06:09,403 --> 00:06:13,257
+So on each one, it's going to be separate things that you need to check.
+

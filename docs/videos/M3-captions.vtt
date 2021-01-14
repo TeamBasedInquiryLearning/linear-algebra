@@ -1,0 +1,208 @@
+1
+00:00:00,973 --> 00:00:06,973
+In this video, we're going to learn how to determine if a matrix is invertible or not.
+
+2
+00:00:06,973 --> 00:00:14,013
+So to me, the right way to think about invertibility is to think about linear transformations.
+
+3
+00:00:14,013 --> 00:00:18,973
+So let's suppose we have a linear transformation. From, say,
+
+4
+00:00:18,973 --> 00:00:24,913
+R^m to R^n,
+
+5
+00:00:24,913 --> 00:00:30,973
+we can call it.
+
+6
+00:00:30,973 --> 00:00:36,613
+So we want to know if this linear transformation is invertible. So I want to know if we can
+
+7
+00:00:36,613 --> 00:00:41,973
+find a map going the other way, which if it exists, we would call it
+
+8
+00:00:41,973 --> 00:00:46,973
+T inverse that undoes what T does. So in other words,
+
+9
+00:00:46,973 --> 00:00:51,973
+if T sends a vector v from R^m to w in R^n then T
+
+10
+00:00:51,973 --> 00:00:59,323
+inverse is gonna take that w and send it right back to where it came from, namely v.
+
+11
+00:00:59,323 --> 00:01:03,973
+So if we want an inverse to exist, we need to know what's going to happen to every
+
+12
+00:01:03,973 --> 00:01:09,973
+element of R^n. So in other words, every element
+
+13
+00:01:09,973 --> 00:01:15,973
+of R^n has to be mapped to by something in R^m.
+
+14
+00:01:15,973 --> 00:01:26,963
+And if I rephrase what I've just said, we said that T has to be surjective.
+
+15
+00:01:26,963 --> 00:01:31,973
+So to have any hope of an inverse existing, I have to have somewhere to send everything
+
+16
+00:01:31,973 --> 00:01:36,973
+in R^n back to. So it had to be mapped to by something from
+
+17
+00:01:36,973 --> 00:01:43,583
+R^m by T. So
+
+18
+00:01:43,583 --> 00:01:48,973
+the other issue that could happen is I need to have somewhere to go back to. But
+
+19
+00:01:48,973 --> 00:01:53,973
+one thing that could go wrong is if I have choices of where to go back to. So if I have two things in R^m
+
+20
+00:01:53,973 --> 00:01:58,973
+that T maps to the same place, then I don't know where I'm going to send
+
+21
+00:01:58,973 --> 00:02:03,973
+the thing from  R^n back to. So what we need to happen
+
+22
+00:02:03,973 --> 00:02:08,973
+is T needs to send different vectors to different places. And what I've just said
+
+23
+00:02:08,973 --> 00:02:18,973
+there is that T has to be bijective.
+
+24
+00:02:18,973 --> 00:02:24,973
+So if we want a matrix to be invertible,
+
+25
+00:02:24,973 --> 00:02:36,023
+the corresponding linear transformation must be by bijective.
+
+26
+00:02:36,023 --> 00:02:40,973
+I want to make one quick note before we look at an example. So note that
+
+27
+00:02:40,973 --> 00:02:45,973
+when I say T has to be surjective, that tells us a little bit about m and
+
+28
+00:02:45,973 --> 00:02:50,973
+in particular it tells us that m has to be at least as big as
+
+29
+00:02:50,973 --> 00:02:55,973
+n. If the dimension of our domain isn't big enough, we won't be all to
+
+30
+00:02:55,973 --> 00:03:01,973
+fill up all of the codomain. And we also know something
+
+31
+00:03:01,973 --> 00:03:06,973
+from T being injective. If m was bigger
+
+32
+00:03:06,973 --> 00:03:11,973
+than n, then we could not be injective. We would have to squish something down
+
+33
+00:03:11,973 --> 00:03:16,973
+to fit it inside of R^n. So we know if
+
+34
+00:03:16,973 --> 00:03:21,973
+we are surjective, n better be at least as big as m. And if we're injected, it can't
+
+35
+00:03:21,973 --> 00:03:27,703
+be any bigger. So for bijective, m and n
+
+36
+00:03:27,703 --> 00:03:31,973
+have to be the same. So in terms of matrices, the only matrices that have any hope
+
+37
+00:03:31,973 --> 00:03:43,973
+of being invertible are square matrices. So let's look at an example.
+
+38
+00:03:43,973 --> 00:03:49,433
+So if I don't write down a square matrix, this is gonna be very easy, so
+
+39
+00:03:49,433 --> 00:04:01,973
+I'll write down a square matrix.
+
+40
+00:04:01,973 --> 00:04:08,973
+So here is a three by three matrix corresponding to a map from R^3 to R^3.
+
+41
+00:04:08,973 --> 00:04:14,973
+We want to know if it's invertible or not. So the question we're asking ourselves is,
+
+42
+00:04:14,973 --> 00:04:19,973
+is the corresponding linear transformation bijective?
+
+43
+00:04:19,973 --> 00:04:29,343
+Well, the way we answer that question is to look at the reduced row echelon form of A.
+
+44
+00:04:29,343 --> 00:04:34,703
+Which in this case, I type in a calculator.
+
+45
+00:04:34,703 --> 00:04:40,973
+It has produced.
+
+46
+00:04:40,973 --> 00:04:45,973
+The identity matrix. And so in particular, we have a pivot in every column,
+
+47
+00:04:45,973 --> 00:04:50,973
+so our map is injective and we have a pivot in every row, so our
+
+48
+00:04:50,973 --> 00:04:59,973
+map is surjective. So our linear map.
+
+49
+00:04:59,973 --> 00:05:04,973
+Is bijectivee. So our Matrix
+
+50
+00:05:04,973 --> 00:05:17,453
+A is invertible.
+
+51
+00:05:17,453 --> 00:05:21,973
+In the next video, we'll talk about how to actually find the inverse of a once we know that it's
+
+52
+00:05:21,973 --> 00:05:23,966
+invertible.
+
