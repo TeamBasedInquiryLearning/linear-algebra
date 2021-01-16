@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-13T19:23:37Z       *-->
+<!--*       on 2021-01-15T10:59:28-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,7 +14,7 @@
 <title>Row Operations as Matrix Multiplication (M2)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [['\\(','\\)']]
@@ -43,7 +43,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-octave' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-octave',
+                           linked: true,
+                           languages: ['octave'],
+                           evalButtonText: 'Evaluate (Octave)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -147,7 +163,7 @@ MathJax.Hub.Config({
 <article class="activity project-like" id="activity-111"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
 </h6>
-<p id="p-631">Let \(A=\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]\text{.}\) Find a \(3 \times 3\) matrix \(B\) such that \(BA=A\text{,}\) that is,</p>
+<p id="p-628">Let \(A=\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]\text{.}\) Find a \(3 \times 3\) matrix \(B\) such that \(BA=A\text{,}\) that is,</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ 
@@ -158,10 +174,11 @@ MathJax.Hub.Config({
 \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
 \end{equation*}
 </div>
-<p data-braille="continuation">Check your guess using technology.</p></article><article class="definition definition-like" id="definition-25"><h6 class="heading">
+<p data-braille="continuation">Check your guess using technology.</p></article><div class="sagecell-octave" id="sage-38"><script type="text/x-sage"></script></div>
+<article class="definition definition-like" id="definition-25"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
 </h6>
-<p id="p-632">The identity matrix \(I_n\) (or just \(I\) when \(n\) is obvious from context) is the \(n \times n\) matrix</p>
+<p id="p-629">The identity matrix \(I_n\) (or just \(I\) when \(n\) is obvious from context) is the \(n \times n\) matrix</p>
 <div class="displaymath">
 \begin{equation*}
 I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &amp; \ddots &amp; \vdots  \\
@@ -171,7 +188,7 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 <p data-braille="continuation">It has a \(1\) on each diagonal element and a \(0\) in every other position.</p></article><article class="fact theorem-like" id="fact-21"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
 </h6>
-<p id="p-633">For any square matrix \(A\text{,}\) \(IA=AI=A\text{:}\)</p>
+<p id="p-630">For any square matrix \(A\text{,}\) \(IA=AI=A\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right]
@@ -185,9 +202,9 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 </div></article><article class="activity project-like" id="activity-112"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-34"><p id="p-634">Tweaking the identity matrix slightly allows us to write row operations in terms of matrix multiplication.</p></div>
+<div class="introduction" id="introduction-34"><p id="p-631">Tweaking the identity matrix slightly allows us to write row operations in terms of matrix multiplication.</p></div>
 <article class="task exercise-like" id="task-81"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-635">Create a matrix that doubles the third row of \(A\text{:}\)</p>
+<p id="p-632">Create a matrix that doubles the third row of \(A\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
@@ -196,7 +213,7 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 2 &amp; 2 &amp; -2 \end{array}\right]
 \end{equation*}
 </div></article><article class="task exercise-like" id="task-82"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-636">Create a matrix that swaps the second and third rows of \(A\text{:}\)</p>
+<p id="p-633">Create a matrix that swaps the second and third rows of \(A\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
@@ -205,7 +222,7 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 1 &amp; 1 &amp; -1 \\ 0 &amp; 3 &amp; 2 \end{array}\right]
 \end{equation*}
 </div></article><article class="task exercise-like" id="task-83"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-637">Create a matrix that adds \(5\) times the third row of \(A\) to the first row:</p>
+<p id="p-634">Create a matrix that adds \(5\) times the third row of \(A\) to the first row:</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
@@ -213,31 +230,32 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 =
 \left[\begin{array}{ccc} 2+5(1) &amp; 7+5(1) &amp; -1+5(-1) \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
 \end{equation*}
-</div></article></article><article class="fact theorem-like" id="fact-22"><h6 class="heading">
+</div></article></article><div class="sagecell-octave" id="sage-39"><script type="text/x-sage"></script></div>
+<article class="fact theorem-like" id="fact-22"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
 </h6>
-<p id="p-638">If \(R\) is the result of applying a row operation to \(I\text{,}\) then \(RA\) is the result of applying the same row operation to \(A\text{.}\)</p>
+<p id="p-635">If \(R\) is the result of applying a row operation to \(I\text{,}\) then \(RA\) is the result of applying the same row operation to \(A\text{.}\)</p>
 <ul class="disc">
-<li id="li-314"><p id="p-639">Scaling a row: \(R=
+<li id="li-314"><p id="p-636">Scaling a row: \(R=
 \left[\begin{array}{ccc}
 c &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 1
 \end{array}\right]\)</p></li>
-<li id="li-315"><p id="p-640">Swapping rows: \(R=
+<li id="li-315"><p id="p-637">Swapping rows: \(R=
 \left[\begin{array}{ccc}
 0 &amp; 1 &amp; 0 \\
 1 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 1
 \end{array}\right]\)</p></li>
-<li id="li-316"><p id="p-641">Adding a row multiple to another row: \(R=
+<li id="li-316"><p id="p-638">Adding a row multiple to another row: \(R=
 \left[\begin{array}{ccc}
 1 &amp; 0 &amp; c \\
 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 1
 \end{array}\right]\)</p></li>
 </ul>
-<p id="p-642">Such matrices can be chained together to emulate multiple row operations. In particular,</p>
+<p id="p-639">Such matrices can be chained together to emulate multiple row operations. In particular,</p>
 <div class="displaymath">
 \begin{equation*}
 \RREF(A)=R_k\dots R_2R_1A
@@ -246,7 +264,7 @@ c &amp; 0 &amp; 0 \\
 <p data-braille="continuation">for some sequence of matrices \(R_1,R_2,\dots,R_k\text{.}\)</p></article><article class="activity project-like" id="activity-113"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
 </h6>
-<p id="p-643">Consider the two row operations \(R_2\leftrightarrow R_3\) and \(R_1+R_2\to R_1\) applied as follows to show \(A\sim B\text{:}\)</p>
+<p id="p-640">Consider the two row operations \(R_2\leftrightarrow R_3\) and \(R_1+R_2\to R_1\) applied as follows to show \(A\sim B\text{:}\)</p>
 <div class="displaymath">
 \begin{align*}
 A
@@ -278,7 +296,7 @@ A
 B
 \end{align*}
 </div>
-<p id="p-644">Express these row operations as matrix multiplication by expressing \(B\) as the product of two matrices and \(A\text{:}\)</p>
+<p id="p-641">Express these row operations as matrix multiplication by expressing \(B\) as the product of two matrices and \(A\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 B =
@@ -295,10 +313,15 @@ B =
 A
 \end{equation*}
 </div>
-<p data-braille="continuation">Check your work using technology.</p></article><section class="exercises" id="exercises-18"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">4.2.1</span> <span class="title">Exercises</span>
+<p data-braille="continuation">Check your work using technology.</p></article><div class="sagecell-octave" id="sage-40"><script type="text/x-sage"></script></div>
+<section class="subsection" id="subsection-20"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.1</span> <span class="title">Videos</span>
 </h3>
-<p id="p-645"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/M2/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+<figure class="figure figure-like" id="figure-40"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-M2" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/4c3f8aa1-dd0c-4845-977f-ac5d0107bc45.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="videos/M2-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.4<span class="period">.</span></span><span class="space"> </span>Video example: Row operations as matrix multiplication</figcaption></figure></section><section class="exercises" id="exercises-18"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">4.2.2</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-642"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/M2/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
 </div>
 </body>
 </html>

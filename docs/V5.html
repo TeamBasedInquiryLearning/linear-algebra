@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-13T19:23:33Z       *-->
+<!--*       on 2021-01-15T10:59:26-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,7 +14,7 @@
 <title>Linear Independence (V5)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [['\\(','\\)']]
@@ -43,7 +43,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-octave' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-octave',
+                           linked: true,
+                           languages: ['octave'],
+                           evalButtonText: 'Evaluate (Octave)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -147,7 +163,7 @@ MathJax.Hub.Config({
 <article class="activity project-like" id="activity-44"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span>
 </h6>
-<p id="p-274">Consider the two sets</p>
+<p id="p-271">Consider the two sets</p>
 <div class="displaymath">
 \begin{equation*}
 S=\left\{
@@ -169,32 +185,21 @@ T=\left\{
 </ol></article><article class="definition definition-like" id="definition-13"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span>
 </h6>
-<p id="p-275">We say that a set of vectors is <dfn class="terminology">linearly dependent</dfn> if one vector in the set belongs to the span of the others. Otherwise, we say the set is <dfn class="terminology">linearly independent</dfn>.</p>
-<pre class="code-block tex2jax_ignore">
-  \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)},scale=0.4]
-    \draw[-&gt;] (0,0,0) -- (6,0,0);
-    \draw[-&gt;] (0,0,0) -- (0,6,0);
-    \draw[-&gt;] (0,0,0) -- (0,0,6);
-    \draw[fill=purple!20,fill opacity=0.5]
-      (-2,-2,2) -- (6,-2,-2) -- (2,2,-2) -- (-6,2,2) -- (-2,-2,2);
-    \draw[thick,blue,-&gt;] (0,0,0) -- (1,-1,0);
-    \draw[thick,red,-&gt;] (0,0,0) -- (-2,0,1);
-    \draw[thick,purple,-&gt;] (0,0,0) -- (1,1,-1);
-  \end{tikzpicture}
-        </pre>
-<p id="p-276">You can think of linearly dependent sets as containing a redundant vector, in the sense that you can drop a vector out without reducing the span of the set. In the above image, all three vectors lay on the same planar subspace, but only two vectors are needed to span the plane, so the set is linearly dependent.</p></article><article class="activity project-like" id="activity-45"><h6 class="heading">
+<p id="p-272">We say that a set of vectors is <dfn class="terminology">linearly dependent</dfn> if one vector in the set belongs to the span of the others. Otherwise, we say the set is <dfn class="terminology">linearly independent</dfn>.</p>
+<figure class="figure figure-like" id="figure-14"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-6.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.2<span class="period">.</span></span><span class="space"> </span>A linearly dependent set of three vectors</figcaption></figure><p id="p-273">You can think of linearly dependent sets as containing a redundant vector, in the sense that you can drop a vector out without reducing the span of the set. In the above image, all three vectors lay in the same planar subspace, but only two vectors are needed to span the plane, so the set is linearly dependent.</p></article><article class="activity project-like" id="activity-45"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span>
 </h6>Let \(\vec{v}_1,\vec{v}_2,\vec{v}_3 \) be vectors in \(\mathbb R^n\text{.}\) Suppose \(3\vec{v}_1-5\vec{v}_2=\vec{v}_3\text{,}\) so the set \(\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}\) is linearly dependent. Which of the following is true of the vector equation \(x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3=\vec{0}\) ? <ol class="upper-alpha">
-<li id="li-149"><p id="p-277">It is consistent with one solution</p></li>
-<li id="li-150"><p id="p-278">It is consistent with infinitely many solutions</p></li>
-<li id="li-151"><p id="p-279">It is inconsistent.</p></li>
+<li id="li-149"><p id="p-274">It is consistent with one solution</p></li>
+<li id="li-150"><p id="p-275">It is consistent with infinitely many solutions</p></li>
+<li id="li-151"><p id="p-276">It is inconsistent.</p></li>
 </ol></article><article class="fact theorem-like" id="fact-7"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span>
 </h6>
-<p id="p-280">For any vector space, the set \(\{\vec v_1,\dots\vec v_n\}\) is linearly dependent if and only if the vector equation \(x_1\vec v_1+\dots+x_n\vec v_n=\vec{0}\) is consistent with infinitely many solutions.</p></article><article class="activity project-like" id="activity-46"><h6 class="heading">
+<p id="p-277">For any vector space, the set \(\{\vec v_1,\dots\vec v_n\}\) is linearly dependent if and only if the vector equation \(x_1\vec v_1+\dots+x_n\vec v_n=\vec{0}\) is consistent with infinitely many solutions.</p></article><article class="activity project-like" id="activity-46"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span>
 </h6>
-<p id="p-281">Find</p>
+<p id="p-278">Find</p>
 <div class="displaymath">
 \begin{equation*}
 \RREF\left[\begin{array}{ccccc|c}
@@ -217,63 +222,66 @@ S=\left\{
 \right\}
 \end{equation*}
 </div>
-<p data-braille="continuation">is linearly dependent (the part that shows its linear system has infinitely many solutions).</p></article><article class="observation remark-like" id="observation-8"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span>
-</h6>
-<p id="p-282">A set of Euclidean vectors \(\{\vec v_1,\dots\vec v_n\}\) is linearly dependent if and only if \(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\) has a column without a pivot position.</p></article><article class="observation remark-like" id="observation-9"><h6 class="heading">
+<p data-braille="continuation">is linearly dependent (the part that shows its linear system has infinitely many solutions).</p></article><div class="sagecell-octave" id="sage-15"><script type="text/x-sage"></script></div>
+<article class="observation remark-like" id="observation-8"><h6 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span>
 </h6>
-<p id="p-283">Compare the following results:</p>
+<p id="p-279">A set of Euclidean vectors \(\{\vec v_1,\dots\vec v_n\}\) is linearly dependent if and only if \(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\) has a column without a pivot position.</p></article><article class="observation remark-like" id="observation-9"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span>
+</h6>
+<p id="p-280">Compare the following results:</p>
 <ul class="disc">
-<li id="li-152"><p id="p-284">A set of \(\IR^m\) vectors \(\{\vec v_1,\dots\vec v_n\}\) is linearly independent if and only if \(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\) has all pivot columns.</p></li>
-<li id="li-153"><p id="p-285">A set of \(\IR^m\) vectors \(\{\vec v_1,\dots\vec v_n\}\) spans \(\IR^m\) if and only if \(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\) has all pivot rows.</p></li>
+<li id="li-152"><p id="p-281">A set of \(\IR^m\) vectors \(\{\vec v_1,\dots\vec v_n\}\) is linearly independent if and only if \(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\) has all pivot columns.</p></li>
+<li id="li-153"><p id="p-282">A set of \(\IR^m\) vectors \(\{\vec v_1,\dots\vec v_n\}\) spans \(\IR^m\) if and only if \(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\) has all pivot rows.</p></li>
 </ul></article><article class="activity project-like" id="activity-47"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-19"><p id="p-286">Consider whether the set of Euclidean vectors \(\left\{
+<div class="introduction" id="introduction-19"><p id="p-283">Consider whether the set of Euclidean vectors \(\left\{
 \left[\begin{array}{c}-4\\2\\3\\0\\-1\end{array}\right],
 \left[\begin{array}{c}1\\2\\0\\0\\3\end{array}\right],
 \left[\begin{array}{c}1\\10\\10\\2\\6\end{array}\right],
 \left[\begin{array}{c}3\\4\\7\\2\\1\end{array}\right]
 \right\}\) is linearly dependent or linearly independent.</p></div>
 <article class="task exercise-like" id="task-45"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-287">Reinterpret this question as an appropriate question about solutions to a vector equation.</p></article><article class="task exercise-like" id="task-46"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-288">Use the solution to this question to answer the original question.</p></article></article><article class="activity project-like" id="activity-48"><h6 class="heading">
+<p id="p-284">Reinterpret this question as an appropriate question about solutions to a vector equation.</p></article><article class="task exercise-like" id="task-46"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-285">Use the solution to this question to answer the original question.</p></article></article><div class="sagecell-octave" id="sage-16"><script type="text/x-sage"></script></div>
+<article class="activity project-like" id="activity-48"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-20"><p id="p-289">Consider whether the set of polynomials \(\left\{
+<div class="introduction" id="introduction-20"><p id="p-286">Consider whether the set of polynomials \(\left\{
 x^3+1,x^2+2x,x^2+7x+4
 \right\}\) is linearly dependent or linearly independent.</p></div>
 <article class="task exercise-like" id="task-47"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-290">Reinterpret this question as an appropriate question about solutions to a polynomial equation.</p></article><article class="task exercise-like" id="task-48"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-291">Use the solution to this question to answer the original question.</p></article></article><article class="activity project-like" id="activity-49"><h6 class="heading">
+<p id="p-287">Reinterpret this question as an appropriate question about solutions to a polynomial equation.</p></article><article class="task exercise-like" id="task-48"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-288">Use the solution to this question to answer the original question.</p></article></article><div class="sagecell-octave" id="sage-17"><script type="text/x-sage"></script></div>
+<article class="activity project-like" id="activity-49"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span>
 </h6>
-<p id="p-292">What is the largest number of \(\IR^4\) vectors that can form a linearly independent set?</p>
+<p id="p-289">What is the largest number of \(\IR^4\) vectors that can form a linearly independent set?</p>
 <ol class="lower-alpha">
-<li id="li-154"><p id="p-293">\(\displaystyle 3\)</p></li>
-<li id="li-155"><p id="p-294">\(\displaystyle 4\)</p></li>
-<li id="li-156"><p id="p-295">\(\displaystyle 5\)</p></li>
-<li id="li-157"><p id="p-296">You can have infinitely many vectors and still be linearly independent.</p></li>
+<li id="li-154"><p id="p-290">\(\displaystyle 3\)</p></li>
+<li id="li-155"><p id="p-291">\(\displaystyle 4\)</p></li>
+<li id="li-156"><p id="p-292">\(\displaystyle 5\)</p></li>
+<li id="li-157"><p id="p-293">You can have infinitely many vectors and still be linearly independent.</p></li>
 </ol></article><article class="activity project-like" id="activity-50"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.7</span><span class="period">.</span>
 </h6>
-<p id="p-297">What is the largest number of</p>
+<p id="p-294">What is the largest number of</p>
 <div class="displaymath">
 \begin{equation*}
-\P^4=\setBuilder{ax^4+bx^3+cx^2+dx+e}{a,b,c,d,e\in\IR}
+\P_4=\setBuilder{ax^4+bx^3+cx^2+dx+e}{a,b,c,d,e\in\IR}
 \end{equation*}
 </div>
 <p data-braille="continuation">vectors that can form a linearly independent set?</p>
 <ol class="lower-alpha">
-<li id="li-158"><p id="p-298">\(\displaystyle 3\)</p></li>
-<li id="li-159"><p id="p-299">\(\displaystyle 4\)</p></li>
-<li id="li-160"><p id="p-300">\(\displaystyle 5\)</p></li>
-<li id="li-161"><p id="p-301">You can have infinitely many vectors and still be linearly independent.</p></li>
+<li id="li-158"><p id="p-295">\(\displaystyle 3\)</p></li>
+<li id="li-159"><p id="p-296">\(\displaystyle 4\)</p></li>
+<li id="li-160"><p id="p-297">\(\displaystyle 5\)</p></li>
+<li id="li-161"><p id="p-298">You can have infinitely many vectors and still be linearly independent.</p></li>
 </ol></article><article class="activity project-like" id="activity-51"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.8</span><span class="period">.</span>
 </h6>
-<p id="p-302">What is the largest number of</p>
+<p id="p-299">What is the largest number of</p>
 <div class="displaymath">
 \begin{equation*}
 \P=\setBuilder{f(x)}{f(x)\text{ is any polynomial}}
@@ -281,14 +289,18 @@ x^3+1,x^2+2x,x^2+7x+4
 </div>
 <p data-braille="continuation">vectors that can form a linearly independent set?</p>
 <ol class="lower-alpha">
-<li id="li-162"><p id="p-303">\(\displaystyle 3\)</p></li>
-<li id="li-163"><p id="p-304">\(\displaystyle 4\)</p></li>
-<li id="li-164"><p id="p-305">\(\displaystyle 5\)</p></li>
-<li id="li-165"><p id="p-306">You can have infinitely many vectors and still be linearly independent.</p></li>
-</ol></article><section class="exercises" id="exercises-8"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">2.5.1</span> <span class="title">Exercises</span>
+<li id="li-162"><p id="p-300">\(\displaystyle 3\)</p></li>
+<li id="li-163"><p id="p-301">\(\displaystyle 4\)</p></li>
+<li id="li-164"><p id="p-302">\(\displaystyle 5\)</p></li>
+<li id="li-165"><p id="p-303">You can have infinitely many vectors and still be linearly independent.</p></li>
+</ol></article><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.5.1</span> <span class="title">Videos</span>
 </h3>
-<p id="p-307"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/V5/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+<figure class="figure figure-like" id="figure-15"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-V5" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/4b405d52-6044-4817-8545-ac250114975c.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="videos/V5-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.6<span class="period">.</span></span><span class="space"> </span>Video example: Linear independence</figcaption></figure></section><section class="exercises" id="exercises-8"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.5.2</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-304"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/V5/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
 </div>
 </body>
 </html>

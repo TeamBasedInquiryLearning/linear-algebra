@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-13T19:23:37Z       *-->
+<!--*       on 2021-01-15T10:59:28-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,7 +14,7 @@
 <title>Matrices and Multiplication (M1)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [['\\(','\\)']]
@@ -43,7 +43,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-octave' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-octave',
+                           linked: true,
+                           languages: ['octave'],
+                           evalButtonText: 'Evaluate (Octave)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -147,29 +163,25 @@ MathJax.Hub.Config({
 <article class="observation remark-like" id="observation-22"><h6 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
 </h6>
-<p id="p-601">If \(T: \IR^n \rightarrow \IR^m\) and \(S: \IR^m \rightarrow \IR^k\) are linear maps, then the composition map \(S\circ T\) is a linear map from \(\IR^n \rightarrow \IR^k\text{.}\)</p>
-<pre class="code-block tex2jax_ignore">
-\begin{tikzcd}[ampersand replacement=\&amp;]
-\IR^n \arrow[rr, bend right, "S\circ T"']  \arrow[r,"T"] \&amp; \IR^m  \arrow[r,"S"]  \&amp;\IR^k 
-\end{tikzcd}
-        </pre>
-<p id="p-602">Recall that for a vector, \(\vec{v} \in \IR^n\text{,}\) the composition is computed as \((S \circ T)(\vec{v})=S(T(\vec{v}))\text{.}\)</p></article><article class="activity project-like" id="activity-105"><h6 class="heading">
+<p id="p-598">If \(T: \IR^n \rightarrow \IR^m\) and \(S: \IR^m \rightarrow \IR^k\) are linear maps, then the composition map \(S\circ T\) is a linear map from \(\IR^n \rightarrow \IR^k\text{.}\)</p>
+<figure class="figure figure-like" id="figure-38"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-16.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.2<span class="period">.</span></span><span class="space"> </span>The composition of two linear maps.</figcaption></figure><p id="p-599">Recall that for a vector, \(\vec{v} \in \IR^n\text{,}\) the composition is computed as \((S \circ T)(\vec{v})=S(T(\vec{v}))\text{.}\)</p></article><article class="activity project-like" id="activity-105"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
 </h6>
-<p id="p-603">Let \(T: \IR^3 \rightarrow \IR^2\) be given by the \(2\times 3\) standard matrix \(B=\left[\begin{array}{c} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]\) and \(S: \IR^2 \rightarrow \IR^4\) be given by the \(4\times 2\) standard matrix \(A=\left[\begin{array}{c} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]\text{.}\)</p>
-<p id="p-604">What are the domain and codomain of the composition map \(S \circ T\text{?}\)</p>
+<p id="p-600">Let \(T: \IR^3 \rightarrow \IR^2\) be given by the \(2\times 3\) standard matrix \(B=\left[\begin{array}{c} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]\) and \(S: \IR^2 \rightarrow \IR^4\) be given by the \(4\times 2\) standard matrix \(A=\left[\begin{array}{c} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]\text{.}\)</p>
+<p id="p-601">What are the domain and codomain of the composition map \(S \circ T\text{?}\)</p>
 <ol class="lower-alpha">
-<li id="li-302"><p id="p-605">The domain is \(\IR ^2\) and the codomain is \(\IR^3\)</p></li>
-<li id="li-303"><p id="p-606">The domain is \(\IR ^3\) and the codomain is \(\IR^2\)</p></li>
-<li id="li-304"><p id="p-607">The domain is \(\IR ^2\) and the codomain is \(\IR^4\)</p></li>
-<li id="li-305"><p id="p-608">The domain is \(\IR ^3\) and the codomain is \(\IR^4\)</p></li>
-<li id="li-306"><p id="p-609">The domain is \(\IR ^4\) and the codomain is \(\IR^3\)</p></li>
-<li id="li-307"><p id="p-610">The domain is \(\IR ^4\) and the codomain is \(\IR^2\)</p></li>
+<li id="li-302"><p id="p-602">The domain is \(\IR ^2\) and the codomain is \(\IR^3\)</p></li>
+<li id="li-303"><p id="p-603">The domain is \(\IR ^3\) and the codomain is \(\IR^2\)</p></li>
+<li id="li-304"><p id="p-604">The domain is \(\IR ^2\) and the codomain is \(\IR^4\)</p></li>
+<li id="li-305"><p id="p-605">The domain is \(\IR ^3\) and the codomain is \(\IR^4\)</p></li>
+<li id="li-306"><p id="p-606">The domain is \(\IR ^4\) and the codomain is \(\IR^3\)</p></li>
+<li id="li-307"><p id="p-607">The domain is \(\IR ^4\) and the codomain is \(\IR^2\)</p></li>
 </ol></article><article class="activity project-like" id="activity-106"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
 </h6>
-<p id="p-611">Let \(T: \IR^3 \rightarrow \IR^2\) be given by the \(2\times 3\) standard matrix \(B=\left[\begin{array}{ccc} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]\) and \(S: \IR^2 \rightarrow \IR^4\) be given by the \(4\times 2\) standard matrix \(A=\left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]\text{.}\)</p>
-<p id="p-612">What size will the standard matrix of \(S \circ T:\IR^3\to\IR^4\) be? (Rows \(\times\) Columns)</p>
+<p id="p-608">Let \(T: \IR^3 \rightarrow \IR^2\) be given by the \(2\times 3\) standard matrix \(B=\left[\begin{array}{ccc} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]\) and \(S: \IR^2 \rightarrow \IR^4\) be given by the \(4\times 2\) standard matrix \(A=\left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]\text{.}\)</p>
+<p id="p-609">What size will the standard matrix of \(S \circ T:\IR^3\to\IR^4\) be? (Rows \(\times\) Columns)</p>
 <ol class="lower-alpha">
 <li id="li-308">\(\displaystyle 4 \times 3\)</li>
 <li id="li-309">\(\displaystyle 4 \times 2\)</li>
@@ -180,9 +192,9 @@ MathJax.Hub.Config({
 </ol></article><article class="activity project-like" id="activity-107"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-30"><p id="p-613">Let \(T: \IR^3 \rightarrow \IR^2\) be given by the \(2\times 3\) standard matrix \(B=\left[\begin{array}{ccc} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]\) and \(S: \IR^2 \rightarrow \IR^4\) be given by the \(4\times 2\) standard matrix \(A=\left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]\text{.}\)</p></div>
+<div class="introduction" id="introduction-30"><p id="p-610">Let \(T: \IR^3 \rightarrow \IR^2\) be given by the \(2\times 3\) standard matrix \(B=\left[\begin{array}{ccc} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]\) and \(S: \IR^2 \rightarrow \IR^4\) be given by the \(4\times 2\) standard matrix \(A=\left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]\text{.}\)</p></div>
 <article class="task exercise-like" id="task-70"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-614">Compute</p>
+<p id="p-611">Compute</p>
 <div class="displaymath">
 \begin{equation*}
 (S \circ T)(\vec{e}_1)
@@ -194,15 +206,15 @@ S\left(\left[\begin{array}{c} 2 \\ 5\end{array}\right]\right)
 \left[\begin{array}{c}\unknown\\\unknown\\\unknown\\\unknown\end{array}\right].
 \end{equation*}
 </div></article><article class="task exercise-like" id="task-71"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-615">Compute \((S \circ T)(\vec{e}_2)
+<p id="p-612">Compute \((S \circ T)(\vec{e}_2)
 \text{.}\)</p></article><article class="task exercise-like" id="task-72"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-616">Compute \((S \circ T)(\vec{e}_3)
+<p id="p-613">Compute \((S \circ T)(\vec{e}_3)
 \text{.}\)</p></article><article class="task exercise-like" id="task-73"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-617">Write the \(4\times 3\) standard matrix of \(S \circ T:\IR^3\to\IR^4\text{.}\)</p></article></article><article class="definition definition-like" id="definition-24"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
+<p id="p-614">Write the \(4\times 3\) standard matrix of \(S \circ T:\IR^3\to\IR^4\text{.}\)</p></article></article><article class="definition definition-like" id="definition-24"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
 </h6>
-<p id="p-618">We define the <dfn class="terminology">product</dfn> \(AB\) of a \(m \times n\) matrix \(A\) and a \(n \times k\) matrix \(B\) to be the \(m \times k\) standard matrix of the composition map of the two corresponding linear functions.</p>
-<p id="p-619">For the previous activity, \(T\) was a map \(\IR^3 \rightarrow \IR^2\text{,}\) and \(S\) was a map \(\IR^2 \rightarrow \IR^4\text{,}\) so \(S \circ T\) gave a map \(\IR^3 \rightarrow \IR^4\) with a \(4\times 3\) standard matrix:</p>
+<p id="p-615">We define the <dfn class="terminology">product</dfn> \(AB\) of a \(m \times n\) matrix \(A\) and a \(n \times k\) matrix \(B\) to be the \(m \times k\) standard matrix of the composition map of the two corresponding linear functions.</p>
+<p id="p-616">For the previous activity, \(T\) was a map \(\IR^3 \rightarrow \IR^2\text{,}\) and \(S\) was a map \(\IR^2 \rightarrow \IR^4\text{,}\) so \(S \circ T\) gave a map \(\IR^3 \rightarrow \IR^4\) with a \(4\times 3\) standard matrix:</p>
 <div class="displaymath">
 \begin{equation*}
 AB
@@ -231,15 +243,15 @@ AB
 </div></article><article class="activity project-like" id="activity-108"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-31"><p id="p-620">Let \(S: \IR^3 \rightarrow \IR^2\) be given by the matrix \(A=\left[\begin{array}{ccc} -4 &amp; -2 &amp; 3 \\ 0 &amp; 1 &amp; 1 \end{array}\right]\) and \(T: \IR^2 \rightarrow \IR^3\) be given by the matrix \(B=\left[\begin{array}{cc} 2 &amp; 3 \\ 1 &amp; -1 \\ 0 &amp; -1 \end{array}\right]\text{.}\)</p></div>
+<div class="introduction" id="introduction-31"><p id="p-617">Let \(S: \IR^3 \rightarrow \IR^2\) be given by the matrix \(A=\left[\begin{array}{ccc} -4 &amp; -2 &amp; 3 \\ 0 &amp; 1 &amp; 1 \end{array}\right]\) and \(T: \IR^2 \rightarrow \IR^3\) be given by the matrix \(B=\left[\begin{array}{cc} 2 &amp; 3 \\ 1 &amp; -1 \\ 0 &amp; -1 \end{array}\right]\text{.}\)</p></div>
 <article class="task exercise-like" id="task-74"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-621">Write the dimensions (rows \(\times\) columns) for \(A\text{,}\) \(B\text{,}\) \(AB\text{,}\) and \(BA\text{.}\)</p></article><article class="task exercise-like" id="task-75"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-622">Find the standard matrix \(AB\) of \(S \circ T\text{.}\)</p></article><article class="task exercise-like" id="task-76"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-623">Find the standard matrix \(BA\) of \(T \circ S\text{.}\)</p></article></article><article class="activity project-like" id="activity-109"><h6 class="heading">
+<p id="p-618">Write the dimensions (rows \(\times\) columns) for \(A\text{,}\) \(B\text{,}\) \(AB\text{,}\) and \(BA\text{.}\)</p></article><article class="task exercise-like" id="task-75"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-619">Find the standard matrix \(AB\) of \(S \circ T\text{.}\)</p></article><article class="task exercise-like" id="task-76"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-620">Find the standard matrix \(BA\) of \(T \circ S\text{.}\)</p></article></article><article class="activity project-like" id="activity-109"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-32">
-<p id="p-624">Consider the following three matrices.</p>
+<p id="p-621">Consider the following three matrices.</p>
 <div class="displaymath">
 \begin{equation*}
 A = \left[\begin{array}{ccc}1&amp;0&amp;-3\\3&amp;2&amp;1\end{array}\right]
@@ -251,22 +263,30 @@ C = \left[\begin{array}{cc}2&amp;2\\0&amp;-1\\3&amp;1\\4&amp;0\end{array}\right]
 </div>
 </div>
 <article class="task exercise-like" id="task-77"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-625">Find the domain and codomain of each of the three linear maps corresponding to \(A\text{,}\) \(B)\text{,}\) and \(C\text{.}\)</p></article><article class="task exercise-like" id="task-78"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-626">Only one of the matrix products \(AB,AC,BA,BC,CA,CB\) can actually be computed. Compute it.</p></article></article><article class="activity project-like" id="activity-110"><h6 class="heading">
+<p id="p-622">Find the domain and codomain of each of the three linear maps corresponding to \(A\text{,}\) \(B)\text{,}\) and \(C\text{.}\)</p></article><article class="task exercise-like" id="task-78"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-623">Only one of the matrix products \(AB,AC,BA,BC,CA,CB\) can actually be computed. Compute it.</p></article></article><article class="activity project-like" id="activity-110"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.6</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-33"><p id="p-627">Let \(B=\left[\begin{array}{ccc} 3 &amp; -4 &amp; 0 \\ 2 &amp; 0 &amp; -1 \\ 0 &amp; -3 &amp; 3 \end{array}\right]\text{,}\) and let \(A=\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]\text{.}\)</p></div>
+<div class="introduction" id="introduction-33"><p id="p-624">Let \(B=\left[\begin{array}{ccc} 3 &amp; -4 &amp; 0 \\ 2 &amp; 0 &amp; -1 \\ 0 &amp; -3 &amp; 3 \end{array}\right]\text{,}\) and let \(A=\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]\text{.}\)</p></div>
 <article class="task exercise-like" id="task-79"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-628">Compute the product \(BA\) by hand.</p></article><article class="task exercise-like" id="task-80"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-629">Check your work using technology. Using Octave:</p>
+<p id="p-625">Compute the product \(BA\) by hand.</p></article><article class="task exercise-like" id="task-80"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-626">Check your work using technology. Using Octave:</p>
 <pre class="code-block tex2jax_ignore">
-B = sym([3 -4 0 ; 2 0 -1 ; 0 -3 3])
-A = sym([2 7 -1 ; 0 3 2  ; 1 1 -1])
+B = [3 -4 0 ; 2 0 -1 ; 0 -3 3]
+A = [2 7 -1 ; 0 3 2  ; 1 1 -1]
 B*A
-    </pre></article></article><section class="exercises" id="exercises-17"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">4.1.1</span> <span class="title">Exercises</span>
+    </pre></article></article><div class="sagecell-octave" id="sage-37"><script type="text/x-sage">B = [3 -4 0 ; 2 0 -1 ; 0 -3 3]
+A = [2 7 -1 ; 0 3 2  ; 1 1 -1]
+B*A
+</script></div>
+<section class="subsection" id="subsection-19"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.1.1</span> <span class="title">Videos</span>
 </h3>
-<p id="p-630"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/M1/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+<figure class="figure figure-like" id="figure-39"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-M1" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/a9aff0c2-0958-4245-a0b0-ab81012e866e.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="videos/M1-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.4<span class="period">.</span></span><span class="space"> </span>Video example: Multiplying matrices</figcaption></figure></section><section class="exercises" id="exercises-17"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">4.1.2</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-627"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/M1/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
 </div>
 </body>
 </html>

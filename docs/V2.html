@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-13T19:23:32Z       *-->
+<!--*       on 2021-01-15T10:59:25-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,7 +14,7 @@
 <title>Linear Combinations (V2)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [['\\(','\\)']]
@@ -43,7 +43,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-octave' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-octave',
+                           linked: true,
+                           languages: ['octave'],
+                           evalButtonText: 'Evaluate (Octave)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -147,8 +163,8 @@ MathJax.Hub.Config({
 <article class="definition definition-like" id="definition-10"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
 </h6>
-<p id="p-184">A <dfn class="terminology">linear combination</dfn> of a set of vectors \(\{\vec v_1,\vec v_2,\dots,\vec v_m\}\) is given by \(c_1\vec v_1+c_2\vec v_2+\dots+c_m\vec v_m\) for any choice of scalar multiples \(c_1,c_2,\dots,c_m\text{.}\)</p>
-<p id="p-185">For example, we can say \(\left[\begin{array}{c}3 \\0 \\ 5\end{array}\right]\) is a linear combination of the vectors \(\left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right]\) and \(\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]\) since</p>
+<p id="p-182">A <dfn class="terminology">linear combination</dfn> of a set of vectors \(\{\vec v_1,\vec v_2,\dots,\vec v_m\}\) is given by \(c_1\vec v_1+c_2\vec v_2+\dots+c_m\vec v_m\) for any choice of scalar multiples \(c_1,c_2,\dots,c_m\text{.}\)</p>
+<p id="p-183">For example, we can say \(\left[\begin{array}{c}3 \\0 \\ 5\end{array}\right]\) is a linear combination of the vectors \(\left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right]\) and \(\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]\) since</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{c} 3 \\ 0 \\ 5 \end{array}\right] = 
@@ -158,7 +174,7 @@ MathJax.Hub.Config({
 </div></article><article class="definition definition-like" id="definition-11"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
 </h6>
-<p id="p-186">The <dfn class="terminology">span</dfn> of a set of vectors is the collection of all linear combinations of that set:</p>
+<p id="p-184">The <dfn class="terminology">span</dfn> of a set of vectors is the collection of all linear combinations of that set:</p>
 <div class="displaymath">
 \begin{equation*}
 \vspan\{\vec v_1,\vec v_2,\dots,\vec v_m\} =
@@ -166,7 +182,7 @@ MathJax.Hub.Config({
 c_i\in\IR}\text{.}
 \end{equation*}
 </div>
-<p id="p-187">For example:</p>
+<p id="p-185">For example:</p>
 <div class="displaymath">
 \begin{equation*}
 \vspan\setList
@@ -179,23 +195,23 @@ a\left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right]+
 b\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]
 }{
 a,b\in\IR
-}
+}\text{.}
 \end{equation*}
 </div></article><article class="activity project-like" id="activity-24"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-10"><p id="p-188">Consider \(\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right]\right\}\text{.}\)</p></div>
+<div class="introduction" id="introduction-10"><p id="p-186">Consider \(\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right]\right\}\text{.}\)</p></div>
 <article class="task exercise-like" id="task-22"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-189">Sketch \(1\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}1\\2\end{array}\right]\text{,}\) \(3\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}3\\6\end{array}\right]\text{,}\) \(0\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}0\\0\end{array}\right]\text{,}\) and \(-2\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}-2\\-4\end{array}\right]\) in the \(xy\) plane.</p></article><article class="task exercise-like" id="task-23"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-190">Sketch a representation of all the vectors belonging to \(\vspan\setList{\left[\begin{array}{c}1\\2\end{array}\right]}
+<p id="p-187">Sketch \(1\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}1\\2\end{array}\right]\text{,}\) \(3\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}3\\6\end{array}\right]\text{,}\) \(0\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}0\\0\end{array}\right]\text{,}\) and \(-2\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}-2\\-4\end{array}\right]\) in the \(xy\) plane.</p></article><article class="task exercise-like" id="task-23"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-188">Sketch a representation of all the vectors belonging to \(\vspan\setList{\left[\begin{array}{c}1\\2\end{array}\right]}
 =
 \setBuilder{a\left[\begin{array}{c}1\\2\end{array}\right]}{a\in\IR}\) in the \(xy\) plane.</p></article></article><article class="activity project-like" id="activity-25"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-11"><p id="p-191">Consider \(\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right],
+<div class="introduction" id="introduction-11"><p id="p-189">Consider \(\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right],
 \left[\begin{array}{c}-1\\1\end{array}\right]\right\}\text{.}\)</p></div>
 <article class="task exercise-like" id="task-24"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-192">Sketch the following linear combinations in the \(xy\) plane.</p>
+<p id="p-190">Sketch the following linear combinations in the \(xy\) plane.</p>
 <div class="displaymath">
 \begin{equation*}
 1\left[\begin{array}{c}1\\2\end{array}\right]+
@@ -214,58 +230,67 @@ a,b\in\IR
 -2\left[\begin{array}{c}-1\\1\end{array}\right]
 \end{equation*}
 </div></article><article class="task exercise-like" id="task-25"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-193">Sketch a representation of all the vectors belonging to \(\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right],
-\left[\begin{array}{c}-1\\1\end{array}\right]\right\}\) in the \(xy\) plane.</p></article></article><article class="activity project-like" id="activity-26"><h6 class="heading">
+<p id="p-191">Sketch a representation of all the vectors belonging to \(\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right],
+\left[\begin{array}{c}-1\\1\end{array}\right]\right\}=\setBuilder{a\left[\begin{array}{c}1\\2\end{array}\right]+b\left[\begin{array}{c}-1\\1\end{array}\right]}{a, b \in \IR}\) in the \(xy\) plane.</p></article></article><article class="activity project-like" id="activity-26"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
 </h6>
-<p id="p-194">Sketch a representation of all the vectors belonging to \(\vspan\left\{\left[\begin{array}{c}6\\-4\end{array}\right],
+<p id="p-192">Sketch a representation of all the vectors belonging to \(\vspan\left\{\left[\begin{array}{c}6\\-4\end{array}\right],
 \left[\begin{array}{c}-3\\2\end{array}\right]\right\}\) in the \(xy\) plane.</p></article><article class="activity project-like" id="activity-27"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
 </h6>
 <article class="task exercise-like" id="task-26"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-196">Reinterpret this vector equation as a system of linear equations.</p></article><article class="task exercise-like" id="task-27"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-197">Find its solution set, using technology to find \(\RREF\) of its corresponding augmented matrix.</p></article><article class="task exercise-like" id="task-28"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-198">Given this solution set, does \(\left[\begin{array}{c}-1\\-6\\1\end{array}\right]\) belong to \(\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
-\left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}\text{?}\)</p></article></article><article class="fact theorem-like" id="fact-2"><h6 class="heading">
+<p id="p-194">Reinterpret this vector equation as a system of linear equations.</p></article><article class="task exercise-like" id="task-27"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-195">Find its solution set, using technology to find \(\RREF\) of its corresponding augmented matrix.</p></article><article class="task exercise-like" id="task-28"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-196">Given this solution set, does \(\left[\begin{array}{c}-1\\-6\\1\end{array}\right]\) belong to \(\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
+\left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}\text{?}\)</p></article></article><div class="sagecell-octave" id="sage-6"><script type="text/x-sage"></script></div>
+<article class="fact theorem-like" id="fact-2"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
 </h6>
-<p id="p-199">A vector \(\vec b\) belongs to \(\vspan\{\vec v_1,\dots,\vec v_n\}\) if and only if the vector equation \(x_1 \vec{v}_1+\cdots+x_n \vec{v_n}=\vec{b}\) is consistent.</p></article><article class="observation remark-like" id="observation-6"><h6 class="heading">
+<p id="p-197">A vector \(\vec b\) belongs to \(\vspan\{\vec v_1,\dots,\vec v_n\}\) if and only if the vector equation \(x_1 \vec{v}_1+\cdots+x_n \vec{v_n}=\vec{b}\) is consistent.</p></article><article class="observation remark-like" id="observation-6"><h6 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
 </h6>
-<p id="p-200">The following are all equivalent statements:</p>
+<p id="p-198">The following are all equivalent statements:</p>
 <ul class="disc">
-<li id="li-119"><p id="p-201">The vector \(\vec{b}\) belongs to \(\vspan\{\vec v_1,\dots,\vec v_n\}\text{.}\)</p></li>
-<li id="li-120"><p id="p-202">The vector equation \(x_1 \vec{v}_1+\cdots+x_n \vec{v}_n=\vec{b}\) is consistent.</p></li>
-<li id="li-121"><p id="p-203">The linear system corresponding to \(\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]\) is consistent.</p></li>
-<li id="li-122"><p id="p-204">\(\RREF\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]\) doesn't have a row \([0\,\cdots\,0\,|\,1]\) representing the contradiction \(0=1\text{.}\)</p></li>
+<li id="li-119"><p id="p-199">The vector \(\vec{b}\) belongs to \(\vspan\{\vec v_1,\dots,\vec v_n\}\text{.}\)</p></li>
+<li id="li-120"><p id="p-200">The vector equation \(x_1 \vec{v}_1+\cdots+x_n \vec{v}_n=\vec{b}\) is consistent.</p></li>
+<li id="li-121"><p id="p-201">The linear system corresponding to \(\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]\) is consistent.</p></li>
+<li id="li-122"><p id="p-202">\(\RREF\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]\) doesn't have a row \([0\,\cdots\,0\,|\,1]\) representing the contradiction \(0=1\text{.}\)</p></li>
 </ul></article><article class="activity project-like" id="activity-28"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
 </h6>
-<p id="p-205">Determine if \(\left[\begin{array}{c}3\\-2\\1 \\ 5\end{array}\right]\) belongs to \(\vspan\left\{\left[\begin{array}{c}1\\0\\-3 \\ 2\end{array}\right],
-\left[\begin{array}{c}-1\\-3\\2 \\ 2\end{array}\right]\right\}\) by solving an appropriate vector equation.</p></article><article class="activity project-like" id="activity-29"><h6 class="heading">
+<p id="p-203">Determine if \(\left[\begin{array}{c}3\\-2\\1 \\ 5\end{array}\right]\) belongs to \(\vspan\left\{\left[\begin{array}{c}1\\0\\-3 \\ 2\end{array}\right],
+\left[\begin{array}{c}-1\\-3\\2 \\ 2\end{array}\right]\right\}\) by solving an appropriate vector equation.</p></article><div class="sagecell-octave" id="sage-7"><script type="text/x-sage"></script></div>
+<article class="activity project-like" id="activity-29"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span>
 </h6>
-<p id="p-206">Determine if \(\left[\begin{array}{c}-1\\-9\\0\end{array}\right]\) belongs to \(\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
-\left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}\) by solving an appropriate vector equation.</p></article><article class="activity project-like" id="activity-30"><h6 class="heading">
+<p id="p-204">Determine if \(\left[\begin{array}{c}-1\\-9\\0\end{array}\right]\) belongs to \(\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
+\left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}\) by solving an appropriate vector equation.</p></article><div class="sagecell-octave" id="sage-8"><script type="text/x-sage"></script></div>
+<article class="activity project-like" id="activity-30"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-12"><p id="p-207">Does the third-degree polynomial \(3y^3-2y^2+y+5\) in \(\P^3\) belong to \(\vspan\{y^3-3y+2,-y^3-3y^2+2y+2\}\text{?}\)</p></div>
+<div class="introduction" id="introduction-12"><p id="p-205">Does the third-degree polynomial \(3y^3-2y^2+y+5\) in \(\P_3\) belong to \(\vspan\{y^3-3y+2,-y^3-3y^2+2y+2\}\text{?}\)</p></div>
 <article class="task exercise-like" id="task-29"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-208">Reinterpret this question as a question about the solution(s) of a polynomial equation.</p></article><article class="task exercise-like" id="task-30"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-209">Answer this equivalent question, and use its solution to answer the original question.</p></article></article><article class="activity project-like" id="activity-31"><h6 class="heading">
+<p id="p-206">Reinterpret this question as a question about the solution(s) of a polynomial equation.</p></article><article class="task exercise-like" id="task-30"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-207">Answer this equivalent question, and use its solution to answer the original question.</p></article></article><div class="sagecell-octave" id="sage-9"><script type="text/x-sage"></script></div>
+<article class="activity project-like" id="activity-31"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span>
 </h6>
-<p id="p-210">Does the polynomial  \(x^2+x+1\) belong to \(\vspan\{x^2-x,x+1, x^2-1\}\text{?}\)</p></article><article class="activity project-like" id="activity-32"><h6 class="heading">
+<p id="p-208">Does the polynomial  \(x^2+x+1\) belong to \(\vspan\{x^2-x,x+1, x^2-1\}\text{?}\)</p></article><article class="activity project-like" id="activity-32"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.9</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-13"><p id="p-211">Does the matrix \(\left[\begin{array}{c}3&amp;-2\\1&amp;5\end{array}\right]\) belong to \(\vspan\left\{\left[\begin{array}{c}1&amp;0\\-3&amp;2\end{array}\right],
+<div class="introduction" id="introduction-13"><p id="p-209">Does the matrix \(\left[\begin{array}{c}3&amp;-2\\1&amp;5\end{array}\right]\) belong to \(\vspan\left\{\left[\begin{array}{c}1&amp;0\\-3&amp;2\end{array}\right],
 \left[\begin{array}{c}-1&amp;-3\\2&amp;2\end{array}\right]\right\}\text{?}\)</p></div>
 <article class="task exercise-like" id="task-31"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-212">Reinterpret this question as a question about the solution(s) of a matrix equation.</p></article><article class="task exercise-like" id="task-32"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-213">Answer this equivalent question, and use its solution to answer the original question.</p></article></article><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">2.2.1</span> <span class="title">Exercises</span>
+<p id="p-210">Reinterpret this question as a question about the solution(s) of a matrix equation.</p></article><article class="task exercise-like" id="task-32"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-211">Answer this equivalent question, and use its solution to answer the original question.</p></article></article><div class="sagecell-octave" id="sage-10"><script type="text/x-sage"></script></div>
+<section class="subsection" id="subsection-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.1</span> <span class="title">Videos</span>
 </h3>
-<p id="p-214"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/V2/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+<figure class="figure figure-like" id="figure-6"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-V2" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/b1fc603a-bf2d-41f4-a6d8-ac250114737e.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="videos/V2-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.5<span class="period">.</span></span><span class="space"> </span>Video example: Linear combinations</figcaption></figure></section><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.2.2</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-212"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/V2/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
 </div>
 </body>
 </html>

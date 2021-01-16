@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-13T19:23:32Z       *-->
+<!--*       on 2021-01-15T10:59:26-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,7 +14,7 @@
 <title>Subspaces (V4)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [['\\(','\\)']]
@@ -147,57 +147,46 @@ MathJax.Hub.Config({
 <article class="definition definition-like" id="definition-12"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
 </h6>
-<p id="p-244">A subset of a vector space is called a <dfn class="terminology">subspace</dfn> if it is a vector space on its own.</p>
-<p id="p-245">For example, the span of these two vectors forms a planar subspace inside of the larger vector space \(\IR^3\text{.}\)</p>
-<pre class="code-block tex2jax_ignore">
-  \begin{center}
-  \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)},scale=0.4]
-    \draw[-&gt;] (0,0,0) -- (6,0,0);
-    \draw[-&gt;] (0,0,0) -- (0,6,0);
-    \draw[-&gt;] (0,0,0) -- (0,0,6);
-    \draw[fill=purple!20,fill opacity=0.5]
-      (-2,-2,2) -- (6,-2,-2) -- (2,2,-2) -- (-6,2,2) -- (-2,-2,2);
-    \draw[thick,blue,-&gt;] (0,0,0) -- (1,-1,0);
-    \draw[thick,red,-&gt;] (0,0,0) -- (-2,0,1);
-  \end{tikzpicture}
-  \end{center}
-        </pre></article><article class="fact theorem-like" id="fact-5"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
+<p id="p-241">A subset of a vector space is called a <dfn class="terminology">subspace</dfn> if it is a vector space on its own.</p>
+<p id="p-242">For example, the span of these two vectors forms a planar subspace inside of the larger vector space \(\IR^3\text{.}\)</p>
+<figure class="figure figure-like" id="figure-12"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-5.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.2<span class="period">.</span></span><span class="space"> </span>A subspace of \(\IR^3\)</figcaption></figure></article><article class="fact theorem-like" id="fact-5"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
 </h6>
-<p id="p-246">Any sub<em class="emphasis">set</em> \(S\) of a vector space \(V\) that contains the additive identity \(\vec 0\) satisfies the eight vector space properties automatically, since it is a collection of known vectors.</p>
-<p id="p-247">However, to verify that it's a sub<em class="emphasis">space</em>, we need to check that addition and multiplication still make sense using only vectors from \(S\text{.}\) So we need to check two things:</p>
+<p id="p-243">Any sub<em class="emphasis">set</em> \(S\) of a vector space \(V\) that contains the additive identity \(\vec 0\) satisfies the eight vector space properties automatically, since it is a collection of known vectors.</p>
+<p id="p-244">However, to verify that it's a sub<em class="emphasis">space</em>, we need to check that addition and multiplication still make sense using only vectors from \(S\text{.}\) So we need to check two things:</p>
 <ul class="disc">
-<li id="li-136"><p id="p-248">The set is <dfn class="terminology">closed under addition</dfn>: for any \(\vec{x},\vec{y} \in S\text{,}\) the sum \(\vec{x}+\vec{y}\) is also in \(S\text{.}\)</p></li>
-<li id="li-137"><p id="p-249">The set is <dfn class="terminology">closed under scalar multiplication</dfn>: for any \(\vec{x} \in S\) and scalar \(c \in \IR\text{,}\) the product \(c\vec{x}\) is also in \(S\text{.}\)</p></li>
+<li id="li-136"><p id="p-245">The set is <dfn class="terminology">closed under addition</dfn>: for any \(\vec{x},\vec{y} \in S\text{,}\) the sum \(\vec{x}+\vec{y}\) is also in \(S\text{.}\)</p></li>
+<li id="li-137"><p id="p-246">The set is <dfn class="terminology">closed under scalar multiplication</dfn>: for any \(\vec{x} \in S\) and scalar \(c \in \IR\text{,}\) the product \(c\vec{x}\) is also in \(S\text{.}\)</p></li>
 </ul></article><article class="activity project-like" id="activity-40"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-17"><p id="p-250">Let \(S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}\text{.}\)</p></div>
+<div class="introduction" id="introduction-17"><p id="p-247">Let \(S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}\text{.}\)</p></div>
 <article class="task exercise-like" id="task-39"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-251">Let \(\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]\) and \(\vec{w} = \left[\begin{array}{c} a \\ b \\ c \end{array}\right] \) be vectors in \(S\text{,}\) so \(x+2y+z=0\) and \(a+2b+c=0\text{.}\) Show that \(\vec v+\vec w = \left[\begin{array}{c} x+a \\ y+b \\ z+c \end{array}\right]\) also belongs to \(S\) by verifying that \((x+a)+2(y+b)+(z+c)=0\text{.}\)</p></article><article class="task exercise-like" id="task-40"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-252">Let \(\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]\in S\text{,}\) so \(x+2y+z=0\text{.}\) Show that \(c\vec v=\left[\begin{array}{c}cx\\cy\\cz\end{array}\right]\) also belongs to \(S\) for any \(c\in\IR\) by verifying an appropriate equation.</p></article><article class="task exercise-like" id="task-41"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-253">Is \(S\) is a subspace of \(\IR^3\text{?}\)</p></article></article><article class="activity project-like" id="activity-41"><h6 class="heading">
+<p id="p-248">Let \(\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]\) and \(\vec{w} = \left[\begin{array}{c} a \\ b \\ c \end{array}\right] \) be vectors in \(S\text{,}\) so \(x+2y+z=0\) and \(a+2b+c=0\text{.}\) Show that \(\vec v+\vec w = \left[\begin{array}{c} x+a \\ y+b \\ z+c \end{array}\right]\) also belongs to \(S\) by verifying that \((x+a)+2(y+b)+(z+c)=0\text{.}\)</p></article><article class="task exercise-like" id="task-40"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-249">Let \(\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]\in S\text{,}\) so \(x+2y+z=0\text{.}\) Show that \(c\vec v=\left[\begin{array}{c}cx\\cy\\cz\end{array}\right]\) also belongs to \(S\) for any \(c\in\IR\) by verifying an appropriate equation.</p></article><article class="task exercise-like" id="task-41"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-250">Is \(S\) is a subspace of \(\IR^3\text{?}\)</p></article></article><article class="activity project-like" id="activity-41"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
 </h6>
-<p id="p-254">Let \(S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=4}\text{.}\) Choose a vector \(\vec v=\left[\begin{array}{c} \unknown\\\unknown\\\unknown \end{array}\right]\) in \(S\) and a real number \(c=\unknown\text{,}\) and show that \(c\vec v\) isn't in \(S\text{.}\) Is \(S\) a subspace of \(\IR^3\text{?}\)</p></article><article class="remark remark-like" id="remark-11"><h6 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
+<p id="p-251">Let \(S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=4}\text{.}\) Choose a vector \(\vec v=\left[\begin{array}{c} \unknown\\\unknown\\\unknown \end{array}\right]\) in \(S\) and a real number \(c=\unknown\text{,}\) and show that \(c\vec v\) isn't in \(S\text{.}\) Is \(S\) a subspace of \(\IR^3\text{?}\)</p></article><article class="remark remark-like" id="remark-10"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
 </h6>
-<p id="p-255">Since \(0\) is a scalar and \(0\vec{v}=\vec{z}\) for any vector \(\vec{v}\text{,}\) a nonempty set that is closed under scalar multiplication must contain the zero vector \(\vec{z}\) for that vector space.</p>
-<p id="p-256">Put another way, you can check any of the following to show that a nonempty subset \(W\) isn't a subspace:</p>
+<p id="p-252">Since \(0\) is a scalar and \(0\vec{v}=\vec{z}\) for any vector \(\vec{v}\text{,}\) a nonempty set that is closed under scalar multiplication must contain the zero vector \(\vec{z}\) for that vector space.</p>
+<p id="p-253">Put another way, you can check any of the following to show that a nonempty subset \(W\) isn't a subspace:</p>
 <ul class="disc">
-<li id="li-138"><p id="p-257">Show that \(\vec 0\not\in W\text{.}\)</p></li>
-<li id="li-139"><p id="p-258">Find \(\vec u,\vec v\in W\) such that \(\vec u+\vec v\not\in W\text{.}\)</p></li>
-<li id="li-140"><p id="p-259">Find \(c\in\IR,\vec v\in W\) such that \(c\vec v\not\in W\text{.}\)</p></li>
+<li id="li-138"><p id="p-254">Show that \(\vec 0\not\in W\text{.}\)</p></li>
+<li id="li-139"><p id="p-255">Find \(\vec u,\vec v\in W\) such that \(\vec u+\vec v\not\in W\text{.}\)</p></li>
+<li id="li-140"><p id="p-256">Find \(c\in\IR,\vec v\in W\) such that \(c\vec v\not\in W\text{.}\)</p></li>
 </ul>
-<p id="p-260">If you cannot do any of these, then \(W\) can be proven to be a subspace by doing the following:</p>
+<p id="p-257">If you cannot do any of these, then \(W\) can be proven to be a subspace by doing the following:</p>
 <ul class="disc">
-<li id="li-141"><p id="p-261">Prove that \(\vec u+\vec v\in W\) whenever \(\vec u,\vec v\in W\text{.}\)</p></li>
-<li id="li-142"><p id="p-262">Prove that \(c\vec v\in W\) whenever \(c\in\IR,\vec v\in W\text{.}\)</p></li>
+<li id="li-141"><p id="p-258">Prove that \(\vec u+\vec v\in W\) whenever \(\vec u,\vec v\in W\text{.}\)</p></li>
+<li id="li-142"><p id="p-259">Prove that \(c\vec v\in W\) whenever \(c\in\IR,\vec v\in W\text{.}\)</p></li>
 </ul></article><article class="activity project-like" id="activity-42"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-18">
-<p id="p-263">Consider these subsets of \(\IR^3\text{:}\)</p>
+<p id="p-260">Consider these subsets of \(\IR^3\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 R=
@@ -212,24 +201,28 @@ T=
 </div>
 </div>
 <article class="task exercise-like" id="task-42"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-264">Show \(R\) isn't a subspace by showing that \(\vec 0\not\in R\text{.}\)</p></article><article class="task exercise-like" id="task-43"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-265">Show \(S\) isn't a subspace by finding two vectors \(\vec u,\vec v\in S\) such that \(\vec u+\vec v\not\in S\text{.}\)</p></article><article class="task exercise-like" id="task-44"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-266">Show \(T\) isn't a subspace by finding a vector \(\vec v\in T\) such that \(2\vec v\not\in T\text{.}\)</p></article></article><article class="activity project-like" id="activity-43"><h6 class="heading">
+<p id="p-261">Show \(R\) isn't a subspace by showing that \(\vec 0\not\in R\text{.}\)</p></article><article class="task exercise-like" id="task-43"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-262">Show \(S\) isn't a subspace by finding two vectors \(\vec u,\vec v\in S\) such that \(\vec u+\vec v\not\in S\text{.}\)</p></article><article class="task exercise-like" id="task-44"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-263">Show \(T\) isn't a subspace by finding a vector \(\vec v\in T\) such that \(2\vec v\not\in T\text{.}\)</p></article></article><article class="activity project-like" id="activity-43"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
 </h6>
-<p id="p-267">Let \(W\) be a subspace of a vector space \(V\text{.}\)  How are \(\vspan W\) and \(W\) related?</p>
+<p id="p-264">Let \(W\) be a subspace of a vector space \(V\text{.}\)  How are \(\vspan W\) and \(W\) related?</p>
 <ol class="lower-alpha">
-<li id="li-143"><p id="p-268">\(\vspan W\) is bigger than \(W\)</p></li>
-<li id="li-144"><p id="p-269">\(\vspan W\) is the same as \(W\)</p></li>
-<li id="li-145"><p id="p-270">\(\vspan W\) is smaller than \(W\)</p></li>
+<li id="li-143"><p id="p-265">\(\vspan W\) is bigger than \(W\)</p></li>
+<li id="li-144"><p id="p-266">\(\vspan W\) is the same as \(W\)</p></li>
+<li id="li-145"><p id="p-267">\(\vspan W\) is smaller than \(W\)</p></li>
 </ol></article><article class="fact theorem-like" id="fact-6"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
 </h6>
-<p id="p-271">If \(S\) is any subset of a vector space \(V\text{,}\) then since \(\vspan S\) collects all possible linear combinations, \(\vspan S\) is automatically a subspace of \(V\text{.}\)</p>
-<p id="p-272">In fact, \(\vspan S\) is always the smallest subspace of \(V\) that contains all the vectors in \(S\text{.}\)</p></article><section class="exercises" id="exercises-7"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">2.4.1</span> <span class="title">Exercises</span>
+<p id="p-268">If \(S\) is any subset of a vector space \(V\text{,}\) then since \(\vspan S\) collects all possible linear combinations, \(\vspan S\) is automatically a subspace of \(V\text{.}\)</p>
+<p id="p-269">In fact, \(\vspan S\) is always the smallest subspace of \(V\) that contains all the vectors in \(S\text{.}\)</p></article><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Videos</span>
 </h3>
-<p id="p-273"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/V4/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+<figure class="figure figure-like" id="figure-13"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-V4" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/ad69063b-0e34-4b68-8d94-ac2501149093.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="videos/V4-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.6<span class="period">.</span></span><span class="space"> </span>Video example: Determining if a subset of a vector space is a subspace</figcaption></figure></section><section class="exercises" id="exercises-7"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.4.2</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-270"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/V4/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
 </div>
 </body>
 </html>

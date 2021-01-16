@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-13T19:23:35Z       *-->
+<!--*       on 2021-01-15T10:59:27-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,7 +14,7 @@
 <title>Image and Kernel (A3)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [['\\(','\\)']]
@@ -43,7 +43,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-octave' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-octave',
+                           linked: true,
+                           languages: ['octave'],
+                           evalButtonText: 'Evaluate (Octave)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -147,32 +163,17 @@ MathJax.Hub.Config({
 <article class="definition definition-like" id="definition-20"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
 </h6>
-<p id="p-455">Let \(T: V \rightarrow W\) be a linear transformation.  The <dfn class="terminology">kernel</dfn> of \(T\) is an important subspace of \(V\) defined by</p>
+<p id="p-452">Let \(T: V \rightarrow W\) be a linear transformation.  The <dfn class="terminology">kernel</dfn> of \(T\) is an important subspace of \(V\) defined by</p>
 <div class="displaymath">
 \begin{equation*}
 \ker T = \left\{ \vec{v} \in V\ \big|\ T(\vec{v})=\vec{z}\right\}
 \end{equation*}
 </div>
-<pre class="code-block tex2jax_ignore">
-  \begin{tikzpicture}[x=0.15in,y=0.15in]
-    \begin{scope}[shift={(0,0)}]
-      \draw (0,0) node[anchor=north west] {\(\ker T\)} -- (3,0);
-      \draw (0,0) -- (0,3);
-      \draw (0,0)  -- (-2,-1);
-      \draw[thick,latex-latex,blue] (-3,-3) -- (3,3);
-    \end{scope}
-    \draw[dashed,-latex] (3.5,3) to [bend left=30] (7,3);
-    \begin{scope}[shift={(9,0.5)}]
-      \draw (-2,0) -- (2,0);
-      \draw (0,-2) -- (0,2);
-      \fill[blue] (0,0) circle (0.2)
-            node[anchor=south east] {\(\vec{0}\)};
-    \end{scope}
-  \end{tikzpicture}
-            </pre></article><article class="activity project-like" id="activity-79"><h6 class="heading">
+<figure class="figure figure-like" id="figure-25"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-9.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>The kernel of a linear transformation</figcaption></figure></article><article class="activity project-like" id="activity-79"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
 </h6>
-<p id="p-456">Let \(T: \IR^2 \rightarrow \IR^3\) be given by</p>
+<p id="p-453">Let \(T: \IR^2 \rightarrow \IR^3\) be given by</p>
 <div class="displaymath">
 \begin{equation*}
 T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
@@ -185,13 +186,13 @@ T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
 </div>
 <p data-braille="continuation">Which of these subspaces of \(\IR^2\) describes \(\ker T\text{,}\) the set of all vectors that transform into \(\vec 0\text{?}\)</p>
 <ol class="lower-alpha">
-<li id="li-211"><p id="p-457">\(\displaystyle \setBuilder{\left[\begin{array}{c}a \\ a\end{array}\right]}{a\in\IR}\)</p></li>
-<li id="li-212"><p id="p-458">\(\displaystyle \setList{\left[\begin{array}{c}0\\0\end{array}\right]}\)</p></li>
-<li id="li-213"><p id="p-459">\(\displaystyle \IR^2=\setBuilder{\left[\begin{array}{c}x \\ y\end{array}\right]}{x,y\in\IR}\)</p></li>
+<li id="li-211"><p id="p-454">\(\displaystyle \setBuilder{\left[\begin{array}{c}a \\ a\end{array}\right]}{a\in\IR}\)</p></li>
+<li id="li-212"><p id="p-455">\(\displaystyle \setList{\left[\begin{array}{c}0\\0\end{array}\right]}\)</p></li>
+<li id="li-213"><p id="p-456">\(\displaystyle \IR^2=\setBuilder{\left[\begin{array}{c}x \\ y\end{array}\right]}{x,y\in\IR}\)</p></li>
 </ol></article><article class="activity project-like" id="activity-80"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
 </h6>
-<p id="p-460">Let \(T: \IR^3 \rightarrow \IR^2\) be given by</p>
+<p id="p-457">Let \(T: \IR^3 \rightarrow \IR^2\) be given by</p>
 <div class="displaymath">
 \begin{equation*}
 T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
@@ -204,15 +205,15 @@ T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
 </div>
 <p data-braille="continuation">Which of these subspaces of \(\IR^3\) describes \(\ker T\text{,}\) the set of all vectors that transform into \(\vec 0\text{?}\)</p>
 <ol class="lower-alpha">
-<li id="li-214"><p id="p-461">\(\displaystyle \setBuilder{\left[\begin{array}{c}0 \\ 0\\ a\end{array}\right]}{a\in\IR}\)</p></li>
-<li id="li-215"><p id="p-462">\(\displaystyle \setBuilder{\left[\begin{array}{c}a \\ a\\ 0\end{array}\right]}{a\in\IR}\)</p></li>
-<li id="li-216"><p id="p-463">\(\displaystyle \setList{\left[\begin{array}{c}0\\0\\0\end{array}\right]}\)</p></li>
-<li id="li-217"><p id="p-464">\(\displaystyle \IR^3=\setBuilder{\left[\begin{array}{c}x \\ y\\z\end{array}\right]}{x,y,z\in\IR}\)</p></li>
+<li id="li-214"><p id="p-458">\(\displaystyle \setBuilder{\left[\begin{array}{c}0 \\ 0\\ a\end{array}\right]}{a\in\IR}\)</p></li>
+<li id="li-215"><p id="p-459">\(\displaystyle \setBuilder{\left[\begin{array}{c}a \\ a\\ 0\end{array}\right]}{a\in\IR}\)</p></li>
+<li id="li-216"><p id="p-460">\(\displaystyle \setList{\left[\begin{array}{c}0\\0\\0\end{array}\right]}\)</p></li>
+<li id="li-217"><p id="p-461">\(\displaystyle \IR^3=\setBuilder{\left[\begin{array}{c}x \\ y\\z\end{array}\right]}{x,y,z\in\IR}\)</p></li>
 </ol></article><article class="activity project-like" id="activity-81"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-28">
-<p id="p-465">Let \(T: \IR^3 \rightarrow \IR^2\) be the linear transformation given by the standard matrix</p>
+<p id="p-462">Let \(T: \IR^3 \rightarrow \IR^2\) be the linear transformation given by the standard matrix</p>
 <div class="displaymath">
 \begin{equation*}
 T\left( \left[\begin{array}{c} x \\ y \\ z \end{array}\right]\right) = \left[\begin{array}{c} 3x+4y-z \\ x+2y+z \end{array}\right]
@@ -220,82 +221,36 @@ T\left( \left[\begin{array}{c} x \\ y \\ z \end{array}\right]\right) = \left[\be
 </div>
 </div>
 <article class="task exercise-like" id="task-65"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-466">Set \(T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)
+<p id="p-463">Set \(T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)
 =
 \left[\begin{array}{c}0\\0\end{array}\right]\) to find a linear system of equations whose solution set is the kernel.</p></article><article class="task exercise-like" id="task-66"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-467">Use \(\RREF(A)\) to solve this homogeneous system of equations and find a basis for the kernel of \(T\text{.}\)</p></article></article><article class="activity project-like" id="activity-82"><h6 class="heading">
+<p id="p-464">Use \(\RREF(A)\) to solve this homogeneous system of equations and find a basis for the kernel of \(T\text{.}\)</p></article></article><div class="sagecell-octave" id="sage-29"><script type="text/x-sage"></script></div>
+<article class="activity project-like" id="activity-82"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
 </h6>
-<p id="p-468">Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by</p>
+<p id="p-465">Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by</p>
 <div class="displaymath">
 \begin{equation*}
 T\left(\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right] \right) = 
 \left[\begin{array}{c} 2x+4y+2z-4w \\ -2x-4y+z+w \\ 3x+6y-z-4w\end{array}\right].
 \end{equation*}
 </div>
-<p id="p-469">Find a basis for the kernel of \(T\text{.}\)</p></article><article class="definition definition-like" id="definition-21"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
+<p id="p-466">Find a basis for the kernel of \(T\text{.}\)</p></article><div class="sagecell-octave" id="sage-30"><script type="text/x-sage"></script></div>
+<article class="definition definition-like" id="definition-21"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
 </h6>
-<p id="p-470">Let \(T: V \rightarrow W\) be a linear transformation. The <dfn class="terminology">image</dfn> of \(T\) is an important subspace of \(W\) defined by</p>
+<p id="p-467">Let \(T: V \rightarrow W\) be a linear transformation. The <dfn class="terminology">image</dfn> of \(T\) is an important subspace of \(W\) defined by</p>
 <div class="displaymath">
 \begin{equation*}
 \Im T = \left\{ \vec{w} \in W\ \big|\ \text{there is some }\vec v\in V \text{ with } T(\vec{v})=\vec{w}\right\}
 \end{equation*}
 </div>
-<p id="p-471">In the examples below, the left example's image is all of \(\IR^2\text{,}\) but the right example's image is a planar subspace of \(\IR^3\text{.}\)</p>
-<pre class="code-block tex2jax_ignore">
-\begin{tikzpicture}[x=0.15in,y=0.15in]
-  \begin{scope}[shift={(0,0)}]
-    \draw (0,0) -- (3,0);
-    \draw (0,0) -- (0,3);
-    \draw (0,0) -- (-2,-1);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (1,2);
-    \draw[thick,-latex,blue] (0,0) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (1,-1);
-    \draw[thick,-latex,blue] (0,0) -- (-2,3);
-    \draw[thick,-latex,blue] (0,0) -- (-3,-2);
-  \end{scope}
-  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,1)}]
-    \draw (-2,0) -- (2,0);
-    \draw (0,-2) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
-    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2,-2);
-    \fill[color=blue, opacity=0.5] (-2,-2) rectangle (2,2);
-  \end{scope}
-\end{tikzpicture}
-\hspace{3em}
-\begin{tikzpicture}[x=0.15in,y=0.15in]
-  \begin{scope}[shift={(0,1)}]
-    \draw (-2,0) -- (2,0);
-    \draw (0,-2) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
-    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2,-2);
-  \end{scope}
-  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,0)}]
-    \draw (0,0) -- (3,0);
-    \draw (0,0) -- (0,3);
-    \draw (0,0) -- (-2,-1);
-    \draw[thick,-latex,blue] (0,0) -- (0.5,1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (-2.5,1);
-    \draw[thick,-latex,blue] (0,0) -- (-0.5,-1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2.5,-0.5);
-    \fill[color=blue, opacity=0.5] (-2,-2) -- (3,-1) -- (2,2) -- (-3,1) -- (-2,-2);
-  \end{scope}
-\end{tikzpicture}
-        </pre></article><article class="activity project-like" id="activity-83"><h6 class="heading">
+<p id="p-468">In the examples below, the left example's image is all of \(\IR^2\text{,}\) but the right example's image is a planar subspace of \(\IR^3\text{.}\)</p>
+<figure class="figure figure-like" id="figure-26"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-10.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.4<span class="period">.</span></span><span class="space"> </span>The image of a linear transformation</figcaption></figure></article><article class="activity project-like" id="activity-83"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span>
 </h6>
-<p id="p-472">Let \(T: \IR^2 \rightarrow \IR^3\) be given by</p>
+<p id="p-469">Let \(T: \IR^2 \rightarrow \IR^3\) be given by</p>
 <div class="displaymath">
 \begin{equation*}
 T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
@@ -308,14 +263,14 @@ T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
 </div>
 <p data-braille="continuation">Which of these subspaces of \(\IR^3\) describes \(\Im T\text{,}\) the set of all vectors that are the result of using \(T\) to transform \(\IR^2\) vectors?</p>
 <ol class="lower-alpha">
-<li id="li-218"><p id="p-473">\(\displaystyle \setBuilder{\left[\begin{array}{c}0 \\ 0\\ a\end{array}\right]}{a\in\IR}\)</p></li>
-<li id="li-219"><p id="p-474">\(\displaystyle \setBuilder{\left[\begin{array}{c}a \\ b\\ 0\end{array}\right]}{a,b\in\IR}\)</p></li>
-<li id="li-220"><p id="p-475">\(\displaystyle \setList{\left[\begin{array}{c}0\\0\\0\end{array}\right]}\)</p></li>
-<li id="li-221"><p id="p-476">\(\displaystyle \IR^3=\setBuilder{\left[\begin{array}{c}x \\ y\\z\end{array}\right]}{x,y,z\in\IR}\)</p></li>
+<li id="li-218"><p id="p-470">\(\displaystyle \setBuilder{\left[\begin{array}{c}0 \\ 0\\ a\end{array}\right]}{a\in\IR}\)</p></li>
+<li id="li-219"><p id="p-471">\(\displaystyle \setBuilder{\left[\begin{array}{c}a \\ b\\ 0\end{array}\right]}{a,b\in\IR}\)</p></li>
+<li id="li-220"><p id="p-472">\(\displaystyle \setList{\left[\begin{array}{c}0\\0\\0\end{array}\right]}\)</p></li>
+<li id="li-221"><p id="p-473">\(\displaystyle \IR^3=\setBuilder{\left[\begin{array}{c}x \\ y\\z\end{array}\right]}{x,y,z\in\IR}\)</p></li>
 </ol></article><article class="activity project-like" id="activity-84"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.6</span><span class="period">.</span>
 </h6>
-<p id="p-477">Let \(T: \IR^3 \rightarrow \IR^2\) be given by</p>
+<p id="p-474">Let \(T: \IR^3 \rightarrow \IR^2\) be given by</p>
 <div class="displaymath">
 \begin{equation*}
 T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
@@ -328,13 +283,13 @@ T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
 </div>
 <p data-braille="continuation">Which of these subspaces of \(\IR^2\) describes \(\Im T\text{,}\) the set of all vectors that are the result of using \(T\) to transform \(\IR^3\) vectors?</p>
 <ol class="lower-alpha">
-<li id="li-222"><p id="p-478">\(\displaystyle \setBuilder{\left[\begin{array}{c}a \\ a\end{array}\right]}{a\in\IR}\)</p></li>
-<li id="li-223"><p id="p-479">\(\displaystyle \setList{\left[\begin{array}{c}0\\0\end{array}\right]}\)</p></li>
-<li id="li-224"><p id="p-480">\(\displaystyle \IR^2=\setBuilder{\left[\begin{array}{c}x \\ y\end{array}\right]}{x,y\in\IR}\)</p></li>
+<li id="li-222"><p id="p-475">\(\displaystyle \setBuilder{\left[\begin{array}{c}a \\ a\end{array}\right]}{a\in\IR}\)</p></li>
+<li id="li-223"><p id="p-476">\(\displaystyle \setList{\left[\begin{array}{c}0\\0\end{array}\right]}\)</p></li>
+<li id="li-224"><p id="p-477">\(\displaystyle \IR^2=\setBuilder{\left[\begin{array}{c}x \\ y\end{array}\right]}{x,y\in\IR}\)</p></li>
 </ol></article><article class="activity project-like" id="activity-85"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.7</span><span class="period">.</span>
 </h6>
-<p id="p-481">Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by the standard matrix</p>
+<p id="p-478">Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by the standard matrix</p>
 <div class="displaymath">
 \begin{equation*}
 A
@@ -345,7 +300,7 @@ A
 .
 \end{equation*}
 </div>
-<p id="p-482">Since \(T(\vec v)=T(x_1\vec e_1+x_2\vec e_2+x_3\vec e_3+x_4\vec e_4)\text{,}\) the set of vectors</p>
+<p id="p-479">Since \(T(\vec v)=T(x_1\vec e_1+x_2\vec e_2+x_3\vec e_3+x_4\vec e_4)\text{,}\) the set of vectors</p>
 <div class="displaymath">
 \begin{equation*}
 \setList{
@@ -357,13 +312,13 @@ A
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-225"><p id="p-483">spans \(\Im T\)</p></li>
-<li id="li-226"><p id="p-484">is a linearly independent subset of \(\Im T\)</p></li>
-<li id="li-227"><p id="p-485">is a basis for \(\Im T\)</p></li>
+<li id="li-225"><p id="p-480">spans \(\Im T\)</p></li>
+<li id="li-226"><p id="p-481">is a linearly independent subset of \(\Im T\)</p></li>
+<li id="li-227"><p id="p-482">is a basis for \(\Im T\)</p></li>
 </ol></article><article class="observation remark-like" id="observation-17"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span>
 </h6>
-<p id="p-486">Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by the standard matrix</p>
+<p id="p-483">Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by the standard matrix</p>
 <div class="displaymath">
 \begin{equation*}
 A
@@ -372,7 +327,7 @@ A
 .
 \end{equation*}
 </div>
-<p id="p-487">Since the set \(\setList{
+<p id="p-484">Since the set \(\setList{
 \left[\begin{array}{c}3\\-1\\2\end{array}\right],
 \left[\begin{array}{c}4\\1\\1\end{array}\right],
 \left[\begin{array}{c}7\\0\\3\end{array}\right],
@@ -388,16 +343,16 @@ A
 }
 \end{equation*}
 </div></article><article class="fact theorem-like" id="fact-17"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.3.6</span><span class="period">.</span>
 </h6>
-<p id="p-488">Let  \(T:\IR^n\to\IR^m\) be a linear transformation with standard matrix \(A\text{.}\)</p>
+<p id="p-485">Let  \(T:\IR^n\to\IR^m\) be a linear transformation with standard matrix \(A\text{.}\)</p>
 <ul class="disc">
-<li id="li-228"><p id="p-489">The kernel of \(T\) is the solution set of the homogeneous system given by the augmented matrix \(\left[\begin{array}{c|c}A&amp;\vec 0\end{array}\right]\text{.}\) Use the coefficients of its free variables to get a basis for the kernel.</p></li>
-<li id="li-229"><p id="p-490">The image of \(T\) is the span of the columns of \(A\text{.}\) Remove the vectors creating non-pivot columns in \(\RREF A\) to get a basis for the image.</p></li>
+<li id="li-228"><p id="p-486">The kernel of \(T\) is the solution set of the homogeneous system given by the augmented matrix \(\left[\begin{array}{c|c}A&amp;\vec 0\end{array}\right]\text{.}\) Use the coefficients of its free variables to get a basis for the kernel.</p></li>
+<li id="li-229"><p id="p-487">The image of \(T\) is the span of the columns of \(A\text{.}\) Remove the vectors creating non-pivot columns in \(\RREF A\) to get a basis for the image.</p></li>
 </ul></article><article class="activity project-like" id="activity-86"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.8</span><span class="period">.</span>
 </h6>
-<p id="p-491">Let \(T: \IR^3 \rightarrow \IR^4\) be the linear transformation given by the standard matrix</p>
+<p id="p-488">Let \(T: \IR^3 \rightarrow \IR^4\) be the linear transformation given by the standard matrix</p>
 <div class="displaymath">
 \begin{equation*}
 A
@@ -406,33 +361,34 @@ A
 .
 \end{equation*}
 </div>
-<p id="p-492">Find a basis for the kernel and a basis for the image of \(T\text{.}\)</p></article><article class="activity project-like" id="activity-87"><h6 class="heading">
+<p id="p-489">Find a basis for the kernel and a basis for the image of \(T\text{.}\)</p></article><div class="sagecell-octave" id="sage-31"><script type="text/x-sage"></script></div>
+<article class="activity project-like" id="activity-87"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.9</span><span class="period">.</span>
 </h6>
-<p id="p-493">Let \(T: \IR^n \rightarrow \IR^m\) be a linear transformation with standard matrix \(A\text{.}\) Which of the following is equal to the dimension of the kernel of \(T\text{?}\)</p>
+<p id="p-490">Let \(T: \IR^n \rightarrow \IR^m\) be a linear transformation with standard matrix \(A\text{.}\) Which of the following is equal to the dimension of the kernel of \(T\text{?}\)</p>
 <ol class="lower-alpha">
-<li id="li-230"><p id="p-494">The number of pivot columns</p></li>
-<li id="li-231"><p id="p-495">The number of non-pivot columns</p></li>
-<li id="li-232"><p id="p-496">The number of pivot rows</p></li>
-<li id="li-233"><p id="p-497">The number of non-pivot rows</p></li>
+<li id="li-230"><p id="p-491">The number of pivot columns</p></li>
+<li id="li-231"><p id="p-492">The number of non-pivot columns</p></li>
+<li id="li-232"><p id="p-493">The number of pivot rows</p></li>
+<li id="li-233"><p id="p-494">The number of non-pivot rows</p></li>
 </ol></article><article class="activity project-like" id="activity-88"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.10</span><span class="period">.</span>
 </h6>
-<p id="p-498">Let \(T: \IR^n \rightarrow \IR^m\) be a linear transformation with standard matrix \(A\text{.}\) Which of the following is equal to the dimension of the image of \(T\text{?}\)</p>
+<p id="p-495">Let \(T: \IR^n \rightarrow \IR^m\) be a linear transformation with standard matrix \(A\text{.}\) Which of the following is equal to the dimension of the image of \(T\text{?}\)</p>
 <ol class="lower-alpha">
-<li id="li-234"><p id="p-499">The number of pivot columns</p></li>
-<li id="li-235"><p id="p-500">The number of non-pivot columns</p></li>
-<li id="li-236"><p id="p-501">The number of pivot rows</p></li>
-<li id="li-237"><p id="p-502">The number of non-pivot rows</p></li>
+<li id="li-234"><p id="p-496">The number of pivot columns</p></li>
+<li id="li-235"><p id="p-497">The number of non-pivot columns</p></li>
+<li id="li-236"><p id="p-498">The number of pivot rows</p></li>
+<li id="li-237"><p id="p-499">The number of non-pivot rows</p></li>
 </ol></article><article class="observation remark-like" id="observation-18"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.3.7</span><span class="period">.</span>
 </h6>
-<p id="p-503">Combining these with the observation that the number of columns is the dimension of the domain of \(T\text{,}\) we have the <dfn class="terminology">rank-nullity theorem</dfn>:</p>
-<blockquote class="blockquote" id="blockquote-1"><p id="p-504">The dimension of the domain of \(T\) equals \(\dim(\ker T)+\dim(\Im T)\text{.}\)</p></blockquote>
-<p id="p-505">The dimension of the image is called the <dfn class="terminology">rank</dfn> of \(T\) (or \(A\)) and the dimension of the kernel is called the <dfn class="terminology">nullity</dfn>.</p></article><article class="activity project-like" id="activity-89"><h6 class="heading">
+<p id="p-500">Combining these with the observation that the number of columns is the dimension of the domain of \(T\text{,}\) we have the <dfn class="terminology">rank-nullity theorem</dfn>:</p>
+<blockquote class="blockquote" id="blockquote-1"><p id="p-501">The dimension of the domain of \(T\) equals \(\dim(\ker T)+\dim(\Im T)\text{.}\)</p></blockquote>
+<p id="p-502">The dimension of the image is called the <dfn class="terminology">rank</dfn> of \(T\) (or \(A\)) and the dimension of the kernel is called the <dfn class="terminology">nullity</dfn>.</p></article><article class="activity project-like" id="activity-89"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.11</span><span class="period">.</span>
 </h6>
-<p id="p-506">Let \(T: \IR^3 \rightarrow \IR^4\) be the linear transformation given by the standard matrix</p>
+<p id="p-503">Let \(T: \IR^3 \rightarrow \IR^4\) be the linear transformation given by the standard matrix</p>
 <div class="displaymath">
 \begin{equation*}
 A
@@ -441,10 +397,18 @@ A
 .
 \end{equation*}
 </div>
-<p data-braille="continuation">Verify that the rank-nullity theorem holds for \(T\text{.}\)</p></article><section class="exercises" id="exercises-15"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">3.3.1</span> <span class="title">Exercises</span>
+<p data-braille="continuation">Verify that the rank-nullity theorem holds for \(T\text{.}\)</p></article><div class="sagecell-octave" id="sage-32"><script type="text/x-sage"></script></div>
+<section class="subsection" id="subsection-17"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.3.1</span> <span class="title">Videos</span>
 </h3>
-<p id="p-507"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/A3/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+<figure class="figure figure-like" id="figure-27"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-A3-1" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/aab1199e-273a-4857-a2d0-ab8100e609f6.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="videos/A3-1-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.8<span class="period">.</span></span><span class="space"> </span>Video example: The kernel and image of a linear transformation</figcaption></figure><figure class="figure figure-like" id="figure-28"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-A3-2" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/15b7ee7c-e523-4587-b915-ab8100ec1e24.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="videos/A3-2-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.9<span class="period">.</span></span><span class="space"> </span>Video example: Finding a basis of the image of a linear transformation</figcaption></figure><figure class="figure figure-like" id="figure-29"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-A3-3" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/734aa2e3-0b0d-4729-b96d-ab8100ef91f1.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="videos/A3-3-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.10<span class="period">.</span></span><span class="space"> </span>Video example: Finding a basis of the kernel of a linear transformation</figcaption></figure><figure class="figure figure-like" id="figure-30"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-A3-4" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/65f8831d-f80b-4e8d-8ac9-ac520120dfdc.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="videos/A3-4-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.11<span class="period">.</span></span><span class="space"> </span>Video example: The rank-nullity theorem</figcaption></figure></section><section class="exercises" id="exercises-15"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.3.2</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-504"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/A3/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
 </div>
 </body>
 </html>
