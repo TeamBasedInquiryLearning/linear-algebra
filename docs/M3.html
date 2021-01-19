@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-15T10:59:29-06:00       *-->
+<!--*       on 2021-01-19T17:04:59Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -104,7 +104,10 @@ MathJax.Hub.Config({
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul><li><a href="learning-outcomes.html" data-scroll="learning-outcomes">Learning Outcomes</a></li></ul>
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes">Learning Outcomes</a></li>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes">Slideshow</a></li>
+</ul>
 </li>
 <li class="link">
 <a href="E.html" data-scroll="E"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (E)</span></a><ul>
@@ -160,46 +163,46 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="M3"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">The Inverse of a Matrix (M3)</span>
 </h2>
-<article class="activity project-like" id="activity-114"><h6 class="heading">
+<article class="activity project-like" id="activity-116"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
 </h6>
-<p id="p-643">Let \(T: \IR^n \rightarrow \IR^m\) be a linear map with standard matrix \(A\text{.}\) Sort the following items into three groups of statements: a group that means \(T\) is <em class="emphasis">injective</em>, a group that means \(T\) is <em class="emphasis">surjective</em>, and a group that means \(T\) is <em class="emphasis">bijective</em>.</p>
+<p id="p-658">Let \(T: \IR^n \rightarrow \IR^m\) be a linear map with standard matrix \(A\text{.}\) Sort the following items into three groups of statements: a group that means \(T\) is <em class="emphasis">injective</em>, a group that means \(T\) is <em class="emphasis">surjective</em>, and a group that means \(T\) is <em class="emphasis">bijective</em>.</p>
 <ol class="lower-alpha">
-<li id="li-317"><p id="p-644">\(A\vec x=\vec b\) has a solution for all \(\vec b\in\IR^m\)</p></li>
-<li id="li-318"><p id="p-645">\(A\vec x=\vec b\) has a unique solution for all \(\vec b\in\IR^m\)</p></li>
-<li id="li-319"><p id="p-646">\(A\vec x=\vec 0\) has a unique solution.</p></li>
-<li id="li-320"><p id="p-647">The columns of \(A\) span \(\IR^m\)</p></li>
-<li id="li-321"><p id="p-648">The columns of \(A\) are linearly independent</p></li>
-<li id="li-322"><p id="p-649">The columns of \(A\) are a basis of \(\IR^m\)</p></li>
-<li id="li-323"><p id="p-650">Every column of \(\RREF(A)\) has a pivot</p></li>
-<li id="li-324"><p id="p-651">Every row of \(\RREF(A)\) has a pivot</p></li>
-<li id="li-325"><p id="p-652">\(m=n\) and \(\RREF(A)=I\)</p></li>
-</ol></article><article class="activity project-like" id="activity-115"><h6 class="heading">
+<li id="li-309"><p id="p-659">\(A\vec x=\vec b\) has a solution for all \(\vec b\in\IR^m\)</p></li>
+<li id="li-310"><p id="p-660">\(A\vec x=\vec b\) has a unique solution for all \(\vec b\in\IR^m\)</p></li>
+<li id="li-311"><p id="p-661">\(A\vec x=\vec 0\) has a unique solution.</p></li>
+<li id="li-312"><p id="p-662">The columns of \(A\) span \(\IR^m\)</p></li>
+<li id="li-313"><p id="p-663">The columns of \(A\) are linearly independent</p></li>
+<li id="li-314"><p id="p-664">The columns of \(A\) are a basis of \(\IR^m\)</p></li>
+<li id="li-315"><p id="p-665">Every column of \(\RREF(A)\) has a pivot</p></li>
+<li id="li-316"><p id="p-666">Every row of \(\RREF(A)\) has a pivot</p></li>
+<li id="li-317"><p id="p-667">\(m=n\) and \(\RREF(A)=I\)</p></li>
+</ol></article><article class="activity project-like" id="activity-117"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
 </h6>
-<p id="p-653">Let \(T: \IR^3 \rightarrow \IR^3\) be the linear transformation given by the standard matrix \(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; 0 \\ 2 &amp; 1 &amp; 4 \\ 1 &amp; 1 &amp; 3 \end{array}\right]\text{.}\)</p>
-<p id="p-654">Write an augmented matrix representing the system of equations given by \(T(\vec x)=\vec{0}\text{,}\) that is, \(A\vec x=\left[\begin{array}{c}0 \\ 0 \\ 0 \end{array}\right]\text{.}\) Then solve \(T(\vec x)=\vec{0}\) to find the kernel of \(T\text{.}\)</p></article><div class="sagecell-octave" id="sage-41"><script type="text/x-sage"></script></div>
+<p id="p-668">Let \(T: \IR^3 \rightarrow \IR^3\) be the linear transformation given by the standard matrix \(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; 0 \\ 2 &amp; 1 &amp; 4 \\ 1 &amp; 1 &amp; 3 \end{array}\right]\text{.}\)</p>
+<p id="p-669">Write an augmented matrix representing the system of equations given by \(T(\vec x)=\vec{0}\text{,}\) that is, \(A\vec x=\left[\begin{array}{c}0 \\ 0 \\ 0 \end{array}\right]\text{.}\) Then solve \(T(\vec x)=\vec{0}\) to find the kernel of \(T\text{.}\)</p></article><div class="sagecell-octave" id="sage-41"><script type="text/x-sage"></script></div>
 <article class="definition definition-like" id="definition-26"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
 </h6>
-<p id="p-655">Let \(T: \IR^n \rightarrow \IR^n\) be a linear map with standard matrix \(A\text{.}\)</p>
+<p id="p-670">Let \(T: \IR^n \rightarrow \IR^n\) be a linear map with standard matrix \(A\text{.}\)</p>
 <ul class="disc">
-<li id="li-326"><p id="p-656">If \(T\) is a bijection and \(\vec b\) is any \(\IR^n\) vector, then \(T(\vec x)=A\vec x=\vec b\) has a unique solution.</p></li>
-<li id="li-327"><p id="p-657">So we may define an <dfn class="terminology">inverse map</dfn> \(T^{-1} : \IR^n \rightarrow \IR^n\) by setting \(T^{-1}(\vec b)\) to be this unique solution.</p></li>
-<li id="li-328"><p id="p-658">Let \(A^{-1}\) be the standard matrix for \(T^{-1}\text{.}\) We call \(A^{-1}\) the <dfn class="terminology">inverse matrix</dfn> of \(A\text{,}\) so we also say that \(A\) is <dfn class="terminology">invertible</dfn>.</p></li>
-</ul></article><article class="activity project-like" id="activity-116"><h6 class="heading">
+<li id="li-318"><p id="p-671">If \(T\) is a bijection and \(\vec b\) is any \(\IR^n\) vector, then \(T(\vec x)=A\vec x=\vec b\) has a unique solution.</p></li>
+<li id="li-319"><p id="p-672">So we may define an <dfn class="terminology">inverse map</dfn> \(T^{-1} : \IR^n \rightarrow \IR^n\) by setting \(T^{-1}(\vec b)\) to be this unique solution.</p></li>
+<li id="li-320"><p id="p-673">Let \(A^{-1}\) be the standard matrix for \(T^{-1}\text{.}\) We call \(A^{-1}\) the <dfn class="terminology">inverse matrix</dfn> of \(A\text{,}\) so we also say that \(A\) is <dfn class="terminology">invertible</dfn>.</p></li>
+</ul></article><article class="activity project-like" id="activity-118"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-35"><p id="p-659">Let \(T: \IR^3 \rightarrow \IR^3\) be the linear transformation given by the standard matrix \(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]\text{.}\)</p></div>
+<div class="introduction" id="introduction-35"><p id="p-674">Let \(T: \IR^3 \rightarrow \IR^3\) be the linear transformation given by the standard matrix \(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]\text{.}\)</p></div>
 <article class="task exercise-like" id="task-84"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-660">Write an augmented matrix representing the system of equations given by \(T(\vec x)=\vec{e}_1\text{,}\) that is, \(A\vec x=\left[\begin{array}{c}1 \\ 0 \\ 0 \end{array}\right]\text{.}\) Then solve \(T(\vec x)=\vec{e}_1\) to find \(T^{-1}(\vec{e}_1)\text{.}\)</p></article><article class="task exercise-like" id="task-85"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-661">Solve \(T(\vec x)=\vec{e}_2\) to find \(T^{-1}(\vec{e}_2)\text{.}\)</p></article><article class="task exercise-like" id="task-86"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-662">Solve \(T(\vec x)=\vec{e}_3\) to find \(T^{-1}(\vec{e}_3)\text{.}\)</p></article><article class="task exercise-like" id="task-87"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-663">Write \(A^{-1}\text{,}\) the standard matrix for \(T^{-1}\text{.}\)</p></article></article><div class="sagecell-octave" id="sage-42"><script type="text/x-sage"></script></div>
+<p id="p-675">Write an augmented matrix representing the system of equations given by \(T(\vec x)=\vec{e}_1\text{,}\) that is, \(A\vec x=\left[\begin{array}{c}1 \\ 0 \\ 0 \end{array}\right]\text{.}\) Then solve \(T(\vec x)=\vec{e}_1\) to find \(T^{-1}(\vec{e}_1)\text{.}\)</p></article><article class="task exercise-like" id="task-85"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-676">Solve \(T(\vec x)=\vec{e}_2\) to find \(T^{-1}(\vec{e}_2)\text{.}\)</p></article><article class="task exercise-like" id="task-86"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-677">Solve \(T(\vec x)=\vec{e}_3\) to find \(T^{-1}(\vec{e}_3)\text{.}\)</p></article><article class="task exercise-like" id="task-87"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-678">Write \(A^{-1}\text{,}\) the standard matrix for \(T^{-1}\text{.}\)</p></article></article><div class="sagecell-octave" id="sage-42"><script type="text/x-sage"></script></div>
 <article class="observation remark-like" id="observation-23"><h6 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
 </h6>
-<p id="p-664">We could have solved these three systems simultaneously by row reducing the matrix \([A\,|\,I]\) at once.</p>
+<p id="p-679">We could have solved these three systems simultaneously by row reducing the matrix \([A\,|\,I]\) at once.</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{ccc|ccc}
@@ -213,10 +216,10 @@ MathJax.Hub.Config({
 0 &amp; 0 &amp; 1 &amp; 1 &amp; -3 &amp; 4
 \end{array}\right]
 \end{equation*}
-</div></article><article class="activity project-like" id="activity-117"><h6 class="heading">
+</div></article><article class="activity project-like" id="activity-119"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
 </h6>
-<p id="p-665">Find the inverse \(A^{-1}\) of the matrix \(A=\left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; -2 \end{array}\right]\) by row-reducing \([A\,|\,I]\text{.}\)</p></article><div class="sagecell-octave" id="sage-43"><script type="text/x-sage"></script></div>
+<p id="p-680">Find the inverse \(A^{-1}\) of the matrix \(A=\left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; -2 \end{array}\right]\) by row-reducing \([A\,|\,I]\text{.}\)</p></article><div class="sagecell-octave" id="sage-43"><script type="text/x-sage"></script></div>
 <section class="subsection" id="subsection-21"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.3.1</span> <span class="title">Videos</span>
 </h3>
@@ -224,7 +227,7 @@ MathJax.Hub.Config({
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.3<span class="period">.</span></span><span class="space"> </span>Video example: Invertible matrices</figcaption></figure></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">4.3.2</span> <span class="title">Exercises</span>
 </h3>
-<p id="p-666"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/M3/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+<p id="p-681"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/M3/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
 </div>
 </body>
 </html>
