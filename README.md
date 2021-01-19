@@ -76,5 +76,11 @@ And the following line will build that slideshow into a Reveal.js HTML file.
 xsltproc --xinclude -o output/html/slides.html slides/pretext/xsl/pretext-revealjs.xsl slides/slides.ptx
 ```
 
+- For convenience, the following line does a `pretext build` and also builds slides in one step:
+
+  ```
+  pretext build; xsltproc --xinclude -o slides/slides.ptx slides/extract-slides.xsl source/main.ptx; xsltproc --xinclude -o output/html/slides.html slides/pretext/xsl/pretext-revealjs.xsl slides/slides.ptx
+  ```
+
 This slideshow may be previewed with `pretext view`, and will be published with
 the rest of the HTML content.

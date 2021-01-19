@@ -68,7 +68,7 @@
             <xsl:when test="statement|introduction">
                 <xsl:copy-of select="statement/*|introduction/*"/>
                 <xsl:if test="task">
-                    <ol pause="yes">
+                    <ol label="(a)" pause="yes">
                         <xsl:apply-templates select="task"/>
                     </ol>
                 </xsl:if>

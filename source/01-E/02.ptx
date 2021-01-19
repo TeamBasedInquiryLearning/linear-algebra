@@ -87,8 +87,8 @@
 <definition>
     <statement>
         <p>
-  The following <term>row operations</term> produce equivalent
-  augmented matrices:
+  The following three <term>row operations</term> produce equivalent
+  augmented matrices.
         </p>
   <ol>
 <li><p>
@@ -119,20 +119,16 @@
     </p>
     </li>
   </ol>
-        <p>
-  Whenever two matrices <m>A,B</m> are equivalent (so whenever we do any of
-  these operations), we write <m>A\sim B</m>.
-        </p>
     </statement>
-</definition>
+    </definition>
 
 <activity tbil-time='10'>
     <statement>
         <p>
   Consider the following (equivalent) linear systems.
         </p>
-  <ol>
-<li> 
+      <sidebyside widths="33% 33% 33%">
+          <p> A)
         <md alignment="alignat" alignat-columns='4'>
 <mrow>  
              x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3 
@@ -144,8 +140,8 @@
              2x &amp;\,+\,&amp; 5y  &amp;\,+\,&amp; 3z &amp;\,=\,&amp; 7   
 </mrow>
            </md>
-    </li>
-<li> 
+          </p>
+          <p> B)
         <md alignment="alignat" alignat-columns='4'>
 <mrow>  
              2x &amp;\,+\,&amp; 5y  &amp;\,+\,&amp; 3z &amp;\,=\,&amp; 7 
@@ -157,9 +153,8 @@
              x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3  
 </mrow>
            </md>
-
-    </li>
-<li>
+          </p>
+          <p> C)
         <md alignment="alignat" alignat-columns='4'>
 <mrow>  
              x &amp; &amp;   &amp;\,-\,&amp; z &amp;\,=\,&amp; 1 
@@ -171,9 +166,10 @@
               &amp; &amp; y  &amp;\,+\,&amp; 2z &amp;\,=\,&amp; 4   
 </mrow>
            </md>
-
-    </li>
-<li>
+          </p>
+        </sidebyside>
+      <sidebyside widths="33% 33% 33%">
+          <p> D)
         <md alignment="alignat" alignat-columns='4'>
 <mrow>  
              x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3 
@@ -185,9 +181,8 @@
              2x &amp;\,+\,&amp; 5y  &amp;\,+\,&amp; 3z &amp;\,=\,&amp; 7   
 </mrow>
            </md>
-
-    </li>
-<li>
+          </p>
+          <p> E)
         <md alignment="alignat" alignat-columns='4'>
 <mrow>  
              x &amp; &amp;   &amp;\,-\,&amp; z &amp;\,=\,&amp; 1 
@@ -199,9 +194,8 @@
               &amp; &amp;   &amp; &amp; z &amp;\,=\,&amp; 3   
 </mrow>
            </md>
-
-    </li>
-<li>
+          </p>
+          <p> F)
         <md alignment="alignat" alignat-columns='4'>
 <mrow>  
              x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3 
@@ -213,8 +207,8 @@
               &amp; &amp; y  &amp;\,+\,&amp; 2z &amp;\,=\,&amp; 4   
             </mrow>
            </md>
-    </li>
-    </ol>
+          </p>
+        </sidebyside>
         <p>
    Rank the six linear systems from most complicated to simplest.
         </p>
@@ -268,7 +262,7 @@ Every matrix has a unique reduced row echelon form. If <m>A</m> is a matrix, we 
     </statement>
 </definition>
 
-<activity tbil-time='15'>
+<activity tbil-time='8'>
     <statement>
         <p>
 Recall that a matrix is in <term>reduced row echelon form</term> (<term>RREF</term>) if
@@ -284,26 +278,43 @@ Recall that a matrix is in <term>reduced row echelon form</term> (<term>RREF</te
 <li> All rows of zeroes are at the bottom of the matrix.
 </li>
 </ol>
-<sidebyside>
-<ol label="A">
-<li> <me> \left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 0 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me>
-</li>
-<li> <me> \left[\begin{array}{ccc|c} 1 &amp; 2 &amp; 4 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me>
-</li>
-<li> <me> \left[\begin{array}{ccc|c} 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 2 &amp; 0 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; -1  \end{array}\right]</me>
-</li>
-<li> <me> \left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 2 &amp; -3 \\ 0 &amp; 3 &amp; 3 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me>
-</li>
-<li> <me> \left[\begin{array}{ccc|c} 0 &amp; 1 &amp; 0 &amp; 7 \\ 1 &amp; 0 &amp; 0 &amp; 4 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me>
-</li>
-<li> <me> \left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 0 &amp; 4 \\ 0 &amp; 1 &amp; 0 &amp; 7 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{array}\right]</me>
-</li>
-</ol>
-</sidebyside>
     <p>
 For each matrix, circle the leading terms, and label it as RREF or not RREF.
 For the ones not in RREF, find their RREF.
     </p>
+      <sidebyside widths="33% 33% 33%">
+<p><me> A=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 0 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me></p>
+<p><me> B=\left[\begin{array}{ccc|c} 1 &amp; 2 &amp; 4 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me></p>
+<p><me> C=\left[\begin{array}{ccc|c} 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 2 &amp; 0 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; -1  \end{array}\right]</me></p>
+        </sidebyside>
+    </statement>
+</activity>
+
+<activity tbil-time='8'>
+    <statement>
+        <p>
+Recall that a matrix is in <term>reduced row echelon form</term> (<term>RREF</term>) if
+        </p>
+<ol>
+<li> The leading term (first nonzero term) of each nonzero row is a 1.
+      Call these terms <term>pivots</term>.
+</li>
+<li> Each pivot is to the right of every higher pivot.
+</li>
+<li> Each term above or below a pivot is zero.
+</li>
+<li> All rows of zeroes are at the bottom of the matrix.
+</li>
+</ol>
+    <p>
+For each matrix, circle the leading terms, and label it as RREF or not RREF.
+For the ones not in RREF, find their RREF.
+    </p>
+      <sidebyside widths="33% 33% 33%">
+<p><me> D=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 2 &amp; -3 \\ 0 &amp; 3 &amp; 3 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me></p>
+<p><me> E=\left[\begin{array}{ccc|c} 0 &amp; 1 &amp; 0 &amp; 7 \\ 1 &amp; 0 &amp; 0 &amp; 4 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me></p>
+<p><me> F=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 0 &amp; 4 \\ 0 &amp; 1 &amp; 0 &amp; 7 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{array}\right]</me></p>
+</sidebyside>
     </statement>
 </activity>
 
