@@ -23,15 +23,15 @@ are available in the PDF folder of this repository.
 
 First install [Python 3.9](https://www.python.org/) and [pipenv](https://github.com/pypa/pipenv).
 
-Clone this repository to your machine, then `cd ptx` into the folder containing
-the PreTeXt project. `pipenv install` will install any necessary prerequisites.
-The PreTeXt source may be found in the `ptx/source` folder.
+Clone this repository to your machine and `cd` into its folder.
+`pipenv install` will install any necessary prerequisites.
+The PreTeXt source may be found in the `source` folder.
 
 ```
-# Run this in the ptx folder to start the authoring environment after a successful pipenv install
+# Run this to start the authoring environment after a successful pipenv install
 $ pipenv shell
 
-# To build HTML
+# To build HTML from updated source
 $ pretext build
 
 # To preview the built HTML in your browser
@@ -44,48 +44,37 @@ $ pretext view --access=cocalc
 $ exit
 ```
 
+Use `pretext --help` for documentation of other pretext CLI features.
+
 ## Using Git to track and publish changes
 
 Changes are tracked in the `main` Git branch, and the public website
 based on the `docs` folder. The result of `pretext build` creates
-files in the `ptx/output` folder which is not tracked by Git because PreTeXt
+files in the `output` folder which is not tracked by Git because PreTeXt
 changes thousands of files during each build.
 
 To publish changes from a `pretext build` to the public website,
-run `cp -r ptx/output/html/* docs/` from the root folder of this project,
+run `pretext publish` from the root folder of this project,
 and make a single commit like `git add docs; git commit -m "update public site"`
 to the `main` branch that reflects only this change.
 
----
+## Building slides
 
-## Instructions for Deprecated LaTeX materials
+Right now slide building isn't part of PreTeXt CLI, so here's how to do it.
 
-All source files are located within `./tex`. These files are designed
-to be built by `pdflatex` run from within this folder, so `.tex` files
-located in this folder (not within a subfolder) may be built directly
-for development purposes. A `makefile` is provided so that materials may
-be built by running `make`.
+First, clone a copy of https://github.com/rbeezer/mathbook into the folder `slides/pretext`.
 
-During development, it's recommended to run (e.g.) `make pdf/slides-1-E.pdf`
-to build only the appropriate piece of the project for testing purposes.
-A `make slides` command is provided that will make only the individual module slides.
+Then the following line will create a PreTeXt slideshow (run from project root).
 
-When possible, run the global `make` build as its own commit so that content
-changes aren't hidden within a large build. 
- 
-For convenience, files ignored by Git (e.g. TeX auxiliary files) may be
-removed by running `git clean -fX`.
+```
+xsltproc --xinclude -o slides/slides.ptx slides/extract-slides.xsl source/main.ptx
+```
 
-### Style Guide
+And the following line will build that slideshow into a Reveal.js HTML file.
 
-- Definitions should use `\term{}` for the term being defined.
-- LaTeX-style math delimiters `\(x\)` and `\[x\]` should be used in
-  place of TeX-style delimiters `$x$` and `$$x$$`.
-- Bracket delimiters should follow [BSD/Allman style][allman].
-    - Exceptions can be made for e.g. `\newcommand` issues
-- Sets should use the provided `\setBuilder` and `\setList` commands.
-- Use `alignat` or `alignedat` environments for systems of equations.
-- Unless necessary, limit lines to 80 characters for clean `git diff`s.
+```
+xsltproc --xinclude -o output/html/slides.html slides/pretext/xsl/pretext-revealjs.xsl slides/slides.ptx
+```
 
-
-[allman]: https://en.wikipedia.org/wiki/Indentation_style#Allman_style
+This slideshow may be previewed with `pretext view`, and will be published with
+the rest of the HTML content.
