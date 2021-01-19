@@ -8,11 +8,16 @@
 If <m>T: \IR^n \rightarrow \IR^m</m> and <m>S: \IR^m \rightarrow \IR^k</m> are linear maps,
 then the composition map <m>S\circ T</m> is a linear map from <m>\IR^n \rightarrow \IR^k</m>.
         </p>
-        <cd>
+        <figure>
+			<image width="75%">
+				<latex-image>
 \begin{tikzcd}[ampersand replacement=\&amp;]
 \IR^n \arrow[rr, bend right, "S\circ T"']  \arrow[r,"T"] \&amp; \IR^m  \arrow[r,"S"]  \&amp;\IR^k 
 \end{tikzcd}
-        </cd>
+				</latex-image>
+			</image>
+			<caption>The composition of two linear maps.</caption>
+        </figure>
         <p>
 Recall that for a vector, <m>\vec{v} \in \IR^n</m>, the composition is computed as <m> (S \circ T)(\vec{v})=S(T(\vec{v}))</m>.
         </p>
@@ -235,23 +240,34 @@ and let <m>A=\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\
   Check your work using technology. Using Octave:
     </p>
     <cd>
-B = sym([3 -4 0 ; 2 0 -1 ; 0 -3 3])
-A = sym([2 7 -1 ; 0 3 2  ; 1 1 -1])
+B = [3 -4 0 ; 2 0 -1 ; 0 -3 3]
+A = [2 7 -1 ; 0 3 2  ; 1 1 -1]
 B*A
     </cd>
 </task>
 </activity>
+<sage language="octave">
+<input>
+B = [3 -4 0 ; 2 0 -1 ; 0 -3 3]
+A = [2 7 -1 ; 0 3 2  ; 1 1 -1]
+B*A
+</input>
+</sage>
 
 
+    <subsection>
+        <title>Videos</title>
+    <figure>
+		<video xml:id="video-M1" source="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/a9aff0c2-0958-4245-a0b0-ab81012e866e.mp4?mediaTargetType=videoPodcast">
+			<track kind="subtitles" label="US English" xml:lang="en" source="videos/M1-captions.vtt" default=""/>
+		</video>
+        <caption>Video example: Multiplying matrices</caption>
+    </figure>
+    </subsection>
 
 
     <exercises>
-        <xi:include href="../exercises/M1/0000.ptx"/>
-        <xi:include href="../exercises/M1/0001.ptx"/>
-        <xi:include href="../exercises/M1/0002.ptx"/>
-        <xi:include href="../exercises/M1/0003.ptx"/>
-        <xi:include href="../exercises/M1/0004.ptx"/>
-        <p><em>Additional exercises available at <url href="https://checkit.clontz.org/banks/tbil-la/M1/">checkit.clontz.org</url>.</em></p>
+        <p><em>Exercises available at <url href="https://checkit.clontz.org/#/banks/tbil-la/M1/">checkit.clontz.org</url>.</em></p>
     </exercises>
 
 </section>

@@ -13,8 +13,10 @@ but a linearly dependent set contains <q>redundant</q> vectors. For example,
 only two of the three vectors in the following image are needed to span
 the planar subspace.
         </p>
-        <cd>
-\begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)},scale=0.4]
+        <figure>
+			<image width="75%">
+				<latex-image>
+\begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)}]
   \draw[-&gt;] (0,0,0) -- (6,0,0);
   \draw[-&gt;] (0,0,0) -- (0,6,0);
   \draw[-&gt;] (0,0,0) -- (0,0,6);
@@ -24,7 +26,10 @@ the planar subspace.
   \draw[thick,red,-&gt;] (0,0,0) -- (-2,0,1);
   \draw[thick,purple,-&gt;] (0,0,0) -- (1,1,-1);
 \end{tikzpicture}
-        </cd>
+				</latex-image>
+			</image>
+			<caption>A linearly dependent set of three vectors</caption>
+        </figure>
     </statement>
 </observation>
 
@@ -58,6 +63,10 @@ the planar subspace.
       </p>
   </task>
 </activity>
+
+<sage language="octave">
+<input>rref([2,2,2,1; 3,0,-3,5; 0,1,2,-1; 1,-1,-3,0])</input>
+</sage>
 
 <fact>
     <statement>
@@ -120,15 +129,21 @@ Let <m>W</m> be the subspace of <m>\IR^4</m> given by
     </statement>
 </activity>
 
+<sage language="octave">
+</sage>
+
 <activity tbil-time='10'>
     <statement>
         <p>
-Let <m>W</m> be the subspace of <m>\P^3</m> given by
+Let <m>W</m> be the subspace of <m>\P_3</m> given by
  <me>W = \vspan \left\{x^3+3x^2+x-1, 2x^3-x^2+x+2, 4x^3+5x^2+3x, 3x^3+2x^2+2x+1 \right\} </me>
  Find a basis for <m>W</m>.
         </p>
     </statement>
 </activity>
+
+<sage language="octave">
+</sage>
 
 <activity tbil-time='10'>
     <statement>
@@ -144,6 +159,9 @@ Let <m>W</m> be the subspace of <m>M_{2,2}</m> given by
         </p>
     </statement>
 </activity>
+
+<sage language="octave">
+</sage>
 
 <activity tbil-time='10'>
     <introduction>
@@ -179,6 +197,9 @@ Let <m>W</m> be the subspace of <m>M_{2,2}</m> given by
       </p>
   </task>
 </activity>
+
+<sage language="octave">
+</sage>
 
 <observation>
     <statement>
@@ -302,13 +323,21 @@ Let <m>W</m> be the subspace of <m>M_{2,2}</m> given by
     </statement>
 </activity>
 
+<sage language="octave">
+</sage>
+
+    <subsection>
+        <title>Videos</title>
+    <figure>
+		<video xml:id="video-V7" source="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/8717fc7c-5d13-4041-82e3-ac250114a4c8.mp4?mediaTargetType=videoPodcast">
+			<track kind="subtitles" label="US English" xml:lang="en" source="videos/V7-captions.vtt" default=""/>
+		</video>
+        <caption>Video example: Finding a basis of a subspace and computing the dimension of a subspace</caption>
+    </figure>
+    </subsection>
+
     <exercises>
-        <xi:include href="../exercises/V7/0000.ptx"/>
-        <xi:include href="../exercises/V7/0001.ptx"/>
-        <xi:include href="../exercises/V7/0002.ptx"/>
-        <xi:include href="../exercises/V7/0003.ptx"/>
-        <xi:include href="../exercises/V7/0004.ptx"/>
-        <p><em>Additional exercises available at <url href="https://checkit.clontz.org/banks/tbil-la/V7/">checkit.clontz.org</url>.</em></p>
+        <p><em>Exercises available at <url href="https://checkit.clontz.org/#/banks/tbil-la/V7/">checkit.clontz.org</url>.</em></p>
     </exercises>
 
 </section>

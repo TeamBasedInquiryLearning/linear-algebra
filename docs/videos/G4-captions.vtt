@@ -1,0 +1,220 @@
+1
+00:00:00,298 --> 00:00:06,298
+In this video, we're going to learn how to find a basis of the eigenspace associated
+
+2
+00:00:06,298 --> 00:00:11,298
+to a given eigenvalue. Just a quick reminder, remember that
+
+3
+00:00:11,298 --> 00:00:19,558
+an eigenvector.
+
+4
+00:00:19,558 --> 00:00:25,298
+Is a vector that simply gets stretched out when we do matrix multiplication.
+
+5
+00:00:25,298 --> 00:00:30,298
+So another way of saying this is that when you multiply it by A you just get some scalar
+
+6
+00:00:30,298 --> 00:00:35,298
+times your vector back. So if we're handed an eigenvalue Lambda and
+
+7
+00:00:35,298 --> 00:00:41,638
+we're trying to find the eigenvectors. We just need to find the vectors that satisfy A X equals
+
+8
+00:00:41,638 --> 00:00:46,828
+lambda X. And when we do that is similar to when we're finding eigenvalues
+
+9
+00:00:46,828 --> 00:00:54,298
+will rearrange this in fact around. And so we're looking.
+
+10
+00:00:54,298 --> 00:00:59,988
+When there's (A minus lambda I) X equals zero.
+
+11
+00:00:59,988 --> 00:01:04,298
+And to rephrase this in terms of things we've learned before. This is saying that X
+
+12
+00:01:04,298 --> 00:01:09,298
+is an element of the kernel of A minus
+
+13
+00:01:09,298 --> 00:01:15,298
+lambda I. So if we're trying to find a basis on the eigenspace,
+
+14
+00:01:15,298 --> 00:01:22,298
+we're just trying to find a basis of the kernel of a particular linear transformation.
+
+15
+00:01:22,298 --> 00:01:27,298
+All right, so for this particular problem written in black here, we want to find a basis of the eigenspace
+
+16
+00:01:27,298 --> 00:01:32,298
+associated to that value negative three for this matrix A.
+
+17
+00:01:32,298 --> 00:01:37,298
+So we're going to try and find the kernel of A minus negative three I. So the first
+
+18
+00:01:37,298 --> 00:01:43,298
+thing we'll do is we'll write down A minus negative three I
+
+19
+00:01:43,298 --> 00:01:48,298
+Which is the same thing as a plus 3 I
+
+20
+00:01:48,298 --> 00:01:54,198
+So, the identity matrix is ones on the diagonal.
+
+21
+00:01:54,198 --> 00:01:59,388
+So three times the identity matrix is threes on the diagonal and zeros everywhere else. So
+
+22
+00:01:59,388 --> 00:02:06,018
+3 to the first spot. We'll add a three
+
+23
+00:02:06,018 --> 00:02:11,098
+second spot of the second row. 3 to the third
+
+24
+00:02:11,098 --> 00:02:17,298
+spot of the third group and in the fourth row will add a 3.
+
+25
+00:02:17,298 --> 00:02:22,298
+to the fourth spot. But
+
+26
+00:02:22,298 --> 00:02:33,038
+In order to find the kernel, we'll need to do the reduced row echelon form.
+
+27
+00:02:33,038 --> 00:02:38,298
+I've gone ahead and typed into a calculator and we end up with
+
+28
+00:02:38,298 --> 00:02:43,298
+1 4 0 -1;  0 0 1 2;
+
+29
+00:02:43,298 --> 00:02:55,298
+and then 2 rows without a pivot.
+
+30
+00:02:55,298 --> 00:03:01,298
+So now if we look at our reduced matrix here, we see two.
+
+31
+00:03:01,298 --> 00:03:06,298
+non-pivot columns, so we'll have two free variables so they can, let's say
+
+32
+00:03:06,298 --> 00:03:14,298
+x2 equals A and x4 equals b.
+
+33
+00:03:14,298 --> 00:03:19,298
+And now our first row says x 1 plus 4 x 2 2
+
+34
+00:03:19,298 --> 00:03:25,298
+is a, so I'll go ahead and write in a there in there,  minus X 4, which was b.
+
+35
+00:03:25,298 --> 00:03:31,298
+Should be equal to zero of course, and x 2 is a.Our second row says x3
+
+36
+00:03:31,298 --> 00:03:39,298
+minus 2 x4s -- x4 was b--should also be0.
+
+37
+00:03:39,298 --> 00:03:44,298
+So now we just look at our first and third equation and solve for x1 and x3, we'll have x1
+
+38
+00:03:44,298 --> 00:03:50,298
+is negative four a plus b; x2 is a; x3 is 2b; x4 is b.
+
+39
+00:03:50,298 --> 00:03:55,818
+This will allow us to write down the kernel of A minus negative 3 I.
+
+40
+00:03:55,818 --> 00:04:00,298
+3. By.
+
+41
+00:04:00,298 --> 00:04:06,298
+So all of our vectors -- we said x1 is negative 4a plus b
+
+42
+00:04:06,298 --> 00:04:21,818
+x2 is a; x3 is 2b; X four isb.
+
+43
+00:04:21,818 --> 00:04:28,298
+And now we simply want to note that this is the span of two vectors.
+
+44
+00:04:28,298 --> 00:04:33,298
+From the a's, we have a -4 1 0 0
+
+45
+00:04:33,298 --> 00:04:42,628
+and from the b's we have 1 0 2 1.
+
+46
+00:04:42,628 --> 00:04:47,298
+So those two vectors are linearly independent. So our set of these
+
+47
+00:04:47,298 --> 00:04:54,298
+two vectors. -4 1 0 0.
+
+48
+00:04:54,298 --> 00:05:00,808
+And 1 0 2 1.
+
+49
+00:05:00,808 --> 00:05:06,298
+This is a basis.
+
+50
+00:05:06,298 --> 00:05:13,298
+of the eigenspace.
+
+51
+00:05:13,298 --> 00:05:18,298
+So as I've written that it's slightly ambiguous because every eigenvalue is going to have their own eigenspace.
+
+52
+00:05:18,298 --> 00:05:23,298
+But in this particular context, we've only talked about one eigenvalue. So it's clear that the
+
+53
+00:05:23,298 --> 00:05:29,298
+eigenspace we're talking about here is associated this eigenvalue negative three.
+
+54
+00:05:29,298 --> 00:05:34,298
+If whatever you're working on, you're talking about multiple eigenvalues. You should then say which eigenspace you're talking
+
+55
+00:05:34,298 --> 00:05:38,121
+about down here for this context.
+

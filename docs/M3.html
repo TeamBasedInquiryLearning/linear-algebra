@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-13T19:23:37Z       *-->
+<!--*       on 2021-01-15T10:59:29-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,7 +14,7 @@
 <title>The Inverse of a Matrix (M3)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [['\\(','\\)']]
@@ -43,7 +43,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-octave' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-octave',
+                           linked: true,
+                           languages: ['octave'],
+                           evalButtonText: 'Evaluate (Octave)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -147,41 +163,43 @@ MathJax.Hub.Config({
 <article class="activity project-like" id="activity-114"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
 </h6>
-<p id="p-646">Let \(T: \IR^n \rightarrow \IR^m\) be a linear map with standard matrix \(A\text{.}\) Sort the following items into three groups of statements: a group that means \(T\) is <em class="emphasis">injective</em>, a group that means \(T\) is <em class="emphasis">surjective</em>, and a group that means \(T\) is <em class="emphasis">bijective</em>.</p>
+<p id="p-643">Let \(T: \IR^n \rightarrow \IR^m\) be a linear map with standard matrix \(A\text{.}\) Sort the following items into three groups of statements: a group that means \(T\) is <em class="emphasis">injective</em>, a group that means \(T\) is <em class="emphasis">surjective</em>, and a group that means \(T\) is <em class="emphasis">bijective</em>.</p>
 <ol class="lower-alpha">
-<li id="li-317"><p id="p-647">\(A\vec x=\vec b\) has a solution for all \(\vec b\in\IR^m\)</p></li>
-<li id="li-318"><p id="p-648">\(A\vec x=\vec b\) has a unique solution for all \(\vec b\in\IR^m\)</p></li>
-<li id="li-319"><p id="p-649">\(A\vec x=\vec 0\) has a unique solution.</p></li>
-<li id="li-320"><p id="p-650">The columns of \(A\) span \(\IR^m\)</p></li>
-<li id="li-321"><p id="p-651">The columns of \(A\) are linearly independent</p></li>
-<li id="li-322"><p id="p-652">The columns of \(A\) are a basis of \(\IR^m\)</p></li>
-<li id="li-323"><p id="p-653">Every column of \(\RREF(A)\) has a pivot</p></li>
-<li id="li-324"><p id="p-654">Every row of \(\RREF(A)\) has a pivot</p></li>
-<li id="li-325"><p id="p-655">\(m=n\) and \(\RREF(A)=I\)</p></li>
+<li id="li-317"><p id="p-644">\(A\vec x=\vec b\) has a solution for all \(\vec b\in\IR^m\)</p></li>
+<li id="li-318"><p id="p-645">\(A\vec x=\vec b\) has a unique solution for all \(\vec b\in\IR^m\)</p></li>
+<li id="li-319"><p id="p-646">\(A\vec x=\vec 0\) has a unique solution.</p></li>
+<li id="li-320"><p id="p-647">The columns of \(A\) span \(\IR^m\)</p></li>
+<li id="li-321"><p id="p-648">The columns of \(A\) are linearly independent</p></li>
+<li id="li-322"><p id="p-649">The columns of \(A\) are a basis of \(\IR^m\)</p></li>
+<li id="li-323"><p id="p-650">Every column of \(\RREF(A)\) has a pivot</p></li>
+<li id="li-324"><p id="p-651">Every row of \(\RREF(A)\) has a pivot</p></li>
+<li id="li-325"><p id="p-652">\(m=n\) and \(\RREF(A)=I\)</p></li>
 </ol></article><article class="activity project-like" id="activity-115"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
 </h6>
-<p id="p-656">Let \(T: \IR^3 \rightarrow \IR^3\) be the linear transformation given by the standard matrix \(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; 0 \\ 2 &amp; 1 &amp; 4 \\ 1 &amp; 1 &amp; 3 \end{array}\right]\text{.}\)</p>
-<p id="p-657">Write an augmented matrix representing the system of equations given by \(T(\vec x)=\vec{0}\text{,}\) that is, \(A\vec x=\left[\begin{array}{c}0 \\ 0 \\ 0 \end{array}\right]\text{.}\) Then solve \(T(\vec x)=\vec{0}\) to find the kernel of \(T\text{.}\)</p></article><article class="definition definition-like" id="definition-26"><h6 class="heading">
+<p id="p-653">Let \(T: \IR^3 \rightarrow \IR^3\) be the linear transformation given by the standard matrix \(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; 0 \\ 2 &amp; 1 &amp; 4 \\ 1 &amp; 1 &amp; 3 \end{array}\right]\text{.}\)</p>
+<p id="p-654">Write an augmented matrix representing the system of equations given by \(T(\vec x)=\vec{0}\text{,}\) that is, \(A\vec x=\left[\begin{array}{c}0 \\ 0 \\ 0 \end{array}\right]\text{.}\) Then solve \(T(\vec x)=\vec{0}\) to find the kernel of \(T\text{.}\)</p></article><div class="sagecell-octave" id="sage-41"><script type="text/x-sage"></script></div>
+<article class="definition definition-like" id="definition-26"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
 </h6>
-<p id="p-658">Let \(T: \IR^n \rightarrow \IR^n\) be a linear map with standard matrix \(A\text{.}\)</p>
+<p id="p-655">Let \(T: \IR^n \rightarrow \IR^n\) be a linear map with standard matrix \(A\text{.}\)</p>
 <ul class="disc">
-<li id="li-326"><p id="p-659">If \(T\) is a bijection and \(\vec b\) is any \(\IR^n\) vector, then \(T(\vec x)=A\vec x=\vec b\) has a unique solution.</p></li>
-<li id="li-327"><p id="p-660">So we may define an <dfn class="terminology">inverse map</dfn> \(T^{-1} : \IR^n \rightarrow \IR^n\) by setting \(T^{-1}(\vec b)\) to be this unique solution.</p></li>
-<li id="li-328"><p id="p-661">Let \(A^{-1}\) be the standard matrix for \(T^{-1}\text{.}\) We call \(A^{-1}\) the <dfn class="terminology">inverse matrix</dfn> of \(A\text{,}\) so we also say that \(A\) is <dfn class="terminology">invertible</dfn>.</p></li>
+<li id="li-326"><p id="p-656">If \(T\) is a bijection and \(\vec b\) is any \(\IR^n\) vector, then \(T(\vec x)=A\vec x=\vec b\) has a unique solution.</p></li>
+<li id="li-327"><p id="p-657">So we may define an <dfn class="terminology">inverse map</dfn> \(T^{-1} : \IR^n \rightarrow \IR^n\) by setting \(T^{-1}(\vec b)\) to be this unique solution.</p></li>
+<li id="li-328"><p id="p-658">Let \(A^{-1}\) be the standard matrix for \(T^{-1}\text{.}\) We call \(A^{-1}\) the <dfn class="terminology">inverse matrix</dfn> of \(A\text{,}\) so we also say that \(A\) is <dfn class="terminology">invertible</dfn>.</p></li>
 </ul></article><article class="activity project-like" id="activity-116"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-35"><p id="p-662">Let \(T: \IR^3 \rightarrow \IR^3\) be the linear transformation given by the standard matrix \(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]\text{.}\)</p></div>
+<div class="introduction" id="introduction-35"><p id="p-659">Let \(T: \IR^3 \rightarrow \IR^3\) be the linear transformation given by the standard matrix \(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]\text{.}\)</p></div>
 <article class="task exercise-like" id="task-84"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-663">Write an augmented matrix representing the system of equations given by \(T(\vec x)=\vec{e}_1\text{,}\) that is, \(A\vec x=\left[\begin{array}{c}1 \\ 0 \\ 0 \end{array}\right]\text{.}\) Then solve \(T(\vec x)=\vec{e}_1\) to find \(T^{-1}(\vec{e}_1)\text{.}\)</p></article><article class="task exercise-like" id="task-85"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-664">Solve \(T(\vec x)=\vec{e}_2\) to find \(T^{-1}(\vec{e}_2)\text{.}\)</p></article><article class="task exercise-like" id="task-86"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-665">Solve \(T(\vec x)=\vec{e}_3\) to find \(T^{-1}(\vec{e}_3)\text{.}\)</p></article><article class="task exercise-like" id="task-87"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-666">Write \(A^{-1}\text{,}\) the standard matrix for \(T^{-1}\text{.}\)</p></article></article><article class="observation remark-like" id="observation-23"><h6 class="heading">
+<p id="p-660">Write an augmented matrix representing the system of equations given by \(T(\vec x)=\vec{e}_1\text{,}\) that is, \(A\vec x=\left[\begin{array}{c}1 \\ 0 \\ 0 \end{array}\right]\text{.}\) Then solve \(T(\vec x)=\vec{e}_1\) to find \(T^{-1}(\vec{e}_1)\text{.}\)</p></article><article class="task exercise-like" id="task-85"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-661">Solve \(T(\vec x)=\vec{e}_2\) to find \(T^{-1}(\vec{e}_2)\text{.}\)</p></article><article class="task exercise-like" id="task-86"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-662">Solve \(T(\vec x)=\vec{e}_3\) to find \(T^{-1}(\vec{e}_3)\text{.}\)</p></article><article class="task exercise-like" id="task-87"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-663">Write \(A^{-1}\text{,}\) the standard matrix for \(T^{-1}\text{.}\)</p></article></article><div class="sagecell-octave" id="sage-42"><script type="text/x-sage"></script></div>
+<article class="observation remark-like" id="observation-23"><h6 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
 </h6>
-<p id="p-667">We could have solved these three systems simultaneously by row reducing the matrix \([A\,|\,I]\) at once.</p>
+<p id="p-664">We could have solved these three systems simultaneously by row reducing the matrix \([A\,|\,I]\) at once.</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{ccc|ccc}
@@ -198,10 +216,15 @@ MathJax.Hub.Config({
 </div></article><article class="activity project-like" id="activity-117"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
 </h6>
-<p id="p-668">Find the inverse \(A^{-1}\) of the matrix \(A=\left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; -2 \end{array}\right]\) by row-reducing \([A\,|\,I]\text{.}\)</p></article><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">4.3.1</span> <span class="title">Exercises</span>
+<p id="p-665">Find the inverse \(A^{-1}\) of the matrix \(A=\left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; -2 \end{array}\right]\) by row-reducing \([A\,|\,I]\text{.}\)</p></article><div class="sagecell-octave" id="sage-43"><script type="text/x-sage"></script></div>
+<section class="subsection" id="subsection-21"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.3.1</span> <span class="title">Videos</span>
 </h3>
-<p id="p-669"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/M4/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+<figure class="figure figure-like" id="figure-41"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-M3" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/4605a71e-6a01-4efb-8504-ab8101348a73.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="videos/M3-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.3<span class="period">.</span></span><span class="space"> </span>Video example: Invertible matrices</figcaption></figure></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">4.3.2</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-666"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/M3/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
 </div>
 </body>
 </html>

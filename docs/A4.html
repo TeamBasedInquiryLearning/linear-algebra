@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-13T19:23:36Z       *-->
+<!--*       on 2021-01-15T10:59:28-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,7 +14,7 @@
 <title>Injective and Surjective Linear Maps (A4)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [['\\(','\\)']]
@@ -43,7 +43,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-octave' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-octave',
+                           linked: true,
+                           languages: ['octave'],
+                           evalButtonText: 'Evaluate (Octave)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -147,53 +163,12 @@ MathJax.Hub.Config({
 <article class="definition definition-like" id="definition-22"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span>
 </h6>
-<p id="p-508">Let \(T: V \rightarrow W\) be a linear transformation. \(T\) is called <dfn class="terminology">injective</dfn> or <dfn class="terminology">one-to-one</dfn> if \(T\) does not map two distinct vectors to the same place.  More precisely, \(T\) is injective if \(T(\vec{v}) \neq T(\vec{w})\) whenever \(\vec{v} \neq \vec{w}\text{.}\)</p>
-<pre class="code-block tex2jax_ignore">
-\begin{tikzpicture}[x=0.15in,y=0.15in]
-  \begin{scope}[shift={(0,1)}]
-    \draw (-2,0) -- (2,0);
-    \draw (0,-2) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (-1.5,1)
-          node[anchor=south east] {\(\vec v\)};
-    \draw[thick,-latex,red] (0,0) -- (1.5,-2)
-          node[anchor=south west] {\(\vec w\)};
-  \end{scope}
-  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,0)}]
-    \draw (0,0) -- (3,0);
-    \draw (0,0) -- (0,3);
-    \draw (0,0) -- (-2,-1);
-    \draw[thick,-latex,blue] (0,0) -- (2,1)
-          node[anchor=south west] {\(T(\vec v)\)};
-    \draw[thick,-latex,red] (0,0) -- (1,2)
-          node[anchor=south west] {\(T(\vec w)\)};
-  \end{scope}
-  \node[anchor=north] at (5,-1) {injective};
-\end{tikzpicture}
-\hspace{3em}
-\begin{tikzpicture}[x=0.15in,y=0.15in]
-  \begin{scope}[shift={(0,0)}]
-    \draw (0,0) -- (3,0);
-    \draw (0,0) -- (0,3);
-    \draw (0,0) -- (-2,-1);
-    \draw[thick,-latex,blue] (0,0) -- (2,1)
-          node[anchor=south west] {\(\vec v\)};
-    \draw[thick,-latex,red] (0,0) -- (1,2)
-          node[anchor=south west] {\(\vec w\)};
-  \end{scope}
-  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,1)}]
-    \draw (-2,0) -- (2,0);
-    \draw (0,-2) -- (0,2);
-    \draw[thick,-latex,purple] (0,0) -- (0.5,2)
-          node[anchor=south west] {\(T(\vec v)=T(\vec w)\)};
-  \end{scope}
-  \node[anchor=north] at (5,-1) {not injective};
-\end{tikzpicture}
-        </pre></article><article class="activity project-like" id="activity-90"><h6 class="heading">
+<p id="p-505">Let \(T: V \rightarrow W\) be a linear transformation. \(T\) is called <dfn class="terminology">injective</dfn> or <dfn class="terminology">one-to-one</dfn> if \(T\) does not map two distinct vectors to the same place.  More precisely, \(T\) is injective if \(T(\vec{v}) \neq T(\vec{w})\) whenever \(\vec{v} \neq \vec{w}\text{.}\)</p>
+<figure class="figure figure-like" id="figure-31"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-11.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.2<span class="period">.</span></span><span class="space"> </span>An injective transformation and a non-injective transformation</figcaption></figure></article><article class="activity project-like" id="activity-90"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span>
 </h6>
-<p id="p-509">Let \(T: \IR^3 \rightarrow \IR^2\) be given by</p>
+<p id="p-506">Let \(T: \IR^3 \rightarrow \IR^2\) be given by</p>
 <div class="displaymath">
 \begin{equation*}
 T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
@@ -206,18 +181,18 @@ T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
 </div>
 <p data-braille="continuation">Is \(T\) injective?</p>
 <ol class="lower-alpha">
-<li id="li-238"><p id="p-510">Yes, because \(T(\vec v)=T(\vec w)\) whenever \(\vec v=\vec w\text{.}\)</p></li>
-<li id="li-239"><p id="p-511">Yes, because \(T(\vec v)\not=T(\vec w)\) whenever \(\vec v\not=\vec w\text{.}\)</p></li>
-<li id="li-240"><p id="p-512">No, because \(T\left(\left[\begin{array}{c}0\\0\\1\end{array}\right]\right)
+<li id="li-238"><p id="p-507">Yes, because \(T(\vec v)=T(\vec w)\) whenever \(\vec v=\vec w\text{.}\)</p></li>
+<li id="li-239"><p id="p-508">Yes, because \(T(\vec v)\not=T(\vec w)\) whenever \(\vec v\not=\vec w\text{.}\)</p></li>
+<li id="li-240"><p id="p-509">No, because \(T\left(\left[\begin{array}{c}0\\0\\1\end{array}\right]\right)
 \not=
 T\left(\left[\begin{array}{c}0\\0\\2\end{array}\right]\right)\)</p></li>
-<li id="li-241"><p id="p-513">No, because \(T\left(\left[\begin{array}{c}0\\0\\1\end{array}\right]\right)
+<li id="li-241"><p id="p-510">No, because \(T\left(\left[\begin{array}{c}0\\0\\1\end{array}\right]\right)
 =
 T\left(\left[\begin{array}{c}0\\0\\2\end{array}\right]\right)\)</p></li>
 </ol></article><article class="activity project-like" id="activity-91"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="period">.</span>
 </h6>
-<p id="p-514">Let \(T: \IR^2 \rightarrow \IR^3\) be given by</p>
+<p id="p-511">Let \(T: \IR^2 \rightarrow \IR^3\) be given by</p>
 <div class="displaymath">
 \begin{equation*}
 T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
@@ -230,73 +205,23 @@ T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
 </div>
 <p data-braille="continuation">Is \(T\) injective?</p>
 <ol class="lower-alpha">
-<li id="li-242"><p id="p-515">Yes, because \(T(\vec v)=T(\vec w)\) whenever \(\vec v=\vec w\text{.}\)</p></li>
-<li id="li-243"><p id="p-516">Yes, because \(T(\vec v)\not=T(\vec w)\) whenever \(\vec v\not=\vec w\text{.}\)</p></li>
-<li id="li-244"><p id="p-517">No, because \(T\left(\left[\begin{array}{c}1\\2\end{array}\right]\right)
+<li id="li-242"><p id="p-512">Yes, because \(T(\vec v)=T(\vec w)\) whenever \(\vec v=\vec w\text{.}\)</p></li>
+<li id="li-243"><p id="p-513">Yes, because \(T(\vec v)\not=T(\vec w)\) whenever \(\vec v\not=\vec w\text{.}\)</p></li>
+<li id="li-244"><p id="p-514">No, because \(T\left(\left[\begin{array}{c}1\\2\end{array}\right]\right)
 \not=
 T\left(\left[\begin{array}{c}3\\4\end{array}\right]\right)\)</p></li>
-<li id="li-245"><p id="p-518">No, because \(T\left(\left[\begin{array}{c}1\\2\end{array}\right]\right)
+<li id="li-245"><p id="p-515">No, because \(T\left(\left[\begin{array}{c}1\\2\end{array}\right]\right)
 =
 T\left(\left[\begin{array}{c}3\\4\end{array}\right]\right)\)</p></li>
 </ol></article><article class="definition definition-like" id="definition-23"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
 </h6>
-<p id="p-519">Let \(T: V \rightarrow W\) be a linear transformation. \(T\) is called <dfn class="terminology">surjective</dfn> or <dfn class="terminology">onto</dfn> if every element of \(W\) is mapped to by an element of \(V\text{.}\)  More precisely, for every \(\vec{w} \in W\text{,}\) there is some \(\vec{v} \in V\) with \(T(\vec{v})=\vec{w}\text{.}\)</p>
-<pre class="code-block tex2jax_ignore">
-\begin{tikzpicture}[x=0.15in,y=0.15in]
-  \begin{scope}[shift={(0,0)}]
-    \draw (0,0) -- (3,0);
-    \draw (0,0) -- (0,3);
-    \draw (0,0) -- (-2,-1);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (1,2);
-    \draw[thick,-latex,blue] (0,0) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (1,-1);
-    \draw[thick,-latex,blue] (0,0) -- (-2,3);
-    \draw[thick,-latex,blue] (0,0) -- (-3,-2);
-  \end{scope}
-  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,1)}]
-    \draw (-2,0) -- (2,0);
-    \draw (0,-2) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
-    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2,-2);
-    \fill[color=blue, opacity=0.5] (-2,-2) rectangle (2,2);
-  \end{scope}
-  \node[anchor=north] at (5,-2) {surjective};
-\end{tikzpicture}
-\hspace{3em}
-\begin{tikzpicture}[x=0.15in,y=0.15in]
-  \begin{scope}[shift={(0,1)}]
-    \draw (-2,0) -- (2,0);
-    \draw (0,-2) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
-    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2,-2);
-  \end{scope}
-  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,0)}]
-    \draw (0,0) -- (3,0);
-    \draw (0,0) -- (0,3);
-    \draw (0,0) -- (-2,-1);
-    \draw[thick,-latex,blue] (0,0) -- (0.5,1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (-2.5,1);
-    \draw[thick,-latex,blue] (0,0) -- (-0.5,-1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2.5,-0.5);
-    \fill[color=blue, opacity=0.5] (-2,-2) -- (3,-1) -- (2,2) -- (-3,1) -- (-2,-2);
-  \end{scope}
-  \node[anchor=north] at (5,-2) {not surjective};
-\end{tikzpicture}
-    </pre></article><article class="activity project-like" id="activity-92"><h6 class="heading">
+<p id="p-516">Let \(T: V \rightarrow W\) be a linear transformation. \(T\) is called <dfn class="terminology">surjective</dfn> or <dfn class="terminology">onto</dfn> if every element of \(W\) is mapped to by an element of \(V\text{.}\)  More precisely, for every \(\vec{w} \in W\text{,}\) there is some \(\vec{v} \in V\) with \(T(\vec{v})=\vec{w}\text{.}\)</p>
+<figure class="figure figure-like" id="figure-32"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-12.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.4<span class="period">.</span></span><span class="space"> </span>A surjective transformation and a non-surjective transformation</figcaption></figure></article><article class="activity project-like" id="activity-92"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
 </h6>
-<p id="p-520">Let \(T: \IR^2 \rightarrow \IR^3\) be given by</p>
+<p id="p-517">Let \(T: \IR^2 \rightarrow \IR^3\) be given by</p>
 <div class="displaymath">
 \begin{equation*}
 T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
@@ -309,15 +234,15 @@ T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
 </div>
 <p data-braille="continuation">Is \(T\) surjective?</p>
 <ol class="lower-alpha">
-<li id="li-246"><p id="p-521">Yes, because for every \(\vec w=\left[\begin{array}{c}x\\y\\z\end{array}\right]\in\IR^3\text{,}\) there exists \(\vec v=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2\) such that \(T(\vec v)=\vec w\text{.}\)</p></li>
-<li id="li-247"><p id="p-522">No, because \(T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)\) can never equal \(\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]
+<li id="li-246"><p id="p-518">Yes, because for every \(\vec w=\left[\begin{array}{c}x\\y\\z\end{array}\right]\in\IR^3\text{,}\) there exists \(\vec v=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2\) such that \(T(\vec v)=\vec w\text{.}\)</p></li>
+<li id="li-247"><p id="p-519">No, because \(T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)\) can never equal \(\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]
 \text{.}\)</p></li>
-<li id="li-248"><p id="p-523">No, because \(T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)\) can never equal \(\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]
+<li id="li-248"><p id="p-520">No, because \(T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)\) can never equal \(\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]
 \text{.}\)</p></li>
 </ol></article><article class="activity project-like" id="activity-93"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span>
 </h6>
-<p id="p-524">Let \(T: \IR^3 \rightarrow \IR^2\) be given by</p>
+<p id="p-521">Let \(T: \IR^3 \rightarrow \IR^2\) be given by</p>
 <div class="displaymath">
 \begin{equation*}
 T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
@@ -330,14 +255,14 @@ T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
 </div>
 <p data-braille="continuation">Is \(T\) surjective?</p>
 <ol class="lower-alpha">
-<li id="li-249"><p id="p-525">Yes, because for every \(\vec w=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2\text{,}\) there exists \(\vec v=\left[\begin{array}{c}x\\y\\42\end{array}\right]\in\IR^3\) such that \(T(\vec v)=\vec w\text{.}\)</p></li>
-<li id="li-250"><p id="p-526">Yes, because for every \(\vec w=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2\text{,}\) there exists \(\vec v=\left[\begin{array}{c}0\\0\\z\end{array}\right]\in\IR^3\) such that \(T(\vec v)=\vec w\text{.}\)</p></li>
-<li id="li-251"><p id="p-527">No, because \(T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)\) can never equal \(\left[\begin{array}{c} 3\\-2 \end{array}\right]
+<li id="li-249"><p id="p-522">Yes, because for every \(\vec w=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2\text{,}\) there exists \(\vec v=\left[\begin{array}{c}x\\y\\42\end{array}\right]\in\IR^3\) such that \(T(\vec v)=\vec w\text{.}\)</p></li>
+<li id="li-250"><p id="p-523">Yes, because for every \(\vec w=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2\text{,}\) there exists \(\vec v=\left[\begin{array}{c}0\\0\\z\end{array}\right]\in\IR^3\) such that \(T(\vec v)=\vec w\text{.}\)</p></li>
+<li id="li-251"><p id="p-524">No, because \(T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)\) can never equal \(\left[\begin{array}{c} 3\\-2 \end{array}\right]
 \text{.}\)</p></li>
 </ol></article><article class="observation remark-like" id="observation-19"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.4.5</span><span class="period">.</span>
 </h6>
-<p id="p-528">As we will see, it's no coincidence that the \(\RREF\) of the injective map's standard matrix</p>
+<p id="p-525">As we will see, it's no coincidence that the \(\RREF\) of the injective map's standard matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]
@@ -352,220 +277,101 @@ T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
 <p data-braille="continuation">has a pivot in each row.</p></article><article class="activity project-like" id="activity-94"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.5</span><span class="period">.</span>
 </h6>
-<p id="p-529">Let \(T: V \rightarrow W\) be a linear transformation where \(\ker T\) contains multiple vectors. What can you conclude?</p>
+<p id="p-526">Let \(T: V \rightarrow W\) be a linear transformation where \(\ker T\) contains multiple vectors. What can you conclude?</p>
 <ol class="lower-alpha">
-<li id="li-252"><p id="p-530">\(T\) is injective</p></li>
-<li id="li-253"><p id="p-531">\(T\) is not injective</p></li>
-<li id="li-254"><p id="p-532">\(T\) is surjective</p></li>
-<li id="li-255"><p id="p-533">\(T\) is not surjective</p></li>
+<li id="li-252"><p id="p-527">\(T\) is injective</p></li>
+<li id="li-253"><p id="p-528">\(T\) is not injective</p></li>
+<li id="li-254"><p id="p-529">\(T\) is surjective</p></li>
+<li id="li-255"><p id="p-530">\(T\) is not surjective</p></li>
 </ol></article><article class="fact theorem-like" id="fact-18"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.4.6</span><span class="period">.</span>
 </h6>
-<p id="p-534">A linear transformation \(T\) is injective <em class="emphasis">if and only if</em> \(\ker T = \{\vec{0}\}\text{.}\) Put another way, an injective linear transformation may be recognized by its <dfn class="terminology">trivial</dfn> kernel.</p>
-<pre class="code-block tex2jax_ignore">
-\begin{tikzpicture}[x=0.15in,y=0.15in]
-  \begin{scope}[shift={(0,1)}]
-    \draw (-2,0) -- (2,0);
-    \draw (0,-2) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (-1.5,1)
-          node[anchor=south east] {\(\vec v\)};
-    \draw[thick,-latex,red] (0,0) -- (1.5,-2)
-          node[anchor=south west] {\(\vec w\)};
-    \fill[green!50!black] (0,0) circle (0.2)
-          node[anchor=south west] {\(\vec{0}\)};
-  \end{scope}
-  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,0)}]
-    \draw (0,0) -- (3,0);
-    \draw (0,0) -- (0,3);
-    \draw (0,0) -- (-2,-1);
-    \draw[thick,-latex,blue] (0,0) -- (2,1)
-          node[anchor=south west] {\(T(\vec v)\)};
-    \draw[thick,-latex,red] (0,0) -- (1,2)
-          node[anchor=south west] {\(T(\vec w)\)};
-    \fill[green!50!black] (0,0) circle (0.2)
-          node[anchor=south east] {\(T(\vec{0})=\vec{0}\)};
-  \end{scope}
-\end{tikzpicture}
-        </pre></article><article class="activity project-like" id="activity-95"><h6 class="heading">
+<p id="p-531">A linear transformation \(T\) is injective <em class="emphasis">if and only if</em> \(\ker T = \{\vec{0}\}\text{.}\) Put another way, an injective linear transformation may be recognized by its <dfn class="terminology">trivial</dfn> kernel.</p>
+<figure class="figure figure-like" id="figure-33"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-13.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.7<span class="period">.</span></span><span class="space"> </span>A linear transformation with trivial kernel, which is therefore injective</figcaption></figure></article><article class="activity project-like" id="activity-95"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.6</span><span class="period">.</span>
 </h6>
-<p id="p-535">Let \(T: V \rightarrow \IR^5\) be a linear transformation where \(\Im T\) is spanned by four vectors. What can you conclude?</p>
+<p id="p-532">Let \(T: V \rightarrow \IR^5\) be a linear transformation where \(\Im T\) is spanned by four vectors. What can you conclude?</p>
 <ol class="lower-alpha">
-<li id="li-256"><p id="p-536">\(T\) is injective</p></li>
-<li id="li-257"><p id="p-537">\(T\) is not injective</p></li>
-<li id="li-258"><p id="p-538">\(T\) is surjective</p></li>
-<li id="li-259"><p id="p-539">\(T\) is not surjective</p></li>
+<li id="li-256"><p id="p-533">\(T\) is injective</p></li>
+<li id="li-257"><p id="p-534">\(T\) is not injective</p></li>
+<li id="li-258"><p id="p-535">\(T\) is surjective</p></li>
+<li id="li-259"><p id="p-536">\(T\) is not surjective</p></li>
 </ol></article><article class="fact theorem-like" id="fact-19"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.4.5</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.4.8</span><span class="period">.</span>
 </h6>
-<p id="p-540">A linear transformation \(T:V \rightarrow W\) is surjective <em class="emphasis">if and only if</em> \(\Im T = W\text{.}\) Put another way, a surjective linear transformation may be recognized by its identical codomain and image.</p>
-<pre class="code-block tex2jax_ignore">
-\begin{tikzpicture}[x=0.15in,y=0.15in]
-  \begin{scope}[shift={(0,0)}]
-    \draw (0,0) -- (3,0);
-    \draw (0,0) -- (0,3);
-    \draw (0,0) -- (-2,-1);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (1,2);
-    \draw[thick,-latex,blue] (0,0) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (1,-1);
-    \draw[thick,-latex,blue] (0,0) -- (-2,3);
-    \draw[thick,-latex,blue] (0,0) -- (-3,-2);
-  \end{scope}
-  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,1)}]
-    \draw (-2,0) -- (2,0);
-    \draw (0,-2) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
-    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2,-2);
-    \fill[color=blue, opacity=0.5] (-2,-2) rectangle (2,2);
-  \end{scope}
-  \node[anchor=north] at (5,-2) {surjective, \(\Im T=\IR^2\)};
-\end{tikzpicture}
-\hspace{3em}
-\begin{tikzpicture}[x=0.15in,y=0.15in]
-  \begin{scope}[shift={(0,1)}]
-    \draw (-2,0) -- (2,0);
-    \draw (0,-2) -- (0,2);
-    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
-    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2,-2);
-  \end{scope}
-  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-  \begin{scope}[shift={(9,0)}]
-    \draw (0,0) -- (3,0);
-    \draw (0,0) -- (0,3);
-    \draw (0,0) -- (-2,-1);
-    \draw[thick,-latex,blue] (0,0) -- (0.5,1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2,1);
-    \draw[thick,-latex,blue] (0,0) -- (-2.5,1);
-    \draw[thick,-latex,blue] (0,0) -- (-0.5,-1.5);
-    \draw[thick,-latex,blue] (0,0) -- (2.5,-0.5);
-    \fill[color=blue, opacity=0.5] (-2,-2) -- (3,-1) -- (2,2) -- (-3,1) -- (-2,-2);
-  \end{scope}
-  \node[anchor=north] at (5,-2) {not surjective, \(\Im T\not=\IR^3\)};
-\end{tikzpicture}
-    </pre></article><article class="activity project-like" id="activity-96"><h6 class="heading">
+<p id="p-537">A linear transformation \(T:V \rightarrow W\) is surjective <em class="emphasis">if and only if</em> \(\Im T = W\text{.}\) Put another way, a surjective linear transformation may be recognized by its identical codomain and image.</p>
+<figure class="figure figure-like" id="figure-34"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-14.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.9<span class="period">.</span></span><span class="space"> </span>A linear transformation with identical codomain and image, which is therefore surjective; and a linear transformation with an image smaller than the codomain \(\IR^3\text{,}\) which is therefore not surjective.</figcaption></figure></article><article class="activity project-like" id="activity-96"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.7</span><span class="period">.</span>
 </h6>
-<p id="p-541">Let \(T: \IR^n \rightarrow \IR^m\) be a linear map with standard matrix \(A\text{.}\) Sort the following claims into two groups of \textit{equivalent} statements: one group that means \(T\) is <em class="emphasis">injective</em>, and one group that means \(T\) is <em class="emphasis">surjective</em>.</p>
+<p id="p-538">Let \(T: \IR^n \rightarrow \IR^m\) be a linear map with standard matrix \(A\text{.}\) Sort the following claims into two groups of \textit{equivalent} statements: one group that means \(T\) is <em class="emphasis">injective</em>, and one group that means \(T\) is <em class="emphasis">surjective</em>.</p>
 <ol class="lower-alpha">
-<li id="li-260"><p id="p-542">The kernel of \(T\) is trivial, i.e. \(\ker T=\{\vec 0\}\text{.}\)</p></li>
-<li id="li-261"><p id="p-543">The columns of \(A\) span \(\IR^m\text{.}\)</p></li>
-<li id="li-262"><p id="p-544">The columns of \(A\) are linearly independent.</p></li>
-<li id="li-263"><p id="p-545">Every column of \(\RREF(A)\) has a pivot.</p></li>
-<li id="li-264"><p id="p-546">Every row of \(\RREF(A)\) has a pivot.</p></li>
-<li id="li-265"><p id="p-547">The image of \(T\) equals its codomain, i.e. \(\Im T=\IR^m\text{.}\)</p></li>
-<li id="li-266"><p id="p-548">The system of linear equations given by the augmented matrix \(\left[\begin{array}{c|c}A &amp; \vec{b} \end{array}\right]\) has a solution for all \(\vec{b} \in \IR^m\text{.}\)</p></li>
-<li id="li-267"><p id="p-549">The system of linear equations given by the augmented matrix \(\left[\begin{array}{c|c} A &amp; \vec{0} \end{array}\right]\) has exactly one solution.</p></li>
+<li id="li-260"><p id="p-539">The kernel of \(T\) is trivial, i.e. \(\ker T=\{\vec 0\}\text{.}\)</p></li>
+<li id="li-261"><p id="p-540">The columns of \(A\) span \(\IR^m\text{.}\)</p></li>
+<li id="li-262"><p id="p-541">The columns of \(A\) are linearly independent.</p></li>
+<li id="li-263"><p id="p-542">Every column of \(\RREF(A)\) has a pivot.</p></li>
+<li id="li-264"><p id="p-543">Every row of \(\RREF(A)\) has a pivot.</p></li>
+<li id="li-265"><p id="p-544">The image of \(T\) equals its codomain, i.e. \(\Im T=\IR^m\text{.}\)</p></li>
+<li id="li-266"><p id="p-545">The system of linear equations given by the augmented matrix \(\left[\begin{array}{c|c}A &amp; \vec{b} \end{array}\right]\) has a solution for all \(\vec{b} \in \IR^m\text{.}\)</p></li>
+<li id="li-267"><p id="p-546">The system of linear equations given by the augmented matrix \(\left[\begin{array}{c|c} A &amp; \vec{0} \end{array}\right]\) has exactly one solution.</p></li>
 </ol></article><article class="observation remark-like" id="observation-20"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.4.6</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.4.10</span><span class="period">.</span>
 </h6>
-<p id="p-550">The easiest way to determine if the linear map with standard matrix \(A\) is injective is to see if \(\RREF(A)\) has a pivot in each column.</p>
-<p id="p-551">The easiest way to determine if the linear map with standard matrix \(A\) is surjective is to see if \(\RREF(A)\) has a pivot in each row.</p></article><article class="activity project-like" id="activity-97"><h6 class="heading">
+<p id="p-547">The easiest way to determine if the linear map with standard matrix \(A\) is injective is to see if \(\RREF(A)\) has a pivot in each column.</p>
+<p id="p-548">The easiest way to determine if the linear map with standard matrix \(A\) is surjective is to see if \(\RREF(A)\) has a pivot in each row.</p></article><article class="activity project-like" id="activity-97"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.8</span><span class="period">.</span>
 </h6>
-<p id="p-552">What can you conclude about the linear map \(T:\IR^2\to\IR^3\) with standard matrix \(\left[\begin{array}{cc} a &amp; b \\ c &amp; d \\ e &amp; f \end{array}\right]\text{?}\)</p>
+<p id="p-549">What can you conclude about the linear map \(T:\IR^2\to\IR^3\) with standard matrix \(\left[\begin{array}{cc} a &amp; b \\ c &amp; d \\ e &amp; f \end{array}\right]\text{?}\)</p>
 <ol class="lower-alpha">
-<li id="li-268"><p id="p-553">Its standard matrix has more columns than rows, so \(T\) is not injective.</p></li>
-<li id="li-269"><p id="p-554">Its standard matrix has more columns than rows, so \(T\) is injective.</p></li>
-<li id="li-270"><p id="p-555">Its standard matrix has more rows than columns, so \(T\) is not surjective.</p></li>
-<li id="li-271"><p id="p-556">Its standard matrix has more rows than columns, so \(T\) is surjective.</p></li>
+<li id="li-268"><p id="p-550">Its standard matrix has more columns than rows, so \(T\) is not injective.</p></li>
+<li id="li-269"><p id="p-551">Its standard matrix has more columns than rows, so \(T\) is injective.</p></li>
+<li id="li-270"><p id="p-552">Its standard matrix has more rows than columns, so \(T\) is not surjective.</p></li>
+<li id="li-271"><p id="p-553">Its standard matrix has more rows than columns, so \(T\) is surjective.</p></li>
 </ol></article><article class="activity project-like" id="activity-98"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.9</span><span class="period">.</span>
 </h6>
-<p id="p-557">What can you conclude about the linear map \(T:\IR^3\to\IR^2\) with standard matrix \(\left[\begin{array}{ccc} a &amp; b &amp; c \\ d &amp; e &amp; f \end{array}\right]\text{?}\)</p>
+<p id="p-554">What can you conclude about the linear map \(T:\IR^3\to\IR^2\) with standard matrix \(\left[\begin{array}{ccc} a &amp; b &amp; c \\ d &amp; e &amp; f \end{array}\right]\text{?}\)</p>
 <ol class="decimal">
-<li id="li-272"><p id="p-558">Its standard matrix has more columns than rows, so \(T\) is not injective.</p></li>
-<li id="li-273"><p id="p-559">Its standard matrix has more columns than rows, so \(T\) is injective.</p></li>
-<li id="li-274"><p id="p-560">Its standard matrix has more rows than columns, so \(T\) is not surjective.</p></li>
-<li id="li-275"><p id="p-561">Its standard matrix has more rows than columns, so \(T\) is surjective.</p></li>
+<li id="li-272"><p id="p-555">Its standard matrix has more columns than rows, so \(T\) is not injective.</p></li>
+<li id="li-273"><p id="p-556">Its standard matrix has more columns than rows, so \(T\) is injective.</p></li>
+<li id="li-274"><p id="p-557">Its standard matrix has more rows than columns, so \(T\) is not surjective.</p></li>
+<li id="li-275"><p id="p-558">Its standard matrix has more rows than columns, so \(T\) is surjective.</p></li>
 </ol></article><article class="fact theorem-like" id="fact-20"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.4.7</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.4.11</span><span class="period">.</span>
 </h6>The following are true for any linear map \(T:V\to W\text{:}\) <ul class="disc">
-<li id="li-276"><p id="p-562">If \(\dim(V)&gt;\dim(W)\text{,}\) then \(T\) is not injective.</p></li>
-<li id="li-277"><p id="p-563">If \(\dim(V)&lt;\dim(W)\text{,}\) then \(T\) is not surjective.</p></li>
+<li id="li-276"><p id="p-559">If \(\dim(V)&gt;\dim(W)\text{,}\) then \(T\) is not injective.</p></li>
+<li id="li-277"><p id="p-560">If \(\dim(V)&lt;\dim(W)\text{,}\) then \(T\) is not surjective.</p></li>
 </ul>
-<p id="p-564">Basically, a linear transformation cannot reduce dimension without collapsing vectors into each other, and a linear transformation cannot increase dimension from its domain to its image.</p>
-<pre class="code-block tex2jax_ignore">
-    \begin{tikzpicture}[x=0.12in,y=0.12in]
-      \begin{scope}[shift={(0,0)}]
-        \draw (0,0) -- (3,0);
-        \draw (0,0) -- (0,3);
-        \draw (0,0) -- (-2,-1);
-        \draw[thick,-latex,blue] (0,0) -- (2,1)
-              node[anchor=south west] {\(\vec v\)};
-        \draw[thick,-latex,red] (0,0) -- (1,2)
-              node[anchor=south west] {\(\vec w\)};
-      \end{scope}
-      \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-      \begin{scope}[shift={(9,1)}]
-        \draw (-2,0) -- (2,0);
-        \draw (0,-2) -- (0,2);
-        \draw[thick,-latex,purple] (0,0) -- (0.5,2)
-              node[anchor=south west] {\(T(\vec v)=T(\vec w)\)};
-      \end{scope}
-      \node[anchor=north] at (5,-1) {not injective, \(3&gt;2\)};
-    \end{tikzpicture}
-    \hspace{3em}
-    \begin{tikzpicture}[x=0.12in,y=0.12in]
-      \begin{scope}[shift={(0,1)}]
-        \draw (-2,0) -- (2,0);
-        \draw (0,-2) -- (0,2);
-        \draw[thick,-latex,blue] (0,0) -- (0.5,2);
-        \draw[thick,-latex,blue] (0,0) -- (2,1);
-        \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
-        \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
-        \draw[thick,-latex,blue] (0,0) -- (2,-2);
-      \end{scope}
-      \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
-      \begin{scope}[shift={(9,0)}]
-        \draw (0,0) -- (3,0);
-        \draw (0,0) -- (0,3);
-        \draw (0,0) -- (-2,-1);
-        \draw[thick,-latex,blue] (0,0) -- (0.5,1.5);
-        \draw[thick,-latex,blue] (0,0) -- (2,1);
-        \draw[thick,-latex,blue] (0,0) -- (-2.5,1);
-        \draw[thick,-latex,blue] (0,0) -- (-0.5,-1.5);
-        \draw[thick,-latex,blue] (0,0) -- (2.5,-0.5);
-        \fill[color=blue, opacity=0.5] (-2,-2) -- (3,-1) -- (2,2) -- (-3,1) -- (-2,-2);
-      \end{scope}
-      \node[anchor=north] at (5,-2) {not surjective, \(2&lt;3\)};
-    \end{tikzpicture}
-    </pre>
-<p id="p-565">But dimension arguments <em class="emphasis">cannot</em> be used to prove a map <em class="emphasis">is</em> injective or surjective.</p></article><article class="activity project-like" id="activity-99"><h6 class="heading">
+<p id="p-561">Basically, a linear transformation cannot reduce dimension without collapsing vectors into each other, and a linear transformation cannot increase dimension from its domain to its image.</p>
+<figure class="figure figure-like" id="figure-35"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-15.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.12<span class="period">.</span></span><span class="space"> </span>A linear transformation whose domain has a larger dimension than its codomain, and is therefore not injective; and a linear transformation whose domain has a smaller dimension than its codomain, and is therefore not surjective.</figcaption></figure><p id="p-562">But dimension arguments <em class="emphasis">cannot</em> be used to prove a map <em class="emphasis">is</em> injective or surjective.</p></article><article class="activity project-like" id="activity-99"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.10</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-29"><p id="p-566">Suppose \(T: \IR^n \rightarrow \IR^4\) with standard matrix \(A=\left[\begin{array}{cccc}
+<div class="introduction" id="introduction-29"><p id="p-563">Suppose \(T: \IR^n \rightarrow \IR^4\) with standard matrix \(A=\left[\begin{array}{cccc}
 a_{11}&amp;a_{12}&amp;\cdots&amp;a_{1n}\\
 a_{21}&amp;a_{22}&amp;\cdots&amp;a_{2n}\\
 a_{31}&amp;a_{32}&amp;\cdots&amp;a_{3n}\\
 a_{41}&amp;a_{42}&amp;\cdots&amp;a_{4n}\\
 \end{array}\right]\) is both injective and surjective (we call such maps <dfn class="terminology">bijective</dfn>).</p></div>
 <article class="task exercise-like" id="task-67"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-567">How many pivot rows must \(\RREF A\) have?</p></article><article class="task exercise-like" id="task-68"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-568">How many pivot columns must \(\RREF A\) have?</p></article><article class="task exercise-like" id="task-69"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-569">What is \(\RREF A\text{?}\)</p></article></article><article class="activity project-like" id="activity-100"><h6 class="heading">
+<p id="p-564">How many pivot rows must \(\RREF A\) have?</p></article><article class="task exercise-like" id="task-68"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-565">How many pivot columns must \(\RREF A\) have?</p></article><article class="task exercise-like" id="task-69"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-566">What is \(\RREF A\text{?}\)</p></article></article><article class="activity project-like" id="activity-100"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.11</span><span class="period">.</span>
 </h6>
-<p id="p-570">Let \(T: \IR^n \rightarrow \IR^n\) be a bijective linear map with standard matrix \(A\text{.}\) Label each of the following as true or false.</p>
+<p id="p-567">Let \(T: \IR^n \rightarrow \IR^n\) be a bijective linear map with standard matrix \(A\text{.}\) Label each of the following as true or false.</p>
 <ol class="lower-alpha">
-<li id="li-278"><p id="p-571">\(\RREF(A)\) is the identity matrix.</p></li>
-<li id="li-279"><p id="p-572">The columns of \(A\) form a basis for \(\IR^n\)</p></li>
-<li id="li-280"><p id="p-573">The system of linear equations given by the augmented matrix \(\left[\begin{array}{c|c} A &amp; \vec{b} \end{array}\right]\) has exactly one solution for each \(\vec b \in \IR^n\text{.}\)</p></li>
+<li id="li-278"><p id="p-568">\(\RREF(A)\) is the identity matrix.</p></li>
+<li id="li-279"><p id="p-569">The columns of \(A\) form a basis for \(\IR^n\)</p></li>
+<li id="li-280"><p id="p-570">The system of linear equations given by the augmented matrix \(\left[\begin{array}{c|c} A &amp; \vec{b} \end{array}\right]\) has exactly one solution for each \(\vec b \in \IR^n\text{.}\)</p></li>
 </ol></article><article class="observation remark-like" id="observation-21"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.4.8</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.4.13</span><span class="period">.</span>
 </h6>
-<p id="p-574">The easiest way to show that the linear map with standard matrix \(A\) is bijective is to show that \(\RREF(A)\) is the identity matrix.</p></article><article class="activity project-like" id="activity-101"><h6 class="heading">
+<p id="p-571">The easiest way to show that the linear map with standard matrix \(A\) is bijective is to show that \(\RREF(A)\) is the identity matrix.</p></article><article class="activity project-like" id="activity-101"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.12</span><span class="period">.</span>
 </h6>
-<p id="p-575">Let \(T: \IR^3 \rightarrow \IR^3\) be given by the standard matrix</p>
+<p id="p-572">Let \(T: \IR^3 \rightarrow \IR^3\) be given by the standard matrix</p>
 <div class="displaymath">
 \begin{equation*}
 A=\left[\begin{array}{ccc} 2&amp;1&amp;-1 \\ 4&amp;1&amp;1 \\ 6&amp;2&amp;1\end{array}\right].
@@ -573,14 +379,16 @@ A=\left[\begin{array}{ccc} 2&amp;1&amp;-1 \\ 4&amp;1&amp;1 \\ 6&amp;2&amp;1\end{
 </div>
 <p data-braille="continuation">Which of the following must be true?</p>
 <ol class="lower-alpha">
-<li id="li-281"><p id="p-576">\(T\) is neither injective nor surjective</p></li>
-<li id="li-282"><p id="p-577">\(T\) is injective but not surjective</p></li>
-<li id="li-283"><p id="p-578">\(T\) is surjective but not injective</p></li>
-<li id="li-284"><p id="p-579">\(T\) is bijective.</p></li>
-</ol></article><article class="activity project-like" id="activity-102"><h6 class="heading">
+<li id="li-281"><p id="p-573">\(T\) is neither injective nor surjective</p></li>
+<li id="li-282"><p id="p-574">\(T\) is injective but not surjective</p></li>
+<li id="li-283"><p id="p-575">\(T\) is surjective but not injective</p></li>
+<li id="li-284"><p id="p-576">\(T\) is bijective.</p></li>
+</ol></article><div class="sagecell-octave" id="sage-33"><script type="text/x-sage">rref([2,1,-1; 4,1,1; 6,2,1])
+</script></div>
+<article class="activity project-like" id="activity-102"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.13</span><span class="period">.</span>
 </h6>
-<p id="p-580">Let \(T: \IR^3 \rightarrow \IR^3\) be given by</p>
+<p id="p-577">Let \(T: \IR^3 \rightarrow \IR^3\) be given by</p>
 <div class="displaymath">
 \begin{equation*}
 T\left(\left[\begin{array}{ccc} x \\ y  \\ z \end{array}\right] \right) =
@@ -589,14 +397,16 @@ T\left(\left[\begin{array}{ccc} x \\ y  \\ z \end{array}\right] \right) =
 </div>
 <p data-braille="continuation">Which of the following must be true?</p>
 <ol class="lower-alpha">
-<li id="li-285"><p id="p-581">\(T\) is neither injective nor surjective</p></li>
-<li id="li-286"><p id="p-582">\(T\) is injective but not surjective</p></li>
-<li id="li-287"><p id="p-583">\(T\) is surjective but not injective</p></li>
-<li id="li-288"><p id="p-584">\(T\) is bijective.</p></li>
-</ol></article><article class="activity project-like" id="activity-103"><h6 class="heading">
+<li id="li-285"><p id="p-578">\(T\) is neither injective nor surjective</p></li>
+<li id="li-286"><p id="p-579">\(T\) is injective but not surjective</p></li>
+<li id="li-287"><p id="p-580">\(T\) is surjective but not injective</p></li>
+<li id="li-288"><p id="p-581">\(T\) is bijective.</p></li>
+</ol></article><div class="sagecell-octave" id="sage-34"><script type="text/x-sage">rref([2,1,-1; 4,1,1; 6,2,0])
+</script></div>
+<article class="activity project-like" id="activity-103"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.14</span><span class="period">.</span>
 </h6>
-<p id="p-585">Let \(T: \IR^2 \rightarrow \IR^3\) be given by</p>
+<p id="p-582">Let \(T: \IR^2 \rightarrow \IR^3\) be given by</p>
 <div class="displaymath">
 \begin{equation*}
 T\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right) =
@@ -605,14 +415,16 @@ T\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right) =
 </div>
 <p data-braille="continuation">Which of the following must be true?</p>
 <ol class="lower-alpha">
-<li id="li-289"><p id="p-586">\(T\) is neither injective nor surjective</p></li>
-<li id="li-290"><p id="p-587">\(T\) is injective but not surjective</p></li>
-<li id="li-291"><p id="p-588">\(T\) is surjective but not injective</p></li>
-<li id="li-292"><p id="p-589">\(T\) is bijective.</p></li>
-</ol></article><article class="activity project-like" id="activity-104"><h6 class="heading">
+<li id="li-289"><p id="p-583">\(T\) is neither injective nor surjective</p></li>
+<li id="li-290"><p id="p-584">\(T\) is injective but not surjective</p></li>
+<li id="li-291"><p id="p-585">\(T\) is surjective but not injective</p></li>
+<li id="li-292"><p id="p-586">\(T\) is bijective.</p></li>
+</ol></article><div class="sagecell-octave" id="sage-35"><script type="text/x-sage">rref([2,3;1,-1;1,3])
+</script></div>
+<article class="activity project-like" id="activity-104"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.15</span><span class="period">.</span>
 </h6>
-<p id="p-590">Let \(T: \IR^3 \rightarrow \IR^2\) be given by</p>
+<p id="p-587">Let \(T: \IR^3 \rightarrow \IR^2\) be given by</p>
 <div class="displaymath">
 \begin{equation*}
 T\left(\left[\begin{array}{c} x \\ y  \\ z \end{array}\right] \right) =
@@ -621,14 +433,21 @@ T\left(\left[\begin{array}{c} x \\ y  \\ z \end{array}\right] \right) =
 </div>
 <p data-braille="continuation">Which of the following must be true?</p>
 <ol class="lower-alpha">
-<li id="li-293"><p id="p-591">\(T\) is neither injective nor surjective</p></li>
-<li id="li-294"><p id="p-592">\(T\) is injective but not surjective</p></li>
-<li id="li-295"><p id="p-593">\(T\) is surjective but not injective</p></li>
-<li id="li-296"><p id="p-594">\(T\) is bijective.</p></li>
-</ol></article><section class="exercises" id="exercises-16"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">3.4.1</span> <span class="title">Exercises</span>
+<li id="li-293"><p id="p-588">\(T\) is neither injective nor surjective</p></li>
+<li id="li-294"><p id="p-589">\(T\) is injective but not surjective</p></li>
+<li id="li-295"><p id="p-590">\(T\) is surjective but not injective</p></li>
+<li id="li-296"><p id="p-591">\(T\) is bijective.</p></li>
+</ol></article><div class="sagecell-octave" id="sage-36"><script type="text/x-sage">rref([2,1,-1;4,1,1])
+</script></div>
+<section class="subsection" id="subsection-18"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.4.1</span> <span class="title">Videos</span>
 </h3>
-<p id="p-595"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/A4/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+<figure class="figure figure-like" id="figure-36"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-A4-1" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/ea83d890-5bec-42f2-8eaa-ab8100f66b6a.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="videos/A4-1-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.14<span class="period">.</span></span><span class="space"> </span>Video example: Definitions of injective and surjective linear transformations</figcaption></figure><figure class="figure figure-like" id="figure-37"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-A4-2" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/233f5f02-7c1a-48af-a20c-ab8100fa6da9.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="videos/A4-2-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.15<span class="period">.</span></span><span class="space"> </span>Video example: Determining if a linear transformation is injective and/or surjective</figcaption></figure></section><section class="exercises" id="exercises-16"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.4.2</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-592"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/A4/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
 </div>
 </body>
 </html>

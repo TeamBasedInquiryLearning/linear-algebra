@@ -1,0 +1,184 @@
+1
+00:00:00,544 --> 00:00:05,844
+In this video, we're going to see how to put out Matrix into reduced row echelon form.
+
+2
+00:00:05,844 --> 00:00:09,624
+First thing we're gonna want to do is to have a one in the upper right hand corner.
+
+3
+00:00:09,624 --> 00:00:13,154
+Now, in this particular matrix, there's several ways we can do that.
+
+4
+00:00:13,154 --> 00:00:21,154
+But the easiest one that I like to do is just swap those top two rows -- simple swap, row one and row two here.
+
+5
+00:00:21,154 --> 00:00:33,154
+That gives us one, two, three, two; two, four, negative six, zero; negative one, one, negative three, and one.
+
+6
+00:00:33,154 --> 00:00:37,154
+I'm going to go ahead and circle that one, because it's where I want it to be.
+
+7
+00:00:37,154 --> 00:00:44,154
+To help me keep track along the way. Now that I have a one in that pivot position, I want to try and make zeros above and below it.
+
+8
+00:00:44,154 --> 00:00:49,154
+So in this case, that just means below it. So to make that two below it into a zero.
+
+9
+00:00:49,154 --> 00:01:00,154
+We can take that row 2, and we can subtract off two row ones that'll make that two in the first column into a zero.
+
+10
+00:01:00,154 --> 00:01:08,154
+So our first column--first row, rather-- is going to stay the same. Second row, we're going to have a zero.
+
+11
+00:01:08,154 --> 00:01:14,154
+Also, a zero. Also, zero; now subtract off two times two.
+
+12
+00:01:14,154 --> 00:01:25,154
+That gives us a negative four. And our third row will remain the same negative one, one, three, one.
+
+13
+00:01:25,154 --> 00:01:31,154
+Our first column's almost done. We just need to get that negative one in the bottom left to be a zero as well.
+
+14
+00:01:31,154 --> 00:01:37,154
+So we can take row 3 and we can add.
+
+15
+00:01:37,154 --> 00:01:43,154
+row 1 to it. So this will turn into -- our first two rows stay the same.
+
+16
+00:01:43,154 --> 00:01:54,154
+One, two, negative three, two; our second row, still zero, zero, zero, negative four.
+
+17
+00:01:54,154 --> 00:02:03,154
+Now, the bottom row. We're just going to add we get zero, three, negative six, and 3.
+
+18
+00:02:03,154 --> 00:02:09,544
+So now what we're going to do is we're going to shift our attention to the second row, so we'll come down and we'll go over.
+
+19
+00:02:09,544 --> 00:02:16,394
+And now we're going to look at this spot right here. So this is our next candidate for a spot, for a pivot.
+
+20
+00:02:16,394 --> 00:02:24,974
+So we want to make that a one if we can. Now, unfortunately, we have a zero there, which complicates things a little bit.
+
+21
+00:02:24,974 --> 00:02:29,154
+But one way we can get around that is to just swap the second and third rows there.
+
+22
+00:02:29,154 --> 00:02:39,154
+This gives us a non-zero thing in that spot we're interested in. I'll go ahead, write down our first row again, because we're leaving that alone.
+
+23
+00:02:39,154 --> 00:02:47,154
+No one swap in those last two rows. We havezero, three, negative six, threee.
+
+24
+00:02:47,154 --> 00:02:53,204
+We have zero, zero, zero, negative four.
+
+25
+00:02:53,204 --> 00:03:01,224
+And now one way we can turn that three into a one is to multiply that whole second row.
+
+26
+00:03:01,224 --> 00:03:09,154
+By one third. Go ahead and write down the top row and the bottom row.
+
+27
+00:03:09,154 --> 00:03:18,154
+Those aren't changing. We'll multiply the second row by one third -- still zero, one, and negative two.
+
+28
+00:03:18,154 --> 00:03:25,154
+And the one. Now we have a one where we wanted to.
+
+29
+00:03:25,154 --> 00:03:31,154
+Now we'll proceed to make zero above and below it--lucky for us, there's already zero below it.
+
+30
+00:03:31,154 --> 00:03:33,154
+We just had to make a zero above it.
+
+31
+00:03:33,154 --> 00:03:44,154
+So we'll take row one, make it subtract off two of those row twos so that we can use that one pivot spot to make things zero.
+
+32
+00:03:44,154 --> 00:03:52,154
+So I have one; two minus two ones-- zero; negative three minus two negative twos is a positive one.
+
+33
+00:03:52,154 --> 00:04:02,154
+And then two minus two ones is zero. And still the second rowstays the same.
+
+34
+00:04:02,154 --> 00:04:16,963
+And our last row stays the same. So far, so good.
+
+35
+00:04:16,963 --> 00:04:22,363
+And now we'll first look at this next spot over what we see, that's a zero.
+
+36
+00:04:22,363 --> 00:04:31,273
+And unfortunately, we have nothing below us to help. We saw in the previous time we could use the three below to turn that zero into a non zero thing.
+
+37
+00:04:31,273 --> 00:04:39,523
+But here we're stuck. There's no way to make that a nonzero without going back to the rows above that we had already put into a nice form.
+
+38
+00:04:39,523 --> 00:04:43,273
+So instead, we'll just move over to the next one. And this is going to be our next pivot spot here.
+
+39
+00:04:43,273 --> 00:04:53,273
+We'll try and turn this negative four into a one. So one easy way to do that would be to multiply that last row by negative one fourth.
+
+40
+00:04:53,273 --> 00:05:04,463
+So our top two rows stay the same.
+
+41
+00:05:04,463 --> 00:05:12,273
+Bottom row looks like zero zero zero one.
+
+42
+00:05:12,273 --> 00:05:19,273
+Now, the last thing left to do is to make sure we have zeros above and below that last pivot -- in this case, that just means above.
+
+43
+00:05:19,273 --> 00:05:27,273
+So our last operation here will just be to subtract row three from row two.
+
+44
+00:05:27,273 --> 00:05:36,273
+Row one stays the same. Zero; one minus zero is still one; negative two minus zero, still negative two; but now we have a zero here.
+
+45
+00:05:36,273 --> 00:05:44,603
+And that last row is the same.
+
+46
+00:05:44,603 --> 00:05:53,501
+So now we see here we have the reduced row echelon form of our original matrix.
+

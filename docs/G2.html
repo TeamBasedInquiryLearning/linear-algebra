@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-13T19:23:38Z       *-->
+<!--*       on 2021-01-15T10:59:30-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,7 +14,7 @@
 <title>Computing Determinants (G2)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [['\\(','\\)']]
@@ -43,7 +43,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-octave' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-octave',
+                           linked: true,
+                           languages: ['octave'],
+                           evalButtonText: 'Evaluate (Octave)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -144,46 +160,25 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="G2"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Computing Determinants (G2)</span>
 </h2>
-<article class="remark remark-like" id="remark-18"><h6 class="heading">
+<article class="remark remark-like" id="remark-17"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
 </h6>
-<p id="p-765">We've seen that row reducing all the way into RREF gives us a method of computing determinants.</p>
-<p id="p-766">However, we learned in module E that this can be tedious for large matrices.  Thus, we will try to figure out how to turn the determinant of a larger matrix into the determinant of a smaller matrix.</p></article><article class="activity project-like" id="activity-130"><h6 class="heading">
+<p id="p-758">We've seen that row reducing all the way into RREF gives us a method of computing determinants.</p>
+<p id="p-759">However, we learned in module E that this can be tedious for large matrices.  Thus, we will try to figure out how to turn the determinant of a larger matrix into the determinant of a smaller matrix.</p></article><article class="activity project-like" id="activity-130"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
 </h6>
-<p id="p-767">The following image illustrates the transformation of the unit cube by the matrix \(\left[\begin{array}{ccc} 1 &amp; 1 &amp; 0 \\  1 &amp; 3 &amp; 1 \\  0 &amp; 0 &amp; 1\end{array}\right]\text{.}\)</p>
-<pre class="code-block tex2jax_ignore">
-  \begin{tikzpicture}
-  \fill[purple!50!white] (0,0,0) -- (1,0,1) -- (4,0,2) -- (3,0,1) -- (0,0,0);
-  \draw[thin,gray,-&gt;] (0,0,0) -- (3,0,0);
-  \draw[thin,gray,-&gt;] (0,0,0) -- (0,2,0);
-  \draw[thin,gray,-&gt;] (0,0,0) -- (0,0,2);
-  %(y,z,x)
-  \draw[blue] (1,0,1) -- (4,0,2) -- (3,0,1);
-  \draw[blue] (1,1,0) -- (2,1,1) -- (5,1,2) -- (4,1,1) -- (1,1,0);
-  \draw[blue] (1,0,1) -- +(1,1,0);
-  \draw[blue] (4,0,2) -- +(1,1,0);
-  \draw[blue] (3,0,1) -- +(1,1,0);
-
-  \draw[purple,thick,-&gt;] (0,0,0) -- (1,1,0)
-    node[above left]{\tiny\(\left[\begin{array}{c} 0 \\ 1 \\ 1\end{array}\right]\)};
-  \draw[purple,thick,-&gt;] (0,0,0) -- (1,0,1)
-    node[below]{\tiny\(\left[\begin{array}{c} 1 \\ 1 \\ 0\end{array}\right]\)};
-  \draw[purple,thick,-&gt;] (0,0,0) -- (3,0,1)
-    node[above left]{\tiny\(\left[\begin{array}{c} 1 \\ 3 \\ 0\end{array}\right]\)};
-  \draw[purple,dashed,very thick] (0,0,0) -- node[left] {\tiny\(h=1\)} (0,1,0);
-  \end{tikzpicture}
-  </pre>
-<p id="p-768">Recall that for this solid \(V=Bh\text{,}\) where \(h\) is the height of the solid and \(B\) is the area of its parallelogram base. So what must its volume be?</p>
+<p id="p-760">The following image illustrates the transformation of the unit cube by the matrix \(\left[\begin{array}{ccc} 1 &amp; 1 &amp; 0 \\  1 &amp; 3 &amp; 1 \\  0 &amp; 0 &amp; 1\end{array}\right]\text{.}\)</p>
+<figure class="figure figure-like" id="figure-56"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-29.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.2<span class="period">.</span></span><span class="space"> </span>Transformation of the unit cube by the linear transformation.</figcaption></figure><p id="p-761">Recall that for this solid \(V=Bh\text{,}\) where \(h\) is the height of the solid and \(B\) is the area of its parallelogram base. So what must its volume be?</p>
 <ol class="lower-alpha">
-<li id="li-383"><p id="p-769">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 1 \\ 1 &amp; 3 \end{array}\right]\)</p></li>
-<li id="li-384"><p id="p-770">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 0 \\ 3 &amp; 1 \end{array}\right]\)</p></li>
-<li id="li-385"><p id="p-771">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 1 \\ 0 &amp; 1 \end{array}\right]\)</p></li>
-<li id="li-386"><p id="p-772">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; 0 \end{array}\right]\)</p></li>
+<li id="li-383"><p id="p-762">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 1 \\ 1 &amp; 3 \end{array}\right]\)</p></li>
+<li id="li-384"><p id="p-763">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 0 \\ 3 &amp; 1 \end{array}\right]\)</p></li>
+<li id="li-385"><p id="p-764">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 1 \\ 0 &amp; 1 \end{array}\right]\)</p></li>
+<li id="li-386"><p id="p-765">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; 0 \end{array}\right]\)</p></li>
 </ol></article><article class="fact theorem-like" id="fact-27"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
 </h6>
-<p id="p-773">If row \(i\) contains all zeros except for a \(1\) on the main (upper-left to lower-right) diagonal, then both column and row \(i\) may be removed without changing the value of the determinant.</p>
+<p id="p-766">If row \(i\) contains all zeros except for a \(1\) on the main (upper-left to lower-right) diagonal, then both column and row \(i\) may be removed without changing the value of the determinant.</p>
 <div class="displaymath">
 \begin{equation*}
 \det \left[\begin{array}{cccc}
@@ -200,7 +195,7 @@ MathJax.Hub.Config({
 \end{array}\right]
 \end{equation*}
 </div>
-<p id="p-774">Since row and column operations affect the determinants in the same way, the same technique works for a column of all zeros except for a \(1\) on the main diagonal.</p>
+<p id="p-767">Since row and column operations affect the determinants in the same way, the same technique works for a column of all zeros except for a \(1\) on the main diagonal.</p>
 <div class="displaymath">
 \begin{equation*}
 \det \left[\begin{array}{cccc}
@@ -219,22 +214,22 @@ MathJax.Hub.Config({
 </div></article><article class="activity project-like" id="activity-131"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
 </h6>
-<p id="p-775">Remove an appropriate row and column of \(\det \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 1 &amp; 5 &amp; 12 \\ 3 &amp; 2 &amp; -1 \end{array}\right]\) to simplify the determinant to a \(2\times 2\) determinant.</p></article><article class="activity project-like" id="activity-132"><h6 class="heading">
+<p id="p-768">Remove an appropriate row and column of \(\det \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 1 &amp; 5 &amp; 12 \\ 3 &amp; 2 &amp; -1 \end{array}\right]\) to simplify the determinant to a \(2\times 2\) determinant.</p></article><article class="activity project-like" id="activity-132"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-39"><p id="p-776">Simplify \(\det \left[\begin{array}{ccc} 0 &amp; 3 &amp; -2 \\ 2 &amp; 5 &amp; 12 \\ 0 &amp; 2 &amp; -1 \end{array}\right]\) to a multiple of a \(2\times 2\) determinant by first doing the following:</p></div>
+<div class="introduction" id="introduction-39"><p id="p-769">Simplify \(\det \left[\begin{array}{ccc} 0 &amp; 3 &amp; -2 \\ 2 &amp; 5 &amp; 12 \\ 0 &amp; 2 &amp; -1 \end{array}\right]\) to a multiple of a \(2\times 2\) determinant by first doing the following:</p></div>
 <article class="task exercise-like" id="task-94"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-777">Factor out a \(2\) from a column.</p></article><article class="task exercise-like" id="task-95"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-778">Swap rows or columns to put a \(1\) on the main diagonal.</p></article></article><article class="activity project-like" id="activity-133"><h6 class="heading">
+<p id="p-770">Factor out a \(2\) from a column.</p></article><article class="task exercise-like" id="task-95"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-771">Swap rows or columns to put a \(1\) on the main diagonal.</p></article></article><article class="activity project-like" id="activity-133"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-40"><p id="p-779">Simplify \(\det \left[\begin{array}{ccc} 4 &amp; -2 &amp; 2 \\ 3 &amp; 1 &amp; 4 \\ 1 &amp; -1 &amp; 3\end{array}\right]\) to a multiple of a \(2\times 2\) determinant by first doing the following:</p></div>
+<div class="introduction" id="introduction-40"><p id="p-772">Simplify \(\det \left[\begin{array}{ccc} 4 &amp; -2 &amp; 2 \\ 3 &amp; 1 &amp; 4 \\ 1 &amp; -1 &amp; 3\end{array}\right]\) to a multiple of a \(2\times 2\) determinant by first doing the following:</p></div>
 <article class="task exercise-like" id="task-96"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-780">Use row/column operations to create two zeroes in the same row or column.</p></article><article class="task exercise-like" id="task-97"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-781">Factor/swap as needed to get a row/column of all zeroes except a \(1\) on the main diagonal.</p></article></article><article class="observation remark-like" id="observation-31"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
+<p id="p-773">Use row/column operations to create two zeroes in the same row or column.</p></article><article class="task exercise-like" id="task-97"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-774">Factor/swap as needed to get a row/column of all zeroes except a \(1\) on the main diagonal.</p></article></article><article class="observation remark-like" id="observation-31"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
 </h6>
-<p id="p-782">Using row/column operations, you can introduce zeros and reduce dimension to whittle down the determinant of a large matrix to a determinant of a smaller matrix.</p>
+<p id="p-775">Using row/column operations, you can introduce zeros and reduce dimension to whittle down the determinant of a large matrix to a determinant of a smaller matrix.</p>
 <div class="displaymath">
 \begin{align*}
 \det\left[\begin{array}{cccc}
@@ -277,7 +272,7 @@ MathJax.Hub.Config({
 </div></article><article class="activity project-like" id="activity-134"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span>
 </h6>
-<p id="p-783">Rewrite</p>
+<p id="p-776">Rewrite</p>
 <div class="displaymath">
 \begin{equation*}
 \det \left[\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; 1 \\ 3 &amp; 0 &amp; 1 &amp; 4
@@ -287,16 +282,16 @@ MathJax.Hub.Config({
 <p data-braille="continuation">as a multiple of a determinant of a \(3\times3\) matrix.</p></article><article class="activity project-like" id="activity-135"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
 </h6>
-<p id="p-784">Compute \(\det\left[\begin{array}{cccc}
+<p id="p-777">Compute \(\det\left[\begin{array}{cccc}
 2 &amp; 3 &amp; 5 &amp; 0 \\ 
 0 &amp; 3 &amp; 2 &amp; 0 \\ 
 1 &amp; 2 &amp; 0 &amp; 3 \\ 
 -1 &amp; -1 &amp; 2 &amp; 2 
 \end{array}\right]\) by using any combination of row/column operations.</p></article><article class="observation remark-like" id="observation-32"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span>
 </h6>
-<p id="p-785">Another option is to take advantage of the fact that the determinant is linear in each row or column.  This approach is called <dfn class="terminology">Laplace expansion</dfn> or <dfn class="terminology">cofactor expansion</dfn>.</p>
-<p id="p-786">For example, since \(\color{blue}{
+<p id="p-778">Another option is to take advantage of the fact that the determinant is linear in each row or column.  This approach is called <dfn class="terminology">Laplace expansion</dfn> or <dfn class="terminology">cofactor expansion</dfn>.</p>
+<p id="p-779">For example, since \(\color{blue}{
 \left[\begin{array}{ccc} 1 &amp; 2 &amp; 4 \end{array}\right]
 =
 1\left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \end{array}\right]
@@ -319,9 +314,9 @@ MathJax.Hub.Config({
 +4 \det \left[\begin{array}{cc} 2 &amp; 3 \\ -1 &amp; 3 \end{array}\right]
 \end{align*}
 </div></article><article class="observation remark-like" id="observation-33"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
 </h6>
-<p id="p-787">Applying Laplace expansion to a \(2 \times 2\) matrix yields a short formula you may have seen:</p>
+<p id="p-780">Applying Laplace expansion to a \(2 \times 2\) matrix yields a short formula you may have seen:</p>
 <div class="displaymath">
 \begin{equation*}
 \det \left[\begin{array}{cc} {\color{blue} a} &amp; {\color{blue} b} \\ c &amp; d \end{array}\right]
@@ -341,7 +336,7 @@ b \det \left[\begin{array}{cc} {\color{red} 1} &amp; {\color{red} 0} \\
 ad-bc\text{.}
 \end{equation*}
 </div>
-<p id="p-788">There are formulas for the determinants of larger matrices, but they can be pretty tedious to use. For example, writing out a formula for a \(4\times 4\) determinant would require 24 different terms!</p>
+<p id="p-781">There are formulas for the determinants of larger matrices, but they can be pretty tedious to use. For example, writing out a formula for a \(4\times 4\) determinant would require 24 different terms!</p>
 <div class="displaymath">
 \begin{equation*}
 \det\left[\begin{array}{cccc}
@@ -354,28 +349,36 @@ a_{41} &amp; a_{42} &amp; a_{43} &amp; a_{44}
 a_{11}(a_{22}(a_{33}a_{44}-a_{43}a_{34})-a_{23}(a_{32}a_{44}-a_{42}a_{34})+\dots)+\dots
 \end{equation*}
 </div>
-<p id="p-789">So this is why we either use Laplace expansion or row/column operations directly.</p></article><article class="activity project-like" id="activity-136"><h6 class="heading">
+<p id="p-782">So this is why we either use Laplace expansion or row/column operations directly.</p></article><article class="activity project-like" id="activity-136"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
 </h6>
-<p id="p-790">Based on the previous activities, which technique is easier for computing determinants?</p>
+<p id="p-783">Based on the previous activities, which technique is easier for computing determinants?</p>
 <ol class="lower-alpha">
-<li id="li-387"><p id="p-791">Memorizing formulas.</p></li>
-<li id="li-388"><p id="p-792">Using row/column operations.</p></li>
-<li id="li-389"><p id="p-793">Laplace expansion.</p></li>
-<li id="li-390"><p id="p-794">Some other technique (be prepared to describe it).</p></li>
+<li id="li-387"><p id="p-784">Memorizing formulas.</p></li>
+<li id="li-388"><p id="p-785">Using row/column operations.</p></li>
+<li id="li-389"><p id="p-786">Laplace expansion.</p></li>
+<li id="li-390"><p id="p-787">Some other technique (be prepared to describe it).</p></li>
 </ol></article><article class="activity project-like" id="activity-137"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.8</span><span class="period">.</span>
 </h6>
-<p id="p-795">Use your preferred technique to compute \(\det\left[\begin{array}{cccc}
+<p id="p-788">Use your preferred technique to compute \(\det\left[\begin{array}{cccc}
 4 &amp; -3 &amp; 0 &amp; 0 \\ 
 1 &amp; -3 &amp; 2 &amp; -1 \\ 
 3 &amp; 2 &amp; 0 &amp; 3 \\ 
 0 &amp; -3 &amp; 2 &amp; -2 
 \end{array}\right]
-\text{.}\)</p></article><section class="exercises" id="exercises-22"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">5.2.1</span> <span class="title">Exercises</span>
+\text{.}\)</p></article><article class="insight remark-like" id="insight-2"><h6 class="heading">
+<span class="type">Insight</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
+</h6>You can check your answer using Octave. <div class="sagecell-octave" id="sage-45"><script type="text/x-sage">det([4,-3,0,0; 1,-3,2,-1; 3,2,0,3; 0,-3,2,-2])
+</script></div></article><section class="subsection" id="subsection-24"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.1</span> <span class="title">Videos</span>
 </h3>
-<p id="p-796"><em class="emphasis">Additional exercises available at <a class="external" href="https://checkit.clontz.org/banks/tbil-la/G2/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+<figure class="figure figure-like" id="figure-57"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-G2-1" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/72443a97-6380-40c9-a748-ab9f01094603.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="videos/G2-1-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.8<span class="period">.</span></span><span class="space"> </span>Video example: Simplifying a determinant using row operations</figcaption></figure><figure class="figure figure-like" id="figure-58"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-G2-2" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/edba89e8-350b-4e22-b032-ab9f010b9e5f.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="videos/G2-2-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.9<span class="period">.</span></span><span class="space"> </span>Video example: Computing a determinant</figcaption></figure></section><section class="exercises" id="exercises-22"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.2.2</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-789"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/G2/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
 </div>
 </body>
 </html>

@@ -1,0 +1,352 @@
+1
+00:00:01,262 --> 00:00:06,102
+In this video, we're going to learn how to find the inverse of a matrix
+
+2
+00:00:06,102 --> 00:00:11,102
+that we know to be invertible. So to start with, let's suppose we have
+
+3
+00:00:11,102 --> 00:00:17,102
+a linear transformation from R^3 to R^3 that we know has an inverse map.
+
+4
+00:00:17,102 --> 00:00:22,102
+T inverse. So the basic idea is if I want to write down the standard
+
+5
+00:00:22,102 --> 00:00:27,102
+matrix for T inverse, I need to know what T
+
+6
+00:00:27,102 --> 00:00:32,102
+inverse of e1 is. That would give me the first column
+
+7
+00:00:32,102 --> 00:00:37,102
+T inverse of e2, our second basis vector,  would give us the second column
+
+8
+00:00:37,102 --> 00:00:43,102
+and T inverse of e3 will give us the third column.
+
+9
+00:00:43,102 --> 00:00:48,102
+So I don't know what these are. I'm just gonna give them names for the moment. v1, v2, and v3.
+
+10
+00:00:48,102 --> 00:00:55,102
+Whatever those are, those will give me the three columns of our matrix.
+
+11
+00:00:55,102 --> 00:01:01,102
+But note that saying that T inverse of e1 is equal to v1, what
+
+12
+00:01:01,102 --> 00:01:06,102
+T inverse does is it's gonna send e1 back where it came from.
+
+13
+00:01:06,102 --> 00:01:12,102
+So what that tells us is that T(v1)
+
+14
+00:01:12,102 --> 00:01:17,102
+had to be e1. And we want to know where e1 came from
+
+15
+00:01:17,102 --> 00:01:23,102
+to send it back to. And same thing T(v2)
+
+16
+00:01:23,102 --> 00:01:30,102
+needs to be e2 and T(v3)
+
+17
+00:01:30,102 --> 00:01:35,382
+needs to be e3. So that's
+
+18
+00:01:35,382 --> 00:01:41,142
+the idea in principle. So let's look at an example with an actual
+
+19
+00:01:41,142 --> 00:01:46,102
+concrete matrix and we'll see how this works.
+
+20
+00:01:46,102 --> 00:01:52,102
+So let's suppose we have the map given by the matrix A -- 1 2 1,
+
+21
+00:01:52,102 --> 00:01:57,102
+2 5 1
+
+22
+00:01:57,102 --> 00:02:04,102
+-2 -5 0
+
+23
+00:02:04,102 --> 00:02:10,122
+All right, so if we want to figure out what v1 is, we need to figure out what A
+
+24
+00:02:10,122 --> 00:02:19,102
+maps to each one. So we kind of want to solve.
+
+25
+00:02:19,102 --> 00:02:27,102
+Ax produces e1.
+
+26
+00:02:27,102 --> 00:02:32,552
+So if we're thinking about that as an augmented matrix, we have A
+
+27
+00:02:32,552 --> 00:02:37,632
+two five one negative to negative five zero.
+
+28
+00:02:37,632 --> 00:02:45,252
+And we want to produce the vector one zero, zero.
+
+29
+00:02:45,252 --> 00:02:54,102
+And as usual, we're solving this system, so we'll compute the reduced row echelon form.
+
+30
+00:02:54,102 --> 00:02:59,102
+And we've produced the Matrix 1 0 0; 0 1 0
+
+31
+00:02:59,102 --> 00:03:04,102
+0 0 1. And we have
+
+32
+00:03:04,102 --> 00:03:12,312
+5 -2 0
+
+33
+00:03:12,312 --> 00:03:17,352
+So note that the left side here to the left of our augmented bar better
+
+34
+00:03:17,352 --> 00:03:22,102
+be the identity matrix because the left side here is just the row
+
+35
+00:03:22,102 --> 00:03:27,612
+reduced form of A. And so this simpler
+
+36
+00:03:27,612 --> 00:03:33,102
+system here is telling us that the first component is 5. The second component is 2. The last component
+
+37
+00:03:33,102 --> 00:03:38,102
+is zero. So now we know that T inverse e one,
+
+38
+00:03:38,102 --> 00:03:44,102
+that thing we're calling v1 is the vector
+
+39
+00:03:44,102 --> 00:03:49,102
+5 -2 0
+
+40
+00:03:49,102 --> 00:03:54,102
+All right. So that's gonna be the first column of A inverse. Maybe I will
+
+41
+00:03:54,102 --> 00:04:00,102
+change colors and write that up here. A Inverse.
+
+42
+00:04:00,102 --> 00:04:08,042
+The first column is 5 -2 0.
+
+43
+00:04:08,042 --> 00:04:15,102
+In our second column, we'll need to solve.
+
+44
+00:04:15,102 --> 00:04:21,102
+A X equals e2. So now
+
+45
+00:04:21,102 --> 00:04:26,102
+instead of augmenting with the vector 1 0 0 augment with the vector 0 1 0.
+
+46
+00:04:26,102 --> 00:04:37,102
+The left side is going to look the same.
+
+47
+00:04:37,102 --> 00:04:42,262
+We'll compute our reduced row echelon form, not surprisingly, to
+
+48
+00:04:42,262 --> 00:04:48,102
+the left of the augmented bar, we get the identity matrix again.
+
+49
+00:04:48,102 --> 00:04:55,102
+And now we produce the vector -5 -2 1
+
+50
+00:04:55,102 --> 00:05:01,582
+So this tells us that that vector v2 we were looking for
+
+51
+00:05:01,582 --> 00:05:07,102
+is equal to negative 5, negative 2
+
+52
+00:05:07,102 --> 00:05:12,102
+1. So T maps negative 5 negative 2 1 to our vector e2
+
+53
+00:05:12,102 --> 00:05:23,102
+So T inverse of e2 is negative 5 negative 2 and 1.
+
+54
+00:05:23,102 --> 00:05:28,102
+And finally, we'll do the same thing for our last basis vector we want
+
+55
+00:05:28,102 --> 00:05:34,102
+to solve A X equals e3.
+
+56
+00:05:34,102 --> 00:05:40,102
+So we'll do the reduced row echelon form
+
+57
+00:05:40,102 --> 00:05:49,672
+Now we're going to augment with e3.
+
+58
+00:05:49,672 --> 00:05:55,102
+Once again, type that in calculator and we produce
+
+59
+00:05:55,102 --> 00:06:00,322
+1 0 0 ; 0 1 0; 0 0 1;
+
+60
+00:06:00,322 --> 00:06:05,242
+And this gets augmented with negative 3 1 1.
+
+61
+00:06:05,242 --> 00:06:10,242
+Tells us that t of the vector -3 1 1
+
+62
+00:06:10,242 --> 00:06:16,242
+produces the vector 0 0 1
+
+63
+00:06:16,242 --> 00:06:21,242
+which is equivalent to saying that
+
+64
+00:06:21,242 --> 00:06:27,242
+T inverse of e3 ( 0 0 1 )
+
+65
+00:06:27,242 --> 00:06:32,242
+is -3 1 1. So that's our third
+
+66
+00:06:32,242 --> 00:06:42,012
+column of A inverse.
+
+67
+00:06:42,012 --> 00:06:49,242
+So this is our inverse matrix right here.
+
+68
+00:06:49,242 --> 00:06:54,962
+So one thing to noteis that if we're gonna do all these reductions by hand,
+
+69
+00:06:54,962 --> 00:07:00,092
+we think about kind of our algorithm moving from left to right across the matrix.
+
+70
+00:07:00,092 --> 00:07:05,232
+Here we're gonna do the same moves in all of these.
+
+71
+00:07:05,232 --> 00:07:10,332
+Three different row reductions we did. And what's happening to the right of the augmented bar is just
+
+72
+00:07:10,332 --> 00:07:15,492
+keeping track of what those moves are. So you can save yourself a little bit
+
+73
+00:07:15,492 --> 00:07:20,242
+of punching in the calculator here. If instead
+
+74
+00:07:20,242 --> 00:07:26,232
+you look at the matrix write down A
+
+75
+00:07:26,232 --> 00:07:32,242
+to 1 to 5 1 and negative 2 negative
+
+76
+00:07:32,242 --> 00:07:37,482
+and you can go ahead and augment with all three
+
+77
+00:07:37,482 --> 00:07:48,592
+of these at the same time.
+
+78
+00:07:48,592 --> 00:07:54,182
+And you can check if you type it in your calculator. What you end up with on the left side
+
+79
+00:07:54,182 --> 00:07:59,282
+is exactly as before because we're still doing the same moves. And on the right side, the first
+
+80
+00:07:59,282 --> 00:08:04,352
+column is what we got the first time. Second column is what we
+
+81
+00:08:04,352 --> 00:08:11,342
+got. The second time and the third column is what we got.
+
+82
+00:08:11,342 --> 00:08:16,402
+The third time. So kind of a shorter way of saying this
+
+83
+00:08:16,402 --> 00:08:22,832
+is that if you do the reduced row echelon form.
+
+84
+00:08:22,832 --> 00:08:28,552
+Your matrix, a augmented with the identity matrix.
+
+85
+00:08:28,552 --> 00:08:35,442
+You're going to produce the identity matrix augmented with.
+
+86
+00:08:35,442 --> 00:08:40,812
+The inverse matrix. So you can use this to save yourself a little bit of time typing
+
+87
+00:08:40,812 --> 00:08:46,542
+this into your calculator. You really only have to type one thing in here instead of doing three different
+
+88
+00:08:46,542 --> 00:08:47,730
+matrices.
+
