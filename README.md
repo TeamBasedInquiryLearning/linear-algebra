@@ -81,6 +81,12 @@ xsltproc --xinclude -o output/html/slides.html slides/pretext/xsl/pretext-reveal
   ```
   pretext build; xsltproc --xinclude -o slides/slides.ptx slides/extract-slides.xsl source/main.ptx; xsltproc --xinclude -o output/html/slides.html slides/pretext/xsl/pretext-revealjs.xsl slides/slides.ptx
   ```
+  
+- Or run this if you also need to rebuild `latex-image` diagrams:
+
+  ```
+  pretext build -d; xsltproc --xinclude -o slides/slides.ptx slides/extract-slides.xsl source/main.ptx; xsltproc --xinclude -o output/html/slides.html slides/pretext/xsl/pretext-revealjs.xsl slides/slides.ptx
+  ```
 
 This slideshow may be previewed with `pretext view`, and will be published with
 the rest of the HTML content.
