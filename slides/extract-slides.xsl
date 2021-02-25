@@ -66,15 +66,15 @@
         <xsl:apply-templates select="." mode="slides-title"/>
         <xsl:choose>
             <xsl:when test="statement|introduction">
-                <xsl:copy-of select="statement/*|introduction/*"/>
+                <xsl:apply-templates select="statement/*|introduction/*" mode="slideshow-copy"/>
                 <xsl:if test="task">
                     <ol label="(a)" pause="yes">
-                        <xsl:apply-templates select="task"/>
+                        <xsl:apply-templates select="task" mode="slideshow-copy"/>
                     </ol>
                 </xsl:if>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:copy-of select="*"/>
+                <xsl:apply-templates select="*" mode="slideshow-copy"/>
             </xsl:otherwise>
         </xsl:choose>
     </slide>
@@ -82,8 +82,40 @@
 
 <xsl:template match="task">
     <li>
-        <xsl:copy-of select="*"/>
+        <xsl:apply-templates select="*" mode="slideshow-copy"/>
     </li>
+</xsl:template>
+
+<!-- Identity template : copy all text nodes, elements and attributes -->
+    <!-- modified from https://stackoverflow.com/a/14985831 -->
+    <!-- Identity template : copy all text nodes, elements and attributes -->   
+    <xsl:template match="@*|node()" mode="slideshow-copy">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="slideshow-copy" />
+        </xsl:copy>
+    </xsl:template>
+
+<xsl:template match="image" mode="slideshow-copy">
+    <xsl:choose>
+        <xsl:when test="latex-image">
+            <image>
+                <xsl:attribute name="source">
+                    <xsl:text>images/</xsl:text>
+                    <xsl:apply-templates select="latex-image" mode="visible-id" />
+                    <xsl:text>.svg</xsl:text>
+                </xsl:attribute>
+            </image>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:copy-of select="." />
+        </xsl:otherwise>
+    </xsl:choose>
+</xsl:template>
+
+    <!-- stopgap overwrite from pretext-common until CLI is updated -->
+<xsl:template match="latex-image" mode="visible-id" >
+    <xsl:text>image-</xsl:text>
+    <xsl:number from="//book|article" level="any" count="latex-image" />
 </xsl:template>
 
 </xsl:stylesheet>
