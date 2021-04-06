@@ -1295,43 +1295,8 @@ Thus
 </solution>
 </example>
 
+
 <example><title>M2</title>
-<statement>
-    <p>
-Explain why the matrix <m>\left[\begin{array}{ccc}1 &amp; 3 &amp; 2  \\ 2 &amp; 4 &amp; 6  \\ 1 &amp; 6 &amp; -1 \end{array}\right]</m> is or is not invertible.
-    </p>
-</statement>
-<solution>
-    <p>
-We compute
-<me>\RREF\left(\left[\begin{array}{ccc}1 &amp; 3 &amp; 2  \\ 2 &amp; 4 &amp; 6  \\ 1 &amp; 6 &amp; -1 \end{array}\right]\right) = \left[\begin{array}{ccc} 1 &amp; 0 &amp; 5 \\ 0 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 \end{array}\right].</me>
-Since its <m>\RREF</m> is not the identity matrix, the linear map is not bijective and thus the matrix is not invertible.
-    </p>
-</solution>
-</example>
-
-<example><title>M3</title>
-<statement>
-    <p>
-Show how to compute the inverse of the matrix
-<m>A=\left[\begin{array}{cccc}
-1 &amp; 2 &amp; 3 &amp; 5 \\ 0 &amp; -1 &amp; 4 &amp; -2 \\ 0 &amp; 0 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 0 &amp; 1
-\end{array}\right]</m>.
-    </p>
-</statement>
-<solution>
-    <p>
-To find the matrix <m>A^{-1}</m> where <m>AA^{-1}=I</m>, we need to solve the augmented matrix <m>[A|I]</m>.
-<me>\RREF\left(\left[\begin{array}{cccc|cccc} 1 &amp; 2 &amp; 3 &amp; 5 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\ 0 &amp; -1 &amp; 4 &amp; -2 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 3 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]\right) = \left[\begin{array}{cccc|cccc} 1 &amp; 0 &amp; 0 &amp;0 &amp; 1 &amp; 2 &amp; -11 &amp; 32 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 4 &amp; -14 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]</me>
-So the inverse is <m>\left[\begin{array}{cccc}  1 &amp; 2 &amp; -11 &amp; 32 \\ 0 &amp; -1 &amp; 4 &amp; -14 \\  0 &amp; 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]</m>.
-    </p>
-</solution>
-</example>
-
-
-
-
-<example><title>M4</title>
 <statement>
     <p>
 Let <m>A</m> be a <m>4\times4</m> matrix.
@@ -1378,6 +1343,41 @@ Use matrix multiplication to describe the matrix obtained by applying
     </ol>
 </solution>
 </example>
+
+<example><title>M3</title>
+<statement>
+    <p>
+Explain why the matrix <m>\left[\begin{array}{ccc}1 &amp; 3 &amp; 2  \\ 2 &amp; 4 &amp; 6  \\ 1 &amp; 6 &amp; -1 \end{array}\right]</m> is or is not invertible.
+    </p>
+</statement>
+<solution>
+    <p>
+We compute
+<me>\RREF\left(\left[\begin{array}{ccc}1 &amp; 3 &amp; 2  \\ 2 &amp; 4 &amp; 6  \\ 1 &amp; 6 &amp; -1 \end{array}\right]\right) = \left[\begin{array}{ccc} 1 &amp; 0 &amp; 5 \\ 0 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 \end{array}\right].</me>
+Since its <m>\RREF</m> is not the identity matrix, the linear map is not bijective and thus the matrix is not invertible.
+    </p>
+</solution>
+</example>
+
+<example><title>M4</title>
+<statement>
+    <p>
+Show how to compute the inverse of the matrix
+<m>A=\left[\begin{array}{cccc}
+1 &amp; 2 &amp; 3 &amp; 5 \\ 0 &amp; -1 &amp; 4 &amp; -2 \\ 0 &amp; 0 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]</m>.
+    </p>
+</statement>
+<solution>
+    <p>
+To find the matrix <m>A^{-1}</m> where <m>AA^{-1}=I</m>, we need to solve the augmented matrix <m>[A|I]</m>.
+<me>\RREF\left(\left[\begin{array}{cccc|cccc} 1 &amp; 2 &amp; 3 &amp; 5 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\ 0 &amp; -1 &amp; 4 &amp; -2 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 3 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]\right) = \left[\begin{array}{cccc|cccc} 1 &amp; 0 &amp; 0 &amp;0 &amp; 1 &amp; 2 &amp; -11 &amp; 32 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 4 &amp; -14 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]</me>
+So the inverse is <m>\left[\begin{array}{cccc}  1 &amp; 2 &amp; -11 &amp; 32 \\ 0 &amp; -1 &amp; 4 &amp; -14 \\  0 &amp; 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]</m>.
+    </p>
+</solution>
+</example>
+
+
 
 <example><title>G1</title>
 <statement>
