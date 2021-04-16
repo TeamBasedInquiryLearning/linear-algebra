@@ -25,7 +25,7 @@
     <xsl:copy-of select="title"/>
     <xsl:copy-of select="subtitle"/>
     <xsl:apply-templates select="frontmatter"/>
-    <xsl:apply-templates select="chapter"/>
+    <xsl:apply-templates select="chapter|backmatter/appendix"/>
 </xsl:template>
 
 <xsl:template match="frontmatter">
@@ -43,7 +43,7 @@
     </title>
 </xsl:template>
 
-<xsl:template match="chapter">
+<xsl:template match="chapter|backmatter/appendix">
     <section>
         <xsl:apply-templates select="." mode="slides-title"/>
     </section>
