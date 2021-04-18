@@ -1,0 +1,478 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="geology" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Computer Science: PageRank</title>
+
+    <activity tbil-time="10">
+        <title>
+The $978,000,000,000 Problem
+        </title>
+        <statement>
+            <p>
+            </p>
+            <p>
+In the picture below, each circle represents a webpage, and each arrow
+represents a link from one page to another.
+            </p>
+        <figure>
+        <image width="75%">
+            <latex-image>
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+    \node (4) at (4,4) {4};
+    \node (5) at (6,4) {5};
+    \node (6) at (10,4) {6} ;
+    \node (7) at (6,0) {7} ;
+\end{scope}
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (4);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (2) edge (3);
+    \draw [->] (3) edge (4);
+    \draw [->] (3) edge (7);
+    \draw [->] (4) edge (2);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (5) edge (7);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (7);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+                </latex-image>
+        </image>
+            <caption>A seven-webpage network</caption>
+    </figure>
+            <p>
+Based on how these pages link to each other,
+write a list of the 7 webpages in order from
+most imptorant to least important.
+            </p>
+        </statement>
+    </activity>
+
+    <observation>
+        <title>
+The $978,000,000,000 Idea
+        </title>
+        <p>
+Links are endorsements. That is:
+        </p>
+        <ol>
+            <li>
+                <p>
+A webpage is important if it is linked to (endorsed) by important pages.
+                </p>
+            </li>
+            <li>
+                <p>
+A webpage distributes its importance equally among all the pages it links to
+(endorses).
+                </p>
+            </li>
+        </ol>
+    </observation>
+
+
+    <example>
+        <p>
+Consider this small network with only three pages.  Let <m>x_1, x_2, x_3</m> be the importance of the three pages respectively.
+        </p>
+        <figure>
+        <image width="75%">
+            <latex-image>
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+\end{scope}
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (3);
+	\path [->] (2) edge[bend right=30] (1);
+   \draw [->] (3) edge (2);
+\end{scope}
+\end{tikzpicture}
+                </latex-image>
+        </image>
+            <caption>A three-webpage network</caption>
+    </figure>
+            <ol>
+    <li> <m>x_1</m> splits its endorsement in half between <m>x_2</m> and <m>x_3</m></li>
+    <li> <m>x_2</m> sends all of its endorsement to <m>x_1</m></li>
+    <li> <m>x_3</m> sends all of its endorsement to <m>x_2</m>.</li>
+            </ol>
+
+        <p>
+This corresponds to the <term>page rank system</term>:
+        </p>
+        <md alignat-columns='4' alignment="alignat">
+<mrow>  &amp;&amp; x_2 &amp;&amp; &amp;=&amp; x_1 </mrow>
+<mrow>\frac{1}{2} x_1&amp;&amp; &amp;+&amp;x_3 &amp;=&amp; x_2</mrow>
+<mrow>\frac{1}{2} x_1&amp;&amp; &amp;&amp; &amp;=&amp; x_3</mrow>
+        </md>
+    </example>
+
+
+
+
+<observation>
+    <statement>
+        <figure>
+        <image width="75%">
+            <latex-image>
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+\end{scope}
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (3);
+	\path [->] (2) edge[bend right=30] (1);
+   \draw [->] (3) edge (2);
+\end{scope}
+\end{tikzpicture}
+                </latex-image>
+        </image>
+            <caption>A three-webpage network</caption>
+        </figure>
+        <sidebyside widths="45% 45%">
+            <p>
+        <md alignat-columns='4' alignment="alignat">
+<mrow>  &amp;&amp; x_2 &amp;&amp; &amp;=&amp; x_1 </mrow>
+<mrow>\frac{1}{2} x_1&amp;&amp; &amp;+&amp;x_3 &amp;=&amp; x_2</mrow>
+<mrow>\frac{1}{2} x_1&amp;&amp; &amp;&amp; &amp;=&amp; x_3</mrow>
+        </md>
+            </p>
+            <p>
+  <me>
+    \begin{bmatrix}0&amp;1&amp;0\\\frac{1}{2}&amp;0 &amp; 1\\\frac{1}{2}&amp;0&amp;0\end{bmatrix}
+    \begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+  =
+    \begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+        </me>
+            </p>
+        </sidebyside>
+        <p>
+By writing this linear system in terms of matrix multiplication, we obtain the
+<term>page rank matrix</term>
+<m>
+  A
+    =
+  \begin{bmatrix}
+    0 &amp; 1 &amp; 0 \\
+    \frac{1}{2} &amp; 0 &amp; 1 \\
+    \frac{1}{2} &amp; 0 &amp; 0
+  \end{bmatrix}
+</m> and page rank vector
+            <m>\vec{x}=\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}</m>.
+        </p><p>
+Thus, computing the importance of pages on a network is equivalent to solving
+the matrix equation <m>A\vec{x}=1\vec{x}</m>.
+        </p>
+    </statement>
+</observation>
+
+
+    <activity tbil-time="5">
+        <p>
+Thus, our $978,000,000,000 problem is what kind of problem?
+            <me>
+    \begin{bmatrix}0&amp;1&amp;0\\\frac{1}{2}&amp;0&amp;\frac{1}{2}\\\frac{1}{2}&amp;0&amp;0\end{bmatrix}
+    \begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+  =
+    1\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+            </me>
+        </p>
+        <ol label="a">
+<li>An antiderivative problem</li>
+<li>A bijection problem</li>
+<li>A cofactoring problem</li>
+<li>A determinant problem</li>
+<li>An eigenvector problem</li>
+        </ol>
+    </activity>
+
+    <activity tbil-time="10">
+        <statement>
+        <p>
+Find a page rank vector <m>\vec x</m> satisfying <m>A\vec x=1\vec x</m>
+for the following network's page rank matrix <m>A</m>.
+        </p>
+            <p>
+That is, find the eigenspace associated with <m>\lambda=1</m> for the matrix
+<m>A</m>, and choose a vector from that eigenspace.
+            </p>
+            <sidebyside widths="45% 45%">
+        <figure>
+        <image width="75%">
+            <latex-image>
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+\end{scope}
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (3);
+	\path [->] (2) edge[bend right=30] (1);
+   \draw [->] (3) edge (2);
+\end{scope}
+\end{tikzpicture}
+                </latex-image>
+        </image>
+            <caption>A three-webpage network</caption>
+        </figure>
+                <p>
+<me>
+  A
+    =
+  \begin{bmatrix}
+    0 &amp; 1 &amp; 0 \\
+    \frac{1}{2} &amp; 0 &amp; 1 \\
+    \frac{1}{2} &amp; 0 &amp; 0
+  \end{bmatrix}
+                </me>
+                </p>
+            </sidebyside>
+        </statement>
+    </activity>
+
+
+
+    <observation>
+        <statement>
+            <p>
+Row-reducing
+<m>
+  A-I
+    =
+  \begin{bmatrix}
+    -1 &amp; 1 &amp; 0 \\
+    \frac{1}{2} &amp; -1 &amp; 1 \\
+    \frac{1}{2} &amp; 0 &amp; -1
+  \end{bmatrix}
+    \sim
+  \begin{bmatrix}
+    1 &amp; 0 &amp; -2 \\
+    0 &amp; 1 &amp; -2 \\
+    0 &amp; 0 &amp; 0
+  \end{bmatrix}
+                </m>
+yields the basic eigenvector <m>\begin{bmatrix} 2 \\ 2 \\1 \end{bmatrix}</m>.
+            </p><p>
+Therefore, we may conclude that pages <m>1</m> and <m>2</m> are equally important,
+and both pages are twice as important as page <m>3</m>.
+            </p>
+        </statement>
+    </observation>
+
+    <activity tbil-time="5">
+        <statement>
+            <p>
+    Compute the <m>7 \times 7</m> page rank matrix for the following network.
+            </p>
+        <figure>
+        <image width="75%">
+            <latex-image>
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+    \node (4) at (4,4) {4};
+    \node (5) at (6,4) {5};
+    \node (6) at (10,4) {6} ;
+    \node (7) at (6,0) {7} ;
+\end{scope}
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (4);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (2) edge (3);
+    \draw [->] (3) edge (4);
+    \draw [->] (3) edge (7);
+    \draw [->] (4) edge (2);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (5) edge (7);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (7);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+                </latex-image>
+        </image>
+            <caption>A seven-webpage network</caption>
+    </figure>
+            <p>
+    For example, since website <m>1</m> distributes its endorsement equally between <m>2</m> and <m>4</m>, the first column is <m>\begin{bmatrix} 0 \\ \frac{1}{2} \\ 0 \\ \frac{1}{2} \\ 0 \\ 0 \\ 0 \end{bmatrix}</m>.
+            </p>
+        </statement>
+    </activity>
+
+    <activity>
+        <statement>
+            <p>
+Find a page rank vector for the given page rank matrix.
+            </p>
+            <sidebyside>
+                <p>
+            <me>
+A=\begin{bmatrix}
+0 &amp; \frac{1}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+\frac{1}{2} &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; \frac{1}{2} \\
+0 &amp; \frac{1}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+\frac{1}{2} &amp; 0 &amp; \frac{1}{2} &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \frac{1}{2} &amp; 0 &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; 0
+\end{bmatrix}
+            </me>
+                </p>
+        <figure>
+        <image width="75%">
+            <latex-image>
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+    \node (4) at (4,4) {4};
+    \node (5) at (6,4) {5};
+    \node (6) at (10,4) {6} ;
+    \node (7) at (6,0) {7} ;
+\end{scope}
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (4);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (2) edge (3);
+    \draw [->] (3) edge (4);
+    \draw [->] (3) edge (7);
+    \draw [->] (4) edge (2);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (5) edge (7);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (7);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+                </latex-image>
+        </image>
+            <caption>A seven-webpage network</caption>
+    </figure>
+            </sidebyside>
+            <p>
+Which webpage is most important?
+            </p>
+        </statement>
+    </activity>
+
+    <observation>
+        <statement>
+            <p>
+Since a page rank vector for the network is given by <m>\vec x</m>,
+it's reasonable to consider page <m>2</m> as the most important page.
+<me>
+  \vec{x}
+    =
+  \begin{bmatrix} 2 \\ 4 \\2 \\ 2.5 \\ 0 \\ 0 \\ 1\end{bmatrix}
+            </me>
+            </p>
+            <p>
+Based upon this page rank vector,
+here is a complete ranking of all seven pages from most important to least important:
+            <me>
+  2, 4, 1, 3, 7, 5, 6
+                </me>
+            </p>
+         <figure>
+        <image width="75%">
+            <latex-image>
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4) {1};
+    \node (2) at (0,0) {2};
+    \node (3) at (4,0) {3};
+    \node (4) at (4,4) {4};
+    \node (5) at (6,4) {5};
+    \node (6) at (10,4) {6} ;
+    \node (7) at (6,0) {7} ;
+\end{scope}
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge[bend right=30] (2);
+    \draw [->] (1) edge (4);
+	\path [->] (2) edge[bend right=30] (1);
+    \draw [->] (2) edge (3);
+    \draw [->] (3) edge (4);
+    \draw [->] (3) edge (7);
+    \draw [->] (4) edge (2);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (5) edge (7);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (7);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+                </latex-image>
+        </image>
+            <caption>A seven-webpage network</caption>
+            </figure>
+        </statement>
+    </observation>
+
+
+
+    <activity tbil-time="10">
+        <statement>
+            <p>
+Given the following diagram,
+use a page rank vector to rank the pages <m>1</m> through <m>7</m> in order
+from most important to least important.
+            </p>
+         <figure>
+        <image width="75%">
+            <latex-image>
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (1) at (0,4)  {1};
+    \node (2) at (3,4)  {2};
+    \node (3) at (6,4)  {3};
+    \node (4) at (10,4) {4};
+    \node (5) at (0,0)  {5};
+    \node (6) at (3,0)  {6};
+    \node (7) at (6,0)  {7} ;
+\end{scope}
+
+\begin{scope}[>={Stealth[red]}, every edge/.style={draw=red,very thick}]
+    \draw [->] (1) edge (2);
+    \draw [->] (1) edge (5);
+    \draw [->] (2) edge (5);
+    \draw [->] (2) edge[bend left=30] (7);
+    \draw [->] (3) edge[bend right=30] (1);
+    \draw [->] (3) edge (2);
+    \draw [->] (4) edge (3);
+    \draw [->] (5) edge[bend right=30] (6);
+    \draw [->] (6) edge[bend right=30] (5);
+    \draw [->] (6) edge (2);
+    \draw [->] (7) edge (4);
+    \draw [->] (7) edge[bend left=30] (2);
+\end{scope}
+\end{tikzpicture}
+                </latex-image>
+        </image>
+            <caption>Another seven-webpage network</caption>
+            </figure>
+        </statement>
+</activity>
+</section>
