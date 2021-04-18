@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-03-24T14:12:34-05:00       *-->
+<!--*       on 2021-04-18T18:55:38Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -86,7 +86,7 @@ dfn {
 <td align="center"></td>
 </tr>
 </table>
-<h4><div xmlns:svg="http://www.w3.org/2000/svg" class="date">March 24, 2021</div></h4></section></section><section><section><h1>Chapter 1: Systems of Linear Equations (E)</h1></section></section><section><section><h1>Section 1.1: Linear Systems, Vector Equations, and Augmented Matrices (E1)</h1></section><section><h3>Definition 1.1.1</h3>
+<h4><div xmlns:svg="http://www.w3.org/2000/svg" class="date">April 18, 2021</div></h4></section></section><section><section><h1>Chapter 1: Systems of Linear Equations (E)</h1></section></section><section><section><h1>Section 1.1: Linear Systems, Vector Equations, and Augmented Matrices (E1)</h1></section><section><h3>Definition 1.1.1</h3>
 <div align="left"> <p>A <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">linear equation</dfn> is an equation of the variables \(x_i\) of the form<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 a_1x_1+a_2x_2+\dots+a_nx_n=b\text{.}
@@ -2709,8 +2709,8 @@ B\left[\begin{array}{c}\frac{3}{4}\\\frac{1}{2}\end{array}\right]
 </div></section><section><h3>Activity 5.1.5</h3>
 <div align="left"> <p>The transformations of the unit square by the standard matrices \([\vec{v}\hspace{0.5em} \vec{w}]\) and \([c\vec{v}\hspace{0.5em} \vec{w}]\) are illustrated below. Describe the value of \(\det([c\vec{v}\hspace{0.5em} \vec{w}])\text{.}\)</p> <figure class="figure figure-like" id="figure-24"><img src="images/image-24.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">24<span class="period">.</span></span><span class="space"> </span>Parallelogram spanned by \(c\vec{v}\) and \(\vec{w}\)</figcaption></figure> <ol>
 <li><p>\(\displaystyle \det([\vec{v}\hspace{0.5em} \vec{w}])\)</p></li>
-<li><p>\(\displaystyle \det([\vec{v}\hspace{0.5em} \vec{w}])+c\det([\vec{v}\hspace{0.5em} \vec{w}]\)</p></li>
 <li><p>\(\displaystyle c\det([\vec{v}\hspace{0.5em} \vec{w}])\)</p></li>
+<li><p>\(\displaystyle c^2\det([\vec{v}\hspace{0.5em} \vec{w}])\)</p></li>
 <li><p>Cannot be determined from this information.</p></li>
 </ol>
 </div></section><section><h3>Activity 5.1.6</h3>
@@ -3067,6 +3067,46 @@ c\det\left[\begin{array}{c}\vdots\\R\\\vdots\end{array}\right]\)</p></li>
 </ol>
 </div></section><section><h3>Observation 5.2.4</h3>
 <div align="left"> <p>Using row/column operations, you can introduce zeros and reduce dimension to whittle down the determinant of a large matrix to a determinant of a smaller matrix.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\det\left[\begin{array}{cccc}
+4 &amp; 3 &amp; 0 &amp; 1 \\ 
+2 &amp; -2 &amp; 4 &amp; 0 \\ 
+-1 &amp; 4 &amp; 1 &amp; 5 \\ 
+2 &amp; 8 &amp; 0 &amp; 3 
+\end{array}\right]
+&amp;=
+\det\left[\begin{array}{cccc}
+4 &amp; 3 &amp; {\color{red} 0} &amp; 1 \\ 
+6 &amp; -18 &amp; {\color{red} 0} &amp; -20 \\ 
+{\color{red} -1} &amp; {\color{red} 4} &amp; 
+{\color{red} 1} &amp; {\color{red} 5} \\ 
+2 &amp; 8 &amp; {\color{red} 0} &amp; 3 
+\end{array}\right]
+=
+\det\left[\begin{array}{ccc}
+4 &amp; 3 &amp; 1 \\ 
+6 &amp; -18 &amp; -20 \\ 
+2 &amp; 8 &amp; 3 
+\end{array}\right]\\
+&amp;=\dots=
+-2\det\left[\begin{array}{ccc}
+{\color{red} 1} &amp; {\color{red} 3} &amp; {\color{red} 4} \\
+{\color{red} 0} &amp; 21 &amp; 43 \\ 
+{\color{red} 0} &amp; -1 &amp; -10 
+\end{array}\right]
+=
+-2\det\left[\begin{array}{cc} 21 &amp; 43 \\ -1 &amp; -10 \end{array}\right]\\
+&amp;= \dots=
+-2\det\left[\begin{array}{cc}
+-167 &amp; {\color{red}{21}} \\
+{\color{red} 0} &amp; {\color{red} 1}
+\end{array}\right]
+= -2\det[-167]\\
+&amp;=-2(-167)\det(I)=
+334
+\end{align*}
+</div>
 </div></section><section><h3>Activity 5.2.5</h3>
 <div align="left"> <p>Rewrite<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
@@ -3264,7 +3304,407 @@ A-(-2)I
 <div align="left"> <p>Find a basis for the eigenspace for the matrix \(\left[\begin{array}{cccc}
 4 &amp; 3 &amp; 0 &amp; 0 \\ 3 &amp; 3 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 2 &amp; 5 \\ 0 &amp; 0 &amp; 0 &amp; 2
 \end{array}\right]\) associated with the eigenvalue \(2\text{.}\)</p>
-</div></section></section>
+</div></section></section><section><section><h1>Appendix A: Applications</h1></section></section><section><section><h1>Section A.1: Geology: Phases and Components</h1></section><section><h3>Definition A.1.1</h3>
+<div align="left"> <p>In geology, a <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">phase</dfn> is any physically separable material in the system, such as various minerals or liquids.</p> <p>A <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">component</dfn> is a chemical compound necessary to make up the phases; these are usually oxides such as Calcium Oxide (\({\rm CaO}\)) or Silicone Dioxide (\({\rm SiO_2}\)).</p> <p>In a typical application, a geologist knows how to build each phase from the components, and is interested in determining reactions among the different phases.</p>
+</div></section><section><h3>Observation A.1.2</h3>
+<div align="left"> <p>Consider the 3 components<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec{c}_1={\rm CaO} \hspace{1em} \vec{c}_2={\rm MgO} \hspace{1em} \text{and } \vec{c}_3={\rm SiO_2}
+\end{equation*}
+</div>and the 5 phases:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vec{p}_1 &amp;= {\rm Ca_3MgSi_2O_8} &amp; \vec{p}_2 &amp;= {\rm CaMgSiO_4} &amp; \vec{p}_3 &amp;= {\rm CaSiO_3}\\
+\vec{p}_4 &amp;= {\rm CaMgSi_2O_6} &amp; \vec{p}_5 &amp;= {\rm Ca_2MgSi_2O_7}
+\end{align*}
+</div></p> <p>Geologists already know (or can easily deduce) that<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vec{p}_1 &amp;= 3\vec{c}_1 + \vec{c}_2 + 2 \vec{c}_3 &amp; \vec{p}_2 &amp;= \vec{c}_1 +\vec{c}_2 + \vec{c}_3  &amp;
+\vec{p}_3 &amp;= \vec{c}_1 + 0\vec{c}_2 +  \vec{c}_3\\
+\vec{p}_4 &amp;= \vec{c}_1 +\vec{c}_2 + 2\vec{c}_3 &amp;  \vec{p}_5 &amp;= 2\vec{c}_1 + \vec{c}_2 + 2 \vec{c}_3 
+\end{align*}
+</div>since, for example:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec c_1+\vec c_3 = \mathrm{CaO} + \mathrm{SiO_2} = \mathrm{CaSiO_3} = \vec p_3  
+\end{equation*}
+</div></p>
+</div></section><section><h3>Activity A.1.1</h3>
+<div align="left"> <p>To study this vector space, each of the three components \(\vec c_1,\vec c_2,\vec c_3\) may be considered as the three components of a Euclidean vector.<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec{p}_1 = \begin{bmatrix} 3 \\ 1 \\ 2 \end{bmatrix},
+\vec{p}_2 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix},
+\vec{p}_3 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix},
+\vec{p}_4 = \begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix},
+\vec{p}_5 = \begin{bmatrix} 2 \\ 1 \\ 2 \end{bmatrix}.
+\end{equation*}
+</div></p> <p>Determine if the set of phases is linearly dependent or linearly independent.</p>
+</div></section><section><h3>Activity A.1.2</h3>
+<div align="left"> <p>Geologists are interested in knowing all the possible chemical reactions among the 5 phases:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec{p}_1 = \mathrm{Ca_3MgSi_2O_8} = \begin{bmatrix} 3 \\ 1 \\ 2 \end{bmatrix} \hspace{1em}
+\vec{p}_2 = \mathrm{CaMgSiO_4} = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} \hspace{1em}
+\vec{p}_3 = \mathrm{CaSiO_3} =  \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}
+\end{equation*}
+</div><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec{p}_4 = \mathrm{CaMgSi_2O_6} = \begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix} \hspace{1em}
+\vec{p}_5 = \mathrm{Ca_2MgSi_2O_7} = \begin{bmatrix} 2 \\ 1 \\ 2 \end{bmatrix}.
+\end{equation*}
+</div>That is, they want to find numbers \(x_1,x_2,x_3,x_4,x_5\) such that<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x_1\vec{p}_1+x_2\vec{p}_2+x_3\vec{p_3}+x_4\vec{p}_4+x_5\vec{p}_5 = 0.
+\end{equation*}
+</div></p> <ol>
+<article class="task exercise-like" id="task-100"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
+<p>Set up a system of equations equivalent to this vector equation.</p></article><article class="task exercise-like" id="task-101"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
+<p>Find a basis for its solution space.</p></article><article class="task exercise-like" id="task-102"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
+<p>Interpret each basis vector as a vector equation and a chemical equation.</p></article>
+</ol>
+</div></section><section><h3>Activity A.1.3</h3>
+<div align="left"> <p>We found two basis vectors \(\begin{bmatrix} 1 \\ -2 \\ -2 \\ 1 \\ 0 \end{bmatrix}\) and \(\begin{bmatrix} 0 \\ -1 \\ -1 \\ 0 \\ 1 \end{bmatrix}\text{,}\) corresponding to the vector and chemical equations<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+2\vec{p}_2 + 2 \vec{p}_3 &amp;= \vec{p}_1 + \vec{p}_4 &amp; 2{\rm CaMgSiO_4}+2{\rm CaSiO_3}&amp;={\rm Ca_3MgSi_2O_8}+{\rm CaMgSi_2O_6}\\
+\vec{p}_2 +\vec{p}_3 &amp;= \vec{p}_5 &amp;  {\rm CaMgSiO_4} + {\rm CaSiO_3} &amp;= {\rm Ca_2MgSi_2O_7}
+\end{align*}
+</div></p> <p>Combine the basis vectors to produce a chemical equation among the five phases that does not involve \(\vec{p}_2 = {\rm CaMgSiO_4}\text{.}\)</p>
+</div></section></section><section><section><h1>Section A.2: Computer Science: PageRank</h1></section><section><h3>Activity A.2.1: The $978,000,000,000 Problem</h3>
+<div align="left"> <p></p> <p>In the picture below, each circle represents a webpage, and each arrow represents a link from one page to another.</p> <figure class="figure figure-like" id="figure-32"><img src="images/image-32.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">32<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure> <p>Based on how these pages link to each other, write a list of the 7 webpages in order from most imptorant to least important.</p>
+</div></section><section><h3>Observation A.2.2: The $978,000,000,000 IdeaThe $978,000,000,000 Idea</h3>
+<div align="left">  <p>Links are endorsements. That is:</p> <ol>
+<li><p>A webpage is important if it is linked to (endorsed) by important pages.</p></li>
+<li><p>A webpage distributes its importance equally among all the pages it links to (endorses).</p></li>
+</ol>
+</div></section><section><h3>Example A.2.3</h3>
+<div align="left"> <p>Consider this small network with only three pages.  Let \(x_1, x_2, x_3\) be the importance of the three pages respectively.</p> <figure class="figure figure-like" id="figure-33"><img src="images/image-33.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">33<span class="period">.</span></span><span class="space"> </span>A three-webpage network</figcaption></figure> <ol>
+<li>\(x_1\) splits its endorsement in half between \(x_2\) and \(x_3\)</li>
+<li>\(x_2\) sends all of its endorsement to \(x_1\)</li>
+<li>\(x_3\) sends all of its endorsement to \(x_2\text{.}\)</li>
+</ol> <p>This corresponds to the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">page rank system</dfn>:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{alignat*}{4}
+&amp;&amp; x_2 &amp;&amp; &amp;=&amp; x_1 \\
+\frac{1}{2} x_1&amp;&amp; &amp;+&amp;x_3 &amp;=&amp; x_2\\
+\frac{1}{2} x_1&amp;&amp; &amp;&amp; &amp;=&amp; x_3
+\end{alignat*}
+</div>
+</div></section><section><h3>Observation A.2.5</h3>
+<div align="left"> <figure class="figure figure-like" id="figure-34"><img src="images/image-34.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">34<span class="period">.</span></span><span class="space"> </span>A three-webpage network</figcaption></figure> <div style="display:table;margin-left:2.5%;margin-right:2.5%;">
+<div style="display:table-cell;width:47.3684210526316%;vertical-align:top;"><p><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath" id="p-782">
+\begin{alignat*}{4}
+&amp;&amp; x_2 &amp;&amp; &amp;=&amp; x_1 \\
+\frac{1}{2} x_1&amp;&amp; &amp;+&amp;x_3 &amp;=&amp; x_2\\
+\frac{1}{2} x_1&amp;&amp; &amp;&amp; &amp;=&amp; x_3
+\end{alignat*}
+</div></p></div>
+<div style="display:table-cell;width:47.3684210526316%;vertical-align:top;"><p><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath" id="p-783">
+\begin{equation*}
+\begin{bmatrix}0&amp;1&amp;0\\\frac{1}{2}&amp;0 &amp; 1\\\frac{1}{2}&amp;0&amp;0\end{bmatrix}
+\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+=
+\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+\end{equation*}
+</div></p></div>
+</div> <p>By writing this linear system in terms of matrix multiplication, we obtain the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">page rank matrix</dfn> \(A
+=
+\begin{bmatrix}
+0 &amp; 1 &amp; 0 \\
+\frac{1}{2} &amp; 0 &amp; 1 \\
+\frac{1}{2} &amp; 0 &amp; 0
+\end{bmatrix}\) and page rank vector \(\vec{x}=\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\text{.}\)</p> <p>Thus, computing the importance of pages on a network is equivalent to solving the matrix equation \(A\vec{x}=1\vec{x}\text{.}\)</p>
+</div></section><section><h3>Activity A.2.2</h3>
+<div align="left"> <p>Thus, our $978,000,000,000 problem is what kind of problem?<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{bmatrix}0&amp;1&amp;0\\\frac{1}{2}&amp;0&amp;\frac{1}{2}\\\frac{1}{2}&amp;0&amp;0\end{bmatrix}
+\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+=
+1\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+\end{equation*}
+</div></p> <ol>
+<li>An antiderivative problem</li>
+<li>A bijection problem</li>
+<li>A cofactoring problem</li>
+<li>A determinant problem</li>
+<li>An eigenvector problem</li>
+</ol>
+</div></section><section><h3>Activity A.2.3</h3>
+<div align="left"> <p>Find a page rank vector \(\vec x\) satisfying \(A\vec x=1\vec x\) for the following network's page rank matrix \(A\text{.}\)</p> <p>That is, find the eigenspace associated with \(\lambda=1\) for the matrix \(A\text{,}\) and choose a vector from that eigenspace.</p> <div style="display:table;margin-left:2.5%;margin-right:2.5%;">
+<div style="display:table-cell;width:47.3684210526316%;vertical-align:top;"><figure class="figure figure-like" id="figure-35"><img src="images/image-35.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">35<span class="period">.</span></span><span class="space"> </span>A three-webpage network</figcaption></figure></div>
+<div style="display:table-cell;width:47.3684210526316%;vertical-align:top;"><p><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath" id="p-789">
+\begin{equation*}
+A
+=
+\begin{bmatrix}
+0 &amp; 1 &amp; 0 \\
+\frac{1}{2} &amp; 0 &amp; 1 \\
+\frac{1}{2} &amp; 0 &amp; 0
+\end{bmatrix}
+\end{equation*}
+</div></p></div>
+</div>
+</div></section><section><h3>Observation A.2.8</h3>
+<div align="left"> <p>Row-reducing \(A-I
+=
+\begin{bmatrix}
+-1 &amp; 1 &amp; 0 \\
+\frac{1}{2} &amp; -1 &amp; 1 \\
+\frac{1}{2} &amp; 0 &amp; -1
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 &amp; 0 &amp; -2 \\
+0 &amp; 1 &amp; -2 \\
+0 &amp; 0 &amp; 0
+\end{bmatrix}\) yields the basic eigenvector \(\begin{bmatrix} 2 \\ 2 \\1 \end{bmatrix}\text{.}\)</p> <p>Therefore, we may conclude that pages \(1\) and \(2\) are equally important, and both pages are twice as important as page \(3\text{.}\)</p>
+</div></section><section><h3>Activity A.2.4</h3>
+<div align="left"> <p>Compute the \(7 \times 7\) page rank matrix for the following network.</p> <figure class="figure figure-like" id="figure-36"><img src="images/image-36.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">36<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure> <p>For example, since website \(1\) distributes its endorsement equally between \(2\) and \(4\text{,}\) the first column is \(\begin{bmatrix} 0 \\ \frac{1}{2} \\ 0 \\ \frac{1}{2} \\ 0 \\ 0 \\ 0 \end{bmatrix}\text{.}\)</p>
+</div></section><section><h3>Activity A.2.5</h3>
+<div align="left"> <p>Find a page rank vector for the given page rank matrix.</p> <div style="display:table;margin-left:0%;margin-right:0%;">
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath" id="p-795">
+\begin{equation*}
+A=\begin{bmatrix}
+0 &amp; \frac{1}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+\frac{1}{2} &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; \frac{1}{2} \\
+0 &amp; \frac{1}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+\frac{1}{2} &amp; 0 &amp; \frac{1}{2} &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \frac{1}{2} &amp; 0 &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; 0
+\end{bmatrix}
+\end{equation*}
+</div></p></div>
+<div style="display:table-cell;width:50%;vertical-align:top;"><figure class="figure figure-like" id="figure-37"><img src="images/image-37.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">37<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure></div>
+</div> <p>Which webpage is most important?</p>
+</div></section><section><h3>Observation A.2.11</h3>
+<div align="left"> <p>Since a page rank vector for the network is given by \(\vec x\text{,}\) it's reasonable to consider page \(2\) as the most important page.<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec{x}
+=
+\begin{bmatrix} 2 \\ 4 \\2 \\ 2.5 \\ 0 \\ 0 \\ 1\end{bmatrix}
+\end{equation*}
+</div></p> <p>Based upon this page rank vector, here is a complete ranking of all seven pages from most important to least important:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+2, 4, 1, 3, 7, 5, 6
+\end{equation*}
+</div></p> <figure class="figure figure-like" id="figure-38"><img src="images/image-38.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">38<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure>
+</div></section><section><h3>Activity A.2.6</h3>
+<div align="left"> <p>Given the following diagram, use a page rank vector to rank the pages \(1\) through \(7\) in order from most important to least important.</p> <figure class="figure figure-like" id="figure-39"><img src="images/image-39.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">39<span class="period">.</span></span><span class="space"> </span>Another seven-webpage network</figcaption></figure>
+</div></section></section><section><section><h1>Appendix B: Appendix</h1></section></section><section><section><h1>Section B.1: Sample Exercises with Solutions</h1></section><section><h3>Example B.1.1: E1</h3>
+<div align="left"> <p>Consider the scalar system of equations<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{alignat*}{5}
+3x_1 &amp;\,+\,&amp; 2x_2 &amp;\,\,&amp; &amp;\,+\,&amp;x_4 &amp;= 1 \\
+-x_1 &amp;\,-\,&amp; 4x_2 &amp;\,+\,&amp;x_3&amp;\,-\,&amp;7x_4 &amp;= 0 \\
+&amp;\,\,&amp; x_2 &amp;\,-\,&amp;x_3 &amp;\,\,&amp;  &amp;= -2
+\end{alignat*}
+</div></p> <ol>
+<li>Rewrite this system as a vector equation.</li>
+<li>Write an augmented matrix corresponding to this system.</li>
+</ol>
+</div></section><section><h3>Example B.1.2: E2</h3>
+<div align="left"> <ol>
+<li><p>Show that<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\RREF 
+\left[\begin{array}{c}
+0 &amp; 3 &amp; 1 &amp; 2 \\
+1 &amp; 2 &amp; -1 &amp; -3 \\
+2 &amp; 4 &amp; -1 &amp; -1
+\end{array}\right]
+= \left[\begin{array}{c}
+1 &amp; 0 &amp; 0 &amp; 4 \\
+0 &amp; {1} &amp; 0 &amp; -1 \\
+0 &amp; 0 &amp; {1} &amp; 5
+\end{array}\right].
+\end{equation*}
+</div></p></li>
+<li><p>Explain why the matrix \(\left[\begin{array}{ccc}
+1 &amp; 1 &amp; 0 &amp; 3 \\
+0 &amp; 1 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]\) is \textbf{not} in reduced row echelon form.</p></li>
+</ol>
+</div></section><section><h3>Example B.1.3: E3</h3>
+<div align="left"><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{alignat*}{4}
+2x&amp;\,+\,&amp;4y&amp;\,+\,&amp;z &amp;= 5 \\
+x&amp;\,+\,&amp;2y &amp;\,\,&amp; &amp;= 3
+\end{alignat*}
+</div></div></section><section><h3>Example B.1.4: V1</h3>
+<div align="left"> <p>Let \(V\) be the set of all pairs of numbers \((x,y)\) of real numbers together with the following operations:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+(x_1,y_1) \oplus (x_2,y_2) &amp;= (2x_1+2x_2,2y_1+2y_2)\\
+c\odot (x,y) &amp;= (cx,c^2y)
+\end{align*}
+</div>
+<ol>
+<li>
+<p>Show that scalar multiplication distributes over vector addition:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+c\odot \left((x_1,y_1) \oplus (x_2,y_2) \right) = c \odot (x_1,y_1) \oplus c \odot (x_2,y_2)
+\end{equation*}
+</div>
+</li>
+<li><p>Explain why \(V\) nonetheless is not a vector space.</p></li>
+</ol>
+</div></section><section><h3>Example B.1.5: V2</h3>
+<div align="left"> <p>Consider the statement <blockquote class="blockquote" id="blockquote-2"><p>The vector \(\left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right] \) is a linear combination of the vectors \(\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] \text{,}\) \(\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] \text{,}\) and \(\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] \text{.}\)</p></blockquote></p> <ol>
+<li><p>Write an equivalent statement using a vector equation.</p></li>
+<li><p>Explain why your statement is true or false.</p></li>
+</ol>
+</div></section><section><h3>Example B.1.6: V3</h3>
+<div align="left"> <p>Consider the statement <blockquote class="blockquote" id="blockquote-3"><p>The set of vectors \(\left\{\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] ,
+\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] , 
+\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] \right\}\) <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">does not</em> span \(\IR^3\text{.}\)</p></blockquote></p> <ol>
+<li><p>Write an equivalent statement using a vector equation.</p></li>
+<li><p>Explain why your statement is true or false.</p></li>
+</ol>
+</div></section><section><h3>Example B.1.7: V4</h3>
+<div align="left"> <p>Consider the following two sets of Euclidean vectors.<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+W = \setBuilder{\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right] }{x+y=3z+2w}
+\hspace{3em}
+U = \setBuilder{\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right]}{x+y=3z+w^2}
+\end{equation*}
+</div>Explain why one of these sets is a subspace of \(\IR^3\text{,}\) and why the other is not.</p>
+</div></section><section><h3>Example B.1.8: V5</h3>
+<div align="left"> <p>Consider the statement <blockquote class="blockquote" id="blockquote-4"><p>The set of vectors \(\left\{
+\left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right]  ,
+\left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right]  ,
+\left[\begin{array}{c} 0 \\ 1 \\ -1 \\ 1 \end{array}\right]  , 
+\left[\begin{array}{c} 2 \\ 5 \\ 1 \\ 5 \end{array}\right] \right\}\) is linearly dependent.</p></blockquote></p> <ol>
+<li><p>Write an equivalent statement using a vector equation.</p></li>
+<li><p>Explain why your statement is true or false.</p></li>
+</ol>
+</div></section><section><h3>Example B.1.9: V6</h3>
+<div align="left"> <p>Consider the statement <blockquote class="blockquote" id="blockquote-5"><p>The set of vectors \(\left\{
+\left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right] ,
+\left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right] ,
+\left[\begin{array}{c} 0 \\ 1 \\ -1 \\ 1 \end{array}\right] ,
+\left[\begin{array}{c} 2 \\ 5 \\ 1 \\ 5 \end{array}\right] \right\} \) is a basis of \(\IR^4\text{.}\)</p></blockquote></p> <ol>
+<li><p>Write an equivalent statement in terms of other vector properties.</p></li>
+<li><p>Explain why your statement is true or false.</p></li>
+</ol>
+</div></section><section><h3>Example B.1.10: V7</h3>
+<div align="left"> <p>Consider the subspace<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+W = \vspan \left\{
+\left[\begin{array}{c} 1 \\ -3 \\ -1 \\ 2 \end{array}\right] ,
+\left[\begin{array}{c} 1 \\ 0 \\ 1 \\ -2 \end{array}\right] ,
+\left[\begin{array}{c} 3 \\ -6 \\ -1 \\ 2 \end{array}\right] ,
+\left[\begin{array}{c} 1 \\ 6 \\ 1 \\ -1 \end{array}\right] ,
+\left[\begin{array}{c} 2 \\ 3 \\ 0 \\ 1 \end{array}\right]
+\right\} .
+\end{equation*}
+</div></p> <ol>
+<li><p>Explain how to find a basis of \(W\text{.}\)</p></li>
+<li><p>Explain how to find the dimension of \(W\text{.}\)</p></li>
+</ol>
+</div></section><section><h3>Example B.1.11: V8</h3>
+<div align="left"> <p>Consider the statement <blockquote class="blockquote" id="blockquote-6"><p>The set of polynomials \(\setList{3x^3+2x^2+x,-x^3+x^2+2x+3,x^2-x+1,2x^3+5x^2+x+5}\) is linearly independent.</p></blockquote></p> <ol>
+<li><p>Write an equivalent statement using a polynomial equation.</p></li>
+<li><p>Explain why your statement is true or false.</p></li>
+</ol>
+</div></section><section><h3>Example B.1.12: V9</h3>
+<div align="left"> <p>Consider the homogeneous system of equations<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{alignat*}{5}
+x_1 &amp;\,+\,&amp; x_2 &amp;\,+\,&amp; 3x_3 &amp;\,+\,&amp; x_4 &amp;\,+\,&amp; 2x_5 &amp;=&amp; 0\\
+-3x_1 &amp;\,\,&amp;  &amp;\,-\,&amp; 6x_3 &amp;\,+\,&amp;6 x_4 &amp;\,+\,&amp; 3x_5 &amp;=&amp; 0\\
+-x_1 &amp;\,+\,&amp; x_2 &amp;\,-\,&amp; x_3 &amp;\,+\,&amp; x_4 &amp;\,\,&amp;  &amp;=&amp; 0\\
+2x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 2x_3 &amp;\,-\,&amp; x_4 &amp;\,+\,&amp; x_5 &amp;=&amp; 0
+\end{alignat*}
+</div></p> <ol>
+<li><p>Find the solution space of the system.</p></li>
+<li><p>Find a basis of the solution space.</p></li>
+</ol>
+</div></section><section><h3>Example B.1.13: A1</h3>
+<div align="left"> <p>Consider the following maps of polynomials \(S: \P \rightarrow \P\) and \(T:\P\rightarrow\P\) defined by<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+S(f(x))= 3xf(x) \text{ and }T(f(x)) = 3f'(x)f(x).
+\end{equation*}
+</div>Explain why one of these maps is a linear transformation, and why the other map is not.</p>
+</div></section><section><h3>Example B.1.14: A2</h3>
+<div align="left"> <ol>
+<li><p>Find the standard matrix for the linear transformation \(T: \IR^3\rightarrow \IR^4\) given by<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+T\left(\left[\begin{array}{c} x \\ y \\ z \\  \end{array}\right] \right) = \left[\begin{array}{c} -x+y \\ -x+3y-z \\ 7x+y+3z \\ 0 \end{array}\right].
+\end{equation*}
+</div></p></li>
+<li><p>Let \(S: \IR^4 \rightarrow \IR^3\) be the linear transformation given by the standard matrix<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left[\begin{array}{c} 2 &amp; 3 &amp; 4 &amp; 1 \\ 0 &amp; 1 &amp; -1 &amp; -1 \\ 3 &amp; -2 &amp; -2 &amp; 4 \end{array}\right].
+\end{equation*}
+</div>Compute \(S\left( \left[\begin{array}{c} -2 \\ 1 \\ 3 \\ 2\end{array}\right] \right) \text{.}\)</p></li>
+</ol>
+</div></section><section><h3>Example B.1.15: A3</h3>
+<div align="left"> <p>Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+T\left(\left[\begin{array}{c}x\\y\\z\\w\end{array}\right] \right) =
+\left[\begin{array}{c}
+x+3y+2z-3w \\
+2x+4y+6z-10w \\
+x+6y-z+3w
+\end{array}\right]
+\end{equation*}
+</div></p> <ol>
+<li><p>Explain how to find the image of \(T\) and the kernel of \(T\text{.}\)</p></li>
+<li><p>Explain how to find a basis of the image of \(T\) and a basis of the kernel of \(T\text{.}\)</p></li>
+<li><p>Explain how to find the rank and nullity of T, and why the rank-nullity theorem holds for T.</p></li>
+</ol>
+</div></section><section><h3>Example B.1.16: A4</h3>
+<div align="left"> <p>Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by the standard matrix \(\left[\begin{array}{cccc} 1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]\text{.}\)</p> <ol>
+<li><p>Explain why \(T\) is or is not injective.</p></li>
+<li><p>Explain why \(T\) is or is not surjective.</p></li>
+</ol>
+</div></section><section><h3>Example B.1.17: M1</h3>
+<div align="left"> <p>Of the following three matrices, only two may be multiplied.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+A &amp;= \left[\begin{array}{cc} 1 &amp; -3 \\ 0 &amp; 1 \end{array}\right] &amp;
+B&amp;= \left[\begin{array}{ccc} 4 &amp; 1 &amp; 2 \end{array}\right] &amp;
+C&amp;= \left[\begin{array}{ccc} 0 &amp; 1 &amp; 3 \\ 1 &amp; -2 &amp; 5 \end{array}\right]
+\end{align*}
+</div>
+<p>Explain which two may be multiplied and why. Then show how to find their product.</p>
+</div></section><section><h3>Example B.1.18: M2</h3>
+<div align="left"> <p>Let \(A\) be a \(4\times4\) matrix.</p> <ol>
+<li><p>Give a \(4\times 4\) matrix \(P\) that may be used to perform the row operation \({R_3} \to R_3+4 \, {R_1} \text{.}\)</p></li>
+<li><p>Give a \(4\times 4\) matrix \(Q\) that may be used to perform the row operation \({R_1} \to -4 \, {R_1}\text{.}\)</p></li>
+<li><p>Use matrix multiplication to describe the matrix obtained by applying \({R_3} \to 4 \, {R_1} + {R_3}\) and then \({R_1} \to -4 \, {R_1}\) to \(A\) (note the order).</p></li>
+</ol>
+</div></section><section><h3>Example B.1.19: M3</h3>
+<div align="left"> <p>Explain why the matrix \(\left[\begin{array}{ccc}1 &amp; 3 &amp; 2  \\ 2 &amp; 4 &amp; 6  \\ 1 &amp; 6 &amp; -1 \end{array}\right]\) is or is not invertible.</p>
+</div></section><section><h3>Example B.1.20: M4</h3>
+<div align="left"> <p>Show how to compute the inverse of the matrix \(A=\left[\begin{array}{cccc}
+1 &amp; 2 &amp; 3 &amp; 5 \\ 0 &amp; -1 &amp; 4 &amp; -2 \\ 0 &amp; 0 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]\text{.}\)</p>
+</div></section><section><h3>Example B.1.21: G1</h3>
+<div align="left"> <p>Let \(A\) be a \(4 \times 4\) matrix with determinant \(-7\text{.}\)</p> <ol>
+<li><p>Let \(B\) be the matrix obtained from \(A\) by applying the row operation \(R_3 \to R_3+3R_4\text{.}\) What is \(\det(B)\text{?}\)</p></li>
+<li><p>Let \(C\) be the matrix obtained from \(A\) by applying the row operation \(R_2 \to -3R_2\text{.}\) What is \(\det(C)\text{?}\)</p></li>
+<li><p>Let \(D\) be the matrix obtained from \(A\) by applying the row operation \(R_3 \leftrightarrow R_4\text{.}\) What is \(\det(D)\text{?}\)</p></li>
+</ol>
+</div></section><section><h3>Example B.1.22: G2</h3>
+<div align="left"> <p>Show how to compute the determinant of the matrix<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A
+=
+\left[\begin{array}{cccc}
+1 &amp; 3 &amp; 0 &amp; -1 \\
+1 &amp; 1 &amp; 2 &amp; 4 \\
+1 &amp; 1 &amp; 1 &amp; 3 \\
+-3 &amp; 1 &amp; 2 &amp; -5
+\end{array}\right]
+\end{equation*}
+</div></p>
+</div></section><section><h3>Example B.1.23: G3</h3>
+<div align="left"> <p>Explain how to find the eigenvalues of the matrix \(\left[\begin{array}{cc} -2 &amp; -2 \\ 10 &amp; 7 \end{array}\right] \text{.}\)</p>
+</div></section><section><h3>Example B.1.24: G4</h3>
+<div align="left"> <p>Explain how to find a basis for the eigenspace associated to the eigenvalue \(3\) in the matrix<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc} -7 &amp; -8 &amp; 2 \\ 8 &amp; 9 &amp; -1 \\ \frac{13}{2} &amp; 5 &amp; 2 \end{array}\right].
+\end{equation*}
+</div></p>
+</div></section></section><section><section><h1>Section B.2: Definitions</h1></section></section>
 </div></div>
 </body>
 <script>
