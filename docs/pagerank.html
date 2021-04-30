@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-19T18:15:06Z       *-->
+<!--*       on 2021-04-30T20:52:22Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -200,30 +200,30 @@ MathJax.Hub.Config({
 </div></div>
 <div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><div class="displaymath" id="p-867">
 \begin{equation*}
-\begin{bmatrix}0&amp;1&amp;0\\\frac{1}{2}&amp;0 &amp; 1\\\frac{1}{2}&amp;0&amp;0\end{bmatrix}
-\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+\left[\begin{array}{c}0&amp;1&amp;0\\\frac{1}{2}&amp;0 &amp; 1\\\frac{1}{2}&amp;0&amp;0\end{array}\right]
+\left[\begin{array}{c}x_1\\x_2\\x_3\end{array}\right]
 =
-\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+\left[\begin{array}{c}x_1\\x_2\\x_3\end{array}\right]
 \end{equation*}
 </div></div>
 </div></div>
 <p id="p-868">By writing this linear system in terms of matrix multiplication, we obtain the <dfn class="terminology">page rank matrix</dfn> \(A
 =
-\begin{bmatrix}
+\left[\begin{array}{c}
 0 &amp; 1 &amp; 0 \\
 \frac{1}{2} &amp; 0 &amp; 1 \\
 \frac{1}{2} &amp; 0 &amp; 0
-\end{bmatrix}\) and page rank vector \(\vec{x}=\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\text{.}\)</p>
+\end{array}\right]\) and page rank vector \(\vec{x}=\left[\begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array}\right]\text{.}\)</p>
 <p id="p-869">Thus, computing the importance of pages on a network is equivalent to solving the matrix equation \(A\vec{x}=1\vec{x}\text{.}\)</p></article><article class="activity project-like" id="activity-154"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.2.2</span><span class="period">.</span>
 </h6>
 <p id="p-870">Thus, our $978,000,000,000 problem is what kind of problem?</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{bmatrix}0&amp;1&amp;0\\\frac{1}{2}&amp;0&amp;\frac{1}{2}\\\frac{1}{2}&amp;0&amp;0\end{bmatrix}
-\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+\left[\begin{array}{c}0&amp;1&amp;0\\\frac{1}{2}&amp;0&amp;\frac{1}{2}\\\frac{1}{2}&amp;0&amp;0\end{array}\right]
+\left[\begin{array}{c}x_1\\x_2\\x_3\end{array}\right]
 =
-1\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+1\left[\begin{array}{c}x_1\\x_2\\x_3\end{array}\right]
 \end{equation*}
 </div>
 <ol class="lower-alpha">
@@ -243,11 +243,11 @@ MathJax.Hub.Config({
 \begin{equation*}
 A
 =
-\begin{bmatrix}
+\left[\begin{array}{c}
 0 &amp; 1 &amp; 0 \\
 \frac{1}{2} &amp; 0 &amp; 1 \\
 \frac{1}{2} &amp; 0 &amp; 0
-\end{bmatrix}
+\end{array}\right]
 \end{equation*}
 </div></div>
 </div></div></article><article class="observation remark-like" id="observation-38"><h6 class="heading">
@@ -255,30 +255,30 @@ A
 </h6>
 <p id="p-874">Row-reducing \(A-I
 =
-\begin{bmatrix}
+\left[\begin{array}{c}
 -1 &amp; 1 &amp; 0 \\
 \frac{1}{2} &amp; -1 &amp; 1 \\
 \frac{1}{2} &amp; 0 &amp; -1
-\end{bmatrix}
+\end{array}\right]
 \sim
-\begin{bmatrix}
+\left[\begin{array}{c}
 1 &amp; 0 &amp; -2 \\
 0 &amp; 1 &amp; -2 \\
 0 &amp; 0 &amp; 0
-\end{bmatrix}\) yields the basic eigenvector \(\begin{bmatrix} 2 \\ 2 \\1 \end{bmatrix}\text{.}\)</p>
+\end{array}\right]\) yields the basic eigenvector \(\left[\begin{array}{c} 2 \\ 2 \\1 \end{array}\right]\text{.}\)</p>
 <p id="p-875">Therefore, we may conclude that pages \(1\) and \(2\) are equally important, and both pages are twice as important as page \(3\text{.}\)</p></article><article class="activity project-like" id="activity-156"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.2.4</span><span class="period">.</span>
 </h6>
 <p id="p-876">Compute the \(7 \times 7\) page rank matrix for the following network.</p>
 <figure class="figure figure-like" id="figure-67"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-36.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.2.9<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure><p id="p-877">For example, since website \(1\) distributes its endorsement equally between \(2\) and \(4\text{,}\) the first column is \(\begin{bmatrix} 0 \\ \frac{1}{2} \\ 0 \\ \frac{1}{2} \\ 0 \\ 0 \\ 0 \end{bmatrix}\text{.}\)</p></article><article class="activity project-like" id="activity-157"><h6 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.2.9<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure><p id="p-877">For example, since website \(1\) distributes its endorsement equally between \(2\) and \(4\text{,}\) the first column is \(\left[\begin{array}{c} 0 \\ \frac{1}{2} \\ 0 \\ \frac{1}{2} \\ 0 \\ 0 \\ 0 \end{array}\right]\text{.}\)</p></article><article class="activity project-like" id="activity-157"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.2.5</span><span class="period">.</span>
 </h6>
 <p id="p-878">Find a page rank vector for the given page rank matrix.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-879">
 \begin{equation*}
-A=\begin{bmatrix}
+A=\left[\begin{array}{c}
 0 &amp; \frac{1}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
 \frac{1}{2} &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; \frac{1}{2} \\
 0 &amp; \frac{1}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -286,7 +286,7 @@ A=\begin{bmatrix}
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; \frac{1}{2} &amp; 0 &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; 0
-\end{bmatrix}
+\end{array}\right]
 \end{equation*}
 </div></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="figure figure-like" id="figure-68"><img src="images/image-37.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.2.10<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure></div>
@@ -299,7 +299,7 @@ A=\begin{bmatrix}
 \begin{equation*}
 \vec{x}
 =
-\begin{bmatrix} 2 \\ 4 \\2 \\ 2.5 \\ 0 \\ 0 \\ 1\end{bmatrix}
+\left[\begin{array}{c} 2 \\ 4 \\2 \\ 2.5 \\ 0 \\ 0 \\ 1\end{array}\right]
 \end{equation*}
 </div>
 <p id="p-882">Based upon this page rank vector, here is a complete ranking of all seven pages from most important to least important:</p>
