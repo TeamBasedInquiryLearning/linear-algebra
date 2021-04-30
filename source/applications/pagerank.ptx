@@ -152,10 +152,10 @@ This corresponds to the <term>page rank system</term>:
             </p>
             <p>
   <me>
-    \begin{bmatrix}0&amp;1&amp;0\\\frac{1}{2}&amp;0 &amp; 1\\\frac{1}{2}&amp;0&amp;0\end{bmatrix}
-    \begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+    \left[\begin{array}{c}0&amp;1&amp;0\\\frac{1}{2}&amp;0 &amp; 1\\\frac{1}{2}&amp;0&amp;0\end{array}\right]
+    \left[\begin{array}{c}x_1\\x_2\\x_3\end{array}\right]
   =
-    \begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+    \left[\begin{array}{c}x_1\\x_2\\x_3\end{array}\right]
         </me>
             </p>
         </sidebyside>
@@ -165,13 +165,13 @@ By writing this linear system in terms of matrix multiplication, we obtain the
 <m>
   A
     =
-  \begin{bmatrix}
+  \left[\begin{array}{c}
     0 &amp; 1 &amp; 0 \\
     \frac{1}{2} &amp; 0 &amp; 1 \\
     \frac{1}{2} &amp; 0 &amp; 0
-  \end{bmatrix}
+  \end{array}\right]
 </m> and page rank vector
-            <m>\vec{x}=\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}</m>.
+            <m>\vec{x}=\left[\begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array}\right]</m>.
         </p><p>
 Thus, computing the importance of pages on a network is equivalent to solving
 the matrix equation <m>A\vec{x}=1\vec{x}</m>.
@@ -184,10 +184,10 @@ the matrix equation <m>A\vec{x}=1\vec{x}</m>.
         <p>
 Thus, our $978,000,000,000 problem is what kind of problem?
             <me>
-    \begin{bmatrix}0&amp;1&amp;0\\\frac{1}{2}&amp;0&amp;\frac{1}{2}\\\frac{1}{2}&amp;0&amp;0\end{bmatrix}
-    \begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+    \left[\begin{array}{c}0&amp;1&amp;0\\\frac{1}{2}&amp;0&amp;\frac{1}{2}\\\frac{1}{2}&amp;0&amp;0\end{array}\right]
+    \left[\begin{array}{c}x_1\\x_2\\x_3\end{array}\right]
   =
-    1\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+    1\left[\begin{array}{c}x_1\\x_2\\x_3\end{array}\right]
             </me>
         </p>
         <ol label="a">
@@ -234,11 +234,11 @@ That is, find the eigenspace associated with <m>\lambda=1</m> for the matrix
 <me>
   A
     =
-  \begin{bmatrix}
+  \left[\begin{array}{c}
     0 &amp; 1 &amp; 0 \\
     \frac{1}{2} &amp; 0 &amp; 1 \\
     \frac{1}{2} &amp; 0 &amp; 0
-  \end{bmatrix}
+  \end{array}\right]
                 </me>
                 </p>
             </sidebyside>
@@ -254,19 +254,19 @@ Row-reducing
 <m>
   A-I
     =
-  \begin{bmatrix}
+  \left[\begin{array}{c}
     -1 &amp; 1 &amp; 0 \\
     \frac{1}{2} &amp; -1 &amp; 1 \\
     \frac{1}{2} &amp; 0 &amp; -1
-  \end{bmatrix}
+  \end{array}\right]
     \sim
-  \begin{bmatrix}
+  \left[\begin{array}{c}
     1 &amp; 0 &amp; -2 \\
     0 &amp; 1 &amp; -2 \\
     0 &amp; 0 &amp; 0
-  \end{bmatrix}
+  \end{array}\right]
                 </m>
-yields the basic eigenvector <m>\begin{bmatrix} 2 \\ 2 \\1 \end{bmatrix}</m>.
+yields the basic eigenvector <m>\left[\begin{array}{c} 2 \\ 2 \\1 \end{array}\right]</m>.
             </p><p>
 Therefore, we may conclude that pages <m>1</m> and <m>2</m> are equally important,
 and both pages are twice as important as page <m>3</m>.
@@ -313,7 +313,8 @@ and both pages are twice as important as page <m>3</m>.
             <caption>A seven-webpage network</caption>
     </figure>
             <p>
-    For example, since website <m>1</m> distributes its endorsement equally between <m>2</m> and <m>4</m>, the first column is <m>\begin{bmatrix} 0 \\ \frac{1}{2} \\ 0 \\ \frac{1}{2} \\ 0 \\ 0 \\ 0 \end{bmatrix}</m>.
+    For example, since website <m>1</m> distributes its endorsement equally between <m>2</m> and <m>4</m>, the first column is
+                <m>\left[\begin{array}{c} 0 \\ \frac{1}{2} \\ 0 \\ \frac{1}{2} \\ 0 \\ 0 \\ 0 \end{array}\right]</m>.
             </p>
         </statement>
     </activity>
@@ -326,7 +327,7 @@ Find a page rank vector for the given page rank matrix.
             <sidebyside>
                 <p>
             <me>
-A=\begin{bmatrix}
+A=\left[\begin{array}{c}
 0 &amp; \frac{1}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
 \frac{1}{2} &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; \frac{1}{2} \\
 0 &amp; \frac{1}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -334,7 +335,7 @@ A=\begin{bmatrix}
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; \frac{1}{2} &amp; 0 &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; 0
-\end{bmatrix}
+\end{array}\right]
             </me>
                 </p>
         <figure>
@@ -385,7 +386,7 @@ it's reasonable to consider page <m>2</m> as the most important page.
 <me>
   \vec{x}
     =
-  \begin{bmatrix} 2 \\ 4 \\2 \\ 2.5 \\ 0 \\ 0 \\ 1\end{bmatrix}
+  \left[\begin{array}{c} 2 \\ 4 \\2 \\ 2.5 \\ 0 \\ 0 \\ 1\end{array}\right]
             </me>
             </p>
             <p>
