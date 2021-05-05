@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-30T20:52:35Z       *-->
+<!--*       on 2021-05-05T21:11:49Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -66,6 +66,49 @@ dfn {
 \newcommand{\setList}[1]{\left\{#1\right\}}
 \newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
 \newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -86,7 +129,7 @@ dfn {
 <td align="center"></td>
 </tr>
 </table>
-<h4><div xmlns:svg="http://www.w3.org/2000/svg" class="date">April 30, 2021</div></h4></section></section><section><section><h1>Chapter 1: Systems of Linear Equations (E)</h1></section></section><section><section><h1>Section 1.1: Linear Systems, Vector Equations, and Augmented Matrices (E1)</h1></section><section><h3>Definition 1.1.1</h3>
+<h4><div xmlns:svg="http://www.w3.org/2000/svg" class="date">May 5, 2021</div></h4></section></section><section><section><h1>Chapter 1: Systems of Linear Equations (E)</h1></section></section><section><section><h1>Section 1.1: Linear Systems, Vector Equations, and Augmented Matrices (E1)</h1></section><section><h3>Definition 1.1.1</h3>
 <div align="left"> <p>A <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">linear equation</dfn> is an equation of the variables \(x_i\) of the form<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 a_1x_1+a_2x_2+\dots+a_nx_n=b\text{.}
@@ -3488,6 +3531,230 @@ A=\left[\begin{array}{c}
 </div></p> <figure class="figure figure-like" id="figure-38"><img src="images/image-38.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">38<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure>
 </div></section><section><h3>Activity A.2.6</h3>
 <div align="left"> <p>Given the following diagram, use a page rank vector to rank the pages \(1\) through \(7\) in order from most important to least important.</p> <figure class="figure figure-like" id="figure-39"><img src="images/image-39.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">39<span class="period">.</span></span><span class="space"> </span>Another seven-webpage network</figcaption></figure>
+</div></section></section><section><section><h1>Section A.3: Civil Engineering: Trusses and Struts</h1></section><section><h3>Definition A.3.1</h3>
+<div align="left"> <p>In engineering, a <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">truss</dfn> is a structure designed from several beams of material called <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">struts</dfn>, assembled to behave as a single object.</p> <figure class="figure figure-like" id="figure-40"><img src="images/image-40.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">40<span class="period">.</span></span><span class="space"> </span>A simple truss</figcaption></figure>
+</div></section><section><h3>Activity A.3.1</h3>
+<div align="left"> <p>Consider the representation of a simple truss pictured below. All of the seven struts are of equal length, affixed to two anchor points applying a normal force to nodes \(C\) and \(E\text{,}\) and with a \(10000 N\) load applied to the node given by \(D\text{.}\)</p> <figure class="figure figure-like" id="figure-41"><img src="images/image-41.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">41<span class="period">.</span></span><span class="space"> </span>A simple truss</figcaption></figure> <p>Which of the following must hold for the truss to be stable?</p> <ol>
+<li><p>All of the struts will experience compression.</p></li>
+<li><p>All of the struts will experience tension.</p></li>
+<li><p>Some of the struts will be compressed, but others will be tensioned.</p></li>
+</ol>
+</div></section><section><h3>Observation A.3.4</h3>
+<div align="left"> <p>Since the forces must balance at each node for the truss to be stable, some of the struts will be compressed, while others will be tensioned.</p> <figure class="figure figure-like" id="figure-42"><img src="images/image-42.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">42<span class="period">.</span></span><span class="space"> </span>Completed truss</figcaption></figure> <p>By finding vector equations that must hold at each node, we may determine many of the forces at play.</p>
+</div></section><section><h3>Remark A.3.6</h3>
+<div align="left"> <p>For example, at the bottom left node there are 3 forces acting.</p> <figure class="figure figure-like" id="figure-43"><img src="images/image-43.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">43<span class="period">.</span></span><span class="space"> </span>Truss with forces</figcaption></figure> <p>Let \(\vec F_{CA}\) be the force on \(C\) given by the compression/tension of the strut \(CA\text{,}\) let \(\vec F_{CD}\) be defined similarly, and let \(\vec N_C\) be the normal force of the anchor point on \(C\text{.}\)</p> <p>For the truss to be stable, we must have:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+\end{equation*}
+</div>
+</div></section><section><h3>Activity A.3.2</h3>
+<div align="left"> <p>Using the conventions of the previous remark, and where \(\vec L\) represents the load vector on node \(D\text{,}\) find four more vector equations that must be satisfied for each of the other four nodes of the truss.</p> <figure class="figure figure-like" id="figure-44"><img src="images/image-44.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">44<span class="period">.</span></span><span class="space"> </span>A simple truss</figcaption></figure><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A: \unknown
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+B: \unknown
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+D:\unknown
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+E:\unknown
+\end{equation*}
+</div>
+</div></section><section><h3>Remark A.3.9</h3>
+<div align="left"> <p>The five vector equations may be written as follows.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A: \vec F_{AC}+\vec F_{AD}+\vec F_{AB}=\vec 0
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+B: \vec F_{BA}+\vec F_{BD}+\vec F_{BE}=\vec 0
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+D: \vec F_{DC}+\vec F_{DA}+\vec F_{DB} +\vec F_{DE}+\vec L=\vec 0
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+E: \vec F_{EB}+\vec F_{ED}+\vec N_E=\vec 0
+\end{equation*}
+</div>
+</div></section><section><h3>Observation A.3.10</h3>
+<div align="left"> <p>Each vector has a vertical and horizontal component, so it may be treated as a vector in \(\IR^2\text{.}\) Note that \(\vec F_{CA}\) must have the same magnitude (but opposite direction) as \(\vec F_{AC}\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec{F}_{CA}
+= 
+x\begin{bmatrix} \cos(60^\circ) \\ \sin(60^\circ) \end{bmatrix}
+=
+x\begin{bmatrix} 1/2 \\ \sqrt{3}/2\end{bmatrix}
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec{F}_{AC}
+= 
+x\begin{bmatrix} \cos(-120^\circ) \\ \sin(-120^\circ) \end{bmatrix}
+=
+x\begin{bmatrix} -1/2 \\ -\sqrt{3}/2\end{bmatrix}
+\end{equation*}
+</div>
+</div></section><section><h3>Activity A.3.3</h3>
+<div align="left"> <p>To write a linear system that models the truss under consideration with constant load \(10000\) newtons, how many scalar variables will be required?</p> <ul>
+<li><p>\(7\text{:}\) \(5\) from the nodes, \(2\) from the anchors</p></li>
+<li><p>\(9\text{:}\) \(7\) from the struts, \(2\) from the anchors</p></li>
+<li><p>\(11\text{:}\) \(7\) from the struts, \(4\) from the anchors</p></li>
+<li><p>\(12\text{:}\) \(7\) from the struts, \(4\) from the anchors, \(1\) from the load</p></li>
+<li><p>\(13\text{:}\) \(5\) from the nodes, \(7\) from the struts, \(1\) from the load</p></li>
+</ul> <figure class="figure figure-like" id="figure-45"><img src="images/image-45.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">45<span class="period">.</span></span><span class="space"> </span>A simple truss</figcaption></figure>
+</div></section><section><h3>Observation A.3.12</h3>
+<div align="left"> <p>Since the angles for each strut are known, one variable may be used to represent each.</p> <figure class="figure figure-like" id="figure-46"><img src="images/image-46.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">46<span class="period">.</span></span><span class="space"> </span>Variables for the truss</figcaption></figure> <p>For example:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec F_{AB}=-\vec F_{BA}=x_1\begin{bmatrix}\cos(0)\\\sin(0)\end{bmatrix}
+=x_1\begin{bmatrix}1\\0\end{bmatrix}
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec F_{BE}=-\vec F_{EB}=x_5\begin{bmatrix}\cos(-60^\circ)\\\sin(-60^\circ)\end{bmatrix}
+=x_5\begin{bmatrix}1/2\\-\sqrt{3}/2\end{bmatrix}
+\end{equation*}
+</div>
+</div></section><section><h3>Observation A.3.14</h3>
+<div align="left"> <p>Since the angle of the normal forces for each anchor point are unknown, two variables may be used to represent each.</p> <figure class="figure figure-like" id="figure-47"><img src="images/image-47.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">47<span class="period">.</span></span><span class="space"> </span>Truss with normal forces</figcaption></figure><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec N_C=\begin{bmatrix}y_1\\y_2\end{bmatrix}
+\hspace{3em}
+\vec N_D=\begin{bmatrix}z_1\\z_2\end{bmatrix}
+\end{equation*}
+</div>
+<p>The load vector is constant.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec L = \begin{bmatrix}0\\-10000\end{bmatrix}
+\end{equation*}
+</div>
+</div></section><section><h3>Remark A.3.16</h3>
+<div align="left"> <p>Each of the five vector equations found previously represent two linear equations: one for the horizontal component and one for the vertical.</p> <figure class="figure figure-like" id="figure-48"><img src="images/image-48.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">48<span class="period">.</span></span><span class="space"> </span>Variables for the truss</figcaption></figure><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\Leftrightarrow
+x_2\begin{bmatrix}\cos(60^\circ)\\\sin(60^\circ)\end{bmatrix}+
+x_6\begin{bmatrix}\cos(0^\circ)\\\sin(0^\circ)\end{bmatrix}+
+\begin{bmatrix}y_1\\y_2\end{bmatrix}=\begin{bmatrix}0\\0\end{bmatrix}
+\end{equation*}
+</div>\(\sqrt{3}/2\approx 0.866\)<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\Leftrightarrow
+x_2\begin{bmatrix}0.5\\0.866\end{bmatrix}+
+x_6\begin{bmatrix}1\\0\end{bmatrix}+
+y_1\begin{bmatrix}1\\0\end{bmatrix}+
+y_2\begin{bmatrix}0\\1\end{bmatrix}=
+\begin{bmatrix}0\\0\end{bmatrix}
+\end{equation*}
+</div>
+</div></section><section><h3>Activity A.3.4</h3>
+<div align="left"> <p>Expand the vector equation given below using sine and cosine of appropriate angles, then compute each component (approximating \(\sqrt{3}/2\approx 0.866\)).</p> <figure class="figure figure-like" id="figure-49"><img src="images/image-49.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">49<span class="period">.</span></span><span class="space"> </span>Variables for the truss</figcaption></figure><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+D:\vec F_{DA}+\vec F_{DB}+\vec F_{DC}+\vec F_{DE}=-\vec L
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\Leftrightarrow
+x_3\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}+
+x_4\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}+
+x_6\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}+
+x_7\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}=
+\begin{bmatrix}\unknown\\\unknown\end{bmatrix}
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\Leftrightarrow
+x_3\begin{bmatrix}\unknown\\\unknown\end{bmatrix}+
+x_4\begin{bmatrix}\unknown\\\unknown\end{bmatrix}+
+x_6\begin{bmatrix}\unknown\\\unknown\end{bmatrix}+
+x_7\begin{bmatrix}\unknown\\\unknown\end{bmatrix}=
+\begin{bmatrix}\unknown\\\unknown\end{bmatrix}
+\end{equation*}
+</div>
+</div></section><section><h3>Observation A.3.19</h3>
+<div align="left"> <p>The full augmented matrix given by the ten equations in this linear system is given below, where the elevent columns correspond to \(x_1,\dots,x_7,y_1,y_2,z_1,z_2\text{,}\) and the ten rows correspond to the horizontal and vertical components of the forces acting at \(A,\dots,E\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccccccccccc|c}
+1&amp;-0.5&amp;0.5&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;-0.866&amp;-0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+-1&amp;0&amp;0&amp;-0.5&amp;0.5&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;-0.866&amp;-0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0.5&amp;0&amp;0&amp;0&amp;1&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;-0.5&amp;0.5&amp;0&amp;-1&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0.866&amp;0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;10000\\
+0&amp;0&amp;0&amp;0&amp;-0.5&amp;0&amp;-1&amp;0&amp;0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0\\
+\end{array}\right]
+\end{equation*}
+</div>
+</div></section><section><h3>Observation A.3.20</h3>
+<div align="left"> <p>This matrix row-reduces to the following.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sim
+\left[\begin{array}{ccccccccccc|c}
+1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;-5773.7\\
+0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;-5773.7\\
+0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;5773.7\\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;5773.7\\
+0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;-5773.7\\
+0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;-1&amp;0&amp;2886.8\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;-1&amp;0&amp;2886.8\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;5000\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;5000\\
+\end{array}\right]
+\end{equation*}
+</div>
+</div></section><section><h3>Observation A.3.21</h3>
+<div align="left"> <p>Thus we know the truss must satisfy the following conditions.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+x_1=x_2=x_5&amp;=-5882.4\\
+x_3=x_4&amp;=5882.4\\
+x_6=x_7&amp;=2886.8+z_1\\
+y_1&amp;=-z_1\\
+y_2=z_2&amp;=5000 
+\end{align*}
+</div>
+<p>In particular, the negative \(x_1,x_2,x_5\) represent tension (forces pointing into the nodes), and the postive \(x_3,x_4\) represent compression (forces pointing out of the nodes). The vertical normal forces \(y_2+z_2\) counteract the \(10000\) load.</p> <figure class="figure figure-like" id="figure-50"><img src="images/image-50.svg"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">50<span class="period">.</span></span><span class="space"> </span>Completed truss</figcaption></figure>
 </div></section></section><section><section><h1>Appendix B: Appendix</h1></section></section><section><section><h1>Section B.1: Sample Exercises with Solutions</h1></section><section><h3>Example B.1.1: E1</h3>
 <div align="left"> <p>Consider the scalar system of equations<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{alignat*}{5}
