@@ -1,0 +1,468 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="truss" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Civil Engineering: Trusses and Struts</title>
+
+    <definition>
+        <p>
+In engineering, a <term>truss</term> is a structure designed from several beams
+of material called <term>struts</term>, assembled to behave as a single object.
+        </p>
+        <!-- TODO implement jpg image
+\includegraphics[width=0.8\linewidth]{media/truss.jpg}
+-->
+        <figure>
+            <image width="75%">
+                <latex-image>
+\drawtruss{}
+                </latex-image>
+            </image>
+            <caption>A simple truss</caption>
+        </figure>
+    </definition>
+
+    <activity tbil-time="5">
+        <statement>
+            <p>
+Consider the representation of a simple truss pictured below.
+All of the seven struts are of equal length, affixed to two anchor points
+applying a normal force to nodes <m>C</m> and <m>E</m>, and
+with a <m>10000 N</m> load applied to the node given by <m>D</m>.
+            </p>
+        <figure>
+            <image width="75%">
+                <latex-image>
+\drawtruss{}
+                </latex-image>
+            </image>
+            <caption>A simple truss</caption>
+        </figure>
+            <p>
+Which of the following must hold for the truss to be stable?
+            </p>
+            <ol>
+                <li><p>
+All of the struts will experience compression.
+                </p></li>
+                <li><p>
+All of the struts will experience tension.
+                </p></li>
+                <li><p>
+Some of the struts will be compressed, but others will be tensioned.
+                </p></li>
+            </ol>
+        </statement>
+    </activity>
+
+    <observation>
+        <statement>
+            <p>
+Since the forces must balance at each node for the truss to be stable,
+some of the struts will be compressed, while others will be tensioned. 
+            </p>
+        <figure>
+            <image width="75%">
+                <latex-image>
+\drawtruss{\trussCompletion}
+                </latex-image>
+            </image>
+            <caption>Completed truss</caption>
+        </figure>
+            <p>
+By finding vector equations that must hold at each node, we may
+determine many of the forces at play.
+            </p>
+        </statement>
+    </observation>
+
+    <remark>
+        <statement>
+            <p>
+For example, at the bottom left node there are 3 forces acting.
+            </p>
+        <figure>
+            <image width="75%">
+                <latex-image>
+\drawtruss{\trussCForces}
+                </latex-image>
+            </image>
+            <caption>Truss with forces</caption>
+        </figure>
+            <p>
+Let <m>\vec F_{CA}</m> be the force on <m>C</m> given by the compression/tension
+of the strut <m>CA</m>, let <m>\vec F_{CD}</m> be defined similarly, and let
+<m>\vec N_C</m> be the normal force of the anchor point on <m>C</m>.
+            </p>
+            <p>
+For the truss to be stable, we must have:
+            </p>
+            <me>
+\vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+            </me>
+        </statement>
+    </remark>
+
+    <activity tbil-time="10">
+        <statement>
+        </statement>
+        <p>
+Using the conventions of the previous remark, and where <m>\vec L</m>
+represents the load vector on node <m>D</m>, find four more vector equations
+that must be satisfied for each of the other four nodes of the truss.
+        </p>
+        <figure>
+            <image width="75%">
+                <latex-image>
+\drawtruss{}
+                </latex-image>
+            </image>
+            <caption>A simple truss</caption>
+        </figure>
+<me>
+A: \unknown
+</me>
+<me>
+B: \unknown
+</me>
+<me>
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+</me>
+<me>D:\unknown</me>
+<me>E:\unknown</me>
+    </activity>
+
+    <remark>
+        <statement>
+            <p>
+The five vector equations may be written as follows.
+            </p>
+<me>
+A: \vec F_{AC}+\vec F_{AD}+\vec F_{AB}=\vec 0
+</me>
+<me>
+B: \vec F_{BA}+\vec F_{BD}+\vec F_{BE}=\vec 0
+</me>
+<me>
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+</me>
+<me>
+D: \vec F_{DC}+\vec F_{DA}+\vec F_{DB} +\vec F_{DE}+\vec L=\vec 0
+</me>
+<me>
+E: \vec F_{EB}+\vec F_{ED}+\vec N_E=\vec 0
+</me>
+        </statement>
+    </remark>
+
+    <!--
+%\begin{activity}{5}
+%An augmented matrix representing these five equations would have how many rows?
+%<me>
+%A: \vec F_{AC}+\vec F_{AD}+\vec F_{AB}=\vec 0
+%</me>
+%<me>
+%B: \vec F_{BC}+\vec F_{BD}+\vec F_{BE}=\vec 0
+%</me>
+%<me>
+%C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+%</me>
+%<me>
+%D: \vec F_{DC}+\vec F_{DA}+\vec F_{DB} +\vec F_{DE}+\vec L=\vec 0
+%</me>
+%<me>
+%E: \vec F_{EB}+\vec F_{ED}+\vec N_E=\vec 0
+%</me>
+%\begin{enumerate}[a)]
+%\item 5
+%\item 10
+%\item 25
+%\end{enumerate}
+%\end{activity}
+    -->
+
+    <observation>
+        <statement>
+            <p>
+Each vector has a vertical and horizontal component,
+so it may be treated as a vector in <m>\IR^2</m>.
+Note that <m>\vec F_{CA}</m> must have the same magnitude (but opposite
+direction) as <m>\vec F_{AC}</m>.
+            </p>
+<me>
+  \vec{F}_{CA}
+    = 
+  x\begin{bmatrix} \cos(60^\circ) \\ \sin(60^\circ) \end{bmatrix}
+    =
+  x\begin{bmatrix} 1/2 \\ \sqrt{3}/2\end{bmatrix}
+</me>
+
+<me>
+  \vec{F}_{AC}
+    = 
+  x\begin{bmatrix} \cos(-120^\circ) \\ \sin(-120^\circ) \end{bmatrix}
+    =
+  x\begin{bmatrix} -1/2 \\ -\sqrt{3}/2\end{bmatrix}
+</me>
+        </statement>
+    </observation>
+
+    <activity tbil-time="5">
+        <statement>
+            <p>
+To write a linear system that models the truss under consideration
+with constant load <m>10000</m> newtons,
+how many scalar variables will be required?
+            </p>
+            <ul>
+                <li>
+                    <p>
+<m>7</m>: <m>5</m> from the nodes, <m>2</m> from the anchors
+                    </p>
+                </li>
+                <li>
+                    <p>
+<m>9</m>: <m>7</m> from the struts, <m>2</m> from the anchors
+                    </p>
+                </li>
+                <li>
+                    <p>
+<m>11</m>: <m>7</m> from the struts, <m>4</m> from the anchors
+                    </p>
+                </li>
+                <li>
+                    <p>
+<m>12</m>: <m>7</m> from the struts, <m>4</m> from the anchors, <m>1</m> from the load
+                    </p>
+                </li>
+                <li>
+                    <p>
+<m>13</m>: <m>5</m> from the nodes, <m>7</m> from the struts, <m>1</m> from the load
+                    </p>
+                </li>
+            </ul>
+        <figure>
+            <image width="75%">
+                <latex-image>
+\drawtruss{}
+                </latex-image>
+            </image>
+            <caption>A simple truss</caption>
+        </figure>
+        </statement>
+    </activity>
+
+
+    <observation>
+        <statement>
+            <p>
+Since the angles for each strut are known,
+one variable may be used to represent each.
+            </p>
+        <figure>
+            <image width="75%">
+                <latex-image>
+\drawtruss{\trussStrutVariables}
+                </latex-image>
+            </image>
+            <caption>Variables for the truss</caption>
+        </figure>
+            <p>
+            For example:
+            </p>
+<me>
+\vec F_{AB}=-\vec F_{BA}=x_1\begin{bmatrix}\cos(0)\\\sin(0)\end{bmatrix}
+=x_1\begin{bmatrix}1\\0\end{bmatrix}
+</me>
+<me>
+\vec F_{BE}=-\vec F_{EB}=x_5\begin{bmatrix}\cos(-60^\circ)\\\sin(-60^\circ)\end{bmatrix}
+=x_5\begin{bmatrix}1/2\\-\sqrt{3}/2\end{bmatrix}
+</me>
+        </statement>
+    </observation>
+
+    <observation>
+        <statement>
+            <p>
+Since the angle of the normal forces for each anchor point are unknown,
+two variables may be used to represent each.
+            </p>
+        <figure>
+            <image width="75%">
+                <latex-image>
+\drawtruss{\trussNormalForces}
+                </latex-image>
+            </image>
+            <caption>Truss with normal forces</caption>
+        </figure>
+<me>
+\vec N_C=\begin{bmatrix}y_1\\y_2\end{bmatrix}
+\hspace{3em}
+\vec N_D=\begin{bmatrix}z_1\\z_2\end{bmatrix}
+</me>
+            <p>
+The load vector is constant.
+            </p>
+<me>
+\vec L = \begin{bmatrix}0\\-10000\end{bmatrix}
+</me>
+        </statement>
+    </observation>
+
+    <remark>
+        <statement>
+            <p>
+Each of the five vector
+equations found previously represent two linear equations:
+one for the horizontal component and one for the vertical.
+            </p>
+        <figure>
+            <image width="75%">
+                <latex-image>
+\drawtruss{\trussStrutVariables}
+                </latex-image>
+            </image>
+            <caption>Variables for the truss</caption>
+        </figure>
+<me>
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+</me>
+<me>
+\Leftrightarrow
+x_2\begin{bmatrix}\cos(60^\circ)\\\sin(60^\circ)\end{bmatrix}+
+x_6\begin{bmatrix}\cos(0^\circ)\\\sin(0^\circ)\end{bmatrix}+
+\begin{bmatrix}y_1\\y_2\end{bmatrix}=\begin{bmatrix}0\\0\end{bmatrix}
+</me>
+Using the approximation <m>\sqrt{3}/2\approx 0.866</m>, we have
+<me>
+\Leftrightarrow
+x_2\begin{bmatrix}0.5\\0.866\end{bmatrix}+
+x_6\begin{bmatrix}1\\0\end{bmatrix}+
+y_1\begin{bmatrix}1\\0\end{bmatrix}+
+y_2\begin{bmatrix}0\\1\end{bmatrix}=
+\begin{bmatrix}0\\0\end{bmatrix}
+</me>
+        </statement>
+    </remark>
+
+    <activity tbil-time="10">
+        <statement>
+            <p>
+Expand the vector equation given below using sine and cosine of appropriate angles,
+then compute each component (approximating <m>\sqrt{3}/2\approx 0.866</m>).
+            </p>
+        <figure>
+            <image width="75%">
+                <latex-image>
+\drawtruss{\trussStrutVariables}
+                </latex-image>
+            </image>
+            <caption>Variables for the truss</caption>
+        </figure>
+<me>
+D:\vec F_{DA}+\vec F_{DB}+\vec F_{DC}+\vec F_{DE}=-\vec L
+</me>
+<me>
+\Leftrightarrow
+x_3\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}+
+x_4\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}+
+x_6\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}+
+x_7\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}=
+\begin{bmatrix}\unknown\\\unknown\end{bmatrix}
+</me>
+<me>
+\Leftrightarrow
+x_3\begin{bmatrix}\unknown\\\unknown\end{bmatrix}+
+x_4\begin{bmatrix}\unknown\\\unknown\end{bmatrix}+
+x_6\begin{bmatrix}\unknown\\\unknown\end{bmatrix}+
+x_7\begin{bmatrix}\unknown\\\unknown\end{bmatrix}=
+\begin{bmatrix}\unknown\\\unknown\end{bmatrix}
+</me>
+        </statement>
+    </activity>
+
+    <observation>
+        <statement>
+            <p>
+The full augmented matrix given by the ten equations in this linear system
+is given below, where the elevent columns correspond to <m>x_1,\dots,x_7,y_1,y_2,z_1,z_2</m>,
+and the ten rows correspond to the horizontal and vertical components of the
+forces acting at <m>A,\dots,E</m>.
+            </p>
+<me>
+\left[\begin{array}{ccccccccccc|c}
+1&amp;-0.5&amp;0.5&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;-0.866&amp;-0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+-1&amp;0&amp;0&amp;-0.5&amp;0.5&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;-0.866&amp;-0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0.5&amp;0&amp;0&amp;0&amp;1&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;-0.5&amp;0.5&amp;0&amp;-1&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0.866&amp;0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;10000\\
+0&amp;0&amp;0&amp;0&amp;-0.5&amp;0&amp;-1&amp;0&amp;0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0\\
+\end{array}\right]
+</me>
+        </statement>
+    </observation>
+
+    <observation>
+        <statement>
+            <p>
+This matrix row-reduces to the following.
+            </p>
+<me>\sim
+\left[\begin{array}{ccccccccccc|c}
+1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;-5773.7\\
+0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;-5773.7\\
+0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;5773.7\\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;5773.7\\
+0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;-5773.7\\
+0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;-1&amp;0&amp;2886.8\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;-1&amp;0&amp;2886.8\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;5000\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;5000\\
+\end{array}\right]
+</me>
+        </statement>
+    </observation>
+
+    <observation>
+        <statement>
+            <p>
+Thus we know the truss must satisfy the following conditions.
+            </p>
+            <md>
+                <mrow>
+x_1=x_2=x_5&amp;=-5882.4
+                </mrow>
+                <mrow>
+x_3=x_4&amp;=5882.4
+                </mrow>
+                <mrow>
+x_6=x_7&amp;=2886.8+z_1
+                </mrow>
+                <mrow>
+y_1&amp;=-z_1
+                </mrow>
+                <mrow>
+y_2=z_2&amp;=5000 
+                </mrow>
+            </md>
+            <p>
+In particular, the negative <m>x_1,x_2,x_5</m> represent tension (forces pointing into the nodes),
+and the postive <m>x_3,x_4</m> represent compression (forces pointing out of the nodes).
+The vertical normal forces <m>y_2+z_2</m> counteract the <m>10000</m> load.
+            </p>
+        <figure>
+            <image width="75%">
+                <latex-image>
+\drawtruss{\trussCompletion}
+                </latex-image>
+            </image>
+            <caption>Completed truss</caption>
+        </figure>
+        </statement>
+    </observation>
+
+
+</section>
