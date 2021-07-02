@@ -58,12 +58,12 @@ Write an augmented matrix corresponding to this system.
             <p>
 Show that 
 <me>\RREF 
-  \left[\begin{array}{c}
+  \left[\begin{array}{cccc}
   0 &amp; 3 &amp; 1 &amp; 2 \\
   1 &amp; 2 &amp; -1 &amp; -3 \\
   2 &amp; 4 &amp; -1 &amp; -1
   \end{array}\right]
-  = \left[\begin{array}{c}
+  = \left[\begin{array}{cccc}
   1 &amp; 0 &amp; 0 &amp; 4 \\
   0 &amp; {1} &amp; 0 &amp; -1 \\
   0 &amp; 0 &amp; {1} &amp; 5
@@ -74,7 +74,7 @@ Show that
         <li>
             <p>
 Explain why the matrix 
-<m>\left[\begin{array}{ccc}
+<m>\left[\begin{array}{cccc}
 1 &amp; 1 &amp; 0 &amp; 3 \\
 0 &amp; 1 &amp; 1 &amp; 1 \\
 0 &amp; 0 &amp; 0 &amp; 0
@@ -189,7 +189,7 @@ x\,+\,2y&amp;\,\,&amp;  &amp;= 3
         </p>
     <p>
 Since the <m>y</m>-column is a non-pivot column, it is a free variable, so we let <m>y=a</m>; then we have
-    <md alignment="alignat" alignat-columns="2">
+    <md alignment="alignat" alignat-columns="3">
         <mrow>
 x&amp;\,+\,&amp;2y&amp;\,\,&amp;  &amp;= 3
         </mrow>
@@ -748,8 +748,8 @@ is both linearly independent and spans <m>\IR^4</m>.
         <li>
             <p>
 Compute
-<me>\RREF \left[\begin{array}{c} 3 &amp; -1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; 3 &amp; 1 &amp; 5 \end{array}\right] =
-\left[\begin{array}{c} 1 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right].</me>
+<me>\RREF \left[\begin{array}{cccc} 3 &amp; -1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; 3 &amp; 1 &amp; 5 \end{array}\right] =
+\left[\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right].</me>
 Since the fourth column is not a pivot column, the vectors are linearly
 dependent and thus not a basis of <m>\IR^4</m>.
             </p>
@@ -897,7 +897,7 @@ Since the fourth column is not a pivot column, there are (infinitely many) nontr
 <statement>
     <p>
 Consider the homogeneous system of equations
-        <md alignment="alignat" alignat-columns="5">
+        <md alignment="alignat" alignat-columns="6">
             <mrow>
 x_1 &amp;\,+\,&amp; x_2 &amp;\,+\,&amp; 3x_3 &amp;\,+\,&amp; x_4 &amp;\,+\,&amp; 2x_5 &amp;=&amp; 0
             </mrow>
@@ -950,7 +950,7 @@ Letting <m>x_3=a</m> and <m>x_5=b</m>
 (since those correspond to the non-pivot columns),
 this is equivalent to the system
 
-        <md alignment="alignat" alignat-columns="5">
+        <md alignment="alignat" alignat-columns="6">
             <mrow>
 x_1 &amp;\,\,&amp;  &amp;\,+\,&amp; 2x_3 &amp;\,\,&amp;  &amp;\,+\,&amp; x_5 &amp;=&amp; 0
             </mrow>
@@ -1078,7 +1078,7 @@ Find the standard matrix for the linear transformation <m>T: \IR^3\rightarrow \I
         <li>
             <p>
 Let <m>S: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix
-<me>\left[\begin{array}{c} 2 &amp; 3 &amp; 4 &amp; 1 \\ 0 &amp; 1 &amp; -1 &amp; -1 \\ 3 &amp; -2 &amp; -2 &amp; 4 \end{array}\right].</me>
+<me>\left[\begin{array}{cccc} 2 &amp; 3 &amp; 4 &amp; 1 \\ 0 &amp; 1 &amp; -1 &amp; -1 \\ 3 &amp; -2 &amp; -2 &amp; 4 \end{array}\right].</me>
 Compute <m> S\left( \left[\begin{array}{c} -2 \\ 1 \\ 3 \\ 2\end{array}\right] \right) </m>.
             </p>
         </li>
@@ -1100,7 +1100,7 @@ T\left(\left[\begin{array}{c} 0 \\ 1 \\ 0 \end{array}\right]\right) &amp;= \left
 T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right]\right) &amp;= \left[\begin{array}{c} 0 \\ -1 \\ 3 \\ 0  \end{array}\right],
                     </mrow>
                 </md>
-the standard matrix for <m>T</m> is <m> \left[\begin{array}{c} -1 &amp; 1 &amp; 0 \\ -1 &amp; 3 &amp; -1 \\ 7 &amp; 1 &amp; 3  \\ 0 &amp; 0 &amp; 0 \end{array}\right] </m>.
+the standard matrix for <m>T</m> is <m> \left[\begin{array}{ccc} -1 &amp; 1 &amp; 0 \\ -1 &amp; 3 &amp; -1 \\ 7 &amp; 1 &amp; 3  \\ 0 &amp; 0 &amp; 0 \end{array}\right] </m>.
             </p>
         </li>
         <li>
@@ -1188,8 +1188,8 @@ Since
 <m>\Im(T) = \vspan\left\{\left[\begin{array}{c}1 \\ 2 \\ 1 \end{array}\right], \left[\begin{array}{c} 3 \\ 4 \\ 6  \end{array}\right],
 \left[\begin{array}{c} 2 \\ 6 \\ -1 \end{array}\right], \left[\begin{array}{c} -3 \\ -10 \\ 3 \end{array}\right]\right\}</m>,
 we simply need to find a linearly independent subset of these four spanning vectors. So we compute
-<me>\RREF \left[\begin{array}{c}1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]
-= \left[\begin{array}{c} 1 &amp; 0 &amp; 5 &amp; -9 \\ 0 &amp; 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right].</me>
+<me>\RREF \left[\begin{array}{cccc}1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]
+= \left[\begin{array}{cccc} 1 &amp; 0 &amp; 5 &amp; -9 \\ 0 &amp; 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right].</me>
 Since the first two columns are pivot columns, they form a linearly independent spanning set, so a basis for <m>\Im T</m>
 is <m>\setList{\left[\begin{array}{c}1\\2\\1 \end{array}\right], \left[\begin{array}{c}3\\4\\6 \end{array}\right]}.</m>
             </p>
