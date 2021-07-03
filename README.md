@@ -21,15 +21,34 @@ are available in the PDF folder of this repository.
 
 ## Authoring
 
-First install [Python 3.9](https://www.python.org/) and [pipenv](https://github.com/pypa/pipenv).
-
-Clone this repository to your machine and `cd` into its folder.
-`pipenv install` will install any necessary prerequisites.
-The PreTeXt source may be found in the `source` folder.
+First install [Python 3.9](https://www.python.org/). Then do
+the following to install [pipenv](https://github.com/pypa/pipenv).
 
 ```
-# Run this to start the authoring environment after a successful pipenv install
-$ pipenv shell
+$ python -V
+Python 3.9.0
+$ python -m pip install pip --upgrade
+$ python -m pip install pipenv
+```
+
+Then the following steps will clone a copy of this book's
+source and install the appropriate version of the
+[PreTeXt CLI](https://github.com/PreTeXtBook/pretext-cli).
+
+```
+$ git clone git@github.com:TeamBasedInquiryLearning/linear-algebra.git tbil-la
+$ cd tbil-la
+$ python -m pipenv install
+$ python -m pipenv run pretext --version
+[displays the version specified in `Pipfile`]
+```
+
+The PreTeXt source may be found in the `source` folder and
+edited as follows:
+
+```
+# Run this to start the authoring environment
+$ python -m pipenv shell
 
 # To build HTML from updated source
 $ pretext build
@@ -37,26 +56,16 @@ $ pretext build
 # To preview the built HTML in your browser
 $ pretext view
 
-# CoCalc users: To preview HTML
-$ pretext view --access=cocalc
+# To publish the latest build to GitHub pages
+$ git add -A
+$ git commit -m "useful description of update"
+$ pretext publish
 
-# To stop the authoring environment
+# To exit the authoring environment
 $ exit
 ```
 
 Use `pretext --help` for documentation of other pretext CLI features.
-
-## Using Git to track and publish changes
-
-Changes are tracked in the `main` Git branch, and the public website
-based on the `docs` folder. The result of `pretext build` creates
-files in the `output` folder which is not tracked by Git because PreTeXt
-changes thousands of files during each build.
-
-To publish changes from a `pretext build` to the public website,
-run `pretext publish` from the root folder of this project,
-and make a single commit like `git add docs; git commit -m "update public site"`
-to the `main` branch that reflects only this change.
 
 ## Building slides
 
