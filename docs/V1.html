@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-03T01:59:12Z       *-->
+<!--*       on 2021-07-18T13:24:35-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,42 +14,36 @@
 <title>Vector Spaces (V1)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    useLabelIds: true,
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
-  },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
-    renderActions: {
-        findScript: [10, function (doc) {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
-                var display = !!node.type.match(/; *mode=display/);
-                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                var text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = {node: text, delim: '', n: 0};
-                math.end = {node: text, delim: '', n: 0};
-                doc.math.push(math);
-            });
-        }, '']
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
     },
-  },
-  chtml: {
-    scale: 0.88,
-    mtextInheritFont: true
-  },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
-  },
-};
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -58,12 +52,12 @@
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
@@ -215,7 +209,7 @@
 x + y = y + x
 \end{equation*}
 </div>
-<p class="continuation">also hold for Euclidean vectors with multiple components:</p>
+<p data-braille="continuation">also hold for Euclidean vectors with multiple components:</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{c}x_1\\x_2\end{array}\right]
@@ -227,7 +221,7 @@ x + y = y + x
 \left[\begin{array}{c}x_1\\x_2\end{array}\right]\text{.}
 \end{equation*}
 </div></article><article class="activity project-like" id="activity-22"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
 </h6>
 <p id="p-151">Consider each of the following properties of the real numbers \(\IR^1\text{.}\) Label each property as <em class="emphasis">valid</em> if the property also holds for two-dimensional Euclidean vectors \(\vec u,\vec v,\vec w\in\IR^2\) and scalars \(a,b\in\IR\text{,}\) and <em class="emphasis">invalid</em> if it does not.</p>
 <ol class="decimal">
@@ -244,7 +238,7 @@ x + y = y + x
 <li id="li-95"><p id="p-160">\(a(\vec u+\vec v)=a\vec u+a\vec v\text{.}\)</p></li>
 <li id="li-96"><p id="p-161">\((a+b)\vec v=a\vec v+b\vec v\text{.}\)</p></li>
 </ol></article><article class="definition definition-like" id="definition-9"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
 </h6>
 <p id="p-162">A <dfn class="terminology">vector space</dfn> \(V\) is any collection of mathematical objects with associated addition \(\oplus\) and scalar multiplication \(\odot\) operations that satisfy the following properties. Let \(\vec u,\vec v,\vec w\) belong to \(V\text{,}\) and let \(a,b\) be scalar numbers.</p>
 <ol class="decimal">
@@ -259,7 +253,7 @@ x + y = y + x
 <li id="li-103"><p id="p-169">Scalar multiplication distributes over vector addition: \(a\odot(\vec u\oplus \vec v)=(a\odot\vec u)\oplus(a\odot\vec v)\text{.}\)</p></li>
 <li id="li-104"><p id="p-170">Scalar multiplication distributes over scalar addition: \((a+ b)\odot\vec v=(a\odot\vec v)\oplus(b\odot \vec v)\text{.}\)</p></li>
 </ol></article><article class="observation remark-like" id="observation-4"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
 </h6>
 <p id="p-171">Every <dfn class="terminology">Euclidean vector space</dfn></p>
 <div class="displaymath">
@@ -267,8 +261,8 @@ x + y = y + x
 \IR^n=\setBuilder{\left[\begin{array}{c}x_1\\x_2\\\vdots\\x_n\end{array}\right]}{x_1,x_2,\dots,x_n\in\IR}
 \end{equation*}
 </div>
-<p class="continuation">satisfies all eight requirements for the usual definitions of addition and scalar multiplication, but we will also study other types of vector spaces.</p></article><article class="observation remark-like" id="observation-5"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
+<p data-braille="continuation">satisfies all eight requirements for the usual definitions of addition and scalar multiplication, but we will also study other types of vector spaces.</p></article><article class="observation remark-like" id="observation-5"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
 </h6>
 <p id="p-172">The space of \(m \times n\) <dfn class="terminology">matrices</dfn></p>
 <div class="displaymath">
@@ -280,8 +274,8 @@ a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} \end{array}\right]}
 {a_{11},\ldots,a_{mn} \in\IR}
 \end{equation*}
 </div>
-<p class="continuation">satisfies all eight requirements for component-wise addition and scalar multiplication.</p></article><article class="remark remark-like" id="remark-7"><h6 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
+<p data-braille="continuation">satisfies all eight requirements for component-wise addition and scalar multiplication.</p></article><article class="remark remark-like" id="remark-7"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
 </h6>
 <p id="p-173">Every Euclidean space \(\IR^n\) is a vector space, but there are other examples of vector spaces as well.</p>
 <p id="p-174">For example, consider the set \(\IC\) of complex numbers with the usual defintions of addition and scalar multiplication, and let \(\vec u=a+b\mathbf{i}\text{,}\) \(\vec v=c+d\mathbf{i}\text{,}\) and \(\vec w=e+f\mathbf{i}\text{.}\) Then</p>
@@ -299,7 +293,7 @@ a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} \end{array}\right]}
 \end{align*}
 </div>
 <p id="p-175">All eight properties can be verified in this way.</p></article><article class="remark remark-like" id="remark-8"><h6 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
 </h6>
 <p id="p-176">The following sets are just a few examples of vector spaces, with the usual/natural operations for addition and scalar multiplication.</p>
 <ul class="disc">
@@ -310,7 +304,7 @@ a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} \end{array}\right]}
 <li id="li-109"><p id="p-181">\(\P\text{:}\) Polynomials of any degree.</p></li>
 <li id="li-110"><p id="p-182">\(C(\IR)\text{:}\) Real-valued continuous functions.</p></li>
 </ul></article><article class="activity project-like" id="activity-23"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-7">
 <p id="p-183">Consider the set \(V=\setBuilder{(x,y)}{y=e^x}\) with operations defined by</p>
@@ -329,15 +323,15 @@ c\odot (x_1,y_1)=(cx_1,y_1^c)\text{.}
 (a+b)\odot (x_1,y_1)=\left(a\odot (x_1,y_1)\right)\oplus \left(b\odot (x_1,y_1)\right)
 \end{equation*}
 </div>
-<p class="continuation">by simplifying both sides and verifying they are the same expression.</p></article><article class="task exercise-like" id="task-15"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p data-braille="continuation">by simplifying both sides and verifying they are the same expression.</p></article><article class="task exercise-like" id="task-15"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-185">Show that \(V\) contains an additive identity element satisfying</p>
 <div class="displaymath">
 \begin{equation*}
 (x_1,y_1)\oplus\vec{z}=(x_1,y_1)
 \end{equation*}
 </div>
-<p class="continuation">for all \((x_1,y_1)\in V\) by choosing appropriate values for \(\vec{z}=(\unknown,\unknown)\text{.}\)</p></article></article><article class="remark remark-like" id="remark-9"><h6 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span>
+<p data-braille="continuation">for all \((x_1,y_1)\in V\) by choosing appropriate values for \(\vec{z}=(\unknown,\unknown)\text{.}\)</p></article></article><article class="remark remark-like" id="remark-9"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
 </h6>
 <p id="p-186">It turns out \(V=\setBuilder{(x,y)}{y=e^x}\) with operations defined by</p>
 <div class="displaymath">
@@ -347,9 +341,9 @@ c\odot (x_1,y_1)=(cx_1,y_1^c)\text{.}
 c\odot (x_1,y_1)=(cx_1,y_1^c)
 \end{equation*}
 </div>
-<p class="continuation">satisifes all eight properties.</p>
+<p data-braille="continuation">satisifes all eight properties.</p>
 <p id="p-187">Thus, \(V\) is a vector space.</p></article><article class="activity project-like" id="activity-24"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.10</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-8">
 <p id="p-188">Let \(V=\setBuilder{(x,y)}{x,y\in\IR}\) have operations defined by</p>
@@ -365,7 +359,7 @@ c\odot (x_1,y_1)=(x_1^c,y_1+c-1)\text{.}
 <p id="p-189">Show that \(1\) is the scalar multiplication identity element by simplifying \(1\odot(x,y)\) to \((x,y)\text{.}\)</p></article><article class="task exercise-like" id="task-17"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-190">Show that \(V\) does not have an additive identity element by showing that \((0,-1)\oplus\vec z\not=(0,-1)\) no matter how \(\vec z=(z,w)\) is chosen.</p></article><article class="task exercise-like" id="task-18"><h6 class="heading"><span class="codenumber">(c)</span></h6>
 <p id="p-191">Is \(V\) a vector space?</p></article></article><article class="activity project-like" id="activity-25"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.11</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-9">
 <p id="p-192">Let \(V=\setBuilder{(x,y)}{x,y\in\IR}\) have operations defined by</p>
@@ -385,20 +379,24 @@ c\odot (x_1,y_1)=(cx_1,cy_1)
 c \odot \left( (x_1,y_1) \oplus (x_2,y_2) \right) = c\odot (x_1,y_1) \oplus c\odot (x_2,y_2)
 \end{equation*}
 </div>
-<p class="continuation">for <em class="emphasis">all</em> \(c\in \IR,\, (x_1,y_1),(x_2,y_2) \in V\text{.}\)</p></article><article class="task exercise-like" id="task-20"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p data-braille="continuation">for <em class="emphasis">all</em> \(c\in \IR,\, (x_1,y_1),(x_2,y_2) \in V\text{.}\)</p></article><article class="task exercise-like" id="task-20"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-194">Show that vector addition is not associative, i.e.</p>
 <div class="displaymath">
 \begin{equation*}
 (x_1,y_1) \oplus \left((x_2,y_2) \oplus (x_3,y_3)\right) \neq \left((x_1,y_1)\oplus (x_2,y_2)\right) \oplus (x_3,y_3)
 \end{equation*}
 </div>
-<p class="continuation">for <em class="emphasis">some</em> vectors \((x_1,y_1), (x_2,y_2), (x_3,y_3) \in V\text{.}\)</p></article><article class="task exercise-like" id="task-21"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p data-braille="continuation">for <em class="emphasis">some</em> vectors \((x_1,y_1), (x_2,y_2), (x_3,y_3) \in V\text{.}\)</p></article><article class="task exercise-like" id="task-21"><h6 class="heading"><span class="codenumber">(c)</span></h6>
 <p id="p-195">Is \(V\) a vector space?</p></article></article><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.1.1</span> <span class="title">Videos</span>
 </h3>
-<figure class="figure figure-like" id="figure-4"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-V1-1" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/fcb6b715-d76e-48c1-954a-ac22012e5263.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="external/videos/V1-1-captions.vtt"></track></video></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.12<span class="period">.</span></span><span class="space"> </span>Video example: Verifying that a vector space property holds</figcaption></figure><figure class="figure figure-like" id="figure-5"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-V1-2" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/3050cd3d-32e3-4f5d-808d-ac250114473f.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="external/videos/V1-2-captions.vtt"></track></video></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.13<span class="period">.</span></span><span class="space"> </span>Video example: Showing something is not a vector space</figcaption></figure></section><section class="exercises" id="exercises-4"><h3 class="heading hide-type">
+<figure class="figure figure-like" id="figure-4"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;">
+			
+		</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.8<span class="period">.</span></span><span class="space"> </span>Video example: Verifying that a vector space property holds</figcaption></figure><figure class="figure figure-like" id="figure-5"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;">
+			
+		</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.9<span class="period">.</span></span><span class="space"> </span>Video example: Showing something is not a vector space</figcaption></figure></section><section class="exercises" id="exercises-4"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">2.1.2</span> <span class="title">Exercises</span>
 </h3>
 <p id="p-196"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/V1/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
