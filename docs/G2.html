@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-18T13:24:39-05:00       *-->
+<!--*       on 2021-07-19T16:58:13Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Computing Determinants (G2)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -68,12 +74,12 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
@@ -221,18 +227,18 @@ MathJax.Hub.Config({
 </h6>
 <p id="p-775">We've seen that row reducing all the way into RREF gives us a method of computing determinants.</p>
 <p id="p-776">However, we learned in module E that this can be tedious for large matrices.  Thus, we will try to figure out how to turn the determinant of a larger matrix into the determinant of a smaller matrix.</p></article><article class="activity project-like" id="activity-132"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
 </h6>
 <p id="p-777">The following image illustrates the transformation of the unit cube by the matrix \(\left[\begin{array}{ccc} 1 &amp; 1 &amp; 0 \\  1 &amp; 3 &amp; 1 \\  0 &amp; 0 &amp; 1\end{array}\right]\text{.}\)</p>
-<figure class="figure figure-like" id="figure-56"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-29.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.2<span class="period">.</span></span><span class="space"> </span>Transformation of the unit cube by the linear transformation.</figcaption></figure><p id="p-778">Recall that for this solid \(V=Bh\text{,}\) where \(h\) is the height of the solid and \(B\) is the area of its parallelogram base. So what must its volume be?</p>
+<figure class="figure figure-like" id="figure-56"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-29.svg" role="img" class="contained" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.3<span class="period">.</span></span><span class="space"> </span>Transformation of the unit cube by the linear transformation.</figcaption></figure><p id="p-778">Recall that for this solid \(V=Bh\text{,}\) where \(h\) is the height of the solid and \(B\) is the area of its parallelogram base. So what must its volume be?</p>
 <ol class="lower-alpha">
 <li id="li-375"><p id="p-779">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 1 \\ 1 &amp; 3 \end{array}\right]\)</p></li>
 <li id="li-376"><p id="p-780">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 0 \\ 3 &amp; 1 \end{array}\right]\)</p></li>
 <li id="li-377"><p id="p-781">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 1 \\ 0 &amp; 1 \end{array}\right]\)</p></li>
 <li id="li-378"><p id="p-782">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; 0 \end{array}\right]\)</p></li>
 </ol></article><article class="fact theorem-like" id="fact-27"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
 </h6>
 <p id="p-783">If row \(i\) contains all zeros except for a \(1\) on the main (upper-left to lower-right) diagonal, then both column and row \(i\) may be removed without changing the value of the determinant.</p>
 <div class="displaymath">
@@ -268,22 +274,22 @@ MathJax.Hub.Config({
 \end{array}\right]
 \end{equation*}
 </div></article><article class="activity project-like" id="activity-133"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span>
 </h6>
 <p id="p-785">Remove an appropriate row and column of \(\det \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 1 &amp; 5 &amp; 12 \\ 3 &amp; 2 &amp; -1 \end{array}\right]\) to simplify the determinant to a \(2\times 2\) determinant.</p></article><article class="activity project-like" id="activity-134"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-40"><p id="p-786">Simplify \(\det \left[\begin{array}{ccc} 0 &amp; 3 &amp; -2 \\ 2 &amp; 5 &amp; 12 \\ 0 &amp; 2 &amp; -1 \end{array}\right]\) to a multiple of a \(2\times 2\) determinant by first doing the following:</p></div>
 <article class="task exercise-like" id="task-94"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-787">Factor out a \(2\) from a column.</p></article><article class="task exercise-like" id="task-95"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-788">Swap rows or columns to put a \(1\) on the main diagonal.</p></article></article><article class="activity project-like" id="activity-135"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-41"><p id="p-789">Simplify \(\det \left[\begin{array}{ccc} 4 &amp; -2 &amp; 2 \\ 3 &amp; 1 &amp; 4 \\ 1 &amp; -1 &amp; 3\end{array}\right]\) to a multiple of a \(2\times 2\) determinant by first doing the following:</p></div>
 <article class="task exercise-like" id="task-96"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-790">Use row/column operations to create two zeroes in the same row or column.</p></article><article class="task exercise-like" id="task-97"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-791">Factor/swap as needed to get a row/column of all zeroes except a \(1\) on the main diagonal.</p></article></article><article class="observation remark-like" id="observation-31"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.8</span><span class="period">.</span>
 </h6>
 <p id="p-792">Using row/column operations, you can introduce zeros and reduce dimension to whittle down the determinant of a large matrix to a determinant of a smaller matrix.</p>
 <div class="displaymath">
@@ -326,7 +332,7 @@ MathJax.Hub.Config({
 334
 \end{align*}
 </div></article><article class="activity project-like" id="activity-136"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.9</span><span class="period">.</span>
 </h6>
 <p id="p-793">Rewrite</p>
 <div class="displaymath">
@@ -335,8 +341,8 @@ MathJax.Hub.Config({
 \\ -2 &amp; 2 &amp; 3 &amp; 0 \\ -2 &amp; 0 &amp; -3 &amp; -3 \end{array}\right] 
 \end{equation*}
 </div>
-<p data-braille="continuation">as a multiple of a determinant of a \(3\times3\) matrix.</p></article><article class="activity project-like" id="activity-137"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
+<p class="continuation">as a multiple of a determinant of a \(3\times3\) matrix.</p></article><article class="activity project-like" id="activity-137"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.10</span><span class="period">.</span>
 </h6>
 <p id="p-794">Compute \(\det\left[\begin{array}{cccc}
 2 &amp; 3 &amp; 5 &amp; 0 \\ 
@@ -344,7 +350,7 @@ MathJax.Hub.Config({
 1 &amp; 2 &amp; 0 &amp; 3 \\ 
 -1 &amp; -1 &amp; 2 &amp; 2 
 \end{array}\right]\) by using any combination of row/column operations.</p></article><article class="observation remark-like" id="observation-32"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.11</span><span class="period">.</span>
 </h6>
 <p id="p-795">Another option is to take advantage of the fact that the determinant is linear in each row or column.  This approach is called <dfn class="terminology">Laplace expansion</dfn> or <dfn class="terminology">cofactor expansion</dfn>.</p>
 <p id="p-796">For example, since \(\color{blue}{
@@ -370,7 +376,7 @@ MathJax.Hub.Config({
 +4 \det \left[\begin{array}{cc} 2 &amp; 3 \\ -1 &amp; 3 \end{array}\right]
 \end{align*}
 </div></article><article class="observation remark-like" id="observation-33"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.12</span><span class="period">.</span>
 </h6>
 <p id="p-797">Applying Laplace expansion to a \(2 \times 2\) matrix yields a short formula you may have seen:</p>
 <div class="displaymath">
@@ -406,7 +412,7 @@ a_{11}(a_{22}(a_{33}a_{44}-a_{43}a_{34})-a_{23}(a_{32}a_{44}-a_{42}a_{34})+\dots
 \end{equation*}
 </div>
 <p id="p-799">So this is why we either use Laplace expansion or row/column operations directly.</p></article><article class="activity project-like" id="activity-138"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.13</span><span class="period">.</span>
 </h6>
 <p id="p-800">Based on the previous activities, which technique is easier for computing determinants?</p>
 <ol class="lower-alpha">
@@ -415,7 +421,7 @@ a_{11}(a_{22}(a_{33}a_{44}-a_{43}a_{34})-a_{23}(a_{32}a_{44}-a_{42}a_{34})+\dots
 <li id="li-381"><p id="p-803">Laplace expansion.</p></li>
 <li id="li-382"><p id="p-804">Some other technique (be prepared to describe it).</p></li>
 </ol></article><article class="activity project-like" id="activity-139"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.8</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.14</span><span class="period">.</span>
 </h6>
 <p id="p-805">Use your preferred technique to compute \(\det\left[\begin{array}{cccc}
 4 &amp; -3 &amp; 0 &amp; 0 \\ 
@@ -424,18 +430,14 @@ a_{11}(a_{22}(a_{33}a_{44}-a_{43}a_{34})-a_{23}(a_{32}a_{44}-a_{42}a_{34})+\dots
 0 &amp; -3 &amp; 2 &amp; -2 
 \end{array}\right]
 \text{.}\)</p></article><article class="insight remark-like" id="insight-1"><h6 class="heading">
-<span class="type">Insight</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
+<span class="type">Insight</span><span class="space"> </span><span class="codenumber">5.2.15</span><span class="period">.</span>
 </h6>You can check your answer using Octave. <div class="sagecell-octave" id="sage-45"><script type="text/x-sage">det([4,-3,0,0; 1,-3,2,-1; 3,2,0,3; 0,-3,2,-2])
 </script></div></article><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.2.1</span> <span class="title">Videos</span>
 </h3>
-<figure class="figure figure-like" id="figure-57"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;">
-			
-		</div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.8<span class="period">.</span></span><span class="space"> </span>Video example: Simplifying a determinant using row operations</figcaption></figure><figure class="figure figure-like" id="figure-58"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;">
-			
-		</div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.9<span class="period">.</span></span><span class="space"> </span>Video example: Computing a determinant</figcaption></figure></section><section class="exercises" id="exercises-22"><h3 class="heading hide-type">
+<figure class="figure figure-like" id="figure-57"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-G2-1" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/72443a97-6380-40c9-a748-ab9f01094603.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="external/videos/G2-1-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.16<span class="period">.</span></span><span class="space"> </span>Video example: Simplifying a determinant using row operations</figcaption></figure><figure class="figure figure-like" id="figure-58"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-G2-2" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/edba89e8-350b-4e22-b032-ab9f010b9e5f.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="external/videos/G2-2-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.17<span class="period">.</span></span><span class="space"> </span>Video example: Computing a determinant</figcaption></figure></section><section class="exercises" id="exercises-22"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">5.2.2</span> <span class="title">Exercises</span>
 </h3>
 <p id="p-806"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/G2/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>

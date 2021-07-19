@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-18T13:24:40-05:00       *-->
+<!--*       on 2021-07-19T16:58:14Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Sample Exercises with Solutions</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -52,12 +58,12 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
@@ -201,9 +207,10 @@ MathJax.Hub.Config({
 <span class="type">Section</span> <span class="codenumber">B.1</span> <span class="title">Sample Exercises with Solutions</span>
 </h2>
 <p id="p-914">Here we model one exercise and solution for each learning objective. Your solutions should not look identical to those shown below, but these solutions can give you an idea of the level of detail required for a complete solution.</p>
-<article class="example example-like" id="example-5"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-5"><h6 class="heading">
+<article class="example example-like" id="example-5"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">E1.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-5"><article class="example example-like"><p id="p-915">Consider the scalar system of equations</p>
+</h6>
+<p id="p-915">Consider the scalar system of equations</p>
 <div class="displaymath">
 \begin{alignat*}{5}
 3x_1 &amp;\,+\,&amp; 2x_2 &amp;\,\,&amp; &amp;\,+\,&amp;x_4 &amp;= 1 \\
@@ -216,7 +223,7 @@ MathJax.Hub.Config({
 <li id="li-410">Write an augmented matrix corresponding to this system.</li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like"><ol class="decimal">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like"><ol class="decimal">
 <li id="li-411"><div class="displaymath">
 \begin{equation*}
 x_1\left[\begin{array}{c} 3 \\ -1 \\ 0 \end{array}{}\right] +
@@ -236,10 +243,10 @@ x_3 \left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}{}\right]
 \end{equation*}
 </div></li>
 </ol></div></div>
-</div></article></div>
-<article class="example example-like" id="example-6"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-6"><h6 class="heading">
+</div></article><article class="example example-like" id="example-6"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">E2.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-6"><article class="example example-like"><ol class="decimal">
+</h6>
+<ol class="decimal">
 <li id="li-413">
 <p id="p-916">Show that</p>
 <div class="displaymath">
@@ -265,7 +272,7 @@ x_3 \left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}{}\right]
 \end{array}\right]\) is \textbf{not} in reduced row echelon form.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><ol class="decimal">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><ol class="decimal">
 <li id="li-415"><div class="displaymath">
 \begin{alignat*}{4}
 \left[\begin{array}{cccc}
@@ -323,17 +330,16 @@ x_3 \left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}{}\right]
 0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right]\) we see that each pivot is a 1, they are in a descending staircase pattern, and the row(s) of zeroes is at the bottom. However, there is not a zero above the second pivot, so it is not in reduced row echelon form.</p></li>
 </ol></div></div>
-</div></article></div>
-<article class="example example-like" id="example-7"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-7"><h6 class="heading">
+</div></article><article class="example example-like" id="example-7"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">E3.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-7"><article class="example example-like">Show how to find the solution set for the following system of linear equations.<div class="displaymath">
+</h6>Show how to find the solution set for the following system of linear equations.<div class="displaymath">
 \begin{alignat*}{4}
 2x&amp;\,+\,&amp;4y&amp;\,+\,&amp;z &amp;= 5 \\
 x&amp;\,+\,&amp;2y &amp;\,\,&amp; &amp;= 3
 \end{alignat*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like">
 <p id="p-919">First, note that this system corresponds to the matrix \(\left( \left[\begin{array}{ccc|c} 2 &amp; 4 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; 0 &amp; 3 \end{array}\right] \right)\text{.}\) Then we compute (using technology)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -344,7 +350,7 @@ x&amp;\,+\,&amp;2y &amp;\,\,&amp; &amp;= 3
 \left[\begin{array}{ccc|c} 1 &amp; 2 &amp; 0 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; -1\end{array}\right].
 \end{equation*}
 </div>
-<p data-braille="continuation">This corresponds to the system</p>
+<p class="continuation">This corresponds to the system</p>
 <div class="displaymath">
 \begin{alignat*}{2}
 x\,+\,2y&amp;\,\,&amp;  &amp;= 3 \\
@@ -359,7 +365,7 @@ x&amp;\,+\,&amp;2y&amp;\,\,&amp;  &amp;= 3\\
 &amp;\,\,&amp; &amp;\,\,&amp; z&amp;= -1.
 \end{alignat*}
 </div>
-<p data-braille="continuation">and thus</p>
+<p class="continuation">and thus</p>
 <div class="displaymath">
 \begin{align*}
 x&amp;= 3-2a\\
@@ -367,7 +373,7 @@ y&amp;= a\\
 z&amp;= -1
 \end{align*}
 </div>
-<p data-braille="continuation">So the solution set is</p>
+<p class="continuation">So the solution set is</p>
 <div class="displaymath">
 \begin{equation*}
 \setBuilder{
@@ -378,10 +384,10 @@ a \in \IR
 \end{equation*}
 </div>
 </div></div>
-</div></article></div>
-<article class="example example-like" id="example-8"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-8"><h6 class="heading">
+</div></article><article class="example example-like" id="example-8"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">V1.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-8"><article class="example example-like"><p id="p-921">Let \(V\) be the set of all pairs of numbers \((x,y)\) of real numbers together with the following operations:</p>
+</h6>
+<p id="p-921">Let \(V\) be the set of all pairs of numbers \((x,y)\) of real numbers together with the following operations:</p>
 <div class="displaymath">
 \begin{align*}
 (x_1,y_1) \oplus (x_2,y_2) &amp;= (2x_1+2x_2,2y_1+2y_2)\\
@@ -400,7 +406,7 @@ c\odot \left((x_1,y_1) \oplus (x_2,y_2) \right) = c \odot (x_1,y_1) \oplus c \od
 <li id="li-418"><p id="p-923">Explain why \(V\) nonetheless is not a vector space.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like"><ol class="decimal">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like"><ol class="decimal">
 <li id="li-419">
 <p id="p-924">We compute both sides:</p>
 <div class="displaymath">
@@ -469,16 +475,16 @@ c\odot (x,y) \oplus d\odot(x,y) &amp;= 1\odot(1,1)\oplus 1\odot(1,1)\\
 </ul>
 </li>
 </ol></div></div>
-</div></article></div>
-<article class="example example-like" id="example-9"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-9"><h6 class="heading">
+</div></article><article class="example example-like" id="example-9"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">V2.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-9"><article class="example example-like"><p id="p-933">Consider the statement <blockquote class="blockquote" id="blockquote-2"><p id="p-934">The vector \(\left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right] \) is a linear combination of the vectors \(\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] \text{,}\) \(\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] \text{,}\) and \(\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] \text{.}\)</p></blockquote></p>
+</h6>
+<p id="p-933">Consider the statement <blockquote class="blockquote" id="blockquote-2"><p id="p-934">The vector \(\left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right] \) is a linear combination of the vectors \(\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] \text{,}\) \(\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] \text{,}\) and \(\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] \text{.}\)</p></blockquote></p>
 <ol class="decimal">
 <li id="li-423"><p id="p-935">Write an equivalent statement using a vector equation.</p></li>
 <li id="li-424"><p id="p-936">Explain why your statement is true or false.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><ol class="decimal">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><ol class="decimal">
 <li id="li-425"><p id="p-937">By definition, this statement is equivalent to the statement <blockquote class="blockquote" id="blockquote-3"><p id="p-938">There exists a solution to the vector equation \(x_1\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] +
 x_2\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] +
 x_3\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] =
@@ -505,7 +511,7 @@ x_3\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] =
 \end{array}\right].
 \end{equation*}
 </div>
-<p data-braille="continuation">Since this corresponds to an inconsistent system of equations, the vector equation</p>
+<p class="continuation">Since this corresponds to an inconsistent system of equations, the vector equation</p>
 <div class="displaymath">
 \begin{equation*}
 x_1\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] +
@@ -514,13 +520,13 @@ x_3\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] =
 \left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right] 
 \end{equation*}
 </div>
-<p data-braille="continuation">has no solution, and therefore \(\left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right] \) is not a linear combination of \(\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] \text{,}\) \(\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] \text{,}\) and \(\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] \text{.}\)</p>
+<p class="continuation">has no solution, and therefore \(\left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right] \) is not a linear combination of \(\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] \text{,}\) \(\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] \text{,}\) and \(\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] \text{.}\)</p>
 </li>
 </ol></div></div>
-</div></article></div>
-<article class="example example-like" id="example-10"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-10"><h6 class="heading">
+</div></article><article class="example example-like" id="example-10"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">V3.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-10"><article class="example example-like"><p id="p-940">Consider the statement <blockquote class="blockquote" id="blockquote-4"><p id="p-941">The set of vectors \(\left\{\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] ,
+</h6>
+<p id="p-940">Consider the statement <blockquote class="blockquote" id="blockquote-4"><p id="p-941">The set of vectors \(\left\{\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] ,
 \left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] , 
 \left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] \right\}\) <em class="emphasis">does not</em> span \(\IR^3\text{.}\)</p></blockquote></p>
 <ol class="decimal">
@@ -528,7 +534,7 @@ x_3\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] =
 <li id="li-428"><p id="p-943">Explain why your statement is true or false.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><ol class="decimal">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><ol class="decimal">
 <li id="li-429"><p id="p-944">By definition, this statement is equivalent to the statement <blockquote class="blockquote" id="blockquote-5"><p id="p-945">There is some \(\vec{v} \in \IR^3\) for which the vector equation \(x_1\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right]+  
 x_2 \left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right]+
 x_3\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right]=\vec{v}\) does not have a solution.</p></blockquote></p></li>
@@ -550,13 +556,13 @@ x_3\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right]=\vec{v}\) does not hav
 \end{array}\right]
 \end{equation*}
 </div>
-<p data-braille="continuation">Since the last row lacks a pivot, there is some vector \(\vec{v} \in \IR^3\) that upon augmenting this matrix will produce an inconsistent system. That vector will not be in the span of these three vectors, so the vectors do not span \(\IR^3\text{.}\)</p>
+<p class="continuation">Since the last row lacks a pivot, there is some vector \(\vec{v} \in \IR^3\) that upon augmenting this matrix will produce an inconsistent system. That vector will not be in the span of these three vectors, so the vectors do not span \(\IR^3\text{.}\)</p>
 </li>
 </ol></div></div>
-</div></article></div>
-<article class="example example-like" id="example-11"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-11"><h6 class="heading">
+</div></article><article class="example example-like" id="example-11"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">V4.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-11"><article class="example example-like"><p id="p-947">Consider the following two sets of Euclidean vectors.</p>
+</h6>
+<p id="p-947">Consider the following two sets of Euclidean vectors.</p>
 <div class="displaymath">
 \begin{equation*}
 W = \setBuilder{\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right] }{x+y=3z+2w}
@@ -564,9 +570,9 @@ W = \setBuilder{\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right] }{x+y
 U = \setBuilder{\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right]}{x+y=3z+w^2}
 \end{equation*}
 </div>
-<p data-braille="continuation">Explain why one of these sets is a subspace of \(\IR^3\text{,}\) and why the other is not.</p>
+<p class="continuation">Explain why one of these sets is a subspace of \(\IR^3\text{,}\) and why the other is not.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like">
 <p id="p-948">To show that \(W\) is a subspace, let \(\vec v=\left[\begin{array}{c} x_1 \\y_1 \\ z_1 \\ w_1 \end{array}\right]\in W\) and \(\vec w=\left[\begin{array}{c} x_2 \\y_2 \\ z_2 \\ w_2 \end{array}\right] \in W
 \text{,}\) so we know that \(x_1+y_1=3z_1+2w_1\) and \(x_2+y_2=3z_2+2w_2\text{.}\)</p>
 <p id="p-949">Consider</p>
@@ -578,7 +584,7 @@ U = \setBuilder{\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right]}{x+y=
 .
 \end{equation*}
 </div>
-<p data-braille="continuation">To see if \(\vec{v}+\vec{w} \in W\text{,}\) we need to check if \((x_1+x_2)+(y_1+y_2) = 3(z_1+z_2)+2(w_1+w_2)\text{.}\) We compute</p>
+<p class="continuation">To see if \(\vec{v}+\vec{w} \in W\text{,}\) we need to check if \((x_1+x_2)+(y_1+y_2) = 3(z_1+z_2)+2(w_1+w_2)\text{.}\) We compute</p>
 <div class="displaymath">
 \begin{align*}
 (x_1+x_2)+(y_1+y_2) &amp;= (x_1+y_1)+(x_2+y_2) &amp;\text{by regrouping}\\
@@ -586,7 +592,7 @@ U = \setBuilder{\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right]}{x+y=
 &amp;=3(z_1+z_2)+2(w_1+w_2) &amp; \text{by regrouping.}
 \end{align*}
 </div>
-<p data-braille="continuation">Thus \(\vec v+\vec w\in W\text{,}\) so \(W\) is closed under vector addition.</p>
+<p class="continuation">Thus \(\vec v+\vec w\in W\text{,}\) so \(W\) is closed under vector addition.</p>
 <p id="p-950">Now consider</p>
 <div class="displaymath">
 \begin{equation*}
@@ -595,7 +601,7 @@ c\vec v
 .
 \end{equation*}
 </div>
-<p data-braille="continuation">Similarly, to check that \(c\vec{v} \in W\text{,}\) we need to check if \(cx_1+cy_1=3(cz_1)+2(cw_1)\text{,}\) so we compute</p>
+<p class="continuation">Similarly, to check that \(c\vec{v} \in W\text{,}\) we need to check if \(cx_1+cy_1=3(cz_1)+2(cw_1)\text{,}\) so we compute</p>
 <div class="displaymath">
 \begin{align*}
 cx_1+cy_1 &amp; = c(x_1+y_1) &amp;\text{by factoring}\\
@@ -603,7 +609,7 @@ cx_1+cy_1 &amp; = c(x_1+y_1) &amp;\text{by factoring}\\
 &amp;=3(cz_1)+2(cw_1) &amp;\text{by regrouping}
 \end{align*}
 </div>
-<p data-braille="continuation">and we see that \(c\vec v\in W\text{,}\) so \(W\) is closed under scalar multiplication. Therefore \(W\) is a subspace of \(\IR^3\text{.}\)</p>
+<p class="continuation">and we see that \(c\vec v\in W\text{,}\) so \(W\) is closed under scalar multiplication. Therefore \(W\) is a subspace of \(\IR^3\text{.}\)</p>
 <p id="p-951">Now, to show \(U\) is not a subspace, we will show that it is not closed under vector addition.</p>
 <ul class="disc">
 <li id="li-431">
@@ -619,7 +625,7 @@ cx_1+cy_1 &amp; = c(x_1+y_1) &amp;\text{by factoring}\\
 .
 \end{equation*}
 </div>
-<p data-braille="continuation">To see if \(\vec{v}+\vec{w} \in U\text{,}\) we need to check if \((x_1+x_2)+(y_1+y_2) = 3(z_1+z_2)+(w_1+w_2)^2\text{.}\) We compute</p>
+<p class="continuation">To see if \(\vec{v}+\vec{w} \in U\text{,}\) we need to check if \((x_1+x_2)+(y_1+y_2) = 3(z_1+z_2)+(w_1+w_2)^2\text{.}\) We compute</p>
 <div class="displaymath">
 \begin{align*}
 (x_1+x_2)+(y_1+y_2) &amp;= (x_1+y_1)+(x_2+y_2) &amp;\text{by regrouping}\\
@@ -627,15 +633,15 @@ cx_1+cy_1 &amp; = c(x_1+y_1) &amp;\text{by factoring}\\
 &amp;=3(z_1+z_2)+(w_1^2+w_2^2) &amp;\text{by regrouping}
 \end{align*}
 </div>
-<p data-braille="continuation">and thus \(\vec v+\vec w\in U\) \textbf{only when} \(w_1^2+w_2^2=(w_1+w_2)^2\text{.}\) Since this is not true in general, \(U\) is not closed under vector addition, and thus cannot be a subspace.</p>
+<p class="continuation">and thus \(\vec v+\vec w\in U\) \textbf{only when} \(w_1^2+w_2^2=(w_1+w_2)^2\text{.}\) Since this is not true in general, \(U\) is not closed under vector addition, and thus cannot be a subspace.</p>
 </li>
 <li id="li-432"><p id="p-954">(Solution Method 2) Note that the vector \(\vec v=\left[\begin{array}{c} 0\\1\\0\\1\end{array}\right] \) belongs to \(U\) since \(0+1=3(0)+1^2\text{.}\) However, the vector \(2\vec v=\left[\begin{array}{c} 0\\2\\0\\2\end{array}\right] \) does not belong to \(U\) since \(0+2\not=3(0)+2^2\text{.}\) Therefore \(U\) is not closed under scalar multiplication, and thus is not a subspace.</p></li>
 </ul>
 </div></div>
-</div></article></div>
-<article class="example example-like" id="example-12"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-12"><h6 class="heading">
+</div></article><article class="example example-like" id="example-12"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">V5.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-12"><article class="example example-like"><p id="p-955">Consider the statement <blockquote class="blockquote" id="blockquote-6"><p id="p-956">The set of vectors \(\left\{
+</h6>
+<p id="p-955">Consider the statement <blockquote class="blockquote" id="blockquote-6"><p id="p-956">The set of vectors \(\left\{
 \left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right]  ,
 \left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right]  ,
 \left[\begin{array}{c} 0 \\ 1 \\ -1 \\ 1 \end{array}\right]  , 
@@ -645,7 +651,7 @@ cx_1+cy_1 &amp; = c(x_1+y_1) &amp;\text{by factoring}\\
 <li id="li-434"><p id="p-958">Explain why your statement is true or false.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like"><ol class="decimal">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like"><ol class="decimal">
 <li id="li-435"><p id="p-959">This statement is equivalent to the statement <blockquote class="blockquote" id="blockquote-7"><p id="p-960">The vector equation \(x_1\left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right] +
 x_2\left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right] +
 x_3\left[\begin{array}{c} 0 \\ 1 \\ -1 \\ 1 \end{array}\right]+ 
@@ -658,13 +664,13 @@ x_4\left[\begin{array}{c} 2 \\ 5 \\ 1 \\ 5 \end{array}\right] =\vec{0}\) has (in
 \left[\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 1  \\ 0 &amp; 1 &amp; 0 &amp; 1  \\ 0 &amp; 0 &amp; 1 &amp; 2  \\ 0 &amp; 0 &amp; 0 &amp; 0  \end{array}\right].
 \end{equation*}
 </div>
-<p data-braille="continuation">Since the fourth column is not a pivot column, the system has (infinitely many) nontrivial solutions. Thus the set of vectors is linearly dependent.</p>
+<p class="continuation">Since the fourth column is not a pivot column, the system has (infinitely many) nontrivial solutions. Thus the set of vectors is linearly dependent.</p>
 </li>
 </ol></div></div>
-</div></article></div>
-<article class="example example-like" id="example-13"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-13"><h6 class="heading">
+</div></article><article class="example example-like" id="example-13"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">V6.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-13"><article class="example example-like"><p id="p-962">Consider the statement <blockquote class="blockquote" id="blockquote-8"><p id="p-963">The set of vectors \(\left\{
+</h6>
+<p id="p-962">Consider the statement <blockquote class="blockquote" id="blockquote-8"><p id="p-963">The set of vectors \(\left\{
 \left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right] ,
 \left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right] ,
 \left[\begin{array}{c} 0 \\ 1 \\ -1 \\ 1 \end{array}\right] ,
@@ -674,7 +680,7 @@ x_4\left[\begin{array}{c} 2 \\ 5 \\ 1 \\ 5 \end{array}\right] =\vec{0}\) has (in
 <li id="li-438"><p id="p-965">Explain why your statement is true or false.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><ol class="decimal">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><ol class="decimal">
 <li id="li-439"><p id="p-966">This statement is equivalent to the statement <blockquote class="blockquote" id="blockquote-9"><p id="p-967">The set of vectors \(\left\{
 \left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right] ,
 \left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right] ,
@@ -688,14 +694,14 @@ x_4\left[\begin{array}{c} 2 \\ 5 \\ 1 \\ 5 \end{array}\right] =\vec{0}\) has (in
 \left[\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right].
 \end{equation*}
 </div>
-<p data-braille="continuation">Since the fourth column is not a pivot column, the vectors are linearly dependent and thus not a basis of \(\IR^4\text{.}\)</p>
+<p class="continuation">Since the fourth column is not a pivot column, the vectors are linearly dependent and thus not a basis of \(\IR^4\text{.}\)</p>
 <p id="p-969">(Alternate solution:) Since the fourth row is not a pivot row, the vectors do not span \(\IR^4\) and thus are not a basis of \(\IR^4\text{.}\)</p>
 </li>
 </ol></div></div>
-</div></article></div>
-<article class="example example-like" id="example-14"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-14"><h6 class="heading">
+</div></article><article class="example example-like" id="example-14"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">V7.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-14"><article class="example example-like"><p id="p-970">Consider the subspace</p>
+</h6>
+<p id="p-970">Consider the subspace</p>
 <div class="displaymath">
 \begin{equation*}
 W = \vspan \left\{
@@ -712,7 +718,7 @@ W = \vspan \left\{
 <li id="li-442"><p id="p-972">Explain how to find the dimension of \(W\text{.}\)</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like"><ol class="decimal">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like"><ol class="decimal">
 <li id="li-443">
 <p id="p-973">Observe that</p>
 <div class="displaymath">
@@ -732,7 +738,7 @@ W = \vspan \left\{
 \end{array}\right]
 \end{equation*}
 </div>
-<p data-braille="continuation">If we remove the vectors yielding non-pivot columns, the resulting set will span the same vectors while being linearly independent. Therefore</p>
+<p class="continuation">If we remove the vectors yielding non-pivot columns, the resulting set will span the same vectors while being linearly independent. Therefore</p>
 <div class="displaymath">
 \begin{equation*}
 \left\{
@@ -742,20 +748,20 @@ W = \vspan \left\{
 \right\}
 \end{equation*}
 </div>
-<p data-braille="continuation">is a basis of \(W\text{.}\)</p>
+<p class="continuation">is a basis of \(W\text{.}\)</p>
 </li>
 <li id="li-444"><p id="p-974">Since this (and thus every other) basis has three vectors in it, the dimension of \(W\) is \(3\text{.}\)</p></li>
 </ol></div></div>
-</div></article></div>
-<article class="example example-like" id="example-15"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-15"><h6 class="heading">
+</div></article><article class="example example-like" id="example-15"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">V8.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-15"><article class="example example-like"><p id="p-975">Consider the statement <blockquote class="blockquote" id="blockquote-10"><p id="p-976">The set of polynomials \(\setList{3x^3+2x^2+x,-x^3+x^2+2x+3,x^2-x+1,2x^3+5x^2+x+5}\) is linearly independent.</p></blockquote></p>
+</h6>
+<p id="p-975">Consider the statement <blockquote class="blockquote" id="blockquote-10"><p id="p-976">The set of polynomials \(\setList{3x^3+2x^2+x,-x^3+x^2+2x+3,x^2-x+1,2x^3+5x^2+x+5}\) is linearly independent.</p></blockquote></p>
 <ol class="decimal">
 <li id="li-445"><p id="p-977">Write an equivalent statement using a polynomial equation.</p></li>
 <li id="li-446"><p id="p-978">Explain why your statement is true or false.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like"><ol class="decimal">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like"><ol class="decimal">
 <li id="li-447"><p id="p-979">This statement is equivalent to the statement <blockquote class="blockquote" id="blockquote-11"><p id="p-980">The polynomial equation \(y_1(3x^3+2x^2+x) + y_2(-x^3+x^2+2x+3)\) \(+y_3(x^2-x+1)+y_4(2x^3+5x^2+x+5)=0\) has no nontrivial solutions.</p></blockquote></p></li>
 <li id="li-448">
 <p id="p-981">This polynomial equation corresponds to the system of equations</p>
@@ -767,20 +773,20 @@ y_1 &amp;+&amp; 2y_2 &amp;-&amp; y_3 &amp;+&amp; y_4 &amp;=&amp; 0\\
 &amp; &amp; 3y_2 &amp;+&amp; y_3 &amp;+&amp; 5y_4 &amp;=&amp; 0
 \end{alignat*}
 </div>
-<p data-braille="continuation">which corresponds to the augmented matrix \(\left[\begin{array}{cccc} 3 &amp; -1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; 3 &amp; 1 &amp; 5 \end{array}\right]\text{.}\) So we compute</p>
+<p class="continuation">which corresponds to the augmented matrix \(\left[\begin{array}{cccc} 3 &amp; -1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; 3 &amp; 1 &amp; 5 \end{array}\right]\text{.}\) So we compute</p>
 <div class="displaymath">
 \begin{equation*}
 \RREF \left[\begin{array}{cccc} 3 &amp; -1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; 3 &amp; 1 &amp; 5 \end{array}\right] =
 \left[\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right].
 \end{equation*}
 </div>
-<p data-braille="continuation">Since the fourth column is not a pivot column, there are (infinitely many) nontrivial solutions. Thus, the set \(\setList{3x^3+2x^2+x,-x^3+x^2+2x+3,x^2-x+1}\) is linearly dependent.</p>
+<p class="continuation">Since the fourth column is not a pivot column, there are (infinitely many) nontrivial solutions. Thus, the set \(\setList{3x^3+2x^2+x,-x^3+x^2+2x+3,x^2-x+1}\) is linearly dependent.</p>
 </li>
 </ol></div></div>
-</div></article></div>
-<article class="example example-like" id="example-16"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-16"><h6 class="heading">
+</div></article><article class="example example-like" id="example-16"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">V9.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-16"><article class="example example-like"><p id="p-982">Consider the homogeneous system of equations</p>
+</h6>
+<p id="p-982">Consider the homogeneous system of equations</p>
 <div class="displaymath">
 \begin{alignat*}{6}
 x_1 &amp;\,+\,&amp; x_2 &amp;\,+\,&amp; 3x_3 &amp;\,+\,&amp; x_4 &amp;\,+\,&amp; 2x_5 &amp;=&amp; 0\\
@@ -794,7 +800,7 @@ x_1 &amp;\,+\,&amp; x_2 &amp;\,+\,&amp; 3x_3 &amp;\,+\,&amp; x_4 &amp;\,+\,&amp;
 <li id="li-450"><p id="p-984">Find a basis of the solution space.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><ol class="decimal">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><ol class="decimal">
 <li id="li-451">
 <p id="p-985">Observe that</p>
 <div class="displaymath">
@@ -824,7 +830,7 @@ x_1 &amp;\,\,&amp;  &amp;\,+\,&amp; 2x_3 &amp;\,\,&amp;  &amp;\,+\,&amp; x_5 &am
 &amp;\,\,&amp;  &amp;\,\,&amp;  &amp;\,\,&amp;  &amp;\,\,&amp; x_5 &amp;=&amp; b
 \end{alignat*}
 </div>
-<p data-braille="continuation">Thus, the solution set is</p>
+<p class="continuation">Thus, the solution set is</p>
 <div class="displaymath">
 \begin{equation*}
 \setBuilder{\left[\begin{array}{c} -2a-b \\ -a \\ a \\ -b \\ b \end{array}\right]}{a,b \in \IR} .
@@ -839,7 +845,7 @@ x_1 &amp;\,\,&amp;  &amp;\,+\,&amp; 2x_3 &amp;\,\,&amp;  &amp;\,+\,&amp; x_5 &am
 a \left[\begin{array}{c} -2 \\ -1 \\ 1 \\ 0 \\ 0 \end{array}\right] + b \left[\begin{array}{c} -1 \\ 0 \\ 0 \\ -1 \\ 1 \end{array}\right], 
 \end{equation*}
 </div>
-<p data-braille="continuation">a basis for the solution space is</p>
+<p class="continuation">a basis for the solution space is</p>
 <div class="displaymath">
 \begin{equation*}
 \left \{ \left[\begin{array}{c} -2 \\ -1 \\ 1 \\ 0 \\ 0 \end{array}\right] , \left[\begin{array}{c} -1 \\ 0 \\ 0 \\ -1 \\ 1 \end{array}\right] \right\}.
@@ -847,18 +853,18 @@ a \left[\begin{array}{c} -2 \\ -1 \\ 1 \\ 0 \\ 0 \end{array}\right] + b \left[\b
 </div>
 </li>
 </ol></div></div>
-</div></article></div>
-<article class="example example-like" id="example-17"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-17"><h6 class="heading">
+</div></article><article class="example example-like" id="example-17"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">A1.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-17"><article class="example example-like"><p id="p-988">Consider the following maps of polynomials \(S: \P \rightarrow \P\) and \(T:\P\rightarrow\P\) defined by</p>
+</h6>
+<p id="p-988">Consider the following maps of polynomials \(S: \P \rightarrow \P\) and \(T:\P\rightarrow\P\) defined by</p>
 <div class="displaymath">
 \begin{equation*}
 S(f(x))= 3xf(x) \text{ and }T(f(x)) = 3f'(x)f(x).
 \end{equation*}
 </div>
-<p data-braille="continuation">Explain why one of these maps is a linear transformation, and why the other map is not.</p>
+<p class="continuation">Explain why one of these maps is a linear transformation, and why the other map is not.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like">
 <p id="p-989">To show \(S\) is a linear transformation, we must show two things:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -877,7 +883,7 @@ S\left(f(x)+g(x)\right) &amp;= 3x\left(f(x)+g(x)\right) &amp; \text{by definitio
 &amp;= 3xf(x)+3xg(x) &amp; \text{by distributing}
 \end{align*}
 </div>
-<p data-braille="continuation">But note that \(S(f(x))=3xf(x)\) and \(S(g(x))=3xg(x)\text{,}\) so we have \(S(f(x)+g(x))=S(f(x))+S(g(x))\text{.}\)</p>
+<p class="continuation">But note that \(S(f(x))=3xf(x)\) and \(S(g(x))=3xg(x)\text{,}\) so we have \(S(f(x)+g(x))=S(f(x))+S(g(x))\text{.}\)</p>
 <p id="p-991">For the second part, we compute</p>
 <div class="displaymath">
 \begin{align*}
@@ -885,7 +891,7 @@ S\left(cf(x)\right) &amp;= 3x\left(cf(x)\right) &amp; \text{by definition of } \
 &amp;= 3cxf(x) &amp; \text{rewriting the multiplication.}
 \end{align*}
 </div>
-<p data-braille="continuation">But note that \(cS(f(x))=c(3xf(x))=3cxf(x)\) as well, so we have \(S(cf(x))=cS(f(x))\text{.}\) Now, since \(S\) respects both addition and scalar multiplication, we can conclude \(S\) is a linear transformation.</p>
+<p class="continuation">But note that \(cS(f(x))=c(3xf(x))=3cxf(x)\) as well, so we have \(S(cf(x))=cS(f(x))\text{.}\) Now, since \(S\) respects both addition and scalar multiplication, we can conclude \(S\) is a linear transformation.</p>
 <ul class="disc">
 <li id="li-453">
 <p id="p-992">(Solution method 1) As for \(T\text{,}\) we compute</p>
@@ -896,7 +902,7 @@ T(f(x)+g(x))&amp; =3 (f(x)+g(x))'(f(x)+g(x)) &amp;\text{by definition of }\\
 &amp;= 3f(x)f'(x)+3f(x)g'(x)+3f'(x)g(x)+3g(x)g'(x) &amp;\text{by distributing}
 \end{align*}
 </div>
-<p data-braille="continuation">However, note that \(T(f(x))+T(g(x))=3f'(x)f(x)+3g'(x)g(x)\text{,}\) which is not always the same polynomial (for example, when \(f(x)=g(x)=x\)). So we see that \(T(f(x)+g(x)) \neq T(f(x))+T(g(x))\text{,}\) so \(T\) does not respect addition and is therefore not a linear transformation.</p>
+<p class="continuation">However, note that \(T(f(x))+T(g(x))=3f'(x)f(x)+3g'(x)g(x)\text{,}\) which is not always the same polynomial (for example, when \(f(x)=g(x)=x\)). So we see that \(T(f(x)+g(x)) \neq T(f(x))+T(g(x))\text{,}\) so \(T\) does not respect addition and is therefore not a linear transformation.</p>
 </li>
 <li id="li-454">
 <p id="p-993">(Solution method 2) As for \(T\text{,}\) we may choose the polynomial \(f(x)=x\) and scalar \(c=2\text{.}\) Then</p>
@@ -911,14 +917,14 @@ T(cf(x))=T(2x)=3(2x)'(2x)=3(2)(2x)=12x.
 cT(f(x))=2T(x)=2(3)(x)'(x)=2(3)(1)(x)=6x.
 \end{equation*}
 </div>
-<p data-braille="continuation">Since this isn't the same polynomial, \(T\) does not preserve multiplication and is therefore not a linear transformation.</p>
+<p class="continuation">Since this isn't the same polynomial, \(T\) does not preserve multiplication and is therefore not a linear transformation.</p>
 </li>
 </ul>
 </div></div>
-</div></article></div>
-<article class="example example-like" id="example-18"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-18"><h6 class="heading">
+</div></article><article class="example example-like" id="example-18"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.14</span><span class="period">.</span><span class="space"> </span><span class="title">A2.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-18"><article class="example example-like"><ol class="decimal">
+</h6>
+<ol class="decimal">
 <li id="li-455">
 <p id="p-995">Find the standard matrix for the linear transformation \(T: \IR^3\rightarrow \IR^4\) given by</p>
 <div class="displaymath">
@@ -934,11 +940,11 @@ T\left(\left[\begin{array}{c} x \\ y \\ z \\  \end{array}\right] \right) = \left
 \left[\begin{array}{cccc} 2 &amp; 3 &amp; 4 &amp; 1 \\ 0 &amp; 1 &amp; -1 &amp; -1 \\ 3 &amp; -2 &amp; -2 &amp; 4 \end{array}\right].
 \end{equation*}
 </div>
-<p data-braille="continuation">Compute \(S\left( \left[\begin{array}{c} -2 \\ 1 \\ 3 \\ 2\end{array}\right] \right) \text{.}\)</p>
+<p class="continuation">Compute \(S\left( \left[\begin{array}{c} -2 \\ 1 \\ 3 \\ 2\end{array}\right] \right) \text{.}\)</p>
 </li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><ol class="decimal">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><ol class="decimal">
 <li id="li-457">
 <p id="p-997">Since</p>
 <div class="displaymath">
@@ -948,7 +954,7 @@ T\left(\left[\begin{array}{c} 0 \\ 1 \\ 0 \end{array}\right]\right) &amp;= \left
 T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right]\right) &amp;= \left[\begin{array}{c} 0 \\ -1 \\ 3 \\ 0  \end{array}\right],
 \end{align*}
 </div>
-<p data-braille="continuation">the standard matrix for \(T\) is \(\left[\begin{array}{ccc} -1 &amp; 1 &amp; 0 \\ -1 &amp; 3 &amp; -1 \\ 7 &amp; 1 &amp; 3  \\ 0 &amp; 0 &amp; 0 \end{array}\right] \text{.}\)</p>
+<p class="continuation">the standard matrix for \(T\) is \(\left[\begin{array}{ccc} -1 &amp; 1 &amp; 0 \\ -1 &amp; 3 &amp; -1 \\ 7 &amp; 1 &amp; 3  \\ 0 &amp; 0 &amp; 0 \end{array}\right] \text{.}\)</p>
 </li>
 <li id="li-458">
 <div class="displaymath" id="p-998">
@@ -964,10 +970,10 @@ S\left(\left[\begin{array}{c} -2 \\ 1 \\ 3 \\ 2 \end{array}\right] \right) = -2S
 </div>
 </li>
 </ol></div></div>
-</div></article></div>
-<article class="example example-like" id="example-19"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-19"><h6 class="heading">
+</div></article><article class="example example-like" id="example-19"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">A3.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-19"><article class="example example-like"><p id="p-999">Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by</p>
+</h6>
+<p id="p-999">Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by</p>
 <div class="displaymath">
 \begin{equation*}
 T\left(\left[\begin{array}{c}x\\y\\z\\w\end{array}\right] \right) =
@@ -984,7 +990,7 @@ x+6y-z+3w
 <li id="li-461"><p id="p-1002">Explain how to find the rank and nullity of T, and why the rank-nullity theorem holds for T.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><ol class="decimal">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><ol class="decimal">
 <li id="li-462">
 <p id="p-1003">To find the image we compute</p>
 <div class="displaymath">
@@ -1012,14 +1018,14 @@ x &amp;+&amp; 3y &amp;+&amp; 2z &amp;-&amp; 3w &amp;=&amp; 0\\
 x &amp;+&amp; 6y &amp;-&amp; z &amp;+&amp; 3w &amp;=&amp; 0 .
 \end{alignat*}
 </div>
-<p data-braille="continuation">So we compute</p>
+<p class="continuation">So we compute</p>
 <div class="displaymath">
 \begin{equation*}
 \RREF\left[\begin{array}{cccc|c} 1 &amp; 3 &amp; 2 &amp; -3 &amp; 0 \\ 2 &amp; 4 &amp; 6 &amp; -10 &amp;0 \\ 1 &amp; 6 &amp; -1 &amp; 3 &amp; 0 \end{array}\right]
 = \left[\begin{array}{cccc|c} 1 &amp; 0 &amp; 5 &amp; -9 &amp; 0 \\ 0 &amp; 1 &amp; -1 &amp; 2 &amp; 0  \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right].
 \end{equation*}
 </div>
-<p data-braille="continuation">Then, letting \(z=a\) and \(w=b\) we have</p>
+<p class="continuation">Then, letting \(z=a\) and \(w=b\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \ker T = \setBuilder{\left[\begin{array}{c}-5a+9b \\ a-2b \\ a \\ b \end{array}\right]}{a,b \in \IR}. 
@@ -1035,7 +1041,7 @@ x &amp;+&amp; 6y &amp;-&amp; z &amp;+&amp; 3w &amp;=&amp; 0 .
 = \left[\begin{array}{cccc} 1 &amp; 0 &amp; 5 &amp; -9 \\ 0 &amp; 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right].
 \end{equation*}
 </div>
-<p data-braille="continuation">Since the first two columns are pivot columns, they form a linearly independent spanning set, so a basis for \(\Im T\) is \(\setList{\left[\begin{array}{c}1\\2\\1 \end{array}\right], \left[\begin{array}{c}3\\4\\6 \end{array}\right]}.\)</p>
+<p class="continuation">Since the first two columns are pivot columns, they form a linearly independent spanning set, so a basis for \(\Im T\) is \(\setList{\left[\begin{array}{c}1\\2\\1 \end{array}\right], \left[\begin{array}{c}3\\4\\6 \end{array}\right]}.\)</p>
 <p id="p-1006">To find a basis for the kernel, note that</p>
 <div class="displaymath">
 \begin{equation*}
@@ -1052,7 +1058,7 @@ x &amp;+&amp; 6y &amp;-&amp; z &amp;+&amp; 3w &amp;=&amp; 0 .
 = \vspan\left\{ \left[\begin{array}{c} -5 \\ 1 \\ 1 \\ 0 \end{array}\right], \left[\begin{array}{c} 9 \\ -2 \\ 0 \\ 1 \end{array}\right]\right\}.
 \end{equation*}
 </div>
-<p data-braille="continuation">so a basis for the kernel is</p>
+<p class="continuation">so a basis for the kernel is</p>
 <div class="displaymath">
 \begin{equation*}
 \setList{\left[\begin{array}{c}-5 \\ 1 \\ 1 \\ 0 \end{array}\right],
@@ -1062,16 +1068,16 @@ x &amp;+&amp; 6y &amp;-&amp; z &amp;+&amp; 3w &amp;=&amp; 0 .
 </li>
 <li id="li-465"><p id="p-1007">The dimension of the image (the rank) is \(2\text{,}\) the dimension of the kernel (the nullity) is \(2\text{,}\) and the dimension of the domain of \(T\) is \(4\text{,}\) so we see \(2+2=4\text{,}\) which verifies that the sum of the rank and nullity of \(T\) is the dimension of the domain of \(T\text{.}\)</p></li>
 </ol></div></div>
-</div></article></div>
-<article class="example example-like" id="example-20"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-20"><h6 class="heading">
+</div></article><article class="example example-like" id="example-20"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.16</span><span class="period">.</span><span class="space"> </span><span class="title">A4.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-20"><article class="example example-like"><p id="p-1008">Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by the standard matrix \(\left[\begin{array}{cccc} 1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]\text{.}\)</p>
+</h6>
+<p id="p-1008">Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by the standard matrix \(\left[\begin{array}{cccc} 1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]\text{.}\)</p>
 <ol class="decimal">
 <li id="li-466"><p id="p-1009">Explain why \(T\) is or is not injective.</p></li>
 <li id="li-467"><p id="p-1010">Explain why \(T\) is or is not surjective.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like">
 <p id="p-1011">Compute</p>
 <div class="displaymath">
 \begin{equation*}
@@ -1083,10 +1089,10 @@ x &amp;+&amp; 6y &amp;-&amp; z &amp;+&amp; 3w &amp;=&amp; 0 .
 <li id="li-469"><p id="p-1013">Since there are only two pivots, the image (i.e. the span of the columns) is a 2-dimensional subspace (and thus does not equal \(\IR^3\)), so \(T\) is not surjective.</p></li>
 </ol>
 </div></div>
-</div></article></div>
-<article class="example example-like" id="example-21"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-21"><h6 class="heading">
+</div></article><article class="example example-like" id="example-21"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.17</span><span class="period">.</span><span class="space"> </span><span class="title">M1.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-21"><article class="example example-like"><p id="p-1014">Of the following three matrices, only two may be multiplied.</p>
+</h6>
+<p id="p-1014">Of the following three matrices, only two may be multiplied.</p>
 <div class="displaymath">
 \begin{align*}
 A &amp;= \left[\begin{array}{cc} 1 &amp; -3 \\ 0 &amp; 1 \end{array}\right] &amp;
@@ -1096,7 +1102,7 @@ C&amp;= \left[\begin{array}{ccc} 0 &amp; 1 &amp; 3 \\ 1 &amp; -2 &amp; 5 \end{ar
 </div>
 <p id="p-1015">Explain which two may be multiplied and why. Then show how to find their product.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like">
 <p id="p-1016">\(AC\) is the only one that can be computed, since \(A\) is \(2\times 2\) and \(C\) is \(2\times 3\text{.}\) Thus \(AC\) will be the \(2\times 3\) matrix given by</p>
 <div class="displaymath">
 \begin{align*}
@@ -1112,70 +1118,70 @@ AC = \left[\begin{array}{ccc} -3 &amp; 7 &amp; -12 \\ 1 &amp; -2 &amp; 5 \end{ar
 \end{equation*}
 </div>
 </div></div>
-</div></article></div>
-<article class="example example-like" id="example-22"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-22"><h6 class="heading">
+</div></article><article class="example example-like" id="example-22"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.18</span><span class="period">.</span><span class="space"> </span><span class="title">M2.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-22"><article class="example example-like"><p id="p-1018">Let \(A\) be a \(4\times4\) matrix.</p>
+</h6>
+<p id="p-1018">Let \(A\) be a \(4\times4\) matrix.</p>
 <ol class="decimal">
 <li id="li-470"><p id="p-1019">Give a \(4\times 4\) matrix \(P\) that may be used to perform the row operation \({R_3} \to R_3+4 \, {R_1} \text{.}\)</p></li>
 <li id="li-471"><p id="p-1020">Give a \(4\times 4\) matrix \(Q\) that may be used to perform the row operation \({R_1} \to -4 \, {R_1}\text{.}\)</p></li>
 <li id="li-472"><p id="p-1021">Use matrix multiplication to describe the matrix obtained by applying \({R_3} \to 4 \, {R_1} + {R_3}\) and then \({R_1} \to -4 \, {R_1}\) to \(A\) (note the order).</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like"><ol class="decimal">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like"><ol class="decimal">
 <li id="li-473"><p id="p-1022">\(\displaystyle P=\left[\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 4 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]\)</p></li>
 <li id="li-474"><p id="p-1023">\(\displaystyle Q=\left[\begin{array}{cccc} -4 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1\end{array}\right]\)</p></li>
 <li id="li-475"><p id="p-1024">\(\displaystyle QPA\)</p></li>
 </ol></div></div>
-</div></article></div>
-<article class="example example-like" id="example-23"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-23"><h6 class="heading">
+</div></article><article class="example example-like" id="example-23"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">M3.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-23"><article class="example example-like"><p id="p-1025">Explain why the matrix \(\left[\begin{array}{ccc}1 &amp; 3 &amp; 2  \\ 2 &amp; 4 &amp; 6  \\ 1 &amp; 6 &amp; -1 \end{array}\right]\) is or is not invertible.</p>
+</h6>
+<p id="p-1025">Explain why the matrix \(\left[\begin{array}{ccc}1 &amp; 3 &amp; 2  \\ 2 &amp; 4 &amp; 6  \\ 1 &amp; 6 &amp; -1 \end{array}\right]\) is or is not invertible.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like">
 <p id="p-1026">We compute</p>
 <div class="displaymath">
 \begin{equation*}
 \RREF\left(\left[\begin{array}{ccc}1 &amp; 3 &amp; 2  \\ 2 &amp; 4 &amp; 6  \\ 1 &amp; 6 &amp; -1 \end{array}\right]\right) = \left[\begin{array}{ccc} 1 &amp; 0 &amp; 5 \\ 0 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 \end{array}\right].
 \end{equation*}
 </div>
-<p data-braille="continuation">Since its \(\RREF\) is not the identity matrix, the linear map is not bijective and thus the matrix is not invertible.</p>
+<p class="continuation">Since its \(\RREF\) is not the identity matrix, the linear map is not bijective and thus the matrix is not invertible.</p>
 </div></div>
-</div></article></div>
-<article class="example example-like" id="example-24"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-24"><h6 class="heading">
+</div></article><article class="example example-like" id="example-24"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.20</span><span class="period">.</span><span class="space"> </span><span class="title">M4.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-24"><article class="example example-like"><p id="p-1027">Show how to compute the inverse of the matrix \(A=\left[\begin{array}{cccc}
+</h6>
+<p id="p-1027">Show how to compute the inverse of the matrix \(A=\left[\begin{array}{cccc}
 1 &amp; 2 &amp; 3 &amp; 5 \\ 0 &amp; -1 &amp; 4 &amp; -2 \\ 0 &amp; 0 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right]\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like">
 <p id="p-1028">To find the matrix \(A^{-1}\) where \(AA^{-1}=I\text{,}\) we need to solve the augmented matrix \([A|I]\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \RREF\left(\left[\begin{array}{cccc|cccc} 1 &amp; 2 &amp; 3 &amp; 5 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\ 0 &amp; -1 &amp; 4 &amp; -2 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 3 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]\right) = \left[\begin{array}{cccc|cccc} 1 &amp; 0 &amp; 0 &amp;0 &amp; 1 &amp; 2 &amp; -11 &amp; 32 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 4 &amp; -14 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]
 \end{equation*}
 </div>
-<p data-braille="continuation">So the inverse is \(\left[\begin{array}{cccc}  1 &amp; 2 &amp; -11 &amp; 32 \\ 0 &amp; -1 &amp; 4 &amp; -14 \\  0 &amp; 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]\text{.}\)</p>
+<p class="continuation">So the inverse is \(\left[\begin{array}{cccc}  1 &amp; 2 &amp; -11 &amp; 32 \\ 0 &amp; -1 &amp; 4 &amp; -14 \\  0 &amp; 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]\text{.}\)</p>
 </div></div>
-</div></article></div>
-<article class="example example-like" id="example-25"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-25"><h6 class="heading">
+</div></article><article class="example example-like" id="example-25"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">G1.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-25"><article class="example example-like"><p id="p-1029">Let \(A\) be a \(4 \times 4\) matrix with determinant \(-7\text{.}\)</p>
+</h6>
+<p id="p-1029">Let \(A\) be a \(4 \times 4\) matrix with determinant \(-7\text{.}\)</p>
 <ol class="decimal">
 <li id="li-476"><p id="p-1030">Let \(B\) be the matrix obtained from \(A\) by applying the row operation \(R_3 \to R_3+3R_4\text{.}\) What is \(\det(B)\text{?}\)</p></li>
 <li id="li-477"><p id="p-1031">Let \(C\) be the matrix obtained from \(A\) by applying the row operation \(R_2 \to -3R_2\text{.}\) What is \(\det(C)\text{?}\)</p></li>
 <li id="li-478"><p id="p-1032">Let \(D\) be the matrix obtained from \(A\) by applying the row operation \(R_3 \leftrightarrow R_4\text{.}\) What is \(\det(D)\text{?}\)</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><ol class="decimal">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><ol class="decimal">
 <li id="li-479"><p id="p-1033">Adding a multiple of one row to another row does not change the determinant, so \(\det(B)=\det(A)=-7\text{.}\)</p></li>
 <li id="li-480"><p id="p-1034">Scaling a row scales the determinant by the same factor, so so \(\det(B)=-3\det(A)=-3(-7)=21\text{.}\)</p></li>
 <li id="li-481"><p id="p-1035">Swaping rows changes the sign of the determinant, so \(\det(B)=-\det(A)=7\text{.}\)</p></li>
 </ol></div></div>
-</div></article></div>
-<article class="example example-like" id="example-26"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-26"><h6 class="heading">
+</div></article><article class="example example-like" id="example-26"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.22</span><span class="period">.</span><span class="space"> </span><span class="title">G2.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-26"><article class="example example-like"><p id="p-1036">Show how to compute the determinant of the matrix</p>
+</h6>
+<p id="p-1036">Show how to compute the determinant of the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 A
@@ -1189,7 +1195,7 @@ A
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like">
 <p id="p-1037">Here is one possible solution, first applying a single row operation, and then performing Laplace/cofactor expansions to reduce the determinant to a linear combination of \(2\times 2\) determinants:</p>
 <div class="displaymath">
 \begin{align*}
@@ -1229,12 +1235,12 @@ A
 \end{align*}
 </div>
 </div></div>
-</div></article></div>
-<article class="example example-like" id="example-27"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-27"><h6 class="heading">
+</div></article><article class="example example-like" id="example-27"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.23</span><span class="period">.</span><span class="space"> </span><span class="title">G3.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-27"><article class="example example-like"><p id="p-1039">Explain how to find the eigenvalues of the matrix \(\left[\begin{array}{cc} -2 &amp; -2 \\ 10 &amp; 7 \end{array}\right] \text{.}\)</p>
+</h6>
+<p id="p-1039">Explain how to find the eigenvalues of the matrix \(\left[\begin{array}{cc} -2 &amp; -2 \\ 10 &amp; 7 \end{array}\right] \text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like">
 <p id="p-1040">Compute the characteristic polynomial:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -1246,19 +1252,19 @@ A
 = (-2-\lambda)(7-\lambda)+20 = \lambda ^2 -5\lambda +6 = (\lambda -2)(\lambda -3)
 \end{equation*}
 </div>
-<p data-braille="continuation">The eigenvalues are the roots of the characteristic polynomial, namely \(2\) and \(3\text{.}\)</p>
+<p class="continuation">The eigenvalues are the roots of the characteristic polynomial, namely \(2\) and \(3\text{.}\)</p>
 </div></div>
-</div></article></div>
-<article class="example example-like" id="example-28"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-28"><h6 class="heading">
+</div></article><article class="example example-like" id="example-28"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.24</span><span class="period">.</span><span class="space"> </span><span class="title">G4.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-28"><article class="example example-like"><p id="p-1041">Explain how to find a basis for the eigenspace associated to the eigenvalue \(3\) in the matrix</p>
+</h6>
+<p id="p-1041">Explain how to find a basis for the eigenspace associated to the eigenvalue \(3\) in the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{ccc} -7 &amp; -8 &amp; 2 \\ 8 &amp; 9 &amp; -1 \\ \frac{13}{2} &amp; 5 &amp; 2 \end{array}\right].
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like">
 <p id="p-1042">The eigenspace associated to \(3\) is the kernel of \(A-3I\text{,}\) so we compute</p>
 <div class="displaymath">
 \begin{equation*}
@@ -1270,15 +1276,15 @@ A
 \RREF \left[\begin{array}{ccc} -10 &amp; -8 &amp; 2 \\ 8 &amp; 6 &amp; -1 \\ \frac{13}{2} &amp; 5 &amp; -1 \end{array}\right] = \left[\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; -\frac{3}{2} \\ 0 &amp; 0 &amp; 0 \end{array}\right].
 \end{equation*}
 </div>
-<p data-braille="continuation">Thus we see the kernel is</p>
+<p class="continuation">Thus we see the kernel is</p>
 <div class="displaymath">
 \begin{equation*}
 \setBuilder{\left[\begin{array}{c} -a \\ \frac{3}{2} a \\ a \end{array}\right]}{a \in \IR}
 \end{equation*}
 </div>
-<p data-braille="continuation">which has a basis of \(\left\{ \left[\begin{array}{c} -1 \\ \frac{3}{2} \\ 1 \end{array}\right] \right\}\text{.}\)</p>
+<p class="continuation">which has a basis of \(\left\{ \left[\begin{array}{c} -1 \\ \frac{3}{2} \\ 1 \end{array}\right] \right\}\text{.}\)</p>
 </div></div>
-</div></article></div></section></div></main>
+</div></article></section></div></main>
 </div>
 </body>
 </html>

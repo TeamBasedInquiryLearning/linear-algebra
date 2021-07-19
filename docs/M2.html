@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-18T13:24:38-05:00       *-->
+<!--*       on 2021-07-19T16:58:12Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Row Operations as Matrix Multiplication (M2)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -68,12 +74,12 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
@@ -230,9 +236,9 @@ MathJax.Hub.Config({
 \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
 \end{equation*}
 </div>
-<p data-braille="continuation">Check your guess using technology.</p></article><div class="sagecell-octave" id="sage-38"><script type="text/x-sage"></script></div>
+<p class="continuation">Check your guess using technology.</p></article><div class="sagecell-octave" id="sage-38"><script type="text/x-sage"></script></div>
 <article class="definition definition-like" id="definition-25"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
 </h6>
 <p id="p-646">The identity matrix \(I_n\) (or just \(I\) when \(n\) is obvious from context) is the \(n \times n\) matrix</p>
 <div class="displaymath">
@@ -241,8 +247,8 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 \vdots &amp; \ddots &amp; \ddots &amp; 0 \\ 0 &amp; \cdots &amp; 0 &amp; 1 \end{array}\right].
 \end{equation*}
 </div>
-<p data-braille="continuation">It has a \(1\) on each diagonal element and a \(0\) in every other position.</p></article><article class="fact theorem-like" id="fact-21"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
+<p class="continuation">It has a \(1\) on each diagonal element and a \(0\) in every other position.</p></article><article class="fact theorem-like" id="fact-21"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
 </h6>
 <p id="p-647">For any square matrix \(A\text{,}\) \(IA=AI=A\text{:}\)</p>
 <div class="displaymath">
@@ -256,7 +262,7 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
 \end{equation*}
 </div></article><article class="activity project-like" id="activity-114"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-35"><p id="p-648">Tweaking the identity matrix slightly allows us to write row operations in terms of matrix multiplication.</p></div>
 <article class="task exercise-like" id="task-81"><h6 class="heading"><span class="codenumber">(a)</span></h6>
@@ -288,7 +294,7 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 \end{equation*}
 </div></article></article><div class="sagecell-octave" id="sage-39"><script type="text/x-sage"></script></div>
 <article class="fact theorem-like" id="fact-22"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
 </h6>
 <p id="p-652">If \(R\) is the result of applying a row operation to \(I\text{,}\) then \(RA\) is the result of applying the same row operation to \(A\text{.}\)</p>
 <ul class="disc">
@@ -317,8 +323,8 @@ c &amp; 0 &amp; 0 \\
 \RREF(A)=R_k\dots R_2R_1A
 \end{equation*}
 </div>
-<p data-braille="continuation">for some sequence of matrices \(R_1,R_2,\dots,R_k\text{.}\)</p></article><article class="activity project-like" id="activity-115"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
+<p class="continuation">for some sequence of matrices \(R_1,R_2,\dots,R_k\text{.}\)</p></article><article class="activity project-like" id="activity-115"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span>
 </h6>
 <p id="p-657">Consider the two row operations \(R_2\leftrightarrow R_3\) and \(R_1+R_2\to R_1\) applied as follows to show \(A\sim B\text{:}\)</p>
 <div class="displaymath">
@@ -369,14 +375,12 @@ B =
 A
 \end{equation*}
 </div>
-<p data-braille="continuation">Check your work using technology.</p></article><div class="sagecell-octave" id="sage-40"><script type="text/x-sage"></script></div>
+<p class="continuation">Check your work using technology.</p></article><div class="sagecell-octave" id="sage-40"><script type="text/x-sage"></script></div>
 <section class="subsection" id="subsection-19"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.1</span> <span class="title">Videos</span>
 </h3>
-<figure class="figure figure-like" id="figure-40"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;">
-			
-		</div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.4<span class="period">.</span></span><span class="space"> </span>Video example: Row operations as matrix multiplication</figcaption></figure></section><section class="exercises" id="exercises-18"><h3 class="heading hide-type">
+<figure class="figure figure-like" id="figure-40"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-M2" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/4c3f8aa1-dd0c-4845-977f-ac5d0107bc45.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="external/videos/M2-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.7<span class="period">.</span></span><span class="space"> </span>Video example: Row operations as matrix multiplication</figcaption></figure></section><section class="exercises" id="exercises-18"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">4.2.2</span> <span class="title">Exercises</span>
 </h3>
 <p id="p-659"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/M2/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>

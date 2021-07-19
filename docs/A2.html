@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-18T13:24:37-05:00       *-->
+<!--*       on 2021-07-19T16:58:11Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Standard Matrices (A2)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -52,12 +58,12 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
@@ -209,7 +215,7 @@ MathJax.Hub.Config({
 <li id="li-186"><p id="p-434">\(T(c\vec{v}) = cT(\vec{v})\) for any \(c \in \IR,\vec{v} \in V\text{.}\)</p></li>
 </ol>
 <p id="p-435">In other words, a map is linear when vector space operations can be applied before or after the transformation without affecting the result.</p></article><article class="activity project-like" id="activity-73"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
 </h6>
 <p id="p-436">Suppose \(T: \IR^3 \rightarrow \IR^2\) is a linear map, and you know \(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
 =
@@ -223,7 +229,7 @@ MathJax.Hub.Config({
 <li id="li-189">\(\displaystyle \left[\begin{array}{c} -4 \\ -2 \end{array}\right]\)</li>
 <li id="li-190">\(\displaystyle \left[\begin{array}{c} 6 \\ -4 \end{array}\right]\)</li>
 </ol></article><article class="activity project-like" id="activity-74"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
 </h6>
 <p id="p-437">Suppose \(T: \IR^3 \rightarrow \IR^2\) is a linear map, and you know \(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
 =
@@ -237,7 +243,7 @@ MathJax.Hub.Config({
 <li id="li-193"><p id="p-440">\(\displaystyle \left[\begin{array}{c} -1 \\ 3 \end{array}\right]\)</p></li>
 <li id="li-194"><p id="p-441">\(\displaystyle \left[\begin{array}{c} 5 \\ -8 \end{array}\right]\)</p></li>
 </ol></article><article class="activity project-like" id="activity-75"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
 </h6>
 <p id="p-442">Suppose \(T: \IR^3 \rightarrow \IR^2\) is a linear map, and you know \(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
 =
@@ -251,7 +257,7 @@ MathJax.Hub.Config({
 <li id="li-197"><p id="p-445">\(\displaystyle \left[\begin{array}{c} -1 \\ 3 \end{array}\right]\)</p></li>
 <li id="li-198"><p id="p-446">\(\displaystyle \left[\begin{array}{c} 5 \\ -8 \end{array}\right]\)</p></li>
 </ol></article><article class="activity project-like" id="activity-76"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span>
 </h6>
 <p id="p-447">Suppose \(T: \IR^3 \rightarrow \IR^2\) is a linear map, and you know \(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
 =
@@ -265,7 +271,7 @@ MathJax.Hub.Config({
 <li id="li-201"><p id="p-450">The value of \(T\left(\left[\begin{array}{c} 1\\1\\1\end{array}\right]\right)\text{.}\)</p></li>
 <li id="li-202"><p id="p-451">Any of the above.</p></li>
 </ol></article><article class="fact theorem-like" id="fact-15"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.2.6</span><span class="period">.</span>
 </h6>
 <p id="p-452">Consider any basis \(\{\vec b_1,\dots,\vec b_n\}\) for \(V\text{.}\)  Since every vector \(\vec v\) can be written as a linear combination of basis vectors, \(x_1\vec b_1+\dots+ x_n\vec b_n\text{,}\) we may compute \(T(\vec v)\) as follows:</p>
 <div class="displaymath">
@@ -277,7 +283,7 @@ x_1T(\vec b_1)+\dots+x_nT(\vec b_n)
 </div>
 <p id="p-453">Therefore any linear transformation \(T:V \rightarrow W\) can be defined by just describing the values of \(T(\vec b_i)\text{.}\)</p>
 <p id="p-454">Put another way, the images of the basis vectors <dfn class="terminology">determine</dfn> the transformation \(T\text{.}\)</p></article><article class="definition definition-like" id="definition-19"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.7</span><span class="period">.</span>
 </h6>
 <p id="p-455">Since linear transformation \(T:\IR^n\to\IR^m\) is determined by the standard basis \(\{\vec e_1,\dots,\vec e_n\}\text{,}\) it's convenient to store this information in the \(m\times n\) <dfn class="terminology">standard matrix</dfn> \([T(\vec e_1) \,\cdots\, T(\vec e_n)]\text{.}\)</p>
 <p id="p-456">For example, let \(T: \IR^3 \rightarrow \IR^2\) be the linear map determined by the following values for \(T\) applied to the standard basis of \(\IR^3\text{.}\)</p>
@@ -312,7 +318,7 @@ T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
 .
 \end{equation*}
 </div></article><article class="activity project-like" id="activity-77"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.8</span><span class="period">.</span>
 </h6>
 <p id="p-458">Let \(T: \IR^4 \rightarrow \IR^3\) be the linear transformation given by</p>
 <div class="displaymath">
@@ -334,8 +340,8 @@ T\left(\vec e_4 \right)
 \left[\begin{array}{c} 2 \\ 0 \\ 0\end{array}\right]
 \end{equation*}
 </div>
-<p data-braille="continuation">Write the standard matrix \([T(\vec e_1) \,\cdots\, T(\vec e_n)]\) for \(T\text{.}\)</p></article><article class="activity project-like" id="activity-78"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.6</span><span class="period">.</span>
+<p class="continuation">Write the standard matrix \([T(\vec e_1) \,\cdots\, T(\vec e_n)]\) for \(T\text{.}\)</p></article><article class="activity project-like" id="activity-78"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.9</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-27">
 <p id="p-459">Let \(T: \IR^3 \rightarrow \IR^2\) be the linear transformation given by</p>
@@ -348,7 +354,7 @@ T\left(\left[\begin{array}{c} x\\ y \\ z \end{array}\right] \right) = \left[\beg
 <article class="task exercise-like" id="task-61"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-460">Compute \(T(\vec e_1)\text{,}\) \(T(\vec e_2)\text{,}\) and \(T(\vec e_3)\text{.}\)</p></article><article class="task exercise-like" id="task-62"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-461">Find the standard matrix for \(T\text{.}\)</p></article></article><article class="fact theorem-like" id="fact-16"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.2.10</span><span class="period">.</span>
 </h6>
 <p id="p-462">Because every linear map \(T:\IR^m\to\IR^n\) has a linear combination of the variables in each component, and thus \(T(\vec e_i)\) yields exactly the coefficients of \(x_i\text{,}\) the standard matrix for \(T\) is simply an ordered list of the coefficients of the \(x_i\text{:}\)</p>
 <div class="displaymath">
@@ -368,7 +374,7 @@ e &amp; f &amp; g &amp; h
 \end{array}\right]
 \end{equation*}
 </div></article><article class="activity project-like" id="activity-79"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.7</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.11</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-28">
 <p id="p-463">Let \(T: \IR^3 \rightarrow \IR^3\) be the linear transformation given by the standard matrix</p>
@@ -382,7 +388,7 @@ e &amp; f &amp; g &amp; h
 <article class="task exercise-like" id="task-63"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-464">Compute \(T\left(\left[\begin{array}{c} 1\\ 2 \\ 3 \end{array}\right] \right) \text{.}\)</p></article><article class="task exercise-like" id="task-64"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-465">Compute \(T\left(\left[\begin{array}{c} x\\ y \\ z \end{array}\right] \right) \text{.}\)</p></article></article><article class="activity project-like" id="activity-80"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.8</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.12</span><span class="period">.</span>
 </h6>
 <p id="p-466">Compute the following linear transformations of vectors given their standard matrices.</p>
 <div class="displaymath">
@@ -408,10 +414,8 @@ A_3=\left[\begin{array}{ccc}4&amp;3&amp;0\\0&amp;-1&amp;3\\5&amp;1&amp;1\\3&amp;
 </div></article><section class="subsection" id="subsection-15"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.1</span> <span class="title">Videos</span>
 </h3>
-<figure class="figure figure-like" id="figure-24"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;">
-			
-		</div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.5<span class="period">.</span></span><span class="space"> </span>Video example: Using the standard matrix to compute the image of a vector</figcaption></figure></section><section class="exercises" id="exercises-14"><h3 class="heading hide-type">
+<figure class="figure figure-like" id="figure-24"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-A2" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/22b3d1bd-0460-47ee-a813-ac52011e5886.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="external/videos/A2-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.13<span class="period">.</span></span><span class="space"> </span>Video example: Using the standard matrix to compute the image of a vector</figcaption></figure></section><section class="exercises" id="exercises-14"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">3.2.2</span> <span class="title">Exercises</span>
 </h3>
 <p id="p-467"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/A2/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>

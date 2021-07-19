@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-18T13:24:36-05:00       *-->
+<!--*       on 2021-07-19T16:58:11Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Homogeneous Linear Systems (V9)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -68,12 +74,12 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
@@ -234,7 +240,7 @@ a_{m1}x_1 &amp;\,+\,&amp; a_{m2}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{mn
 x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0}
 \end{equation*}
 </div>
-<p data-braille="continuation">and the augmented matrix:</p>
+<p class="continuation">and the augmented matrix:</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{cccc|c}
@@ -245,7 +251,7 @@ a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; 0
 \end{array}\right]
 \end{equation*}
 </div></article><article class="activity project-like" id="activity-64"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.1</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.2</span><span class="period">.</span>
 </h6>
 <p id="p-369">Note that if \(\left[\begin{array}{c} a_1 \\ \vdots \\ a_n \end{array}\right] \) and \(\left[\begin{array}{c} b_1 \\ \vdots \\ b_n \end{array}\right] \) are solutions to \(x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0}\) so is  \(\left[\begin{array}{c} a_1 +b_1\\ \vdots \\ a_n+b_n \end{array}\right] \text{,}\) since</p>
 <div class="displaymath">
@@ -255,7 +261,7 @@ a_1 \vec{v}_1+\cdots+a_n \vec{v}_n = \vec{0}
 b_1 \vec{v}_1+\cdots+b_n \vec{v}_n = \vec{0} 
 \end{equation*}
 </div>
-<p data-braille="continuation">implies</p>
+<p class="continuation">implies</p>
 <div class="displaymath">
 \begin{equation*}
 (a_1 + b_1) \vec{v}_1+\cdots+(a_n+b_n) \vec{v}_n = \vec{0} .
@@ -267,7 +273,7 @@ b_1 \vec{v}_1+\cdots+b_n \vec{v}_n = \vec{0}
 <li id="li-168"><p id="p-372">A subspace of \(\IR^n\text{.}\)</p></li>
 <li id="li-169"><p id="p-373">The empty set.</p></li>
 </ol></article><article class="activity project-like" id="activity-65"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.2</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.3</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-24">
 <p id="p-374">Consider the homogeneous system of equations</p>
@@ -294,7 +300,7 @@ x_1&amp;\,+\,&amp;2x_2&amp;\,\,&amp; &amp;\,+\,&amp; x_4 &amp;=&amp; 0\\
 \end{equation*}
 </div></article></article><div class="sagecell-octave" id="sage-25"><script type="text/x-sage"></script></div>
 <article class="fact theorem-like" id="fact-12"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.9.2</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.9.4</span><span class="period">.</span>
 </h6>
 <p id="p-378">The coefficients of the free variables in the solution set of a linear system always yield linearly independent vectors.</p>
 <p id="p-379">Thus if</p>
@@ -309,7 +315,7 @@ a,b \in \IR
 \left[\begin{array}{c} -1 \\ 0 \\ -4 \\ 1 \end{array}\right] \right\}
 \end{equation*}
 </div>
-<p data-braille="continuation">is the solution space for a homogeneous system, then</p>
+<p class="continuation">is the solution space for a homogeneous system, then</p>
 <div class="displaymath">
 \begin{equation*}
 \setList{
@@ -318,8 +324,8 @@ a,b \in \IR
 }
 \end{equation*}
 </div>
-<p data-braille="continuation">is a basis for the solution space.</p></article><article class="activity project-like" id="activity-66"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.3</span><span class="period">.</span>
+<p class="continuation">is a basis for the solution space.</p></article><article class="activity project-like" id="activity-66"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.5</span><span class="period">.</span>
 </h6>
 <p id="p-380">Consider the homogeneous system of equations</p>
 <div class="displaymath">
@@ -331,7 +337,7 @@ a,b \in \IR
 </div>
 <p id="p-381">Find a basis for its solution space.</p></article><div class="sagecell-octave" id="sage-26"><script type="text/x-sage"></script></div>
 <article class="activity project-like" id="activity-67"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.4</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.6</span><span class="period">.</span>
 </h6>
 <p id="p-382">Consider the homogeneous vector equation</p>
 <div class="displaymath">
@@ -345,7 +351,7 @@ x_4 \left[\begin{array}{c} -4 \\ 1 \\ -4 \end{array}\right]=
 </div>
 <p id="p-383">Find a basis for its solution space.</p></article><div class="sagecell-octave" id="sage-27"><script type="text/x-sage"></script></div>
 <article class="activity project-like" id="activity-68"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.5</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.7</span><span class="period">.</span>
 </h6>
 <p id="p-384">Consider the homogeneous system of equations</p>
 <div class="displaymath">
@@ -357,16 +363,14 @@ x_1&amp;\,+\,&amp;6x_2&amp;\,-\,&amp;4x_3 &amp;=&amp; 0
 </div>
 <p id="p-385">Find a basis for its solution space.</p></article><div class="sagecell-octave" id="sage-28"><script type="text/x-sage"></script></div>
 <article class="observation remark-like" id="observation-15"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.9.3</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.9.8</span><span class="period">.</span>
 </h6>
 <p id="p-386">The basis of the trivial vector space is the empty set.  You can denote this as either \(\emptyset\) or \(\{\}\text{.}\)</p>
 <p id="p-387">Thus, if \(\vec{0}\) is the only solution of a homogeneous system, the basis of the solution space is  \(\emptyset\text{.}\)</p></article><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.9.1</span> <span class="title">Videos</span>
 </h3>
-<figure class="figure figure-like" id="figure-20"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;">
-			
-		</div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.9.4<span class="period">.</span></span><span class="space"> </span>Video example: Finding a basis of the solution space of a homogeneous linear system</figcaption></figure></section><section class="exercises" id="exercises-12"><h3 class="heading hide-type">
+<figure class="figure figure-like" id="figure-20"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-V9" class="video" controls=""><source src="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/54455e88-38ee-40e9-88f6-ac250114b265.mp4?mediaTargetType=videoPodcast" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.<track label="US English" kind="subtitles" srclang="en" src="external/videos/V9-captions.vtt"></track></video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.9.9<span class="period">.</span></span><span class="space"> </span>Video example: Finding a basis of the solution space of a homogeneous linear system</figcaption></figure></section><section class="exercises" id="exercises-12"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">2.9.2</span> <span class="title">Exercises</span>
 </h3>
 <p id="p-388"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/V9/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
