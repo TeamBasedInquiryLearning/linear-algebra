@@ -1,1 +1,290 @@
-<html><head><meta http-equiv="refresh" content="0;url=./archive-2021/V4.html" /></head><body>Redirecting...</body></html>
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-09-10T20:03:30Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Subspaces (V4)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="V3.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="V.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="V5.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="V3.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="V.html" title="Up">Up</a><a class="next-button button toolbar-item" href="V5.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes">Learning Outcomes</a></li>
+<li><a href="slideshow-link.html" data-scroll="slideshow-link">Slideshow</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="E.html" data-scroll="E"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (E)</span></a><ul>
+<li><a href="E1.html" data-scroll="E1">Linear Systems, Vector Equations, and Augmented Matrices (E1)</a></li>
+<li><a href="E2.html" data-scroll="E2">Row Reduction of Matrices (E2)</a></li>
+<li><a href="E3.html" data-scroll="E3">Solving Linear Systems (E3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="V.html" data-scroll="V"><span class="codenumber">2</span> <span class="title">Vector Spaces (V)</span></a><ul>
+<li><a href="V1.html" data-scroll="V1">Vector Spaces (V1)</a></li>
+<li><a href="V2.html" data-scroll="V2">Linear Combinations (V2)</a></li>
+<li><a href="V3.html" data-scroll="V3">Spanning Sets (V3)</a></li>
+<li><a href="V4.html" data-scroll="V4" class="active">Subspaces (V4)</a></li>
+<li><a href="V5.html" data-scroll="V5">Linear Independence (V5)</a></li>
+<li><a href="V6.html" data-scroll="V6">Identifying a Basis (V6)</a></li>
+<li><a href="V7.html" data-scroll="V7">Subspace Basis and Dimension (V7)</a></li>
+<li><a href="V8.html" data-scroll="V8">Polynomial and Matrix Spaces (V8)</a></li>
+<li><a href="V9.html" data-scroll="V9">Homogeneous Linear Systems (V9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="A.html" data-scroll="A"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (A)</span></a><ul>
+<li><a href="A1.html" data-scroll="A1">Linear Transformations (A1)</a></li>
+<li><a href="A2.html" data-scroll="A2">Standard Matrices (A2)</a></li>
+<li><a href="A3.html" data-scroll="A3">Image and Kernel (A3)</a></li>
+<li><a href="A4.html" data-scroll="A4">Injective and Surjective Linear Maps (A4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="M.html" data-scroll="M"><span class="codenumber">4</span> <span class="title">Matrices (M)</span></a><ul>
+<li><a href="M1.html" data-scroll="M1">Matrices and Multiplication (M1)</a></li>
+<li><a href="M2.html" data-scroll="M2">Row Operations as Matrix Multiplication (M2)</a></li>
+<li><a href="M3.html" data-scroll="M3">The Inverse of a Matrix (M3)</a></li>
+<li><a href="M4.html" data-scroll="M4">Invertible Matrices (M4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="G.html" data-scroll="G"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (G)</span></a><ul>
+<li><a href="G1.html" data-scroll="G1">Row Operations and Determinants (G1)</a></li>
+<li><a href="G2.html" data-scroll="G2">Computing Determinants (G2)</a></li>
+<li><a href="G3.html" data-scroll="G3">Eigenvalues and Characteristic Polynomials (G3)</a></li>
+<li><a href="G4.html" data-scroll="G4">Eigenvectors and Eigenspaces (G4)</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="applications.html" data-scroll="applications"><span class="codenumber">A</span> <span class="title">Applications</span></a><ul>
+<li><a href="geology.html" data-scroll="geology">Geology: Phases and Components</a></li>
+<li><a href="pagerank.html" data-scroll="pagerank">Computer Science: PageRank</a></li>
+<li><a href="truss.html" data-scroll="truss">Civil Engineering: Trusses and Struts</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="appendix-2.html" data-scroll="appendix-2"><span class="codenumber">B</span> <span class="title">Appendix</span></a><ul>
+<li><a href="sample-exercises.html" data-scroll="sample-exercises">Sample Exercises with Solutions</a></li>
+<li><a href="list-of-definitions.html" data-scroll="list-of-definitions">Definitions</a></li>
+</ul>
+</li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="V4"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Subspaces (V4)</span>
+</h2>
+<article class="definition definition-like" id="definition-12"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
+</h6>
+<p id="p-256">A subset of a vector space is called a <dfn class="terminology">subspace</dfn> if it is a vector space on its own.</p>
+<p id="p-257">For example, the span of these two vectors forms a planar subspace inside of the larger vector space \(\IR^3\text{.}\)</p>
+<figure class="figure figure-like" id="figure-12"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-5.svg" role="img" class="contained" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.2<span class="period">.</span></span><span class="space"> </span>A subspace of \(\IR^3\)</figcaption></figure></article><article class="fact theorem-like" id="fact-5"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
+</h6>
+<p id="p-258">Any sub<em class="emphasis">set</em> \(S\) of a vector space \(V\) that contains the additive identity \(\vec 0\) satisfies the eight vector space properties automatically, since it is a collection of known vectors.</p>
+<p id="p-259">However, to verify that it's a sub<em class="emphasis">space</em>, we need to check that addition and multiplication still make sense using only vectors from \(S\text{.}\) So we need to check two things:</p>
+<ul class="disc">
+<li id="li-128"><p id="p-260">The set is <dfn class="terminology">closed under addition</dfn>: for any \(\vec{x},\vec{y} \in S\text{,}\) the sum \(\vec{x}+\vec{y}\) is also in \(S\text{.}\)</p></li>
+<li id="li-129"><p id="p-261">The set is <dfn class="terminology">closed under scalar multiplication</dfn>: for any \(\vec{x} \in S\) and scalar \(c \in \IR\text{,}\) the product \(c\vec{x}\) is also in \(S\text{.}\)</p></li>
+</ul></article><article class="activity project-like" id="activity-42"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-18"><p id="p-262">Let \(S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}\text{.}\)</p></div>
+<article class="task exercise-like" id="task-39"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-263">Let \(\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]\) and \(\vec{w} = \left[\begin{array}{c} a \\ b \\ c \end{array}\right] \) be vectors in \(S\text{,}\) so \(x+2y+z=0\) and \(a+2b+c=0\text{.}\) Show that \(\vec v+\vec w = \left[\begin{array}{c} x+a \\ y+b \\ z+c \end{array}\right]\) also belongs to \(S\) by verifying that \((x+a)+2(y+b)+(z+c)=0\text{.}\)</p></article><article class="task exercise-like" id="task-40"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-264">Let \(\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]\in S\text{,}\) so \(x+2y+z=0\text{.}\) Show that \(c\vec v=\left[\begin{array}{c}cx\\cy\\cz\end{array}\right]\) also belongs to \(S\) for any \(c\in\IR\) by verifying an appropriate equation.</p></article><article class="task exercise-like" id="task-41"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-265">Is \(S\) is a subspace of \(\IR^3\text{?}\)</p></article></article><article class="activity project-like" id="activity-43"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
+</h6>
+<p id="p-266">Let \(S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=4}\text{.}\) Choose a vector \(\vec v=\left[\begin{array}{c} \unknown\\\unknown\\\unknown \end{array}\right]\) in \(S\) and a real number \(c=\unknown\text{,}\) and show that \(c\vec v\) isn't in \(S\text{.}\) Is \(S\) a subspace of \(\IR^3\text{?}\)</p></article><article class="remark remark-like" id="remark-10"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span>
+</h6>
+<p id="p-267">Since \(0\) is a scalar and \(0\vec{v}=\vec{z}\) for any vector \(\vec{v}\text{,}\) a nonempty set that is closed under scalar multiplication must contain the zero vector \(\vec{z}\) for that vector space.</p>
+<p id="p-268">Put another way, you can check any of the following to show that a nonempty subset \(W\) isn't a subspace:</p>
+<ul class="disc">
+<li id="li-130"><p id="p-269">Show that \(\vec 0\not\in W\text{.}\)</p></li>
+<li id="li-131"><p id="p-270">Find \(\vec u,\vec v\in W\) such that \(\vec u+\vec v\not\in W\text{.}\)</p></li>
+<li id="li-132"><p id="p-271">Find \(c\in\IR,\vec v\in W\) such that \(c\vec v\not\in W\text{.}\)</p></li>
+</ul>
+<p id="p-272">If you cannot do any of these, then \(W\) can be proven to be a subspace by doing the following:</p>
+<ul class="disc">
+<li id="li-133"><p id="p-273">Prove that \(\vec u+\vec v\in W\) whenever \(\vec u,\vec v\in W\text{.}\)</p></li>
+<li id="li-134"><p id="p-274">Prove that \(c\vec v\in W\) whenever \(c\in\IR,\vec v\in W\text{.}\)</p></li>
+</ul></article><article class="activity project-like" id="activity-44"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-19">
+<p id="p-275">Consider these subsets of \(\IR^3\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+R=
+\setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{y=z+1}
+\hspace{2em}
+S=
+\setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{y=|z|}
+\hspace{2em}
+T=
+\setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{z=xy}\text{.}
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-42"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-276">Show \(R\) isn't a subspace by showing that \(\vec 0\not\in R\text{.}\)</p></article><article class="task exercise-like" id="task-43"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-277">Show \(S\) isn't a subspace by finding two vectors \(\vec u,\vec v\in S\) such that \(\vec u+\vec v\not\in S\text{.}\)</p></article><article class="task exercise-like" id="task-44"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-278">Show \(T\) isn't a subspace by finding a vector \(\vec v\in T\) such that \(2\vec v\not\in T\text{.}\)</p></article></article><article class="activity project-like" id="activity-45"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span>
+</h6>
+<p id="p-279">Let \(W\) be a subspace of a vector space \(V\text{.}\)  How are \(\vspan W\) and \(W\) related?</p>
+<ol class="lower-alpha">
+<li id="li-135"><p id="p-280">\(\vspan W\) is bigger than \(W\)</p></li>
+<li id="li-136"><p id="p-281">\(\vspan W\) is the same as \(W\)</p></li>
+<li id="li-137"><p id="p-282">\(\vspan W\) is smaller than \(W\)</p></li>
+</ol></article><article class="fact theorem-like" id="fact-6"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.4.9</span><span class="period">.</span>
+</h6>
+<p id="p-283">If \(S\) is any subset of a vector space \(V\text{,}\) then since \(\vspan S\) collects all possible linear combinations, \(\vspan S\) is automatically a subspace of \(V\text{.}\)</p>
+<p id="p-284">In fact, \(\vspan S\) is always the smallest subspace of \(V\) that contains all the vectors in \(S\text{.}\)</p></article><section class="subsection" id="subsection-8"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Videos</span>
+</h3>
+<figure class="figure figure-like" id="figure-13"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-V4" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/ccXgu4NIzSA?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.10<span class="period">.</span></span><span class="space"> </span>Video: Determining if a subset of a vector space is a subspace</figcaption></figure></section><section class="exercises" id="exercises-7"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.4.2</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-285"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/V4/" target="_blank">checkit.clontz.org</a>.</em></p></section></section></div></main>
+</div>
+</body>
+</html>
