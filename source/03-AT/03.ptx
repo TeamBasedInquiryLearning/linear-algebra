@@ -1,0 +1,616 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="AT3" tbil-slides="build" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Image and Kernel (AT3)</title>
+    <objectives>
+        <ul>
+            <li>
+                <xi:include href="outcomes/03.ptx"/>
+            </li>
+        </ul>
+    </objectives>
+
+
+<subsection><title>Class Activities</title>
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>T: \IR^2 \rightarrow \IR^3</m> be given by
+<me>
+  T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \\ 0 \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]
+</me>
+Which of these subspaces of <m>\IR^2</m> describes
+the set of all vectors that transform into <m>\vec 0</m>?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    <m>\setBuilder{\left[\begin{array}{c}a \\ a\end{array}\right]}{a\in\IR}</m>
+    </p>
+</li>
+<li>
+    <p>
+    <m>\setList{\left[\begin{array}{c}0\\0\end{array}\right]}</m>
+    </p>
+</li>
+<li>
+    <p>
+    <m>\IR^2=\setBuilder{\left[\begin{array}{c}x \\ y\end{array}\right]}{x,y\in\IR}</m>
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+    
+<definition>
+    <statement>
+        <p>
+Let <m>T: V \rightarrow W</m> be a linear transformation.  The <term>kernel</term><idx>kernel</idx> of <m>T</m>
+is an important subspace of <m>V</m> defined by
+<me>
+\ker T = \left\{ \vec{v} \in V\ \big|\ T(\vec{v})=\vec{z}\right\}
+</me>
+        </p>
+            <figure>
+				<image width="75%">
+					<latex-image>
+  \begin{tikzpicture}[x=0.15in,y=0.15in]
+    \begin{scope}[shift={(0,0)}]
+      \draw (0,0) node[anchor=north west] {\(\ker T\)} -- (3,0);
+      \draw (0,0) -- (0,3);
+      \draw (0,0)  -- (-2,-1);
+      \draw[thick,latex-latex,blue] (-3,-3) -- (3,3);
+    \end{scope}
+    \draw[dashed,-latex] (3.5,3) to [bend left=30] (7,3);
+    \begin{scope}[shift={(9,0.5)}]
+      \draw (-2,0) -- (2,0);
+      \draw (0,-2) -- (0,2);
+      \fill[blue] (0,0) circle (0.2)
+            node[anchor=south east] {\(\vec{0}\)};
+    \end{scope}
+  \end{tikzpicture}
+					</latex-image>
+				</image>
+				<caption>The kernel of a linear transformation</caption>
+            </figure>
+    </statement>
+</definition>
+
+    
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>T: \IR^3 \rightarrow \IR^2</m> be given by
+<me>
+  T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right]
+</me>
+Which of these subspaces of <m>\IR^3</m> describes <m>\ker T</m>,
+the set of all vectors that transform into <m>\vec 0</m>?
+        </p>
+<ol label='a'>
+<li>
+    <p>
+    <m>\setBuilder{\left[\begin{array}{c}0 \\ 0\\ a\end{array}\right]}{a\in\IR}</m>
+    </p>
+</li>
+<li>
+    <p>
+    <m>\setBuilder{\left[\begin{array}{c}a \\ a\\ 0\end{array}\right]}{a\in\IR}</m>
+    </p>
+</li>
+<li>
+    <p>
+        <m>\setList{\left[\begin{array}{c}0\\0\\0\end{array}\right]}</m>
+    </p>
+    </li>
+<li>
+    <p>
+    <m>\IR^3=\setBuilder{\left[\begin{array}{c}x \\ y\\z\end{array}\right]}{x,y,z\in\IR}</m>
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+<activity estimated-time='10'>
+    <introduction>
+        <p>
+Let <m>T: \IR^3 \rightarrow \IR^2</m> be the linear transformation given by the
+standard matrix
+<me>T\left( \left[\begin{array}{c} x \\ y \\ z \end{array}\right]\right) = \left[\begin{array}{c} 3x+4y-z \\ x+2y+z \end{array}\right]</me>
+        </p>
+    </introduction>
+<task>
+    <p>
+Set
+<m>
+  T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)
+    =
+  \left[\begin{array}{c}0\\0\end{array}\right]
+</m> to find a linear system of equations whose solution set is the kernel.
+    </p>
+</task>
+<task>
+    <p>
+Use <m>\RREF(A)</m> to solve this homogeneous system of equations and find a basis
+for the kernel of <m>T</m>.
+    </p>
+</task>
+</activity>
+<sage language="octave">
+</sage>
+
+<activity estimated-time='10'>
+    <statement>
+        <p>
+Let <m>T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by 
+<me> T\left(\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right] \right) = 
+\left[\begin{array}{c} 2x+4y+2z-4w \\ -2x-4y+z+w \\ 3x+6y-z-4w\end{array}\right].</me>
+        </p>
+        <p>
+Find a basis for the kernel of <m>T</m>.
+        </p>
+    </statement>
+</activity>
+<sage language="octave">
+</sage>
+
+
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>T: \IR^2 \rightarrow \IR^3</m> be given by
+<me>
+  T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \\ 0 \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]
+</me>
+Which of these subspaces of <m>\IR^3</m> describes the set of all vectors that are the result of using <m>T</m> to transform
+<m>\IR^2</m> vectors?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    <m>\setBuilder{\left[\begin{array}{c}0 \\ 0\\ a\end{array}\right]}{a\in\IR}</m>
+    </p>
+</li>
+<li>
+    <p>
+    <m>\setBuilder{\left[\begin{array}{c}a \\ b\\ 0\end{array}\right]}{a,b\in\IR}</m>
+    </p>
+</li>
+<li>
+    <p>
+        <m>\setList{\left[\begin{array}{c}0\\0\\0\end{array}\right]}</m>
+    </p>
+</li>
+<li>
+    <p>
+    <m>\IR^3=\setBuilder{\left[\begin{array}{c}x \\ y\\z\end{array}\right]}{x,y,z\in\IR}</m>
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+<definition>
+    <statement>
+        <p>
+Let <m>T: V \rightarrow W</m> be a linear transformation.
+The <term>image</term> of <m>T</m> is an important subspace of <m>W</m> defined by
+<me>
+\Im T = \left\{ \vec{w} \in W\ \big|\ \text{there is some }\vec v\in V \text{ with } T(\vec{v})=\vec{w}\right\}
+</me>
+        </p>
+        <p>
+In the examples below, the left example's image is all of <m>\IR^2</m>, but the
+right example's image is a planar subspace of <m>\IR^3</m>.
+        </p>
+        <figure>
+			<image width="75%">
+				<latex-image>
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (1,2);
+    \draw[thick,-latex,blue] (0,0) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (1,-1);
+    \draw[thick,-latex,blue] (0,0) -- (-2,3);
+    \draw[thick,-latex,blue] (0,0) -- (-3,-2);
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,-2);
+    \fill[color=blue, opacity=0.5] (-2,-2) rectangle (2,2);
+  \end{scope}
+\end{tikzpicture}
+\hspace{3em}
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,-2);
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-2.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (-0.5,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2.5,-0.5);
+    \fill[color=blue, opacity=0.5] (-2,-2) -- (3,-1) -- (2,2) -- (-3,1) -- (-2,-2);
+  \end{scope}
+\end{tikzpicture}
+				</latex-image>
+			</image>
+			<caption>The image of a linear transformation</caption>
+        </figure>
+    </statement>
+</definition>
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>T: \IR^3 \rightarrow \IR^2</m> be given by
+<me>
+  T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right]
+</me>
+Which of these subspaces of <m>\IR^2</m> describes <m>\Im T</m>,
+the set of all vectors that are the result of using <m>T</m> to transform
+<m>\IR^3</m> vectors?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    <m>\setBuilder{\left[\begin{array}{c}a \\ a\end{array}\right]}{a\in\IR}</m>
+    </p>
+</li>
+<li>
+    <p>
+    <m>\setList{\left[\begin{array}{c}0\\0\end{array}\right]}</m>
+    </p>
+</li>
+<li>
+    <p>
+    <m>\IR^2=\setBuilder{\left[\begin{array}{c}x \\ y\end{array}\right]}{x,y\in\IR}</m>
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by the
+standard matrix
+<me>
+  A
+    =
+  \left[\begin{array}{cccc} 3 &amp; 4 &amp; 7 &amp; 1\\ -1 &amp; 1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 3 &amp; -1 \end{array}\right]
+    =
+  \left[\begin{array}{cccc}T(\vec e_1)&amp;T(\vec e_2)&amp;T(\vec e_3)&amp;T(\vec e_4)\end{array}\right]
+.</me>
+        </p>
+        <p>
+Since for a vector <m>\vec v =\left[\begin{array}{c}x_1 \\ x_2 \\ x_3 \\ x_4 \end{array}\right] </m>, <m>T(\vec v)=T(x_1\vec e_1+x_2\vec e_2+x_3\vec e_3+x_4\vec e_4)</m>,
+which of the following best describes the set of vectors
+<me>
+  \setList{
+    \left[\begin{array}{c}3\\-1\\2\end{array}\right],
+    \left[\begin{array}{c}4\\1\\1\end{array}\right],
+    \left[\begin{array}{c}7\\0\\3\end{array}\right],
+    \left[\begin{array}{c}1\\2\\-1\end{array}\right]
+  }
+</me>?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    The set of vectors spans <m>\Im T</m> but is not linearly independent.
+    </p>
+</li>
+<li>
+    <p>
+    The set of vectors is a linearly independent subset of <m>\Im T</m> but does not span <m>\Im T</m>.
+    </p>
+</li>
+<li>
+    <p>
+    The set of vectors is linearly independent <emph>and</emph> spans <m> \Im T</m>; that is, the set of vectors is a basis for <m>\Im T</m>.
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+<observation>
+    <statement>
+        <p>
+Let <m>T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by the
+standard matrix
+<me>
+  A
+    =
+  \left[\begin{array}{cccc} 3 &amp; 4 &amp; 7 &amp; 1\\ -1 &amp; 1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 3 &amp; -1 \end{array}\right]
+.</me>
+        </p>
+        <p>
+Since the set
+<m>
+  \setList{
+    \left[\begin{array}{c}3\\-1\\2\end{array}\right],
+    \left[\begin{array}{c}4\\1\\1\end{array}\right],
+    \left[\begin{array}{c}7\\0\\3\end{array}\right],
+    \left[\begin{array}{c}1\\2\\-1\end{array}\right]
+  }
+</m>
+spans <m>\Im T</m>, we can obtain a basis for <m>\Im T</m> by finding
+<m>
+  \RREF A
+    =
+  \left[\begin{array}{cccc} 1 &amp; 0 &amp; 1 &amp; -1\\ 0 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]
+</m>
+and only using the vectors corresponding to pivot columns:
+<me>
+  \setList{
+    \left[\begin{array}{c}3\\-1\\2\end{array}\right],
+    \left[\begin{array}{c}4\\1\\1\end{array}\right]
+  }
+</me>
+        </p>
+    </statement>
+</observation>
+
+<fact>
+    <statement>
+    <p>
+Let  <m>T:\IR^n\to\IR^m</m> be a linear transformation with standard matrix <m>A</m>.
+    </p>
+<ul>
+<li>
+    <p>
+    The kernel of <m>T</m> is the solution set of the homogeneous system given
+by the augmented matrix <m>\left[\begin{array}{c|c}A&amp;\vec 0\end{array}\right]</m>.
+Use the coefficients of its free variables to get a basis for the kernel.
+    </p>
+</li>
+<li>
+    <p>
+    The image of <m>T</m> is the span of the columns of <m>A</m>. Remove
+the vectors creating non-pivot columns in <m>\RREF A</m> to get a basis
+for the image.
+    </p>
+</li>
+</ul>
+    </statement>
+</fact>
+
+
+<activity estimated-time='10'>
+    <statement>
+        <p>
+Let <m>T: \IR^3 \rightarrow \IR^4</m> be the linear transformation given by the
+standard matrix
+<me>
+  A
+    =
+  \left[\begin{array}{ccc} 1 &amp; -3 &amp; 2\\ 2 &amp; -6 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ -1 &amp; 3 &amp; 1 \end{array}\right]
+.</me>
+        </p>
+        <p>
+Find a basis for the kernel and a basis for the image of <m>T</m>.
+        </p>
+    </statement>
+</activity>
+<sage language="octave">
+</sage>
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>T: \IR^n \rightarrow \IR^m</m> be a linear transformation with standard matrix <m>A</m>.
+Which of the following is equal to the dimension of the kernel of <m>T</m>?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    The number of pivot columns
+    </p>
+</li>
+<li>
+    <p>
+    The number of non-pivot columns
+    </p>
+</li>
+<li>
+    <p>
+    The number of pivot rows
+    </p>
+</li>
+<li>
+    <p>
+    The number of non-pivot rows
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>T: \IR^n \rightarrow \IR^m</m> be a linear transformation with standard matrix <m>A</m>.
+Which of the following is equal to the dimension of the image of <m>T</m>?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    The number of pivot columns
+    </p>
+</li>
+<li>
+    <p>
+    The number of non-pivot columns
+    </p>
+</li>
+<li>
+    <p>
+    The number of pivot rows
+    </p>
+</li>
+<li>
+    <p>
+    The number of non-pivot rows
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+<observation>
+    <statement>
+        <p>
+Combining these with the observation that the number of columns is the dimension of the domain of <m>T</m>, we have the <term>rank-nullity theorem</term>:
+        </p>
+        <blockquote>
+        <p>
+The dimension of the domain of <m>T</m> equals <m>\dim(\ker T)+\dim(\Im T)</m>.
+        </p>
+        </blockquote>
+        <p>
+The dimension of the image is called the <term>rank</term> of <m>T</m> (or <m>A</m>) and the dimension of the kernel is called the <term>nullity</term>. 
+        </p>
+    </statement>
+</observation>
+
+<activity estimated-time='10'>
+    <statement>
+        <p>
+Let <m>T: \IR^3 \rightarrow \IR^4</m> be the linear transformation given by the
+standard matrix
+<me>
+  A
+    =
+  \left[\begin{array}{ccc} 1 &amp; -3 &amp; 2\\ 2 &amp; -6 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ -1 &amp; 3 &amp; 1 \end{array}\right]
+.</me>
+Verify that the rank-nullity theorem holds for <m>T</m>.
+        </p>
+    </statement>
+</activity>
+<sage language="octave">
+</sage>
+
+</subsection>
+
+
+    <subsection>
+        <title>Videos</title>
+        <figure>
+            <video xml:id="video-AT3-1" youtube="FGyD1KLFHwc">
+              <!--<track kind="subtitles" label="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: The kernel and image of a linear transformation</caption>
+        </figure>
+        <figure>
+            <video xml:id="video-AT3-2" youtube="ut_1dVFqwXw">
+              <!--<track kind="subtitles" label="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: Finding a basis of the image of a linear transformation</caption>
+        </figure>
+        <figure>
+            <video xml:id="video-AT3-3" youtube="VO2bDSiwbJM">
+              <!--<track kind="subtitles" label="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: Finding a basis of the kernel of a linear transformation</caption>
+        </figure>
+        <figure>
+            <video xml:id="video-AT3-4" youtube="A0RzdY_g44Y">
+              <!--<track kind="subtitles" label="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: The rank-nullity theorem</caption>
+        </figure>
+    </subsection>
+
+    <subsection>
+        <title>Slideshow</title>
+        <p>Slideshow of activities available at <url href="AT3.slides.html"/>.</p>
+    </subsection>
+
+    <exercises>
+        <p>Exercises available at <url href="https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/AT3/"/>.</p>
+    </exercises>
+<subsection>    
+    <title>Mathematical Writing Explorations</title>
+            <exploration>
+                <statenent>
+                Assume <m>f:V \rightarrow W</m> is a linear map. 
+Let <m>\{\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\}</m> be a set of vectors in <m>V</m>, and set <m>\vec{w_i} = f(\vec{v_i})</m>
+\begin{itemize}
+\item If the set <m>\{\vec{w_1},\vec{w_2},\ldots,\vec{w_n}\}</m> is linearly independent, must the set <m>\{\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\}</m> also be linearly independent?
+\item If the set <m>\{\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\}</m> is linearly independent, must the set <m>\{\vec{w_1},\vec{w_2},\ldots,\vec{w_n}\}</m> also be linearly independent?
+\item If the set <m>\{\vec{w_1},\vec{w_2},\ldots,\vec{w_n}\}</m> spans $W$, must the set <m>\{\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\}$ also span $V</m>?
+\item If the set <m>\{\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\}</m> spans $V$, must the set <m>\{\vec{w_1},\vec{w_2},\ldots,\vec{w_n}\}$ also span $W</m>?
+\item In light of this, is the image of the basis of a vector space always a basis for the codomain? 
+                </statenent>
+    </exploration>
+    <exploration>
+                <statement>
+                    Prove the Rank-Nullity Theorem. Use the steps below to help you.
+<ul>
+<li>The theorem states that, given a linear map <m>h:V \rightarrow W</m>, with <m>V</m> and <m>W</m> vector spaces, the rank of <m>h</m>, plus the nullity of <m>h</m>, equals the dimension of the domain <m>V</m>. Assume that the dimension of <m>V</m> is <m>n</m>.</li>
+<li>For simplicity, denote the rank of <m>h</m> by <m>\mathcal{R}(h)</m>, and the nullity by <m>\mathcal{N}(h)</m>.</li>
+<li>Recall that <m>\mathcal{R}(h)</m> is the dimension of the range space of <m>h</m>. State the precise definition.</li>
+<li>Recall that <m>\mathcal{N}(h)</m> is the dimension of the null space of <m>h</m>. State the precise definition.</li>
+<li>Begin with a basis for the null space, denoted <m>B_N = \{\vec{\beta_1}, \vec{\beta_2}, \ldots, \vec{\beta_k}\}</m>. Show how this can be extended to a basis <m>B_V</m> for <m>V</m>, with 
+<m>B_V = \{\vec{\beta_1}, \vec{\beta_2}, \ldots, \vec{\beta_k}, \vec{\beta_{k+1}}, \vec{\beta_{k+2}}, \ldots, \vec{\beta_n}\}.</m> In this portion, you should assume <m>k \leq n</m>, and construct additional vectors which are not linear combinations of vectors in <m>B_N</m>. Prove that you can always do this until you have <m>n</m> total linearly independent vectors.</li>
+<li>Show that <m>B_R = \{h(\vec{\beta_{k+1}}), h(\vec{\beta_{k+2}}), \ldots, h(\vec{\beta_n})\}</m> is a basis for the range space. Start by showing that it is linearly independent, and be sure you prove that each element of the range space can be written as a linear combination of <m>B_R</m>.</li>
+<li>Show that <m>B_R</m> spans the range space.</li>
+<li>State your conclusion. </li>
+ </ul>
+                </statement>
+    </exploration>
+    </subsection>
+    <subsection>
+        <title>Sample Problem and Solution</title>
+        <p>
+            Sample problem <xref ref="sampleAT3"/>.
+        </p>
+    </subsection>
+
+</section>

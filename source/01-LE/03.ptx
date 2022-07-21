@@ -1,0 +1,429 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="LE3" tbil-slides="build" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Counting Solutions for Linear Systems (LE3)</title>
+    <objectives>
+        <ul>
+            <li>
+                <xi:include href="outcomes/03.ptx"/>
+            </li>
+        </ul>
+    </objectives>
+
+<subsection><title>Class Activities</title>
+<commentary>
+    <p>Be sure students have a device with internet access.</p>
+</commentary>
+
+<activity estimated-time='10'>
+    <statement>
+        <p>
+Free browser-based technologies for mathematical computation
+are available online.
+        </p>
+<ul>
+<li><p>
+     Go to <url href="https://sagecell.sagemath.org/"/>.
+    </p>
+</li>
+<li>
+    In the dropdown on the right, you can select a number of different languages.
+    Select "Octave" for the Matlab-compatible syntax used by this text.
+</li>
+<li>
+    <p>Type <c>rref([1,3,2;2,5,7])</c> and then press the <kbd>Evaluate</kbd> button to compute the <m>\RREF</m> of 
+      <m>\left[\begin{array}{ccc} 1 &amp; 3 &amp; 2 \\ 2 &amp; 5 &amp; 7 \end{array}\right]</m>.
+    </p>
+</li>
+</ul>
+    <p>
+     Since the vertical bar in an augmented matrix does not affect
+          row operations, the <m>\RREF</m> of
+      <m>\left[\begin{array}{cc|c} 1 &amp; 3 &amp; 2 \\ 2 &amp; 5 &amp; 7 \end{array}\right]</m>
+          may be computed in the same way.
+    </p>
+    </statement>
+</activity>
+
+<activity estimated-time='2'>
+    <statement>
+    <p>
+In the HTML version of this text, code cells are often embedded for your convenience
+when RREFs need to be computed.
+    </p>
+        <p>
+Try this out to compute
+<m>\RREF\left[\begin{array}{cc|c} 2 &amp; 3 &amp; 1 \\ 3 &amp; 0 &amp; 6 \end{array}\right]</m>.
+        </p>
+    </statement>
+</activity>
+
+<sage language="octave">
+<input>rref([2,3,1;3,0,6])</input>
+</sage>
+
+<!--<remark>
+<statement>
+    <p>
+We will frequently need to know the reduced row echelon form of matrices 
+during class, so feel free to use Octave-Online.net to compute RREF
+efficiently.
+    </p>
+    <p>
+You may alternatively use the calculator you will use during assessments.
+Be sure to use fractions mode to compute exact solutions rather
+than floating-point approximations.
+    </p>
+</statement>
+</remark>-->
+
+<activity estimated-time='10'>
+    <introduction>
+        <p>
+Consider the following system of equations.
+        </p>
+        <md alignat-columns='4' alignment="alignat">
+<mrow>
+             3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 13x_3 &amp;\,=\,&amp; 6
+</mrow>
+<mrow>
+             2x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 10x_3 &amp;\,=\,&amp; 2
+</mrow>
+<mrow>
+             -x_1 &amp;\,+\,&amp; 3x_2 &amp;\,-\,&amp;  6x_3 &amp;\,=\,&amp; 11
+</mrow>
+           </md>.
+    </introduction>
+
+<task>
+    <p>
+Convert this to an augmented matrix and use technology to compute its
+reduced row echelon form:
+<me>
+  \RREF
+  \left[\begin{array}{ccc|c}
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+  \end{array}\right]
+=
+  \left[\begin{array}{ccc|c}
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+  \end{array}\right]
+</me>
+    </p>
+</task>
+<task>
+    <p>
+Use the <m>\RREF</m> matrix to write a linear system equivalent
+to the original system.
+    </p>
+</task>
+  <task>
+    <p>
+How many solutions must this system have?
+    </p>
+      <ol label="A" cols="3">
+          <li>
+              <p>Zero</p>
+          </li>
+          <li>
+              <p>Only one</p>
+          </li>
+          <li>
+              <p>Infinitely-many</p>
+          </li>
+      </ol>
+  </task>
+</activity>
+
+<sage language="octave">
+<input>rref([3,-2,13,6;2,-2,10,2;-1,3,-6,11])</input>
+</sage>
+
+
+
+<activity estimated-time='10'>
+    <introduction>
+    <p>
+Consider the vector equation
+    </p>
+ <me>
+     x_1 \left[\begin{array}{c} 3 \\ 2\\ -1 \end{array}\right]
+     +x_2 \left[\begin{array}{c}-2 \\ -2 \\ 0 \end{array}\right]
+     +x_3\left[\begin{array}{c} 13 \\ 10 \\ -3 \end{array}\right]
+     =\left[\begin{array}{c} 6 \\ 2 \\ 1 \end{array}\right]
+    </me>
+    </introduction>
+<task>
+    <p>
+Convert this to an augmented matrix and use technology to compute its
+reduced row echelon form:
+    </p>
+<me>
+  \RREF
+  \left[\begin{array}{ccc|c}
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+  \end{array}\right]
+=
+  \left[\begin{array}{ccc|c}
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+    \unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+  \end{array}\right]
+</me>
+</task>
+<task>
+    <p>
+Use the <m>\RREF</m> matrix to write a linear system equivalent
+to the original system.
+    </p>
+</task>
+  <task>
+    <p>
+How many solutions must this system have?
+    </p>
+      <ol label="A" cols="3">
+          <li>
+              <p>Zero</p>
+          </li>
+          <li>
+              <p>Only one</p>
+          </li>
+          <li>
+              <p>Infinitely-many</p>
+          </li>
+      </ol>
+  </task>
+</activity>
+
+<sage language="octave">
+<input>rref([3,-2,13,6;2,-2,10,2;-1,0,-3,1])</input>
+</sage>
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Is <m>0=1</m> the only possible logical contradiction obtained from
+the RREF of an augmented matrix?
+        </p>
+        <ol label="A">
+            <li><p>Yes, <m>0=1</m> is the only possible contradiction from an RREF matrix.</p></li>
+            <li><p>No, <m>0=17</m> is another possible contradiction from an RREF matrix.</p></li>
+            <li><p>No, <m>x=0</m> is another possible contradiction from an RREF matrix.</p></li>
+            <li><p>No, <m>x=y</m> is another possible contradiction from an RREF matrix.</p></li>
+        </ol>
+    </statement>
+</activity>
+
+<activity estimated-time='10' xml:id="LE3-inf">
+    <introduction>
+        <p>
+  Consider the following linear system.
+        </p>
+      <md alignat-columns='4' alignment="alignat">
+          <mrow>
+          x_1 &amp;+ 2x_2 &amp;+ 3x_3 &amp;= 1</mrow>
+        <mrow>
+        2x_1 &amp;+ 4x_2 &amp;+ 8x_3 &amp;= 0
+        </mrow>
+      </md>
+    </introduction>
+  <task>
+      <p>
+    Find its corresponding augmented matrix <m>A</m> and
+    find <m>\RREF(A)</m>.
+      </p>
+  </task>
+  <task>
+    <p>
+Use the <m>\RREF</m> matrix to write a linear system equivalent
+to the original system.
+    </p>
+  </task>
+  <task>
+    <p>
+How many solutions must this system have?
+    </p>
+      <ol label="A" cols="3">
+          <li>
+              <p>Zero</p>
+          </li>
+          <li>
+              <p>One</p>
+          </li>
+          <li>
+              <p>Infinitely-many</p>
+          </li>
+      </ol>
+  </task>
+</activity>
+
+<sage language="octave">
+</sage>
+
+<fact>
+    <statement>
+      <p>
+By finding <m>\RREF(A)</m> from a linear system's corresponding augmented matrix <m>A</m>,
+we can immediately tell how many solutions the system has.
+      </p>
+      <ul>
+          <li>
+              <p>
+If the linear system given by <m>\RREF(A)</m> includes the contradiction
+<m>0=1</m>, that is, the row
+<m>\left[\begin{array}{ccc|c}0&amp;\cdots&amp;0&amp;1\end{array}\right]</m>,
+then the system is <em>inconsistent</em>, which means it has <em>zero</em> solutions
+and its solution set is written as <m>\emptyset</m> or <m>\{\}</m>.
+              </p>
+          </li>
+          <li>
+              <p>
+If the linear system given by <m>\RREF(A)</m> sets each variable of the system
+to a single value; that is, <m>x_1=s_1</m>, <m>x_2=s_2</m>, and so on;
+then the system is <em>consistent</em> with exactly <em>one</em> solution
+<m>\left[\begin{array}{c}s_1\\s_2\\\vdots\end{array}\right]</m>,
+and its solution set is
+<m>\setList{ \left[\begin{array}{c}s_1\\s_2\\\vdots\end{array}\right] }</m>.
+              </p>
+          </li>
+          <li>
+              <p>
+Otherwise, the system must be <em>consistent</em> with <em>infinitely-many</em>
+different solutions. We'll learn how to find such solution sets in 
+<xref ref="LE4"/>. 
+              </p>
+          </li>
+      </ul>
+    </statement>
+</fact>
+
+    <activity estimated-time="15">
+  <introduction>
+    <p>
+For each vector equation, write an explanation for
+whether each solution set
+has no solutions, one solution, or infinitely-many solutions.
+If the set is finite, describe it using set notation.
+        </p>
+  </introduction>
+    <task>
+          <p>
+            <me>
+              x_{1} \left[\begin{array}{c}
+1 \\
+-1 \\
+1
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+4 \\
+-3 \\
+1
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+7 \\
+-6 \\
+4
+\end{array}\right] = \left[\begin{array}{c}
+10 \\
+-6 \\
+4
+\end{array}\right]
+            </me>
+          </p>
+        </task>
+        <task>
+          <p>
+            <me>
+              x_{1} \left[\begin{array}{c}
+-2 \\
+-1 \\
+-2
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+3 \\
+1 \\
+1
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+-2 \\
+-2 \\
+-5
+\end{array}\right] = \left[\begin{array}{c}
+1 \\
+4 \\
+13
+\end{array}\right]
+            </me>
+          </p>
+        </task>
+        <task>
+          <p>
+            <me>
+              x_{1} \left[\begin{array}{c}
+-1 \\
+-2 \\
+1
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+-5 \\
+-5 \\
+4
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+-7 \\
+-9 \\
+6
+\end{array}\right] = \left[\begin{array}{c}
+3 \\
+1 \\
+-2
+\end{array}\right]
+            </me>
+          </p>
+        </task>
+    </activity>
+
+<sage language="octave">
+</sage>
+    </subsection>
+
+    <subsection>
+        <title>Videos</title>
+    <figure>
+		<video xml:id="video-LE3" youtube="tkRKPBtkJcw">
+			<!--<track kind="subtitles" label="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+		</video>
+        <caption>Video: Finding the number of solutions for a system</caption>
+    </figure>
+    </subsection>
+
+    <subsection>
+        <title>Slideshow</title>
+        <p>Slideshow of activities available at <url href="LE3.slides.html"/>.</p>
+    </subsection>
+
+    <exercises>
+        <p>Exercises available at <url href="https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/LE3/"/>.</p>
+    </exercises>
+    
+    
+            <subsection>
+        <title>Mathematical Writing Explorations</title>
+                <exploration>
+            <statement>
+                <p> A system of equations with all constants equal to 0 is called <em> homogeneous </em>.
+                <ul>
+                    <li> Choose three systems of equations from this chapter that you have already solved. Replace the constants with 0 to make the systems homogeneous. Solve the homogeneous systems and make a conjecture about the relationship between the earlier solutions you found and the associated homogeneous systems.
+                    </li>
+                    <li>Prove or disprove. A system of linear equations is homogeneous if an only if it has the the zero vector as a solution.</li></ul></p>
+                    </statement>
+                </exploration>
+    </subsection>
+    <subsection>
+        <title>Sample Problem and Solution</title>
+        <p>
+            Sample problem <xref ref="sampleLE3"/>.
+        </p>
+    </subsection>
+    
+    
+</section>

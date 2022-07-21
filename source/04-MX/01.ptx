@@ -1,0 +1,356 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="MX1" tbil-slides="build" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Matrices and Multiplication (MX1)</title>
+    <objectives>
+        <ul>
+            <li>
+                <xi:include href="outcomes/01.ptx"/>
+            </li>
+        </ul>
+    </objectives>
+
+<subsection><title>Class Activities</title>
+<observation>
+    <statement>
+        <p>
+If <m>T: \IR^n \rightarrow \IR^m</m> and <m>S: \IR^m \rightarrow \IR^k</m> are linear maps,
+then the composition map <m>S\circ T</m> is a linear map from <m>\IR^n \rightarrow \IR^k</m>.
+        </p>
+        <figure>
+			<image width="75%">
+				<latex-image>
+\begin{tikzcd}[ampersand replacement=\&amp;]
+\IR^n \arrow[rr, bend right, "S\circ T"']  \arrow[r,"T"] \&amp; \IR^m  \arrow[r,"S"]  \&amp;\IR^k 
+\end{tikzcd}
+				</latex-image>
+			</image>
+			<caption>The composition of two linear maps.</caption>
+        </figure>
+        <p>
+Recall that for a vector, <m>\vec{v} \in \IR^n</m>, the composition is computed as <m> (S \circ T)(\vec{v})=S(T(\vec{v}))</m>.
+        </p>
+    </statement>
+</observation>
+
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>T: \IR^3 \rightarrow \IR^2</m> be given by the <m>2\times 3</m> standard matrix
+<m>B=\left[\begin{array}{ccc} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]</m> and
+<m>S: \IR^2 \rightarrow \IR^4</m> be given by the <m>4\times 2</m> standard matrix
+<m>A=\left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]</m>.
+        </p>
+        <p>
+What are the domain and codomain of the composition map <m>S \circ T</m>?
+        </p>
+<ol label="a">
+<!-- <li><p> The domain is <m>\IR ^2</m> and the codomain is <m>\IR^3</m>
+</p></li> -->
+<li><p> The domain is <m>\IR ^3</m> and the codomain is <m>\IR^2</m>
+</p></li>
+<li><p> The domain is <m>\IR ^2</m> and the codomain is <m>\IR^4</m>
+</p></li>
+<li><p> The domain is <m>\IR ^3</m> and the codomain is <m>\IR^4</m>
+</p></li>
+<li><p> The domain is <m>\IR ^4</m> and the codomain is <m>\IR^3</m>
+</p></li>
+<!-- <li><p> The domain is <m>\IR ^4</m> and the codomain is <m>\IR^2</m>
+</p></li> -->
+</ol>
+    </statement>
+</activity>
+
+
+<activity estimated-time='2'>
+    <statement>
+    <p>
+Let <m>T: \IR^3 \rightarrow \IR^2</m> be given by the <m>2\times 3</m>
+standard matrix <m>B=\left[\begin{array}{ccc} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]</m>
+and <m>S: \IR^2 \rightarrow \IR^4</m> be given by the <m>4\times 2</m> standard matrix
+<m>A=\left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]</m>.
+    </p>
+<p>
+What size will the standard matrix of <m>S \circ T:\IR^3\to\IR^4</m> be?
+(Rows <m>\times</m> Columns)
+        </p>
+<ol label="a">
+<li> <m>4 \times 3</m>
+</li>
+<!-- <li> <m>4 \times 2</m>
+</li> -->
+<li> <m>3 \times 4</m>
+</li>
+<li> <m>3 \times 2</m>
+</li>
+<li> <m>2 \times 4</m>
+</li>
+<!-- <li> <m>2 \times 3</m>
+</li> -->
+</ol>
+    </statement>
+</activity>
+
+<activity estimated-time='15'>
+    <introduction>
+        <p>
+Let <m>T: \IR^3 \rightarrow \IR^2</m> be given by the <m>2\times 3</m> standard matrix
+<m>B=\left[\begin{array}{ccc} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]</m>
+and <m>S: \IR^2 \rightarrow \IR^4</m> be given by the <m>4\times 2</m> standard matrix
+<m>A=\left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]</m>.
+        </p>
+    </introduction>
+<task>
+    <p>
+Compute
+<me>
+  (S \circ T)(\vec{e}_1)
+    =
+  S(T(\vec{e}_1))
+    =
+  S\left(\left[\begin{array}{c} 2 \\ 5\end{array}\right]\right)
+        =
+  \left[\begin{array}{c}\unknown\\\unknown\\\unknown\\\unknown\end{array}\right].
+</me>
+    </p>
+</task>
+<task>
+    <p>
+Compute
+<m>
+  (S \circ T)(\vec{e}_2)
+</m>.
+    </p>
+</task>
+<task>
+    <p>
+Compute
+<m>
+  (S \circ T)(\vec{e}_3)
+</m>.
+    </p>
+</task>
+<task>
+    <p>
+Write the <m>4\times 3</m> standard matrix of <m>S \circ T:\IR^3\to\IR^4</m>.
+    </p>
+</task>
+</activity>
+
+<definition>
+    <statement>
+    <p>
+We define the <term>product</term> <m>AB</m> of a <m>m \times n</m> matrix <m>A</m> and a
+<m>n \times k</m>
+matrix <m>B</m> to be the <m>m \times k</m> standard matrix of the composition map of the
+two corresponding linear functions.
+    </p>
+        <p>
+For the previous activity, 
+<m>T</m> was a map <m>\IR^3 \rightarrow \IR^2</m>, and 
+<m>S</m> was a map <m>\IR^2 \rightarrow \IR^4</m>, so <m>S \circ T</m> gave a map <m>\IR^3 \rightarrow \IR^4</m> with a
+<m>4\times 3</m> standard matrix:
+<me>
+  AB
+    =
+  \left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]
+  \left[\begin{array}{ccc} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]
+</me>
+<me>
+    =
+  \left[
+  (S \circ T)(\vec{e}_1) \hspace{1em}
+  (S\circ T)(\vec{e}_2) \hspace{1em}
+  (S \circ T)(\vec{e}_3)
+  \right]
+    =
+  \left[\begin{array}{ccc}
+    12 &amp; -5 &amp; 5 \\
+    5 &amp; -3 &amp; 4 \\
+    31 &amp; -12 &amp; 11 \\
+    -12 &amp; 5 &amp; -5
+  \end{array}\right]
+.</me>
+        </p>
+    </statement>
+</definition>
+
+
+
+<activity estimated-time='15'>
+    <introduction>
+        <p>
+Let <m>S: \IR^3 \rightarrow \IR^2</m> be given by the matrix 
+<m>A=\left[\begin{array}{ccc} -4 &amp; -2 &amp; 3 \\ 0 &amp; 1 &amp; 1 \end{array}\right]</m>
+and <m>T: \IR^2 \rightarrow \IR^3</m> be given by the matrix
+<m>B=\left[\begin{array}{cc} 2 &amp; 3 \\ 1 &amp; -1 \\ 0 &amp; -1 \end{array}\right]</m>.
+        </p>
+    </introduction>
+<task>
+    <p>
+Write the dimensions (rows <m>\times</m> columns)
+for <m>A</m>, <m>B</m>, <m>AB</m>, and <m>BA</m>.
+    </p>
+</task>
+<task>
+    <p>
+Find the standard matrix <m>AB</m> of <m>S \circ T</m>.
+    </p>
+</task>
+<task>
+    <p>
+Find the standard matrix <m>BA</m> of <m>T \circ S</m>.
+    </p>
+</task>
+</activity>
+
+<activity estimated-time='10'>
+    <introduction>
+        <p>
+Consider the following three matrices.
+        </p>
+<me>
+  A = \left[\begin{array}{ccc}1&amp;0&amp;-3\\3&amp;2&amp;1\end{array}\right]
+    \hspace{2em}
+  B = \left[\begin{array}{ccccc}2&amp;2&amp;1&amp;0&amp;1\\1&amp;1&amp;1&amp;-1&amp;0\\0&amp;0&amp;3&amp;2&amp;1\\-1&amp;5&amp;7&amp;2&amp;1\end{array}\right]
+    \hspace{2em}
+  C = \left[\begin{array}{cc}2&amp;2\\0&amp;-1\\3&amp;1\\4&amp;0\end{array}\right]
+</me>
+    </introduction>
+<task>
+    <p>
+Find the domain and codomain of each of the three linear maps corresponding to <m>A</m>, <m>B</m>, and <m>C</m>.
+    </p>
+</task>
+<task> 
+    <p>
+Only one of the matrix products
+<m>AB,AC,BA,BC,CA,CB</m> can actually be computed.
+Compute it.
+    </p>
+</task>
+</activity>
+
+<activity estimated-time='15'>
+    <introduction>
+        <p>
+Let <m>B=\left[\begin{array}{ccc} 3 &amp; -4 &amp; 0 \\ 2 &amp; 0 &amp; -1 \\ 0 &amp; -3 &amp; 3 \end{array}\right]</m>, 
+and let <m>A=\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]</m>.  
+        </p>
+    </introduction>
+<task>
+    <p>
+  Compute the product <m>BA</m> by hand.
+    </p>
+</task>
+<task>
+    <p>
+  Check your work using technology. Using Octave:
+    </p>
+    <cd>
+B = [3 -4 0 ; 2 0 -1 ; 0 -3 3]
+A = [2 7 -1 ; 0 3 2  ; 1 1 -1]
+B*A
+    </cd>
+</task>
+</activity>
+<sage language="octave">
+<input>
+B = [3 -4 0 ; 2 0 -1 ; 0 -3 3]
+A = [2 7 -1 ; 0 3 2  ; 1 1 -1]
+B*A
+</input>
+</sage>
+    <activity checkit-seed="0019" checkit-slug="MX1" checkit-title="Multiplying matrices">
+  <statement>
+      <p>Of the following three matrices, only two may be multiplied.
+      <me>
+          A=\left[\begin{array}{cccc}
+-1 &amp; 3 &amp; -2 &amp; -3 \\
+1 &amp; -4 &amp; 2 &amp; 3
+\end{array}\right] \hspace{1em} B=\left[\begin{array}{ccc}
+1 &amp; -6 &amp; -1 \\
+0 &amp; 1 &amp; 0
+\end{array}\right] \hspace{1em} C=\left[\begin{array}{ccc}
+1 &amp; -1 &amp; -1 \\
+0 &amp; 1 &amp; -2 \\
+-2 &amp; 4 &amp; -1 \\
+-2 &amp; 3 &amp; -1
+\end{array}\right]
+      </me>
+      Explain which two can be multiplied and why. Then show how to find their product.</p>
+  </statement>
+  <answer>
+      <me>AC=\left[\begin{array}{ccc}
+9 &amp; -13 &amp; 0 \\
+-9 &amp; 12 &amp; 2
+\end{array}\right]</me>
+  </answer>
+</activity>
+</subsection>
+
+
+    <subsection>
+        <title>Videos</title>
+        <figure>
+            <video xml:id="video-MX1" youtube="xEv2I-6obgM">
+              <!--<track kind="subtitles" label="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: Multiplying matrices</caption>
+        </figure>
+    </subsection>
+
+    <subsection>
+        <title>Slideshow</title>
+        <p>Slideshow of activities available at <url href="MX1.slides.html"/>.</p>
+    </subsection>
+
+    <exercises>
+        <p>Exercises available at <url href="https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/MX1/"/>.</p>
+    </exercises>
+ <subsection>    
+    <title>Mathematical Writing Explorations</title>
+            <exploration>
+                <statement>
+                    Construct 3 examples of matrix multiplication, with all matrix dimensions at least 2.
+<ul>
+<li>Where <m>A</m> and <m>B</m> are not square, but <m>AB</m> is square.</li>
+<li>Where <m>AB = BA</m>.</li>
+<li>Where <m>AB \neq BA</m>.</li>
+</ul>
+                </statement>
+     </exploration>
+<exploration>
+                <statement>
+Use the included map in this problem.
+                    <figure xml:id="MX1-adjacency">
+            <caption>Adjacency map, showing roads between 5 cities</caption>
+            <image xml:id="AB3-sample-id-image" width="50%">
+                <description>A map with 5 dots. A is connected to B, B is connected to C, C is connected to D and E, and D and E are connected to each other</description>
+                <latex-image>
+\tikz{\node[shape=circle,draw=black] (A) at (0,0) {A};
+    \node[shape=circle,draw=black] (B) at (0,2) {B};
+    \node[shape=circle,draw=black] (C) at (0,4) {C};
+    \node[shape=circle,draw=black] (D) at (-2,6) {D};
+    \node[shape=circle,draw=black] (E) at (2,6) {E};
+    \draw[edge] (A)--(B)--(C)--(D)--(E)--(C)}
+                </latex-image>
+            </image>
+        </figure>
+
+<ul>
+<li>An <em>adjacency matrix</em> for this map is a matrix that has the number of roads from city <m>i</m> to city <m>j</m> in the <m>(i,j)</m> entry of the matrix. A road is a path of length exactly 1. All <m>(i,i)</m>entries are 0. Write the adjacency matrix for this map, with the cities in alphabetical order.</li>
+
+    <li>What does the square of this matrix tell you about the map? The cube? The <m>n</m>-th power?</li>
+    </ul>
+                </statement>
+     </exploration>
+    </subsection>
+    <subsection>
+        <title>Sample Problem and Solution</title>
+        <p>
+            Sample problem <xref ref="sampleMX1"/>.
+        </p>
+    </subsection>
+
+</section>

@@ -1,3 +1,20 @@
+# TBIL 2021 Edition
+
+This version is hosted at
+<https://stevenclontz.github.io/linear-algebra-tbil-2021/>.
+
+- Google Drive: https://drive.google.com/drive/folders/1RuicNaVu9kZdMOy0pMvqNtfGQc-U8LkC?usp=sharing
+- Canvas: https://jagsonline.instructure.com/courses/221/
+
+## Copyright and Licensing
+
+See [source/meta/copyright.ptx](source/meta/copyright.ptx) and
+<https://stevenclontz.github.io/linear-algebra-tbil-2021/colophon.html>.
+
+## original README
+
+below
+
 # Linear Algebra for Team-Based Inquiry Learning
 
 Materials for teaching linear algebra using

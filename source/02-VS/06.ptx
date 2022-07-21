@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="VS6" tbil-slides="build" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Identifying a Basis (VS6)</title>
+    <objectives>
+        <ul>
+            <li>
+                <xi:include href="outcomes/06.ptx"/>
+            </li>
+        </ul>
+    </objectives>
+
+
+<subsection><title>Class Activities</title>
+<observation>
+    <statement>
+        <p>
+    Suppose you are building a starship, which is for some reason in the shape of a cube. Due to some clever engineering, each part of the ship can be made out of a finite set of components. In fact, there are only 5 basic components. Assemble them in different ways, and you make every part of the cube! However, at the last minute, the design is changed from a cube to an octahedron. Would it make more sense to take all of the parts you were planning to build, build them anyway and modify them later, or to just modify the 5 basic components?
+       </p>
+   </statement>
+</observation>
+    
+
+<activity>
+    <introduction>
+        <p>
+        Start with three vectors <me>
+    \vec e_1=\hat\imath=\left[\begin{array}{c}1 \\ 0 \\ 0\end{array}\right],
+    \vec e_2=\hat\jmath=\left[\begin{array}{c}0 \\ 1 \\ 0\end{array}\right],
+   \text{ and }
+    \vec e_3=\hat k=\left[\begin{array}{c}0 \\ 0 \\ 1\end{array}\right]
+  </me>.
+        </p>
+    </introduction>
+    <task>
+        <p>Let <m>\vec{v}</m> be an unspecified vector in <m>\IR</m>. Show that <m>\vec{v}</m> can be expressed as a linear combination of <m>\vec{e}_1, \vec{e}_2</m>, and <m>\vec{e}_3</m>.
+        </p>
+    </task>
+    <task>
+        <p>Let <m>\vec{w} = \left[\begin{array}{c}1 \\ 1 \\ 0\end{array}\right]</m>. Show that <m>\vec{v}</m> cannot be expressed as a linear combination of <m>\vec{e}_1, \vec{e}_2</m>, and <m>\vec{w}</m>.
+        </p>
+    </task>
+    <task>
+        <p>Does this imply that all vectors in <m>\IR^3</m> can be written as a linear combination of <m>\vec{e}_1, \vec{e}_2</m>, and <m>\vec{e}_3</m>? If you think so, explain what makes these vectors special. If not, explain why not.
+        </p>
+    </task>
+</activity>
+    
+<definition>
+    <statement>
+        <p>
+  A <term>basis</term><idx> basis </idx> is a linearly independent set that spans a vector space.
+        </p>
+        <p>
+  The <term>standard basis</term><idx><h>standard</h><h>basis</h></idx> of <m>\IR^n</m> is the set <m>\{\vec{e}_1, \ldots, \vec{e}_n\}</m> where
+            <md>
+                <mrow>
+  \vec{e}_1 &amp;= \left[\begin{array}{c}1 \\ 0 \\ 0 \\ \vdots \\ 0 \\  0 \end{array}\right] &amp;
+  \vec{e}_2 &amp;= \left[\begin{array}{c}0 \\ 1 \\ 0 \\ \vdots \\ 0 \\ 0 \end{array}\right] &amp;
+  \cdots &amp; &amp;
+  \vec{e}_n = \left[\begin{array}{c}0 \\ 0 \\ 0 \\ \vdots \\ 0 \\ 1 \end{array}\right]
+                </mrow>
+            </md>.
+        </p>
+ 
+    </statement>
+  </definition>
+
+<observation>
+    <statement>
+        <p>
+  A basis may be thought of as a collection of building blocks for a vector
+  space,  since every vector in the space can be expressed as a unique linear
+  combination of basis vectors.
+        </p>
+        <p>
+  For example, in many calculus courses, vectors in <m>\IR^3</m>
+  are often expressed in their component form
+  <me>
+    (3,-2,4)=\left[\begin{array}{c}3 \\ -2 \\ 4\end{array}\right]
+  </me>
+  or in their standard basic vector form
+  <me>
+    3\vec e_1-2\vec e_2+4\vec e_3 = 3\hat\imath-2\hat\jmath+4\hat k
+  .</me>
+  Since every vector in <m>\IR^3</m> can be uniquely described as a linear
+  combination of the vectors in <m>\setList{\vec e_1,\vec e_2,\vec e_3}</m>,
+  this set is indeed a basis.
+        </p>
+    </statement>
+</observation>
+
+
+
+<activity estimated-time='15'>
+    <statement>
+        <p>
+  Label each of the sets <m>A,B,C,D,E</m> as
+  <ul>
+<li>
+    <p>
+    SPANS <m>\IR^4</m> or DOES NOT SPAN <m>\IR^4</m>
+    </p>
+     </li>
+<li>
+    <p>
+    LINEARLY INDEPENDENT or LINEARLY DEPENDENT
+    </p>
+     </li>
+<li>
+    <p>
+    BASIS FOR <m>\IR^4</m> or NOT A BASIS FOR <m>\IR^4</m>
+    </p>
+     </li>
+  </ul>
+  by finding <m>\RREF</m> for their corresponding matrices.
+        </p>
+        <md>
+            <mrow>
+      A&amp;=\left\{
+      \left[\begin{array}{c}1\\0\\0\\0\end{array}\right],
+      \left[\begin{array}{c}0\\1\\0\\0\end{array}\right],
+      \left[\begin{array}{c}0\\0\\1\\0\end{array}\right],
+      \left[\begin{array}{c}0\\0\\0\\1\end{array}\right]
+      \right\}
+        &amp;
+   B&amp;=\left\{
+      \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+      \left[\begin{array}{c}2\\0\\0\\3\end{array}\right],
+      \left[\begin{array}{c}4\\3\\0\\2\end{array}\right],
+      \left[\begin{array}{c}-3\\0\\1\\3\end{array}\right]
+      \right\}
+            </mrow>
+            <mrow>
+      C&amp;=\left\{
+      \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+      \left[\begin{array}{c}2\\0\\0\\3\end{array}\right],
+      \left[\begin{array}{c}3\\13\\7\\16\end{array}\right],
+      \left[\begin{array}{c}-1\\10\\7\\14\end{array}\right],
+      \left[\begin{array}{c}4\\3\\0\\2\end{array}\right]
+      \right\}
+      &amp;
+      D&amp;=\left\{
+      \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+      \left[\begin{array}{c}4\\3\\0\\2\end{array}\right],
+      \left[\begin{array}{c}-3\\0\\1\\3\end{array}\right],
+      \left[\begin{array}{c}3\\6\\1\\5\end{array}\right]
+      \right\}
+            </mrow>
+            <mrow>
+     E&amp;=\left\{
+      \left[\begin{array}{c}5\\3\\0\\-1\end{array}\right],
+      \left[\begin{array}{c}-2\\1\\0\\3\end{array}\right],
+      \left[\begin{array}{c}4\\5\\1\\3\end{array}\right]
+      \right\}
+            </mrow>
+        </md>
+    </statement>
+</activity>
+
+<sage language="octave">
+</sage>
+
+<activity estimated-time='10'>
+    <statement>
+        <p>
+  If <m>\{\vec v_1,\vec v_2,\vec v_3,\vec v_4\}</m> is a basis for
+  <m>\IR^4</m>, that means <m>\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]</m>
+  doesn't have a non-pivot column, and doesn't have a
+  row of zeros. What is <m>\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]</m>?
+        </p>
+  <me>
+    \RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]
+      =
+    \left[\begin{array}{cccc}
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+    \end{array}\right]
+  </me>
+    </statement>
+</activity>
+
+    <fact>
+        <statement>
+            <p>
+  The set <m>\{\vec v_1,\dots,\vec v_m\}</m> is a basis for <m>\IR^n</m> if and
+  only if <m>m=n</m> and
+  <m>\RREF[\vec v_1\,\dots\,\vec v_n]=
+  \left[\begin{array}{cccc}
+    1&amp;0&amp;\dots&amp;0\\
+    0&amp;1&amp;\dots&amp;0\\
+    \vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+    0&amp;0&amp;\dots&amp;1
+  \end{array}\right]
+  </m>.
+            </p>
+            <p>
+  That is, a basis for <m>\IR^n</m> must have exactly <m>n</m> vectors and
+  its square matrix must row-reduce to the so-called <term>identity matrix</term>
+  containing all zeros except for a downward diagonal of ones.
+  (We will learn where the identity matrix gets its name in a later module.)
+            </p>
+        </statement>
+    </fact>
+
+    </subsection>
+
+    <subsection>
+        <title>Videos</title>
+        <figure>
+            <video xml:id="video-VS6" youtube="ayft2QhQ-xM">
+              <!--<track kind="subtitles" label="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: Verifying that a set of vectors is a basis of a vector space</caption>
+        </figure>
+    </subsection>
+
+    <subsection>
+        <title>Slideshow</title>
+        <p>Slideshow of activities available at <url href="VS6.slides.html"/>.</p>
+    </subsection>
+
+    <exercises>
+        <p>Exercises available at <url href="https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/VS6/"/>.</p>
+    </exercises>
+<subsection>    
+    <title>Mathematical Writing Explorations</title>
+            <exploration>
+                <statement>
+                    <ul>
+                    <li>What is a basis for <m>M_{2\times 2}</m>?</li>
+<li>What about <m>M_{3\times 3}</m>?</li>
+<li>Could we write each of these in a way that looks like the standard basis vectors in <m>\mathbb{R}^m</m> for some <m>m</m>? Make a conjecture about the relationship between these spaces of matrices and standard Eulidean space.</li>
+</ul>
+                </statement>
+<statement>
+Recall our earlier definition of symmetric matrices. Find a basis for each of the following:
+<ul>
+    <li>The space of <m>2 \times 2</m> symmetric matrices.</li>
+    <li>The space of <m>3 \times 3</m> symmetric matrices.</li>
+    <li>The space of <m>n \times n</m> symmetric matrices.</li>
+</ul>
+</statement>
+<statement>
+Must a basis for the space <m>P_2</m>, the space of all quadratic polynomials, contain a polynomial of each degree less than or equal to 2? Generalize your result to polynomials of arbitrary degree.
+                </statement>
+    </exploration>
+    </subsection>
+    
+    <subsection>
+        <title>Sample Problem and Solution</title>
+        <p>
+            Sample problem <xref ref="sampleVS6"/>.
+        </p>
+    </subsection>
+
+</section>

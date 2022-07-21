@@ -1,0 +1,360 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="VS3" tbil-slides="build" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Spanning Sets (VS3)</title>
+    <objectives>
+        <ul>
+            <li>
+                <xi:include href="outcomes/03.ptx"/>
+            </li>
+        </ul>
+    </objectives>
+
+
+<subsection><title>Class Activities</title>
+<observation>
+    <statement>
+        <p>
+Any single non-zero vector/number <m>x</m> in <m>\IR^1</m> spans <m>\IR^1</m>,
+since <m>\IR^1=\setBuilder{cx}{c\in\IR}</m>.
+        </p>
+        <figure>
+        <image width="75%">
+            <latex-image>
+                \begin{tikzpicture}
+                \draw[&lt;-&gt;] (-3,0) -- (3,0);
+                \draw[thick,-&gt;,blue] (0,0) -- (2,0) node[above] {x};
+                \draw (0,-0.2) -- (0,0.2) node[above] {0};
+                \end{tikzpicture}
+                </latex-image>
+        </image>
+            <caption>An <m>\IR^1</m> vector</caption>
+    </figure>
+    </statement>
+</observation>
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+  How many vectors are required to span <m>\IR^2</m>?
+  Sketch a drawing in the <m>xy</m> plane to support your answer.
+        </p>
+        <figure>
+        <image width="75%">
+            <latex-image>
+  \begin{tikzpicture}
+    \draw[&lt;-&gt;] (-4,0) -- (4,0);
+    \draw[&lt;-&gt;] (0,-4) -- (0,4);
+  \end{tikzpicture}
+            </latex-image>
+        </image>
+            <caption>The <m>xy</m> plane <m>\IR^2</m></caption>
+        </figure>
+  <ol label="a">
+<li>
+    <p>
+    <m>1</m>
+    </p>
+  </li>
+<li>
+    <p>
+    <m>2</m>
+    </p>
+  </li>
+<li>
+    <p>
+    <m>3</m>
+    </p>
+  </li>
+<li>
+    <p>
+    <m>4</m>
+    </p>
+  </li>
+<li>
+    <p>
+    Infinitely Many
+    </p>
+  </li>
+  </ol>
+    </statement>
+</activity>
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+  How many vectors are required to span <m>\IR^3</m>?
+        </p>
+        <figure>
+        <image width="75%">
+            <latex-image>
+  \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)}]
+    \draw[-&gt;] (0,0,0) -- (6,0,0);
+    \draw[-&gt;] (0,0,0) -- (0,6,0);
+    \draw[-&gt;] (0,0,0) -- (0,0,6);
+  \end{tikzpicture}
+            </latex-image>
+        </image>
+            <caption><m>\IR^3</m> space</caption>
+        </figure>
+  <ol label="a">
+<li>
+    <p>
+    <m>1</m>
+    </p>
+  </li>
+<li>
+    <p>
+    <m>2</m>
+    </p>
+  </li>
+<li>
+    <p>
+    <m>3</m>
+    </p>
+  </li>
+<li>
+    <p>
+    <m>4</m>
+    </p>
+  </li>
+<li>
+    <p>
+    Infinitely Many
+    </p>
+  </li>
+  </ol>
+    </statement>
+</activity>
+
+<fact>
+    <statement>
+        <p>
+  At least <m>n</m> vectors are required to span <m>\IR^n</m>.
+        </p>
+        <figure>
+        <image width="75%">
+            <latex-image>
+  \begin{tikzpicture}[scale=0.5]
+    \draw[&lt;-&gt;] (-4,0) -- (4,0);
+    \draw[&lt;-&gt;] (0,-4) -- (0,4);
+    \draw[blue!50] (2,-4) -- (-2,4);
+    \draw[thick,blue,-&gt;] (0,0) -- (1,-2);
+  \end{tikzpicture}
+  \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)},scale=0.5]
+    \draw[-&gt;] (0,0,0) -- (6,0,0);
+    \draw[-&gt;] (0,0,0) -- (0,6,0);
+    \draw[-&gt;] (0,0,0) -- (0,0,6);
+    \draw[fill=purple!20,fill opacity=0.5]
+      (-2,-2,2) -- (6,-2,-2) -- (2,2,-2) -- (-6,2,2) -- (-2,-2,2);
+    \draw[thick,blue,-&gt;] (0,0,0) -- (1,-1,0);
+    \draw[thick,red,-&gt;] (0,0,0) -- (-2,0,1);
+  \end{tikzpicture}
+            </latex-image>
+        </image>
+            <caption>Failed attempts to span <m>\IR^n</m> by <m>&lt;n</m> vectors</caption>
+        </figure>
+    </statement>
+    </fact>
+
+<activity estimated-time='15'>
+    <statement>
+        <p>
+  Choose any vector <m>\left[\begin{array}{c}\unknown\\\unknown\\\unknown\end{array}\right]</m>
+  in <m>\IR^3</m> that is not in
+  <m>\vspan\left\{\left[\begin{array}{c}1\\-1\\0\end{array}\right],
+  \left[\begin{array}{c}-2\\0\\1\end{array}\right]\right\}</m> by using technology to verify that
+  <m>
+    \RREF
+    \left[\begin{array}{cc|c}1&amp;-2&amp;\unknown\\-1&amp;0&amp;\unknown\\0&amp;1&amp;\unknown\end{array}\right]
+      =
+    \left[\begin{array}{cc|c}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{array}\right]
+  </m>.
+  (Why does this work?)
+        </p>
+    </statement>
+</activity>
+<sage language="octave">
+</sage>
+
+<fact>
+    <statement>
+        <p>
+  The set <m>\{\vec v_1,\dots,\vec v_m\}</m> fails to span all of <m>\IR^n</m>
+  exactly when the vector equation
+  <me> x_1 \vec{v}_1 + \cdots x_m\vec{v}_m = \vec{w} </me>
+  is inconsistent for <em>some</em> vector <m>\vec{w}</m>.
+        </p>
+        <p>
+  Note that this happens exactly when <m>\RREF[\vec v_1\,\dots\,\vec v_m]</m> has a non-pivot row of zeros.
+  <me>\left[\begin{array}{cc}1&amp;-2\\-1&amp;0\\0&amp;1\end{array}\right]\sim
+  \left[\begin{array}{cc}1&amp;0\\0&amp;1\\0&amp;0\end{array}\right]</me>
+  <me>\Rightarrow
+  \left[\begin{array}{cc|c}1&amp;-2&amp;a\\-1&amp;0&amp;b\\0&amp;1&amp;c\end{array}\right]\sim
+  \left[\begin{array}{cc|c}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{array}\right]
+  \text{for some choice of vector} \left[\begin{array}{c} a \\ b \\ c \end{array}\right] </me>.
+        </p>
+    </statement>
+</fact>
+
+<activity estimated-time='5'>
+    <introduction>
+        <p>
+  Consider the set of vectors <m>S=\left\{
+  \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+  \left[\begin{array}{c}1\\-4\\3\\0\end{array}\right],
+  \left[\begin{array}{c}1\\7\\-3\\-1\end{array}\right],
+  \left[\begin{array}{c}0\\3\\5\\7\end{array}\right],
+  \left[\begin{array}{c}3\\13\\7\\16\end{array}\right]
+  \right\}
+  </m> and the question
+  <q>Does
+  <m>\IR^4=\vspan S</m>?</q>
+        </p>
+    </introduction>
+  <task>
+        <p>
+        Rewrite this question in terms of the solutions to a vector equation.
+        </p>
+  </task>
+  <task>
+        <p>
+        Answer your new question, and use this to answer the original question.
+        </p>
+  </task>
+</activity>
+<sage language="octave">
+</sage>
+
+
+<activity estimated-time='10'>
+    <introduction>
+        <p>
+  Consider the set of third-degree polynomials 
+            <md>
+                <mrow>
+  S=\{
+  &amp;2x^3+3x^2-1,
+  2x^3+3,
+  3x^3+13x^2+7x+16,
+                </mrow>
+                <mrow>
+  &amp;-x^3+10x^2+7x+14,
+  4x^3+3x^2+2 \} .
+                </mrow>
+            </md>
+            and the question
+            <q>
+  Does
+  <m>\P_3=\vspan S</m>?
+            </q>
+        </p>
+    </introduction>
+  <task><p>Rewrite this question to be about the solutions to a polynomial equation.
+      </p>
+  </task>
+  <task>
+      <p>
+      Answer your new question, and use this to answer the original question.
+      </p>
+  </task>
+</activity>
+<sage language="octave">
+</sage>
+
+
+<activity estimated-time='5'>
+    <introduction>
+    <p>
+Consider the set of matrices
+<me> S = \left\{
+    \left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; 1 \end{array}\right],
+    \left[\begin{array}{cc} 1 &amp; -1 \\ 1 &amp; 0 \end{array}\right],
+    \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 2 \end{array}\right]
+    \right\} </me>
+and the question <q>Does <m>M_{2,2} = \vspan S</m>?</q>
+    </p>
+    </introduction>
+  <task>
+      <p>
+      Rewrite this as a question about the solutions to a matrix equation.
+      </p>
+  </task>
+  <task>
+      <p>
+      Answer your new question, and use this to answer the original question.
+      </p>
+  </task>
+</activity>
+<sage language="octave">
+</sage>
+
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>\vec{v}_1, \vec{v}_2, \vec{v}_3 \in \IR^7</m> be three vectors,
+and suppose <m>\vec{w}</m> is another vector with
+<m>\vec{w} \in \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\}</m>.
+What can you conclude about
+<m> \vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} </m>?
+        </p>
+<ol label="a">
+<li> <m> \vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} </m> is larger than <m> \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} </m>.
+</li>
+<li> <m> \vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\}  = \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} </m>.
+</li>
+<li> <m> \vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} </m> is smaller than <m> \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} </m>.
+</li>
+</ol>
+    </statement>
+</activity>
+    </subsection>
+
+    <subsection>
+        <title>Videos</title>
+        <figure>
+            <video xml:id="video-VS3" youtube="Mr8LJAPwp1E">
+              <!--<track kind="subtitles" label="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: Determining if a set spans a Euclidean space</caption>
+        </figure>
+    </subsection>
+
+    <subsection>
+        <title>Slideshow</title>
+        <p>Slideshow of activities available at <url href="VS3.slides.html"/>.</p>
+    </subsection>
+
+    <exercises>
+        <p>Exercises available at <url href="https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/VS3/"/>.</p>
+    </exercises>
+    
+<subsection>    
+    <title>Mathematical Writing Explorations</title>
+            <exploration>
+                <statement>
+                    Construct each of the following, or show that it is impossible:
+<ul>
+<li>A set of 2 vectors that spans <m>\mathbb{R}^3</m></li>
+<li>A set of 3 vectors that spans <m>\mathbb{R}^3</m></li>
+<li>A set of 3 vectors that does not span <m>\mathbb{R}^3</m></li>
+<li>A set of 4 vectors that spans <m>\mathbb{R}^3</m></li>
+</ul>
+                    For any of the sets you constructed that did span the required space, are any of the vectors a linear combination of the others in your set? 
+                </statement>
+    </exploration>
+    <exploration>
+                <statement>
+                    Based on these results, generalize this a conjecture about how a set of <m>n-1, n</m> and <m>n+1</m> vectors would or would not span <m>\mathbb{R}^n</m>.
+        </statement>
+    </exploration>
+    </subsection>
+    <subsection>
+        <title>Sample Problem and Solution</title>
+        <p>
+            Sample problem <xref ref="sampleVS3"/>.
+        </p>
+    </subsection>
+    
+    
+</section>
