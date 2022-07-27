@@ -7,7 +7,7 @@ class Generator(BaseGenerator):
         rows = choice([3,4])
         columns = 7-rows
         rank = randrange(2,columns)
-        A = CheckIt.CheckIt.simple_random_matrix_of_rank(rank,rows=rows,columns=columns)
+        A = CheckIt.simple_random_matrix_of_rank(rank,rows=rows,columns=columns)
         image_basis = [A.column(p) for p in A.pivots()]
         coeffs = [
             randrange(1,4)*choice([-1,1])
@@ -20,7 +20,7 @@ class Generator(BaseGenerator):
         matrix = A.augment(lin_combo, subdivide=True)
         if choice([True,False]):
             system_label = "system"
-            system = CheckIt.CheckIt.latex_system_from_matrix(matrix)
+            system = CheckIt.latex_system_from_matrix(matrix)
         else:
             system_label = "vec_eq"
             system = vectorEquation(matrix)

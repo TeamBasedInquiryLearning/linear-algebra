@@ -4,7 +4,7 @@ class Generator(BaseGenerator):
     def data(self):
         # single solution
         # create a 3x3 invertible matrix
-        A = CheckIt.CheckIt.simple_random_matrix_of_rank(3,rows=3,columns=3)
+        A = CheckIt.simple_random_matrix_of_rank(3,rows=3,columns=3)
         # add linear combination of rows for fourth row
         combo = sum([randrange(1,4)*vector(r) for r in A.rows()])
         A = A.stack(matrix(QQ,1,combo))
@@ -14,7 +14,7 @@ class Generator(BaseGenerator):
         constants = A*solution
         m = A.augment(constants, subdivide=True)
         if choice([True,False]):
-            system = CheckIt.CheckIt.latex_system_from_matrix(m)
+            system = CheckIt.latex_system_from_matrix(m)
         else:
             system = vectorEquation(m)
         systems = [{
@@ -27,7 +27,7 @@ class Generator(BaseGenerator):
 
         # infinitely-many solutions
         # create a 3x3 non-invertible matrix
-        A = CheckIt.CheckIt.simple_random_matrix_of_rank(2,rows=3,columns=3)
+        A = CheckIt.simple_random_matrix_of_rank(2,rows=3,columns=3)
         # add linear combination of rows for fourth row
         combo = sum([randrange(1,4)*vector(r) for r in A.rows()])
         A = A.stack(matrix(QQ,1,combo))
@@ -42,7 +42,7 @@ class Generator(BaseGenerator):
         ]))
         m = A.augment(lin_combo, subdivide=True)
         if choice([True,False]):
-            system = CheckIt.CheckIt.latex_system_from_matrix(m)
+            system = CheckIt.latex_system_from_matrix(m)
         else:
             system = vectorEquation(m)
         systems += [{
@@ -54,7 +54,7 @@ class Generator(BaseGenerator):
 
         # no solutions
         # create a 4x4 non-invertible matrix
-        A = CheckIt.CheckIt.simple_random_matrix_of_rank(2,rows=3,columns=3)
+        A = CheckIt.simple_random_matrix_of_rank(2,rows=3,columns=3)
         # add linear combination of rows for fourth row
         combo = sum([randrange(1,4)*vector(r) for r in A.rows()])
         A = A.stack(matrix(QQ,1,combo))
@@ -78,7 +78,7 @@ class Generator(BaseGenerator):
             ])
         m = A.augment(column_matrix(non_lin_combo), subdivide=True)
         if choice([True,False]):
-            system = CheckIt.CheckIt.latex_system_from_matrix(m)
+            system = CheckIt.latex_system_from_matrix(m)
         else:
             system = vectorEquation(m)
         systems += [{
