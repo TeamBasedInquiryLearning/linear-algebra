@@ -1,3 +1,5 @@
+load("library/common.sage")
+
 class Generator(BaseGenerator):
     def data(self):
         var('x1 x2 x3 y1 y2 y3 c d x y')
