@@ -1,0 +1,371 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="LE4" tbil-slides="build" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Linear Systems with Infinitely-Many Solutions (LE4)</title>
+    <objectives>
+        <ul>
+            <li>
+                <xi:include href="outcomes/04.ptx"/>
+            </li>
+        </ul>
+    </objectives>
+
+<subsection><title>Class Activities</title>
+<activity estimated-time='10'>
+    <introduction>
+        <p>
+Consider this simplified linear system found to be equivalent to the system
+from <xref ref="LE3-inf"/>:
+        </p>
+    <md alignat-columns='3' alignment="alignat">
+        <mrow>
+        x_1 &amp;+ 2x_2 &amp; &amp;= 4
+        </mrow>
+        <mrow>
+              &amp; &amp;\phantom{+}x_3 &amp;= -1
+        </mrow>
+    </md>
+        <p>
+Earlier, we determined this system has infinitely-many solutions.
+        </p>
+    </introduction>
+<task>
+    <p>
+Let <m>x_1=a</m> and write the solution set in the form
+<m>
+  \setBuilder
+  {
+    \left[\begin{array}{c} a \\ \unknown \\ \unknown \end{array}\right]
+  }{
+    a \in \IR
+  }
+</m>.
+    </p>
+</task>
+<task>
+    <p>
+Let <m>x_2=b</m> and write the solution set in the form
+<m>
+  \setBuilder
+  {
+    \left[\begin{array}{c} \unknown \\ b \\ \unknown \end{array}\right]
+  }{
+    b \in \IR
+  }
+</m>.
+    </p>
+</task>
+<task>
+    <p>
+Which of these was easier?  What features of the RREF matrix
+<m>
+  \left[\begin{array}{ccc|c}
+    \circledNumber{1} &amp; 2 &amp; 0 &amp; 4 \\
+    0 &amp; 0 &amp; \circledNumber{1} &amp; -1
+  \end{array}\right]
+</m> caused this?
+    </p>
+</task>
+</activity>
+
+<definition>
+    <statement>
+        <p>
+Recall that the pivots of a matrix in <m>\RREF</m> form are the leading
+<m>1</m>s in each non-zero row.
+        </p>
+        <p>
+The pivot columns in an augmented matrix correspond to the
+<term>bound variables</term> in the system of equations (<m>x_1,x_3</m> below).
+The remaining variables are called <term>free variables</term> (<m>x_2</m> below).
+        </p>
+<!-- <me>
+  \begin{array}{cccc}
+    x_1 &amp; x_2 &amp; x_3 &amp; \phantom{-1} \\
+    \downarrow &amp; \downarrow &amp; \downarrow &amp;
+  \end{array}
+</me> -->
+<me>
+  \left[\begin{array}{ccc|c}
+    \circledNumber{1} &amp; 2 &amp; 0 &amp; 4 \\
+    0 &amp; 0 &amp; \circledNumber{1} &amp; -1
+  \end{array}\right]
+</me>
+        <p>
+To efficiently solve a system in RREF form, assign letters to the free
+variables, and then solve for the bound variables.
+        </p>
+    </statement>
+</definition>
+
+<activity estimated-time='20'>
+    <introduction>
+        <p>
+Find the solution set for the system
+<md alignat-columns='6' alignment="alignat">
+    <mrow>
+2x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;6x_3&amp;\,+\,&amp;x_4&amp;\,-\,&amp;x_5&amp;\,=\,&amp;3 
+    </mrow>
+    <mrow>
+-x_1&amp;\,+\,&amp;x_2&amp;\,+\,&amp;3x_3&amp;\,-\,&amp;x_4&amp;\,+\,&amp;2x_5 &amp;\,=\,&amp; -3 
+    </mrow>
+    <mrow>
+x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;x_3&amp;\,+\,&amp;x_4&amp;\,+\,&amp;x_5 &amp;\,=\,&amp; 2
+    </mrow>
+</md>
+by doing the following.
+        </p>
+    </introduction>
+    <task>
+        <p>
+Row-reduce its augmented matrix.
+        </p>
+    </task>
+    <task>
+        <p>
+Assign letters to the free variables (given by the non-pivot columns):
+<m>\unknown = a</m> and <m>\unknown = b</m>.
+        </p>
+    </task>
+    <task>
+        <p>
+Solve for the bound variables (given by the pivot columns) to show that
+<m>\unknown = 1+5a+2b</m>, <m>\unknown = 1+2a+3b</m>, and
+<m>\unknown=3+3b</m>.
+        </p>
+    </task>
+    <task>
+        <statement>
+        <p>
+Replace <m>x_1</m> through <m>x_5</m> with the appropriate expressions of <m>a,b</m>
+in the following set-builder notation.
+        </p>
+            <p>
+<me>
+  \setBuilder
+  {
+    \left[\begin{array}{c}
+      x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5
+    \end{array}\right]
+  }{
+    a,b\in \IR
+  }
+</me>
+            </p>
+        </statement>
+        <answer>
+        <p>
+<me>
+  \setBuilder
+  {
+    \left[\begin{array}{c}
+      1+5a+2b \\
+      1+2a+3b \\
+      a \\
+      3+3b \\
+      b
+    \end{array}\right]
+  }{
+    a,b\in \IR
+  }
+</me>
+        </p>
+        </answer>
+    </task>
+</activity>
+
+<sage language="octave">
+</sage>
+
+
+<remark>
+    <statement>
+    <p>
+Don't forget to correctly express the solution set of a linear system.
+Systems with zero or one solutions may be written by listing their elements,
+        while systems with infinitely-many solutions may be written using
+        set-builder notation.
+    </p>
+  <ul>
+<li><p> <em>Inconsistent</em>: <m>\emptyset</m> or <m>\{\}</m> (not <m>0</m>).
+    </p>
+  </li>
+      <li><p> <em>Consistent</em> with <em>one solution</em>: e.g.
+        <m>\setList{ \left[\begin{array}{c}1\\2\\3\end{array}\right] }</m>
+          (not just
+        <m>\left[\begin{array}{c}1\\2\\3\end{array}\right]</m>).
+    </p>
+  </li>
+<li> <p>
+    <em>Consistent</em> with <em>infinitely-many solutions</em>: e.g.
+        <m>
+          \setBuilder
+          {
+            \left[\begin{array}{c}1\\2-3a\\a\end{array}\right]
+          }{
+            a\in\IR
+          }
+        </m>
+    (not just
+        <m>
+            \left[\begin{array}{c}1\\2-3a\\a\end{array}\right]
+        </m>
+    ).
+    </p>
+  </li>
+  </ul>
+    </statement>
+</remark>
+
+<activity estimated-time="15">
+  <statement>
+    <p>Show how to find the solution set for the
+        vector equation <me>x_{1} \left[\begin{array}{c}
+1 \\
+0 \\
+1
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+0 \\
+1 \\
+-1
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+-1 \\
+5 \\
+-5
+\end{array}\right] + x_{4} \left[\begin{array}{c}
+-3 \\
+13 \\
+-13
+\end{array}\right] = \left[\begin{array}{c}
+-3 \\
+12 \\
+-12
+\end{array}\right]</me>.
+     </p>
+  </statement>
+
+  <answer>
+      <p>
+      <me>\mathrm{RREF}\left[\begin{array}{cccc|c}
+1 &amp; 0 &amp; -1 &amp; -3 &amp; -3 \\
+0 &amp; 1 &amp; 5 &amp; 13 &amp; 12 \\
+1 &amp; -1 &amp; -5 &amp; -13 &amp; -12
+\end{array}\right]=\left[\begin{array}{cccc|c}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; -2 &amp; -3 \\
+0 &amp; 0 &amp; 1 &amp; 3 &amp; 3
+\end{array}\right]</me>
+      </p>
+      <p>The solution set is <m> \left\{ \left[\begin{array}{c}
+0 \\
+2 \, a - 3 \\
+-3 \, a + 3 \\
+a
+\end{array}\right] \,\middle|\, a \in\mathbb R \right\} </m>.</p>
+  </answer>
+</activity>
+    <activity checkit-seed="0019" checkit-slug="LE4" checkit-title="Linear Systems with Infinitely-Many Solutions">
+  <statement>
+    <p>
+Consider the following
+system of linear equations.
+      <me>
+        \begin{matrix}
+ x_{1} &amp;  &amp;  &amp;  -  &amp; 2 \, x_{3} &amp; = &amp; -3 \\
+ 5 \, x_{1} &amp;  +  &amp; x_{2} &amp;  -  &amp; 7 \, x_{3} &amp; = &amp; -18 \\
+ 5 \, x_{1} &amp;  -  &amp; x_{2} &amp;  -  &amp; 13 \, x_{3} &amp; = &amp; -12 \\
+ x_{1} &amp;  +  &amp; 3 \, x_{2} &amp;  +  &amp; 7 \, x_{3} &amp; = &amp; -12 \\
+ \end{matrix}
+        
+      </me>
+    </p>
+    <ol>
+      <li>
+        <p>
+Explain how to find a simpler system or vector equation
+that has the same solution set.
+        </p>
+      </li>
+      <li>
+        <p>
+Explain how to describe this solution set using set notation.
+        </p>
+      </li>
+    </ol>
+  </statement>
+
+  <answer>
+    <p>
+      <me>\mathrm{RREF}\left[\begin{array}{ccc|c}
+1 &amp; 0 &amp; -2 &amp; -3 \\
+5 &amp; 1 &amp; -7 &amp; -18 \\
+5 &amp; -1 &amp; -13 &amp; -12 \\
+1 &amp; 3 &amp; 7 &amp; -12
+\end{array}\right]=\left[\begin{array}{ccc|c}
+1 &amp; 0 &amp; -2 &amp; -3 \\
+0 &amp; 1 &amp; 3 &amp; -3 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]</me>
+      The solution set is <m> \left\{ \left[\begin{array}{c}
+2 \, a - 3 \\
+-3 \, a - 3 \\
+a
+\end{array}\right] \,\middle|\, a \in\mathbb R \right\} </m>.
+    </p>
+  </answer>
+</activity>
+    </subsection>
+
+    <subsection>
+        <title>Videos</title>
+    <figure>
+		<video xml:id="video-LE4" youtube="_ievdPswLoE">
+			<!--<track kind="subtitles" label="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+		</video>
+        <caption>Video: Solving a system of linear equations with infinitely-many solutions</caption>
+    </figure>
+    </subsection>
+
+    <subsection>
+        <title>Slideshow</title>
+        <p>Slideshow of activities available at <url href="LE4.slides.html"/>.</p>
+    </subsection>
+
+    <exercises>
+        <p>Exercises available at <url href="https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/LE4/"/>.</p>
+    </exercises>
+    
+    <subsection>
+        <title>Mathematical Writing Explorations</title>
+        <exploration>
+            <statement>
+                <p>Construct a system of 3 equations in 3 variables having:
+<ul> <li> 0 free variables </li>
+<li>1 free variable</li> 
+<li>2 free variables</li>
+</ul>
+                    In each case, solve the system you have created. Conjecture a relationship between the number of free variables and the type of solution set that can be obtained from a given system.
+                </p>
+            </statement>
+        </exploration>
+        <exploration>
+        <statement>
+                <p>For each of the following, decide if it's true or false. If you think it's true, can we construct a proof? If you think it's false, can we find a counterexample?
+    <ul>
+        <li>If the coefficient matrix of a system of linear equations has a pivot in the rightmost column, then the system is inconsistent.</li>
+<li>If a system of equations has two equations and four unknowns, then it must be consistent.</li>
+<li> If a system of equations having four equations and three unknowns is consistent, then the solution is unique.</li>
+<li> Suppose that a linear system has four equations and four unknowns and that the coefficient matrix has four pivots. Then the linear system is consistent and has a unique solution.</li>
+<li> Suppose that a linear system has five equations and three unknowns and that the coefficient matrix has a pivot in every column. Then the linear system is consistent and has a unique solution.</li></ul></p></statement></exploration>
+    </subsection>    
+    
+    <subsection>
+        <title>Sample Problem and Solution</title>
+        <p>
+            Sample problem <xref ref="sampleLE4"/>.
+        </p>
+    </subsection>
+    
+    
+
+</section>

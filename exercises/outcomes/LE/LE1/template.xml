@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
+    <!-- {{#prompt}} -->
+
+        <!-- {{#sys}} -->
+            <intro>
+                <p> Consider the system of equations <me>{{system}}</me></p>
+            </intro>
+        <!-- {{/sys}} -->
+        <!-- {{#mat}} -->
+            <intro>
+                <p> Consider the augmented matrix <me>{{matrix}}</me></p>
+            </intro>
+        <!-- {{/mat}} -->
+        <!-- {{#vec}} -->
+            <intro>
+                <p> Consider the vector equation <me>{{vectorequation}}</me></p>
+            </intro>
+        <!-- {{/vec}} -->
+
+        <!-- {{^sys}} -->
+            <knowl>
+                <content><p> Write a system of scalar equations corresponding to this augmented matrix. </p></content>
+                <outtro><p><me>{{system}}</me></p></outtro>
+            </knowl>
+        <!-- {{/sys}} -->
+        <!-- {{^mat}} -->
+            <knowl>
+                <content><p> Write an augmented matrix corresponding to this system. </p></content>
+                <outtro><p><me>{{matrix}}</me></p></outtro>
+            </knowl>
+        <!-- {{/mat}} -->
+        <!-- {{^vec}} -->
+            <knowl>
+                <content><p> Write a vector equation corresponding to this system.</p></content>
+                <outtro><p><me>{{vectorequation}}</me></p></outtro>
+            </knowl>
+        <!-- {{/vec}} -->
+
+    <!-- {{/prompt}} -->
+</knowl>

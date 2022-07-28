@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="ON1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Dot Products (ON1)</title>
+    <objectives>
+        <ul>
+            <li>
+                <xi:include href="outcomes/01.ptx"/>
+            </li>
+        </ul>
+    </objectives>
+    
+
+
+    <activity estimated-time="10">
+        <introduction>
+            <p> 
+           Consider the binary operation ''<m>\circledast</m>'' defined on vectors <m>\vec v</m>, <m> \vec w</m> in <m>\IR^n</m> by
+<me> \vec v \circledast \vec w = v_1 w_1 + v_2 w_2 + v_3 w_3 + \cdots + v_n w_n.
+</me>
+            </p>
+        </introduction>
+        <task>
+            <p>
+Let <m>\vec v =\left[\begin{array}{c} 1 \\ -1 \\ 0 \\ 2 \\ 3 \end{array}\right]</m> and <m> \vec w=\left[\begin{array}{c} 5 \\ 12 \\ -1 \\ 1 \\ 2 \end{array}\right]</m>. What is <m>\vec v \circledast \vec w</m>?
+            </p>
+    <ol label ="a">
+<li> <m>25</m></li>
+<li> <m>\left[\begin{array}{c} 5 \\ -12 \\ 0 \\ 2 \\ 6 \end{array}\right]</m></li>
+<li> <m>1</m></li>
+<li> <m>\left[\begin{array}{c} 6 \\ 11 \\ -1 \\ 3 \\ 5 \end{array}\right]</m></li>
+</ol>
+        </task>
+        <task>
+<p>Let <m>\vec v=\left[\begin{array}{c} 48 \\ 55 \end{array}\right]</m>.</p>
+            <ol><li>Graph <m>\vec v</m> and use the Pythagorean Theorem to determine the length of <m>\vec v</m>.</li>
+                <li>What is <m>\vec v \circledast \vec v</m>?</li></ol>
+        </task>
+        <task>
+<p>Let <m>\vec v=\left[\begin{array}{c} v_1 \\ v_2 \end{array}\right]</m>.</p>
+            <ol><li>Graph <m>\vec v</m> and use the Pythagorean Theorem to determine the length of <m>\vec v</m>.</li>
+                <li>What is <m>\vec v \circledast \vec v</m>?</li>
+                <li>For a vector <m>\vec v</m> in <m>\mathbb{R}^2</m>, how is the length of <m>\vec v</m> related to<m>\vec v \circledast \vec v</m>?</li>
+            </ol>
+        </task>
+    </activity>    
+<subsection><title>The Dot Product</title>
+<p>The dot product is a binary operation on vectors that helps us measure the length of vectors and the angle formed by a pair of vectors.</p>
+    
+<definition>
+    <statement>
+    <p>
+Given two <m>n</m>-dimensional vectors <m>\vec v</m> and <m>\vec w</m>, the <term>dot product</term><idx>dot product</idx> <m> \vec v \cdot \vec w</m> is defined by
+    <me>
+    \vec v \cdot \vec w = \left[\begin{array}{c} v_1 \\ v_2 \\ v_3 \\ \vdots \\ v_n \end{array}\right] \cdot \left[\begin{array}{c} w_1 \\ w_2 \\ w_3 \\ \vdots \\ w_n \end{array}\right]
+        = v_1 w_1 + v_2 w_2 + v_3 w_3 + \cdots + v_n w_n
+    </me>
+The dot product combines two vectors and creates a scalar that gives us geometric information about the input vectors. If both vectors are the same, then <m>\vec{v} \cdot \vec{v}</m> gives us the square of the length of <m>\vec{v}</m>. The <term>length</term> of a vector <m>\vec v</m> in <m>\IR^n</m>, denoted <m>\lvert \vec v \rvert</m>, is defined as
+            <me>\lvert \vec v \rvert = \sqrt{\vec v \cdot \vec v}=\sqrt{v_1^2 + v_2^2 + v_3 ^2 + \cdots + v_n^2}</me>
+    Vectors of length <m>1</m> are called <term>unit vectors</term>.
+        </p>
+    </statement>
+    </definition>
+
+    <activity estimated-time="5">
+        <introduction>
+        <p>Consider each of the following properties of the dot product. Label each property as <em>valid</em> if the property holds for Euclidean vectors <m>\vec u</m>, <m>\vec v</m> and <m>\vec w</m> from <m>\IR^n</m>, and scalars <m>a,b \in \IR</m>, and <em>invalid</em> if it does not.
+            </p></introduction>
+        <ol>
+<li>    <p>    <m>\left(\vec u \cdot \vec v\right) \cdot \vec w=\vec u \cdot \left(\vec v \cdot \vec w\right)</m>.    </p>      </li> 
+<li>    <p>    <m>\left(a \vec v\right) \cdot \vec w=a \left(\vec v \cdot \vec w\right)</m>.    </p>      </li> 
+<li>    <p>    <m>\vec w\cdot \vec v=\vec v \cdot \vec w</m>.    </p>      </li>
+<li>    <p>    <m>\left(a+b\right) \left(\vec v \cdot \vec w\right)= \left(a \vec v\right) \cdot \left(b \vec w\right)</m>.    </p>      </li>
+<li>    <p>    <m>\left(a \vec u+b \vec v\right) \cdot \vec w= \left(a \vec u\right) \cdot \vec w + \left(b \vec v\right) \cdot \vec w</m>.    </p>      </li>
+        </ol>
+    </activity>
+
+    <observation>
+    <statement>
+        <p>Like arithmetic of real numbers, the dot product on vectors satisfies some familiar properties. Let   <m>\vec u</m>, <m>\vec v</m> and <m>\vec w</m> be vectors from <m>\IR^n</m>, and let <m>a,b \in \IR</m> be scalars.
+            <ol>
+            <li><p><m>\vec u \cdot \vec v = \vec v \cdot \vec u</m>.</p></li>
+                <li><p><m>\left( a\vec u\right) \cdot \vec v = a\left(\vec u \cdot \vec v\right)</m>.</p></li>
+                <li><p><m>\left(a\vec u + b \vec v\right)\cdot \vec w =a \vec u \cdot \vec w + b \vec v \cdot \vec w</m>.</p></li>
+            </ol>
+        </p>
+    </statement>
+    </observation>
+    
+        <activity estimated-time="5">
+<introduction>
+<p>Given the linear transformation <m>S:\IR^2 \to \IR^2</m> whose standard matrix is 
+    <m>\left[\begin{array}{cc} 0 &amp; -1 \\ 1 &amp; 0 \end{array}\right]</m> 
+    and vector <m>\vec v = \left[\begin{array}{c} 3 \\ 4 \end{array}\right]</m>, 
+    </p></introduction>
+<task><p> Graph <m>\vec v</m> and <m>S( \vec v )</m>.</p></task>
+<task><p> For an unspecified vector <m>\vec w = \left[\begin{array}{c} w_1 \\ w_2 \end{array}\right]</m>, describe the relationship between <m>\vec w</m> and <m>S( \vec w )</m>.</p></task>
+           </activity>
+
+    <activity estimated-time="5">
+        <introduction><p>Consider <m>\vec v = \left[\begin{array}{c} 3 \\ 4 \end{array}\right]</m>. </p>
+        </introduction>
+        <task><p> What vector <m>\vec w = \left[\begin{array}{c} ? \\ ? \end{array}\right]</m> is the result of rotating <m>\vec v</m> by <m>90^{\circ}</m> counter-clockwise?</p></task>
+        <task><p> Find the dot product <m>\vec v \cdot \vec w</m>.</p></task>
+        <task><p> For an arbitrary vector <m>\vec x = \left[\begin{array}{c} x_1 \\ x_2 \end{array}\right]</m>, what vector <m>\vec y = \left[\begin{array}{c} ? \\ ? \end{array}\right]</m> is the result of rotating <m>\vec x</m> by <m>90^{\circ}</m> counter-clockwise? </p></task>
+        <task><p> Find the dot product <m>\vec x \cdot \vec y</m>.</p></task>
+        <task><p> Suppose two vectors are perpendicular. What can you say about their dot product?</p></task>
+    </activity>
+
+<definition>
+    <statement>
+        <p>Two vectors <m>\vec u</m> and <m>\vec v</m> in <m>\IR^n</m> are <term>orthogonal</term><idx>orthogonal</idx> provided <m>\vec u \cdot \vec v = 0</m>.
+        </p></statement></definition>
+
+<p>A bunch of stuff goes here. So it turns out you can find the angle between vectors using the Law of Cosines as a starting place.</p>   
+
+    
+    
+
+<activity estimated-time="10">
+    <introduction>
+    <p>Suppose that <m>\vec u =\left[\begin{array}{c} 4 \\ -1 \\ 0 \end{array}\right]</m> and <m>\vec v = \left[\begin{array}{c} 2 \\ 3 \\ 1 \end{array}\right]</m>.</p>
+    </introduction>
+<task><p>Find the length of <m>\vec u</m> and the length of <m>\vec v</m>.</p></task>
+<task><p>Describe all vectors <m>\vec w</m> that are orthogonal to <m>\vec u</m>.</p></task>
+<task><p>Find the angle between <m>\vec u</m> and <m>\vec v</m>.</p></task>
+    </activity>
+    </subsection>
+    <subsection>
+        <title>Videos</title>
+<!--    <figure>
+		<video xml:id="video-E3" href="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/1792c805-8df0-4b5c-a624-ac1901421d9d.mp4?mediaTargetType=videoPodcast">
+			<track kind="subtitles" label="US English" xml:lang="en" source="videos/E3-captions.vtt" default=""/>
+		</video>
+        <caption>Video example: Solving a system of linear equations</caption>
+    </figure>-->
+    </subsection>
+
+    <exercises>
+        <p><em>Exercises available at <url href="https://checkit.clontz.org">checkit.clontz.org</url>.</em></p>
+    </exercises>
+
+</section>

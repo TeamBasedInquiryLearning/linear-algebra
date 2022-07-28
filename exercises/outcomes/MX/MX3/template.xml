@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
+    <intro>
+        <p>
+Consider each of the following matrices.
+        </p>
+    </intro>
+    <!-- {{#matrices}} -->
+    <knowl>
+        <intro>
+            <p>
+<me>{{label}} = {{matrix}}</me>
+            </p>
+        </intro>
+        <knowl>
+            <content>
+                <p>
+Explain why this matrix is or is not invertible by
+discussing its corresponding linear transformation.
+                </p>
+            </content>
+            <outtro>
+                <p>
+<me>\mathrm{RREF}\,{{matrix}}={{rref}}</me>
+                </p>
+                <p>
+<!-- {{#invertible}} -->
+<m>{{label}}</m> is invertible.
+<!-- {{/invertible}} -->
+<!-- {{^invertible}} -->
+<m>{{label}}</m> is not invertible.
+<!-- {{/invertible}} -->
+                </p>
+            </outtro>
+        </knowl>
+        <knowl>
+            <content>
+                <p>
+If the matrix is invertible, explain how to find its inverse.
+                </p>
+            </content>
+            <outtro>
+                <p>
+<!-- {{#invertible}} -->
+Its inverse is <m>{{inverse}}</m>.
+<!-- {{/invertible}} -->
+<!-- {{^invertible}} -->
+N/A
+<!-- {{/invertible}} -->
+                </p>
+            </outtro>
+        </knowl>
+    </knowl>
+    <!-- {{/matrices}} -->
+</knowl>

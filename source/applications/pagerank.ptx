@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<section xml:id="pagerank" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="pagerank" tbil-slides="build" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Computer Science: PageRank</title>
 
     <activity tbil-time="10">
@@ -58,6 +58,7 @@ most important to least important.
         <title>
 The $978,000,000,000 Idea
         </title>
+        <statement>
         <p>
 Links are endorsements. That is:
         </p>
@@ -73,11 +74,12 @@ A webpage distributes its importance equally among all the pages it links to
 (endorses).
                 </p>
             </li>
-        </ol>
+        </ol></statement>
     </observation>
 
 
     <example>
+        <statement>
         <p>
 Consider this small network with only three pages.  Let <m>x_1, x_2, x_3</m> be the importance of the three pages respectively.
         </p>
@@ -114,7 +116,7 @@ This corresponds to the <term>page rank system</term>:
 <mrow>  &amp;&amp; x_2 &amp;&amp; &amp;=&amp; x_1 </mrow>
 <mrow>\frac{1}{2} x_1&amp;&amp; &amp;+&amp;x_3 &amp;=&amp; x_2</mrow>
 <mrow>\frac{1}{2} x_1&amp;&amp; &amp;&amp; &amp;=&amp; x_3</mrow>
-        </md>
+        </md></statement>
     </example>
 
 
@@ -181,6 +183,7 @@ the matrix equation <m>A\vec{x}=1\vec{x}</m>.
 
 
     <activity tbil-time="5">
+        <statement>
         <p>
 Thus, our $978,000,000,000 problem is what kind of problem?
             <me>
@@ -196,7 +199,7 @@ Thus, our $978,000,000,000 problem is what kind of problem?
 <li>A cofactoring problem</li>
 <li>A determinant problem</li>
 <li>An eigenvector problem</li>
-        </ol>
+        </ol></statement>
     </activity>
 
     <activity tbil-time="10">
@@ -443,7 +446,7 @@ from most important to least important.
             </p>
          <figure>
         <image width="75%">
-            <latex-image>
+            <latex-image xml:id="another_network">
 \begin{tikzpicture}
 \begin{scope}[every node/.style={circle,thick,draw}]
     \node (1) at (0,4)  {1};
@@ -476,4 +479,9 @@ from most important to least important.
             </figure>
         </statement>
 </activity>
+
+    <subsection>
+        <title>Slideshow</title>
+        <p>Slideshow of activities available at <url href="pagerank.slides.html"/>.</p>
+    </subsection>
 </section>

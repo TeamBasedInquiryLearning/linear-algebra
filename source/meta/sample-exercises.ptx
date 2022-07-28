@@ -8,8 +8,8 @@ these solutions can give you an idea of the level of detail required
 for a complete solution.
     </p>
 
-    <example>
-        <title>E1</title>
+    <example xml:id="sampleLE1">
+        <title>LE1</title>
         <statement>
             <p>
 Consider the scalar system of equations 
@@ -29,34 +29,65 @@ Write an augmented matrix corresponding to this system.
                 </li>
             </ol>
         </statement>
-        <solution>
+        <solution >
             <ol>
-                <li>
+                <li><p>
 <me> x_1\left[\begin{array}{c} 3 \\ -1 \\ 0 \end{array}{}\right] +
     x_2 \left[\begin{array}{c}2 \\ -4 \\ 1 \end{array}{}\right]+
     x_3 \left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}{}\right] 
     + x_4 \left[\begin{array}{c} 1 \\ -7 \\ 0 \end{array}{}\right] 
-    = \left[\begin{array}{c} 1 \\ 0 \\ -2 \end{array}{}\right] </me>
+    = \left[\begin{array}{c} 1 \\ 0 \\ -2 \end{array}{}\right] </me></p>
                 </li>
                 <li>
+                    <p>
 <me>
 \left[\begin{array}{cccc|c}
 3 &amp; 2 &amp; 0 &amp; 1 &amp; 1 \\
 -1 &amp; -4 &amp; 1 &amp; -7 &amp; 0 \\
 0 &amp; 1 &amp; -1 &amp; 0 &amp; -2
 \end{array}\right]
-</me>
+    </me></p>
                 </li>
             </ol>
         </solution>
 </example>
 
-<example><title>E2</title>
+<example xml:id="sampleLE2"><title>LE2</title>
 <statement>
-    <ol>
-        <li>
-            <p>
-Show that 
+         <ol>
+            <li>
+                <p>
+For each of the following matrices, explain why it is not in reduced row
+echelon form.
+                    <me>
+                            A = \left[\begin{array}{ccc}
+-4 &amp; 0 &amp; 4 \\
+0 &amp; 1 &amp; -2 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{array}\right] \hspace{2em}
+                            B = \left[\begin{array}{ccc}
+0 &amp; 1 &amp; 2 \\
+1 &amp; 0 &amp; -3 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{array}\right] \hspace{2em}
+                            C = \left[\begin{array}{ccc}
+1 &amp; -4 &amp; 4 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{array}\right] \hspace{2em}
+                        \hspace{2em}
+                    </me>
+                </p>
+            </li>
+            <li>
+                <p>
+Show step-by-step why
 <me>\RREF 
   \left[\begin{array}{cccc}
   0 &amp; 3 &amp; 1 &amp; 2 \\
@@ -71,22 +102,51 @@ Show that
 </me>
             </p>
         </li>
-        <li>
-            <p>
-Explain why the matrix 
-<m>\left[\begin{array}{cccc}
-1 &amp; 1 &amp; 0 &amp; 3 \\
-0 &amp; 1 &amp; 1 &amp; 1 \\
-0 &amp; 0 &amp; 0 &amp; 0
-\end{array}\right]</m>
-is \textbf{not} in reduced row echelon form.
-            </p>
-        </li>
     </ol>
 </statement>
 <solution>
     <ol>
-        <li>
+        <li><p>
+            <ul>
+                <li>
+                    <p>
+<m>A=\left[\begin{array}{ccc}
+-4 &amp; 0 &amp; 4 \\
+0 &amp; 1 &amp; -2 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{array}\right]</m> is not in reduced row echelon form because
+the pivots are not all <m>1</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+<m>B=\left[\begin{array}{ccc}
+0 &amp; 1 &amp; 2 \\
+1 &amp; 0 &amp; -3 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{array}\right]</m> is not in reduced row echelon form because
+the pivots are not descending to the right.
+                    </p>
+                </li>
+                <li>
+                    <p>
+<m>C=\left[\begin{array}{ccc}
+1 &amp; -4 &amp; 4 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{array}\right]</m> is not in reduced row echelon form because
+not every entry above and below each pivot is zero.
+                    </p>
+                </li>
+            </ul></p>
+        </li>
+        <li><p>
     <md alignment="alignat" alignat-columns="4">
     <mrow>
   \left[\begin{array}{cccc}
@@ -107,125 +167,285 @@ is \textbf{not} in reduced row echelon form.
   0 &amp; 3 &amp; 1 &amp; 2 \\
   0 &amp; 0 &amp; 1 &amp; 5
   \end{array}\right]
-  &amp;\hspace{0.2in} \text{Add <m>-2</m> Row 1 to Row 3}&amp; </mrow><mrow>
+  &amp;\hspace{0.2in} \text{Add } -2 \text{ Row 1 to Row 3}&amp; </mrow><mrow>
   &amp;\sim&amp;
   \left[\begin{array}{cccc}
   \circledNumber{1} &amp; 2 &amp; -1 &amp; -3 \\
   0 &amp; \circledNumber{1} &amp; \frac{1}{3} &amp; \frac{2}{3} \\
   0 &amp; 0 &amp; 1 &amp; 5
   \end{array}\right] 
-  &amp;\hspace{0.2in} \text{Multiply Row 3 by <m>\frac{1}{3}</m>}&amp; </mrow><mrow>
+  &amp;\hspace{0.2in} \text{Multiply Row 3 by } \frac{1}{3}&amp; </mrow><mrow>
   &amp;\sim&amp;
   \left[\begin{array}{cccc}
   \circledNumber{1} &amp; 0 &amp; -\frac{5}{3} &amp; -\frac{13}{3} \\
   0 &amp; \circledNumber{1} &amp; \frac{1}{3} &amp; \frac{2}{3} \\
   0 &amp; 0 &amp; \circledNumber{1} &amp; 5
   \end{array}\right]
-        &amp;\hspace{0.2in} \text{Add <m>-2</m> Row 2 to Row 1}&amp; </mrow><mrow>
+        &amp;\hspace{0.2in} \text{Add } -2 \text{  Row 2 to Row 1}&amp; </mrow><mrow>
   &amp;\sim&amp;
   \left[\begin{array}{cccc}
   \circledNumber{1} &amp; 0 &amp; -\frac{5}{3} &amp; -\frac{13}{3} \\
   0 &amp; \circledNumber{1} &amp; 0 &amp; -1 \\
   0 &amp; 0 &amp; \circledNumber{1} &amp; 5
   \end{array}\right]
-  &amp;\hspace{0.2in} \text{Add <m>-\frac{1}{3}</m> Row 3 to Row 2}&amp; </mrow><mrow>
+  &amp;\hspace{0.2in} \text{Add } -\frac{1}{3} \text{ Row 3 to Row 2}&amp; </mrow><mrow>
   &amp;\sim&amp;
   \left[\begin{array}{cccc}
   \circledNumber{1} &amp; 0 &amp; 0 &amp; 4 \\
   0 &amp; \circledNumber{1} &amp; 0 &amp; -1 \\
   0 &amp; 0 &amp; \circledNumber{1} &amp; 5
   \end{array}\right]
-  &amp;\hspace{0.2in} \text{Add <m>\frac{5}{3}</m> Row 3 to Row 1}&amp; </mrow>
+  &amp;\hspace{0.2in} \text{Add } \frac{5}{3} \text{ Row 3 to Row 1}&amp; </mrow>
                 </md>
+            </p></li>
+
+    </ol>
+</solution>
+</example>
+
+<example xml:id="sampleLE3"><title>LE3</title>
+  <statement>
+    <p>
+Consider each of the following systems of linear equations
+or vector equations.
+    </p>
+    <ol>
+        <li>
+          <p>
+            <me>
+              \begin{matrix}
+ -2 \, x_{1} &amp;  +  &amp; x_{2} &amp;  +  &amp; x_{3} &amp; = &amp; -2 \\
+ -2 \, x_{1} &amp;  -  &amp; 3 \, x_{2} &amp;  -  &amp; 3 \, x_{3} &amp; = &amp; 0 \\
+ 3 \, x_{1} &amp;  +  &amp; x_{2} &amp;  +  &amp; x_{3} &amp; = &amp; 3 \\
+ \end{matrix}
+            </me>
+          </p>
         </li>
         <li>
-            <p>
-Circling our pivots, 
-<m>\left[\begin{array}{cccc}
-\circledNumber{1} &amp; 1 &amp; 0 &amp; 3 \\
-0 &amp; \circledNumber{1} &amp; 1 &amp; 1 \\
+          <p>
+            <me>
+              x_{1} \left[\begin{array}{c}
+-5 \\
+3 \\
+-1
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+3 \\
+-2 \\
+2
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+14 \\
+-9 \\
+7
+\end{array}\right] = \left[\begin{array}{c}
+1 \\
+0 \\
+-4
+\end{array}\right]
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>
+              x_{1} \left[\begin{array}{c}
+0 \\
+-1 \\
+-1
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+1 \\
+-4 \\
+-4
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+2 \\
+-4 \\
+-3
+\end{array}\right] = \left[\begin{array}{c}
+-5 \\
+11 \\
+8
+\end{array}\right]
+            </me>
+          </p>
+        </li>
+    </ol>
+    <ul>
+      <li>
+        <p>
+Explain how to find a simpler system or vector equation
+that has the same solution set for each.
+        </p>
+      </li>
+      <li>
+        <p>
+Explain whether each solution set
+has no solutions, one solution, or infinitely-many solutions.
+If the set is finite, describe it using set notation.
+        </p>
+      </li>
+    </ul>
+  </statement>
+<solution>
+    <ol>
+        <li>
+          <p>
+            <me>\mathrm{RREF}\left[\begin{array}{ccc|c}
+-2 &amp; 1 &amp; 1 &amp; -2 \\
+-2 &amp; -3 &amp; -3 &amp; 0 \\
+3 &amp; 1 &amp; 1 &amp; 3
+\end{array}\right]=\left[\begin{array}{ccc|c}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]</me>
+            This matrix corresponds to the simpler system
+                 <me>
+              \begin{matrix}
+  x_{1} &amp;    &amp;  &amp;    &amp; &amp; = &amp; 0 \\
+  &amp;    &amp;  x_{2} &amp;  +  &amp; x_{3} &amp; = &amp; 0 \\
+  &amp;    &amp;  &amp;   &amp; 0 &amp; = &amp; 1 \\
+ \end{matrix}
+            </me>
+              The third equation <m>0=1</m> indicates that the system has no solutions.
+            The solution set is <m>\emptyset</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>\mathrm{RREF}\left[\begin{array}{ccc|c}
+-5 &amp; 3 &amp; 14 &amp; 1 \\
+3 &amp; -2 &amp; -9 &amp; 0 \\
+-1 &amp; 2 &amp; 7 &amp; -4
+\end{array}\right]=\left[\begin{array}{ccc|c}
+1 &amp; 0 &amp; -1 &amp; -2 \\
+0 &amp; 1 &amp; 3 &amp; -3 \\
 0 &amp; 0 &amp; 0 &amp; 0
-\end{array}\right]</m>
-we see that each pivot is a 1, they are in a descending staircase pattern, and the row(s) of zeroes is at the bottom. However, there is not a zero above the second pivot, so it is not in reduced row echelon form.
-            </p>
+\end{array}\right]</me>
+             This matrix corresponds to the simpler system
+                 <me>
+              \begin{matrix}
+  x_{1} &amp;    &amp;  &amp;  -  &amp; x_3 &amp; = &amp; -2 \\
+  &amp;    &amp;  x_{2} &amp;  +  &amp; 3\,x_{3} &amp; = &amp; -3 \\
+  &amp;    &amp;  &amp;   &amp; 0 &amp; = &amp; 0 \\
+ \end{matrix}.
+            </me>
+            Since there are three variables and two nontrivial equations, the solution set has infinitely-many solutions.
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>\mathrm{RREF}\left[\begin{array}{ccc|c}
+0 &amp; 1 &amp; 2 &amp; -5 \\
+-1 &amp; -4 &amp; -4 &amp; 11 \\
+-1 &amp; -4 &amp; -3 &amp; 8
+\end{array}\right]=\left[\begin{array}{ccc|c}
+1 &amp; 0 &amp; 0 &amp; -3 \\
+0 &amp; 1 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; -3
+\end{array}\right]</me>
+            This matrix corresponds to the simpler system
+                               <me>
+              \begin{matrix}
+  x_{1} &amp;    &amp;  &amp;    &amp;  &amp; = &amp; -3 \\
+  &amp;    &amp;  x_{2} &amp;    &amp;  &amp; = &amp; 1 \\
+  &amp;    &amp;  &amp;   &amp; x_{3} &amp; = &amp; -3 \\
+ \end{matrix}.
+            </me>
+            This system has one solution.  
+            The solution set is <m>\left\{ \left[\begin{array}{c}
+-3 \\
+1 \\
+-3
+\end{array}\right] \right\}</m>.
+          </p>
         </li>
     </ol>
 </solution>
 </example>
 
-<example><title>E3</title>
-<statement>
-Show how to find the solution set for the following system of linear equations.
-    <md alignment="alignat" alignat-columns="4">
-        <mrow>
-2x&amp;\,+\,&amp;4y&amp;\,+\,&amp;z &amp;= 5 
-        </mrow>
-        <mrow>
-x&amp;\,+\,&amp;2y &amp;\,\,&amp; &amp;= 3
-        </mrow>
-    </md>
-</statement>
-<solution>
+<example xml:id="sampleLE4"><title>LE4</title>
+  <statement>
     <p>
-First, note that this system corresponds to the matrix 
-<m> \left( \left[\begin{array}{ccc|c} 2 &amp; 4 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; 0 &amp; 3 \end{array}\right] \right)</m>.
-Then we compute (using technology) 
-<me>
-  \RREF \left(
-    \left[\begin{array}{ccc|c} 2 &amp; 4 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; 0 &amp; 3 \end{array}\right]
-  \right)
-    =
-  \left[\begin{array}{ccc|c} 1 &amp; 2 &amp; 0 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; -1\end{array}\right].
-</me>
-This corresponds to the system
-    <md alignment="alignat" alignat-columns="2">
-        <mrow>
-x\,+\,2y&amp;\,\,&amp;  &amp;= 3 
-        </mrow>
-        <mrow>
-  &amp;\,\,&amp; z&amp;= -1
-        </mrow>
-        </md>
-        </p>
-    <p>
-Since the <m>y</m>-column is a non-pivot column, it is a free variable, so we let <m>y=a</m>; then we have
-    <md alignment="alignat" alignat-columns="3">
-        <mrow>
-x&amp;\,+\,&amp;2y&amp;\,\,&amp;  &amp;= 3
-        </mrow>
-        <mrow>
- &amp;\,\,&amp;y &amp;\,\,&amp; &amp;=a
-        </mrow>
-        <mrow>
- &amp;\,\,&amp; &amp;\,\,&amp; z&amp;= -1.
-        </mrow>
-        </md>
-and thus
-        <md>
-            <mrow>
-x&amp;= 3-2a
-            </mrow>
-            <mrow>
-y&amp;= a
-            </mrow>
-            <mrow>
-z&amp;= -1
-            </mrow>
-        </md>
-So the solution set is
-<me>
-  \setBuilder{
-    \left[\begin{array}{c} 3-2a \\ a \\ -1 \end{array}\right]
-  }{
-    a \in \IR
-  }.
-</me>
+Consider the following
+vector equation.
+      <me>
+        
+        x_{1} \left[\begin{array}{c}
+-3 \\
+0 \\
+4
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+-3 \\
+0 \\
+4
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+0 \\
+1 \\
+0
+\end{array}\right] + x_{4} \left[\begin{array}{c}
+-4 \\
+-5 \\
+5
+\end{array}\right] = \left[\begin{array}{c}
+-11 \\
+-9 \\
+14
+\end{array}\right]
+      </me>
     </p>
-</solution>
-</example>
+    <ol>
+      <li>
+        <p>
+Explain how to find a simpler system or vector equation
+that has the same solution set.
+        </p>
+      </li>
+      <li>
+        <p>
+Explain how to describe this solution set using set notation.
+        </p>
+      </li>
+    </ol>
+  </statement>
 
+  <solution>
+    <p>First, we compute 
+      <me>\mathrm{RREF}\left[\begin{array}{cccc|c}
+-3 &amp; -3 &amp; 0 &amp; -4 &amp; -11 \\
+0 &amp; 0 &amp; 1 &amp; -5 &amp; -9 \\
+4 &amp; 4 &amp; 0 &amp; 5 &amp; 14
+\end{array}\right]=\left[\begin{array}{cccc|c}
+1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 2
+\end{array}\right].</me>
+      This corresponds to the simpler system 
+<me>
+              \begin{matrix}
+  x_{1} &amp;  +  &amp; x_2 &amp;    &amp;  &amp;  &amp; &amp; = &amp; 1 \\
+       &amp;    &amp;  &amp;    &amp; x_3  &amp;  &amp; &amp; = &amp; 1 \\
+       &amp;    &amp;  &amp;    &amp;  &amp;  &amp; x_4 &amp; = &amp; 2 \\
+ \end{matrix}.
+            </me>
+      Since the second column is a non-pivot column, we let <m>x_2=a</m>.  Making this substitution
+        and then solving for <m>x_1</m>, <m>x_3</m>, and <m>x_4</m> produces the system
+        <me>\begin{matrix}
+        x_1 &amp;=&amp; 1-a \\
+        x_2 &amp;=&amp; a \\
+        x_3 &amp;=&amp; 1 \\
+        x_4 &amp;=&amp; 2 \\
+        \end{matrix}</me>
+      Thus, the solution set is <m> \left\{ \left[\begin{array}{c}
+-a + 1 \\
+a \\
+1 \\
+2
+\end{array}\right] \,\middle|\, a \in\mathbb R \right\} </m>.
+    </p>
+  </solution>
+</example>    
+    
 
-<example><title>V1</title>
+<example xml:id="sampleVS1"><title>VS1</title>
 <statement>
     <p>
 Let <m>V</m> be the set of all pairs of numbers <m>(x,y)</m> of real numbers together with the following operations:
@@ -363,156 +583,373 @@ Since these ordered pairs are different, the property fails to hold.
 </example>
 
 
-<example><title>V2</title>
-<statement>
-    <p>
-Consider the statement
-        <blockquote>
-            <p>
-The vector <m>\left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right] </m> is a linear combination of the vectors
-<m>\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] </m>,
-<m>\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] </m>, and
-<m>\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] </m>.
-            </p>
-        </blockquote>
-    </p>
-    <ol>
-        <li>
-            <p>
-Write an equivalent statement using a vector equation.
-            </p>
-        </li>
-        <li>
-            <p>
-Explain why your statement is true or false.
-            </p>
-        </li>
-    </ol>
-</statement>
-<solution>
-    <ol>
-        <li>
-    <p>
-By definition, this statement
-is equivalent to the statement
-        <blockquote>
-            <p>
-There exists a solution to the vector equation
-<m>x_1\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] +
-x_2\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] +
-x_3\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] =
-\left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right].</m>
-            </p>
-        </blockquote>
-            </p>
-        </li>
+<example xml:id="sampleVS2"><title>VS2</title>
+    <statement>
+        <ol>
             <li>
                 <p>
-This vector equation corresponds to the augmented matrix
-  <m>\left[\begin{array}{ccc|c}
-  1 &amp; 3 &amp; 1 &amp; 3 \\
-  0 &amp; 2 &amp; 1 &amp; -1 \\
-  1 &amp; -1 &amp; -1 &amp; 2
-  \end{array}\right]</m>.  Therefore, we compute
-<me> \RREF
-  \left[\begin{array}{ccc|c}
-  1 &amp; 3 &amp; 1 &amp; 3 \\
-  0 &amp; 2 &amp; 1 &amp; -1 \\
-  1 &amp; -1 &amp; -1 &amp; 2
-  \end{array}\right]
-  =
-  \left[\begin{array}{ccc|c}
-  1 &amp; 0 &amp; -\frac{1}{2} &amp; 0 \\
-  0 &amp; 1 &amp; \frac{1}{2} &amp; 0 \\
-  0 &amp; 0 &amp; 0 &amp; 1
-  \end{array}\right].
-</me>
-Since this corresponds to an inconsistent system of equations, the vector equation
-<me>
-x_1\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] +
-x_2\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] +
-x_3\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] =
-\left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right] </me>
-has no solution, and therefore 
-<m>\left[\begin{array}{c} 3 \\ -1 \\ 2 \end{array}\right] </m> is 
-not a linear combination of <m>\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] </m>,
-<m>\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] </m>, and
-<m>\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] </m>.
-    </p>
-        </li>
-    </ol>
-</solution>
+Write a statement involving the solutions of a vector equation
+that's equivalent to each claim below.
+                </p>
+                <ul>
+                        <li>
+                            <p>
+<m>\left[\begin{array}{c}
+-13 \\
+3 \\
+-13
+\end{array}\right]</m>is a linear combination of the vectors <m>\left[\begin{array}{c}
+1 \\
+0 \\
+1
+\end{array}\right] , \left[\begin{array}{c}
+2 \\
+0 \\
+2
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+0 \\
+3
+\end{array}\right] , \text{ and } \left[\begin{array}{c}
+-5 \\
+1 \\
+-5
+\end{array}\right]</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+<m>\left[\begin{array}{c}
+-13 \\
+3 \\
+-15
+\end{array}\right]</m>is a linear combination of the vectors <m>\left[\begin{array}{c}
+1 \\
+0 \\
+1
+\end{array}\right] , \left[\begin{array}{c}
+2 \\
+0 \\
+2
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+0 \\
+3
+\end{array}\right] , \text{ and } \left[\begin{array}{c}
+-5 \\
+1 \\
+-5
+\end{array}\right]</m>.
+                            </p>
+                        </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+Use these statements to determine if each vector
+is or is not a linear combination.
+If it is, give an example of such a linear combination.
+                </p>
+            </li>
+        </ol>
+    </statement>
+    <solution>
+        <ul> 
+                <li> <p><m>\left[\begin{array}{c}
+-13 \\
+3 \\
+-13
+\end{array}\right]</m>is a linear combination of the vectors <m>\left[\begin{array}{c}
+1 \\
+0 \\
+1
+\end{array}\right] , \left[\begin{array}{c}
+2 \\
+0 \\
+2
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+0 \\
+3
+\end{array}\right] , \text{ and } \left[\begin{array}{c}
+-5 \\
+1 \\
+-5
+\end{array}\right]</m> exactly when the vector equation <me>x_1\left[\begin{array}{c}
+1 \\
+0 \\
+1
+\end{array}\right] +x_2 \left[\begin{array}{c}
+2 \\
+0 \\
+2
+\end{array}\right] +x_3 \left[\begin{array}{c}
+3 \\
+0 \\
+3
+\end{array}\right] +x_4 \left[\begin{array}{c}
+-5 \\
+1 \\
+-5
+\end{array}\right] = \left[\begin{array}{c}
+-13 \\
+3 \\
+-13
+                    \end{array}\right]</me> has a solution.  To solve this vector equation, we compute
+
+                        <me>
+\mathrm{RREF}\, \left[\begin{array}{cccc|c}
+1 &amp; 2 &amp; 3 &amp; -5 &amp; -13 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 3 \\
+1 &amp; 2 &amp; 3 &amp; -5 &amp; -13
+\end{array}\right] = \left[\begin{array}{cccc|c}
+1 &amp; 2 &amp; 3 &amp; 0 &amp; 2 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 3 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]
+                        </me>.
+                         We see that this vector equation has solution set <m> \left\{\left[\begin{array}{c}2-2a-3b \\ a \\ b \\ 3 \end{array}\right]\ \middle|\ a,b \in \mathbb{R}\right\}</m>, so
+                        
+<m>\left[\begin{array}{c}
+-13 \\
+3 \\
+-13
+\end{array}\right]</m> is a linear combination; for example,
+                            <m>
+2 \left[\begin{array}{c}
+1 \\
+0 \\
+1
+\end{array}\right] + 3 \left[\begin{array}{c}
+-5 \\
+1 \\
+-5
+\end{array}\right] = \left[\begin{array}{c}
+-13 \\
+3 \\
+-13
+\end{array}\right]
+                            </m>
+                        </p>
+                </li>
+                <li><p> <m>\left[\begin{array}{c}
+-13 \\
+3 \\
+-15
+                    \end{array}\right]</m> is a linear combination of the vectors <m>\left[\begin{array}{c}
+1 \\
+0 \\
+1
+\end{array}\right] , \left[\begin{array}{c}
+2 \\
+0 \\
+2
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+0 \\
+3
+\end{array}\right] , \text{ and } \left[\begin{array}{c}
+-5 \\
+1 \\
+-5
+\end{array}\right]</m> exactly when the vector equation <me>x_1\left[\begin{array}{c}
+1 \\
+0 \\
+1
+\end{array}\right] +x_2 \left[\begin{array}{c}
+2 \\
+0 \\
+2
+\end{array}\right] +x_3 \left[\begin{array}{c}
+3 \\
+0 \\
+3
+\end{array}\right] +x_4  \left[\begin{array}{c}
+-5 \\
+1 \\
+-5
+\end{array}\right] = \left[\begin{array}{c}
+-13 \\
+3 \\
+-15
+\end{array}\right] </me> has a solution.  To solve this vector equation, we compute
+                        <me>
+\mathrm{RREF}\, \left[\begin{array}{cccc|c}
+1 &amp; 2 &amp; 3 &amp; -5 &amp; -13 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 3 \\
+1 &amp; 2 &amp; 3 &amp; -5 &amp; -15
+\end{array}\right] = \left[\begin{array}{cccc|c}
+1 &amp; 2 &amp; 3 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]
+                        </me>.
+                    
+                       This vector equation has no solution, so
+<m>\left[\begin{array}{c}
+-13 \\
+3 \\
+-15
+\end{array}\right]</m> is not a linear combination.
+                        </p>
+                </li>
+        </ul>
+    </solution>
 </example>
 
-<example><title>V3</title>
+<example xml:id="sampleVS3"><title>VS3</title>
 <statement>
-    <p>
-Consider the statement
-        <blockquote>
-            <p>
-The set of vectors
-<m>\left\{\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right] ,
-\left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right] , 
-\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right] \right\}</m> <em>does not</em> span <m>\IR^3</m>.
-            </p>
-        </blockquote>
-    </p>
-    <ol>
-        <li>
-            <p>
-Write an equivalent statement using a vector equation.
-            </p>
-        </li>
-        <li>
-            <p>
-Explain why your statement is true or false.
-            </p>
-        </li>
-    </ol>
-</statement>
-<solution>
-    <ol>
-        <li>
-            <p>
-By definition, this statement
-is equivalent to the statement
-
-                <blockquote>
-                    <p>
-There is some <m>\vec{v} \in \IR^3</m> for which the vector equation
-<m>x_1\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right]+  
-x_2 \left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right]+
-x_3\left[\begin{array}{c} 1 \\ 1 \\ -1 \end{array}\right]=\vec{v}</m> does not have a solution.
-                    </p>
-                </blockquote>
-            </p>
-        </li>
-        <li>
-            <p>
-We compute
-<me> \RREF
-  \left[\begin{array}{ccc}
-  1 &amp; 3 &amp; 1  \\
-  0 &amp; 2 &amp; 1  \\
-  1 &amp; -1 &amp; -1
-  \end{array}\right]
-  =
-  \left[\begin{array}{ccc}
-  1 &amp; 0 &amp; -\frac{1}{2} \\
-  0 &amp; 1 &amp; \frac{1}{2} \\
-  0 &amp; 0 &amp; 0
-  \end{array}\right]
-</me>
-Since the last row lacks a pivot, there is some vector <m>\vec{v} \in \IR^3</m> that upon augmenting this matrix will produce
-an inconsistent system. That vector will not be in the span of these three vectors, so the vectors do not span <m>\IR^3</m>.
-            </p>
-        </li>
-    </ol>
-</solution>
+        <ol>
+            <li>
+                <p>
+Write a statement involving the solutions of a vector equation that's equivalent to each
+claim below.
+                </p>
+                <ul>
+                    <li>
+                        <p>
+The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+-1 \\
+2 \\
+0
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+-2 \\
+3 \\
+3
+\end{array}\right] , \left[\begin{array}{c}
+10 \\
+-7 \\
+11 \\
+9
+\end{array}\right] , \left[\begin{array}{c}
+-6 \\
+3 \\
+-3 \\
+-9
+\end{array}\right] \right\}</m> <em>spans</em> <m>\mathbb R^4</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+-1 \\
+2 \\
+0
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+-2 \\
+3 \\
+3
+\end{array}\right] , \left[\begin{array}{c}
+10 \\
+-7 \\
+11 \\
+9
+\end{array}\right] , \left[\begin{array}{c}
+-6 \\
+3 \\
+-3 \\
+-9
+\end{array}\right] \right\}</m> does <em>not</em> span <m>\mathbb R^4</m>.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+Explain how to determine which of these statements is true.
+                </p>
+            </li>
+        </ol>
+    </statement>
+    <solution>
+        <p> The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+-1 \\
+2 \\
+0
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+-2 \\
+3 \\
+3
+\end{array}\right] , \left[\begin{array}{c}
+10 \\
+-7 \\
+11 \\
+9
+\end{array}\right] , \left[\begin{array}{c}
+-6 \\
+3 \\
+-3 \\
+-9
+\end{array}\right] \right\}</m>  spans <m>\mathbb{R}^4</m> exactly when the vector equation 
+            <me>x_1 \left[\begin{array}{c}
+1 \\
+-1 \\
+2 \\
+0
+\end{array}\right] +x_2 \left[\begin{array}{c}
+3 \\
+-2 \\
+3 \\
+3
+\end{array}\right] +x_3 \left[\begin{array}{c}
+10 \\
+-7 \\
+11 \\
+9
+\end{array}\right] +x_4 \left[\begin{array}{c}
+-6 \\
+3 \\
+-3 \\
+-9
+\end{array}\right] =\vec{v}</me> has a solution <em> for all</em> <m>\vec{v} \in \mathbb{R}^4</m>. If there is <em>some</em> vector <m>\vec{v} \in \mathbb{R}^4</m> for which this vector equation has no solution, then the set does not span <m>\mathbb{R}^4</m>. To answer this, we compute  
+            <me>
+\mathrm{RREF}\, \left[\begin{array}{cccc}
+1 &amp; 3 &amp; 10 &amp; -6 \\
+-1 &amp; -2 &amp; -7 &amp; 3 \\
+2 &amp; 3 &amp; 11 &amp; -3 \\
+0 &amp; 3 &amp; 9 &amp; -9
+\end{array}\right] = \left[\begin{array}{cccc}
+1 &amp; 0 &amp; 1 &amp; 3 \\
+0 &amp; 1 &amp; 3 &amp; -3 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]
+            </me>.
+         We see that for some <m>\vec{v} \in \mathbb{R}^4</m>, this vector equation will not have a solution, so the set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+-1 \\
+2 \\
+0
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+-2 \\
+3 \\
+3
+\end{array}\right] , \left[\begin{array}{c}
+10 \\
+-7 \\
+11 \\
+9
+\end{array}\right] , \left[\begin{array}{c}
+-6 \\
+3 \\
+-3 \\
+-9
+\end{array}\right] \right\}</m>
+                does <em>not</em> span
+<m>\mathbb{R}^4</m>.
+        </p>
+    </solution>
 </example>
 
 
-<example><title>V4</title>
+<example xml:id="sampleVS4"><title>VS4</title>
 <statement>
     <p>
 Consider the following two sets of Euclidean vectors.
@@ -640,131 +1077,276 @@ and thus is not a subspace.
 </example>
 
 
-<example><title>V5</title>
-<statement>
-    <p>
-Consider the statement
-        <blockquote>
-            <p>
-The set of vectors
-<m>\left\{
- \left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right]  ,
- \left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right]  ,
- \left[\begin{array}{c} 0 \\ 1 \\ -1 \\ 1 \end{array}\right]  , 
- \left[\begin{array}{c} 2 \\ 5 \\ 1 \\ 5 \end{array}\right] \right\}</m>
-is linearly dependent.
-            </p>
-        </blockquote>
-    </p>
-    <ol>
-        <li>
-            <p>
-Write an equivalent statement using a vector equation.
-            </p>
-        </li>
-        <li>
-            <p>
-Explain why your statement is true or false.
-            </p>
-        </li>
-    </ol>
-</statement>
-<solution>
-    <ol>
-        <li>
-            <p>
-This statement
-is equivalent to the statement
-                <blockquote>
-                    <p>
-The vector equation
-<m> x_1\left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right] +
- x_2\left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right] +
- x_3\left[\begin{array}{c} 0 \\ 1 \\ -1 \\ 1 \end{array}\right]+ 
- x_4\left[\begin{array}{c} 2 \\ 5 \\ 1 \\ 5 \end{array}\right] =\vec{0}</m>
-has (infintely many) nontrivial solutions.
-                    </p>
-                </blockquote>
-            </p>
-        </li>
-        <li>
-            <p>
-Converting the left side of this system to the corresponding matrix and row reducing, we have
-<me>\RREF \left[\begin{array}{cccc} 3 &amp; -1 &amp; 0 &amp; 2  \\ 2 &amp; 1 &amp; 1 &amp; 5  \\ 1 &amp; 2 &amp; -1 &amp; 1  \\ 0 &amp; 3 &amp; 1 &amp; 5 \end{array}\right] =
-\left[\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 1  \\ 0 &amp; 1 &amp; 0 &amp; 1  \\ 0 &amp; 0 &amp; 1 &amp; 2  \\ 0 &amp; 0 &amp; 0 &amp; 0  \end{array}\right].</me> 
-Since the fourth column is not a pivot column, the system has (infinitely many) nontrivial solutions.
-Thus the set of vectors is linearly dependent.
-            </p>
-        </li>
-    </ol>
-</solution>
+<example xml:id="sampleVS5"><title>VS5</title>
+   <statement>
+        <ol>
+            <li>
+                <p>
+Write a statement involving the solutions of a vector equation that's equivalent to each
+claim below.
+                </p>
+                <ul>
+                    <li>
+                        <p>
+The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+-1 \\
+-3 \\
+-4 \\
+4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] \right\}</m> is linearly <em>independent</em>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+-1 \\
+-3 \\
+-4 \\
+4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] \right\}</m> is linearly <em>dependent</em>.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+Explain how to determine which of these statements is true.
+                </p>
+            </li>
+        </ol>
+    </statement>
+    <solution>
+        <p> The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+-1 \\
+-3 \\
+-4 \\
+4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] \right\}</m> is linearly independent exactly when the vector equation
+            <me>x_1 \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] +x_2 \left[\begin{array}{c}
+-1 \\
+-3 \\
+-4 \\
+4
+\end{array}\right] +x_3 \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] =\left[\begin{array}{c}0 \\ 0 \\ 0 \\ 0 \end{array}\right]</me> has no non-trivial (i.e. nonzero) solutions.
+            The set is linearly <em>dependent</em> when there exists a nontrivial (i.e. nonzero) solution.  We compute
+            <me>
+\mathrm{RREF}\, \left[\begin{array}{ccc}
+1 &amp; -1 &amp; 0 \\
+3 &amp; -3 &amp; 1 \\
+4 &amp; -4 &amp; 3 \\
+-4 &amp; 4 &amp; -3
+\end{array}\right] = \left[\begin{array}{ccc}
+1 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{array}\right]
+            </me>.
+        </p>
+        <p>
+        Thus, this vector equation has a solution set <m>\left\{ \left[\begin{array}{c}a \\ a \\ 0 \end{array}\right]\ \middle|\ a \in \mathbb{R}\right\}</m>.  
+        Since there are nontrivial solutions, we conclude that the set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+-1 \\
+-3 \\
+-4 \\
+4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] \right\}</m> is linearly
+
+<em>dependent</em>.
+        </p>
+    </solution>
 </example>
 
-<example><title>V6</title>
-<statement>
-    <p>
-Consider the statement
-        <blockquote>
-            <p>
-The set of vectors <m> \left\{
- \left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right] ,
- \left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right] ,
- \left[\begin{array}{c} 0 \\ 1 \\ -1 \\ 1 \end{array}\right] ,
- \left[\begin{array}{c} 2 \\ 5 \\ 1 \\ 5 \end{array}\right] \right\} </m>
-is a basis of <m>\IR^4</m>.
-            </p>
-        </blockquote>
-    </p>
-    <ol>
-        <li>
-            <p>
-Write an equivalent statement in terms of other vector properties.
-            </p>
-        </li>
-        <li>
-            <p>
-Explain why your statement is true or false.
-            </p>
-        </li>
-    </ol>
-</statement>
-<solution>
-    <ol>
-        <li>
-            <p>
-This statement is equivalent to the statement
-                <blockquote>
-                    <p>
-The set of vectors <m> \left\{
- \left[\begin{array}{c} 3 \\ 2 \\ 1 \\ 0 \end{array}\right] ,
- \left[\begin{array}{c} -1 \\ 1 \\ 2 \\ 3 \end{array}\right] ,
- \left[\begin{array}{c} 0 \\ 1 \\ -1 \\ 1 \end{array}\right] ,
- \left[\begin{array}{c} 2 \\ 5 \\ 1 \\ 5 \end{array}\right] \right\} </m>
-is both linearly independent and spans <m>\IR^4</m>.
-                    </p>
-                </blockquote>
-            </p>
-        </li>
-        <li>
-            <p>
-Compute
-<me>\RREF \left[\begin{array}{cccc} 3 &amp; -1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; 3 &amp; 1 &amp; 5 \end{array}\right] =
-\left[\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right].</me>
-Since the fourth column is not a pivot column, the vectors are linearly
-dependent and thus not a basis of <m>\IR^4</m>.
-            </p>
-            <p>
-(Alternate solution:)
-Since the fourth row is not a pivot row, the vectors do not span
-<m>\IR^4</m> and thus are not a basis of <m>\IR^4</m>.
-            </p>
-        </li>
-    </ol>
-</solution>
+<example xml:id="sampleVS6"><title>VS6</title>
+    <statement>
+        <ol>
+            <li>
+                <p>
+Write a statement involving spanning and independence properties
+that's equivalent to each claim below.
+                </p>
+                <ul>
+                    <li>
+                        <p>
+The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+11 \\
+18 \\
+-18
+\end{array}\right] , \left[\begin{array}{c}
+-2 \\
+-7 \\
+-11 \\
+11
+\end{array}\right] \right\}</m> is a <em>basis</em>
+of <m>\mathbb{R}^4</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+11 \\
+18 \\
+-18
+\end{array}\right] , \left[\begin{array}{c}
+-2 \\
+-7 \\
+-11 \\
+11
+\end{array}\right] \right\}</m> is <em>not</em> a basis
+of <m>\mathbb{R}^4</m>.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+Explain how to determine which of these statements is true.
+                </p>
+            </li>
+        </ol>
+    </statement>
+    <solution>
+        <p>The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+11 \\
+18 \\
+-18
+\end{array}\right] , \left[\begin{array}{c}
+-2 \\
+-7 \\
+-11 \\
+11
+\end{array}\right] \right\}</m> is a basis
+of <m>\mathbb{R}^4</m> exactly when it is linearly independent <em>and</em> the set spans <m>\mathbb{R}^4</m>. 
+            If it is either linearly dependent, <em>or</em> the set does not span <m>\mathbb{R}^4</m>, then the set is not a basis.
+        </p>
+        <p> To answer this, we compute
+            <me>
+\mathrm{RREF}\, \left[\begin{array}{cccc}
+1 &amp; 0 &amp; 3 &amp; -2 \\
+3 &amp; 1 &amp; 11 &amp; -7 \\
+4 &amp; 3 &amp; 18 &amp; -11 \\
+-4 &amp; -3 &amp; -18 &amp; 11
+\end{array}\right] = \left[\begin{array}{cccc}
+1 &amp; 0 &amp; 3 &amp; -2 \\
+0 &amp; 1 &amp; 2 &amp; -1 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]
+            </me>.
+        </p>
+        <p>We see that this set of vectors is linearly dependent, so therefore 
+the set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+11 \\
+18 \\
+-18
+\end{array}\right] , \left[\begin{array}{c}
+-2 \\
+-7 \\
+-11 \\
+11
+\end{array}\right] \right\}</m> is
+
+<em>not</em> a basis.
+        </p>
+    </solution>
 </example>
 
 
-<example><title>V7</title>
+<example xml:id="sampleVS7"><title>VS7</title>
 <statement>
     <p>
 Consider the subspace 
@@ -831,69 +1413,86 @@ Since this (and thus every other) basis has three vectors in it, the dimension o
 </solution>
 </example>
 
-<example><title>V8</title>
-<statement>
-    <p>
-Consider the statement
-        <blockquote>
-            <p>
-The set of polynomials <m>\setList{3x^3+2x^2+x,-x^3+x^2+2x+3,x^2-x+1,2x^3+5x^2+x+5}</m> is linearly independent.
-            </p>
-        </blockquote>
-    </p>
-    <ol>
-        <li>
-            <p>
-Write an equivalent statement using a polynomial equation.
-            </p>
-        </li>
-        <li>
-            <p>
-Explain why your statement is true or false.
-            </p>
-        </li>
-    </ol>
-</statement>
-<solution>
-    <ol>
-        <li>
-            <p>
-This statement is equivalent to the statement
-                <blockquote>
-                    <p>
-The polynomial equation <m> y_1(3x^3+2x^2+x) + y_2(-x^3+x^2+2x+3)</m> <m>+y_3(x^2-x+1)+y_4(2x^3+5x^2+x+5)=0</m> has no nontrivial solutions.
-                    </p>
-                </blockquote>
-            </p>
-        </li>
-        <li>
-            <p>
-This polynomial equation corresponds to the system of equations
-                <md alignment="alignat" alignat-columns="5">
-                    <mrow>
-3y_1 &amp;-&amp; y_2 &amp; &amp; &amp;+&amp; 2y_4 &amp;=&amp; 0
-                    </mrow>
-                    <mrow>
-2y_1 &amp;+&amp; y_2 &amp;+&amp; y_3 &amp;+&amp; 5y_4 &amp;=&amp; 0
-                    </mrow>
-                    <mrow>
- y_1 &amp;+&amp; 2y_2 &amp;-&amp; y_3 &amp;+&amp; y_4 &amp;=&amp; 0
-                    </mrow>
-                    <mrow>
-&amp; &amp; 3y_2 &amp;+&amp; y_3 &amp;+&amp; 5y_4 &amp;=&amp; 0
-                    </mrow>
-                </md>
-which corresponds to the augmented matrix <m>\left[\begin{array}{cccc} 3 &amp; -1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; 3 &amp; 1 &amp; 5 \end{array}\right]</m>. So we compute
-<me>\RREF \left[\begin{array}{cccc} 3 &amp; -1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; -1 &amp; 1 \\ 0 &amp; 3 &amp; 1 &amp; 5 \end{array}\right] =
-\left[\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right].</me>
-Since the fourth column is not a pivot column, there are (infinitely many) nontrivial solutions. Thus, the set <m> \setList{3x^3+2x^2+x,-x^3+x^2+2x+3,x^2-x+1}</m> is linearly dependent.
-            </p>
-        </li>
-    </ol>
-</solution>
+            
+            
+<example xml:id="sampleVS8"><title>VS8</title>
+    <statement>
+        <ol>
+            <li>
+                <p>
+Given the set
+<me>\left\{ x^{3} - 2 \, x^{2} + x + 2 , 2 \, x^{2} - 1 , -x^{3} + 3 \, x^{2} + 3 \, x - 2 , x^{3} - 6 \, x^{2} + 9 \, x + 5 \right\}</me>
+write a statement involving the solutions to a 
+
+polynomial
+equation that's equivalent to each claim below.
+                </p>
+                <ul>
+                    <li>
+                        <p>
+The set of 
+
+polynomials
+is linearly <em>independent</em>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+The set of 
+
+polynomials
+is linearly <em>dependent</em>.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+Explain how to determine which of these statements is true.
+                </p>
+            </li>
+        </ol>
+    </statement>
+    <solution>
+                <p>The set of polynomials <me>\left\{ x^{3} - 2 \, x^{2} + x + 2 , 2 \, x^{2} - 1 , -x^{3} + 3 \, x^{2} + 3 \, x - 2 , x^{3} - 6 \, x^{2} + 9 \, x + 5 \right\}</me>
+            is linearly <em>independent</em> exactly when the polynomial equation
+            <me> y_1\left( x^{3} - 2 \, x^{2} + x + 2 \right)+y_2\left( 2 \, x^{2} - 1 \right)+y_3\left( -x^{3} + 3 \, x^{2} + 3 \, x - 2 \right)+y_4\left( x^{3} - 6 \, x^{2} + 9 \, x + 5\right)=0</me>
+            has no nontrivial (i.e. nonzero) solutions.  The set is linearly <em>dependent</em> when this equation has a nontrivial (i.e. nonzero) solution.</p>
+        <p>To solve this equation, we distribute and then collect coefficients to obtain
+            <me>\left(y_1-y_3+y_4\right)x^3+\left(-2y_1+2y_2+3y_3-6y_4\right)x^2+\left(y_1+3y_3+9y_4\right)x+\left(2y_1-y_2-2y_3+5y_4\right)=0</me>.
+            These polynomials are equal precisely when their coefficients are equal, leading to the system
+            <me> \begin{matrix}
+                y_1 &amp; &amp;  &amp;-&amp;y_3 &amp; +&amp;y_4 &amp; = &amp; 0 \\
+                -2 y_1 &amp; + &amp; 2y_2 &amp;+&amp;3y_3 &amp; -&amp;6y_4 &amp; = &amp; 0 \\
+                y_1 &amp; + &amp;  &amp;+&amp;3y_3 &amp; +&amp;9y_4 &amp; = &amp; 0 \\
+                2 y_1 &amp; - &amp; y_2 &amp;-&amp;2y_3 &amp; +&amp;5y_4 &amp; = &amp; 0 
+                \end{matrix}
+            </me>.
+        </p>
+        <p>
+            To solve this, we compute
+            <me>
+\mathrm{RREF}\, \left[\begin{array}{cccc|c}
+1 &amp; 0 &amp; -1 &amp; 1  &amp; 0\\
+ -2 &amp; 2 &amp; 3 &amp; -6 &amp; 0\\
+  1 &amp; 0 &amp; 3 &amp; 9 &amp; 0\\
+ 2 &amp; -1 &amp; -2 &amp; 5 &amp; 0
+\end{array}\right] = \left[\begin{array}{cccc|c}
+1 &amp; 0 &amp; 0 &amp; 3 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; -3 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 2 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]
+            </me>
+        </p>
+        <p>
+The system has (infintely many) nontrivial solutions, so we that the set of polynomials 
+    is linearly <em>dependent</em>.
+        </p>
+    </solution>
 </example>
 
-<example><title>V9</title>
+<example xml:id="sampleVS9"><title>VS9</title>
 <statement>
     <p>
 Consider the homogeneous system of equations
@@ -983,7 +1582,7 @@ a basis for the solution space is
 </solution>
 </example>
 
-<example><title>A1</title>
+<example xml:id="sampleAT1"><title>AT1</title>
 <statement>
     <p>
 Consider the following maps of polynomials <m>S: \P \rightarrow \P</m>
@@ -1066,7 +1665,7 @@ and is therefore not a linear transformation.
 </solution>
 </example>
 
-<example><title>A2</title>
+<example xml:id="sampleAT2"><title>AT2</title>
 <statement>
     <ol>
         <li>
@@ -1117,7 +1716,7 @@ S\left(\left[\begin{array}{c} -2 \\ 1 \\ 3 \\ 2 \end{array}\right] \right) = -2S
 </solution>
 </example>
 
-<example><title>A3</title>
+<example xml:id="sampleAT3"><title>AT3</title>
 <statement>
     <p>
 Let <m>T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by
@@ -1216,7 +1815,7 @@ of the rank and nullity of <m>T</m> is the dimension of the domain of <m>T</m>.
 </solution>
 </example>
 
-<example><title>A4</title>
+<example xml:id="sampleAT4"><title>AT4</title>
 <statement>
     <p>
 Let <m>T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix <m>\left[\begin{array}{cccc} 1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]</m>.
@@ -1255,7 +1854,7 @@ Since there are only two pivots, the image (i.e. the span of the columns) is a 2
 
 
 
-<example><title>M1</title>
+<example xml:id="sampleMX1"><title>MX1</title>
 <statement>
     <p>
 Of the following three matrices, only two may be multiplied.
@@ -1273,9 +1872,8 @@ Explain which two may be multiplied and why. Then show how to find their product
 </statement>
 <solution>
     <p>
-<m>AC</m> is the only one that can be computed, since <m>A</m> is <m>2\times 2</m>
-and <m>C</m> is <m>2\times 3</m>. Thus <m>AC</m> will be the <m>2\times 3</m> matrix
-given by
+<m>AC</m> is the only one that can be computed, since <m>C</m> is a linear transformation <m>\mathbb{R}^3 \rightarrow \mathbb{R}^2</m> and <m>A</m> is a linear transfromation <m>\mathbb{R}^2 \rightarrow \mathbb{R}^2</m>. Thus the composition <m>AC</m> is a linear transformation <m>\mathbb{R}^3 \rightarrow \mathbb{R}^2</m> with a  <m>2\times 3</m> standard matrix.
+We compute
     </p>
     <md>
         <mrow>
@@ -1287,7 +1885,7 @@ AC\left( \vec{e}_2 \right) &amp;= A \left( \left[\begin{array}{c} 1 \\ -2 \end{a
         <mrow>
 AC\left( \vec{e}_3 \right) &amp;= A \left( \left[\begin{array}{c} 3 \\ 5 \end{array}\right] \right) = 3 \left[\begin{array}{c} 1 \\ 0 \end{array}\right] + 5\left[\begin{array}{c} -3 \\ 1 \end{array}\right] = \left[\begin{array}{c} -12 \\ 5 \end{array}\right] \\
         </mrow>
-    </md>
+    </md>.
     <p>
 Thus
 <me>AC = \left[\begin{array}{ccc} -3 &amp; 7 &amp; -12 \\ 1 &amp; -2 &amp; 5 \end{array}\right].</me>
@@ -1296,7 +1894,7 @@ Thus
 </example>
 
 
-<example><title>M2</title>
+<example xml:id="sampleMX2"><title>MX2</title>
 <statement>
     <p>
 Let <m>A</m> be a <m>4\times4</m> matrix.
@@ -1344,42 +1942,112 @@ Use matrix multiplication to describe the matrix obtained by applying
 </solution>
 </example>
 
-<example><title>M3</title>
-<statement>
-    <p>
-Explain why the matrix <m>\left[\begin{array}{ccc}1 &amp; 3 &amp; 2  \\ 2 &amp; 4 &amp; 6  \\ 1 &amp; 6 &amp; -1 \end{array}\right]</m> is or is not invertible.
-    </p>
-</statement>
-<solution>
-    <p>
-We compute
-<me>\RREF\left(\left[\begin{array}{ccc}1 &amp; 3 &amp; 2  \\ 2 &amp; 4 &amp; 6  \\ 1 &amp; 6 &amp; -1 \end{array}\right]\right) = \left[\begin{array}{ccc} 1 &amp; 0 &amp; 5 \\ 0 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 \end{array}\right].</me>
-Since its <m>\RREF</m> is not the identity matrix, the linear map is not bijective and thus the matrix is not invertible.
-    </p>
-</solution>
+<example xml:id="sampleMX3"><title>MX3</title>
+  <statement>
+      <p>
+Explain why each of the following matrices is or is not invertible by
+disussing its corresponding linear transformation.
+If the matrix is invertible, explain how to find its inverse.
+        <me>
+\hspace{2em}
+D = \left[\begin{array}{cccc}
+-1 &amp; 1 &amp; 0 &amp; 2 \\
+-2 &amp; 5 &amp; 5 &amp; -4 \\
+2 &amp; -3 &amp; -2 &amp; 0 \\
+4 &amp; -4 &amp; -3 &amp; 5
+\end{array}\right]
+\hspace{2em}
+N = \left[\begin{array}{cccc}
+-3 &amp; 9 &amp; 1 &amp; -11 \\
+3 &amp; -9 &amp; -2 &amp; 13 \\
+3 &amp; -9 &amp; -3 &amp; 15 \\
+-4 &amp; 12 &amp; 2 &amp; -16
+\end{array}\right]
+\hspace{2em}
+        </me>
+      </p>
+  </statement>
+  <solution>
+      <p> We compute 
+<me>\mathrm{RREF}\left(D\right)=\left[\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]</me>.
+We see <m>D</m> is  bijective, and therefore invertible.  To compute the inverse, we solve <m>D\vec{x}=\vec{e}_1</m> by computing
+<me>\mathrm{RREF}\,\left[\begin{array}{cccc|c}
+-1 &amp; 1 &amp; 0 &amp; 2 &amp; 1\\
+-2 &amp; 5 &amp; 5 &amp; -4 &amp; 0  \\
+2 &amp; -3 &amp; -2 &amp; 0 &amp; 0\\
+4 &amp; -4 &amp; -3 &amp; 5 &amp; 0
+\end{array}\right]=\left[\begin{array}{cccc|c}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 21 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 38\\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; -36\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; -8
+\end{array}\right]</me>.
+      </p><p>          
+Similarly, we solve <m>D\vec{x}=\vec{e}_2</m> by computing
+<me>\mathrm{RREF}\,\left[\begin{array}{cccc|c}
+-1 &amp; 1 &amp; 0 &amp; 2 &amp; 0\\
+-2 &amp; 5 &amp; 5 &amp; -4 &amp; 1  \\
+2 &amp; -3 &amp; -2 &amp; 0 &amp; 0\\
+4 &amp; -4 &amp; -3 &amp; 5 &amp; 0
+\end{array}\right]=\left[\begin{array}{cccc|c}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 8 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 14\\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; -13\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; -3
+\end{array}\right]</me>. 
+      </p><p>          
+          Similarly, we solve <m>D\vec{x}=\vec{e}_3</m> by computing
+<me>\mathrm{RREF}\,\left[\begin{array}{cccc|c}
+-1 &amp; 1 &amp; 0 &amp; 2 &amp; 0\\
+-2 &amp; 5 &amp; 5 &amp; -4 &amp; 0  \\
+2 &amp; -3 &amp; -2 &amp; 0 &amp; 1\\
+4 &amp; -4 &amp; -3 &amp; 5 &amp; 0
+\end{array}\right]=\left[\begin{array}{cccc|c}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 23 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 41\\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; -39\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; -9
+\end{array}\right]</me>. 
+      </p><p> Similarly, we solve <m>D\vec{x}=\vec{e}_4</m> by computing
+<me>\mathrm{RREF}\,\left[\begin{array}{cccc|c}
+-1 &amp; 1 &amp; 0 &amp; 2 &amp; 0\\
+-2 &amp; 5 &amp; 5 &amp; -4 &amp; 0  \\
+2 &amp; -3 &amp; -2 &amp; 0 &amp; 0\\
+4 &amp; -4 &amp; -3 &amp; 5 &amp; 1
+\end{array}\right]=\left[\begin{array}{cccc|c}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; -2 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; -4\\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 4\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 1
+\end{array}\right]</me>.
+      </p><p>     
+Combining these, we obtain <me>D^{-1}=\left[\begin{array}{cccc}
+21 &amp; 8 &amp; 23 &amp; -2 \\
+38 &amp; 14 &amp; 41 &amp; -4 \\
+-36 &amp; -13 &amp; -39 &amp; 4 \\
+-8 &amp; -3 &amp; -9 &amp; 1
+\end{array}\right]</me>.
+</p>
+      <p>We compute
+<me>\mathrm{RREF}\left(N\right)=\left[\begin{array}{cccc}
+1 &amp; -3 &amp; 0 &amp; 3 \\
+0 &amp; 0 &amp; 1 &amp; -2 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]</me>.
+We see <m>N</m> is not bijective and thus is <em>not</em>  invertible.
+</p>
+  </solution>
 </example>
 
-<example><title>M4</title>
-<statement>
-    <p>
-Show how to compute the inverse of the matrix
-<m>A=\left[\begin{array}{cccc}
-1 &amp; 2 &amp; 3 &amp; 5 \\ 0 &amp; -1 &amp; 4 &amp; -2 \\ 0 &amp; 0 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 0 &amp; 1
-\end{array}\right]</m>.
-    </p>
-</statement>
-<solution>
-    <p>
-To find the matrix <m>A^{-1}</m> where <m>AA^{-1}=I</m>, we need to solve the augmented matrix <m>[A|I]</m>.
-<me>\RREF\left(\left[\begin{array}{cccc|cccc} 1 &amp; 2 &amp; 3 &amp; 5 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\ 0 &amp; -1 &amp; 4 &amp; -2 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 3 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]\right) = \left[\begin{array}{cccc|cccc} 1 &amp; 0 &amp; 0 &amp;0 &amp; 1 &amp; 2 &amp; -11 &amp; 32 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 4 &amp; -14 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]</me>
-So the inverse is <m>\left[\begin{array}{cccc}  1 &amp; 2 &amp; -11 &amp; 32 \\ 0 &amp; -1 &amp; 4 &amp; -14 \\  0 &amp; 0 &amp; 1 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]</m>.
-    </p>
-</solution>
-</example>
 
 
-
-<example><title>G1</title>
+<example xml:id="sampleGT1"><title>GT1</title>
 <statement>
     <p>
 Let <m>A</m> be a <m>4 \times 4</m> matrix with determinant <m>-7</m>.
@@ -1423,7 +2091,7 @@ Swaping rows changes the sign of the determinant, so <m>\det(B)=-\det(A)=7</m>.
 </solution>
 </example>
 
-<example><title>G2</title>
+<example xml:id="sampleGT2"><title>GT2</title>
 <statement>
     <p>
 Show how to compute the determinant of the matrix
@@ -1504,7 +2172,7 @@ the determinant to a <m>3\times 3</m> matrix and then applying a formula:
 </solution>
 </example>
 
-<example><title>G3</title>
+<example xml:id="sampleGT3"><title>GT3</title>
 <statement>
     <p>
 Explain how to find the eigenvalues of the matrix <m>\left[\begin{array}{cc} -2 &amp; -2 \\ 10 &amp; 7 \end{array}\right] </m>.
@@ -1520,7 +2188,7 @@ The eigenvalues are the roots of the characteristic polynomial, namely <m>2</m> 
 </solution>
 </example>
 
-    <example><title>G4</title>
+    <example xml:id="sampleGT4"><title>GT4</title>
 <statement>
     <p>
 Explain how to find a basis for the eigenspace associated to the eigenvalue <m>3</m> in the matrix <me>\left[\begin{array}{ccc} -7 &amp; -8 &amp; 2 \\ 8 &amp; 9 &amp; -1 \\ \frac{13}{2} &amp; 5 &amp; 2 \end{array}\right].</me>

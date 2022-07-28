@@ -1,0 +1,889 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="AT4" tbil-slides="build" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Injective and Surjective Linear Maps (AT4)</title>
+    <objectives>
+        <ul>
+            <li>
+                <xi:include href="outcomes/04.ptx"/>
+            </li>
+        </ul>
+    </objectives>
+
+
+<subsection><title>Class Activities</title>
+
+<definition>
+    <statement>
+        <p>
+Let <m>T: V \rightarrow W</m> be a linear transformation.
+<m>T</m> is called <term>injective</term> or <term>one-to-one</term> if <m>T</m> does not map two
+distinct vectors to the same place.  More precisely, <m>T</m> is injective if
+<m>T(\vec{v}) \neq T(\vec{w})</m> whenever <m>\vec{v} \neq \vec{w}</m>.
+        </p>
+        <figure>
+			<image width="75%">
+				<latex-image>
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1)
+          node[anchor=south east] {\(\vec v\)};
+    \draw[thick,-latex,red] (0,0) -- (1.5,-2)
+          node[anchor=south west] {\(\vec w\)};
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (2,1)
+          node[anchor=south west] {\(T(\vec v)\)};
+    \draw[thick,-latex,red] (0,0) -- (1,2)
+          node[anchor=south west] {\(T(\vec w)\)};
+  \end{scope}
+  \node[anchor=north] at (5,-1) {injective};
+\end{tikzpicture}
+\hspace{3em}
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (2,1)
+          node[anchor=south west] {\(\vec v\)};
+    \draw[thick,-latex,red] (0,0) -- (1,2)
+          node[anchor=south west] {\(\vec w\)};
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,purple] (0,0) -- (0.5,2)
+          node[anchor=south west] {\(T(\vec v)=T(\vec w)\)};
+  \end{scope}
+  \node[anchor=north] at (5,-1) {not injective};
+\end{tikzpicture}
+				</latex-image>
+			</image>
+			<caption>An injective transformation and a non-injective transformation</caption>
+        </figure>
+    </statement>
+</definition>
+
+<activity estimated-time='3'>
+    <statement>
+        <p>
+Let <m>T: \IR^3 \rightarrow \IR^2</m> be given by
+<me>
+  T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right]
+</me>
+Is <m>T</m> injective?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    Yes, because <m>T(\vec v)=T(\vec w)</m> whenever <m>\vec v=\vec w</m>.
+    </p>
+</li>
+<li>
+    <p>
+    Yes, because <m>T(\vec v)\not=T(\vec w)</m> whenever <m>\vec v\not=\vec w</m>.
+    </p>
+</li>
+<li>
+    <p>
+    No, because 
+  <m>
+    T\left(\left[\begin{array}{c}0\\0\\1\end{array}\right]\right)
+      \not=
+    T\left(\left[\begin{array}{c}0\\0\\2\end{array}\right]\right)
+  </m>
+    </p>
+</li>
+<li>
+    <p>
+    No, because 
+  <m>
+    T\left(\left[\begin{array}{c}0\\0\\1\end{array}\right]\right)
+      =
+    T\left(\left[\begin{array}{c}0\\0\\2\end{array}\right]\right)
+  </m>
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+<activity estimated-time='2'>
+    <statement>
+        <p>
+Let <m>T: \IR^2 \rightarrow \IR^3</m> be given by
+<me>
+  T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \\ 0 \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]
+</me>
+Is <m>T</m> injective?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    Yes, because <m>T(\vec v)=T(\vec w)</m> whenever <m>\vec v=\vec w</m>.
+    </p>
+</li>
+<li>
+    <p>
+    Yes, because <m>T(\vec v)\not=T(\vec w)</m> whenever <m>\vec v\not=\vec w</m>.
+    </p>
+</li>
+<li>
+    <p>
+    No, because 
+  <m>
+    T\left(\left[\begin{array}{c}1\\2\end{array}\right]\right)
+      \not=
+    T\left(\left[\begin{array}{c}3\\4\end{array}\right]\right)
+  </m>
+    </p>
+</li>
+<li>
+    <p>
+    No, because 
+  <m>
+    T\left(\left[\begin{array}{c}1\\2\end{array}\right]\right)
+      =
+    T\left(\left[\begin{array}{c}3\\4\end{array}\right]\right)
+  </m>
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+<definition>
+    <statement>
+        <p>
+Let <m>T: V \rightarrow W</m> be a linear transformation.
+<m>T</m> is called <term>surjective</term> or <term>onto</term> if every element of <m>W</m> is mapped to by an element of <m>V</m>.  More precisely, for every <m>\vec{w} \in W</m>, there is some <m>\vec{v} \in V</m> with <m>T(\vec{v})=\vec{w}</m>.
+        </p>
+    <figure>
+		<image width="75%">
+			<latex-image>
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (1,2);
+    \draw[thick,-latex,blue] (0,0) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (1,-1);
+    \draw[thick,-latex,blue] (0,0) -- (-2,3);
+    \draw[thick,-latex,blue] (0,0) -- (-3,-2);
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,-2);
+    \fill[color=blue, opacity=0.5] (-2,-2) rectangle (2,2);
+  \end{scope}
+  \node[anchor=north] at (5,-2) {surjective};
+\end{tikzpicture}
+\hspace{3em}
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,-2);
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-2.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (-0.5,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2.5,-0.5);
+    \fill[color=blue, opacity=0.5] (-2,-2) -- (3,-1) -- (2,2) -- (-3,1) -- (-2,-2);
+  \end{scope}
+  \node[anchor=north] at (5,-2) {not surjective};
+\end{tikzpicture}
+			</latex-image>
+		</image>
+		<caption>A surjective transformation and a non-surjective transformation</caption>
+    </figure>
+    </statement>
+</definition>
+
+<activity estimated-time='3'>
+    <statement>
+        <p>
+Let <m>T: \IR^2 \rightarrow \IR^3</m> be given by
+<me>
+  T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \\ 0 \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]
+</me>
+Is <m>T</m> surjective?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    Yes, because for every <m>\vec w=\left[\begin{array}{c}x\\y\\z\end{array}\right]\in\IR^3</m>,
+there exists <m>\vec v=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2</m> such that
+<m>T(\vec v)=\vec w</m>.
+    </p>
+</li>
+<li>
+    <p>
+    No, because 
+  <m>
+    T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)
+  </m>
+can never equal
+  <m>
+  \left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]
+  </m>.
+    </p>
+</li>
+<li>
+    <p>
+    No, because 
+  <m>
+    T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)
+  </m>
+can never equal
+  <m>
+  \left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]
+  </m>.
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+<activity estimated-time='2'>
+    <statement>
+        <p>
+Let <m>T: \IR^3 \rightarrow \IR^2</m> be given by
+<me>
+  T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right]
+</me>
+Is <m>T</m> surjective?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    Yes, because for every <m>\vec w=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2</m>,
+there exists <m>\vec v=\left[\begin{array}{c}x\\y\\42\end{array}\right]\in\IR^3</m> such that
+<m>T(\vec v)=\vec w</m>.
+    </p>
+</li>
+<li>
+    <p>
+    Yes, because for every <m>\vec w=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2</m>,
+there exists <m>\vec v=\left[\begin{array}{c}0\\0\\z\end{array}\right]\in\IR^3</m> such that
+<m>T(\vec v)=\vec w</m>.
+    </p>
+</li>
+<li>
+    <p>
+    No, because 
+  <m>
+    T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)
+  </m>
+can never equal
+  <m>
+  \left[\begin{array}{c} 3\\-2 \end{array}\right]
+  </m>.
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+<observation>
+    <statement>
+        <p>
+As we will see, it's no coincidence that the <m>\RREF</m> of the
+injective map's standard matrix
+<me>
+  \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]
+</me>
+has all pivot columns. Similarly, the <m>\RREF</m> of the surjective map's
+standard matrix
+<me>
+  \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right]
+</me>
+has a pivot in each row.
+        </p>
+    </statement>
+</observation>
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>T: V \rightarrow W</m> be a linear transformation where
+<m>\ker T</m> contains multiple vectors. What can you conclude?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    <m>T</m> is injective
+    </p>
+</li>
+<li>
+    <p>
+    <m>T</m> is not injective
+    </p>
+</li>
+<li>
+    <p>
+    <m>T</m> is surjective
+    </p>
+</li>
+<li>
+    <p>
+    <m>T</m> is not surjective
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+<fact>
+    <statement>
+        <p>
+A linear transformation <m>T</m> is injective <em>if and only if</em> <m>\ker T = \{\vec{0}\}</m>.
+Put another way, an injective linear transformation may be
+recognized by its <term>trivial</term> kernel.
+        </p>
+        <figure>
+			<image width="75%">
+				<latex-image>
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1)
+          node[anchor=south east] {\(\vec v\)};
+    \draw[thick,-latex,red] (0,0) -- (1.5,-2)
+          node[anchor=south west] {\(\vec w\)};
+    \fill[green!50!black] (0,0) circle (0.2)
+          node[anchor=south west] {\(\vec{0}\)};
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (2,1)
+          node[anchor=south west] {\(T(\vec v)\)};
+    \draw[thick,-latex,red] (0,0) -- (1,2)
+          node[anchor=south west] {\(T(\vec w)\)};
+    \fill[green!50!black] (0,0) circle (0.2)
+          node[anchor=south east] {\(T(\vec{0})=\vec{0}\)};
+  \end{scope}
+\end{tikzpicture}
+				</latex-image>
+			</image>
+			<caption>A linear transformation with trivial kernel, which is therefore injective</caption>
+        </figure>
+    </statement>
+</fact>
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>T: V \rightarrow \IR^5</m> be a linear transformation where
+<m>\Im T</m> is spanned by four vectors.
+What can you conclude?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    <m>T</m> is injective
+    </p>
+</li>
+<li>
+    <p>
+    <m>T</m> is not injective
+    </p>
+</li>
+<li>
+    <p>
+    <m>T</m> is surjective
+    </p>
+</li>
+<li>
+    <p>
+    <m>T</m> is not surjective
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+<fact>
+    <statement>
+        <p>
+A linear transformation <m>T:V \rightarrow W</m> is surjective <em>if and only if</em>
+<m>\Im T = W</m>. Put another way, a surjective linear transformation may be
+recognized by its identical codomain and image.
+        </p>
+    <figure>
+		<image width="75%">
+			<latex-image>
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (1,2);
+    \draw[thick,-latex,blue] (0,0) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (1,-1);
+    \draw[thick,-latex,blue] (0,0) -- (-2,3);
+    \draw[thick,-latex,blue] (0,0) -- (-3,-2);
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,-2);
+    \fill[color=blue, opacity=0.5] (-2,-2) rectangle (2,2);
+  \end{scope}
+  \node[anchor=north] at (5,-2) {surjective, \(\Im T=\IR^2\)};
+\end{tikzpicture}
+\hspace{3em}
+\begin{tikzpicture}[x=0.15in,y=0.15in]
+  \begin{scope}[shift={(0,1)}]
+    \draw (-2,0) -- (2,0);
+    \draw (0,-2) -- (0,2);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,2);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,-2);
+  \end{scope}
+  \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+  \begin{scope}[shift={(9,0)}]
+    \draw (0,0) -- (3,0);
+    \draw (0,0) -- (0,3);
+    \draw (0,0) -- (-2,-1);
+    \draw[thick,-latex,blue] (0,0) -- (0.5,1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2,1);
+    \draw[thick,-latex,blue] (0,0) -- (-2.5,1);
+    \draw[thick,-latex,blue] (0,0) -- (-0.5,-1.5);
+    \draw[thick,-latex,blue] (0,0) -- (2.5,-0.5);
+    \fill[color=blue, opacity=0.5] (-2,-2) -- (3,-1) -- (2,2) -- (-3,1) -- (-2,-2);
+  \end{scope}
+  \node[anchor=north] at (5,-2) {not surjective, \(\Im T\not=\IR^3\)};
+\end{tikzpicture}
+			</latex-image>
+		</image>
+		<caption>A linear transformation with identical codomain and image, which is therefore surjective; and a linear transformation with an image smaller than the codomain <m>\IR^3</m>, which is therefore not surjective.</caption>
+    </figure>
+    </statement>
+</fact>
+
+<activity estimated-time='15'>
+    <statement>
+        <p>
+Let <m>T: \IR^n \rightarrow \IR^m</m> be a linear map with standard matrix <m>A</m>.
+            Sort the following claims into two groups of <em>equivalent</em> statements:
+one group that means <m>T</m> is <em>injective</em>, and one group that means
+<m>T</m> is <em>surjective</em>.
+        </p>
+<ol label="a">
+<li><p> The kernel of <m>T</m> is trivial, i.e. <m>\ker T=\{\vec 0\}</m>.
+</p></li>
+<li><p> The columns of <m>A</m> span <m>\IR^m</m>.
+</p></li>
+<li><p> The columns of <m>A</m> are linearly independent.
+</p></li>
+<li><p> Every column of <m>\RREF(A)</m> has a pivot.
+</p></li>
+<li><p> Every row of <m>\RREF(A)</m> has a pivot.
+</p></li>
+<li><p> The image of <m>T</m> equals its codomain, i.e. <m>\Im T=\IR^m</m>.
+</p></li>
+<li><p> The system of linear equations given by the augmented matrix <m>\left[\begin{array}{c|c}A &amp; \vec{b} \end{array}\right]</m> has a solution for all <m>\vec{b} \in \IR^m</m>.
+</p></li>
+<li><p> The system of linear equations given by the augmented matrix <m>\left[\begin{array}{c|c} A &amp; \vec{0} \end{array}\right]</m> has exactly one solution.
+</p></li>
+</ol>
+<!--
+  This activity may be ran as a card sort.
+-->
+    </statement>
+</activity>
+
+<observation>
+    <statement>
+        <p>
+  The easiest way to determine if the linear map with standard matrix <m>A</m>
+  is injective is to see if <m>\RREF(A)</m> has a pivot in each column.
+        </p>
+        <p>
+  The easiest way to determine if the linear map with standard matrix <m>A</m>
+  is surjective is to see if <m>\RREF(A)</m> has a pivot in each row.
+        </p>
+    </statement>
+</observation>
+
+<activity estimated-time='3'>
+    <statement>
+        <p>
+  What can you conclude about the linear map 
+  <m>T:\IR^2\to\IR^3</m> with standard matrix 
+  <m>\left[\begin{array}{cc} a &amp; b \\ c &amp; d \\ e &amp; f \end{array}\right]</m>?
+        </p>
+  <ol label="a">
+<li><p> Its standard matrix has more columns than rows, so <m>T</m> is not
+    injective.
+    </p></li>
+<li><p> Its standard matrix has more columns than rows, so <m>T</m> is
+    injective.
+    </p></li>
+<li><p> Its standard matrix has more rows than columns, so <m>T</m> is not
+    surjective.
+    </p></li>
+<li><p> Its standard matrix has more rows than columns, so <m>T</m> is
+    surjective.
+    </p></li>
+  </ol>
+    </statement>
+</activity>
+
+<activity estimated-time='2'>
+    <statement>
+        <p>
+  What can you conclude about the linear map <m>T:\IR^3\to\IR^2</m> with standard matrix 
+  <m>\left[\begin{array}{ccc} a &amp; b &amp; c \\ d &amp; e &amp; f \end{array}\right]</m>?
+        </p>
+  <ol label="a">
+<li><p> Its standard matrix has more columns than rows, so <m>T</m> is not
+    injective.
+    </p></li>
+<li><p> Its standard matrix has more columns than rows, so <m>T</m> is
+    injective.
+    </p></li>
+<li><p> Its standard matrix has more rows than columns, so <m>T</m> is not
+    surjective.
+    </p></li>
+<li><p> Its standard matrix has more rows than columns, so <m>T</m> is
+    surjective.
+    </p></li>
+  </ol>
+    </statement>
+</activity>
+
+<fact>
+    <statement>
+
+  <p>The following are true for any linear map <m>T:V\to W</m>:</p>
+  <ul>
+<li><p> If <m>\dim(V)&gt;\dim(W)</m>, then <m>T</m> is not injective.
+    </p></li>
+<li><p> If <m>\dim(V)&lt;\dim(W)</m>, then <m>T</m> is not surjective.
+    </p></li>
+  </ul>
+    <p>
+  Basically, a linear transformation cannot reduce dimension without collapsing
+  vectors into each other, and a linear transformation cannot
+  increase dimension from its domain to its image.
+    </p>
+    <figure>
+		<image width="75%">
+			<latex-image>
+    \begin{tikzpicture}[x=0.12in,y=0.12in]
+      \begin{scope}[shift={(0,0)}]
+        \draw (0,0) -- (3,0);
+        \draw (0,0) -- (0,3);
+        \draw (0,0) -- (-2,-1);
+        \draw[thick,-latex,blue] (0,0) -- (2,1)
+              node[anchor=south west] {\(\vec v\)};
+        \draw[thick,-latex,red] (0,0) -- (1,2)
+              node[anchor=south west] {\(\vec w\)};
+      \end{scope}
+      \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+      \begin{scope}[shift={(9,1)}]
+        \draw (-2,0) -- (2,0);
+        \draw (0,-2) -- (0,2);
+        \draw[thick,-latex,purple] (0,0) -- (0.5,2)
+              node[anchor=south west] {\(T(\vec v)=T(\vec w)\)};
+      \end{scope}
+      \node[anchor=north] at (5,-1) {not injective, \(3&gt;2\)};
+    \end{tikzpicture}
+    \hspace{3em}
+    \begin{tikzpicture}[x=0.12in,y=0.12in]
+      \begin{scope}[shift={(0,1)}]
+        \draw (-2,0) -- (2,0);
+        \draw (0,-2) -- (0,2);
+        \draw[thick,-latex,blue] (0,0) -- (0.5,2);
+        \draw[thick,-latex,blue] (0,0) -- (2,1);
+        \draw[thick,-latex,blue] (0,0) -- (-1.5,1);
+        \draw[thick,-latex,blue] (0,0) -- (0,-1.5);
+        \draw[thick,-latex,blue] (0,0) -- (2,-2);
+      \end{scope}
+      \draw[dashed,-latex] (3,3) to [bend left=30] (7,3);
+      \begin{scope}[shift={(9,0)}]
+        \draw (0,0) -- (3,0);
+        \draw (0,0) -- (0,3);
+        \draw (0,0) -- (-2,-1);
+        \draw[thick,-latex,blue] (0,0) -- (0.5,1.5);
+        \draw[thick,-latex,blue] (0,0) -- (2,1);
+        \draw[thick,-latex,blue] (0,0) -- (-2.5,1);
+        \draw[thick,-latex,blue] (0,0) -- (-0.5,-1.5);
+        \draw[thick,-latex,blue] (0,0) -- (2.5,-0.5);
+        \fill[color=blue, opacity=0.5] (-2,-2) -- (3,-1) -- (2,2) -- (-3,1) -- (-2,-2);
+      \end{scope}
+      \node[anchor=north] at (5,-2) {not surjective, \(2&lt;3\)};
+    \end{tikzpicture}
+			</latex-image>
+		</image>
+		<caption>A linear transformation whose domain has a larger dimension than its codomain, and is therefore not injective; and a linear transformation whose domain has a smaller dimension than its codomain, and is therefore not surjective.</caption>
+    </figure>
+    <p>
+  But dimension arguments <em>cannot</em> be used to prove a map <em>is</em>
+  injective or surjective.
+    </p>
+    </statement>
+</fact>
+
+
+<activity estimated-time='5'>
+    <introduction>
+        <p>
+Suppose <m>T: \IR^n \rightarrow \IR^4</m> with standard matrix 
+<m>A=\left[\begin{array}{cccc}
+  a_{11}&amp;a_{12}&amp;\cdots&amp;a_{1n}\\
+  a_{21}&amp;a_{22}&amp;\cdots&amp;a_{2n}\\
+  a_{31}&amp;a_{32}&amp;\cdots&amp;a_{3n}\\
+  a_{41}&amp;a_{42}&amp;\cdots&amp;a_{4n}\\
+\end{array}\right]</m> is both 
+injective and surjective (we call such maps <term>bijective</term>).
+        </p>
+    </introduction>
+<task>
+    <p>
+How many pivot rows must <m>\RREF A</m> have?
+    </p>
+</task>
+<task>
+    <p>
+ How many pivot columns must <m>\RREF A</m> have?
+    </p>
+</task>
+<task>
+    <p>
+What is <m>\RREF A</m>?
+    </p>
+</task>
+</activity>
+
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>T: \IR^n \rightarrow \IR^n</m> be a bijective linear map with
+standard matrix <m>A</m>. Label each of the following as true or false.
+        </p>
+<ol label="a">
+<li><p> <m>\RREF(A)</m> is the identity matrix.
+</p></li>
+<li><p> The columns of <m>A</m> form a basis for <m>\IR^n</m>
+</p></li>
+<li><p> The system of linear equations given by the augmented matrix <m>\left[\begin{array}{c|c} A &amp; \vec{b} \end{array}\right]</m> has exactly one solution
+for each <m>\vec b \in \IR^n</m>.
+</p></li>
+</ol>
+    </statement>
+</activity>
+
+<observation>
+    <statement>
+    <p>
+  The easiest way to show that the linear map with standard matrix <m>A</m>
+  is bijective is to show that <m>\RREF(A)</m> is the identity matrix.
+    </p>
+    </statement>
+</observation>
+
+<activity estimated-time='3'>
+    <statement>
+        <p>
+Let <m>T: \IR^3 \rightarrow \IR^3</m> be given by the standard matrix
+<me>A=\left[\begin{array}{ccc} 2&amp;1&amp;-1 \\ 4&amp;1&amp;1 \\ 6&amp;2&amp;1\end{array}\right].</me>
+Which of the following must be true?
+        </p>
+<ol label="a">
+<li><p> <m>T</m> is neither injective nor surjective
+</p></li>
+<li><p> <m>T</m> is injective but not surjective
+</p></li>
+<li><p> <m>T</m> is surjective but not injective
+</p></li>
+<li><p> <m>T</m> is bijective.
+</p></li>
+</ol>
+    </statement>
+</activity>
+
+<sage language="octave">
+<input>rref([2,1,-1; 4,1,1; 6,2,1])</input>
+</sage>
+
+<activity estimated-time='3'>
+    <statement>
+        <p>
+Let <m>T: \IR^3 \rightarrow \IR^3</m> be given by
+<me>T\left(\left[\begin{array}{ccc} x \\ y  \\ z \end{array}\right] \right) =
+\left[\begin{array}{c} 2x+y-z \\ 4x+y+z \\ 6x+2y\end{array}\right].</me>
+Which of the following must be true?
+        </p>
+<ol label="a">
+<li><p> <m>T</m> is neither injective nor surjective
+</p></li>
+<li><p> <m>T</m> is injective but not surjective
+</p></li>
+<li><p> <m>T</m> is surjective but not injective
+</p></li>
+<li><p> <m>T</m> is bijective.
+</p></li>
+</ol>
+    </statement>
+</activity>
+<sage language="octave">
+<input>rref([2,1,-1; 4,1,1; 6,2,0])</input>
+</sage>
+
+<activity estimated-time='3'>
+    <statement>
+        <p>
+Let <m>T: \IR^2 \rightarrow \IR^3</m> be given by
+<me>T\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right) =
+\left[\begin{array}{c} 2x+3y \\ x-y \\ x+3y\end{array}\right].</me>
+Which of the following must be true?
+        </p>
+<ol label="a">
+<li><p> <m>T</m> is neither injective nor surjective
+</p></li>
+<li><p> <m>T</m> is injective but not surjective
+</p></li>
+<li><p> <m>T</m> is surjective but not injective
+</p></li>
+<li><p> <m>T</m> is bijective.
+</p></li>
+</ol>
+    </statement>
+</activity>
+<sage language="octave">
+<input>rref([2,3;1,-1;1,3])</input>
+</sage>
+
+<activity estimated-time='3'>
+    <statement>
+        <p>
+Let <m>T: \IR^3 \rightarrow \IR^2</m> be given by
+<me>T\left(\left[\begin{array}{c} x \\ y  \\ z \end{array}\right] \right) =
+\left[\begin{array}{c} 2x+y-z \\ 4x+y+z\end{array}\right].</me>
+Which of the following must be true?
+        </p>
+<ol label="a">
+<li><p> <m>T</m> is neither injective nor surjective
+</p></li>
+<li><p> <m>T</m> is injective but not surjective
+</p></li>
+<li><p> <m>T</m> is surjective but not injective
+</p></li>
+<li><p> <m>T</m> is bijective.
+</p></li>
+</ol>
+    </statement>
+</activity>
+<sage language="octave">
+<input>rref([2,1,-1;4,1,1])</input>
+</sage>
+
+</subsection>
+
+
+    <subsection>
+        <title>Videos</title>
+        <figure>
+            <video xml:id="video-AT4-1" youtube="97MK7_QJnhY">
+              <!--<track kind="subtitles" label="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: The kernel and image of a linear transformation</caption>
+        </figure>
+        <figure>
+            <video xml:id="video-AT4-2" youtube="4WN1BQhtkK0">
+              <!--<track kind="subtitles" label="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: Finding a basis of the image of a linear transformation</caption>
+        </figure>
+    </subsection>
+
+    <subsection>
+        <title>Slideshow</title>
+        <p>Slideshow of activities available at <url href="AT4.slides.html"/>.</p>
+    </subsection>
+
+    <exercises>
+        <p>Exercises available at <url href="https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/AT4/"/>.</p>
+    </exercises>
+<subsection>    
+    <title>Mathematical Writing Explorations</title>
+            <exploration>
+                <statement>
+                    Suppose that <m>f:V \rightarrow W</m> is a linear transformation between two vector spaces <m>V</m> and <m>W</m>. State carefully what conditions <m>f</m> must satisfy. Let <m>\vec{0_V}</m> and <m>\vec{0_W}</m> be the zero vectors in <m>V</m> and <m>W</m> respectively.
+                    <ul>
+                    <li>Prove that <m>f</m> is one-to-one if and only if <m>f(\vec{0_V}) = \vec{0_W}</m>, and that <m>\vec{0_V}</m> is the unique element of <m>V</m> which is mapped to <m>\vec{0_W}</m>. Remember that this needs to be done in both directions. First prove the if and only if statement, and then show the uniqueness.</li>
+
+<li>Do not use subtraction in your proof. The only vector space operation we have is addition, and a structure preserving function only preserves addition. If you are writing <m>\vec{v} - \vec{v} = \vec{0}_V</m>, what you really mean is that <m>\vec{v} \oplus \vec{v}^{-1} = \vec{0}_V</m>, where <m>\vec{v}^{-1}</m> is the additive inverse of <m>\vec{v}</m>. </li>   </ul>
+                </statement>
+    </exploration>
+ 
+    </subsection>
+    <subsection>
+        <title>Sample Problem and Solution</title>
+        <p>
+            Sample problem <xref ref="sampleAT4"/>.
+        </p>
+    </subsection>
+
+</section>
