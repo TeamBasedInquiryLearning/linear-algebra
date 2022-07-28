@@ -394,18 +394,46 @@ Compute <m>T\left(\left[\begin{array}{c} x\\ y \\ z \end{array}\right] \right) <
     <exercises>
         <p>Exercises available at <url href="https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/AT2/"/>.</p>
     </exercises>
-    <!-- TODO fix custom \m below -->
-<!-- <subsection>    
+ <subsection>    
     <title>Mathematical Writing Explorations</title>
-            <exploration>
-                <statement>
-                    We can represent images in the plane <m>\mathbb{R}^2</m> using vectors, and manipulate those images with linear transformations.
+                         <p>We can represent images in the plane <m>\mathbb{R}^2</m> using vectors, and manipulate those images with linear transformations. We introduce some notation in these explorations that is needed for their completion, but is not essential to the rest of the text. These have a geometric flair to them, and can be understood by thinking of geometric transformations in terms of standard matrices.</p>
+     
+ <p>    Given two vectors <m>\vec{v} = \left[\begin{array}{c}v_1\\v_2\\ \vdots \\ v_n\end{array}\right]</m> and <m>\vec{w} = \left[\begin{array}{c}w_1 \\ w_2\\ \vdots \\ w_n\end{array}\right]</m>, we define the <term> dot product </term><idx>dot product </idx> as
+     <me>\vec{v}\cdot \vec{w} = v_1w_1 + v_2w_2 + \cdots v_nw_n.</me> 
+</p>     
+<exploration>
+     <statement>
+    For each of the following properties, determine if it is held by the dot product. Either provide a proof it the property holds, or provide a counter-example if it does not.
+
+<ul>
+<li>Distributive over addition (e.g., (<m>\vec{u} + \vec{v})\cdot \vec{w} = \vec{u}\cdot\vec{w} + \vec{v}\cdot\vec{w})?</m></li>
+<li> Associative?</li>
+<li> Commutative?</li>
+    </ul>
+</statement></exploration>
+    
+     <exploration><statement>
+         Given the properties you proved in the last exploration, could the dot product take the place of <m>\oplus</m> as a vector space operation on <m>\mathbb{R}^n</m>?</statement></exploration>
+
+<exploration><statement>Is the dot product a linear operator? That is, given vectors <m>\vec{u}, \vec{v}, \vec{w} \in \mathbb{R}^n</m>, and <m>k,m \in \mathbb{R}</m>, is it true that
+<me>\vec{u} \cdot (k\vec{v} + m\vec{w}) = k(\vec{u} \cdot \vec{v}) + m(\vec{u}\cdot\vec{w}).</me> Prove or provide a counter-example.
+</statement></exploration>
+   
+     <exploration>
+         <statement>
+             <p>Assume <m>\vec{v} = \left[\begin{array}{c}v_1\\v_2\\ \vdots \\ v_n\end{array}\right]</m> and define the length of a vector by <me>|\vec{v}| = \left(\sum_{i=1}^n v_i^2 \right)^{1/2}</me>. Prove that <m>|\vec{u}| = |\vec{v}|</m> if an only if <m>\vec{u} + \vec{v}</m> and <m>\vec{u} - \vec{v}</m> are perpendicular. You may use the fact (try and prove it!) that two vectors are perpendicular if and only if their dot product is zero.
+             </p>
+         </statement>
+     </exploration>
+     
+<exploration>
+     <statement>
                     <ul>
-    <li>A <em>dilation</em> is given by by mapping a vector <m>\vec{v} = \m{x\\y}</m> to some scalar multiple of <m>\vec{v}</m>.</li>
+    <li>A <term>dilation</term> is given by by mapping a vector <m>\vec{v} = \left[\begin{array}{c}x\\y\end{array}\right]</m> to some scalar multiple of <m>\vec{v}</m>.</li>
 
-<li>A <em>rotation</em> is given by <m>\vec{v} \mapsto \m{\cos(\theta)x - \sin(\theta)y\\ \cos(\theta)y + \sin(\theta)x}.</m></li>
+<li>A <term>rotation</term> is given by <m>\vec{v} \mapsto \left[\begin{array}{c} \cos(\theta)x - \sin(\theta)y\\ \cos(\theta)y + \sin(\theta)x\end{array}\right].</m></li>
 
-<li>A <em>reflection</em> of <m>\vec{v}</m> over a line <m>l</m> can be found by first finding a vector <m>\vec{l} = \left(\begin{array}{c} l_x\\l_y\end{array}\right)</m> along <m>l</m>, then <m>\vec{v} \mapsto 2\frac{\vec{l}\cdot\vec{v}}{\vec{l}\cdot\vec{l}}\vec{l} - \vec{v}.</m></li>
+<li>A <term>reflection</term> of <m>\vec{v}</m> over a line <m>l</m> can be found by first finding a vector <m>\vec{l} = \left[\begin{array}{c} l_x\\l_y\end{array}\right]</m> along <m>l</m>, then <m>\vec{v} \mapsto 2\frac{\vec{l}\cdot\vec{v}}{\vec{l}\cdot\vec{l}}\vec{l} - \vec{v}.</m></li>
 </ul>
 Represent each of the following transformations with respect to the standard basis in <m>\mathbb{R}^2</m>.
 <ul>
@@ -416,7 +444,7 @@ Represent each of the following transformations with respect to the standard bas
 Prove that each transformation is linear, and that your matrix representations are correct.
                 </statement>
     </exploration>
-    </subsection> -->
+    </subsection>
     <subsection>
         <title>Sample Problem and Solution</title>
         <p>

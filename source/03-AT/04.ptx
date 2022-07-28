@@ -877,7 +877,18 @@ Which of the following must be true?
 <li>Do not use subtraction in your proof. The only vector space operation we have is addition, and a structure preserving function only preserves addition. If you are writing <m>\vec{v} - \vec{v} = \vec{0}_V</m>, what you really mean is that <m>\vec{v} \oplus \vec{v}^{-1} = \vec{0}_V</m>, where <m>\vec{v}^{-1}</m> is the additive inverse of <m>\vec{v}</m>. </li>   </ul>
                 </statement>
     </exploration>
- 
+ <exploration><statement>
+     <p>Start with an <m>n</m>-dimensional vector space <m>V</m>. We can define the <term>dual</term> of <m>V</m>, denoted <m>V^*</m>, by 
+<me>V^* = \{h:V \rightarrow \mathbb{R}: h \mbox{ is linear}\}.</me>
+Prove that <m>V</m> is isomorphic to<m>V^*</m>. Here are some things to think about as you work through this.
+<ul>
+<li>Start by assuming you have a basis for <m>V</m>. How many basis vectors should you have?</li>
+<li>For each basis vector in <m>V</m>, define a function that returns 1 if it's given that basis vector, and returns 0 if it's given any other basis vector. For example, if <m>\vec{b_i}</m> and <m>\vec{b_j}</m> are each members of the basis for <m>V</m>, and you'll need a function <m>f_i:V \rightarrow \{0,1\}</m>, where <m>f_i(b_i) = 1</m> and <m>f_i(b_j)= 0</m> for all <m> j \neq i</m></li>
+<li>How many of these functions will you need? Show that each of them is in <m>V^*</m>.</li>
+<li>Show that the functions you found in the last part are a basis for <m>V^*</m>? To do this, take an arbitrary function <m>h \in V^*</m> and some vector <m>\vec{v} \in V</m>. Write <m>\vec{v}</m> in terms of the basis you chose earlier. How can you write <m>h(\vec{v})</m>, with respect to that basis? Pay attention to the fact that all functions in <m>V^*</m> are linear. </li>
+<li> Now that you've got a basis for <m>V</m> and a basis for <m>V^*</m>, can you find an isomorphism?</li>
+    </ul>
+     </p></statement></exploration>
     </subsection>
     <subsection>
         <title>Sample Problem and Solution</title>
