@@ -484,6 +484,60 @@
       <output-filename>GT4.slides.html</output-filename>
       <xsl>slides/slideshow.xsl</xsl>
     </target>
+    <target name="slide-ptx-truss">
+      <format>custom</format>
+      <source>source/main.ptx</source>
+      <publication>publication/publication.ptx</publication>
+      <output-dir>output/slides</output-dir>
+      <output-filename>truss.ptx</output-filename>
+      <xsl>slides/extract.xsl</xsl>
+      <stringparam key="debug.project.number" value="the-way-it-should-be"/>
+      <stringparam key="section" value="truss"/>
+    </target>
+    <target name="slide-html-truss">
+      <format>custom</format>
+      <source>output/slides/truss.ptx</source>
+      <publication>publication/publication.ptx</publication>
+      <output-dir>output/deploy/2022</output-dir>
+      <output-filename>truss.slides.html</output-filename>
+      <xsl>slides/slideshow.xsl</xsl>
+    </target>
+    <target name="slide-ptx-pagerank">
+      <format>custom</format>
+      <source>source/main.ptx</source>
+      <publication>publication/publication.ptx</publication>
+      <output-dir>output/slides</output-dir>
+      <output-filename>pagerank.ptx</output-filename>
+      <xsl>slides/extract.xsl</xsl>
+      <stringparam key="debug.project.number" value="the-way-it-should-be"/>
+      <stringparam key="section" value="pagerank"/>
+    </target>
+    <target name="slide-html-pagerank">
+      <format>custom</format>
+      <source>output/slides/pagerank.ptx</source>
+      <publication>publication/publication.ptx</publication>
+      <output-dir>output/deploy/2022</output-dir>
+      <output-filename>pagerank.slides.html</output-filename>
+      <xsl>slides/slideshow.xsl</xsl>
+    </target>
+    <target name="slide-ptx-geology">
+      <format>custom</format>
+      <source>source/main.ptx</source>
+      <publication>publication/publication.ptx</publication>
+      <output-dir>output/slides</output-dir>
+      <output-filename>geology.ptx</output-filename>
+      <xsl>slides/extract.xsl</xsl>
+      <stringparam key="debug.project.number" value="the-way-it-should-be"/>
+      <stringparam key="section" value="geology"/>
+    </target>
+    <target name="slide-html-geology">
+      <format>custom</format>
+      <source>output/slides/geology.ptx</source>
+      <publication>publication/publication.ptx</publication>
+      <output-dir>output/deploy/2022</output-dir>
+      <output-filename>geology.slides.html</output-filename>
+      <xsl>slides/slideshow.xsl</xsl>
+    </target>
   </targets>
   <executables>
       <xelatex>xelatex</xelatex>
