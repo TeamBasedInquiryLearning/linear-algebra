@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-07-29T00:10:11Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -51,6 +48,14 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      $(document).trigger("runestone:mathjax-ready");
+      }
+    )}
+},
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
@@ -145,9 +150,9 @@
 <li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
 <li><a href="colophon.html" data-scroll="colophon" class="internal">Colophon</a></li>
+<li><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal">TBIL Resource Library</a></li>
 <li><a href="instructor-notes.html" data-scroll="instructor-notes" class="internal">For Instructors</a></li>
 <li><a href="video-resources.html" data-scroll="video-resources" class="internal">Video Resources</a></li>
-<li><a href="printable-pdf.html" data-scroll="printable-pdf" class="internal">Printable PDF</a></li>
 <li><a href="slideshows.html" data-scroll="slideshows" class="internal">Slideshows</a></li>
 </ul>
 </li>
@@ -210,34 +215,32 @@
 </ul>
 </li>
 <li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
-<li class="link"><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal"><span class="title">TBIL Resource Library</span></a></li>
-<li class="link"><a href="pretext.html" data-scroll="pretext" class="internal"><span class="title">Authored with PreTeXt</span></a></li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="AT1"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Linear Transformations (AT1)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-17"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
-<ul class="disc"><li id="li-304"><p id="p-575">Determine if a map between vector spaces of polynomials is linear or not.</p></li></ul></article><section class="subsection" id="subsection-66"><h3 class="heading hide-type">
+<ul class="disc"><li id="li-302"><p id="p-578">Determine if a map between vector spaces of polynomials is linear or not.</p></li></ul></article><section class="subsection" id="subsection-66"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.1</span> <span class="title">Class Activities</span>
 </h3>
 <article class="definition definition-like" id="definition-17"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
 </h4>
-<p id="p-576">A <dfn class="terminology">linear transformation</dfn> (also called a <dfn class="terminology">linear map</dfn>) is a map between vector spaces that preserves the vector space operations. More precisely, if <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are vector spaces, a map <span class="process-math">\(T:V\rightarrow W\)</span> is called a linear transformation if</p>
+<p id="p-579">A <dfn class="terminology">linear transformation</dfn> (also called a <dfn class="terminology">linear map</dfn>) is a map between vector spaces that preserves the vector space operations. More precisely, if <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are vector spaces, a map <span class="process-math">\(T:V\rightarrow W\)</span> is called a linear transformation if</p>
 <ol class="decimal">
-<li id="li-305"><p id="p-577"><span class="process-math">\(T(\vec{v}+\vec{w}) = T(\vec{v})+T(\vec{w})\)</span> for any <span class="process-math">\(\vec{v},\vec{w} \in V\text{,}\)</span> and</p></li>
-<li id="li-306"><p id="p-578"><span class="process-math">\(T(c\vec{v}) = cT(\vec{v})\)</span> for any <span class="process-math">\(c \in \IR,\)</span> and <span class="process-math">\(\vec{v} \in V\text{.}\)</span></p></li>
+<li id="li-303"><p id="p-580"><span class="process-math">\(T(\vec{v}+\vec{w}) = T(\vec{v})+T(\vec{w})\)</span> for any <span class="process-math">\(\vec{v},\vec{w} \in V\text{,}\)</span> and</p></li>
+<li id="li-304"><p id="p-581"><span class="process-math">\(T(c\vec{v}) = cT(\vec{v})\)</span> for any <span class="process-math">\(c \in \IR,\)</span> and <span class="process-math">\(\vec{v} \in V\text{.}\)</span></p></li>
 </ol>
 <p class="continuation">In other words, a map is linear when vector space operations can be applied before or after the transformation without affecting the result.</p></article><article class="definition definition-like" id="definition-18"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
 </h4>
-<p id="p-579">Given a linear transformation <span class="process-math">\(T:V\to W\text{,}\)</span> <span class="process-math">\(V\)</span> is called the <dfn class="terminology">domain</dfn> of <span class="process-math">\(T\)</span> and <span class="process-math">\(W\)</span> is called the <dfn class="terminology">co-domain</dfn> of <span class="process-math">\(T\text{.}\)</span></p>
-<figure class="figure figure-like" id="figure-24"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-9.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">24<span class="period">.</span></span><span class="space"> </span>A linear transformation with a domain of <span class="process-math">\(\IR^3\)</span> and a co-domain of <span class="process-math">\(\IR^2\)</span></figcaption></figure></article><article class="example example-like" id="example-2"><h4 class="heading">
+<p id="p-582">Given a linear transformation <span class="process-math">\(T:V\to W\text{,}\)</span> <span class="process-math">\(V\)</span> is called the <dfn class="terminology">domain</dfn> of <span class="process-math">\(T\)</span> and <span class="process-math">\(W\)</span> is called the <dfn class="terminology">co-domain</dfn> of <span class="process-math">\(T\text{.}\)</span></p>
+<figure class="figure figure-like" id="figure-23"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-9.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">23<span class="period">.</span></span><span class="space"> </span>A linear transformation with a domain of <span class="process-math">\(\IR^3\)</span> and a co-domain of <span class="process-math">\(\IR^2\)</span></figcaption></figure></article><article class="example example-like" id="example-2"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
 </h4>
-<p id="p-580">Let <span class="process-math">\(T : \IR^3 \rightarrow \IR^2\)</span> be given by</p>
+<p id="p-583">Let <span class="process-math">\(T : \IR^3 \rightarrow \IR^2\)</span> be given by</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 T\left(\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
@@ -245,7 +248,7 @@ T\left(\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
 \left[\begin{array}{c} x-z \\ 3y \end{array}\right].
 \end{equation*}
 </div>
-<p id="p-581">To show that <span class="process-math">\(T\)</span> is a linear transformation, we must verify that <span class="process-math">\(T(\vec{v}+\vec{w}) = T(\vec{v})+T(\vec{w})\)</span> by computing</p>
+<p id="p-584">To show that <span class="process-math">\(T\)</span> is a linear transformation, we must verify that <span class="process-math">\(T(\vec{v}+\vec{w}) = T(\vec{v})+T(\vec{w})\)</span> by computing</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 T\left(
@@ -289,10 +292,10 @@ c\left[\begin{array}{c} x-z \\ 3y \end{array}\right]
 \left[\begin{array}{c} cx-cz \\ 3cy \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p id="p-582">Therefore <span class="process-math">\(T\)</span> is a linear transformation.</p></article><article class="example example-like" id="example-3"><h4 class="heading">
+<p id="p-585">Therefore <span class="process-math">\(T\)</span> is a linear transformation.</p></article><article class="example example-like" id="example-3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
 </h4>
-<p id="p-583">Let <span class="process-math">\(S : \IR^2 \rightarrow \IR^4\)</span> be given by</p>
+<p id="p-586">Let <span class="process-math">\(S : \IR^2 \rightarrow \IR^4\)</span> be given by</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 S\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right)
@@ -300,7 +303,7 @@ S\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right)
 \left[\begin{array}{c} x+y \\ x^2 \\ y+3 \\ y-2^x \end{array}\right]
 \end{equation*}
 </div>
-<p id="p-584">To show that <span class="process-math">\(S\)</span> is not linear, we only need to find one counterexample.</p>
+<p id="p-587">To show that <span class="process-math">\(S\)</span> is not linear, we only need to find one counterexample.</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 S\left(
@@ -328,21 +331,21 @@ S\left(
 \left[\begin{array}{c} 6 \\ 4 \\ 10 \\ -1 \end{array}\right]
 \end{equation*}
 </div>
-<p id="p-585">Since the resulting vectors are different, <span class="process-math">\(S\)</span> is not a linear transformation.</p></article><article class="fact theorem-like" id="fact-14"><h4 class="heading">
+<p id="p-588">Since the resulting vectors are different, <span class="process-math">\(S\)</span> is not a linear transformation.</p></article><article class="fact theorem-like" id="fact-14"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
 </h4>
-<p id="p-586">A map between Euclidean spaces <span class="process-math">\(T:\IR^n\to\IR^m\)</span> is linear exactly when every component of the output is a linear combination of the variables of <span class="process-math">\(\IR^n\text{.}\)</span></p>
-<p id="p-587">For example, the following map is definitely linear because <span class="process-math">\(x-z\)</span> and <span class="process-math">\(3y\)</span> are linear combinations of <span class="process-math">\(x,y,z\text{:}\)</span></p>
+<p id="p-589">A map between Euclidean spaces <span class="process-math">\(T:\IR^n\to\IR^m\)</span> is linear exactly when every component of the output is a linear combination of the variables of <span class="process-math">\(\IR^n\text{.}\)</span></p>
+<p id="p-590">For example, the following map is definitely linear because <span class="process-math">\(x-z\)</span> and <span class="process-math">\(3y\)</span> are linear combinations of <span class="process-math">\(x,y,z\text{:}\)</span></p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 T\left(\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
 =
 \left[\begin{array}{c} x-z \\ 3y \end{array}\right]
 =
-\left[\begin{array}{c} 1x+0y-1z \\ 0x+3y+0z \end{array}\right]
+\left[\begin{array}{c} 1x+0y-1z \\ 0x+3y+0z \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p id="p-588">But the map below is not linear because <span class="process-math">\(x^2\text{,}\)</span> <span class="process-math">\(y+3\text{,}\)</span> and <span class="process-math">\(y-2^x\)</span> are not linear combinations (even though <span class="process-math">\(x+y\)</span> is):</p>
+<p id="p-591">But the map below is not linear because <span class="process-math">\(x^2\text{,}\)</span> <span class="process-math">\(y+3\text{,}\)</span> and <span class="process-math">\(y-2^x\)</span> are not linear combinations (even though <span class="process-math">\(x+y\)</span> is):</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 S\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right)
@@ -352,7 +355,7 @@ S\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right)
 </div></article><article class="activity project-like" id="activity-81"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
 </h4>
-<p id="p-589">Let <span class="process-math">\(D:\P\to\P\)</span> be the derivative map defined by <span class="process-math">\(D(f(x))=f'(x)\)</span> for each polynomial <span class="process-math">\(f \in \P\text{.}\)</span> We recall from calculus that</p>
+<p id="p-592">Let <span class="process-math">\(D:\P\to\P\)</span> be the derivative map defined by <span class="process-math">\(D(f(x))=f'(x)\)</span> for each polynomial <span class="process-math">\(f \in \P\text{.}\)</span> We recall from calculus that</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 D(f+g)=f'(x)+g'(x)\text{,}
@@ -362,25 +365,25 @@ D(f+g)=f'(x)+g'(x)\text{,}
 D(cf(x))=cf'(x)\text{.}
 \end{equation*}
 </div>
-<p id="p-590">Which of the following can we conclude from these calculus rules?</p>
-<ol class="lower-alpha">
-<li id="li-307"><p id="p-591"><span class="process-math">\(\P\)</span> is not a vector space</p></li>
-<li id="li-308"><p id="p-592"><span class="process-math">\(D\)</span> is a linear map</p></li>
-<li id="li-309"><p id="p-593"><span class="process-math">\(D\)</span> is not a linear map</p></li>
+<p id="p-593">Which of the following can we conclude from these calculus rules?</p>
+<ol class="upper-alpha cols2">
+<li id="li-305"><p id="p-594"><span class="process-math">\(\P\)</span> is not a vector space</p></li>
+<li id="li-306"><p id="p-595"><span class="process-math">\(D\)</span> is a linear map</p></li>
+<li id="li-307"><p id="p-596"><span class="process-math">\(D\)</span> is not a linear map</p></li>
 </ol></article><article class="activity project-like" id="activity-82"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span>
 </h4>
-<p id="p-594">Let the polynomial maps <span class="process-math">\(S: \P_4 \rightarrow \P_3\)</span> and <span class="process-math">\(T: \P_4 \rightarrow \P_3\)</span> be defined by</p>
+<p id="p-597">Let the polynomial maps <span class="process-math">\(S: \P_4 \rightarrow \P_3\)</span> and <span class="process-math">\(T: \P_4 \rightarrow \P_3\)</span> be defined by</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 S(f(x)) = 2f'(x)-f''(x) \hspace{3em} T(f(x)) = f'(x)+x^3\text{.}
 \end{equation*}
 </div>
-<p id="p-595">Compute <span class="process-math">\(S(x^4+x)\text{,}\)</span> <span class="process-math">\(S(x^4)+S(x)\text{,}\)</span> <span class="process-math">\(T(x^4+x)\text{,}\)</span> and <span class="process-math">\(T(x^4)+T(x)\text{.}\)</span> Based on these computations, can you conclude that either <span class="process-math">\(S\)</span> or <span class="process-math">\(T\)</span> is definitely not a linear transformation?</p></article><article class="fact theorem-like" id="fact-15"><h4 class="heading">
+<p id="p-598">Compute <span class="process-math">\(S(x^4+x)\text{,}\)</span> <span class="process-math">\(S(x^4)+S(x)\text{,}\)</span> <span class="process-math">\(T(x^4+x)\text{,}\)</span> and <span class="process-math">\(T(x^4)+T(x)\text{.}\)</span> Based on these computations, can you conclude that either <span class="process-math">\(S\)</span> or <span class="process-math">\(T\)</span> is definitely not a linear transformation?</p></article><article class="fact theorem-like" id="fact-15"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span>
 </h4>
-<p id="p-596">If <span class="process-math">\(L:V\to W\)</span> is a linear transformation, then <span class="process-math">\(L(\vec z)=L(0\vec v)=0L(\vec v)=\vec z\)</span> where <span class="process-math">\(\vec z\)</span> is the additive identity of the vector spaces <span class="process-math">\(V,W\text{.}\)</span></p>
-<p id="p-597">Put another way, an easy way to prove that a map like <span class="process-math">\(T(f(x)) = f'(x)+x^3\)</span> can not be linear is to check that</p>
+<p id="p-599">If <span class="process-math">\(L:V\to W\)</span> is a linear transformation, then <span class="process-math">\(L(\vec z)=L(0\vec v)=0L(\vec v)=\vec z\)</span> where <span class="process-math">\(\vec z\)</span> is the additive identity of the vector spaces <span class="process-math">\(V,W\text{.}\)</span></p>
+<p id="p-600">Put another way, an easy way to prove that a map like <span class="process-math">\(T(f(x)) = f'(x)+x^3\)</span> can not be linear is to check that</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 T(0)=\frac{d}{dx}[0]+x^3=0+x^3=x^3\not=0.
@@ -388,70 +391,74 @@ T(0)=\frac{d}{dx}[0]+x^3=0+x^3=x^3\not=0.
 </div></article><article class="observation remark-like" id="observation-17"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span>
 </h4>
-<p id="p-598">Showing <span class="process-math">\(T:V\to W\)</span> is not a linear transformation can be done by finding an example for any one of the following.</p>
+<p id="p-601">Showing <span class="process-math">\(T:V\to W\)</span> is not a linear transformation can be done by finding an example for any one of the following.</p>
 <ul class="disc">
-<li id="li-310"><p id="p-599">Show <span class="process-math">\(T(\vec z)\not=\vec z\)</span> (where <span class="process-math">\(\vec z\)</span> is the additive identity of <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span>).</p></li>
-<li id="li-311"><p id="p-600">Find <span class="process-math">\(\vec v,\vec w\in V\)</span> such that <span class="process-math">\(T(\vec v+\vec w)\not=T(\vec v)+T(\vec w)\text{.}\)</span></p></li>
-<li id="li-312"><p id="p-601">Find <span class="process-math">\(\vec v\in V\)</span> and <span class="process-math">\(c\in \IR\)</span> such that <span class="process-math">\(T(c\vec v)\not=cT(\vec v)\text{.}\)</span></p></li>
+<li id="li-308"><p id="p-602">Show <span class="process-math">\(T(\vec z)\not=\vec z\)</span> (where <span class="process-math">\(\vec z\)</span> is the additive identity of <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span>).</p></li>
+<li id="li-309"><p id="p-603">Find <span class="process-math">\(\vec v,\vec w\in V\)</span> such that <span class="process-math">\(T(\vec v+\vec w)\not=T(\vec v)+T(\vec w)\text{.}\)</span></p></li>
+<li id="li-310"><p id="p-604">Find <span class="process-math">\(\vec v\in V\)</span> and <span class="process-math">\(c\in \IR\)</span> such that <span class="process-math">\(T(c\vec v)\not=cT(\vec v)\text{.}\)</span></p></li>
 </ul>
-<p id="p-602">Otherwise, <span class="process-math">\(T\)</span> can be shown to be linear by proving the following in general.</p>
+<p id="p-605">Otherwise, <span class="process-math">\(T\)</span> can be shown to be linear by proving the following in general.</p>
 <ul class="disc">
-<li id="li-313"><p id="p-603">For all <span class="process-math">\(\vec v,\vec w\in V\text{,}\)</span> <span class="process-math">\(T(\vec v+\vec w)=T(\vec v)+T(\vec w)\text{.}\)</span></p></li>
-<li id="li-314"><p id="p-604">For all <span class="process-math">\(\vec v\in V\)</span> and <span class="process-math">\(c\in \IR\text{,}\)</span> <span class="process-math">\(T(c\vec v)=cT(\vec v)\text{.}\)</span></p></li>
+<li id="li-311"><p id="p-606">For all <span class="process-math">\(\vec v,\vec w\in V\text{,}\)</span> <span class="process-math">\(T(\vec v+\vec w)=T(\vec v)+T(\vec w)\text{.}\)</span></p></li>
+<li id="li-312"><p id="p-607">For all <span class="process-math">\(\vec v\in V\)</span> and <span class="process-math">\(c\in \IR\text{,}\)</span> <span class="process-math">\(T(c\vec v)=cT(\vec v)\text{.}\)</span></p></li>
 </ul>
-<p id="p-605">Note the similarities between this process and showing that a subset of a vector space is or is not a subspace.</p></article><article class="activity project-like" id="activity-83"><h4 class="heading">
+<p id="p-608">Note the similarities between this process and showing that a subset of a vector space is or is not a subspace.</p></article><article class="activity project-like" id="activity-83"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-38">
-<p id="p-606">Continue to consider <span class="process-math">\(S: \P_4 \rightarrow \P_3\)</span> defined by</p>
+<div class="introduction" id="introduction-40">
+<p id="p-609">Continue to consider <span class="process-math">\(S: \P_4 \rightarrow \P_3\)</span> defined by</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-S(f(x)) = 2f'(x)-f''(x)
+S(f(x)) = 2f'(x)-f''(x)\text{.}
 \end{equation*}
 </div>
 </div>
-<article class="task exercise-like" id="task-83"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-607">Verify that</p>
+<article class="task exercise-like" id="task-89"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-610">Verify that</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 S(f(x)+g(x))=2f'(x)+2g'(x)-f''(x)-g''(x)
 \end{equation*}
 </div>
-<p class="continuation">is equal to <span class="process-math">\(S(f(x))+S(g(x))\)</span> for all polynomials <span class="process-math">\(f,g \in \P_4\text{.}\)</span></p></article><article class="task exercise-like" id="task-84"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-608">Verify that <span class="process-math">\(S(cf(x))\)</span> is equal to <span class="process-math">\(cS(f(x))\)</span> for all real numbers <span class="process-math">\(c\)</span> and polynomials <span class="process-math">\(f \in \P_4\text{.}\)</span></p></article><article class="task exercise-like" id="task-85"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-609">Is <span class="process-math">\(S\)</span> linear?</p></article></article><article class="activity project-like" id="activity-84"><h4 class="heading">
+<p class="continuation">is equal to <span class="process-math">\(S(f(x))+S(g(x))\)</span> for all polynomials <span class="process-math">\(f,g \in \P_4\text{.}\)</span></p></article><article class="task exercise-like" id="task-90"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-611">Verify that <span class="process-math">\(S(cf(x))\)</span> is equal to <span class="process-math">\(cS(f(x))\)</span> for all real numbers <span class="process-math">\(c\)</span> and polynomials <span class="process-math">\(f \in \P_4\text{.}\)</span></p></article><article class="task exercise-like" id="task-91"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-612">Is <span class="process-math">\(S\)</span> linear?</p></article></article><article class="activity project-like" id="activity-84"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-39">
-<p id="p-610">Let polynomial maps <span class="process-math">\(S: \P \rightarrow \P\)</span> and <span class="process-math">\(T: \P \rightarrow \P\)</span> be defined by</p>
+<div class="introduction" id="introduction-41">
+<p id="p-613">Let polynomial maps <span class="process-math">\(S: \P \rightarrow \P\)</span> and <span class="process-math">\(T: \P \rightarrow \P\)</span> be defined by</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 S(f(x)) = (f(x))^2 \hspace{3em} T(f(x)) = 3xf(x^2)
 \end{equation*}
 </div>
 </div>
-<article class="task exercise-like" id="task-86"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-611">Note that <span class="process-math">\(S(0)=0\)</span> and <span class="process-math">\(T(0)=0\text{.}\)</span> So instead, show that <span class="process-math">\(S(x+1)\not= S(x)+S(1)\)</span> to verify that <span class="process-math">\(S\)</span> is not linear.</p></article><article class="task exercise-like" id="task-87"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-612">Prove that <span class="process-math">\(T\)</span> is linear by verifying that <span class="process-math">\(T(f(x)+g(x))=T(f(x))+T(g(x))\)</span> and <span class="process-math">\(T(cf(x))=cT(f(x))\text{.}\)</span></p></article></article></section><section class="subsection" id="subsection-67"><h3 class="heading hide-type">
+<article class="task exercise-like" id="task-92"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-614">Note that <span class="process-math">\(S(0)=0\)</span> and <span class="process-math">\(T(0)=0\text{.}\)</span> So instead, show that <span class="process-math">\(S(x+1)\not= S(x)+S(1)\)</span> to verify that <span class="process-math">\(S\)</span> is not linear.</p></article><article class="task exercise-like" id="task-93"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-615">Prove that <span class="process-math">\(T\)</span> is linear by verifying that <span class="process-math">\(T(f(x)+g(x))=T(f(x))+T(g(x))\)</span> and <span class="process-math">\(T(cf(x))=cT(f(x))\text{.}\)</span></p></article></article></section><section class="subsection" id="subsection-67"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.2</span> <span class="title">Videos</span>
 </h3>
-<figure class="figure figure-like" id="figure-25"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-AT1-1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/b1BC2rceq44?&amp;modestbranding=1&amp;rel=0"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">25<span class="period">.</span></span><span class="space"> </span>Video: Showing a transformation is linear</figcaption></figure><figure class="figure figure-like" id="figure-26"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-AT1-2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Z4tUZgJrCxU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">26<span class="period">.</span></span><span class="space"> </span>Video: Showing a transformation is not linear</figcaption></figure></section><section class="subsection" id="subsection-68"><h3 class="heading hide-type">
+<figure class="figure figure-like" id="figure-24"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-AT1-1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/b1BC2rceq44?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">24<span class="period">.</span></span><span class="space"> </span>Video: Showing a transformation is linear</figcaption></figure><figure class="figure figure-like" id="figure-25"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-AT1-2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Z4tUZgJrCxU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">25<span class="period">.</span></span><span class="space"> </span>Video: Showing a transformation is not linear</figcaption></figure></section><section class="subsection" id="subsection-68"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.3</span> <span class="title">Slideshow</span>
 </h3>
-<p id="p-613">Slideshow of activities available at <a class="external" href="AT1.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">AT1.slides.html</code></a>.</p></section><section class="exercises" id="exercises-14"><h3 class="heading hide-type">
+<p id="p-616">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/AT1.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/AT1.slides.html</code></a>.</p></section><section class="exercises" id="exercises-14"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">3.1.4</span> <span class="title">Exercises</span>
 </h3>
-<p id="p-614">Exercises available at <a class="external" href="https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/AT1/" target="_blank"><code class="code-inline tex2jax_ignore">https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/AT1/</code></a>.</p></section><section class="subsection" id="subsection-69"><h3 class="heading hide-type">
+<p id="p-617">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/2022/exercises/#/bank/AT1/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/2022/exercises/#/bank/AT1/</code></a>.</p></section><section class="subsection" id="subsection-69"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-29"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span>
-</h4>If <span class="process-math">\(V,W\)</span> are vectors spaces, with associated zero vectors <span class="process-math">\(\vec{0}_V\)</span> and <span class="process-math">\(\vec{0}_W\text{,}\)</span> and <span class="process-math">\(T:V \rightarrow W\)</span> is a linear transformation, does <span class="process-math">\(T(\vec{0}_V)  = \vec{0}_W\text{?}\)</span> Prove this is true, or find a counterexample.Assume <span class="process-math">\(f: V \rightarrow W\)</span> is a linear transformation between vector spaces. Let <span class="process-math">\(\vec{v} \in V\)</span> with additive inverse <span class="process-math">\(\vec{v}^{-1}\text{.}\)</span> Prove that <span class="process-math">\(f(\vec{v}^{-1}) = [f(\vec{v})]^{-1}\text{.}\)</span></article></section><section class="subsection" id="subsection-70"><h3 class="heading hide-type">
+</h4>
+<p id="p-618">If <span class="process-math">\(V,W\)</span> are vectors spaces, with associated zero vectors <span class="process-math">\(\vec{0}_V\)</span> and <span class="process-math">\(\vec{0}_W\text{,}\)</span> and <span class="process-math">\(T:V \rightarrow W\)</span> is a linear transformation, does <span class="process-math">\(T(\vec{0}_V)  = \vec{0}_W\text{?}\)</span> Prove this is true, or find a counterexample.</p></article><article class="exploration project-like" id="exploration-30"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.1.13</span><span class="period">.</span>
+</h4>
+<p id="p-619">Assume <span class="process-math">\(f: V \rightarrow W\)</span> is a linear transformation between vector spaces. Let <span class="process-math">\(\vec{v} \in V\)</span> with additive inverse <span class="process-math">\(\vec{v}^{-1}\text{.}\)</span> Prove that <span class="process-math">\(f(\vec{v}^{-1}) = [f(\vec{v})]^{-1}\text{.}\)</span></p></article></section><section class="subsection" id="subsection-70"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.6</span> <span class="title">Sample Problem and Solution</span>
 </h3>
-<p id="p-615">Sample problem <a href="" class="xref" data-knowl="./knowl/sampleAT1.html" title="Example B.1.14: AT1">Example B.1.14</a>.</p></section></section></div></main>
+<p id="p-620">Sample problem <a href="" class="xref" data-knowl="./knowl/sampleAT1.html" title="Example B.1.14: AT1">Example B.1.14</a>.</p></section></section></div></main>
 </div>
 </body>
 </html>

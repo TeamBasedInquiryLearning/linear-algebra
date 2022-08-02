@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-07-29T00:10:10Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -51,6 +48,14 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      $(document).trigger("runestone:mathjax-ready");
+      }
+    )}
+},
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
@@ -157,9 +162,9 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
 <li><a href="colophon.html" data-scroll="colophon" class="internal">Colophon</a></li>
+<li><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal">TBIL Resource Library</a></li>
 <li><a href="instructor-notes.html" data-scroll="instructor-notes" class="internal">For Instructors</a></li>
 <li><a href="video-resources.html" data-scroll="video-resources" class="internal">Video Resources</a></li>
-<li><a href="printable-pdf.html" data-scroll="printable-pdf" class="internal">Printable PDF</a></li>
 <li><a href="slideshows.html" data-scroll="slideshows" class="internal">Slideshows</a></li>
 </ul>
 </li>
@@ -222,53 +227,51 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 </ul>
 </li>
 <li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
-<li class="link"><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal"><span class="title">TBIL Resource Library</span></a></li>
-<li class="link"><a href="pretext.html" data-scroll="pretext" class="internal"><span class="title">Authored with PreTeXt</span></a></li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="VS3"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Spanning Sets (VS3)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-9"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
-<ul class="disc"><li id="li-197"><p id="p-356">Determine if a set of Euclidean vectors spans <span class="process-math">\(\IR^n\)</span> by solving appropriate vector equations.</p></li></ul></article><section class="subsection" id="subsection-31"><h3 class="heading hide-type">
+<ul class="disc"><li id="li-195"><p id="p-355">Determine if a set of Euclidean vectors spans <span class="process-math">\(\IR^n\)</span> by solving appropriate vector equations.</p></li></ul></article><section class="subsection" id="subsection-31"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">Class Activities</span>
 </h3>
 <article class="observation remark-like" id="observation-6"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
 </h4>
-<p id="p-357">Any single non-zero vector/number <span class="process-math">\(x\)</span> in <span class="process-math">\(\IR^1\)</span> spans <span class="process-math">\(\IR^1\text{,}\)</span> since <span class="process-math">\(\IR^1=\setBuilder{cx}{c\in\IR}\text{.}\)</span></p>
+<p id="p-356">Any single non-zero vector/number <span class="process-math">\(x\)</span> in <span class="process-math">\(\IR^1\)</span> spans <span class="process-math">\(\IR^1\text{,}\)</span> since <span class="process-math">\(\IR^1=\setBuilder{cx}{c\in\IR}\text{.}\)</span></p>
 <figure class="figure figure-like" id="figure-8"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-1.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8<span class="period">.</span></span><span class="space"> </span>An <span class="process-math">\(\IR^1\)</span> vector</figcaption></figure></article><article class="activity project-like" id="activity-42"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
 </h4>
-<p id="p-358">How many vectors are required to span <span class="process-math">\(\IR^2\text{?}\)</span> Sketch a drawing in the <span class="process-math">\(xy\)</span> plane to support your answer.</p>
+<p id="p-357">How many vectors are required to span <span class="process-math">\(\IR^2\text{?}\)</span> Sketch a drawing in the <span class="process-math">\(xy\)</span> plane to support your answer.</p>
 <figure class="figure figure-like" id="figure-9"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-2.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9<span class="period">.</span></span><span class="space"> </span>The <span class="process-math">\(xy\)</span> plane <span class="process-math">\(\IR^2\)</span></figcaption></figure><ol class="lower-alpha">
-<li id="li-198"><p id="p-359"><span class="process-math">\(\displaystyle 1\)</span></p></li>
-<li id="li-199"><p id="p-360"><span class="process-math">\(\displaystyle 2\)</span></p></li>
-<li id="li-200"><p id="p-361"><span class="process-math">\(\displaystyle 3\)</span></p></li>
-<li id="li-201"><p id="p-362"><span class="process-math">\(\displaystyle 4\)</span></p></li>
-<li id="li-202"><p id="p-363">Infinitely Many</p></li>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9<span class="period">.</span></span><span class="space"> </span>The <span class="process-math">\(xy\)</span> plane <span class="process-math">\(\IR^2\)</span></figcaption></figure><ol class="upper-alpha cols2">
+<li id="li-196"><p id="p-358"><span class="process-math">\(\displaystyle 1\)</span></p></li>
+<li id="li-197"><p id="p-359"><span class="process-math">\(\displaystyle 2\)</span></p></li>
+<li id="li-198"><p id="p-360"><span class="process-math">\(\displaystyle 3\)</span></p></li>
+<li id="li-199"><p id="p-361"><span class="process-math">\(\displaystyle 4\)</span></p></li>
+<li id="li-200"><p id="p-362">Infinitely Many</p></li>
 </ol></article><article class="activity project-like" id="activity-43"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
 </h4>
-<p id="p-364">How many vectors are required to span <span class="process-math">\(\IR^3\text{?}\)</span></p>
+<p id="p-363">How many vectors are required to span <span class="process-math">\(\IR^3\text{?}\)</span></p>
 <figure class="figure figure-like" id="figure-10"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-3.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(\IR^3\)</span> space</figcaption></figure><ol class="lower-alpha">
-<li id="li-203"><p id="p-365"><span class="process-math">\(\displaystyle 1\)</span></p></li>
-<li id="li-204"><p id="p-366"><span class="process-math">\(\displaystyle 2\)</span></p></li>
-<li id="li-205"><p id="p-367"><span class="process-math">\(\displaystyle 3\)</span></p></li>
-<li id="li-206"><p id="p-368"><span class="process-math">\(\displaystyle 4\)</span></p></li>
-<li id="li-207"><p id="p-369">Infinitely Many</p></li>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(\IR^3\)</span> space</figcaption></figure><ol class="upper-alpha cols2">
+<li id="li-201"><p id="p-364"><span class="process-math">\(\displaystyle 1\)</span></p></li>
+<li id="li-202"><p id="p-365"><span class="process-math">\(\displaystyle 2\)</span></p></li>
+<li id="li-203"><p id="p-366"><span class="process-math">\(\displaystyle 3\)</span></p></li>
+<li id="li-204"><p id="p-367"><span class="process-math">\(\displaystyle 4\)</span></p></li>
+<li id="li-205"><p id="p-368">Infinitely Many</p></li>
 </ol></article><article class="fact theorem-like" id="fact-4"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
 </h4>
-<p id="p-370">At least <span class="process-math">\(n\)</span> vectors are required to span <span class="process-math">\(\IR^n\text{.}\)</span></p>
+<p id="p-369">At least <span class="process-math">\(n\)</span> vectors are required to span <span class="process-math">\(\IR^n\text{.}\)</span></p>
 <figure class="figure figure-like" id="figure-11"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-4.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11<span class="period">.</span></span><span class="space"> </span>Failed attempts to span <span class="process-math">\(\IR^n\)</span> by <span class="process-math">\(&lt;n\)</span> vectors</figcaption></figure></article><article class="activity project-like" id="activity-44"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span>
 </h4>
-<p id="p-371">Choose any vector <span class="process-math">\(\left[\begin{array}{c}\unknown\\\unknown\\\unknown\end{array}\right]\)</span> in <span class="process-math">\(\IR^3\)</span> that is not in <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\-1\\0\end{array}\right],
+<p id="p-370">Choose any vector <span class="process-math">\(\left[\begin{array}{c}\unknown\\\unknown\\\unknown\end{array}\right]\)</span> in <span class="process-math">\(\IR^3\)</span> that is not in <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\-1\\0\end{array}\right],
 \left[\begin{array}{c}-2\\0\\1\end{array}\right]\right\}\)</span> by using technology to verify that <span class="process-math">\(\RREF
 \left[\begin{array}{cc|c}1&amp;-2&amp;\unknown\\-1&amp;0&amp;\unknown\\0&amp;1&amp;\unknown\end{array}\right]
 =
@@ -277,14 +280,14 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <article class="fact theorem-like" id="fact-5"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span>
 </h4>
-<p id="p-372">The set <span class="process-math">\(\{\vec v_1,\dots,\vec v_m\}\)</span> fails to span all of <span class="process-math">\(\IR^n\)</span> exactly when the vector equation</p>
+<p id="p-371">The set <span class="process-math">\(\{\vec v_1,\dots,\vec v_m\}\)</span> fails to span all of <span class="process-math">\(\IR^n\)</span> exactly when the vector equation</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 x_1 \vec{v}_1 + \cdots x_m\vec{v}_m = \vec{w} 
 \end{equation*}
 </div>
 <p class="continuation">is inconsistent for <em class="emphasis">some</em> vector <span class="process-math">\(\vec{w}\text{.}\)</span></p>
-<p id="p-373">Note that this happens exactly when <span class="process-math">\(\RREF[\vec v_1\,\dots\,\vec v_m]\)</span> has a non-pivot row of zeros.</p>
+<p id="p-372">Note that this happens exactly when <span class="process-math">\(\RREF[\vec v_1\,\dots\,\vec v_m]\)</span> has a non-pivot row of zeros.</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[\begin{array}{cc}1&amp;-2\\-1&amp;0\\0&amp;1\end{array}\right]\sim
@@ -301,21 +304,21 @@ x_1 \vec{v}_1 + \cdots x_m\vec{v}_m = \vec{w}
 </div></article><article class="activity project-like" id="activity-45"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-22"><p id="p-374">Consider the set of vectors <span class="process-math">\(S=\left\{
+<div class="introduction" id="introduction-23"><p id="p-373">Consider the set of vectors <span class="process-math">\(S=\left\{
 \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
 \left[\begin{array}{c}1\\-4\\3\\0\end{array}\right],
 \left[\begin{array}{c}1\\7\\-3\\-1\end{array}\right],
 \left[\begin{array}{c}0\\3\\5\\7\end{array}\right],
 \left[\begin{array}{c}3\\13\\7\\16\end{array}\right]
 \right\}\)</span> and the question “Does <span class="process-math">\(\IR^4=\vspan S\text{?}\)</span>”</p></div>
-<article class="task exercise-like" id="task-47"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-375">Rewrite this question in terms of the solutions to a vector equation.</p></article><article class="task exercise-like" id="task-48"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-376">Answer your new question, and use this to answer the original question.</p></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-13"><script type="text/x-sage"></script></pre>
+<article class="task exercise-like" id="task-49"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-374">Rewrite this question in terms of the solutions to a vector equation.</p></article><article class="task exercise-like" id="task-50"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-375">Answer your new question, and use this to answer the original question.</p></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-13"><script type="text/x-sage"></script></pre>
 <article class="activity project-like" id="activity-46"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.8</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-23">
-<p id="p-377">Consider the set of third-degree polynomials</p>
+<div class="introduction" id="introduction-24">
+<p id="p-376">Consider the set of third-degree polynomials</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="md-31">
 \begin{align*}
 S=\{
@@ -328,14 +331,14 @@ S=\{
 </div>
 <p class="continuation">and the question “Does <span class="process-math">\(\P_3=\vspan S\text{?}\)</span>”</p>
 </div>
-<article class="task exercise-like" id="task-49"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-378">Rewrite this question to be about the solutions to a polynomial equation.</p></article><article class="task exercise-like" id="task-50"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-379">Answer your new question, and use this to answer the original question.</p></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-14"><script type="text/x-sage"></script></pre>
+<article class="task exercise-like" id="task-51"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-377">Rewrite this question to be about the solutions to a polynomial equation.</p></article><article class="task exercise-like" id="task-52"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-378">Answer your new question, and use this to answer the original question.</p></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-14"><script type="text/x-sage"></script></pre>
 <article class="activity project-like" id="activity-47"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.9</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-24">
-<p id="p-380">Consider the set of matrices</p>
+<div class="introduction" id="introduction-25">
+<p id="p-379">Consider the set of matrices</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 S = \left\{
@@ -347,17 +350,17 @@ S = \left\{
 </div>
 <p class="continuation">and the question “Does <span class="process-math">\(M_{2,2} = \vspan S\text{?}\)</span>”</p>
 </div>
-<article class="task exercise-like" id="task-51"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-381">Rewrite this as a question about the solutions to a matrix equation.</p></article><article class="task exercise-like" id="task-52"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-382">Answer your new question, and use this to answer the original question.</p></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-15"><script type="text/x-sage"></script></pre>
+<article class="task exercise-like" id="task-53"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-380">Rewrite this as a question about the solutions to a matrix equation.</p></article><article class="task exercise-like" id="task-54"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-381">Answer your new question, and use this to answer the original question.</p></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-15"><script type="text/x-sage"></script></pre>
 <article class="activity project-like" id="activity-48"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.10</span><span class="period">.</span>
 </h4>
-<p id="p-383">Let <span class="process-math">\(\vec{v}_1, \vec{v}_2, \vec{v}_3 \in \IR^7\)</span> be three vectors, and suppose <span class="process-math">\(\vec{w}\)</span> is another vector with <span class="process-math">\(\vec{w} \in \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\}\text{.}\)</span> What can you conclude about <span class="process-math">\(\vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \text{?}\)</span></p>
-<ol class="lower-alpha">
-<li id="li-208"><p id="p-derived-li-208"><span class="process-math">\(\vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \)</span> is larger than <span class="process-math">\(\vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \text{.}\)</span></p></li>
-<li id="li-209"><p id="p-derived-li-209"><span class="process-math">\(\vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\}  = \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \text{.}\)</span></p></li>
-<li id="li-210"><p id="p-derived-li-210"><span class="process-math">\(\vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \)</span> is smaller than <span class="process-math">\(\vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \text{.}\)</span></p></li>
+<p id="p-382">Let <span class="process-math">\(\vec{v}_1, \vec{v}_2, \vec{v}_3 \in \IR^7\)</span> be three vectors, and suppose <span class="process-math">\(\vec{w}\)</span> is another vector with <span class="process-math">\(\vec{w} \in \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\}\text{.}\)</span> What can you conclude about <span class="process-math">\(\vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \text{?}\)</span></p>
+<ol class="upper-alpha">
+<li id="li-206"><p id="p-derived-li-206"><span class="process-math">\(\vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \)</span> is larger than <span class="process-math">\(\vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \text{.}\)</span></p></li>
+<li id="li-207"><p id="p-derived-li-207"><span class="process-math">\(\vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\}  = \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \text{.}\)</span></p></li>
+<li id="li-208"><p id="p-derived-li-208"><span class="process-math">\(\vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \)</span> is smaller than <span class="process-math">\(\vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \text{.}\)</span></p></li>
 </ol></article></section><section class="subsection" id="subsection-32"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">Videos</span>
 </h3>
@@ -365,25 +368,25 @@ S = \left\{
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12<span class="period">.</span></span><span class="space"> </span>Video: Determining if a set spans a Euclidean space</figcaption></figure></section><section class="subsection" id="subsection-33"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.3</span> <span class="title">Slideshow</span>
 </h3>
-<p id="p-384">Slideshow of activities available at <a class="external" href="VS3.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">VS3.slides.html</code></a>.</p></section><section class="exercises" id="exercises-7"><h3 class="heading hide-type">
+<p id="p-383">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/VS3.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/VS3.slides.html</code></a>.</p></section><section class="exercises" id="exercises-7"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">2.3.4</span> <span class="title">Exercises</span>
 </h3>
-<p id="p-385">Exercises available at <a class="external" href="https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/VS3/" target="_blank"><code class="code-inline tex2jax_ignore">https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/VS3/</code></a>.</p></section><section class="subsection" id="subsection-34"><h3 class="heading hide-type">
+<p id="p-384">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/2022/exercises/#/bank/VS3/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/2022/exercises/#/bank/VS3/</code></a>.</p></section><section class="subsection" id="subsection-34"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-12"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.3.11</span><span class="period">.</span>
 </h4>Construct each of the following, or show that it is impossible: <ul class="disc">
-<li id="li-211"><p id="p-derived-li-211">A set of 2 vectors that spans <span class="process-math">\(\mathbb{R}^3\)</span></p></li>
-<li id="li-212"><p id="p-derived-li-212">A set of 3 vectors that spans <span class="process-math">\(\mathbb{R}^3\)</span></p></li>
-<li id="li-213"><p id="p-derived-li-213">A set of 3 vectors that does not span <span class="process-math">\(\mathbb{R}^3\)</span></p></li>
-<li id="li-214"><p id="p-derived-li-214">A set of 4 vectors that spans <span class="process-math">\(\mathbb{R}^3\)</span></p></li>
+<li id="li-209"><p id="p-derived-li-209">A set of 2 vectors that spans <span class="process-math">\(\mathbb{R}^3\)</span></p></li>
+<li id="li-210"><p id="p-derived-li-210">A set of 3 vectors that spans <span class="process-math">\(\mathbb{R}^3\)</span></p></li>
+<li id="li-211"><p id="p-derived-li-211">A set of 3 vectors that does not span <span class="process-math">\(\mathbb{R}^3\)</span></p></li>
+<li id="li-212"><p id="p-derived-li-212">A set of 4 vectors that spans <span class="process-math">\(\mathbb{R}^3\)</span></p></li>
 </ul> For any of the sets you constructed that did span the required space, are any of the vectors a linear combination of the others in your set?</article><article class="exploration project-like" id="exploration-13"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.3.12</span><span class="period">.</span>
 </h4>Based on these results, generalize this a conjecture about how a set of <span class="process-math">\(n-1, n\)</span> and <span class="process-math">\(n+1\)</span> vectors would or would not span <span class="process-math">\(\mathbb{R}^n\text{.}\)</span></article></section><section class="subsection" id="subsection-35"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.6</span> <span class="title">Sample Problem and Solution</span>
 </h3>
-<p id="p-386">Sample problem <a href="" class="xref" data-knowl="./knowl/sampleVS3.html" title="Example B.1.7: VS3">Example B.1.7</a>.</p></section></section></div></main>
+<p id="p-385">Sample problem <a href="" class="xref" data-knowl="./knowl/sampleVS3.html" title="Example B.1.7: VS3">Example B.1.7</a>.</p></section></section></div></main>
 </div>
 </body>
 </html>

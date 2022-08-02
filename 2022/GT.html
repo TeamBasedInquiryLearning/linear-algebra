@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-07-29T00:10:12Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -51,6 +48,14 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      $(document).trigger("runestone:mathjax-ready");
+      }
+    )}
+},
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
@@ -157,9 +162,9 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
 <li><a href="colophon.html" data-scroll="colophon" class="internal">Colophon</a></li>
+<li><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal">TBIL Resource Library</a></li>
 <li><a href="instructor-notes.html" data-scroll="instructor-notes" class="internal">For Instructors</a></li>
 <li><a href="video-resources.html" data-scroll="video-resources" class="internal">Video Resources</a></li>
-<li><a href="printable-pdf.html" data-scroll="printable-pdf" class="internal">Printable PDF</a></li>
 <li><a href="slideshows.html" data-scroll="slideshows" class="internal">Slideshows</a></li>
 </ul>
 </li>
@@ -222,8 +227,6 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 </ul>
 </li>
 <li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
-<li class="link"><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal"><span class="title">TBIL Resource Library</span></a></li>
-<li class="link"><a href="pretext.html" data-scroll="pretext" class="internal"><span class="title">Authored with PreTeXt</span></a></li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content">
@@ -231,47 +234,47 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <span class="type">Chapter</span> <span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (GT)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-25"><h2 class="heading"><span class="type">Learning Outcomes</span></h2>
-<div class="introduction" id="introduction-54">
-<p id="p-910">What is a vector space?</p>
-<p id="p-911">By the end of this chapter, you should be able to...</p>
+<div class="introduction" id="introduction-56">
+<p id="p-915">How do we understand linear maps geometrically?</p>
+<p id="p-916">By the end of this chapter, you should be able to...</p>
 </div>
 <ol class="decimal">
-<li id="li-510"><p id="p-912">Describe how a row operation affects the determinant of a matrix.</p></li>
-<li id="li-511"><p id="p-913">Compute the determinant of a <span class="process-math">\(4\times 4\)</span> matrix.</p></li>
-<li id="li-512"><p id="p-914">Find the eigenvalues of a <span class="process-math">\(2\times 2\)</span> matrix.</p></li>
-<li id="li-513"><p id="p-915">Find a basis for the eigenspace of a <span class="process-math">\(4\times 4\)</span> matrix associated with a given eigenvalue.</p></li>
+<li id="li-508"><p id="p-917">Describe how a row operation affects the determinant of a matrix.</p></li>
+<li id="li-509"><p id="p-918">Compute the determinant of a <span class="process-math">\(4\times 4\)</span> matrix.</p></li>
+<li id="li-510"><p id="p-919">Find the eigenvalues of a <span class="process-math">\(2\times 2\)</span> matrix.</p></li>
+<li id="li-511"><p id="p-920">Find a basis for the eigenspace of a <span class="process-math">\(4\times 4\)</span> matrix associated with a given eigenvalue.</p></li>
 </ol></article><section class="introduction" id="GT-intro"><section class="paragraphs" id="GT-readiness"><h2 class="heading"><span class="title">Readiness Assurance.</span></h2>
-<p id="p-916">Before beginning this chapter, you should be able to...</p>
-<ol class="lower-alpha">
+<p id="p-921">Before beginning this chapter, you should be able to...</p>
+<ol class="decimal">
+<li id="li-512">
+<p id="p-922">Calculate the area of a parallelogram.</p>
+<ul class="disc"><li id="li-513"><p id="p-923">Review: <a class="external" href="https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-geometry-topic/cc-6th-parallelogram-area/v/intuition-for-area-of-a-parallelogram" target="_blank">Khan Academy</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-44" id="fn-44"><sup> 1 </sup></a></p></li></ul>
+</li>
 <li id="li-514">
-<p id="p-917">Calculate the area of a parallelogram.</p>
-<ul class="disc"><li id="li-515"><p id="p-918">Review: <a class="external" href="https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-geometry-topic/cc-6th-parallelogram-area/v/intuition-for-area-of-a-parallelogram" target="_blank">Khan Academy</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-41" id="fn-41"><sup> 1 </sup></a></p></li></ul>
+<p id="p-924">Recall and use the definition of a linear transformation.</p>
+<ul class="disc"><li id="li-515"><p id="p-925">Review: <a href="AT1.html" class="internal" title="Section 3.1: Linear Transformations (AT1)">Section 3.1</a></p></li></ul>
 </li>
 <li id="li-516">
-<p id="p-919">Recall and use the definition of a linear transformation</p>
-<ul class="disc"><li id="li-517"><p id="p-920">Review: <a href="AT1.html" class="internal" title="Section 3.1: Linear Transformations (AT1)">Section 3.1</a></p></li></ul>
+<p id="p-926">Find the matrix corresponding to a linear transformation of Euclidean spaces.</p>
+<ul class="disc"><li id="li-517"><p id="p-927">Review: <a href="AT2.html" class="internal" title="Section 3.2: Standard Matrices (AT2)">Section 3.2</a></p></li></ul>
 </li>
 <li id="li-518">
-<p id="p-921">Find the matrix corresponding to a linear transformation of Euclidean spaces</p>
-<ul class="disc"><li id="li-519"><p id="p-922">Review: <a href="AT2.html" class="internal" title="Section 3.2: Standard Matrices (AT2)">Section 3.2</a></p></li></ul>
+<p id="p-928">Find all roots of quadratic polynomials (including complex ones).</p>
+<ul class="disc"><li id="li-519"><p id="p-929">Review: <a class="external" href="https://www.khanacademy.org/math/algebra-home/alg-polynomials/alg-factoring-polynomials-quadratic-forms/v/factoring-trinomials-by-grouping-5" target="_blank">Khan Academy</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-45" id="fn-45"><sup> 2 </sup></a>, <a class="external" href="https://youtu.be/Aa-v1EK7DR4" target="_blank">YouTube (1)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-46" id="fn-46"><sup> 3 </sup></a>, <a class="external" href="https://www.youtube.com/watch?v=2yBhDsNE0w" target="_blank">YouTube (2)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-47" id="fn-47"><sup> 4 </sup></a></p></li></ul>
 </li>
 <li id="li-520">
-<p id="p-923">Find all roots of quadratic polynomials (including complex ones).</p>
-<ul class="disc"><li id="li-521"><p id="p-924">Review: <a class="external" href="https://www.khanacademy.org/math/algebra-home/alg-polynomials/alg-factoring-polynomials-quadratic-forms/v/factoring-trinomials-by-grouping-5" target="_blank">Khan Academy</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-42" id="fn-42"><sup> 2 </sup></a>, <a class="external" href="https://youtu.be/Aa-v1EK7DR4" target="_blank">YouTube (1)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-43" id="fn-43"><sup> 3 </sup></a>, <a class="external" href="https://www.youtube.com/watch?v=2yBhDsNE0w" target="_blank">YouTube (2)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-44" id="fn-44"><sup> 4 </sup></a></p></li></ul>
-</li>
-<li id="li-522">
-<p id="p-925">Interpret the statement “<span class="process-math">\(A\)</span> is an invertible matrix” in many equivalent ways in different contexts.</p>
-<ul class="disc"><li id="li-523"><p id="p-926">Review: <a href="MX3.html" class="internal" title="Section 4.3: The Inverse of a Matrix (MX3)">Section 4.3</a></p></li></ul>
+<p id="p-930">Interpret the statement “<span class="process-math">\(A\)</span> is an invertible matrix” in many equivalent ways in different contexts.</p>
+<ul class="disc"><li id="li-521"><p id="p-931">Review: <a href="MX3.html" class="internal" title="Section 4.3: The Inverse of a Matrix (MX3)">Section 4.3</a></p></li></ul>
 </li>
 </ol></section></section><nav class="summary-links"><ul>
 <li><a href="GT1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Row Operations and Determinants (GT1)</span></a></li>
 <li><a href="GT2.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Computing Determinants (GT2)</span></a></li>
 <li><a href="GT3.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Characteristic Polynomials (GT3)</span></a></li>
 <li><a href="GT4.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Eigenvectors and Eigenspaces (GT4)</span></a></li>
-</ul></nav></section><div class="hidden-content tex2jax_ignore" id="hk-fn-41"><div class="fn"><code class="code-inline tex2jax_ignore">https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-geometry-topic/cc-6th-parallelogram-area/v/intuition-for-area-of-a-parallelogram</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-42"><div class="fn"><code class="code-inline tex2jax_ignore">https://www.khanacademy.org/math/algebra-home/alg-polynomials/alg-factoring-polynomials-quadratic-forms/v/factoring-trinomials-by-grouping-5</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-43"><div class="fn"><code class="code-inline tex2jax_ignore">https://youtu.be/Aa-v1EK7DR4</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-44"><div class="fn"><code class="code-inline tex2jax_ignore">https://www.youtube.com/watch?v=2yBhDsNE0w</code></div></div>
+</ul></nav></section><div class="hidden-content tex2jax_ignore" id="hk-fn-44"><div class="fn"><code class="code-inline tex2jax_ignore">www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-geometry-topic/cc-6th-parallelogram-area/v/intuition-for-area-of-a-parallelogram</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-45"><div class="fn"><code class="code-inline tex2jax_ignore">www.khanacademy.org/math/algebra-home/alg-polynomials/alg-factoring-polynomials-quadratic-forms/v/factoring-trinomials-by-grouping-5</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-46"><div class="fn"><code class="code-inline tex2jax_ignore">youtu.be/Aa-v1EK7DR4</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-47"><div class="fn"><code class="code-inline tex2jax_ignore">www.youtube.com/watch?v=2yBhDsNE0w</code></div></div>
 </div></main>
 </div>
 </body>

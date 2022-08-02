@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-07-29T00:10:10Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -51,6 +48,14 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      $(document).trigger("runestone:mathjax-ready");
+      }
+    )}
+},
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
@@ -157,9 +162,9 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
 <li><a href="colophon.html" data-scroll="colophon" class="internal">Colophon</a></li>
+<li><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal">TBIL Resource Library</a></li>
 <li><a href="instructor-notes.html" data-scroll="instructor-notes" class="internal">For Instructors</a></li>
 <li><a href="video-resources.html" data-scroll="video-resources" class="internal">Video Resources</a></li>
-<li><a href="printable-pdf.html" data-scroll="printable-pdf" class="internal">Printable PDF</a></li>
 <li><a href="slideshows.html" data-scroll="slideshows" class="internal">Slideshows</a></li>
 </ul>
 </li>
@@ -222,22 +227,20 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 </ul>
 </li>
 <li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
-<li class="link"><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal"><span class="title">TBIL Resource Library</span></a></li>
-<li class="link"><a href="pretext.html" data-scroll="pretext" class="internal"><span class="title">Authored with PreTeXt</span></a></li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="VS2"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Linear Combinations (VS2)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-8"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
-<ul class="disc"><li id="li-189"><p id="p-320">Determine if a Euclidean vector can be written as a linear combination of a given set of Euclidean vectors by solving an appropriate vector equation.</p></li></ul></article><section class="subsection" id="subsection-26"><h3 class="heading hide-type">
+<ul class="disc"><li id="li-187"><p id="p-319">Determine if a Euclidean vector can be written as a linear combination of a given set of Euclidean vectors by solving an appropriate vector equation.</p></li></ul></article><section class="subsection" id="subsection-26"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.1</span> <span class="title">Class Activities</span>
 </h3>
 <article class="definition definition-like" id="definition-10"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
 </h4>
-<p id="p-321">A <dfn class="terminology">linear combination</dfn> of a set of vectors <span class="process-math">\(\{\vec v_1,\vec v_2,\dots,\vec v_m\}\)</span> is given by <span class="process-math">\(c_1\vec v_1+c_2\vec v_2+\dots+c_m\vec v_m\)</span> for any choice of scalar multiples <span class="process-math">\(c_1,c_2,\dots,c_m\text{.}\)</span></p>
-<p id="p-322">For example, we can say <span class="process-math">\(\left[\begin{array}{c}3 \\0 \\ 5\end{array}\right]\)</span> is a linear combination of the vectors <span class="process-math">\(\left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right]\)</span> and <span class="process-math">\(\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]\)</span> since</p>
+<p id="p-320">A <dfn class="terminology">linear combination</dfn> of a set of vectors <span class="process-math">\(\{\vec v_1,\vec v_2,\dots,\vec v_m\}\)</span> is given by <span class="process-math">\(c_1\vec v_1+c_2\vec v_2+\dots+c_m\vec v_m\)</span> for any choice of scalar multiples <span class="process-math">\(c_1,c_2,\dots,c_m\text{.}\)</span></p>
+<p id="p-321">For example, we can say <span class="process-math">\(\left[\begin{array}{c}3 \\0 \\ 5\end{array}\right]\)</span> is a linear combination of the vectors <span class="process-math">\(\left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right]\)</span> and <span class="process-math">\(\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]\)</span> since</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[\begin{array}{c} 3 \\ 0 \\ 5 \end{array}\right] = 
@@ -247,7 +250,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 </div></article><article class="definition definition-like" id="definition-11"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
 </h4>
-<p id="p-323">The <dfn class="terminology">span</dfn> of a set of vectors is the collection of all linear combinations of that set:</p>
+<p id="p-322">The <dfn class="terminology">span</dfn> of a set of vectors is the collection of all linear combinations of that set:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vspan\{\vec v_1,\vec v_2,\dots,\vec v_m\} =
@@ -255,7 +258,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 c_i\in\IR}\text{.}
 \end{equation*}
 </div>
-<p id="p-324">For example:</p>
+<p id="p-323">For example:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vspan\setList
@@ -273,18 +276,18 @@ a,b\in\IR
 </div></article><article class="activity project-like" id="activity-33"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-17"><p id="p-325">Consider <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right]\right\}\text{.}\)</span></p></div>
-<article class="task exercise-like" id="task-35"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-326">Sketch <span class="process-math">\(1\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}1\\2\end{array}\right]\text{,}\)</span> <span class="process-math">\(3\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}3\\6\end{array}\right]\text{,}\)</span> <span class="process-math">\(0\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}0\\0\end{array}\right]\text{,}\)</span> and <span class="process-math">\(-2\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}-2\\-4\end{array}\right]\)</span> in the <span class="process-math">\(xy\)</span> plane.</p></article><article class="task exercise-like" id="task-36"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-327">Sketch a representation of all the vectors belonging to <span class="process-math">\(\vspan\setList{\left[\begin{array}{c}1\\2\end{array}\right]}
+<div class="introduction" id="introduction-18"><p id="p-324">Consider <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right]\right\}\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task-37"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-325">Sketch <span class="process-math">\(1\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}1\\2\end{array}\right]\text{,}\)</span> <span class="process-math">\(3\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}3\\6\end{array}\right]\text{,}\)</span> <span class="process-math">\(0\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}0\\0\end{array}\right]\text{,}\)</span> and <span class="process-math">\(-2\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}-2\\-4\end{array}\right]\)</span> in the <span class="process-math">\(xy\)</span> plane.</p></article><article class="task exercise-like" id="task-38"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-326">Sketch a representation of all the vectors belonging to <span class="process-math">\(\vspan\setList{\left[\begin{array}{c}1\\2\end{array}\right]}
 =
 \setBuilder{a\left[\begin{array}{c}1\\2\end{array}\right]}{a\in\IR}\)</span> in the <span class="process-math">\(xy\)</span> plane.</p></article></article><article class="activity project-like" id="activity-34"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-18"><p id="p-328">Consider <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right],
+<div class="introduction" id="introduction-19"><p id="p-327">Consider <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right],
 \left[\begin{array}{c}-1\\1\end{array}\right]\right\}\text{.}\)</span></p></div>
-<article class="task exercise-like" id="task-37"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-329">Sketch the following linear combinations in the <span class="process-math">\(xy\)</span> plane.</p>
+<article class="task exercise-like" id="task-39"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-328">Sketch the following linear combinations in the <span class="process-math">\(xy\)</span> plane.</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 1\left[\begin{array}{c}1\\2\end{array}\right]+
@@ -302,101 +305,101 @@ a,b\in\IR
 -1\left[\begin{array}{c}1\\2\end{array}\right]+
 -2\left[\begin{array}{c}-1\\1\end{array}\right]
 \end{equation*}
-</div></article><article class="task exercise-like" id="task-38"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-330">Sketch a representation of all the vectors belonging to <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right],
+</div></article><article class="task exercise-like" id="task-40"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-329">Sketch a representation of all the vectors belonging to <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right],
 \left[\begin{array}{c}-1\\1\end{array}\right]\right\}=\setBuilder{a\left[\begin{array}{c}1\\2\end{array}\right]+b\left[\begin{array}{c}-1\\1\end{array}\right]}{a, b \in \IR}\)</span> in the <span class="process-math">\(xy\)</span> plane.</p></article></article><article class="activity project-like" id="activity-35"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
 </h4>
-<p id="p-331">Sketch a representation of all the vectors belonging to <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}6\\-4\end{array}\right],
+<p id="p-330">Sketch a representation of all the vectors belonging to <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}6\\-4\end{array}\right],
 \left[\begin{array}{c}-3\\2\end{array}\right]\right\}\)</span> in the <span class="process-math">\(xy\)</span> plane.</p></article><article class="activity project-like" id="activity-36"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-19"><p id="p-332">The vector <span class="process-math">\(\left[\begin{array}{c}-1\\-6\\1\end{array}\right]\)</span> belongs to <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
+<div class="introduction" id="introduction-20"><p id="p-331">The vector <span class="process-math">\(\left[\begin{array}{c}-1\\-6\\1\end{array}\right]\)</span> belongs to <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
 \left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}\)</span> exactly when there exists a solution to the vector equation <span class="process-math">\(x_1\left[\begin{array}{c}1\\0\\-3\end{array}\right]+
 x_2\left[\begin{array}{c}-1\\-3\\2\end{array}\right]
 =\left[\begin{array}{c}-1\\-6\\1\end{array}\right]\text{.}\)</span></p></div>
-<article class="task exercise-like" id="task-39"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-333">Reinterpret this vector equation as a system of linear equations.</p></article><article class="task exercise-like" id="task-40"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-334">Find its solution set, using technology to find <span class="process-math">\(\RREF\)</span> of its corresponding augmented matrix.</p></article><article class="task exercise-like" id="task-41"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-335">Given this solution set, does <span class="process-math">\(\left[\begin{array}{c}-1\\-6\\1\end{array}\right]\)</span> belong to <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
+<article class="task exercise-like" id="task-41"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-332">Reinterpret this vector equation as a system of linear equations.</p></article><article class="task exercise-like" id="task-42"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-333">Find its solution set, using technology to find <span class="process-math">\(\RREF\)</span> of its corresponding augmented matrix.</p></article><article class="task exercise-like" id="task-43"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-334">Given this solution set, does <span class="process-math">\(\left[\begin{array}{c}-1\\-6\\1\end{array}\right]\)</span> belong to <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
 \left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}\text{?}\)</span></p></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-7"><script type="text/x-sage"></script></pre>
 <article class="fact theorem-like" id="fact-3"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
 </h4>
-<p id="p-336">A vector <span class="process-math">\(\vec b\)</span> belongs to <span class="process-math">\(\vspan\{\vec v_1,\dots,\vec v_n\}\)</span> if and only if the vector equation <span class="process-math">\(x_1 \vec{v}_1+\cdots+x_n \vec{v}_n=\vec{b}\)</span> is consistent.</p></article><article class="observation remark-like" id="observation-5"><h4 class="heading">
+<p id="p-335">A vector <span class="process-math">\(\vec b\)</span> belongs to <span class="process-math">\(\vspan\{\vec v_1,\dots,\vec v_n\}\)</span> if and only if the vector equation <span class="process-math">\(x_1 \vec{v}_1+\cdots+x_n \vec{v}_n=\vec{b}\)</span> is consistent.</p></article><article class="observation remark-like" id="observation-5"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span>
 </h4>
-<p id="p-337">The following are all equivalent statements:</p>
+<p id="p-336">The following are all equivalent statements:</p>
 <ul class="disc">
-<li id="li-190"><p id="p-338">The vector <span class="process-math">\(\vec{b}\)</span> belongs to <span class="process-math">\(\vspan\{\vec v_1,\dots,\vec v_n\}\text{.}\)</span></p></li>
-<li id="li-191"><p id="p-339">The vector equation <span class="process-math">\(x_1 \vec{v}_1+\cdots+x_n \vec{v}_n=\vec{b}\)</span> is consistent.</p></li>
-<li id="li-192"><p id="p-340">The linear system corresponding to <span class="process-math">\(\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]\)</span> is consistent.</p></li>
-<li id="li-193"><p id="p-341"><span class="process-math">\(\RREF\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]\)</span> doesn't have a row <span class="process-math">\([0\,\cdots\,0\,|\,1]\)</span> representing the contradiction <span class="process-math">\(0=1\text{.}\)</span></p></li>
+<li id="li-188"><p id="p-337">The vector <span class="process-math">\(\vec{b}\)</span> belongs to <span class="process-math">\(\vspan\{\vec v_1,\dots,\vec v_n\}\text{.}\)</span></p></li>
+<li id="li-189"><p id="p-338">The vector equation <span class="process-math">\(x_1 \vec{v}_1+\cdots+x_n \vec{v}_n=\vec{b}\)</span> is consistent.</p></li>
+<li id="li-190"><p id="p-339">The linear system corresponding to <span class="process-math">\(\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]\)</span> is consistent.</p></li>
+<li id="li-191"><p id="p-340"><span class="process-math">\(\RREF\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]\)</span> doesn't have a row <span class="process-math">\([0\,\cdots\,0\,|\,1]\)</span> representing the contradiction <span class="process-math">\(0=1\text{.}\)</span></p></li>
 </ul></article><article class="activity project-like" id="activity-37"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.9</span><span class="period">.</span>
 </h4>
-<p id="p-342">Determine if <span class="process-math">\(\left[\begin{array}{c}3\\-2\\1 \\ 5\end{array}\right]\)</span> belongs to <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\0\\-3 \\ 2\end{array}\right],
+<p id="p-341">Determine if <span class="process-math">\(\left[\begin{array}{c}3\\-2\\1 \\ 5\end{array}\right]\)</span> belongs to <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\0\\-3 \\ 2\end{array}\right],
 \left[\begin{array}{c}-1\\-3\\2 \\ 2\end{array}\right]\right\}\)</span> by solving an appropriate vector equation.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-8"><script type="text/x-sage"></script></pre>
 <article class="activity project-like" id="activity-38"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.10</span><span class="period">.</span>
 </h4>
-<p id="p-343">Determine if <span class="process-math">\(\left[\begin{array}{c}-1\\-9\\0\end{array}\right]\)</span> belongs to <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
+<p id="p-342">Determine if <span class="process-math">\(\left[\begin{array}{c}-1\\-9\\0\end{array}\right]\)</span> belongs to <span class="process-math">\(\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
 \left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}\)</span> by solving an appropriate vector equation.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-9"><script type="text/x-sage"></script></pre>
 <article class="activity project-like" id="activity-39"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.11</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-20"><p id="p-344">Does the third-degree polynomial <span class="process-math">\(3y^3-2y^2+y+5\)</span> in <span class="process-math">\(\P_3\)</span> belong to <span class="process-math">\(\vspan\{y^3-3y+2,-y^3-3y^2+2y+2\}\text{?}\)</span></p></div>
-<article class="task exercise-like" id="task-42"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-345">Reinterpret this question as a question about the solution(s) of a polynomial equation:</p>
+<div class="introduction" id="introduction-21"><p id="p-343">Does the third-degree polynomial <span class="process-math">\(3y^3-2y^2+y+5\)</span> in <span class="process-math">\(\P_3\)</span> belong to <span class="process-math">\(\vspan\{y^3-3y+2,-y^3-3y^2+2y+2\}\text{?}\)</span></p></div>
+<article class="task exercise-like" id="task-44"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-344">Reinterpret this question as a question about the solution(s) of a polynomial equation:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 x_1(\cdots\unknown\cdots)+x_2(\cdots\unknown\cdots)= (\cdots\unknown\cdots)
 \end{equation*}
-</div></article><article class="task exercise-like" id="task-43"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-346">Write a Euclidean vector equation that has the same solution set:</p>
+</div></article><article class="task exercise-like" id="task-45"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-345">Write a Euclidean vector equation that has the same solution set:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 x_1\left[\begin{array}{c}\unknown\\\unknown\\\unknown\\\unknown\end{array}\right]+
 x_2\left[\begin{array}{c}\unknown\\\unknown\\\unknown\\\unknown\end{array}\right]=
 \left[\begin{array}{c}\unknown\\\unknown\\\unknown\\\unknown\end{array}\right]
 \end{equation*}
-</div></article><article class="task exercise-like" id="task-44"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-347">Answer this equivalent question, and use its solution to answer the original question.</p></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-10"><script type="text/x-sage"></script></pre>
+</div></article><article class="task exercise-like" id="task-46"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-346">Answer this equivalent question, and use its solution to answer the original question.</p></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-10"><script type="text/x-sage"></script></pre>
 <article class="activity project-like" id="activity-40"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.12</span><span class="period">.</span>
 </h4>
-<p id="p-348">Does the polynomial  <span class="process-math">\(x^2+x+1\)</span> belong to <span class="process-math">\(\vspan\{x^2-x,x+1, x^2-1\}\text{?}\)</span></p></article><article class="activity project-like" id="activity-41"><h4 class="heading">
+<p id="p-347">Does the polynomial  <span class="process-math">\(x^2+x+1\)</span> belong to <span class="process-math">\(\vspan\{x^2-x,x+1, x^2-1\}\text{?}\)</span></p></article><article class="activity project-like" id="activity-41"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.13</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-21"><p id="p-349">Does the matrix <span class="process-math">\(\left[\begin{array}{cc}3&amp;-2\\1&amp;5\end{array}\right]\)</span> belong to <span class="process-math">\(\vspan\left\{\left[\begin{array}{cc}1&amp;0\\-3&amp;2\end{array}\right],
+<div class="introduction" id="introduction-22"><p id="p-348">Does the matrix <span class="process-math">\(\left[\begin{array}{cc}3&amp;-2\\1&amp;5\end{array}\right]\)</span> belong to <span class="process-math">\(\vspan\left\{\left[\begin{array}{cc}1&amp;0\\-3&amp;2\end{array}\right],
 \left[\begin{array}{cc}-1&amp;-3\\2&amp;2\end{array}\right]\right\}\text{?}\)</span></p></div>
-<article class="task exercise-like" id="task-45"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-350">Reinterpret this question as a question about the solution(s) of a matrix equation.</p></article><article class="task exercise-like" id="task-46"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-351">Answer this equivalent question, and use its solution to answer the original question.</p></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-11"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-27"><h3 class="heading hide-type">
+<article class="task exercise-like" id="task-47"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-349">Reinterpret this question as a question about the solution(s) of a matrix equation.</p></article><article class="task exercise-like" id="task-48"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-350">Answer this equivalent question, and use its solution to answer the original question.</p></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-11"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-27"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.2</span> <span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-7"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-VS2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/wkLa08LwSNs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7<span class="period">.</span></span><span class="space"> </span>Video: Linear combinations</figcaption></figure></section><section class="subsection" id="subsection-28"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.3</span> <span class="title">Slideshow</span>
 </h3>
-<p id="p-352">Slideshow of activities available at <a class="external" href="VS2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">VS2.slides.html</code></a>.</p></section><section class="exercises" id="exercises-6"><h3 class="heading hide-type">
+<p id="p-351">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/VS2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/VS2.slides.html</code></a>.</p></section><section class="exercises" id="exercises-6"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">2.2.4</span> <span class="title">Exercises</span>
 </h3>
-<p id="p-353">Exercises available at <a class="external" href="https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/VS2/" target="_blank"><code class="code-inline tex2jax_ignore">https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/VS2/</code></a>.</p></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
+<p id="p-352">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/2022/exercises/#/bank/VS2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/2022/exercises/#/bank/VS2/</code></a>.</p></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-11"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.2.14</span><span class="period">.</span>
 </h4>
-<p id="p-354">Suppose <span class="process-math">\(S = \{\vec{v_1},\ldots, \vec{v_n}\}\)</span> is a set of vectors. Show that <span class="process-math">\(\vec{v_0}\)</span> is a linear combination of members of <span class="process-math">\(S\text{,}\)</span> if an only if there are a set of scalars <span class="process-math">\(\{c_0,c_1,\ldots, c_n\}\)</span> such that <span class="process-math">\(\vec{z} = c_0\vec{v_0} + \cdots + c_n\vec{v_n}.\)</span> We can do this in a few parts. I've used bullets here to indicate all that needs to be done. This is an "if and only if" proof, so it needs two parts.</p>
+<p id="p-353">Suppose <span class="process-math">\(S = \{\vec{v_1},\ldots, \vec{v_n}\}\)</span> is a set of vectors. Show that <span class="process-math">\(\vec{v_0}\)</span> is a linear combination of members of <span class="process-math">\(S\text{,}\)</span> if an only if there are a set of scalars <span class="process-math">\(\{c_0,c_1,\ldots, c_n\}\)</span> such that <span class="process-math">\(\vec{z} = c_0\vec{v_0} + \cdots + c_n\vec{v_n}.\)</span> We can do this in a few parts. I've used bullets here to indicate all that needs to be done. This is an "if and only if" proof, so it needs two parts.</p>
 <ul class="disc">
-<li id="li-194"><p id="p-derived-li-194">First, assume that <span class="process-math">\(\vec{0} = c_0\vec{v_0} + \cdots + c_n\vec{v_n}\)</span> has a solution, with <span class="process-math">\(c_0 \neq 0\text{.}\)</span> Show that <span class="process-math">\(\vec{v_0}\)</span> is a linear combination of elements of <span class="process-math">\(S\text{.}\)</span></p></li>
-<li id="li-195"><p id="p-derived-li-195">Next, assume that <span class="process-math">\(\vec{v_0}\)</span> is a linear combination of elements of <span class="process-math">\(S\text{.}\)</span> Can you find the appropriate <span class="process-math">\(\{c_0,c_1,\ldots, c_n\}\)</span> to make the equation <span class="process-math">\(\vec{z} = c_0\vec{v_0} + \cdots + c_n\vec{v_n}\)</span> true?</p></li>
-<li id="li-196"><p id="p-derived-li-196">In either of your proofs above, does the case when <span class="process-math">\(\vec{v_0} = \vec{z}\)</span> change your thinking? Explain why or why not.</p></li>
+<li id="li-192"><p id="p-derived-li-192">First, assume that <span class="process-math">\(\vec{0} = c_0\vec{v_0} + \cdots + c_n\vec{v_n}\)</span> has a solution, with <span class="process-math">\(c_0 \neq 0\text{.}\)</span> Show that <span class="process-math">\(\vec{v_0}\)</span> is a linear combination of elements of <span class="process-math">\(S\text{.}\)</span></p></li>
+<li id="li-193"><p id="p-derived-li-193">Next, assume that <span class="process-math">\(\vec{v_0}\)</span> is a linear combination of elements of <span class="process-math">\(S\text{.}\)</span> Can you find the appropriate <span class="process-math">\(\{c_0,c_1,\ldots, c_n\}\)</span> to make the equation <span class="process-math">\(\vec{z} = c_0\vec{v_0} + \cdots + c_n\vec{v_n}\)</span> true?</p></li>
+<li id="li-194"><p id="p-derived-li-194">In either of your proofs above, does the case when <span class="process-math">\(\vec{v_0} = \vec{z}\)</span> change your thinking? Explain why or why not.</p></li>
 </ul></article></section><section class="subsection" id="subsection-30"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.6</span> <span class="title">Sample Problem and Solution</span>
 </h3>
-<p id="p-355">Sample problem <a href="" class="xref" data-knowl="./knowl/sampleVS1.html" title="Example B.1.5: VS1">Example B.1.5</a>.</p></section></section></div></main>
+<p id="p-354">Sample problem <a href="" class="xref" data-knowl="./knowl/sampleVS1.html" title="Example B.1.5: VS1">Example B.1.5</a>.</p></section></section></div></main>
 </div>
 </body>
 </html>
