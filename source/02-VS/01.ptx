@@ -102,7 +102,7 @@ and <em>invalid</em> if it does not.
 
 <definition xml:id="VS1-properties">
     <statement>
-        <p>
+        <p> <!-- fixme: "real" vector space -->
   A <term>vector space</term><idx>vector space</idx> <m>V</m> is any set of mathematical objects, called <term>vectors</term><idx> vector </idx>, and a set of numbers, called <term>scalars</term><idx> scalar </idx>, with
   associated addition <m>\oplus</m> and scalar multiplication <m>\odot</m>
   operations that satisfy the following properties. 
@@ -272,7 +272,7 @@ The space of <m>m \times n</m> <term>matrices</term>
   Consider the set <m>V=\setBuilder{(x,y)}{y=2^x}</m>.
     </p>
    <p>Which of the following vectors is not in <m>V</m>?               </p>
-       <ol label="a">
+       <ol marker="A." cols="2">
         <li>
             <p>
             <m>(0, 0)</m>
@@ -310,7 +310,7 @@ Let <m>\vec u, \vec v</m> be in <m>V</m> with
 <m>\vec u=(1, 2)</m> and <m>\vec v=(2, 4)</m>.
 Using the operations defined for <m>V</m>, which of the
 following is <m>\vec u\oplus\vec v</m>?</p>
-      <ol label="a">
+      <ol marker="A." cols="2">
         <li>
             <p>
             <m>(2, 6)</m>
@@ -397,7 +397,7 @@ simplify to the expression <m>(ax+bx,y^ay^b)</m>.
 Which of the properties from <xref ref="VS1-properties"/>
 did we verify in the previous task?
     </p>
-    <ol label="A.">
+    <ol marker="A.">
       <li><p>Vector addition is associative</p></li>
       <li><p><m>1</m> is a multiplicative identity</p></li>
       <li><p>Scalar multiplication distributes over scalar addition</p></li>
@@ -508,13 +508,13 @@ for <em>all</em> <m>c\in \IR,\, (x_1,y_1),(x_2,y_2) \in V</m>.
         <title>Videos</title>
         <figure>
             <video xml:id="video-VS1-1" youtube="7Qv5Sykdv0I">
-              <!--<track kind="subtitles" label="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+              <!--<track kind="subtitles" marker="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
             </video>
             <caption>Video: Verifying that a vector space property holds</caption>
         </figure>
         <figure>
             <video xml:id="video-VS1-2" youtube="q6VSE54ogc4">
-              <!--<track kind="subtitles" label="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+              <!--<track kind="subtitles" marker="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
             </video>
             <caption>Video: Showing something is not a vector space</caption>
         </figure>
@@ -522,11 +522,11 @@ for <em>all</em> <m>c\in \IR,\, (x_1,y_1),(x_2,y_2) \in V</m>.
 
     <subsection>
         <title>Slideshow</title>
-        <p>Slideshow of activities available at <url href="VS1.slides.html"/>.</p>
+        <p>Slideshow of activities available at <url href="https://teambasedinquirylearning.github.io/linear-algebra/2022/VS1.slides.html"/>.</p>
     </subsection>
 
     <exercises>
-        <p>Exercises available at <url href="https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/VS1/"/>.</p>
+        <p>Exercises available at <url href="https://teambasedinquirylearning.github.io/2022/exercises/#/bank/VS1/"/>.</p>
     </exercises>
             <subsection>
         <title>Mathematical Writing Explorations</title>
@@ -534,7 +534,7 @@ for <em>all</em> <m>c\in \IR,\, (x_1,y_1),(x_2,y_2) \in V</m>.
             <statement>
                 <p>
                     <ul>
-                <li>Show that <m>\mathbb{R}^+</m>, the set of positive real numbers, is a vector space, but where <m>x\oplus y</m> really means the product (so <m>2 \oplus 3 = 6</m>, and where scalar multiplication <m>\alpha\odot x</m> really means <m>x^\alpha</m>. Yes, you really do need to check all of the properties, but this is the only time I'll make you do so. Remember, examples aren't proofs, so you should start with arbitrary elements of <m>\mathbb R^+</m> for your vectors. Make sure you're careful about telling the reader what <m>\alpha</m> means.</li>
+                <li>Show that <m>\mathbb{R}^+</m>, the set of positive real numbers, is a vector space, but where <m>x\oplus y</m> really means the product (so <m>2 \oplus 3 = 6</m>), and where scalar multiplication <m>\alpha\odot x</m> really means <m>x^\alpha</m>. Yes, you really do need to check all of the properties, but this is the only time I'll make you do so. Remember, examples aren't proofs, so you should start with arbitrary elements of <m>\mathbb R^+</m> for your vectors. Make sure you're careful about telling the reader what <m>\alpha</m> means.</li>
                         <li> Prove that the additive identity <m>\vec{z}</m> in an arbitrary vector space is unique.  </li>
                         <li> Prove that additive inverses are unique. Assume you have a vector space <m>V</m> and  some <m>\vec{v} \in V</m>. Further, assume <m>\vec{w_1},\vec{w_2} \in V</m> with <m>\vec{v} \oplus \vec{w_1} = \vec{v} \oplus \vec{w_2} = \vec{z}</m>. Prove that <m>\vec{w_1} = \vec{w_2}</m>.</li>
                </ul> </p>

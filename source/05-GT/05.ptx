@@ -12,16 +12,72 @@
 <activity estimated-time='10'>
     <statement>
         <p>
-            TODO
+            Scaffolding for the general power below
         </p>
     </statement>
-</activity>
+    </activity>
+            
+
+
+<activity><statement><p>
+Prove that if <me>D = \left[\begin{array}{ccccc}\lambda_1 &amp; \cdots &amp; 0 &amp; \cdots &amp;  0\\ 0 &amp; \lambda_2  &amp; \cdots &amp; \cdots &amp;  0\\
+\vdots &amp;  &amp; \ddots &amp;  &amp; \vdots\\
+\vdots &amp;  &amp;  &amp;  &amp; \vdots\\
+0 &amp; \cdots &amp; 0 &amp; \cdots &amp; \lambda_n\end{array}\left]</me>
+    then 
+<me>D^k = \left[\begin{array}{ccccc}\lambda_1^k &amp; \cdots &amp; 0 &amp; \cdots &amp;  0\\ 0 &amp; \lambda_2^k  &amp; \cdots &amp; \cdots &amp;  0\\
+\vdots &amp;  &amp; \ddots &amp;  &amp; \vdots\\
+\vdots &amp;  &amp;  &amp;  &amp; \vdots\\
+0 &amp; \cdots &amp; 0 &amp; \cdots &amp; \lambda_n^k\end{array}\left]</me>
+</p></statement></activity>
+
+            <definition>
+    <statement>
+        <p>
+A matrix <m>A</m> is <term>diagonalizable</term><idx>diagonalizable</idx> if it is similar to a diagonal matrix, that is, if there exist a diagonal matrix <m>D</m> and an invertible matrix <m>C</m> such that 
+<m>A = CDC^{-1}</m>
+</p>
+                </statement>
+    </definition>
+    
+<remark><statement><p>
+<m>A</m> is diagonalizable iff <m>A</m> has <m>n</m> linearly independent eigenvectors.
+</p></statement></remark>
+    
+\begin{itemize}
+    \item Assume $A$ has $n$ linearly independent eigenvectors $\vec{v_1},\ldots, \vec{v_n}$ with associated eigenvalues $\lambda_1,\ldots, \lambda_n$. Construct the matrix $C$ using the eigenvectors as columns. \pause 
+    \item Let $D = C^{-1}AC$, so that $A = CDC^{-1}$.\pause 
+    \item Let $\vec{e_i}$ be the $i$-th standard basis vector for $\R^n$. What would occur if we tried to multiply $$D\vec{e_i} = C^{-1}AC\vec{e_i}?$$
+    \pause $$D\vec{e_i} = C^{-1}AC\vec{e_i} = C^{-1}A\vec{v_i} = C^{-1}\lambda_i\vec{v_i} = \lambda_i C^{-1}\vec{v_i} = \lambda_i \vec{e_i}$$\\
+    What can we conclude from this?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Examples}
+Diagonalize the matrix $$A = \m{\frac{1}{2}&\frac{3}{2}\\\frac{3}{2}&\frac{1}{2}}$$
+\pause
+\begin{itemize}
+    \item Find the eigenvalues of $A$. \pause 
+    \item Find the associated eigenvectors of $A$. \pause 
+    \item Verify the eigenvectors are linearly independent \pause 
+    \item Then $A = CDC^{-1}$. Is this representation unique?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Examples}
+Diagonalize $$A = \m{2/3&-4/3 \\ -2/3&4/3 }$$
+
+Diagonalize $$A = \m{1&1\\0&1}$$
+
+\end{frame}
+
+
 
     <subsection>
         <title>Videos</title>
 <!--    <figure>
 		<video xml:id="video-G4" href="https://southalabama.hosted.panopto.com/Panopto/Podcast/Social/9fb5bb0c-4076-44a9-9eb5-aba000f38f1b.mp4?mediaTargetType=videoPodcast">
-			<track kind="subtitles" label="US English" xml:lang="en" source="videos/G4-captions.vtt" default=""/>
+			<track kind="subtitles" marker="US English" xml:lang="en" source="videos/G4-captions.vtt" default=""/>
 		</video>
         <caption>Video example: Finding eigenvectors</caption>
     </figure>-->
