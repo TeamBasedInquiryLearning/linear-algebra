@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>TBIL-LA Front Matter</title>
+<title>TBIL-LA Orthonormal Bases (ON3)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -138,16 +138,16 @@ startup: {
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="linear-algebra-for-team-based-inquiry-learning.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="linear-algebra-for-team-based-inquiry-learning.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="colophon.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ON2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ON.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="linear-algebra-for-team-based-inquiry-learning.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="linear-algebra-for-team-based-inquiry-learning.html" title="Up">Up</a><a class="next-button button toolbar-item" href="colophon.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ON2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ON.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link frontmatter active">
+<li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
 <li><a href="colophon.html" data-scroll="colophon" class="internal">Colophon</a></li>
 <li><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal">TBIL Resource Library</a></li>
@@ -200,6 +200,13 @@ startup: {
 <li><a href="GT4.html" data-scroll="GT4" class="internal">Eigenvectors and Eigenspaces (GT4)</a></li>
 </ul>
 </li>
+<li class="link">
+<a href="ON.html" data-scroll="ON" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonal and Orthonormal Vectors (ON - Coming Soon!)</span></a><ul>
+<li><a href="ON1.html" data-scroll="ON1" class="internal">Dot Products (ON1)</a></li>
+<li><a href="ON2.html" data-scroll="ON2" class="internal">Projections (ON2)</a></li>
+<li><a href="ON3.html" data-scroll="ON3" class="active">Orthonormal Bases (ON3)</a></li>
+</ul>
+</li>
 <li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
 <li class="link">
 <a href="applications.html" data-scroll="applications" class="internal"><span class="codenumber">A</span> <span class="title">Applications</span></a><ul>
@@ -217,55 +224,21 @@ startup: {
 <li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="frontmatter" id="frontmatter"><h2 class="heading">
-<span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">2022 Edition</span>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="ON3"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.3</span> <span class="title">Orthonormal Bases (ON3)</span>
 </h2>
-<div class="author">
-<div class="author-name">Steven Clontz</div>
-<div class="author-info">Department of Mathematics and Statistics<br>University of South Alabama<br><a href="mailto:sclontz@southalabama.edu">sclontz@southalabama.edu</a>
-</div>
-</div>
-<div class="author">
-<div class="author-name">Drew Lewis</div>
-<div class="author-info">Department of Mathematics and Statistics<br>University of South Alabama<br><a href="mailto:drewlewis@southalabama.edu">drewlewis@southalabama.edu</a>
-</div>
-</div>
-<div class="credit">
-<div class="title">Contributing Authors</div>
-<div class="author">
-<div class="author-name">Jessalyn Bolkema</div>
-<div class="author-info">Department of Mathematics<br>California State University, Dominguez Hills<br><a href="mailto:jbolkema@csudh.edu">jbolkema@csudh.edu</a>
-</div>
-</div>
-<div class="author">
-<div class="author-name">Jeff Ford</div>
-<div class="author-info">Department of Mathematics, Computer Science, and Statistics<br>Gustavus Adolphus College<br><a href="mailto:jford@gustavus.edu">jford@gustavus.edu</a>
-</div>
-</div>
-<div class="author">
-<div class="author-name">Sharona Krinsky</div>
-<div class="author-info">Department of Mathematics<br>California State University, Los Angeles<br><a href="mailto:skrinsk@calstatela.edu">skrinsk@calstatela.edu</a>
-</div>
-</div>
-<div class="author">
-<div class="author-name">Jennifer Nordstrom</div>
-<div class="author-info">Department of Mathematics<br>Linfield University<br><a href="mailto:jnordstrom@linfield.edu">jnordstrom@linfield.edu</a>
-</div>
-</div>
-<div class="author">
-<div class="author-name">Kate Owens</div>
-<div class="author-info">Department of Mathematics<br>College of Charleston<br><a href="mailto:owensks@cofc.edu">owensks@cofc.edu</a>
-</div>
-</div>
-</div>
-<div class="date">August 3, 2022</div>
-<nav class="summary-links"><ul>
-<li><a href="colophon.html" class="internal"><span class="title">Colophon</span></a></li>
-<li><a href="tbil-rl.html" class="internal"><span class="title">TBIL Resource Library</span></a></li>
-<li><a href="instructor-notes.html" class="internal"><span class="title">For Instructors</span></a></li>
-<li><a href="video-resources.html" class="internal"><span class="title">Video Resources</span></a></li>
-<li><a href="slideshows.html" class="internal"><span class="title">Slideshows</span></a></li>
-</ul></nav></section></div></main>
+<article class="objectives goal-like" id="objectives-33"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
+<ul class="disc"><li id="li-614"><p id="p-1152">Use the Gram-Schmidt algorithm to compute an orthonormal basis.</p></li></ul></article><article class="activity project-like" id="activity-169"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span>
+</h3>
+<p id="p-1153">TODO</p></article><section class="subsection" id="subsection-123"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.3.1</span> <span class="title">Videos</span>
+</h3></section><section class="exercises" id="exercises-27"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">6.3.2</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-1154"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org" target="_blank">checkit.clontz.org</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-52" id="fn-52"><sup> 1 </sup></a>.</em></p></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-52"><div class="fn"><code class="code-inline tex2jax_ignore">checkit.clontz.org</code></div></div>
+</div></main>
 </div>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>TBIL-LA Front Matter</title>
+<title>TBIL-LA Projections (ON2)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -138,16 +138,16 @@ startup: {
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="linear-algebra-for-team-based-inquiry-learning.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="linear-algebra-for-team-based-inquiry-learning.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="colophon.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ON1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ON.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ON3.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="linear-algebra-for-team-based-inquiry-learning.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="linear-algebra-for-team-based-inquiry-learning.html" title="Up">Up</a><a class="next-button button toolbar-item" href="colophon.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ON1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ON.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ON3.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link frontmatter active">
+<li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
 <li><a href="colophon.html" data-scroll="colophon" class="internal">Colophon</a></li>
 <li><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal">TBIL Resource Library</a></li>
@@ -200,6 +200,13 @@ startup: {
 <li><a href="GT4.html" data-scroll="GT4" class="internal">Eigenvectors and Eigenspaces (GT4)</a></li>
 </ul>
 </li>
+<li class="link">
+<a href="ON.html" data-scroll="ON" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonal and Orthonormal Vectors (ON - Coming Soon!)</span></a><ul>
+<li><a href="ON1.html" data-scroll="ON1" class="internal">Dot Products (ON1)</a></li>
+<li><a href="ON2.html" data-scroll="ON2" class="active">Projections (ON2)</a></li>
+<li><a href="ON3.html" data-scroll="ON3" class="internal">Orthonormal Bases (ON3)</a></li>
+</ul>
+</li>
 <li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
 <li class="link">
 <a href="applications.html" data-scroll="applications" class="internal"><span class="codenumber">A</span> <span class="title">Applications</span></a><ul>
@@ -217,55 +224,32 @@ startup: {
 <li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="frontmatter" id="frontmatter"><h2 class="heading">
-<span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">2022 Edition</span>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="ON2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.2</span> <span class="title">Projections (ON2)</span>
 </h2>
-<div class="author">
-<div class="author-name">Steven Clontz</div>
-<div class="author-info">Department of Mathematics and Statistics<br>University of South Alabama<br><a href="mailto:sclontz@southalabama.edu">sclontz@southalabama.edu</a>
-</div>
-</div>
-<div class="author">
-<div class="author-name">Drew Lewis</div>
-<div class="author-info">Department of Mathematics and Statistics<br>University of South Alabama<br><a href="mailto:drewlewis@southalabama.edu">drewlewis@southalabama.edu</a>
-</div>
-</div>
-<div class="credit">
-<div class="title">Contributing Authors</div>
-<div class="author">
-<div class="author-name">Jessalyn Bolkema</div>
-<div class="author-info">Department of Mathematics<br>California State University, Dominguez Hills<br><a href="mailto:jbolkema@csudh.edu">jbolkema@csudh.edu</a>
-</div>
-</div>
-<div class="author">
-<div class="author-name">Jeff Ford</div>
-<div class="author-info">Department of Mathematics, Computer Science, and Statistics<br>Gustavus Adolphus College<br><a href="mailto:jford@gustavus.edu">jford@gustavus.edu</a>
-</div>
-</div>
-<div class="author">
-<div class="author-name">Sharona Krinsky</div>
-<div class="author-info">Department of Mathematics<br>California State University, Los Angeles<br><a href="mailto:skrinsk@calstatela.edu">skrinsk@calstatela.edu</a>
-</div>
-</div>
-<div class="author">
-<div class="author-name">Jennifer Nordstrom</div>
-<div class="author-info">Department of Mathematics<br>Linfield University<br><a href="mailto:jnordstrom@linfield.edu">jnordstrom@linfield.edu</a>
-</div>
-</div>
-<div class="author">
-<div class="author-name">Kate Owens</div>
-<div class="author-info">Department of Mathematics<br>College of Charleston<br><a href="mailto:owensks@cofc.edu">owensks@cofc.edu</a>
-</div>
-</div>
-</div>
-<div class="date">August 3, 2022</div>
-<nav class="summary-links"><ul>
-<li><a href="colophon.html" class="internal"><span class="title">Colophon</span></a></li>
-<li><a href="tbil-rl.html" class="internal"><span class="title">TBIL Resource Library</span></a></li>
-<li><a href="instructor-notes.html" class="internal"><span class="title">For Instructors</span></a></li>
-<li><a href="video-resources.html" class="internal"><span class="title">Video Resources</span></a></li>
-<li><a href="slideshows.html" class="internal"><span class="title">Slideshows</span></a></li>
-</ul></nav></section></div></main>
+<article class="objectives goal-like" id="objectives-32"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
+<ul class="disc"><li id="li-613"><p id="p-1143">Compute projections of Euclidean vectors.</p></li></ul></article><article class="definition definition-like" id="definition-33"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="period">.</span>
+</h3>
+<p id="p-1144">A set <span class="process-math">\(S\)</span> of vectors is called an <dfn class="terminology">orthogonal set</dfn> provided <span class="process-math">\(\vec u \cdot \vec v = 0\)</span> for any pair of vectors <span class="process-math">\(\vec u\text{,}\)</span> <span class="process-math">\(\vec v \in S\)</span> with <span class="process-math">\(\vec u \ne \vec v\text{.}\)</span></p></article><article class="activity project-like" id="activity-168"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-73"><p id="p-1145">If we rotate the standard basis of <span class="process-math">\(\IR^2\)</span> by <span class="process-math">\(45^{\circ}\text{,}\)</span> we produce the set <span class="process-math">\(B=\left\{\vec b_1, \vec b_2\right\}=\left\{ \left[\begin{array}{c} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{array}\right], \left[\begin{array}{c} -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{array}\right]\right\}\)</span></p></div>
+<article class="task exercise-like" id="task-156"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-1146">Determine the length of <span class="process-math">\(\vec b_1\)</span> and <span class="process-math">\(\vec b_2\text{.}\)</span></p></article><article class="task exercise-like" id="task-157"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-1147">Determine the dot product <span class="process-math">\(\vec b_1 \cdot \vec b_2\text{.}\)</span></p></article><article class="task exercise-like" id="task-158"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-1148">Is <span class="process-math">\(B\)</span> is an orthogonal set? Explain why or why not.</p></article><article class="task exercise-like" id="task-159"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-1149">Is <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(\IR^2\text{?}\)</span> Explain why or why not.</p></article></article><article class="definition definition-like" id="definition-34"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.3</span><span class="period">.</span>
+</h3>
+<p id="p-1150">A basis <span class="process-math">\(B\)</span> of a vector space is called an <dfn class="terminology">orthogonal basis</dfn> provided every pair of vectors in <span class="process-math">\(B\)</span> is orthogonal. If, in addition, each vector in <span class="process-math">\(B\)</span> is a unit vector, then <span class="process-math">\(B\)</span> is called an <dfn class="terminology">orthonormal basis</dfn>.</p></article><section class="subsection" id="subsection-122"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.1</span> <span class="title">Videos</span>
+</h3></section><section class="exercises" id="exercises-26"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">6.2.2</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-1151"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org" target="_blank">checkit.clontz.org</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-51" id="fn-51"><sup> 1 </sup></a>.</em></p></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-51"><div class="fn"><code class="code-inline tex2jax_ignore">checkit.clontz.org</code></div></div>
+</div></main>
 </div>
 </body>
 </html>
