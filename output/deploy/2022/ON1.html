@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TBIL-LA Dot Products (ON1)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra for Team-Based Inquiry Learning">
+<meta property="book:author" content="Steven Clontz">
+<meta property="book:author" content="Drew Lewis">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      $(document).trigger("runestone:mathjax-ready");
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">2022 Edition</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ON.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ON.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ON2.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ON.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ON.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ON2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon.html" data-scroll="colophon" class="internal">Colophon</a></li>
+<li><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal">TBIL Resource Library</a></li>
+<li><a href="instructor-notes.html" data-scroll="instructor-notes" class="internal">For Instructors</a></li>
+<li><a href="video-resources.html" data-scroll="video-resources" class="internal">Video Resources</a></li>
+<li><a href="slideshows.html" data-scroll="slideshows" class="internal">Slideshows</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="LE.html" data-scroll="LE" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (LE)</span></a><ul>
+<li><a href="LE1.html" data-scroll="LE1" class="internal">Linear Systems, Vector Equations, and Augmented Matrices (LE1)</a></li>
+<li><a href="LE2.html" data-scroll="LE2" class="internal">Row Reduction of Matrices (LE2)</a></li>
+<li><a href="LE3.html" data-scroll="LE3" class="internal">Counting Solutions for Linear Systems (LE3)</a></li>
+<li><a href="LE4.html" data-scroll="LE4" class="internal">Linear Systems with Infinitely-Many Solutions (LE4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="VS.html" data-scroll="VS" class="internal"><span class="codenumber">2</span> <span class="title">Vector Spaces (VS)</span></a><ul>
+<li><a href="VS1.html" data-scroll="VS1" class="internal">Vector Spaces (VS1)</a></li>
+<li><a href="VS2.html" data-scroll="VS2" class="internal">Linear Combinations (VS2)</a></li>
+<li><a href="VS3.html" data-scroll="VS3" class="internal">Spanning Sets (VS3)</a></li>
+<li><a href="VS4.html" data-scroll="VS4" class="internal">Subspaces (VS4)</a></li>
+<li><a href="VS5.html" data-scroll="VS5" class="internal">Linear Independence (VS5)</a></li>
+<li><a href="VS6.html" data-scroll="VS6" class="internal">Identifying a Basis (VS6)</a></li>
+<li><a href="VS7.html" data-scroll="VS7" class="internal">Subspace Basis and Dimension (VS7)</a></li>
+<li><a href="VS8.html" data-scroll="VS8" class="internal">Polynomial and Matrix Spaces (VS8)</a></li>
+<li><a href="VS9.html" data-scroll="VS9" class="internal">Homogeneous Linear Systems (VS9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="AT.html" data-scroll="AT" class="internal"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (AT)</span></a><ul>
+<li><a href="AT1.html" data-scroll="AT1" class="internal">Linear Transformations (AT1)</a></li>
+<li><a href="AT2.html" data-scroll="AT2" class="internal">Standard Matrices (AT2)</a></li>
+<li><a href="AT3.html" data-scroll="AT3" class="internal">Image and Kernel (AT3)</a></li>
+<li><a href="AT4.html" data-scroll="AT4" class="internal">Injective and Surjective Linear Maps (AT4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="MX.html" data-scroll="MX" class="internal"><span class="codenumber">4</span> <span class="title">Matrices (MX)</span></a><ul>
+<li><a href="MX1.html" data-scroll="MX1" class="internal">Matrices and Multiplication (MX1)</a></li>
+<li><a href="MX2.html" data-scroll="MX2" class="internal">Row Operations as Matrix Multiplication (MX2)</a></li>
+<li><a href="MX3.html" data-scroll="MX3" class="internal">The Inverse of a Matrix (MX3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="GT.html" data-scroll="GT" class="internal"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (GT)</span></a><ul>
+<li><a href="GT1.html" data-scroll="GT1" class="internal">Row Operations and Determinants (GT1)</a></li>
+<li><a href="GT2.html" data-scroll="GT2" class="internal">Computing Determinants (GT2)</a></li>
+<li><a href="GT3.html" data-scroll="GT3" class="internal">Eigenvalues and Characteristic Polynomials (GT3)</a></li>
+<li><a href="GT4.html" data-scroll="GT4" class="internal">Eigenvectors and Eigenspaces (GT4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ON.html" data-scroll="ON" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonal and Orthonormal Vectors (ON - Coming Soon!)</span></a><ul>
+<li><a href="ON1.html" data-scroll="ON1" class="active">Dot Products (ON1)</a></li>
+<li><a href="ON2.html" data-scroll="ON2" class="internal">Projections (ON2)</a></li>
+<li><a href="ON3.html" data-scroll="ON3" class="internal">Orthonormal Bases (ON3)</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="applications.html" data-scroll="applications" class="internal"><span class="codenumber">A</span> <span class="title">Applications</span></a><ul>
+<li><a href="truss.html" data-scroll="truss" class="internal">Civil Engineering: Trusses and Struts</a></li>
+<li><a href="pagerank.html" data-scroll="pagerank" class="internal">Computer Science: PageRank</a></li>
+<li><a href="geology.html" data-scroll="geology" class="internal">Geology: Phases and Components</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="appendix-2.html" data-scroll="appendix-2" class="internal"><span class="codenumber">B</span> <span class="title">Appendix</span></a><ul>
+<li><a href="sample-exercises.html" data-scroll="sample-exercises" class="internal">Sample Exercises with Solutions</a></li>
+<li><a href="list-of-definitions.html" data-scroll="list-of-definitions" class="internal">Definitions</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="ON1"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.1</span> <span class="title">Dot Products (ON1)</span>
+</h2>
+<article class="objectives goal-like" id="objectives-31"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
+<ul class="disc"><li id="li-595"><p id="p-1110">Use the dot product to determine norms, distances, and angles.</p></li></ul></article><article class="activity project-like" id="activity-163"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.1</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-68">
+<p id="p-1111">Consider the binary operation ''<span class="process-math">\(\circledast\)</span>'' defined on vectors <span class="process-math">\(\vec v\text{,}\)</span> <span class="process-math">\(\vec w\)</span> in <span class="process-math">\(\IR^n\)</span> by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec v \circledast \vec w = v_1 w_1 + v_2 w_2 + v_3 w_3 + \cdots + v_n w_n.
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-143"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-1112">Let <span class="process-math">\(\vec v =\left[\begin{array}{c} 1 \\ -1 \\ 0 \\ 2 \\ 3 \end{array}\right]\)</span> and <span class="process-math">\(\vec w=\left[\begin{array}{c} 5 \\ 12 \\ -1 \\ 1 \\ 2 \end{array}\right]\text{.}\)</span> What is <span class="process-math">\(\vec v \circledast \vec w\text{?}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-596"><p id="p-derived-li-596"><span class="process-math">\(\displaystyle 25\)</span></p></li>
+<li id="li-597"><p id="p-derived-li-597"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 5 \\ -12 \\ 0 \\ 2 \\ 6 \end{array}\right]\)</span></p></li>
+<li id="li-598"><p id="p-derived-li-598"><span class="process-math">\(\displaystyle 1\)</span></p></li>
+<li id="li-599"><p id="p-derived-li-599"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 6 \\ 11 \\ -1 \\ 3 \\ 5 \end{array}\right]\)</span></p></li>
+</ol></article><article class="task exercise-like" id="task-144"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-1113">Let <span class="process-math">\(\vec v=\left[\begin{array}{c} 48 \\ 55 \end{array}\right]\text{.}\)</span></p>
+<ol class="decimal">
+<li id="li-600"><p id="p-derived-li-600">Graph <span class="process-math">\(\vec v\)</span> and use the Pythagorean Theorem to determine the length of <span class="process-math">\(\vec v\text{.}\)</span></p></li>
+<li id="li-601"><p id="p-derived-li-601">What is <span class="process-math">\(\vec v \circledast \vec v\text{?}\)</span></p></li>
+</ol></article><article class="task exercise-like" id="task-145"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-1114">Let <span class="process-math">\(\vec v=\left[\begin{array}{c} v_1 \\ v_2 \end{array}\right]\text{.}\)</span></p>
+<ol class="decimal">
+<li id="li-602"><p id="p-derived-li-602">Graph <span class="process-math">\(\vec v\)</span> and use the Pythagorean Theorem to determine the length of <span class="process-math">\(\vec v\text{.}\)</span></p></li>
+<li id="li-603"><p id="p-derived-li-603">What is <span class="process-math">\(\vec v \circledast \vec v\text{?}\)</span></p></li>
+<li id="li-604"><p id="p-derived-li-604">For a vector <span class="process-math">\(\vec v\)</span> in <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> how is the length of <span class="process-math">\(\vec v\)</span> related to<span class="process-math">\(\vec v \circledast \vec v\text{?}\)</span></p></li>
+</ol></article></article><section class="subsection" id="subsection-120"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.1.1</span> <span class="title">The Dot Product</span>
+</h3>
+<p id="p-1115">The dot product is a binary operation on vectors that helps us measure the length of vectors and the angle formed by a pair of vectors.</p>
+<article class="definition definition-like" id="definition-31"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.1.2</span><span class="period">.</span>
+</h4>
+<p id="p-1116">Given two <span class="process-math">\(n\)</span>-dimensional vectors <span class="process-math">\(\vec v\)</span> and <span class="process-math">\(\vec w\text{,}\)</span> the <dfn class="terminology">dot product</dfn> <span class="process-math">\(\vec v \cdot \vec w\)</span> is defined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec v \cdot \vec w = \left[\begin{array}{c} v_1 \\ v_2 \\ v_3 \\ \vdots \\ v_n \end{array}\right] \cdot \left[\begin{array}{c} w_1 \\ w_2 \\ w_3 \\ \vdots \\ w_n \end{array}\right]
+= v_1 w_1 + v_2 w_2 + v_3 w_3 + \cdots + v_n w_n
+\end{equation*}
+</div>
+<p class="continuation">The dot product combines two vectors and creates a scalar that gives us geometric information about the input vectors. If both vectors are the same, then <span class="process-math">\(\vec{v} \cdot \vec{v}\)</span> gives us the square of the length of <span class="process-math">\(\vec{v}\text{.}\)</span> The <dfn class="terminology">length</dfn> of a vector <span class="process-math">\(\vec v\)</span> in <span class="process-math">\(\IR^n\text{,}\)</span> denoted <span class="process-math">\(\lvert \vec v \rvert\text{,}\)</span> is defined as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lvert \vec v \rvert = \sqrt{\vec v \cdot \vec v}=\sqrt{v_1^2 + v_2^2 + v_3 ^2 + \cdots + v_n^2}
+\end{equation*}
+</div>
+<p class="continuation">Vectors of length <span class="process-math">\(1\)</span> are called <dfn class="terminology">unit vectors</dfn>.</p></article><article class="activity project-like" id="activity-164"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-69"><p id="p-1117">Consider each of the following properties of the dot product. Label each property as <em class="emphasis">valid</em> if the property holds for Euclidean vectors <span class="process-math">\(\vec u\text{,}\)</span> <span class="process-math">\(\vec v\)</span> and <span class="process-math">\(\vec w\)</span> from <span class="process-math">\(\IR^n\text{,}\)</span> and scalars <span class="process-math">\(a,b \in \IR\text{,}\)</span> and <em class="emphasis">invalid</em> if it does not.</p></div>
+<ol class="decimal">
+<li id="li-605"><p id="p-1118"><span class="process-math">\(\left(\vec u \cdot \vec v\right) \cdot \vec w=\vec u \cdot \left(\vec v \cdot \vec w\right)\text{.}\)</span></p></li>
+<li id="li-606"><p id="p-1119"><span class="process-math">\(\left(a \vec v\right) \cdot \vec w=a \left(\vec v \cdot \vec w\right)\text{.}\)</span></p></li>
+<li id="li-607"><p id="p-1120"><span class="process-math">\(\vec w\cdot \vec v=\vec v \cdot \vec w\text{.}\)</span></p></li>
+<li id="li-608"><p id="p-1121"><span class="process-math">\(\left(a+b\right) \left(\vec v \cdot \vec w\right)= \left(a \vec v\right) \cdot \left(b \vec w\right)\text{.}\)</span></p></li>
+<li id="li-609"><p id="p-1122"><span class="process-math">\(\left(a \vec u+b \vec v\right) \cdot \vec w= \left(a \vec u\right) \cdot \vec w + \left(b \vec v\right) \cdot \vec w\text{.}\)</span></p></li>
+</ol></article><article class="observation remark-like" id="observation-36"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">6.1.4</span><span class="period">.</span>
+</h4>
+<p id="p-1123">Like arithmetic of real numbers, the dot product on vectors satisfies some familiar properties. Let   <span class="process-math">\(\vec u\text{,}\)</span> <span class="process-math">\(\vec v\)</span> and <span class="process-math">\(\vec w\)</span> be vectors from <span class="process-math">\(\IR^n\text{,}\)</span> and let <span class="process-math">\(a,b \in \IR\)</span> be scalars.</p>
+<ol class="decimal">
+<li id="li-610"><p id="p-1124"><span class="process-math">\(\vec u \cdot \vec v = \vec v \cdot \vec u\text{.}\)</span></p></li>
+<li id="li-611"><p id="p-1125"><span class="process-math">\(\left( a\vec u\right) \cdot \vec v = a\left(\vec u \cdot \vec v\right)\text{.}\)</span></p></li>
+<li id="li-612"><p id="p-1126"><span class="process-math">\(\left(a\vec u + b \vec v\right)\cdot \vec w =a \vec u \cdot \vec w + b \vec v \cdot \vec w\text{.}\)</span></p></li>
+</ol></article><article class="activity project-like" id="activity-165"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.5</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-70"><p id="p-1127">Given the linear transformation <span class="process-math">\(S:\IR^2 \to \IR^2\)</span> whose standard matrix is <span class="process-math">\(\left[\begin{array}{cc} 0 &amp; -1 \\ 1 &amp; 0 \end{array}\right]\)</span> and vector <span class="process-math">\(\vec v = \left[\begin{array}{c} 3 \\ 4 \end{array}\right]\text{,}\)</span></p></div>
+<article class="task exercise-like" id="task-146"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1128">Graph <span class="process-math">\(\vec v\)</span> and <span class="process-math">\(S( \vec v )\text{.}\)</span></p></article><article class="task exercise-like" id="task-147"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1129">For an unspecified vector <span class="process-math">\(\vec w = \left[\begin{array}{c} w_1 \\ w_2 \end{array}\right]\text{,}\)</span> describe the relationship between <span class="process-math">\(\vec w\)</span> and <span class="process-math">\(S( \vec w )\text{.}\)</span></p></article></article><article class="activity project-like" id="activity-166"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.6</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-71"><p id="p-1130">Consider <span class="process-math">\(\vec v = \left[\begin{array}{c} 3 \\ 4 \end{array}\right]\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task-148"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1131">What vector <span class="process-math">\(\vec w = \left[\begin{array}{c} ? \\ ? \end{array}\right]\)</span> is the result of rotating <span class="process-math">\(\vec v\)</span> by <span class="process-math">\(90^{\circ}\)</span> counter-clockwise?</p></article><article class="task exercise-like" id="task-149"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1132">Find the dot product <span class="process-math">\(\vec v \cdot \vec w\text{.}\)</span></p></article><article class="task exercise-like" id="task-150"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1133">For an arbitrary vector <span class="process-math">\(\vec x = \left[\begin{array}{c} x_1 \\ x_2 \end{array}\right]\text{,}\)</span> what vector <span class="process-math">\(\vec y = \left[\begin{array}{c} ? \\ ? \end{array}\right]\)</span> is the result of rotating <span class="process-math">\(\vec x\)</span> by <span class="process-math">\(90^{\circ}\)</span> counter-clockwise?</p></article><article class="task exercise-like" id="task-151"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1134">Find the dot product <span class="process-math">\(\vec x \cdot \vec y\text{.}\)</span></p></article><article class="task exercise-like" id="task-152"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1135">Suppose two vectors are perpendicular. What can you say about their dot product?</p></article></article><article class="definition definition-like" id="definition-32"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.1.7</span><span class="period">.</span>
+</h4>
+<p id="p-1136">Two vectors <span class="process-math">\(\vec u\)</span> and <span class="process-math">\(\vec v\)</span> in <span class="process-math">\(\IR^n\)</span> are <dfn class="terminology">orthogonal</dfn> provided <span class="process-math">\(\vec u \cdot \vec v = 0\text{.}\)</span></p></article><p id="p-1137">A bunch of stuff goes here. So it turns out you can find the angle between vectors using the Law of Cosines as a starting place.</p>
+<article class="activity project-like" id="activity-167"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.8</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-72"><p id="p-1138">Suppose that <span class="process-math">\(\vec u =\left[\begin{array}{c} 4 \\ -1 \\ 0 \end{array}\right]\)</span> and <span class="process-math">\(\vec v = \left[\begin{array}{c} 2 \\ 3 \\ 1 \end{array}\right]\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task-153"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1139">Find the length of <span class="process-math">\(\vec u\)</span> and the length of <span class="process-math">\(\vec v\text{.}\)</span></p></article><article class="task exercise-like" id="task-154"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1140">Describe all vectors <span class="process-math">\(\vec w\)</span> that are orthogonal to <span class="process-math">\(\vec u\text{.}\)</span></p></article><article class="task exercise-like" id="task-155"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1141">Find the angle between <span class="process-math">\(\vec u\)</span> and <span class="process-math">\(\vec v\text{.}\)</span></p></article></article></section><section class="subsection" id="subsection-121"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.1.2</span> <span class="title">Videos</span>
+</h3></section><section class="exercises" id="exercises-25"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">6.1.3</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-1142"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org" target="_blank">checkit.clontz.org</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-50" id="fn-50"><sup> 1 </sup></a>.</em></p></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-50"><div class="fn"><code class="code-inline tex2jax_ignore">checkit.clontz.org</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-03T18:18:44Z       *-->
+<!--*   A recent stable commit (2022-07-01):   *-->
+<!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html xmlns:pi="http://pretextbook.org/2020/pretext/internal">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear Algebra for Team-Based Inquiry Learning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/simple.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+</head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>Linear Algebra for Team-Based Inquiry Learning</h1>
+<h2>2022 Edition</h2>
+<table>
+<tr>
+<th align="center" style="border-bottom: 0px;">Steven Clontz</th>
+<th align="center" style="border-bottom: 0px;">Drew Lewis</th>
+</tr>
+<tr>
+<td align="center" style="border-bottom: 0px;">University of South Alabama</td>
+<td align="center" style="border-bottom: 0px;">University of South Alabama</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</table>
+<h4><div class="date">August 3, 2022</div></h4></section></section><section><section><h1>Section 3.1: Linear Transformations (AT1)</h1></section><section><h3>Definition 3.1.1</h3>
+<div align="left"> <p>A <dfn class="terminology">linear transformation</dfn> (also called a <dfn class="terminology">linear map</dfn>) is a map between vector spaces that preserves the vector space operations. More precisely, if <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are vector spaces, a map <span class="process-math">\(T:V\rightarrow W\)</span> is called a linear transformation if<ol class="decimal">
+<li><p><span class="process-math">\(T(\vec{v}+\vec{w}) = T(\vec{v})+T(\vec{w})\)</span> for any <span class="process-math">\(\vec{v},\vec{w} \in V\text{,}\)</span> and</p></li>
+<li><p><span class="process-math">\(T(c\vec{v}) = cT(\vec{v})\)</span> for any <span class="process-math">\(c \in \IR,\)</span> and <span class="process-math">\(\vec{v} \in V\text{.}\)</span></p></li>
+</ol>In other words, a map is linear when vector space operations can be applied before or after the transformation without affecting the result.</p>
+</div></section><section><h3>Definition 3.1.2</h3>
+<div align="left"> <p>Given a linear transformation <span class="process-math">\(T:V\to W\text{,}\)</span> <span class="process-math">\(V\)</span> is called the <dfn class="terminology">domain</dfn> of <span class="process-math">\(T\)</span> and <span class="process-math">\(W\)</span> is called the <dfn class="terminology">co-domain</dfn> of <span class="process-math">\(T\text{.}\)</span></p> <figure class="figure figure-like" id="figure-1"><img src="generated/latex-image/image-9.svg"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span>A linear transformation with a domain of <span class="process-math">\(\IR^3\)</span> and a co-domain of <span class="process-math">\(\IR^2\)</span></figcaption></figure>
+</div></section><section><h3>Example 3.1.3</h3>
+<div align="left"> <p>Let <span class="process-math">\(T : \IR^3 \rightarrow \IR^2\)</span> be given by<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T\left(\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
+=
+\left[\begin{array}{c} x-z \\ 3y \end{array}\right].
+\end{equation*}
+</div></p> <p>To show that <span class="process-math">\(T\)</span> is a linear transformation, we must verify that <span class="process-math">\(T(\vec{v}+\vec{w}) = T(\vec{v})+T(\vec{w})\)</span> by computing<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T\left(
+\left[\begin{array}{c} x \\ y \\ z \end{array}\right] +
+\left[\begin{array}{c} u \\ v \\ w \end{array}\right]
+\right)
+=
+T\left(
+\left[\begin{array}{c} x+u \\ y+v \\ z+w \end{array}\right]
+\right) =
+\left[\begin{array}{c} (x+u)-(z+w) \\ 3(y+v) \end{array}\right]
+\end{equation*}
+</div>and<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T\left(
+\left[\begin{array}{c} x \\ y \\ z \end{array}\right]
+\right) + T\left(
+\left[\begin{array}{c} u \\ v \\ w \end{array}\right]
+\right)
+=
+\left[\begin{array}{c} x-z \\ 3y \end{array}\right] +
+\left[\begin{array}{c} u-w \\ 3v \end{array}\right]=
+\left[\begin{array}{c} (x+u)-(z+w) \\ 3(y+v) \end{array}\right]\text{,}
+\end{equation*}
+</div>and we must verify that <span class="process-math">\(T(c\vec{v}) = cT(\vec{v})\)</span> by computing<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T\left(c\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
+=
+T\left(\left[\begin{array}{c} cx \\ cy \\ cz \end{array}\right] \right)
+=
+\left[\begin{array}{c} cx-cz \\ 3cy \end{array}\right]
+\text{ and }
+cT\left(\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
+=
+c\left[\begin{array}{c} x-z \\ 3y \end{array}\right]
+=
+\left[\begin{array}{c} cx-cz \\ 3cy \end{array}\right]\text{.}
+\end{equation*}
+</div></p> <p>Therefore <span class="process-math">\(T\)</span> is a linear transformation.</p>
+</div></section><section><h3>Example 3.1.4</h3>
+<div align="left"> <p>Let <span class="process-math">\(S : \IR^2 \rightarrow \IR^4\)</span> be given by<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right)
+=
+\left[\begin{array}{c} x+y \\ x^2 \\ y+3 \\ y-2^x \end{array}\right]
+\end{equation*}
+</div></p> <p>To show that <span class="process-math">\(S\)</span> is not linear, we only need to find one counterexample.<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S\left(
+\left[\begin{array}{c} 0 \\ 1 \end{array}\right] +
+\left[\begin{array}{c} 2 \\ 3 \end{array}\right]
+\right)
+=
+S\left(
+\left[\begin{array}{c} 2 \\ 4 \end{array}\right]
+\right) =
+\left[\begin{array}{c} 6 \\ 4 \\ 7 \\ 0 \end{array}\right]
+\end{equation*}
+</div><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S\left(
+\left[\begin{array}{c} 0 \\ 1 \end{array}\right]
+\right) + S\left(
+\left[\begin{array}{c} 2 \\ 3\end{array}\right]
+\right)
+=
+\left[\begin{array}{c} 1 \\ 0 \\ 4 \\ 0 \end{array}\right] +
+\left[\begin{array}{c} 5 \\ 4 \\ 6 \\ -1 \end{array}\right]
+=
+\left[\begin{array}{c} 6 \\ 4 \\ 10 \\ -1 \end{array}\right]
+\end{equation*}
+</div></p> <p>Since the resulting vectors are different, <span class="process-math">\(S\)</span> is not a linear transformation.</p>
+</div></section><section><h3>Fact 3.1.5</h3>
+<div align="left"> <p>A map between Euclidean spaces <span class="process-math">\(T:\IR^n\to\IR^m\)</span> is linear exactly when every component of the output is a linear combination of the variables of <span class="process-math">\(\IR^n\text{.}\)</span></p> <p>For example, the following map is definitely linear because <span class="process-math">\(x-z\)</span> and <span class="process-math">\(3y\)</span> are linear combinations of <span class="process-math">\(x,y,z\text{:}\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T\left(\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
+=
+\left[\begin{array}{c} x-z \\ 3y \end{array}\right]
+=
+\left[\begin{array}{c} 1x+0y-1z \\ 0x+3y+0z \end{array}\right]\text{.}
+\end{equation*}
+</div></p> <p>But the map below is not linear because <span class="process-math">\(x^2\text{,}\)</span> <span class="process-math">\(y+3\text{,}\)</span> and <span class="process-math">\(y-2^x\)</span> are not linear combinations (even though <span class="process-math">\(x+y\)</span> is):<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right)
+=
+\left[\begin{array}{c} x+y \\ x^2 \\ y+3 \\ y-2^x \end{array}\right]\text{.}
+\end{equation*}
+</div></p>
+</div></section><section><h3>Activity 3.1.6 (~5 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(D:\P\to\P\)</span> be the derivative map defined by <span class="process-math">\(D(f(x))=f'(x)\)</span> for each polynomial <span class="process-math">\(f \in \P\text{.}\)</span> We recall from calculus that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+D(f(x)+g(x))=f'(x)+g'(x)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+D(cf(x))=cf'(x)
+\end{equation*}
+</div>
+<p>Which of the following can we conclude from these calculus rules?</p> <ol class="upper-alpha cols2">
+<li><p><span class="process-math">\(\P\)</span> is not a vector space</p></li>
+<li><p><span class="process-math">\(D\)</span> is a linear map</p></li>
+<li><p><span class="process-math">\(D\)</span> is not a linear map</p></li>
+</ol>
+</div></section><section><h3>Activity 3.1.7 (~10 min)</h3>
+<div align="left"> <p>Let the polynomial maps <span class="process-math">\(S: \P_4 \rightarrow \P_3\)</span> and <span class="process-math">\(T: \P_4 \rightarrow \P_3\)</span> be defined by<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S(f(x)) = 2f'(x)-f''(x) \hspace{3em} T(f(x)) = f'(x)+x^3\text{.}
+\end{equation*}
+</div></p> <p>Compute <span class="process-math">\(S(x^4+x)\text{,}\)</span> <span class="process-math">\(S(x^4)+S(x)\text{,}\)</span> <span class="process-math">\(T(x^4+x)\text{,}\)</span> and <span class="process-math">\(T(x^4)+T(x)\text{.}\)</span> Based on these computations, can you conclude that either <span class="process-math">\(S\)</span> or <span class="process-math">\(T\)</span> is definitely not a linear transformation?</p>
+</div></section><section><h3>Fact 3.1.8</h3>
+<div align="left"> <p>If <span class="process-math">\(L:V\to W\)</span> is a linear transformation, then <span class="process-math">\(L(\vec z)=L(0\vec v)=0L(\vec v)=\vec z\)</span> where <span class="process-math">\(\vec z\)</span> is the additive identity of the vector spaces <span class="process-math">\(V,W\text{.}\)</span></p> <p>Put another way, an easy way to prove that a map like <span class="process-math">\(T(f(x)) = f'(x)+x^3\)</span> can not be linear is to check that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T(0)=\frac{d}{dx}[0]+x^3=0+x^3=x^3\not=0.
+\end{equation*}
+</div></p>
+</div></section><section><h3>Observation 3.1.9</h3>
+<div align="left"> <p>Showing <span class="process-math">\(T:V\to W\)</span> is not a linear transformation can be done by finding an example for any one of the following.</p> <ul class="disc">
+<li><p>Show <span class="process-math">\(T(\vec z)\not=\vec z\)</span> (where <span class="process-math">\(\vec z\)</span> is the additive identity of <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span>).</p></li>
+<li><p>Find <span class="process-math">\(\vec v,\vec w\in V\)</span> such that <span class="process-math">\(T(\vec v+\vec w)\not=T(\vec v)+T(\vec w)\text{.}\)</span></p></li>
+<li><p>Find <span class="process-math">\(\vec v\in V\)</span> and <span class="process-math">\(c\in \IR\)</span> such that <span class="process-math">\(T(c\vec v)\not=cT(\vec v)\text{.}\)</span></p></li>
+</ul> <p>Otherwise, <span class="process-math">\(T\)</span> can be shown to be linear by proving the following in general.</p> <ul class="disc">
+<li><p>For all <span class="process-math">\(\vec v,\vec w\in V\text{,}\)</span> <span class="process-math">\(T(\vec v+\vec w)=T(\vec v)+T(\vec w)\text{.}\)</span></p></li>
+<li><p>For all <span class="process-math">\(\vec v\in V\)</span> and <span class="process-math">\(c\in \IR\text{,}\)</span> <span class="process-math">\(T(c\vec v)=cT(\vec v)\text{.}\)</span></p></li>
+</ul> <p>Note the similarities between this process and showing that a subset of a vector space is or is not a subspace.</p>
+</div></section><section><h3>Activity 3.1.10 (~15 min)</h3>
+<div align="left"> <p>Continue to consider <span class="process-math">\(S: \P_4 \rightarrow \P_3\)</span> defined by<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S(f(x)) = 2f'(x)-f''(x)\text{.}
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 1.</em></p> <p>Verify that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S(f(x)+g(x))=2f'(x)+2g'(x)-f''(x)-g''(x)
+\end{equation*}
+</div>is equal to <span class="process-math">\(S(f(x))+S(g(x))\)</span> for all polynomials <span class="process-math">\(f,g \in \P_4\text{.}\)</span></p>
+</div></section><section><h3>Activity 3.1.10 (~15 min)</h3>
+<div align="left"> <p>Continue to consider <span class="process-math">\(S: \P_4 \rightarrow \P_3\)</span> defined by<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S(f(x)) = 2f'(x)-f''(x)\text{.}
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 2.</em></p> <p>Verify that <span class="process-math">\(S(cf(x))\)</span> is equal to <span class="process-math">\(cS(f(x))\)</span> for all real numbers <span class="process-math">\(c\)</span> and polynomials <span class="process-math">\(f \in \P_4\text{.}\)</span></p>
+</div></section><section><h3>Activity 3.1.10 (~15 min)</h3>
+<div align="left"> <p>Continue to consider <span class="process-math">\(S: \P_4 \rightarrow \P_3\)</span> defined by<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S(f(x)) = 2f'(x)-f''(x)\text{.}
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 3.</em></p> <p>Is <span class="process-math">\(S\)</span> linear?</p>
+</div></section><section><h3>Activity 3.1.11 (~20 min)</h3>
+<div align="left"> <p>Let polynomial maps <span class="process-math">\(S: \P \rightarrow \P\)</span> and <span class="process-math">\(T: \P \rightarrow \P\)</span> be defined by<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S(f(x)) = (f(x))^2 \hspace{3em} T(f(x)) = 3xf(x^2)
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 1.</em></p> <p>Note that <span class="process-math">\(S(0)=0\)</span> and <span class="process-math">\(T(0)=0\text{.}\)</span> So instead, show that <span class="process-math">\(S(x+1)\not= S(x)+S(1)\)</span> to verify that <span class="process-math">\(S\)</span> is not linear.</p>
+</div></section><section><h3>Activity 3.1.11 (~20 min)</h3>
+<div align="left"> <p>Let polynomial maps <span class="process-math">\(S: \P \rightarrow \P\)</span> and <span class="process-math">\(T: \P \rightarrow \P\)</span> be defined by<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S(f(x)) = (f(x))^2 \hspace{3em} T(f(x)) = 3xf(x^2)
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 2.</em></p> <p>Prove that <span class="process-math">\(T\)</span> is linear by verifying that <span class="process-math">\(T(f(x)+g(x))=T(f(x))+T(g(x))\)</span> and <span class="process-math">\(T(cf(x))=cT(f(x))\text{.}\)</span></p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>
