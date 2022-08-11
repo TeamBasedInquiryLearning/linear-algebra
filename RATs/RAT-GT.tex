@@ -1,0 +1,212 @@
+\documentclass{article}
+\usepackage{enumerate,amssymb,tikz, tikz-cd,amsmath,amsthm,multicol,hyperref,environ,etoolbox,graphicx,catchfile}
+
+\usepackage[left=1in,right=1in,top=0.5in,bottom=0.7in,includeheadfoot]{geometry}
+\usepackage{fancyhdr}
+
+%%%Page layout setup%%%
+\newcommand{\header}{Linear Algebra}
+\newcommand{\setHeader}[1]{\renewcommand{\header}{#1}}
+
+\newcommand{\moduleLetter}{X}
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{\header}
+\rfoot{Page \thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+\NewEnviron{module}[2]{
+  \renewcommand{\moduleLetter}{#1}
+  \setHeader{Module \moduleLetter{}: #2}
+  \BODY
+}
+\NewEnviron{readinessAssuranceTest}{
+  \newpage
+  \subsection*{Readiness Check}
+  Choose the most appropriate response for each question.
+  \begin{enumerate}[1)]
+    \BODY
+  \end{enumerate}
+}
+
+
+\NewEnviron{readinessAssuranceTestChoices}{
+  \begin{enumerate}[(a)]
+    \BODY
+  \end{enumerate}
+}
+
+%%%New Commands/Math operators%%%
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+%This code allows for augmented matrices, e.g. by \begin{bmatrix}[cc|c] ...
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+
+\begin{document}
+\begin{module}{GT}{Understanding linear transformations geometrically}
+\begin{readinessAssuranceTest}
+\setcounter{enumi}{40}
+
+%B011
+%D C A B A D B A D B
+
+%D
+\item Find the area of the parallelogram with vertices $(0,0)$, $(4,0)$, $(5,2)$, and $(1,2)$.
+\begin{multicols}{2}
+\begin{readinessAssuranceTestChoices}
+\item $14$
+\item $12$
+\item $10$
+\item $8$ %Correct
+\end{readinessAssuranceTestChoices}
+
+
+\begin{tikzpicture}[scale=0.7]
+\draw[thin,gray,<->] (-1,0)-- (5,0);
+\draw[thin,gray,<->] (0,-1)-- (0,3);
+\draw[thick,blue] (0,0) node[below right] {$(0,0)$} -- (4,0)node [below] {$(4,0)$} -- (5,2) node[above] {$(5,2)$} -- (1,2) node[above]{$(1,2)$} -- cycle;
+\end{tikzpicture}
+\end{multicols}
+
+%C
+\item Find the area of the parallelogram with vertices $(0,0)$, $(12,5)$, $(12,8)$, and $(0,3)$.
+\begin{multicols}{2}
+\begin{readinessAssuranceTestChoices}
+\item $96$
+\item $54$
+\item $36$ %Correct
+\item $72$
+\end{readinessAssuranceTestChoices}
+
+
+\begin{tikzpicture}[scale=0.25]
+\draw[thin,gray,<->] (-1,0)-- (15,0);
+\draw[thin,gray,<->] (0,-1)-- (0,9);
+\draw[thick,blue] (0,0) node[below right] {$(0,0)$} -- (12,5)node [below right] {$(12,5)$} -- (12,8) node[above] {$(12,8)$} -- (0,3) node[left]{$(0,3)$} -- cycle;
+\end{tikzpicture}
+\end{multicols}
+
+%A
+\item The parallelogram ABCD has area $6$.  If AE is $50\%$ longer than AB, what is the area of the parallelogram AEFD?
+\begin{multicols}{2}
+\begin{readinessAssuranceTestChoices}
+\item $9$  %Correct
+\item $12$
+\item $15$
+\item $18$
+\end{readinessAssuranceTestChoices}
+
+\begin{tikzpicture}[scale=0.4]
+\draw[thin,gray,<->] (-1,0)-- (6,0);
+\draw[thin,gray,<->] (0,-1)-- (0,6);
+\draw[thick,blue] (0,0) node[below right] {A} --(4,2) node[below] {E} -- (5,5) node[above]{F} -- (1,3)node[above] {D} -- cycle;
+\draw[thick,blue] (3,1.5) node[below] {B} -- (4,4.5) node [above] {C};
+\end{tikzpicture}
+\end{multicols}
+
+%B
+\item The parallelogram ABCD has area $6$.  If AD is twice as long as AF, what is the area of the parallelogram ABEF?
+\begin{multicols}{2}
+\begin{readinessAssuranceTestChoices}
+\item $4$
+\item $3$ %Correct
+\item $2$
+\item $1$
+\end{readinessAssuranceTestChoices}
+
+\begin{tikzpicture}[scale=0.5]
+\draw[thin,gray,<->] (-1,0)-- (6,0);
+\draw[thin,gray,<->] (0,-1)-- (0,6);
+\draw[thick,blue] (0,0) node[below left] {A} --(4,2) node[below] {B} -- (5,5) node[above]{C} -- (1,3)node[above left] {D} -- cycle;
+\draw[thick,blue] (0.5,1.5) node[left] {F\ \ } -- (4.5,3.5) node [right] {E};
+\end{tikzpicture}
+\end{multicols}
+
+\newpage
+
+%A
+\item Let $T: \IR^2 \rightarrow \IR$ be a linear transformation.  Which of the following is equal to $T\left(\begin{bmatrix} a+b \\ a+b \end{bmatrix}\right)$?
+\begin{multicols}{2}
+\begin{readinessAssuranceTestChoices}
+\item $T\left(\begin{bmatrix}a \\ b \end{bmatrix} \right)+T\left(\begin{bmatrix}b \\ a \end{bmatrix} \right)$%Correct
+\item $T\left(\begin{bmatrix} a \\ a \end{bmatrix}\right)+T\left(\begin{bmatrix}a \\ b \end{bmatrix} \right)+T\left(\begin{bmatrix}b \\ a \end{bmatrix}\right)+T\left(\begin{bmatrix}b \\ b \end{bmatrix} \right)$ 
+\item $T\left(\begin{bmatrix}a \\ b \end{bmatrix} \right)$
+\item $2T\left(\begin{bmatrix}a \\ b \end{bmatrix} \right)$
+\end{readinessAssuranceTestChoices}
+\end{multicols}
+
+%D
+\item Let $T: \IR^n \rightarrow \IR^n$ be a linear transformation with standard matrix $A$.  Which of the following is equivalent to the statement ``$A$ is an invertible matrix''?
+\begin{readinessAssuranceTestChoices}
+\item $A$ is a square matrix
+\item $\RREF(A)$ has a column without a pivot
+\item The matrix equation $AX=B$ has no solution for some $n\times 1$
+      matrix $B$.
+\item $T$ is both injective and surjective %Correct
+\end{readinessAssuranceTestChoices}
+
+%B
+\item What is the matrix corresponding to the linear transformation $T: \IR^3 \rightarrow \IR^3$ given by $$T\left( \begin{bmatrix} x \\ y \\ z \end{bmatrix}\right) = \begin{bmatrix} 3x+2y-z \\ y+z \\x+7z \end{bmatrix}?$$
+\begin{multicols}{4}
+\begin{readinessAssuranceTestChoices}
+\item $\begin{bmatrix} 3 & 0 & 1 \\ 2 & 1 & 0 \\ -1 & 1 & 7 \end{bmatrix}$
+\item $\begin{bmatrix} 3 & 2 & -1 \\ 0 & 1 & 1 \\ 1 & 0 & 7  \end{bmatrix}$ %Correct
+\item $\begin{bmatrix} 3 & 2 & -1 \\ 1 & 1 & 0 \\ 1 & 7 & 0 \end{bmatrix}$
+\item $\begin{bmatrix}  3 & 1 & 1 \\ 2 & 1 & 7 \\ -1 & 0 & 0 \end{bmatrix}$
+
+\end{readinessAssuranceTestChoices}
+\end{multicols}
+
+%A
+\item What is the largest root of the polynomial $x^2+x-12$?
+\begin{multicols}{4}
+\begin{readinessAssuranceTestChoices}
+\item $3$ %Correct
+\item $4$
+\item $1$
+\item $2$
+\end{readinessAssuranceTestChoices}
+\end{multicols}
+
+
+%D
+\item Which of the following is a root of the polynomial $x^2-4x+13$?
+\begin{multicols}{4}
+\begin{readinessAssuranceTestChoices}
+\item $3+4i$
+\item $5+6i$
+\item $4-5i$
+\item $2-3i$ %Correct
+\end{readinessAssuranceTestChoices}
+\end{multicols}
+
+%B
+\item Which of the following conditions imply that the quadratic polynomial $ax^2+bx+c$ has no real roots?
+\begin{multicols}{2}
+\begin{readinessAssuranceTestChoices}
+\item $a^2+4bc<0$
+\item $b^2-4ac<0$ %Correct
+\item $ac-4b^2<0$
+\item $ab+4c^2<0$
+\end{readinessAssuranceTestChoices}
+\end{multicols}
+
+
+\end{readinessAssuranceTest}
+\end{module}
+\end{document}

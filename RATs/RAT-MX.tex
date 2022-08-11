@@ -1,0 +1,187 @@
+\documentclass{article}
+\usepackage{enumerate,amssymb,tikz, tikz-cd,amsmath,amsthm,multicol,hyperref,environ,etoolbox,graphicx,catchfile}
+
+\usepackage[left=1in,right=1in,top=0.5in,bottom=0.7in,includeheadfoot]{geometry}
+\usepackage{fancyhdr}
+
+%%%Page layout setup%%%
+\newcommand{\header}{Linear Algebra}
+\newcommand{\setHeader}[1]{\renewcommand{\header}{#1}}
+
+\newcommand{\moduleLetter}{X}
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{\header}
+\rfoot{Page \thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+\NewEnviron{module}[2]{
+  \renewcommand{\moduleLetter}{#1}
+  \setHeader{Module \moduleLetter{}: #2}
+  \BODY
+}
+\NewEnviron{readinessAssuranceTest}{
+  \newpage
+  \subsection*{Readiness Check}
+  Choose the most appropriate response for each question.
+  \begin{enumerate}[1)]
+    \BODY
+  \end{enumerate}
+}
+
+
+\NewEnviron{readinessAssuranceTestChoices}{
+  \begin{enumerate}[(a)]
+    \BODY
+  \end{enumerate}
+}
+
+%%%New Commands/Math operators%%%
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+%This code allows for augmented matrices, e.g. by \begin{bmatrix}[cc|c] ...
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+
+\begin{document}
+\begin{module}{MX}{}
+\begin{readinessAssuranceTest}
+\setcounter{enumi}{30}
+
+%B011
+%A C B A C B D C B D
+
+
+%A
+\item Suppose $f(x)$ and $g(x)$ are real-valued functions satisfying
+\begin{align*}
+f(2) &= 4 & g(2) & = 4 \\
+f(3) &= 5 & g(3) &= 5 \\
+f(4) &= 3 & g(4) &= 2
+\end{align*}
+Compute $(f \circ g)(2)$.
+\begin{multicols}{4}
+\begin{readinessAssuranceTestChoices}
+\item $3$ %Correct
+\item $4$
+\item $5$
+\item $6$
+\end{readinessAssuranceTestChoices}
+\end{multicols}
+
+%C
+\item Let $f(x) = x^2-2$ and $g(x)= x^2+1$.  Compute the composition function $(f \circ g)(x)$.
+\begin{multicols}{4}
+\begin{readinessAssuranceTestChoices}
+\item $x^2-1$
+\item $x^4-4x^2+5$
+\item $x^4+2x^2-1$ %Correct
+\item $x^4-x^2-2$
+\end{readinessAssuranceTestChoices}
+\end{multicols}
+
+
+
+%B
+\item What is the standard matrix corresponding to the linear transformation $T: \IR^3 \rightarrow \IR^3$ given by $T\left( \begin{bmatrix} x \\ y \\ z \end{bmatrix}\right) = \begin{bmatrix} x+2y-z \\ y+3z \\x+7y \end{bmatrix}$?
+\begin{multicols}{4}
+\begin{readinessAssuranceTestChoices}
+\item $\begin{bmatrix} 1 & 2 & -1 \\ 1 & 3 & 0 \\ 1 & 7 & 0 \end{bmatrix}$
+\item $\begin{bmatrix} 1 & 2 & -1 \\ 0 & 1 & 3 \\ 1 & 7 & 0 \end{bmatrix}$ %Correct
+\item $\begin{bmatrix}  1 & 0 & 1 \\ 2 & 1 & 7 \\ -1 & 3 & 0 \end{bmatrix}$
+\item $\begin{bmatrix} 1 & 1 & 1 \\ 2 & 3 & 7 \\ -1 & 0 & 0 \end{bmatrix}$
+\end{readinessAssuranceTestChoices}
+\end{multicols}
+
+%A
+\item Let \(T: \IR^3 \rightarrow \IR^2\) be the linear map corresponding to the standard matrix \(\begin{bmatrix} 2 & 1 & -1 \\ 0 & 1 & 3  \end{bmatrix} \).  Compute \(T\left(\begin{bmatrix} 1 \\ -1 \\ 3 \end{bmatrix} \right)\).
+\begin{multicols}{4}
+\begin{readinessAssuranceTestChoices}
+\item $\begin{bmatrix}  -2 \\ 8 \end{bmatrix}$ %Correct
+\item $\begin{bmatrix} -2 \\ -8  \end{bmatrix}$
+\item $\begin{bmatrix} 2 \\ -4 \end{bmatrix}$
+\item $\begin{bmatrix}  2 \\ 4 \end{bmatrix}$ 
+\end{readinessAssuranceTestChoices}
+\end{multicols}
+
+%C
+\item Let $T: \IR^2 \rightarrow \IR^3$ be the linear transformation corresponding to the standard matrix $A=\begin{bmatrix} 2 & 3 \\ -1 & -1 \\ 0 & 4 \end{bmatrix}$.  Compute $T\left(\begin{bmatrix} 2 \\ -1 \end{bmatrix}\right)$.
+\begin{multicols}{4}
+\begin{readinessAssuranceTestChoices}
+\item $\begin{bmatrix} 2 \\ -1 \\ 0 \end{bmatrix}$
+\item $\begin{bmatrix} 5 \\ 7 \\ 4\end{bmatrix}$
+\item $\begin{bmatrix} 1 \\ -1 \\ -4 \end{bmatrix}$ %Correct
+\item $\begin{bmatrix} 4 \\ -1 \\ 8 \end{bmatrix}$
+\end{readinessAssuranceTestChoices}
+\end{multicols}
+
+\newpage
+%B
+\item Let \(T: \IR^4 \rightarrow \IR^2\) be the linear transformation corresponding to the standard matrix \(\begin{bmatrix} 3 & -1 & 0 & 2 \\ -2 & -4 & -1 & 1 \end{bmatrix} \).  What are the domain and codomain of \(T\)?
+\begin{readinessAssuranceTestChoices}
+\item The domain is \(\IR^2\) and the codomain is \(\IR^4\)
+\item The domain is \(\IR^4\) and the codomain is \(\IR^2\) %correct
+\item The domain and codomain are both \(\IR^4\)
+\item The domain and codomain are both \(\IR^2\)
+\end{readinessAssuranceTestChoices}
+
+%D
+\item Which of the following is true of the linear transformation $T: \IR^3 \rightarrow \IR^3$ given by $$T\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix} \right) = \begin{bmatrix} x+3y-4z \\ x+y \\ 3z \end{bmatrix}?$$
+\begin{readinessAssuranceTestChoices}
+\item $T$ is neither injective nor surjective
+\item $T$ is injective but not surjective
+\item $T$ is surjective but not injective
+\item $T$ is both injective and surjective %Correct
+\end{readinessAssuranceTestChoices}
+
+
+%C
+\item Which of the following is true of the linear transformation $T:\IR^3 \rightarrow \IR^2$ given by $$T\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix} \right) = \begin{bmatrix} x-y \\ x+z \end{bmatrix} ?$$
+\begin{readinessAssuranceTestChoices}
+\item $T$ is injective but not surjective
+\item $T$ is both injective and surjective
+\item $T$ is surjective but not injective %Correct
+\item $T$ is neither injective nor surjective
+\end{readinessAssuranceTestChoices}
+
+
+%B
+\item Let $T: \IR^n \rightarrow \IR^m$ be a linear transformation with standard matrix $A$.  Which of the following is {\bf not} a characterization of the statement ``$T$ is injective''?
+\begin{readinessAssuranceTestChoices}
+\item If $T(\vec{v})=T(\vec{w})$ for some $\vec{v}, \vec{w} \in \IR^n$, then $\vec{v}=\vec{w}$.
+\item $T$ has a non-trivial kernel, i.e. \(\ker T \neq \left\{ \vec{0}\right\}\) %Correct
+\item The columns of $A$ are linearly independent
+\item $\RREF(A)$ has a pivot in every column
+\end{readinessAssuranceTestChoices}
+
+
+%D
+\item Let $T: \IR^n \rightarrow \IR^m$ be a linear transformation with standard matrix $A$.  Which of the following is {\bf not} a characterization of the statement ``$T$ is surjective''?
+\begin{readinessAssuranceTestChoices}
+\item $\RREF(A)$ has a pivot in every row
+\item $\Im T = \IR^m$
+\item The columns of $A$ span $\IR^m$
+\item $\RREF(A)$ has a pivot in every column %Correct
+\end{readinessAssuranceTestChoices}
+
+
+
+
+
+\end{readinessAssuranceTest}
+\end{module}
+\end{document}
