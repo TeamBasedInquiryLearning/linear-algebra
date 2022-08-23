@@ -15,7 +15,8 @@
 <meta property="book:title" content="Linear Algebra for Team-Based Inquiry Learning">
 <meta property="book:author" content="Steven Clontz">
 <meta property="book:author" content="Drew Lewis">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
@@ -48,11 +49,11 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
-startup: {
+  startup: {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
-      $(document).trigger("runestone:mathjax-ready");
+      rsMathReady();
       }
     )}
 },
@@ -258,7 +259,7 @@ startup: {
 </div>
 </div>
 </div>
-<div class="date">August 3, 2022</div>
+<div class="date">August 23, 2022</div>
 <nav class="summary-links"><ul>
 <li><a href="colophon.html" class="internal"><span class="title">Colophon</span></a></li>
 <li><a href="tbil-rl.html" class="internal"><span class="title">TBIL Resource Library</span></a></li>
