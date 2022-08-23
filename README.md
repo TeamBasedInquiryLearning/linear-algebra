@@ -1,40 +1,37 @@
-# TBIL 2021 Edition
-
-This version is hosted at
-<https://stevenclontz.github.io/linear-algebra-tbil-2021/>.
-
-- Google Drive: https://drive.google.com/drive/folders/1RuicNaVu9kZdMOy0pMvqNtfGQc-U8LkC?usp=sharing
-- Canvas: https://jagsonline.instructure.com/courses/221/
-
-## Copyright and Licensing
-
-See [source/meta/copyright.ptx](source/meta/copyright.ptx) and
-<https://stevenclontz.github.io/linear-algebra-tbil-2021/colophon.html>.
-
-## original README
-
-below
-
 # Linear Algebra for Team-Based Inquiry Learning
 
 Materials for teaching linear algebra using
 Team-Based Inquiry Learning, authored in
 [PreTeXt](https://pretextbook.org/). This is a part of the
-[NSF-funded TBIL Resource Library](https://sites.google.com/southalabama.edu/tbil).
+[TBIL Resource Library](https://sites.google.com/southalabama.edu/tbil). This work was
+funded by the National Science Foundation [DUE #2011807](https://nsf.gov/awardsearch/showAward?AWD_ID=2011807).
 
 [Steven Clontz](https://clontz.org) and
-[Drew Lewis](https://twitter.com/siwelwerd) are the maintainers
+[Drew Lewis](http://drew-lewis.com) are the maintainers
 of this project.
 
-## For instructors and students
+## TBIL 2022 Edition
 
-A textbook of activities and sample exercises is available publicly at
-<https://teambasedinquirylearning.github.io/linear-algebra>.
+The 2022 version of the textbook is hosted at
+<https://teambasedinquirylearning.github.io/linear-algebra/2022/>.
 Randomized practice exercises are available publicly on the
-[CheckIt](https://checkit.clontz.org/#/banks/tbil-la) platform.
+[CheckIt](https://teambasedinquirylearning.github.io/linear-algebra/2022/exercises/#/bank/) platform.
 
 Other materials, such as quizzes for the Readiness Assurance Process,
 are available in the PDF folder of this repository.
+
+## 2023 Preview Edition
+
+The in-development 2023 version is available for preview at 
+<https://teambasedinquirylearning.github.io/linear-algebra/2023/>. Please note
+that this version is subject to change radically without notice.
+Classroom use is discouraged; these updates will be published
+by August 2023.
+
+## Copyright and Licensing
+
+See [source/meta/copyright.ptx](source/meta/copyright.ptx) and
+<https://teambasedinquirylearning.github.io/linear-algebra/2022/colophon.html>.
 
 ## Authoring
 
