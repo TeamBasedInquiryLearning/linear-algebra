@@ -40,8 +40,8 @@ class Generator(BaseGenerator):
         non_rrefs[2]["label"]="C"
 
         return {
-        "A": A,
-        "rref": A.rref(),
-        "non_rrefs": non_rrefs,
+            "A": A,
+            "rref": A.rref(),
+            "non_rrefs": non_rrefs,
         }
 
