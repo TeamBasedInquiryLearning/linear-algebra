@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-08-02T20:01:53Z       *-->
+<!--*       on 2022-09-14T18:09:31Z       *-->
 <!--*   A recent stable commit (2022-07-01):   *-->
 <!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
 <!--*                                          *-->
@@ -169,7 +169,98 @@ dfn {
 <td align="center"></td>
 </tr>
 </table>
-<h4><div class="date">August 2, 2022</div></h4></section></section><section><section><h1>Section A.3: Geology: Phases and Components</h1></section></section>
+<h4><div class="date">September 14, 2022</div></h4></section></section><section><section><h1>Section A.3: Geology: Phases and Components</h1></section><section><h3>Definition A.3.1</h3>
+<div align="left"> <p>In geology, a <dfn class="terminology">phase</dfn> is any physically separable material in the system, such as various minerals or liquids.</p> <p>A <dfn class="terminology">component</dfn> is a chemical compound necessary to make up the phases; these are usually oxides such as Calcium Oxide (<span class="process-math">\({\rm CaO}\)</span>) or Silicon Dioxide (<span class="process-math">\({\rm SiO_2}\)</span>).</p> <p>In a typical application, a geologist knows how to build each phase from the components, and is interested in determining reactions among the different phases.</p>
+</div></section><section><h3>Observation A.3.2</h3>
+<div align="left"> <p>Consider the 3 components<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec{c}_1={\rm CaO} \hspace{1em} \vec{c}_2={\rm MgO} \hspace{1em} \text{and } \vec{c}_3={\rm SiO_2}
+\end{equation*}
+</div>and the 5 phases:<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+\vec{p}_1 &amp;= {\rm Ca_3MgSi_2O_8} &amp; \vec{p}_2 &amp;= {\rm CaMgSiO_4} &amp; \vec{p}_3 &amp;= {\rm CaSiO_3}\\
+\vec{p}_4 &amp;= {\rm CaMgSi_2O_6} &amp; \vec{p}_5 &amp;= {\rm Ca_2MgSi_2O_7}
+\end{align*}
+</div></p> <p>Geologists already know (or can easily deduce) that<div class="displaymath process-math" data-contains-math-knowls="" id="md-2">
+\begin{align*}
+\vec{p}_1 &amp;= 3\vec{c}_1 + \vec{c}_2 + 2 \vec{c}_3 &amp; \vec{p}_2 &amp;= \vec{c}_1 +\vec{c}_2 + \vec{c}_3  &amp;
+\vec{p}_3 &amp;= \vec{c}_1 + 0\vec{c}_2 +  \vec{c}_3\\
+\vec{p}_4 &amp;= \vec{c}_1 +\vec{c}_2 + 2\vec{c}_3 &amp;  \vec{p}_5 &amp;= 2\vec{c}_1 + \vec{c}_2 + 2 \vec{c}_3 
+\end{align*}
+</div>since, for example:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec c_1+\vec c_3 = \mathrm{CaO} + \mathrm{SiO_2} = \mathrm{CaSiO_3} = \vec p_3  
+\end{equation*}
+</div></p>
+</div></section><section><h3>Activity A.3.3</h3>
+<div align="left"> <p>To study this vector space, each of the three components <span class="process-math">\(\vec c_1,\vec c_2,\vec c_3\)</span> may be considered as the three components of a Euclidean vector.<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec{p}_1 = \left[\begin{array}{c} 3 \\ 1 \\ 2 \end{array}\right],
+\vec{p}_2 = \left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right],
+\vec{p}_3 = \left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right],
+\vec{p}_4 = \left[\begin{array}{c} 1 \\ 1 \\ 2 \end{array}\right],
+\vec{p}_5 = \left[\begin{array}{c} 2 \\ 1 \\ 2 \end{array}\right].
+\end{equation*}
+</div></p> <p>Determine if the set of phases is linearly dependent or linearly independent.</p>
+</div></section><section><h3>Activity A.3.4</h3>
+<div align="left"> <p>Geologists are interested in knowing all the possible chemical reactions among the 5 phases:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec{p}_1 = \mathrm{Ca_3MgSi_2O_8} = \left[\begin{array}{c} 3 \\ 1 \\ 2 \end{array}\right] \hspace{1em}
+\vec{p}_2 = \mathrm{CaMgSiO_4} = \left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right] \hspace{1em}
+\vec{p}_3 = \mathrm{CaSiO_3} =  \left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right]
+\end{equation*}
+</div><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec{p}_4 = \mathrm{CaMgSi_2O_6} = \left[\begin{array}{c} 1 \\ 1 \\ 2 \end{array}\right] \hspace{1em}
+\vec{p}_5 = \mathrm{Ca_2MgSi_2O_7} = \left[\begin{array}{c} 2 \\ 1 \\ 2 \end{array}\right].
+\end{equation*}
+</div>That is, they want to find numbers <span class="process-math">\(x_1,x_2,x_3,x_4,x_5\)</span> such that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_1\vec{p}_1+x_2\vec{p}_2+x_3\vec{p}_3+x_4\vec{p}_4+x_5\vec{p}_5 = 0.
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 1.</em></p> <p>Set up a system of equations equivalent to this vector equation.</p>
+</div></section><section><h3>Activity A.3.4</h3>
+<div align="left"> <p>Geologists are interested in knowing all the possible chemical reactions among the 5 phases:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec{p}_1 = \mathrm{Ca_3MgSi_2O_8} = \left[\begin{array}{c} 3 \\ 1 \\ 2 \end{array}\right] \hspace{1em}
+\vec{p}_2 = \mathrm{CaMgSiO_4} = \left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right] \hspace{1em}
+\vec{p}_3 = \mathrm{CaSiO_3} =  \left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right]
+\end{equation*}
+</div><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec{p}_4 = \mathrm{CaMgSi_2O_6} = \left[\begin{array}{c} 1 \\ 1 \\ 2 \end{array}\right] \hspace{1em}
+\vec{p}_5 = \mathrm{Ca_2MgSi_2O_7} = \left[\begin{array}{c} 2 \\ 1 \\ 2 \end{array}\right].
+\end{equation*}
+</div>That is, they want to find numbers <span class="process-math">\(x_1,x_2,x_3,x_4,x_5\)</span> such that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_1\vec{p}_1+x_2\vec{p}_2+x_3\vec{p}_3+x_4\vec{p}_4+x_5\vec{p}_5 = 0.
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 2.</em></p> <p>Find a basis for its solution space.</p>
+</div></section><section><h3>Activity A.3.4</h3>
+<div align="left"> <p>Geologists are interested in knowing all the possible chemical reactions among the 5 phases:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec{p}_1 = \mathrm{Ca_3MgSi_2O_8} = \left[\begin{array}{c} 3 \\ 1 \\ 2 \end{array}\right] \hspace{1em}
+\vec{p}_2 = \mathrm{CaMgSiO_4} = \left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right] \hspace{1em}
+\vec{p}_3 = \mathrm{CaSiO_3} =  \left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right]
+\end{equation*}
+</div><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec{p}_4 = \mathrm{CaMgSi_2O_6} = \left[\begin{array}{c} 1 \\ 1 \\ 2 \end{array}\right] \hspace{1em}
+\vec{p}_5 = \mathrm{Ca_2MgSi_2O_7} = \left[\begin{array}{c} 2 \\ 1 \\ 2 \end{array}\right].
+\end{equation*}
+</div>That is, they want to find numbers <span class="process-math">\(x_1,x_2,x_3,x_4,x_5\)</span> such that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_1\vec{p}_1+x_2\vec{p}_2+x_3\vec{p}_3+x_4\vec{p}_4+x_5\vec{p}_5 = 0.
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 3.</em></p> <p>Interpret each basis vector as a vector equation and a chemical equation.</p>
+</div></section><section><h3>Activity A.3.5</h3>
+<div align="left"> <p>We found two basis vectors <span class="process-math">\(\left[\begin{array}{c} 1 \\ -2 \\ -2 \\ 1 \\ 0 \end{array}\right]\)</span> and <span class="process-math">\(\left[\begin{array}{c} 0 \\ -1 \\ -1 \\ 0 \\ 1 \end{array}\right]\text{,}\)</span> corresponding to the vector and chemical equations<div class="displaymath process-math" data-contains-math-knowls="" id="md-3">
+\begin{align*}
+2\vec{p}_2 + 2 \vec{p}_3 &amp;= \vec{p}_1 + \vec{p}_4 &amp; 2{\rm CaMgSiO_4}+2{\rm CaSiO_3}&amp;={\rm Ca_3MgSi_2O_8}+{\rm CaMgSi_2O_6}\\
+\vec{p}_2 +\vec{p}_3 &amp;= \vec{p}_5 &amp;  {\rm CaMgSiO_4} + {\rm CaSiO_3} &amp;= {\rm Ca_2MgSi_2O_7}
+\end{align*}
+</div></p> <p>Combine the basis vectors to produce a chemical equation among the five phases that does not involve <span class="process-math">\(\vec{p}_2 = {\rm CaMgSiO_4}\text{.}\)</span></p>
+</div></section></section>
 </div>
 </div></body>
 <script>
