@@ -70,7 +70,8 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
                        linked: true,
                        languages: ['octave'],
                        evalButtonText: 'Evaluate (Octave)'});
-</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.13/pretext_search.js"></script><link href="https://pretextbook.org/css/0.4/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
@@ -146,6 +147,14 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">2023 Edition PREVIEW</span></a></h1>
 <p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+<div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<ol id="searchresults"></ol>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
@@ -259,7 +268,7 @@ T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
 </ol></article><article class="definition definition-like" id="definition-20"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
 </h4>
-<p id="p-671">Let <span class="process-math">\(T: V \rightarrow W\)</span> be a linear transformation.  The <dfn class="terminology">kernel</dfn> of <span class="process-math">\(T\)</span> is an important subspace of <span class="process-math">\(V\)</span> defined by</p>
+<p id="p-671">Let <span class="process-math">\(T: V \rightarrow W\)</span> be a linear transformation, and let <span class="process-math">\(\vec{z}\)</span> be the additive identity (the “zero vector”) of <span class="process-math">\(W\text{.}\)</span>  The <dfn class="terminology">kernel</dfn> of <span class="process-math">\(T\)</span> is an important subspace of <span class="process-math">\(V\)</span> defined by</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \ker T = \left\{ \vec{v} \in V\ \big|\ T(\vec{v})=\vec{z}\right\}
@@ -487,7 +496,7 @@ A
 <p id="p-719">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/AT3.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/AT3.slides.html</code></a>.</p></section><section class="exercises" id="exercises-16"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">3.3.4</span> <span class="title">Exercises</span>
 </h3>
-<p id="p-720">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/2022/exercises/#/bank/AT3/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/2022/exercises/#/bank/AT3/</code></a>.</p></section><section class="subsection" id="subsection-79"><h3 class="heading hide-type">
+<p id="p-720">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/exercises/#/bank/AT3/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/exercises/#/bank/AT3/</code></a>.</p></section><section class="subsection" id="subsection-79"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.3.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-36"><h4 class="heading">

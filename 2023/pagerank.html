@@ -58,7 +58,8 @@ window.MathJax = {
     )}
 },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.13/pretext_search.js"></script><link href="https://pretextbook.org/css/0.4/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
@@ -134,6 +135,14 @@ window.MathJax = {
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">2023 Edition PREVIEW</span></a></h1>
 <p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+<div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<ol id="searchresults"></ol>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
@@ -221,22 +230,25 @@ window.MathJax = {
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="pagerank"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">A.2</span> <span class="title">Computer Science: PageRank</span>
 </h2>
-<article class="activity project-like" id="activity-167"><h3 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">The $978,000,000,000 Problem.</span>
+<section class="subsection" id="subsection-122"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">A.2.1</span> <span class="title">Activities</span>
 </h3>
+<article class="activity project-like" id="activity-167"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">The $978,000,000,000 Problem.</span>
+</h4>
 <p id="p-1131"></p>
 <p id="p-1132">In the picture below, each circle represents a webpage, and each arrow represents a link from one page to another.</p>
 <figure class="figure figure-like" id="figure-81"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-49.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">81<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure><p id="p-1133">Based on how these pages link to each other, write a list of the 7 webpages in order from most important to least important.</p></article><article class="observation remark-like" id="observation-43"><h3 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">81<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure><p id="p-1133">Based on how these pages link to each other, write a list of the 7 webpages in order from most important to least important.</p></article><article class="observation remark-like" id="observation-43"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">A.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">The $978,000,000,000 Idea.</span>
-</h3>
+</h4>
 <p id="p-1134">Links are endorsements. That is:</p>
 <ol class="decimal">
 <li id="li-596"><p id="p-1135">A webpage is important if it is linked to (endorsed) by important pages.</p></li>
 <li id="li-597"><p id="p-1136">A webpage distributes its importance equally among all the pages it links to (endorses).</p></li>
-</ol></article><article class="example example-like" id="example-4"><h3 class="heading">
+</ol></article><article class="example example-like" id="example-4"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">A.2.3</span><span class="period">.</span>
-</h3>
+</h4>
 <p id="p-1137">Consider this small network with only three pages.  Let <span class="process-math">\(x_1, x_2, x_3\)</span> be the importance of the three pages respectively.</p>
 <figure class="figure figure-like" id="figure-82"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-50.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">82<span class="period">.</span></span><span class="space"> </span>A three-webpage network</figcaption></figure><ol class="decimal">
@@ -251,9 +263,9 @@ window.MathJax = {
 \frac{1}{2} x_1&amp;&amp; &amp;+&amp;x_3 &amp;=&amp; x_2\\
 \frac{1}{2} x_1&amp;&amp; &amp;&amp; &amp;=&amp; x_3
 \end{alignat*}
-</div></article><article class="observation remark-like" id="observation-44"><h3 class="heading">
+</div></article><article class="observation remark-like" id="observation-44"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">A.2.4</span><span class="period">.</span>
-</h3>
+</h4>
 <figure class="figure figure-like" id="figure-83"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-51.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">83<span class="period">.</span></span><span class="space"> </span>A three-webpage network</figcaption></figure><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
 <div class="sbspanel top" style="width:47.3684210526316%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-46">
@@ -279,9 +291,9 @@ window.MathJax = {
 \frac{1}{2} &amp; 0 &amp; 1 \\
 \frac{1}{2} &amp; 0 &amp; 0
 \end{array}\right]\)</span> and page rank vector <span class="process-math">\(\vec{x}=\left[\begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array}\right]\text{.}\)</span></p>
-<p id="p-1142">Thus, computing the importance of pages on a network is equivalent to solving the matrix equation <span class="process-math">\(A\vec{x}=1\vec{x}\text{.}\)</span></p></article><article class="activity project-like" id="activity-168"><h3 class="heading">
+<p id="p-1142">Thus, computing the importance of pages on a network is equivalent to solving the matrix equation <span class="process-math">\(A\vec{x}=1\vec{x}\text{.}\)</span></p></article><article class="activity project-like" id="activity-168"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.2.5</span><span class="period">.</span>
-</h3>
+</h4>
 <p id="p-1143">Thus, our $978,000,000,000 problem is what kind of problem?</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
@@ -297,9 +309,9 @@ window.MathJax = {
 <li id="li-603"><p id="p-derived-li-603">A cofactoring problem</p></li>
 <li id="li-604"><p id="p-derived-li-604">A determinant problem</p></li>
 <li id="li-605"><p id="p-derived-li-605">An eigenvector problem</p></li>
-</ol></article><article class="activity project-like" id="activity-169"><h3 class="heading">
+</ol></article><article class="activity project-like" id="activity-169"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.2.6</span><span class="period">.</span>
-</h3>
+</h4>
 <p id="p-1144">Find a page rank vector <span class="process-math">\(\vec x\)</span> satisfying <span class="process-math">\(A\vec x=1\vec x\)</span> for the following network's page rank matrix <span class="process-math">\(A\text{.}\)</span></p>
 <p id="p-1145">That is, find the eigenspace associated with <span class="process-math">\(\lambda=1\)</span> for the matrix <span class="process-math">\(A\text{,}\)</span> and choose a vector from that eigenspace.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
@@ -315,9 +327,9 @@ A
 \end{array}\right]
 \end{equation*}
 </div></div>
-</div></div></article><article class="observation remark-like" id="observation-45"><h3 class="heading">
+</div></div></article><article class="observation remark-like" id="observation-45"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">A.2.7</span><span class="period">.</span>
-</h3>
+</h4>
 <p id="p-1147">Row-reducing <span class="process-math">\(A-I
 =
 \left[\begin{array}{ccc}
@@ -331,14 +343,14 @@ A
 0 &amp; 1 &amp; -2 \\
 0 &amp; 0 &amp; 0
 \end{array}\right]\)</span> yields the basic eigenvector <span class="process-math">\(\left[\begin{array}{c} 2 \\ 2 \\1 \end{array}\right]\text{.}\)</span></p>
-<p id="p-1148">Therefore, we may conclude that pages <span class="process-math">\(1\)</span> and <span class="process-math">\(2\)</span> are equally important, and both pages are twice as important as page <span class="process-math">\(3\text{.}\)</span></p></article><article class="activity project-like" id="activity-170"><h3 class="heading">
+<p id="p-1148">Therefore, we may conclude that pages <span class="process-math">\(1\)</span> and <span class="process-math">\(2\)</span> are equally important, and both pages are twice as important as page <span class="process-math">\(3\text{.}\)</span></p></article><article class="activity project-like" id="activity-170"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.2.8</span><span class="period">.</span>
-</h3>
+</h4>
 <p id="p-1149">Compute the <span class="process-math">\(7 \times 7\)</span> page rank matrix for the following network.</p>
 <figure class="figure figure-like" id="figure-85"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-53.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">85<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure><p id="p-1150">For example, since website <span class="process-math">\(1\)</span> distributes its endorsement equally between <span class="process-math">\(2\)</span> and <span class="process-math">\(4\text{,}\)</span> the first column is <span class="process-math">\(\left[\begin{array}{c} 0 \\ \frac{1}{2} \\ 0 \\ \frac{1}{2} \\ 0 \\ 0 \\ 0 \end{array}\right]\text{.}\)</span></p></article><article class="activity project-like" id="activity-171"><h3 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">85<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure><p id="p-1150">For example, since website <span class="process-math">\(1\)</span> distributes its endorsement equally between <span class="process-math">\(2\)</span> and <span class="process-math">\(4\text{,}\)</span> the first column is <span class="process-math">\(\left[\begin{array}{c} 0 \\ \frac{1}{2} \\ 0 \\ \frac{1}{2} \\ 0 \\ 0 \\ 0 \end{array}\right]\text{.}\)</span></p></article><article class="activity project-like" id="activity-171"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.2.9</span><span class="period">.</span>
-</h3>
+</h4>
 <p id="p-1151">Find a page rank vector for the given page rank matrix.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel top" style="width:50%;"><div class="displaymath process-math" data-contains-math-knowls="" id="p-1152">
@@ -356,9 +368,9 @@ A=\left[\begin{array}{ccccccc}
 </div></div>
 <div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="figure-86"><img src="generated/latex-image/image-54.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">86<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure></div>
 </div></div>
-<p id="p-1153">Which webpage is most important?</p></article><article class="observation remark-like" id="observation-46"><h3 class="heading">
+<p id="p-1153">Which webpage is most important?</p></article><article class="observation remark-like" id="observation-46"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">A.2.10</span><span class="period">.</span>
-</h3>
+</h4>
 <p id="p-1154">Since a page rank vector for the network is given by <span class="process-math">\(\vec x\text{,}\)</span> it's reasonable to consider page <span class="process-math">\(2\)</span> as the most important page.</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
@@ -374,13 +386,13 @@ A=\left[\begin{array}{ccccccc}
 \end{equation*}
 </div>
 <figure class="figure figure-like" id="figure-87"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-55.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">87<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure></article><article class="activity project-like" id="activity-172"><h3 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">87<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure></article><article class="activity project-like" id="activity-172"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.2.11</span><span class="period">.</span>
-</h3>
+</h4>
 <p id="p-1156">Given the following diagram, use a page rank vector to rank the pages <span class="process-math">\(1\)</span> through <span class="process-math">\(7\)</span> in order from most important to least important.</p>
 <figure class="figure figure-like" id="figure-88"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-56.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">88<span class="period">.</span></span><span class="space"> </span>Another seven-webpage network</figcaption></figure></article><section class="subsection" id="subsection-121"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">A.2.1</span> <span class="title">Slideshow</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">88<span class="period">.</span></span><span class="space"> </span>Another seven-webpage network</figcaption></figure></article></section><section class="subsection" id="subsection-123"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">A.2.2</span> <span class="title">Slideshow</span>
 </h3>
 <p id="p-1157">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/pagerank.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/pagerank.slides.html</code></a>.</p></section></section></div></main>
 </div>

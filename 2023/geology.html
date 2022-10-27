@@ -58,7 +58,8 @@ window.MathJax = {
     )}
 },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.13/pretext_search.js"></script><link href="https://pretextbook.org/css/0.4/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
@@ -134,6 +135,14 @@ window.MathJax = {
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">2023 Edition PREVIEW</span></a></h1>
 <p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+<div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<ol id="searchresults"></ol>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
@@ -221,14 +230,17 @@ window.MathJax = {
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="geology"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">A.3</span> <span class="title">Geology: Phases and Components</span>
 </h2>
-<article class="definition definition-like" id="definition-32"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">A.3.1</span><span class="period">.</span>
+<section class="subsection" id="subsection-124"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">A.3.1</span> <span class="title">Activities</span>
 </h3>
+<article class="definition definition-like" id="definition-32"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">A.3.1</span><span class="period">.</span>
+</h4>
 <p id="p-1158">In geology, a <dfn class="terminology">phase</dfn> is any physically separable material in the system, such as various minerals or liquids.</p>
 <p id="p-1159">A <dfn class="terminology">component</dfn> is a chemical compound necessary to make up the phases; these are usually oxides such as Calcium Oxide (<span class="process-math">\({\rm CaO}\)</span>) or Silicon Dioxide (<span class="process-math">\({\rm SiO_2}\)</span>).</p>
-<p id="p-1160">In a typical application, a geologist knows how to build each phase from the components, and is interested in determining reactions among the different phases.</p></article><article class="observation remark-like" id="observation-47"><h3 class="heading">
+<p id="p-1160">In a typical application, a geologist knows how to build each phase from the components, and is interested in determining reactions among the different phases.</p></article><article class="observation remark-like" id="observation-47"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">A.3.2</span><span class="period">.</span>
-</h3>
+</h4>
 <p id="p-1161">Consider the 3 components</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
@@ -255,9 +267,9 @@ window.MathJax = {
 \begin{equation*}
 \vec c_1+\vec c_3 = \mathrm{CaO} + \mathrm{SiO_2} = \mathrm{CaSiO_3} = \vec p_3  
 \end{equation*}
-</div></article><article class="activity project-like" id="activity-173"><h3 class="heading">
+</div></article><article class="activity project-like" id="activity-173"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.3.3</span><span class="period">.</span>
-</h3>
+</h4>
 <p id="p-1163">To study this vector space, each of the three components <span class="process-math">\(\vec c_1,\vec c_2,\vec c_3\)</span> may be considered as the three components of a Euclidean vector.</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
@@ -268,9 +280,9 @@ window.MathJax = {
 \vec{p}_5 = \left[\begin{array}{c} 2 \\ 1 \\ 2 \end{array}\right].
 \end{equation*}
 </div>
-<p id="p-1164">Determine if the set of phases is linearly dependent or linearly independent.</p></article><article class="activity project-like" id="activity-174"><h3 class="heading">
+<p id="p-1164">Determine if the set of phases is linearly dependent or linearly independent.</p></article><article class="activity project-like" id="activity-174"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.3.4</span><span class="period">.</span>
-</h3>
+</h4>
 <div class="introduction" id="introduction-66">
 <p id="p-1165">Geologists are interested in knowing all the possible chemical reactions among the 5 phases:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
@@ -293,12 +305,12 @@ x_1\vec{p}_1+x_2\vec{p}_2+x_3\vec{p}_3+x_4\vec{p}_4+x_5\vec{p}_5 = 0.
 \end{equation*}
 </div>
 </div>
-<article class="task exercise-like" id="task-143"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<p id="p-1166">Set up a system of equations equivalent to this vector equation.</p></article><article class="task exercise-like" id="task-144"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<p id="p-1167">Find a basis for its solution space.</p></article><article class="task exercise-like" id="task-145"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<p id="p-1168">Interpret each basis vector as a vector equation and a chemical equation.</p></article></article><article class="activity project-like" id="activity-175"><h3 class="heading">
+<article class="task exercise-like" id="task-143"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1166">Set up a system of equations equivalent to this vector equation.</p></article><article class="task exercise-like" id="task-144"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1167">Find a basis for its solution space.</p></article><article class="task exercise-like" id="task-145"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1168">Interpret each basis vector as a vector equation and a chemical equation.</p></article></article><article class="activity project-like" id="activity-175"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.3.5</span><span class="period">.</span>
-</h3>
+</h4>
 <p id="p-1169">We found two basis vectors <span class="process-math">\(\left[\begin{array}{c} 1 \\ -2 \\ -2 \\ 1 \\ 0 \end{array}\right]\)</span> and <span class="process-math">\(\left[\begin{array}{c} 0 \\ -1 \\ -1 \\ 0 \\ 1 \end{array}\right]\text{,}\)</span> corresponding to the vector and chemical equations</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="md-49">
 \begin{align*}
@@ -306,8 +318,8 @@ x_1\vec{p}_1+x_2\vec{p}_2+x_3\vec{p}_3+x_4\vec{p}_4+x_5\vec{p}_5 = 0.
 \vec{p}_2 +\vec{p}_3 &amp;= \vec{p}_5 &amp;  {\rm CaMgSiO_4} + {\rm CaSiO_3} &amp;= {\rm Ca_2MgSi_2O_7}
 \end{align*}
 </div>
-<p id="p-1170">Combine the basis vectors to produce a chemical equation among the five phases that does not involve <span class="process-math">\(\vec{p}_2 = {\rm CaMgSiO_4}\text{.}\)</span></p></article><section class="subsection" id="subsection-122"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">A.3.1</span> <span class="title">Slideshow</span>
+<p id="p-1170">Combine the basis vectors to produce a chemical equation among the five phases that does not involve <span class="process-math">\(\vec{p}_2 = {\rm CaMgSiO_4}\text{.}\)</span></p></article></section><section class="subsection" id="subsection-125"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">A.3.2</span> <span class="title">Slideshow</span>
 </h3>
 <p id="p-1171">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/geology.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/geology.slides.html</code></a>.</p></section></section></div></main>
 </div>
