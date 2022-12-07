@@ -154,6 +154,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <div id="searchresultsplaceholder" style="display: none">
 <button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
 </h2>
+<div id="searchempty"><span>No results.</span></div>
 <ol id="searchresults"></ol>
 </div>
 </div></div>
@@ -280,9 +281,7 @@ b \in \IR
 \end{array}\right]\)</span> caused this?</p></article></article><article class="definition definition-like" id="definition-8"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
 </h4>
-<p id="p-200">Recall that the pivots of a matrix in <span class="process-math">\(\RREF\)</span> form are the leading <span class="process-math">\(1\)</span>s in each non-zero row.</p>
-<p id="p-201">The pivot columns in an augmented matrix correspond to the <dfn class="terminology">bound variables</dfn> in the system of equations (<span class="process-math">\(x_1,x_3\)</span> below). The remaining variables are called <dfn class="terminology">free variables</dfn> (<span class="process-math">\(x_2\)</span> below).</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<p id="p-200">Recall that the pivots of a matrix in <span class="process-math">\(\RREF\)</span> form are the leading <span class="process-math">\(1\)</span>s in each non-zero row.</p> <p id="p-201">The pivot columns in an augmented matrix correspond to the <dfn class="terminology">bound variables</dfn> in the system of equations (<span class="process-math">\(x_1,x_3\)</span> below). The remaining variables are called <dfn class="terminology">free variables</dfn> (<span class="process-math">\(x_2\)</span> below).</p> <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[\begin{array}{ccc|c}
 \circledNumber{1} &amp; 2 &amp; 0 &amp; 4 \\
@@ -308,8 +307,7 @@ x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;x_3&amp;\,+\,&amp;x_4&amp;\,+\,&amp;x_5 &am
 <p id="p-204">Row-reduce its augmented matrix.</p></article><article class="task exercise-like" id="task-21"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-205">Assign letters to the free variables (given by the non-pivot columns): <p id="p-206"><span class="process-math">\(\unknown = a\)</span> and <span class="process-math">\(\unknown = b\text{.}\)</span></p></p></article><article class="task exercise-like" id="task-22"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-207">Solve for the bound variables (given by the pivot columns) to show that <p id="p-208"><span class="process-math">\(\unknown = 1+5a+2b\text{,}\)</span></p> <p id="p-209"><span class="process-math">\(\unknown = 1+2a+3b\text{,}\)</span></p> <p id="p-210">and <span class="process-math">\(\unknown=3+3b\text{.}\)</span></p></p></article><article class="task exercise-like" id="task-23"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-211">Replace <span class="process-math">\(x_1\)</span> through <span class="process-math">\(x_5\)</span> with the appropriate expressions of <span class="process-math">\(a,b\)</span> in the following set-builder notation.</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="p-212">
+<p id="p-211">Replace <span class="process-math">\(x_1\)</span> through <span class="process-math">\(x_5\)</span> with the appropriate expressions of <span class="process-math">\(a,b\)</span> in the following set-builder notation.</p> <div class="displaymath process-math" data-contains-math-knowls="" id="p-212">
 \begin{equation*}
 \setBuilder
 {
@@ -324,8 +322,7 @@ a,b\in \IR
 <article class="remark remark-like" id="remark-6"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="period">.</span>
 </h4>
-<p id="p-213">Don't forget to correctly express the solution set of a linear system. Systems with zero or one solutions may be written by listing their elements, while systems with infinitely-many solutions may be written using set-builder notation.</p>
-<ul class="disc">
+<p id="p-213">Don't forget to correctly express the solution set of a linear system. Systems with zero or one solutions may be written by listing their elements, while systems with infinitely-many solutions may be written using set-builder notation.</p> <ul class="disc">
 <li id="li-120"><p id="p-214"><em class="emphasis">Inconsistent</em>: <span class="process-math">\(\emptyset\)</span> or <span class="process-math">\(\{\}\)</span> (not <span class="process-math">\(0\)</span>).</p></li>
 <li id="li-121"><p id="p-215"><em class="emphasis">Consistent</em> with <em class="emphasis">one solution</em>: e.g. <span class="process-math">\(\setList{ \left[\begin{array}{c}1\\2\\3\end{array}\right] }\)</span> (not just <span class="process-math">\(\left[\begin{array}{c}1\\2\\3\end{array}\right]\)</span>).</p></li>
 <li id="li-122"><p id="p-216"><em class="emphasis">Consistent</em> with <em class="emphasis">infinitely-many solutions</em>: e.g. <span class="process-math">\(\setBuilder

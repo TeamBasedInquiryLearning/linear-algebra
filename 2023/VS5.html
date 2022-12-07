@@ -154,6 +154,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <div id="searchresultsplaceholder" style="display: none">
 <button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
 </h2>
+<div id="searchempty"><span>No results.</span></div>
 <ol id="searchresults"></ol>
 </div>
 </div></div>
@@ -263,17 +264,15 @@ T=\left\{
 \right\}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Which of the following is true?</p>
-<ol class="upper-alpha">
+<p class="continuation">Which of the following is true?</p> <ol class="upper-alpha">
 <li id="li-229"><p id="p-derived-li-229"><span class="process-math">\(\vspan S\)</span> is bigger than <span class="process-math">\(\vspan T\text{.}\)</span></p></li>
 <li id="li-230"><p id="p-derived-li-230"><span class="process-math">\(\vspan S\)</span> and <span class="process-math">\(\vspan T\)</span> are the same size.</p></li>
 <li id="li-231"><p id="p-derived-li-231"><span class="process-math">\(\vspan S\)</span> is smaller than <span class="process-math">\(\vspan T\text{.}\)</span></p></li>
 </ol></article><article class="definition definition-like" id="definition-13"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span>
 </h4>
-<p id="p-432">We say that a set of vectors is <dfn class="terminology">linearly dependent</dfn> if one vector in the set belongs to the span of the others. Otherwise, we say the set is <dfn class="terminology">linearly independent</dfn>.</p>
-<figure class="figure figure-like" id="figure-16"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-7.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">16<span class="period">.</span></span><span class="space"> </span>A linearly dependent set of three vectors</figcaption></figure><p id="p-433">You can think of linearly dependent sets as containing a redundant vector, in the sense that you can drop a vector out without reducing the span of the set. In the above image, all three vectors lay in the same planar subspace, but only two vectors are needed to span the plane, so the set is linearly dependent.</p></article><article class="activity project-like" id="activity-56"><h4 class="heading">
+<p id="p-432">We say that a set of vectors is <dfn class="terminology">linearly dependent</dfn> if one vector in the set belongs to the span of the others. Otherwise, we say the set is <dfn class="terminology">linearly independent</dfn>.</p> <figure class="figure figure-like" id="figure-16"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-7.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">16<span class="period">.</span></span><span class="space"> </span>A linearly dependent set of three vectors</figcaption></figure> <p id="p-433">You can think of linearly dependent sets as containing a redundant vector, in the sense that you can drop a vector out without reducing the span of the set. In the above image, all three vectors lay in the same planar subspace, but only two vectors are needed to span the plane, so the set is linearly dependent.</p></article><article class="activity project-like" id="activity-56"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span>
 </h4>
 <div class="introduction" id="introduction-30">
@@ -302,8 +301,7 @@ T=\left\{
 <p id="p-437">What does this tell you about solution set for the vector equation <span class="process-math">\(x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3 + x_4\vec w=\vec{0}\text{?}\)</span></p></article></article><article class="activity project-like" id="activity-57"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span>
 </h4>
-<p id="p-438">Let <span class="process-math">\(\vec{v}_1,\vec{v}_2,\vec{v}_3 \)</span> be vectors in <span class="process-math">\(\mathbb R^n\text{.}\)</span> Suppose <span class="process-math">\(3\vec{v}_1-5\vec{v}_2=\vec{v}_3\text{,}\)</span> so the set <span class="process-math">\(\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}\)</span> is linearly dependent. Which of the following is true of the vector equation <span class="process-math">\(x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3=\vec{0}\text{?}\)</span></p>
-<ol class="upper-alpha">
+<p id="p-438">Let <span class="process-math">\(\vec{v}_1,\vec{v}_2,\vec{v}_3 \)</span> be vectors in <span class="process-math">\(\mathbb R^n\text{.}\)</span> Suppose <span class="process-math">\(3\vec{v}_1-5\vec{v}_2=\vec{v}_3\text{,}\)</span> so the set <span class="process-math">\(\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}\)</span> is linearly dependent. Which of the following is true of the vector equation <span class="process-math">\(x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3=\vec{0}\text{?}\)</span></p> <ol class="upper-alpha">
 <li id="li-232"><p id="p-439">It is consistent with one solution.</p></li>
 <li id="li-233"><p id="p-440">It is consistent with infinitely many solutions.</p></li>
 <li id="li-234"><p id="p-441">It is inconsistent.</p></li>
@@ -343,8 +341,7 @@ S=\left\{
 <p id="p-444">A set of Euclidean vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly dependent if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has a column without a pivot position.</p></article><article class="observation remark-like" id="def_of_LI"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.5.8</span><span class="period">.</span>
 </h4>
-<p id="p-445">Compare the following results:</p>
-<ul class="disc">
+<p id="p-445">Compare the following results:</p> <ul class="disc">
 <li id="li-235"><p id="p-446">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly independent if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has all pivot columns.</p></li>
 <li id="li-236"><p id="p-447">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> spans <span class="process-math">\(\IR^m\)</span> if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has all pivot rows.</p></li>
 <li id="li-237">
@@ -380,8 +377,7 @@ x^3+1,x^2+2x,x^2+7x+4
 <article class="activity project-like" id="activity-61"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.11</span><span class="period">.</span>
 </h4>
-<p id="p-455">What is the largest number of <span class="process-math">\(\IR^4\)</span> vectors that can form a linearly independent set?</p>
-<ol class="upper-alpha cols2">
+<p id="p-455">What is the largest number of <span class="process-math">\(\IR^4\)</span> vectors that can form a linearly independent set?</p> <ol class="upper-alpha cols2">
 <li id="li-238"><p id="p-456"><span class="process-math">\(\displaystyle 3\)</span></p></li>
 <li id="li-239"><p id="p-457"><span class="process-math">\(\displaystyle 4\)</span></p></li>
 <li id="li-240"><p id="p-458"><span class="process-math">\(\displaystyle 5\)</span></p></li>
@@ -395,8 +391,7 @@ x^3+1,x^2+2x,x^2+7x+4
 \P_4=\setBuilder{ax^4+bx^3+cx^2+dx+e}{a,b,c,d,e\in\IR}
 \end{equation*}
 </div>
-<p class="continuation">vectors that can form a linearly independent set?</p>
-<ol class="upper-alpha cols2">
+<p class="continuation">vectors that can form a linearly independent set?</p> <ol class="upper-alpha cols2">
 <li id="li-242"><p id="p-461"><span class="process-math">\(\displaystyle 3\)</span></p></li>
 <li id="li-243"><p id="p-462"><span class="process-math">\(\displaystyle 4\)</span></p></li>
 <li id="li-244"><p id="p-463"><span class="process-math">\(\displaystyle 5\)</span></p></li>
@@ -410,8 +405,7 @@ x^3+1,x^2+2x,x^2+7x+4
 \P=\setBuilder{f(x)}{f(x)\text{ is any polynomial}}
 \end{equation*}
 </div>
-<p class="continuation">vectors that can form a linearly independent set?</p>
-<ol class="upper-alpha cols2">
+<p class="continuation">vectors that can form a linearly independent set?</p> <ol class="upper-alpha cols2">
 <li id="li-246"><p id="p-466"><span class="process-math">\(\displaystyle 3\)</span></p></li>
 <li id="li-247"><p id="p-467"><span class="process-math">\(\displaystyle 4\)</span></p></li>
 <li id="li-248"><p id="p-468"><span class="process-math">\(\displaystyle 5\)</span></p></li>

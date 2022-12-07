@@ -154,6 +154,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <div id="searchresultsplaceholder" style="display: none">
 <button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
 </h2>
+<div id="searchempty"><span>No results.</span></div>
 <ol id="searchresults"></ol>
 </div>
 </div></div>
@@ -249,8 +250,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <article class="definition definition-like" id="definition-10"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
 </h4>
-<p id="p-320">A <dfn class="terminology">linear combination</dfn> of a set of vectors <span class="process-math">\(\{\vec v_1,\vec v_2,\dots,\vec v_m\}\)</span> is given by <span class="process-math">\(c_1\vec v_1+c_2\vec v_2+\dots+c_m\vec v_m\)</span> for any choice of scalar multiples <span class="process-math">\(c_1,c_2,\dots,c_m\text{.}\)</span></p>
-<p id="p-321">For example, we can say <span class="process-math">\(\left[\begin{array}{c}3 \\0 \\ 5\end{array}\right]\)</span> is a linear combination of the vectors <span class="process-math">\(\left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right]\)</span> and <span class="process-math">\(\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]\)</span> since</p>
+<p id="p-320">A <dfn class="terminology">linear combination</dfn> of a set of vectors <span class="process-math">\(\{\vec v_1,\vec v_2,\dots,\vec v_m\}\)</span> is given by <span class="process-math">\(c_1\vec v_1+c_2\vec v_2+\dots+c_m\vec v_m\)</span> for any choice of scalar multiples <span class="process-math">\(c_1,c_2,\dots,c_m\text{.}\)</span></p> <p id="p-321">For example, we can say <span class="process-math">\(\left[\begin{array}{c}3 \\0 \\ 5\end{array}\right]\)</span> is a linear combination of the vectors <span class="process-math">\(\left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right]\)</span> and <span class="process-math">\(\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]\)</span> since</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[\begin{array}{c} 3 \\ 0 \\ 5 \end{array}\right] = 
@@ -267,8 +267,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 \setBuilder{c_1\vec v_1+c_2\vec v_2+\dots+c_m\vec v_m}{
 c_i\in\IR}\text{.}
 \end{equation*}
-</div>
-<p id="p-323">For example:</p>
+</div> <p id="p-323">For example:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vspan\setList
@@ -339,8 +338,7 @@ x_2\left[\begin{array}{c}-1\\-3\\2\end{array}\right]
 <p id="p-335">A vector <span class="process-math">\(\vec b\)</span> belongs to <span class="process-math">\(\vspan\{\vec v_1,\dots,\vec v_n\}\)</span> if and only if the vector equation <span class="process-math">\(x_1 \vec{v}_1+\cdots+x_n \vec{v}_n=\vec{b}\)</span> is consistent.</p></article><article class="observation remark-like" id="observation-5"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span>
 </h4>
-<p id="p-336">The following are all equivalent statements:</p>
-<ul class="disc">
+<p id="p-336">The following are all equivalent statements:</p> <ul class="disc">
 <li id="li-188"><p id="p-337">The vector <span class="process-math">\(\vec{b}\)</span> belongs to <span class="process-math">\(\vspan\{\vec v_1,\dots,\vec v_n\}\text{.}\)</span></p></li>
 <li id="li-189"><p id="p-338">The vector equation <span class="process-math">\(x_1 \vec{v}_1+\cdots+x_n \vec{v}_n=\vec{b}\)</span> is consistent.</p></li>
 <li id="li-190"><p id="p-339">The linear system corresponding to <span class="process-math">\(\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]\)</span> is consistent.</p></li>

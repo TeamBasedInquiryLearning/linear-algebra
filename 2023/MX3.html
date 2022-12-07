@@ -154,6 +154,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <div id="searchresultsplaceholder" style="display: none">
 <button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
 </h2>
+<div id="searchempty"><span>No results.</span></div>
 <ol id="searchresults"></ol>
 </div>
 </div></div>
@@ -249,8 +250,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <article class="activity project-like" id="activity-129"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
 </h4>
-<p id="p-883">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^m\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span> Sort the following items into three groups of statements: a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">injective</em>, a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">surjective</em>, and a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">bijective</em>.</p>
-<ol class="upper-alpha">
+<p id="p-883">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^m\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span> Sort the following items into three groups of statements: a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">injective</em>, a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">surjective</em>, and a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">bijective</em>.</p> <ol class="upper-alpha">
 <li id="li-485"><p id="p-884"><span class="process-math">\(A\vec x=\vec b\)</span> has a solution for all <span class="process-math">\(\vec b\in\IR^m\)</span></p></li>
 <li id="li-486"><p id="p-885"><span class="process-math">\(A\vec x=\vec b\)</span> has a unique solution for all <span class="process-math">\(\vec b\in\IR^m\)</span></p></li>
 <li id="li-487"><p id="p-886"><span class="process-math">\(A\vec x=\vec 0\)</span> has a unique solution.</p></li>
@@ -263,13 +263,11 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 </ol></article><article class="activity project-like" id="activity-130"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
 </h4>
-<p id="p-893">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^3\)</span> be the linear transformation given by the standard matrix <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; 0 \\ 2 &amp; 1 &amp; 4 \\ 1 &amp; 1 &amp; 3 \end{array}\right]\text{.}\)</span></p>
-<p id="p-894">Write an augmented matrix representing the system of equations given by <span class="process-math">\(T(\vec x)=\vec{0}\text{,}\)</span> that is, <span class="process-math">\(A\vec x=\left[\begin{array}{c}0 \\ 0 \\ 0 \end{array}\right]\text{.}\)</span> Then solve <span class="process-math">\(T(\vec x)=\vec{0}\)</span> to find the kernel of <span class="process-math">\(T\text{.}\)</span></p></article><pre class="ptx-sagecell sagecell-octave" id="sage-42"><script type="text/x-sage"></script></pre>
+<p id="p-893">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^3\)</span> be the linear transformation given by the standard matrix <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; 0 \\ 2 &amp; 1 &amp; 4 \\ 1 &amp; 1 &amp; 3 \end{array}\right]\text{.}\)</span></p> <p id="p-894">Write an augmented matrix representing the system of equations given by <span class="process-math">\(T(\vec x)=\vec{0}\text{,}\)</span> that is, <span class="process-math">\(A\vec x=\left[\begin{array}{c}0 \\ 0 \\ 0 \end{array}\right]\text{.}\)</span> Then solve <span class="process-math">\(T(\vec x)=\vec{0}\)</span> to find the kernel of <span class="process-math">\(T\text{.}\)</span></p></article><pre class="ptx-sagecell sagecell-octave" id="sage-42"><script type="text/x-sage"></script></pre>
 <article class="definition definition-like" id="definition-26"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
 </h4>
-<p id="p-895">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^n\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span></p>
-<ul class="disc">
+<p id="p-895">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^n\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span></p> <ul class="disc">
 <li id="li-494"><p id="p-896">If <span class="process-math">\(T\)</span> is a bijection and <span class="process-math">\(\vec b\)</span> is any <span class="process-math">\(\IR^n\)</span> vector, then <span class="process-math">\(T(\vec x)=A\vec x=\vec b\)</span> has a unique solution.</p></li>
 <li id="li-495"><p id="p-897">So we may define an <dfn class="terminology">inverse map</dfn> <span class="process-math">\(T^{-1} : \IR^n \rightarrow \IR^n\)</span> by setting <span class="process-math">\(T^{-1}(\vec b)\)</span> to be this unique solution.</p></li>
 <li id="li-496"><p id="p-898">Let <span class="process-math">\(A^{-1}\)</span> be the standard matrix for <span class="process-math">\(T^{-1}\text{.}\)</span> We call <span class="process-math">\(A^{-1}\)</span> the <dfn class="terminology">inverse matrix</dfn> of <span class="process-math">\(A\text{,}\)</span> so we also say that <span class="process-math">\(A\)</span> is <dfn class="terminology">invertible</dfn>.</p></li>

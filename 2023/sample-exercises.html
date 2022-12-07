@@ -142,6 +142,7 @@ window.MathJax = {
 <div id="searchresultsplaceholder" style="display: none">
 <button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
 </h2>
+<div id="searchempty"><span>No results.</span></div>
 <ol id="searchresults"></ol>
 </div>
 </div></div>
@@ -241,8 +242,7 @@ window.MathJax = {
 -x_1 &amp;\,-\,&amp; 4x_2 &amp;\,+\,&amp;x_3&amp;\,-\,&amp;7x_4 &amp;= 0 \\
 &amp;\,\,&amp; x_2 &amp;\,-\,&amp;x_3 &amp;\,\,&amp;  &amp;= -2
 \end{alignat*}
-</div>
-<ol class="decimal">
+</div> <ol class="decimal">
 <li id="li-606"><p id="p-derived-li-606">Rewrite this system as a vector equation.</p></li>
 <li id="li-607"><p id="p-derived-li-607">Write an augmented matrix corresponding to this system.</p></li>
 </ol>
@@ -399,8 +399,7 @@ C = \left[\begin{array}{ccc}
 </div></article><article class="example example-like" id="sampleLE3"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">LE3.</span>
 </h3>
-<p id="p-1183">Consider each of the following systems of linear equations or vector equations.</p>
-<ol class="decimal">
+<p id="p-1183">Consider each of the following systems of linear equations or vector equations.</p> <ol class="decimal">
 <li id="li-617"><div class="displaymath process-math" data-contains-math-knowls="" id="p-1184">
 \begin{equation*}
 \begin{matrix}
@@ -452,8 +451,7 @@ x_{1} \left[\begin{array}{c}
 \end{array}\right]
 \end{equation*}
 </div></li>
-</ol>
-<ul class="disc">
+</ol> <ul class="disc">
 <li id="li-620"><p id="p-1187">Explain how to find a simpler system or vector equation that has the same solution set for each.</p></li>
 <li id="li-621"><p id="p-1188">Explain whether each solution set has no solutions, one solution, or infinitely-many solutions. If the set is finite, describe it using set notation.</p></li>
 </ul>
@@ -570,8 +568,7 @@ x_{1} \left[\begin{array}{c}
 14
 \end{array}\right]
 \end{equation*}
-</div>
-<ol class="decimal">
+</div> <ol class="decimal">
 <li id="li-625"><p id="p-1193">Explain how to find a simpler system or vector equation that has the same solution set.</p></li>
 <li id="li-626"><p id="p-1194">Explain how to describe this solution set using set notation.</p></li>
 </ol>
@@ -1066,8 +1063,7 @@ U = \setBuilder{\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right]}{x+y=
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like">
 <p id="p-1220">To show that <span class="process-math">\(W\)</span> is a subspace, let <span class="process-math">\(\vec v=\left[\begin{array}{c} x_1 \\y_1 \\ z_1 \\ w_1 \end{array}\right]\in W\)</span> and <span class="process-math">\(\vec w=\left[\begin{array}{c} x_2 \\y_2 \\ z_2 \\ w_2 \end{array}\right] \in W
-\text{,}\)</span> so we know that <span class="process-math">\(x_1+y_1=3z_1+2w_1\)</span> and <span class="process-math">\(x_2+y_2=3z_2+2w_2\text{.}\)</span></p>
-<p id="p-1221">Consider</p>
+\text{,}\)</span> so we know that <span class="process-math">\(x_1+y_1=3z_1+2w_1\)</span> and <span class="process-math">\(x_2+y_2=3z_2+2w_2\text{.}\)</span></p> <p id="p-1221">Consider</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[\begin{array}{c} x_1 \\y_1 \\ z_1 \\ w_1\end{array}\right]
@@ -1084,8 +1080,7 @@ U = \setBuilder{\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right]}{x+y=
 &amp;=3(z_1+z_2)+2(w_1+w_2) &amp; \text{by regrouping.}
 \end{align*}
 </div>
-<p class="continuation">Thus <span class="process-math">\(\vec v+\vec w\in W\text{,}\)</span> so <span class="process-math">\(W\)</span> is closed under vector addition.</p>
-<p id="p-1222">Now consider</p>
+<p class="continuation">Thus <span class="process-math">\(\vec v+\vec w\in W\text{,}\)</span> so <span class="process-math">\(W\)</span> is closed under vector addition.</p> <p id="p-1222">Now consider</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 c\vec v
@@ -1101,9 +1096,7 @@ cx_1+cy_1 &amp; = c(x_1+y_1) &amp;\text{by factoring}\\
 &amp;=3(cz_1)+2(cw_1) &amp;\text{by regrouping}
 \end{align*}
 </div>
-<p class="continuation">and we see that <span class="process-math">\(c\vec v\in W\text{,}\)</span> so <span class="process-math">\(W\)</span> is closed under scalar multiplication. Therefore <span class="process-math">\(W\)</span> is a subspace of <span class="process-math">\(\IR^3\text{.}\)</span></p>
-<p id="p-1223">Now, to show <span class="process-math">\(U\)</span> is not a subspace, we will show that it is not closed under vector addition.</p>
-<ul class="disc">
+<p class="continuation">and we see that <span class="process-math">\(c\vec v\in W\text{,}\)</span> so <span class="process-math">\(W\)</span> is closed under scalar multiplication. Therefore <span class="process-math">\(W\)</span> is a subspace of <span class="process-math">\(\IR^3\text{.}\)</span></p> <p id="p-1223">Now, to show <span class="process-math">\(U\)</span> is not a subspace, we will show that it is not closed under vector addition.</p> <ul class="disc">
 <li id="li-643">
 <p id="p-1224">(Solution Method 1) Now let <span class="process-math">\(\vec v=\left[\begin{array}{c} x_1 \\y_1 \\ z_1 \\ w_1 \end{array}\right]\in U\)</span> and <span class="process-math">\(\vec w=\left[\begin{array}{c} x_2 \\y_2 \\ z_2 \\ w_2 \end{array}\right] \in U
 \text{,}\)</span> so we know that <span class="process-math">\(x_1+y_1=3z_1+w_1^2\)</span> and <span class="process-math">\(x_2+y_2=3z_2+w_2^2\text{.}\)</span></p>
@@ -1226,8 +1219,7 @@ x_1 \left[\begin{array}{c}
 0 &amp; 0 &amp; 0
 \end{array}\right]\text{.}
 \end{equation*}
-</div>
-<p id="p-1232">Thus, this vector equation has a solution set <span class="process-math">\(\left\{ \left[\begin{array}{c}a \\ a \\ 0 \end{array}\right]\ \middle|\ a \in \mathbb{R}\right\}\text{.}\)</span> Since there are nontrivial solutions, we conclude that the set of vectors <span class="process-math">\(\left\{ \left[\begin{array}{c}
+</div> <p id="p-1232">Thus, this vector equation has a solution set <span class="process-math">\(\left\{ \left[\begin{array}{c}a \\ a \\ 0 \end{array}\right]\ \middle|\ a \in \mathbb{R}\right\}\text{.}\)</span> Since there are nontrivial solutions, we conclude that the set of vectors <span class="process-math">\(\left\{ \left[\begin{array}{c}
 1 \\
 3 \\
 4 \\
@@ -1319,8 +1311,7 @@ x_1 \left[\begin{array}{c}
 -7 \\
 -11 \\
 11
-\end{array}\right] \right\}\)</span> is a basis of <span class="process-math">\(\mathbb{R}^4\)</span> exactly when it is linearly independent <em class="emphasis">and</em> the set spans <span class="process-math">\(\mathbb{R}^4\text{.}\)</span> If it is either linearly dependent, <em class="emphasis">or</em> the set does not span <span class="process-math">\(\mathbb{R}^4\text{,}\)</span> then the set is not a basis.</p>
-<p id="p-1238">To answer this, we compute</p>
+\end{array}\right] \right\}\)</span> is a basis of <span class="process-math">\(\mathbb{R}^4\)</span> exactly when it is linearly independent <em class="emphasis">and</em> the set spans <span class="process-math">\(\mathbb{R}^4\text{.}\)</span> If it is either linearly dependent, <em class="emphasis">or</em> the set does not span <span class="process-math">\(\mathbb{R}^4\text{,}\)</span> then the set is not a basis.</p> <p id="p-1238">To answer this, we compute</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mathrm{RREF}\, \left[\begin{array}{cccc}
@@ -1335,8 +1326,7 @@ x_1 \left[\begin{array}{c}
 0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right]\text{.}
 \end{equation*}
-</div>
-<p id="p-1239">We see that this set of vectors is linearly dependent, so therefore the set of vectors <span class="process-math">\(\left\{ \left[\begin{array}{c}
+</div> <p id="p-1239">We see that this set of vectors is linearly dependent, so therefore the set of vectors <span class="process-math">\(\left\{ \left[\begin{array}{c}
 1 \\
 3 \\
 4 \\
@@ -1372,8 +1362,7 @@ W = \vspan \left\{
 \left[\begin{array}{c} 2 \\ 3 \\ 0 \\ 1 \end{array}\right]
 \right\} .
 \end{equation*}
-</div>
-<ol class="decimal">
+</div> <ol class="decimal">
 <li id="li-653"><p id="p-1241">Explain how to find a basis of <span class="process-math">\(W\text{.}\)</span></p></li>
 <li id="li-654"><p id="p-1242">Explain how to find the dimension of <span class="process-math">\(W\text{.}\)</span></p></li>
 </ol>
@@ -1445,8 +1434,7 @@ W = \vspan \left\{
 y_1\left( x^{3} - 2 \, x^{2} + x + 2 \right)+y_2\left( 2 \, x^{2} - 1 \right)+y_3\left( -x^{3} + 3 \, x^{2} + 3 \, x - 2 \right)+y_4\left( x^{3} - 6 \, x^{2} + 9 \, x + 5\right)=0
 \end{equation*}
 </div>
-<p class="continuation">has no nontrivial (i.e. nonzero) solutions.  The set is linearly <em class="emphasis">dependent</em> when this equation has a nontrivial (i.e. nonzero) solution.</p>
-<p id="p-1250">To solve this equation, we distribute and then collect coefficients to obtain</p>
+<p class="continuation">has no nontrivial (i.e. nonzero) solutions.  The set is linearly <em class="emphasis">dependent</em> when this equation has a nontrivial (i.e. nonzero) solution.</p> <p id="p-1250">To solve this equation, we distribute and then collect coefficients to obtain</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left(y_1-y_3+y_4\right)x^3+\left(-2y_1+2y_2+3y_3-6y_4\right)x^2+\left(y_1+3y_3+9y_4\right)x+\left(2y_1-y_2-2y_3+5y_4\right)=0\text{.}
@@ -1462,8 +1450,7 @@ y_1 &amp; + &amp;  &amp;+&amp;3y_3 &amp; +&amp;9y_4 &amp; = &amp; 0 \\
 2 y_1 &amp; - &amp; y_2 &amp;-&amp;2y_3 &amp; +&amp;5y_4 &amp; = &amp; 0 
 \end{matrix}\text{.}
 \end{equation*}
-</div>
-<p id="p-1251">To solve this, we compute</p>
+</div> <p id="p-1251">To solve this, we compute</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mathrm{RREF}\, \left[\begin{array}{cccc|c}
@@ -1478,8 +1465,7 @@ y_1 &amp; + &amp;  &amp;+&amp;3y_3 &amp; +&amp;9y_4 &amp; = &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right]
 \end{equation*}
-</div>
-<p id="p-1252">The system has (infintely many) nontrivial solutions, so we that the set of polynomials is linearly <em class="emphasis">dependent</em>.</p>
+</div> <p id="p-1252">The system has (infintely many) nontrivial solutions, so we that the set of polynomials is linearly <em class="emphasis">dependent</em>.</p>
 </div></div>
 </div></article><article class="example example-like" id="sampleVS9"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">VS9.</span>
@@ -1492,8 +1478,7 @@ x_1 &amp;\,+\,&amp; x_2 &amp;\,+\,&amp; 3x_3 &amp;\,+\,&amp; x_4 &amp;\,+\,&amp;
 -x_1 &amp;\,+\,&amp; x_2 &amp;\,-\,&amp; x_3 &amp;\,+\,&amp; x_4 &amp;\,\,&amp;  &amp;=&amp; 0\\
 2x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 2x_3 &amp;\,-\,&amp; x_4 &amp;\,+\,&amp; x_5 &amp;=&amp; 0
 \end{alignat*}
-</div>
-<ol class="decimal">
+</div> <ol class="decimal">
 <li id="li-661"><p id="p-1254">Find the solution space of the system.</p></li>
 <li id="li-662"><p id="p-1255">Find a basis of the solution space.</p></li>
 </ol>
@@ -1573,24 +1558,21 @@ S\left(f(x)+g(x)\right)=S(f(x))+s(g(x))
 \begin{equation*}
 S(cf(x)) = cS(f(x))
 \end{equation*}
-</div>
-<p id="p-1261">To show <span class="process-math">\(S\)</span> respects addition, we compute</p>
+</div> <p id="p-1261">To show <span class="process-math">\(S\)</span> respects addition, we compute</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="md-64">
 \begin{align*}
 S\left(f(x)+g(x)\right) &amp;= 3x\left(f(x)+g(x)\right) &amp; \text{by definition of } \\\\
 &amp;= 3xf(x)+3xg(x) &amp; \text{by distributing}
 \end{align*}
 </div>
-<p class="continuation">But note that <span class="process-math">\(S(f(x))=3xf(x)\)</span> and <span class="process-math">\(S(g(x))=3xg(x)\text{,}\)</span> so we have <span class="process-math">\(S(f(x)+g(x))=S(f(x))+S(g(x))\text{.}\)</span></p>
-<p id="p-1262">For the second part, we compute</p>
+<p class="continuation">But note that <span class="process-math">\(S(f(x))=3xf(x)\)</span> and <span class="process-math">\(S(g(x))=3xg(x)\text{,}\)</span> so we have <span class="process-math">\(S(f(x)+g(x))=S(f(x))+S(g(x))\text{.}\)</span></p> <p id="p-1262">For the second part, we compute</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="md-65">
 \begin{align*}
 S\left(cf(x)\right) &amp;= 3x\left(cf(x)\right) &amp; \text{by definition of } \\\\
 &amp;= 3cxf(x) &amp; \text{rewriting the multiplication.}
 \end{align*}
 </div>
-<p class="continuation">But note that <span class="process-math">\(cS(f(x))=c(3xf(x))=3cxf(x)\)</span> as well, so we have <span class="process-math">\(S(cf(x))=cS(f(x))\text{.}\)</span> Now, since <span class="process-math">\(S\)</span> respects both addition and scalar multiplication, we can conclude <span class="process-math">\(S\)</span> is a linear transformation.</p>
-<ul class="disc">
+<p class="continuation">But note that <span class="process-math">\(cS(f(x))=c(3xf(x))=3cxf(x)\)</span> as well, so we have <span class="process-math">\(S(cf(x))=cS(f(x))\text{.}\)</span> Now, since <span class="process-math">\(S\)</span> respects both addition and scalar multiplication, we can conclude <span class="process-math">\(S\)</span> is a linear transformation.</p> <ul class="disc">
 <li id="li-665">
 <p id="p-1263">(Solution method 1) As for <span class="process-math">\(T\text{,}\)</span> we compute</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="md-66">
@@ -1681,8 +1663,7 @@ x+3y+2z-3w \\
 x+6y-z+3w
 \end{array}\right]
 \end{equation*}
-</div>
-<ol class="decimal">
+</div> <ol class="decimal">
 <li id="li-671"><p id="p-1271">Explain how to find the image of <span class="process-math">\(T\)</span> and the kernel of <span class="process-math">\(T\text{.}\)</span></p></li>
 <li id="li-672"><p id="p-1272">Explain how to find a basis of the image of <span class="process-math">\(T\)</span> and a basis of the kernel of <span class="process-math">\(T\text{.}\)</span></p></li>
 <li id="li-673"><p id="p-1273">Explain how to find the rank and nullity of T, and why the rank-nullity theorem holds for T.</p></li>
@@ -1769,8 +1750,7 @@ x &amp;+&amp; 6y &amp;-&amp; z &amp;+&amp; 3w &amp;=&amp; 0 .
 </div></article><article class="example example-like" id="sampleAT4"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.17</span><span class="period">.</span><span class="space"> </span><span class="title">AT4.</span>
 </h3>
-<p id="p-1279">Let <span class="process-math">\(T: \IR^4 \rightarrow \IR^3\)</span> be the linear transformation given by the standard matrix <span class="process-math">\(\left[\begin{array}{cccc} 1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]\text{.}\)</span></p>
-<ol class="decimal">
+<p id="p-1279">Let <span class="process-math">\(T: \IR^4 \rightarrow \IR^3\)</span> be the linear transformation given by the standard matrix <span class="process-math">\(\left[\begin{array}{cccc} 1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]\text{.}\)</span></p> <ol class="decimal">
 <li id="li-678"><p id="p-1280">Explain why <span class="process-math">\(T\)</span> is or is not injective.</p></li>
 <li id="li-679"><p id="p-1281">Explain why <span class="process-math">\(T\)</span> is or is not surjective.</p></li>
 </ol>
@@ -1781,8 +1761,7 @@ x &amp;+&amp; 6y &amp;-&amp; z &amp;+&amp; 3w &amp;=&amp; 0 .
 \begin{equation*}
 \RREF\left[\begin{array}{cccc}1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right] = \left[\begin{array}{cccc} 1 &amp; 0 &amp; 5 &amp; -9 \\ 0 &amp; 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right].
 \end{equation*}
-</div>
-<ol class="decimal">
+</div> <ol class="decimal">
 <li id="li-680"><p id="p-1283">Note that the third and fourth columns are non-pivot columns, which means <span class="process-math">\(\ker T\)</span> contains infinitely many vectors, so <span class="process-math">\(T\)</span> is not injective.</p></li>
 <li id="li-681"><p id="p-1284">Since there are only two pivots, the image (i.e. the span of the columns) is a 2-dimensional subspace (and thus does not equal <span class="process-math">\(\IR^3\)</span>), so <span class="process-math">\(T\)</span> is not surjective.</p></li>
 </ol>
@@ -1819,8 +1798,7 @@ AC = \left[\begin{array}{ccc} -3 &amp; 7 &amp; -12 \\ 1 &amp; -2 &amp; 5 \end{ar
 </div></article><article class="example example-like" id="sampleMX2"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">MX2.</span>
 </h3>
-<p id="p-1289">Let <span class="process-math">\(A\)</span> be a <span class="process-math">\(4\times4\)</span> matrix.</p>
-<ol class="decimal">
+<p id="p-1289">Let <span class="process-math">\(A\)</span> be a <span class="process-math">\(4\times4\)</span> matrix.</p> <ol class="decimal">
 <li id="li-682"><p id="p-1290">Give a <span class="process-math">\(4\times 4\)</span> matrix <span class="process-math">\(P\)</span> that may be used to perform the row operation <span class="process-math">\({R_3} \to R_3+4 \, {R_1} \text{.}\)</span></p></li>
 <li id="li-683"><p id="p-1291">Give a <span class="process-math">\(4\times 4\)</span> matrix <span class="process-math">\(Q\)</span> that may be used to perform the row operation <span class="process-math">\({R_1} \to -4 \, {R_1}\text{.}\)</span></p></li>
 <li id="li-684"><p id="p-1292">Use matrix multiplication to describe the matrix obtained by applying <span class="process-math">\({R_3} \to 4 \, {R_1} + {R_3}\)</span> and then <span class="process-math">\({R_1} \to -4 \, {R_1}\)</span> to <span class="process-math">\(A\)</span> (note the order).</p></li>
@@ -1941,8 +1919,7 @@ D^{-1}=\left[\begin{array}{cccc}
 -8 &amp; -3 &amp; -9 &amp; 1
 \end{array}\right]\text{.}
 \end{equation*}
-</div>
-<p id="p-1302">We compute</p>
+</div> <p id="p-1302">We compute</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mathrm{RREF}\left(N\right)=\left[\begin{array}{cccc}
@@ -1958,8 +1935,7 @@ D^{-1}=\left[\begin{array}{cccc}
 </div></article><article class="example example-like" id="sampleGT1"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">GT1.</span>
 </h3>
-<p id="p-1303">Let <span class="process-math">\(A\)</span> be a <span class="process-math">\(4 \times 4\)</span> matrix with determinant <span class="process-math">\(-7\text{.}\)</span></p>
-<ol class="decimal">
+<p id="p-1303">Let <span class="process-math">\(A\)</span> be a <span class="process-math">\(4 \times 4\)</span> matrix with determinant <span class="process-math">\(-7\text{.}\)</span></p> <ol class="decimal">
 <li id="li-688"><p id="p-1304">Let <span class="process-math">\(B\)</span> be the matrix obtained from <span class="process-math">\(A\)</span> by applying the row operation <span class="process-math">\(R_3 \to R_3+3R_4\text{.}\)</span> What is <span class="process-math">\(\det(B)\text{?}\)</span></p></li>
 <li id="li-689"><p id="p-1305">Let <span class="process-math">\(C\)</span> be the matrix obtained from <span class="process-math">\(A\)</span> by applying the row operation <span class="process-math">\(R_2 \to -3R_2\text{.}\)</span> What is <span class="process-math">\(\det(C)\text{?}\)</span></p></li>
 <li id="li-690"><p id="p-1306">Let <span class="process-math">\(D\)</span> be the matrix obtained from <span class="process-math">\(A\)</span> by applying the row operation <span class="process-math">\(R_3 \leftrightarrow R_4\text{.}\)</span> What is <span class="process-math">\(\det(D)\text{?}\)</span></p></li>

@@ -154,6 +154,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <div id="searchresultsplaceholder" style="display: none">
 <button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
 </h2>
+<div id="searchempty"><span>No results.</span></div>
 <ol id="searchresults"></ol>
 </div>
 </div></div>
@@ -257,8 +258,7 @@ a_{21}x_1 &amp;\,+\,&amp; a_{22}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{2n
 \vdots&amp;  &amp;\vdots&amp;   &amp;&amp;  &amp;\vdots&amp;&amp;\vdots\\
 a_{m1}x_1 &amp;\,+\,&amp; a_{m2}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{mn}x_n &amp;\,=\,&amp; 0
 \end{alignat*}
-</div>
-<p id="p-539">This system is equivalent to the vector equation:</p>
+</div> <p id="p-539">This system is equivalent to the vector equation:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0}
@@ -290,9 +290,7 @@ b_1 \vec{v}_1+\cdots+b_n \vec{v}_n = \vec{0}
 \begin{equation*}
 (a_1 + b_1) \vec{v}_1+\cdots+(a_n+b_n) \vec{v}_n = \vec{0} .
 \end{equation*}
-</div>
-<p id="p-541">Similarly, if <span class="process-math">\(c \in \IR\text{,}\)</span> <span class="process-math">\(\left[\begin{array}{c} ca_1 \\ \vdots \\ ca_n \end{array}\right] \)</span> is a solution. Thus the solution set of a homogeneous system is...</p>
-<ol class="upper-alpha">
+</div> <p id="p-541">Similarly, if <span class="process-math">\(c \in \IR\text{,}\)</span> <span class="process-math">\(\left[\begin{array}{c} ca_1 \\ \vdots \\ ca_n \end{array}\right] \)</span> is a solution. Thus the solution set of a homogeneous system is...</p> <ol class="upper-alpha">
 <li id="li-283"><p id="p-542">A basis for <span class="process-math">\(\IR^n\text{.}\)</span></p></li>
 <li id="li-284"><p id="p-543">A subspace of <span class="process-math">\(\IR^n\text{.}\)</span></p></li>
 <li id="li-285"><p id="p-544">The empty set.</p></li>
@@ -326,8 +324,7 @@ x_1&amp;\,+\,&amp;2x_2&amp;\,\,&amp; &amp;\,+\,&amp; x_4 &amp;=&amp; 0\\
 <article class="fact theorem-like" id="fact-13"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.9.4</span><span class="period">.</span>
 </h4>
-<p id="p-549">The coefficients of the free variables in the solution set of a linear system always yield linearly independent vectors.</p>
-<p id="p-550">Thus if</p>
+<p id="p-549">The coefficients of the free variables in the solution set of a linear system always yield linearly independent vectors.</p> <p id="p-550">Thus if</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \setBuilder{
@@ -358,8 +355,7 @@ a,b \in \IR
 -2x_1&amp;\,-\,&amp;4x_2&amp;\,+\,&amp;x_3 &amp;\,+\,&amp; x_4 &amp;=&amp; 0\\
 3x_1&amp;\,+\,&amp;6x_2&amp;\,-\,&amp;x_3 &amp;\,-\,&amp;4 x_4 &amp;=&amp; 0
 \end{alignat*}
-</div>
-<p id="p-552">Find a basis for its solution space.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-27"><script type="text/x-sage"></script></pre>
+</div> <p id="p-552">Find a basis for its solution space.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-27"><script type="text/x-sage"></script></pre>
 <article class="activity project-like" id="activity-79"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.6</span><span class="period">.</span>
 </h4>
@@ -372,8 +368,7 @@ x_3 \left[\begin{array}{c} 2 \\ 1 \\ -1 \end{array}\right]+
 x_4 \left[\begin{array}{c} -4 \\ 1 \\ -4 \end{array}\right]=
 \left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]
 \end{equation*}
-</div>
-<p id="p-554">Find a basis for its solution space.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-28"><script type="text/x-sage"></script></pre>
+</div> <p id="p-554">Find a basis for its solution space.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-28"><script type="text/x-sage"></script></pre>
 <article class="activity project-like" id="activity-80"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.7</span><span class="period">.</span>
 </h4>
@@ -384,13 +379,11 @@ x_1&amp;\,-\,&amp;3x_2&amp;\,+\,&amp; 2x_3  &amp;=&amp; 0\\
 2x_1&amp;\,+\,&amp;6x_2&amp;\,+\,&amp;4x_3  &amp;=&amp; 0\\
 x_1&amp;\,+\,&amp;6x_2&amp;\,-\,&amp;4x_3 &amp;=&amp; 0
 \end{alignat*}
-</div>
-<p id="p-556">Find a basis for its solution space.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-29"><script type="text/x-sage"></script></pre>
+</div> <p id="p-556">Find a basis for its solution space.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-29"><script type="text/x-sage"></script></pre>
 <article class="observation remark-like" id="observation-16"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.9.8</span><span class="period">.</span>
 </h4>
-<p id="p-557">The basis of the trivial vector space is the empty set.  You can denote this as either <span class="process-math">\(\emptyset\)</span> or <span class="process-math">\(\{\}\text{.}\)</span></p>
-<p id="p-558">Thus, if <span class="process-math">\(\vec{0}\)</span> is the only solution of a homogeneous system, the basis of the solution space is  <span class="process-math">\(\emptyset\text{.}\)</span></p></article></section><section class="subsection" id="subsection-62"><h3 class="heading hide-type">
+<p id="p-557">The basis of the trivial vector space is the empty set.  You can denote this as either <span class="process-math">\(\emptyset\)</span> or <span class="process-math">\(\{\}\text{.}\)</span></p> <p id="p-558">Thus, if <span class="process-math">\(\vec{0}\)</span> is the only solution of a homogeneous system, the basis of the solution space is  <span class="process-math">\(\emptyset\text{.}\)</span></p></article></section><section class="subsection" id="subsection-62"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.9.2</span> <span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-22"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-VS9" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/TbN3lvLaNOw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
@@ -406,8 +399,7 @@ x_1&amp;\,+\,&amp;6x_2&amp;\,-\,&amp;4x_3 &amp;=&amp; 0
 <article class="exploration project-like" id="non-singular"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.9.9</span><span class="period">.</span>
 </h4>
-<p id="p-561">An <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(M\)</span> is <dfn class="terminology">non-singular</dfn> if the associated homogeneous system with coefficient matrix <span class="process-math">\(M\)</span> is consistent with one solution. Assume the matrices in the writing explorations in this section are all non-singular.</p>
-<ul class="disc">
+<p id="p-561">An <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(M\)</span> is <dfn class="terminology">non-singular</dfn> if the associated homogeneous system with coefficient matrix <span class="process-math">\(M\)</span> is consistent with one solution. Assume the matrices in the writing explorations in this section are all non-singular.</p> <ul class="disc">
 <li id="li-286"><p id="p-derived-li-286">Prove that the reduced row echelon form of <span class="process-math">\(M\)</span> is the identity matrix.</p></li>
 <li id="li-287"><p id="p-derived-li-287">Prove that, for any column vector <span class="process-math">\(\vec{b} = \left[\begin{array}{c}b_1\\b_2\\ \vdots \\b_n \end{array}\right]\text{,}\)</span> the system of equations given by <span class="process-math">\(\left[\begin{array}{c|c}M &amp; \vec{b}\end{array}
 \right]\)</span> has a unique solution.</p></li>

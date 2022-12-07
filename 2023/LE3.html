@@ -154,6 +154,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <div id="searchresultsplaceholder" style="display: none">
 <button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
 </h2>
+<div id="searchempty"><span>No results.</span></div>
 <ol id="searchresults"></ol>
 </div>
 </div></div>
@@ -249,17 +250,14 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <article class="activity project-like" id="activity-15"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
 </h4>
-<p id="p-150">Free browser-based technologies for mathematical computation are available online.</p>
-<ul class="disc">
+<p id="p-150">Free browser-based technologies for mathematical computation are available online.</p> <ul class="disc">
 <li id="li-98"><p id="p-151">Go to <a class="external" href="https://sagecell.sagemath.org/" target="_blank"><code class="code-inline tex2jax_ignore">https://sagecell.sagemath.org/</code></a>.</p></li>
 <li id="li-99"><p id="p-derived-li-99">In the dropdown on the right, you can select a number of different languages. Select "Octave" for the Matlab-compatible syntax used by this text.</p></li>
 <li id="li-100"><p id="p-152">Type <code class="code-inline tex2jax_ignore">rref([1,3,2;2,5,7])</code> and then press the <kbd class="kbdkey">Evaluate</kbd> button to compute the <span class="process-math">\(\RREF\)</span> of <span class="process-math">\(\left[\begin{array}{ccc} 1 &amp; 3 &amp; 2 \\ 2 &amp; 5 &amp; 7 \end{array}\right]\text{.}\)</span></p></li>
-</ul>
-<p id="p-153">Since the vertical bar in an augmented matrix does not affect row operations, the <span class="process-math">\(\RREF\)</span> of <span class="process-math">\(\left[\begin{array}{cc|c} 1 &amp; 3 &amp; 2 \\ 2 &amp; 5 &amp; 7 \end{array}\right]\)</span> may be computed in the same way.</p></article><article class="activity project-like" id="activity-16"><h4 class="heading">
+</ul> <p id="p-153">Since the vertical bar in an augmented matrix does not affect row operations, the <span class="process-math">\(\RREF\)</span> of <span class="process-math">\(\left[\begin{array}{cc|c} 1 &amp; 3 &amp; 2 \\ 2 &amp; 5 &amp; 7 \end{array}\right]\)</span> may be computed in the same way.</p></article><article class="activity project-like" id="activity-16"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
 </h4>
-<p id="p-154">In the HTML version of this text, code cells are often embedded for your convenience when RREFs need to be computed.</p>
-<p id="p-155">Try this out to compute <span class="process-math">\(\RREF\left[\begin{array}{cc|c} 2 &amp; 3 &amp; 1 \\ 3 &amp; 0 &amp; 6 \end{array}\right]\text{.}\)</span></p></article><pre class="ptx-sagecell sagecell-octave" id="sage-1"><script type="text/x-sage">rref([2,3,1;3,0,6])
+<p id="p-154">In the HTML version of this text, code cells are often embedded for your convenience when RREFs need to be computed.</p> <p id="p-155">Try this out to compute <span class="process-math">\(\RREF\left[\begin{array}{cc|c} 2 &amp; 3 &amp; 1 \\ 3 &amp; 0 &amp; 6 \end{array}\right]\text{.}\)</span></p></article><pre class="ptx-sagecell sagecell-octave" id="sage-1"><script type="text/x-sage">rref([2,3,1;3,0,6])
 </script></pre>
 <article class="activity project-like" id="activity-17"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
@@ -343,8 +341,7 @@ x_1 \left[\begin{array}{c} 3 \\ 2\\ -1 \end{array}\right]
 <article class="activity project-like" id="activity-19"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
 </h4>
-<p id="p-170">Is <span class="process-math">\(0=1\)</span> the only possible logical contradiction obtained from the RREF of an augmented matrix?</p>
-<ol class="upper-alpha">
+<p id="p-170">Is <span class="process-math">\(0=1\)</span> the only possible logical contradiction obtained from the RREF of an augmented matrix?</p> <ol class="upper-alpha">
 <li id="li-107"><p id="p-171">Yes, <span class="process-math">\(0=1\)</span> is the only possible contradiction from an RREF matrix.</p></li>
 <li id="li-108"><p id="p-172">No, <span class="process-math">\(0=17\)</span> is another possible contradiction from an RREF matrix.</p></li>
 <li id="li-109"><p id="p-173">No, <span class="process-math">\(x=0\)</span> is another possible contradiction from an RREF matrix.</p></li>
@@ -373,8 +370,7 @@ x_1 &amp;+ 2x_2 &amp;+ 3x_3 &amp;= 1\\
 <article class="fact theorem-like" id="fact-2"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span>
 </h4>
-<p id="p-182">By finding <span class="process-math">\(\RREF(A)\)</span> from a linear system's corresponding augmented matrix <span class="process-math">\(A\text{,}\)</span> we can immediately tell how many solutions the system has.</p>
-<ul class="disc">
+<p id="p-182">By finding <span class="process-math">\(\RREF(A)\)</span> from a linear system's corresponding augmented matrix <span class="process-math">\(A\text{,}\)</span> we can immediately tell how many solutions the system has.</p> <ul class="disc">
 <li id="li-114"><p id="p-183">If the linear system given by <span class="process-math">\(\RREF(A)\)</span> includes the contradiction <span class="process-math">\(0=1\text{,}\)</span> that is, the row <span class="process-math">\(\left[\begin{array}{ccc|c}0&amp;\cdots&amp;0&amp;1\end{array}\right]\text{,}\)</span> then the system is <em class="emphasis">inconsistent</em>, which means it has <em class="emphasis">zero</em> solutions and its solution set is written as <span class="process-math">\(\emptyset\)</span> or <span class="process-math">\(\{\}\text{.}\)</span></p></li>
 <li id="li-115"><p id="p-184">If the linear system given by <span class="process-math">\(\RREF(A)\)</span> sets each variable of the system to a single value; that is, <span class="process-math">\(x_1=s_1\text{,}\)</span> <span class="process-math">\(x_2=s_2\text{,}\)</span> and so on; then the system is <em class="emphasis">consistent</em> with exactly <em class="emphasis">one</em> solution <span class="process-math">\(\left[\begin{array}{c}s_1\\s_2\\\vdots\end{array}\right]\text{,}\)</span> and its solution set is <span class="process-math">\(\setList{ \left[\begin{array}{c}s_1\\s_2\\\vdots\end{array}\right] }\text{.}\)</span></p></li>
 <li id="li-116"><p id="p-185">Otherwise, the system must be <em class="emphasis">consistent</em> with <em class="emphasis">infinitely-many</em> different solutions. We'll learn how to find such solution sets in <a href="LE4.html" class="internal" title="Section 1.4: Linear Systems with Infinitely-Many Solutions (LE4)">Section 1.4</a>.</p></li>
