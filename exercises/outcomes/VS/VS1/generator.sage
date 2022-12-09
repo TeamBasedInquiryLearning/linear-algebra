@@ -59,7 +59,7 @@ class Generator(BaseGenerator):
                 return vector([v1[0]+v2[0]+randrange(1,5), v1[1]+v2[1]])
 
             def otimesop(c,v):
-                return vector([c*v[0],v[1]^c])
+                return vector([c*v[0],v[1]^abs(c)])
 
             trueproperty= trueproperties[0]
             truetex=truepropertiessymb[0]
