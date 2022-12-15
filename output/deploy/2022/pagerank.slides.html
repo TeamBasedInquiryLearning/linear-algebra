@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-12-15T12:44:29-08:00       *-->
+<!--*       on 2022-09-14T18:10:50Z       *-->
 <!--*   A recent stable commit (2022-07-01):   *-->
 <!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
 <!--*                                          *-->
@@ -154,7 +154,7 @@ dfn {
 \)</span></div>
 <div class="slides">
 <section><section><h1>Linear Algebra for Team-Based Inquiry Learning</h1>
-<h2>2023 Edition PREVIEW</h2>
+<h2>2022 Edition</h2>
 <table>
 <tr>
 <th align="center" style="border-bottom: 0px;">Steven Clontz</th>
@@ -169,7 +169,7 @@ dfn {
 <td align="center"></td>
 </tr>
 </table>
-<h4><div class="date">December 15, 2022</div></h4></section></section><section><section><h1>Section A.2: Computer Science: PageRank</h1></section><section><h3>Activity A.2.1: The $978,000,000,000 Problem (~10 min)</h3>
+<h4><div class="date">September 14, 2022</div></h4></section></section><section><section><h1>Section A.2: Computer Science: PageRank</h1></section><section><h3>Activity A.2.1: The $978,000,000,000 Problem</h3>
 <div align="left"> <p></p> <p>In the picture below, each circle represents a webpage, and each arrow represents a link from one page to another.</p> <figure class="figure figure-like" id="figure-1"><img src="generated/latex-image/image-49.svg"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure> <p>Based on how these pages link to each other, write a list of the 7 webpages in order from most important to least important.</p>
 </div></section><section><h3>Observation A.2.2: The $978,000,000,000 Idea</h3>
 <div align="left"> <p>Links are endorsements. That is:</p> <ol class="decimal">
@@ -219,7 +219,7 @@ dfn {
 \frac{1}{2} &amp; 0 &amp; 1 \\
 \frac{1}{2} &amp; 0 &amp; 0
 \end{array}\right]\)</span> and page rank vector <span class="process-math">\(\vec{x}=\left[\begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array}\right]\text{.}\)</span></p> <p>Thus, computing the importance of pages on a network is equivalent to solving the matrix equation <span class="process-math">\(A\vec{x}=1\vec{x}\text{.}\)</span></p>
-</div></section><section><h3>Activity A.2.5 (~5 min)</h3>
+</div></section><section><h3>Activity A.2.5</h3>
 <div align="left"> <p>Thus, our $978,000,000,000 problem is what kind of problem?<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[\begin{array}{ccc}0&amp;1&amp;0\\\frac{1}{2}&amp;0&amp;\frac{1}{2}\\\frac{1}{2}&amp;0&amp;0\end{array}\right]
@@ -227,14 +227,14 @@ dfn {
 =
 1\left[\begin{array}{c}x_1\\x_2\\x_3\end{array}\right]
 \end{equation*}
-</div></p> <ol class="upper-alpha">
+</div></p> <ol class="upper-alpha cols2">
 <li>An antiderivative problem</li>
 <li>A bijection problem</li>
 <li>A cofactoring problem</li>
 <li>A determinant problem</li>
 <li>An eigenvector problem</li>
 </ol>
-</div></section><section><h3>Activity A.2.6 (~10 min)</h3>
+</div></section><section><h3>Activity A.2.6</h3>
 <div align="left"> <p>Find a page rank vector <span class="process-math">\(\vec x\)</span> satisfying <span class="process-math">\(A\vec x=1\vec x\)</span> for the following network's page rank matrix <span class="process-math">\(A\text{.}\)</span></p> <p>That is, find the eigenspace associated with <span class="process-math">\(\lambda=1\)</span> for the matrix <span class="process-math">\(A\text{,}\)</span> and choose a vector from that eigenspace.</p> <div style="display:table;margin-left:2.5%;margin-right:2.5%;">
 <div style="display:table-cell;width:47.3684210526316%;vertical-align:top;"><figure class="figure figure-like" id="figure-4"><img src="generated/latex-image/image-52.svg"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span>A three-webpage network</figcaption></figure></div>
 <div style="display:table-cell;width:47.3684210526316%;vertical-align:top;"><p><div class="displaymath process-math" data-contains-math-knowls="" id="p-16">
@@ -263,9 +263,9 @@ A
 0 &amp; 1 &amp; -2 \\
 0 &amp; 0 &amp; 0
 \end{array}\right]\)</span> yields the basic eigenvector <span class="process-math">\(\left[\begin{array}{c} 2 \\ 2 \\1 \end{array}\right]\text{.}\)</span></p> <p>Therefore, we may conclude that pages <span class="process-math">\(1\)</span> and <span class="process-math">\(2\)</span> are equally important, and both pages are twice as important as page <span class="process-math">\(3\text{.}\)</span></p>
-</div></section><section><h3>Activity A.2.8 (~5 min)</h3>
+</div></section><section><h3>Activity A.2.8</h3>
 <div align="left"> <p>Compute the <span class="process-math">\(7 \times 7\)</span> page rank matrix for the following network.</p> <figure class="figure figure-like" id="figure-5"><img src="generated/latex-image/image-53.svg"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure> <p>For example, since website <span class="process-math">\(1\)</span> distributes its endorsement equally between <span class="process-math">\(2\)</span> and <span class="process-math">\(4\text{,}\)</span> the first column is <span class="process-math">\(\left[\begin{array}{c} 0 \\ \frac{1}{2} \\ 0 \\ \frac{1}{2} \\ 0 \\ 0 \\ 0 \end{array}\right]\text{.}\)</span></p>
-</div></section><section><h3>Activity A.2.9 (~10 min)</h3>
+</div></section><section><h3>Activity A.2.9</h3>
 <div align="left"> <p>Find a page rank vector for the given page rank matrix.</p> <div style="display:table;margin-left:0%;margin-right:0%;">
 <div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math" data-contains-math-knowls="" id="p-22">
 \begin{equation*}
@@ -294,7 +294,7 @@ A=\left[\begin{array}{ccccccc}
 2, 4, 1, 3, 7, 5, 6
 \end{equation*}
 </div></p> <figure class="figure figure-like" id="figure-7"><img src="generated/latex-image/image-55.svg"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7<span class="period">.</span></span><span class="space"> </span>A seven-webpage network</figcaption></figure>
-</div></section><section><h3>Activity A.2.11 (~10 min)</h3>
+</div></section><section><h3>Activity A.2.11</h3>
 <div align="left"> <p>Given the following diagram, use a page rank vector to rank the pages <span class="process-math">\(1\)</span> through <span class="process-math">\(7\)</span> in order from most important to least important.</p> <figure class="figure figure-like" id="figure-8"><img src="generated/latex-image/image-56.svg"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8<span class="period">.</span></span><span class="space"> </span>Another seven-webpage network</figcaption></figure>
 </div></section></section>
 </div>
