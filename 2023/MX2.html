@@ -83,7 +83,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<body id="tbilla" class="pretext-book ignore-math has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
@@ -244,13 +244,13 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Row Operations as Matrix Multiplication (MX2)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-23"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
-<ul class="disc"><li id="li-480"><p id="p-864">Express row operations through matrix multiplication.</p></li></ul></article><section class="subsection" id="subsection-91"><h3 class="heading hide-type">
+<ul class="disc"><li id="li-480"><p id="p-869">Express row operations through matrix multiplication.</p></li></ul></article><section class="subsection" id="subsection-91"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.1</span> <span class="title">Class Activities</span>
 </h3>
 <article class="activity project-like" id="activity-126"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
 </h4>
-<p id="p-865">Let <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]\text{.}\)</span> Find a <span class="process-math">\(3 \times 3\)</span> matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(BA=A\text{,}\)</span> that is,</p>
+<p id="p-870">Let <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]\text{.}\)</span> Find a <span class="process-math">\(3 \times 3\)</span> matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(BA=A\text{,}\)</span> that is,</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ 
@@ -261,11 +261,11 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
 \end{equation*}
 </div>
-<p class="continuation">Check your guess using technology.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-39"><script type="text/x-sage"></script></pre>
+<p class="continuation">Check your guess using technology.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-38"><script type="text/x-sage"></script></pre>
 <article class="definition definition-like" id="definition-25"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
 </h4>
-<p id="p-866">The identity matrix <span class="process-math">\(I_n\)</span> (or just <span class="process-math">\(I\)</span> when <span class="process-math">\(n\)</span> is obvious from context) is the <span class="process-math">\(n \times n\)</span> matrix</p>
+<p id="p-871">The identity matrix <span class="process-math">\(I_n\)</span> (or just <span class="process-math">\(I\)</span> when <span class="process-math">\(n\)</span> is obvious from context) is the <span class="process-math">\(n \times n\)</span> matrix</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &amp; \ddots &amp; \vdots  \\
@@ -275,7 +275,7 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 <p class="continuation">It has a <span class="process-math">\(1\)</span> on each diagonal element and a <span class="process-math">\(0\)</span> in every other position.</p></article><article class="fact theorem-like" id="fact-22"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
 </h4>
-<p id="p-867">For any square matrix <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(IA=AI=A\text{:}\)</span></p>
+<p id="p-872">For any square matrix <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(IA=AI=A\text{:}\)</span></p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right]
@@ -289,9 +289,9 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 </div></article><article class="activity project-like" id="activity-127"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-53"><p id="p-868">Tweaking the identity matrix slightly allows us to write row operations in terms of matrix multiplication.</p></div>
-<article class="task exercise-like" id="task-117"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-869">Create a matrix that doubles the third row of <span class="process-math">\(A\text{:}\)</span></p>
+<div class="introduction" id="introduction-54"><p id="p-873">Tweaking the identity matrix slightly allows us to write row operations in terms of matrix multiplication.</p></div>
+<article class="task exercise-like" id="task-120"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-874">Create a matrix that doubles the third row of <span class="process-math">\(A\text{:}\)</span></p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
@@ -299,8 +299,8 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 =
 \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 2 &amp; 2 &amp; -2 \end{array}\right]
 \end{equation*}
-</div></article><article class="task exercise-like" id="task-118"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-870">Create a matrix that swaps the second and third rows of <span class="process-math">\(A\text{:}\)</span></p>
+</div></article><article class="task exercise-like" id="task-121"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-875">Create a matrix that swaps the second and third rows of <span class="process-math">\(A\text{:}\)</span></p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
@@ -308,8 +308,8 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 =
 \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 1 &amp; 1 &amp; -1 \\ 0 &amp; 3 &amp; 2 \end{array}\right]
 \end{equation*}
-</div></article><article class="task exercise-like" id="task-119"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-871">Create a matrix that adds <span class="process-math">\(5\)</span> times the third row of <span class="process-math">\(A\)</span> to the first row:</p>
+</div></article><article class="task exercise-like" id="task-122"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-876">Create a matrix that adds <span class="process-math">\(5\)</span> times the third row of <span class="process-math">\(A\)</span> to the first row:</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
@@ -317,30 +317,30 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 =
 \left[\begin{array}{ccc} 2+5(1) &amp; 7+5(1) &amp; -1+5(-1) \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
 \end{equation*}
-</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-40"><script type="text/x-sage"></script></pre>
+</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-39"><script type="text/x-sage"></script></pre>
 <article class="fact theorem-like" id="fact-23"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
 </h4>
-<p id="p-872">If <span class="process-math">\(R\)</span> is the result of applying a row operation to <span class="process-math">\(I\text{,}\)</span> then <span class="process-math">\(RA\)</span> is the result of applying the same row operation to <span class="process-math">\(A\text{.}\)</span></p> <ul class="disc">
-<li id="li-481"><p id="p-873">Scaling a row: <span class="process-math">\(R=
+<p id="p-877">If <span class="process-math">\(R\)</span> is the result of applying a row operation to <span class="process-math">\(I\text{,}\)</span> then <span class="process-math">\(RA\)</span> is the result of applying the same row operation to <span class="process-math">\(A\text{.}\)</span></p> <ul class="disc">
+<li id="li-481"><p id="p-878">Scaling a row: <span class="process-math">\(R=
 \left[\begin{array}{ccc}
 c &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 1
 \end{array}\right]\)</span></p></li>
-<li id="li-482"><p id="p-874">Swapping rows: <span class="process-math">\(R=
+<li id="li-482"><p id="p-879">Swapping rows: <span class="process-math">\(R=
 \left[\begin{array}{ccc}
 0 &amp; 1 &amp; 0 \\
 1 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 1
 \end{array}\right]\)</span></p></li>
-<li id="li-483"><p id="p-875">Adding a row multiple to another row: <span class="process-math">\(R=
+<li id="li-483"><p id="p-880">Adding a row multiple to another row: <span class="process-math">\(R=
 \left[\begin{array}{ccc}
 1 &amp; 0 &amp; c \\
 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 1
 \end{array}\right]\)</span></p></li>
-</ul> <p id="p-876">Such matrices can be chained together to emulate multiple row operations. In particular,</p>
+</ul> <p id="p-881">Such matrices can be chained together to emulate multiple row operations. In particular,</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \RREF(A)=R_k\dots R_2R_1A
@@ -349,8 +349,8 @@ c &amp; 0 &amp; 0 \\
 <p class="continuation">for some sequence of matrices <span class="process-math">\(R_1,R_2,\dots,R_k\text{.}\)</span></p></article><article class="activity project-like" id="activity-128"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span>
 </h4>
-<p id="p-877">Consider the two row operations <span class="process-math">\(R_2\leftrightarrow R_3\)</span> and <span class="process-math">\(R_1+R_2\to R_1\)</span> applied as follows to show <span class="process-math">\(A\sim B\text{:}\)</span></p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="md-38">
+<p id="p-882">Consider the two row operations <span class="process-math">\(R_2\leftrightarrow R_3\)</span> and <span class="process-math">\(R_1+R_2\to R_1\)</span> applied as follows to show <span class="process-math">\(A\sim B\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-39">
 \begin{align*}
 A
 =
@@ -381,7 +381,7 @@ A
 B
 \end{align*}
 </div>
-<p id="p-878">Express these row operations as matrix multiplication by expressing <span class="process-math">\(B\)</span> as the product of two matrices and <span class="process-math">\(A\text{:}\)</span></p>
+<p id="p-883">Express these row operations as matrix multiplication by expressing <span class="process-math">\(B\)</span> as the product of two matrices and <span class="process-math">\(A\text{:}\)</span></p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 B =
@@ -398,20 +398,20 @@ B =
 A
 \end{equation*}
 </div>
-<p class="continuation">Check your work using technology.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-41"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-92"><h3 class="heading hide-type">
+<p class="continuation">Check your work using technology.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-40"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-92"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.2</span> <span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-43"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-MX2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/5kpk67ABLwY?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">43<span class="period">.</span></span><span class="space"> </span>Video: Row operations as matrix multiplication</figcaption></figure></section><section class="subsection" id="subsection-93"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.3</span> <span class="title">Slideshow</span>
 </h3>
-<p id="p-879">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/MX2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/MX2.slides.html</code></a>.</p></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
+<p id="p-884">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/MX2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/MX2.slides.html</code></a>.</p></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">4.2.4</span> <span class="title">Exercises</span>
 </h3>
-<p id="p-880">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/exercises/#/bank/MX2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/exercises/#/bank/MX2/</code></a>.</p></section><section class="subsection" id="subsection-94"><h3 class="heading hide-type">
+<p id="p-885">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/exercises/#/bank/MX2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/exercises/#/bank/MX2/</code></a>.</p></section><section class="subsection" id="subsection-94"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.5</span> <span class="title">Sample Problem and Solution</span>
 </h3>
-<p id="p-881">Sample problem <a href="" class="xref" data-knowl="./knowl/sampleMX2.html" title="Example B.1.19: MX2">Example B.1.19</a>.</p></section></section></div></main>
+<p id="p-886">Sample problem <a href="" class="xref" data-knowl="./knowl/sampleMX2.html" title="Example B.1.19: MX2">Example B.1.19</a>.</p></section></section></div></main>
 </div>
 </body>
 </html>

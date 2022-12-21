@@ -83,7 +83,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<body id="tbilla" class="pretext-book ignore-math has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
@@ -244,30 +244,30 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <span class="type">Chapter</span> <span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (AT)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-16"><h2 class="heading"><span class="type">Learning Outcomes</span></h2>
-<div class="introduction" id="introduction-38">
-<p id="p-563">How can we understand linear maps algebraically?</p> <p id="p-564">By the end of this chapter, you should be able to...</p>
+<div class="introduction" id="introduction-39">
+<p id="p-568">How can we understand linear maps algebraically?</p> <p id="p-569">By the end of this chapter, you should be able to...</p>
 </div>
 <ol class="decimal">
-<li id="li-290"><p id="p-565">Determine if a map between vector spaces of polynomials is linear or not.</p></li>
-<li id="li-291"><p id="p-566">Translate back and forth between a linear transformation of Euclidean spaces and its standard matrix, and perform related computations.</p></li>
-<li id="li-292"><p id="p-567">Compute a basis for the kernel and a basis for the image of a linear map, and verify that the rank-nullity theorem holds for a given linear map.</p></li>
-<li id="li-293"><p id="p-568">Determine if a given linear map is injective and/or surjective.</p></li>
-</ol></article><section class="introduction" id="AT-intro"><section class="paragraphs" id="AT-readiness"><h2 class="heading"><span class="title">Readiness Assurance.</span></h2> <p id="p-569">Before beginning this chapter, you should be able to...</p> <ol class="decimal">
+<li id="li-290"><p id="p-570">Determine if a map between vector spaces of polynomials is linear or not.</p></li>
+<li id="li-291"><p id="p-571">Translate back and forth between a linear transformation of Euclidean spaces and its standard matrix, and perform related computations.</p></li>
+<li id="li-292"><p id="p-572">Compute a basis for the kernel and a basis for the image of a linear map, and verify that the rank-nullity theorem holds for a given linear map.</p></li>
+<li id="li-293"><p id="p-573">Determine if a given linear map is injective and/or surjective.</p></li>
+</ol></article><section class="introduction" id="AT-intro"><section class="paragraphs" id="AT-readiness"><h2 class="heading"><span class="title">Readiness Assurance.</span></h2> <p id="p-574">Before beginning this chapter, you should be able to...</p> <ol class="decimal">
 <li id="li-294">
-<p id="p-570">State the definition of a spanning set, and determine if a set of Euclidean vectors spans <span class="process-math">\(\IR^n\text{.}\)</span></p>
-<ul class="disc"><li id="li-295"><p id="p-571">Review: <a href="VS3.html" class="internal" title="Section 2.3: Spanning Sets (VS3)">Section 2.3</a></p></li></ul>
+<p id="p-575">State the definition of a spanning set, and determine if a set of Euclidean vectors spans <span class="process-math">\(\IR^n\text{.}\)</span></p>
+<ul class="disc"><li id="li-295"><p id="p-576">Review: <a href="VS3.html" class="internal" title="Section 2.3: Spanning Sets (VS3)">Section 2.3</a></p></li></ul>
 </li>
 <li id="li-296">
-<p id="p-572">State the definition of linear independence, and determine if a set of Euclidean vectors is linearly dependent or independent.</p>
-<ul class="disc"><li id="li-297"><p id="p-573">Review: <a href="VS5.html" class="internal" title="Section 2.5: Linear Independence (VS5)">Section 2.5</a></p></li></ul>
+<p id="p-577">State the definition of linear independence, and determine if a set of Euclidean vectors is linearly dependent or independent.</p>
+<ul class="disc"><li id="li-297"><p id="p-578">Review: <a href="VS5.html" class="internal" title="Section 2.5: Linear Independence (VS5)">Section 2.5</a></p></li></ul>
 </li>
 <li id="li-298">
-<p id="p-574">State the definition of a basis, and determine if a set of Euclidean vectors is a basis.</p>
-<ul class="disc"><li id="li-299"><p id="p-575">Review: <a href="VS6.html" class="internal" title="Section 2.6: Identifying a Basis (VS6)">Section 2.6</a>, <a href="VS7.html" class="internal" title="Section 2.7: Subspace Basis and Dimension (VS7)">Section 2.7</a></p></li></ul>
+<p id="p-579">State the definition of a basis, and determine if a set of Euclidean vectors is a basis.</p>
+<ul class="disc"><li id="li-299"><p id="p-580">Review: <a href="VS6.html" class="internal" title="Section 2.6: Identifying a Basis (VS6)">Section 2.6</a>, <a href="VS7.html" class="internal" title="Section 2.7: Subspace Basis and Dimension (VS7)">Section 2.7</a></p></li></ul>
 </li>
 <li id="li-300">
-<p id="p-576">Find a basis of the solution space to a homogeneous system of linear equations.</p>
-<ul class="disc"><li id="li-301"><p id="p-577">Review: <a href="VS9.html" class="internal" title="Section 2.9: Homogeneous Linear Systems (VS9)">Section 2.9</a></p></li></ul>
+<p id="p-581">Find a basis of the solution space to a homogeneous system of linear equations.</p>
+<ul class="disc"><li id="li-301"><p id="p-582">Review: <a href="VS9.html" class="internal" title="Section 2.9: Homogeneous Linear Systems (VS9)">Section 2.9</a></p></li></ul>
 </li>
 </ol></section></section><nav class="summary-links"><ul>
 <li><a href="AT1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Linear Transformations (AT1)</span></a></li>
