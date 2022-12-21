@@ -619,7 +619,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.1",
   "title": "Vector Spaces (VS1)",
-  "body": " Vector Spaces (VS1)     Explain why a given set with defined addition and scalar multiplication does satisfy a given vector space property, but nonetheless isn't a vector space.     Class Activities    Several properties of the real numbers, such as commutivity: also hold for Euclidean vectors with multiple components: .      Consider each of the following properties of the real numbers . Label each property as valid if the property also holds for two-dimensional Euclidean vectors and numbers , and invalid if it does not.    .     .    There exists some where .    There exists some where .    If , then is the only vector equally distant from both and      .     .    If , then there exists some number such that .     .     .         A vector space vector space  is any set of mathematical objects, called vectors vector , and a set of numbers, called scalars scalar , with associated addition and scalar multiplication operations that satisfy the following properties. Let be vectors belonging to , and let be scalars.   Vector addition is associative: .    Vector addition is commutative: .    An additive identity exists: There exists some where . additive identity     Additive inverses exist: There exists some where . additive inverse     Scalar multiplication is associative: .    1 is a multiplicative identity: .    Scalar multiplication distributes over vector addition: .    Scalar multiplication distributes over scalar addition: .        Every Euclidean vector space Euclidean vector space  satisfies all eight requirements for the usual definitions of addition and scalar multiplication, but we will also study other types of vector spaces.      The space of  matrices  satisfies all eight requirements for component-wise addition and scalar multiplication.      Every Euclidean space is a vector space, but there are other examples of vector spaces as well.  For example, consider the set of complex numbers with the usual defintions of addition and scalar multiplication, and let , , and . Then   All eight properties can be verified in this way.      The following sets are just a few examples of vector spaces, with the usual\/natural operations for addition and scalar multiplication.     : Euclidean vectors with components.     : Complex numbers.     : Matrices of real numbers with rows and columns.     : Polynomials of degree or less.     : Polynomials of any degree.     : Real-valued continuous functions.        Consider the set .  Which of the following vectors is not in ?                            Consider the set with the operation defined by .  Let be in with and . Using the operations defined for , which of the following is ?                            Consider the set with operations defined by .  Let be scalars and .   Verify that .  Compute the value of .     Consider the set with operations defined by .  Let be unspecified scalars in and be an unspecified vector in .   Show that both sides of the equation simplify to the expression .  Which of the properties from did we verify in the previous task?  Vector addition is associative  is a multiplicative identity  Scalar multiplication distributes over scalar addition   Show that contains an additive identity element satisfying for all by choosing appropriate values for and using those to simplify to .     It turns out with operations defined by satisifes all eight properties from .  Thus, is a vector space.      Let have operations defined by  .   Show that is the scalar multiplication identity element by simplifying to .  Show that does not have an additive identity element by showing that for any possible values of .  Is a vector space according to ?     Let have operations defined by    Show that scalar multiplication distributes over vector addition, i.e. for all  .  Show that vector addition is not associative, i.e. for some vectors .  Is a vector space?     Videos      Video: Verifying that a vector space property holds       Video: Showing something is not a vector space     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations      Show that , the set of positive real numbers, is a vector space, but where really means the product (so ), and where scalar multiplication really means . Yes, you really do need to check all of the properties, but this is the only time I'll make you do so. Remember, examples aren't proofs, so you should start with arbitrary elements of for your vectors. Make sure you're careful about telling the reader what means.  Prove that the additive identity in an arbitrary vector space is unique.  Prove that additive inverses are unique. Assume you have a vector space and some . Further, assume with . Prove that .        Consider the vector space of polynomials, . Suppose further that , where are each positive integers. Conjecture a relationship between and . We will investigate this further in section     Sample Problem and Solution  Sample problem .   "
+  "body": " Vector Spaces (VS1)     Explain why a given set with defined addition and scalar multiplication does satisfy a given vector space property, but nonetheless isn't a vector space.     Class Activities    Several properties of the real numbers, such as commutivity: also hold for Euclidean vectors with multiple components: .      Consider each of the following properties of the real numbers . Label each property as valid if the property also holds for two-dimensional Euclidean vectors and numbers , and invalid if it does not.    .     .    There exists some where .    There exists some where .    If , then is the only vector equally distant from both and      .     .    If , then there exists some number such that .     .     .         A vector space vector space  is any set of mathematical objects, called vectors vector , and a set of numbers, called scalars scalar , with associated addition and scalar multiplication operations that satisfy the following properties.  We always assume the codomain of our operations is , i.e. that addition is a map and that scalar multiplication is a map .  Let be vectors belonging to , and let be scalars.   Vector addition is associative: .    Vector addition is commutative: .    An additive identity exists: There exists some where . additive identity     Additive inverses exist: There exists some where . additive inverse     Scalar multiplication is associative: .    1 is a multiplicative identity: .    Scalar multiplication distributes over vector addition: .    Scalar multiplication distributes over scalar addition: .       In this text, we only consider real vector spaces, i.e. those whose scalars come from . However, one can similarly define vector spaces with scalars from other fields like the complex or rational numbers.     Every Euclidean vector space Euclidean vector space  satisfies all eight requirements for the usual definitions of addition and scalar multiplication, but we will also study other types of vector spaces.      The space of  matrices  satisfies all eight requirements for component-wise addition and scalar multiplication.      Every Euclidean space is a vector space, but there are other examples of vector spaces as well.  For example, consider the set of complex numbers with the usual defintions of addition and scalar multiplication, and let , , and . Then   All eight properties can be verified in this way.      The following sets are just a few examples of vector spaces, with the usual\/natural operations for addition and scalar multiplication.     : Euclidean vectors with components.     : Complex numbers.     : Matrices of real numbers with rows and columns.     : Polynomials of degree or less.     : Polynomials of any degree.     : Real-valued continuous functions.        Consider the set .  Which of the following vectors is not in ?                            Consider the set with the operation defined by .  Let be in with and . Using the operations defined for , which of the following is ?                            Consider the set with operations defined by .  Let be scalars and .   Verify that .  Compute the value of .     Consider the set with operations defined by .  Let be unspecified scalars in and be an unspecified vector in .   Show that both sides of the equation simplify to the expression .  Which of the properties from did we verify in the previous task?  Vector addition is associative  is a multiplicative identity  Scalar multiplication distributes over scalar addition   Show that contains an additive identity element satisfying for all by choosing appropriate values for and using those to simplify to .     It turns out with operations defined by satisifes all eight properties from .  Thus, is a vector space.      Let have operations defined by  .   Show that is the scalar multiplication identity element by simplifying to .  Show that does not have an additive identity element by showing that for any possible values of .  Is a vector space according to ?     Let have operations defined by    Show that scalar multiplication distributes over vector addition, i.e. for all  .  Show that vector addition is not associative, i.e. for some vectors .  Is a vector space?     Videos      Video: Verifying that a vector space property holds       Video: Showing something is not a vector space     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations      Show that , the set of positive real numbers, is a vector space, but where really means the product (so ), and where scalar multiplication really means . Yes, you really do need to check all of the properties, but this is the only time I'll make you do so. Remember, examples aren't proofs, so you should start with arbitrary elements of for your vectors. Make sure you're careful about telling the reader what means.  Prove that the additive identity in an arbitrary vector space is unique.  Prove that additive inverses are unique. Assume you have a vector space and some . Further, assume with . Prove that .        Consider the vector space of polynomials, . Suppose further that , where are each positive integers. Conjecture a relationship between and . We will investigate this further in section     Sample Problem and Solution  Sample problem .   "
 },
 {
   "id": "objectives-7",
@@ -655,14 +655,23 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "2.1.3",
   "title": "",
-  "body": "   A vector space vector space  is any set of mathematical objects, called vectors vector , and a set of numbers, called scalars scalar , with associated addition and scalar multiplication operations that satisfy the following properties. Let be vectors belonging to , and let be scalars.   Vector addition is associative: .    Vector addition is commutative: .    An additive identity exists: There exists some where . additive identity     Additive inverses exist: There exists some where . additive inverse     Scalar multiplication is associative: .    1 is a multiplicative identity: .    Scalar multiplication distributes over vector addition: .    Scalar multiplication distributes over scalar addition: .     "
+  "body": "   A vector space vector space  is any set of mathematical objects, called vectors vector , and a set of numbers, called scalars scalar , with associated addition and scalar multiplication operations that satisfy the following properties.  We always assume the codomain of our operations is , i.e. that addition is a map and that scalar multiplication is a map .  Let be vectors belonging to , and let be scalars.   Vector addition is associative: .    Vector addition is commutative: .    An additive identity exists: There exists some where . additive identity     Additive inverses exist: There exists some where . additive inverse     Scalar multiplication is associative: .    1 is a multiplicative identity: .    Scalar multiplication distributes over vector addition: .    Scalar multiplication distributes over scalar addition: .     "
+},
+{
+  "id": "remark-7",
+  "level": "2",
+  "url": "VS1.html#remark-7",
+  "type": "Remark",
+  "number": "2.1.4",
+  "title": "",
+  "body": " In this text, we only consider real vector spaces, i.e. those whose scalars come from . However, one can similarly define vector spaces with scalars from other fields like the complex or rational numbers.  "
 },
 {
   "id": "observation-3",
   "level": "2",
   "url": "VS1.html#observation-3",
   "type": "Observation",
-  "number": "2.1.4",
+  "number": "2.1.5",
   "title": "",
   "body": "  Every Euclidean vector space Euclidean vector space  satisfies all eight requirements for the usual definitions of addition and scalar multiplication, but we will also study other types of vector spaces.   "
 },
@@ -671,18 +680,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VS1.html#observation-4",
   "type": "Observation",
-  "number": "2.1.5",
-  "title": "",
-  "body": "  The space of  matrices  satisfies all eight requirements for component-wise addition and scalar multiplication.   "
-},
-{
-  "id": "remark-7",
-  "level": "2",
-  "url": "VS1.html#remark-7",
-  "type": "Remark",
   "number": "2.1.6",
   "title": "",
-  "body": "  Every Euclidean space is a vector space, but there are other examples of vector spaces as well.  For example, consider the set of complex numbers with the usual defintions of addition and scalar multiplication, and let , , and . Then   All eight properties can be verified in this way.   "
+  "body": "  The space of  matrices  satisfies all eight requirements for component-wise addition and scalar multiplication.   "
 },
 {
   "id": "remark-8",
@@ -691,6 +691,15 @@ var ptx_lunr_docs = [
   "type": "Remark",
   "number": "2.1.7",
   "title": "",
+  "body": "  Every Euclidean space is a vector space, but there are other examples of vector spaces as well.  For example, consider the set of complex numbers with the usual defintions of addition and scalar multiplication, and let , , and . Then   All eight properties can be verified in this way.   "
+},
+{
+  "id": "remark-9",
+  "level": "2",
+  "url": "VS1.html#remark-9",
+  "type": "Remark",
+  "number": "2.1.8",
+  "title": "",
   "body": "  The following sets are just a few examples of vector spaces, with the usual\/natural operations for addition and scalar multiplication.     : Euclidean vectors with components.     : Complex numbers.     : Matrices of real numbers with rows and columns.     : Polynomials of degree or less.     : Polynomials of any degree.     : Real-valued continuous functions.     "
 },
 {
@@ -698,7 +707,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VS1.html#activity-27",
   "type": "Activity",
-  "number": "2.1.8",
+  "number": "2.1.9",
   "title": "",
   "body": "  Consider the set .  Which of the following vectors is not in ?                         "
 },
@@ -707,7 +716,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VS1.html#activity-28",
   "type": "Activity",
-  "number": "2.1.9",
+  "number": "2.1.10",
   "title": "",
   "body": "  Consider the set with the operation defined by .  Let be in with and . Using the operations defined for , which of the following is ?                         "
 },
@@ -716,7 +725,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VS1.html#activity-29",
   "type": "Activity",
-  "number": "2.1.10",
+  "number": "2.1.11",
   "title": "",
   "body": "  Consider the set with operations defined by .  Let be scalars and .   Verify that .  Compute the value of .  "
 },
@@ -725,16 +734,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VS1.html#activity-30",
   "type": "Activity",
-  "number": "2.1.11",
+  "number": "2.1.12",
   "title": "",
   "body": "  Consider the set with operations defined by .  Let be unspecified scalars in and be an unspecified vector in .   Show that both sides of the equation simplify to the expression .  Which of the properties from did we verify in the previous task?  Vector addition is associative  is a multiplicative identity  Scalar multiplication distributes over scalar addition   Show that contains an additive identity element satisfying for all by choosing appropriate values for and using those to simplify to .  "
 },
 {
-  "id": "remark-9",
+  "id": "remark-10",
   "level": "2",
-  "url": "VS1.html#remark-9",
+  "url": "VS1.html#remark-10",
   "type": "Remark",
-  "number": "2.1.12",
+  "number": "2.1.13",
   "title": "",
   "body": "  It turns out with operations defined by satisifes all eight properties from .  Thus, is a vector space.   "
 },
@@ -743,7 +752,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VS1.html#activity-31",
   "type": "Activity",
-  "number": "2.1.13",
+  "number": "2.1.14",
   "title": "",
   "body": "  Let have operations defined by  .   Show that is the scalar multiplication identity element by simplifying to .  Show that does not have an additive identity element by showing that for any possible values of .  Is a vector space according to ?  "
 },
@@ -752,7 +761,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VS1.html#activity-32",
   "type": "Activity",
-  "number": "2.1.14",
+  "number": "2.1.15",
   "title": "",
   "body": "  Let have operations defined by    Show that scalar multiplication distributes over vector addition, i.e. for all  .  Show that vector addition is not associative, i.e. for some vectors .  Is a vector space?  "
 },
@@ -779,7 +788,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VS1.html#exploration-9",
   "type": "Exploration",
-  "number": "2.1.15",
+  "number": "2.1.16",
   "title": "",
   "body": "    Show that , the set of positive real numbers, is a vector space, but where really means the product (so ), and where scalar multiplication really means . Yes, you really do need to check all of the properties, but this is the only time I'll make you do so. Remember, examples aren't proofs, so you should start with arbitrary elements of for your vectors. Make sure you're careful about telling the reader what means.  Prove that the additive identity in an arbitrary vector space is unique.  Prove that additive inverses are unique. Assume you have a vector space and some . Further, assume with . Prove that .     "
 },
@@ -788,7 +797,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "VS1.html#exploration-10",
   "type": "Exploration",
-  "number": "2.1.16",
+  "number": "2.1.17",
   "title": "",
   "body": "  Consider the vector space of polynomials, . Suppose further that , where are each positive integers. Conjecture a relationship between and . We will investigate this further in section  "
 },
@@ -1162,9 +1171,9 @@ var ptx_lunr_docs = [
   "body": "  Let . Choose a vector in and a real number , and show that isn't in . Is a subspace of ?   "
 },
 {
-  "id": "remark-10",
+  "id": "remark-11",
   "level": "2",
-  "url": "VS4.html#remark-10",
+  "url": "VS4.html#remark-11",
   "type": "Remark",
   "number": "2.4.7",
   "title": "",
@@ -2071,9 +2080,9 @@ var ptx_lunr_docs = [
   "body": "   Translate back and forth between a linear transformation of Euclidean spaces and its standard matrix, and perform related computations.    "
 },
 {
-  "id": "remark-11",
+  "id": "remark-12",
   "level": "2",
-  "url": "AT2.html#remark-11",
+  "url": "AT2.html#remark-12",
   "type": "Remark",
   "number": "3.2.1",
   "title": "",
@@ -2188,9 +2197,9 @@ var ptx_lunr_docs = [
   "body": "    Video: Using the standard matrix to compute the image of a vector  "
 },
 {
-  "id": "p-668",
+  "id": "p-670",
   "level": "2",
-  "url": "AT2.html#p-668",
+  "url": "AT2.html#p-670",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -3133,9 +3142,9 @@ var ptx_lunr_docs = [
   "body": "  Notice that while a linear map can transform vectors in various ways, linear maps always transform parallelograms into parallelograms, and these areas are always transformed by the same factor: in the case of , this factor is .      A linear map transforming parallelograms into parallelograms.   Since this change in area is always the same for a given linear map, it will be equal to the value of the transformed unit square (which begins with area ).   "
 },
 {
-  "id": "remark-12",
+  "id": "remark-13",
   "level": "2",
-  "url": "GT1.html#remark-12",
+  "url": "GT1.html#remark-13",
   "type": "Remark",
   "number": "5.1.5",
   "title": "",
@@ -3223,9 +3232,9 @@ var ptx_lunr_docs = [
   "body": "  The determinant must also satisfy other properties. Consider and .      Parallelogram built by and   The base of both parallelograms is , while the height has not changed, so the determinant does not change either. This can also be proven using the other properties of the determinant:    "
 },
 {
-  "id": "remark-13",
+  "id": "remark-14",
   "level": "2",
-  "url": "GT1.html#remark-13",
+  "url": "GT1.html#remark-14",
   "type": "Remark",
   "number": "5.1.12",
   "title": "",
@@ -3268,9 +3277,9 @@ var ptx_lunr_docs = [
   "body": "  Since the transformation given by the standard matrix is obtained by applying the transformations given by and , it follows that .   "
 },
 {
-  "id": "remark-14",
+  "id": "remark-15",
   "level": "2",
-  "url": "GT1.html#remark-14",
+  "url": "GT1.html#remark-15",
   "type": "Remark",
   "number": "5.1.17",
   "title": "",
@@ -3313,18 +3322,18 @@ var ptx_lunr_docs = [
   "body": "  Consider the row operation applied as follows to show :    Find a matrix such that .  If is a matrix with , find .  "
 },
 {
-  "id": "remark-15",
+  "id": "remark-16",
   "level": "2",
-  "url": "GT1.html#remark-15",
+  "url": "GT1.html#remark-16",
   "type": "Remark",
   "number": "5.1.22",
   "title": "",
   "body": "  Recall that the column versions of the three row-reducing operations a matrix may be used to simplify a determinant:   Multiplying columns by scalars:   Swapping two columns:   Adding a multiple of a column to another column:     "
 },
 {
-  "id": "remark-16",
+  "id": "remark-17",
   "level": "2",
-  "url": "GT1.html#remark-16",
+  "url": "GT1.html#remark-17",
   "type": "Remark",
   "number": "5.1.23",
   "title": "",
@@ -3385,9 +3394,9 @@ var ptx_lunr_docs = [
   "body": "   Compute the determinant of a matrix.    "
 },
 {
-  "id": "remark-17",
+  "id": "remark-18",
   "level": "2",
-  "url": "GT2.html#remark-17",
+  "url": "GT2.html#remark-18",
   "type": "Remark",
   "number": "5.2.1",
   "title": "",
@@ -3817,9 +3826,9 @@ var ptx_lunr_docs = [
   "body": "  Since the forces must balance at each node for the truss to be stable, some of the struts will be compressed, while others will be tensioned.      Completed truss   By finding vector equations that must hold at each node, we may determine many of the forces at play.   "
 },
 {
-  "id": "remark-18",
+  "id": "remark-19",
   "level": "2",
-  "url": "truss.html#remark-18",
+  "url": "truss.html#remark-19",
   "type": "Remark",
   "number": "A.1.4",
   "title": "",
@@ -3835,9 +3844,9 @@ var ptx_lunr_docs = [
   "body": "  Using the conventions of the previous remark, and where represents the load vector on node , find four more vector equations that must be satisfied for each of the other four nodes of the truss.      A simple truss         "
 },
 {
-  "id": "remark-19",
+  "id": "remark-20",
   "level": "2",
-  "url": "truss.html#remark-19",
+  "url": "truss.html#remark-20",
   "type": "Remark",
   "number": "A.1.6",
   "title": "",
@@ -3880,9 +3889,9 @@ var ptx_lunr_docs = [
   "body": "  Since the angle of the normal forces for each anchor point are unknown, two variables may be used to represent each.      Truss with normal forces    The load vector is constant.    "
 },
 {
-  "id": "remark-20",
+  "id": "remark-21",
   "level": "2",
-  "url": "truss.html#remark-20",
+  "url": "truss.html#remark-21",
   "type": "Remark",
   "number": "A.1.11",
   "title": "",
