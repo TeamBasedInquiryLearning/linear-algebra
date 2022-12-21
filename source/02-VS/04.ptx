@@ -111,28 +111,43 @@ we'll learn what this means more carefully in a later chapter.
 <fact>
     <statement>
         <p>
-  Any sub<em>set</em> <m>S</m> of a vector space <m>V</m> that contains
-  the additive identity <m>\vec 0</m> satisfies the eight
-  vector space properties in <xref ref="VS1-properties"/> automatically, since
-  the operations were well-defined for the parent vector space.
+            In order for a nonempty sub<em>set</em> <m>S</m> of a vector space <m>V</m> to be a sub<em>space</em>, we must first check that the operations <m>S</m>
+            inherits from <m>V</m> are defined on <m>S</m>.
+            <aside>
+                <p>Recall that we are using the convention that an "operation on <m>S</m>" must have a codomain of <m>S</m>.</p>
+            </aside>
+            In other words, we need to check two things:  
         </p>
-        <p>
-  However, to verify that it's a sub<em>space</em>, we still need to check that
-  addition and multiplication still make sense using when only vectors from <m>S</m>
-  are allowed to be used. So we need to check two things:
-        </p>
-  <ul>
-<li>
-    <p>
-    The set is <term>closed under addition</term><idx><h>vector space</h></idx><idx>closed under addition</idx>: for any <m>\vec{u},\vec{v} \in S</m>, the sum <m>\vec{u}+\vec{v}</m> is also in <m>S</m>.
-    </p>
-  </li>
-<li>
-    <p>
-    The set is <term>closed under scalar multiplication</term><idx><h>vector space</h></idx><idx>closed under scalar multiplication</idx>: for any <m>\vec{u} \in S</m> and scalar <m>c \in \IR</m>, the product <m>c\vec{u}</m> is also in <m>S</m>.
-    </p>
-  </li>
-</ul>
+            <ul>
+            <li>
+                <p>
+                The set is <term>closed under addition</term><idx><h>vector space</h></idx><idx>closed under addition</idx>: for any <m>\vec{u},\vec{v} \in S</m>, the sum <m>\vec{u}+\vec{v}</m> is also in <m>S</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                The set is <term>closed under scalar multiplication</term><idx><h>vector space</h></idx><idx>closed under scalar multiplication</idx>: for any <m>\vec{u} \in S</m> and scalar <m>c \in \IR</m>, the product <m>c\vec{u}</m> is also in <m>S</m>.
+                </p>
+            </li>
+            </ul>
+        <p>Once we have verified the operations are closed and thus well-defined on <m>S</m>, we get the eight vector space properties for free.</p>
+            <ul><li>
+                <p>
+                    Six of the eight (e.g. commutativity) propertieshold directly since they hold in <m>V</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Since <m>0 \in \IR</m> and <m>S</m> is closed under scalar multiplication, we see <m>\vec{0}=0\odot \vec{v}</m> is in <m>S</m> for 
+                    any <m>\vec{v} \in S</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Since <m>-1 \in \IR</m> and <m>S</m> is closed under scalar multiplication, we see <m>-\vec{v}=-1\odot \vec{v}</m> is in <m>S</m> for 
+                    any <m>\vec{v} \in S</m>.
+                </p>
+            </li></ul>
     </statement>
 </fact>
 
