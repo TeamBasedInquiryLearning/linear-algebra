@@ -412,7 +412,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "Counting Solutions for Linear Systems (LE3)",
-  "body": " Counting Solutions for Linear Systems (LE3)     Determine the number of solutions for a system of linear equations or a vector equation.     Class Activities     Free browser-based technologies for mathematical computation are available online.   Go to .   In the dropdown on the right, you can select a number of different languages. Select \"Octave\" for the Matlab-compatible syntax used by this text.   Type rref([1,3,2;2,5,7]) and then press the Evaluate button to compute the of .    Since the vertical bar in an augmented matrix does not affect row operations, the of may be computed in the same way.      In the HTML version of this text, code cells are often embedded for your convenience when RREFs need to be computed.  Try this out to compute .        Consider the following system of equations.  .  Convert this to an augmented matrix and use technology to compute its reduced row echelon form:   Use the matrix to write a linear system equivalent to the original system.  How many solutions must this system have?   Zero    Only one    Infinitely-many        Consider the vector equation    Convert this to an augmented matrix and use technology to compute its reduced row echelon form:  Use the matrix to write a linear system equivalent to the original system.  How many solutions must this system have?   Zero    Only one    Infinitely-many        Is the only possible logical contradiction obtained from the RREF of an augmented matrix?   Yes, is the only possible contradiction from an RREF matrix.  No, is another possible contradiction from an RREF matrix.  No, is another possible contradiction from an RREF matrix.  No, is another possible contradiction from an RREF matrix.       Consider the following linear system.    Find its corresponding augmented matrix and find .  Use the matrix to write a linear system equivalent to the original system.  How many solutions must this system have?   Zero    One    Infinitely-many        By finding from a linear system's corresponding augmented matrix , we can immediately tell how many solutions the system has.    If the linear system given by includes the contradiction , that is, the row , then the system is inconsistent , which means it has zero solutions and its solution set is written as or .    If the linear system given by sets each variable of the system to a single value; that is, , , and so on; then the system is consistent with exactly one solution , and its solution set is .    Otherwise, the system must be consistent with infinitely-many different solutions. We'll learn how to find such solution sets in .        For each vector equation, write an explanation for whether each solution set has no solutions, one solution, or infinitely-many solutions. If the set is finite, describe it using set notation.                Videos      Video: Finding the number of solutions for a system     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations    A system of equations with all constants equal to 0 is called homogeneous . These are addressed in detail in section   Choose three systems of equations from this chapter that you have already solved. Replace the constants with 0 to make the systems homogeneous. Solve the homogeneous systems and make a conjecture about the relationship between the earlier solutions you found and the associated homogeneous systems.  Prove or disprove. A system of linear equations is homogeneous if an only if it has the the zero vector as a solution.      Sample Problem and Solution  Sample problem .   "
+  "body": " Counting Solutions for Linear Systems (LE3)     Determine the number of solutions for a system of linear equations or a vector equation.     Class Activities     Free browser-based technologies for mathematical computation are available online.   Go to .   In the dropdown on the right, you can select a number of different languages. Select \"Octave\" for the Matlab-compatible syntax used by this text.   Type rref([1,3,2;2,5,7]) and then press the Evaluate button to compute the of .    Since the vertical bar in an augmented matrix does not affect row operations, the of may be computed in the same way.      In the HTML version of this text, code cells are often embedded for your convenience when RREFs need to be computed.  Try this out to compute .        Consider the following system of equations.  .  Convert this to an augmented matrix and use technology to compute its reduced row echelon form:   Use the matrix to write a linear system equivalent to the original system.  How many solutions must this system have?   Zero    Only one    Infinitely-many        Consider the vector equation    Convert this to an augmented matrix and use technology to compute its reduced row echelon form:  Use the matrix to write a linear system equivalent to the original system.  How many solutions must this system have?   Zero    Only one    Infinitely-many        Is the only possible logical contradiction obtained from the RREF of an augmented matrix?   Yes, is the only possible contradiction from an RREF matrix.  No, is another possible contradiction from an RREF matrix.  No, is another possible contradiction from an RREF matrix.  No, is another possible contradiction from an RREF matrix.       Consider the following linear system.    Find its corresponding augmented matrix and find .  Use the matrix to write a linear system equivalent to the original system.  How many solutions must this system have?   Zero    One    Infinitely-many        We will see in that the intuition established here generalizes: a consistent system with more equations than variables will always have infinitely many solutions.      By finding from a linear system's corresponding augmented matrix , we can immediately tell how many solutions the system has.    If the linear system given by includes the contradiction , that is, the row , then the system is inconsistent , which means it has zero solutions and its solution set is written as or .    If the linear system given by sets each variable of the system to a single value; that is, , , and so on; then the system is consistent with exactly one solution , and its solution set is .    Otherwise, the system must be consistent with infinitely-many different solutions. We'll learn how to find such solution sets in .        For each vector equation, write an explanation for whether each solution set has no solutions, one solution, or infinitely-many solutions. If the set is finite, describe it using set notation.                Videos      Video: Finding the number of solutions for a system     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations    A system of equations with all constants equal to 0 is called homogeneous . These are addressed in detail in section   Choose three systems of equations from this chapter that you have already solved. Replace the constants with 0 to make the systems homogeneous. Solve the homogeneous systems and make a conjecture about the relationship between the earlier solutions you found and the associated homogeneous systems.  Prove or disprove. A system of linear equations is homogeneous if an only if it has the the zero vector as a solution.      Sample Problem and Solution  Sample problem .   "
 },
 {
   "id": "objectives-4",
@@ -484,6 +484,15 @@ var ptx_lunr_docs = [
   "type": "Fact",
   "number": "1.3.7",
   "title": "",
+  "body": "  We will see in that the intuition established here generalizes: a consistent system with more equations than variables will always have infinitely many solutions.   "
+},
+{
+  "id": "fact-3",
+  "level": "2",
+  "url": "LE3.html#fact-3",
+  "type": "Fact",
+  "number": "1.3.8",
+  "title": "",
   "body": "  By finding from a linear system's corresponding augmented matrix , we can immediately tell how many solutions the system has.    If the linear system given by includes the contradiction , that is, the row , then the system is inconsistent , which means it has zero solutions and its solution set is written as or .    If the linear system given by sets each variable of the system to a single value; that is, , , and so on; then the system is consistent with exactly one solution , and its solution set is .    Otherwise, the system must be consistent with infinitely-many different solutions. We'll learn how to find such solution sets in .     "
 },
 {
@@ -491,7 +500,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "LE3.html#activity-21",
   "type": "Activity",
-  "number": "1.3.8",
+  "number": "1.3.9",
   "title": "",
   "body": "  For each vector equation, write an explanation for whether each solution set has no solutions, one solution, or infinitely-many solutions. If the set is finite, describe it using set notation.            "
 },
@@ -509,7 +518,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "LE3.html#exploration-6",
   "type": "Exploration",
-  "number": "1.3.9",
+  "number": "1.3.10",
   "title": "",
   "body": "  A system of equations with all constants equal to 0 is called homogeneous . These are addressed in detail in section   Choose three systems of equations from this chapter that you have already solved. Replace the constants with 0 to make the systems homogeneous. Solve the homogeneous systems and make a conjecture about the relationship between the earlier solutions you found and the associated homogeneous systems.  Prove or disprove. A system of linear equations is homogeneous if an only if it has the the zero vector as a solution.   "
 },
@@ -874,9 +883,9 @@ var ptx_lunr_docs = [
   "body": "  The vector belongs to exactly when there exists a solution to the vector equation .   Reinterpret this vector equation as a system of linear equations.  Find its solution set, using technology to find of its corresponding augmented matrix.  Given this solution set, does belong to ?  "
 },
 {
-  "id": "fact-3",
+  "id": "fact-4",
   "level": "2",
-  "url": "VS2.html#fact-3",
+  "url": "VS2.html#fact-4",
   "type": "Fact",
   "number": "2.2.7",
   "title": "",
@@ -1000,9 +1009,9 @@ var ptx_lunr_docs = [
   "body": "  How many vectors are required to span ?      space                         Infinitely Many     "
 },
 {
-  "id": "fact-4",
+  "id": "fact-5",
   "level": "2",
-  "url": "VS3.html#fact-4",
+  "url": "VS3.html#fact-5",
   "type": "Fact",
   "number": "2.3.4",
   "title": "",
@@ -1027,9 +1036,9 @@ var ptx_lunr_docs = [
   "body": "  The vector equation simplifies to the system of equations . This last equation gives a relation among the components of the vector that must be satisfied for it to belong to the span. Thus, we can conclude that is not all of , as we can find some vector that does not satisfy the equation .   "
 },
 {
-  "id": "fact-5",
+  "id": "fact-6",
   "level": "2",
-  "url": "VS3.html#fact-5",
+  "url": "VS3.html#fact-6",
   "type": "Fact",
   "number": "2.3.7",
   "title": "",
@@ -1144,9 +1153,9 @@ var ptx_lunr_docs = [
   "body": "  Note the similarities between a planar subspace spanned by two non-colinear vectors in , and the Euclidean plane . While they are not the same thing (and shouldn't be referred to interchangably), algebraists call such similar spaces isomorphic isomorphic ; we'll learn what this means more carefully in a later chapter.     A planar subset of compared with the plane .   A planar subset of compared with the plane .    "
 },
 {
-  "id": "fact-6",
+  "id": "fact-7",
   "level": "2",
-  "url": "VS4.html#fact-6",
+  "url": "VS4.html#fact-7",
   "type": "Fact",
   "number": "2.4.4",
   "title": "",
@@ -1207,9 +1216,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a subspace of a vector space . How are and related?     may include vectors that aren't in      may include vectors that aren't in      and always contain the same vectors     "
 },
 {
-  "id": "fact-7",
+  "id": "fact-8",
   "level": "2",
-  "url": "VS4.html#fact-7",
+  "url": "VS4.html#fact-8",
   "type": "Fact",
   "number": "2.4.11",
   "title": "",
@@ -1324,9 +1333,9 @@ var ptx_lunr_docs = [
   "body": "  Let be vectors in . Suppose , so the set is linearly dependent. Which of the following is true of the vector equation ?    It is consistent with one solution.    It is consistent with infinitely many solutions.    It is inconsistent.     "
 },
 {
-  "id": "fact-8",
+  "id": "fact-9",
   "level": "2",
-  "url": "VS5.html#fact-8",
+  "url": "VS5.html#fact-9",
   "type": "Fact",
   "number": "2.5.5",
   "title": "",
@@ -1504,9 +1513,9 @@ var ptx_lunr_docs = [
   "body": "  If is a basis for , that means doesn't have a non-pivot column, and doesn't have a row of zeros. What is ?    "
 },
 {
-  "id": "fact-9",
+  "id": "fact-10",
   "level": "2",
-  "url": "VS6.html#fact-9",
+  "url": "VS6.html#fact-10",
   "type": "Fact",
   "number": "2.6.7",
   "title": "",
@@ -1585,9 +1594,9 @@ var ptx_lunr_docs = [
   "body": "  Consider the subspace of given by .   Mark the part of that shows that 's spanning set is linearly dependent.  Find a basis for by removing a vector from its spanning set to make it linearly independent.  "
 },
 {
-  "id": "fact-10",
+  "id": "fact-11",
   "level": "2",
-  "url": "VS7.html#fact-10",
+  "url": "VS7.html#fact-11",
   "type": "Fact",
   "number": "2.7.3",
   "title": "",
@@ -1639,9 +1648,9 @@ var ptx_lunr_docs = [
   "body": "  Even though we found different bases for them, and are exactly the same subspace of , since .   "
 },
 {
-  "id": "fact-11",
+  "id": "fact-12",
   "level": "2",
-  "url": "VS7.html#fact-11",
+  "url": "VS7.html#fact-12",
   "type": "Fact",
   "number": "2.7.9",
   "title": "",
@@ -1720,9 +1729,9 @@ var ptx_lunr_docs = [
   "body": "   Answer questions about vector spaces of polynomials or matrices.    "
 },
 {
-  "id": "fact-12",
+  "id": "fact-13",
   "level": "2",
-  "url": "VS8.html#fact-12",
+  "url": "VS8.html#fact-13",
   "type": "Fact",
   "number": "2.8.1",
   "title": "",
@@ -1846,9 +1855,9 @@ var ptx_lunr_docs = [
   "body": "  Consider the homogeneous system of equations    Find its solution set (a subspace of ).  Rewrite this solution space in the form   Rewrite this solution space in the form   "
 },
 {
-  "id": "fact-13",
+  "id": "fact-14",
   "level": "2",
-  "url": "VS9.html#fact-13",
+  "url": "VS9.html#fact-14",
   "type": "Fact",
   "number": "2.9.4",
   "title": "",
@@ -1963,9 +1972,9 @@ var ptx_lunr_docs = [
   "body": "  Let be given by   To show that is not linear, we only need to find one counterexample.    Since the resulting vectors are different, is not a linear transformation.   "
 },
 {
-  "id": "fact-14",
+  "id": "fact-15",
   "level": "2",
-  "url": "AT1.html#fact-14",
+  "url": "AT1.html#fact-15",
   "type": "Fact",
   "number": "3.1.5",
   "title": "",
@@ -1990,9 +1999,9 @@ var ptx_lunr_docs = [
   "body": "  Let the polynomial maps and be defined by .  Compute , , , and . Based on these computations, can you conclude that either or is definitely not a linear transformation?   "
 },
 {
-  "id": "fact-15",
+  "id": "fact-16",
   "level": "2",
-  "url": "AT1.html#fact-15",
+  "url": "AT1.html#fact-16",
   "type": "Fact",
   "number": "3.1.8",
   "title": "",
@@ -2125,9 +2134,9 @@ var ptx_lunr_docs = [
   "body": "  Suppose is a linear map, and you know and . What piece of information would help you compute ?    The value of .    The value of .    The value of .    Any of the above.     "
 },
 {
-  "id": "fact-16",
+  "id": "fact-17",
   "level": "2",
-  "url": "AT2.html#fact-16",
+  "url": "AT2.html#fact-17",
   "type": "Fact",
   "number": "3.2.6",
   "title": "",
@@ -2161,9 +2170,9 @@ var ptx_lunr_docs = [
   "body": "  Let be the linear transformation given by    Compute , , and .  Find the standard matrix for .  "
 },
 {
-  "id": "fact-17",
+  "id": "fact-18",
   "level": "2",
-  "url": "AT2.html#fact-17",
+  "url": "AT2.html#fact-18",
   "type": "Fact",
   "number": "3.2.10",
   "title": "",
@@ -2197,9 +2206,9 @@ var ptx_lunr_docs = [
   "body": "    Video: Using the standard matrix to compute the image of a vector  "
 },
 {
-  "id": "p-674",
+  "id": "p-675",
   "level": "2",
-  "url": "AT2.html#p-674",
+  "url": "AT2.html#p-675",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -2359,9 +2368,9 @@ var ptx_lunr_docs = [
   "body": "  Let be the linear transformation given by the standard matrix   Since the set spans , we can obtain a basis for by finding and only using the vectors corresponding to pivot columns:    "
 },
 {
-  "id": "fact-18",
+  "id": "fact-19",
   "level": "2",
-  "url": "AT3.html#fact-18",
+  "url": "AT3.html#fact-19",
   "type": "Fact",
   "number": "3.3.11",
   "title": "",
@@ -2557,9 +2566,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation where contains multiple vectors. What can you conclude?     is injective     is not injective     is surjective     is not surjective     "
 },
 {
-  "id": "fact-19",
+  "id": "fact-20",
   "level": "2",
-  "url": "AT4.html#fact-19",
+  "url": "AT4.html#fact-20",
   "type": "Fact",
   "number": "3.4.9",
   "title": "",
@@ -2575,9 +2584,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation where is spanned by four vectors. What can you conclude?     is injective     is not injective     is surjective     is not surjective     "
 },
 {
-  "id": "fact-20",
+  "id": "fact-21",
   "level": "2",
-  "url": "AT4.html#fact-20",
+  "url": "AT4.html#fact-21",
   "type": "Fact",
   "number": "3.4.11",
   "title": "",
@@ -2620,9 +2629,9 @@ var ptx_lunr_docs = [
   "body": "  What can you conclude about the linear map with standard matrix ?   Its standard matrix has more columns than rows, so is not injective.  Its standard matrix has more columns than rows, so is injective.  Its standard matrix has more rows than columns, so is not surjective.  Its standard matrix has more rows than columns, so is surjective.    "
 },
 {
-  "id": "fact-21",
+  "id": "fact-22",
   "level": "2",
-  "url": "AT4.html#fact-21",
+  "url": "AT4.html#fact-22",
   "type": "Fact",
   "number": "3.4.16",
   "title": "",
@@ -2899,9 +2908,9 @@ var ptx_lunr_docs = [
   "body": "  The identity matrix (or just when is obvious from context) is the matrix It has a on each diagonal element and a in every other position.   "
 },
 {
-  "id": "fact-22",
+  "id": "fact-23",
   "level": "2",
-  "url": "MX2.html#fact-22",
+  "url": "MX2.html#fact-23",
   "type": "Fact",
   "number": "4.2.3",
   "title": "",
@@ -2917,9 +2926,9 @@ var ptx_lunr_docs = [
   "body": "  Tweaking the identity matrix slightly allows us to write row operations in terms of matrix multiplication.   Create a matrix that doubles the third row of :   Create a matrix that swaps the second and third rows of :   Create a matrix that adds times the third row of to the first row:   "
 },
 {
-  "id": "fact-23",
+  "id": "fact-24",
   "level": "2",
-  "url": "MX2.html#fact-23",
+  "url": "MX2.html#fact-24",
   "type": "Fact",
   "number": "4.2.5",
   "title": "",
@@ -3250,9 +3259,9 @@ var ptx_lunr_docs = [
   "body": "  The fact that swapping columns multiplies determinants by a negative may be verified by adding and subtracting columns.    "
 },
 {
-  "id": "fact-24",
+  "id": "fact-25",
   "level": "2",
-  "url": "GT1.html#fact-24",
+  "url": "GT1.html#fact-25",
   "type": "Fact",
   "number": "5.1.14",
   "title": "",
@@ -3268,9 +3277,9 @@ var ptx_lunr_docs = [
   "body": "  The transformation given by the standard matrix scales areas by , and the transformation given by the standard matrix scales areas by . By what factor does the transformation given by the standard matrix scale areas?      Area changing under the composition of two linear maps             Cannot be determined    "
 },
 {
-  "id": "fact-25",
+  "id": "fact-26",
   "level": "2",
-  "url": "GT1.html#fact-25",
+  "url": "GT1.html#fact-26",
   "type": "Fact",
   "number": "5.1.16",
   "title": "",
@@ -3286,9 +3295,9 @@ var ptx_lunr_docs = [
   "body": "  Recall that row operations may be produced by matrix multiplication.   Multiply the first row of by :   Swap the first and second row of :   Add times the third row to the first row of :     "
 },
 {
-  "id": "fact-26",
+  "id": "fact-27",
   "level": "2",
-  "url": "GT1.html#fact-26",
+  "url": "GT1.html#fact-27",
   "type": "Fact",
   "number": "5.1.18",
   "title": "",
@@ -3340,9 +3349,9 @@ var ptx_lunr_docs = [
   "body": "  The determinants of row operation matrices may be computed by manipulating columns to reduce each matrix to the identity:   Scaling a row:   Swapping rows:   Adding a row multiple to another row:     "
 },
 {
-  "id": "fact-27",
+  "id": "fact-28",
   "level": "2",
-  "url": "GT1.html#fact-27",
+  "url": "GT1.html#fact-28",
   "type": "Fact",
   "number": "5.1.24",
   "title": "",
@@ -3412,9 +3421,9 @@ var ptx_lunr_docs = [
   "body": "  The following image illustrates the transformation of the unit cube by the matrix .      Transformation of the unit cube by the linear transformation.   Recall that for this solid , where is the height of the solid and is the area of its parallelogram base. So what must its volume be?                 "
 },
 {
-  "id": "fact-28",
+  "id": "fact-29",
   "level": "2",
-  "url": "GT2.html#fact-28",
+  "url": "GT2.html#fact-29",
   "type": "Fact",
   "number": "5.2.3",
   "title": "",
@@ -3601,9 +3610,9 @@ var ptx_lunr_docs = [
   "body": "  An invertible matrix and its inverse are given below:   Which of the following is equal to ?                 "
 },
 {
-  "id": "fact-29",
+  "id": "fact-30",
   "level": "2",
-  "url": "GT3.html#fact-29",
+  "url": "GT3.html#fact-30",
   "type": "Fact",
   "number": "5.3.2",
   "title": "",
@@ -3637,9 +3646,9 @@ var ptx_lunr_docs = [
   "body": "  Finding the eigenvalues that satisfy for some nontrivial eigenvector is equivalent to finding nonzero solutions for the matrix equation .  Which of the following must be true for any eigenvalue?   The kernel of the transformation with standard matrix must contain the zero vector , so is invertible .  The kernel of the transformation with standard matrix must contain a non-zero vector , so is not invertible .  The image of the transformation with standard matrix must contain the zero vector , so is invertible .  The image of the transformation with standard matrix must contain a non-zero vector , so is not invertible .    "
 },
 {
-  "id": "fact-30",
+  "id": "fact-31",
   "level": "2",
-  "url": "GT3.html#fact-30",
+  "url": "GT3.html#fact-31",
   "type": "Fact",
   "number": "5.3.6",
   "title": "",
