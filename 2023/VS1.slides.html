@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-12-22T18:59:50Z       *-->
+<!--*   A recent stable commit (2022-07-01):   *-->
+<!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html xmlns:pi="http://pretextbook.org/2020/pretext/internal">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear Algebra for Team-Based Inquiry Learning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/simple.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+</head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>Linear Algebra for Team-Based Inquiry Learning</h1>
+<h2>2023 Early Edition</h2>
+<table>
+<tr>
+<th align="center" style="border-bottom: 0px;">Steven Clontz</th>
+<th align="center" style="border-bottom: 0px;">Drew Lewis</th>
+</tr>
+<tr>
+<td align="center" style="border-bottom: 0px;">University of South Alabama</td>
+<td align="center" style="border-bottom: 0px;">University of South Alabama</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</table>
+<h4><div class="date">December 22, 2022</div></h4></section></section><section><section><h1>Section 2.1: Vector Spaces (VS1)</h1></section><section><h3>Observation 2.1.1</h3>
+<div align="left"> <p>Several properties of the real numbers, such as commutivity:<div class="displaymath process-math">
+\begin{equation*}
+x + y = y + x
+\end{equation*}
+</div>also hold for Euclidean vectors with multiple components:<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{c}x_1\\x_2\end{array}\right]
++
+\left[\begin{array}{c}y_1\\y_2\end{array}\right]
+=
+\left[\begin{array}{c}y_1\\y_2\end{array}\right]
++
+\left[\begin{array}{c}x_1\\x_2\end{array}\right]\text{.}
+\end{equation*}
+</div></p>
+</div></section><section><h3>Activity 2.1.2 (~20 min)</h3>
+<div align="left"> <p>Consider each of the following properties of the real numbers <span class="process-math">\(\IR^1\text{.}\)</span> Label each property as <em class="emphasis">valid</em> if the property also holds for two-dimensional Euclidean vectors <span class="process-math">\(\vec u,\vec v,\vec w\in\IR^2\)</span> and numbers <span class="process-math">\(a,b\in\IR\text{,}\)</span> and <em class="emphasis">invalid</em> if it does not.</p> <ol class="decimal">
+<li><p><span class="process-math">\(\vec u+(\vec v+\vec w)=
+(\vec u+\vec v)+\vec w\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\vec u+\vec v=
+\vec v+\vec u\text{.}\)</span></p></li>
+<li><p>There exists some <span class="process-math">\(\vec z\)</span> where <span class="process-math">\(\vec v +\vec z =\vec v\text{.}\)</span></p></li>
+<li><p>There exists some <span class="process-math">\(-\vec v\)</span> where <span class="process-math">\(\vec v+(-\vec v)=\vec z\text{.}\)</span></p></li>
+<li><p>If <span class="process-math">\(\vec u\not=\vec v\text{,}\)</span> then <span class="process-math">\(\frac{1}{2}(\vec u +\vec v )\)</span> is the only vector equally distant from both <span class="process-math">\(\vec u\)</span> and <span class="process-math">\(\vec v\)</span></p></li>
+<li><p><span class="process-math">\(a(b\vec v)=(ab)\vec v\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(1\vec v=\vec v\text{.}\)</span></p></li>
+<li><p>If <span class="process-math">\(\vec u\not=\vec 0\text{,}\)</span> then there exists some number <span class="process-math">\(c\)</span> such that <span class="process-math">\(c\vec u=\vec v\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(a(\vec u+\vec v)=a\vec u+a\vec v\text{.}\)</span></p></li>
+<li><p><span class="process-math">\((a+b)\vec v=a\vec v+b\vec v\text{.}\)</span></p></li>
+</ol>
+</div></section><section><h3>Definition 2.1.3</h3>
+<div align="left"> <p> A <dfn class="terminology">vector space</dfn> <span class="process-math">\(V\)</span> is any set of mathematical objects, called <dfn class="terminology">vectors</dfn>, and a set of numbers, called <dfn class="terminology">scalars</dfn>, with associated addition <span class="process-math">\(\oplus\)</span> and scalar multiplication <span class="process-math">\(\odot\)</span> operations that satisfy the following properties. <aside class="aside aside-like" id="aside-1"><p>We always assume the codomain of our operations is <span class="process-math">\(V\text{,}\)</span> i.e. that addition is a map <span class="process-math">\(V \times V \rightarrow V\)</span> and that scalar multiplication is a map <span class="process-math">\(\IR \times V \rightarrow V\text{.}\)</span></p></aside> Let <span class="process-math">\(\vec u,\vec v,\vec w\)</span> be vectors belonging to <span class="process-math">\(V\text{,}\)</span> and let <span class="process-math">\(a,b\)</span> be scalars.</p> <ol class="decimal">
+<li><p>Vector addition is associative: <span class="process-math">\(\vec u\oplus (\vec v\oplus \vec w)=
+(\vec u\oplus \vec v)\oplus \vec w\text{.}\)</span></p></li>
+<li><p>Vector addition is commutative: <span class="process-math">\(\vec u\oplus \vec v=
+\vec v\oplus \vec u\text{.}\)</span></p></li>
+<li><p>An additive identity exists: There exists some <span class="process-math">\(\vec z\)</span> where <span class="process-math">\(\vec v\oplus \vec z=\vec v\text{.}\)</span></p></li>
+<li><p>Additive inverses exist: There exists some <span class="process-math">\(-\vec v\)</span> where <span class="process-math">\(\vec v\oplus (-\vec v)=\vec z\text{.}\)</span></p></li>
+<li><p>Scalar multiplication is associative: <span class="process-math">\(a\odot(b\odot\vec v)=(ab)\odot\vec v\text{.}\)</span></p></li>
+<li><p>1 is a multiplicative identity: <span class="process-math">\(1\odot\vec v=\vec v\text{.}\)</span></p></li>
+<li><p>Scalar multiplication distributes over vector addition: <span class="process-math">\(a\odot(\vec u\oplus \vec v)=(a\odot\vec u)\oplus(a\odot\vec v)\text{.}\)</span></p></li>
+<li><p>Scalar multiplication distributes over scalar addition: <span class="process-math">\((a+ b)\odot\vec v=(a\odot\vec v)\oplus(b\odot \vec v)\text{.}\)</span></p></li>
+</ol>
+</div></section><section><h3>Remark 2.1.4</h3>
+<div align="left"></div></section><section><h3>Observation 2.1.5</h3>
+<div align="left"> <p>Every <dfn class="terminology">Euclidean vector space</dfn><div class="displaymath process-math">
+\begin{equation*}
+\IR^n=\setBuilder{\left[\begin{array}{c}x_1\\x_2\\\vdots\\x_n\end{array}\right]}{x_1,x_2,\dots,x_n\in\IR}
+\end{equation*}
+</div>satisfies all eight requirements for the usual definitions of addition and scalar multiplication, but we will also study other types of vector spaces.</p>
+</div></section><section><h3>Observation 2.1.6</h3>
+<div align="left"> <p>The space of <span class="process-math">\(m \times n\)</span> <dfn class="terminology">matrices</dfn><div class="displaymath process-math">
+\begin{equation*}
+M_{m,n}=\setBuilder{\left[\begin{array}{cccc}a_{11}  &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} \end{array}\right]}
+{a_{11},\ldots,a_{mn} \in\IR}
+\end{equation*}
+</div>satisfies all eight requirements for component-wise addition and scalar multiplication.</p>
+</div></section><section><h3>Remark 2.1.7</h3>
+<div align="left"> <p>Every Euclidean space <span class="process-math">\(\IR^n\)</span> is a vector space, but there are other examples of vector spaces as well.</p> <p>For example, consider the set <span class="process-math">\(\IC\)</span> of complex numbers with the usual defintions of addition and scalar multiplication, and let <span class="process-math">\(\vec u=a+b\mathbf{i}\text{,}\)</span> <span class="process-math">\(\vec v=c+d\mathbf{i}\text{,}\)</span> and <span class="process-math">\(\vec w=e+f\mathbf{i}\text{.}\)</span> Then</p>
+<div class="displaymath process-math" id="md-1">
+\begin{align*}
+\vec u+(\vec v+\vec w)
+&amp;=
+(a+b\mathbf{i})+((c+d\mathbf{i})+(e+f\mathbf{i}))\\
+&amp;=
+(a+b\mathbf{i})+((c+e)+(d+f)\mathbf{i})
+\\&amp;=(a+c+e)+(b+d+f)\mathbf{i}
+\\&amp;=((a+c)+(b+d)\mathbf{i})+(e+f\mathbf{i})\\
+&amp;=
+(\vec u+\vec v)+\vec w
+\end{align*}
+</div>
+<p>All eight properties can be verified in this way.</p>
+</div></section><section><h3>Remark 2.1.8</h3>
+<div align="left"> <p>The following sets are just a few examples of vector spaces, with the usual/natural operations for addition and scalar multiplication.</p> <ul class="disc">
+<li><p><span class="process-math">\(\IR^n\text{:}\)</span> Euclidean vectors with <span class="process-math">\(n\)</span> components.</p></li>
+<li><p><span class="process-math">\(\IC\text{:}\)</span> Complex numbers.</p></li>
+<li><p><span class="process-math">\(M_{m,n}\text{:}\)</span> Matrices of real numbers with <span class="process-math">\(m\)</span> rows and <span class="process-math">\(n\)</span> columns.</p></li>
+<li><p><span class="process-math">\(\P_n\text{:}\)</span> Polynomials of degree <span class="process-math">\(n\)</span> or less.</p></li>
+<li><p><span class="process-math">\(\P\text{:}\)</span> Polynomials of any degree.</p></li>
+<li><p><span class="process-math">\(C(\IR)\text{:}\)</span> Real-valued continuous functions.</p></li>
+</ul>
+</div></section><section><h3>Activity 2.1.9 (~5 min)</h3>
+<div align="left"> <p>Consider the set <span class="process-math">\(V=\setBuilder{(x,y)}{y=2^x}\text{.}\)</span></p> <p>Which of the following vectors is not in <span class="process-math">\(V\text{?}\)</span></p> <ol class="upper-alpha cols2">
+<li><p><span class="process-math">\(\displaystyle (0, 0)\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle (1, 2)\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle (2, 4)\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle (3, 8)\)</span></p></li>
+</ol>
+</div></section><section><h3>Activity 2.1.10 (~5 min)</h3>
+<div align="left"> <p>Consider the set <span class="process-math">\(V=\setBuilder{(x,y)}{y=2^x}\)</span> with the operation <span class="process-math">\(\oplus\)</span> defined by<div class="displaymath process-math">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)   \text{.}
+\end{equation*}
+</div></p> <p>Let <span class="process-math">\(\vec u, \vec v\)</span> be in <span class="process-math">\(V\)</span> with <span class="process-math">\(\vec u=(1, 2)\)</span> and <span class="process-math">\(\vec v=(2, 4)\text{.}\)</span> Using the operations defined for <span class="process-math">\(V\text{,}\)</span> which of the following is <span class="process-math">\(\vec u\oplus\vec v\text{?}\)</span></p> <ol class="upper-alpha cols2">
+<li><p><span class="process-math">\(\displaystyle (2, 6)\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle (2, 8)\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle (3, 6)\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle (3, 8)\)</span></p></li>
+</ol>
+</div></section><section><h3>Activity 2.1.11 (~10 min)</h3>
+<div align="left"> <p>Consider the set <span class="process-math">\(V=\setBuilder{(x,y)}{y=2^x}\)</span> with operations <span class="process-math">\(\oplus,\odot\)</span> defined by<div class="displaymath process-math">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+\hspace{3em}
+c\odot (x,y)=(cx,y^c)\text{.}
+\end{equation*}
+</div></p> <p>Let <span class="process-math">\(a=2, b=-3\)</span> be scalars and <span class="process-math">\(\vec u=(1,2) \in V\text{.}\)</span></p> <p><em class="emphasis">Part 1.</em></p> <p>Verify that<div class="displaymath process-math">
+\begin{equation*}
+(a+b)\odot \vec u=\left(-1,\frac{1}{2}\right)\text{.}
+\end{equation*}
+</div></p>
+</div></section><section><h3>Activity 2.1.11 (~10 min)</h3>
+<div align="left"> <p>Consider the set <span class="process-math">\(V=\setBuilder{(x,y)}{y=2^x}\)</span> with operations <span class="process-math">\(\oplus,\odot\)</span> defined by<div class="displaymath process-math">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+\hspace{3em}
+c\odot (x,y)=(cx,y^c)\text{.}
+\end{equation*}
+</div></p> <p>Let <span class="process-math">\(a=2, b=-3\)</span> be scalars and <span class="process-math">\(\vec u=(1,2) \in V\text{.}\)</span></p> <p><em class="emphasis">Part 2.</em></p> <p>Compute the value of<div class="displaymath process-math">
+\begin{equation*}
+\left(a\odot \vec u\right)\oplus \left(b\odot \vec u\right)\text{.}
+\end{equation*}
+</div></p>
+</div></section><section><h3>Activity 2.1.12 (~10 min)</h3>
+<div align="left"> <p>Consider the set <span class="process-math">\(V=\setBuilder{(x,y)}{y=2^x}\)</span> with operations <span class="process-math">\(\oplus,\odot\)</span> defined by<div class="displaymath process-math">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+\hspace{3em}
+c\odot (x,y)=(cx,y^c)\text{.}
+\end{equation*}
+</div></p> <p>Let <span class="process-math">\(a, b\)</span> be unspecified scalars in <span class="process-math">\(\mathbb R\)</span> and <span class="process-math">\(\vec u = (x,y)\)</span> be an unspecified vector in <span class="process-math">\(V\text{.}\)</span></p> <p><em class="emphasis">Part 1.</em></p> <p>Show that both sides of the equation<div class="displaymath process-math">
+\begin{equation*}
+(a+b)\odot (x,y)=
+\left(a\odot (x,y)\right)\oplus \left(b\odot (x,y)\right)
+\end{equation*}
+</div>simplify to the expression <span class="process-math">\((ax+bx,y^ay^b)\text{.}\)</span></p>
+</div></section><section><h3>Activity 2.1.12 (~10 min)</h3>
+<div align="left"> <p>Consider the set <span class="process-math">\(V=\setBuilder{(x,y)}{y=2^x}\)</span> with operations <span class="process-math">\(\oplus,\odot\)</span> defined by<div class="displaymath process-math">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+\hspace{3em}
+c\odot (x,y)=(cx,y^c)\text{.}
+\end{equation*}
+</div></p> <p>Let <span class="process-math">\(a, b\)</span> be unspecified scalars in <span class="process-math">\(\mathbb R\)</span> and <span class="process-math">\(\vec u = (x,y)\)</span> be an unspecified vector in <span class="process-math">\(V\text{.}\)</span></p> <p><em class="emphasis">Part 2.</em></p> <p>Which of the properties from Definition 2.1.3 did we verify in the previous task?</p> <ol class="upper-alpha">
+<li><p>Vector addition is associative</p></li>
+<li><p><span class="process-math">\(1\)</span> is a multiplicative identity</p></li>
+<li><p>Scalar multiplication distributes over scalar addition</p></li>
+</ol>
+</div></section><section><h3>Activity 2.1.12 (~10 min)</h3>
+<div align="left"> <p>Consider the set <span class="process-math">\(V=\setBuilder{(x,y)}{y=2^x}\)</span> with operations <span class="process-math">\(\oplus,\odot\)</span> defined by<div class="displaymath process-math">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+\hspace{3em}
+c\odot (x,y)=(cx,y^c)\text{.}
+\end{equation*}
+</div></p> <p>Let <span class="process-math">\(a, b\)</span> be unspecified scalars in <span class="process-math">\(\mathbb R\)</span> and <span class="process-math">\(\vec u = (x,y)\)</span> be an unspecified vector in <span class="process-math">\(V\text{.}\)</span></p> <p><em class="emphasis">Part 3.</em></p> <p>Show that <span class="process-math">\(V\)</span> contains an additive identity element <span class="process-math">\(\vec{z}=(\unknown,\unknown)\)</span> satisfying<div class="displaymath process-math">
+\begin{equation*}
+(x,y)\oplus(\unknown,\unknown)=(x,y)
+\end{equation*}
+</div>for all <span class="process-math">\((x,y)\in V\)</span> by choosing appropriate values for <span class="process-math">\(\vec{z}=(\unknown,\unknown)\)</span> and using those to simplify <span class="process-math">\((x,y)\oplus(\unknown,\unknown)=(x,y)\)</span> to <span class="process-math">\((x,y)\text{.}\)</span></p>
+</div></section><section><h3>Remark 2.1.13</h3>
+<div align="left"> <p>It turns out <span class="process-math">\(V=\setBuilder{(x,y)}{y=2^x}\)</span> with operations <span class="process-math">\(\oplus,\odot\)</span> defined by<div class="displaymath process-math">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+\hspace{3em}
+c\odot (x,y)=(cx,y^c)
+\end{equation*}
+</div>satisifes all eight properties from Definition 2.1.3 .</p> <p>Thus, <span class="process-math">\(V\)</span> is a vector space.</p>
+</div></section><section><h3>Activity 2.1.14 (~15 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(V=\setBuilder{(x,y)}{x,y\in\IR}\)</span> have operations defined by<div class="displaymath process-math">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+y_1+x_2+y_2,x_1^2+x_2^2)
+\end{equation*}
+</div><div class="displaymath process-math">
+\begin{equation*}
+c\odot (x,y)=(x^c,y+c-1)\text{.}
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 1.</em></p> <p>Show that <span class="process-math">\(1\)</span> is the scalar multiplication identity element by simplifying <span class="process-math">\(1\odot(x,y)\)</span> to <span class="process-math">\((x,y)\text{.}\)</span></p>
+</div></section><section><h3>Activity 2.1.14 (~15 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(V=\setBuilder{(x,y)}{x,y\in\IR}\)</span> have operations defined by<div class="displaymath process-math">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+y_1+x_2+y_2,x_1^2+x_2^2)
+\end{equation*}
+</div><div class="displaymath process-math">
+\begin{equation*}
+c\odot (x,y)=(x^c,y+c-1)\text{.}
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 2.</em></p> <p>Show that <span class="process-math">\(V\)</span> does not have an additive identity element <span class="process-math">\(\vec z=(z,w)\)</span> by showing that <span class="process-math">\((0,-1)\oplus(z,w)\not=(0,-1)\)</span> for any possible values of <span class="process-math">\(z,w\text{.}\)</span></p>
+</div></section><section><h3>Activity 2.1.14 (~15 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(V=\setBuilder{(x,y)}{x,y\in\IR}\)</span> have operations defined by<div class="displaymath process-math">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+y_1+x_2+y_2,x_1^2+x_2^2)
+\end{equation*}
+</div><div class="displaymath process-math">
+\begin{equation*}
+c\odot (x,y)=(x^c,y+c-1)\text{.}
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 3.</em></p> <p>Is <span class="process-math">\(V\)</span> a vector space according to Definition 2.1.3 ?</p>
+</div></section><section><h3>Activity 2.1.15 (~15 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(V=\setBuilder{(x,y)}{x,y\in\IR}\)</span> have operations defined by<div class="displaymath process-math">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1+3y_2)
+\hspace{3em}
+c\odot (x,y)=(cx,cy)
+.
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 1.</em></p> <p>Show that scalar multiplication distributes over vector addition, i.e.<div class="displaymath process-math">
+\begin{equation*}
+c \odot \left( (x_1,y_1) \oplus (x_2,y_2) \right) = c\odot (x_1,y_1) \oplus c\odot (x_2,y_2)
+\end{equation*}
+</div>for <em class="emphasis">all</em> <span class="process-math">\(c\in \IR,\, (x_1,y_1),(x_2,y_2) \in V\text{.}\)</span></p>
+</div></section><section><h3>Activity 2.1.15 (~15 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(V=\setBuilder{(x,y)}{x,y\in\IR}\)</span> have operations defined by<div class="displaymath process-math">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1+3y_2)
+\hspace{3em}
+c\odot (x,y)=(cx,cy)
+.
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 2.</em></p> <p>Show that vector addition is not associative, i.e.<div class="displaymath process-math">
+\begin{equation*}
+(x_1,y_1) \oplus \left((x_2,y_2) \oplus (x_3,y_3)\right) \neq \left((x_1,y_1)\oplus (x_2,y_2)\right) \oplus (x_3,y_3)
+\end{equation*}
+</div>for <em class="emphasis">some</em> vectors <span class="process-math">\((x_1,y_1), (x_2,y_2), (x_3,y_3) \in V\text{.}\)</span></p>
+</div></section><section><h3>Activity 2.1.15 (~15 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(V=\setBuilder{(x,y)}{x,y\in\IR}\)</span> have operations defined by<div class="displaymath process-math">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1+3y_2)
+\hspace{3em}
+c\odot (x,y)=(cx,cy)
+.
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 3.</em></p> <p>Is <span class="process-math">\(V\)</span> a vector space?</p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>
