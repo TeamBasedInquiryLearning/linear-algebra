@@ -10,28 +10,19 @@ funded by the National Science Foundation [DUE #2011807](https://nsf.gov/awardse
 [Drew Lewis](http://drew-lewis.com) are the maintainers
 of this project.
 
-## TBIL 2022 Edition
+## Getting started
 
-The 2022 version of the textbook is hosted at
-<https://teambasedinquirylearning.github.io/linear-algebra/2022/>.
-Randomized practice exercises are available publicly on the
-[CheckIt](https://teambasedinquirylearning.github.io/linear-algebra/2022/exercises/#/bank/) platform.
+These materials are hosted at
+<https://teambasedinquirylearning.github.io/linear-algebra/>.
 
 Other materials, such as quizzes for the Readiness Assurance Process,
-are available in the PDF folder of this repository.
-
-## 2023 Preview Edition
-
-The in-development 2023 version is available for preview at 
-<https://teambasedinquirylearning.github.io/linear-algebra/2023/>. Please note
-that this version is subject to change radically without notice.
-Classroom use is discouraged; these updates will be published
-by August 2023.
+are available in the PDF folder of this repository, with updated versions
+available by joining the TBIL Slack community. Learn more at
+[TBIL.org](http://tbil.org).
 
 ## Copyright and Licensing
 
-See [source/meta/copyright.ptx](source/meta/copyright.ptx) and
-<https://teambasedinquirylearning.github.io/linear-algebra/2022/colophon.html>.
+See [source/meta/copyright.ptx](source/meta/copyright.ptx).
 
 ## Authoring
 
