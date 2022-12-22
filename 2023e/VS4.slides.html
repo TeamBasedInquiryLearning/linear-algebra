@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-12-22T18:59:57Z       *-->
+<!--*   A recent stable commit (2022-07-01):   *-->
+<!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html xmlns:pi="http://pretextbook.org/2020/pretext/internal">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear Algebra for Team-Based Inquiry Learning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/simple.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+</head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>Linear Algebra for Team-Based Inquiry Learning</h1>
+<h2>2023 Early Edition</h2>
+<table>
+<tr>
+<th align="center" style="border-bottom: 0px;">Steven Clontz</th>
+<th align="center" style="border-bottom: 0px;">Drew Lewis</th>
+</tr>
+<tr>
+<td align="center" style="border-bottom: 0px;">University of South Alabama</td>
+<td align="center" style="border-bottom: 0px;">University of South Alabama</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</table>
+<h4><div class="date">December 22, 2022</div></h4></section></section><section><section><h1>Section 2.4: Subspaces (VS4)</h1></section><section><h3>Activity 2.4.1 (~5 min)</h3>
+<div align="left"> <p>Consider two non-colinear vectors in <span class="process-math">\(\IR^3\text{.}\)</span> If we look at all linear combinations of those two vectors (that is, their <em class="emphasis">span</em>), we end up with a plane within <span class="process-math">\(\IR^3\text{.}\)</span> Call this plane <span class="process-math">\(S\text{.}\)</span></p> <p><img src="generated/latex-image/image-5.svg"></p> <p><em class="emphasis">Part 1.</em></p> <p>Are all of the vectors in <span class="process-math">\(S\)</span> also in <span class="process-math">\(\IR^3\text{?}\)</span></p>
+</div></section><section><h3>Activity 2.4.1 (~5 min)</h3>
+<div align="left"> <p>Consider two non-colinear vectors in <span class="process-math">\(\IR^3\text{.}\)</span> If we look at all linear combinations of those two vectors (that is, their <em class="emphasis">span</em>), we end up with a plane within <span class="process-math">\(\IR^3\text{.}\)</span> Call this plane <span class="process-math">\(S\text{.}\)</span></p> <p><img src="generated/latex-image/image-5.svg"></p> <p><em class="emphasis">Part 2.</em></p> <p>Let <span class="process-math">\(\vec{z}\)</span> be the additive identity in <span class="process-math">\(\IR^3\text{.}\)</span> Is <span class="process-math">\(\vec{z} \in S\text{?}\)</span></p>
+</div></section><section><h3>Activity 2.4.1 (~5 min)</h3>
+<div align="left"> <p>Consider two non-colinear vectors in <span class="process-math">\(\IR^3\text{.}\)</span> If we look at all linear combinations of those two vectors (that is, their <em class="emphasis">span</em>), we end up with a plane within <span class="process-math">\(\IR^3\text{.}\)</span> Call this plane <span class="process-math">\(S\text{.}\)</span></p> <p><img src="generated/latex-image/image-5.svg"></p> <p><em class="emphasis">Part 3.</em></p> <p>For any unspecified <span class="process-math">\(\vec{u}, \vec{v} \in S\text{,}\)</span> is it the case that <span class="process-math">\(\vec{u} + \vec{v} \in S\text{?}\)</span></p>
+</div></section><section><h3>Activity 2.4.1 (~5 min)</h3>
+<div align="left"> <p>Consider two non-colinear vectors in <span class="process-math">\(\IR^3\text{.}\)</span> If we look at all linear combinations of those two vectors (that is, their <em class="emphasis">span</em>), we end up with a plane within <span class="process-math">\(\IR^3\text{.}\)</span> Call this plane <span class="process-math">\(S\text{.}\)</span></p> <p><img src="generated/latex-image/image-5.svg"></p> <p><em class="emphasis">Part 4.</em></p> <p>For any unspecified <span class="process-math">\(\vec{u} \in S\)</span> and <span class="process-math">\(c\in\IR\text{,}\)</span> is it the case that <span class="process-math">\(c\vec{u} \in S\text{?}\)</span></p>
+</div></section><section><h3>Definition 2.4.2</h3>
+<div align="left"> <p>A subset of a vector space is called a <dfn class="terminology">subspace</dfn> if it is a vector space on its own. The operations of addition and scalar from the <dfn class="terminology">parent vector space</dfn> are inherited by the subspace.</p>
+</div></section><section><h3>Observation 2.4.3</h3>
+<div align="left"> <p>Note the similarities between a planar subspace spanned by two non-colinear vectors in <span class="process-math">\(\IR^3\text{,}\)</span> and the Euclidean plane <span class="process-math">\(\IR^2\text{.}\)</span> While they are not the same thing (and shouldn't be referred to interchangably), algebraists call such similar spaces <dfn class="terminology">isomorphic</dfn>; we'll learn what this means more carefully in a later chapter.</p> <figure class="figure figure-like" id="VS4-planar-subspace-vs-r2"><img src="generated/latex-image/image-6.svg"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span>A planar subset of <span class="process-math">\(\IR^3\)</span> compared with the plane <span class="process-math">\(\IR^2\text{.}\)</span></figcaption></figure>
+</div></section><section><h3>Fact 2.4.4</h3>
+<div align="left"> <p>In order for a nonempty sub<em class="emphasis">set</em> <span class="process-math">\(S\)</span> of a vector space <span class="process-math">\(V\)</span> to be a sub<em class="emphasis">space</em>, we must first check that the operations <span class="process-math">\(S\)</span> inherits from <span class="process-math">\(V\)</span> are defined on <span class="process-math">\(S\text{.}\)</span> <aside class="aside aside-like" id="aside-1"><p>Recall that we are using the convention that an "operation on <span class="process-math">\(S\)</span>" must have a codomain of <span class="process-math">\(S\text{.}\)</span></p></aside> In other words, we need to check two things:</p> <ul class="disc">
+<li><p>The set is <dfn class="terminology">closed under addition</dfn>: for any <span class="process-math">\(\vec{u},\vec{v} \in S\text{,}\)</span> the sum <span class="process-math">\(\vec{u}+\vec{v}\)</span> is also in <span class="process-math">\(S\text{.}\)</span></p></li>
+<li><p>The set is <dfn class="terminology">closed under scalar multiplication</dfn>: for any <span class="process-math">\(\vec{u} \in S\)</span> and scalar <span class="process-math">\(c \in \IR\text{,}\)</span> the product <span class="process-math">\(c\vec{u}\)</span> is also in <span class="process-math">\(S\text{.}\)</span></p></li>
+</ul> <p>Once we have verified the operations are closed and thus well-defined on <span class="process-math">\(S\text{,}\)</span> we get the eight vector space properties for free.</p> <ul class="disc">
+<li><p>Six of the eight (e.g. commutativity) propertieshold directly since they hold in <span class="process-math">\(V\text{.}\)</span></p></li>
+<li><p>Since <span class="process-math">\(0 \in \IR\)</span> and <span class="process-math">\(S\)</span> is closed under scalar multiplication, we see <span class="process-math">\(\vec{0}=0\odot \vec{v}\)</span> is in <span class="process-math">\(S\)</span> for any <span class="process-math">\(\vec{v} \in S\text{.}\)</span></p></li>
+<li><p>Since <span class="process-math">\(-1 \in \IR\)</span> and <span class="process-math">\(S\)</span> is closed under scalar multiplication, we see <span class="process-math">\(-\vec{v}=-1\odot \vec{v}\)</span> is in <span class="process-math">\(S\)</span> for any <span class="process-math">\(\vec{v} \in S\text{.}\)</span></p></li>
+</ul>
+</div></section><section><h3>Activity 2.4.5 (~10 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}\text{.}\)</span></p> <p><em class="emphasis">Part 1.</em></p> <p>Let <span class="process-math">\(\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]\)</span> and <span class="process-math">\(\vec{w} = \left[\begin{array}{c} a \\ b \\ c \end{array}\right] \)</span> be vectors in <span class="process-math">\(S\text{,}\)</span> so <span class="process-math">\(x+2y+z=0\)</span> and <span class="process-math">\(a+2b+c=0\text{.}\)</span> Show that <span class="process-math">\(\vec v+\vec w = \left[\begin{array}{c} x+a \\ y+b \\ z+c \end{array}\right]\)</span> also belongs to <span class="process-math">\(S\)</span> by verifying that <span class="process-math">\((x+a)+2(y+b)+(z+c)=0\text{.}\)</span></p>
+</div></section><section><h3>Activity 2.4.5 (~10 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}\text{.}\)</span></p> <p><em class="emphasis">Part 2.</em></p> <p>Let <span class="process-math">\(\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]\in S\text{,}\)</span> so <span class="process-math">\(x+2y+z=0\text{.}\)</span> Show that <span class="process-math">\(c\vec v=\left[\begin{array}{c}cx\\cy\\cz\end{array}\right]\)</span> also belongs to <span class="process-math">\(S\)</span> for any <span class="process-math">\(c\in\IR\)</span> by verifying an appropriate equation.</p>
+</div></section><section><h3>Activity 2.4.5 (~10 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}\text{.}\)</span></p> <p><em class="emphasis">Part 3.</em></p> <p>Is <span class="process-math">\(S\)</span> is a subspace of <span class="process-math">\(\IR^3\text{?}\)</span></p>
+</div></section><section><h3>Activity 2.4.6 (~10 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=4}\text{.}\)</span> Choose a vector <span class="process-math">\(\vec v=\left[\begin{array}{c} \unknown\\\unknown\\\unknown \end{array}\right]\)</span> in <span class="process-math">\(S\)</span> and a real number <span class="process-math">\(c=\unknown\text{,}\)</span> and show that <span class="process-math">\(c\vec v\)</span> isn't in <span class="process-math">\(S\text{.}\)</span> Is <span class="process-math">\(S\)</span> a subspace of <span class="process-math">\(\IR^3\text{?}\)</span></p>
+</div></section><section><h3>Remark 2.4.7</h3>
+<div align="left"> <p>Since <span class="process-math">\(0\)</span> is a scalar and <span class="process-math">\(0\vec{v}=\vec{z}\)</span> for any vector <span class="process-math">\(\vec{v}\text{,}\)</span> a nonempty set that is closed under scalar multiplication must contain the zero vector <span class="process-math">\(\vec{z}\)</span> for that vector space.</p> <p>Put another way, you can check any of the following to show that a nonempty subset <span class="process-math">\(W\)</span> isn't a subspace:</p> <ul class="disc">
+<li><p>Show that <span class="process-math">\(\vec 0\not\in W\text{.}\)</span></p></li>
+<li><p>Find <span class="process-math">\(\vec u,\vec v\in W\)</span> such that <span class="process-math">\(\vec u+\vec v\not\in W\text{.}\)</span></p></li>
+<li><p>Find <span class="process-math">\(c\in\IR,\vec v\in W\)</span> such that <span class="process-math">\(c\vec v\not\in W\text{.}\)</span></p></li>
+</ul> <p>If you cannot do any of these, then <span class="process-math">\(W\)</span> can be proven to be a subspace by doing the following:</p> <ul class="disc">
+<li><p>Prove that <span class="process-math">\(\vec u+\vec v\in W\)</span> whenever <span class="process-math">\(\vec u,\vec v\in W\text{.}\)</span></p></li>
+<li><p>Prove that <span class="process-math">\(c\vec v\in W\)</span> whenever <span class="process-math">\(c\in\IR,\vec v\in W\text{.}\)</span></p></li>
+</ul>
+</div></section><section><h3>Activity 2.4.8 (~20 min)</h3>
+<div align="left"> <p>Consider these subsets of <span class="process-math">\(\IR^3\text{:}\)</span><div class="displaymath process-math">
+\begin{equation*}
+R=
+\setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{y=z+1}
+\hspace{2em}
+S=
+\setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{y=|z|}
+\hspace{2em}
+T=
+\setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{z=xy}\text{.}
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 1.</em></p> <p>Show <span class="process-math">\(R\)</span> isn't a subspace by showing that <span class="process-math">\(\vec 0\not\in R\text{.}\)</span></p>
+</div></section><section><h3>Activity 2.4.8 (~20 min)</h3>
+<div align="left"> <p>Consider these subsets of <span class="process-math">\(\IR^3\text{:}\)</span><div class="displaymath process-math">
+\begin{equation*}
+R=
+\setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{y=z+1}
+\hspace{2em}
+S=
+\setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{y=|z|}
+\hspace{2em}
+T=
+\setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{z=xy}\text{.}
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 2.</em></p> <p>Show <span class="process-math">\(S\)</span> isn't a subspace by finding two vectors <span class="process-math">\(\vec u,\vec v\in S\)</span> such that <span class="process-math">\(\vec u+\vec v\not\in S\text{.}\)</span></p>
+</div></section><section><h3>Activity 2.4.8 (~20 min)</h3>
+<div align="left"> <p>Consider these subsets of <span class="process-math">\(\IR^3\text{:}\)</span><div class="displaymath process-math">
+\begin{equation*}
+R=
+\setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{y=z+1}
+\hspace{2em}
+S=
+\setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{y=|z|}
+\hspace{2em}
+T=
+\setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{z=xy}\text{.}
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 3.</em></p> <p>Show <span class="process-math">\(T\)</span> isn't a subspace by finding a vector <span class="process-math">\(\vec v\in T\)</span> such that <span class="process-math">\(2\vec v\not\in T\text{.}\)</span></p>
+</div></section><section><h3>Activity 2.4.9 (~10 min)</h3>
+<div align="left"> <p>Consider these subsets of <span class="process-math">\(M_{2 \times 2}\text{,}\)</span> the vector space of all <span class="process-math">\(2 \times 2\)</span> matrices with real entries. Show that each of these sets is or is not a subspace of <span class="process-math">\(M_{2 \times 2}\text{.}\)</span></p> <p><em class="emphasis">Part 1.</em></p> <p><div class="displaymath process-math">
+\begin{equation*}
+\setBuilder{ \left[\begin{array}{cc}a&amp;0\\0&amp;b\end{array}\right]}{a,b \in \IR}\text{.}
+\end{equation*}
+</div></p>
+</div></section><section><h3>Activity 2.4.9 (~10 min)</h3>
+<div align="left"> <p>Consider these subsets of <span class="process-math">\(M_{2 \times 2}\text{,}\)</span> the vector space of all <span class="process-math">\(2 \times 2\)</span> matrices with real entries. Show that each of these sets is or is not a subspace of <span class="process-math">\(M_{2 \times 2}\text{.}\)</span></p> <p><em class="emphasis">Part 2.</em></p> <p><div class="displaymath process-math">
+\begin{equation*}
+\setBuilder{ \left[\begin{array}{cc}a&amp;0\\0&amp;b\end{array}\right]}{a + b = 0}\text{.}
+\end{equation*}
+</div></p>
+</div></section><section><h3>Activity 2.4.9 (~10 min)</h3>
+<div align="left"> <p>Consider these subsets of <span class="process-math">\(M_{2 \times 2}\text{,}\)</span> the vector space of all <span class="process-math">\(2 \times 2\)</span> matrices with real entries. Show that each of these sets is or is not a subspace of <span class="process-math">\(M_{2 \times 2}\text{.}\)</span></p> <p><em class="emphasis">Part 3.</em></p> <p><div class="displaymath process-math">
+\begin{equation*}
+\setBuilder{ \left[\begin{array}{cc}a&amp;0\\0&amp;b\end{array}\right]}{a + b = 5}\text{.}
+\end{equation*}
+</div></p>
+</div></section><section><h3>Activity 2.4.9 (~10 min)</h3>
+<div align="left"> <p>Consider these subsets of <span class="process-math">\(M_{2 \times 2}\text{,}\)</span> the vector space of all <span class="process-math">\(2 \times 2\)</span> matrices with real entries. Show that each of these sets is or is not a subspace of <span class="process-math">\(M_{2 \times 2}\text{.}\)</span></p> <p><em class="emphasis">Part 4.</em></p> <p><div class="displaymath process-math">
+\begin{equation*}
+\setBuilder{ \left[\begin{array}{cc}a&amp;c\\0&amp;b\end{array}\right]}{a + b = 0, c \in \IR}\text{.}
+\end{equation*}
+</div></p>
+</div></section><section><h3>Activity 2.4.10 (~5 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(W\)</span> be a subspace of a vector space <span class="process-math">\(V\text{.}\)</span>  How are <span class="process-math">\(\vspan W\)</span> and <span class="process-math">\(W\)</span> related?</p> <ol class="upper-alpha">
+<li><p><span class="process-math">\(\vspan W\)</span> may include vectors that aren't in <span class="process-math">\(W\)</span></p></li>
+<li><p><span class="process-math">\(W\)</span> may include vectors that aren't in <span class="process-math">\(\vspan W\)</span></p></li>
+<li><p><span class="process-math">\(W\)</span> and <span class="process-math">\(\vspan W\)</span> always contain the same vectors</p></li>
+</ol>
+</div></section><section><h3>Fact 2.4.11</h3>
+<div align="left"> <p>If <span class="process-math">\(S\)</span> is any subset of a vector space <span class="process-math">\(V\text{,}\)</span> then since <span class="process-math">\(\vspan S\)</span> collects all possible linear combinations, <span class="process-math">\(\vspan S\)</span> is automatically a subspace of <span class="process-math">\(V\text{.}\)</span></p> <p>In fact, <span class="process-math">\(\vspan S\)</span> is always the smallest subspace of <span class="process-math">\(V\)</span> that contains all the vectors in <span class="process-math">\(S\text{.}\)</span></p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>
