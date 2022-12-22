@@ -32,114 +32,87 @@ class Generator(BaseGenerator):
                         "scalar multiplication does not distribute over vector addition",#6
                         "scalar multiplication does not distribute over scalar addition"#7
                     ]
-        n = randrange(0,10)
-        if n==1:
-            def oplusop(v1,v2):
-                return vector([randrange(2,5)*v1[0]+v2[0], v1[1]+randrange(1,4)*v2[1]])
+        vectorsimplify = lambda v : vector([simplify(expand(x)) for x in v])
 
-            def otimesop(c,v):
-                return vector([c*v[0],c*v[1]])
+        n = randrange(1,7)
+        if n==1:
+            plus = lambda v1,v2 : vector([randrange(2,5)*v1[0]+v2[0], v1[1]+randrange(1,4)*v2[1]])
+            times = lambda c,v : vector([c*v[0],c*v[1]])
+            a=randrange(1,8)
+            b=randrange(1,8)
+            theta = lambda v,a=a : vector([v[0]+a,v[1]+b])
+            untheta = lambda v,a=a : vector([v[0]+a,v[1]-b])
 
             trueproperty= trueproperties[6]
             truetex=truepropertiessymb[6]
             falseproperty=[ falseproperties[0],falseproperties[1],falseproperties[7]]
 
         elif n==2:
-            def oplusop(v1,v2):
-                return vector([randrange(1,5)*v1[0]*v2[0], v1[1]+randrange(2,5)*v2[1]])
+            plus = lambda v1,v2 : vector([v1[0]+v2[0], v1[1]+v2[1]])
+            times= lambda c,v : vector([c*v[0]+randrange(1,9)*c*v[1],randrange(1,9)*c*v[1]])
+            a=randrange(1,8)
+            theta = lambda v,a=a : vector([v[0],v[1]+a])
+            untheta = lambda v,a=a : vector([v[0],v[1]-a])
 
-            def otimesop(c,v):
-                return vector([c*v[0],0])
+            t=choice([6,7])
+            trueproperty= trueproperties[t]
+            truetex=truepropertiessymb[t]
+            falseproperty=[falseproperties[4], falseproperties[5]]
 
-            trueproperty= trueproperties[2]
-            truetex=truepropertiessymb[2]
-            falseproperty=[ falseproperties[0], falseproperties[1], falseproperties[3], falseproperties[5], falseproperties[6], falseproperties[7]]
-        elif n==3:
-            def oplusop(v1,v2):
-                return vector([v1[0]+v2[0]+randrange(1,5), v1[1]+v2[1]])
+        elif n==3:            
+            plus = lambda v1,v2 : vector([v1[0]+v2[0], v1[1]+v2[1]])
+            times= lambda c,v : vector([c^(randrange(2,4))*v[0],c^(randrange(2,5))*v[1]])
+            a=randrange(1,8)
+            b=randrange(2,8)
+            theta = lambda v,a=a : vector([v[0]+b*v[1],v[1]+a])
+            untheta = lambda v,a=a : vector([v[0]-b*(v[1]-a),v[1]-a])
 
-            def otimesop(c,v):
-                return vector([c*v[0],v[1]^abs(c)])
-
-            trueproperty= trueproperties[0]
-            truetex=truepropertiessymb[0]
-            falseproperty=[falseproperties[6], falseproperties[7]]
-        elif n==4:
-            def oplusop(v1,v2):
-                return vector([v1[0]+v2[0], v1[1]+v2[1]])
-
-            def otimesop(c,v):
-                return vector([randrange(2,6)*c*v[0],randrange(2,6)*c*v[1]])
-
-            trueproperty= trueproperties[7]
-            truetex=truepropertiessymb[7]
-            falseproperty=[falseproperties[4], falseproperties[5],falseproperties[6]]
-        elif n==5:
-            def oplusop(v1,v2):
-                return vector([v1[0]+v2[0], v1[1]+v2[1]])
-
-            def otimesop(c,v):
-                return vector([c^(randrange(2,4))*v[0],c^(randrange(2,5))*v[1]])
-
-            trueproperty= trueproperties[6]
-            truetex=truepropertiessymb[6]
+            t=choice([4,5,6])
+            trueproperty= trueproperties[t]
+            truetex=truepropertiessymb[t]
             falseproperty=[falseproperties[7]]
-        elif n==6:
-            def oplusop(v1,v2):
-                return vector([v1[0]+v2[0], v1[1]+v2[1]-randrange(2,7)])
 
-            def otimesop(c,v):
-                return vector([c*v[0],c*v[1]])
+        elif n==4:            
+            plus = lambda v1,v2 : vector([v1[0]+v2[0], v1[1]+v2[1]-randrange(2,7)])
+            times= lambda c,v : vector([c*v[0],c*v[1]])
+            a=randrange(1,5)
+            theta = lambda v,a=a : vector([v[0],v[1]+a*v[0]^2])
+            untheta = lambda v,a=a : vector([v[0],v[1]-a*v[0]^2])
 
             trueproperty= trueproperties[0]
             truetex=truepropertiessymb[0]
             falseproperty=[falseproperties[6], falseproperties[7]]
-        elif n==7:
-            def oplusop(v1,v2):
-                return vector([v1[0]+v2[0], v1[1]+v2[1]])
-
-            def otimesop(c,v):
-                r=randrange(3,8)
-                return vector([c*v[0],c*v[1]-r*c+r])
+        elif n==5:
+            r=randrange(3,8)
+            plus = lambda v1,v2 : vector([v1[0]+v2[0], v1[1]+v2[1]])
+            times= lambda c,v,r=r : vector([c*v[0],c*v[1]-r*c+r])            
+            a=randrange(1,5)
+            b=randrange(1,5)
+            theta = lambda v,a=a,b=b : vector([v[0]+b,v[1]+a*v[0]])
+            untheta = lambda v,a=a,b=b : vector([v[0]-b,v[1]-a*(v[0]-b)])
 
             trueproperty= trueproperties[4]
             truetex=truepropertiessymb[4]
             falseproperty=[falseproperties[6],falseproperties[7]]
-        elif n==8:
-            def oplusop(v1,v2):
-                return vector([v1[0]+v2[0]+randrange(2,7), sqrt(v1[1]^2+v2[1]^2)])
+        elif n==6:
+            r=randrange(1,6)
+            plus = lambda v1,v2,r=r : vector([v1[0]+v2[0]+r, v1[1]+v2[1]])
+            times= lambda c,v,r=r : vector([c*v[0]+randrange(1,6)*c*v[1]-r,randrange(1,6)*c*v[1]])
+            a=randrange(1,5)
+            theta = lambda v,a=a : vector([v[0],v[1]+a*v[0]])
+            untheta = lambda v,a=a : vector([v[0],v[1]-a*v[0]])
 
-            def otimesop(c,v):
-                return vector([c*v[0],c*v[1]])
-
-            trueproperty= trueproperties[0]
-            truetex=truepropertiessymb[0]
-            falseproperty=[falseproperties[2], falseproperties[6],falseproperties[7]]
-        elif n==9:
-            def oplusop(v1,v2):
-                return vector([randrange(2,7)*(v1[0]+v2[0]), randrange(2,7)*(v1[1]+v2[1])])
-
-            def otimesop(c,v):
-                return vector([c*v[0],c*v[1]])
-
-            trueproperty= trueproperties[6]
-            truetex=truepropertiessymb[6]
-            falseproperty=[falseproperties[0], falseproperties[7]]
-        else: #n==0
-            def oplusop(v1,v2):
-                return vector([v1[0]*v2[0], v1[1]*v2[1]])
-
-            def otimesop(c,v):
-                return vector([v[0]^c,v[1]^c])
-
-            trueproperty= trueproperties[2]
-            truetex=truepropertiessymb[2]
-            falseproperty=[falseproperties[3]]
+            t=choice([0,6,7])
+            trueproperty= trueproperties[t]
+            truetex=truepropertiessymb[t]
+            falseproperty=[falseproperties[4], falseproperties[5]]
 
 
         return {
-            "oplus": [oplus,oplusop(vector([x1,y1]),vector([x2,y2]))],
-            "otimes": [otimes,otimesop(c,vector([x,y]))],
+            #"oplus": [oplus,oplusop(vector([x1,y1]),vector([x2,y2]))],
+            "oplus": [oplus,vectorsimplify(theta(plus(untheta([x1,y1]),untheta([x2,y2]))))],
+            #"otimes": [otimes,otimesop(c,vector([x,y]))],
+            "otimes": [otimes,vectorsimplify(theta(times(c,untheta([x,y]))))],
             "trueproperty": trueproperty,
             "truetex": truetex,
             "falseproperties": falseproperty,
