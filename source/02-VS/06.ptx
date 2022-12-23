@@ -11,45 +11,99 @@
 
 
 <subsection><title>Class Activities</title>
-<observation>
-    <statement>
-        <p>
-    Suppose you are building a starship, which is for some reason in the shape of a cube. Due to some clever engineering, each part of the ship can be made out of a finite set of components. In fact, there are only 5 basic components. Assemble them in different ways, and you make every part of the cube! However, at the last minute, the design is changed from a cube to an octahedron. Would it make more sense to take all of the parts you were planning to build, build them anyway and modify them later, or to just modify the 5 basic components?
-       </p>
-   </statement>
-</observation>
     
-
-<activity estimated-time="10">
+<activity estimated-time="15" xml:id='activity-vs6-intro'>
     <introduction>
         <p>
-        Start with three vectors <me>
-    \vec e_1=\hat\imath=\left[\begin{array}{c}1 \\ 0 \\ 0\end{array}\right],
-    \vec e_2=\hat\jmath=\left[\begin{array}{c}0 \\ 1 \\ 0\end{array}\right],
-   \text{ and }
-    \vec e_3=\hat k=\left[\begin{array}{c}0 \\ 0 \\ 1\end{array}\right]
-  </me>.
+            Consider the set of vectors
+            <me>S=\left\{ 
+                \left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right],
+                \left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right],
+                \left[\begin{array}{c} 0 \\ -16 \\ -5 \\ -3  \end{array} \right],
+                \left[\begin{array}{c} 1 \\ 2 \\ 3 \\ 0  \end{array} \right],
+                \left[\begin{array}{c} 3 \\ 3 \\ 0 \\ 1  \end{array} \right]
+                \right\}
+            </me>.
         </p>
     </introduction>
     <task>
-        <p>Let <m>\vec{v}</m> be an unspecified vector in <m>\IR</m>. Show that <m>\vec{v}</m> can be expressed as a linear combination of <m>\vec{e}_1, \vec{e}_2</m>, and <m>\vec{e}_3</m>.
-        </p>
+        <statement>
+            <p>
+                Express the vector <m>\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]</m> as a linear combination
+                of the vectors in <m>S</m>, i.e. find scalars such that
+                <me>
+                \left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right] = 
+                \unknown \left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right] + 
+                \unknown \left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right] + 
+                \unknown \left[\begin{array}{c} 0 \\ -16 \\ -5 \\ -3  \end{array} \right] +
+                \unknown \left[\begin{array}{c} 1 \\ 2 \\ 3 \\ 0  \end{array} \right] +
+                \unknown \left[\begin{array}{c} 3 \\ 3 \\ 0 \\ 1  \end{array} \right]
+                </me>.
+            </p>
+        </statement>
     </task>
     <task>
-        <p>Let <m>\vec{w} = \left[\begin{array}{c}1 \\ 1 \\ 0\end{array}\right]</m>. Show that <m>\vec{v}</m> cannot be expressed as a linear combination of <m>\vec{e}_1, \vec{e}_2</m>, and <m>\vec{w}</m>.
-        </p>
-    </task>
+        <statement>
+            <p>
+                Find a <em>different</em> way to express the vector <m>\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]</m> 
+                as a linear combination of the vectors in <m>S</m>.
+            </p>
+        </statement>
+    </task>    
     <task>
-        <p>Does this imply that all vectors in <m>\IR^3</m> can be written as a linear combination of <m>\vec{e}_1, \vec{e}_2</m>, and <m>\vec{e}_3</m>? If you think so, explain what makes these vectors special. If not, explain why not.
-        </p>
-    </task>
+        <statement>
+            <p>
+                How many ways can the vector <m>\left[\begin{array}{c} 8 \\ 6 \\ 7 \\ 5  \end{array} \right]</m> 
+                be written as a linear combination of the vectors in <m>S</m>?
+            </p>
+        </statement>
+    </task> 
 </activity>
-    
+
+<sage language="octave">
+</sage>
+
+<observation>
+    <p>
+        We saw that some vectors could be expressed as a linear combination of the vectors in <m>S</m> in lots of (infinitely many) ways,
+        while others could not be expressed at all as a linear combination.
+    </p>
+    <p>
+        This motivates us to look for sets of vectors where every other vector can be constructed from them, and there is only one way to do so.
+    </p>
+</observation>
+
 <definition>
     <statement>
         <p>
-  A <term>basis</term><idx> basis </idx> is a linearly independent set that spans a vector space.
+        A <term>basis</term><idx> basis </idx> of a vector space <m>V</m> is a set of vectors <m>S</m> for which 
         </p>
+        <ol>
+            <li>
+                <p>
+                    <em>Every</em> vector in <m>V</m> can be expressed as a linear combination of the vectors in <m>S</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    For each vector <m>\vec{v} \in V</m>, there is only <em>one</em> way to write it as a linear combination
+                    of the vectors in <m>S</m>.
+                </p>
+            </li>
+        </ol>
+
+        <p>These two properties may be expressed more succintly as the statement "Every vector in <m>V</m> can be expressed
+        <em>uniquely</em> as a linear combination of the vectors in <m>S</m>".
+        </p>
+        <p>Or, in terms of a vector equation, a set <m>S=\left\{\vec{v}_1,\ldots,\vec{v}_n\right\}</m> is a basis of <m>V</m> if the vector equation
+        <me>x_1 \vec{v_1}+\cdots+x_n\vec{v_n}=\vec{w}</me>
+        has a <em>unique solution</em> for <em>every vector</em> <m> \vec{w} \in V</m>.
+        </p>
+    </statement>
+</definition>
+
+<definition>
+    <statement>
         <p>
   The <term>standard basis</term><idx><h>basis</h></idx><idx>standard</idx> of <m>\IR^n</m> is the set <m>\{\vec{e}_1, \ldots, \vec{e}_n\}</m> where
             <md>
@@ -89,6 +143,69 @@
     </statement>
 </observation>
 
+<remark>
+<p>
+    Saying that the vector equation
+        <me>x_1 \vec{v_1}+\cdots+x_n\vec{v_n}=\vec{w}</me>
+        has a solution for <em>every vector</em> <m> \vec{w} \in V</m> is saying that the set 
+        <m>\left\{\vec{v}_1,\ldots,\vec{v}_n\right\}</m> <em>spans</em> the vector space <m>V</m>.
+</p>
+<p>
+    However, to be a basis, we need to also check that the solution is always unique
+</p>
+<p>
+    In other words, it is <em>necessary</em> for a set to span <m>V</m> in order to be a basis of <m>V</m>, but this is <em>not sufficient</em>.
+</p>
+</remark>
+
+<activity estimated-time='10'>
+    <statement>
+        <p>
+            Recall that in <xref ref="activity-vs6-intro"/> we found two different ways to write the vector 
+            <m>\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]</m> as a linear combination
+                of the vectors in the set <m>S=\left\{
+                \left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right],
+                \left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right],
+                \left[\begin{array}{c} 0 \\ -16 \\ -5 \\ -3  \end{array} \right],
+                \left[\begin{array}{c} 1 \\ 2 \\ 3 \\ 0  \end{array} \right],
+                \left[\begin{array}{c} 3 \\ 3 \\ 0 \\ 1  \end{array} \right] \right\}
+                </m>.
+        </p>
+        <p>
+            For example, we had
+            <md>
+            <mrow>\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]&amp; =
+                \left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right]  +
+                \left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right]
+            </mrow>
+            <mrow>\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]&amp; =
+                3\left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right]  
+                -2\left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right]
+                -\left[\begin{array}{c} 0 \\ -16 \\ -5 \\ -3  \end{array} \right]
+            </mrow>
+            </md>.
+        </p>
+        <p>Manipulate these two equations to show how to build the zero vector out of the vectors in <m>S</m>.
+        </p>
+    </statement>
+</activity>
+
+<observation>
+    <p>
+        Whenever a vector can be expressed as two different linear combinations of vectors in a set <m>S</m>, the set <m>S</m> must be <em>linearly dependent</em>.
+    </p>
+</observation>
+
+<fact>
+    <statement>
+        <p>
+            A set of vectors <m>S</m> is a basis of a vector space <m>V</m> if <m>S</m> <em>spans <m>V</m></em> and is <em>linearly independent</em>.
+        </p>
+        <p>
+            If either of these fails, then <m>S</m> cannot be a basis of <m>V</m>.
+        </p>
+    </statement>
+</fact>
 
 
 <activity estimated-time='15'>
