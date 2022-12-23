@@ -612,32 +612,66 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 </div></li></ul></article><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">Class Activities</span>
 </h3>
-<article class="observation remark-like" id="observation-11"><h4 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span>
+<article class="activity project-like" id="activity-vs6-intro"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-487">Suppose you are building a starship, which is for some reason in the shape of a cube. Due to some clever engineering, each part of the ship can be made out of a finite set of components. In fact, there are only 5 basic components. Assemble them in different ways, and you make every part of the cube! However, at the last minute, the design is changed from a cube to an octahedron. Would it make more sense to take all of the parts you were planning to build, build them anyway and modify them later, or to just modify the 5 basic components?</div></article><article class="activity project-like" id="activity-65"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span>
-</h4>
-<div class="introduction" id="introduction-34"><div class="para logical" id="p-488">
-<div class="para">Start with three vectors</div>
+<div class="introduction" id="introduction-34"><div class="para logical" id="p-487">
+<div class="para">Consider the set of vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vec e_1=\hat\imath=\left[\begin{array}{c}1 \\ 0 \\ 0\end{array}\right],
-\vec e_2=\hat\jmath=\left[\begin{array}{c}0 \\ 1 \\ 0\end{array}\right],
-\text{ and }
-\vec e_3=\hat k=\left[\begin{array}{c}0 \\ 0 \\ 1\end{array}\right]\text{.}
+S=\left\{ 
+\left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right],
+\left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right],
+\left[\begin{array}{c} 0 \\ -16 \\ -5 \\ -3  \end{array} \right],
+\left[\begin{array}{c} 1 \\ 2 \\ 3 \\ 0  \end{array} \right],
+\left[\begin{array}{c} 3 \\ 3 \\ 0 \\ 1  \end{array} \right]
+\right\}\text{.}
 \end{equation*}
 </div>
 </div></div>
 <article class="task exercise-like" id="task-78"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-489">Let <span class="process-math">\(\vec{v}\)</span> be an unspecified vector in <span class="process-math">\(\IR\text{.}\)</span> Show that <span class="process-math">\(\vec{v}\)</span> can be expressed as a linear combination of <span class="process-math">\(\vec{e}_1, \vec{e}_2\text{,}\)</span> and <span class="process-math">\(\vec{e}_3\text{.}\)</span>
+<div class="para logical" id="p-488">
+<div class="para">Express the vector <span class="process-math">\(\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]\)</span> as a linear combination of the vectors in <span class="process-math">\(S\text{,}\)</span> i.e. find scalars such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right] = 
+\unknown \left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right] + 
+\unknown \left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right] + 
+\unknown \left[\begin{array}{c} 0 \\ -16 \\ -5 \\ -3  \end{array} \right] +
+\unknown \left[\begin{array}{c} 1 \\ 2 \\ 3 \\ 0  \end{array} \right] +
+\unknown \left[\begin{array}{c} 3 \\ 3 \\ 0 \\ 1  \end{array} \right]\text{.}
+\end{equation*}
+</div>
 </div></article><article class="task exercise-like" id="task-79"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-490">Let <span class="process-math">\(\vec{w} = \left[\begin{array}{c}1 \\ 1 \\ 0\end{array}\right]\text{.}\)</span> Show that <span class="process-math">\(\vec{v}\)</span> cannot be expressed as a linear combination of <span class="process-math">\(\vec{e}_1, \vec{e}_2\text{,}\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span>
+<div class="para" id="p-489">Find a <em class="emphasis">different</em> way to express the vector <span class="process-math">\(\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]\)</span> as a linear combination of the vectors in <span class="process-math">\(S\text{.}\)</span>
 </div></article><article class="task exercise-like" id="task-80"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para" id="p-491">Does this imply that all vectors in <span class="process-math">\(\IR^3\)</span> can be written as a linear combination of <span class="process-math">\(\vec{e}_1, \vec{e}_2\text{,}\)</span> and <span class="process-math">\(\vec{e}_3\text{?}\)</span> If you think so, explain what makes these vectors special. If not, explain why not.</div></article></article><article class="definition definition-like" id="definition-14"><h4 class="heading">
+<div class="para" id="p-490">How many ways can the vector <span class="process-math">\(\left[\begin{array}{c} 8 \\ 6 \\ 7 \\ 5  \end{array} \right]\)</span> be written as a linear combination of the vectors in <span class="process-math">\(S\text{?}\)</span>
+</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-18"><script type="text/x-sage"></script></pre>
+<article class="observation remark-like" id="observation-11"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-491">We saw that some vectors could be expressed as a linear combination of the vectors in <span class="process-math">\(S\)</span> in lots of (infinitely many) ways, while others could not be expressed at all as a linear combination.</div> <div class="para" id="p-492">This motivates us to look for sets of vectors where every other vector can be constructed from them, and there is only one way to do so.</div></article><article class="definition definition-like" id="definition-14"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-492">A <dfn class="terminology">basis</dfn> is a linearly independent set that spans a vector space.</div> <div class="para logical" id="p-493">
+<div class="para" id="p-493">A <dfn class="terminology">basis</dfn> of a vector space <span class="process-math">\(V\)</span> is a set of vectors <span class="process-math">\(S\)</span> for which</div> <ol class="decimal">
+<li id="li-254"><div class="para" id="p-494">
+<em class="emphasis">Every</em> vector in <span class="process-math">\(V\)</span> can be expressed as a linear combination of the vectors in <span class="process-math">\(S\)</span>
+</div></li>
+<li id="li-255"><div class="para" id="p-495">For each vector <span class="process-math">\(\vec{v} \in V\text{,}\)</span> there is only <em class="emphasis">one</em> way to write it as a linear combination of the vectors in <span class="process-math">\(S\text{.}\)</span>
+</div></li>
+</ol> <div class="para" id="p-496">These two properties may be expressed more succintly as the statement "Every vector in <span class="process-math">\(V\)</span> can be expressed <em class="emphasis">uniquely</em> as a linear combination of the vectors in <span class="process-math">\(S\)</span>".</div> <div class="para logical" id="p-497">
+<div class="para">Or, in terms of a vector equation, a set <span class="process-math">\(S=\left\{\vec{v}_1,\ldots,\vec{v}_n\right\}\)</span> is a basis of <span class="process-math">\(V\)</span> if the vector equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_1 \vec{v_1}+\cdots+x_n\vec{v_n}=\vec{w}
+\end{equation*}
+</div>
+<div class="para">has a <em class="emphasis">unique solution</em> for <em class="emphasis">every vector</em> <span class="process-math">\(\vec{w} \in V\text{.}\)</span>
+</div>
+</div></article><article class="definition definition-like" id="definition-15"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-498">
 <div class="para">The <dfn class="terminology">standard basis</dfn> of <span class="process-math">\(\IR^n\)</span> is the set <span class="process-math">\(\{\vec{e}_1, \ldots, \vec{e}_n\}\)</span> where</div>
 <div class="displaymath process-math" id="md-33">
 \begin{align*}
@@ -648,9 +682,9 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 \end{align*}
 </div>
 </div></article><article class="observation remark-like" id="observation-12"><h4 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.6.5</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-494">A basis may be thought of as a collection of building blocks for a vector space,  since every vector in the space can be expressed as a unique linear combination of basis vectors.</div> <div class="para logical" id="p-495">
+<div class="para" id="p-499">A basis may be thought of as a collection of building blocks for a vector space,  since every vector in the space can be expressed as a unique linear combination of basis vectors.</div> <div class="para logical" id="p-500">
 <div class="para">For example, in many calculus courses, vectors in <span class="process-math">\(\IR^3\)</span> are often expressed in their component form</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -665,21 +699,64 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 \end{equation*}
 </div>
 <div class="para">Since every vector in <span class="process-math">\(\IR^3\)</span> can be uniquely described as a linear combination of the vectors in <span class="process-math">\(\setList{\vec e_1,\vec e_2,\vec e_3}\text{,}\)</span> this set is indeed a basis.</div>
-</div></article><article class="activity project-like" id="activity-66"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.5</span><span class="period">.</span>
+</div></article><article class="remark remark-like" id="remark-12"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.6.6</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-496">
+<div class="para logical" id="p-501">
+<div class="para">Saying that the vector equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_1 \vec{v_1}+\cdots+x_n\vec{v_n}=\vec{w}
+\end{equation*}
+</div>
+<div class="para">has a solution for <em class="emphasis">every vector</em> <span class="process-math">\(\vec{w} \in V\)</span> is saying that the set <span class="process-math">\(\left\{\vec{v}_1,\ldots,\vec{v}_n\right\}\)</span> <em class="emphasis">spans</em> the vector space <span class="process-math">\(V\text{.}\)</span>
+</div>
+</div> <div class="para" id="p-502">However, to be a basis, we need to also check that the solution is always unique</div> <div class="para" id="p-503">In other words, it is <em class="emphasis">necessary</em> for a set to span <span class="process-math">\(V\)</span> in order to be a basis of <span class="process-math">\(V\text{,}\)</span> but this is <em class="emphasis">not sufficient</em>.</div></article><article class="activity project-like" id="activity-66"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-504">Recall that in <a href="" class="xref" data-knowl="./knowl/activity-vs6-intro.html" title="Activity 2.6.1">Activity 2.6.1</a> we found two different ways to write the vector <span class="process-math">\(\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]\)</span> as a linear combination of the vectors in the set <span class="process-math">\(S=\left\{
+\left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right],
+\left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right],
+\left[\begin{array}{c} 0 \\ -16 \\ -5 \\ -3  \end{array} \right],
+\left[\begin{array}{c} 1 \\ 2 \\ 3 \\ 0  \end{array} \right],
+\left[\begin{array}{c} 3 \\ 3 \\ 0 \\ 1  \end{array} \right] \right\}
+\text{.}\)</span>
+</div> <div class="para logical" id="p-505">
+<div class="para">For example, we had</div>
+<div class="displaymath process-math" id="md-34">
+\begin{align*}
+\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]&amp; =
+\left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right]  +
+\left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right]\\
+\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]&amp; =
+3\left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right]  
+-2\left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right]
+-\left[\begin{array}{c} 0 \\ -16 \\ -5 \\ -3  \end{array} \right]\text{.}
+\end{align*}
+</div>
+</div> <div class="para" id="p-506">Manipulate these two equations to show how to build the zero vector out of the vectors in <span class="process-math">\(S\text{.}\)</span>
+</div></article><article class="observation remark-like" id="observation-13"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.6.8</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-507">Whenever a vector can be expressed as two different linear combinations of vectors in a set <span class="process-math">\(S\text{,}\)</span> the set <span class="process-math">\(S\)</span> must be <em class="emphasis">linearly dependent</em>.</div></article><article class="fact theorem-like" id="fact-10"><h4 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.6.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-508">A set of vectors <span class="process-math">\(S\)</span> is a basis of a vector space <span class="process-math">\(V\)</span> if <span class="process-math">\(S\)</span> <em class="emphasis">spans <span class="process-math">\(V\)</span></em> and is <em class="emphasis">linearly independent</em>.</div> <div class="para" id="p-509">If either of these fails, then <span class="process-math">\(S\)</span> cannot be a basis of <span class="process-math">\(V\text{.}\)</span>
+</div></article><article class="activity project-like" id="activity-67"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.10</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-510">
 <div class="para">Label each of the sets <span class="process-math">\(A,B,C,D,E\)</span> as</div>
 <ul class="disc">
-<li id="li-254"><div class="para" id="p-497">SPANS <span class="process-math">\(\IR^4\)</span> or DOES NOT SPAN <span class="process-math">\(\IR^4\)</span>
+<li id="li-256"><div class="para" id="p-511">SPANS <span class="process-math">\(\IR^4\)</span> or DOES NOT SPAN <span class="process-math">\(\IR^4\)</span>
 </div></li>
-<li id="li-255"><div class="para" id="p-498">LINEARLY INDEPENDENT or LINEARLY DEPENDENT</div></li>
-<li id="li-256"><div class="para" id="p-499">BASIS FOR <span class="process-math">\(\IR^4\)</span> or NOT A BASIS FOR <span class="process-math">\(\IR^4\)</span>
+<li id="li-257"><div class="para" id="p-512">LINEARLY INDEPENDENT or LINEARLY DEPENDENT</div></li>
+<li id="li-258"><div class="para" id="p-513">BASIS FOR <span class="process-math">\(\IR^4\)</span> or NOT A BASIS FOR <span class="process-math">\(\IR^4\)</span>
 </div></li>
 </ul>
 <div class="para">by finding <span class="process-math">\(\RREF\)</span> for their corresponding matrices.</div>
 </div>
-<div class="displaymath process-math" id="md-34">
+<div class="displaymath process-math" id="md-35">
 \begin{align*}
 A&amp;=\left\{
 \left[\begin{array}{c}1\\0\\0\\0\end{array}\right],
@@ -714,11 +791,11 @@ E&amp;=\left\{
 \left[\begin{array}{c}4\\5\\1\\3\end{array}\right]
 \right\}
 \end{align*}
-</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-18"><script type="text/x-sage"></script></pre>
-<article class="activity project-like" id="activity-67"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.6</span><span class="period">.</span>
+</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-19"><script type="text/x-sage"></script></pre>
+<article class="activity project-like" id="activity-68"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.11</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-500">If <span class="process-math">\(\{\vec v_1,\vec v_2,\vec v_3,\vec v_4\}\)</span> is a basis for <span class="process-math">\(\IR^4\text{,}\)</span> that means <span class="process-math">\(\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]\)</span> doesn't have a non-pivot column, and doesn't have a row of zeros. What is <span class="process-math">\(\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]\text{?}\)</span>
+<div class="para" id="p-514">If <span class="process-math">\(\{\vec v_1,\vec v_2,\vec v_3,\vec v_4\}\)</span> is a basis for <span class="process-math">\(\IR^4\text{,}\)</span> that means <span class="process-math">\(\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]\)</span> doesn't have a non-pivot column, and doesn't have a row of zeros. What is <span class="process-math">\(\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]\text{?}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -731,10 +808,10 @@ E&amp;=\left\{
 \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
 \end{array}\right]
 \end{equation*}
-</div></article><article class="fact theorem-like" id="fact-10"><h4 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.6.7</span><span class="period">.</span>
+</div></article><article class="fact theorem-like" id="fact-11"><h4 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.6.12</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-501">The set <span class="process-math">\(\{\vec v_1,\dots,\vec v_m\}\)</span> is a basis for <span class="process-math">\(\IR^n\)</span> if and only if <span class="process-math">\(m=n\)</span> and <span class="process-math">\(\RREF[\vec v_1\,\dots\,\vec v_n]=
+<div class="para" id="p-515">The set <span class="process-math">\(\{\vec v_1,\dots,\vec v_m\}\)</span> is a basis for <span class="process-math">\(\IR^n\)</span> if and only if <span class="process-math">\(m=n\)</span> and <span class="process-math">\(\RREF[\vec v_1\,\dots\,\vec v_n]=
 \left[\begin{array}{cccc}
 1&amp;0&amp;\dots&amp;0\\
 0&amp;1&amp;\dots&amp;0\\
@@ -742,40 +819,40 @@ E&amp;=\left\{
 0&amp;0&amp;\dots&amp;1
 \end{array}\right]
 \text{.}\)</span>
-</div> <div class="para" id="p-502">That is, a basis for <span class="process-math">\(\IR^n\)</span> must have exactly <span class="process-math">\(n\)</span> vectors and its square matrix must row-reduce to the so-called <dfn class="terminology">identity matrix</dfn> containing all zeros except for a downward diagonal of ones. (We will learn where the identity matrix gets its name in a later module.)</div></article></section><section class="subsection" id="subsection-47"><h3 class="heading hide-type">
+</div> <div class="para" id="p-516">That is, a basis for <span class="process-math">\(\IR^n\)</span> must have exactly <span class="process-math">\(n\)</span> vectors and its square matrix must row-reduce to the so-called <dfn class="terminology">identity matrix</dfn> containing all zeros except for a downward diagonal of ones. (We will learn where the identity matrix gets its name in a later module.)</div></article></section><section class="subsection" id="subsection-47"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.2</span> <span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-18"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-VS6" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/ayft2QhQ-xM?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">18<span class="period">.</span></span><span class="space"> </span>Video: Verifying that a set of vectors is a basis of a vector space</figcaption></figure></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.3</span> <span class="title">Slideshow</span>
 </h3>
-<div class="para" id="p-503">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023e/VS6.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023e/VS6.slides.html</code></a>.</div></section><section class="exercises" id="exercises-10"><h3 class="heading hide-type">
+<div class="para" id="p-517">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023e/VS6.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023e/VS6.slides.html</code></a>.</div></section><section class="exercises" id="exercises-10"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">2.6.4</span> <span class="title">Exercises</span>
 </h3>
-<div class="para" id="p-504">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023e/exercises/#/bank/VS6/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023e/exercises/#/bank/VS6/</code></a>.</div></section><section class="subsection" id="subsection-49"><h3 class="heading hide-type">
+<div class="para" id="p-518">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023e/exercises/#/bank/VS6/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023e/exercises/#/bank/VS6/</code></a>.</div></section><section class="subsection" id="subsection-49"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-19"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.6.8</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.6.13</span><span class="period">.</span>
 </h4>
 <ul class="disc">
-<li id="li-257"><div class="para" id="p-derived-li-257">What is a basis for <span class="process-math">\(M_{2,2}\text{?}\)</span>
+<li id="li-259"><div class="para" id="p-derived-li-259">What is a basis for <span class="process-math">\(M_{2,2}\text{?}\)</span>
 </div></li>
-<li id="li-258"><div class="para" id="p-derived-li-258">What about <span class="process-math">\(M_{3,3}\text{?}\)</span>
+<li id="li-260"><div class="para" id="p-derived-li-260">What about <span class="process-math">\(M_{3,3}\text{?}\)</span>
 </div></li>
-<li id="li-259"><div class="para" id="p-derived-li-259">Could we write each of these in a way that looks like the standard basis vectors in <span class="process-math">\(\mathbb{R}^m\)</span> for some <span class="process-math">\(m\text{?}\)</span> Make a conjecture about the relationship between these spaces of matrices and standard Eulidean space.</div></li>
+<li id="li-261"><div class="para" id="p-derived-li-261">Could we write each of these in a way that looks like the standard basis vectors in <span class="process-math">\(\mathbb{R}^m\)</span> for some <span class="process-math">\(m\text{?}\)</span> Make a conjecture about the relationship between these spaces of matrices and standard Eulidean space.</div></li>
 </ul></article><article class="exploration project-like" id="exploration-20"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.6.9</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.6.14</span><span class="period">.</span>
 </h4>Recall our earlier definition of symmetric matrices. Find a basis for each of the following: <ul class="disc">
-<li id="li-260"><div class="para" id="p-derived-li-260">The space of <span class="process-math">\(2 \times 2\)</span> symmetric matrices.</div></li>
-<li id="li-261"><div class="para" id="p-derived-li-261">The space of <span class="process-math">\(3 \times 3\)</span> symmetric matrices.</div></li>
-<li id="li-262"><div class="para" id="p-derived-li-262">The space of <span class="process-math">\(n \times n\)</span> symmetric matrices.</div></li>
+<li id="li-262"><div class="para" id="p-derived-li-262">The space of <span class="process-math">\(2 \times 2\)</span> symmetric matrices.</div></li>
+<li id="li-263"><div class="para" id="p-derived-li-263">The space of <span class="process-math">\(3 \times 3\)</span> symmetric matrices.</div></li>
+<li id="li-264"><div class="para" id="p-derived-li-264">The space of <span class="process-math">\(n \times n\)</span> symmetric matrices.</div></li>
 </ul></article><article class="exploration project-like" id="exploration-21"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.6.10</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.6.15</span><span class="period">.</span>
 </h4>Must a basis for the space <span class="process-math">\(P_2\text{,}\)</span> the space of all quadratic polynomials, contain a polynomial of each degree less than or equal to 2? Generalize your result to polynomials of arbitrary degree.</article></section><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.6</span> <span class="title">Sample Problem and Solution</span>
 </h3>
-<div class="para" id="p-505">Sample problem <a href="" class="xref" data-knowl="./knowl/sampleVS6.html" title="Example B.1.10: VS6">Example B.1.10</a>.</div></section></section></div>
+<div class="para" id="p-519">Sample problem <a href="" class="xref" data-knowl="./knowl/sampleVS6.html" title="Example B.1.10: VS6">Example B.1.10</a>.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="VS5.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="VS7.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
