@@ -26,6 +26,8 @@ See [source/meta/copyright.ptx](source/meta/copyright.ptx).
 
 ## Authoring
 
+(Web-based authoring is coming soon...)
+
 First install [Python 3.9](https://www.python.org/). Then do
 the following to install [pipenv](https://github.com/pypa/pipenv).
 
