@@ -117,4 +117,18 @@ class vectorEquation(Equation):
         
         super().__init__(linearCombination(vars,[column_matrix(c) for c in self.matrix.subdivision(0,0).columns()]), column_matrix(A.column(-1)))
 
+def choices_from_list(lst):
+    """
+    Given a list, return a list of choices in a canonical way,
+    in a random order.
+    The first item of the list is the "correct" choice.
+    """
+    choices = [
+        {"item": lst[i],"correct":(i==0)} 
+        for i in range(len(lst))
+    ]
+    shuffle(choices)
+    for i in range(len(lst)):
+        choices[i]["letter"] = chr(ord('a')+i)
+    return choices
 
