@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
     <intro><p>Choose the most appropriate response for each question.</p></intro>
+    <!-- {{#questions}} -->
     <!-- {{#lineset}} -->
     <knowl>
         <content>
@@ -23,4 +24,145 @@
         </outtro>
     </knowl>
     <!-- {{/lineset}} -->
+    <!-- {{#int_once_a}} -->
+    <knowl>
+        <content>
+            <p>
+                How many solutions are there for a system of two linear equations
+                whose line graphs intersect only at the point
+                <m>{{random_point}}</m>?
+            </p>
+            <list>
+                <item><p>(a) Zero</p></item>
+                <item><p>(b) One</p></item>
+                <item><p>(c) Two</p></item>
+                <item><p>(d) Infinitely-many</p></item>
+            </list>
+        </content>
+        <outtro>
+            <p>(b) One</p>
+        </outtro>
+    </knowl>
+    <!-- {{/int_once_a}} -->
+    <!-- {{#int_once_b}} -->
+    <knowl>
+        <content>
+            <p>
+                How many solutions are there for a system of two linear
+                equations including a line of slope <m>{{slope1}}</m>
+                and a line of slope <m>{{slope2}}</m>?
+            </p>
+            <list>
+                <item><p>(a) Zero</p></item>
+                <item><p>(b) One</p></item>
+                <item><p>(c) Two</p></item>
+                <item><p>(d) Infinitely-many</p></item>
+            </list>
+        </content>
+        <outtro>
+            <p>(b) One</p>
+        </outtro>
+    </knowl>
+    <!-- {{/int_once_b}} -->
+    <!-- {{#int_never}} -->
+    <knowl>
+        <content>
+            <p>
+                How many solutions are there for a system of two linear
+                equations including a line of slope <m>{{slope}}</m>
+                with <m>y</m>-intercept <m>{{yint1}}</m>, and
+                a line of slope <m>{{slope}}</m> with <m>y</m>-intercept
+                <m>{{yint2}}</m>?
+            </p>
+            <list>
+                <item><p>(a) Zero</p></item>
+                <item><p>(b) One</p></item>
+                <item><p>(c) Two</p></item>
+                <item><p>(d) Infinitely-many</p></item>
+            </list>
+        </content>
+        <outtro>
+            <p>(a) Zero</p>
+        </outtro>
+    </knowl>
+    <!-- {{/int_never}} -->
+    <!-- {{#int_inf}} -->
+    <knowl>
+        <content>
+            <p>
+                How many solutions are there for a system of two linear
+                equations where both lines contain the points
+                <m>{{point1}}</m> and <m>{{point2}}</m>?
+            </p>
+            <list>
+                <item><p>(a) Zero</p></item>
+                <item><p>(b) One</p></item>
+                <item><p>(c) Two</p></item>
+                <item><p>(d) Infinitely-many</p></item>
+            </list>
+        </content>
+        <outtro>
+            <p>(d) Infinitely-many</p>
+        </outtro>
+    </knowl>
+    <!-- {{/int_inf}} -->
+    <!-- {{#point_in_set}} -->
+    <knowl>
+        <content>
+            <p>
+                Which of the following points is an element of the
+                set <m>{{set}}</m>?
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) <m>{{item}}</m></p></item>
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+                <!-- {{#correct}} -->
+            <p>({{letter}}) <m>{{item}}</m></p>
+                <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/point_in_set}} -->
+    <!-- {{#solve_system}} -->
+    <knowl>
+        <content>
+            <p>
+                Solve the following system of linear equations.
+                <me>{{system}}</me>
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <!-- {{#item}} -->
+                <!-- {{#point}} -->
+                <item><p>({{letter}}) <m>(x,y)={{point}}</m></p></item>
+                <!-- {{/point}} -->
+                <!-- {{#text}} -->
+                <item><p>({{letter}}) {{text}}</p></item>
+                <!-- {{/text}} -->
+                <!-- {{/item}} -->
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+                <!-- {{#correct}} -->
+                <!-- {{#item}} -->
+                <!-- {{#point}} -->
+                <p>({{letter}}) <m>(x,y)={{point}}</m></p>
+                <!-- {{/point}} -->
+                <!-- {{#text}} -->
+                <p>({{letter}}) {{text}}</p>
+                <!-- {{/text}} -->
+                <!-- {{/item}} -->
+                <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/solve_system}} -->
+    <!-- {{/questions}} -->
 </knowl>
