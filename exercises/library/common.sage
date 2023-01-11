@@ -30,7 +30,13 @@ class setBuilder(SageObject):
         if self.predicate==None:
             string+=r"\right\}"
         else:
-            string+=r"\middle|\,"+"".join([latex(p) for p in self.predicate])+r"\right\}"
+            try:
+                iter(self.predicate)
+            except TypeError:
+                pred = [self.predicate]
+            else:
+                pred = self.predicate
+            string+=r"\middle|\,"+"".join([latex(p) for p in pred])+r"\right\}"
         return string
 
 #Used to force Sage to use {} around a set -- sometimes Sage is dumb about this with vectors and matrices
