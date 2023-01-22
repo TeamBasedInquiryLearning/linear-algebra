@@ -1,56 +1,122 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
-    <intro>
-        <p>Consider each of these claims about a vector equation.</p>
-    </intro>
-    <!-- {{#vectors}} -->
     <knowl>
-        <intro>
-            <p><q><m>{{v}}</m>is a linear combination of the vectors <m>{{veclist}}</m>.</q></p>
-        </intro>
-        <knowl>
-            <content>
-                <p>
-Write a statement involving the solutions of a vector equation
-that's equivalent to this claim.
-                </p>
-            </content>
-        </knowl>
-        <knowl>
-            <content>
-                <p>
-Determine if the statement you wrote is true or false.
-                </p>
-            </content>
-        </knowl>
-        <knowl>
-            <content>
-                <p>
-If your statement was true, describe a linear combination of <m>{{veclist}}</m>
-that equals <m>{{v}}</m>.
-                </p>
-            </content>
-        </knowl>
-        <outtro>
+    <intro>
+        <p>
+Write a statement involving the solutions to a 
+<!-- {{#context_mat}} -->
+    matrix
+<!-- {{/context_mat}} -->
+<!-- {{#context_pol}} -->
+    polynomial
+<!-- {{/context_pol}} -->
+equation that's equivalent to each claim about the following set of 
+<!-- {{#context_mat}} -->
+    matrices:
+<!-- {{/context_mat}} -->
+<!-- {{#context_pol}} -->
+    polynomials:
+<!-- {{/context_pol}} -->
+<me>{{set}}</me>
+        </p>
+    </intro>
+    <knowl>
+        <content>
             <p>
-                <m>
-\mathrm{RREF}\, {{A}} = {{rref}}
-                </m>
+<q>The set of 
+<!-- {{#context_mat}} -->
+    matrices
+<!-- {{/context_mat}} -->
+<!-- {{#context_pol}} -->
+    polynomials
+<!-- {{/context_pol}} -->
+<!-- {{#task_ind}} -->
+is linearly <em>independent</em>.
+<!-- {{/task_ind}} -->
+<!-- {{#task_spa}} -->
+<em>spans</em>
+    <!-- {{#context_mat}} -->
+        <m>\mathrm{M}_{2,2}</m>.
+    <!-- {{/context_mat}} -->
+    <!-- {{#context_pol}} -->
+        <m>\mathcal{P}_3</m>.
+    <!-- {{/context_pol}} -->
+<!-- {{/task_spa}} -->
+</q>
             </p>
-            <!-- {{#lin_combo}} -->
-                <p>
-<m>{{v}}</m> is a linear combination, for example:
-                    <m>
-{{lin_combo_exp}} = {{v}}
-                    </m>
-                </p>
-            <!-- {{/lin_combo}} -->
-            <!-- {{^lin_combo}} -->
-                <p>
-<m>{{v}}</m> is not a linear combination.
-                </p>
-            <!-- {{/lin_combo}} -->
-        </outtro>
+        </content>
     </knowl>
-    <!-- {{/vectors}} -->
+    <knowl>
+        <content>
+            <p>
+<q>The set of 
+<!-- {{#context_mat}} -->
+    matrices
+<!-- {{/context_mat}} -->
+<!-- {{#context_pol}} -->
+    polynomials
+<!-- {{/context_pol}} -->
+<!-- {{#task_ind}} -->
+is linearly <em>dependent</em>.
+<!-- {{/task_ind}} -->
+<!-- {{#task_spa}} -->
+does <em>not</em> span
+    <!-- {{#context_mat}} -->
+        <m>\mathrm{M}_{2,2}</m>.
+    <!-- {{/context_mat}} -->
+    <!-- {{#context_pol}} -->
+        <m>\mathcal{P}_3</m>.
+    <!-- {{/context_pol}} -->
+<!-- {{/task_spa}} -->
+</q>
+            </p>
+        </content>
+    </knowl>
+    </knowl>
+    <knowl>
+        <content>
+            <p>
+Explain how to determine which of these statements is true.
+            </p>
+        </content>
+    </knowl>
+    <outtro>
+        <p>
+            <me>
+\mathrm{RREF}\, {{matrix}} = {{rref}}
+            </me>
+        </p>
+        <p>
+The set
+<!-- {{#task_ind}} -->
+    is linearly 
+    <!-- {{#result}} -->
+        <em>independent</em>.
+    <!-- {{/result}} -->
+    <!-- {{^result}} -->
+        <em>dependent</em>.
+    <!-- {{/result}} -->
+<!-- {{/task_ind}} -->
+<!-- {{#task_spa}}  -->
+    <!-- {{#result}} -->
+        <em>spans</em>
+        <!-- {{#context_mat}} -->
+            <m>\mathrm{M}_{2,2}</m>.
+        <!-- {{/context_mat}} -->
+        <!-- {{#context_pol}} -->
+            <m>\mathcal{P}_3</m>.
+        <!-- {{/context_pol}} -->
+    <!-- {{/result}} -->
+    <!-- {{^result}} -->
+        does <em>not</em> span
+        <!-- {{#context_mat}} -->
+            <m>\mathrm{M}_{2,2}</m>.
+        <!-- {{/context_mat}} -->
+        <!-- {{#context_pol}} -->
+            <m>\mathcal{P}_3</m>.
+        <!-- {{/context_pol}} -->
+    <!-- {{/result}} -->
+<!-- {{/task_spa}} -->
+        </p>
+    </outtro>
 </knowl>
