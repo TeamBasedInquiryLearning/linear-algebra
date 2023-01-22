@@ -62,10 +62,39 @@
     </statement>
 </definition>
     
-<!-- TODO add remark that span of set is different from the set. -->
-<!--<remark>It is important to note that a set of vectors
-  <m>\{\vec v_1,\vec v_2,\dots,\vec v_m\}</m> is <em>not the same</em> the span of a set of vectors
-  <m>\{\vec v_1,\vec v_2,\dots,\vec v_m\}</m>. The first set just contains the <m>m</m> vectors, while the second contains all linear combinations of the <m>m</m> vectors.</remark>-->
+<remark>
+    <statement>
+        <p>
+It is important to remember that
+<me>\{\vec v_1,\vec v_2,\dots,\vec v_m\}\not=\vspan\{\vec v_1,\vec v_2,\dots,\vec v_m\}</me>.
+        </p>
+        <p>
+  For example,
+  <me>
+    \setList
+    {
+      \left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right],
+      \left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]
+    }
+  </me>
+is a set containing exactly two vectors, while
+  <me>
+    \vspan\setList
+    {
+      \left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right],
+      \left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]
+    } = \setBuilder
+    {
+      a\left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right]+
+      b\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]
+    }{
+      a,b\in\IR
+    }
+  </me>
+is a set containing infinitely-many vectors.
+        </p>
+    </statement>
+</remark>
     
 <activity estimated-time='10'>
     <introduction>
@@ -75,11 +104,11 @@
     </introduction>
   <task>
       <p>
-    Sketch
-    <m>1\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}1\\2\end{array}\right]</m>,
-    <m>3\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}3\\6\end{array}\right]</m>,
-    <m>0\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}0\\0\end{array}\right]</m>,
-    and <m>-2\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}-2\\-4\end{array}\right]</m> 
+    Sketch the four Euclidean vectors
+    <me>1\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}1\\2\end{array}\right],\hspace{1em}
+    3\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}3\\6\end{array}\right],\hspace{1em}
+    0\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}0\\0\end{array}\right],\hspace{1em}
+    -2\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}-2\\-4\end{array}\right]</me> 
     in the <m>xy</m> plane.
       </p>
   </task>
@@ -109,20 +138,20 @@
     </introduction>
   <task>
       <p>
-    Sketch the following linear combinations in the <m>xy</m> plane.
+    Sketch the following five Euclidean vectors in the <m>xy</m> plane.
     <me>
     1\left[\begin{array}{c}1\\2\end{array}\right]+
-    0\left[\begin{array}{c}-1\\1\end{array}\right]\hspace{3em}
+    0\left[\begin{array}{c}-1\\1\end{array}\right]=\unknown\hspace{2em}
     0\left[\begin{array}{c}1\\2\end{array}\right]+
-    1\left[\begin{array}{c}-1\\1\end{array}\right]\hspace{3em}
+    1\left[\begin{array}{c}-1\\1\end{array}\right]=\unknown\hspace{2em}
     1\left[\begin{array}{c}1\\2\end{array}\right]+
-    1\left[\begin{array}{c}-1\\1\end{array}\right]
+    1\left[\begin{array}{c}-1\\1\end{array}\right]=\unknown
     </me>
     <me>
     -2\left[\begin{array}{c}1\\2\end{array}\right]+
-    1\left[\begin{array}{c}-1\\1\end{array}\right]\hspace{3em}
+    1\left[\begin{array}{c}-1\\1\end{array}\right]=\unknown\hspace{2em}
     -1\left[\begin{array}{c}1\\2\end{array}\right]+
-    -2\left[\begin{array}{c}-1\\1\end{array}\right]
+    -2\left[\begin{array}{c}-1\\1\end{array}\right]=\unknown
     </me>
       </p>
   </task>
@@ -151,27 +180,44 @@
 <activity estimated-time='15'>
     <introduction>
         <p>
-  The vector
-  <m>\left[\begin{array}{c}-1\\-6\\1\end{array}\right]</m> belongs to
-  <m>\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
-  \left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}</m> exactly when
-  there exists a solution to the vector equation
-  <m>x_1\left[\begin{array}{c}1\\0\\-3\end{array}\right]+
-  x_2\left[\begin{array}{c}-1\\-3\\2\end{array}\right]
-  =\left[\begin{array}{c}-1\\-6\\1\end{array}\right]</m>.
+Consider the following questions to discover whether a Euclidean
+vector belongs to a span.
         </p>
     </introduction>
 
-  <task>
-      <p>
-    Reinterpret this vector equation as a system of linear equations.
-      </p>
-  </task>
+<task>
+        <p>
+The Euclidean vector
+<m>\left[\begin{array}{c}-1\\-6\\1\end{array}\right]</m> belongs to
+<m>\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
+\left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}</m> exactly when
+there exists a solution to which of these vector equations?
+        </p>
+        <p>
+            <ol marker="A.">
+                <li>
+<m>x_1\left[\begin{array}{c}-1\\-6\\1\end{array}\right]+
+x_2\left[\begin{array}{c}1\\0\\-3\end{array}\right]
+=\left[\begin{array}{c}-1\\-3\\2\end{array}\right]</m>
+                </li>
+                <li>
+<m>x_1\left[\begin{array}{c}1\\0\\-3\end{array}\right]+
+x_2\left[\begin{array}{c}-1\\-3\\2\end{array}\right]
+=\left[\begin{array}{c}-1\\-6\\1\end{array}\right]</m>
+                </li>
+                <li>
+<m>x_1\left[\begin{array}{c}-1\\-3\\2\end{array}\right]+
+x_2\left[\begin{array}{c}-1\\-6\\1\end{array}\right]+
+x_3\left[\begin{array}{c}1\\0\\-3\end{array}\right]=0</m>
+                </li>
+            </ol>
+        </p>
+</task>
 
   <task>
       <p>
-    Find its solution set, using technology to find <m>\RREF</m> of its
-    corresponding augmented matrix.
+    Use technology to find <m>\RREF</m> of the corresponding augmented matrix,
+    and then use that matrix to find the solution set of the vector equation.
       </p>
   </task>
 
@@ -185,18 +231,7 @@
   </task>
 </activity>
 
-<sage language="octave">
-</sage>
-
-<fact>
-    <statement>
-        <p>
-  A vector <m>\vec b</m> belongs to
-  <m>\vspan\{\vec v_1,\dots,\vec v_n\}</m> if and only if
-	the vector equation <m>x_1 \vec{v}_1+\cdots+x_n \vec{v}_n=\vec{b}</m> is consistent.
-        </p>
-    </statement>
-</fact>
+<sage language="octave"/>
 
     <observation>
         <statement>
@@ -207,6 +242,11 @@ The following are all equivalent statements:
 <li>
     <p>
     The vector <m>\vec{b}</m> belongs to <m>\vspan\{\vec v_1,\dots,\vec v_n\}</m>.
+    </p>
+</li>
+<li>
+    <p>
+    The vector <m>\vec{b}</m> is a linear combination of the vectors <m>\vec v_1,\dots,\vec v_n</m>.
     </p>
 </li>
 <li>
@@ -232,40 +272,60 @@ The following are all equivalent statements:
         </statement>
     </observation>
 
-<activity estimated-time='10'>
-    <statement>
-        <p>
-  Determine if
-  <m>\left[\begin{array}{c}3\\-2\\1 \\ 5\end{array}\right]</m> belongs to
-  <m>\vspan\left\{\left[\begin{array}{c}1\\0\\-3 \\ 2\end{array}\right],
-  \left[\begin{array}{c}-1\\-3\\2 \\ 2\end{array}\right]\right\}</m>
-  by solving an appropriate vector equation.
-        </p>
-    </statement>
+ <activity estimated-time="10">
+    <introduction>
+      <p>Consider this claim about a vector equation:</p>
+          <p><m>\left[\begin{array}{c} -6 \\ 2 \\ -6 \end{array}\right]</m>is a linear combination of the vectors <m>\left[\begin{array}{c} 1 \\ 0 \\ 2 \end{array}\right] , \left[\begin{array}{c} 3 \\ 0 \\ 6 \end{array}\right] , \left[\begin{array}{c} 2 \\ 0 \\ 4 \end{array}\right] , \text{ and } \left[\begin{array}{c} -4 \\ 1 \\ -5 \end{array}\right]</m>.</p>
+        </introduction>
+          <task>
+            <statement>
+              <p> Write a statement involving the solutions of a vector equation that's equivalent to this claim. </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p> Explain why the statement you wrote is true. </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p> Since your statement was true, use the solution set to describe a linear combination of <m>\left[\begin{array}{c} 1 \\ 0 \\ 2 \end{array}\right] , \left[\begin{array}{c} 3 \\ 0 \\ 6 \end{array}\right] , \left[\begin{array}{c} 2 \\ 0 \\ 4 \end{array}\right] , \text{ and } \left[\begin{array}{c} -4 \\ 1 \\ -5 \end{array}\right]</m> that equals <m>\left[\begin{array}{c} -5 \\ -1 \\ -7 \end{array}\right]</m>. </p>
+            </statement>
+          </task>
+        <!-- <answer>
+          <p> <m>\mathrm{RREF}\, \left[\begin{array}{cccc|c} 1 &amp; 3 &amp; 2 &amp; -4 &amp; -6 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 2 \\ 2 &amp; 6 &amp; 4 &amp; -5 &amp; -6 \end{array}\right] = \left[\begin{array}{cccc|c} 1 &amp; 3 &amp; 2 &amp; 0 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</m> </p>
+          <p> <m>\left[\begin{array}{c} -6 \\ 2 \\ -6 \end{array}\right]</m> is a linear combination, for example: <m>2 \left[\begin{array}{c} 1 \\ 0 \\ 2 \end{array}\right] + 2 \left[\begin{array}{c} -4 \\ 1 \\ -5 \end{array}\right] = \left[\begin{array}{c} -6 \\ 2 \\ -6 \end{array}\right]</m> </p>
+        </answer> -->
 </activity>
 
-<sage language="octave">
-</sage>
+<sage language="octave"/>
 
+ <activity estimated-time="10">
+    <introduction>
+      <p>Consider this claim about a vector equation:</p>
+          <p><m>\left[\begin{array}{c} -5 \\ -1 \\ -7 \end{array}\right]</m> belongs to
+          <m>\vspan\left\{\left[\begin{array}{c} 1 \\ 0 \\ 2 \end{array}\right] , \left[\begin{array}{c} 3 \\ 0 \\ 6 \end{array}\right] , 
+          \left[\begin{array}{c} 2 \\ 0 \\ 4 \end{array}\right] , \left[\begin{array}{c} -4 \\ 1 \\ -5 \end{array}\right]\right\}</m>.</p>
+        </introduction>
+          <task>
+            <statement>
+              <p> Write a statement involving the solutions of a vector equation that's equivalent to this claim. </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p> Explain why the statement you wrote is false, to conclude that the vector does not belong to the span. </p>
+            </statement>
+          </task>
+        <!-- <answer>
+          <p> <m>\mathrm{RREF}\, \left[\begin{array}{cccc|c} 1 &amp; 3 &amp; 2 &amp; -4 &amp; -5 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; -1 \\ 2 &amp; 6 &amp; 4 &amp; -5 &amp; -7 \end{array}\right] = \left[\begin{array}{cccc|c} 1 &amp; 3 &amp; 2 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]</m> </p>
+          <p> <m>\left[\begin{array}{c} -5 \\ -1 \\ -7 \end{array}\right]</m> is not a linear combination. </p>
+        </answer> -->
+  </activity>
 
+<sage language="octave"/>
 
-
-<activity estimated-time='5'>
-    <statement>
-        <p>
-  Determine if
-  <m>\left[\begin{array}{c}-1\\-9\\0\end{array}\right]</m> belongs to
-  <m>\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
-  \left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}</m>
-  by solving an appropriate vector equation.
-        </p>
-    </statement>
-</activity>
-
-<sage language="octave">
-</sage>
-
-<activity estimated-time='10'>
+<!-- <activity estimated-time='10'>
     <introduction>
         <p>
   Does the third-degree polynomial <m>3y^3-2y^2+y+5</m> in <m>\P_3</m> belong to
@@ -296,20 +356,18 @@ x_2\left[\begin{array}{c}\unknown\\\unknown\\\unknown\\\unknown\end{array}\right
     question.
       </p>
   </task>
-</activity>
+</activity> -->
 
-<sage language="octave">
-</sage>
-<activity estimated-time='5'>
+<!-- <activity estimated-time='5'>
     <statement>
         <p>
   Does the polynomial  <m>x^2+x+1</m> belong to
   <m>\vspan\{x^2-x,x+1, x^2-1\}</m>?
         </p>
     </statement>
-</activity>
+</activity> -->
 
-<activity estimated-time='5'>
+<!-- <activity estimated-time='5'>
     <introduction>
         <p>
   Does the matrix <m>\left[\begin{array}{cc}3&amp;-2\\1&amp;5\end{array}\right]</m> belong to
@@ -317,7 +375,6 @@ x_2\left[\begin{array}{c}\unknown\\\unknown\\\unknown\\\unknown\end{array}\right
   \left[\begin{array}{cc}-1&amp;-3\\2&amp;2\end{array}\right]\right\}</m>?
         </p>
     </introduction>
-    <!-- adjust as in 2.2.11-->
   <task>
       <p>
   	Reinterpret this question as a question about the solution(s) of a matrix equation.
@@ -329,10 +386,8 @@ x_2\left[\begin{array}{c}\unknown\\\unknown\\\unknown\\\unknown\end{array}\right
     question.
       </p>
   </task>
-</activity>
+</activity> -->
 
-<sage language="octave">
-</sage>
     </subsection>
 
     <subsection>
