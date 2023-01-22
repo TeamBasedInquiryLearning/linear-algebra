@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-12-22T18:59:46Z       *-->
+<!--*   A recent stable commit (2022-07-01):   *-->
+<!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html xmlns:pi="http://pretextbook.org/2020/pretext/internal">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear Algebra for Team-Based Inquiry Learning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/simple.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+</head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>Linear Algebra for Team-Based Inquiry Learning</h1>
+<h2>2023 Early Edition</h2>
+<table>
+<tr>
+<th align="center" style="border-bottom: 0px;">Steven Clontz</th>
+<th align="center" style="border-bottom: 0px;">Drew Lewis</th>
+</tr>
+<tr>
+<td align="center" style="border-bottom: 0px;">University of South Alabama</td>
+<td align="center" style="border-bottom: 0px;">University of South Alabama</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</table>
+<h4><div class="date">December 22, 2022</div></h4></section></section><section><section><h1>Section 1.3: Counting Solutions for Linear Systems (LE3)</h1></section><section><h3>Activity 1.3.1 (~10 min)</h3>
+<div align="left"> <p>Free browser-based technologies for mathematical computation are available online.</p> <ul class="disc">
+<li><p>Go to <a class="external" href="https://sagecell.sagemath.org/" target="_blank"><code class="code-inline tex2jax_ignore">https://sagecell.sagemath.org/</code></a>.</p></li>
+<li>In the dropdown on the right, you can select a number of different languages. Select "Octave" for the Matlab-compatible syntax used by this text.</li>
+<li><p>Type <code class="code-inline tex2jax_ignore">rref([1,3,2;2,5,7])</code> and then press the <kbd class="kbdkey">Evaluate</kbd> button to compute the <span class="process-math">\(\RREF\)</span> of <span class="process-math">\(\left[\begin{array}{ccc} 1 &amp; 3 &amp; 2 \\ 2 &amp; 5 &amp; 7 \end{array}\right]\text{.}\)</span></p></li>
+</ul> <p>Since the vertical bar in an augmented matrix does not affect row operations, the <span class="process-math">\(\RREF\)</span> of <span class="process-math">\(\left[\begin{array}{cc|c} 1 &amp; 3 &amp; 2 \\ 2 &amp; 5 &amp; 7 \end{array}\right]\)</span> may be computed in the same way.</p>
+</div></section><section><h3>Activity 1.3.2 (~2 min)</h3>
+<div align="left"> <p>In the HTML version of this text, code cells are often embedded for your convenience when RREFs need to be computed.</p> <p>Try this out to compute <span class="process-math">\(\RREF\left[\begin{array}{cc|c} 2 &amp; 3 &amp; 1 \\ 3 &amp; 0 &amp; 6 \end{array}\right]\text{.}\)</span></p>
+</div></section><section><h3>Activity 1.3.3 (~10 min)</h3>
+<div align="left"> <p>Consider the following system of equations.</p>
+<div class="displaymath process-math" id="md-1">
+\begin{alignat*}{4}
+3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 13x_3 &amp;\,=\,&amp; 6\\
+2x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 10x_3 &amp;\,=\,&amp; 2\\
+-x_1 &amp;\,+\,&amp; 3x_2 &amp;\,-\,&amp;  6x_3 &amp;\,=\,&amp; 11
+\end{alignat*}
+</div>
+<p><em class="emphasis">Part 1.</em></p> <p>Convert this to an augmented matrix and use technology to compute its reduced row echelon form:<div class="displaymath process-math">
+\begin{equation*}
+\RREF
+\left[\begin{array}{ccc|c}
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\end{array}\right]
+=
+\left[\begin{array}{ccc|c}
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\end{array}\right]
+\end{equation*}
+</div></p>
+</div></section><section><h3>Activity 1.3.3 (~10 min)</h3>
+<div align="left"> <p>Consider the following system of equations.</p>
+<div class="displaymath process-math" id="md-2">
+\begin{alignat*}{4}
+3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 13x_3 &amp;\,=\,&amp; 6\\
+2x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 10x_3 &amp;\,=\,&amp; 2\\
+-x_1 &amp;\,+\,&amp; 3x_2 &amp;\,-\,&amp;  6x_3 &amp;\,=\,&amp; 11
+\end{alignat*}
+</div>
+<p><em class="emphasis">Part 2.</em></p> <p>Use the <span class="process-math">\(\RREF\)</span> matrix to write a linear system equivalent to the original system.</p>
+</div></section><section><h3>Activity 1.3.3 (~10 min)</h3>
+<div align="left"> <p>Consider the following system of equations.</p>
+<div class="displaymath process-math" id="md-3">
+\begin{alignat*}{4}
+3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 13x_3 &amp;\,=\,&amp; 6\\
+2x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 10x_3 &amp;\,=\,&amp; 2\\
+-x_1 &amp;\,+\,&amp; 3x_2 &amp;\,-\,&amp;  6x_3 &amp;\,=\,&amp; 11
+\end{alignat*}
+</div>
+<p><em class="emphasis">Part 3.</em></p> <p>How many solutions must this system have?</p> <ol class="upper-alpha cols3">
+<li><p>Zero</p></li>
+<li><p>Only one</p></li>
+<li><p>Infinitely-many</p></li>
+</ol>
+</div></section><section><h3>Activity 1.3.4 (~10 min)</h3>
+<div align="left"> <p>Consider the vector equation</p>
+<div class="displaymath process-math">
+\begin{equation*}
+x_1 \left[\begin{array}{c} 3 \\ 2\\ -1 \end{array}\right]
++x_2 \left[\begin{array}{c}-2 \\ -2 \\ 0 \end{array}\right]
++x_3\left[\begin{array}{c} 13 \\ 10 \\ -3 \end{array}\right]
+=\left[\begin{array}{c} 6 \\ 2 \\ 1 \end{array}\right]
+\end{equation*}
+</div>
+<p><em class="emphasis">Part 1.</em></p> <p>Convert this to an augmented matrix and use technology to compute its reduced row echelon form:</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\RREF
+\left[\begin{array}{ccc|c}
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\end{array}\right]
+=
+\left[\begin{array}{ccc|c}
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\ 
+\end{array}\right]
+\end{equation*}
+</div>
+</div></section><section><h3>Activity 1.3.4 (~10 min)</h3>
+<div align="left"> <p>Consider the vector equation</p>
+<div class="displaymath process-math">
+\begin{equation*}
+x_1 \left[\begin{array}{c} 3 \\ 2\\ -1 \end{array}\right]
++x_2 \left[\begin{array}{c}-2 \\ -2 \\ 0 \end{array}\right]
++x_3\left[\begin{array}{c} 13 \\ 10 \\ -3 \end{array}\right]
+=\left[\begin{array}{c} 6 \\ 2 \\ 1 \end{array}\right]
+\end{equation*}
+</div>
+<p><em class="emphasis">Part 2.</em></p> <p>Use the <span class="process-math">\(\RREF\)</span> matrix to write a linear system equivalent to the original system.</p>
+</div></section><section><h3>Activity 1.3.4 (~10 min)</h3>
+<div align="left"> <p>Consider the vector equation</p>
+<div class="displaymath process-math">
+\begin{equation*}
+x_1 \left[\begin{array}{c} 3 \\ 2\\ -1 \end{array}\right]
++x_2 \left[\begin{array}{c}-2 \\ -2 \\ 0 \end{array}\right]
++x_3\left[\begin{array}{c} 13 \\ 10 \\ -3 \end{array}\right]
+=\left[\begin{array}{c} 6 \\ 2 \\ 1 \end{array}\right]
+\end{equation*}
+</div>
+<p><em class="emphasis">Part 3.</em></p> <p>How many solutions must this system have?</p> <ol class="upper-alpha cols3">
+<li><p>Zero</p></li>
+<li><p>Only one</p></li>
+<li><p>Infinitely-many</p></li>
+</ol>
+</div></section><section><h3>Activity 1.3.5 (~5 min)</h3>
+<div align="left"> <p>Is <span class="process-math">\(0=1\)</span> the only possible logical contradiction obtained from the RREF of an augmented matrix?</p> <ol class="upper-alpha">
+<li><p>Yes, <span class="process-math">\(0=1\)</span> is the only possible contradiction from an RREF matrix.</p></li>
+<li><p>No, <span class="process-math">\(0=17\)</span> is another possible contradiction from an RREF matrix.</p></li>
+<li><p>No, <span class="process-math">\(x=0\)</span> is another possible contradiction from an RREF matrix.</p></li>
+<li><p>No, <span class="process-math">\(x=y\)</span> is another possible contradiction from an RREF matrix.</p></li>
+</ol>
+</div></section><section><h3>Activity 1.3.6 (~10 min)</h3>
+<div align="left"> <p>Consider the following linear system.</p>
+<div class="displaymath process-math" id="md-4">
+\begin{alignat*}{4}
+x_1 &amp;+ 2x_2 &amp;+ 3x_3 &amp;= 1\\
+2x_1 &amp;+ 4x_2 &amp;+ 8x_3 &amp;= 0
+\end{alignat*}
+</div>
+<p><em class="emphasis">Part 1.</em></p> <p>Find its corresponding augmented matrix <span class="process-math">\(A\)</span> and find <span class="process-math">\(\RREF(A)\text{.}\)</span></p>
+</div></section><section><h3>Activity 1.3.6 (~10 min)</h3>
+<div align="left"> <p>Consider the following linear system.</p>
+<div class="displaymath process-math" id="md-5">
+\begin{alignat*}{4}
+x_1 &amp;+ 2x_2 &amp;+ 3x_3 &amp;= 1\\
+2x_1 &amp;+ 4x_2 &amp;+ 8x_3 &amp;= 0
+\end{alignat*}
+</div>
+<p><em class="emphasis">Part 2.</em></p> <p>Use the <span class="process-math">\(\RREF\)</span> matrix to write a linear system equivalent to the original system.</p>
+</div></section><section><h3>Activity 1.3.6 (~10 min)</h3>
+<div align="left"> <p>Consider the following linear system.</p>
+<div class="displaymath process-math" id="md-6">
+\begin{alignat*}{4}
+x_1 &amp;+ 2x_2 &amp;+ 3x_3 &amp;= 1\\
+2x_1 &amp;+ 4x_2 &amp;+ 8x_3 &amp;= 0
+\end{alignat*}
+</div>
+<p><em class="emphasis">Part 3.</em></p> <p>How many solutions must this system have?</p> <ol class="upper-alpha cols3">
+<li><p>Zero</p></li>
+<li><p>One</p></li>
+<li><p>Infinitely-many</p></li>
+</ol>
+</div></section><section><h3>Fact 1.3.7</h3>
+<div align="left"> <p>We will see in Section 1.4 Linear Systems with Infinitely-Many Solutions (LE4) that the intuition established here generalizes: a <em class="emphasis">consistent</em> system with more nontrivial equations than variables will always have infinitely many solutions.</p>
+</div></section><section><h3>Fact 1.3.8</h3>
+<div align="left"> <p>By finding <span class="process-math">\(\RREF(A)\)</span> from a linear system's corresponding augmented matrix <span class="process-math">\(A\text{,}\)</span> we can immediately tell how many solutions the system has.</p> <ul class="disc">
+<li><p>If the linear system given by <span class="process-math">\(\RREF(A)\)</span> includes the contradiction <span class="process-math">\(0=1\text{,}\)</span> that is, the row <span class="process-math">\(\left[\begin{array}{ccc|c}0&amp;\cdots&amp;0&amp;1\end{array}\right]\text{,}\)</span> then the system is <em class="emphasis">inconsistent</em>, which means it has <em class="emphasis">zero</em> solutions and its solution set is written as <span class="process-math">\(\emptyset\)</span> or <span class="process-math">\(\{\}\text{.}\)</span></p></li>
+<li><p>If the linear system given by <span class="process-math">\(\RREF(A)\)</span> sets each variable of the system to a single value; that is, <span class="process-math">\(x_1=s_1\text{,}\)</span> <span class="process-math">\(x_2=s_2\text{,}\)</span> and so on; then the system is <em class="emphasis">consistent</em> with exactly <em class="emphasis">one</em> solution <span class="process-math">\(\left[\begin{array}{c}s_1\\s_2\\\vdots\end{array}\right]\text{,}\)</span> and its solution set is <span class="process-math">\(\setList{ \left[\begin{array}{c}s_1\\s_2\\\vdots\end{array}\right] }\text{.}\)</span></p></li>
+<li><p>Otherwise, the system must be <em class="emphasis">consistent</em> with <em class="emphasis">infinitely-many</em> different solutions. We'll learn how to find such solution sets in Section 1.4 Linear Systems with Infinitely-Many Solutions (LE4).</p></li>
+</ul>
+</div></section><section><h3>Activity 1.3.9 (~15 min)</h3>
+<div align="left"> <p>For each vector equation, write an explanation for whether each solution set has no solutions, one solution, or infinitely-many solutions. If the set is finite, describe it using set notation.</p> <p><em class="emphasis">Part 1.</em></p> <p><div class="displaymath process-math">
+\begin{equation*}
+x_{1} \left[\begin{array}{c}
+1 \\
+-1 \\
+1
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+4 \\
+-3 \\
+1
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+7 \\
+-6 \\
+4
+\end{array}\right] = \left[\begin{array}{c}
+10 \\
+-6 \\
+4
+\end{array}\right]
+\end{equation*}
+</div></p>
+</div></section><section><h3>Activity 1.3.9 (~15 min)</h3>
+<div align="left"> <p>For each vector equation, write an explanation for whether each solution set has no solutions, one solution, or infinitely-many solutions. If the set is finite, describe it using set notation.</p> <p><em class="emphasis">Part 2.</em></p> <p><div class="displaymath process-math">
+\begin{equation*}
+x_{1} \left[\begin{array}{c}
+-2 \\
+-1 \\
+-2
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+3 \\
+1 \\
+1
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+-2 \\
+-2 \\
+-5
+\end{array}\right] = \left[\begin{array}{c}
+1 \\
+4 \\
+13
+\end{array}\right]
+\end{equation*}
+</div></p>
+</div></section><section><h3>Activity 1.3.9 (~15 min)</h3>
+<div align="left"> <p>For each vector equation, write an explanation for whether each solution set has no solutions, one solution, or infinitely-many solutions. If the set is finite, describe it using set notation.</p> <p><em class="emphasis">Part 3.</em></p> <p><div class="displaymath process-math">
+\begin{equation*}
+x_{1} \left[\begin{array}{c}
+-1 \\
+-2 \\
+1
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+-5 \\
+-5 \\
+4
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+-7 \\
+-9 \\
+6
+\end{array}\right] = \left[\begin{array}{c}
+3 \\
+1 \\
+-2
+\end{array}\right]
+\end{equation*}
+</div></p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>
