@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<example xml:id="sample-LE4"><title>LE4</title>
+  <statement>
+    <p>
+Consider the following
+vector equation.
+      <me>
+        
+        x_{1} \left[\begin{array}{c}
+-3 \\
+0 \\
+4
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+-3 \\
+0 \\
+4
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+0 \\
+1 \\
+0
+\end{array}\right] + x_{4} \left[\begin{array}{c}
+-4 \\
+-5 \\
+5
+\end{array}\right] = \left[\begin{array}{c}
+-11 \\
+-9 \\
+14
+\end{array}\right]
+      </me>
+    </p>
+    <ol>
+      <li>
+        <p>
+Explain how to find a simpler system or vector equation
+that has the same solution set.
+        </p>
+      </li>
+      <li>
+        <p>
+Explain how to describe this solution set using set notation.
+        </p>
+      </li>
+    </ol>
+  </statement>
+
+  <solution>
+    <p>First, we compute 
+      <me>\mathrm{RREF}\left[\begin{array}{cccc|c}
+-3 &amp; -3 &amp; 0 &amp; -4 &amp; -11 \\
+0 &amp; 0 &amp; 1 &amp; -5 &amp; -9 \\
+4 &amp; 4 &amp; 0 &amp; 5 &amp; 14
+\end{array}\right]=\left[\begin{array}{cccc|c}
+1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 2
+\end{array}\right].</me>
+      This corresponds to the simpler system 
+<me>
+              \begin{matrix}
+  x_{1} &amp;  +  &amp; x_2 &amp;    &amp;  &amp;  &amp; &amp; = &amp; 1 \\
+       &amp;    &amp;  &amp;    &amp; x_3  &amp;  &amp; &amp; = &amp; 1 \\
+       &amp;    &amp;  &amp;    &amp;  &amp;  &amp; x_4 &amp; = &amp; 2 \\
+ \end{matrix}.
+            </me>
+      Since the second column is a non-pivot column, we let <m>x_2=a</m>.  Making this substitution
+        and then solving for <m>x_1</m>, <m>x_3</m>, and <m>x_4</m> produces the system
+        <me>\begin{matrix}
+        x_1 &amp;=&amp; 1-a \\
+        x_2 &amp;=&amp; a \\
+        x_3 &amp;=&amp; 1 \\
+        x_4 &amp;=&amp; 2 \\
+        \end{matrix}</me>
+      Thus, the solution set is <m> \left\{ \left[\begin{array}{c}
+-a + 1 \\
+a \\
+1 \\
+2
+\end{array}\right] \,\middle|\, a \in\mathbb R \right\} </m>.
+    </p>
+  </solution>
+</example>    

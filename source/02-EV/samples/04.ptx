@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<example xml:id="sample-EV4"><title>EV4</title>
+   <statement>
+        <ol>
+            <li>
+                <p>
+Write a statement involving the solutions of a vector equation that's equivalent to each
+claim below.
+                </p>
+                <ul>
+                    <li>
+                        <p>
+The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+-1 \\
+-3 \\
+-4 \\
+4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] \right\}</m> is linearly <em>independent</em>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+-1 \\
+-3 \\
+-4 \\
+4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] \right\}</m> is linearly <em>dependent</em>.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+Explain how to determine which of these statements is true.
+                </p>
+            </li>
+        </ol>
+    </statement>
+    <solution>
+        <p> The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+-1 \\
+-3 \\
+-4 \\
+4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] \right\}</m> is linearly independent exactly when the vector equation
+            <me>x_1 \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] +x_2 \left[\begin{array}{c}
+-1 \\
+-3 \\
+-4 \\
+4
+\end{array}\right] +x_3 \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] =\left[\begin{array}{c}0 \\ 0 \\ 0 \\ 0 \end{array}\right]</me> has no non-trivial (i.e. nonzero) solutions.
+            The set is linearly <em>dependent</em> when there exists a nontrivial (i.e. nonzero) solution.  We compute
+            <me>
+\mathrm{RREF}\, \left[\begin{array}{ccc}
+1 &amp; -1 &amp; 0 \\
+3 &amp; -3 &amp; 1 \\
+4 &amp; -4 &amp; 3 \\
+-4 &amp; 4 &amp; -3
+\end{array}\right] = \left[\begin{array}{ccc}
+1 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{array}\right]
+            </me>.
+        </p>
+        <p>
+        Thus, this vector equation has a solution set <m>\left\{ \left[\begin{array}{c}a \\ a \\ 0 \end{array}\right]\ \middle|\ a \in \mathbb{R}\right\}</m>.  
+        Since there are nontrivial solutions, we conclude that the set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+-1 \\
+-3 \\
+-4 \\
+4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] \right\}</m> is linearly
+
+<em>dependent</em>.
+        </p>
+    </solution>
+</example>

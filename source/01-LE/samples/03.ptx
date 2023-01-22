@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<example xml:id="sample-LE3"><title>LE3</title>
+  <statement>
+    <p>
+Consider each of the following systems of linear equations
+or vector equations.
+    </p>
+    <ol>
+        <li>
+          <p>
+            <me>
+              \begin{matrix}
+ -2 \, x_{1} &amp;  +  &amp; x_{2} &amp;  +  &amp; x_{3} &amp; = &amp; -2 \\
+ -2 \, x_{1} &amp;  -  &amp; 3 \, x_{2} &amp;  -  &amp; 3 \, x_{3} &amp; = &amp; 0 \\
+ 3 \, x_{1} &amp;  +  &amp; x_{2} &amp;  +  &amp; x_{3} &amp; = &amp; 3 \\
+ \end{matrix}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>
+              x_{1} \left[\begin{array}{c}
+-5 \\
+3 \\
+-1
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+3 \\
+-2 \\
+2
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+14 \\
+-9 \\
+7
+\end{array}\right] = \left[\begin{array}{c}
+1 \\
+0 \\
+-4
+\end{array}\right]
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>
+              x_{1} \left[\begin{array}{c}
+0 \\
+-1 \\
+-1
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+1 \\
+-4 \\
+-4
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+2 \\
+-4 \\
+-3
+\end{array}\right] = \left[\begin{array}{c}
+-5 \\
+11 \\
+8
+\end{array}\right]
+            </me>
+          </p>
+        </li>
+    </ol>
+    <ul>
+      <li>
+        <p>
+Explain how to find a simpler system or vector equation
+that has the same solution set for each.
+        </p>
+      </li>
+      <li>
+        <p>
+Explain whether each solution set
+has no solutions, one solution, or infinitely-many solutions.
+If the set is finite, describe it using set notation.
+        </p>
+      </li>
+    </ul>
+  </statement>
+<solution>
+    <ol>
+        <li>
+          <p>
+            <me>\mathrm{RREF}\left[\begin{array}{ccc|c}
+-2 &amp; 1 &amp; 1 &amp; -2 \\
+-2 &amp; -3 &amp; -3 &amp; 0 \\
+3 &amp; 1 &amp; 1 &amp; 3
+\end{array}\right]=\left[\begin{array}{ccc|c}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]</me>
+            This matrix corresponds to the simpler system
+                 <me>
+              \begin{matrix}
+  x_{1} &amp;    &amp;  &amp;    &amp; &amp; = &amp; 0 \\
+  &amp;    &amp;  x_{2} &amp;  +  &amp; x_{3} &amp; = &amp; 0 \\
+  &amp;    &amp;  &amp;   &amp; 0 &amp; = &amp; 1 \\
+ \end{matrix}
+            </me>
+              The third equation <m>0=1</m> indicates that the system has no solutions.
+            The solution set is <m>\emptyset</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>\mathrm{RREF}\left[\begin{array}{ccc|c}
+-5 &amp; 3 &amp; 14 &amp; 1 \\
+3 &amp; -2 &amp; -9 &amp; 0 \\
+-1 &amp; 2 &amp; 7 &amp; -4
+\end{array}\right]=\left[\begin{array}{ccc|c}
+1 &amp; 0 &amp; -1 &amp; -2 \\
+0 &amp; 1 &amp; 3 &amp; -3 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]</me>
+             This matrix corresponds to the simpler system
+                 <me>
+              \begin{matrix}
+  x_{1} &amp;    &amp;  &amp;  -  &amp; x_3 &amp; = &amp; -2 \\
+  &amp;    &amp;  x_{2} &amp;  +  &amp; 3\,x_{3} &amp; = &amp; -3 \\
+  &amp;    &amp;  &amp;   &amp; 0 &amp; = &amp; 0 \\
+ \end{matrix}.
+            </me>
+            Since there are three variables and two nontrivial equations, the solution set has infinitely-many solutions.
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>\mathrm{RREF}\left[\begin{array}{ccc|c}
+0 &amp; 1 &amp; 2 &amp; -5 \\
+-1 &amp; -4 &amp; -4 &amp; 11 \\
+-1 &amp; -4 &amp; -3 &amp; 8
+\end{array}\right]=\left[\begin{array}{ccc|c}
+1 &amp; 0 &amp; 0 &amp; -3 \\
+0 &amp; 1 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; -3
+\end{array}\right]</me>
+            This matrix corresponds to the simpler system
+                               <me>
+              \begin{matrix}
+  x_{1} &amp;    &amp;  &amp;    &amp;  &amp; = &amp; -3 \\
+  &amp;    &amp;  x_{2} &amp;    &amp;  &amp; = &amp; 1 \\
+  &amp;    &amp;  &amp;   &amp; x_{3} &amp; = &amp; -3 \\
+ \end{matrix}.
+            </me>
+            This system has one solution.  
+            The solution set is <m>\left\{ \left[\begin{array}{c}
+-3 \\
+1 \\
+-3
+\end{array}\right] \right\}</m>.
+          </p>
+        </li>
+    </ol>
+</solution>
+</example>

@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<example xml:id="sample-AT1"><title>AT1</title>
+<statement>
+    <p>
+Consider the following maps of polynomials <m>S: \P \rightarrow \P</m>
+and <m>T:\P\rightarrow\P</m> defined by
+<me>S(f(x))= 3xf(x) \text{ and }T(f(x)) = 3f'(x)f(x).</me>
+Explain why one of these maps is a linear transformation, and why the other
+map is not.
+    </p>
+</statement>
+<solution>
+    <p>
+To show <m>S</m> is a linear transformation, we must show two things:
+        <me>
+S\left(f(x)+g(x)\right)=S(f(x))+s(g(x))
+        </me>
+        <me>
+S(cf(x)) = cS(f(x))
+        </me>
+    </p>
+    <p>
+To show <m>S</m> respects addition, we compute
+        <md>
+            <mrow>
+S\left(f(x)+g(x)\right) &amp;= 3x\left(f(x)+g(x)\right) &amp; \text{by definition of <m>S</m>} \\
+            </mrow>
+            <mrow>
+&amp;= 3xf(x)+3xg(x) &amp; \text{by distributing}
+            </mrow>
+        </md>
+But note that <m>S(f(x))=3xf(x)</m> and <m>S(g(x))=3xg(x)</m>, so we have <m>S(f(x)+g(x))=S(f(x))+S(g(x))</m>.
+    </p>
+    <p>
+For the second part, we compute
+        <md>
+            <mrow>
+S\left(cf(x)\right) &amp;= 3x\left(cf(x)\right) &amp; \text{by definition of <m>S</m>} \\
+            </mrow>
+            <mrow>
+&amp;= 3cxf(x) &amp; \text{rewriting the multiplication.}
+            </mrow>
+        </md>
+But note that <m>cS(f(x))=c(3xf(x))=3cxf(x)</m> as well, so we have <m>S(cf(x))=cS(f(x))</m>.
+Now, since <m>S</m> respects both addition and scalar multiplication, we can conclude <m>S</m> is a linear transformation.
+    </p>
+    <ul>
+        <li>
+            <p>
+(Solution method 1)
+As for <m>T</m>, we compute
+                <md>
+                    <mrow>
+  T(f(x)+g(x))&amp; =3 (f(x)+g(x))'(f(x)+g(x)) &amp;\text{by definition of <m>T</m>}
+                    </mrow>
+                    <mrow>
+  &amp;= 3(f'(x)+g'(x))(f(x)+g(x)) &amp; \text{since the derivative is linear}
+                    </mrow>
+                    <mrow>
+  &amp;= 3f(x)f'(x)+3f(x)g'(x)+3f'(x)g(x)+3g(x)g'(x) &amp;\text{by distributing}
+                    </mrow>
+                </md>
+However, note that <m>T(f(x))+T(g(x))=3f'(x)f(x)+3g'(x)g(x)</m>, which is not
+always the same polynomial (for example, when <m>f(x)=g(x)=x</m>).
+So we see that <m>T(f(x)+g(x)) \neq T(f(x))+T(g(x))</m>,
+so <m>T</m> does not respect addition and is therefore not a linear transformation.
+            </p>
+        </li>
+        <li>
+            <p>
+(Solution method 2)
+As for <m>T</m>, we may choose the polynomial <m>f(x)=x</m> and scalar <m>c=2</m>. Then
+<me>T(cf(x))=T(2x)=3(2x)'(2x)=3(2)(2x)=12x.</me>
+            </p>
+            <p>
+But on the other hand, <me>cT(f(x))=2T(x)=2(3)(x)'(x)=2(3)(1)(x)=6x.</me>
+Since this isn't the same polynomial, <m>T</m> does not preserve multiplication
+and is therefore not a linear transformation.
+            </p>
+        </li>
+    </ul>
+</solution>
+</example>

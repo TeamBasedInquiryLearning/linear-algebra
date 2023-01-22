@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<example xml:id="sample-AT3"><title>AT3</title>
+<statement>
+    <p>
+Let <m>T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by
+<me>
+  T\left(\left[\begin{array}{c}x\\y\\z\\w\end{array}\right] \right) =
+  \left[\begin{array}{c}
+    x+3y+2z-3w \\
+    2x+4y+6z-10w \\
+    x+6y-z+3w
+  \end{array}\right]
+</me>
+    </p>
+    <ol>
+        <li>
+            <p>
+Explain how to find the image of <m>T</m> and the kernel of <m>T</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+Explain how to find a basis of the image of <m>T</m> and a basis of the kernel of <m>T</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+Explain how to find the rank and nullity of T, and why the rank-nullity theorem holds for T.
+            </p>
+        </li>
+    </ol>
+</statement>
+<solution>
+    <ol>
+        <li>
+            <p>
+                To find the image we compute
+<me> \Im(T) = T\left(\vspan\left\{\vec{e}_1,\vec{e}_2,\vec{e}_3,\vec{e}_4\right\}\right)
+                </me><me>
+= \vspan\left\{T(\vec{e}_1),T(\vec{e}_2),T(\vec{e}_3),T(\vec{e}_4)\right\}
+                </me>
+                <me>
+= \vspan\left\{\left[\begin{array}{c}1 \\ 2 \\ 1 \end{array}\right], \left[\begin{array}{c} 3 \\ 4 \\ 6  \end{array}\right], \left[\begin{array}{c} 2 \\ 6 \\ -1 \end{array}\right], \left[\begin{array}{c} -3 \\ -10 \\ 3 \end{array}\right]\right\}.</me>
+            </p>
+        </li>
+        <li>
+            <p>
+The kernel is the solution set of the corresponding homogeneous system of equations, i.e.
+                <md alignment="alignat" alignat-columns="5">
+                    <mrow>
+x &amp;+&amp; 3y &amp;+&amp; 2z &amp;-&amp; 3w &amp;=&amp; 0
+                    </mrow>
+                    <mrow>
+2x &amp;+&amp; 4y &amp;+&amp; 6z &amp;-&amp; 10w &amp;=&amp; 0
+                    </mrow>
+                    <mrow>
+x &amp;+&amp; 6y &amp;-&amp; z &amp;+&amp; 3w &amp;=&amp; 0 .
+                    </mrow>
+                </md>
+So we compute
+<me>\RREF\left[\begin{array}{cccc|c} 1 &amp; 3 &amp; 2 &amp; -3 &amp; 0 \\ 2 &amp; 4 &amp; 6 &amp; -10 &amp;0 \\ 1 &amp; 6 &amp; -1 &amp; 3 &amp; 0 \end{array}\right]
+= \left[\begin{array}{cccc|c} 1 &amp; 0 &amp; 5 &amp; -9 &amp; 0 \\ 0 &amp; 1 &amp; -1 &amp; 2 &amp; 0  \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right].</me>
+Then, letting <m>z=a</m> and <m>w=b</m> we have
+<me> \ker T = \setBuilder{\left[\begin{array}{c}-5a+9b \\ a-2b \\ a \\ b \end{array}\right]}{a,b \in \IR}. </me>
+            </p>
+        </li>
+        <li>
+            <p>
+Since
+<m>\Im(T) = \vspan\left\{\left[\begin{array}{c}1 \\ 2 \\ 1 \end{array}\right], \left[\begin{array}{c} 3 \\ 4 \\ 6  \end{array}\right],
+\left[\begin{array}{c} 2 \\ 6 \\ -1 \end{array}\right], \left[\begin{array}{c} -3 \\ -10 \\ 3 \end{array}\right]\right\}</m>,
+we simply need to find a linearly independent subset of these four spanning vectors. So we compute
+<me>\RREF \left[\begin{array}{cccc}1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]
+= \left[\begin{array}{cccc} 1 &amp; 0 &amp; 5 &amp; -9 \\ 0 &amp; 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right].</me>
+Since the first two columns are pivot columns, they form a linearly independent spanning set, so a basis for <m>\Im T</m>
+is <m>\setList{\left[\begin{array}{c}1\\2\\1 \end{array}\right], \left[\begin{array}{c}3\\4\\6 \end{array}\right]}.</m>
+            </p>
+            <p>
+To find a basis for the kernel, note that
+<me> \ker T = \setBuilder{\left[\begin{array}{c}-5a+9b \\ a-2b \\ a \\ b \end{array}\right]}{a,b \in \IR}
+                </me><me>
+= \setBuilder{a \left[\begin{array}{c}-5 \\ 1 \\ 1  \\ 0 \end{array}\right]+b \left[\begin{array}{c} 9 \\ -2 \\ 0 \\ 1 \end{array}\right]}{a,b \in \IR}
+                </me><me>
+= \vspan\left\{ \left[\begin{array}{c} -5 \\ 1 \\ 1 \\ 0 \end{array}\right], \left[\begin{array}{c} 9 \\ -2 \\ 0 \\ 1 \end{array}\right]\right\}.</me>
+so a basis for the kernel is
+<me>\setList{\left[\begin{array}{c}-5 \\ 1 \\ 1 \\ 0 \end{array}\right],
+\left[\begin{array}{c}9 \\ -2 \\ 0 \\ 1 \end{array}\right]}.</me>
+            </p>
+        </li>
+        <li>
+            <p>
+The dimension of the image (the rank) is <m>2</m>, the dimension of the kernel (the nullity) is <m>2</m>,
+and the dimension of the domain of <m>T</m> is <m>4</m>, so we see <m>2+2=4</m>, which verifies that the sum
+of the rank and nullity of <m>T</m> is the dimension of the domain of <m>T</m>.
+            </p>
+        </li>
+    </ol>
+</solution>
+</example>

@@ -21,9 +21,9 @@ try:
     print("building checkit viewer")
     b.build_viewer()
     try:
-        shutil.rmtree("../output/deploy/2023e/exercises")
+        shutil.rmtree("../output/deploy/2023/exercises")
     except FileNotFoundError:
         pass
-    shutil.copytree("docs","../output/deploy/2023e/exercises",dirs_exist_ok=True)
+    shutil.copytree("docs","../output/deploy/2023/exercises",dirs_exist_ok=True)
 finally:
     os.chdir(cwd)

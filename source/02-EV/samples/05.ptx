@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<example xml:id="sample-EV5"><title>EV5</title>
+    <statement>
+        <ol>
+            <li>
+                <p>
+Write a statement involving spanning and independence properties
+that's equivalent to each claim below.
+                </p>
+                <ul>
+                    <li>
+                        <p>
+The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+11 \\
+18 \\
+-18
+\end{array}\right] , \left[\begin{array}{c}
+-2 \\
+-7 \\
+-11 \\
+11
+\end{array}\right] \right\}</m> is a <em>basis</em>
+of <m>\mathbb{R}^4</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+11 \\
+18 \\
+-18
+\end{array}\right] , \left[\begin{array}{c}
+-2 \\
+-7 \\
+-11 \\
+11
+\end{array}\right] \right\}</m> is <em>not</em> a basis
+of <m>\mathbb{R}^4</m>.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+Explain how to determine which of these statements is true.
+                </p>
+            </li>
+        </ol>
+    </statement>
+    <solution>
+        <p>The set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+11 \\
+18 \\
+-18
+\end{array}\right] , \left[\begin{array}{c}
+-2 \\
+-7 \\
+-11 \\
+11
+\end{array}\right] \right\}</m> is a basis
+of <m>\mathbb{R}^4</m> exactly when it is linearly independent <em>and</em> the set spans <m>\mathbb{R}^4</m>. 
+            If it is either linearly dependent, <em>or</em> the set does not span <m>\mathbb{R}^4</m>, then the set is not a basis.
+        </p>
+        <p> To answer this, we compute
+            <me>
+\mathrm{RREF}\, \left[\begin{array}{cccc}
+1 &amp; 0 &amp; 3 &amp; -2 \\
+3 &amp; 1 &amp; 11 &amp; -7 \\
+4 &amp; 3 &amp; 18 &amp; -11 \\
+-4 &amp; -3 &amp; -18 &amp; 11
+\end{array}\right] = \left[\begin{array}{cccc}
+1 &amp; 0 &amp; 3 &amp; -2 \\
+0 &amp; 1 &amp; 2 &amp; -1 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]
+            </me>.
+        </p>
+        <p>We see that this set of vectors is linearly dependent, so therefore 
+the set of vectors <m>\left\{ \left[\begin{array}{c}
+1 \\
+3 \\
+4 \\
+-4
+\end{array}\right] , \left[\begin{array}{c}
+0 \\
+1 \\
+3 \\
+-3
+\end{array}\right] , \left[\begin{array}{c}
+3 \\
+11 \\
+18 \\
+-18
+\end{array}\right] , \left[\begin{array}{c}
+-2 \\
+-7 \\
+-11 \\
+11
+\end{array}\right] \right\}</m> is
+
+<em>not</em> a basis.
+        </p>
+    </solution>
+</example>

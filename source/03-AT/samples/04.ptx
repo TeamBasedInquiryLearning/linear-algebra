@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<example xml:id="sample-AT4"><title>AT4</title>
+<statement>
+    <p>
+Let <m>T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix <m>\left[\begin{array}{cccc} 1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]</m>.
+    </p>
+    <ol>
+        <li>
+            <p>
+Explain why <m>T</m> is or is not injective.
+            </p>
+        </li>
+        <li>
+            <p>
+Explain why <m>T</m> is or is not surjective.
+            </p>
+        </li>
+    </ol>
+</statement>
+<solution>
+    <p>
+Compute <me>\RREF\left[\begin{array}{cccc}1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right] = \left[\begin{array}{cccc} 1 &amp; 0 &amp; 5 &amp; -9 \\ 0 &amp; 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right].</me>
+    </p>
+    <ol>
+        <li>
+            <p>
+Note that the third and fourth columns are non-pivot columns, which means <m>\ker T</m> contains infinitely many vectors, so <m>T</m> is not injective.
+            </p>
+        </li>
+        <li>
+            <p>
+Since there are only two pivots, the image (i.e. the span of the columns) is a 2-dimensional subspace (and thus does not equal <m>\IR^3</m>), so <m>T</m> is not surjective.
+            </p>
+        </li>
+    </ol>
+</solution>
+</example>
