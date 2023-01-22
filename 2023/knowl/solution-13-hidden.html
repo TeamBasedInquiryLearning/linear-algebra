@@ -11,58 +11,28 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like"><ol class="decimal">
-<li>
-<div class="para logical">
-<div class="para">Observe that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\RREF
-\left[\begin{array}{ccccc|c}
-1 &amp; 1 &amp; 3 &amp; 1 &amp; 2 &amp; 0\\
--3 &amp; 0 &amp; -6 &amp; 6 &amp; 3 &amp; 0\\
--1 &amp; 1 &amp; -1 &amp; 1 &amp; 0 &amp; 0\\
-2 &amp; -2 &amp; 2 &amp; -1 &amp; 1&amp; 0
-\end{array}\right] =
-\left[\begin{array}{ccccc|c}
-1 &amp; 0 &amp; 2 &amp; 0 &amp; 1 &amp;0\\
-0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp;0\\
-0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp;0\\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0&amp;0
-\end{array}\right]
-\end{equation*}
-</div>
-</div>
-<div class="para logical">
-<div class="para">Letting <span class="process-math">\(x_3=a\)</span> and <span class="process-math">\(x_5=b\)</span> (since those correspond to the non-pivot columns), this is equivalent to the system</div>
-<div class="displaymath process-math">
-\begin{alignat*}{6}
-x_1 &amp;\,\,&amp;  &amp;\,+\,&amp; 2x_3 &amp;\,\,&amp;  &amp;\,+\,&amp; x_5 &amp;=&amp; 0\\
-&amp;\,\,&amp; x_2 &amp;\,+\,&amp; x_3 &amp;\,\,&amp; &amp;\,\,&amp;  &amp;=&amp; 0\\
-&amp;\,\,&amp;  &amp;\,\,&amp; x_3 &amp;\,\,&amp;  &amp;\,\,&amp;  &amp;=&amp; a\\
-&amp;\,\,&amp;  &amp;\,\,&amp;  &amp;\,\,&amp; x_4 &amp;\,+\,&amp; x_5 &amp;=&amp; 0\\
-&amp;\,\,&amp;  &amp;\,\,&amp;  &amp;\,\,&amp;  &amp;\,\,&amp; x_5 &amp;=&amp; b
-\end{alignat*}
-</div>
-<div class="para">Thus, the solution set is</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\setBuilder{\left[\begin{array}{c} -2a-b \\ -a \\ a \\ -b \\ b \end{array}\right]}{a,b \in \IR} .
-\end{equation*}
-</div>
-</div>
-</li>
 <li><div class="para logical">
-<div class="para">Since we can write</div>
+<div class="para">Since</div>
+<div class="displaymath process-math">
+\begin{align*}
+T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0  \end{array}\right]\right) &amp;= \left[\begin{array}{c} -1 \\ -1 \\ 7 \\0\end{array}\right]\\
+T\left(\left[\begin{array}{c} 0 \\ 1 \\ 0 \end{array}\right]\right) &amp;= \left[\begin{array}{c} 1 \\ 3 \\ 1 \\0 \end{array}\right]\\
+T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right]\right) &amp;= \left[\begin{array}{c} 0 \\ -1 \\ 3 \\ 0  \end{array}\right],
+\end{align*}
+</div>
+<div class="para">the standard matrix for <span class="process-math">\(T\)</span> is <span class="process-math">\(\left[\begin{array}{ccc} -1 &amp; 1 &amp; 0 \\ -1 &amp; 3 &amp; -1 \\ 7 &amp; 1 &amp; 3  \\ 0 &amp; 0 &amp; 0 \end{array}\right] \text{.}\)</span>
+</div>
+</div></li>
+<li><div class="para logical">
 <div class="displaymath process-math">
 \begin{equation*}
-\left[\begin{array}{c} -2a-b \\ -a \\ a \\ -b \\ b \end{array}\right] =
-a \left[\begin{array}{c} -2 \\ -1 \\ 1 \\ 0 \\ 0 \end{array}\right] + b \left[\begin{array}{c} -1 \\ 0 \\ 0 \\ -1 \\ 1 \end{array}\right], 
+S\left(\left[\begin{array}{c} -2 \\ 1 \\ 3 \\ 2 \end{array}\right] \right) = -2S(\vec{e}_1)+S(\vec{e}_2)+3S(\vec{e}_3)+2S(\vec{e}_4)
 \end{equation*}
 </div>
-<div class="para">a basis for the solution space is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\left \{ \left[\begin{array}{c} -2 \\ -1 \\ 1 \\ 0 \\ 0 \end{array}\right] , \left[\begin{array}{c} -1 \\ 0 \\ 0 \\ -1 \\ 1 \end{array}\right] \right\}.
+= -2 \left[\begin{array}{c} 2 \\ 0 \\ 3 \end{array}\right] + \left[\begin{array}{c} 3 \\ 1 \\ -2 \end{array}\right] + 3 \left[\begin{array}{c} 4 \\ -1 \\ -2 \end{array}\right]+2\left[\begin{array}{c} 1 \\ -1 \\ 4 \end{array}\right] 
+= \left[\begin{array}{c} 13 \\ -4 \\ -6\end{array}\right]. 
 \end{equation*}
 </div>
 </div></li>

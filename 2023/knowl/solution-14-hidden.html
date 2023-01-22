@@ -10,69 +10,88 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
-<div class="para">To show <span class="process-math">\(S\)</span> is a linear transformation, we must show two things:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-S\left(f(x)+g(x)\right)=S(f(x))+s(g(x))
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-S(cf(x)) = cS(f(x))
-\end{equation*}
-</div>
-</div> <div class="para logical">
-<div class="para">To show <span class="process-math">\(S\)</span> respects addition, we compute</div>
-<div class="displaymath process-math">
-\begin{align*}
-S\left(f(x)+g(x)\right) &amp;= 3x\left(f(x)+g(x)\right) &amp; \text{by definition of } \\\\
-&amp;= 3xf(x)+3xg(x) &amp; \text{by distributing}
-\end{align*}
-</div>
-<div class="para">But note that <span class="process-math">\(S(f(x))=3xf(x)\)</span> and <span class="process-math">\(S(g(x))=3xg(x)\text{,}\)</span> so we have <span class="process-math">\(S(f(x)+g(x))=S(f(x))+S(g(x))\text{.}\)</span>
-</div>
-</div> <div class="para logical">
-<div class="para">For the second part, we compute</div>
-<div class="displaymath process-math">
-\begin{align*}
-S\left(cf(x)\right) &amp;= 3x\left(cf(x)\right) &amp; \text{by definition of } \\\\
-&amp;= 3cxf(x) &amp; \text{rewriting the multiplication.}
-\end{align*}
-</div>
-<div class="para">But note that <span class="process-math">\(cS(f(x))=c(3xf(x))=3cxf(x)\)</span> as well, so we have <span class="process-math">\(S(cf(x))=cS(f(x))\text{.}\)</span> Now, since <span class="process-math">\(S\)</span> respects both addition and scalar multiplication, we can conclude <span class="process-math">\(S\)</span> is a linear transformation.</div>
-</div> <ul class="disc">
+<body class="ignore-math"><div class="solution solution-like"><ol class="decimal">
 <li><div class="para logical">
-<div class="para">(Solution method 1) As for <span class="process-math">\(T\text{,}\)</span> we compute</div>
+<div class="para">To find the image we compute</div>
 <div class="displaymath process-math">
-\begin{align*}
-T(f(x)+g(x))&amp; =3 (f(x)+g(x))'(f(x)+g(x)) &amp;\text{by definition of }\\
-&amp;= 3(f'(x)+g'(x))(f(x)+g(x)) &amp; \text{since the derivative is linear}\\
-&amp;= 3f(x)f'(x)+3f(x)g'(x)+3f'(x)g(x)+3g(x)g'(x) &amp;\text{by distributing}
-\end{align*}
+\begin{equation*}
+\Im(T) = T\left(\vspan\left\{\vec{e}_1,\vec{e}_2,\vec{e}_3,\vec{e}_4\right\}\right)
+\end{equation*}
 </div>
-<div class="para">However, note that <span class="process-math">\(T(f(x))+T(g(x))=3f'(x)f(x)+3g'(x)g(x)\text{,}\)</span> which is not always the same polynomial (for example, when <span class="process-math">\(f(x)=g(x)=x\)</span>). So we see that <span class="process-math">\(T(f(x)+g(x)) \neq T(f(x))+T(g(x))\text{,}\)</span> so <span class="process-math">\(T\)</span> does not respect addition and is therefore not a linear transformation.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \vspan\left\{T(\vec{e}_1),T(\vec{e}_2),T(\vec{e}_3),T(\vec{e}_4)\right\}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \vspan\left\{\left[\begin{array}{c}1 \\ 2 \\ 1 \end{array}\right], \left[\begin{array}{c} 3 \\ 4 \\ 6  \end{array}\right], \left[\begin{array}{c} 2 \\ 6 \\ -1 \end{array}\right], \left[\begin{array}{c} -3 \\ -10 \\ 3 \end{array}\right]\right\}.
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">The kernel is the solution set of the corresponding homogeneous system of equations, i.e.</div>
+<div class="displaymath process-math">
+\begin{alignat*}{5}
+x &amp;+&amp; 3y &amp;+&amp; 2z &amp;-&amp; 3w &amp;=&amp; 0\\
+2x &amp;+&amp; 4y &amp;+&amp; 6z &amp;-&amp; 10w &amp;=&amp; 0\\
+x &amp;+&amp; 6y &amp;-&amp; z &amp;+&amp; 3w &amp;=&amp; 0 .
+\end{alignat*}
+</div>
+<div class="para">So we compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\RREF\left[\begin{array}{cccc|c} 1 &amp; 3 &amp; 2 &amp; -3 &amp; 0 \\ 2 &amp; 4 &amp; 6 &amp; -10 &amp;0 \\ 1 &amp; 6 &amp; -1 &amp; 3 &amp; 0 \end{array}\right]
+= \left[\begin{array}{cccc|c} 1 &amp; 0 &amp; 5 &amp; -9 &amp; 0 \\ 0 &amp; 1 &amp; -1 &amp; 2 &amp; 0  \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right].
+\end{equation*}
+</div>
+<div class="para">Then, letting <span class="process-math">\(z=a\)</span> and <span class="process-math">\(w=b\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ker T = \setBuilder{\left[\begin{array}{c}-5a+9b \\ a-2b \\ a \\ b \end{array}\right]}{a,b \in \IR}. 
+\end{equation*}
+</div>
 </div></li>
 <li>
 <div class="para logical">
-<div class="para">(Solution method 2) As for <span class="process-math">\(T\text{,}\)</span> we may choose the polynomial <span class="process-math">\(f(x)=x\)</span> and scalar <span class="process-math">\(c=2\text{.}\)</span> Then</div>
+<div class="para">Since <span class="process-math">\(\Im(T) = \vspan\left\{\left[\begin{array}{c}1 \\ 2 \\ 1 \end{array}\right], \left[\begin{array}{c} 3 \\ 4 \\ 6  \end{array}\right],
+\left[\begin{array}{c} 2 \\ 6 \\ -1 \end{array}\right], \left[\begin{array}{c} -3 \\ -10 \\ 3 \end{array}\right]\right\}\text{,}\)</span> we simply need to find a linearly independent subset of these four spanning vectors. So we compute</div>
 <div class="displaymath process-math">
 \begin{equation*}
-T(cf(x))=T(2x)=3(2x)'(2x)=3(2)(2x)=12x.
+\RREF \left[\begin{array}{cccc}1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]
+= \left[\begin{array}{cccc} 1 &amp; 0 &amp; 5 &amp; -9 \\ 0 &amp; 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right].
 \end{equation*}
+</div>
+<div class="para">Since the first two columns are pivot columns, they form a linearly independent spanning set, so a basis for <span class="process-math">\(\Im T\)</span> is <span class="process-math">\(\setList{\left[\begin{array}{c}1\\2\\1 \end{array}\right], \left[\begin{array}{c}3\\4\\6 \end{array}\right]}.\)</span>
 </div>
 </div>
 <div class="para logical">
-<div class="para">But on the other hand,</div>
+<div class="para">To find a basis for the kernel, note that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-cT(f(x))=2T(x)=2(3)(x)'(x)=2(3)(1)(x)=6x.
+\ker T = \setBuilder{\left[\begin{array}{c}-5a+9b \\ a-2b \\ a \\ b \end{array}\right]}{a,b \in \IR}
 \end{equation*}
 </div>
-<div class="para">Since this isn't the same polynomial, <span class="process-math">\(T\)</span> does not preserve multiplication and is therefore not a linear transformation.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \setBuilder{a \left[\begin{array}{c}-5 \\ 1 \\ 1  \\ 0 \end{array}\right]+b \left[\begin{array}{c} 9 \\ -2 \\ 0 \\ 1 \end{array}\right]}{a,b \in \IR}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \vspan\left\{ \left[\begin{array}{c} -5 \\ 1 \\ 1 \\ 0 \end{array}\right], \left[\begin{array}{c} 9 \\ -2 \\ 0 \\ 1 \end{array}\right]\right\}.
+\end{equation*}
+</div>
+<div class="para">so a basis for the kernel is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\setList{\left[\begin{array}{c}-5 \\ 1 \\ 1 \\ 0 \end{array}\right],
+\left[\begin{array}{c}9 \\ -2 \\ 0 \\ 1 \end{array}\right]}.
+\end{equation*}
+</div>
 </div>
 </li>
-</ul>
-</div></body>
+<li><div class="para">The dimension of the image (the rank) is <span class="process-math">\(2\text{,}\)</span> the dimension of the kernel (the nullity) is <span class="process-math">\(2\text{,}\)</span> and the dimension of the domain of <span class="process-math">\(T\)</span> is <span class="process-math">\(4\text{,}\)</span> so we see <span class="process-math">\(2+2=4\text{,}\)</span> which verifies that the sum of the rank and nullity of <span class="process-math">\(T\)</span> is the dimension of the domain of <span class="process-math">\(T\text{.}\)</span>
+</div></li>
+</ol></div></body>
 </html>
