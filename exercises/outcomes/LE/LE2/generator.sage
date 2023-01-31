@@ -14,9 +14,9 @@ class Generator(BaseGenerator):
         #Create an almost-RREF matrix by doing one row op to an RREF
         s=ZZ(choice([randrange(2,8)])*int(choice([-1,1])))
         # elementry
-        r=randrange(0,number_of_pivots)
-        rr=choice(list(range(0,r))+list(range(r+1,number_of_pivots)))
-        E=elementary_matrix(rows, row1=r, row2=rr, scale=s)
+        r=randrange(1,number_of_pivots)
+        rr=choice(list(range(0,r)))
+        E=elementary_matrix(rows, row1=rr, row2=r, scale=s)
         e_matrix=E*random_matrix(ZZ,rows,columns,algorithm='echelonizable',rank=number_of_pivots,upper_bound=13).rref()
         # diagonal
         E=elementary_matrix(rows, row1=randrange(0,number_of_pivots), scale=s)
