@@ -12,24 +12,28 @@
 </head>
 <body class="ignore-math">
 <article class="observation remark-like"><h4 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">6.1.13</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">6.1.25</span><span class="period">.</span>
 </h4>
-<div class="para">The fact that swapping columns multiplies determinants by a negative may be verified by adding and subtracting columns.</div>
+<div class="para">So we may compute the determinant of <span class="process-math">\(\left[\begin{array}{cc} 2 &amp; 4 \\ 2 &amp; 3 \end{array}\right]\)</span> by manipulating its rows/columns to reduce the matrix to <span class="process-math">\(I\text{:}\)</span>
+</div>
 <div class="displaymath process-math">
 \begin{align*}
-\det([\vec{v}\hspace{1em}\vec{w}])
+\det\left[\begin{array}{cc} 2 &amp; 4 \\ 2 &amp; 3 \end{array}\right]
 &amp;=
-\det([\vec{v}+\vec{w}\hspace{1em}\vec{w}])\\
+2 \det \left[\begin{array}{cc} 1 &amp; 2 \\ 2 &amp; 3 \end{array}\right]\\
 &amp;=
-\det([\vec{v}+\vec{w}\hspace{1em}\vec{w}-(\vec{v}+\vec{w})])\\
+%2 \det \left[\begin{array}{cc} 1 &amp; 2 \\ 2-2(1) &amp; 3-2(2)\end{array}\right]=
+2 \det \left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; -1 \end{array}\right]\\
 &amp;=
-\det([\vec{v}+\vec{w}\hspace{1em}-\vec{v}])\\
+%2(-1) \det \left[\begin{array}{cc} 1 &amp; -2 \\ 0 &amp; +1 \end{array}\right]=
+-2 \det \left[\begin{array}{cc} 1 &amp; -2 \\ 0 &amp; 1 \end{array}\right]\\
 &amp;=
-\det([\vec{v}+\vec{w}-\vec{v}\hspace{1em}-\vec{v}])\\
+%-2 \det \left[\begin{array}{cc} 1+2(0) &amp; -2+2(1) \\ 0 &amp; 1\end{array}\right] =
+-2 \det \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \end{array}\right]\\
 &amp;=
-\det([\vec{w}\hspace{1em}-\vec{v}])\\
-&amp;=
--\det([\vec{w}\hspace{1em}\vec{v}])
+%-2\det I = 
+%-2(1) = 
+-2
 \end{align*}
 </div></article><span class="incontext"><a href="GT1.html#observation-32" class="internal">in-context</a></span>
 </body>
