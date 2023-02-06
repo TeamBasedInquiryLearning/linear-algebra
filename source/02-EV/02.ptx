@@ -161,85 +161,83 @@ since <m>\IR^1=\setBuilder{cx}{c\in\IR}</m>.
         <p>
             Consider the question: Does every vector in <m>\IR^3</m> belong to 
     <m>\vspan\left\{\left[\begin{array}{c}1\\-1\\0\end{array}\right],
-    \left[\begin{array}{c}-2\\0\\1\end{array}\right]\right\}</m>? 
+    \left[\begin{array}{c}-2\\0\\1\end{array}\right],\left[\begin{array}{c}-2\\-2\\2\end{array}\right]\right\}</m>? 
         </p>
     </introduction>
     <task>
         <statement>
             <p>
+                Determine if <m>\left[\begin{array}{c} 7 \\ -3 \\ -2 \end{array}\right]</m> belongs to 
+                <m>\vspan\left\{\left[\begin{array}{c}1\\-1\\0\end{array}\right],
+                \left[\begin{array}{c}-2\\0\\1\end{array}\right],\left[\begin{array}{c}-2\\-2\\2\end{array}\right]\right\}</m>. 
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
                 Determine if <m>\left[\begin{array}{c} 2 \\ 5 \\ 7 \end{array}\right]</m> belongs to 
                 <m>\vspan\left\{\left[\begin{array}{c}1\\-1\\0\end{array}\right],
-                \left[\begin{array}{c}-2\\0\\1\end{array}\right]\right\}</m>. 
+                \left[\begin{array}{c}-2\\0\\1\end{array}\right],\left[\begin{array}{c}-2\\-2\\2\end{array}\right]\right\}</m>. 
             </p>
         </statement>
     </task>
     <task>
         <statement>
             <p>
-                Write a system of equations to determine if the arbitrary vector <m>\left[\begin{array}{c} y_1 \\ y_2 \\ y_3 \end{array}\right]</m> belongs to 
-                <m>\vspan\left\{\left[\begin{array}{c}1\\-1\\0\end{array}\right],
-                \left[\begin{array}{c}-2\\0\\1\end{array}\right]\right\}</m>. 
+We can say <m>\IR^3=\vspan\left\{\left[\begin{array}{c}1\\-1\\0\end{array}\right],
+\left[\begin{array}{c}-2\\0\\1\end{array}\right],\left[\begin{array}{c}-2\\-2\\2\end{array}\right]\right\}</m> provided the equation
+<me>x_1\left[\begin{array}{c}1\\-1\\0\end{array}\right]+
+    x_2\left[\begin{array}{c}-2\\0\\1\end{array}\right]+
+    x_3\left[\begin{array}{c}-2\\-2\\2\end{array}\right]=\vec{w}</me> has...
+    <ol marker="A.">
+        <li><em>at least one solution</em> for <em>every</em> vector <m>\vec w\in\IR^3</m>.</li>
+        <li><em>at least one solution</em> for <em>some</em> vector <m>\vec w\in\IR^3</m>.</li>
+        <li><em>no solutions</em> for <em>every</em> vector <m>\vec w\in\IR^3</m>.</li>
+        <li><em>no solutions</em> for <em>some</em> vector <m>\vec w\in\IR^3</m>.</li>
+    </ol>
             </p>
         </statement>
     </task>
     <task>
         <statement>
             <p>
-                Write down the simpler system of equations that results from computing the RREF of the corresponding augmented matrix.
-            </p>
+We're guaranteed at least one solution if the RREF of the corresponding augmented matrix has no contradictions;
+likewise, we have no solutions if the RREF corresponds to the contradiction <m>0=1</m>. Given
+<me>\left[\begin{array}{ccc|c}1&amp;-2&amp;-2&amp;\unknown\\-1&amp;0&amp;-2&amp;\unknown\\0&amp;1&amp;2&amp;\unknown\end{array}\right]\sim
+\left[\begin{array}{ccc|c}1&amp;0&amp;2&amp;\unknown\\0&amp;1&amp;2&amp;\unknown\\0&amp;0&amp;0&amp;\unknown\end{array}\right]</me>
+we may conclude that the set does not span all of <m>\IR^3</m> because...
+            <ol marker="A.">
+                <li>the row <m>[0\,1\,2\,|\,\unknown]</m> prevents a contradiction.</li>
+                <li>the row <m>[0\,1\,2\,|\,\unknown]</m> allows a contradiction.</li>
+                <li>the row <m>[0\,0\,0\,|\,\unknown]</m> prevents a contradiction.</li>
+                <li>the row <m>[0\,0\,0\,|\,\unknown]</m> allows a contradiction.</li>
+            </ol>
+        </p>
         </statement>
     </task>
 </activity>
 
-<observation>
-    <statement>
-        <p>
-            The vector equation 
-                <me>x_1 \left[\begin{array}{c}1\\-1\\0\end{array}\right]+x_2\left[\begin{array}{c}-2\\0\\1\end{array}\right] = 
-                                        \left[\begin{array}{c} y_1 \\ y_2 \\ y_3 \end{array}\right]</me> 
-            simplifies to the system of equations
-                <md alignat-columns='6' alignment="alignat">
-                    <mrow>
-                        x_1 &amp;  &amp;  &amp;+ y_2 &amp;  &amp;= 0
-                    </mrow>
-                    <mrow>
-                         &amp; x_2 &amp;  &amp; &amp;-y_3 &amp;= 0
-                    </mrow>
-                    <mrow> 
-                        &amp; &amp; y_1 &amp;+y_2 &amp; +2y_3   &amp; = 0
-                    </mrow>
-                </md>.
-            
-            This last equation gives a relation among the components of the vector <m>\left[\begin{array}{c} y_1 \\ y_2 \\ y_3 \end{array}\right]</m>
-            that must be satisfied for it to belong to the span.  Thus, we can conclude that 
-            <m>\vspan\left\{\left[\begin{array}{c}1\\-1\\0\end{array}\right],
-            \left[\begin{array}{c}-2\\0\\1\end{array}\right]\right\}</m> is <em>not</em> all of <m>\IR^3</m>, as we can find <em>some</em> vector that
-            does not satisfy the equation <m>y_1+y_2+2y_3=0</m>.
-        </p>
-    </statement>
-</observation>
-
-
 <fact>
     <statement>
         <p>
-  The set <m>\{\vec v_1,\dots,\vec v_m\}</m> fails to span all of <m>\IR^n</m>
+  The set <m>\{\vec v_1,\dots,\vec v_m\}</m> spans all of <m>\IR^n</m>
+  exactly when the vector equation
+  <me> x_1 \vec{v}_1 + \cdots x_m\vec{v}_m = \vec{w} </me>
+  is consistent for <em>every</em> vector <m>\vec{w}</m>.
+        </p>
+        <p>
+  Likewise, the set <m>\{\vec v_1,\dots,\vec v_m\}</m> fails to span all of <m>\IR^n</m>
   exactly when the vector equation
   <me> x_1 \vec{v}_1 + \cdots x_m\vec{v}_m = \vec{w} </me>
   is inconsistent for <em>some</em> vector <m>\vec{w}</m>.
         </p>
         <p>
-  Note that this happens exactly when <m>\RREF[\vec v_1\,\dots\,\vec v_m]</m> has a non-pivot row of zeros.
-  <me>\left[\begin{array}{cc}1&amp;-2\\-1&amp;0\\0&amp;1\end{array}\right]\sim
-  \left[\begin{array}{cc}1&amp;0\\0&amp;1\\0&amp;0\end{array}\right],</me>
-  as then 
-  <m>
-  \RREF\left[\begin{array}{ccccc}1&amp;-2&amp; -1 &amp; 0 &amp; 0\\-1&amp;0&amp; 0 &amp; -1 &amp; 0 \\0&amp;1&amp; 0 &amp; 0 &amp; -1\end{array}\right] </m>
-  must have a pivot in one of the last three columns.
-        </p>
-        <p>
-            Conversely, if <m>\RREF[\vec v_1\,\dots\,\vec v_m]</m> has a pivot in each row, there will not be a relation solely 
-            among <m>a, b, \text{and}\ c</m>, in which case <m>\vspan\left\{\vec{v}_1,\dots, \vec{v}_m\right\} = \IR^n</m>.
+  Note these two possibilities are decided based on whether or not
+  <m>\RREF[\vec v_1\,\dots\,\vec v_m]</m> has either all pivot rows, or at
+  least one non-pivot row (a row of zeroes):
+  <me>\left[\begin{array}{ccc|c}1&amp;-2&amp;-2\\-1&amp;0&amp;-2\\0&amp;1&amp;2\end{array}\right]\sim
+  \left[\begin{array}{ccc|c}1&amp;0&amp;2\\0&amp;1&amp;2\\0&amp;0&amp;0\end{array}\right]</me>.
         </p>
     </statement>
 </fact>
@@ -274,7 +272,7 @@ since <m>\IR^1=\setBuilder{cx}{c\in\IR}</m>.
 </sage>
 
 
-<activity estimated-time='10'>
+<!-- <activity estimated-time='10'>
     <introduction>
         <p>
   Consider the set of third-degree polynomials 
@@ -334,7 +332,7 @@ and the question <q>Does <m>M_{2,2} = \vspan S</m>?</q>
   </task>
 </activity>
 <sage language="octave">
-</sage>
+</sage> -->
 
 
 <activity estimated-time='5'>
