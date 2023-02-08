@@ -15,6 +15,9 @@ Write a statement involving the solutions of a vector equation
 that's equivalent to this claim.
                 </p>
             </content>
+            <outtro>
+                <p><q>The vector equation (...) has at least one solution.</q></p>
+            </outtro>
         </knowl>
         <knowl>
             <content>
@@ -22,6 +25,18 @@ that's equivalent to this claim.
 Determine if the statement you wrote is true or false.
                 </p>
             </content>
+            <outtro>
+                <!-- {{#lin_combo}} -->
+                    <p>
+The vector equation has at least one solution, so <m>{{v}}</m> is a linear combination.
+                    </p>
+                <!-- {{/lin_combo}} -->
+                <!-- {{^lin_combo}} -->
+                    <p>
+The vector equation has no solutions, so <m>{{v}}</m> is not a linear combination.
+                    </p>
+                <!-- {{/lin_combo}} -->
+            </outtro>
         </knowl>
         <knowl>
             <content>
@@ -30,6 +45,20 @@ If your statement was true, describe a linear combination of <m>{{veclist}}</m>
 that equals <m>{{v}}</m>.
                 </p>
             </content>
+            <outtro>
+                <!-- {{#lin_combo}} -->
+                    <p>
+                        <m>
+{{lin_combo_exp}} = {{v}}
+                        </m>
+                    </p>
+                <!-- {{/lin_combo}} -->
+                <!-- {{^lin_combo}} -->
+                    <p>
+                        N/A
+                    </p>
+                <!-- {{/lin_combo}} -->
+            </outtro>
         </knowl>
         <outtro>
             <p>
@@ -37,19 +66,6 @@ that equals <m>{{v}}</m>.
 \mathrm{RREF}\, {{A}} = {{rref}}
                 </m>
             </p>
-            <!-- {{#lin_combo}} -->
-                <p>
-<m>{{v}}</m> is a linear combination, for example:
-                    <m>
-{{lin_combo_exp}} = {{v}}
-                    </m>
-                </p>
-            <!-- {{/lin_combo}} -->
-            <!-- {{^lin_combo}} -->
-                <p>
-<m>{{v}}</m> is not a linear combination.
-                </p>
-            <!-- {{/lin_combo}} -->
         </outtro>
     </knowl>
     <!-- {{/vectors}} -->
