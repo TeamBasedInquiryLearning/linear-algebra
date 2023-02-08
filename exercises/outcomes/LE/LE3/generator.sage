@@ -17,11 +17,11 @@ class Generator(BaseGenerator):
             system = CheckIt.latex_system_from_matrix(m)
         else:
             system = vectorEquation(m)
+        simplified_system = CheckIt.latex_system_from_matrix(m.rref())
         systems = [{
             "count": "one solution",
             "system": system,
-            "matrix": m,
-            "rref": m.rref(),
+            "simplified_system": simplified_system,
             "solset": "\\left\\{"+latex(solution)+"\\right\\}",
         }]
 
@@ -45,11 +45,11 @@ class Generator(BaseGenerator):
             system = CheckIt.latex_system_from_matrix(m)
         else:
             system = vectorEquation(m)
+        simplified_system = CheckIt.latex_system_from_matrix(m.rref())
         systems += [{
             "count": "infinitely-many solutions",
             "system": system,
-            "matrix": m,
-            "rref": m.rref(),
+            "simplified_system": simplified_system,
         }]
 
         # no solutions
@@ -81,11 +81,11 @@ class Generator(BaseGenerator):
             system = CheckIt.latex_system_from_matrix(m)
         else:
             system = vectorEquation(m)
+        simplified_system = CheckIt.latex_system_from_matrix(m.rref())
         systems += [{
             "count": "no solutions",
             "system": system,
-            "matrix": m,
-            "rref": m.rref(),
+            "simplified_system": simplified_system,
             "solset": "\\emptyset"
         }]
 

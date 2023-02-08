@@ -17,18 +17,18 @@ class Generator(BaseGenerator):
             coeffs[p]*image_basis[p]
             for p in range(rank)
         ]))
-        matrix = A.augment(lin_combo, subdivide=True)
+        m = A.augment(lin_combo, subdivide=True)
         if choice([True,False]):
             system_label = "system"
-            system = CheckIt.latex_system_from_matrix(matrix)
+            system = CheckIt.latex_system_from_matrix(m)
         else:
             system_label = "vec_eq"
-            system = vectorEquation(matrix)
-        solset = CheckIt.latex_solution_set_from_matrix(matrix)
+            system = vectorEquation(m)
+        solset = CheckIt.latex_solution_set_from_matrix(m)
+        simplified_system = CheckIt.latex_system_from_matrix(m.rref())
         
         return {
             system_label: system,
-            "matrix": matrix,
-            "rref": matrix.rref(),
+            "simplified_system": simplified_system,
             "solset": solset,
         }
