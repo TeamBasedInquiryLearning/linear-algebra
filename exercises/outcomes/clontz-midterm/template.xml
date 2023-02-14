@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
+    <intro><p>Choose the most appropriate response for each question.</p></intro>
+    <!-- {{#questions}} -->
+    <!-- {{#LE1}} -->
+    <knowl>
+        <content>
+            <p>
+                Which of the following augmented matrices corresponds
+                to the following system of linear equations?
+                <me>
+{{system}}
+                </me>
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) <m>{{item}}</m></p></item>
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+                <!-- {{#correct}} -->
+            <p>({{letter}}) <m>{{item}}</m></p>
+                <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/LE1}} -->
+    <!-- {{#equivalent_matrix}} -->
+    <knowl>
+        <content>
+            <p>
+                Which of the following augmented matrices is equivalent
+                to the following matrix?
+                <me>
+{{A}}
+                </me>
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) <m>{{item}}</m></p></item>
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+                <!-- {{#correct}} -->
+            <p>({{letter}}) <m>{{item}}</m></p>
+                <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/equivalent_matrix}} -->
+    <!-- {{#LE2}} -->
+    <knowl>
+        <content>
+            <p>
+                Find
+                <m>
+\mathrm{RREF}{{A}}
+                </m>.
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) <m>{{item}}</m></p></item>
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+                <!-- {{#correct}} -->
+            <p>({{letter}}) <m>{{item}}</m></p>
+                <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/LE2}} -->
+    <!-- {{#LE3-4}} -->
+    <knowl>
+        <content>
+            <p>
+                Find the solution set for
+                <me>
+{{system}}
+                </me>
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) <m>{{item}}</m></p></item>
+                <!-- {{/choices}} -->
+                <item><p>(d) <m>\emptyset</m></p></item>
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+                <!-- {{#correct}} -->
+            <p>({{letter}}) <m>{{item}}</m></p>
+                <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/LE3-4}} -->
+    <!-- {{#LE3empty}} -->
+    <knowl>
+        <content>
+            <p>
+                Find the solution set for
+                <me>
+{{system}}
+                </me>
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) <m>{{item}}</m></p></item>
+                <!-- {{/choices}} -->
+                <item><p>(d) <m>\emptyset</m></p></item>
+            </list>
+        </content>
+        <outtro>
+            <p>(d) <m>\emptyset</m></p>
+        </outtro>
+    </knowl>
+    <!-- {{/LE3empty}} -->
+    <!-- {{#EV1}} -->
+    <knowl>
+        <content>
+            <p>True or false? <m>{{v}}</m>is a linear combination of the vectors <m>{{veclist}}</m>.</p>
+            <list><item><p>(a) True</p></item><item><p>(b) False</p></item></list>
+        </content>
+        <outtro>
+            <!-- {{#lin_combo}} -->
+                <p>(a) True</p>
+            <!-- {{/lin_combo}} -->
+            <!-- {{^lin_combo}} -->
+                <p>(b) False</p>
+            <!-- {{/lin_combo}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/EV1}} -->
+    <!-- {{#EV2}} -->
+    <knowl>
+        <content>
+            <p>
+True or false? The set of vectors <m>{{vecset}}</m>
+spans <m>\mathbb R^4</m>.
+            </p>
+            <list>
+                <item><p>(a) True.</p></item>
+                <item><p>(b) False.</p></item>
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#spans}} -->
+                <p>(a) True.</p>
+            <!-- {{/spans}} -->
+            <!-- {{^spans}} -->
+                <p>(b) False.</p>
+            <!-- {{/spans}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/EV2}} -->
+    <!-- {{#EV3}} -->
+    <knowl>
+        <content>
+            <p>
+Which of the following is true about the following two sets of Euclidean vectors?
+                <me>
+U={{U}} \hspace{2em}  W={{W}}
+                </me>
+            </p>
+            <list>
+                <item><p>(a) <m>U</m> is a subspace of <m>\mathbb R^3</m>, <m>W</m> is not.</p></item>
+                <item><p>(b) <m>W</m> is a subspace of <m>\mathbb R^3</m>, <m>U</m> is not.</p></item>
+                <item><p>(c) <m>U</m> and <m>W</m> are both subspaces of <m>\mathbb R^3</m>.</p></item>
+                <item><p>(d) Neither <m>U</m> nor <m>W</m> is a subspace of <m>\mathbb R^3</m>.</p></item>
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#U_is_subspace}} -->
+            <p>(a) <m>U</m> is a subspace of <m>\mathbb R^3</m>, <m>W</m> is not.</p>
+            <!-- {{/U_is_subspace}} -->
+            <!-- {{^U_is_subspace}} -->
+            <p>(b) <m>W</m> is a subspace of <m>\mathbb R^3</m>, <m>U</m> is not.</p>
+            <!-- {{/U_is_subspace}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/EV3}} -->
+    <!-- {{#EV4}} -->
+    <knowl>
+        <content>
+            <p>
+True or false? The set of vectors <m>{{vecset}}</m>
+is linearly independent.
+            </p>
+            <list>
+                <item><p>(a) True.</p></item>
+                <item><p>(b) False.</p></item>
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#independent}} -->
+                <p>(a) True.</p>
+            <!-- {{/independent}} -->
+            <!-- {{^independent}} -->
+                <p>(b) False.</p>
+            <!-- {{/independent}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/EV4}} -->
+    <!-- {{/questions}} -->
+</knowl>
