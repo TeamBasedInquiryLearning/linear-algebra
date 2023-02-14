@@ -19,7 +19,7 @@
     S=\left\{
   \left[\begin{array}{c}2\\3\\1\end{array}\right],
   \left[\begin{array}{c}1\\1\\4\end{array}\right]
-  \right\} \hspace{1em}
+  \right\} \hspace{3em}
     T=\left\{
   \left[\begin{array}{c}2\\3\\1\end{array}\right],
   \left[\begin{array}{c}1\\1\\4\end{array}\right],
@@ -73,64 +73,105 @@
 </definition>
 <activity estimated-time='10'>
     <introduction>
-    <p>Begin with 3 vectors in <m>\IR^3</m>
-        <me>\vec v_1=\left[\begin{array}{c}1 \\ 0 \\ 0\end{array}\right],
-    \vec v_2=\left[\begin{array}{c}0 \\ 1 \\ 0\end{array}\right],
+    <p>Consider the following three vectors in <m>\IR^3</m>:
+        <me>\vec v_1=\left[\begin{array}{c}-2 \\ 0 \\ 0\end{array}\right],
+    \vec v_2=\left[\begin{array}{c}1 \\ 3 \\ 0\end{array}\right],
    \text{ and }
-    \vec v_3=\left[\begin{array}{c}0 \\ 0 \\ 1\end{array}\right]
+    \vec v_3=\left[\begin{array}{c}-2 \\ 5 \\ 4\end{array}\right]
   </me>.
         </p>
     </introduction>
-    <task><p>Choose three non-zero scalars, <m>a,b</m>, and <m>c</m>. Let <m> \vec w = a\vec v_1 + b \vec v_2 + c \vec v_3</m>. Is the set <m>\{\vec v_1,\vec v_2,\vec v_3,\vec w\}</m> linearly dependent?</p></task>
+    <task>
+        <p>
+            Let <m> \vec w = 3\vec v_1 - \vec v_2 - 5 \vec v_3 = \left[\begin{array}{c}\unknown \\ \unknown \\ \unknown\end{array}\right]</m>. 
+            The set <m>\{\vec v_1,\vec v_2,\vec v_3,\vec w\}</m> is...
+            <ol marker="A.">
+                <li><p>linearly dependent: at least one vector is a linear combination of others</p></li>
+                <li><p>linearly independent: no vector is a linear combination of others</p></li>
+            </ol>
+        </p>
+    </task>
     <task> 
         <p>
        Find <me>\RREF \left[\begin{array}{cccc}
         \vdots &amp; \vdots &amp;\vdots &amp;\vdots \\
         \vec v_1 &amp; \vec v_2  &amp; \vec v_3  &amp; \vec w \\
         \vdots &amp;\vdots &amp;\vdots &amp;\vdots
-            \end{array}\right].</me></p>
-         <p>   
-        What does this tell you about solution set for the vector equation 
-        <m>x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3 + x_4\vec w=\vec{0}</m>?
+            \end{array}\right]= 
+        \RREF \left[\begin{array}{cccc}
+        -2 &amp; 1 &amp;-2 &amp; \unknown \\
+        0 &amp; 3  &amp; 5 &amp; \unknown  \\
+        0 &amp;0 &amp;4 &amp; \unknown 
+            \end{array}\right]=  \unknown .</me>
+        </p>
+        <p>   
+            What does this tell you about solution set for the vector equation 
+            <m>x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3 + x_4\vec w=\vec{0}</m>?
+            <ol marker="A.">
+                <li>
+                    <p>
+                    It is inconsistent.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                    It is consistent with one solution.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                    It is consistent with infinitely many solutions.
+                    </p>
+                </li>
+            </ol>
         </p>
         </task>
+        <task> 
+            <p>
+                Which of these might explain the connection?
+                <ol marker="A.">
+                    <li>
+                        <p>
+A pivot column establishes linear independence and creates a
+contradiction.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+A non-pivot column both describes a linear combination and
+denotes the number of solutions.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+A pivot row describes the bound variables and prevents
+a contradiction.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+A non-pivot row prevents contradictions and makes the vector
+equation solvable.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+            </task>
     </activity>
-
-<activity estimated-time='10'>
-    <statement>
-	<p>
-  Let <m>\vec{v}_1,\vec{v}_2,\vec{v}_3 </m> be vectors in <m>\mathbb R^n</m>.
-  Suppose <m>3\vec{v}_1-5\vec{v}_2=\vec{v}_3</m>, so the set
-  <m>\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}</m> is linearly dependent.
-  Which of the following is true of the vector equation <m>x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3=\vec{0}</m>?
-	</p>
-  <ol marker="A.">
-<li>
-    <p>
-    It is consistent with one solution.
-    </p>
-  </li>
-<li>
-    <p>
-    It is consistent with infinitely many solutions.
-    </p>
-  </li>
-<li>
-    <p>
-    It is inconsistent.
-    </p>
-  </li>
-  </ol>
-    </statement>
-</activity>
 
 <fact>
     <statement>
         <p>
   For any vector space,
   the set <m>\{\vec v_1,\dots\vec v_n\}</m> is linearly dependent if and only
-  if the vector equation <m>x_1\vec v_1+\dots+x_n\vec v_n=\vec{0}</m> is consistent with
+  if the vector equation <m>x_1\vec v_1+ x_2 \vec v_2+\dots+x_n\vec v_n=\vec{0}</m> is consistent with
   infinitely many solutions.
+        </p>
+        <p>
+   Likewise, the set of vectors
+        <m>\{\vec v_1,\dots\vec v_n\}</m> is linearly independent 
+        if and only the vector equation <me>x_1\vec v_1+ x_2 \vec v_2 + \cdots + x_n\vec v_n = 0</me> 
+        has exactly one solution (<m>x_1 = x_2 = \cdots  = x_n = 0</m>).
         </p>
     </statement>
 </fact>
@@ -164,75 +205,109 @@
 <sage language="octave">
 </sage>
 
-<observation>
-        <statement>
-            <p>
-  A set of Euclidean vectors
-  <m>\{\vec v_1,\dots\vec v_n\}</m> is linearly dependent if and only
-  if <m>\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]</m>
-  has a column without a pivot position.
-            </p>
-        </statement>
-</observation>
-
-
 <observation xml:id="def_of_LI">
     <statement>
         <p>
   Compare the following results:
         </p>
   <ul>
-<li>
-    <p>
-    A set of <m>\IR^m</m> vectors
-  <m>\{\vec v_1,\dots\vec v_n\}</m> is linearly independent if and only
-  if <m>\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]</m>
-  has all pivot columns.
-    </p>
-  </li>
-<li>
-    <p>
-    A set of <m>\IR^m</m> vectors
-  <m>\{\vec v_1,\dots\vec v_n\}</m> spans <m>\IR^m</m> if and only
-  if <m>\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]</m>
-  has all pivot rows.
-    </p>
-  </li>
-  <li><p> A set of <m>\IR^m</m> vectors
-  <m>\{\vec v_1,\dots\vec v_n\}</m> is linearly independent if and only the vector equation <me>c_1\vec v_1+ c_2 \vec v_2 + \cdots + c_n\vec v_n = 0</me> has exactly one solution, with <m>c_1 = c_2 = \cdots  = c_n = 0</m>.
-      </p>
+    <li>
+        <p>
+        A set of <m>\IR^m</m> vectors
+      <m>\{\vec v_1,\dots\vec v_n\}</m> is linearly independent if and only
+      if <m>\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]</m>
+      has all pivot <em>columns</em>.
+        </p>
       </li>
+      <li>
+          <p>
+          A set of <m>\IR^m</m> vectors
+        <m>\{\vec v_1,\dots\vec v_n\}</m> is linearly dependent if and only
+        if <m>\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]</m>
+        has at least one non-pivot <em>column</em>.
+          </p>
+        </li>
+        <li>
+            <p>
+            A set of <m>\IR^m</m> vectors
+          <m>\{\vec v_1,\dots\vec v_n\}</m> spans <m>\IR^m</m> if and only
+          if <m>\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]</m>
+          has all pivot <em>rows</em>.
+            </p>
+          </li>
+      <li>
+          <p>
+          A set of <m>\IR^m</m> vectors
+        <m>\{\vec v_1,\dots\vec v_n\}</m> fails to span <m>\IR^m</m> if and only
+        if <m>\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]</m>
+        has at least one non-pivot <em>row</em>.
+          </p>
+        </li>
   </ul>
     </statement>
 </observation>
 
-<activity estimated-time='5'>
-    <introduction>
-        <p>
-  Consider whether the set of Euclidean vectors <m>\left\{
-  \left[\begin{array}{c}-4\\2\\3\\0\\-1\end{array}\right],
-  \left[\begin{array}{c}1\\2\\0\\0\\3\end{array}\right],
-  \left[\begin{array}{c}1\\10\\10\\2\\6\end{array}\right],
-  \left[\begin{array}{c}3\\4\\7\\2\\1\end{array}\right]
-  \right\}</m> is linearly dependent or linearly independent.
-        </p>
-    </introduction>
-<task>
-    <p>
-Reinterpret this question as an appropriate question about solutions to a vector equation.
-    </p>
-</task>
-<task>
-    <p>
-Use the solution to this question to answer the original question.
-    </p>
-</task>
+<activity>
+      <task>
+        <introduction>
+          <p> Write a statement involving the solutions of a vector equation that's equivalent to each claim: </p>
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                    <q>The set of vectors <m>\left\{ \left[\begin{array}{c}
+                    1 \\
+                    -1 \\
+                    0 \\
+                    -1
+                    \end{array}\right] , \left[\begin{array}{c}
+                    5 \\
+                    5 \\
+                    3 \\
+                    1
+                    \end{array}\right] , \left[\begin{array}{c}
+                    9 \\
+                    11 \\
+                    6 \\
+                    3
+                    \end{array}\right] \right\}</m> is linearly <em>independent</em>.</q>
+                    </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+                <p>
+                    <q>The set of vectors <m>\left\{ \left[\begin{array}{c}
+                    1 \\
+                    -1 \\
+                    0 \\
+                    -1
+                    \end{array}\right] , \left[\begin{array}{c}
+                    5 \\
+                    5 \\
+                    3 \\
+                    1
+                    \end{array}\right] , \left[\begin{array}{c}
+                    9 \\
+                    11 \\
+                    6 \\
+                    3
+                    \end{array}\right] \right\}</m> is linearly <em>dependent</em>.</q>
+                </p>
+            </statement>
+          </task>
+      </task>
+      <task>
+        <statement>
+          <p> Explain how to determine which of these statements is true. </p>
+        </statement>
+      </task>
 </activity>
 
 <sage language="octave">
 </sage>
 
-<activity estimated-time='10'>
+<!-- <activity estimated-time='10'>
     <introduction>
         <p>
   Consider whether the set of polynomials <m>\left\{
@@ -253,7 +328,7 @@ Use the solution to this question to answer the original question.
 </activity>
 
 <sage language="octave">
-</sage>
+</sage> -->
 
 <activity estimated-time='5'>
     <statement>
@@ -285,7 +360,7 @@ What is the largest number of <m>\IR^4</m> vectors that can form a linearly inde
     </statement>
 </activity>
 
-<activity estimated-time='5'>
+<!-- <activity estimated-time='5'>
     <statement>
         <p>
 What is the largest number of 
@@ -315,9 +390,9 @@ vectors that can form a linearly independent set?
 </li>
 </ol>
     </statement>
-</activity>
+</activity> -->
 
-<activity estimated-time='5'>
+<!-- <activity estimated-time='5'>
     <statement>
         <p>
 What is the largest number of 
@@ -348,11 +423,24 @@ vectors that can form a linearly independent set?
 </ol>
     </statement>
 </activity>
-    
+     -->
 <activity estimated-time="5">
     <statement>
         <p>
-    Is is possible for the set of vectors <m>\{\vec v_1, \vec v_2,\ldots, \vec v_n, \vec 0\}</m> in a vector space <m> V </m> to be linearly independent? Recall that <m>\vec 0</m> represents the additive identity.
+    Is is possible for the set of Euclidean vectors <m>\{\vec v_1, \vec v_2,\ldots, \vec v_n, \vec 0\}</m>
+    to be linearly independent?
+    <ol marker="A." cols="2">
+    <li>
+        <p>
+            Yes
+        </p>
+    </li>
+    <li>
+        <p>
+            No
+        </p>
+    </li>
+    </ol>
         </p>
     </statement>
 </activity>
