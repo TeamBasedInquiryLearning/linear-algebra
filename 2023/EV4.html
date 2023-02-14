@@ -626,7 +626,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 S=\left\{
 \left[\begin{array}{c}2\\3\\1\end{array}\right],
 \left[\begin{array}{c}1\\1\\4\end{array}\right]
-\right\} \hspace{1em}
+\right\} \hspace{3em}
 T=\left\{
 \left[\begin{array}{c}2\\3\\1\end{array}\right],
 \left[\begin{array}{c}1\\1\\4\end{array}\right],
@@ -652,20 +652,26 @@ T=\left\{
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
 </h4>
 <div class="introduction" id="introduction-25"><div class="para logical" id="p-375">
-<div class="para">Begin with 3 vectors in <span class="process-math">\(\IR^3\)</span>
+<div class="para">Consider the following three vectors in <span class="process-math">\(\IR^3\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vec v_1=\left[\begin{array}{c}1 \\ 0 \\ 0\end{array}\right],
-\vec v_2=\left[\begin{array}{c}0 \\ 1 \\ 0\end{array}\right],
+\vec v_1=\left[\begin{array}{c}-2 \\ 0 \\ 0\end{array}\right],
+\vec v_2=\left[\begin{array}{c}1 \\ 3 \\ 0\end{array}\right],
 \text{ and }
-\vec v_3=\left[\begin{array}{c}0 \\ 0 \\ 1\end{array}\right]\text{.}
+\vec v_3=\left[\begin{array}{c}-2 \\ 5 \\ 4\end{array}\right]\text{.}
 \end{equation*}
 </div>
 </div></div>
 <article class="task exercise-like" id="task-58"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-376">Choose three non-zero scalars, <span class="process-math">\(a,b\text{,}\)</span> and <span class="process-math">\(c\text{.}\)</span> Let <span class="process-math">\(\vec w = a\vec v_1 + b \vec v_2 + c \vec v_3\text{.}\)</span> Is the set <span class="process-math">\(\{\vec v_1,\vec v_2,\vec v_3,\vec w\}\)</span> linearly dependent?</div></article><article class="task exercise-like" id="task-59"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para logical" id="p-377">
+<div class="para logical" id="p-376">
+<div class="para">Let <span class="process-math">\(\vec w = 3\vec v_1 - \vec v_2 - 5 \vec v_3 = \left[\begin{array}{c}\unknown \\ \unknown \\ \unknown\end{array}\right]\text{.}\)</span> The set <span class="process-math">\(\{\vec v_1,\vec v_2,\vec v_3,\vec w\}\)</span> is...</div>
+<ol class="upper-alpha">
+<li id="li-232"><div class="para" id="p-377">linearly dependent: at least one vector is a linear combination of others</div></li>
+<li id="li-233"><div class="para" id="p-378">linearly independent: no vector is a linear combination of others</div></li>
+</ol>
+</div></article><article class="task exercise-like" id="task-59"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-379">
 <div class="para">Find</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -673,26 +679,47 @@ T=\left\{
 \vdots &amp; \vdots &amp;\vdots &amp;\vdots \\
 \vec v_1 &amp; \vec v_2  &amp; \vec v_3  &amp; \vec w \\
 \vdots &amp;\vdots &amp;\vdots &amp;\vdots
-\end{array}\right].
+\end{array}\right]= 
+\RREF \left[\begin{array}{cccc}
+-2 &amp; 1 &amp;-2 &amp; \unknown \\
+0 &amp; 3  &amp; 5 &amp; \unknown  \\
+0 &amp;0 &amp;4 &amp; \unknown 
+\end{array}\right]=  \unknown .
 \end{equation*}
 </div>
 </div>
-<div class="para" id="p-378">What does this tell you about solution set for the vector equation <span class="process-math">\(x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3 + x_4\vec w=\vec{0}\text{?}\)</span>
-</div></article></article><article class="activity project-like" id="activity-44"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
-</h4>
-<div class="para" id="p-379">Let <span class="process-math">\(\vec{v}_1,\vec{v}_2,\vec{v}_3 \)</span> be vectors in <span class="process-math">\(\mathbb R^n\text{.}\)</span> Suppose <span class="process-math">\(3\vec{v}_1-5\vec{v}_2=\vec{v}_3\text{,}\)</span> so the set <span class="process-math">\(\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}\)</span> is linearly dependent. Which of the following is true of the vector equation <span class="process-math">\(x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3=\vec{0}\text{?}\)</span>
-</div> <ol class="upper-alpha">
-<li id="li-232"><div class="para" id="p-380">It is consistent with one solution.</div></li>
-<li id="li-233"><div class="para" id="p-381">It is consistent with infinitely many solutions.</div></li>
-<li id="li-234"><div class="para" id="p-382">It is inconsistent.</div></li>
-</ol></article><article class="fact theorem-like" id="fact-7"><h4 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
-</h4>
-<div class="para" id="p-383">For any vector space, the set <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly dependent if and only if the vector equation <span class="process-math">\(x_1\vec v_1+\dots+x_n\vec v_n=\vec{0}\)</span> is consistent with infinitely many solutions.</div></article><article class="activity project-like" id="activity-45"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span>
-</h4>
+<div class="para logical" id="p-380">
+<div class="para">What does this tell you about solution set for the vector equation <span class="process-math">\(x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3 + x_4\vec w=\vec{0}\text{?}\)</span>
+</div>
+<ol class="upper-alpha">
+<li id="li-234"><div class="para" id="p-381">It is inconsistent.</div></li>
+<li id="li-235"><div class="para" id="p-382">It is consistent with one solution.</div></li>
+<li id="li-236"><div class="para" id="p-383">It is consistent with infinitely many solutions.</div></li>
+</ol>
+</div></article><article class="task exercise-like" id="task-60"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para logical" id="p-384">
+<div class="para">Which of these might explain the connection?</div>
+<ol class="upper-alpha">
+<li id="li-237"><div class="para" id="p-385">A pivot column establishes linear independence and creates a contradiction.</div></li>
+<li id="li-238"><div class="para" id="p-386">A non-pivot column both describes a linear combination and denotes the number of solutions.</div></li>
+<li id="li-239"><div class="para" id="p-387">A pivot row describes the bound variables and prevents a contradiction.</div></li>
+<li id="li-240"><div class="para" id="p-388">A non-pivot row prevents contradictions and makes the vector equation solvable.</div></li>
+</ol>
+</div></article></article><article class="fact theorem-like" id="fact-7"><h4 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-389">For any vector space, the set <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly dependent if and only if the vector equation <span class="process-math">\(x_1\vec v_1+ x_2 \vec v_2+\dots+x_n\vec v_n=\vec{0}\)</span> is consistent with infinitely many solutions.</div> <div class="para logical" id="p-390">
+<div class="para">Likewise, the set of vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly independent if and only the vector equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_1\vec v_1+ x_2 \vec v_2 + \cdots + x_n\vec v_n = 0
+\end{equation*}
+</div>
+<div class="para">has exactly one solution (<span class="process-math">\(x_1 = x_2 = \cdots  = x_n = 0\)</span>).</div>
+</div></article><article class="activity project-like" id="activity-44"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-391">
 <div class="para">Find</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -718,108 +745,89 @@ S=\left\{
 </div>
 <div class="para">is linearly dependent (the part that shows its linear system has infinitely many solutions).</div>
 </div></article><pre class="ptx-sagecell sagecell-octave" id="sage-11"><script type="text/x-sage"></script></pre>
-<article class="observation remark-like" id="observation-5"><h4 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span>
+<article class="observation remark-like" id="def_of_LI"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-385">A set of Euclidean vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly dependent if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has a column without a pivot position.</div></article><article class="observation remark-like" id="def_of_LI"><h4 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span>
+<div class="para" id="p-392">Compare the following results:</div> <ul class="disc">
+<li id="li-241"><div class="para" id="p-393">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly independent if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has all pivot <em class="emphasis">columns</em>.</div></li>
+<li id="li-242"><div class="para" id="p-394">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly dependent if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has at least one non-pivot <em class="emphasis">column</em>.</div></li>
+<li id="li-243"><div class="para" id="p-395">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> spans <span class="process-math">\(\IR^m\)</span> if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has all pivot <em class="emphasis">rows</em>.</div></li>
+<li id="li-244"><div class="para" id="p-396">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> fails to span <span class="process-math">\(\IR^m\)</span> if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has at least one non-pivot <em class="emphasis">row</em>.</div></li>
+</ul></article><article class="activity project-like" id="activity-45"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-386">Compare the following results:</div> <ul class="disc">
-<li id="li-235"><div class="para" id="p-387">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly independent if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has all pivot columns.</div></li>
-<li id="li-236"><div class="para" id="p-388">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> spans <span class="process-math">\(\IR^m\)</span> if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has all pivot rows.</div></li>
-<li id="li-237"><div class="para logical" id="p-389">
-<div class="para">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly independent if and only the vector equation</div>
-<div class="displaymath process-math">
-\begin{equation*}
-c_1\vec v_1+ c_2 \vec v_2 + \cdots + c_n\vec v_n = 0
-\end{equation*}
-</div>
-<div class="para">has exactly one solution, with <span class="process-math">\(c_1 = c_2 = \cdots  = c_n = 0\text{.}\)</span>
-</div>
-</div></li>
-</ul></article><article class="activity project-like" id="activity-46"><h4 class="heading">
+<article class="task exercise-like" id="task-61"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="introduction" id="introduction-26"><div class="para" id="p-397">Write a statement involving the solutions of a vector equation that's equivalent to each claim:</div></div>
+<article class="task exercise-like" id="task-62"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<div class="para" id="p-398">“The set of vectors <span class="process-math">\(\left\{ \left[\begin{array}{c}
+1 \\
+-1 \\
+0 \\
+-1
+\end{array}\right] , \left[\begin{array}{c}
+5 \\
+5 \\
+3 \\
+1
+\end{array}\right] , \left[\begin{array}{c}
+9 \\
+11 \\
+6 \\
+3
+\end{array}\right] \right\}\)</span> is linearly <em class="emphasis">independent</em>.”</div></article><article class="task exercise-like" id="task-63"><h6 class="heading"><span class="codenumber">(ii)</span></h6>
+<div class="para" id="p-399">“The set of vectors <span class="process-math">\(\left\{ \left[\begin{array}{c}
+1 \\
+-1 \\
+0 \\
+-1
+\end{array}\right] , \left[\begin{array}{c}
+5 \\
+5 \\
+3 \\
+1
+\end{array}\right] , \left[\begin{array}{c}
+9 \\
+11 \\
+6 \\
+3
+\end{array}\right] \right\}\)</span> is linearly <em class="emphasis">dependent</em>.”</div></article></article><article class="task exercise-like" id="task-64"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-400">Explain how to determine which of these statements is true.</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-12"><script type="text/x-sage"></script></pre>
+<article class="activity project-like" id="activity-46"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-401">What is the largest number of <span class="process-math">\(\IR^4\)</span> vectors that can form a linearly independent set?</div> <ol class="upper-alpha cols2">
+<li id="li-245"><div class="para" id="p-402"><span class="process-math">\(\displaystyle 3\)</span></div></li>
+<li id="li-246"><div class="para" id="p-403"><span class="process-math">\(\displaystyle 4\)</span></div></li>
+<li id="li-247"><div class="para" id="p-404"><span class="process-math">\(\displaystyle 5\)</span></div></li>
+<li id="li-248"><div class="para" id="p-405">You can have infinitely many vectors and still be linearly independent.</div></li>
+</ol></article><article class="activity project-like" id="activity-47"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.9</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-26"><div class="para" id="p-390">Consider whether the set of Euclidean vectors <span class="process-math">\(\left\{
-\left[\begin{array}{c}-4\\2\\3\\0\\-1\end{array}\right],
-\left[\begin{array}{c}1\\2\\0\\0\\3\end{array}\right],
-\left[\begin{array}{c}1\\10\\10\\2\\6\end{array}\right],
-\left[\begin{array}{c}3\\4\\7\\2\\1\end{array}\right]
-\right\}\)</span> is linearly dependent or linearly independent.</div></div>
-<article class="task exercise-like" id="task-60"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-391">Reinterpret this question as an appropriate question about solutions to a vector equation.</div></article><article class="task exercise-like" id="task-61"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-392">Use the solution to this question to answer the original question.</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-12"><script type="text/x-sage"></script></pre>
-<article class="activity project-like" id="activity-47"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.10</span><span class="period">.</span>
-</h4>
-<div class="introduction" id="introduction-27"><div class="para" id="p-393">Consider whether the set of polynomials <span class="process-math">\(\left\{
-x^3+1,x^2+2x,x^2+7x+4
-\right\}\)</span> is linearly dependent or linearly independent.</div></div>
-<article class="task exercise-like" id="task-62"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-394">Reinterpret this question as an appropriate question about solutions to a polynomial equation.</div></article><article class="task exercise-like" id="task-63"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-395">Use the solution to this question to answer the original question.</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-13"><script type="text/x-sage"></script></pre>
-<article class="activity project-like" id="activity-48"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.11</span><span class="period">.</span>
-</h4>
-<div class="para" id="p-396">What is the largest number of <span class="process-math">\(\IR^4\)</span> vectors that can form a linearly independent set?</div> <ol class="upper-alpha cols2">
-<li id="li-238"><div class="para" id="p-397"><span class="process-math">\(\displaystyle 3\)</span></div></li>
-<li id="li-239"><div class="para" id="p-398"><span class="process-math">\(\displaystyle 4\)</span></div></li>
-<li id="li-240"><div class="para" id="p-399"><span class="process-math">\(\displaystyle 5\)</span></div></li>
-<li id="li-241"><div class="para" id="p-400">You can have infinitely many vectors and still be linearly independent.</div></li>
-</ol></article><article class="activity project-like" id="activity-49"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.12</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="p-401">
-<div class="para">What is the largest number of</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\P_4=\setBuilder{ax^4+bx^3+cx^2+dx+e}{a,b,c,d,e\in\IR}
-\end{equation*}
-</div>
-<div class="para">vectors that can form a linearly independent set?</div>
-</div> <ol class="upper-alpha cols2">
-<li id="li-242"><div class="para" id="p-402"><span class="process-math">\(\displaystyle 3\)</span></div></li>
-<li id="li-243"><div class="para" id="p-403"><span class="process-math">\(\displaystyle 4\)</span></div></li>
-<li id="li-244"><div class="para" id="p-404"><span class="process-math">\(\displaystyle 5\)</span></div></li>
-<li id="li-245"><div class="para" id="p-405">You can have infinitely many vectors and still be linearly independent.</div></li>
-</ol></article><article class="activity project-like" id="activity-50"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.13</span><span class="period">.</span>
-</h4>
 <div class="para logical" id="p-406">
-<div class="para">What is the largest number of</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\P=\setBuilder{f(x)}{f(x)\text{ is any polynomial}}
-\end{equation*}
-</div>
-<div class="para">vectors that can form a linearly independent set?</div>
-</div> <ol class="upper-alpha cols2">
-<li id="li-246"><div class="para" id="p-407"><span class="process-math">\(\displaystyle 3\)</span></div></li>
-<li id="li-247"><div class="para" id="p-408"><span class="process-math">\(\displaystyle 4\)</span></div></li>
-<li id="li-248"><div class="para" id="p-409"><span class="process-math">\(\displaystyle 5\)</span></div></li>
-<li id="li-249"><div class="para" id="p-410">You can have infinitely many vectors and still be linearly independent.</div></li>
-</ol></article><article class="activity project-like" id="activity-51"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.14</span><span class="period">.</span>
-</h4>
-<div class="para" id="p-411">Is is possible for the set of vectors <span class="process-math">\(\{\vec v_1, \vec v_2,\ldots, \vec v_n, \vec 0\}\)</span> in a vector space <span class="process-math">\(V \)</span> to be linearly independent? Recall that <span class="process-math">\(\vec 0\)</span> represents the additive identity.</div></article></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
+<div class="para">Is is possible for the set of Euclidean vectors <span class="process-math">\(\{\vec v_1, \vec v_2,\ldots, \vec v_n, \vec 0\}\)</span> to be linearly independent?</div>
+<ol class="upper-alpha cols2">
+<li id="li-249"><div class="para" id="p-407">Yes</div></li>
+<li id="li-250"><div class="para" id="p-408">No</div></li>
+</ol>
+</div></article></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.4.2</span> <span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-15"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-EV4" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/EZ9BX1z-H4Y?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15<span class="period">.</span></span><span class="space"> </span>Video: Linear independence</figcaption></figure></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.4.3</span> <span class="title">Slideshow</span>
 </h3>
-<div class="para" id="p-412">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/EV4.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/EV4.slides.html</code></a>.</div></section><section class="exercises" id="exercises-8"><h3 class="heading hide-type">
+<div class="para" id="p-409">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/EV4.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/EV4.slides.html</code></a>.</div></section><section class="exercises" id="exercises-8"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">2.4.4</span> <span class="title">Exercises</span>
 </h3>
-<div class="para" id="p-413">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV4/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV4/</code></a>.</div></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
+<div class="para" id="p-410">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV4/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV4/</code></a>.</div></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.4.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-16"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.4.15</span><span class="period">.</span>
-</h4>Prove the result of <a href="" class="xref" data-knowl="./knowl/def_of_LI.html" title="Observation 2.4.8">Observation 2.4.8</a>, by showing that, given a set <span class="process-math">\(S = \{\vec{v}_1,\vec{v}_2,\ldots,\vec{v}_n\}\)</span> of vectors, <span class="process-math">\(S\)</span> is linearly independent iff the equation <span class="process-math">\(x_1\vec{v}_1 + x_2\vec{v}_2 + \ldots\ + x_n\vec{v}_n = \vec{0}\)</span> is only true when <span class="process-math">\(x_1 = x_2 = \cdots = x_n = 0\text{.}\)</span></article></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.4.10</span><span class="period">.</span>
+</h4>Prove the result of <a href="" class="xref" data-knowl="./knowl/def_of_LI.html" title="Observation 2.4.6">Observation 2.4.6</a>, by showing that, given a set <span class="process-math">\(S = \{\vec{v}_1,\vec{v}_2,\ldots,\vec{v}_n\}\)</span> of vectors, <span class="process-math">\(S\)</span> is linearly independent iff the equation <span class="process-math">\(x_1\vec{v}_1 + x_2\vec{v}_2 + \ldots\ + x_n\vec{v}_n = \vec{0}\)</span> is only true when <span class="process-math">\(x_1 = x_2 = \cdots = x_n = 0\text{.}\)</span></article></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.4.6</span> <span class="title">Sample Problem and Solution</span>
 </h3>
-<div class="para" id="p-414">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-EV4.html" title="Example B.1.8: EV4">Example B.1.8</a>.</div></section></section></div>
+<div class="para" id="p-411">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-EV4.html" title="Example B.1.8: EV4">Example B.1.8</a>.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="EV3.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="EV5.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
