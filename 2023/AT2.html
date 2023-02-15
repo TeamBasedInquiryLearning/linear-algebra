@@ -601,82 +601,82 @@ window.MathJax = {
 <span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Standard Matrices (AT2)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-16"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
-<ul class="disc"><li id="li-301"><div class="para" id="p-560">Translate back and forth between a linear transformation of Euclidean spaces and its standard matrix, and perform related computations.</div></li></ul></article><section class="subsection" id="subsection-61"><h3 class="heading hide-type">
+<ul class="disc"><li id="li-343"><div class="para" id="p-592">Translate back and forth between a linear transformation of Euclidean spaces and its standard matrix, and perform related computations.</div></li></ul></article><section class="subsection" id="subsection-61"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.1</span> <span class="title">Class Activities</span>
 </h3>
-<article class="remark remark-like" id="remark-10"><h4 class="heading">
+<article class="remark remark-like" id="remark-9"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-561">Recall that a linear map <span class="process-math">\(T:V\rightarrow W\)</span> satisfies</div> <ol class="decimal">
-<li id="li-302"><div class="para" id="p-562">
+<div class="para" id="p-593">Recall that a linear map <span class="process-math">\(T:V\rightarrow W\)</span> satisfies</div> <ol class="decimal">
+<li id="li-344"><div class="para" id="p-594">
 <span class="process-math">\(T(\vec{v}+\vec{w}) = T(\vec{v})+T(\vec{w})\)</span> for any <span class="process-math">\(\vec{v},\vec{w} \in V\text{.}\)</span>
 </div></li>
-<li id="li-303"><div class="para" id="p-563">
+<li id="li-345"><div class="para" id="p-595">
 <span class="process-math">\(T(c\vec{v}) = cT(\vec{v})\)</span> for any <span class="process-math">\(c \in \IR,\vec{v} \in V\text{.}\)</span>
 </div></li>
-</ol> <div class="para" id="p-564">In other words, a map is linear when vector space operations can be applied before or after the transformation without affecting the result.</div></article><article class="activity project-like" id="activity-71"><h4 class="heading">
+</ol> <div class="para" id="p-596">In other words, a map is linear when vector space operations can be applied before or after the transformation without affecting the result.</div></article><article class="activity project-like" id="activity-67"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-565">Suppose <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> is a linear map, and you know <span class="process-math">\(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
+<div class="para" id="p-597">Suppose <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> is a linear map, and you know <span class="process-math">\(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
 =
 \left[\begin{array}{c} 2 \\ 1 \end{array}\right]\)</span> and <span class="process-math">\(T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
 =
 \left[\begin{array}{c} -3 \\ 2 \end{array}\right]
 \text{.}\)</span> What is <span class="process-math">\(T\left(\left[\begin{array}{c} 3 \\ 0 \\ 0 \end{array}\right]\right)\text{?}\)</span>
 </div> <ol class="upper-alpha cols2">
-<li id="li-304"><div class="para" id="p-derived-li-304"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 6 \\ 3\end{array}\right]\)</span></div></li>
-<li id="li-305"><div class="para" id="p-derived-li-305"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -9 \\ 6 \end{array}\right]\)</span></div></li>
-<li id="li-306"><div class="para" id="p-derived-li-306"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -4 \\ -2 \end{array}\right]\)</span></div></li>
-<li id="li-307"><div class="para" id="p-derived-li-307"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 6 \\ -4 \end{array}\right]\)</span></div></li>
-</ol></article><article class="activity project-like" id="activity-72"><h4 class="heading">
+<li id="li-346"><div class="para" id="p-derived-li-346"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 6 \\ 3\end{array}\right]\)</span></div></li>
+<li id="li-347"><div class="para" id="p-derived-li-347"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -9 \\ 6 \end{array}\right]\)</span></div></li>
+<li id="li-348"><div class="para" id="p-derived-li-348"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -4 \\ -2 \end{array}\right]\)</span></div></li>
+<li id="li-349"><div class="para" id="p-derived-li-349"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 6 \\ -4 \end{array}\right]\)</span></div></li>
+</ol></article><article class="activity project-like" id="activity-68"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-566">Suppose <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> is a linear map, and you know <span class="process-math">\(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
+<div class="para" id="p-598">Suppose <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> is a linear map, and you know <span class="process-math">\(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
 =
 \left[\begin{array}{c} 2 \\ 1 \end{array}\right]\)</span> and <span class="process-math">\(T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
 =
 \left[\begin{array}{c} -3 \\ 2 \end{array}\right]
 \text{.}\)</span> What is <span class="process-math">\(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right]\right)\text{?}\)</span>
 </div> <ol class="upper-alpha cols2">
-<li id="li-308"><div class="para" id="p-567"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 2 \\ 1\end{array}\right]\)</span></div></li>
-<li id="li-309"><div class="para" id="p-568"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 3 \\ -1 \end{array}\right]\)</span></div></li>
-<li id="li-310"><div class="para" id="p-569"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -1 \\ 3 \end{array}\right]\)</span></div></li>
-<li id="li-311"><div class="para" id="p-570"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 5 \\ -8 \end{array}\right]\)</span></div></li>
-</ol></article><article class="activity project-like" id="activity-73"><h4 class="heading">
+<li id="li-350"><div class="para" id="p-599"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 2 \\ 1\end{array}\right]\)</span></div></li>
+<li id="li-351"><div class="para" id="p-600"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 3 \\ -1 \end{array}\right]\)</span></div></li>
+<li id="li-352"><div class="para" id="p-601"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -1 \\ 3 \end{array}\right]\)</span></div></li>
+<li id="li-353"><div class="para" id="p-602"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 5 \\ -8 \end{array}\right]\)</span></div></li>
+</ol></article><article class="activity project-like" id="activity-69"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-571">Suppose <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> is a linear map, and you know <span class="process-math">\(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
+<div class="para" id="p-603">Suppose <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> is a linear map, and you know <span class="process-math">\(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
 =
 \left[\begin{array}{c} 2 \\ 1 \end{array}\right]\)</span> and <span class="process-math">\(T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
 =
 \left[\begin{array}{c} -3 \\ 2 \end{array}\right]
 \text{.}\)</span> What is <span class="process-math">\(T\left(\left[\begin{array}{c} -2 \\ 0 \\ -3 \end{array}\right]\right)\text{?}\)</span>
 </div> <ol class="upper-alpha cols2">
-<li id="li-312"><div class="para" id="p-572"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 2 \\ 1\end{array}\right]\)</span></div></li>
-<li id="li-313"><div class="para" id="p-573"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 3 \\ -1 \end{array}\right]\)</span></div></li>
-<li id="li-314"><div class="para" id="p-574"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -1 \\ 3 \end{array}\right]\)</span></div></li>
-<li id="li-315"><div class="para" id="p-575"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 5 \\ -8 \end{array}\right]\)</span></div></li>
-</ol></article><article class="activity project-like" id="activity-74"><h4 class="heading">
+<li id="li-354"><div class="para" id="p-604"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 2 \\ 1\end{array}\right]\)</span></div></li>
+<li id="li-355"><div class="para" id="p-605"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 3 \\ -1 \end{array}\right]\)</span></div></li>
+<li id="li-356"><div class="para" id="p-606"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -1 \\ 3 \end{array}\right]\)</span></div></li>
+<li id="li-357"><div class="para" id="p-607"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 5 \\ -8 \end{array}\right]\)</span></div></li>
+</ol></article><article class="activity project-like" id="activity-70"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-576">Suppose <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> is a linear map, and you know <span class="process-math">\(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
+<div class="para" id="p-608">Suppose <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> is a linear map, and you know <span class="process-math">\(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
 =
 \left[\begin{array}{c} 2 \\ 1 \end{array}\right]\)</span> and <span class="process-math">\(T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
 =
 \left[\begin{array}{c} -3 \\ 2 \end{array}\right]
 \text{.}\)</span> What piece of information would help you compute <span class="process-math">\(T\left(\left[\begin{array}{c}0\\4\\-1\end{array}\right]\right)\text{?}\)</span>
 </div> <ol class="upper-alpha cols2">
-<li id="li-316"><div class="para" id="p-577">The value of <span class="process-math">\(T\left(\left[\begin{array}{c} 0\\-4\\0\end{array}\right]\right)\text{.}\)</span>
+<li id="li-358"><div class="para" id="p-609">The value of <span class="process-math">\(T\left(\left[\begin{array}{c} 0\\-4\\0\end{array}\right]\right)\text{.}\)</span>
 </div></li>
-<li id="li-317"><div class="para" id="p-578">The value of <span class="process-math">\(T\left(\left[\begin{array}{c} 0\\1\\0\end{array}\right]\right)\text{.}\)</span>
+<li id="li-359"><div class="para" id="p-610">The value of <span class="process-math">\(T\left(\left[\begin{array}{c} 0\\1\\0\end{array}\right]\right)\text{.}\)</span>
 </div></li>
-<li id="li-318"><div class="para" id="p-579">The value of <span class="process-math">\(T\left(\left[\begin{array}{c} 1\\1\\1\end{array}\right]\right)\text{.}\)</span>
+<li id="li-360"><div class="para" id="p-611">The value of <span class="process-math">\(T\left(\left[\begin{array}{c} 1\\1\\1\end{array}\right]\right)\text{.}\)</span>
 </div></li>
-<li id="li-319"><div class="para" id="p-580">Any of the above.</div></li>
-</ol></article><article class="fact theorem-like" id="fact-15"><h4 class="heading">
+<li id="li-361"><div class="para" id="p-612">Any of the above.</div></li>
+</ol></article><article class="fact theorem-like" id="fact-14"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.2.6</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-581">Consider any basis <span class="process-math">\(\{\vec b_1,\dots,\vec b_n\}\)</span> for <span class="process-math">\(V\text{.}\)</span>  Since every vector <span class="process-math">\(\vec v\)</span> can be written as a linear combination of basis vectors,  <span class="process-math">\(\vec v = x_1\vec b_1+\dots+ x_n\vec b_n\text{,}\)</span> we may compute <span class="process-math">\(T(\vec v)\)</span> as follows:</div>
+<div class="para" id="p-613">Consider any basis <span class="process-math">\(\{\vec b_1,\dots,\vec b_n\}\)</span> for <span class="process-math">\(V\text{.}\)</span>  Since every vector <span class="process-math">\(\vec v\)</span> can be written as a linear combination of basis vectors,  <span class="process-math">\(\vec v = x_1\vec b_1+\dots+ x_n\vec b_n\text{,}\)</span> we may compute <span class="process-math">\(T(\vec v)\)</span> as follows:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 T(\vec v)=T(x_1\vec b_1+\dots+ x_n\vec b_n)=
@@ -684,13 +684,13 @@ x_1T(\vec b_1)+\dots+x_nT(\vec b_n)
 .
 \end{equation*}
 </div>
-<div class="para" id="p-582">Therefore any linear transformation <span class="process-math">\(T:V \rightarrow W\)</span> can be defined by just describing the values of <span class="process-math">\(T(\vec b_i)\text{.}\)</span>
-</div> <div class="para" id="p-583">Put another way, the images of the basis vectors completely <dfn class="terminology">determine</dfn> the transformation <span class="process-math">\(T\text{.}\)</span>
+<div class="para" id="p-614">Therefore any linear transformation <span class="process-math">\(T:V \rightarrow W\)</span> can be defined by just describing the values of <span class="process-math">\(T(\vec b_i)\text{.}\)</span>
+</div> <div class="para" id="p-615">Put another way, the images of the basis vectors completely <dfn class="terminology">determine</dfn> the transformation <span class="process-math">\(T\text{.}\)</span>
 </div></article><article class="definition definition-like" id="definition-19"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.7</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-584">Since a linear transformation <span class="process-math">\(T:\IR^n\to\IR^m\)</span> is determined by its action on the standard basis <span class="process-math">\(\{\vec e_1,\dots,\vec e_n\}\text{,}\)</span> it is convenient to store this information in an <span class="process-math">\(m\times n\)</span> matrix, called the <dfn class="terminology">standard matrix</dfn> of <span class="process-math">\(T\text{,}\)</span> given by <span class="process-math">\([T(\vec e_1) \,\cdots\, T(\vec e_n)]\text{.}\)</span>
-</div> <div class="para" id="p-585">For example, let <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> be the linear map determined by the following values for <span class="process-math">\(T\)</span> applied to the standard basis of <span class="process-math">\(\IR^3\text{.}\)</span>
+<div class="para" id="p-616">Since a linear transformation <span class="process-math">\(T:\IR^n\to\IR^m\)</span> is determined by its action on the standard basis <span class="process-math">\(\{\vec e_1,\dots,\vec e_n\}\text{,}\)</span> it is convenient to store this information in an <span class="process-math">\(m\times n\)</span> matrix, called the <dfn class="terminology">standard matrix</dfn> of <span class="process-math">\(T\text{,}\)</span> given by <span class="process-math">\([T(\vec e_1) \,\cdots\, T(\vec e_n)]\text{.}\)</span>
+</div> <div class="para" id="p-617">For example, let <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> be the linear map determined by the following values for <span class="process-math">\(T\)</span> applied to the standard basis of <span class="process-math">\(\IR^3\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -714,7 +714,7 @@ T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
 \left[\begin{array}{c} 5 \\ 0\end{array}\right]
 \end{equation*}
 </div>
-<div class="para logical" id="p-586">
+<div class="para logical" id="p-618">
 <div class="para">Then the standard matrix corresponding to <span class="process-math">\(T\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -724,10 +724,10 @@ T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
 .
 \end{equation*}
 </div>
-</div></article><article class="activity project-like" id="activity-75"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-71"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.8</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-587">
+<div class="para logical" id="p-619">
 <div class="para">Let <span class="process-math">\(T: \IR^4 \rightarrow \IR^3\)</span> be the linear transformation given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -750,10 +750,10 @@ T\left(\vec e_4 \right)
 </div>
 <div class="para">Write the standard matrix <span class="process-math">\([T(\vec e_1) \,\cdots\, T(\vec e_n)]\)</span> for <span class="process-math">\(T\text{.}\)</span>
 </div>
-</div></article><article class="activity project-like" id="activity-76"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-72"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.9</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-37"><div class="para logical" id="p-588">
+<div class="introduction" id="introduction-36"><div class="para logical" id="p-620">
 <div class="para">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> be the linear transformation given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -761,14 +761,14 @@ T\left(\left[\begin{array}{c} x\\ y \\ z \end{array}\right] \right) = \left[\beg
 \end{equation*}
 </div>
 </div></div>
-<article class="task exercise-like" id="task-83"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-589">Compute <span class="process-math">\(T(\vec e_1)\text{,}\)</span> <span class="process-math">\(T(\vec e_2)\text{,}\)</span> and <span class="process-math">\(T(\vec e_3)\text{.}\)</span>
-</div></article><article class="task exercise-like" id="task-84"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-590">Find the standard matrix for <span class="process-math">\(T\text{.}\)</span>
-</div></article></article><article class="fact theorem-like" id="fact-16"><h4 class="heading">
+<article class="task exercise-like" id="task-92"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-621">Compute <span class="process-math">\(T(\vec e_1)\text{,}\)</span> <span class="process-math">\(T(\vec e_2)\text{,}\)</span> and <span class="process-math">\(T(\vec e_3)\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-93"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-622">Find the standard matrix for <span class="process-math">\(T\text{.}\)</span>
+</div></article></article><article class="fact theorem-like" id="fact-15"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.2.10</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-591">
+<div class="para logical" id="p-623">
 <div class="para">Because every linear map <span class="process-math">\(T:\IR^m\to\IR^n\)</span> has a linear combination of the variables in each component, and thus <span class="process-math">\(T(\vec e_i)\)</span> yields exactly the coefficients of <span class="process-math">\(x_i\text{,}\)</span> the standard matrix for <span class="process-math">\(T\)</span> is simply an ordered list of the coefficients of the <span class="process-math">\(x_i\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -788,10 +788,10 @@ e &amp; f &amp; g &amp; h
 \end{array}\right]
 \end{equation*}
 </div>
-</div></article><article class="activity project-like" id="activity-77"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-73"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.11</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-38"><div class="para logical" id="p-592">
+<div class="introduction" id="introduction-37"><div class="para logical" id="p-624">
 <div class="para">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^3\)</span> be the linear transformation given by the standard matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -800,30 +800,30 @@ e &amp; f &amp; g &amp; h
 \end{equation*}
 </div>
 </div></div>
-<article class="task exercise-like" id="task-85"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-593">Compute <span class="process-math">\(T\left(\left[\begin{array}{c} 1\\ 2 \\ 3 \end{array}\right] \right) \text{.}\)</span>
-</div></article><article class="task exercise-like" id="task-86"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-594">Compute <span class="process-math">\(T\left(\left[\begin{array}{c} x\\ y \\ z \end{array}\right] \right) \text{.}\)</span>
-</div></article></article><article class="activity project-like" id="activity-78"><h4 class="heading">
+<article class="task exercise-like" id="task-94"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-625">Compute <span class="process-math">\(T\left(\left[\begin{array}{c} 1\\ 2 \\ 3 \end{array}\right] \right) \text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-95"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-626">Compute <span class="process-math">\(T\left(\left[\begin{array}{c} x\\ y \\ z \end{array}\right] \right) \text{.}\)</span>
+</div></article></article><article class="activity project-like" id="activity-74"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.12</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-39"><div class="para" id="p-595">Compute the following linear transformations of vectors given their standard matrices.</div></div>
-<article class="task exercise-like" id="task-87"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para logical" id="p-596"><div class="displaymath process-math">
+<div class="introduction" id="introduction-38"><div class="para" id="p-627">Compute the following linear transformations of vectors given their standard matrices.</div></div>
+<article class="task exercise-like" id="task-96"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical" id="p-628"><div class="displaymath process-math">
 \begin{equation*}
 T_1\left(\left[\begin{array}{c}1\\2\end{array}\right]\right)
 \text{ for the standard matrix }
 A_1=\left[\begin{array}{cc}4&amp;3\\0&amp;-1\\1&amp;1\\3&amp;0\end{array}\right]
 \end{equation*}
-</div></div></article><article class="task exercise-like" id="task-88"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para logical" id="p-597"><div class="displaymath process-math">
+</div></div></article><article class="task exercise-like" id="task-97"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-629"><div class="displaymath process-math">
 \begin{equation*}
 T_2\left(\left[\begin{array}{c}1\\1\\0\\-3\end{array}\right]\right)
 \text{ for the standard matrix }
 A_2=\left[\begin{array}{cccc}4&amp;3&amp;0&amp;-1\\1&amp;1&amp;3&amp;0\end{array}\right]
 \end{equation*}
-</div></div></article><article class="task exercise-like" id="task-89"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para logical" id="p-598"><div class="displaymath process-math">
+</div></div></article><article class="task exercise-like" id="task-98"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para logical" id="p-630"><div class="displaymath process-math">
 \begin{equation*}
 T_3\left(\left[\begin{array}{c}0\\-2\\0\end{array}\right]\right)
 \text{ for the standard matrix }
@@ -836,14 +836,14 @@ A_3=\left[\begin{array}{ccc}4&amp;3&amp;0\\0&amp;-1&amp;3\\5&amp;1&amp;1\\3&amp;
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">23<span class="period">.</span></span><span class="space"> </span>Video: Using the standard matrix to compute the image of a vector</figcaption></figure></section><section class="subsection" id="subsection-63"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.3</span> <span class="title">Slideshow</span>
 </h3>
-<div class="para" id="p-599">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/AT2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/AT2.slides.html</code></a>.</div></section><section class="exercises" id="exercises-13"><h3 class="heading hide-type">
+<div class="para" id="p-631">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/AT2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/AT2.slides.html</code></a>.</div></section><section class="exercises" id="exercises-13"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">3.2.4</span> <span class="title">Exercises</span>
 </h3>
-<div class="para" id="p-600">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/AT2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/AT2/</code></a>.</div></section><section class="subsection" id="subsection-64"><h3 class="heading hide-type">
+<div class="para" id="p-632">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/AT2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/AT2/</code></a>.</div></section><section class="subsection" id="subsection-64"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
-<div class="para" id="p-601">We can represent images in the plane <span class="process-math">\(\mathbb{R}^2\)</span> using vectors, and manipulate those images with linear transformations. We introduce some notation in these explorations that is needed for their completion, but is not essential to the rest of the text. These have a geometric flair to them, and can be understood by thinking of geometric transformations in terms of standard matrices.</div>
-<div class="para logical" id="p-602">
+<div class="para" id="p-633">We can represent images in the plane <span class="process-math">\(\mathbb{R}^2\)</span> using vectors, and manipulate those images with linear transformations. We introduce some notation in these explorations that is needed for their completion, but is not essential to the rest of the text. These have a geometric flair to them, and can be understood by thinking of geometric transformations in terms of standard matrices.</div>
+<div class="para logical" id="p-634">
 <div class="para">Given two vectors <span class="process-math">\(\vec{v} = \left[\begin{array}{c}v_1\\v_2\\ \vdots \\ v_n\end{array}\right]\)</span> and <span class="process-math">\(\vec{w} = \left[\begin{array}{c}w_1 \\ w_2\\ \vdots \\ w_n\end{array}\right]\text{,}\)</span> we define the <dfn class="terminology">dot product</dfn> as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -854,10 +854,10 @@ A_3=\left[\begin{array}{ccc}4&amp;3&amp;0\\0&amp;-1&amp;3\\5&amp;1&amp;1\\3&amp;
 <article class="exploration project-like" id="exploration-26"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.2.13</span><span class="period">.</span>
 </h4>For each of the following properties, determine if it is held by the dot product. Either provide a proof it the property holds, or provide a counter-example if it does not. <ul class="disc">
-<li id="li-320"><div class="para" id="p-derived-li-320">Distributive over addition (e.g., (<span class="process-math">\(\vec{u} + \vec{v})\cdot \vec{w} = \vec{u}\cdot\vec{w} + \vec{v}\cdot\vec{w})?\)</span>
+<li id="li-362"><div class="para" id="p-derived-li-362">Distributive over addition (e.g., (<span class="process-math">\(\vec{u} + \vec{v})\cdot \vec{w} = \vec{u}\cdot\vec{w} + \vec{v}\cdot\vec{w})?\)</span>
 </div></li>
-<li id="li-321"><div class="para" id="p-derived-li-321">Associative?</div></li>
-<li id="li-322"><div class="para" id="p-derived-li-322">Commutative?</div></li>
+<li id="li-363"><div class="para" id="p-derived-li-363">Associative?</div></li>
+<li id="li-364"><div class="para" id="p-derived-li-364">Commutative?</div></li>
 </ul></article><article class="exploration project-like" id="exploration-27"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.2.14</span><span class="period">.</span>
 </h4>Given the properties you proved in the last exploration, could the dot product take the place of <span class="process-math">\(\oplus\)</span> as a vector space operation on <span class="process-math">\(\mathbb{R}^n\text{?}\)</span></article><article class="exploration project-like" id="exploration-28"><h4 class="heading">
@@ -869,7 +869,7 @@ A_3=\left[\begin{array}{ccc}4&amp;3&amp;0\\0&amp;-1&amp;3\\5&amp;1&amp;1\\3&amp;
 </div>Prove or provide a counter-example.</article><article class="exploration project-like" id="exploration-29"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.2.16</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-603">
+<div class="para logical" id="p-635">
 <div class="para">Assume <span class="process-math">\(\vec{v} = \left[\begin{array}{c}v_1\\v_2\\ \vdots \\ v_n\end{array}\right]\)</span> and define the length of a vector by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -881,22 +881,22 @@ A_3=\left[\begin{array}{ccc}4&amp;3&amp;0\\0&amp;-1&amp;3\\5&amp;1&amp;1\\3&amp;
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.2.17</span><span class="period">.</span>
 </h4>
 <ul class="disc">
-<li id="li-323"><div class="para" id="p-derived-li-323">A <dfn class="terminology">dilation</dfn> is given by by mapping a vector <span class="process-math">\(\vec{v} = \left[\begin{array}{c}x\\y\end{array}\right]\)</span> to some scalar multiple of <span class="process-math">\(\vec{v}\text{.}\)</span>
+<li id="li-365"><div class="para" id="p-derived-li-365">A <dfn class="terminology">dilation</dfn> is given by by mapping a vector <span class="process-math">\(\vec{v} = \left[\begin{array}{c}x\\y\end{array}\right]\)</span> to some scalar multiple of <span class="process-math">\(\vec{v}\text{.}\)</span>
 </div></li>
-<li id="li-324"><div class="para" id="p-derived-li-324">A <dfn class="terminology">rotation</dfn> is given by <span class="process-math">\(\vec{v} \mapsto \left[\begin{array}{c} \cos(\theta)x - \sin(\theta)y\\ \cos(\theta)y + \sin(\theta)x\end{array}\right].\)</span>
+<li id="li-366"><div class="para" id="p-derived-li-366">A <dfn class="terminology">rotation</dfn> is given by <span class="process-math">\(\vec{v} \mapsto \left[\begin{array}{c} \cos(\theta)x - \sin(\theta)y\\ \cos(\theta)y + \sin(\theta)x\end{array}\right].\)</span>
 </div></li>
-<li id="li-325"><div class="para" id="p-derived-li-325">A <dfn class="terminology">reflection</dfn> of <span class="process-math">\(\vec{v}\)</span> over a line <span class="process-math">\(l\)</span> can be found by first finding a vector <span class="process-math">\(\vec{l} = \left[\begin{array}{c} l_x\\l_y\end{array}\right]\)</span> along <span class="process-math">\(l\text{,}\)</span> then <span class="process-math">\(\vec{v} \mapsto 2\frac{\vec{l}\cdot\vec{v}}{\vec{l}\cdot\vec{l}}\vec{l} - \vec{v}.\)</span>
+<li id="li-367"><div class="para" id="p-derived-li-367">A <dfn class="terminology">reflection</dfn> of <span class="process-math">\(\vec{v}\)</span> over a line <span class="process-math">\(l\)</span> can be found by first finding a vector <span class="process-math">\(\vec{l} = \left[\begin{array}{c} l_x\\l_y\end{array}\right]\)</span> along <span class="process-math">\(l\text{,}\)</span> then <span class="process-math">\(\vec{v} \mapsto 2\frac{\vec{l}\cdot\vec{v}}{\vec{l}\cdot\vec{l}}\vec{l} - \vec{v}.\)</span>
 </div></li>
 </ul> Represent each of the following transformations with respect to the standard basis in <span class="process-math">\(\mathbb{R}^2\text{.}\)</span> <ul class="disc">
-<li id="li-326"><div class="para" id="p-derived-li-326">Rotation through an angle <span class="process-math">\(\theta\text{.}\)</span>
+<li id="li-368"><div class="para" id="p-derived-li-368">Rotation through an angle <span class="process-math">\(\theta\text{.}\)</span>
 </div></li>
-<li id="li-327"><div class="para" id="p-derived-li-327">Reflection over a line <span class="process-math">\(l\)</span> passing through the origin.</div></li>
-<li id="li-328"><div class="para" id="p-derived-li-328">Dilation by some scalar <span class="process-math">\(s\text{.}\)</span>
+<li id="li-369"><div class="para" id="p-derived-li-369">Reflection over a line <span class="process-math">\(l\)</span> passing through the origin.</div></li>
+<li id="li-370"><div class="para" id="p-derived-li-370">Dilation by some scalar <span class="process-math">\(s\text{.}\)</span>
 </div></li>
 </ul> Prove that each transformation is linear, and that your matrix representations are correct.</article></section><section class="subsection" id="subsection-65"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.6</span> <span class="title">Sample Problem and Solution</span>
 </h3>
-<div class="para" id="p-604">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-AT2.html" title="Example B.1.13: AT2">Example B.1.13</a>.</div></section></section></div>
+<div class="para" id="p-636">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-AT2.html" title="Example B.1.13: AT2">Example B.1.13</a>.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="AT1.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="AT3.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

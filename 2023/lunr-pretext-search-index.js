@@ -1150,7 +1150,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.5",
   "title": "Identifying a Basis (EV5)",
-  "body": " Identifying a Basis (EV5)     Explain why a set of Euclidean vectors is or is not a basis of .     Class Activities    Consider the set of vectors .    Express the vector as a linear combination of the vectors in , i.e. find scalars such that .    Find a different way to express the vector as a linear combination of the vectors in .    How many ways can the vector be written as a linear combination of the vectors in ?      We saw that some vectors could be expressed as a linear combination of the vectors in in lots of (infinitely many) ways, while others could not be expressed at all as a linear combination.  This motivates us to look for sets of vectors where every other vector can be constructed from them, and there is only one way to do so.     A basis basis of a vector space is a set of vectors for which     Every vector in can be expressed as a linear combination of the vectors in     For each vector , there is only one way to write it as a linear combination of the vectors in .    These two properties may be expressed more succintly as the statement \"Every vector in can be expressed uniquely as a linear combination of the vectors in \".  Or, in terms of a vector equation, a set is a basis of if the vector equation has a unique solution for every vector  .      The standard basis basis standard of is the set where .      A basis may be thought of as a collection of building blocks for a vector space, since every vector in the space can be expressed as a unique linear combination of basis vectors.  For example, in many calculus courses, vectors in are often expressed in their component form or in their standard basic vector form Since every vector in can be uniquely described as a linear combination of the vectors in , this set is indeed a basis.     Saying that the vector equation has a solution for every vector  is saying that the set  spans the vector space .  However, to be a basis, we need to also check that the solution is always unique  In other words, it is necessary for a set to span in order to be a basis of , but this is not sufficient .     Recall that in we found two different ways to write the vector as a linear combination of the vectors in the set .  For example, we had .  Manipulate these two equations to show how to build the zero vector out of the vectors in .     Whenever a vector can be expressed as two different linear combinations of vectors in a set , the set must be linearly dependent .     A set of vectors is a basis of a vector space if  spans and is linearly independent .  If either of these fails, then cannot be a basis of .      Label each of the sets as   SPANS or DOES NOT SPAN     LINEARLY INDEPENDENT or LINEARLY DEPENDENT    BASIS FOR or NOT A BASIS FOR    by finding for their corresponding matrices.        If is a basis for , that means doesn't have a non-pivot column, and doesn't have a row of zeros. What is ?       The set is a basis for if and only if and .  That is, a basis for must have exactly vectors and its square matrix must row-reduce to the so-called identity matrix identity matrix containing all zeros except for a downward diagonal of ones. (We will learn where the identity matrix gets its name in a later module.)      Videos      Video: Verifying that a set of vectors is a basis of a vector space     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations     What is a basis for ?  What about ?  Could we write each of these in a way that looks like the standard basis vectors in for some ? Make a conjecture about the relationship between these spaces of matrices and standard Eulidean space.      Recall our earlier definition of symmetric matrices. Find a basis for each of the following:  The space of symmetric matrices.  The space of symmetric matrices.  The space of symmetric matrices.      Must a basis for the space , the space of all quadratic polynomials, contain a polynomial of each degree less than or equal to 2? Generalize your result to polynomials of arbitrary degree.     Sample Problem and Solution  Sample problem .   "
+  "body": " Identifying a Basis (EV5)     Explain why a set of Euclidean vectors is or is not a basis of .     Class Activities    Consider the set of vectors .    Express the vector as a linear combination of the vectors in , i.e. find scalars such that .    Find a different way to express the vector as a linear combination of the vectors in .    Consider another vector . Without computing the RREF of another matrix, how many ways can this vector be written as a linear combination of the vectors in ?  Zero.  One.  Infintiely-many.  Computing a new matrix RREF is necessary.        If every vector in a space can be constructed as one or more linear combination of vectors in a set , we can say...  the set spans the space.  the set fails to span the space.  the set is linearly indpendent.  the set is linearly dependent.    If the zero vector can be constructed as a unique linear combination of vectors in a set (the combination multiplying every vector by the scalar value ), we can say...  the set spans the space.  the set fails to span the space.  the set is linearly independent.  the set is linearly dependent.    If every vector of a space can either be constructed as a unique linear combination of vectors in a set , or not at all, we can say...  the set spans the space.  the set fails to span the space.  the set is linearly independent.  the set is linearly dependent.       A basis basis of a vector space is a set of vectors for which     Every vector of the space can be expressed as a linear combination of the vectors in .    For each vector in the space, there is only one way to write it as a linear combination of the vectors in .    These two properties may be expressed more succintly as the statement \"Every vector in can be expressed uniquely as a linear combination of the vectors in \".     In terms of a vector equation, a set is a basis of a space if the vector equation has a unique solution for every vector in the space.  Put another way, a basis may be thought of as a minimal set of building blocks that can be used to construct any other vector of the space.    Let be a basis for a space. Then...  the set must both span the space and be linearly independent.  the set must span the space but could be linearly dependent.  the set must be linearly independent but could fail to span the space.  the set could fail to span the space and could be linearly dependent.      The vectors form a basis used frequently in multivariable calculus.  Find the unique linear combination of these vectors that equals the vector in space.     The standard basis basis standard of is the set where .  In particular, the standard basis for is .      Take the RREF of an appropriate matrix to determine if each of the following sets is a basis for .       A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly indpendent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.         A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly indpendent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.         A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly indpendent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.         A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly indpendent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.         A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly indpendent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.         If is a basis for , that means has a pivot in every row (because it spans), and has a pivot in every column (because it's linearly independent).  What is ?       The set is a basis for if and only if and .  That is, a basis for must have exactly vectors and its square matrix must row-reduce to the so-called identity matrix identity matrix containing all zeros except for a downward diagonal of ones. (We will learn where the identity matrix gets its name in a later module.)      Videos      Video: Verifying that a set of vectors is a basis of a vector space     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations     What is a basis for ?  What about ?  Could we write each of these in a way that looks like the standard basis vectors in for some ? Make a conjecture about the relationship between these spaces of matrices and standard Eulidean space.      Recall our earlier definition of symmetric matrices. Find a basis for each of the following:  The space of symmetric matrices.  The space of symmetric matrices.  The space of symmetric matrices.      Must a basis for the space , the space of all quadratic polynomials, contain a polynomial of each degree less than or equal to 2? Generalize your result to polynomials of arbitrary degree.     Sample Problem and Solution  Sample problem .   "
 },
 {
   "id": "objectives-11",
@@ -1168,16 +1168,16 @@ var ptx_lunr_docs = [
   "type": "Activity",
   "number": "2.5.1",
   "title": "",
-  "body": "  Consider the set of vectors .    Express the vector as a linear combination of the vectors in , i.e. find scalars such that .    Find a different way to express the vector as a linear combination of the vectors in .    How many ways can the vector be written as a linear combination of the vectors in ?   "
+  "body": "  Consider the set of vectors .    Express the vector as a linear combination of the vectors in , i.e. find scalars such that .    Find a different way to express the vector as a linear combination of the vectors in .    Consider another vector . Without computing the RREF of another matrix, how many ways can this vector be written as a linear combination of the vectors in ?  Zero.  One.  Infintiely-many.  Computing a new matrix RREF is necessary.     "
 },
 {
-  "id": "observation-6",
+  "id": "activity-49",
   "level": "2",
-  "url": "EV5.html#observation-6",
-  "type": "Observation",
+  "url": "EV5.html#activity-49",
+  "type": "Activity",
   "number": "2.5.2",
   "title": "",
-  "body": " We saw that some vectors could be expressed as a linear combination of the vectors in in lots of (infinitely many) ways, while others could not be expressed at all as a linear combination.  This motivates us to look for sets of vectors where every other vector can be constructed from them, and there is only one way to do so.  "
+  "body": " If every vector in a space can be constructed as one or more linear combination of vectors in a set , we can say...  the set spans the space.  the set fails to span the space.  the set is linearly indpendent.  the set is linearly dependent.    If the zero vector can be constructed as a unique linear combination of vectors in a set (the combination multiplying every vector by the scalar value ), we can say...  the set spans the space.  the set fails to span the space.  the set is linearly independent.  the set is linearly dependent.    If every vector of a space can either be constructed as a unique linear combination of vectors in a set , or not at all, we can say...  the set spans the space.  the set fails to span the space.  the set is linearly independent.  the set is linearly dependent.    "
 },
 {
   "id": "definition-13",
@@ -1186,86 +1186,68 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "2.5.3",
   "title": "",
-  "body": "  A basis basis of a vector space is a set of vectors for which     Every vector in can be expressed as a linear combination of the vectors in     For each vector , there is only one way to write it as a linear combination of the vectors in .    These two properties may be expressed more succintly as the statement \"Every vector in can be expressed uniquely as a linear combination of the vectors in \".  Or, in terms of a vector equation, a set is a basis of if the vector equation has a unique solution for every vector  .   "
+  "body": "  A basis basis of a vector space is a set of vectors for which     Every vector of the space can be expressed as a linear combination of the vectors in .    For each vector in the space, there is only one way to write it as a linear combination of the vectors in .    These two properties may be expressed more succintly as the statement \"Every vector in can be expressed uniquely as a linear combination of the vectors in \".   "
 },
 {
-  "id": "definition-14",
+  "id": "observation-6",
   "level": "2",
-  "url": "EV5.html#definition-14",
-  "type": "Definition",
+  "url": "EV5.html#observation-6",
+  "type": "Observation",
   "number": "2.5.4",
   "title": "",
-  "body": "  The standard basis basis standard of is the set where .   "
-},
-{
-  "id": "observation-7",
-  "level": "2",
-  "url": "EV5.html#observation-7",
-  "type": "Observation",
-  "number": "2.5.5",
-  "title": "",
-  "body": "  A basis may be thought of as a collection of building blocks for a vector space, since every vector in the space can be expressed as a unique linear combination of basis vectors.  For example, in many calculus courses, vectors in are often expressed in their component form or in their standard basic vector form Since every vector in can be uniquely described as a linear combination of the vectors in , this set is indeed a basis.   "
-},
-{
-  "id": "remark-9",
-  "level": "2",
-  "url": "EV5.html#remark-9",
-  "type": "Remark",
-  "number": "2.5.6",
-  "title": "",
-  "body": " Saying that the vector equation has a solution for every vector  is saying that the set  spans the vector space .  However, to be a basis, we need to also check that the solution is always unique  In other words, it is necessary for a set to span in order to be a basis of , but this is not sufficient .  "
-},
-{
-  "id": "activity-49",
-  "level": "2",
-  "url": "EV5.html#activity-49",
-  "type": "Activity",
-  "number": "2.5.7",
-  "title": "",
-  "body": "  Recall that in we found two different ways to write the vector as a linear combination of the vectors in the set .  For example, we had .  Manipulate these two equations to show how to build the zero vector out of the vectors in .   "
-},
-{
-  "id": "observation-8",
-  "level": "2",
-  "url": "EV5.html#observation-8",
-  "type": "Observation",
-  "number": "2.5.8",
-  "title": "",
-  "body": " Whenever a vector can be expressed as two different linear combinations of vectors in a set , the set must be linearly dependent .  "
-},
-{
-  "id": "fact-8",
-  "level": "2",
-  "url": "EV5.html#fact-8",
-  "type": "Fact",
-  "number": "2.5.9",
-  "title": "",
-  "body": "  A set of vectors is a basis of a vector space if  spans and is linearly independent .  If either of these fails, then cannot be a basis of .   "
+  "body": " In terms of a vector equation, a set is a basis of a space if the vector equation has a unique solution for every vector in the space.  Put another way, a basis may be thought of as a minimal set of building blocks that can be used to construct any other vector of the space.  "
 },
 {
   "id": "activity-50",
   "level": "2",
   "url": "EV5.html#activity-50",
   "type": "Activity",
-  "number": "2.5.10",
+  "number": "2.5.5",
   "title": "",
-  "body": "  Label each of the sets as   SPANS or DOES NOT SPAN     LINEARLY INDEPENDENT or LINEARLY DEPENDENT    BASIS FOR or NOT A BASIS FOR    by finding for their corresponding matrices.    "
+  "body": " Let be a basis for a space. Then...  the set must both span the space and be linearly independent.  the set must span the space but could be linearly dependent.  the set must be linearly independent but could fail to span the space.  the set could fail to span the space and could be linearly dependent.    "
 },
 {
   "id": "activity-51",
   "level": "2",
   "url": "EV5.html#activity-51",
   "type": "Activity",
-  "number": "2.5.11",
+  "number": "2.5.6",
   "title": "",
-  "body": "  If is a basis for , that means doesn't have a non-pivot column, and doesn't have a row of zeros. What is ?    "
+  "body": " The vectors form a basis used frequently in multivariable calculus.  Find the unique linear combination of these vectors that equals the vector in space.  "
 },
 {
-  "id": "fact-9",
+  "id": "definition-14",
   "level": "2",
-  "url": "EV5.html#fact-9",
+  "url": "EV5.html#definition-14",
+  "type": "Definition",
+  "number": "2.5.7",
+  "title": "",
+  "body": "  The standard basis basis standard of is the set where .  In particular, the standard basis for is .   "
+},
+{
+  "id": "activity-52",
+  "level": "2",
+  "url": "EV5.html#activity-52",
+  "type": "Activity",
+  "number": "2.5.8",
+  "title": "",
+  "body": "  Take the RREF of an appropriate matrix to determine if each of the following sets is a basis for .       A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly indpendent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.         A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly indpendent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.         A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly indpendent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.         A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly indpendent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.         A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly indpendent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.     "
+},
+{
+  "id": "activity-53",
+  "level": "2",
+  "url": "EV5.html#activity-53",
+  "type": "Activity",
+  "number": "2.5.9",
+  "title": "",
+  "body": "  If is a basis for , that means has a pivot in every row (because it spans), and has a pivot in every column (because it's linearly independent).  What is ?    "
+},
+{
+  "id": "fact-8",
+  "level": "2",
+  "url": "EV5.html#fact-8",
   "type": "Fact",
-  "number": "2.5.12",
+  "number": "2.5.10",
   "title": "",
   "body": "  The set is a basis for if and only if and .  That is, a basis for must have exactly vectors and its square matrix must row-reduce to the so-called identity matrix identity matrix containing all zeros except for a downward diagonal of ones. (We will learn where the identity matrix gets its name in a later module.)   "
 },
@@ -1283,7 +1265,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "EV5.html#exploration-17",
   "type": "Exploration",
-  "number": "2.5.13",
+  "number": "2.5.11",
   "title": "",
   "body": "   What is a basis for ?  What about ?  Could we write each of these in a way that looks like the standard basis vectors in for some ? Make a conjecture about the relationship between these spaces of matrices and standard Eulidean space.    "
 },
@@ -1292,7 +1274,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "EV5.html#exploration-18",
   "type": "Exploration",
-  "number": "2.5.14",
+  "number": "2.5.12",
   "title": "",
   "body": " Recall our earlier definition of symmetric matrices. Find a basis for each of the following:  The space of symmetric matrices.  The space of symmetric matrices.  The space of symmetric matrices.    "
 },
@@ -1301,7 +1283,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "EV5.html#exploration-19",
   "type": "Exploration",
-  "number": "2.5.15",
+  "number": "2.5.13",
   "title": "",
   "body": " Must a basis for the space , the space of all quadratic polynomials, contain a polynomial of each degree less than or equal to 2? Generalize your result to polynomials of arbitrary degree.  "
 },
@@ -1312,7 +1294,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.6",
   "title": "Subspace Basis and Dimension (EV6)",
-  "body": " Subspace Basis and Dimension (EV6)     Compute a basis for the subspace spanned by a given set of Euclidean vectors, and determine the dimension of the subspace.     Class Activities    Recall from section that a subspace of a vector space is a subset that is itself a vector space.  One easy way to construct a subspace is to take the span of set, but a linearly dependent set contains redundant vectors. For example, only two of the three vectors in the following image are needed to span the planar subspace.      A linearly dependent set of three vectors       Consider the subspace of given by .   Mark the part of that shows that 's spanning set is linearly dependent.  Find a basis for by removing a vector from its spanning set to make it linearly independent.      Let . The easiest basis describing is the set of vectors in given by the pivot columns of .  Put another way, to compute a basis for the subspace , simply remove the vectors corresponding to the non-pivot columns of . For example, since the subspace has as a basis.      Let be the subspace of given by . Find a basis for .       Let be the subspace of given by Find a basis for .       Let be the subspace of given by Find a basis for .       Let and .   Find a basis for .  Find a basis for .      Even though we found different bases for them, and are exactly the same subspace of , since .      Any non-trivial real vector space has infinitely-many different bases, but all the bases for a given vector space are exactly the same size.  For example, are all valid bases for , and they all contain three vectors.      The dimension of a vector space is equal to the size of any basis for the vector space.  As you'd expect, has dimension . For example, has dimension because any basis for such as contains exactly three vectors.      Find the dimension of each subspace of by finding for each corresponding matrix.            Videos      Video: Finding a basis of a subspace and computing the dimension of a subspace     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations   Prove each of the following statements is true.  If and are each a basis for a vector space , then  If is linearly independent, then so is .  Let be a vector space of dimension , and . Then there exists a basis for which contains .      Suppose we have the set of all function . We claim that this is a vector space under the usual operation of function addition and scalar multiplication. What is the dimension of this space for each choice of below:            Suppose you have the vector space with the operations Find a basis for and determine it's dimension.    Sample Problem and Solution  Sample problem .   "
+  "body": " Subspace Basis and Dimension (EV6)     Compute a basis for the subspace spanned by a given set of Euclidean vectors, and determine the dimension of the subspace.     Class Activities    Recall from section that a subspace of a vector space is the result of spanning a set of vectors from that space.  Recall also that a linearly dependent set contains redundant vectors. For example, only two of the three vectors in the following image are needed to span the planar subspace.      A linearly dependent set of three vectors       Consider the subspace of given by .   Mark the column of that shows that 's spanning set is linearly dependent.  What would be the result of removing the vector that gave us this column?  The set still spans , but is now also linearly independent.  The set forms a basis for .  Both of these.  Neither of these.        Let . The most convenient basis for is the set of vectors from given by the pivot columns of .  Put another way, to compute a basis for the subspace , simply remove the vectors corresponding to the non-pivot columns of . For example, since the subspace has as a basis.      Let be the subspace of given by . Find a basis for .         Find a basis for where .  Find a basis for where .      Even though we found different bases for them, and are exactly the same subspace of , since .      Any non-trivial real vector space has infinitely-many different bases, but all the bases for a given vector space are exactly the same size.  For example, are all valid bases for , and they all contain three vectors.      The dimension of a vector space is equal to the size of any basis for the vector space.  As you'd expect, has dimension . For example, has dimension because any basis for such as contains exactly three vectors.      Find the dimension of each subspace of by finding for each corresponding matrix.            Videos      Video: Finding a basis of a subspace and computing the dimension of a subspace     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations   Prove each of the following statements is true.  If and are each a basis for a vector space , then  If is linearly independent, then so is .  Let be a vector space of dimension , and . Then there exists a basis for which contains .      Suppose we have the set of all function . We claim that this is a vector space under the usual operation of function addition and scalar multiplication. What is the dimension of this space for each choice of below:            Suppose you have the vector space with the operations Find a basis for and determine it's dimension.    Sample Problem and Solution  Sample problem .   "
 },
 {
   "id": "objectives-12",
@@ -1324,83 +1306,65 @@ var ptx_lunr_docs = [
   "body": "   Compute a basis for the subspace spanned by a given set of Euclidean vectors, and determine the dimension of the subspace.    "
 },
 {
-  "id": "observation-9",
+  "id": "observation-7",
   "level": "2",
-  "url": "EV6.html#observation-9",
+  "url": "EV6.html#observation-7",
   "type": "Observation",
   "number": "2.6.1",
   "title": "",
-  "body": "  Recall from section that a subspace of a vector space is a subset that is itself a vector space.  One easy way to construct a subspace is to take the span of set, but a linearly dependent set contains redundant vectors. For example, only two of the three vectors in the following image are needed to span the planar subspace.      A linearly dependent set of three vectors    "
-},
-{
-  "id": "activity-52",
-  "level": "2",
-  "url": "EV6.html#activity-52",
-  "type": "Activity",
-  "number": "2.6.2",
-  "title": "",
-  "body": "  Consider the subspace of given by .   Mark the part of that shows that 's spanning set is linearly dependent.  Find a basis for by removing a vector from its spanning set to make it linearly independent.  "
-},
-{
-  "id": "fact-10",
-  "level": "2",
-  "url": "EV6.html#fact-10",
-  "type": "Fact",
-  "number": "2.6.3",
-  "title": "",
-  "body": "  Let . The easiest basis describing is the set of vectors in given by the pivot columns of .  Put another way, to compute a basis for the subspace , simply remove the vectors corresponding to the non-pivot columns of . For example, since the subspace has as a basis.   "
-},
-{
-  "id": "activity-53",
-  "level": "2",
-  "url": "EV6.html#activity-53",
-  "type": "Activity",
-  "number": "2.6.4",
-  "title": "",
-  "body": "  Let be the subspace of given by . Find a basis for .   "
+  "body": "  Recall from section that a subspace of a vector space is the result of spanning a set of vectors from that space.  Recall also that a linearly dependent set contains redundant vectors. For example, only two of the three vectors in the following image are needed to span the planar subspace.      A linearly dependent set of three vectors    "
 },
 {
   "id": "activity-54",
   "level": "2",
   "url": "EV6.html#activity-54",
   "type": "Activity",
-  "number": "2.6.5",
+  "number": "2.6.2",
   "title": "",
-  "body": "  Let be the subspace of given by Find a basis for .   "
+  "body": "  Consider the subspace of given by .   Mark the column of that shows that 's spanning set is linearly dependent.  What would be the result of removing the vector that gave us this column?  The set still spans , but is now also linearly independent.  The set forms a basis for .  Both of these.  Neither of these.    "
+},
+{
+  "id": "fact-9",
+  "level": "2",
+  "url": "EV6.html#fact-9",
+  "type": "Fact",
+  "number": "2.6.3",
+  "title": "",
+  "body": "  Let . The most convenient basis for is the set of vectors from given by the pivot columns of .  Put another way, to compute a basis for the subspace , simply remove the vectors corresponding to the non-pivot columns of . For example, since the subspace has as a basis.   "
 },
 {
   "id": "activity-55",
   "level": "2",
   "url": "EV6.html#activity-55",
   "type": "Activity",
-  "number": "2.6.6",
+  "number": "2.6.4",
   "title": "",
-  "body": "  Let be the subspace of given by Find a basis for .   "
+  "body": "  Let be the subspace of given by . Find a basis for .   "
 },
 {
   "id": "activity-56",
   "level": "2",
   "url": "EV6.html#activity-56",
   "type": "Activity",
-  "number": "2.6.7",
+  "number": "2.6.5",
   "title": "",
-  "body": "  Let and .   Find a basis for .  Find a basis for .  "
+  "body": " Find a basis for where .  Find a basis for where .  "
 },
 {
-  "id": "observation-10",
+  "id": "observation-8",
   "level": "2",
-  "url": "EV6.html#observation-10",
+  "url": "EV6.html#observation-8",
   "type": "Observation",
-  "number": "2.6.8",
+  "number": "2.6.6",
   "title": "",
   "body": "  Even though we found different bases for them, and are exactly the same subspace of , since .   "
 },
 {
-  "id": "fact-11",
+  "id": "fact-10",
   "level": "2",
-  "url": "EV6.html#fact-11",
+  "url": "EV6.html#fact-10",
   "type": "Fact",
-  "number": "2.6.9",
+  "number": "2.6.7",
   "title": "",
   "body": "  Any non-trivial real vector space has infinitely-many different bases, but all the bases for a given vector space are exactly the same size.  For example, are all valid bases for , and they all contain three vectors.   "
 },
@@ -1409,7 +1373,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "EV6.html#definition-15",
   "type": "Definition",
-  "number": "2.6.10",
+  "number": "2.6.8",
   "title": "",
   "body": "  The dimension of a vector space is equal to the size of any basis for the vector space.  As you'd expect, has dimension . For example, has dimension because any basis for such as contains exactly three vectors.   "
 },
@@ -1418,7 +1382,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "EV6.html#activity-57",
   "type": "Activity",
-  "number": "2.6.11",
+  "number": "2.6.9",
   "title": "",
   "body": "  Find the dimension of each subspace of by finding for each corresponding matrix.        "
 },
@@ -1436,7 +1400,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "EV6.html#exploration-20",
   "type": "Exploration",
-  "number": "2.6.12",
+  "number": "2.6.10",
   "title": "",
   "body": " Prove each of the following statements is true.  If and are each a basis for a vector space , then  If is linearly independent, then so is .  Let be a vector space of dimension , and . Then there exists a basis for which contains .    "
 },
@@ -1445,7 +1409,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "EV6.html#exploration-21",
   "type": "Exploration",
-  "number": "2.6.13",
+  "number": "2.6.11",
   "title": "",
   "body": " Suppose we have the set of all function . We claim that this is a vector space under the usual operation of function addition and scalar multiplication. What is the dimension of this space for each choice of below:          "
 },
@@ -1454,7 +1418,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "EV6.html#exploration-22",
   "type": "Exploration",
-  "number": "2.6.14",
+  "number": "2.6.12",
   "title": "",
   "body": " Suppose you have the vector space with the operations Find a basis for and determine it's dimension. "
 },
@@ -1504,9 +1468,9 @@ var ptx_lunr_docs = [
   "body": "  Consider the homogeneous system of equations    Find its solution set (a subspace of ).  Rewrite this solution space in the form   Rewrite this solution space in the form   "
 },
 {
-  "id": "fact-12",
+  "id": "fact-11",
   "level": "2",
-  "url": "EV7.html#fact-12",
+  "url": "EV7.html#fact-11",
   "type": "Fact",
   "number": "2.7.4",
   "title": "",
@@ -1540,9 +1504,9 @@ var ptx_lunr_docs = [
   "body": "  Consider the homogeneous system of equations   Find a basis for its solution space.   "
 },
 {
-  "id": "observation-11",
+  "id": "observation-9",
   "level": "2",
-  "url": "EV7.html#observation-11",
+  "url": "EV7.html#observation-9",
   "type": "Observation",
   "number": "2.7.8",
   "title": "",
@@ -1621,9 +1585,9 @@ var ptx_lunr_docs = [
   "body": "  Let be given by   To show that is not linear, we only need to find one counterexample.    Since the resulting vectors are different, is not a linear transformation.   "
 },
 {
-  "id": "fact-13",
+  "id": "fact-12",
   "level": "2",
-  "url": "AT1.html#fact-13",
+  "url": "AT1.html#fact-12",
   "type": "Fact",
   "number": "3.1.5",
   "title": "",
@@ -1648,18 +1612,18 @@ var ptx_lunr_docs = [
   "body": "  Let the polynomial maps and be defined by .  Compute , , , and . Based on these computations, can you conclude that either or is definitely not a linear transformation?   "
 },
 {
-  "id": "fact-14",
+  "id": "fact-13",
   "level": "2",
-  "url": "AT1.html#fact-14",
+  "url": "AT1.html#fact-13",
   "type": "Fact",
   "number": "3.1.8",
   "title": "",
   "body": "  If is a linear transformation, then where is the additive identity of the vector spaces .  Put another way, an easy way to prove that a map like can not be linear is to check that    "
 },
 {
-  "id": "observation-12",
+  "id": "observation-10",
   "level": "2",
-  "url": "AT1.html#observation-12",
+  "url": "AT1.html#observation-10",
   "type": "Observation",
   "number": "3.1.9",
   "title": "",
@@ -1738,9 +1702,9 @@ var ptx_lunr_docs = [
   "body": "   Translate back and forth between a linear transformation of Euclidean spaces and its standard matrix, and perform related computations.    "
 },
 {
-  "id": "remark-10",
+  "id": "remark-9",
   "level": "2",
-  "url": "AT2.html#remark-10",
+  "url": "AT2.html#remark-9",
   "type": "Remark",
   "number": "3.2.1",
   "title": "",
@@ -1783,9 +1747,9 @@ var ptx_lunr_docs = [
   "body": "  Suppose is a linear map, and you know and . What piece of information would help you compute ?    The value of .    The value of .    The value of .    Any of the above.     "
 },
 {
-  "id": "fact-15",
+  "id": "fact-14",
   "level": "2",
-  "url": "AT2.html#fact-15",
+  "url": "AT2.html#fact-14",
   "type": "Fact",
   "number": "3.2.6",
   "title": "",
@@ -1819,9 +1783,9 @@ var ptx_lunr_docs = [
   "body": "  Let be the linear transformation given by    Compute , , and .  Find the standard matrix for .  "
 },
 {
-  "id": "fact-16",
+  "id": "fact-15",
   "level": "2",
-  "url": "AT2.html#fact-16",
+  "url": "AT2.html#fact-15",
   "type": "Fact",
   "number": "3.2.10",
   "title": "",
@@ -1855,9 +1819,9 @@ var ptx_lunr_docs = [
   "body": "    Video: Using the standard matrix to compute the image of a vector  "
 },
 {
-  "id": "p-599",
+  "id": "p-634",
   "level": "2",
-  "url": "AT2.html#p-599",
+  "url": "AT2.html#p-634",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -2008,18 +1972,18 @@ var ptx_lunr_docs = [
   "body": "  Let be the linear transformation given by the standard matrix   Since for a vector , , which of the following best describes the set of vectors ?    The set of vectors spans but is not linearly independent.    The set of vectors is a linearly independent subset of but does not span .    The set of vectors is linearly independent and spans ; that is, the set of vectors is a basis for .     "
 },
 {
-  "id": "observation-13",
+  "id": "observation-11",
   "level": "2",
-  "url": "AT3.html#observation-13",
+  "url": "AT3.html#observation-11",
   "type": "Observation",
   "number": "3.3.10",
   "title": "",
   "body": "  Let be the linear transformation given by the standard matrix   Since the set spans , we can obtain a basis for by finding and only using the vectors corresponding to pivot columns:    "
 },
 {
-  "id": "fact-17",
+  "id": "fact-16",
   "level": "2",
-  "url": "AT3.html#fact-17",
+  "url": "AT3.html#fact-16",
   "type": "Fact",
   "number": "3.3.11",
   "title": "",
@@ -2053,9 +2017,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation with standard matrix . Which of the following is equal to the dimension of the image of ?    The number of pivot columns    The number of non-pivot columns    The number of pivot rows    The number of non-pivot rows     "
 },
 {
-  "id": "observation-14",
+  "id": "observation-12",
   "level": "2",
-  "url": "AT3.html#observation-14",
+  "url": "AT3.html#observation-12",
   "type": "Observation",
   "number": "3.3.15",
   "title": "",
@@ -2197,9 +2161,9 @@ var ptx_lunr_docs = [
   "body": "  Let be given by Is surjective?    Yes, because for every , there exists such that .    Yes, because for every , there exists such that .    No, because can never equal .     "
 },
 {
-  "id": "observation-15",
+  "id": "observation-13",
   "level": "2",
-  "url": "AT4.html#observation-15",
+  "url": "AT4.html#observation-13",
   "type": "Observation",
   "number": "3.4.7",
   "title": "",
@@ -2215,9 +2179,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation where contains multiple vectors. What can you conclude?     is injective     is not injective     is surjective     is not surjective     "
 },
 {
-  "id": "fact-18",
+  "id": "fact-17",
   "level": "2",
-  "url": "AT4.html#fact-18",
+  "url": "AT4.html#fact-17",
   "type": "Fact",
   "number": "3.4.9",
   "title": "",
@@ -2233,9 +2197,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation where is spanned by four vectors. What can you conclude?     is injective     is not injective     is surjective     is not surjective     "
 },
 {
-  "id": "fact-19",
+  "id": "fact-18",
   "level": "2",
-  "url": "AT4.html#fact-19",
+  "url": "AT4.html#fact-18",
   "type": "Fact",
   "number": "3.4.11",
   "title": "",
@@ -2251,9 +2215,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear map with standard matrix . Sort the following claims into two groups of equivalent statements: one group that means is injective , and one group that means is surjective .   The kernel of is trivial, i.e. .  The columns of span .  The columns of are linearly independent.  Every column of has a pivot.  Every row of has a pivot.  The image of equals its codomain, i.e. .  The system of linear equations given by the augmented matrix has a solution for all .  The system of linear equations given by the augmented matrix has exactly one solution.     "
 },
 {
-  "id": "observation-16",
+  "id": "observation-14",
   "level": "2",
-  "url": "AT4.html#observation-16",
+  "url": "AT4.html#observation-14",
   "type": "Observation",
   "number": "3.4.13",
   "title": "",
@@ -2278,9 +2242,9 @@ var ptx_lunr_docs = [
   "body": "  What can you conclude about the linear map with standard matrix ?   Its standard matrix has more columns than rows, so is not injective.  Its standard matrix has more columns than rows, so is injective.  Its standard matrix has more rows than columns, so is not surjective.  Its standard matrix has more rows than columns, so is surjective.    "
 },
 {
-  "id": "fact-20",
+  "id": "fact-19",
   "level": "2",
-  "url": "AT4.html#fact-20",
+  "url": "AT4.html#fact-19",
   "type": "Fact",
   "number": "3.4.16",
   "title": "",
@@ -2305,9 +2269,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a bijective linear map with standard matrix . Label each of the following as true or false.    is the identity matrix.  The columns of form a basis for   The system of linear equations given by the augmented matrix has exactly one solution for each .    "
 },
 {
-  "id": "observation-17",
+  "id": "observation-15",
   "level": "2",
-  "url": "AT4.html#observation-17",
+  "url": "AT4.html#observation-15",
   "type": "Observation",
   "number": "3.4.19",
   "title": "",
@@ -2404,9 +2368,9 @@ var ptx_lunr_docs = [
   "body": "   Explain why a given set with defined addition and scalar multiplication does satisfy a given vector space property, but nonetheless isn't a vector space.    "
 },
 {
-  "id": "observation-18",
+  "id": "observation-16",
   "level": "2",
-  "url": "VS1.html#observation-18",
+  "url": "VS1.html#observation-16",
   "type": "Observation",
   "number": "4.1.1",
   "title": "",
@@ -2431,45 +2395,45 @@ var ptx_lunr_docs = [
   "body": "   A vector space vector space  is any set of mathematical objects, called vectors vector , and a set of numbers, called scalars scalar , with associated addition and scalar multiplication operations that satisfy the following properties.  We always assume the codomain of our operations is , i.e. that addition is a map and that scalar multiplication is a map .  Let be vectors belonging to , and let be scalars.   Vector addition is associative: .    Vector addition is commutative: .    An additive identity exists: There exists some where . additive identity     Additive inverses exist: There exists some where . additive inverse     Scalar multiplication is associative: .    1 is a multiplicative identity: .    Scalar multiplication distributes over vector addition: .    Scalar multiplication distributes over scalar addition: .     "
 },
 {
-  "id": "remark-11",
+  "id": "remark-10",
   "level": "2",
-  "url": "VS1.html#remark-11",
+  "url": "VS1.html#remark-10",
   "type": "Remark",
   "number": "4.1.4",
   "title": "",
   "body": " In this text, we only consider real vector spaces, i.e. those whose scalars come from . However, one can similarly define vector spaces with scalars from other fields like the complex or rational numbers.  "
 },
 {
-  "id": "observation-19",
+  "id": "observation-17",
   "level": "2",
-  "url": "VS1.html#observation-19",
+  "url": "VS1.html#observation-17",
   "type": "Observation",
   "number": "4.1.5",
   "title": "",
   "body": "  Every Euclidean vector space Euclidean vector space  satisfies all eight requirements for the usual definitions of addition and scalar multiplication, but we will also study other types of vector spaces.   "
 },
 {
-  "id": "observation-20",
+  "id": "observation-18",
   "level": "2",
-  "url": "VS1.html#observation-20",
+  "url": "VS1.html#observation-18",
   "type": "Observation",
   "number": "4.1.6",
   "title": "",
   "body": "  The space of  matrices  satisfies all eight requirements for component-wise addition and scalar multiplication.   "
 },
 {
-  "id": "remark-12",
+  "id": "remark-11",
   "level": "2",
-  "url": "VS1.html#remark-12",
+  "url": "VS1.html#remark-11",
   "type": "Remark",
   "number": "4.1.7",
   "title": "",
   "body": "  Every Euclidean space is a vector space, but there are other examples of vector spaces as well.  For example, consider the set of complex numbers with the usual defintions of addition and scalar multiplication, and let , , and . Then   All eight properties can be verified in this way.   "
 },
 {
-  "id": "remark-13",
+  "id": "remark-12",
   "level": "2",
-  "url": "VS1.html#remark-13",
+  "url": "VS1.html#remark-12",
   "type": "Remark",
   "number": "4.1.8",
   "title": "",
@@ -2512,9 +2476,9 @@ var ptx_lunr_docs = [
   "body": "  Consider the set with operations defined by .  Let be unspecified scalars in and be an unspecified vector in .   Show that both sides of the equation simplify to the expression .  Which of the properties from did we verify in the previous task?  Vector addition is associative  is a multiplicative identity  Scalar multiplication distributes over scalar addition   Show that contains an additive identity element satisfying for all by choosing appropriate values for and using those to simplify to .  "
 },
 {
-  "id": "remark-14",
+  "id": "remark-13",
   "level": "2",
-  "url": "VS1.html#remark-14",
+  "url": "VS1.html#remark-13",
   "type": "Remark",
   "number": "4.1.13",
   "title": "",
@@ -2593,18 +2557,18 @@ var ptx_lunr_docs = [
   "body": "   Answer questions about vector spaces of polynomials or matrices.    "
 },
 {
-  "id": "fact-21",
+  "id": "fact-20",
   "level": "2",
-  "url": "VS2.html#fact-21",
+  "url": "VS2.html#fact-20",
   "type": "Fact",
   "number": "4.2.1",
   "title": "",
   "body": "  Every vector space with finite dimension, that is, every vector space with a basis of the form is said to be isomorphic isomorphic to a Euclidean space , since there exists a natural correspondance between vectors in and vectors in :    "
 },
 {
-  "id": "observation-21",
+  "id": "observation-19",
   "level": "2",
-  "url": "VS2.html#observation-21",
+  "url": "VS2.html#observation-19",
   "type": "Observation",
   "number": "4.2.2",
   "title": "",
@@ -2629,9 +2593,9 @@ var ptx_lunr_docs = [
   "body": "  Suppose is a subspace of , and you know that is spanned by the six vectors What can you conclude about ?    The dimension of is 6 or less.    The dimension of is exactly 6.    The dimension of is 6 or more.     "
 },
 {
-  "id": "observation-22",
+  "id": "observation-20",
   "level": "2",
-  "url": "VS2.html#observation-22",
+  "url": "VS2.html#observation-20",
   "type": "Observation",
   "number": "4.2.5",
   "title": "",
@@ -2692,9 +2656,9 @@ var ptx_lunr_docs = [
   "body": "   Multiply matrices.    "
 },
 {
-  "id": "observation-23",
+  "id": "observation-21",
   "level": "2",
-  "url": "MX1.html#observation-23",
+  "url": "MX1.html#observation-21",
   "type": "Observation",
   "number": "5.1.1",
   "title": "",
@@ -2845,9 +2809,9 @@ var ptx_lunr_docs = [
   "body": "  The identity matrix (or just when is obvious from context) is the matrix It has a on each diagonal element and a in every other position.   "
 },
 {
-  "id": "fact-22",
+  "id": "fact-21",
   "level": "2",
-  "url": "MX2.html#fact-22",
+  "url": "MX2.html#fact-21",
   "type": "Fact",
   "number": "5.2.3",
   "title": "",
@@ -2863,9 +2827,9 @@ var ptx_lunr_docs = [
   "body": "  Tweaking the identity matrix slightly allows us to write row operations in terms of matrix multiplication.   Create a matrix that doubles the third row of :   Create a matrix that swaps the second and third rows of :   Create a matrix that adds times the third row of to the first row:   "
 },
 {
-  "id": "fact-23",
+  "id": "fact-22",
   "level": "2",
-  "url": "MX2.html#fact-23",
+  "url": "MX2.html#fact-22",
   "type": "Fact",
   "number": "5.2.5",
   "title": "",
@@ -2944,9 +2908,9 @@ var ptx_lunr_docs = [
   "body": "  Let be the linear transformation given by the standard matrix .   Write an augmented matrix representing the system of equations given by , that is, . Then solve to find .  Solve to find .  Solve to find .  Write , the standard matrix for .  "
 },
 {
-  "id": "observation-24",
+  "id": "observation-22",
   "level": "2",
-  "url": "MX3.html#observation-24",
+  "url": "MX3.html#observation-22",
   "type": "Observation",
   "number": "5.3.5",
   "title": "",
@@ -2971,9 +2935,9 @@ var ptx_lunr_docs = [
   "body": "  Is the matrix invertible? Give a reason for your answer.   "
 },
 {
-  "id": "observation-25",
+  "id": "observation-23",
   "level": "2",
-  "url": "MX3.html#observation-25",
+  "url": "MX3.html#observation-23",
   "type": "Observation",
   "number": "5.3.8",
   "title": "",
@@ -2989,9 +2953,9 @@ var ptx_lunr_docs = [
   "body": "  Let be the bijective linear map defined by , with the inverse map .   Compute .  If is the standard matrix for and is the standard matrix for , find the matrix   "
 },
 {
-  "id": "observation-26",
+  "id": "observation-24",
   "level": "2",
-  "url": "MX3.html#observation-26",
+  "url": "MX3.html#observation-24",
   "type": "Observation",
   "number": "5.3.10",
   "title": "",
@@ -3070,27 +3034,27 @@ var ptx_lunr_docs = [
   "body": "  The image below illustrates how the linear transformation given by the standard matrix transforms the unit square.      Transformation of the unit square by the matrix    What are the lengths of and ?  What is the area of the transformed unit square?  "
 },
 {
-  "id": "observation-27",
+  "id": "observation-25",
   "level": "2",
-  "url": "GT1.html#observation-27",
+  "url": "GT1.html#observation-25",
   "type": "Observation",
   "number": "6.1.3",
   "title": "",
   "body": "  It is possible to find two nonparallel vectors that are scaled but not rotated by the linear map given by .        Certain vectors are stretched out without being rotated.   The process for finding such vectors will be covered later in this chapter.   "
 },
 {
-  "id": "observation-28",
+  "id": "observation-26",
   "level": "2",
-  "url": "GT1.html#observation-28",
+  "url": "GT1.html#observation-26",
   "type": "Observation",
   "number": "6.1.4",
   "title": "",
   "body": "  Notice that while a linear map can transform vectors in various ways, linear maps always transform parallelograms into parallelograms, and these areas are always transformed by the same factor: in the case of , this factor is .      A linear map transforming parallelograms into parallelograms.   Since this change in area is always the same for a given linear map, it will be equal to the value of the transformed unit square (which begins with area ).   "
 },
 {
-  "id": "remark-15",
+  "id": "remark-14",
   "level": "2",
-  "url": "GT1.html#remark-15",
+  "url": "GT1.html#remark-14",
   "type": "Remark",
   "number": "6.1.5",
   "title": "",
@@ -3169,36 +3133,36 @@ var ptx_lunr_docs = [
   "body": "  The determinant is the unique function satisfying these properties:   whenever two columns of the matrix are identical.   , assuming no other columns change.   , assuming no other columns change.    Note that these last two properties together can be phrased as The determinant is linear in each column.    "
 },
 {
-  "id": "observation-29",
+  "id": "observation-27",
   "level": "2",
-  "url": "GT1.html#observation-29",
+  "url": "GT1.html#observation-27",
   "type": "Observation",
   "number": "6.1.11",
   "title": "",
   "body": "  The determinant must also satisfy other properties. Consider and .      Parallelogram built by and   The base of both parallelograms is , while the height has not changed, so the determinant does not change either. This can also be proven using the other properties of the determinant:    "
 },
 {
-  "id": "remark-16",
+  "id": "remark-15",
   "level": "2",
-  "url": "GT1.html#remark-16",
+  "url": "GT1.html#remark-15",
   "type": "Remark",
   "number": "6.1.12",
   "title": "",
   "body": "  Swapping columns may be thought of as a reflection, which is represented by a negative determinant. For example, the following matrices transform the unit square into the same parallelogram, but the second matrix reflects its orientation.       Reflection of a parallelogram as a result of swapping columns.    "
 },
 {
-  "id": "observation-30",
+  "id": "observation-28",
   "level": "2",
-  "url": "GT1.html#observation-30",
+  "url": "GT1.html#observation-28",
   "type": "Observation",
   "number": "6.1.13",
   "title": "",
   "body": "  The fact that swapping columns multiplies determinants by a negative may be verified by adding and subtracting columns.    "
 },
 {
-  "id": "fact-24",
+  "id": "fact-23",
   "level": "2",
-  "url": "GT1.html#fact-24",
+  "url": "GT1.html#fact-23",
   "type": "Fact",
   "number": "6.1.14",
   "title": "",
@@ -3214,27 +3178,27 @@ var ptx_lunr_docs = [
   "body": "  The transformation given by the standard matrix scales areas by , and the transformation given by the standard matrix scales areas by . By what factor does the transformation given by the standard matrix scale areas?      Area changing under the composition of two linear maps             Cannot be determined    "
 },
 {
-  "id": "fact-25",
+  "id": "fact-24",
   "level": "2",
-  "url": "GT1.html#fact-25",
+  "url": "GT1.html#fact-24",
   "type": "Fact",
   "number": "6.1.16",
   "title": "",
   "body": "  Since the transformation given by the standard matrix is obtained by applying the transformations given by and , it follows that .   "
 },
 {
-  "id": "remark-17",
+  "id": "remark-16",
   "level": "2",
-  "url": "GT1.html#remark-17",
+  "url": "GT1.html#remark-16",
   "type": "Remark",
   "number": "6.1.17",
   "title": "",
   "body": "  Recall that row operations may be produced by matrix multiplication.   Multiply the first row of by :   Swap the first and second row of :   Add times the third row to the first row of :     "
 },
 {
-  "id": "fact-26",
+  "id": "fact-25",
   "level": "2",
-  "url": "GT1.html#fact-26",
+  "url": "GT1.html#fact-25",
   "type": "Fact",
   "number": "6.1.18",
   "title": "",
@@ -3268,36 +3232,36 @@ var ptx_lunr_docs = [
   "body": "  Consider the row operation applied as follows to show :    Find a matrix such that .  If is a matrix with , find .  "
 },
 {
-  "id": "remark-18",
+  "id": "remark-17",
   "level": "2",
-  "url": "GT1.html#remark-18",
+  "url": "GT1.html#remark-17",
   "type": "Remark",
   "number": "6.1.22",
   "title": "",
   "body": "  Recall that the column versions of the three row-reducing operations a matrix may be used to simplify a determinant:   Multiplying columns by scalars:   Swapping two columns:   Adding a multiple of a column to another column:     "
 },
 {
-  "id": "remark-19",
+  "id": "remark-18",
   "level": "2",
-  "url": "GT1.html#remark-19",
+  "url": "GT1.html#remark-18",
   "type": "Remark",
   "number": "6.1.23",
   "title": "",
   "body": "  The determinants of row operation matrices may be computed by manipulating columns to reduce each matrix to the identity:   Scaling a row:   Swapping rows:   Adding a row multiple to another row:     "
 },
 {
-  "id": "fact-27",
+  "id": "fact-26",
   "level": "2",
-  "url": "GT1.html#fact-27",
+  "url": "GT1.html#fact-26",
   "type": "Fact",
   "number": "6.1.24",
   "title": "",
   "body": "  Thus we can also use both row operations to simplify determinants:   Multiplying rows by scalars:    Swapping two rows:    Adding multiples of rows\/columns to other rows:      "
 },
 {
-  "id": "observation-31",
+  "id": "observation-29",
   "level": "2",
-  "url": "GT1.html#observation-31",
+  "url": "GT1.html#observation-29",
   "type": "Observation",
   "number": "6.1.25",
   "title": "",
@@ -3340,9 +3304,9 @@ var ptx_lunr_docs = [
   "body": "   Compute the determinant of a matrix.    "
 },
 {
-  "id": "remark-20",
+  "id": "remark-19",
   "level": "2",
-  "url": "GT2.html#remark-20",
+  "url": "GT2.html#remark-19",
   "type": "Remark",
   "number": "6.2.1",
   "title": "",
@@ -3358,9 +3322,9 @@ var ptx_lunr_docs = [
   "body": "  The following image illustrates the transformation of the unit cube by the matrix .      Transformation of the unit cube by the linear transformation.   Recall that for this solid , where is the height of the solid and is the area of its parallelogram base. So what must its volume be?                 "
 },
 {
-  "id": "fact-28",
+  "id": "fact-27",
   "level": "2",
-  "url": "GT2.html#fact-28",
+  "url": "GT2.html#fact-27",
   "type": "Fact",
   "number": "6.2.3",
   "title": "",
@@ -3394,9 +3358,9 @@ var ptx_lunr_docs = [
   "body": "  Simplify to a multiple of a determinant by first doing the following:   Use row\/column operations to create two zeroes in the same row or column.  Factor\/swap as needed to get a row\/column of all zeroes except a on the main diagonal.  "
 },
 {
-  "id": "observation-32",
+  "id": "observation-30",
   "level": "2",
-  "url": "GT2.html#observation-32",
+  "url": "GT2.html#observation-30",
   "type": "Observation",
   "number": "6.2.7",
   "title": "",
@@ -3421,18 +3385,18 @@ var ptx_lunr_docs = [
   "body": "  Compute by using any combination of row\/column operations.   "
 },
 {
-  "id": "observation-33",
+  "id": "observation-31",
   "level": "2",
-  "url": "GT2.html#observation-33",
+  "url": "GT2.html#observation-31",
   "type": "Observation",
   "number": "6.2.10",
   "title": "",
   "body": "  Another option is to take advantage of the fact that the determinant is linear in each row or column. This approach is called Laplace expansion or cofactor expansion .  For example, since ,    "
 },
 {
-  "id": "observation-34",
+  "id": "observation-32",
   "level": "2",
-  "url": "GT2.html#observation-34",
+  "url": "GT2.html#observation-32",
   "type": "Observation",
   "number": "6.2.11",
   "title": "",
@@ -3547,18 +3511,18 @@ var ptx_lunr_docs = [
   "body": "  An invertible matrix and its inverse are given below:   Which of the following is equal to ?                 "
 },
 {
-  "id": "fact-29",
+  "id": "fact-28",
   "level": "2",
-  "url": "GT3.html#fact-29",
+  "url": "GT3.html#fact-28",
   "type": "Fact",
   "number": "6.3.2",
   "title": "",
   "body": "  For every invertible matrix , so .  Furthermore, a square matrix is invertible if and only if .   "
 },
 {
-  "id": "observation-35",
+  "id": "observation-33",
   "level": "2",
-  "url": "GT3.html#observation-35",
+  "url": "GT3.html#observation-33",
   "type": "Observation",
   "number": "6.3.3",
   "title": "",
@@ -3583,9 +3547,9 @@ var ptx_lunr_docs = [
   "body": "  Finding the eigenvalues that satisfy for some nontrivial eigenvector is equivalent to finding nonzero solutions for the matrix equation .  Which of the following must be true for any eigenvalue?   The kernel of the transformation with standard matrix must contain the zero vector , so is invertible .  The kernel of the transformation with standard matrix must contain a non-zero vector , so is not invertible .  The image of the transformation with standard matrix must contain the zero vector , so is invertible .  The image of the transformation with standard matrix must contain a non-zero vector , so is not invertible .    "
 },
 {
-  "id": "fact-30",
+  "id": "fact-29",
   "level": "2",
-  "url": "GT3.html#fact-30",
+  "url": "GT3.html#fact-29",
   "type": "Fact",
   "number": "6.3.6",
   "title": "",
@@ -3763,18 +3727,18 @@ var ptx_lunr_docs = [
   "body": "  Consider the representation of a simple truss pictured below. All of the seven struts are of equal length, affixed to two anchor points applying a normal force to nodes and , and with a load applied to the node given by .      A simple truss   Which of the following must hold for the truss to be stable?   All of the struts will experience compression.  All of the struts will experience tension.  Some of the struts will be compressed, but others will be tensioned.    "
 },
 {
-  "id": "observation-36",
+  "id": "observation-34",
   "level": "2",
-  "url": "truss.html#observation-36",
+  "url": "truss.html#observation-34",
   "type": "Observation",
   "number": "A.1.3",
   "title": "",
   "body": "  Since the forces must balance at each node for the truss to be stable, some of the struts will be compressed, while others will be tensioned.      Completed truss   By finding vector equations that must hold at each node, we may determine many of the forces at play.   "
 },
 {
-  "id": "remark-21",
+  "id": "remark-20",
   "level": "2",
-  "url": "truss.html#remark-21",
+  "url": "truss.html#remark-20",
   "type": "Remark",
   "number": "A.1.4",
   "title": "",
@@ -3790,18 +3754,18 @@ var ptx_lunr_docs = [
   "body": "  Using the conventions of the previous remark, and where represents the load vector on node , find four more vector equations that must be satisfied for each of the other four nodes of the truss.      A simple truss         "
 },
 {
-  "id": "remark-22",
+  "id": "remark-21",
   "level": "2",
-  "url": "truss.html#remark-22",
+  "url": "truss.html#remark-21",
   "type": "Remark",
   "number": "A.1.6",
   "title": "",
   "body": "  The five vector equations may be written as follows.        "
 },
 {
-  "id": "observation-37",
+  "id": "observation-35",
   "level": "2",
-  "url": "truss.html#observation-37",
+  "url": "truss.html#observation-35",
   "type": "Observation",
   "number": "A.1.7",
   "title": "",
@@ -3817,27 +3781,27 @@ var ptx_lunr_docs = [
   "body": "  To write a linear system that models the truss under consideration with constant load newtons, how many scalar variables will be required?     : from the nodes, from the anchors     : from the struts, from the anchors     : from the struts, from the anchors     : from the struts, from the anchors, from the load     : from the nodes, from the struts, from the load        A simple truss    "
 },
 {
-  "id": "observation-38",
+  "id": "observation-36",
   "level": "2",
-  "url": "truss.html#observation-38",
+  "url": "truss.html#observation-36",
   "type": "Observation",
   "number": "A.1.9",
   "title": "",
   "body": "  Since the angles for each strut are known, one variable may be used to represent each.      Variables for the truss   For example:     "
 },
 {
-  "id": "observation-39",
+  "id": "observation-37",
   "level": "2",
-  "url": "truss.html#observation-39",
+  "url": "truss.html#observation-37",
   "type": "Observation",
   "number": "A.1.10",
   "title": "",
   "body": "  Since the angle of the normal forces for each anchor point are unknown, two variables may be used to represent each.      Truss with normal forces    The load vector is constant.    "
 },
 {
-  "id": "remark-23",
+  "id": "remark-22",
   "level": "2",
-  "url": "truss.html#remark-23",
+  "url": "truss.html#remark-22",
   "type": "Remark",
   "number": "A.1.11",
   "title": "",
@@ -3853,27 +3817,27 @@ var ptx_lunr_docs = [
   "body": "  Expand the vector equation given below using sine and cosine of appropriate angles, then compute each component (approximating ).      Variables for the truss       "
 },
 {
-  "id": "observation-40",
+  "id": "observation-38",
   "level": "2",
-  "url": "truss.html#observation-40",
+  "url": "truss.html#observation-38",
   "type": "Observation",
   "number": "A.1.13",
   "title": "",
   "body": "  The full augmented matrix given by the ten equations in this linear system is given below, where the elevent columns correspond to , and the ten rows correspond to the horizontal and vertical components of the forces acting at .    "
 },
 {
-  "id": "observation-41",
+  "id": "observation-39",
   "level": "2",
-  "url": "truss.html#observation-41",
+  "url": "truss.html#observation-39",
   "type": "Observation",
   "number": "A.1.14",
   "title": "",
   "body": "  This matrix row-reduces to the following.    "
 },
 {
-  "id": "observation-42",
+  "id": "observation-40",
   "level": "2",
-  "url": "truss.html#observation-42",
+  "url": "truss.html#observation-40",
   "type": "Observation",
   "number": "A.1.15",
   "title": "",
@@ -3898,9 +3862,9 @@ var ptx_lunr_docs = [
   "body": " The $978,000,000,000 Problem     In the picture below, each circle represents a webpage, and each arrow represents a link from one page to another.      A seven-webpage network   Based on how these pages link to each other, write a list of the 7 webpages in order from most important to least important.   "
 },
 {
-  "id": "observation-43",
+  "id": "observation-41",
   "level": "2",
-  "url": "pagerank.html#observation-43",
+  "url": "pagerank.html#observation-41",
   "type": "Observation",
   "number": "A.2.2",
   "title": "The $978,000,000,000 Idea.",
@@ -3916,9 +3880,9 @@ var ptx_lunr_docs = [
   "body": "  Consider this small network with only three pages. Let be the importance of the three pages respectively.      A three-webpage network     splits its endorsement in half between and   sends all of its endorsement to   sends all of its endorsement to .   This corresponds to the page rank system :   "
 },
 {
-  "id": "observation-44",
+  "id": "observation-42",
   "level": "2",
-  "url": "pagerank.html#observation-44",
+  "url": "pagerank.html#observation-42",
   "type": "Observation",
   "number": "A.2.4",
   "title": "",
@@ -3943,9 +3907,9 @@ var ptx_lunr_docs = [
   "body": "  Find a page rank vector satisfying for the following network's page rank matrix .  That is, find the eigenspace associated with for the matrix , and choose a vector from that eigenspace.       A three-webpage network        "
 },
 {
-  "id": "observation-45",
+  "id": "observation-43",
   "level": "2",
-  "url": "pagerank.html#observation-45",
+  "url": "pagerank.html#observation-43",
   "type": "Observation",
   "number": "A.2.7",
   "title": "",
@@ -3970,9 +3934,9 @@ var ptx_lunr_docs = [
   "body": "  Find a page rank vector for the given page rank matrix.          A seven-webpage network    Which webpage is most important?   "
 },
 {
-  "id": "observation-46",
+  "id": "observation-44",
   "level": "2",
-  "url": "pagerank.html#observation-46",
+  "url": "pagerank.html#observation-44",
   "type": "Observation",
   "number": "A.2.10",
   "title": "",
@@ -4006,9 +3970,9 @@ var ptx_lunr_docs = [
   "body": "  In geology, a phase is any physically separable material in the system, such as various minerals or liquids.  A component is a chemical compound necessary to make up the phases; these are usually oxides such as Calcium Oxide ( ) or Silicon Dioxide ( ).  In a typical application, a geologist knows how to build each phase from the components, and is interested in determining reactions among the different phases.   "
 },
 {
-  "id": "observation-47",
+  "id": "observation-45",
   "level": "2",
-  "url": "geology.html#observation-47",
+  "url": "geology.html#observation-45",
   "type": "Observation",
   "number": "A.3.2",
   "title": "",

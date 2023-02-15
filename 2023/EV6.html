@@ -613,17 +613,17 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">Subspace Basis and Dimension (EV6)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-12"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
-<ul class="disc"><li id="li-262"><div class="para" id="p-449">Compute a basis for the subspace spanned by a given set of Euclidean vectors, and determine the dimension of the subspace.</div></li></ul></article><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
+<ul class="disc"><li id="li-300"><div class="para" id="p-484">Compute a basis for the subspace spanned by a given set of Euclidean vectors, and determine the dimension of the subspace.</div></li></ul></article><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">Class Activities</span>
 </h3>
-<article class="observation remark-like" id="observation-10"><h4 class="heading">
+<article class="observation remark-like" id="observation-7"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-450">Recall from section <a href="EV3.html" class="internal" title="Section 2.3: Subspaces (EV3)">Section 2.3</a> that a <dfn class="terminology">subspace</dfn> of a vector space is a subset that is itself a vector space.</div> <div class="para" id="p-451">One easy way to construct a subspace is to take the span of set, but a linearly dependent set contains “redundant” vectors. For example, only two of the three vectors in the following image are needed to span the planar subspace.</div> <figure class="figure figure-like" id="figure-17"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-8.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">17<span class="period">.</span></span><span class="space"> </span>A linearly dependent set of three vectors</figcaption></figure></article><article class="activity project-like" id="activity-56"><h4 class="heading">
+<div class="para" id="p-485">Recall from section <a href="EV3.html" class="internal" title="Section 2.3: Subspaces (EV3)">Section 2.3</a> that a <dfn class="terminology">subspace</dfn> of a vector space is the result of spanning a set of vectors from that space.</div> <div class="para" id="p-486">Recall also that a linearly dependent set contains “redundant” vectors. For example, only two of the three vectors in the following image are needed to span the planar subspace.</div> <figure class="figure figure-like" id="figure-17"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-8.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">17<span class="period">.</span></span><span class="space"> </span>A linearly dependent set of three vectors</figcaption></figure></article><article class="activity project-like" id="activity-54"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-29"><div class="para" id="p-452">Consider the subspace of <span class="process-math">\(\IR^4\)</span> given by <span class="process-math">\(W=\vspan\left\{
+<div class="introduction" id="introduction-29"><div class="para" id="p-487">Consider the subspace of <span class="process-math">\(\IR^4\)</span> given by <span class="process-math">\(W=\vspan\left\{
 \left[\begin{array}{c}2\\3\\0\\1\end{array}\right],
 \left[\begin{array}{c}2\\0\\1\\-1\end{array}\right],
 \left[\begin{array}{c}2\\-3\\2\\-3\end{array}\right],
@@ -631,20 +631,29 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 \right\}
 \text{.}\)</span>
 </div></div>
-<article class="task exercise-like" id="task-67"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-453">Mark the part of <span class="process-math">\(\RREF\left[\begin{array}{cccc}
+<article class="task exercise-like" id="task-76"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-488">Mark the column of <span class="process-math">\(\RREF\left[\begin{array}{cccc}
 2&amp;2&amp;2&amp;1\\
 3&amp;0&amp;-3&amp;5\\
 0&amp;1&amp;2&amp;-1\\
 1&amp;-1&amp;-3&amp;0
-\end{array}\right]\)</span> that shows that <span class="process-math">\(W\)</span>'s spanning set is linearly dependent.</div></article><article class="task exercise-like" id="task-68"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-454">Find a basis for <span class="process-math">\(W\)</span> by removing a vector from its spanning set to make it linearly independent.</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-16"><script type="text/x-sage">rref([2,2,2,1; 3,0,-3,5; 0,1,2,-1; 1,-1,-3,0])
+\end{array}\right]\)</span> that shows that <span class="process-math">\(W\)</span>'s spanning set is linearly dependent.</div></article><article class="task exercise-like" id="task-77"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-489">
+<div class="para">What would be the result of removing the vector that gave us this column?</div>
+<ol class="upper-alpha">
+<li id="li-301"><div class="para" id="p-derived-li-301">The set still spans <span class="process-math">\(W\text{,}\)</span> but is now also linearly independent.</div></li>
+<li id="li-302"><div class="para" id="p-derived-li-302">The set forms a basis for <span class="process-math">\(W\text{.}\)</span>
+</div></li>
+<li id="li-303"><div class="para" id="p-derived-li-303">Both of these.</div></li>
+<li id="li-304"><div class="para" id="p-derived-li-304">Neither of these.</div></li>
+</ol>
+</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-15"><script type="text/x-sage">rref([2,2,2,1; 3,0,-3,5; 0,1,2,-1; 1,-1,-3,0])
 </script></pre>
-<article class="fact theorem-like" id="fact-10"><h4 class="heading">
+<article class="fact theorem-like" id="fact-9"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-455">Let <span class="process-math">\(S=\{\vec v_1,\dots,\vec v_m\}\text{.}\)</span> The easiest basis describing <span class="process-math">\(\vspan S\)</span> is the set of vectors in <span class="process-math">\(S\)</span> given by the pivot columns of <span class="process-math">\(\RREF[\vec v_1\,\dots\,\vec v_m]\text{.}\)</span>
-</div> <div class="para logical" id="p-456">
+<div class="para" id="p-490">Let <span class="process-math">\(S=\{\vec v_1,\dots,\vec v_m\}\text{.}\)</span> The most convenient basis for <span class="process-math">\(\vspan S\)</span> is the set of vectors from <span class="process-math">\(S\)</span> given by the pivot columns of <span class="process-math">\(\RREF[\vec v_1\,\dots\,\vec v_m]\text{.}\)</span>
+</div> <div class="para logical" id="p-491">
 <div class="para">Put another way, to compute a basis for the subspace <span class="process-math">\(\vspan S\text{,}\)</span> simply remove the vectors corresponding to the non-pivot columns of <span class="process-math">\(\RREF[\vec v_1\,\dots\,\vec v_m]\text{.}\)</span> For example, since</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -670,10 +679,10 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 \left[\begin{array}{c}1\\0\\-3\end{array}\right],
 \left[\begin{array}{c}2\\-2\\1\end{array}\right]
 }\)</span> as a basis.</div>
-</div></article><article class="activity project-like" id="activity-57"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-55"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-457">
+<div class="para logical" id="p-492">
 <div class="para">Let <span class="process-math">\(W\)</span> be the subspace of <span class="process-math">\(\IR^4\)</span> given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -687,43 +696,13 @@ W = \vspan \left\{
 </div>
 <div class="para">Find a basis for <span class="process-math">\(W\text{.}\)</span>
 </div>
-</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-17"><script type="text/x-sage"></script></pre>
-<article class="activity project-like" id="activity-58"><h4 class="heading">
+</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-16"><script type="text/x-sage"></script></pre>
+<article class="activity project-like" id="activity-56"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.5</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-458">
-<div class="para">Let <span class="process-math">\(W\)</span> be the subspace of <span class="process-math">\(\P_3\)</span> given by</div>
-<div class="displaymath process-math">
-\begin{equation*}
-W = \vspan \left\{x^3+3x^2+x-1, 2x^3-x^2+x+2, 4x^3+5x^2+3x, 3x^3+2x^2+2x+1 \right\} 
-\end{equation*}
-</div>
-<div class="para">Find a basis for <span class="process-math">\(W\text{.}\)</span>
-</div>
-</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-18"><script type="text/x-sage"></script></pre>
-<article class="activity project-like" id="activity-59"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.6</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="p-459">
-<div class="para">Let <span class="process-math">\(W\)</span> be the subspace of <span class="process-math">\(M_{2,2}\)</span> given by</div>
-<div class="displaymath process-math">
-\begin{equation*}
-W = \vspan \left\{
-\left[\begin{array}{cc} 1 &amp; 3 \\ 1  &amp; -1 \end{array}\right],
-\left[\begin{array}{cc} 2 &amp; -1 \\ 1  &amp; 2 \end{array}\right],
-\left[\begin{array}{cc} 4 &amp; 5 \\ 3  &amp; 0 \end{array}\right],
-\left[\begin{array}{cc} 3 &amp; 2 \\ 2  &amp; 1 \end{array}\right]
-\right\}. 
-\end{equation*}
-</div>
-<div class="para">Find a basis for <span class="process-math">\(W\text{.}\)</span>
-</div>
-</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-19"><script type="text/x-sage"></script></pre>
-<article class="activity project-like" id="activity-60"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.7</span><span class="period">.</span>
-</h4>
-<div class="introduction" id="introduction-30"><div class="para logical" id="p-460">
-<div class="para">Let</div>
+<article class="task exercise-like" id="task-78"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical" id="p-493">
+<div class="para">Find a basis for <span class="process-math">\(\vspan S\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
 S=\left\{
@@ -731,10 +710,12 @@ S=\left\{
 \left[\begin{array}{c}2\\0\\1\\-1\end{array}\right],
 \left[\begin{array}{c}2\\-3\\2\\-3\end{array}\right],
 \left[\begin{array}{c}1\\5\\-1\\0\end{array}\right]
-\right\}
+\right\}\text{.}
 \end{equation*}
 </div>
-<div class="para">and</div>
+</div></article><article class="task exercise-like" id="task-79"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-494">
+<div class="para">Find a basis for <span class="process-math">\(\vspan T\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
 T=\left\{
@@ -745,16 +726,11 @@ T=\left\{
 \right\}\text{.}
 \end{equation*}
 </div>
-</div></div>
-<article class="task exercise-like" id="task-69"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-461">Find a basis for <span class="process-math">\(\vspan S\text{.}\)</span>
-</div></article><article class="task exercise-like" id="task-70"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-462">Find a basis for <span class="process-math">\(\vspan T\text{.}\)</span>
-</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-20"><script type="text/x-sage"></script></pre>
-<article class="observation remark-like" id="observation-11"><h4 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.6.8</span><span class="period">.</span>
+</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-17"><script type="text/x-sage"></script></pre>
+<article class="observation remark-like" id="observation-8"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.6.6</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-463">
+<div class="para logical" id="p-495">
 <div class="para">Even though we found different bases for them, <span class="process-math">\(\vspan S\)</span> and <span class="process-math">\(\vspan T\)</span> are exactly the same subspace of <span class="process-math">\(\IR^4\text{,}\)</span> since</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -773,10 +749,10 @@ S=\left\{
 \right\}=T\text{.}
 \end{equation*}
 </div>
-</div></article><article class="fact theorem-like" id="fact-11"><h4 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.6.9</span><span class="period">.</span>
+</div></article><article class="fact theorem-like" id="fact-10"><h4 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.6.7</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-464">Any non-trivial real vector space has infinitely-many different bases, but all the bases for a given vector space are exactly the same size.</div> <div class="para logical" id="p-465">
+<div class="para" id="p-496">Any non-trivial real vector space has infinitely-many different bases, but all the bases for a given vector space are exactly the same size.</div> <div class="para logical" id="p-497">
 <div class="para">For example,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -797,9 +773,9 @@ S=\left\{
 </div>
 <div class="para">are all valid bases for <span class="process-math">\(\IR^3\text{,}\)</span> and they all contain three vectors.</div>
 </div></article><article class="definition definition-like" id="definition-15"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.10</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-466">The <dfn class="terminology">dimension</dfn> of a vector space is equal to the size of any basis for the vector space.</div> <div class="para logical" id="p-467">
+<div class="para" id="p-498">The <dfn class="terminology">dimension</dfn> of a vector space is equal to the size of any basis for the vector space.</div> <div class="para logical" id="p-499">
 <div class="para">As you'd expect, <span class="process-math">\(\IR^n\)</span> has dimension <span class="process-math">\(n\text{.}\)</span> For example, <span class="process-math">\(\IR^3\)</span> has dimension <span class="process-math">\(3\)</span> because any basis for <span class="process-math">\(\IR^3\)</span> such as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -819,12 +795,12 @@ S=\left\{
 \end{equation*}
 </div>
 <div class="para">contains exactly three vectors.</div>
-</div></article><article class="activity project-like" id="activity-61"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.11</span><span class="period">.</span>
+</div></article><article class="activity project-like" id="activity-57"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.9</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-31"><div class="para" id="p-468">Find the dimension of each subspace of <span class="process-math">\(\IR^4\)</span> by finding <span class="process-math">\(\RREF\)</span> for each corresponding matrix.</div></div>
-<article class="task exercise-like" id="task-71"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para logical" id="p-469"><div class="displaymath process-math">
+<div class="introduction" id="introduction-30"><div class="para" id="p-500">Find the dimension of each subspace of <span class="process-math">\(\IR^4\)</span> by finding <span class="process-math">\(\RREF\)</span> for each corresponding matrix.</div></div>
+<article class="task exercise-like" id="task-80"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical" id="p-501"><div class="displaymath process-math">
 \begin{equation*}
 \vspan\left\{
 \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
@@ -833,8 +809,8 @@ S=\left\{
 \left[\begin{array}{c}-3\\0\\1\\3\end{array}\right]
 \right\}
 \end{equation*}
-</div></div></article><article class="task exercise-like" id="task-72"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para logical" id="p-470"><div class="displaymath process-math">
+</div></div></article><article class="task exercise-like" id="task-81"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-502"><div class="displaymath process-math">
 \begin{equation*}
 \vspan\left\{
 \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
@@ -844,8 +820,8 @@ S=\left\{
 \left[\begin{array}{c}4\\3\\0\\2\end{array}\right]
 \right\}
 \end{equation*}
-</div></div></article><article class="task exercise-like" id="task-73"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para logical" id="p-471"><div class="displaymath process-math">
+</div></div></article><article class="task exercise-like" id="task-82"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para logical" id="p-503"><div class="displaymath process-math">
 \begin{equation*}
 \vspan\left\{
 \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
@@ -854,8 +830,8 @@ S=\left\{
 \left[\begin{array}{c}3\\6\\1\\5\end{array}\right]
 \right\}
 \end{equation*}
-</div></div></article><article class="task exercise-like" id="task-74"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<div class="para logical" id="p-472"><div class="displaymath process-math">
+</div></div></article><article class="task exercise-like" id="task-83"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para logical" id="p-504"><div class="displaymath process-math">
 \begin{equation*}
 \vspan\left\{
 \left[\begin{array}{c}5\\3\\0\\-1\end{array}\right],
@@ -863,41 +839,41 @@ S=\left\{
 \left[\begin{array}{c}4\\5\\1\\3\end{array}\right]
 \right\}
 \end{equation*}
-</div></div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-21"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-47"><h3 class="heading hide-type">
+</div></div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-18"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-47"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.2</span> <span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-18"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-EV6" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/iMYIbdtspyo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">18<span class="period">.</span></span><span class="space"> </span>Video: Finding a basis of a subspace and computing the dimension of a subspace</figcaption></figure></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.3</span> <span class="title">Slideshow</span>
 </h3>
-<div class="para" id="p-473">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/EV6.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/EV6.slides.html</code></a>.</div></section><section class="exercises" id="exercises-10"><h3 class="heading hide-type">
+<div class="para" id="p-505">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/EV6.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/EV6.slides.html</code></a>.</div></section><section class="exercises" id="exercises-10"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">2.6.4</span> <span class="title">Exercises</span>
 </h3>
-<div class="para" id="p-474">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV6/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV6/</code></a>.</div></section><section class="subsection" id="subsection-49"><h3 class="heading hide-type">
+<div class="para" id="p-506">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV6/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV6/</code></a>.</div></section><section class="subsection" id="subsection-49"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-20"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.6.12</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.6.10</span><span class="period">.</span>
 </h4>Prove each of the following statements is true. <ul class="disc">
-<li id="li-263"><div class="para" id="p-derived-li-263">If <span class="process-math">\(\{\vec{b}_1, \vec{b}_2,\ldots, \vec{b}_m\}\)</span> and <span class="process-math">\(\{\vec{c}_1,\vec{c}_2,\ldots,\vec{c}_n\}\)</span> are each a basis for a vector space <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(m=n.\)</span>
+<li id="li-305"><div class="para" id="p-derived-li-305">If <span class="process-math">\(\{\vec{b}_1, \vec{b}_2,\ldots, \vec{b}_m\}\)</span> and <span class="process-math">\(\{\vec{c}_1,\vec{c}_2,\ldots,\vec{c}_n\}\)</span> are each a basis for a vector space <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(m=n.\)</span>
 </div></li>
-<li id="li-264"><div class="para" id="p-derived-li-264">If <span class="process-math">\(\{\vec{v}_1,\vec{v}_2\ldots, \vec{v}_n\}\)</span> is linearly independent, then so is <span class="process-math">\(\{\vec{v}_1,\vec{v}_1 + \vec{v}_2, \ldots, \vec{v}_1 + \vec{v}_2 + \cdots + \vec{v}_n\}\text{.}\)</span>
+<li id="li-306"><div class="para" id="p-derived-li-306">If <span class="process-math">\(\{\vec{v}_1,\vec{v}_2\ldots, \vec{v}_n\}\)</span> is linearly independent, then so is <span class="process-math">\(\{\vec{v}_1,\vec{v}_1 + \vec{v}_2, \ldots, \vec{v}_1 + \vec{v}_2 + \cdots + \vec{v}_n\}\text{.}\)</span>
 </div></li>
-<li id="li-265"><div class="para" id="p-derived-li-265">Let <span class="process-math">\(V\)</span> be a vector space of dimension <span class="process-math">\(n\text{,}\)</span> and <span class="process-math">\(\vec{v} \in V\text{.}\)</span> Then there exists a basis for <span class="process-math">\(V\)</span> which contains <span class="process-math">\(\vec{v}\text{.}\)</span>
+<li id="li-307"><div class="para" id="p-derived-li-307">Let <span class="process-math">\(V\)</span> be a vector space of dimension <span class="process-math">\(n\text{,}\)</span> and <span class="process-math">\(\vec{v} \in V\text{.}\)</span> Then there exists a basis for <span class="process-math">\(V\)</span> which contains <span class="process-math">\(\vec{v}\text{.}\)</span>
 </div></li>
 </ul></article><article class="exploration project-like" id="exploration-21"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.6.13</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.6.11</span><span class="period">.</span>
 </h4>Suppose we have the set of all function <span class="process-math">\(f:S \rightarrow \mathbb{R}\text{.}\)</span> We claim that this is a vector space under the usual operation of function addition and scalar multiplication. What is the dimension of this space for each choice of <span class="process-math">\(S\)</span> below: <ul class="disc">
-<li id="li-266"><div class="para" id="p-derived-li-266"><span class="process-math">\(\displaystyle S = \{1\}\)</span></div></li>
-<li id="li-267"><div class="para" id="p-derived-li-267"><span class="process-math">\(\displaystyle S = \{1,2\}\)</span></div></li>
-<li id="li-268"><div class="para" id="p-derived-li-268"><span class="process-math">\(\displaystyle S = \{1,2,\ldots ,n\}\)</span></div></li>
-<li id="li-269"><div class="para" id="p-derived-li-269"><span class="process-math">\(\displaystyle S = \mathbb{R}\)</span></div></li>
+<li id="li-308"><div class="para" id="p-derived-li-308"><span class="process-math">\(\displaystyle S = \{1\}\)</span></div></li>
+<li id="li-309"><div class="para" id="p-derived-li-309"><span class="process-math">\(\displaystyle S = \{1,2\}\)</span></div></li>
+<li id="li-310"><div class="para" id="p-derived-li-310"><span class="process-math">\(\displaystyle S = \{1,2,\ldots ,n\}\)</span></div></li>
+<li id="li-311"><div class="para" id="p-derived-li-311"><span class="process-math">\(\displaystyle S = \mathbb{R}\)</span></div></li>
 </ul></article><article class="exploration project-like" id="exploration-22"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.6.14</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.6.12</span><span class="period">.</span>
 </h4>Suppose you have the vector space <span class="process-math">\(V = \left\{\left(\begin{array}{c}x\\y\\z\end{array}\right)\in \mathbb{R}^3: x + y + z =  1\right\}\)</span> with the operations <span class="process-math">\(\left(\begin{array}{c}x_1\\y_1\\z_1\end{array}\right) \oplus \left(\begin{array}{c}x_2\\y_2\\z_2\end{array}\right) = \left(\begin{array}{c}x_1 + x_2 - 1\\y_1 + y_2\\z_1+z_2\end{array}\right) \mbox{ and } \alpha\odot\left(\begin{array}{c}x_1\\y_1\\z_1\end{array}\right) = \left(\begin{array}{c}\alpha x_1 - \alpha +1\\\alpha y_1\\\alpha z_1\end{array}\right).\)</span> Find a basis for <span class="process-math">\(V\)</span> and determine it's dimension.</article></section><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.6</span> <span class="title">Sample Problem and Solution</span>
 </h3>
-<div class="para" id="p-475">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-EV6.html" title="Example B.1.10: EV6">Example B.1.10</a>.</div></section></section></div>
+<div class="para" id="p-507">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-EV6.html" title="Example B.1.10: EV6">Example B.1.10</a>.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="EV5.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="EV7.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
