@@ -53,8 +53,15 @@
     <task>
         <statement>
             <p>
-                How many ways can the vector <m>\left[\begin{array}{c} 8 \\ 6 \\ 7 \\ 5  \end{array} \right]</m> 
-                be written as a linear combination of the vectors in <m>S</m>?
+                Consider another vector <m>\left[\begin{array}{c} 8 \\ 6 \\ 7 \\ 5  \end{array} \right]</m>.
+                Without computing the RREF of another matrix,
+                how many ways can this vector be written as a linear combination of the vectors in <m>S</m>?
+                <ol marker="A.">
+                    <li><p>Zero.</p></li>
+                    <li><p>One.</p></li>
+                    <li><p>Infintiely-many.</p></li>
+                    <li><p>Computing a new matrix RREF is necessary.</p></li>
+                </ol>
             </p>
         </statement>
     </task> 
@@ -63,30 +70,58 @@
 <sage language="octave">
 </sage>
 
-<observation>
-    <p>
-        We saw that some vectors could be expressed as a linear combination of the vectors in <m>S</m> in lots of (infinitely many) ways,
-        while others could not be expressed at all as a linear combination.
-    </p>
-    <p>
-        This motivates us to look for sets of vectors where every other vector can be constructed from them, and there is only one way to do so.
-    </p>
-</observation>
+<activity>
+    <task>
+        <p>
+    If every vector in a space can be constructed as one or more linear combination of vectors in a set <m>S</m>, we can say...
+            <ol marker="A.">
+                <li><p>the set <m>S</m> spans the space.</p></li>
+                <li><p>the set <m>S</m> fails to span the space.</p></li>
+                <li><p>the set <m>S</m> is linearly indpendent.</p></li>
+                <li><p>the set <m>S</m> is linearly dependent.</p></li>
+            </ol>
+        </p>
+    </task>
+    <task>
+        <p>
+    If the zero vector <m>\vec 0</m> can be constructed as a <em>unique</em> linear combination of vectors in a set <m>S</m>
+    (the combination multiplying every vector by the scalar value <m>0</m>), we can say...
+            <ol marker="A.">
+                <li><p>the set <m>S</m> spans the space.</p></li>
+                <li><p>the set <m>S</m> fails to span the space.</p></li>
+                <li><p>the set <m>S</m> is linearly independent.</p></li>
+                <li><p>the set <m>S</m> is linearly dependent.</p></li>
+            </ol>
+        </p>
+    </task>
+    <task>
+        <p>
+    If every vector of a space can either be constructed as a <em>unique</em> linear combination of vectors in a set <m>S</m>
+    , or not at all, we can say...
+            <ol marker="A.">
+                <li><p>the set <m>S</m> spans the space.</p></li>
+                <li><p>the set <m>S</m> fails to span the space.</p></li>
+                <li><p>the set <m>S</m> is linearly independent.</p></li>
+                <li><p>the set <m>S</m> is linearly dependent.</p></li>
+            </ol>
+        </p>
+    </task>
+</activity>
 
 <definition>
     <statement>
         <p>
-        A <term>basis</term><idx> basis </idx> of a vector space <m>V</m> is a set of vectors <m>S</m> for which 
+        A <term>basis</term><idx> basis </idx> of a vector space is a set of vectors <m>S</m> for which 
         </p>
         <ol>
             <li>
                 <p>
-                    <em>Every</em> vector in <m>V</m> can be expressed as a linear combination of the vectors in <m>S</m>
+                    <em>Every</em> vector of the space can be expressed as a linear combination of the vectors in <m>S</m>.
                 </p>
             </li>
             <li>
                 <p>
-                    For each vector <m>\vec{v} \in V</m>, there is only <em>one</em> way to write it as a linear combination
+                    For each vector <m>\vec{v}</m> in the space, there is only <em>one</em> way to write it as a linear combination
                     of the vectors in <m>S</m>.
                 </p>
             </li>
@@ -95,12 +130,54 @@
         <p>These two properties may be expressed more succintly as the statement "Every vector in <m>V</m> can be expressed
         <em>uniquely</em> as a linear combination of the vectors in <m>S</m>".
         </p>
-        <p>Or, in terms of a vector equation, a set <m>S=\left\{\vec{v}_1,\ldots,\vec{v}_n\right\}</m> is a basis of <m>V</m> if the vector equation
-        <me>x_1 \vec{v_1}+\cdots+x_n\vec{v_n}=\vec{w}</me>
-        has a <em>unique solution</em> for <em>every vector</em> <m> \vec{w} \in V</m>.
-        </p>
     </statement>
 </definition>
+
+<observation>
+    <p>In terms of a vector equation, a set <m>S=\left\{\vec{v}_1,\ldots,\vec{v}_n\right\}</m> is a basis of a space if the vector equation
+    <me>x_1 \vec{v_1}+\cdots+x_n\vec{v_n}=\vec{w}</me>
+    has a <em>unique</em> solution for <em>every</em> vector <m> \vec{w}</m> in the space.</p>
+    <p>Put another way, a basis may be thought of as a minimal set of <q>building blocks</q> that can be used to construct
+        any other vector of the space.</p>
+</observation>
+
+<activity>
+        <p>
+ Let <m>S</m> be a basis for a space. Then...
+            <ol marker="A.">
+                <li><p>the set <m>S</m> must both span the space and be linearly independent.</p></li>
+                <li><p>the set <m>S</m> must span the space but could be linearly dependent.</p></li>
+                <li><p>the set <m>S</m> must be linearly independent but could fail to span the space.</p></li>
+                <li><p>the set <m>S</m> could fail to span the space and could be linearly dependent.</p></li>
+            </ol>
+        </p>
+</activity>
+
+<activity>
+        <p>
+The vectors
+<md>
+    <mrow>
+\hat\imath &amp;= (1,0,0)=\left[\begin{array}{c}1 \\ 0 \\ 0 \\ \end{array}\right] &amp;
+\hat\jmath &amp;= (0,1,0)=\left[\begin{array}{c}0 \\ 1 \\ 0  \end{array}\right] &amp;
+\hat k &amp;=(0,0,1)= \left[\begin{array}{c}0 \\ 0 \\ 1  \end{array}\right] 
+    </mrow>
+</md>
+form a basis <m>\{\hat\imath,\hat\jmath,\hat k\}</m> used frequently in
+multivariable calculus.
+</p>
+<p>
+Find the unique linear combination of these vectors
+<me>
+  \unknown\hat\imath+\unknown\hat\jmath+\unknown\hat k
+</me>
+that equals the vector
+  <me>
+    (3,-2,4)=\left[\begin{array}{c}3 \\ -2 \\ 4\end{array}\right]
+  </me>
+  in <m>xyz</m> space.
+        </p>
+</activity>
 
 <definition>
     <statement>
@@ -115,163 +192,189 @@
                 </mrow>
             </md>.
         </p>
- 
+        <p>
+In particular, the standard basis for <m>\mathbb R^3</m> is <m>\{\vec e_1,\vec e_2,\vec e_3\}=\{\hat\imath,\hat\jmath,\hat k\}</m>.
+        </p>
     </statement>
   </definition>
 
-<observation>
-    <statement>
-        <p>
-  A basis may be thought of as a collection of building blocks for a vector
-  space,  since every vector in the space can be expressed as a unique linear
-  combination of basis vectors.
-        </p>
-        <p>
-  For example, in many calculus courses, vectors in <m>\IR^3</m>
-  are often expressed in their component form
-  <me>
-    (3,-2,4)=\left[\begin{array}{c}3 \\ -2 \\ 4\end{array}\right]
-  </me>
-  or in their standard basic vector form
-  <me>
-    3\vec e_1-2\vec e_2+4\vec e_3 = 3\hat\imath-2\hat\jmath+4\hat k
-  .</me>
-  Since every vector in <m>\IR^3</m> can be uniquely described as a linear
-  combination of the vectors in <m>\setList{\vec e_1,\vec e_2,\vec e_3}</m>,
-  this set is indeed a basis.
-        </p>
-    </statement>
-</observation>
-
-<remark>
-<p>
-    Saying that the vector equation
-        <me>x_1 \vec{v_1}+\cdots+x_n\vec{v_n}=\vec{w}</me>
-        has a solution for <em>every vector</em> <m> \vec{w} \in V</m> is saying that the set 
-        <m>\left\{\vec{v}_1,\ldots,\vec{v}_n\right\}</m> <em>spans</em> the vector space <m>V</m>.
-</p>
-<p>
-    However, to be a basis, we need to also check that the solution is always unique
-</p>
-<p>
-    In other words, it is <em>necessary</em> for a set to span <m>V</m> in order to be a basis of <m>V</m>, but this is <em>not sufficient</em>.
-</p>
-</remark>
-
-<activity estimated-time='10'>
-    <statement>
-        <p>
-            Recall that in <xref ref="activity-EV5-intro"/> we found two different ways to write the vector 
-            <m>\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]</m> as a linear combination
-                of the vectors in the set <m>S=\left\{
-                \left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right],
-                \left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right],
-                \left[\begin{array}{c} 0 \\ -16 \\ -5 \\ -3  \end{array} \right],
-                \left[\begin{array}{c} 1 \\ 2 \\ 3 \\ 0  \end{array} \right],
-                \left[\begin{array}{c} 3 \\ 3 \\ 0 \\ 1  \end{array} \right] \right\}
-                </m>.
-        </p>
-        <p>
-            For example, we had
-            <md>
-            <mrow>\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]&amp; =
-                \left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right]  +
-                \left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right]
-            </mrow>
-            <mrow>\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]&amp; =
-                3\left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right]  
-                -2\left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right]
-                -\left[\begin{array}{c} 0 \\ -16 \\ -5 \\ -3  \end{array} \right]
-            </mrow>
-            </md>.
-        </p>
-        <p>Manipulate these two equations to show how to build the zero vector out of the vectors in <m>S</m>.
-        </p>
-    </statement>
-</activity>
-
-<observation>
-    <p>
-        Whenever a vector can be expressed as two different linear combinations of vectors in a set <m>S</m>, the set <m>S</m> must be <em>linearly dependent</em>.
-    </p>
-</observation>
-
-<fact>
-    <statement>
-        <p>
-            A set of vectors <m>S</m> is a basis of a vector space <m>V</m> if <m>S</m> <em>spans <m>V</m></em> and is <em>linearly independent</em>.
-        </p>
-        <p>
-            If either of these fails, then <m>S</m> cannot be a basis of <m>V</m>.
-        </p>
-    </statement>
-</fact>
-
-
 <activity estimated-time='15'>
-    <statement>
+    <introduction>
         <p>
-  Label each of the sets <m>A,B,C,D,E</m> as
-  <ul>
-<li>
-    <p>
-    SPANS <m>\IR^4</m> or DOES NOT SPAN <m>\IR^4</m>
-    </p>
-     </li>
-<li>
-    <p>
-    LINEARLY INDEPENDENT or LINEARLY DEPENDENT
-    </p>
-     </li>
-<li>
-    <p>
-    BASIS FOR <m>\IR^4</m> or NOT A BASIS FOR <m>\IR^4</m>
-    </p>
-     </li>
-  </ul>
-  by finding <m>\RREF</m> for their corresponding matrices.
+  Take the RREF of an appropriate matrix to determine
+  if each of the following sets is a basis for <m>\IR^4</m>.
         </p>
-        <md>
-            <mrow>
-      A&amp;=\left\{
+    </introduction>
+    <task>
+        <p>
+        <me>
+      \left\{
       \left[\begin{array}{c}1\\0\\0\\0\end{array}\right],
       \left[\begin{array}{c}0\\1\\0\\0\end{array}\right],
       \left[\begin{array}{c}0\\0\\1\\0\end{array}\right],
       \left[\begin{array}{c}0\\0\\0\\1\end{array}\right]
       \right\}
-        &amp;
-   B&amp;=\left\{
-      \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
-      \left[\begin{array}{c}2\\0\\0\\3\end{array}\right],
-      \left[\begin{array}{c}4\\3\\0\\2\end{array}\right],
-      \left[\begin{array}{c}-3\\0\\1\\3\end{array}\right]
-      \right\}
-            </mrow>
-            <mrow>
-      C&amp;=\left\{
-      \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
-      \left[\begin{array}{c}2\\0\\0\\3\end{array}\right],
-      \left[\begin{array}{c}3\\13\\7\\16\end{array}\right],
-      \left[\begin{array}{c}-1\\10\\7\\14\end{array}\right],
-      \left[\begin{array}{c}4\\3\\0\\2\end{array}\right]
-      \right\}
-      &amp;
-      D&amp;=\left\{
-      \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
-      \left[\begin{array}{c}4\\3\\0\\2\end{array}\right],
-      \left[\begin{array}{c}-3\\0\\1\\3\end{array}\right],
-      \left[\begin{array}{c}3\\6\\1\\5\end{array}\right]
-      \right\}
-            </mrow>
-            <mrow>
-     E&amp;=\left\{
-      \left[\begin{array}{c}5\\3\\0\\-1\end{array}\right],
-      \left[\begin{array}{c}-2\\1\\0\\3\end{array}\right],
-      \left[\begin{array}{c}4\\5\\1\\3\end{array}\right]
-      \right\}
-            </mrow>
-        </md>
-    </statement>
+      </me>
+      <ol marker="A.">
+        <li>
+            <p>
+A basis because it both spans and is linearly independent.   
+            </p>
+        </li>
+        <li>
+            <p>
+Spans, but not a basis as it is linearly dependent.   
+            </p>
+        </li>
+        <li>
+            <p>
+Linearly indpendent, but not a basis as it fails to span. 
+            </p>
+        </li>
+        <li>
+            <p>
+Fails to span and linearly independent, so not a basis.
+            </p>
+        </li>
+    </ol>
+</p>
+</task>
+<task>
+    <p>
+    <me>
+        \left\{
+            \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+            \left[\begin{array}{c}2\\0\\0\\3\end{array}\right],
+            \left[\begin{array}{c}4\\3\\0\\2\end{array}\right],
+            \left[\begin{array}{c}-3\\0\\1\\3\end{array}\right]
+            \right\}
+  </me>
+  <ol marker="A.">
+    <li>
+        <p>
+A basis because it both spans and is linearly independent.   
+        </p>
+    </li>
+    <li>
+        <p>
+Spans, but not a basis as it is linearly dependent.   
+        </p>
+    </li>
+    <li>
+        <p>
+Linearly indpendent, but not a basis as it fails to span. 
+        </p>
+    </li>
+    <li>
+        <p>
+Fails to span and linearly independent, so not a basis.
+        </p>
+    </li>
+</ol>
+</p>
+</task>
+<task>
+    <p>
+    <me>
+        \left\{
+            \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+            \left[\begin{array}{c}2\\0\\0\\3\end{array}\right],
+            \left[\begin{array}{c}3\\13\\7\\16\end{array}\right],
+            \left[\begin{array}{c}-1\\10\\7\\14\end{array}\right],
+            \left[\begin{array}{c}4\\3\\0\\2\end{array}\right]
+            \right\}
+  </me>
+  <ol marker="A.">
+    <li>
+        <p>
+A basis because it both spans and is linearly independent.   
+        </p>
+    </li>
+    <li>
+        <p>
+Spans, but not a basis as it is linearly dependent.   
+        </p>
+    </li>
+    <li>
+        <p>
+Linearly indpendent, but not a basis as it fails to span. 
+        </p>
+    </li>
+    <li>
+        <p>
+Fails to span and linearly independent, so not a basis.
+        </p>
+    </li>
+</ol>
+</p>
+</task>
+<task>
+    <p>
+    <me>
+        \left\{
+            \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+            \left[\begin{array}{c}4\\3\\0\\2\end{array}\right],
+            \left[\begin{array}{c}-3\\0\\1\\3\end{array}\right],
+            \left[\begin{array}{c}3\\6\\1\\5\end{array}\right]
+            \right\}
+  </me>
+  <ol marker="A.">
+    <li>
+        <p>
+A basis because it both spans and is linearly independent.   
+        </p>
+    </li>
+    <li>
+        <p>
+Spans, but not a basis as it is linearly dependent.   
+        </p>
+    </li>
+    <li>
+        <p>
+Linearly indpendent, but not a basis as it fails to span. 
+        </p>
+    </li>
+    <li>
+        <p>
+Fails to span and linearly independent, so not a basis.
+        </p>
+    </li>
+</ol>
+</p>
+</task>
+<task>
+    <p>
+    <me>
+        \left\{
+            \left[\begin{array}{c}5\\3\\0\\-1\end{array}\right],
+            \left[\begin{array}{c}-2\\1\\0\\3\end{array}\right],
+            \left[\begin{array}{c}4\\5\\1\\3\end{array}\right]
+            \right\}
+  </me>
+  <ol marker="A.">
+    <li>
+        <p>
+A basis because it both spans and is linearly independent.   
+        </p>
+    </li>
+    <li>
+        <p>
+Spans, but not a basis as it is linearly dependent.   
+        </p>
+    </li>
+    <li>
+        <p>
+Linearly indpendent, but not a basis as it fails to span. 
+        </p>
+    </li>
+    <li>
+        <p>
+Fails to span and linearly independent, so not a basis.
+        </p>
+    </li>
+</ol>
+</p>
+</task>
 </activity>
 
 <sage language="octave">
@@ -282,9 +385,11 @@
         <p>
   If <m>\{\vec v_1,\vec v_2,\vec v_3,\vec v_4\}</m> is a basis for
   <m>\IR^4</m>, that means <m>\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]</m>
-  doesn't have a non-pivot column, and doesn't have a
-  row of zeros. What is <m>\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]</m>?
+  has a pivot in every row (because it spans), and has a pivot in every column
+  (because it's linearly independent).
         </p>
+        <p>
+            What is <m>\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]</m>?
   <me>
     \RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]
       =
@@ -295,6 +400,7 @@
       \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
     \end{array}\right]
   </me>
+</p>
     </statement>
 </activity>
 
