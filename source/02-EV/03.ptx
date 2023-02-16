@@ -388,6 +388,121 @@ by doing <em>both</em> of the following:
     </answer> -->
   </activity>
 
+  <activity>
+      <statement>
+        <p> 
+            Consider the following attempted proof that 
+            <me>U=\left\{ \left[\begin{array}{c} x \\ y \end{array}\right] \middle| x+y=xy\right\}</me>
+            is closed under scalar multiplication.
+        </p>
+        <blockquote>
+            <p>
+Let <m>\left[\begin{array}{c} x \\ y \end{array}\right]\in U</m>, so we know that <m>x+y=xy</m>.
+We want to show <m>k\left[\begin{array}{c} x \\ y \end{array}\right]=\left[\begin{array}{c} kx \\ ky \end{array}\right]=\in U</m>,
+that is, <m>(kx)+(ky)=(kx)(ky)</m>. This is verified by the following calculation:
+<md>
+    <mrow>
+(kx)+(ky)&amp;=(kx)(ky)
+    </mrow>
+    <mrow>
+k(x+y)&amp;=k^2xy
+    </mrow>
+    <mrow>
+0[k(x+y)]&amp;=0[k^2xy]
+    </mrow>
+    <mrow>
+0&amp;=0
+    </mrow>
+</md>
+            </p>
+        </blockquote>
+        <p>
+            Is this reasoning valid?
+            <ol marker="A.">
+                <li>
+                    <p>
+                        Yes
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        No
+                    </p>
+                </li>
+            </ol>
+        </p>
+      </statement>
+      <!-- <answer>
+        <p><m>U</m> is a subspace of <m>\mathbb{R}^2</m> and <m>W</m> is not.</p>
+      </answer> -->
+    </activity>
+
+    <remark>
+            <p>
+Proofs of an equality <m>LEFT=RIGHT</m> should generally be of one of two forms:
+<ol>
+    <li>
+        <p>Using a chain of equalities:
+            <md>
+                <mrow>
+            LEFT &amp;= \cdots
+                </mrow>
+                <mrow>
+             &amp;= \cdots
+                </mrow>
+                <mrow>
+             &amp;= \cdots
+                </mrow>
+                <mrow>
+             &amp;= RIGHT
+                    </mrow>
+            </md>
+        </p>
+    </li>
+    <li>
+        <p>
+When the assumption <m>THIS=THAT</m> is already known or assumed to be true :
+            <md>
+                <mrow>
+                    &amp;&amp;    THIS &amp;= THAT
+                </mrow>
+                <mrow>
+                    &amp;  \Rightarrow&amp;  \cdots &amp;= \cdots
+                </mrow>
+                <mrow>
+                    &amp;  \Rightarrow&amp; \cdots &amp;= \cdots
+                </mrow>
+                <mrow>
+                 &amp;   \Rightarrow&amp; LEFT &amp;= RIGHT
+                </mrow>
+            </md>
+        </p>
+    </li>
+</ol>
+            </p>
+    </remark>
+
+    <warning>
+        <p>
+The following proof is invalid, as <m>0=0</m> can always be
+proven by multiplying both sides by <m>0</m>.
+    <md>
+        <mrow>
+            &amp;&amp;    LEFT &amp;= RIGHT
+        </mrow>
+        <mrow>
+            &amp;  \Rightarrow&amp;  \cdots &amp;= \cdots
+        </mrow>
+        <mrow>
+            &amp;  \Rightarrow&amp; \cdots &amp;= \cdots
+        </mrow>
+        <mrow>
+         &amp;   \Rightarrow&amp; 0 &amp;= 0
+        </mrow>
+    </md>
+        </p>
+    </warning>
+
 <!-- <activity estimated-time='10'>
     <introduction>
         <p>
