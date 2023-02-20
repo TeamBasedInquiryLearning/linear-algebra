@@ -41,7 +41,7 @@ class Generator(BaseGenerator):
             a=randrange(1,8)
             b=randrange(1,8)
             theta = lambda v,a=a : vector([v[0]+a,v[1]+b])
-            untheta = lambda v,a=a : vector([v[0]+a,v[1]-b])
+            untheta = lambda v,a=a : vector([v[0]-a,v[1]-b])
 
             trueproperty= trueproperties[6]
             truetex=truepropertiessymb[6]
