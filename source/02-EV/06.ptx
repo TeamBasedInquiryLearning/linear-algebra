@@ -12,7 +12,6 @@
 
 <subsection><title>Class Activities</title>
 <observation>
-    <statement>
         <p>
 Recall from section <xref ref="EV3"></xref> that a <term>subspace</term> of a vector space is
 the result of spanning a set of vectors from that space.
@@ -23,6 +22,7 @@ only two of the three vectors in the following image are needed to span
 the planar subspace.
         </p>
         <figure>
+          <caption>A linearly dependent set of three vectors</caption>
 			<image width="75%">
 				<latex-image>
 \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)}]
@@ -37,9 +37,7 @@ the planar subspace.
 \end{tikzpicture}
 				</latex-image>
 			</image>
-			<caption>A linearly dependent set of three vectors</caption>
         </figure>
-    </statement>
 </observation>
 
 <activity estimated-time='10'>
@@ -97,30 +95,31 @@ What would be the result of removing the vector that gave us this column?
   <me>
     \RREF
     \left[\begin{array}{ccc}
-      1 &amp; 2 &amp; 3 \\
-      0 &amp; -2 &amp; -2 \\
-      -3 &amp; 1 &amp; -2
+    1 &amp; 2 &amp; 0 &amp; 1 \\
+    2 &amp; 4 &amp; -2 &amp; 2 \\
+    3 &amp; 6 &amp; -2 &amp; 1 \\
     \end{array}\right]
       =
     \left[\begin{array}{ccc}
-      \circledNumber{1} &amp; 0 &amp; 1 \\
-      0 &amp; \circledNumber{1} &amp; 1 \\
-      0 &amp; 0 &amp; 0
+      \circledNumber{1} &amp; 2 &amp; 0 &amp; 1 \\
+      0 &amp; 0 &amp; \circledNumber{1} &amp; 1 \\
+      0 &amp; 0 &amp; 0 &amp; 0
     \end{array}\right]
   </me>
   the subspace
   <m>
     W=\vspan\setList{
-      \left[\begin{array}{c}1\\0\\-3\end{array}\right],
-      \left[\begin{array}{c}2\\-2\\1\end{array}\right],
-      \left[\begin{array}{c}3\\-2\\-2\end{array}\right]
+      \left[\begin{array}{c}1\\2\\3\end{array}\right],
+      \left[\begin{array}{c}2\\4\\6\end{array}\right],
+      \left[\begin{array}{c}0\\-2\\-2\end{array}\right],
+      \left[\begin{array}{c}1\\2\\1\end{array}\right]
     }
   </m>
   has
   <m>
     \setList{
-      \left[\begin{array}{c}1\\0\\-3\end{array}\right],
-      \left[\begin{array}{c}2\\-2\\1\end{array}\right]
+      \left[\begin{array}{c}1\\2\\3\end{array}\right],
+      \left[\begin{array}{c}0\\-2\\-2\end{array}\right]
     }
   </m>
   as a basis.
