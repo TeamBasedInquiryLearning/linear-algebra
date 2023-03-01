@@ -12,31 +12,30 @@
 </head>
 <body class="ignore-math">
 <article class="fact theorem-like"><h4 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.7.4</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
 </h4>
-<div class="para">The coefficients of the free variables in the solution set of a linear system always yield linearly independent vectors.</div> <div class="para logical">
-<div class="para">Thus if</div>
+<div class="para">A map between Euclidean spaces <span class="process-math">\(T:\IR^n\to\IR^m\)</span> is linear exactly when every component of the output is a linear combination of the variables of <span class="process-math">\(\IR^n\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">For example, the following map is definitely linear because <span class="process-math">\(x-z\)</span> and <span class="process-math">\(3y\)</span> are linear combinations of <span class="process-math">\(x,y,z\text{:}\)</span>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\setBuilder{
-a \left[\begin{array}{c} -2 \\ 1 \\ 0 \\ 0\end{array}\right] +
-b \left[\begin{array}{c} -1 \\ 0 \\ -4 \\ 1 \end{array}\right]
-}{
-a,b \in \IR
-} = \vspan\left\{ \left[\begin{array}{c} -2 \\ 1 \\ 0 \\ 0\end{array}\right], 
-\left[\begin{array}{c} -1 \\ 0 \\ -4 \\ 1 \end{array}\right] \right\}
+T\left(\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
+=
+\left[\begin{array}{c} x-z \\ 3y \end{array}\right]
+=
+\left[\begin{array}{c} 1x+0y-1z \\ 0x+3y+0z \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para">is the solution space for a homogeneous system, then</div>
+</div> <div class="para logical">
+<div class="para">But the map below is not linear because <span class="process-math">\(x^2\text{,}\)</span> <span class="process-math">\(y+3\text{,}\)</span> and <span class="process-math">\(y-2^x\)</span> are not linear combinations (even though <span class="process-math">\(x+y\)</span> is):</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\setList{
-\left[\begin{array}{c} -2 \\ 1 \\ 0 \\ 0\end{array}\right],
-\left[\begin{array}{c} -1 \\ 0 \\ -4 \\ 1 \end{array}\right]
-}
+S\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right)
+=
+\left[\begin{array}{c} x+y \\ x^2 \\ y+3 \\ y-2^x \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para">is a basis for the solution space.</div>
-</div></article><span class="incontext"><a href="EV7.html#fact-11" class="internal">in-context</a></span>
+</div></article><span class="incontext"><a href="AT1.html#fact-11" class="internal">in-context</a></span>
 </body>
 </html>
