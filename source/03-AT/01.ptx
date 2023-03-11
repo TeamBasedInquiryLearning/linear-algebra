@@ -46,6 +46,7 @@ Given a linear transformation <m>T:V\to W</m>,
 <m>W</m> is called the <term>co-domain</term> of <m>T</m>.
         </p>
     <figure>
+    <caption>A linear transformation with a domain of <m>\IR^3</m> and a co-domain of <m>\IR^2</m></caption>
 		<image width="75%">
 			<latex-image>
 \begin{tikzpicture}[x=0.2in,y=0.2in]
@@ -69,70 +70,207 @@ Given a linear transformation <m>T:V\to W</m>,
 \end{tikzpicture}
 			</latex-image>
 		</image>
-		<caption>A linear transformation with a domain of <m>\IR^3</m> and a co-domain of <m>\IR^2</m></caption>
     </figure>
     </statement>
 </definition>
 
-<example>
-    <statement>
-    <p>
+<activity>
+  <introduction>
+  <p>
 Let <m>T : \IR^3 \rightarrow \IR^2</m> be given by
 <me>
-  T\left(\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
+T\left(\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
 =
-  \left[\begin{array}{c} x-z \\ 3y \end{array}\right].
+\left[\begin{array}{c} x-z \\ 3y \end{array}\right].
 </me>
-    </p>
-
-    <p>
-To show that <m>T</m> is a linear transformation, we must verify that <m>T(\vec{v}+\vec{w}) = T(\vec{v})+T(\vec{w})</m> by computing 
+  </p>
+</introduction>
+<task>
+  <p>
+Compute the result of adding vectors before a <m>T</m> transformation:
 <me>
-  T\left(
-    \left[\begin{array}{c} x \\ y \\ z \end{array}\right] +
-    \left[\begin{array}{c} u \\ v \\ w \end{array}\right]
-  \right)
+T\left(
+  \left[\begin{array}{c} x \\ y \\ z \end{array}\right] +
+  \left[\begin{array}{c} u \\ v \\ w \end{array}\right]
+\right)
 =
-  T\left(
-    \left[\begin{array}{c} x+u \\ y+v \\ z+w \end{array}\right]
-  \right) =
-  \left[\begin{array}{c} (x+u)-(z+w) \\ 3(y+v) \end{array}\right]
+T\left(
+  \left[\begin{array}{c} x+u \\ y+v \\ z+w \end{array}\right]
+\right)
 </me>
-        and 
+<ol marker="A." cols="2">
+<li>
+  <p>
+    <m>\left[\begin{array}{c} x-u+z-w \\ 3y-3v \end{array}\right]</m>
+  </p>
+</li>
+<li>
+  <p>
+    <m>\left[\begin{array}{c} x+u-z-w \\ 3y+3v \end{array}\right]</m>
+  </p>
+</li>
+<li>
+  <p>
+    <m>\left[\begin{array}{c} x+u \\ 3y+3v \\ z+w \end{array}\right]</m>
+  </p>
+</li>
+<li>
+  <p>
+    <m>\left[\begin{array}{c} x-u \\ 3y-3v \\ z-w \end{array}\right]</m>
+  </p>
+</li>
+</ol>
+</p>
+</task>
+<task>
+<p>
+Compute the result of adding vectors after a <m>T</m> transformation:
 <me>
-  T\left(
-    \left[\begin{array}{c} x \\ y \\ z \end{array}\right]
-  \right) + T\left(
-    \left[\begin{array}{c} u \\ v \\ w \end{array}\right]
-  \right)
+T\left(
+  \left[\begin{array}{c} x \\ y \\ z \end{array}\right]
+\right) + T\left(
+  \left[\begin{array}{c} u \\ v \\ w \end{array}\right]
+\right)
 =
-  \left[\begin{array}{c} x-z \\ 3y \end{array}\right] +
-  \left[\begin{array}{c} u-w \\ 3v \end{array}\right]=
-  \left[\begin{array}{c} (x+u)-(z+w) \\ 3(y+v) \end{array}\right]
-</me>, 
-and we must verify that <m>T(c\vec{v}) = cT(\vec{v})</m> by computing
+\left[\begin{array}{c} x-z \\ 3y \end{array}\right] +
+\left[\begin{array}{c} u-w \\ 3v \end{array}\right]
+</me>
+<ol marker="A." cols="2">
+<li>
+  <p>
+    <m>\left[\begin{array}{c} x-u+z-w \\ 3y-3v \end{array}\right]</m>
+  </p>
+</li>
+<li>
+  <p>
+    <m>\left[\begin{array}{c} x+u-z-w \\ 3y+3v \end{array}\right]</m>
+  </p>
+</li>
+<li>
+  <p>
+    <m>\left[\begin{array}{c} x+u \\ 3y+3v \\ z+w \end{array}\right]</m>
+  </p>
+</li>
+<li>
+  <p>
+    <m>\left[\begin{array}{c} x-u \\ 3y-3v \\ z-w \end{array}\right]</m>
+  </p>
+</li>
+</ol>
+</p>
+</task>
+<task>
+<p>
+Is <m>T</m> a linear transformation? 
+<ol marker="A.">
+<li>
+  <p>
+    Yes.
+  </p>
+</li>
+<li>
+  <p>
+    No.
+  </p>
+</li>
+<li>
+  <p>
+    More work is necessary to know.
+  </p>
+</li>
+</ol>
+</p>
+</task>
+<task>
+<p>
+  Compute the result of scalar multiplcation before a <m>T</m> transformation:
 <me>
-  T\left(c\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
+T\left(c\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
 =
-  T\left(\left[\begin{array}{c} cx \\ cy \\ cz \end{array}\right] \right)
-=
-  \left[\begin{array}{c} cx-cz \\ 3cy \end{array}\right]
-\text{ and }
+T\left(\left[\begin{array}{c} cx \\ cy \\ cz \end{array}\right] \right)
+</me>
+<ol marker="A." cols="2">
+<li>
+  <p>
+    <m>\left[\begin{array}{c} cx-cz\\ 3cy \end{array}\right]</m>
+  </p>
+</li>
+<li>
+  <p>
+    <m>\left[\begin{array}{c} cx+cz \\ -3cy \end{array}\right]</m>
+  </p>
+</li>
+<li>
+  <p>
+    <m>\left[\begin{array}{c} x+c \\ 3y+c \\ z+c \end{array}\right]</m>
+  </p>
+</li>
+<li>
+  <p>
+    <m>\left[\begin{array}{c} x-c \\ 3y-c \\ z-c \end{array}\right]</m>
+  </p>
+</li>
+</ol>
+  </p>
+</task>
+<task>
+  <p>
+    Compute the result of scalar multiplcation after a <m>T</m> transformation:
+<me>
   cT\left(\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
 =
   c\left[\begin{array}{c} x-z \\ 3y \end{array}\right]
-=
-  \left[\begin{array}{c} cx-cz \\ 3cy \end{array}\right]
-</me>.
-    </p>
+</me>
+<ol marker="A." cols="2">
+  <li>
     <p>
-Therefore <m>T</m> is a linear transformation.
+      <m>\left[\begin{array}{c} cx-cz\\ 3cy \end{array}\right]</m>
     </p>
-    </statement>
-</example>
+  </li>
+  <li>
+    <p>
+      <m>\left[\begin{array}{c} cx+cz \\ -3cy \end{array}\right]</m>
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>\left[\begin{array}{c} x+c \\ 3y+c \\ z+c \end{array}\right]</m>
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>\left[\begin{array}{c} x-c \\ 3y-c \\ z-c \end{array}\right]</m>
+    </p>
+  </li>
+</ol>
+    </p>
+  </task>
+<task>
+  <p>
+Is <m>T</m> a linear transformation? 
+<ol marker="A.">
+  <li>
+    <p>
+      Yes.
+    </p>
+  </li>
+  <li>
+    <p>
+      No.
+    </p>
+  </li>
+  <li>
+    <p>
+      More work is necessary to know.
+    </p>
+  </li>
+</ol>
+  </p>
+</task>
+</activity>
 
-<example>
-    <statement>
+<activity>
+    <introduction>
     <p>
 Let <m>S : \IR^2 \rightarrow \IR^4</m> be given by
 <me>
@@ -141,9 +279,10 @@ Let <m>S : \IR^2 \rightarrow \IR^4</m> be given by
   \left[\begin{array}{c} x+y \\ x^2 \\ y+3 \\ y-2^x \end{array}\right]
 </me>
     </p>
+  </introduction>
+  <task>
     <p>
-To show that <m>S</m> is <emph>not</emph> linear, we only need to find one
-counterexample.
+Compute
 <me>
   S\left(
     \left[\begin{array}{c} 0 \\ 1 \end{array}\right] +
@@ -152,30 +291,94 @@ counterexample.
 =
   S\left(
     \left[\begin{array}{c} 2 \\ 4 \end{array}\right]
-  \right) =
-  \left[\begin{array}{c} 6 \\ 4 \\ 7 \\ 0 \end{array}\right]
+  \right)
 </me>
+<ol marker="A." cols="4">
+  <li>
+    <p>
+      <m>\left[\begin{array}{c} 6 \\ 4 \\ 7 \\ 0 \end{array}\right]</m>
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>\left[\begin{array}{c} -3 \\ 0 \\ 1 \\ 5 \end{array}\right]</m>
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>\left[\begin{array}{c} -3 \\ -1 \\ 7 \\ 5 \end{array}\right]</m>
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>\left[\begin{array}{c} 6 \\ 4 \\ 10 \\ -1 \end{array}\right]</m>
+    </p>
+  </li>
+</ol>
+</p>
+</task>
+<task>
+  <p>
+Compute
 <me>
   S\left(
     \left[\begin{array}{c} 0 \\ 1 \end{array}\right]
   \right) + S\left(
-    \left[\begin{array}{c} 2 \\ 3\end{array}\right]
+    \left[\begin{array}{c} 2 \\ 3 \end{array}\right]
   \right)
 =
-  \left[\begin{array}{c} 1 \\ 0 \\ 4 \\ 0 \end{array}\right] +
-  \left[\begin{array}{c} 5 \\ 4 \\ 6 \\ -1 \end{array}\right]
-=
-  \left[\begin{array}{c} 6 \\ 4 \\ 10 \\ -1 \end{array}\right]
+  \left[\begin{array}{c} 0+1 \\ 0^2 \\ 1+3 \\ 1-2^0 \end{array}\right] +
+  \left[\begin{array}{c} 2+3 \\ 2^2 \\ 3+3 \\ 3-2^2 \end{array}\right]
 </me>
-    </p>
+<ol marker="A." cols="4">
+  <li>
     <p>
-Since the resulting vectors are different,
-<m>S</m> is not a linear transformation.
+      <m>\left[\begin{array}{c} 6 \\ 4 \\ 7 \\ 0 \end{array}\right]</m>
     </p>
-    </statement>
-</example>
+  </li>
+  <li>
+    <p>
+      <m>\left[\begin{array}{c} -3 \\ 0 \\ 1 \\ 5 \end{array}\right]</m>
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>\left[\begin{array}{c} -3 \\ -1 \\ 7 \\ 5 \end{array}\right]</m>
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>\left[\begin{array}{c} 6 \\ 4 \\ 10 \\ -1 \end{array}\right]</m>
+    </p>
+  </li>
+</ol>
+</p>
+</task>
+<task>
+  <p>
+Is <m>T</m> a linear transformation? 
+<ol marker="A.">
+  <li>
+    <p>
+      Yes.
+    </p>
+  </li>
+  <li>
+    <p>
+      No.
+    </p>
+  </li>
+  <li>
+    <p>
+      More work is necessary to know.
+    </p>
+  </li>
+</ol>
+  </p>
+</task>
+</activity>
 
-<fact>
+<!-- <fact>
     <statement>
         <p>
 A map between Euclidean spaces <m>T:\IR^n\to\IR^m</m> is linear
@@ -203,9 +406,9 @@ are not linear combinations (even though <m>x+y</m> is):
 </me>.
         </p>
     </statement>
-</fact>
+</fact> -->
 
-<activity estimated-time='5'>
+<!-- <activity estimated-time='5'>
     <statement>
         <p>
   Let <m>D:\P\to\P</m>
@@ -239,10 +442,10 @@ are not linear combinations (even though <m>x+y</m> is):
     </li>
   </ol>
     </statement>
-</activity>
+</activity> -->
 
 
-<activity estimated-time='10'>
+<!-- <activity estimated-time='10'>
     <statement>
         <p>
 Let the polynomial maps <m>S: \P_4 \rightarrow \P_3</m>
@@ -253,10 +456,23 @@ and <m>T: \P_4 \rightarrow \P_3</m> be defined by
 Compute <m>S(x^4+x)</m>, <m>S(x^4)+S(x)</m>, <m>T(x^4+x)</m>, and <m>T(x^4)+T(x)</m>. Based on these computations, can you conclude that either <m>S</m> or <m>T</m> is definitely <emph>not</emph> a linear transformation? 
         </p>
     </statement>
+</activity> -->
+
+<activity>
+    <statement>
+        <p>
+Fill in the <m>\unknown</m>s, assuming <m>T:\mathbb R^3\to\mathbb R^3</m> is linear:
+<me>
+  T\left(\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]\right)
+  = T\left(\unknown \left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\right)
+  = \unknown T\left(\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\right)
+  = \left[\begin{array}{c} \unknown \\ \unknown \\ \unknown \end{array}\right]
+</me>
+        </p>
+    </statement>
 </activity>
 
-
-<fact>
+<!-- <fact>
     <statement>
         <p>
 If <m>L:V\to W</m> is a linear transformation, then <m>L(\vec z)=L(0\vec v)=0L(\vec v)=\vec z</m>
@@ -268,34 +484,32 @@ Put another way, an easy way to prove that a map like
 <me>T(0)=\frac{d}{dx}[0]+x^3=0+x^3=x^3\not=0.</me>
         </p>
     </statement>
-</fact>
+</fact> -->
 
 <observation>
-    <statement>
         <p>
-Showing <m>T:V\to W</m> is <emph>not</emph> a linear transformation can be done by finding an example
-for any one of the following.
-        </p>
+Showing <m>T:V\to W</m> is <em>not</em> a linear transformation can be done by finding an example
+for <em>any one</em> of the following.
 <ul>
 <li>
     <p>
-    Show <m>T(\vec z)\not=\vec z</m> (where <m>\vec z</m> is the additive identity of <m>V</m> and <m>W</m>).
+    Show <m>T(\vec 0)\not=\vec 0</m> (where <m>\vec 0</m> is the additive identity of <m>V</m> and <m>W</m>).
     </p>
 </li>
 <li>
     <p>
-    Find <m>\vec v,\vec w\in V</m> such that <m>T(\vec v+\vec w)\not=T(\vec v)+T(\vec w)</m>.
+    Find specific values for <m>\vec v,\vec w\in V</m> such that <m>T(\vec v+\vec w)\not=T(\vec v)+T(\vec w)</m>.
     </p>
 </li>
 <li>
     <p>
-    Find <m>\vec v\in V</m> and <m>c\in \IR</m> such that <m>T(c\vec v)\not=cT(\vec v)</m>.
+    Find specific values for <m>\vec v\in V</m> and <m>c\in \IR</m> such that <m>T(c\vec v)\not=cT(\vec v)</m>.
     </p>
 </li>
 </ul>
+</p>
         <p>
-Otherwise, <m>T</m> can be shown to be linear by proving the following <emph>in general</emph>.
-        </p>
+Otherwise, <m>T</m> can be shown to be linear by proving <em>both</em> of the following <em>in general</em>.
 <ul>
 <li>
     <p>
@@ -308,14 +522,14 @@ Otherwise, <m>T</m> can be shown to be linear by proving the following <emph>in 
     </p>
 </li>
 </ul>
+</p>
         <p>
 Note the similarities between this process and showing that a subset of a vector
-space is or is not a subspace.
+space is or is not a subspace (<xref ref="EV3-subspace-check"/>).
         </p>
-    </statement>
 </observation>
 
-<activity estimated-time='15'>
+<!-- <activity estimated-time='15'>
     <introduction>
         <p>
 Continue to consider <m>S: \P_4 \rightarrow \P_3</m> defined by
@@ -363,7 +577,7 @@ Prove that <m>T</m> is linear by verifying that <m>T(f(x)+g(x))=T(f(x))+T(g(x))<
 and <m>T(cf(x))=cT(f(x))</m>.
     </p>
 </task>
-</activity>
+</activity> -->
 
 </subsection>
 
