@@ -946,9 +946,9 @@ var ptx_lunr_docs = [
   "body": "  Let .   Which of these statements is valid?    , and  , so  is a subspace.     , and  , so  is not a subspace.     , but  , so  is a subspace.     , but  , so  is not a subspace.     Which of these statements is valid?    , and  , so  is a subspace.     , and  , so  is not a subspace.     , but  , so  is a subspace.     , but  , so  is not a subspace.     "
 },
 {
-  "id": "remark-8",
+  "id": "EV3-subspace-check",
   "level": "2",
-  "url": "EV3.html#remark-8",
+  "url": "EV3.html#EV3-subspace-check",
   "type": "Remark",
   "number": "2.3.7",
   "title": "",
@@ -1573,7 +1573,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Linear Transformations (AT1)",
-  "body": " Linear Transformations (AT1)     Determine if a map between vector spaces of polynomials is linear or not.     Class Activities    A linear transformation  linear transformation (also called a linear map ) is a map between vector spaces that preserves the vector space operations. More precisely, if and are vector spaces, a map is called a linear transformation if    for any , and     for any and .   In other words, a map is linear when vector space operations can be applied before or after the transformation without affecting the result.      Given a linear transformation , is called the domain of and is called the co-domain of .      A linear transformation with a domain of and a co-domain of       Let be given by   To show that is a linear transformation, we must verify that by computing and , and we must verify that by computing .  Therefore is a linear transformation.      Let be given by   To show that is not linear, we only need to find one counterexample.    Since the resulting vectors are different, is not a linear transformation.      A map between Euclidean spaces is linear exactly when every component of the output is a linear combination of the variables of .  For example, the following map is definitely linear because and are linear combinations of : .  But the map below is not linear because , , and are not linear combinations (even though is): .      Let be the derivative map defined by for each polynomial . We recall from calculus that  , and . Which of the following can we conclude from these calculus rules?     is not a vector space     is a linear map     is not a linear map        Let the polynomial maps and be defined by .  Compute , , , and . Based on these computations, can you conclude that either or is definitely not a linear transformation?      If is a linear transformation, then where is the additive identity of the vector spaces .  Put another way, an easy way to prove that a map like can not be linear is to check that       Showing is not a linear transformation can be done by finding an example for any one of the following.    Show (where is the additive identity of and ).    Find such that .    Find and such that .    Otherwise, can be shown to be linear by proving the following in general .    For all , .    For all and , .    Note the similarities between this process and showing that a subset of a vector space is or is not a subspace.      Continue to consider defined by .   Verify that is equal to for all polynomials .  Verify that is equal to for all real numbers and polynomials .  Is linear?     Let polynomial maps and be defined by    Note that and . So instead, show that to verify that is not linear.  Prove that is linear by verifying that and .     Videos      Video: Showing a transformation is linear       Video: Showing a transformation is not linear     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations    If are vectors spaces, with associated zero vectors and , and is a linear transformation, does ? Prove this is true, or find a counterexample.   Assume is a linear transformation between vector spaces. Let with additive inverse . Prove that .      Sample Problem and Solution  Sample problem .   "
+  "body": " Linear Transformations (AT1)     Determine if a map between vector spaces of polynomials is linear or not.     Class Activities    A linear transformation  linear transformation (also called a linear map ) is a map between vector spaces that preserves the vector space operations. More precisely, if and are vector spaces, a map is called a linear transformation if    for any , and     for any and .   In other words, a map is linear when vector space operations can be applied before or after the transformation without affecting the result.      Given a linear transformation , is called the domain of and is called the co-domain of .   A linear transformation with a domain of and a co-domain of          Let be given by    Compute the result of adding vectors before a transformation:                         Compute the result of adding vectors after a transformation:                         Is a linear transformation?   Yes.    No.    More work is necessary to know.     Compute the result of scalar multiplcation before a transformation:                         Compute the result of scalar multiplcation after a transformation:                         Is a linear transformation?   Yes.    No.    More work is necessary to know.        Let be given by    Compute                         Compute                         Is a linear transformation?   Yes.    No.    More work is necessary to know.           Fill in the s, assuming is linear:       Showing is not a linear transformation can be done by finding an example for any one of the following.   Show (where is the additive identity of and ).    Find specific values for such that .    Find specific values for and such that .     Otherwise, can be shown to be linear by proving both of the following in general .   For all , .    For all and , .     Note the similarities between this process and showing that a subset of a vector space is or is not a subspace ( ).     Consider the following maps of Euclidean vectors and defined by Which do you suspect ?    is linear, but is not.     is linear, but is not.    Both maps are linear.    Neither map is linear.       Consider the following map of Euclidean vectors  Prove that  is not a linear transformation.    Consider the following map of Euclidean vectors  Prove that  is a linear transformation.       Videos      Video: Showing a transformation is linear       Video: Showing a transformation is not linear     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations    If are vectors spaces, with associated zero vectors and , and is a linear transformation, does ? Prove this is true, or find a counterexample.   Assume is a linear transformation between vector spaces. Let with additive inverse . Prove that .      Sample Problem and Solution  Sample problem .   "
 },
 {
   "id": "objectives-15",
@@ -1600,88 +1600,52 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "3.1.2",
   "title": "",
-  "body": "  Given a linear transformation , is called the domain of and is called the co-domain of .      A linear transformation with a domain of and a co-domain of    "
-},
-{
-  "id": "example-2",
-  "level": "2",
-  "url": "AT1.html#example-2",
-  "type": "Example",
-  "number": "3.1.3",
-  "title": "",
-  "body": "  Let be given by   To show that is a linear transformation, we must verify that by computing and , and we must verify that by computing .  Therefore is a linear transformation.   "
-},
-{
-  "id": "example-3",
-  "level": "2",
-  "url": "AT1.html#example-3",
-  "type": "Example",
-  "number": "3.1.4",
-  "title": "",
-  "body": "  Let be given by   To show that is not linear, we only need to find one counterexample.    Since the resulting vectors are different, is not a linear transformation.   "
-},
-{
-  "id": "fact-11",
-  "level": "2",
-  "url": "AT1.html#fact-11",
-  "type": "Fact",
-  "number": "3.1.5",
-  "title": "",
-  "body": "  A map between Euclidean spaces is linear exactly when every component of the output is a linear combination of the variables of .  For example, the following map is definitely linear because and are linear combinations of : .  But the map below is not linear because , , and are not linear combinations (even though is): .   "
+  "body": "  Given a linear transformation , is called the domain of and is called the co-domain of .   A linear transformation with a domain of and a co-domain of       "
 },
 {
   "id": "activity-64",
   "level": "2",
   "url": "AT1.html#activity-64",
   "type": "Activity",
-  "number": "3.1.6",
+  "number": "3.1.3",
   "title": "",
-  "body": "  Let be the derivative map defined by for each polynomial . We recall from calculus that  , and . Which of the following can we conclude from these calculus rules?     is not a vector space     is a linear map     is not a linear map     "
+  "body": "  Let be given by    Compute the result of adding vectors before a transformation:                         Compute the result of adding vectors after a transformation:                         Is a linear transformation?   Yes.    No.    More work is necessary to know.     Compute the result of scalar multiplcation before a transformation:                         Compute the result of scalar multiplcation after a transformation:                         Is a linear transformation?   Yes.    No.    More work is necessary to know.     "
 },
 {
   "id": "activity-65",
   "level": "2",
   "url": "AT1.html#activity-65",
   "type": "Activity",
-  "number": "3.1.7",
+  "number": "3.1.4",
   "title": "",
-  "body": "  Let the polynomial maps and be defined by .  Compute , , , and . Based on these computations, can you conclude that either or is definitely not a linear transformation?   "
-},
-{
-  "id": "fact-12",
-  "level": "2",
-  "url": "AT1.html#fact-12",
-  "type": "Fact",
-  "number": "3.1.8",
-  "title": "",
-  "body": "  If is a linear transformation, then where is the additive identity of the vector spaces .  Put another way, an easy way to prove that a map like can not be linear is to check that    "
-},
-{
-  "id": "observation-11",
-  "level": "2",
-  "url": "AT1.html#observation-11",
-  "type": "Observation",
-  "number": "3.1.9",
-  "title": "",
-  "body": "  Showing is not a linear transformation can be done by finding an example for any one of the following.    Show (where is the additive identity of and ).    Find such that .    Find and such that .    Otherwise, can be shown to be linear by proving the following in general .    For all , .    For all and , .    Note the similarities between this process and showing that a subset of a vector space is or is not a subspace.   "
+  "body": "  Let be given by    Compute                         Compute                         Is a linear transformation?   Yes.    No.    More work is necessary to know.     "
 },
 {
   "id": "activity-66",
   "level": "2",
   "url": "AT1.html#activity-66",
   "type": "Activity",
-  "number": "3.1.10",
+  "number": "3.1.5",
   "title": "",
-  "body": "  Continue to consider defined by .   Verify that is equal to for all polynomials .  Verify that is equal to for all real numbers and polynomials .  Is linear?  "
+  "body": "  Fill in the s, assuming is linear:    "
+},
+{
+  "id": "observation-11",
+  "level": "2",
+  "url": "AT1.html#observation-11",
+  "type": "Observation",
+  "number": "3.1.6",
+  "title": "",
+  "body": " Showing is not a linear transformation can be done by finding an example for any one of the following.   Show (where is the additive identity of and ).    Find specific values for such that .    Find specific values for and such that .     Otherwise, can be shown to be linear by proving both of the following in general .   For all , .    For all and , .     Note the similarities between this process and showing that a subset of a vector space is or is not a subspace ( ).  "
 },
 {
   "id": "activity-67",
   "level": "2",
   "url": "AT1.html#activity-67",
   "type": "Activity",
-  "number": "3.1.11",
+  "number": "3.1.7",
   "title": "",
-  "body": "  Let polynomial maps and be defined by    Note that and . So instead, show that to verify that is not linear.  Prove that is linear by verifying that and .  "
+  "body": "  Consider the following maps of Euclidean vectors and defined by Which do you suspect ?    is linear, but is not.     is linear, but is not.    Both maps are linear.    Neither map is linear.       Consider the following map of Euclidean vectors  Prove that  is not a linear transformation.    Consider the following map of Euclidean vectors  Prove that  is a linear transformation.   "
 },
 {
   "id": "figure-21",
@@ -1706,7 +1670,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AT1.html#exploration-24",
   "type": "Exploration",
-  "number": "3.1.12",
+  "number": "3.1.8",
   "title": "",
   "body": "  If are vectors spaces, with associated zero vectors and , and is a linear transformation, does ? Prove this is true, or find a counterexample. "
 },
@@ -1715,7 +1679,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AT1.html#exploration-25",
   "type": "Exploration",
-  "number": "3.1.13",
+  "number": "3.1.9",
   "title": "",
   "body": " Assume is a linear transformation between vector spaces. Let with additive inverse . Prove that .   "
 },
@@ -1783,9 +1747,9 @@ var ptx_lunr_docs = [
   "body": "  Suppose is a linear map, and you know and . What piece of information would help you compute ?    The value of .    The value of .    The value of .    Any of the above.     "
 },
 {
-  "id": "fact-13",
+  "id": "fact-11",
   "level": "2",
-  "url": "AT2.html#fact-13",
+  "url": "AT2.html#fact-11",
   "type": "Fact",
   "number": "3.2.6",
   "title": "",
@@ -1819,9 +1783,9 @@ var ptx_lunr_docs = [
   "body": "  Let be the linear transformation given by    Compute , , and .  Find the standard matrix for .  "
 },
 {
-  "id": "fact-14",
+  "id": "fact-12",
   "level": "2",
-  "url": "AT2.html#fact-14",
+  "url": "AT2.html#fact-12",
   "type": "Fact",
   "number": "3.2.10",
   "title": "",
@@ -1855,9 +1819,9 @@ var ptx_lunr_docs = [
   "body": "    Video: Using the standard matrix to compute the image of a vector  "
 },
 {
-  "id": "p-654",
+  "id": "p-681",
   "level": "2",
-  "url": "AT2.html#p-654",
+  "url": "AT2.html#p-681",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -2017,9 +1981,9 @@ var ptx_lunr_docs = [
   "body": "  Let be the linear transformation given by the standard matrix   Since the set spans , we can obtain a basis for by finding and only using the vectors corresponding to pivot columns:    "
 },
 {
-  "id": "fact-15",
+  "id": "fact-13",
   "level": "2",
-  "url": "AT3.html#fact-15",
+  "url": "AT3.html#fact-13",
   "type": "Fact",
   "number": "3.3.11",
   "title": "",
@@ -2215,9 +2179,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation where contains multiple vectors. What can you conclude?     is injective     is not injective     is surjective     is not surjective     "
 },
 {
-  "id": "fact-16",
+  "id": "fact-14",
   "level": "2",
-  "url": "AT4.html#fact-16",
+  "url": "AT4.html#fact-14",
   "type": "Fact",
   "number": "3.4.9",
   "title": "",
@@ -2233,9 +2197,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation where is spanned by four vectors. What can you conclude?     is injective     is not injective     is surjective     is not surjective     "
 },
 {
-  "id": "fact-17",
+  "id": "fact-15",
   "level": "2",
-  "url": "AT4.html#fact-17",
+  "url": "AT4.html#fact-15",
   "type": "Fact",
   "number": "3.4.11",
   "title": "",
@@ -2278,9 +2242,9 @@ var ptx_lunr_docs = [
   "body": "  What can you conclude about the linear map with standard matrix ?   Its standard matrix has more columns than rows, so is not injective.  Its standard matrix has more columns than rows, so is injective.  Its standard matrix has more rows than columns, so is not surjective.  Its standard matrix has more rows than columns, so is surjective.    "
 },
 {
-  "id": "fact-18",
+  "id": "fact-16",
   "level": "2",
-  "url": "AT4.html#fact-18",
+  "url": "AT4.html#fact-16",
   "type": "Fact",
   "number": "3.4.16",
   "title": "",
@@ -2593,9 +2557,9 @@ var ptx_lunr_docs = [
   "body": "   Answer questions about vector spaces of polynomials or matrices.    "
 },
 {
-  "id": "fact-19",
+  "id": "fact-17",
   "level": "2",
-  "url": "VS2.html#fact-19",
+  "url": "VS2.html#fact-17",
   "type": "Fact",
   "number": "4.2.1",
   "title": "",
@@ -2845,9 +2809,9 @@ var ptx_lunr_docs = [
   "body": "  The identity matrix (or just when is obvious from context) is the matrix It has a on each diagonal element and a in every other position.   "
 },
 {
-  "id": "fact-20",
+  "id": "fact-18",
   "level": "2",
-  "url": "MX2.html#fact-20",
+  "url": "MX2.html#fact-18",
   "type": "Fact",
   "number": "5.2.3",
   "title": "",
@@ -2863,9 +2827,9 @@ var ptx_lunr_docs = [
   "body": "  Tweaking the identity matrix slightly allows us to write row operations in terms of matrix multiplication.   Create a matrix that doubles the third row of :   Create a matrix that swaps the second and third rows of :   Create a matrix that adds times the third row of to the first row:   "
 },
 {
-  "id": "fact-21",
+  "id": "fact-19",
   "level": "2",
-  "url": "MX2.html#fact-21",
+  "url": "MX2.html#fact-19",
   "type": "Fact",
   "number": "5.2.5",
   "title": "",
@@ -3196,9 +3160,9 @@ var ptx_lunr_docs = [
   "body": "  The fact that swapping columns multiplies determinants by a negative may be verified by adding and subtracting columns.    "
 },
 {
-  "id": "fact-22",
+  "id": "fact-20",
   "level": "2",
-  "url": "GT1.html#fact-22",
+  "url": "GT1.html#fact-20",
   "type": "Fact",
   "number": "6.1.14",
   "title": "",
@@ -3214,9 +3178,9 @@ var ptx_lunr_docs = [
   "body": "  The transformation given by the standard matrix scales areas by , and the transformation given by the standard matrix scales areas by . By what factor does the transformation given by the standard matrix scale areas?      Area changing under the composition of two linear maps             Cannot be determined    "
 },
 {
-  "id": "fact-23",
+  "id": "fact-21",
   "level": "2",
-  "url": "GT1.html#fact-23",
+  "url": "GT1.html#fact-21",
   "type": "Fact",
   "number": "6.1.16",
   "title": "",
@@ -3232,9 +3196,9 @@ var ptx_lunr_docs = [
   "body": "  Recall that row operations may be produced by matrix multiplication.   Multiply the first row of by :   Swap the first and second row of :   Add times the third row to the first row of :     "
 },
 {
-  "id": "fact-24",
+  "id": "fact-22",
   "level": "2",
-  "url": "GT1.html#fact-24",
+  "url": "GT1.html#fact-22",
   "type": "Fact",
   "number": "6.1.18",
   "title": "",
@@ -3286,9 +3250,9 @@ var ptx_lunr_docs = [
   "body": "  The determinants of row operation matrices may be computed by manipulating columns to reduce each matrix to the identity:   Scaling a row:   Swapping rows:   Adding a row multiple to another row:     "
 },
 {
-  "id": "fact-25",
+  "id": "fact-23",
   "level": "2",
-  "url": "GT1.html#fact-25",
+  "url": "GT1.html#fact-23",
   "type": "Fact",
   "number": "6.1.24",
   "title": "",
@@ -3358,9 +3322,9 @@ var ptx_lunr_docs = [
   "body": "  The following image illustrates the transformation of the unit cube by the matrix .      Transformation of the unit cube by the linear transformation.   Recall that for this solid , where is the height of the solid and is the area of its parallelogram base. So what must its volume be?                 "
 },
 {
-  "id": "fact-26",
+  "id": "fact-24",
   "level": "2",
-  "url": "GT2.html#fact-26",
+  "url": "GT2.html#fact-24",
   "type": "Fact",
   "number": "6.2.3",
   "title": "",
@@ -3547,9 +3511,9 @@ var ptx_lunr_docs = [
   "body": "  An invertible matrix and its inverse are given below:   Which of the following is equal to ?                 "
 },
 {
-  "id": "fact-27",
+  "id": "fact-25",
   "level": "2",
-  "url": "GT3.html#fact-27",
+  "url": "GT3.html#fact-25",
   "type": "Fact",
   "number": "6.3.2",
   "title": "",
@@ -3583,9 +3547,9 @@ var ptx_lunr_docs = [
   "body": "  Finding the eigenvalues that satisfy for some nontrivial eigenvector is equivalent to finding nonzero solutions for the matrix equation .  Which of the following must be true for any eigenvalue?   The kernel of the transformation with standard matrix must contain the zero vector , so is invertible .  The kernel of the transformation with standard matrix must contain a non-zero vector , so is not invertible .  The image of the transformation with standard matrix must contain the zero vector , so is invertible .  The image of the transformation with standard matrix must contain a non-zero vector , so is not invertible .    "
 },
 {
-  "id": "fact-28",
+  "id": "fact-26",
   "level": "2",
-  "url": "GT3.html#fact-28",
+  "url": "GT3.html#fact-26",
   "type": "Fact",
   "number": "6.3.6",
   "title": "",
@@ -3907,9 +3871,9 @@ var ptx_lunr_docs = [
   "body": " The $978,000,000,000 Idea   Links are endorsements. That is:    A webpage is important if it is linked to (endorsed) by important pages.    A webpage distributes its importance equally among all the pages it links to (endorses).    "
 },
 {
-  "id": "example-4",
+  "id": "example-2",
   "level": "2",
-  "url": "pagerank.html#example-4",
+  "url": "pagerank.html#example-2",
   "type": "Example",
   "number": "A.2.3",
   "title": "",
