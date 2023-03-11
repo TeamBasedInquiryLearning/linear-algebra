@@ -2,39 +2,52 @@ load("library/common.sage")
 
 class Generator(BaseGenerator):
     def data(self):
-        x=var("x")
-        function_letter=choice(["f","g","h"])
-        f=function(function_letter)(x)
-        fp=function(function_letter+"p",latex_name=function_letter+"'")(x)
+        x,y,z = var("x y z")
+        v = column_matrix([x,y,z])
+        w = column_matrix([x,y])
 
-        # some linear terms
-        linear_terms = [
-            x^randrange(0,4)*f,
-            f(x=x^randrange(1,4)),
-            f(x=choice([-1,1])*randrange(1,6)),
-            fp,
-            fp(x=choice([-1,1])*randrange(1,6)),
-        ]
-        shuffle(linear_terms)
-        # some non-linear
-        nonlinear_terms = [
-            f^randrange(2,4),
-            f*fp,
-            x^randrange(0,4),
-        ]
-        shuffle(nonlinear_terms)
+        # make a linear map
+        A = CheckIt.simple_random_matrix_of_rank(3,rows=3,columns=3)
+        Pmap = A*v
 
-        linear_trans = choice([-1,1])*randrange(1,6)*linear_terms[0] +\
-            choice([-1,1])*randrange(1,6)*linear_terms[1]
+        # make a nonlinear map
+        B = CheckIt.simple_random_matrix_of_rank(2,rows=2,columns=3)
+        insert_at = choice(range(3))
+        preQmap = B*v
+        terms = [x,y,z]
+        shuffle(terms)
+        Qmap = matrix(preQmap.rows()[:insert_at]+ \
+            [(randrange(2,10)*choice([-1,1])*terms[0]*terms[1]+\
+            randrange(2,10)*choice([-1,1])*terms[2]^2,)] + \
+            preQmap.rows()[insert_at:])
 
-        nonlinear_trans = choice([-1,1])*randrange(1,6)*linear_terms[2] +\
-            choice([-1,1])*randrange(1,6)*nonlinear_terms[0]
+        # choose which is linear randomly
+        PQlinear = choice(["Plinear","Qlinear"])
+        if PQlinear == "Qlinear":
+            Pmap, Qmap = Qmap, Pmap
 
-        swapped = choice([True,False])
+        # make a nonlinear map
+        C = CheckIt.simple_random_matrix_of_rank(1,rows=1,columns=2)
+        insert_at = choice(range(2))
+        preSmap = C*w
+        terms = [x,y]
+        shuffle(terms)
+        Smap = matrix(preSmap.rows()[:insert_at]+ \
+            [choice([
+                (randrange(2,10)*choice([-1,1])*terms[0]*terms[1],),
+                (randrange(2,10)*choice([-1,1])*terms[0]^2,)
+            ])] + \
+            preSmap.rows()[insert_at:])
+
+        # make a linear map
+        D = CheckIt.simple_random_matrix_of_rank(2,rows=2,columns=2)
+        Tmap = 2*D*w
+
 
         return {
-            "swapped": swapped,
-            "linear_trans": linear_trans,
-            "nonlinear_trans": nonlinear_trans,
-            "f_letter": function_letter
+            PQlinear: True,
+            "Pmap": Pmap,
+            "Qmap": Qmap,
+            "Smap": Smap,
+            "Tmap": Tmap,
         }
