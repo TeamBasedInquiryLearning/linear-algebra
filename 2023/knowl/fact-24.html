@@ -12,63 +12,44 @@
 </head>
 <body class="ignore-math">
 <article class="fact theorem-like"><h4 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">6.1.18</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">6.2.3</span><span class="period">.</span>
 </h4>
-<div class="para">The determinants of row operation matrices may be computed by manipulating columns to reduce each matrix to the identity:</div> <ul class="disc">
-<li><div class="para">Scaling a row: <span class="process-math">\(\det
-\left[\begin{array}{cccc}
-c &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 1 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1
+<div class="para logical">
+<div class="para">If row <span class="process-math">\(i\)</span> contains all zeros except for a <span class="process-math">\(1\)</span> on the main (upper-left to lower-right) diagonal, then both column and row <span class="process-math">\(i\)</span> may be removed without changing the value of the determinant.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det \left[\begin{array}{cccc}
+3 &amp; {\color{red} 2} &amp; -1 &amp; 3 \\
+{\color{red} 0} &amp; {\color{red} 1} 
+&amp; {\color{red} 0} &amp; {\color{red} 0} \\
+-1 &amp; {\color{red} 4} &amp; 1 &amp; 0 \\
+5 &amp; {\color{red} 0} &amp; 11 &amp; 1
+\end{array}\right] =
+\det \left[\begin{array}{ccc}
+3 &amp; -1 &amp; 3 \\
+-1 &amp; 1 &amp; 0 \\
+5 &amp; 11 &amp; 1
 \end{array}\right]
-=
-c\det
-\left[\begin{array}{cccc}
-1 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; 0 &amp; 0  \\
-0 &amp; 0 &amp; 1 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Since row and column operations affect the determinants in the same way, the same technique works for a column of all zeros except for a <span class="process-math">\(1\)</span> on the main diagonal.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det \left[\begin{array}{cccc}
+3 &amp; {\color{red} 0} &amp; -1 &amp; 5 \\
+{\color{red} 2} &amp; {\color{red} 1} &amp; {\color{red} 4} &amp; 
+{\color{red} 0} \\
+-1 &amp; {\color{red} 0} &amp; 1 &amp; 11 \\
+3 &amp; {\color{red} 0} &amp; 0 &amp; 1
+\end{array}\right] =
+\det \left[\begin{array}{ccc}
+3 &amp; -1 &amp; 5 \\
+-1 &amp; 1 &amp; 11 \\
+3 &amp; 0 &amp; 1
 \end{array}\right]
-=
-c\)</span>
-</div></li>
-<li><div class="para">Swapping rows: <span class="process-math">\(\det
-\left[\begin{array}{cccc}
-0 &amp; 1 &amp; 0 &amp; 0 \\
-1 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 1 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{array}\right]
-=
--1\det
-\left[\begin{array}{cccc}
-1 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 1 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{array}\right]
-=
--1\)</span>
-</div></li>
-<li><div class="para">Adding a row multiple to another row: <span class="process-math">\(\det
-\left[\begin{array}{cccc}
-1 &amp; 0 &amp; c &amp; 0\\
-0 &amp; 1 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 1 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{array}\right]
-=
-\det
-\left[\begin{array}{cccc}
-1 &amp; 0 &amp; c-1c &amp; 0\\
-0 &amp; 1 &amp; 0-0c &amp; 0\\
-0 &amp; 0 &amp; 1-0c &amp; 0 \\
-0 &amp; 0 &amp; 0-0c &amp; 1
-\end{array}\right]
-=
-\det(I)=1\)</span>
-</div></li>
-</ul></article><span class="incontext"><a href="GT1.html#fact-24" class="internal">in-context</a></span>
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a href="GT2.html#fact-24" class="internal">in-context</a></span>
 </body>
 </html>

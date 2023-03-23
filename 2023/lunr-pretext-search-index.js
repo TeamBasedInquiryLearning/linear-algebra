@@ -7,7 +7,7 @@ var ptx_lunr_docs = [
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
-  "body": "  Linear Algebra for Team-Based Inquiry Learning teambasedinquirylearning.github.io\/linear-algebra\/   https:\/\/teambasedinquirylearning.github.io\/linear-algebra\/   copyright  This work includes materials used under license from the following works:    Understanding Linear Algebra       CC BY 4.0      "
+  "body": "  Linear Algebra for Team-Based Inquiry Learning teambasedinquirylearning.github.io\/linear-algebra\/   https:\/\/teambasedinquirylearning.github.io\/linear-algebra\/   copyright  This work includes materials used under license from the following works:    Understanding Linear Algebra       CC BY 4.0         Copyright 2023 Reeve Hunter    CC BY 4.0      "
 },
 {
   "id": "tbil-rl",
@@ -1573,7 +1573,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Linear Transformations (AT1)",
-  "body": " Linear Transformations (AT1)     Determine if a map between vector spaces of polynomials is linear or not.     Class Activities    A linear transformation  linear transformation (also called a linear map ) is a map between vector spaces that preserves the vector space operations. More precisely, if and are vector spaces, a map is called a linear transformation if    for any , and     for any and .   In other words, a map is linear when vector space operations can be applied before or after the transformation without affecting the result.      Given a linear transformation , is called the domain of and is called the co-domain of .   A linear transformation with a domain of and a co-domain of          Let be given by    Compute the result of adding vectors before a transformation:                         Compute the result of adding vectors after a transformation:                         Is a linear transformation?   Yes.    No.    More work is necessary to know.     Compute the result of scalar multiplcation before a transformation:                         Compute the result of scalar multiplcation after a transformation:                         Is a linear transformation?   Yes.    No.    More work is necessary to know.        Let be given by    Compute                         Compute                         Is a linear transformation?   Yes.    No.    More work is necessary to know.           Fill in the s, assuming is linear:       Showing is not a linear transformation can be done by finding an example for any one of the following.   Show (where is the additive identity of and ).    Find specific values for such that .    Find specific values for and such that .     Otherwise, can be shown to be linear by proving both of the following in general .   For all , .    For all and , .     Note the similarities between this process and showing that a subset of a vector space is or is not a subspace ( ).     Consider the following maps of Euclidean vectors and defined by Which do you suspect ?    is linear, but is not.     is linear, but is not.    Both maps are linear.    Neither map is linear.       Consider the following map of Euclidean vectors  Prove that  is not a linear transformation.    Consider the following map of Euclidean vectors  Prove that  is a linear transformation.       Videos      Video: Showing a transformation is linear       Video: Showing a transformation is not linear     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations    If are vectors spaces, with associated zero vectors and , and is a linear transformation, does ? Prove this is true, or find a counterexample.   Assume is a linear transformation between vector spaces. Let with additive inverse . Prove that .      Sample Problem and Solution  Sample problem .   "
+  "body": " Linear Transformations (AT1)     Determine if a map between vector spaces of polynomials is linear or not.     Class Activities    A linear transformation  linear transformation (also called a linear map ) is a map between vector spaces that preserves the vector space operations. More precisely, if and are vector spaces, a map is called a linear transformation if    for any , and     for any and .   In other words, a map is linear when vector space operations can be applied before or after the transformation without affecting the result.      Given a linear transformation , is called the domain of and is called the co-domain of .   A linear transformation with a domain of and a co-domain of         One example of a linear transformation is the projection of three-dimesional data onto a two-dimensional screen, as is necessary for computer animiation in film or video games.   A projection of a teapot onto a screen       Let be given by    Compute the result of adding vectors before a transformation:                         Compute the result of adding vectors after a transformation:                         Is a linear transformation?   Yes.    No.    More work is necessary to know.     Compute the result of scalar multiplcation before a transformation:                         Compute the result of scalar multiplcation after a transformation:                         Is a linear transformation?   Yes.    No.    More work is necessary to know.        Let be given by    Compute                         Compute                         Is a linear transformation?   Yes.    No.    More work is necessary to know.           Fill in the s, assuming is linear:       Showing is not a linear transformation can be done by finding an example for any one of the following.   Show (where is the additive identity of and ).    Find specific values for such that .    Find specific values for and such that .     Otherwise, can be shown to be linear by proving both of the following in general .   For all , .    For all and , .     Note the similarities between this process and showing that a subset of a vector space is or is not a subspace ( ).     Consider the following maps of Euclidean vectors and defined by Which do you suspect ?    is linear, but is not.     is linear, but is not.    Both maps are linear.    Neither map is linear.       Consider the following map of Euclidean vectors  Prove that  is not a linear transformation.    Consider the following map of Euclidean vectors  Prove that  is a linear transformation.       Videos      Video: Showing a transformation is linear       Video: Showing a transformation is not linear     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations    If are vectors spaces, with associated zero vectors and , and is a linear transformation, does ? Prove this is true, or find a counterexample.   Assume is a linear transformation between vector spaces. Let with additive inverse . Prove that .      Sample Problem and Solution  Sample problem .   "
 },
 {
   "id": "objectives-15",
@@ -1603,11 +1603,20 @@ var ptx_lunr_docs = [
   "body": "  Given a linear transformation , is called the domain of and is called the co-domain of .   A linear transformation with a domain of and a co-domain of       "
 },
 {
+  "id": "observation-11",
+  "level": "2",
+  "url": "AT1.html#observation-11",
+  "type": "Observation",
+  "number": "3.1.3",
+  "title": "",
+  "body": " One example of a linear transformation is the projection of three-dimesional data onto a two-dimensional screen, as is necessary for computer animiation in film or video games.   A projection of a teapot onto a screen    "
+},
+{
   "id": "activity-64",
   "level": "2",
   "url": "AT1.html#activity-64",
   "type": "Activity",
-  "number": "3.1.3",
+  "number": "3.1.4",
   "title": "",
   "body": "  Let be given by    Compute the result of adding vectors before a transformation:                         Compute the result of adding vectors after a transformation:                         Is a linear transformation?   Yes.    No.    More work is necessary to know.     Compute the result of scalar multiplcation before a transformation:                         Compute the result of scalar multiplcation after a transformation:                         Is a linear transformation?   Yes.    No.    More work is necessary to know.     "
 },
@@ -1616,7 +1625,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AT1.html#activity-65",
   "type": "Activity",
-  "number": "3.1.4",
+  "number": "3.1.5",
   "title": "",
   "body": "  Let be given by    Compute                         Compute                         Is a linear transformation?   Yes.    No.    More work is necessary to know.     "
 },
@@ -1625,16 +1634,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AT1.html#activity-66",
   "type": "Activity",
-  "number": "3.1.5",
+  "number": "3.1.6",
   "title": "",
   "body": "  Fill in the s, assuming is linear:    "
 },
 {
-  "id": "observation-11",
+  "id": "observation-12",
   "level": "2",
-  "url": "AT1.html#observation-11",
+  "url": "AT1.html#observation-12",
   "type": "Observation",
-  "number": "3.1.6",
+  "number": "3.1.7",
   "title": "",
   "body": " Showing is not a linear transformation can be done by finding an example for any one of the following.   Show (where is the additive identity of and ).    Find specific values for such that .    Find specific values for and such that .     Otherwise, can be shown to be linear by proving both of the following in general .   For all , .    For all and , .     Note the similarities between this process and showing that a subset of a vector space is or is not a subspace ( ).  "
 },
@@ -1643,18 +1652,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AT1.html#activity-67",
   "type": "Activity",
-  "number": "3.1.7",
+  "number": "3.1.8",
   "title": "",
   "body": "  Consider the following maps of Euclidean vectors and defined by Which do you suspect ?    is linear, but is not.     is linear, but is not.    Both maps are linear.    Neither map is linear.       Consider the following map of Euclidean vectors  Prove that  is not a linear transformation.    Consider the following map of Euclidean vectors  Prove that  is a linear transformation.   "
-},
-{
-  "id": "figure-21",
-  "level": "2",
-  "url": "AT1.html#figure-21",
-  "type": "Figure",
-  "number": "21",
-  "title": "",
-  "body": "    Video: Showing a transformation is linear  "
 },
 {
   "id": "figure-22",
@@ -1663,6 +1663,15 @@ var ptx_lunr_docs = [
   "type": "Figure",
   "number": "22",
   "title": "",
+  "body": "    Video: Showing a transformation is linear  "
+},
+{
+  "id": "figure-23",
+  "level": "2",
+  "url": "AT1.html#figure-23",
+  "type": "Figure",
+  "number": "23",
+  "title": "",
   "body": "    Video: Showing a transformation is not linear  "
 },
 {
@@ -1670,7 +1679,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AT1.html#exploration-24",
   "type": "Exploration",
-  "number": "3.1.8",
+  "number": "3.1.9",
   "title": "",
   "body": "  If are vectors spaces, with associated zero vectors and , and is a linear transformation, does ? Prove this is true, or find a counterexample. "
 },
@@ -1679,7 +1688,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AT1.html#exploration-25",
   "type": "Exploration",
-  "number": "3.1.9",
+  "number": "3.1.10",
   "title": "",
   "body": " Assume is a linear transformation between vector spaces. Let with additive inverse . Prove that .   "
 },
@@ -1810,18 +1819,18 @@ var ptx_lunr_docs = [
   "body": "  Compute the following linear transformations of vectors given their standard matrices.      "
 },
 {
-  "id": "figure-23",
+  "id": "figure-24",
   "level": "2",
-  "url": "AT2.html#figure-23",
+  "url": "AT2.html#figure-24",
   "type": "Figure",
-  "number": "23",
+  "number": "24",
   "title": "",
   "body": "    Video: Using the standard matrix to compute the image of a vector  "
 },
 {
-  "id": "p-681",
+  "id": "p-685",
   "level": "2",
-  "url": "AT2.html#p-681",
+  "url": "AT2.html#p-685",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1972,9 +1981,9 @@ var ptx_lunr_docs = [
   "body": "  Let be the linear transformation given by the standard matrix   Since for a vector , , which of the following best describes the set of vectors ?    The set of vectors spans but is not linearly independent.    The set of vectors is a linearly independent subset of but does not span .    The set of vectors is linearly independent and spans ; that is, the set of vectors is a basis for .     "
 },
 {
-  "id": "observation-12",
+  "id": "observation-13",
   "level": "2",
-  "url": "AT3.html#observation-12",
+  "url": "AT3.html#observation-13",
   "type": "Observation",
   "number": "3.3.10",
   "title": "",
@@ -2017,9 +2026,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation with standard matrix . Which of the following is equal to the dimension of the image of ?    The number of pivot columns    The number of non-pivot columns    The number of pivot rows    The number of non-pivot rows     "
 },
 {
-  "id": "observation-13",
+  "id": "observation-14",
   "level": "2",
-  "url": "AT3.html#observation-13",
+  "url": "AT3.html#observation-14",
   "type": "Observation",
   "number": "3.3.15",
   "title": "",
@@ -2035,22 +2044,13 @@ var ptx_lunr_docs = [
   "body": "  Let be the linear transformation given by the standard matrix Verify that the rank-nullity theorem holds for .   "
 },
 {
-  "id": "figure-26",
-  "level": "2",
-  "url": "AT3.html#figure-26",
-  "type": "Figure",
-  "number": "26",
-  "title": "",
-  "body": "    Video: The kernel and image of a linear transformation  "
-},
-{
   "id": "figure-27",
   "level": "2",
   "url": "AT3.html#figure-27",
   "type": "Figure",
   "number": "27",
   "title": "",
-  "body": "    Video: Finding a basis of the image of a linear transformation  "
+  "body": "    Video: The kernel and image of a linear transformation  "
 },
 {
   "id": "figure-28",
@@ -2059,7 +2059,7 @@ var ptx_lunr_docs = [
   "type": "Figure",
   "number": "28",
   "title": "",
-  "body": "    Video: Finding a basis of the kernel of a linear transformation  "
+  "body": "    Video: Finding a basis of the image of a linear transformation  "
 },
 {
   "id": "figure-29",
@@ -2067,6 +2067,15 @@ var ptx_lunr_docs = [
   "url": "AT3.html#figure-29",
   "type": "Figure",
   "number": "29",
+  "title": "",
+  "body": "    Video: Finding a basis of the kernel of a linear transformation  "
+},
+{
+  "id": "figure-30",
+  "level": "2",
+  "url": "AT3.html#figure-30",
+  "type": "Figure",
+  "number": "30",
   "title": "",
   "body": "    Video: The rank-nullity theorem  "
 },
@@ -2161,9 +2170,9 @@ var ptx_lunr_docs = [
   "body": "  Let be given by Is surjective?    Yes, because for every , there exists such that .    Yes, because for every , there exists such that .    No, because can never equal .     "
 },
 {
-  "id": "observation-14",
+  "id": "observation-15",
   "level": "2",
-  "url": "AT4.html#observation-14",
+  "url": "AT4.html#observation-15",
   "type": "Observation",
   "number": "3.4.7",
   "title": "",
@@ -2215,9 +2224,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear map with standard matrix . Sort the following claims into two groups of equivalent statements: one group that means is injective , and one group that means is surjective .   The kernel of is trivial, i.e. .  The columns of span .  The columns of are linearly independent.  Every column of has a pivot.  Every row of has a pivot.  The image of equals its codomain, i.e. .  The system of linear equations given by the augmented matrix has a solution for all .  The system of linear equations given by the augmented matrix has exactly one solution.     "
 },
 {
-  "id": "observation-15",
+  "id": "observation-16",
   "level": "2",
-  "url": "AT4.html#observation-15",
+  "url": "AT4.html#observation-16",
   "type": "Observation",
   "number": "3.4.13",
   "title": "",
@@ -2269,9 +2278,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a bijective linear map with standard matrix . Label each of the following as true or false.    is the identity matrix.  The columns of form a basis for   The system of linear equations given by the augmented matrix has exactly one solution for each .    "
 },
 {
-  "id": "observation-16",
+  "id": "observation-17",
   "level": "2",
-  "url": "AT4.html#observation-16",
+  "url": "AT4.html#observation-17",
   "type": "Observation",
   "number": "3.4.19",
   "title": "",
@@ -2314,20 +2323,20 @@ var ptx_lunr_docs = [
   "body": "  Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.    "
 },
 {
-  "id": "figure-35",
-  "level": "2",
-  "url": "AT4.html#figure-35",
-  "type": "Figure",
-  "number": "35",
-  "title": "",
-  "body": "    Video: The kernel and image of a linear transformation  "
-},
-{
   "id": "figure-36",
   "level": "2",
   "url": "AT4.html#figure-36",
   "type": "Figure",
   "number": "36",
+  "title": "",
+  "body": "    Video: The kernel and image of a linear transformation  "
+},
+{
+  "id": "figure-37",
+  "level": "2",
+  "url": "AT4.html#figure-37",
+  "type": "Figure",
+  "number": "37",
   "title": "",
   "body": "    Video: Finding a basis of the image of a linear transformation  "
 },
@@ -2368,9 +2377,9 @@ var ptx_lunr_docs = [
   "body": "   Explain why a given set with defined addition and scalar multiplication does satisfy a given vector space property, but nonetheless isn't a vector space.    "
 },
 {
-  "id": "observation-17",
+  "id": "observation-18",
   "level": "2",
-  "url": "VS1.html#observation-17",
+  "url": "VS1.html#observation-18",
   "type": "Observation",
   "number": "4.1.1",
   "title": "",
@@ -2404,18 +2413,18 @@ var ptx_lunr_docs = [
   "body": " In this text, we only consider real vector spaces, i.e. those whose scalars come from . However, one can similarly define vector spaces with scalars from other fields like the complex or rational numbers.  "
 },
 {
-  "id": "observation-18",
+  "id": "observation-19",
   "level": "2",
-  "url": "VS1.html#observation-18",
+  "url": "VS1.html#observation-19",
   "type": "Observation",
   "number": "4.1.5",
   "title": "",
   "body": "  Every Euclidean vector space Euclidean vector space  satisfies all eight requirements for the usual definitions of addition and scalar multiplication, but we will also study other types of vector spaces.   "
 },
 {
-  "id": "observation-19",
+  "id": "observation-20",
   "level": "2",
-  "url": "VS1.html#observation-19",
+  "url": "VS1.html#observation-20",
   "type": "Observation",
   "number": "4.1.6",
   "title": "",
@@ -2503,20 +2512,20 @@ var ptx_lunr_docs = [
   "body": "  Let have operations defined by    Show that scalar multiplication distributes over vector addition, i.e. for all  .  Show that vector addition is not associative, i.e. for some vectors .  Is a vector space?  "
 },
 {
-  "id": "figure-37",
-  "level": "2",
-  "url": "VS1.html#figure-37",
-  "type": "Figure",
-  "number": "37",
-  "title": "",
-  "body": "    Video: Verifying that a vector space property holds  "
-},
-{
   "id": "figure-38",
   "level": "2",
   "url": "VS1.html#figure-38",
   "type": "Figure",
   "number": "38",
+  "title": "",
+  "body": "    Video: Verifying that a vector space property holds  "
+},
+{
+  "id": "figure-39",
+  "level": "2",
+  "url": "VS1.html#figure-39",
+  "type": "Figure",
+  "number": "39",
   "title": "",
   "body": "    Video: Showing something is not a vector space  "
 },
@@ -2566,9 +2575,9 @@ var ptx_lunr_docs = [
   "body": "  Every vector space with finite dimension, that is, every vector space with a basis of the form is said to be isomorphic isomorphic to a Euclidean space , since there exists a natural correspondance between vectors in and vectors in :    "
 },
 {
-  "id": "observation-20",
+  "id": "observation-21",
   "level": "2",
-  "url": "VS2.html#observation-20",
+  "url": "VS2.html#observation-21",
   "type": "Observation",
   "number": "4.2.2",
   "title": "",
@@ -2593,20 +2602,20 @@ var ptx_lunr_docs = [
   "body": "  Suppose is a subspace of , and you know that is spanned by the six vectors What can you conclude about ?    The dimension of is 6 or less.    The dimension of is exactly 6.    The dimension of is 6 or more.     "
 },
 {
-  "id": "observation-21",
+  "id": "observation-22",
   "level": "2",
-  "url": "VS2.html#observation-21",
+  "url": "VS2.html#observation-22",
   "type": "Observation",
   "number": "4.2.5",
   "title": "",
   "body": "  The space of polynomials (of any degree) has the basis , so it is a natural example of an infinite-dimensional vector space.  Since and other infinite-dimensional spaces cannot be treated as an isomorphic finite-dimensional Euclidean space , vectors in such spaces cannot be studied by converting them into Euclidean vectors. Fortunately, most of the examples we will be interested in for this course will be finite-dimensional.   "
 },
 {
-  "id": "figure-39",
+  "id": "figure-40",
   "level": "2",
-  "url": "VS2.html#figure-39",
+  "url": "VS2.html#figure-40",
   "type": "Figure",
-  "number": "39",
+  "number": "40",
   "title": "",
   "body": "    Video: Polynomial and matrix calculations  "
 },
@@ -2656,9 +2665,9 @@ var ptx_lunr_docs = [
   "body": "   Multiply matrices.    "
 },
 {
-  "id": "observation-22",
+  "id": "observation-23",
   "level": "2",
-  "url": "MX1.html#observation-22",
+  "url": "MX1.html#observation-23",
   "type": "Observation",
   "number": "5.1.1",
   "title": "",
@@ -2737,11 +2746,11 @@ var ptx_lunr_docs = [
   "body": "  Of the following three matrices, only two may be multiplied. Explain which two can be multiplied and why. Then show how to find their product.      "
 },
 {
-  "id": "figure-41",
+  "id": "figure-42",
   "level": "2",
-  "url": "MX1.html#figure-41",
+  "url": "MX1.html#figure-42",
   "type": "Figure",
-  "number": "41",
+  "number": "42",
   "title": "",
   "body": "    Video: Multiplying matrices  "
 },
@@ -2845,11 +2854,11 @@ var ptx_lunr_docs = [
   "body": "  Consider the two row operations and applied as follows to show :   Express these row operations as matrix multiplication by expressing as the product of two matrices and : Check your work using technology.   "
 },
 {
-  "id": "figure-43",
+  "id": "figure-44",
   "level": "2",
-  "url": "MX2.html#figure-43",
+  "url": "MX2.html#figure-44",
   "type": "Figure",
-  "number": "43",
+  "number": "44",
   "title": "",
   "body": "    Video: Row operations as matrix multiplication  "
 },
@@ -2908,9 +2917,9 @@ var ptx_lunr_docs = [
   "body": "  Let be the linear transformation given by the standard matrix .   Write an augmented matrix representing the system of equations given by , that is, . Then solve to find .  Solve to find .  Solve to find .  Write , the standard matrix for .  "
 },
 {
-  "id": "observation-23",
+  "id": "observation-24",
   "level": "2",
-  "url": "MX3.html#observation-23",
+  "url": "MX3.html#observation-24",
   "type": "Observation",
   "number": "5.3.5",
   "title": "",
@@ -2935,9 +2944,9 @@ var ptx_lunr_docs = [
   "body": "  Is the matrix invertible? Give a reason for your answer.   "
 },
 {
-  "id": "observation-24",
+  "id": "observation-25",
   "level": "2",
-  "url": "MX3.html#observation-24",
+  "url": "MX3.html#observation-25",
   "type": "Observation",
   "number": "5.3.8",
   "title": "",
@@ -2953,22 +2962,13 @@ var ptx_lunr_docs = [
   "body": "  Let be the bijective linear map defined by , with the inverse map .   Compute .  If is the standard matrix for and is the standard matrix for , find the matrix   "
 },
 {
-  "id": "observation-25",
+  "id": "observation-26",
   "level": "2",
-  "url": "MX3.html#observation-25",
+  "url": "MX3.html#observation-26",
   "type": "Observation",
   "number": "5.3.10",
   "title": "",
   "body": "   is the identity map for any bijective linear transformation . Therefore equals the identity matrix for any invertible matrix .   "
-},
-{
-  "id": "figure-44",
-  "level": "2",
-  "url": "MX3.html#figure-44",
-  "type": "Figure",
-  "number": "44",
-  "title": "",
-  "body": "    Video: Invertible matrices  "
 },
 {
   "id": "figure-45",
@@ -2976,6 +2976,15 @@ var ptx_lunr_docs = [
   "url": "MX3.html#figure-45",
   "type": "Figure",
   "number": "45",
+  "title": "",
+  "body": "    Video: Invertible matrices  "
+},
+{
+  "id": "figure-46",
+  "level": "2",
+  "url": "MX3.html#figure-46",
+  "type": "Figure",
+  "number": "46",
   "title": "",
   "body": "    Video: Finding the inverse of a matrix  "
 },
@@ -3034,18 +3043,18 @@ var ptx_lunr_docs = [
   "body": "  The image below illustrates how the linear transformation given by the standard matrix transforms the unit square.      Transformation of the unit square by the matrix    What are the lengths of and ?  What is the area of the transformed unit square?  "
 },
 {
-  "id": "observation-26",
+  "id": "observation-27",
   "level": "2",
-  "url": "GT1.html#observation-26",
+  "url": "GT1.html#observation-27",
   "type": "Observation",
   "number": "6.1.3",
   "title": "",
   "body": "  It is possible to find two nonparallel vectors that are scaled but not rotated by the linear map given by .        Certain vectors are stretched out without being rotated.   The process for finding such vectors will be covered later in this chapter.   "
 },
 {
-  "id": "observation-27",
+  "id": "observation-28",
   "level": "2",
-  "url": "GT1.html#observation-27",
+  "url": "GT1.html#observation-28",
   "type": "Observation",
   "number": "6.1.4",
   "title": "",
@@ -3088,22 +3097,13 @@ var ptx_lunr_docs = [
   "body": "  The transformations of the unit square by the standard matrices and are illustrated below. Describe the value of .      The parallelograms generated by and \/   Describe the value of :            Cannot be determined from this information.    "
 },
 {
-  "id": "figure-54",
-  "level": "2",
-  "url": "GT1.html#figure-54",
-  "type": "Figure",
-  "number": "54",
-  "title": "",
-  "body": "    The vectors , , and  "
-},
-{
   "id": "figure-55",
   "level": "2",
   "url": "GT1.html#figure-55",
   "type": "Figure",
   "number": "55",
   "title": "",
-  "body": "    Parallelogram generated by and  "
+  "body": "    The vectors , , and  "
 },
 {
   "id": "figure-56",
@@ -3111,6 +3111,15 @@ var ptx_lunr_docs = [
   "url": "GT1.html#figure-56",
   "type": "Figure",
   "number": "56",
+  "title": "",
+  "body": "    Parallelogram generated by and  "
+},
+{
+  "id": "figure-57",
+  "level": "2",
+  "url": "GT1.html#figure-57",
+  "type": "Figure",
+  "number": "57",
   "title": "",
   "body": "    Parallelogram generated by and  "
 },
@@ -3133,9 +3142,9 @@ var ptx_lunr_docs = [
   "body": "  The determinant is the unique function satisfying these properties:   whenever two columns of the matrix are identical.   , assuming no other columns change.   , assuming no other columns change.    Note that these last two properties together can be phrased as The determinant is linear in each column.    "
 },
 {
-  "id": "observation-28",
+  "id": "observation-29",
   "level": "2",
-  "url": "GT1.html#observation-28",
+  "url": "GT1.html#observation-29",
   "type": "Observation",
   "number": "6.1.11",
   "title": "",
@@ -3151,9 +3160,9 @@ var ptx_lunr_docs = [
   "body": "  Swapping columns may be thought of as a reflection, which is represented by a negative determinant. For example, the following matrices transform the unit square into the same parallelogram, but the second matrix reflects its orientation.       Reflection of a parallelogram as a result of swapping columns.    "
 },
 {
-  "id": "observation-29",
+  "id": "observation-30",
   "level": "2",
-  "url": "GT1.html#observation-29",
+  "url": "GT1.html#observation-30",
   "type": "Observation",
   "number": "6.1.13",
   "title": "",
@@ -3259,20 +3268,20 @@ var ptx_lunr_docs = [
   "body": "  Thus we can also use both row operations to simplify determinants:   Multiplying rows by scalars:    Swapping two rows:    Adding multiples of rows\/columns to other rows:      "
 },
 {
-  "id": "observation-30",
+  "id": "observation-31",
   "level": "2",
-  "url": "GT1.html#observation-30",
+  "url": "GT1.html#observation-31",
   "type": "Observation",
   "number": "6.1.25",
   "title": "",
   "body": "  So we may compute the determinant of by manipulating its rows\/columns to reduce the matrix to :    "
 },
 {
-  "id": "figure-61",
+  "id": "figure-62",
   "level": "2",
-  "url": "GT1.html#figure-61",
+  "url": "GT1.html#figure-62",
   "type": "Figure",
-  "number": "61",
+  "number": "62",
   "title": "",
   "body": "    Video: Row operations, matrix multiplication, and determinants  "
 },
@@ -3358,9 +3367,9 @@ var ptx_lunr_docs = [
   "body": "  Simplify to a multiple of a determinant by first doing the following:   Use row\/column operations to create two zeroes in the same row or column.  Factor\/swap as needed to get a row\/column of all zeroes except a on the main diagonal.  "
 },
 {
-  "id": "observation-31",
+  "id": "observation-32",
   "level": "2",
-  "url": "GT2.html#observation-31",
+  "url": "GT2.html#observation-32",
   "type": "Observation",
   "number": "6.2.7",
   "title": "",
@@ -3385,18 +3394,18 @@ var ptx_lunr_docs = [
   "body": "  Compute by using any combination of row\/column operations.   "
 },
 {
-  "id": "observation-32",
+  "id": "observation-33",
   "level": "2",
-  "url": "GT2.html#observation-32",
+  "url": "GT2.html#observation-33",
   "type": "Observation",
   "number": "6.2.10",
   "title": "",
   "body": "  Another option is to take advantage of the fact that the determinant is linear in each row or column. This approach is called Laplace expansion or cofactor expansion .  For example, since ,    "
 },
 {
-  "id": "observation-33",
+  "id": "observation-34",
   "level": "2",
-  "url": "GT2.html#observation-33",
+  "url": "GT2.html#observation-34",
   "type": "Observation",
   "number": "6.2.11",
   "title": "",
@@ -3430,20 +3439,20 @@ var ptx_lunr_docs = [
   "body": "You can check your answer using Octave.  "
 },
 {
-  "id": "figure-63",
-  "level": "2",
-  "url": "GT2.html#figure-63",
-  "type": "Figure",
-  "number": "63",
-  "title": "",
-  "body": "    Video: Simplifying a determinant using row operations  "
-},
-{
   "id": "figure-64",
   "level": "2",
   "url": "GT2.html#figure-64",
   "type": "Figure",
   "number": "64",
+  "title": "",
+  "body": "    Video: Simplifying a determinant using row operations  "
+},
+{
+  "id": "figure-65",
+  "level": "2",
+  "url": "GT2.html#figure-65",
+  "type": "Figure",
+  "number": "65",
   "title": "",
   "body": "    Video: Computing a determinant  "
 },
@@ -3520,9 +3529,9 @@ var ptx_lunr_docs = [
   "body": "  For every invertible matrix , so .  Furthermore, a square matrix is invertible if and only if .   "
 },
 {
-  "id": "observation-34",
+  "id": "observation-35",
   "level": "2",
-  "url": "GT3.html#observation-34",
+  "url": "GT3.html#observation-35",
   "type": "Observation",
   "number": "6.3.3",
   "title": "",
@@ -3601,11 +3610,11 @@ var ptx_lunr_docs = [
   "body": "  Find all the eigenvalues for the matrix .   "
 },
 {
-  "id": "figure-67",
+  "id": "figure-68",
   "level": "2",
-  "url": "GT3.html#figure-67",
+  "url": "GT3.html#figure-68",
   "type": "Figure",
-  "number": "67",
+  "number": "68",
   "title": "",
   "body": "    Video: Finding eigenvalues  "
 },
@@ -3682,11 +3691,11 @@ var ptx_lunr_docs = [
   "body": "  Find a basis for the eigenspace for the matrix associated with the eigenvalue .   "
 },
 {
-  "id": "figure-68",
+  "id": "figure-69",
   "level": "2",
-  "url": "GT4.html#figure-68",
+  "url": "GT4.html#figure-69",
   "type": "Figure",
-  "number": "68",
+  "number": "69",
   "title": "",
   "body": "    Video: Finding eigenvectors  "
 },
@@ -3727,9 +3736,9 @@ var ptx_lunr_docs = [
   "body": "  Consider the representation of a simple truss pictured below. All of the seven struts are of equal length, affixed to two anchor points applying a normal force to nodes and , and with a load applied to the node given by .      A simple truss   Which of the following must hold for the truss to be stable?   All of the struts will experience compression.  All of the struts will experience tension.  Some of the struts will be compressed, but others will be tensioned.    "
 },
 {
-  "id": "observation-35",
+  "id": "observation-36",
   "level": "2",
-  "url": "truss.html#observation-35",
+  "url": "truss.html#observation-36",
   "type": "Observation",
   "number": "A.1.3",
   "title": "",
@@ -3763,9 +3772,9 @@ var ptx_lunr_docs = [
   "body": "  The five vector equations may be written as follows.        "
 },
 {
-  "id": "observation-36",
+  "id": "observation-37",
   "level": "2",
-  "url": "truss.html#observation-36",
+  "url": "truss.html#observation-37",
   "type": "Observation",
   "number": "A.1.7",
   "title": "",
@@ -3781,18 +3790,18 @@ var ptx_lunr_docs = [
   "body": "  To write a linear system that models the truss under consideration with constant load newtons, how many scalar variables will be required?     : from the nodes, from the anchors     : from the struts, from the anchors     : from the struts, from the anchors     : from the struts, from the anchors, from the load     : from the nodes, from the struts, from the load        A simple truss    "
 },
 {
-  "id": "observation-37",
+  "id": "observation-38",
   "level": "2",
-  "url": "truss.html#observation-37",
+  "url": "truss.html#observation-38",
   "type": "Observation",
   "number": "A.1.9",
   "title": "",
   "body": "  Since the angles for each strut are known, one variable may be used to represent each.      Variables for the truss   For example:     "
 },
 {
-  "id": "observation-38",
+  "id": "observation-39",
   "level": "2",
-  "url": "truss.html#observation-38",
+  "url": "truss.html#observation-39",
   "type": "Observation",
   "number": "A.1.10",
   "title": "",
@@ -3817,27 +3826,27 @@ var ptx_lunr_docs = [
   "body": "  Expand the vector equation given below using sine and cosine of appropriate angles, then compute each component (approximating ).      Variables for the truss       "
 },
 {
-  "id": "observation-39",
+  "id": "observation-40",
   "level": "2",
-  "url": "truss.html#observation-39",
+  "url": "truss.html#observation-40",
   "type": "Observation",
   "number": "A.1.13",
   "title": "",
   "body": "  The full augmented matrix given by the ten equations in this linear system is given below, where the elevent columns correspond to , and the ten rows correspond to the horizontal and vertical components of the forces acting at .    "
 },
 {
-  "id": "observation-40",
+  "id": "observation-41",
   "level": "2",
-  "url": "truss.html#observation-40",
+  "url": "truss.html#observation-41",
   "type": "Observation",
   "number": "A.1.14",
   "title": "",
   "body": "  This matrix row-reduces to the following.    "
 },
 {
-  "id": "observation-41",
+  "id": "observation-42",
   "level": "2",
-  "url": "truss.html#observation-41",
+  "url": "truss.html#observation-42",
   "type": "Observation",
   "number": "A.1.15",
   "title": "",
@@ -3862,9 +3871,9 @@ var ptx_lunr_docs = [
   "body": " The $978,000,000,000 Problem     In the picture below, each circle represents a webpage, and each arrow represents a link from one page to another.      A seven-webpage network   Based on how these pages link to each other, write a list of the 7 webpages in order from most important to least important.   "
 },
 {
-  "id": "observation-42",
+  "id": "observation-43",
   "level": "2",
-  "url": "pagerank.html#observation-42",
+  "url": "pagerank.html#observation-43",
   "type": "Observation",
   "number": "A.2.2",
   "title": "The $978,000,000,000 Idea.",
@@ -3880,9 +3889,9 @@ var ptx_lunr_docs = [
   "body": "  Consider this small network with only three pages. Let be the importance of the three pages respectively.      A three-webpage network     splits its endorsement in half between and   sends all of its endorsement to   sends all of its endorsement to .   This corresponds to the page rank system :   "
 },
 {
-  "id": "observation-43",
+  "id": "observation-44",
   "level": "2",
-  "url": "pagerank.html#observation-43",
+  "url": "pagerank.html#observation-44",
   "type": "Observation",
   "number": "A.2.4",
   "title": "",
@@ -3907,9 +3916,9 @@ var ptx_lunr_docs = [
   "body": "  Find a page rank vector satisfying for the following network's page rank matrix .  That is, find the eigenspace associated with for the matrix , and choose a vector from that eigenspace.       A three-webpage network        "
 },
 {
-  "id": "observation-44",
+  "id": "observation-45",
   "level": "2",
-  "url": "pagerank.html#observation-44",
+  "url": "pagerank.html#observation-45",
   "type": "Observation",
   "number": "A.2.7",
   "title": "",
@@ -3934,9 +3943,9 @@ var ptx_lunr_docs = [
   "body": "  Find a page rank vector for the given page rank matrix.          A seven-webpage network    Which webpage is most important?   "
 },
 {
-  "id": "observation-45",
+  "id": "observation-46",
   "level": "2",
-  "url": "pagerank.html#observation-45",
+  "url": "pagerank.html#observation-46",
   "type": "Observation",
   "number": "A.2.10",
   "title": "",
@@ -3970,9 +3979,9 @@ var ptx_lunr_docs = [
   "body": "  In geology, a phase is any physically separable material in the system, such as various minerals or liquids.  A component is a chemical compound necessary to make up the phases; these are usually oxides such as Calcium Oxide ( ) or Silicon Dioxide ( ).  In a typical application, a geologist knows how to build each phase from the components, and is interested in determining reactions among the different phases.   "
 },
 {
-  "id": "observation-46",
+  "id": "observation-47",
   "level": "2",
-  "url": "geology.html#observation-46",
+  "url": "geology.html#observation-47",
   "type": "Observation",
   "number": "A.3.2",
   "title": "",
