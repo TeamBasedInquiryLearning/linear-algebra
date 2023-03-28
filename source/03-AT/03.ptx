@@ -520,19 +520,33 @@ The dimension of the image is called the <term>rank</term> of <m>T</m> (or <m>A<
     </statement>
 </observation>
 
-<activity estimated-time='10'>
+<activity estimated-time='10'><introduction>
+  <p> Let <m>T:\mathbb{R}^4 \to \mathbb{R}^3</m> be the linear transformation given by <me>T\left( \left[\begin{array}{c} x \\ y \\ z \\ {w} \end{array}\right] \right) = \left[\begin{array}{c} x - y + 5 \, z + 3 \, {w} \\ -x - 4 \, z - 2 \, {w} \\ y - 2 \, z - {w} \end{array}\right].</me> </p>
+</introduction>
+  <task>
     <statement>
-        <p>
-Let <m>T: \IR^3 \rightarrow \IR^4</m> be the linear transformation given by the
-standard matrix
-<me>
-  A
-    =
-  \left[\begin{array}{ccc} 1 &amp; -3 &amp; 2\\ 2 &amp; -6 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ -1 &amp; 3 &amp; 1 \end{array}\right]
-.</me>
-Verify that the rank-nullity theorem holds for <m>T</m>.
-        </p>
+      <p>Explain and demonstrate how to find the image of <m>T</m> and the kernel of <m>T</m>.</p>
     </statement>
+    <!-- <answer>
+      <p> <m>\mathrm{Im}\,T = \left\{ \left[\begin{array}{c} a - b + 5 \, c \\ -a - 4 \, c \\ b - 2 \, c \end{array}\right] \middle|\,a,b,c\in\mathbb{R}\right\}</m> and <m>\mathrm{ker}\,T = \left\{ \left[\begin{array}{c} -2 \, a \\ a \\ 0 \\ a \end{array}\right] \middle|\,a\in\mathbb{R}\right\}</m> </p>
+    </answer> -->
+  </task>
+  <task>
+    <statement>
+      <p>Explain and demonstrate how to find a basis of the image of <m>T</m> and a basis of the kernel of <m>T</m>.</p>
+    </statement>
+    <!-- <answer>
+      <p> A basis of <m>\mathrm{Im}\,T</m> is <m>\left\{ \left[\begin{array}{c} 1 \\ -1 \\ 0 \end{array}\right] , \left[\begin{array}{c} -1 \\ 0 \\ 1 \end{array}\right] , \left[\begin{array}{c} 5 \\ -4 \\ -2 \end{array}\right] \right\}</m>. A basis of <m>\mathrm{ker}\,T</m> is <m>\left\{ \left[\begin{array}{c} -2 \\ 1 \\ 0 \\ 1 \end{array}\right] \right\}</m>. </p>
+    </answer> -->
+  </task>
+  <task>
+    <statement>
+      <p>Explain and demonstrate how to find the rank and nullity of <m>T</m>, and why the rank-nullity theorem holds for <m>T</m>.</p>
+    </statement>
+    <!-- <answer>
+      <p> The rank of <m>T</m> is <m>3</m>, the nullity of <m>T</m> is <m>1</m>, and the dimension of the domain of <m>T</m> is <m>4</m>. The rank-nullity theorem asserts that <m>\mathrm{rank}+\mathrm{nullity}=\mathrm{dim}(\mathrm{dom}T)</m>, which we see to be true as <m>3+1=4</m>. </p>
+    </answer> -->
+  </task>
 </activity>
 <sage language="octave">
 </sage>

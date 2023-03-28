@@ -21,7 +21,8 @@ distinct vectors to the same place.  More precisely, <m>T</m> is injective if
 <m>T(\vec{v}) \neq T(\vec{w})</m> whenever <m>\vec{v} \neq \vec{w}</m>.
         </p>
         <figure>
-			<image width="75%">
+          <caption>An injective transformation and a non-injective transformation</caption>
+			<image width="75%" xml:id="AT4-injective-image">
 				<latex-image>
 \begin{tikzpicture}[x=0.15in,y=0.15in]
   \begin{scope}[shift={(0,1)}]
@@ -66,7 +67,6 @@ distinct vectors to the same place.  More precisely, <m>T</m> is injective if
 \end{tikzpicture}
 				</latex-image>
 			</image>
-			<caption>An injective transformation and a non-injective transformation</caption>
         </figure>
     </statement>
 </definition>
@@ -176,7 +176,7 @@ Let <m>T: V \rightarrow W</m> be a linear transformation.
 <m>T</m> is called <term>surjective</term> or <term>onto</term> if every element of <m>W</m> is mapped to by an element of <m>V</m>.  More precisely, for every <m>\vec{w} \in W</m>, there is some <m>\vec{v} \in V</m> with <m>T(\vec{v})=\vec{w}</m>.
         </p>
     <figure>
-		<image width="75%">
+		<image width="75%" xml:id="AT4-surjective-image">
 			<latex-image>
 \begin{tikzpicture}[x=0.15in,y=0.15in]
   \begin{scope}[shift={(0,0)}]
@@ -387,7 +387,7 @@ Put another way, an injective linear transformation may be
 recognized by its <term>trivial</term> kernel.
         </p>
         <figure>
-			<image width="75%">
+			<image width="75%" xml:id="AT4-trivial-kernel-image">
 				<latex-image>
 \begin{tikzpicture}[x=0.15in,y=0.15in]
   \begin{scope}[shift={(0,1)}]
@@ -460,7 +460,7 @@ A linear transformation <m>T:V \rightarrow W</m> is surjective <em>if and only i
 recognized by its identical codomain and image.
         </p>
     <figure>
-		<image width="75%">
+		<image width="75%" xml:id="AT4-codomain-range-image">
 			<latex-image>
 \begin{tikzpicture}[x=0.15in,y=0.15in]
   \begin{scope}[shift={(0,0)}]
@@ -523,11 +523,9 @@ recognized by its identical codomain and image.
     <statement>
         <p>
 Let <m>T: \IR^n \rightarrow \IR^m</m> be a linear map with standard matrix <m>A</m>.
-            Sort the following claims into two groups of <em>equivalent</em> statements:
-one group that means <m>T</m> is <em>injective</em>, and one group that means
-<m>T</m> is <em>surjective</em>.
-        </p>
-<ol marker="A.">
+Determine whether each of the following statements
+means <m>T</m> is (A) <em>injective</em> or (B) <em>surjective</em>.
+<ol marker="1.">
 <li><p> The kernel of <m>T</m> is trivial, i.e. <m>\ker T=\{\vec 0\}</m>.
 </p></li>
 <li><p> The columns of <m>A</m> span <m>\IR^m</m>.
@@ -545,14 +543,11 @@ one group that means <m>T</m> is <em>injective</em>, and one group that means
 <li><p> The system of linear equations given by the augmented matrix <m>\left[\begin{array}{c|c} A &amp; \vec{0} \end{array}\right]</m> has exactly one solution.
 </p></li>
 </ol>
-<!--
-  This activity may be run as a card sort.
--->
+</p>
     </statement>
 </activity>
 
 <observation>
-    <statement>
         <p>
   The easiest way to determine if the linear map with standard matrix <m>A</m>
   is injective is to see if <m>\RREF(A)</m> has a pivot in each column.
@@ -561,7 +556,6 @@ one group that means <m>T</m> is <em>injective</em>, and one group that means
   The easiest way to determine if the linear map with standard matrix <m>A</m>
   is surjective is to see if <m>\RREF(A)</m> has a pivot in each row.
         </p>
-    </statement>
 </observation>
 
 <activity estimated-time='3'>
