@@ -330,8 +330,7 @@ can never equal
     </statement>
 </activity>
 
-<observation>
-    <statement>
+<!-- <observation>
         <p>
 As we will see, it's no coincidence that the <m>\RREF</m> of the
 injective map's standard matrix
@@ -345,8 +344,7 @@ standard matrix
 </me>
 has a pivot in each row.
         </p>
-    </statement>
-</observation>
+</observation> -->
 
 <activity estimated-time='5'>
     <statement>
@@ -423,8 +421,8 @@ recognized by its <term>trivial</term> kernel.
 <activity estimated-time='5'>
     <statement>
         <p>
-Let <m>T: V \rightarrow \IR^5</m> be a linear transformation where
-<m>\Im T</m> is spanned by four vectors.
+Let <m>T: V \rightarrow \IR^3</m> be a linear transformation where
+<m>\Im T</m> may be spanned by only two vectors.
 What can you conclude?
         </p>
 <ol marker="A." cols="2">
@@ -519,28 +517,89 @@ recognized by its identical codomain and image.
     </statement>
 </fact>
 
-<activity estimated-time='15'>
+<definition xml:id="def-bijective">
+  <statement>
+    <p>
+      A transformation that is both injective and surjective is said to be
+      <term>bijective</term>.
+    </p>
+  </statement>
+</definition>
+
+<activity estimated-time='5'>
     <statement>
         <p>
 Let <m>T: \IR^n \rightarrow \IR^m</m> be a linear map with standard matrix <m>A</m>.
 Determine whether each of the following statements
-means <m>T</m> is (A) <em>injective</em> or (B) <em>surjective</em>.
+means <m>T</m> is (A) <em>injective</em>, (B) <em>surjective</em>, or
+(C) <em>bijective</em> (both).
 <ol marker="1.">
 <li><p> The kernel of <m>T</m> is trivial, i.e. <m>\ker T=\{\vec 0\}</m>.
 </p></li>
+<li><p> The image of <m>T</m> equals its codomain, i.e. <m>\Im T=\IR^m</m>.
+</p></li>
+<li><p> For every <m>\vec w\in \IR^m</m>, the set <m>\{\vec w\in \IR^n|T(\vec v)=\vec w\}</m> contains
+  exactly one vector.
+</p></li>
+</ol>
+</p>
+    </statement>
+</activity>
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>T: \IR^n \rightarrow \IR^m</m> be a linear map with standard matrix <m>A</m>.
+Determine whether each of the following statements
+means <m>T</m> is (A) <em>injective</em>, (B) <em>surjective</em>, or
+(C) <em>bijective</em> (both).
+<ol marker="1.">
 <li><p> The columns of <m>A</m> span <m>\IR^m</m>.
 </p></li>
+<li><p> The columns of <m>A</m> form a basis for <m>\IR^m</m>.
+</p></li>
 <li><p> The columns of <m>A</m> are linearly independent.
+</p></li>
+</ol>
+</p>
+    </statement>
+</activity>
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>T: \IR^n \rightarrow \IR^m</m> be a linear map with standard matrix <m>A</m>.
+Determine whether each of the following statements
+means <m>T</m> is (A) <em>injective</em>, (B) <em>surjective</em>, or
+(C) <em>bijective</em> (both).
+<ol marker="1.">
+<li><p> <m>\RREF(A)</m> is the identity matrix.
 </p></li>
 <li><p> Every column of <m>\RREF(A)</m> has a pivot.
 </p></li>
 <li><p> Every row of <m>\RREF(A)</m> has a pivot.
 </p></li>
-<li><p> The image of <m>T</m> equals its codomain, i.e. <m>\Im T=\IR^m</m>.
+</ol>
+</p>
+    </statement>
+</activity>
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Let <m>T: \IR^n \rightarrow \IR^m</m> be a linear map with standard matrix <m>A</m>.
+Determine whether each of the following statements
+means <m>T</m> is (A) <em>injective</em>, (B) <em>surjective</em>, or
+(C) <em>bijective</em> (both).
+<ol marker="1.">
+<li><p> The system of linear equations given by the augmented matrix 
+  <m>\left[\begin{array}{c|c}A &amp; \vec{b} \end{array}\right]</m> has a solution for all <m>\vec{b} \in \IR^m</m>.
 </p></li>
-<li><p> The system of linear equations given by the augmented matrix <m>\left[\begin{array}{c|c}A &amp; \vec{b} \end{array}\right]</m> has a solution for all <m>\vec{b} \in \IR^m</m>.
+<li><p> The system of linear equations given by the augmented matrix 
+  <m>\left[\begin{array}{c|c}A &amp; \vec{b} \end{array}\right]</m> has exactly one solution for all <m>\vec{b} \in \IR^m</m>.
 </p></li>
-<li><p> The system of linear equations given by the augmented matrix <m>\left[\begin{array}{c|c} A &amp; \vec{0} \end{array}\right]</m> has exactly one solution.
+<li><p> The system of linear equations given by the augmented matrix
+  <m>\left[\begin{array}{c|c} A &amp; \vec{0} \end{array}\right]</m> has exactly one solution.
 </p></li>
 </ol>
 </p>
