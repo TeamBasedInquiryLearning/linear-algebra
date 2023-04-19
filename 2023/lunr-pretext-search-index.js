@@ -1888,7 +1888,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.3",
   "title": "Image and Kernel (AT3)",
-  "body": " Image and Kernel (AT3)     Compute a basis for the kernel and a basis for the image of a linear map, and verify that the rank-nullity theorem holds for a given linear map.     Class Activities    Let be given by Which of these subspaces of describes the set of all vectors that transform into ?                       Let be a linear transformation, and let be the additive identity (the zero vector ) of . The kernel kernel of is an important subspace of defined by       The kernel of a linear transformation       Let be given by Which of these subspaces of describes , the set of all vectors that transform into ?                            Let be the linear transformation given by the standard matrix    Set to find a linear system of equations whose solution set is the kernel.  Use to solve this homogeneous system of equations and find a basis for the kernel of .      Let be the linear transformation given by   Find a basis for the kernel of .       Let be given by Which of these subspaces of describes the set of all vectors that are the result of using to transform vectors?                            Let be a linear transformation. The image of is an important subspace of defined by   In the examples below, the left example's image is all of , but the right example's image is a planar subspace of .      The image of a linear transformation       Let be given by Which of these subspaces of describes , the set of all vectors that are the result of using to transform vectors?                       Let be the linear transformation given by the standard matrix   Since for a vector , , which of the following best describes the set of vectors ?    The set of vectors spans but is not linearly independent.    The set of vectors is a linearly independent subset of but does not span .    The set of vectors is linearly independent and spans ; that is, the set of vectors is a basis for .        Let be the linear transformation given by the standard matrix   Since the set spans , we can obtain a basis for by finding and only using the vectors corresponding to pivot columns:       Let be a linear transformation with standard matrix .    The kernel of is the solution set of the homogeneous system given by the augmented matrix . Use the coefficients of its free variables to get a basis for the kernel.    The image of is the span of the columns of . Remove the vectors creating non-pivot columns in to get a basis for the image.        Let be the linear transformation given by the standard matrix   Find a basis for the kernel and a basis for the image of .       Let be a linear transformation with standard matrix . Which of the following is equal to the dimension of the kernel of ?    The number of pivot columns    The number of non-pivot columns    The number of pivot rows    The number of non-pivot rows        Let be a linear transformation with standard matrix . Which of the following is equal to the dimension of the image of ?    The number of pivot columns    The number of non-pivot columns    The number of pivot rows    The number of non-pivot rows        Combining these with the observation that the number of columns is the dimension of the domain of , we have the rank-nullity theorem :   The dimension of the domain of equals .   The dimension of the image is called the rank of (or ) and the dimension of the kernel is called the nullity .     Let be the linear transformation given by     Explain and demonstrate how to find the image of and the kernel of .    Explain and demonstrate how to find a basis of the image of and a basis of the kernel of .    Explain and demonstrate how to find the rank and nullity of , and why the rank-nullity theorem holds for .       Videos      Video: The kernel and image of a linear transformation       Video: Finding a basis of the image of a linear transformation       Video: Finding a basis of the kernel of a linear transformation       Video: The rank-nullity theorem     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations    Assume is a linear map. Let be a set of vectors in , and set .  If the set is linearly independent, must the set also be linearly independent?  If the set is linearly independent, must the set also be linearly independent?  If the set spans , must the set also span ?  If the set spans , must the set also span ?  In light of this, is the image of the basis of a vector space always a basis for the codomain?      Prove the Rank-Nullity Theorem. Use the steps below to help you.  The theorem states that, given a linear map , with and vector spaces, the rank of , plus the nullity of , equals the dimension of the domain . Assume that the dimension of is .  For simplicity, denote the rank of by , and the nullity by .  Recall that is the dimension of the range space of . State the precise definition.  Recall that is the dimension of the null space of . State the precise definition.  Begin with a basis for the null space, denoted . Show how this can be extended to a basis for , with In this portion, you should assume , and construct additional vectors which are not linear combinations of vectors in . Prove that you can always do this until you have total linearly independent vectors.  Show that is a basis for the range space. Start by showing that it is linearly independent, and be sure you prove that each element of the range space can be written as a linear combination of .  Show that spans the range space.  State your conclusion.       Sample Problem and Solution  Sample problem .   "
+  "body": " Image and Kernel (AT3)     Compute a basis for the kernel and a basis for the image of a linear map, and verify that the rank-nullity theorem holds for a given linear map.     Class Activities    Let be given by Which of these subspaces of describes the set of all vectors that transform into ?                       Let be a linear transformation, and let be the additive identity (the zero vector ) of . The kernel kernel of is an important subspace of defined by       The kernel of a linear transformation       Let be given by Which of these subspaces of describes , the set of all vectors that transform into ?                            Let be the linear transformation given by the standard matrix    Set to find a linear system of equations whose solution set is the kernel.  Use to solve this homogeneous system of equations and find a basis for the kernel of .      Let be the linear transformation given by   Find a basis for the kernel of .       Let be given by Which of these subspaces of describes the set of all vectors that are the result of using to transform vectors?                            Let be a linear transformation. The image of is an important subspace of defined by   In the examples below, the left example's image is all of , but the right example's image is a planar subspace of .      The image of a linear transformation       Let be given by Which of these subspaces of describes , the set of all vectors that are the result of using to transform vectors?                       Let be the linear transformation given by the standard matrix   Since for a vector , , which of the following best describes the set of vectors ?    The set of vectors spans but is not linearly independent.    The set of vectors is a linearly independent subset of but does not span .    The set of vectors is linearly independent and spans ; that is, the set of vectors is a basis for .        Let be the linear transformation given by the standard matrix   Since the set spans , we can obtain a basis for by finding and only using the vectors corresponding to pivot columns:       Let be a linear transformation with standard matrix .    The kernel of is the solution set of the homogeneous system given by the augmented matrix . Use the coefficients of its free variables to get a basis for the kernel.    The image of is the span of the columns of . Remove the vectors creating non-pivot columns in to get a basis for the image.        Let be the linear transformation given by the standard matrix   Find a basis for the kernel and a basis for the image of .       Let be a linear transformation with standard matrix . Which of the following is equal to the dimension of the kernel of ?    The number of pivot columns    The number of non-pivot columns    The number of pivot rows    The number of non-pivot rows        Let be a linear transformation with standard matrix . Which of the following is equal to the dimension of the image of ?    The number of pivot columns    The number of non-pivot columns    The number of pivot rows    The number of non-pivot rows        Combining these with the observation that the number of columns is the dimension of the domain of , we have the rank-nullity theorem :   The dimension of the domain of equals .   The dimension of the image is called the rank of (or ) and the dimension of the kernel is called the nullity .     Let be the linear transformation given by     Explain and demonstrate how to find the image of and a basis for that image.    Explain and demonstrate how to find the kernel of and a basis for that kernel.    Explain and demonstrate how to find the rank and nullity of , and why the rank-nullity theorem holds for .       Videos      Video: The kernel and image of a linear transformation       Video: Finding a basis of the image of a linear transformation       Video: Finding a basis of the kernel of a linear transformation       Video: The rank-nullity theorem     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations    Assume is a linear map. Let be a set of vectors in , and set .  If the set is linearly independent, must the set also be linearly independent?  If the set is linearly independent, must the set also be linearly independent?  If the set spans , must the set also span ?  If the set spans , must the set also span ?  In light of this, is the image of the basis of a vector space always a basis for the codomain?      Prove the Rank-Nullity Theorem. Use the steps below to help you.  The theorem states that, given a linear map , with and vector spaces, the rank of , plus the nullity of , equals the dimension of the domain . Assume that the dimension of is .  For simplicity, denote the rank of by , and the nullity by .  Recall that is the dimension of the range space of . State the precise definition.  Recall that is the dimension of the null space of . State the precise definition.  Begin with a basis for the null space, denoted . Show how this can be extended to a basis for , with In this portion, you should assume , and construct additional vectors which are not linear combinations of vectors in . Prove that you can always do this until you have total linearly independent vectors.  Show that is a basis for the range space. Start by showing that it is linearly independent, and be sure you prove that each element of the range space can be written as a linear combination of .  Show that spans the range space.  State your conclusion.       Sample Problem and Solution  Sample problem .   "
 },
 {
   "id": "objectives-17",
@@ -2041,7 +2041,7 @@ var ptx_lunr_docs = [
   "type": "Activity",
   "number": "3.3.16",
   "title": "",
-  "body": " Let be the linear transformation given by     Explain and demonstrate how to find the image of and the kernel of .    Explain and demonstrate how to find a basis of the image of and a basis of the kernel of .    Explain and demonstrate how to find the rank and nullity of , and why the rank-nullity theorem holds for .   "
+  "body": " Let be the linear transformation given by     Explain and demonstrate how to find the image of and a basis for that image.    Explain and demonstrate how to find the kernel of and a basis for that kernel.    Explain and demonstrate how to find the rank and nullity of , and why the rank-nullity theorem holds for .   "
 },
 {
   "id": "figure-27",
@@ -2104,7 +2104,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.4",
   "title": "Injective and Surjective Linear Maps (AT4)",
-  "body": " Injective and Surjective Linear Maps (AT4)     Determine if a given linear map is injective and\/or surjective.     Class Activities    Let be a linear transformation. is called injective or one-to-one if does not map two distinct vectors to the same place. More precisely, is injective if whenever .   An injective transformation and a non-injective transformation          Let be given by Is injective?    Yes, because whenever .    Yes, because whenever .    No, because .    No, because .        Let be given by Is injective?    Yes, because whenever .    Yes, because whenever .    No, because .    No, because .        Let be a linear transformation. is called surjective or onto if every element of is mapped to by an element of . More precisely, for every , there is some with .      A surjective transformation and a non-surjective transformation       Let be given by Is surjective?    Yes, because for every , there exists such that .    No, because can never equal .    No, because can never equal .        Let be given by Is surjective?    Yes, because for every , there exists such that .    Yes, because for every , there exists such that .    No, because can never equal .        As we will see, it's no coincidence that the of the injective map's standard matrix has all pivot columns. Similarly, the of the surjective map's standard matrix has a pivot in each row.      Let be a linear transformation where contains multiple vectors. What can you conclude?     is injective     is not injective     is surjective     is not surjective        A linear transformation is injective if and only if  . Put another way, an injective linear transformation may be recognized by its trivial kernel.      A linear transformation with trivial kernel, which is therefore injective       Let be a linear transformation where is spanned by four vectors. What can you conclude?     is injective     is not injective     is surjective     is not surjective        A linear transformation is surjective if and only if  . Put another way, a surjective linear transformation may be recognized by its identical codomain and image.      A linear transformation with identical codomain and image, which is therefore surjective; and a linear transformation with an image smaller than the codomain , which is therefore not surjective.       Let be a linear map with standard matrix . Determine whether each of the following statements means is (A) injective or (B) surjective .  The kernel of is trivial, i.e. .  The columns of span .  The columns of are linearly independent.  Every column of has a pivot.  Every row of has a pivot.  The image of equals its codomain, i.e. .  The system of linear equations given by the augmented matrix has a solution for all .  The system of linear equations given by the augmented matrix has exactly one solution.       The easiest way to determine if the linear map with standard matrix is injective is to see if has a pivot in each column.  The easiest way to determine if the linear map with standard matrix is surjective is to see if has a pivot in each row.     What can you conclude about the linear map with standard matrix ?   Its standard matrix has more columns than rows, so is not injective.  Its standard matrix has more columns than rows, so is injective.  Its standard matrix has more rows than columns, so is not surjective.  Its standard matrix has more rows than columns, so is surjective.       What can you conclude about the linear map with standard matrix ?   Its standard matrix has more columns than rows, so is not injective.  Its standard matrix has more columns than rows, so is injective.  Its standard matrix has more rows than columns, so is not surjective.  Its standard matrix has more rows than columns, so is surjective.       The following are true for any linear map :   If , then is not injective.  If , then is not surjective.   Basically, a linear transformation cannot reduce dimension without collapsing vectors into each other, and a linear transformation cannot increase dimension from its domain to its image.      A linear transformation whose domain has a larger dimension than its codomain, and is therefore not injective; and a linear transformation whose domain has a smaller dimension than its codomain, and is therefore not surjective.   But dimension arguments cannot be used to prove a map is injective or surjective.      Suppose with standard matrix is both injective and surjective (we call such maps bijective ).   How many pivot rows must have?  How many pivot columns must have?  What is ?     Let be a bijective linear map with standard matrix . Label each of the following as true or false.    is the identity matrix.  The columns of form a basis for   The system of linear equations given by the augmented matrix has exactly one solution for each .       The easiest way to show that the linear map with standard matrix is bijective is to show that is the identity matrix.      Let be given by the standard matrix Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.        Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.        Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.        Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.        Videos      Video: The kernel and image of a linear transformation       Video: Finding a basis of the image of a linear transformation     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations   Suppose that is a linear transformation between two vector spaces and . State carefully what conditions must satisfy. Let and be the zero vectors in and respectively.  Prove that is one-to-one if and only if , and that is the unique element of which is mapped to . Remember that this needs to be done in both directions. First prove the if and only if statement, and then show the uniqueness.  Do not use subtraction in your proof. The only vector space operation we have is addition, and a structure preserving function only preserves addition. If you are writing , what you really mean is that , where is the additive inverse of .      Start with an -dimensional vector space . We can define the dual of , denoted , by Prove that is isomorphic to . Here are some things to think about as you work through this.  Start by assuming you have a basis for . How many basis vectors should you have?  For each basis vector in , define a function that returns 1 if it's given that basis vector, and returns 0 if it's given any other basis vector. For example, if and are each members of the basis for , and you'll need a function , where and for all .  How many of these functions will you need? Show that each of them is in .  Show that the functions you found in the last part are a basis for ? To do this, take an arbitrary function and some vector . Write in terms of the basis you chose earlier. How can you write , with respect to that basis? Pay attention to the fact that all functions in are linear.  Now that you've got a basis for and a basis for , can you find an isomorphism?      Sample Problem and Solution  Sample problem .   "
+  "body": " Injective and Surjective Linear Maps (AT4)     Determine if a given linear map is injective and\/or surjective.     Class Activities    Let be a linear transformation. is called injective or one-to-one if does not map two distinct vectors to the same place. More precisely, is injective if whenever .   An injective transformation and a non-injective transformation          Let be given by Is injective?    Yes, because whenever .    Yes, because whenever .    No, because .    No, because .        Let be given by Is injective?    Yes, because whenever .    Yes, because whenever .    No, because .    No, because .        Let be a linear transformation. is called surjective or onto if every element of is mapped to by an element of . More precisely, for every , there is some with .      A surjective transformation and a non-surjective transformation       Let be given by Is surjective?    Yes, because for every , there exists such that .    No, because can never equal .    No, because can never equal .        Let be given by Is surjective?    Yes, because for every , there exists such that .    Yes, because for every , there exists such that .    No, because can never equal .         Let be a linear transformation where contains multiple vectors. What can you conclude?     is injective     is not injective     is surjective     is not surjective        A linear transformation is injective if and only if  . Put another way, an injective linear transformation may be recognized by its trivial kernel.      A linear transformation with trivial kernel, which is therefore injective       Let be a linear transformation where may be spanned by only two vectors. What can you conclude?     is injective     is not injective     is surjective     is not surjective        A linear transformation is surjective if and only if  . Put another way, a surjective linear transformation may be recognized by its identical codomain and image.      A linear transformation with identical codomain and image, which is therefore surjective; and a linear transformation with an image smaller than the codomain , which is therefore not surjective.       A transformation that is both injective and surjective is said to be bijective .      Let be a linear map with standard matrix . Determine whether each of the following statements means is (A) injective , (B) surjective , or (C) bijective (both).  The kernel of is trivial, i.e. .  The image of equals its codomain, i.e. .  For every , the set contains exactly one vector.        Let be a linear map with standard matrix . Determine whether each of the following statements means is (A) injective , (B) surjective , or (C) bijective (both).  The columns of span .  The columns of form a basis for .  The columns of are linearly independent.        Let be a linear map with standard matrix . Determine whether each of the following statements means is (A) injective , (B) surjective , or (C) bijective (both).   is the identity matrix.  Every column of has a pivot.  Every row of has a pivot.        Let be a linear map with standard matrix . Determine whether each of the following statements means is (A) injective , (B) surjective , or (C) bijective (both).  The system of linear equations given by the augmented matrix has a solution for all .  The system of linear equations given by the augmented matrix has exactly one solution for all .  The system of linear equations given by the augmented matrix has exactly one solution.       The easiest way to determine if the linear map with standard matrix is injective is to see if has a pivot in each column.  The easiest way to determine if the linear map with standard matrix is surjective is to see if has a pivot in each row.     What can you conclude about the linear map with standard matrix ?   Its standard matrix has more columns than rows, so is not injective.  Its standard matrix has more columns than rows, so is injective.  Its standard matrix has more rows than columns, so is not surjective.  Its standard matrix has more rows than columns, so is surjective.       What can you conclude about the linear map with standard matrix ?   Its standard matrix has more columns than rows, so is not injective.  Its standard matrix has more columns than rows, so is injective.  Its standard matrix has more rows than columns, so is not surjective.  Its standard matrix has more rows than columns, so is surjective.       The following are true for any linear map :   If , then is not injective.  If , then is not surjective.   Basically, a linear transformation cannot reduce dimension without collapsing vectors into each other, and a linear transformation cannot increase dimension from its domain to its image.      A linear transformation whose domain has a larger dimension than its codomain, and is therefore not injective; and a linear transformation whose domain has a smaller dimension than its codomain, and is therefore not surjective.   But dimension arguments cannot be used to prove a map is injective or surjective.      Suppose with standard matrix is both injective and surjective (we call such maps bijective ).   How many pivot rows must have?  How many pivot columns must have?  What is ?     Let be a bijective linear map with standard matrix . Label each of the following as true or false.    is the identity matrix.  The columns of form a basis for   The system of linear equations given by the augmented matrix has exactly one solution for each .       The easiest way to show that the linear map with standard matrix is bijective is to show that is the identity matrix.      Let be given by the standard matrix Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.        Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.        Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.        Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.        Videos      Video: The kernel and image of a linear transformation       Video: Finding a basis of the image of a linear transformation     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations   Suppose that is a linear transformation between two vector spaces and . State carefully what conditions must satisfy. Let and be the zero vectors in and respectively.  Prove that is one-to-one if and only if , and that is the unique element of which is mapped to . Remember that this needs to be done in both directions. First prove the if and only if statement, and then show the uniqueness.  Do not use subtraction in your proof. The only vector space operation we have is addition, and a structure preserving function only preserves addition. If you are writing , what you really mean is that , where is the additive inverse of .      Start with an -dimensional vector space . We can define the dual of , denoted , by Prove that is isomorphic to . Here are some things to think about as you work through this.  Start by assuming you have a basis for . How many basis vectors should you have?  For each basis vector in , define a function that returns 1 if it's given that basis vector, and returns 0 if it's given any other basis vector. For example, if and are each members of the basis for , and you'll need a function , where and for all .  How many of these functions will you need? Show that each of them is in .  Show that the functions you found in the last part are a basis for ? To do this, take an arbitrary function and some vector . Write in terms of the basis you chose earlier. How can you write , with respect to that basis? Pay attention to the fact that all functions in are linear.  Now that you've got a basis for and a basis for , can you find an isomorphism?      Sample Problem and Solution  Sample problem .   "
 },
 {
   "id": "objectives-18",
@@ -2170,20 +2170,11 @@ var ptx_lunr_docs = [
   "body": "  Let be given by Is surjective?    Yes, because for every , there exists such that .    Yes, because for every , there exists such that .    No, because can never equal .     "
 },
 {
-  "id": "observation-15",
-  "level": "2",
-  "url": "AT4.html#observation-15",
-  "type": "Observation",
-  "number": "3.4.7",
-  "title": "",
-  "body": "  As we will see, it's no coincidence that the of the injective map's standard matrix has all pivot columns. Similarly, the of the surjective map's standard matrix has a pivot in each row.   "
-},
-{
   "id": "activity-91",
   "level": "2",
   "url": "AT4.html#activity-91",
   "type": "Activity",
-  "number": "3.4.8",
+  "number": "3.4.7",
   "title": "",
   "body": "  Let be a linear transformation where contains multiple vectors. What can you conclude?     is injective     is not injective     is surjective     is not surjective     "
 },
@@ -2192,7 +2183,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AT4.html#fact-14",
   "type": "Fact",
-  "number": "3.4.9",
+  "number": "3.4.8",
   "title": "",
   "body": "  A linear transformation is injective if and only if  . Put another way, an injective linear transformation may be recognized by its trivial kernel.      A linear transformation with trivial kernel, which is therefore injective    "
 },
@@ -2201,18 +2192,27 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AT4.html#activity-92",
   "type": "Activity",
-  "number": "3.4.10",
+  "number": "3.4.9",
   "title": "",
-  "body": "  Let be a linear transformation where is spanned by four vectors. What can you conclude?     is injective     is not injective     is surjective     is not surjective     "
+  "body": "  Let be a linear transformation where may be spanned by only two vectors. What can you conclude?     is injective     is not injective     is surjective     is not surjective     "
 },
 {
   "id": "fact-15",
   "level": "2",
   "url": "AT4.html#fact-15",
   "type": "Fact",
-  "number": "3.4.11",
+  "number": "3.4.10",
   "title": "",
   "body": "  A linear transformation is surjective if and only if  . Put another way, a surjective linear transformation may be recognized by its identical codomain and image.      A linear transformation with identical codomain and image, which is therefore surjective; and a linear transformation with an image smaller than the codomain , which is therefore not surjective.    "
+},
+{
+  "id": "def-bijective",
+  "level": "2",
+  "url": "AT4.html#def-bijective",
+  "type": "Definition",
+  "number": "3.4.11",
+  "title": "",
+  "body": "  A transformation that is both injective and surjective is said to be bijective .   "
 },
 {
   "id": "activity-93",
@@ -2221,32 +2221,59 @@ var ptx_lunr_docs = [
   "type": "Activity",
   "number": "3.4.12",
   "title": "",
-  "body": "  Let be a linear map with standard matrix . Determine whether each of the following statements means is (A) injective or (B) surjective .  The kernel of is trivial, i.e. .  The columns of span .  The columns of are linearly independent.  Every column of has a pivot.  Every row of has a pivot.  The image of equals its codomain, i.e. .  The system of linear equations given by the augmented matrix has a solution for all .  The system of linear equations given by the augmented matrix has exactly one solution.     "
-},
-{
-  "id": "observation-16",
-  "level": "2",
-  "url": "AT4.html#observation-16",
-  "type": "Observation",
-  "number": "3.4.13",
-  "title": "",
-  "body": " The easiest way to determine if the linear map with standard matrix is injective is to see if has a pivot in each column.  The easiest way to determine if the linear map with standard matrix is surjective is to see if has a pivot in each row.  "
+  "body": "  Let be a linear map with standard matrix . Determine whether each of the following statements means is (A) injective , (B) surjective , or (C) bijective (both).  The kernel of is trivial, i.e. .  The image of equals its codomain, i.e. .  For every , the set contains exactly one vector.     "
 },
 {
   "id": "activity-94",
   "level": "2",
   "url": "AT4.html#activity-94",
   "type": "Activity",
-  "number": "3.4.14",
+  "number": "3.4.13",
   "title": "",
-  "body": "  What can you conclude about the linear map with standard matrix ?   Its standard matrix has more columns than rows, so is not injective.  Its standard matrix has more columns than rows, so is injective.  Its standard matrix has more rows than columns, so is not surjective.  Its standard matrix has more rows than columns, so is surjective.    "
+  "body": "  Let be a linear map with standard matrix . Determine whether each of the following statements means is (A) injective , (B) surjective , or (C) bijective (both).  The columns of span .  The columns of form a basis for .  The columns of are linearly independent.     "
 },
 {
   "id": "activity-95",
   "level": "2",
   "url": "AT4.html#activity-95",
   "type": "Activity",
+  "number": "3.4.14",
+  "title": "",
+  "body": "  Let be a linear map with standard matrix . Determine whether each of the following statements means is (A) injective , (B) surjective , or (C) bijective (both).   is the identity matrix.  Every column of has a pivot.  Every row of has a pivot.     "
+},
+{
+  "id": "activity-96",
+  "level": "2",
+  "url": "AT4.html#activity-96",
+  "type": "Activity",
   "number": "3.4.15",
+  "title": "",
+  "body": "  Let be a linear map with standard matrix . Determine whether each of the following statements means is (A) injective , (B) surjective , or (C) bijective (both).  The system of linear equations given by the augmented matrix has a solution for all .  The system of linear equations given by the augmented matrix has exactly one solution for all .  The system of linear equations given by the augmented matrix has exactly one solution.     "
+},
+{
+  "id": "observation-15",
+  "level": "2",
+  "url": "AT4.html#observation-15",
+  "type": "Observation",
+  "number": "3.4.16",
+  "title": "",
+  "body": " The easiest way to determine if the linear map with standard matrix is injective is to see if has a pivot in each column.  The easiest way to determine if the linear map with standard matrix is surjective is to see if has a pivot in each row.  "
+},
+{
+  "id": "activity-97",
+  "level": "2",
+  "url": "AT4.html#activity-97",
+  "type": "Activity",
+  "number": "3.4.17",
+  "title": "",
+  "body": "  What can you conclude about the linear map with standard matrix ?   Its standard matrix has more columns than rows, so is not injective.  Its standard matrix has more columns than rows, so is injective.  Its standard matrix has more rows than columns, so is not surjective.  Its standard matrix has more rows than columns, so is surjective.    "
+},
+{
+  "id": "activity-98",
+  "level": "2",
+  "url": "AT4.html#activity-98",
+  "type": "Activity",
+  "number": "3.4.18",
   "title": "",
   "body": "  What can you conclude about the linear map with standard matrix ?   Its standard matrix has more columns than rows, so is not injective.  Its standard matrix has more columns than rows, so is injective.  Its standard matrix has more rows than columns, so is not surjective.  Its standard matrix has more rows than columns, so is surjective.    "
 },
@@ -2255,63 +2282,36 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AT4.html#fact-16",
   "type": "Fact",
-  "number": "3.4.16",
-  "title": "",
-  "body": "  The following are true for any linear map :   If , then is not injective.  If , then is not surjective.   Basically, a linear transformation cannot reduce dimension without collapsing vectors into each other, and a linear transformation cannot increase dimension from its domain to its image.      A linear transformation whose domain has a larger dimension than its codomain, and is therefore not injective; and a linear transformation whose domain has a smaller dimension than its codomain, and is therefore not surjective.   But dimension arguments cannot be used to prove a map is injective or surjective.   "
-},
-{
-  "id": "activity-96",
-  "level": "2",
-  "url": "AT4.html#activity-96",
-  "type": "Activity",
-  "number": "3.4.17",
-  "title": "",
-  "body": "  Suppose with standard matrix is both injective and surjective (we call such maps bijective ).   How many pivot rows must have?  How many pivot columns must have?  What is ?  "
-},
-{
-  "id": "activity-97",
-  "level": "2",
-  "url": "AT4.html#activity-97",
-  "type": "Activity",
-  "number": "3.4.18",
-  "title": "",
-  "body": "  Let be a bijective linear map with standard matrix . Label each of the following as true or false.    is the identity matrix.  The columns of form a basis for   The system of linear equations given by the augmented matrix has exactly one solution for each .    "
-},
-{
-  "id": "observation-17",
-  "level": "2",
-  "url": "AT4.html#observation-17",
-  "type": "Observation",
   "number": "3.4.19",
   "title": "",
-  "body": "  The easiest way to show that the linear map with standard matrix is bijective is to show that is the identity matrix.   "
-},
-{
-  "id": "activity-98",
-  "level": "2",
-  "url": "AT4.html#activity-98",
-  "type": "Activity",
-  "number": "3.4.20",
-  "title": "",
-  "body": "  Let be given by the standard matrix Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.    "
+  "body": "  The following are true for any linear map :   If , then is not injective.  If , then is not surjective.   Basically, a linear transformation cannot reduce dimension without collapsing vectors into each other, and a linear transformation cannot increase dimension from its domain to its image.      A linear transformation whose domain has a larger dimension than its codomain, and is therefore not injective; and a linear transformation whose domain has a smaller dimension than its codomain, and is therefore not surjective.   But dimension arguments cannot be used to prove a map is injective or surjective.   "
 },
 {
   "id": "activity-99",
   "level": "2",
   "url": "AT4.html#activity-99",
   "type": "Activity",
-  "number": "3.4.21",
+  "number": "3.4.20",
   "title": "",
-  "body": "  Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.    "
+  "body": "  Suppose with standard matrix is both injective and surjective (we call such maps bijective ).   How many pivot rows must have?  How many pivot columns must have?  What is ?  "
 },
 {
   "id": "activity-100",
   "level": "2",
   "url": "AT4.html#activity-100",
   "type": "Activity",
+  "number": "3.4.21",
+  "title": "",
+  "body": "  Let be a bijective linear map with standard matrix . Label each of the following as true or false.    is the identity matrix.  The columns of form a basis for   The system of linear equations given by the augmented matrix has exactly one solution for each .    "
+},
+{
+  "id": "observation-16",
+  "level": "2",
+  "url": "AT4.html#observation-16",
+  "type": "Observation",
   "number": "3.4.22",
   "title": "",
-  "body": "  Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.    "
+  "body": "  The easiest way to show that the linear map with standard matrix is bijective is to show that is the identity matrix.   "
 },
 {
   "id": "activity-101",
@@ -2319,6 +2319,33 @@ var ptx_lunr_docs = [
   "url": "AT4.html#activity-101",
   "type": "Activity",
   "number": "3.4.23",
+  "title": "",
+  "body": "  Let be given by the standard matrix Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.    "
+},
+{
+  "id": "activity-102",
+  "level": "2",
+  "url": "AT4.html#activity-102",
+  "type": "Activity",
+  "number": "3.4.24",
+  "title": "",
+  "body": "  Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.    "
+},
+{
+  "id": "activity-103",
+  "level": "2",
+  "url": "AT4.html#activity-103",
+  "type": "Activity",
+  "number": "3.4.25",
+  "title": "",
+  "body": "  Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.    "
+},
+{
+  "id": "activity-104",
+  "level": "2",
+  "url": "AT4.html#activity-104",
+  "type": "Activity",
+  "number": "3.4.26",
   "title": "",
   "body": "  Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.    "
 },
@@ -2345,7 +2372,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AT4.html#exploration-33",
   "type": "Exploration",
-  "number": "3.4.24",
+  "number": "3.4.27",
   "title": "",
   "body": " Suppose that is a linear transformation between two vector spaces and . State carefully what conditions must satisfy. Let and be the zero vectors in and respectively.  Prove that is one-to-one if and only if , and that is the unique element of which is mapped to . Remember that this needs to be done in both directions. First prove the if and only if statement, and then show the uniqueness.  Do not use subtraction in your proof. The only vector space operation we have is addition, and a structure preserving function only preserves addition. If you are writing , what you really mean is that , where is the additive inverse of .    "
 },
@@ -2354,7 +2381,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "AT4.html#exploration-34",
   "type": "Exploration",
-  "number": "3.4.25",
+  "number": "3.4.28",
   "title": "",
   "body": " Start with an -dimensional vector space . We can define the dual of , denoted , by Prove that is isomorphic to . Here are some things to think about as you work through this.  Start by assuming you have a basis for . How many basis vectors should you have?  For each basis vector in , define a function that returns 1 if it's given that basis vector, and returns 0 if it's given any other basis vector. For example, if and are each members of the basis for , and you'll need a function , where and for all .  How many of these functions will you need? Show that each of them is in .  Show that the functions you found in the last part are a basis for ? To do this, take an arbitrary function and some vector . Write in terms of the basis you chose earlier. How can you write , with respect to that basis? Pay attention to the fact that all functions in are linear.  Now that you've got a basis for and a basis for , can you find an isomorphism?   "
 },
@@ -2365,7 +2392,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.5",
   "title": "Vector Spaces (AT5)",
-  "body": " Vector Spaces (AT5)     Determine if a map between vector spaces of polynomials is linear or not.     Class Activities    Several properties of the real numbers, such as commutivity: also hold for Euclidean vectors with multiple components: .      Consider each of the following properties of the real numbers . Label each property as valid if the property also holds for two-dimensional Euclidean vectors and numbers , and invalid if it does not.    .     .    There exists some where .    There exists some where .    If , then is the only vector equally distant from both and      .     .    If , then there exists some number such that .     .     .         A vector space vector space  is any set of mathematical objects, called vectors vector , and a set of numbers, called scalars scalar , with associated addition and scalar multiplication operations that satisfy the following properties.  We always assume the codomain of our operations is , i.e. that addition is a map and that scalar multiplication is a map .  Let be vectors belonging to , and let be scalars.   Vector addition is associative: .    Vector addition is commutative: .    An additive identity exists: There exists some where . additive identity     Additive inverses exist: There exists some where . additive inverse     Scalar multiplication is associative: .    1 is a multiplicative identity: .    Scalar multiplication distributes over vector addition: .    Scalar multiplication distributes over scalar addition: .       In this text, we only consider real vector spaces, i.e. those whose scalars come from . However, one can similarly define vector spaces with scalars from other fields like the complex or rational numbers.     Every Euclidean vector space Euclidean vector space  satisfies all eight requirements for the usual definitions of addition and scalar multiplication, but we will also study other types of vector spaces.      The space of  matrices  satisfies all eight requirements for component-wise addition and scalar multiplication.      Every Euclidean space is a vector space, but there are other examples of vector spaces as well.  For example, consider the set of complex numbers with the usual defintions of addition and scalar multiplication, and let , , and . Then   All eight properties can be verified in this way.      The following sets are just a few examples of vector spaces, with the usual\/natural operations for addition and scalar multiplication.     : Euclidean vectors with components.     : Complex numbers.     : Matrices of real numbers with rows and columns.     : Polynomials of degree or less.     : Polynomials of any degree.     : Real-valued continuous functions.        Consider the set .  Which of the following vectors is not in ?                            Consider the set with the operation defined by .  Let be in with and . Using the operations defined for , which of the following is ?                            Consider the set with operations defined by .  Let be scalars and .   Verify that .  Compute the value of .     Consider the set with operations defined by .  Let be unspecified scalars in and be an unspecified vector in .   Show that both sides of the equation simplify to the expression .  Which of the properties from did we verify in the previous task?  Vector addition is associative  is a multiplicative identity  Scalar multiplication distributes over scalar addition   Show that contains an additive identity element satisfying for all by choosing appropriate values for and using those to simplify to .     It turns out with operations defined by satisifes all eight properties from .  Thus, is a vector space.      Let have operations defined by  .   Show that is the scalar multiplication identity element by simplifying to .  Show that does not have an additive identity element by showing that for any possible values of .  Is a vector space according to ?     Let have operations defined by    Show that scalar multiplication distributes over vector addition, i.e. for all  .  Show that vector addition is not associative, i.e. for some vectors .  Is a vector space?     Videos      Video: Verifying that a vector space property holds       Video: Showing something is not a vector space     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations      Show that , the set of positive real numbers, is a vector space, but where really means the product (so ), and where scalar multiplication really means . Yes, you really do need to check all of the properties, but this is the only time I'll make you do so. Remember, examples aren't proofs, so you should start with arbitrary elements of for your vectors. Make sure you're careful about telling the reader what means.  Prove that the additive identity in an arbitrary vector space is unique.  Prove that additive inverses are unique. Assume you have a vector space and some . Further, assume with . Prove that .        Consider the vector space of polynomials, . Suppose further that , where are each positive integers. Conjecture a relationship between and . We will investigate this further in section     Sample Problem and Solution  Sample problem .   "
+  "body": " Vector Spaces (AT5)     Determine if a map between vector spaces of polynomials is linear or not.     Class Activities   Consider the following applications of properites of the real numbers :    .     .    There exists some where .    There exists some where .     is the only number that is equally distant from and .       Which of the following properites of Euclidean vectors is NOT true?    .     .    There exists some where .    There exists some where .     is the only vector whose endpoint is equally distant from the endpoints of and .       Consider the following applications of properites of the real numbers :     .     .    There exists some such that .     .     .       Which of the following properites of Euclidean vectors is NOT true?     .     .    There exists some such that .     .     .        Every Euclidean vector space satisfies the following properties, where are Euclidean vectors and are scalars.   Vector addition is associative: .    Vector addition is commutative: .    An additive identity exists: There exists some where .    Additive inverses exist: There exists some where .    Scalar multiplication is associative: .    1 is a multiplicative identity: .    Scalar multiplication distributes over vector addition: .    Scalar multiplication distributes over scalar addition: .        A vector space vector space  is any set of mathematical objects, called vectors vector , and a set of numbers, called scalars scalar , with associated addition and scalar multiplication operations that satisfy the following properties. Let be vectors belonging to , and let be scalars.   We always assume the codomain of our operations is , i.e. that addition is a map and that scalar multiplication is a map .  Likewise, we only consider real vector spaces, i.e. those whose scalars come from . However, one can similarly define vector spaces with scalars from other fields like the complex or rational numbers.    Vector addition is associative: .    Vector addition is commutative: .    An additive identity exists: There exists some where . additive identity     Additive inverses exist: There exists some where . additive inverse     Scalar multiplication is associative: .    1 is a multiplicative identity: .    Scalar multiplication distributes over vector addition: .    Scalar multiplication distributes over scalar addition: .        Consider the set of complex numbers with the usual defintion for addition: .  Let , , and . Then    This proves that complex addition is associative: . The seven other vector space properties may also be verified, so is an example of a non-Euclidean vector space.     The following sets are just a few examples of vector spaces, with the usual\/natural operations for addition and scalar multiplication.     : Euclidean vectors with components.     : Complex numbers.     : Matrices of real numbers with rows and columns.     : Polynomials of degree or less.     : Polynomials of any degree.     : Real-valued continuous functions.        Consider the set .  Which of the following vectors is not in ?                            Consider the set with the operation defined by .  Let be in with and . Using the operations defined for , which of the following is ?                            Consider the set with operations defined by .  Let be scalars and .   Verify that .  Compute the value of .     Consider the set with operations defined by .  Let be unspecified scalars in and be an unspecified vector in .   Show that both sides of the equation simplify to the expression .   Show that contains an additive identity element satisfying for all . That is, pick appropriate values for and then simplify into just .  Is a vector space?  Yes  No  More work is required       It turns out with operations defined by satisifes all eight properties from .  Thus, is a vector space.      Let have operations defined by  .   Show that is the scalar multiplication identity element by simplifying to .  Show that does not have an additive identity element by showing that no matter what the values of are.  Is a vector space?  Yes  No  More work is required       Let have operations defined by    Show that scalar multiplication distributes over vector addition, i.e. for all  .  Show that vector addition is not associative, i.e. for some vectors .  Is a vector space?  Yes  No  More work is required       Videos      Video: Verifying that a vector space property holds       Video: Showing something is not a vector space     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations      Show that , the set of positive real numbers, is a vector space, but where really means the product (so ), and where scalar multiplication really means . Yes, you really do need to check all of the properties, but this is the only time I'll make you do so. Remember, examples aren't proofs, so you should start with arbitrary elements of for your vectors. Make sure you're careful about telling the reader what means.  Prove that the additive identity in an arbitrary vector space is unique.  Prove that additive inverses are unique. Assume you have a vector space and some . Further, assume with . Prove that .        Consider the vector space of polynomials, . Suppose further that , where are each positive integers. Conjecture a relationship between and . We will investigate this further in section     Sample Problem and Solution  Sample problem .   "
 },
 {
   "id": "objectives-19",
@@ -2377,139 +2404,139 @@ var ptx_lunr_docs = [
   "body": "   Determine if a map between vector spaces of polynomials is linear or not.    "
 },
 {
-  "id": "observation-18",
+  "id": "observation-17",
   "level": "2",
-  "url": "AT5.html#observation-18",
+  "url": "AT5.html#observation-17",
   "type": "Observation",
   "number": "3.5.1",
   "title": "",
-  "body": "  Several properties of the real numbers, such as commutivity: also hold for Euclidean vectors with multiple components: .   "
-},
-{
-  "id": "activity-102",
-  "level": "2",
-  "url": "AT5.html#activity-102",
-  "type": "Activity",
-  "number": "3.5.2",
-  "title": "",
-  "body": "  Consider each of the following properties of the real numbers . Label each property as valid if the property also holds for two-dimensional Euclidean vectors and numbers , and invalid if it does not.    .     .    There exists some where .    There exists some where .    If , then is the only vector equally distant from both and      .     .    If , then there exists some number such that .     .     .     "
-},
-{
-  "id": "AT5-properties",
-  "level": "2",
-  "url": "AT5.html#AT5-properties",
-  "type": "Definition",
-  "number": "3.5.3",
-  "title": "",
-  "body": "   A vector space vector space  is any set of mathematical objects, called vectors vector , and a set of numbers, called scalars scalar , with associated addition and scalar multiplication operations that satisfy the following properties.  We always assume the codomain of our operations is , i.e. that addition is a map and that scalar multiplication is a map .  Let be vectors belonging to , and let be scalars.   Vector addition is associative: .    Vector addition is commutative: .    An additive identity exists: There exists some where . additive identity     Additive inverses exist: There exists some where . additive inverse     Scalar multiplication is associative: .    1 is a multiplicative identity: .    Scalar multiplication distributes over vector addition: .    Scalar multiplication distributes over scalar addition: .     "
-},
-{
-  "id": "remark-11",
-  "level": "2",
-  "url": "AT5.html#remark-11",
-  "type": "Remark",
-  "number": "3.5.4",
-  "title": "",
-  "body": " In this text, we only consider real vector spaces, i.e. those whose scalars come from . However, one can similarly define vector spaces with scalars from other fields like the complex or rational numbers.  "
-},
-{
-  "id": "observation-19",
-  "level": "2",
-  "url": "AT5.html#observation-19",
-  "type": "Observation",
-  "number": "3.5.5",
-  "title": "",
-  "body": "  Every Euclidean vector space Euclidean vector space  satisfies all eight requirements for the usual definitions of addition and scalar multiplication, but we will also study other types of vector spaces.   "
-},
-{
-  "id": "observation-20",
-  "level": "2",
-  "url": "AT5.html#observation-20",
-  "type": "Observation",
-  "number": "3.5.6",
-  "title": "",
-  "body": "  The space of  matrices  satisfies all eight requirements for component-wise addition and scalar multiplication.   "
-},
-{
-  "id": "remark-12",
-  "level": "2",
-  "url": "AT5.html#remark-12",
-  "type": "Remark",
-  "number": "3.5.7",
-  "title": "",
-  "body": "  Every Euclidean space is a vector space, but there are other examples of vector spaces as well.  For example, consider the set of complex numbers with the usual defintions of addition and scalar multiplication, and let , , and . Then   All eight properties can be verified in this way.   "
-},
-{
-  "id": "remark-13",
-  "level": "2",
-  "url": "AT5.html#remark-13",
-  "type": "Remark",
-  "number": "3.5.8",
-  "title": "",
-  "body": "  The following sets are just a few examples of vector spaces, with the usual\/natural operations for addition and scalar multiplication.     : Euclidean vectors with components.     : Complex numbers.     : Matrices of real numbers with rows and columns.     : Polynomials of degree or less.     : Polynomials of any degree.     : Real-valued continuous functions.     "
-},
-{
-  "id": "activity-103",
-  "level": "2",
-  "url": "AT5.html#activity-103",
-  "type": "Activity",
-  "number": "3.5.9",
-  "title": "",
-  "body": "  Consider the set .  Which of the following vectors is not in ?                         "
-},
-{
-  "id": "activity-104",
-  "level": "2",
-  "url": "AT5.html#activity-104",
-  "type": "Activity",
-  "number": "3.5.10",
-  "title": "",
-  "body": "  Consider the set with the operation defined by .  Let be in with and . Using the operations defined for , which of the following is ?                         "
+  "body": " Consider the following applications of properites of the real numbers :    .     .    There exists some where .    There exists some where .     is the only number that is equally distant from and .    "
 },
 {
   "id": "activity-105",
   "level": "2",
   "url": "AT5.html#activity-105",
   "type": "Activity",
-  "number": "3.5.11",
+  "number": "3.5.2",
   "title": "",
-  "body": "  Consider the set with operations defined by .  Let be scalars and .   Verify that .  Compute the value of .  "
+  "body": "  Which of the following properites of Euclidean vectors is NOT true?    .     .    There exists some where .    There exists some where .     is the only vector whose endpoint is equally distant from the endpoints of and .     "
+},
+{
+  "id": "observation-18",
+  "level": "2",
+  "url": "AT5.html#observation-18",
+  "type": "Observation",
+  "number": "3.5.3",
+  "title": "",
+  "body": " Consider the following applications of properites of the real numbers :     .     .    There exists some such that .     .     .    "
 },
 {
   "id": "activity-106",
   "level": "2",
   "url": "AT5.html#activity-106",
   "type": "Activity",
-  "number": "3.5.12",
+  "number": "3.5.4",
   "title": "",
-  "body": "  Consider the set with operations defined by .  Let be unspecified scalars in and be an unspecified vector in .   Show that both sides of the equation simplify to the expression .  Which of the properties from did we verify in the previous task?  Vector addition is associative  is a multiplicative identity  Scalar multiplication distributes over scalar addition   Show that contains an additive identity element satisfying for all by choosing appropriate values for and using those to simplify to .  "
+  "body": "  Which of the following properites of Euclidean vectors is NOT true?     .     .    There exists some such that .     .     .     "
 },
 {
-  "id": "remark-14",
+  "id": "fact-17",
   "level": "2",
-  "url": "AT5.html#remark-14",
-  "type": "Remark",
-  "number": "3.5.13",
+  "url": "AT5.html#fact-17",
+  "type": "Fact",
+  "number": "3.5.5",
   "title": "",
-  "body": "  It turns out with operations defined by satisifes all eight properties from .  Thus, is a vector space.   "
+  "body": "  Every Euclidean vector space satisfies the following properties, where are Euclidean vectors and are scalars.   Vector addition is associative: .    Vector addition is commutative: .    An additive identity exists: There exists some where .    Additive inverses exist: There exists some where .    Scalar multiplication is associative: .    1 is a multiplicative identity: .    Scalar multiplication distributes over vector addition: .    Scalar multiplication distributes over scalar addition: .     "
+},
+{
+  "id": "AT5-properties",
+  "level": "2",
+  "url": "AT5.html#AT5-properties",
+  "type": "Definition",
+  "number": "3.5.6",
+  "title": "",
+  "body": "  A vector space vector space  is any set of mathematical objects, called vectors vector , and a set of numbers, called scalars scalar , with associated addition and scalar multiplication operations that satisfy the following properties. Let be vectors belonging to , and let be scalars.   We always assume the codomain of our operations is , i.e. that addition is a map and that scalar multiplication is a map .  Likewise, we only consider real vector spaces, i.e. those whose scalars come from . However, one can similarly define vector spaces with scalars from other fields like the complex or rational numbers.    Vector addition is associative: .    Vector addition is commutative: .    An additive identity exists: There exists some where . additive identity     Additive inverses exist: There exists some where . additive inverse     Scalar multiplication is associative: .    1 is a multiplicative identity: .    Scalar multiplication distributes over vector addition: .    Scalar multiplication distributes over scalar addition: .     "
+},
+{
+  "id": "remark-11",
+  "level": "2",
+  "url": "AT5.html#remark-11",
+  "type": "Remark",
+  "number": "3.5.7",
+  "title": "",
+  "body": " Consider the set of complex numbers with the usual defintion for addition: .  Let , , and . Then    This proves that complex addition is associative: . The seven other vector space properties may also be verified, so is an example of a non-Euclidean vector space.  "
+},
+{
+  "id": "remark-12",
+  "level": "2",
+  "url": "AT5.html#remark-12",
+  "type": "Remark",
+  "number": "3.5.8",
+  "title": "",
+  "body": "  The following sets are just a few examples of vector spaces, with the usual\/natural operations for addition and scalar multiplication.     : Euclidean vectors with components.     : Complex numbers.     : Matrices of real numbers with rows and columns.     : Polynomials of degree or less.     : Polynomials of any degree.     : Real-valued continuous functions.     "
 },
 {
   "id": "activity-107",
   "level": "2",
   "url": "AT5.html#activity-107",
   "type": "Activity",
-  "number": "3.5.14",
+  "number": "3.5.9",
   "title": "",
-  "body": "  Let have operations defined by  .   Show that is the scalar multiplication identity element by simplifying to .  Show that does not have an additive identity element by showing that for any possible values of .  Is a vector space according to ?  "
+  "body": "  Consider the set .  Which of the following vectors is not in ?                         "
 },
 {
   "id": "activity-108",
   "level": "2",
   "url": "AT5.html#activity-108",
   "type": "Activity",
+  "number": "3.5.10",
+  "title": "",
+  "body": "  Consider the set with the operation defined by .  Let be in with and . Using the operations defined for , which of the following is ?                         "
+},
+{
+  "id": "activity-109",
+  "level": "2",
+  "url": "AT5.html#activity-109",
+  "type": "Activity",
+  "number": "3.5.11",
+  "title": "",
+  "body": "  Consider the set with operations defined by .  Let be scalars and .   Verify that .  Compute the value of .  "
+},
+{
+  "id": "activity-110",
+  "level": "2",
+  "url": "AT5.html#activity-110",
+  "type": "Activity",
+  "number": "3.5.12",
+  "title": "",
+  "body": "  Consider the set with operations defined by .  Let be unspecified scalars in and be an unspecified vector in .   Show that both sides of the equation simplify to the expression .   Show that contains an additive identity element satisfying for all . That is, pick appropriate values for and then simplify into just .  Is a vector space?  Yes  No  More work is required    "
+},
+{
+  "id": "remark-13",
+  "level": "2",
+  "url": "AT5.html#remark-13",
+  "type": "Remark",
+  "number": "3.5.13",
+  "title": "",
+  "body": "  It turns out with operations defined by satisifes all eight properties from .  Thus, is a vector space.   "
+},
+{
+  "id": "activity-111",
+  "level": "2",
+  "url": "AT5.html#activity-111",
+  "type": "Activity",
+  "number": "3.5.14",
+  "title": "",
+  "body": "  Let have operations defined by  .   Show that is the scalar multiplication identity element by simplifying to .  Show that does not have an additive identity element by showing that no matter what the values of are.  Is a vector space?  Yes  No  More work is required    "
+},
+{
+  "id": "activity-112",
+  "level": "2",
+  "url": "AT5.html#activity-112",
+  "type": "Activity",
   "number": "3.5.15",
   "title": "",
-  "body": "  Let have operations defined by    Show that scalar multiplication distributes over vector addition, i.e. for all  .  Show that vector addition is not associative, i.e. for some vectors .  Is a vector space?  "
+  "body": "  Let have operations defined by    Show that scalar multiplication distributes over vector addition, i.e. for all  .  Show that vector addition is not associative, i.e. for some vectors .  Is a vector space?  Yes  No  More work is required    "
 },
 {
   "id": "figure-38",
@@ -2566,45 +2593,45 @@ var ptx_lunr_docs = [
   "body": "   Translate back and forth between a linear transformation of Euclidean spaces and its standard matrix, and perform related computations.    "
 },
 {
-  "id": "fact-17",
+  "id": "fact-18",
   "level": "2",
-  "url": "AT6.html#fact-17",
+  "url": "AT6.html#fact-18",
   "type": "Fact",
   "number": "3.6.1",
   "title": "",
   "body": "  Every vector space with finite dimension, that is, every vector space with a basis of the form is said to be isomorphic isomorphic to a Euclidean space , since there exists a natural correspondance between vectors in and vectors in :    "
 },
 {
-  "id": "observation-21",
+  "id": "observation-19",
   "level": "2",
-  "url": "AT6.html#observation-21",
+  "url": "AT6.html#observation-19",
   "type": "Observation",
   "number": "3.6.2",
   "title": "",
   "body": "  We've already been taking advantage of the previous fact by converting polynomials and matrices into Euclidean vectors. Since and are both four-dimensional:    "
 },
 {
-  "id": "activity-109",
+  "id": "activity-113",
   "level": "2",
-  "url": "AT6.html#activity-109",
+  "url": "AT6.html#activity-113",
   "type": "Activity",
   "number": "3.6.3",
   "title": "",
   "body": "  Suppose is a subspace of , and you know that the set is a linearly independent subset of . What can you conclude about ?    The dimension of is 3 or less.    The dimension of is exactly 3.    The dimension of is 3 or more.     "
 },
 {
-  "id": "activity-110",
+  "id": "activity-114",
   "level": "2",
-  "url": "AT6.html#activity-110",
+  "url": "AT6.html#activity-114",
   "type": "Activity",
   "number": "3.6.4",
   "title": "",
   "body": "  Suppose is a subspace of , and you know that is spanned by the six vectors What can you conclude about ?    The dimension of is 6 or less.    The dimension of is exactly 6.    The dimension of is 6 or more.     "
 },
 {
-  "id": "observation-22",
+  "id": "observation-20",
   "level": "2",
-  "url": "AT6.html#observation-22",
+  "url": "AT6.html#observation-20",
   "type": "Observation",
   "number": "3.6.5",
   "title": "",
@@ -2665,81 +2692,81 @@ var ptx_lunr_docs = [
   "body": "   Multiply matrices.    "
 },
 {
-  "id": "observation-23",
+  "id": "observation-21",
   "level": "2",
-  "url": "MX1.html#observation-23",
+  "url": "MX1.html#observation-21",
   "type": "Observation",
   "number": "4.1.1",
   "title": "",
   "body": "  If and are linear maps, then the composition map is a linear map from .      The composition of two linear maps.   Recall that for a vector, , the composition is computed as .   "
 },
 {
-  "id": "activity-111",
+  "id": "activity-115",
   "level": "2",
-  "url": "MX1.html#activity-111",
+  "url": "MX1.html#activity-115",
   "type": "Activity",
   "number": "4.1.2",
   "title": "",
   "body": "  Let be given by the standard matrix and be given by the standard matrix .  What are the domain and codomain of the composition map ?    The domain is and the codomain is   The domain is and the codomain is   The domain is and the codomain is   The domain is and the codomain is      "
 },
 {
-  "id": "activity-112",
+  "id": "activity-116",
   "level": "2",
-  "url": "MX1.html#activity-112",
+  "url": "MX1.html#activity-116",
   "type": "Activity",
   "number": "4.1.3",
   "title": "",
   "body": "  Let be given by the standard matrix and be given by the standard matrix .  What size will the standard matrix of be? (Rows Columns)                   "
 },
 {
-  "id": "activity-113",
+  "id": "activity-117",
   "level": "2",
-  "url": "MX1.html#activity-113",
+  "url": "MX1.html#activity-117",
   "type": "Activity",
   "number": "4.1.4",
   "title": "",
   "body": "  Let be given by the standard matrix and be given by the standard matrix .   Compute   Compute .  Compute .  Write the standard matrix of .  "
 },
 {
-  "id": "definition-26",
+  "id": "definition-27",
   "level": "2",
-  "url": "MX1.html#definition-26",
+  "url": "MX1.html#definition-27",
   "type": "Definition",
   "number": "4.1.5",
   "title": "",
   "body": "  We define the product  of a matrix and a matrix to be the standard matrix of the composition map of the two corresponding linear functions.  For the previous activity, was a map , and was a map , so gave a map with a standard matrix:     "
 },
 {
-  "id": "activity-114",
+  "id": "activity-118",
   "level": "2",
-  "url": "MX1.html#activity-114",
+  "url": "MX1.html#activity-118",
   "type": "Activity",
   "number": "4.1.6",
   "title": "",
   "body": "  Let be given by the matrix and be given by the matrix .   Write the dimensions (rows columns) for , , , and .  Find the standard matrix of .  Find the standard matrix of .  "
 },
 {
-  "id": "activity-115",
+  "id": "activity-119",
   "level": "2",
-  "url": "MX1.html#activity-115",
+  "url": "MX1.html#activity-119",
   "type": "Activity",
   "number": "4.1.7",
   "title": "",
   "body": "  Consider the following three matrices.    Find the domain and codomain of each of the three linear maps corresponding to , , and .  Only one of the matrix products can actually be computed. Compute it.  "
 },
 {
-  "id": "activity-116",
+  "id": "activity-120",
   "level": "2",
-  "url": "MX1.html#activity-116",
+  "url": "MX1.html#activity-120",
   "type": "Activity",
   "number": "4.1.8",
   "title": "",
   "body": "  Let , and let .   Compute the product by hand.  Check your work using technology. Using Octave: B = [3 -4 0 ; 2 0 -1 ; 0 -3 3] A = [2 7 -1 ; 0 3 2 ; 1 1 -1] B*A  "
 },
 {
-  "id": "activity-117",
+  "id": "activity-121",
   "level": "2",
-  "url": "MX1.html#activity-117",
+  "url": "MX1.html#activity-121",
   "type": "Activity",
   "number": "4.1.9",
   "title": "",
@@ -2800,54 +2827,54 @@ var ptx_lunr_docs = [
   "body": "   Express row operations through matrix multiplication.    "
 },
 {
-  "id": "activity-118",
+  "id": "activity-122",
   "level": "2",
-  "url": "MX2.html#activity-118",
+  "url": "MX2.html#activity-122",
   "type": "Activity",
   "number": "4.2.1",
   "title": "",
   "body": "  Let . Find a matrix such that , that is, Check your guess using technology.   "
 },
 {
-  "id": "definition-27",
+  "id": "definition-28",
   "level": "2",
-  "url": "MX2.html#definition-27",
+  "url": "MX2.html#definition-28",
   "type": "Definition",
   "number": "4.2.2",
   "title": "",
   "body": "  The identity matrix (or just when is obvious from context) is the matrix It has a on each diagonal element and a in every other position.   "
 },
 {
-  "id": "fact-18",
+  "id": "fact-19",
   "level": "2",
-  "url": "MX2.html#fact-18",
+  "url": "MX2.html#fact-19",
   "type": "Fact",
   "number": "4.2.3",
   "title": "",
   "body": "  For any square matrix , :    "
 },
 {
-  "id": "activity-119",
+  "id": "activity-123",
   "level": "2",
-  "url": "MX2.html#activity-119",
+  "url": "MX2.html#activity-123",
   "type": "Activity",
   "number": "4.2.4",
   "title": "",
   "body": "  Tweaking the identity matrix slightly allows us to write row operations in terms of matrix multiplication.   Create a matrix that doubles the third row of :   Create a matrix that swaps the second and third rows of :   Create a matrix that adds times the third row of to the first row:   "
 },
 {
-  "id": "fact-19",
+  "id": "fact-20",
   "level": "2",
-  "url": "MX2.html#fact-19",
+  "url": "MX2.html#fact-20",
   "type": "Fact",
   "number": "4.2.5",
   "title": "",
   "body": "  If is the result of applying a row operation to , then is the result of applying the same row operation to .    Scaling a row:     Swapping rows:     Adding a row multiple to another row:     Such matrices can be chained together to emulate multiple row operations. In particular, for some sequence of matrices .   "
 },
 {
-  "id": "activity-120",
+  "id": "activity-124",
   "level": "2",
-  "url": "MX2.html#activity-120",
+  "url": "MX2.html#activity-124",
   "type": "Activity",
   "number": "4.2.6",
   "title": "",
@@ -2881,90 +2908,90 @@ var ptx_lunr_docs = [
   "body": "   Determine if a matrix is invertible, and if so, compute its inverse.    "
 },
 {
-  "id": "activity-121",
+  "id": "activity-125",
   "level": "2",
-  "url": "MX3.html#activity-121",
+  "url": "MX3.html#activity-125",
   "type": "Activity",
   "number": "4.3.1",
   "title": "",
   "body": "  Let be a linear map with standard matrix . Sort the following items into three groups of statements: a group that means is injective , a group that means is surjective , and a group that means is bijective .    has a solution for all    has a unique solution for all    has a unique solution.  The columns of span   The columns of are linearly independent  The columns of are a basis of   Every column of has a pivot  Every row of has a pivot   and     "
 },
 {
-  "id": "activity-122",
+  "id": "activity-126",
   "level": "2",
-  "url": "MX3.html#activity-122",
+  "url": "MX3.html#activity-126",
   "type": "Activity",
   "number": "4.3.2",
   "title": "",
   "body": "  Let be the linear transformation given by the standard matrix .  Write an augmented matrix representing the system of equations given by , that is, . Then solve to find the kernel of .   "
 },
 {
-  "id": "definition-28",
+  "id": "definition-29",
   "level": "2",
-  "url": "MX3.html#definition-28",
+  "url": "MX3.html#definition-29",
   "type": "Definition",
   "number": "4.3.3",
   "title": "",
   "body": "  Let be a linear map with standard matrix .   If is a bijection and is any vector, then has a unique solution.  So we may define an inverse map inverse map  by setting to be this unique solution.  Let be the standard matrix for . We call the inverse matrix inverse matrix of , so we also say that is invertible invertible .    "
 },
 {
-  "id": "activity-123",
+  "id": "activity-127",
   "level": "2",
-  "url": "MX3.html#activity-123",
+  "url": "MX3.html#activity-127",
   "type": "Activity",
   "number": "4.3.4",
   "title": "",
   "body": "  Let be the linear transformation given by the standard matrix .   Write an augmented matrix representing the system of equations given by , that is, . Then solve to find .  Solve to find .  Solve to find .  Write , the standard matrix for .  "
 },
 {
-  "id": "observation-24",
+  "id": "observation-22",
   "level": "2",
-  "url": "MX3.html#observation-24",
+  "url": "MX3.html#observation-22",
   "type": "Observation",
   "number": "4.3.5",
   "title": "",
   "body": "  We could have solved these three systems simultaneously by row reducing the matrix at once.    "
 },
 {
-  "id": "activity-124",
+  "id": "activity-128",
   "level": "2",
-  "url": "MX3.html#activity-124",
+  "url": "MX3.html#activity-128",
   "type": "Activity",
   "number": "4.3.6",
   "title": "",
   "body": "  Find the inverse of the matrix by row-reducing .   "
 },
 {
-  "id": "activity-125",
+  "id": "activity-129",
   "level": "2",
-  "url": "MX3.html#activity-125",
+  "url": "MX3.html#activity-129",
   "type": "Activity",
   "number": "4.3.7",
   "title": "",
   "body": "  Is the matrix invertible? Give a reason for your answer.   "
 },
 {
-  "id": "observation-25",
+  "id": "observation-23",
   "level": "2",
-  "url": "MX3.html#observation-25",
+  "url": "MX3.html#observation-23",
   "type": "Observation",
   "number": "4.3.8",
   "title": "",
   "body": "  An matrix is invertible if and only if .   "
 },
 {
-  "id": "activity-126",
+  "id": "activity-130",
   "level": "2",
-  "url": "MX3.html#activity-126",
+  "url": "MX3.html#activity-130",
   "type": "Activity",
   "number": "4.3.9",
   "title": "",
   "body": "  Let be the bijective linear map defined by , with the inverse map .   Compute .  If is the standard matrix for and is the standard matrix for , find the matrix   "
 },
 {
-  "id": "observation-26",
+  "id": "observation-24",
   "level": "2",
-  "url": "MX3.html#observation-26",
+  "url": "MX3.html#observation-24",
   "type": "Observation",
   "number": "4.3.10",
   "title": "",
@@ -3025,72 +3052,72 @@ var ptx_lunr_docs = [
   "body": "   Describe how a row operation affects the determinant of a matrix.    "
 },
 {
-  "id": "activity-127",
+  "id": "activity-131",
   "level": "2",
-  "url": "GT1.html#activity-127",
+  "url": "GT1.html#activity-131",
   "type": "Activity",
   "number": "5.1.1",
   "title": "",
   "body": "  The image in illustrates how the linear transformation given by the standard matrix transforms the unit square.      Transformation of the unit square by the matrix .    What are the lengths of and ?  What is the area of the transformed unit square?  "
 },
 {
-  "id": "activity-128",
+  "id": "activity-132",
   "level": "2",
-  "url": "GT1.html#activity-128",
+  "url": "GT1.html#activity-132",
   "type": "Activity",
   "number": "5.1.2",
   "title": "",
   "body": "  The image below illustrates how the linear transformation given by the standard matrix transforms the unit square.      Transformation of the unit square by the matrix    What are the lengths of and ?  What is the area of the transformed unit square?  "
 },
 {
-  "id": "observation-27",
+  "id": "observation-25",
   "level": "2",
-  "url": "GT1.html#observation-27",
+  "url": "GT1.html#observation-25",
   "type": "Observation",
   "number": "5.1.3",
   "title": "",
   "body": "  It is possible to find two nonparallel vectors that are scaled but not rotated by the linear map given by .        Certain vectors are stretched out without being rotated.   The process for finding such vectors will be covered later in this chapter.   "
 },
 {
-  "id": "observation-28",
+  "id": "observation-26",
   "level": "2",
-  "url": "GT1.html#observation-28",
+  "url": "GT1.html#observation-26",
   "type": "Observation",
   "number": "5.1.4",
   "title": "",
   "body": "  Notice that while a linear map can transform vectors in various ways, linear maps always transform parallelograms into parallelograms, and these areas are always transformed by the same factor: in the case of , this factor is .      A linear map transforming parallelograms into parallelograms.   Since this change in area is always the same for a given linear map, it will be equal to the value of the transformed unit square (which begins with area ).   "
 },
 {
-  "id": "remark-15",
+  "id": "remark-14",
   "level": "2",
-  "url": "GT1.html#remark-15",
+  "url": "GT1.html#remark-14",
   "type": "Remark",
   "number": "5.1.5",
   "title": "",
   "body": "  We will define the determinant of a square matrix , or for short, to be the factor by which scales areas. In order to figure out how to compute it, we first figure out the properties it must satisfy.      The linear transformation scaling areas by a constant factor, which we call the determinant    "
 },
 {
-  "id": "activity-129",
+  "id": "activity-133",
   "level": "2",
-  "url": "GT1.html#activity-129",
+  "url": "GT1.html#activity-133",
   "type": "Activity",
   "number": "5.1.6",
   "title": "",
   "body": "  The transformation of the unit square by the standard matrix is illustrated below. If is the area of resulting parallelogram, what is the value of ?      The transformation of the unit square by the identity matrix.   The value for is:   0  1  2  4    "
 },
 {
-  "id": "activity-130",
+  "id": "activity-134",
   "level": "2",
-  "url": "GT1.html#activity-130",
+  "url": "GT1.html#activity-134",
   "type": "Activity",
   "number": "5.1.7",
   "title": "",
   "body": "  The transformation of the unit square by the standard matrix is illustrated below: both . If is the area of the generated parallelogram, what is the value of ?      Transformation of the unit square by a matrix with identical columns.   The value of is:   0  1  2  4    "
 },
 {
-  "id": "activity-131",
+  "id": "activity-135",
   "level": "2",
-  "url": "GT1.html#activity-131",
+  "url": "GT1.html#activity-135",
   "type": "Activity",
   "number": "5.1.8",
   "title": "",
@@ -3124,153 +3151,153 @@ var ptx_lunr_docs = [
   "body": "    Parallelogram generated by and  "
 },
 {
-  "id": "activity-132",
+  "id": "activity-136",
   "level": "2",
-  "url": "GT1.html#activity-132",
+  "url": "GT1.html#activity-136",
   "type": "Activity",
   "number": "5.1.9",
   "title": "",
   "body": "  The paralellograms generated by the standard matrices , and are illustrated below.      Parallelogram generated by and   Describe the value of .            Cannot be determined from this information.    "
 },
 {
-  "id": "definition-29",
+  "id": "definition-30",
   "level": "2",
-  "url": "GT1.html#definition-29",
+  "url": "GT1.html#definition-30",
   "type": "Definition",
   "number": "5.1.10",
   "title": "",
   "body": "  The determinant is the unique function satisfying these properties:   whenever two columns of the matrix are identical.   , assuming no other columns change.   , assuming no other columns change.    Note that these last two properties together can be phrased as The determinant is linear in each column.    "
 },
 {
-  "id": "observation-29",
+  "id": "observation-27",
   "level": "2",
-  "url": "GT1.html#observation-29",
+  "url": "GT1.html#observation-27",
   "type": "Observation",
   "number": "5.1.11",
   "title": "",
   "body": "  The determinant must also satisfy other properties. Consider and .      Parallelogram built by and   The base of both parallelograms is , while the height has not changed, so the determinant does not change either. This can also be proven using the other properties of the determinant:    "
 },
 {
-  "id": "remark-16",
+  "id": "remark-15",
   "level": "2",
-  "url": "GT1.html#remark-16",
+  "url": "GT1.html#remark-15",
   "type": "Remark",
   "number": "5.1.12",
   "title": "",
   "body": "  Swapping columns may be thought of as a reflection, which is represented by a negative determinant. For example, the following matrices transform the unit square into the same parallelogram, but the second matrix reflects its orientation.       Reflection of a parallelogram as a result of swapping columns.    "
 },
 {
-  "id": "observation-30",
+  "id": "observation-28",
   "level": "2",
-  "url": "GT1.html#observation-30",
+  "url": "GT1.html#observation-28",
   "type": "Observation",
   "number": "5.1.13",
   "title": "",
   "body": "  The fact that swapping columns multiplies determinants by a negative may be verified by adding and subtracting columns.    "
 },
 {
-  "id": "fact-20",
+  "id": "fact-21",
   "level": "2",
-  "url": "GT1.html#fact-20",
+  "url": "GT1.html#fact-21",
   "type": "Fact",
   "number": "5.1.14",
   "title": "",
   "body": "  To summarize, we've shown that the column versions of the three row-reducing operations a matrix may be used to simplify a determinant in the following way:   Multiplying a column by a scalar multiplies the determinant by that scalar:   Swapping two columns changes the sign of the determinant:   Adding a multiple of a column to another column does not change the determinant:     "
 },
 {
-  "id": "activity-133",
+  "id": "activity-137",
   "level": "2",
-  "url": "GT1.html#activity-133",
+  "url": "GT1.html#activity-137",
   "type": "Activity",
   "number": "5.1.15",
   "title": "",
   "body": "  The transformation given by the standard matrix scales areas by , and the transformation given by the standard matrix scales areas by . By what factor does the transformation given by the standard matrix scale areas?      Area changing under the composition of two linear maps             Cannot be determined    "
 },
 {
-  "id": "fact-21",
+  "id": "fact-22",
   "level": "2",
-  "url": "GT1.html#fact-21",
+  "url": "GT1.html#fact-22",
   "type": "Fact",
   "number": "5.1.16",
   "title": "",
   "body": "  Since the transformation given by the standard matrix is obtained by applying the transformations given by and , it follows that .   "
 },
 {
-  "id": "remark-17",
+  "id": "remark-16",
   "level": "2",
-  "url": "GT1.html#remark-17",
+  "url": "GT1.html#remark-16",
   "type": "Remark",
   "number": "5.1.17",
   "title": "",
   "body": "  Recall that row operations may be produced by matrix multiplication.   Multiply the first row of by :   Swap the first and second row of :   Add times the third row to the first row of :     "
 },
 {
-  "id": "fact-22",
+  "id": "fact-23",
   "level": "2",
-  "url": "GT1.html#fact-22",
+  "url": "GT1.html#fact-23",
   "type": "Fact",
   "number": "5.1.18",
   "title": "",
   "body": "  The determinants of row operation matrices may be computed by manipulating columns to reduce each matrix to the identity:   Scaling a row:   Swapping rows:   Adding a row multiple to another row:     "
 },
 {
-  "id": "activity-134",
+  "id": "activity-138",
   "level": "2",
-  "url": "GT1.html#activity-134",
+  "url": "GT1.html#activity-138",
   "type": "Activity",
   "number": "5.1.19",
   "title": "",
   "body": "  Consider the row operation applied as follows to show :    Find a matrix such that , by applying the same row operation to .  Find by comparing with the previous slide.  If is a matrix with , find   "
 },
 {
-  "id": "activity-135",
+  "id": "activity-139",
   "level": "2",
-  "url": "GT1.html#activity-135",
+  "url": "GT1.html#activity-139",
   "type": "Activity",
   "number": "5.1.20",
   "title": "",
   "body": "  Consider the row operation applied as follows to show :    Find a matrix such that , by applying the same row operation to .  If is a matrix with , find .  "
 },
 {
-  "id": "activity-136",
+  "id": "activity-140",
   "level": "2",
-  "url": "GT1.html#activity-136",
+  "url": "GT1.html#activity-140",
   "type": "Activity",
   "number": "5.1.21",
   "title": "",
   "body": "  Consider the row operation applied as follows to show :    Find a matrix such that .  If is a matrix with , find .  "
 },
 {
-  "id": "remark-18",
+  "id": "remark-17",
   "level": "2",
-  "url": "GT1.html#remark-18",
+  "url": "GT1.html#remark-17",
   "type": "Remark",
   "number": "5.1.22",
   "title": "",
   "body": "  Recall that the column versions of the three row-reducing operations a matrix may be used to simplify a determinant:   Multiplying columns by scalars:   Swapping two columns:   Adding a multiple of a column to another column:     "
 },
 {
-  "id": "remark-19",
+  "id": "remark-18",
   "level": "2",
-  "url": "GT1.html#remark-19",
+  "url": "GT1.html#remark-18",
   "type": "Remark",
   "number": "5.1.23",
   "title": "",
   "body": "  The determinants of row operation matrices may be computed by manipulating columns to reduce each matrix to the identity:   Scaling a row:   Swapping rows:   Adding a row multiple to another row:     "
 },
 {
-  "id": "fact-23",
+  "id": "fact-24",
   "level": "2",
-  "url": "GT1.html#fact-23",
+  "url": "GT1.html#fact-24",
   "type": "Fact",
   "number": "5.1.24",
   "title": "",
   "body": "  Thus we can also use both row operations to simplify determinants:   Multiplying rows by scalars:    Swapping two rows:    Adding multiples of rows\/columns to other rows:      "
 },
 {
-  "id": "observation-31",
+  "id": "observation-29",
   "level": "2",
-  "url": "GT1.html#observation-31",
+  "url": "GT1.html#observation-29",
   "type": "Observation",
   "number": "5.1.25",
   "title": "",
@@ -3313,117 +3340,117 @@ var ptx_lunr_docs = [
   "body": "   Compute the determinant of a matrix.    "
 },
 {
-  "id": "remark-20",
+  "id": "remark-19",
   "level": "2",
-  "url": "GT2.html#remark-20",
+  "url": "GT2.html#remark-19",
   "type": "Remark",
   "number": "5.2.1",
   "title": "",
   "body": "  We've seen that row reducing all the way into RREF gives us a method of computing determinants.  However, we learned in that this can be tedious for large matrices. Thus, we will try to figure out how to turn the determinant of a larger matrix into the determinant of a smaller matrix.   "
 },
 {
-  "id": "activity-137",
+  "id": "activity-141",
   "level": "2",
-  "url": "GT2.html#activity-137",
+  "url": "GT2.html#activity-141",
   "type": "Activity",
   "number": "5.2.2",
   "title": "",
   "body": "  The following image illustrates the transformation of the unit cube by the matrix .      Transformation of the unit cube by the linear transformation.   Recall that for this solid , where is the height of the solid and is the area of its parallelogram base. So what must its volume be?                 "
 },
 {
-  "id": "fact-24",
+  "id": "fact-25",
   "level": "2",
-  "url": "GT2.html#fact-24",
+  "url": "GT2.html#fact-25",
   "type": "Fact",
   "number": "5.2.3",
   "title": "",
   "body": "  If row contains all zeros except for a on the main (upper-left to lower-right) diagonal, then both column and row may be removed without changing the value of the determinant.   Since row and column operations affect the determinants in the same way, the same technique works for a column of all zeros except for a on the main diagonal.    "
 },
 {
-  "id": "activity-138",
+  "id": "activity-142",
   "level": "2",
-  "url": "GT2.html#activity-138",
+  "url": "GT2.html#activity-142",
   "type": "Activity",
   "number": "5.2.4",
   "title": "",
   "body": "  Remove an appropriate row and column of to simplify the determinant to a determinant.  "
 },
 {
-  "id": "activity-139",
+  "id": "activity-143",
   "level": "2",
-  "url": "GT2.html#activity-139",
+  "url": "GT2.html#activity-143",
   "type": "Activity",
   "number": "5.2.5",
   "title": "",
   "body": "  Simplify to a multiple of a determinant by first doing the following:   Factor out a from a column.  Swap rows or columns to put a on the main diagonal.  "
 },
 {
-  "id": "activity-140",
+  "id": "activity-144",
   "level": "2",
-  "url": "GT2.html#activity-140",
+  "url": "GT2.html#activity-144",
   "type": "Activity",
   "number": "5.2.6",
   "title": "",
   "body": "  Simplify to a multiple of a determinant by first doing the following:   Use row\/column operations to create two zeroes in the same row or column.  Factor\/swap as needed to get a row\/column of all zeroes except a on the main diagonal.  "
 },
 {
-  "id": "observation-32",
+  "id": "observation-30",
   "level": "2",
-  "url": "GT2.html#observation-32",
+  "url": "GT2.html#observation-30",
   "type": "Observation",
   "number": "5.2.7",
   "title": "",
   "body": "  Using row\/column operations, you can introduce zeros and reduce dimension to whittle down the determinant of a large matrix to a determinant of a smaller matrix.    "
 },
 {
-  "id": "activity-141",
+  "id": "activity-145",
   "level": "2",
-  "url": "GT2.html#activity-141",
+  "url": "GT2.html#activity-145",
   "type": "Activity",
   "number": "5.2.8",
   "title": "",
   "body": "  Rewrite as a multiple of a determinant of a matrix.  "
 },
 {
-  "id": "activity-142",
+  "id": "activity-146",
   "level": "2",
-  "url": "GT2.html#activity-142",
+  "url": "GT2.html#activity-146",
   "type": "Activity",
   "number": "5.2.9",
   "title": "",
   "body": "  Compute by using any combination of row\/column operations.   "
 },
 {
-  "id": "observation-33",
+  "id": "observation-31",
   "level": "2",
-  "url": "GT2.html#observation-33",
+  "url": "GT2.html#observation-31",
   "type": "Observation",
   "number": "5.2.10",
   "title": "",
   "body": "  Another option is to take advantage of the fact that the determinant is linear in each row or column. This approach is called Laplace expansion or cofactor expansion .  For example, since ,    "
 },
 {
-  "id": "observation-34",
+  "id": "observation-32",
   "level": "2",
-  "url": "GT2.html#observation-34",
+  "url": "GT2.html#observation-32",
   "type": "Observation",
   "number": "5.2.11",
   "title": "",
   "body": "  Applying Laplace expansion to a matrix yields a short formula you may have seen: .  There are formulas for the determinants of larger matrices, but they can be pretty tedious to use. For example, writing out a formula for a determinant would require 24 different terms!   So this is why we either use Laplace expansion or row\/column operations directly.   "
 },
 {
-  "id": "activity-143",
+  "id": "activity-147",
   "level": "2",
-  "url": "GT2.html#activity-143",
+  "url": "GT2.html#activity-147",
   "type": "Activity",
   "number": "5.2.12",
   "title": "",
   "body": "  Based on the previous activities, which technique is easier for computing determinants?   Memorizing formulas.  Using row\/column operations.  Laplace expansion.  Some other technique (be prepared to describe it).    "
 },
 {
-  "id": "activity-144",
+  "id": "activity-148",
   "level": "2",
-  "url": "GT2.html#activity-144",
+  "url": "GT2.html#activity-148",
   "type": "Activity",
   "number": "5.2.13",
   "title": "",
@@ -3511,99 +3538,99 @@ var ptx_lunr_docs = [
   "body": "   Find the eigenvalues of a matrix.    "
 },
 {
-  "id": "activity-145",
+  "id": "activity-149",
   "level": "2",
-  "url": "GT3.html#activity-145",
+  "url": "GT3.html#activity-149",
   "type": "Activity",
   "number": "5.3.1",
   "title": "",
   "body": "  An invertible matrix and its inverse are given below:   Which of the following is equal to ?                 "
 },
 {
-  "id": "fact-25",
+  "id": "fact-26",
   "level": "2",
-  "url": "GT3.html#fact-25",
+  "url": "GT3.html#fact-26",
   "type": "Fact",
   "number": "5.3.2",
   "title": "",
   "body": "  For every invertible matrix , so .  Furthermore, a square matrix is invertible if and only if .   "
 },
 {
-  "id": "observation-35",
+  "id": "observation-33",
   "level": "2",
-  "url": "GT3.html#observation-35",
+  "url": "GT3.html#observation-33",
   "type": "Observation",
   "number": "5.3.3",
   "title": "",
   "body": "  Consider the linear transformation given by the matrix .      Transformation of the unit square by the linear transformation   It is easy to see geometrically that .  It is less obvious (but easily checked once you find it) that .   "
 },
 {
-  "id": "definition-30",
+  "id": "definition-31",
   "level": "2",
-  "url": "GT3.html#definition-30",
+  "url": "GT3.html#definition-31",
   "type": "Definition",
   "number": "5.3.4",
   "title": "",
   "body": "  Let . An eigenvector eigenvector for is a vector such that is parallel to .      The map stretches out the eigenvector by a factor of (the corresponding eigenvalue).   In other words, for some scalar . If , then we say is a nontrivial eigenvector eigenvector nontrivial and we call this an eigenvalue eigenvalue of .   "
 },
 {
-  "id": "activity-146",
+  "id": "activity-150",
   "level": "2",
-  "url": "GT3.html#activity-146",
+  "url": "GT3.html#activity-150",
   "type": "Activity",
   "number": "5.3.5",
   "title": "",
   "body": "  Finding the eigenvalues that satisfy for some nontrivial eigenvector is equivalent to finding nonzero solutions for the matrix equation .  Which of the following must be true for any eigenvalue?   The kernel of the transformation with standard matrix must contain the zero vector , so is invertible .  The kernel of the transformation with standard matrix must contain a non-zero vector , so is not invertible .  The image of the transformation with standard matrix must contain the zero vector , so is invertible .  The image of the transformation with standard matrix must contain a non-zero vector , so is not invertible .    "
 },
 {
-  "id": "fact-26",
+  "id": "fact-27",
   "level": "2",
-  "url": "GT3.html#fact-26",
+  "url": "GT3.html#fact-27",
   "type": "Fact",
   "number": "5.3.6",
   "title": "",
   "body": "  The eigenvalues for a matrix are the values that make non-invertible.  Thus the eigenvalues for a matrix are the solutions to the equation    "
 },
 {
-  "id": "definition-31",
+  "id": "definition-32",
   "level": "2",
-  "url": "GT3.html#definition-31",
+  "url": "GT3.html#definition-32",
   "type": "Definition",
   "number": "5.3.7",
   "title": "",
   "body": "  The expression is called characteristic polynomial of .  For example, when , we have .  Thus the characteristic polynomial of is and its eigenvalues are the solutions to .   "
 },
 {
-  "id": "activity-147",
+  "id": "activity-151",
   "level": "2",
-  "url": "GT3.html#activity-147",
+  "url": "GT3.html#activity-151",
   "type": "Activity",
   "number": "5.3.8",
   "title": "",
   "body": "  Let .   Compute to determine the characteristic polynomial of .  Set this characteristic polynomial equal to zero and factor to determine the eigenvalues of .  "
 },
 {
-  "id": "activity-148",
+  "id": "activity-152",
   "level": "2",
-  "url": "GT3.html#activity-148",
+  "url": "GT3.html#activity-152",
   "type": "Activity",
   "number": "5.3.9",
   "title": "",
   "body": "  Find all the eigenvalues for the matrix .   "
 },
 {
-  "id": "activity-149",
+  "id": "activity-153",
   "level": "2",
-  "url": "GT3.html#activity-149",
+  "url": "GT3.html#activity-153",
   "type": "Activity",
   "number": "5.3.10",
   "title": "",
   "body": "  Find all the eigenvalues for the matrix .   "
 },
 {
-  "id": "activity-150",
+  "id": "activity-154",
   "level": "2",
-  "url": "GT3.html#activity-150",
+  "url": "GT3.html#activity-154",
   "type": "Activity",
   "number": "5.3.11",
   "title": "",
@@ -3646,45 +3673,45 @@ var ptx_lunr_docs = [
   "body": "   Find a basis for the eigenspace of a matrix associated with a given eigenvalue.    "
 },
 {
-  "id": "activity-151",
+  "id": "activity-155",
   "level": "2",
-  "url": "GT4.html#activity-151",
+  "url": "GT4.html#activity-155",
   "type": "Activity",
   "number": "5.4.1",
   "title": "",
   "body": "  It's possible to show that is an eigenvalue for .  Compute the kernel of the transformation with standard matrix to find all the eigenvectors such that .   "
 },
 {
-  "id": "definition-32",
+  "id": "definition-33",
   "level": "2",
-  "url": "GT4.html#definition-32",
+  "url": "GT4.html#definition-33",
   "type": "Definition",
   "number": "5.4.2",
   "title": "",
   "body": "  Since the kernel of a linear map is a subspace of , and the kernel obtained from contains all the eigenvectors associated with , we call this kernel the eigenspace eigenspace of associated with .   "
 },
 {
-  "id": "activity-152",
+  "id": "activity-156",
   "level": "2",
-  "url": "GT4.html#activity-152",
+  "url": "GT4.html#activity-156",
   "type": "Activity",
   "number": "5.4.3",
   "title": "",
   "body": "  Find a basis for the eigenspace for the matrix associated with the eigenvalue .   "
 },
 {
-  "id": "activity-153",
+  "id": "activity-157",
   "level": "2",
-  "url": "GT4.html#activity-153",
+  "url": "GT4.html#activity-157",
   "type": "Activity",
   "number": "5.4.4",
   "title": "",
   "body": "  Find a basis for the eigenspace for the matrix associated with the eigenvalue .   "
 },
 {
-  "id": "activity-154",
+  "id": "activity-158",
   "level": "2",
-  "url": "GT4.html#activity-154",
+  "url": "GT4.html#activity-158",
   "type": "Activity",
   "number": "5.4.5",
   "title": "",
@@ -3718,135 +3745,135 @@ var ptx_lunr_docs = [
   "body": " Civil Engineering: Trusses and Struts   Activities    In engineering, a truss is a structure designed from several beams of material called struts , assembled to behave as a single object.    A simple truss       A simple truss       Consider the representation of a simple truss pictured below. All of the seven struts are of equal length, affixed to two anchor points applying a normal force to nodes and , and with a load applied to the node given by .      A simple truss   Which of the following must hold for the truss to be stable?   All of the struts will experience compression.  All of the struts will experience tension.  Some of the struts will be compressed, but others will be tensioned.       Since the forces must balance at each node for the truss to be stable, some of the struts will be compressed, while others will be tensioned.      Completed truss   By finding vector equations that must hold at each node, we may determine many of the forces at play.      For example, at the bottom left node there are 3 forces acting.      Truss with forces   Let be the force on given by the compression\/tension of the strut , let be defined similarly, and let be the normal force of the anchor point on .  For the truss to be stable, we must have:       Using the conventions of the previous remark, and where represents the load vector on node , find four more vector equations that must be satisfied for each of the other four nodes of the truss.      A simple truss            The five vector equations may be written as follows.            Each vector has a vertical and horizontal component, so it may be treated as a vector in . Note that must have the same magnitude (but opposite direction) as .        To write a linear system that models the truss under consideration with constant load newtons, how many scalar variables will be required?     : from the nodes, from the anchors     : from the struts, from the anchors     : from the struts, from the anchors     : from the struts, from the anchors, from the load     : from the nodes, from the struts, from the load        A simple truss       Since the angles for each strut are known, one variable may be used to represent each.      Variables for the truss   For example:        Since the angle of the normal forces for each anchor point are unknown, two variables may be used to represent each.      Truss with normal forces    The load vector is constant.       Each of the five vector equations found previously represent two linear equations: one for the horizontal component and one for the vertical.      Variables for the truss    Using the approximation , we have      Expand the vector equation given below using sine and cosine of appropriate angles, then compute each component (approximating ).      Variables for the truss          The full augmented matrix given by the ten equations in this linear system is given below, where the elevent columns correspond to , and the ten rows correspond to the horizontal and vertical components of the forces acting at .       This matrix row-reduces to the following.       Thus we know the truss must satisfy the following conditions.   In particular, the negative represent tension (forces pointing into the nodes), and the postive represent compression (forces pointing out of the nodes). The vertical normal forces counteract the load.      Completed truss       Slideshow  Slideshow of activities available at .   "
 },
 {
-  "id": "definition-33",
+  "id": "definition-34",
   "level": "2",
-  "url": "truss.html#definition-33",
+  "url": "truss.html#definition-34",
   "type": "Definition",
   "number": "A.1.1",
   "title": "",
   "body": "  In engineering, a truss is a structure designed from several beams of material called struts , assembled to behave as a single object.    A simple truss       A simple truss    "
 },
 {
-  "id": "activity-155",
+  "id": "activity-159",
   "level": "2",
-  "url": "truss.html#activity-155",
+  "url": "truss.html#activity-159",
   "type": "Activity",
   "number": "A.1.2",
   "title": "",
   "body": "  Consider the representation of a simple truss pictured below. All of the seven struts are of equal length, affixed to two anchor points applying a normal force to nodes and , and with a load applied to the node given by .      A simple truss   Which of the following must hold for the truss to be stable?   All of the struts will experience compression.  All of the struts will experience tension.  Some of the struts will be compressed, but others will be tensioned.    "
 },
 {
-  "id": "observation-36",
+  "id": "observation-34",
   "level": "2",
-  "url": "truss.html#observation-36",
+  "url": "truss.html#observation-34",
   "type": "Observation",
   "number": "A.1.3",
   "title": "",
   "body": "  Since the forces must balance at each node for the truss to be stable, some of the struts will be compressed, while others will be tensioned.      Completed truss   By finding vector equations that must hold at each node, we may determine many of the forces at play.   "
 },
 {
-  "id": "remark-21",
+  "id": "remark-20",
   "level": "2",
-  "url": "truss.html#remark-21",
+  "url": "truss.html#remark-20",
   "type": "Remark",
   "number": "A.1.4",
   "title": "",
   "body": "  For example, at the bottom left node there are 3 forces acting.      Truss with forces   Let be the force on given by the compression\/tension of the strut , let be defined similarly, and let be the normal force of the anchor point on .  For the truss to be stable, we must have:    "
 },
 {
-  "id": "activity-156",
+  "id": "activity-160",
   "level": "2",
-  "url": "truss.html#activity-156",
+  "url": "truss.html#activity-160",
   "type": "Activity",
   "number": "A.1.5",
   "title": "",
   "body": "  Using the conventions of the previous remark, and where represents the load vector on node , find four more vector equations that must be satisfied for each of the other four nodes of the truss.      A simple truss         "
 },
 {
-  "id": "remark-22",
+  "id": "remark-21",
   "level": "2",
-  "url": "truss.html#remark-22",
+  "url": "truss.html#remark-21",
   "type": "Remark",
   "number": "A.1.6",
   "title": "",
   "body": "  The five vector equations may be written as follows.        "
 },
 {
-  "id": "observation-37",
+  "id": "observation-35",
   "level": "2",
-  "url": "truss.html#observation-37",
+  "url": "truss.html#observation-35",
   "type": "Observation",
   "number": "A.1.7",
   "title": "",
   "body": "  Each vector has a vertical and horizontal component, so it may be treated as a vector in . Note that must have the same magnitude (but opposite direction) as .     "
 },
 {
-  "id": "activity-157",
+  "id": "activity-161",
   "level": "2",
-  "url": "truss.html#activity-157",
+  "url": "truss.html#activity-161",
   "type": "Activity",
   "number": "A.1.8",
   "title": "",
   "body": "  To write a linear system that models the truss under consideration with constant load newtons, how many scalar variables will be required?     : from the nodes, from the anchors     : from the struts, from the anchors     : from the struts, from the anchors     : from the struts, from the anchors, from the load     : from the nodes, from the struts, from the load        A simple truss    "
 },
 {
-  "id": "observation-38",
+  "id": "observation-36",
   "level": "2",
-  "url": "truss.html#observation-38",
+  "url": "truss.html#observation-36",
   "type": "Observation",
   "number": "A.1.9",
   "title": "",
   "body": "  Since the angles for each strut are known, one variable may be used to represent each.      Variables for the truss   For example:     "
 },
 {
-  "id": "observation-39",
+  "id": "observation-37",
   "level": "2",
-  "url": "truss.html#observation-39",
+  "url": "truss.html#observation-37",
   "type": "Observation",
   "number": "A.1.10",
   "title": "",
   "body": "  Since the angle of the normal forces for each anchor point are unknown, two variables may be used to represent each.      Truss with normal forces    The load vector is constant.    "
 },
 {
-  "id": "remark-23",
+  "id": "remark-22",
   "level": "2",
-  "url": "truss.html#remark-23",
+  "url": "truss.html#remark-22",
   "type": "Remark",
   "number": "A.1.11",
   "title": "",
   "body": "  Each of the five vector equations found previously represent two linear equations: one for the horizontal component and one for the vertical.      Variables for the truss    Using the approximation , we have   "
 },
 {
-  "id": "activity-158",
+  "id": "activity-162",
   "level": "2",
-  "url": "truss.html#activity-158",
+  "url": "truss.html#activity-162",
   "type": "Activity",
   "number": "A.1.12",
   "title": "",
   "body": "  Expand the vector equation given below using sine and cosine of appropriate angles, then compute each component (approximating ).      Variables for the truss       "
 },
 {
-  "id": "observation-40",
+  "id": "observation-38",
   "level": "2",
-  "url": "truss.html#observation-40",
+  "url": "truss.html#observation-38",
   "type": "Observation",
   "number": "A.1.13",
   "title": "",
   "body": "  The full augmented matrix given by the ten equations in this linear system is given below, where the elevent columns correspond to , and the ten rows correspond to the horizontal and vertical components of the forces acting at .    "
 },
 {
-  "id": "observation-41",
+  "id": "observation-39",
   "level": "2",
-  "url": "truss.html#observation-41",
+  "url": "truss.html#observation-39",
   "type": "Observation",
   "number": "A.1.14",
   "title": "",
   "body": "  This matrix row-reduces to the following.    "
 },
 {
-  "id": "observation-42",
+  "id": "observation-40",
   "level": "2",
-  "url": "truss.html#observation-42",
+  "url": "truss.html#observation-40",
   "type": "Observation",
   "number": "A.1.15",
   "title": "",
@@ -3862,18 +3889,18 @@ var ptx_lunr_docs = [
   "body": " Computer Science: PageRank   Activities   The $978,000,000,000 Problem     In the picture below, each circle represents a webpage, and each arrow represents a link from one page to another.      A seven-webpage network   Based on how these pages link to each other, write a list of the 7 webpages in order from most important to least important.     The $978,000,000,000 Idea   Links are endorsements. That is:    A webpage is important if it is linked to (endorsed) by important pages.    A webpage distributes its importance equally among all the pages it links to (endorses).       Consider this small network with only three pages. Let be the importance of the three pages respectively.      A three-webpage network     splits its endorsement in half between and   sends all of its endorsement to   sends all of its endorsement to .   This corresponds to the page rank system :          A three-webpage network           By writing this linear system in terms of matrix multiplication, we obtain the page rank matrix  and page rank vector . Thus, computing the importance of pages on a network is equivalent to solving the matrix equation .      Thus, our $978,000,000,000 problem is what kind of problem?    An antiderivative problem  A bijection problem  A cofactoring problem  A determinant problem  An eigenvector problem      Find a page rank vector satisfying for the following network's page rank matrix .  That is, find the eigenspace associated with for the matrix , and choose a vector from that eigenspace.       A three-webpage network           Row-reducing yields the basic eigenvector . Therefore, we may conclude that pages and are equally important, and both pages are twice as important as page .      Compute the page rank matrix for the following network.      A seven-webpage network   For example, since website distributes its endorsement equally between and , the first column is .      Find a page rank vector for the given page rank matrix.          A seven-webpage network    Which webpage is most important?      Since a page rank vector for the network is given by , it's reasonable to consider page as the most important page.   Based upon this page rank vector, here is a complete ranking of all seven pages from most important to least important:       A seven-webpage network       Given the following diagram, use a page rank vector to rank the pages through in order from most important to least important.      Another seven-webpage network       Slideshow  Slideshow of activities available at .   "
 },
 {
-  "id": "activity-159",
+  "id": "activity-163",
   "level": "2",
-  "url": "pagerank.html#activity-159",
+  "url": "pagerank.html#activity-163",
   "type": "Activity",
   "number": "A.2.1",
   "title": "The $978,000,000,000 Problem.",
   "body": " The $978,000,000,000 Problem     In the picture below, each circle represents a webpage, and each arrow represents a link from one page to another.      A seven-webpage network   Based on how these pages link to each other, write a list of the 7 webpages in order from most important to least important.   "
 },
 {
-  "id": "observation-43",
+  "id": "observation-41",
   "level": "2",
-  "url": "pagerank.html#observation-43",
+  "url": "pagerank.html#observation-41",
   "type": "Observation",
   "number": "A.2.2",
   "title": "The $978,000,000,000 Idea.",
@@ -3889,72 +3916,72 @@ var ptx_lunr_docs = [
   "body": "  Consider this small network with only three pages. Let be the importance of the three pages respectively.      A three-webpage network     splits its endorsement in half between and   sends all of its endorsement to   sends all of its endorsement to .   This corresponds to the page rank system :   "
 },
 {
-  "id": "observation-44",
+  "id": "observation-42",
   "level": "2",
-  "url": "pagerank.html#observation-44",
+  "url": "pagerank.html#observation-42",
   "type": "Observation",
   "number": "A.2.4",
   "title": "",
   "body": "      A three-webpage network           By writing this linear system in terms of matrix multiplication, we obtain the page rank matrix  and page rank vector . Thus, computing the importance of pages on a network is equivalent to solving the matrix equation .   "
 },
 {
-  "id": "activity-160",
+  "id": "activity-164",
   "level": "2",
-  "url": "pagerank.html#activity-160",
+  "url": "pagerank.html#activity-164",
   "type": "Activity",
   "number": "A.2.5",
   "title": "",
   "body": "  Thus, our $978,000,000,000 problem is what kind of problem?    An antiderivative problem  A bijection problem  A cofactoring problem  A determinant problem  An eigenvector problem   "
 },
 {
-  "id": "activity-161",
+  "id": "activity-165",
   "level": "2",
-  "url": "pagerank.html#activity-161",
+  "url": "pagerank.html#activity-165",
   "type": "Activity",
   "number": "A.2.6",
   "title": "",
   "body": "  Find a page rank vector satisfying for the following network's page rank matrix .  That is, find the eigenspace associated with for the matrix , and choose a vector from that eigenspace.       A three-webpage network        "
 },
 {
-  "id": "observation-45",
+  "id": "observation-43",
   "level": "2",
-  "url": "pagerank.html#observation-45",
+  "url": "pagerank.html#observation-43",
   "type": "Observation",
   "number": "A.2.7",
   "title": "",
   "body": "  Row-reducing yields the basic eigenvector . Therefore, we may conclude that pages and are equally important, and both pages are twice as important as page .   "
 },
 {
-  "id": "activity-162",
+  "id": "activity-166",
   "level": "2",
-  "url": "pagerank.html#activity-162",
+  "url": "pagerank.html#activity-166",
   "type": "Activity",
   "number": "A.2.8",
   "title": "",
   "body": "  Compute the page rank matrix for the following network.      A seven-webpage network   For example, since website distributes its endorsement equally between and , the first column is .   "
 },
 {
-  "id": "activity-163",
+  "id": "activity-167",
   "level": "2",
-  "url": "pagerank.html#activity-163",
+  "url": "pagerank.html#activity-167",
   "type": "Activity",
   "number": "A.2.9",
   "title": "",
   "body": "  Find a page rank vector for the given page rank matrix.          A seven-webpage network    Which webpage is most important?   "
 },
 {
-  "id": "observation-46",
+  "id": "observation-44",
   "level": "2",
-  "url": "pagerank.html#observation-46",
+  "url": "pagerank.html#observation-44",
   "type": "Observation",
   "number": "A.2.10",
   "title": "",
   "body": "  Since a page rank vector for the network is given by , it's reasonable to consider page as the most important page.   Based upon this page rank vector, here is a complete ranking of all seven pages from most important to least important:       A seven-webpage network    "
 },
 {
-  "id": "activity-164",
+  "id": "activity-168",
   "level": "2",
-  "url": "pagerank.html#activity-164",
+  "url": "pagerank.html#activity-168",
   "type": "Activity",
   "number": "A.2.11",
   "title": "",
@@ -3970,45 +3997,45 @@ var ptx_lunr_docs = [
   "body": " Geology: Phases and Components   Activities    In geology, a phase is any physically separable material in the system, such as various minerals or liquids.  A component is a chemical compound necessary to make up the phases; these are usually oxides such as Calcium Oxide ( ) or Silicon Dioxide ( ).  In a typical application, a geologist knows how to build each phase from the components, and is interested in determining reactions among the different phases.      Consider the 3 components and the 5 phases:   Geologists already know (or can easily deduce) that since, for example:       To study this vector space, each of the three components may be considered as the three components of a Euclidean vector.   Determine if the set of phases is linearly dependent or linearly independent.      Geologists are interested in knowing all the possible chemical reactions among the 5 phases:  That is, they want to find numbers such that    Set up a system of equations equivalent to this vector equation.  Find a basis for its solution space.  Interpret each basis vector as a vector equation and a chemical equation.     We found two basis vectors and , corresponding to the vector and chemical equations   Combine the basis vectors to produce a chemical equation among the five phases that does not involve .      Slideshow  Slideshow of activities available at .   "
 },
 {
-  "id": "definition-34",
+  "id": "definition-35",
   "level": "2",
-  "url": "geology.html#definition-34",
+  "url": "geology.html#definition-35",
   "type": "Definition",
   "number": "A.3.1",
   "title": "",
   "body": "  In geology, a phase is any physically separable material in the system, such as various minerals or liquids.  A component is a chemical compound necessary to make up the phases; these are usually oxides such as Calcium Oxide ( ) or Silicon Dioxide ( ).  In a typical application, a geologist knows how to build each phase from the components, and is interested in determining reactions among the different phases.   "
 },
 {
-  "id": "observation-47",
+  "id": "observation-45",
   "level": "2",
-  "url": "geology.html#observation-47",
+  "url": "geology.html#observation-45",
   "type": "Observation",
   "number": "A.3.2",
   "title": "",
   "body": "  Consider the 3 components and the 5 phases:   Geologists already know (or can easily deduce) that since, for example:    "
 },
 {
-  "id": "activity-165",
+  "id": "activity-169",
   "level": "2",
-  "url": "geology.html#activity-165",
+  "url": "geology.html#activity-169",
   "type": "Activity",
   "number": "A.3.3",
   "title": "",
   "body": "  To study this vector space, each of the three components may be considered as the three components of a Euclidean vector.   Determine if the set of phases is linearly dependent or linearly independent.   "
 },
 {
-  "id": "activity-166",
+  "id": "activity-170",
   "level": "2",
-  "url": "geology.html#activity-166",
+  "url": "geology.html#activity-170",
   "type": "Activity",
   "number": "A.3.4",
   "title": "",
   "body": "  Geologists are interested in knowing all the possible chemical reactions among the 5 phases:  That is, they want to find numbers such that    Set up a system of equations equivalent to this vector equation.  Find a basis for its solution space.  Interpret each basis vector as a vector equation and a chemical equation.  "
 },
 {
-  "id": "activity-167",
+  "id": "activity-171",
   "level": "2",
-  "url": "geology.html#activity-167",
+  "url": "geology.html#activity-171",
   "type": "Activity",
   "number": "A.3.5",
   "title": "",
