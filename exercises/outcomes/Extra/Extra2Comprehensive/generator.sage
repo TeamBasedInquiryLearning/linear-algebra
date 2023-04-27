@@ -16,22 +16,22 @@ class Generator(BaseGenerator):
         roll = randrange(3)
         if roll == 0:
             # random row scaling
-            row = randrange(0,4)
+            randrow = randrange(0,4)
             scale = randrange(2,6)*choice([-1,1])
-            op = rowOp("diagonal",row+1,row+1,scale)
+            op = rowOp("diagonal",randrow+1,randrow+1,scale)
             newdet = det*scale
         elif roll == 1:
             # random row swapping
-            rows = sample([0,1,2,3],2)
-            shuffle(rows)
-            op = rowOp("permutation",rows[0]+1, rows[1]+1)
+            randrows = sample([0,1,2,3],2)
+            shuffle(randrows)
+            op = rowOp("permutation",randrows[0]+1, randrows[1]+1)
             newdet = det*(-1)
         else:
             # random row adding 
-            rows = sample([0,1,2,3],2)
-            shuffle(rows)
+            randrows = sample([0,1,2,3],2)
+            shuffle(randrows)
             scale = randrange(2,6)*choice([-1,1])
-            op = rowOp("elementary",rows[0]+1,rows[1]+1,scale)
+            op = rowOp("elementary",randrows[0]+1,randrows[1]+1,scale)
             newdet = det
 
         l = choice([-1,1])*randrange(1,5)
