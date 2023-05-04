@@ -4,13 +4,17 @@ class Generator(BaseGenerator):
     def data(self):
         # create a mxn standard matrix
         Scolumns = randrange(2,5)
-        Srows = min(randrange(5,8)-Scolumns,4)
-        A = random_matrix(QQ,Srows,Scolumns,algorithm='echelonizable',rank=min(Srows,Scolumns),upper_bound=9)
-
+        Srows = min(randrange(6,8)-Scolumns,4)
+        entries = [randrange(1,7)*choice([-1,1]) for _ in range(Scolumns*Srows)]
+        entries[randrange(Scolumns*Srows)] = 0
+        A = matrix(QQ,Srows,entries)
+        
         Tcolumns = randrange(2,5)
-        Trows = min(randrange(5,8)-Tcolumns,4)
-        B = random_matrix(QQ,Trows,Tcolumns,algorithm='echelonizable',rank=min(Trows,Tcolumns),upper_bound=9)
-
+        Trows = min(randrange(6,8)-Tcolumns,4)
+        entries = [randrange(1,7)*choice([-1,1]) for _ in range(Tcolumns*Trows)]
+        entries[randrange(Tcolumns*Trows)] = 0
+        B = matrix(QQ,Trows,entries)
+    
         # construct variables
         xs=choice([
             column_matrix(vector([var("x_"+str(i+1)) for i in range(0,Scolumns)])),
@@ -18,7 +22,10 @@ class Generator(BaseGenerator):
         ])
 
         # give vector to transform
-        v = column_matrix([randrange(-8,9) for _ in range(0,Tcolumns)])
+        entries = [randrange(1,7)*choice([-1,1]) for _ in range(Tcolumns)]
+        if Tcolumns > 2:
+            entries[randrange(Tcolumns)] = 0
+        v = column_matrix(entries)
 
 
         return {
