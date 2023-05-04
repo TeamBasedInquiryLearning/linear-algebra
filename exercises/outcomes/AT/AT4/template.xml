@@ -1,29 +1,114 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
-    <intro>
-        <p>
-            Let <m>T:\mathbb{R}^{{columns}} \to \mathbb{R}^{{rows}}</m> be the linear transformation given by the standard matrix
-            <m>{{matrix}}</m>.
-        </p>
-    </intro>
+    <!-- {{#tasks}} -->
     <knowl>
-        <content>
-            <p>Explain and demonstrate why <m>T</m> is or is not injective.</p>
-        </content>
-        <outtro>
-      <p><me>\mathrm{RREF}\,{{matrix}}={{rref}}</me></p>
-            <p><m>T</m> is <!-- {{^injective}} --> not <!-- {{/injective}} --> injective.</p>
-        </outtro>
+        <intro>
+            <p>
+    Consider the linear transformation with standard matrix <m>{{matrix}}</m>.
+            </p>
+        </intro>
+        <knowl>
+            <content>
+                <p>
+                    Write a statement involving spanning or independence
+                    that's equivalent to this claim:
+                    <q>The transformation with this standard matrix is injective.</q>
+                </p>
+            </content>
+            <outtro>
+                <p>
+                    <q>The set of vectors <m>(...)</m> is linearly independent.</q>
+                </p>
+            </outtro>
+        </knowl>
+        <knowl>
+            <content>
+                <p>
+    Explain and demonstrate how to determine whether or not these statements are true.
+                </p>
+            </content>
+            <outtro>
+                <p>
+                    <m>
+        \mathrm{RREF}\, {{matrix}} = {{rref}}
+                    </m>
+                </p>
+                <p>
+        The set of vectors is (...), and thus
+        the transformation
+                <!-- {{#injective}} -->
+                    <em>is</em>
+                <!-- {{/injective}} -->
+                <!-- {{^injective}} -->
+                    is <em>not</em>
+                <!-- {{/injective}} -->
+        injective.
+                </p>
+            </outtro>
+        </knowl>
+        <knowl>
+            <content>
+                <p>
+                    Write a statement involving spanning or independence
+                    that's equivalent to this claim:
+                    <q>The transformation with this standard matrix is surjective.</q>
+                </p>
+            </content>
+            <outtro>
+                <p>
+                    <q>The set of vectors <m>(...)</m> is spanning.</q>
+                </p>
+            </outtro>
+        </knowl>
+        <knowl>
+            <content>
+                <p>
+    Explain and demonstrate how to determine whether or not these statements are true.
+                </p>
+            </content>
+            <outtro>
+                <p>
+                    <m>
+        \mathrm{RREF}\, {{matrix}} = {{rref}}
+                    </m>
+                </p>
+                <p>
+        The set of vectors is (...), and thus
+        the transformation
+                <!-- {{#injective}} -->
+                    <em>is</em>
+                <!-- {{/injective}} -->
+                <!-- {{^injective}} -->
+                    is <em>not</em>
+                <!-- {{/injective}} -->
+        surjective.
+                </p>
+            </outtro>
+        </knowl>
+        <knowl>
+            <content>
+                <p>
+    Explain whether or not the transformation is bijective.
+                </p>
+            </content>
+            <outtro>
+                <p>
+        This transformation
+                <!-- {{#injective}} -->
+                    <!-- {{#surjective}} -->
+                        <em>is</em>
+                    <!-- {{/surjective}} -->
+                    <!-- {{^surjective}} -->
+                        is <em>not</em>
+                    <!-- {{/surjective}} -->
+                <!-- {{/injective}} -->
+                <!-- {{^injective}} -->
+                    is <em>not</em>
+                <!-- {{/injective}} -->
+        bijective.
+                </p>
+            </outtro>
+        </knowl>
     </knowl>
-    <knowl>
-        <content>
-            <p>Explain and demonstrate why <m>T</m> is or is not surjective.</p>
-        </content>
-        <outtro>
-            <p><m>T</m> is <!-- {{^surjective}} --> not <!-- {{/surjective}} --> surjective.</p>
-        </outtro>
-    </knowl>
-    <outtro>
-        <p><me>\mathrm{RREF}\,{{matrix}}={{rref}}</me></p>
-    </outtro>
+    <!-- {{/tasks}} -->
 </knowl>
