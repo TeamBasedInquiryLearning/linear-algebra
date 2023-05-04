@@ -1,17 +1,86 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
-    <content>
+    <intro>
         <p>
-Consider the following two sets of Euclidean vectors:
-            <me>
-U={{U}} \hspace{2em}  W={{W}}
-            </me>
+Answer the following questions about Euclidean subspaces.
         </p>
-        <p>
-Explain why one of these sets is a subspace of <m>\mathbb{R}^{{dim}}</m> and one is not.
-        </p>
-    </content>
-    <outtro>
-        <p><m>{{subspace}}</m> is a subspace of <m>\mathbb{R}^{{dim}}</m> and <m>{{nonsubspace}}</m> is not.</p>
-    </outtro>
+    </intro>
+    <knowl>
+        <content>
+            <p>
+Consider the following subsets of Euclidean space <m>\mathbb R^4</m>
+defined by
+<me>
+    U=\left\{ \left[\begin{array}{c}
+    x \\
+    y \\
+    z \\
+    w
+    \end{array}\right] \middle|
+            {{U_eq}}
+    \right\}
+        \hspace{1em} \text{and} \hspace{1em}
+    W=\left\{ \left[\begin{array}{c}
+    x \\
+    y \\
+    z \\
+    w
+    \end{array}\right] \middle|
+            {{W_eq}}
+    \right\}
+</me>
+Without writing a proof, explain why only one of these subsets is likely to be a subspace.
+            </p>
+        </content>
+        <outtro>
+          <!-- {{#U_space}} -->
+                <p><m>U</m> is a subspace and <m>W</m> is not.</p>
+          <!-- {{/U_space}} -->
+          <!-- {{#W_space}} -->
+                <p><m>W</m> is a subspace and <m>U</m> is not.</p>
+          <!-- {{/W_space}} -->
+        </outtro>
+    </knowl>
+    <knowl>
+        <content>
+            <p>
+Consider the following subset of Euclidean space <m>\mathbb R^3</m>
+<me>
+    Q=\left\{ \left[\begin{array}{c}
+    x \\
+    y \\
+    z
+    \end{array}\right] \middle|
+            {{Q_eq}}
+    \right\}
+</me>
+Prove that <m>Q</m> <em>is not</em> a subspace.
+            </p>
+        </content>
+        <outtro>
+            <p>Show that the closure of <m>Q</m> under either
+            vector addition or scalar multiplication fails.</p>
+        </outtro>
+    </knowl>
+    <knowl>
+        <content>
+            <p>
+Consider the following subset of Euclidean space <m>\mathbb R^3</m>
+<me>
+    R=\left\{ \left[\begin{array}{c}
+    x \\
+    y \\
+    z
+    \end{array}\right] \middle|
+            {{R_eq}}
+    \right\}
+</me>
+Prove that <m>R</m> <em>is</em> a subspace.
+            </p>
+        </content>
+        <outtro>
+            <p>Show that <m>R</m> is closed under both
+            vector addition and scalar multiplication.</p>
+        </outtro>
+    </knowl>
 </knowl>
