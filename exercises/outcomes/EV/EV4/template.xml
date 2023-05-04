@@ -1,56 +1,50 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
     <!-- {{#tasks}} -->
+    <knowl>
+        <intro>
+            <p>
+    Consider the set of vectors <me>{{vecset}}</me>
+            </p>
+        </intro>
         <knowl>
-            <intro>
+            <content>
                 <p>
-Write a statement involving the solutions of a vector equation
-that's equivalent to each claim:
+                    Write a statement involving the solutions of a vector equation
+                    that's equivalent to this claim:
+                    <q>The set of vectors is linearly independent.</q>
                 </p>
-            </intro>
-            <knowl>
-                <content>
-                    <p>
-<q>The set of vectors <m>{{vecset}}</m> is linearly <em>independent</em>.</q>
-                    </p>
-                </content>
-                <outtro>
-                    <p><q>The vector equation (...) has exactly one solution.</q></p>
-                </outtro>
-            </knowl>
-            <knowl>
-                <content>
-                    <p>
-<q>The set of vectors <m>{{vecset}}</m> is linearly <em>dependent</em>.</q>
-                    </p>
-                </content>
-                <outtro>
-                    <p><q>The vector equation (...) has infintiely-many solutions.</q></p>
-                </outtro>
-            </knowl>
+            </content>
+            <outtro>
+                <p>
+                    <q>The vector equation <m>(...)=\vec 0</m> has exactly one solution.</q>
+                </p>
+            </outtro>
         </knowl>
         <knowl>
             <content>
                 <p>
-Explain how to determine which of these statements is true.
+    Explain and demonstrate how to determine whether or not these statements are true.
                 </p>
             </content>
+            <outtro>
+                <p>
+                    <m>
+        \mathrm{RREF}\, {{matrix}} = {{rref}}
+                    </m>
+                </p>
+                <p>
+        The vector equation (...), and thus
+        the set of vectors is linearly
+                <!-- {{#independent}} -->
+                    <em>independent</em>.
+                <!-- {{/independent}} -->
+                <!-- {{^independent}} -->
+                    <em>dependent</em>.
+                <!-- {{/independent}} -->
+                </p>
+            </outtro>
         </knowl>
-        <outtro>
-            <p>
-                <m>
-\mathrm{RREF}\, {{matrix}} = {{rref}}
-                </m>
-            </p>
-            <p>
-The set of vectors <m>{{vecset}}</m> is linearly
-            <!-- {{#independent}} -->
-                <em>independent</em>.
-            <!-- {{/independent}} -->
-            <!-- {{^independent}} -->
-                <em>dependent</em>.
-            <!-- {{/independent}} -->
-            </p>
-        </outtro>
+    </knowl>
     <!-- {{/tasks}} -->
 </knowl>

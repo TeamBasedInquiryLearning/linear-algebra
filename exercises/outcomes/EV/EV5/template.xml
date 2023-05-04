@@ -1,61 +1,51 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
     <!-- {{#tasks}} -->
+    <knowl>
+        <intro>
+            <p>
+    Consider the set of vectors <me>{{vecset}}</me>
+            </p>
+        </intro>
         <knowl>
-            <intro>
+            <content>
                 <p>
-Write a statement involving the solutions of a vector equation
-that's equivalent to each claim:
+                    Write a statement involving the solutions of a vector equation
+                    that's equivalent to this claim:
+                    <q>The set of vectors is a basis for <m>\mathbb R^4</m>.</q>
                 </p>
-            </intro>
-            <knowl>
-                <content>
-                    <p>
-<q>The set of vectors <m>{{vecset}}</m> is a <em>basis</em> for <m>\mathbb R^4</m>.</q>
-                    </p>
-                </content>
-                <outtro>
-                    <p>
-<q>The vector equation <m>(...)=\vec w</m> has exactly one solution for every <m>\vec w\in\mathbb R^4</m>.</q>
-                    </p>
-                </outtro>
-            </knowl>
-            <knowl>
-                <content>
-                    <p>
-<q>The set of vectors <m>{{vecset}}</m> is <em>not</em> a basis for <m>\mathbb R^4</m>.</q>
-                    </p>
-                </content>
-                <outtro>
-                    <p>
-<q>The vector equation <m>(...)=\vec w</m> has either no solutions or infinitely-many solutions for some <m>\vec w\in\mathbb R^4</m>.</q>
-                    </p>
-                </outtro>
-            </knowl>
+            </content>
+            <outtro>
+                <p>
+                    <q>The vector equation <m>(...)=\vec w</m> has exactly one solution for every <m>\vec w\in\mathbb R^4</m>.</q>
+                </p>
+            </outtro>
         </knowl>
         <knowl>
             <content>
                 <p>
-Explain how to determine which of these statements is true.
+    Explain and demonstrate how to determine whether or not these statements are true.
                 </p>
             </content>
+            <outtro>
+                <p>
+                    <m>
+        \mathrm{RREF}\, {{matrix}} = {{rref}}
+                    </m>
+                </p>
+                <p>
+        The vector equation (...), and thus
+        the set of vectors
+                <!-- {{#basis}} -->
+                    <em>is</em>
+                <!-- {{/basis}} -->
+                <!-- {{^basis}} -->
+                    is <em>not</em>
+                <!-- {{/basis}} -->
+        a basis for <m>\mathbb R^4</m>.
+                </p>
+            </outtro>
         </knowl>
-        <outtro>
-            <p>
-                <m>
-\mathrm{RREF}\, {{matrix}} = {{rref}}
-                </m>
-            </p>
-            <p>
-The set of vectors <m>{{vecset}}</m>
-            <!-- {{#basis}} -->
-                <em>is</em>
-            <!-- {{/basis}} -->
-            <!-- {{^basis}} -->
-                is <em>not</em>
-            <!-- {{/basis}} -->
-a basis for <m>\mathbb R^4</m>.
-            </p>
-        </outtro>
+    </knowl>
     <!-- {{/tasks}} -->
 </knowl>
