@@ -3,17 +3,15 @@ load("library/common.sage")
 class Generator(BaseGenerator):
     def data(self):
         # create a mxn standard matrix
-        columns = 4
-        rows = 7-columns
-        rank = randrange(2,4)
+        columns = choice([4,5])
+        rows = 8-columns
+        maxrank = min(columns,rows)
+        rank = choice([maxrank-2,maxrank-1])
         nullity = columns-rank
         A = CheckIt.simple_random_matrix_of_rank(rank,rows=rows,columns=columns)
 
         # construct variables
-        xs=choice([
-            [var("x_"+str(i+1)) for i in range(columns)],
-            [var("x"),var("y"),var("z"),var("zw",latex_name="w")][:columns],
-        ])
+        xs=[var("x_"+str(i+1)) for i in range(columns)]
         xs_vector = column_matrix(vector(xs))
         free_vars = [var("a"), var("b"), var("c"), var("d")]
 
