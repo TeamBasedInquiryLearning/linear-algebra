@@ -2,38 +2,219 @@
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
     <intro>
         <p>
-            Let <m>V</m> be the set of all pairs <m>(x,y)</m> of real numbers
-            together with the following operations:
-            <me>{{#oplus}}{{.}}{{/oplus}}</me>
-            <me>{{#otimes}}{{.}}{{/otimes}}.</me>
+Let <m>V</m> be the set of all pairs <m>(x,y)</m>
+of real numbers together with the following operations:
+<me>(x_1,y_1)\oplus(x_2,y_2)={{oplus}}</me>
+<me>c\odot(x,y)={{otimes}}.</me>
         </p>
     </intro>
+    <!-- {{#trueproperty}} -->
+    <!-- {{#add_assoc}} -->
     <knowl>
         <content>
             <p>
-                Show that {{trueproperty}}, that is:
+Show that vector addition is associative, that is:
                 <me>
-                {{truetex}}.
+\left((x_1,y_1)\oplus(x_2,y_2)\right)\oplus(x_3,y_3)
+    =
+(x_1,y_1)\oplus\left((x_2,y_2)\oplus(x_3,y_3)\right).
                 </me>
             </p>
         </content>
+        <outtro>
+            <p>
+Show both sides simplify to <m>{{add_assoc}}</m>.
+            </p>
+        </outtro>
     </knowl>
+    <!-- {{/add_assoc}} -->
+    <!-- {{#add_comm}} -->
     <knowl>
         <content>
             <p>
-                Explain why <m>V</m> nonetheless is not a vector space.
+Show that vector addition is commutative, that is:
+                <me>
+(x_1,y_1)\oplus(x_2,y_2)
+    =
+(x_2,y_2)\oplus(x_1,y_1).
+                </me>
             </p>
         </content>
+        <outtro>
+            <p>
+Show both sides simplify to <m>{{add_comm}}</m>.
+            </p>
+        </outtro>
     </knowl>
+    <!-- {{/add_comm}} -->
+    <!-- {{#add_id}} -->
+    <!-- <knowl>
+        <content>
+            <p>
+Show that there exists an additive identity element, that is:
+                <me>
+\text{There exists }(w,z)\in V
+\text{ such that }(x,y)\oplus(w,z)=(x,y).
+                </me>
+            </p>
+        </content>
+        <outtro><p>TODO</p></outtro>
+    </knowl> -->
+    <!-- {{/add_id}} -->
+    <!-- {{#add_inv}} -->
+    <!-- <knowl>
+        <content>
+            <p>
+Show that additive inverses exist.
+            </p>
+        </content>
+        <outtro><p>TODO</p></outtro>
+    </knowl> -->
+    <!-- {{/add_inv}} -->
+    <!-- {{#mul_assoc}} -->
+    <knowl>
+        <content>
+            <p>
+Show that scalar multiplication is associative, that is:
+                <me>
+c\odot\left(d\odot (x,y)\right)=(cd)\odot(x,y).
+                </me>
+            </p>
+        </content>
+        <outtro>
+            <p>
+Show both sides simplify to <m>{{mul_assoc}}</m>.
+            </p>
+        </outtro>
+    </knowl>
+    <!-- {{/mul_assoc}} -->
+    <!-- {{#mul_id}} -->
+    <knowl>
+        <content>
+            <p>
+Show that <m>1</m> is a scalar multiplication identity, that is:
+                <me>
+1\odot(x,y)=(x,y).
+                </me>
+            </p>
+        </content>
+        <outtro>
+            <p>
+Simplify <m>1\odot(x,y)</m> into <m>(x,y)</m>.
+            </p>
+        </outtro>
+    </knowl>
+    <!-- {{/mul_id}} -->
+    <!-- {{#dist_v}} -->
+    <knowl>
+        <content>
+            <p>
+Show that scalar multiplication distributes over vector addition, that is:
+                <me>
+c\odot \left((x_1,y_1)\oplus(x_2,y_2)\right)
+    =
+\left(c\odot(x_1,y_1)\right)\oplus\left( c\odot(x_2,y_2)\right).
+                </me>
+            </p>
+        </content>
+        <outtro>
+            <p>
+Show both sides simplify to <m>{{dist_v}}</m>.
+            </p>
+        </outtro>
+    </knowl>
+    <!-- {{/dist_v}} -->
+    <!-- {{#dist_s}} -->
+    <knowl>
+        <content>
+            <p>
+Show that scalar multiplication distributes over scalar addition, that is:
+                <me>
+(c+d)\odot(x,y)
+    =
+\left(c\odot(x,y)\right)\oplus \left(d\odot (x,y)\right).
+                </me>
+            </p>
+        </content>
+        <outtro>
+            <p>
+Show both sides simplify to <m>{{dist_s}}</m>.
+            </p>
+        </outtro>
+    </knowl>
+    <!-- {{/dist_s}} -->
+    <!-- {{/trueproperty}} -->
+    <knowl>
+        <content>
+            <p>
+Explain why <m>V</m> nonetheless is not a vector space.
+            </p>
+        </content>
     <outtro>
         <p>
-            <m>V</m> is not a vector space, which may be shown by demonstrating that
-            any one of the following properties do not hold:
+Demonstrate that
+any one of the following properties does not hold:
         </p>
         <list>
             <!-- {{#falseproperties}} -->
-            <item><p>{{.}}</p></item>
+                <!-- {{#add_assoc}} -->
+                <item>
+                    <p>
+Vector addition is not associative.
+                    </p>
+                </item>
+                <!-- {{/add_assoc}} -->
+                <!-- {{#add_comm}} -->
+                <item>
+                    <p>
+Vector addition is not commutative.
+                    </p>
+                </item>
+                <!-- {{/add_comm}} -->
+                <!-- {{#add_id}} -->
+                <item>
+                    <p>
+There is no additive identity element.
+                    </p>
+                </item>
+                <!-- {{/add_id}} -->
+                <!-- {{#add_inv}} -->
+                <item>
+                    <p>
+Additive inverses do not always exist.
+                    </p>
+                </item>
+                <!-- {{/add_inv}} -->
+                <!-- {{#mul_assoc}} -->
+                <item>
+                    <p>
+Scalar multiplication is not associative.
+                    </p>
+                </item>
+                <!-- {{/mul_assoc}} -->
+                <!-- {{#mul_id}} -->
+                <item>
+                    <p>
+<m>1</m> is not a scalar multiplication identity.
+                    </p>
+                </item>
+                <!-- {{/mul_id}} -->
+                <!-- {{#dist_v}} -->
+                <item>
+                    <p>
+Scalar multiplication does not distribute over vector addition.
+                    </p>
+                </item>
+                <!-- {{/dist_v}} -->
+                <!-- {{#dist_s}} -->
+                <item>
+                    <p>
+Scalar multiplication does not distribute over scalar addition.
+                    </p>
+                </item>
+                <!-- {{/dist_s}} -->
             <!-- {{/falseproperties}} -->
         </list>
     </outtro>
+    </knowl>
 </knowl>
