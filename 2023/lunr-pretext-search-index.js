@@ -3328,7 +3328,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.2",
   "title": "Computing Determinants (GT2)",
-  "body": " Computing Determinants (GT2)     Compute the determinant of a matrix.     Class Activities    We've seen that row reducing all the way into RREF gives us a method of computing determinants.  However, we learned in that this can be tedious for large matrices. Thus, we will try to figure out how to turn the determinant of a larger matrix into the determinant of a smaller matrix.      The following image illustrates the transformation of the unit cube by the matrix .      Transformation of the unit cube by the linear transformation.   Recall that for this solid , where is the height of the solid and is the area of its parallelogram base. So what must its volume be?                    If row contains all zeros except for a on the main (upper-left to lower-right) diagonal, then both column and row may be removed without changing the value of the determinant.   Since row and column operations affect the determinants in the same way, the same technique works for a column of all zeros except for a on the main diagonal.       Remove an appropriate row and column of to simplify the determinant to a determinant.     Simplify to a multiple of a determinant by first doing the following:   Factor out a from a column.  Swap rows or columns to put a on the main diagonal.     Simplify to a multiple of a determinant by first doing the following:   Use row\/column operations to create two zeroes in the same row or column.  Factor\/swap as needed to get a row\/column of all zeroes except a on the main diagonal.     Using row\/column operations, you can introduce zeros and reduce dimension to whittle down the determinant of a large matrix to a determinant of a smaller matrix.       Rewrite as a multiple of a determinant of a matrix.     Compute by using any combination of row\/column operations.      Another option is to take advantage of the fact that the determinant is linear in each row or column. This approach is called Laplace expansion or cofactor expansion .  For example, since ,       Applying Laplace expansion to a matrix yields a short formula you may have seen: .  There are formulas for the determinants of larger matrices, but they can be pretty tedious to use. For example, writing out a formula for a determinant would require 24 different terms!   So this is why we either use Laplace expansion or row\/column operations directly.      Based on the previous activities, which technique is easier for computing determinants?   Memorizing formulas.  Using row\/column operations.  Laplace expansion.  Some other technique (be prepared to describe it).       Use your preferred technique to compute .    You can check your answer using Octave.     Videos      Video: Simplifying a determinant using row operations       Video: Computing a determinant     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations   Prove that the equation of a line in the plane, through points , when is given by the equation     Prove that the determinant of any diagonal matrix, upper triangular matrix, or lower triangular matrix, is the product of it's diagonal entries.    Show that, if an matrix has a non-zero determinant, then any can be represented as a linear combination of the columns of .    What is the smallest number of zeros necessary to place in a matrix, and the placement of those zeros, such that the matrix has a zero determinant?     Sample Problem and Solution  Sample problem .   "
+  "body": " Computing Determinants (GT2)     Compute the determinant of a matrix.     Class Activities    We've seen that row reducing all the way into RREF gives us a method of computing determinants.  However, we learned in that this can be tedious for large matrices. Thus, we will try to figure out how to turn the determinant of a larger matrix into the determinant of a smaller matrix.      The following image illustrates the transformation of the unit cube by the matrix .      Transformation of the unit cube by the linear transformation.   Recall that for this solid , where is the height of the solid and is the area of its parallelogram base. So what must its volume be?                    If row contains all zeros except for a on the main (upper-left to lower-right) diagonal, then both column and row may be removed without changing the value of the determinant.   Since row and column operations affect the determinants in the same way, the same technique works for a column of all zeros except for a on the main diagonal.   Put another way, if you have either a column or row from the identity matrix, you can cancel both the column and row containing the .     If the is not on the main diagonal, you'll need to use row or column swaps in order to cancel.      Remove an appropriate row and column of to simplify the determinant to a determinant.     Simplify to a multiple of a determinant by first doing the following:   Factor out a from a column.  Swap rows or columns to put a on the main diagonal.     Simplify to a multiple of a determinant by first doing the following:   Use row\/column operations to create two zeroes in the same row or column.  Factor\/swap as needed to get a row\/column of all zeroes except a on the main diagonal.     Using row\/column operations, you can introduce zeros and reduce dimension to whittle down the determinant of a large matrix to a determinant of a smaller matrix.       Rewrite as a multiple of a determinant of a matrix.     Compute by using any combination of row\/column operations.      Another option is to take advantage of the fact that the determinant is linear in each row or column. This approach is called Laplace expansion or cofactor expansion .  For example, since ,       Applying Laplace expansion to a matrix yields a short formula you may have seen: .  There are formulas for the determinants of larger matrices, but they can be pretty tedious to use. For example, writing out a formula for a determinant would require 24 different terms!   So this is why we either use Laplace expansion or row\/column operations directly.      Based on the previous activities, which technique is easier for computing determinants?   Memorizing formulas.  Using row\/column operations.  Laplace expansion.  Some other technique (be prepared to describe it).       Use your preferred technique to compute .    You can check your answer using Octave.     Videos      Video: Simplifying a determinant using row operations       Video: Computing a determinant     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations   Prove that the equation of a line in the plane, through points , when is given by the equation     Prove that the determinant of any diagonal matrix, upper triangular matrix, or lower triangular matrix, is the product of it's diagonal entries.    Show that, if an matrix has a non-zero determinant, then any can be represented as a linear combination of the columns of .    What is the smallest number of zeros necessary to place in a matrix, and the placement of those zeros, such that the matrix has a zero determinant?     Sample Problem and Solution  Sample problem .   "
 },
 {
   "id": "objectives-27",
@@ -3364,14 +3364,23 @@ var ptx_lunr_docs = [
   "type": "Fact",
   "number": "5.2.3",
   "title": "",
-  "body": "  If row contains all zeros except for a on the main (upper-left to lower-right) diagonal, then both column and row may be removed without changing the value of the determinant.   Since row and column operations affect the determinants in the same way, the same technique works for a column of all zeros except for a on the main diagonal.    "
+  "body": "  If row contains all zeros except for a on the main (upper-left to lower-right) diagonal, then both column and row may be removed without changing the value of the determinant.   Since row and column operations affect the determinants in the same way, the same technique works for a column of all zeros except for a on the main diagonal.   Put another way, if you have either a column or row from the identity matrix, you can cancel both the column and row containing the .   "
+},
+{
+  "id": "warning-2",
+  "level": "2",
+  "url": "GT2.html#warning-2",
+  "type": "Warning",
+  "number": "5.2.4",
+  "title": "",
+  "body": " If the is not on the main diagonal, you'll need to use row or column swaps in order to cancel.   "
 },
 {
   "id": "activity-142",
   "level": "2",
   "url": "GT2.html#activity-142",
   "type": "Activity",
-  "number": "5.2.4",
+  "number": "5.2.5",
   "title": "",
   "body": "  Remove an appropriate row and column of to simplify the determinant to a determinant.  "
 },
@@ -3380,7 +3389,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "GT2.html#activity-143",
   "type": "Activity",
-  "number": "5.2.5",
+  "number": "5.2.6",
   "title": "",
   "body": "  Simplify to a multiple of a determinant by first doing the following:   Factor out a from a column.  Swap rows or columns to put a on the main diagonal.  "
 },
@@ -3389,7 +3398,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "GT2.html#activity-144",
   "type": "Activity",
-  "number": "5.2.6",
+  "number": "5.2.7",
   "title": "",
   "body": "  Simplify to a multiple of a determinant by first doing the following:   Use row\/column operations to create two zeroes in the same row or column.  Factor\/swap as needed to get a row\/column of all zeroes except a on the main diagonal.  "
 },
@@ -3398,7 +3407,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "GT2.html#observation-30",
   "type": "Observation",
-  "number": "5.2.7",
+  "number": "5.2.8",
   "title": "",
   "body": "  Using row\/column operations, you can introduce zeros and reduce dimension to whittle down the determinant of a large matrix to a determinant of a smaller matrix.    "
 },
@@ -3407,7 +3416,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "GT2.html#activity-145",
   "type": "Activity",
-  "number": "5.2.8",
+  "number": "5.2.9",
   "title": "",
   "body": "  Rewrite as a multiple of a determinant of a matrix.  "
 },
@@ -3416,7 +3425,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "GT2.html#activity-146",
   "type": "Activity",
-  "number": "5.2.9",
+  "number": "5.2.10",
   "title": "",
   "body": "  Compute by using any combination of row\/column operations.   "
 },
@@ -3425,7 +3434,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "GT2.html#observation-31",
   "type": "Observation",
-  "number": "5.2.10",
+  "number": "5.2.11",
   "title": "",
   "body": "  Another option is to take advantage of the fact that the determinant is linear in each row or column. This approach is called Laplace expansion or cofactor expansion .  For example, since ,    "
 },
@@ -3434,7 +3443,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "GT2.html#observation-32",
   "type": "Observation",
-  "number": "5.2.11",
+  "number": "5.2.12",
   "title": "",
   "body": "  Applying Laplace expansion to a matrix yields a short formula you may have seen: .  There are formulas for the determinants of larger matrices, but they can be pretty tedious to use. For example, writing out a formula for a determinant would require 24 different terms!   So this is why we either use Laplace expansion or row\/column operations directly.   "
 },
@@ -3443,7 +3452,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "GT2.html#activity-147",
   "type": "Activity",
-  "number": "5.2.12",
+  "number": "5.2.13",
   "title": "",
   "body": "  Based on the previous activities, which technique is easier for computing determinants?   Memorizing formulas.  Using row\/column operations.  Laplace expansion.  Some other technique (be prepared to describe it).    "
 },
@@ -3452,7 +3461,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "GT2.html#activity-148",
   "type": "Activity",
-  "number": "5.2.13",
+  "number": "5.2.14",
   "title": "",
   "body": "  Use your preferred technique to compute .   "
 },
@@ -3461,7 +3470,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "GT2.html#insight-1",
   "type": "Insight",
-  "number": "5.2.14",
+  "number": "5.2.15",
   "title": "",
   "body": "You can check your answer using Octave.  "
 },
@@ -3488,7 +3497,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "GT2.html#exploration-46",
   "type": "Exploration",
-  "number": "5.2.15",
+  "number": "5.2.16",
   "title": "",
   "body": " Prove that the equation of a line in the plane, through points , when is given by the equation   "
 },
@@ -3497,7 +3506,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "GT2.html#exploration-47",
   "type": "Exploration",
-  "number": "5.2.16",
+  "number": "5.2.17",
   "title": "",
   "body": " Prove that the determinant of any diagonal matrix, upper triangular matrix, or lower triangular matrix, is the product of it's diagonal entries.  "
 },
@@ -3506,7 +3515,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "GT2.html#exploration-48",
   "type": "Exploration",
-  "number": "5.2.17",
+  "number": "5.2.18",
   "title": "",
   "body": " Show that, if an matrix has a non-zero determinant, then any can be represented as a linear combination of the columns of .  "
 },
@@ -3515,7 +3524,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "GT2.html#exploration-49",
   "type": "Exploration",
-  "number": "5.2.18",
+  "number": "5.2.19",
   "title": "",
   "body": " What is the smallest number of zeros necessary to place in a matrix, and the placement of those zeros, such that the matrix has a zero determinant?  "
 },
