@@ -25,8 +25,8 @@ class Generator(BaseGenerator):
         A=CheckIt.simple_random_matrix_of_rank(rank,rows=4,columns=3)
  
         tasks +=  [{
-            "injective": False,
-            "surjective": surjective,
+            "injective": injective,
+            "surjective": False,
             "vecset": vectorSet(A.columns()),
             "matrix": A,
             "rref": A.rref(),
