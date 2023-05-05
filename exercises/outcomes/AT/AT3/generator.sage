@@ -23,7 +23,7 @@ class Generator(BaseGenerator):
         image_basis=[A.column(i) for i in A.pivots()]
         image_rep=column_matrix(sum([free_vars[i]*image_basis[i] for i in range(rank)]))
         image_predicate = [LatexExpr(",".join([latex(v) for v in free_vars[:rank]])),LatexExpr(r"\in\mathbb{R}")]
-        image = setBuilder(image_rep,image_predicate)
+        image = vectorSet(A.columns())
 
 
         return {
