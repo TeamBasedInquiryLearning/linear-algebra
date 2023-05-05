@@ -38,10 +38,15 @@ class Generator(BaseGenerator):
                 (randrange(2,10)*choice([-1,1])*terms[0]^2,)
             ])] + \
             preSmap.rows()[insert_at:])
+        S_valid_in = column_matrix(vector([1,1]))
+        S_valid_out_before = Smap(x=2,y=2)
+        S_valid_out_after = 2*Smap(x=1,y=1)
 
         # make a linear map
-        D = CheckIt.simple_random_matrix_of_rank(2,rows=2,columns=2)
-        Tmap = 2*D*w
+        D = matrix(QQ,2,[choice([-1,1])*randrange(2,7) for _ in range(4)])
+        Tmap = D*w
+        a,b,k = var("a b k")
+        w_prime = column_matrix(vector([a,b]))
 
 
         return {
@@ -49,5 +54,12 @@ class Generator(BaseGenerator):
             "Pmap": Pmap,
             "Qmap": Qmap,
             "Smap": Smap,
+            "S_valid_in": S_valid_in,
+            "S_valid_out_before": S_valid_out_before,
+            "S_valid_out_after": S_valid_out_after,
             "Tmap": Tmap,
+            "xy": w,
+            "ab": w_prime,
+            "Tplus": D*(w+w_prime),
+            "Ttimes": D*(k*w),
         }
