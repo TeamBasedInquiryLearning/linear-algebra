@@ -2,55 +2,101 @@ load("library/common.sage")
 
 class Generator(BaseGenerator):
     def data(self):
-        context=choice(["context_pol","context_mat"])
-        task=choice(["task_ind","task_spa"])
+        rows = 4
+        columns = 4
+        a,b,c,d = var("a b c d")
+        ls = [a,b,c,d]
 
-        if task=="task_ind":
-            #Pick if yes a linear combination or no
-            independent = choice([False,True])
-            n = choice([3,4])
-            if independent:
-                A=CheckIt.simple_random_matrix_of_rank(n,rows=4,columns=n)
-            else:
-                A=CheckIt.simple_random_matrix_of_rank(n-1,rows=4,columns=n)
-            result=independent
+        #start with nice RREF
+        number_of_pivots = choice([2,3])
+        A = CheckIt.simple_random_matrix_of_rank(
+            number_of_pivots,
+            rows=rows,
+            columns=columns
+        )
 
-        if task=="task_spa":
-            #Pick if yes a spanning set or no
-            span = choice([False,True])
-            if span:
-                A=CheckIt.simple_random_matrix_of_rank(4,rows=4,columns=choice([4,5]))
-            else:
-                A=CheckIt.simple_random_matrix_of_rank(choice([2,3]),rows=4,columns=choice([4,5]))
-            result=span
+        #linear combo
+        coeffs = [
+            randrange(1,5)*choice([-1,1])
+            for _ in range(number_of_pivots)
+        ]
+        pivot_columns = [
+            A.column(A.pivots()[i])
+            for i in range(number_of_pivots)
+        ]
+        e_vector = sum([
+            coeffs[i]*pivot_columns[i]
+            for i in range(number_of_pivots)
+        ])
+        e_combo = linearCombination(
+            [
+                coeffs[i]
+                for i in range(number_of_pivots)
+            ],
+            [
+                column_matrix(A.column(A.pivots()[i]))
+                for i in range(number_of_pivots)
+            ],
+        )
+        e_set = bracedSet(
+            [column_matrix(c) for c in A.columns()]
+        )
+        aug_matrix = A.augment(column_matrix(e_vector), subdivide=True)
 
-        #Create equation
-        if context=="context_pol":
-            polys=[ sum([v[i]*x^i for i in range(0,len(v))]) for v in A.columns() ]
-            vset=polys
-            vars=[var("y_"+str(i+1)) for i in range(0,A.ncols())]
-            lc=linearCombination(vars,polys,parentheses=true)
-            if task=="independent":
-                eq=Equation(lc,"0")
-            else:
-                eq=lc
-
-        if context=="context_mat":
-            matrices = [ matrix(ZZ,2,v) for v in A.columns()]
-            vset=matrices
-            vars=[var("y_"+str(i+1)) for i in range(0,A.ncols())]
-            lc=linearCombination(vars,matrices)
-            if task=="independent":
-                eq=Equation(lc,matrix(ZZ,2)) #matrix() defaults to zero matrix
-            else:
-                eq=lc
-
-        return {
-            task: True,
-            context: True,
-            "set": bracedSet(vset),
-            "equation": eq,
-            "result": result,
-            "matrix": A,
-            "rref": A.rref(),
+        result = {
+            "e_vector": column_matrix(e_vector),
+            "e_set": e_set,
+            "e_combo": e_combo,
+            "aug_matrix": aug_matrix,
+            "rref": aug_matrix.rref(),
         }
+
+        #polynomial or matrix?
+        if choice([True,False]):
+            # polynomial
+            x = var('x')
+            result["polynomial"] = sum(
+                x^i*e_vector[i]
+                for i in range(rows)
+            )
+            result["set"] = bracedSet([
+                sum(
+                    x^i*v[i]
+                    for i in range(rows)
+                )
+                for v in A.columns()
+            ])
+            result["combo"] = linearCombination(
+                [
+                    coeffs[i]
+                    for i in range(number_of_pivots)
+                ],
+                [
+                    sum(
+                        x^i*e_vector[i]
+                        for i in range(rows)
+                    )
+                    for i in range(number_of_pivots)
+                ],
+                parentheses=True
+            )
+        else:
+            # matrix
+            result["matrix"] = matrix(QQ,2,e_vector)
+            result["set"] = bracedSet([
+                matrix(QQ,2,v)
+                for v in A.columns()
+            ])
+            result["combo"] = linearCombination(
+                [
+                    coeffs[i]
+                    for i in range(number_of_pivots)
+                ],
+                [
+                    matrix(QQ,2,A.columns()[A.pivots()[i]])
+                    for i in range(number_of_pivots)
+                ],
+                parentheses=False
+            )
+
+        return result
