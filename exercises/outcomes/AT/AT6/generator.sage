@@ -51,8 +51,9 @@ class Generator(BaseGenerator):
             "rref": aug_matrix.rref(),
         }
 
-        #polynomial or matrix?
-        if choice([True,False]):
+        # type of vector space
+        roll = randrange(2)
+        if roll==0:
             # polynomial
             x = var('x')
             result["polynomial"] = sum(
@@ -80,7 +81,7 @@ class Generator(BaseGenerator):
                 ],
                 parentheses=True
             )
-        else:
+        elif roll==1:
             # matrix
             result["matrix"] = matrix(QQ,2,e_vector)
             result["set"] = bracedSet([
@@ -97,6 +98,35 @@ class Generator(BaseGenerator):
                     for i in range(number_of_pivots)
                 ],
                 parentheses=False
+            )
+        else: #unused
+            # quarternions
+            i,j,k = var("i j k")
+            units = [1,i,j,k]
+            result["quarternion"] = sum(
+                units[i]*e_vector[i]
+                for i in range(rows)
+            )
+            result["set"] = bracedSet([
+                sum(
+                    units[i]*v[i]
+                    for i in range(rows)
+                )
+                for v in A.columns()
+            ])
+            result["combo"] = linearCombination(
+                [
+                    coeffs[i]
+                    for i in range(number_of_pivots)
+                ],
+                [
+                    sum(
+                        units[i]*e_vector[i]
+                        for i in range(rows)
+                    )
+                    for i in range(number_of_pivots)
+                ],
+                parentheses=True
             )
 
         return result
