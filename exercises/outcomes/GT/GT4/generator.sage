@@ -16,4 +16,6 @@ class Generator(BaseGenerator):
             "basis": vectorSet(basis), 
             "matrix_minus_lambda":A,
             "rref": A.rref(),
+            "eigenvector": column_matrix(basis[0]),
+            "scaled_eigenvector": column_matrix(l*basis[0]),
         }
