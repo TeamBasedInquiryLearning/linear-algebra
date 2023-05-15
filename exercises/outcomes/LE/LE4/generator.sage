@@ -2,11 +2,10 @@ load("library/common.sage")
 
 class Generator(BaseGenerator):
     def data(self):
-        # infinitely-many solutions
-        # create a 3x4 or 4x3 non-invertible matrix
-        rows = choice([3,4])
-        columns = 7-rows
-        rank = randrange(2,columns)
+        # create a 4x5 matrix with 3, 2, or 1 non-pivot cols
+        rows = 4
+        columns = 5
+        rank = choice([2,3,4])
         A = CheckIt.simple_random_matrix_of_rank(rank,rows=rows,columns=columns)
         image_basis = [A.column(p) for p in A.pivots()]
         coeffs = [
