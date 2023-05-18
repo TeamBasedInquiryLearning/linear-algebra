@@ -864,6 +864,49 @@ A=\left[\begin{array}{cccc}1&amp;2&amp;3&amp;4\\5&amp;6&amp;7&amp;8\\9&amp;10&am
     </p></task>
 </activity>
 
+
+  <activity>
+    <introduction>
+      <p> Let <m>A</m> be <em>any</em> <m>4 \times 4</m> matrix with determinant <m>2</m>. </p>
+    </introduction>
+      <task>
+        <statement>
+          <p> Let <m>B</m> be the matrix obtained from <m>A</m> by applying the row operation <m>R_1 - 5 R_3 \to R_1</m>.
+          What is <m>\mathrm{det}\,B</m>?</p> 
+          <p><ol marker="A" cols="4">
+            <li>-4</li>
+            <li>-2</li>
+            <li>2</li>
+            <li>10</li>
+          </ol></p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p> Let <m>M</m> be the matrix obtained from <m>A</m> by applying the row operation <m>R_3 \leftrightarrow R_1</m>.
+          What is <m>\mathrm{det}\,M</m>? </p>
+          <p><ol marker="A" cols="4">
+            <li>-4</li>
+            <li>-2</li>
+            <li>2</li>
+            <li>10</li>
+          </ol></p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p> Let <m>P</m> be the matrix obtained from <m>A</m> by applying the row operation <m>2 R_4 \to R_4</m>.
+          What is <m>\mathrm{det}\,P</m>?</p>
+          <p><ol marker="A" cols="4">
+            <li>-4</li>
+            <li>-2</li>
+            <li>2</li>
+            <li>10</li>
+          </ol></p>
+        </statement>
+      </task>
+  </activity>
+
 <remark>
     <statement>
     <p>
@@ -958,13 +1001,48 @@ Thus we can also use both row operations to simplify determinants:
 </fact>
 
 
+<activity>
+        <p>
+  Complete the following derivation for a formula calculating
+  <m>2\times 2</m> determinants:
+        <md>
+            <mrow>
+    \det\left[\begin{array}{cc} a &amp; b \\ c &amp; d \end{array}\right]
+      &amp;=
+    \unknown \det \left[\begin{array}{cc} 1 &amp; b/a \\ c &amp; d \end{array}\right]
+            </mrow>
+            <mrow>
+      &amp;=
+    \unknown \det \left[\begin{array}{cc} 1 &amp; b/a \\ c-c &amp; d-bc/a \end{array}\right]
+            </mrow>
+            <mrow>
+      &amp;=
+    \unknown \det \left[\begin{array}{cc} 1 &amp; b/a \\ 0 &amp; d-bc/a \end{array}\right]
+            </mrow>
+            <mrow>
+      &amp;=
+    \unknown \det \left[\begin{array}{cc} 1 &amp; b/a \\ 0 &amp; 1 \end{array}\right]
+            </mrow>
+            <mrow>
+      &amp;=
+    \unknown \det \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \end{array}\right]
+            </mrow>
+            <mrow>
+      &amp;=
+    \unknown \det I
+            </mrow>
+            <mrow>
+      &amp;=
+    \unknown
+            </mrow>
+        </md>
+        </p>
+</activity>
 
 <observation>
-    <statement>
         <p>
   So we may compute the determinant of <m>\left[\begin{array}{cc} 2 &amp; 4 \\ 2 &amp; 3 \end{array}\right]</m> 
-  by manipulating its rows/columns to reduce the matrix to <m>I</m>:
-        </p>
+  by using determinant properties to manipulate its rows/columns to reduce the matrix to <m>I</m>:
         <md>
             <mrow>
     \det\left[\begin{array}{cc} 2 &amp; 4 \\ 2 &amp; 3 \end{array}\right]
@@ -993,7 +1071,15 @@ Thus we can also use both row operations to simplify determinants:
     -2
             </mrow>
         </md>
-    </statement>
+        </p>
+        <p>
+Or we may use a formula:
+<me>
+    \det\left[\begin{array}{cc} 2 &amp; 4 \\ 2 &amp; 3 \end{array}\right]
+    =
+    (2)(3)-(4)(2)=-2
+</me>
+        </p>
 </observation>
 </subsection>
 

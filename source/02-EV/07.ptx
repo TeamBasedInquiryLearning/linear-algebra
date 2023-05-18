@@ -189,8 +189,8 @@ used in this span?
 <fact>
     <statement>
     <p>
-  The coefficients of the free variables in the solution set of a linear system
-  always yield linearly independent vectors.
+  The coefficients of the free variables in the solution space of a linear system
+  always yield linearly independent vectors that span the solution space.
     </p>
     <p>
   Thus if
@@ -264,7 +264,7 @@ Find a basis for its solution space.
 
 
 <activity estimated-time='5'>
-    <statement>
+    <introduction>
         <p>
 Consider the homogeneous system of equations
 <md alignat-columns='5' alignment="alignat">
@@ -279,25 +279,61 @@ x_1&amp;\,+\,&amp;6x_2&amp;\,-\,&amp;4x_3 &amp;=&amp; 0
     </mrow>
 </md>
         </p>
+    </introduction>
+    <task>
+        <statement>
         <p>
-Find a basis for its solution space.
+Find its solution space.
         </p>
-    </statement>
+        </statement>
+    </task>
+    <task>
+        <statement>
+        <p>
+Which of these is the best choice of basis for this
+solution space?
+<ol marker="A" cols="3">
+    <li><m>\{\}</m></li>
+    <li><m>\{\vec 0\}</m></li>
+    <li>The basis does not exist</li>
+</ol>
+        </p>
+        </statement>
+    </task>
 </activity>
 <sage language="octave">
 </sage>
 
 
-<observation>
-    <statement>
-    <p>
-The basis of the trivial vector space is the empty set.  You can denote this as either <m>\emptyset</m> or <m>\{\}</m>.
-    </p>
-    <p>
-Thus, if <m>\vec{0}</m> is the only solution of a homogeneous system, the basis of the solution space is  <m>\emptyset</m>.
-    </p>
-    </statement>
-</observation>
+<activity estimated-time='5'>
+    <introduction>
+        <p>
+Suppose that in a certain 3D video game, the <q>camera</q>
+aligns the position <m>(x,y,z)</m> within the level onto the pixel
+located at <m>(x+y,y-z)</m> on the television screen.
+        </p>
+    </introduction>
+    <task>
+        <statement>
+        <p>
+What homoegeneous linear system describes the positions
+within the level that would be aligned with the
+pixel <m>(0,0)</m> on the screen?
+        </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+        <p>
+Solve this system to describe these locations.
+        </p>
+        </statement>
+    </task>
+</activity>
+<sage language="octave">
+</sage>
+
+
     </subsection>
 
 
