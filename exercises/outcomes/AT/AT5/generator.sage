@@ -56,9 +56,8 @@ class Generator(BaseGenerator):
 
         elif n==2:            
             plus = lambda v1,v2 : vector([v1[0]+v2[0], v1[1]+v2[1]])
-            r1 = randrange(2,4)
-            r2 = randrange(2,5)
-            times= lambda c,v : vector([c^(r1)*v[0],c^(r2)*v[1]])
+            r2 = randrange(2,4)
+            times= lambda c,v : vector([c*v[0],c^(r2)*v[1]])
             a=randrange(1,8)
             b=randrange(2,8)
             theta = lambda v,a=a : vector([v[0]+b*v[1],v[1]+a])
