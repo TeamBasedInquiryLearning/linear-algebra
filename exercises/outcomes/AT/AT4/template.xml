@@ -1,32 +1,32 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
-    <!-- {{#tasks}} -->
+    <knowl>
+        <content>
+            <p>
+                Explain how to determine if a transformation is an injection
+                and/or surjection in terms of spanning and independence of a particular set.
+            </p>
+        </content>
+        <outtro>
+            <p>
+                Consider the set of vectors taken from the columns of
+                the transformation's standard matrix.
+                The transformation is an injection if this set (...)
+                and the transformation is a surjection if this set (...).
+            </p>
+        </outtro>
+    </knowl>
     <knowl>
         <intro>
             <p>
-    Consider the linear transformation with standard matrix <m>{{matrix}}</m>.
+    Determine if the transformation defined by each of the
+    following standard matrices is an injection and/or surjection.
             </p>
         </intro>
+<!-- {{#tasks}} -->
         <knowl>
             <content>
-                <p>
-                    Explain how to determine if this transformation is an injection
-                    and/or surjection in terms of spanning and independence of a particular set.
-                </p>
-            </content>
-            <outtro>
-                <p>
-                    Consider the set of vectors <m>(...)</m>.
-                    The transformation is an injection if this set (...)
-                    and the transformation is a surjection if this set (...).
-                </p>
-            </outtro>
-        </knowl>
-        <knowl>
-            <content>
-                <p>
-                    Determine if this transformation is an injection and/or surjection.
-                </p>
+                <p><me>{{matrix}}</me></p>
             </content>
             <outtro>
                 <p>
@@ -58,30 +58,24 @@
                 </p>
             </outtro>
         </knowl>
-        <knowl>
-            <content>
-                <p>
-    Explain whether or not the transformation is bijective.
-                </p>
-            </content>
-            <outtro>
-                <p>
-        This transformation
+<!-- {{/tasks}} -->
+    </knowl>
+    <knowl>
+        <content>
+            <p>
+Explain which of the above transformations was bijective.
+            </p>
+        </content>
+        <outtro>
+            <p>
+            <!-- {{#tasks}} -->
                 <!-- {{#injective}} -->
                     <!-- {{#surjective}} -->
-                        <em>is</em>
-                    <!-- {{/surjective}} -->
-                    <!-- {{^surjective}} -->
-                        is <em>not</em>
+The transformation with matrix <m>{{matrix}}</m> because...
                     <!-- {{/surjective}} -->
                 <!-- {{/injective}} -->
-                <!-- {{^injective}} -->
-                    is <em>not</em>
-                <!-- {{/injective}} -->
-        bijective.
-                </p>
-            </outtro>
-        </knowl>
+            <!-- {{/tasks}} -->
+            </p>
+        </outtro>
     </knowl>
-    <!-- {{/tasks}} -->
 </knowl>
