@@ -70,7 +70,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
                        linked: true,
                        languages: ['octave'],
                        evalButtonText: 'Evaluate (Octave)'});
-</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -205,7 +205,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 </li>
 </ol></div></button><span class="treebuttons"><a class="previous-button button" href="MX1.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="MX.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="MX3.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\markedPivot}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
@@ -608,13 +608,13 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Row Operations as Matrix Multiplication (MX2)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-23"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
-<ul class="disc"><li id="li-646"><div class="para" id="p-1014">Express row operations through matrix multiplication.</div></li></ul></article><section class="subsection" id="subsection-91"><h3 class="heading hide-type">
+<ul class="disc"><li id="li-649"><div class="para" id="p-1016">Express row operations through matrix multiplication.</div></li></ul></article><section class="subsection" id="subsection-91"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.1</span> <span class="title">Class Activities</span>
 </h3>
-<article class="activity project-like" id="activity-122"><h4 class="heading">
+<article class="activity project-like" id="activity-123"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1015">
+<div class="para logical" id="p-1017">
 <div class="para">Let <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]\text{.}\)</span> Find a <span class="process-math">\(3 \times 3\)</span> matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(BA=A\text{,}\)</span> that is,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -627,11 +627,11 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 \end{equation*}
 </div>
 <div class="para">Check your guess using technology.</div>
-</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-30"><script type="text/x-sage"></script></pre>
+</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-31"><script type="text/x-sage"></script></pre>
 <article class="definition definition-like" id="definition-28"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1016">
+<div class="para logical" id="p-1018">
 <div class="para">The identity matrix <span class="process-math">\(I_n\)</span> (or just <span class="process-math">\(I\)</span> when <span class="process-math">\(n\)</span> is obvious from context) is the <span class="process-math">\(n \times n\)</span> matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -643,7 +643,7 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 </div></article><article class="fact theorem-like" id="fact-19"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1017">
+<div class="para logical" id="p-1019">
 <div class="para">For any square matrix <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(IA=AI=A\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -657,12 +657,12 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
 \end{equation*}
 </div>
-</div></article><article class="activity project-like" id="activity-123"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-124"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-53"><div class="para" id="p-1018">Tweaking the identity matrix slightly allows us to write row operations in terms of matrix multiplication.</div></div>
-<article class="task exercise-like" id="task-137"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para logical" id="p-1019">
+<div class="introduction" id="introduction-55"><div class="para" id="p-1020">Tweaking the identity matrix slightly allows us to write row operations in terms of matrix multiplication.</div></div>
+<article class="task exercise-like" id="task-141"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical" id="p-1021">
 <div class="para">Create a matrix that doubles the third row of <span class="process-math">\(A\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -673,8 +673,8 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 2 &amp; 2 &amp; -2 \end{array}\right]
 \end{equation*}
 </div>
-</div></article><article class="task exercise-like" id="task-138"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para logical" id="p-1020">
+</div></article><article class="task exercise-like" id="task-142"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-1022">
 <div class="para">Create a matrix that swaps the second and third rows of <span class="process-math">\(A\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -685,8 +685,8 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 1 &amp; 1 &amp; -1 \\ 0 &amp; 3 &amp; 2 \end{array}\right]
 \end{equation*}
 </div>
-</div></article><article class="task exercise-like" id="task-139"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para logical" id="p-1021">
+</div></article><article class="task exercise-like" id="task-143"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para logical" id="p-1023">
 <div class="para">Create a matrix that adds <span class="process-math">\(5\)</span> times the third row of <span class="process-math">\(A\)</span> to the first row:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -696,34 +696,34 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 \left[\begin{array}{ccc} 2+5(1) &amp; 7+5(1) &amp; -1+5(-1) \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
 \end{equation*}
 </div>
-</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-31"><script type="text/x-sage"></script></pre>
+</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-32"><script type="text/x-sage"></script></pre>
 <article class="fact theorem-like" id="fact-20"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1022">If <span class="process-math">\(R\)</span> is the result of applying a row operation to <span class="process-math">\(I\text{,}\)</span> then <span class="process-math">\(RA\)</span> is the result of applying the same row operation to <span class="process-math">\(A\text{.}\)</span>
+<div class="para" id="p-1024">If <span class="process-math">\(R\)</span> is the result of applying a row operation to <span class="process-math">\(I\text{,}\)</span> then <span class="process-math">\(RA\)</span> is the result of applying the same row operation to <span class="process-math">\(A\text{.}\)</span>
 </div> <ul class="disc">
-<li id="li-647"><div class="para" id="p-1023">Scaling a row: <span class="process-math">\(R=
+<li id="li-650"><div class="para" id="p-1025">Scaling a row: <span class="process-math">\(R=
 \left[\begin{array}{ccc}
 c &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 1
 \end{array}\right]\)</span>
 </div></li>
-<li id="li-648"><div class="para" id="p-1024">Swapping rows: <span class="process-math">\(R=
+<li id="li-651"><div class="para" id="p-1026">Swapping rows: <span class="process-math">\(R=
 \left[\begin{array}{ccc}
 0 &amp; 1 &amp; 0 \\
 1 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 1
 \end{array}\right]\)</span>
 </div></li>
-<li id="li-649"><div class="para" id="p-1025">Adding a row multiple to another row: <span class="process-math">\(R=
+<li id="li-652"><div class="para" id="p-1027">Adding a row multiple to another row: <span class="process-math">\(R=
 \left[\begin{array}{ccc}
 1 &amp; 0 &amp; c \\
 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 1
 \end{array}\right]\)</span>
 </div></li>
-</ul> <div class="para logical" id="p-1026">
+</ul> <div class="para logical" id="p-1028">
 <div class="para">Such matrices can be chained together to emulate multiple row operations. In particular,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -732,10 +732,10 @@ c &amp; 0 &amp; 0 \\
 </div>
 <div class="para">for some sequence of matrices <span class="process-math">\(R_1,R_2,\dots,R_k\text{.}\)</span>
 </div>
-</div></article><article class="activity project-like" id="activity-124"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-125"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1027">Consider the two row operations <span class="process-math">\(R_2\leftrightarrow R_3\)</span> and <span class="process-math">\(R_1+R_2\to R_1\)</span> applied as follows to show <span class="process-math">\(A\sim B\text{:}\)</span>
+<div class="para" id="p-1029">Consider the two row operations <span class="process-math">\(R_2\leftrightarrow R_3\)</span> and <span class="process-math">\(R_1+R_2\to R_1\)</span> applied as follows to show <span class="process-math">\(A\sim B\text{:}\)</span>
 </div>
 <div class="displaymath process-math" id="md-42">
 \begin{align*}
@@ -768,7 +768,7 @@ A
 B
 \end{align*}
 </div>
-<div class="para logical" id="p-1028">
+<div class="para logical" id="p-1030">
 <div class="para">Express these row operations as matrix multiplication by expressing <span class="process-math">\(B\)</span> as the product of two matrices and <span class="process-math">\(A\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -788,28 +788,26 @@ A
 \end{equation*}
 </div>
 <div class="para">Check your work using technology.</div>
-</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-32"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-92"><h3 class="heading hide-type">
+</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-33"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-92"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.2</span> <span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-44"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-MX2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/5kpk67ABLwY?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">44<span class="period">.</span></span><span class="space"> </span>Video: Row operations as matrix multiplication</figcaption></figure></section><section class="subsection" id="subsection-93"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.3</span> <span class="title">Slideshow</span>
 </h3>
-<div class="para" id="p-1029">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/MX2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/MX2.slides.html</code></a>.</div></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
+<div class="para" id="p-1031">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/MX2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/MX2.slides.html</code></a>.</div></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">4.2.4</span> <span class="title">Exercises</span>
 </h3>
-<div class="para" id="p-1030">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX2/</code></a>.</div></section><section class="subsection" id="subsection-94"><h3 class="heading hide-type">
+<div class="para" id="p-1032">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX2/</code></a>.</div></section><section class="subsection" id="subsection-94"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.5</span> <span class="title">Sample Problem and Solution</span>
 </h3>
-<div class="para" id="p-1031">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-MX2.html" title="Example B.1.19: MX2">Example B.1.19</a>.</div></section></section></div>
+<div class="para" id="p-1033">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-MX2.html" title="Example B.1.19: MX2">Example B.1.19</a>.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="MX1.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="MX3.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
-<div class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
-<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
-<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+<div id="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
 </div>
 </body>
 </html>

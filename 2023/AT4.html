@@ -70,7 +70,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
                        linked: true,
                        languages: ['octave'],
                        evalButtonText: 'Evaluate (Octave)'});
-</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -205,7 +205,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 </li>
 </ol></div></button><span class="treebuttons"><a class="previous-button button" href="AT3.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="AT.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="AT5.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\markedPivot}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
@@ -608,18 +608,18 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Injective and Surjective Linear Maps (AT4)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-18"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
-<ul class="disc"><li id="li-467"><div class="para" id="p-749">Determine if a given linear map is injective and/or surjective.</div></li></ul></article><section class="subsection" id="subsection-71"><h3 class="heading hide-type">
+<ul class="disc"><li id="li-470"><div class="para" id="p-751">Determine if a given linear map is injective and/or surjective.</div></li></ul></article><section class="subsection" id="subsection-71"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.1</span> <span class="title">Class Activities</span>
 </h3>
 <article class="definition definition-like" id="definition-23"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-750">Let <span class="process-math">\(T: V \rightarrow W\)</span> be a linear transformation. <span class="process-math">\(T\)</span> is called <dfn class="terminology">injective</dfn> or <dfn class="terminology">one-to-one</dfn> if <span class="process-math">\(T\)</span> does not map two distinct vectors to the same place.  More precisely, <span class="process-math">\(T\)</span> is injective if <span class="process-math">\(T(\vec{v}) \neq T(\vec{w})\)</span> whenever <span class="process-math">\(\vec{v} \neq \vec{w}\text{.}\)</span>
+<div class="para" id="p-752">Let <span class="process-math">\(T: V \rightarrow W\)</span> be a linear transformation. <span class="process-math">\(T\)</span> is called <dfn class="terminology">injective</dfn> or <dfn class="terminology">one-to-one</dfn> if <span class="process-math">\(T\)</span> does not map two distinct vectors to the same place.  More precisely, <span class="process-math">\(T\)</span> is injective if <span class="process-math">\(T(\vec{v}) \neq T(\vec{w})\)</span> whenever <span class="process-math">\(\vec{v} \neq \vec{w}\text{.}\)</span>
 </div> <figure class="figure figure-like" id="figure-31"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/AT4-injective-image.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">31<span class="period">.</span></span><span class="space"> </span>An injective transformation and a non-injective transformation</figcaption></figure></article><article class="activity project-like" id="activity-87"><h4 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">31<span class="period">.</span></span><span class="space"> </span>An injective transformation and a non-injective transformation</figcaption></figure></article><article class="activity project-like" id="activity-88"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-751">
+<div class="para logical" id="p-753">
 <div class="para">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> be given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -633,24 +633,24 @@ T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
 </div>
 <div class="para">Is <span class="process-math">\(T\)</span> injective?</div>
 </div> <ol class="upper-alpha">
-<li id="li-468"><div class="para" id="p-752">Yes, because <span class="process-math">\(T(\vec v)=T(\vec w)\)</span> whenever <span class="process-math">\(\vec v=\vec w\text{.}\)</span>
+<li id="li-471"><div class="para" id="p-754">Yes, because <span class="process-math">\(T(\vec v)=T(\vec w)\)</span> whenever <span class="process-math">\(\vec v=\vec w\text{.}\)</span>
 </div></li>
-<li id="li-469"><div class="para" id="p-753">Yes, because <span class="process-math">\(T(\vec v)\not=T(\vec w)\)</span> whenever <span class="process-math">\(\vec v\not=\vec w\text{.}\)</span>
+<li id="li-472"><div class="para" id="p-755">Yes, because <span class="process-math">\(T(\vec v)\not=T(\vec w)\)</span> whenever <span class="process-math">\(\vec v\not=\vec w\text{.}\)</span>
 </div></li>
-<li id="li-470"><div class="para" id="p-754">No, because <span class="process-math">\(T\left(\left[\begin{array}{c}0\\0\\1\end{array}\right]\right)
+<li id="li-473"><div class="para" id="p-756">No, because <span class="process-math">\(T\left(\left[\begin{array}{c}0\\0\\1\end{array}\right]\right)
 \not=
 T\left(\left[\begin{array}{c}0\\0\\2\end{array}\right]\right)
 \text{.}\)</span>
 </div></li>
-<li id="li-471"><div class="para" id="p-755">No, because <span class="process-math">\(T\left(\left[\begin{array}{c}0\\0\\1\end{array}\right]\right)
+<li id="li-474"><div class="para" id="p-757">No, because <span class="process-math">\(T\left(\left[\begin{array}{c}0\\0\\1\end{array}\right]\right)
 =
 T\left(\left[\begin{array}{c}0\\0\\2\end{array}\right]\right)
 \text{.}\)</span>
 </div></li>
-</ol></article><article class="activity project-like" id="activity-88"><h4 class="heading">
+</ol></article><article class="activity project-like" id="activity-89"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-756">
+<div class="para logical" id="p-758">
 <div class="para">Let <span class="process-math">\(T: \IR^2 \rightarrow \IR^3\)</span> be given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -664,16 +664,16 @@ T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
 </div>
 <div class="para">Is <span class="process-math">\(T\)</span> injective?</div>
 </div> <ol class="upper-alpha">
-<li id="li-472"><div class="para" id="p-757">Yes, because <span class="process-math">\(T(\vec v)=T(\vec w)\)</span> whenever <span class="process-math">\(\vec v=\vec w\text{.}\)</span>
+<li id="li-475"><div class="para" id="p-759">Yes, because <span class="process-math">\(T(\vec v)=T(\vec w)\)</span> whenever <span class="process-math">\(\vec v=\vec w\text{.}\)</span>
 </div></li>
-<li id="li-473"><div class="para" id="p-758">Yes, because <span class="process-math">\(T(\vec v)\not=T(\vec w)\)</span> whenever <span class="process-math">\(\vec v\not=\vec w\text{.}\)</span>
+<li id="li-476"><div class="para" id="p-760">Yes, because <span class="process-math">\(T(\vec v)\not=T(\vec w)\)</span> whenever <span class="process-math">\(\vec v\not=\vec w\text{.}\)</span>
 </div></li>
-<li id="li-474"><div class="para" id="p-759">No, because <span class="process-math">\(T\left(\left[\begin{array}{c}1\\2\end{array}\right]\right)
+<li id="li-477"><div class="para" id="p-761">No, because <span class="process-math">\(T\left(\left[\begin{array}{c}1\\2\end{array}\right]\right)
 \not=
 T\left(\left[\begin{array}{c}3\\4\end{array}\right]\right)
 \text{.}\)</span>
 </div></li>
-<li id="li-475"><div class="para" id="p-760">No, because <span class="process-math">\(T\left(\left[\begin{array}{c}1\\2\end{array}\right]\right)
+<li id="li-478"><div class="para" id="p-762">No, because <span class="process-math">\(T\left(\left[\begin{array}{c}1\\2\end{array}\right]\right)
 =
 T\left(\left[\begin{array}{c}3\\4\end{array}\right]\right)
 \text{.}\)</span>
@@ -681,12 +681,12 @@ T\left(\left[\begin{array}{c}3\\4\end{array}\right]\right)
 </ol></article><article class="definition definition-like" id="definition-24"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-761">Let <span class="process-math">\(T: V \rightarrow W\)</span> be a linear transformation. <span class="process-math">\(T\)</span> is called <dfn class="terminology">surjective</dfn> or <dfn class="terminology">onto</dfn> if every element of <span class="process-math">\(W\)</span> is mapped to by an element of <span class="process-math">\(V\text{.}\)</span>  More precisely, for every <span class="process-math">\(\vec{w} \in W\text{,}\)</span> there is some <span class="process-math">\(\vec{v} \in V\)</span> with <span class="process-math">\(T(\vec{v})=\vec{w}\text{.}\)</span>
+<div class="para" id="p-763">Let <span class="process-math">\(T: V \rightarrow W\)</span> be a linear transformation. <span class="process-math">\(T\)</span> is called <dfn class="terminology">surjective</dfn> or <dfn class="terminology">onto</dfn> if every element of <span class="process-math">\(W\)</span> is mapped to by an element of <span class="process-math">\(V\text{.}\)</span>  More precisely, for every <span class="process-math">\(\vec{w} \in W\text{,}\)</span> there is some <span class="process-math">\(\vec{v} \in V\)</span> with <span class="process-math">\(T(\vec{v})=\vec{w}\text{.}\)</span>
 </div> <figure class="figure figure-like" id="figure-32"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/AT4-surjective-image.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">32<span class="period">.</span></span><span class="space"> </span>A surjective transformation and a non-surjective transformation</figcaption></figure></article><article class="activity project-like" id="activity-89"><h4 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">32<span class="period">.</span></span><span class="space"> </span>A surjective transformation and a non-surjective transformation</figcaption></figure></article><article class="activity project-like" id="activity-90"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.5</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-762">
+<div class="para logical" id="p-764">
 <div class="para">Let <span class="process-math">\(T: \IR^2 \rightarrow \IR^3\)</span> be given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -700,18 +700,18 @@ T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
 </div>
 <div class="para">Is <span class="process-math">\(T\)</span> surjective?</div>
 </div> <ol class="upper-alpha">
-<li id="li-476"><div class="para" id="p-763">Yes, because for every <span class="process-math">\(\vec w=\left[\begin{array}{c}x\\y\\z\end{array}\right]\in\IR^3\text{,}\)</span> there exists <span class="process-math">\(\vec v=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2\)</span> such that <span class="process-math">\(T(\vec v)=\vec w\text{.}\)</span>
+<li id="li-479"><div class="para" id="p-765">Yes, because for every <span class="process-math">\(\vec w=\left[\begin{array}{c}x\\y\\z\end{array}\right]\in\IR^3\text{,}\)</span> there exists <span class="process-math">\(\vec v=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2\)</span> such that <span class="process-math">\(T(\vec v)=\vec w\text{.}\)</span>
 </div></li>
-<li id="li-477"><div class="para" id="p-764">No, because <span class="process-math">\(T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)\)</span> can never equal <span class="process-math">\(\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]
+<li id="li-480"><div class="para" id="p-766">No, because <span class="process-math">\(T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)\)</span> can never equal <span class="process-math">\(\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]
 \text{.}\)</span>
 </div></li>
-<li id="li-478"><div class="para" id="p-765">No, because <span class="process-math">\(T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)\)</span> can never equal <span class="process-math">\(\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]
+<li id="li-481"><div class="para" id="p-767">No, because <span class="process-math">\(T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)\)</span> can never equal <span class="process-math">\(\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]
 \text{.}\)</span>
 </div></li>
-</ol></article><article class="activity project-like" id="activity-90"><h4 class="heading">
+</ol></article><article class="activity project-like" id="activity-91"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.6</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-766">
+<div class="para logical" id="p-768">
 <div class="para">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> be given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -725,154 +725,154 @@ T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
 </div>
 <div class="para">Is <span class="process-math">\(T\)</span> surjective?</div>
 </div> <ol class="upper-alpha">
-<li id="li-479"><div class="para" id="p-767">Yes, because for every <span class="process-math">\(\vec w=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2\text{,}\)</span> there exists <span class="process-math">\(\vec v=\left[\begin{array}{c}x\\y\\42\end{array}\right]\in\IR^3\)</span> such that <span class="process-math">\(T(\vec v)=\vec w\text{.}\)</span>
+<li id="li-482"><div class="para" id="p-769">Yes, because for every <span class="process-math">\(\vec w=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2\text{,}\)</span> there exists <span class="process-math">\(\vec v=\left[\begin{array}{c}x\\y\\42\end{array}\right]\in\IR^3\)</span> such that <span class="process-math">\(T(\vec v)=\vec w\text{.}\)</span>
 </div></li>
-<li id="li-480"><div class="para" id="p-768">Yes, because for every <span class="process-math">\(\vec w=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2\text{,}\)</span> there exists <span class="process-math">\(\vec v=\left[\begin{array}{c}0\\0\\z\end{array}\right]\in\IR^3\)</span> such that <span class="process-math">\(T(\vec v)=\vec w\text{.}\)</span>
+<li id="li-483"><div class="para" id="p-770">Yes, because for every <span class="process-math">\(\vec w=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2\text{,}\)</span> there exists <span class="process-math">\(\vec v=\left[\begin{array}{c}0\\0\\z\end{array}\right]\in\IR^3\)</span> such that <span class="process-math">\(T(\vec v)=\vec w\text{.}\)</span>
 </div></li>
-<li id="li-481"><div class="para" id="p-769">No, because <span class="process-math">\(T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)\)</span> can never equal <span class="process-math">\(\left[\begin{array}{c} 3\\-2 \end{array}\right]
+<li id="li-484"><div class="para" id="p-771">No, because <span class="process-math">\(T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)\)</span> can never equal <span class="process-math">\(\left[\begin{array}{c} 3\\-2 \end{array}\right]
 \text{.}\)</span>
 </div></li>
-</ol></article><article class="activity project-like" id="activity-91"><h4 class="heading">
+</ol></article><article class="activity project-like" id="activity-92"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.7</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-770">Let <span class="process-math">\(T: V \rightarrow W\)</span> be a linear transformation where <span class="process-math">\(\ker T\)</span> contains multiple vectors. What can you conclude?</div> <ol class="upper-alpha cols2">
-<li id="li-482"><div class="para" id="p-771">
+<div class="para" id="p-772">Let <span class="process-math">\(T: V \rightarrow W\)</span> be a linear transformation where <span class="process-math">\(\ker T\)</span> contains multiple vectors. What can you conclude?</div> <ol class="upper-alpha cols2">
+<li id="li-485"><div class="para" id="p-773">
 <span class="process-math">\(T\)</span> is injective</div></li>
-<li id="li-483"><div class="para" id="p-772">
+<li id="li-486"><div class="para" id="p-774">
 <span class="process-math">\(T\)</span> is not injective</div></li>
-<li id="li-484"><div class="para" id="p-773">
+<li id="li-487"><div class="para" id="p-775">
 <span class="process-math">\(T\)</span> is surjective</div></li>
-<li id="li-485"><div class="para" id="p-774">
+<li id="li-488"><div class="para" id="p-776">
 <span class="process-math">\(T\)</span> is not surjective</div></li>
 </ol></article><article class="fact theorem-like" id="fact-14"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.4.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-775">A linear transformation <span class="process-math">\(T\)</span> is injective <em class="emphasis">if and only if</em> <span class="process-math">\(\ker T = \{\vec{0}\}\text{.}\)</span> Put another way, an injective linear transformation may be recognized by its <dfn class="terminology">trivial</dfn> kernel.</div> <figure class="figure figure-like" id="figure-33"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/AT4-trivial-kernel-image.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">33<span class="period">.</span></span><span class="space"> </span>A linear transformation with trivial kernel, which is therefore injective</figcaption></figure></article><article class="activity project-like" id="activity-92"><h4 class="heading">
+<div class="para" id="p-777">A linear transformation <span class="process-math">\(T\)</span> is injective <em class="emphasis">if and only if</em> <span class="process-math">\(\ker T = \{\vec{0}\}\text{.}\)</span> Put another way, an injective linear transformation may be recognized by its <dfn class="terminology">trivial</dfn> kernel.</div> <figure class="figure figure-like" id="figure-33"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/AT4-trivial-kernel-image.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">33<span class="period">.</span></span><span class="space"> </span>A linear transformation with trivial kernel, which is therefore injective</figcaption></figure></article><article class="activity project-like" id="activity-93"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-776">Let <span class="process-math">\(T: V \rightarrow \IR^3\)</span> be a linear transformation where <span class="process-math">\(\Im T\)</span> may be spanned by only two vectors. What can you conclude?</div> <ol class="upper-alpha cols2">
-<li id="li-486"><div class="para" id="p-777">
+<div class="para" id="p-778">Let <span class="process-math">\(T: V \rightarrow \IR^3\)</span> be a linear transformation where <span class="process-math">\(\Im T\)</span> may be spanned by only two vectors. What can you conclude?</div> <ol class="upper-alpha cols2">
+<li id="li-489"><div class="para" id="p-779">
 <span class="process-math">\(T\)</span> is injective</div></li>
-<li id="li-487"><div class="para" id="p-778">
+<li id="li-490"><div class="para" id="p-780">
 <span class="process-math">\(T\)</span> is not injective</div></li>
-<li id="li-488"><div class="para" id="p-779">
+<li id="li-491"><div class="para" id="p-781">
 <span class="process-math">\(T\)</span> is surjective</div></li>
-<li id="li-489"><div class="para" id="p-780">
+<li id="li-492"><div class="para" id="p-782">
 <span class="process-math">\(T\)</span> is not surjective</div></li>
 </ol></article><article class="fact theorem-like" id="fact-15"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.4.10</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-781">A linear transformation <span class="process-math">\(T:V \rightarrow W\)</span> is surjective <em class="emphasis">if and only if</em> <span class="process-math">\(\Im T = W\text{.}\)</span> Put another way, a surjective linear transformation may be recognized by its identical codomain and image.</div> <figure class="figure figure-like" id="figure-34"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/AT4-codomain-range-image.svg" role="img" class="contained"></div>
+<div class="para" id="p-783">A linear transformation <span class="process-math">\(T:V \rightarrow W\)</span> is surjective <em class="emphasis">if and only if</em> <span class="process-math">\(\Im T = W\text{.}\)</span> Put another way, a surjective linear transformation may be recognized by its identical codomain and image.</div> <figure class="figure figure-like" id="figure-34"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/AT4-codomain-range-image.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">34<span class="period">.</span></span><span class="space"> </span>A linear transformation with identical codomain and image, which is therefore surjective; and a linear transformation with an image smaller than the codomain <span class="process-math">\(\IR^3\text{,}\)</span> which is therefore not surjective.</figcaption></figure></article><article class="definition definition-like" id="def-bijective"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.11</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-782">A transformation that is both injective and surjective is said to be <dfn class="terminology">bijective</dfn>.</div></article><article class="activity project-like" id="activity-93"><h4 class="heading">
+<div class="para" id="p-784">A transformation that is both injective and surjective is said to be <dfn class="terminology">bijective</dfn>.</div></article><article class="activity project-like" id="activity-94"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.12</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-783">
+<div class="para logical" id="p-785">
 <div class="para">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^m\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span> Determine whether each of the following statements means <span class="process-math">\(T\)</span> is (A) <em class="emphasis">injective</em>, (B) <em class="emphasis">surjective</em>, or (C) <em class="emphasis">bijective</em> (both).</div>
 <ol class="decimal">
-<li id="li-490"><div class="para" id="p-784">The kernel of <span class="process-math">\(T\)</span> is trivial, i.e. <span class="process-math">\(\ker T=\{\vec 0\}\text{.}\)</span>
+<li id="li-493"><div class="para" id="p-786">The kernel of <span class="process-math">\(T\)</span> is trivial, i.e. <span class="process-math">\(\ker T=\{\vec 0\}\text{.}\)</span>
 </div></li>
-<li id="li-491"><div class="para" id="p-785">The image of <span class="process-math">\(T\)</span> equals its codomain, i.e. <span class="process-math">\(\Im T=\IR^m\text{.}\)</span>
+<li id="li-494"><div class="para" id="p-787">The image of <span class="process-math">\(T\)</span> equals its codomain, i.e. <span class="process-math">\(\Im T=\IR^m\text{.}\)</span>
 </div></li>
-<li id="li-492"><div class="para" id="p-786">For every <span class="process-math">\(\vec w\in \IR^m\text{,}\)</span> the set <span class="process-math">\(\{\vec w\in \IR^n|T(\vec v)=\vec w\}\)</span> contains exactly one vector.</div></li>
-</ol>
-</div></article><article class="activity project-like" id="activity-94"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.13</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="p-787">
-<div class="para">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^m\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span> Determine whether each of the following statements means <span class="process-math">\(T\)</span> is (A) <em class="emphasis">injective</em>, (B) <em class="emphasis">surjective</em>, or (C) <em class="emphasis">bijective</em> (both).</div>
-<ol class="decimal">
-<li id="li-493"><div class="para" id="p-788">The columns of <span class="process-math">\(A\)</span> span <span class="process-math">\(\IR^m\text{.}\)</span>
-</div></li>
-<li id="li-494"><div class="para" id="p-789">The columns of <span class="process-math">\(A\)</span> form a basis for <span class="process-math">\(\IR^m\text{.}\)</span>
-</div></li>
-<li id="li-495"><div class="para" id="p-790">The columns of <span class="process-math">\(A\)</span> are linearly independent.</div></li>
+<li id="li-495"><div class="para" id="p-788">For every <span class="process-math">\(\vec w\in \IR^m\text{,}\)</span> the set <span class="process-math">\(\{\vec w\in \IR^n|T(\vec v)=\vec w\}\)</span> contains exactly one vector.</div></li>
 </ol>
 </div></article><article class="activity project-like" id="activity-95"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.14</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.13</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-791">
+<div class="para logical" id="p-789">
 <div class="para">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^m\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span> Determine whether each of the following statements means <span class="process-math">\(T\)</span> is (A) <em class="emphasis">injective</em>, (B) <em class="emphasis">surjective</em>, or (C) <em class="emphasis">bijective</em> (both).</div>
 <ol class="decimal">
-<li id="li-496"><div class="para" id="p-792">
-<span class="process-math">\(\RREF(A)\)</span> is the identity matrix.</div></li>
-<li id="li-497"><div class="para" id="p-793">Every column of <span class="process-math">\(\RREF(A)\)</span> has a pivot.</div></li>
-<li id="li-498"><div class="para" id="p-794">Every row of <span class="process-math">\(\RREF(A)\)</span> has a pivot.</div></li>
+<li id="li-496"><div class="para" id="p-790">The columns of <span class="process-math">\(A\)</span> span <span class="process-math">\(\IR^m\text{.}\)</span>
+</div></li>
+<li id="li-497"><div class="para" id="p-791">The columns of <span class="process-math">\(A\)</span> form a basis for <span class="process-math">\(\IR^m\text{.}\)</span>
+</div></li>
+<li id="li-498"><div class="para" id="p-792">The columns of <span class="process-math">\(A\)</span> are linearly independent.</div></li>
 </ol>
 </div></article><article class="activity project-like" id="activity-96"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.15</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.14</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-795">
+<div class="para logical" id="p-793">
 <div class="para">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^m\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span> Determine whether each of the following statements means <span class="process-math">\(T\)</span> is (A) <em class="emphasis">injective</em>, (B) <em class="emphasis">surjective</em>, or (C) <em class="emphasis">bijective</em> (both).</div>
 <ol class="decimal">
-<li id="li-499"><div class="para" id="p-796">The system of linear equations given by the augmented matrix <span class="process-math">\(\left[\begin{array}{c|c}A &amp; \vec{b} \end{array}\right]\)</span> has a solution for all <span class="process-math">\(\vec{b} \in \IR^m\text{.}\)</span>
-</div></li>
-<li id="li-500"><div class="para" id="p-797">The system of linear equations given by the augmented matrix <span class="process-math">\(\left[\begin{array}{c|c}A &amp; \vec{b} \end{array}\right]\)</span> has exactly one solution for all <span class="process-math">\(\vec{b} \in \IR^m\text{.}\)</span>
-</div></li>
-<li id="li-501"><div class="para" id="p-798">The system of linear equations given by the augmented matrix <span class="process-math">\(\left[\begin{array}{c|c} A &amp; \vec{0} \end{array}\right]\)</span> has exactly one solution.</div></li>
+<li id="li-499"><div class="para" id="p-794">
+<span class="process-math">\(\RREF(A)\)</span> is the identity matrix.</div></li>
+<li id="li-500"><div class="para" id="p-795">Every column of <span class="process-math">\(\RREF(A)\)</span> has a pivot.</div></li>
+<li id="li-501"><div class="para" id="p-796">Every row of <span class="process-math">\(\RREF(A)\)</span> has a pivot.</div></li>
 </ol>
-</div></article><article class="observation remark-like" id="observation-15"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-97"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.15</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-797">
+<div class="para">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^m\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span> Determine whether each of the following statements means <span class="process-math">\(T\)</span> is (A) <em class="emphasis">injective</em>, (B) <em class="emphasis">surjective</em>, or (C) <em class="emphasis">bijective</em> (both).</div>
+<ol class="decimal">
+<li id="li-502"><div class="para" id="p-798">The system of linear equations given by the augmented matrix <span class="process-math">\(\left[\begin{array}{c|c}A &amp; \vec{b} \end{array}\right]\)</span> has a solution for all <span class="process-math">\(\vec{b} \in \IR^m\text{.}\)</span>
+</div></li>
+<li id="li-503"><div class="para" id="p-799">The system of linear equations given by the augmented matrix <span class="process-math">\(\left[\begin{array}{c|c}A &amp; \vec{b} \end{array}\right]\)</span> has exactly one solution for all <span class="process-math">\(\vec{b} \in \IR^m\text{.}\)</span>
+</div></li>
+<li id="li-504"><div class="para" id="p-800">The system of linear equations given by the augmented matrix <span class="process-math">\(\left[\begin{array}{c|c} A &amp; \vec{0} \end{array}\right]\)</span> has exactly one solution.</div></li>
+</ol>
+</div></article><article class="observation remark-like" id="observation-14"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.4.16</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-799">The easiest way to determine if the linear map with standard matrix <span class="process-math">\(A\)</span> is injective is to see if <span class="process-math">\(\RREF(A)\)</span> has a pivot in each column.</div> <div class="para" id="p-800">The easiest way to determine if the linear map with standard matrix <span class="process-math">\(A\)</span> is surjective is to see if <span class="process-math">\(\RREF(A)\)</span> has a pivot in each row.</div></article><article class="activity project-like" id="activity-97"><h4 class="heading">
+<div class="para" id="p-801">The easiest way to determine if the linear map with standard matrix <span class="process-math">\(A\)</span> is injective is to see if <span class="process-math">\(\RREF(A)\)</span> has a pivot in each column.</div> <div class="para" id="p-802">The easiest way to determine if the linear map with standard matrix <span class="process-math">\(A\)</span> is surjective is to see if <span class="process-math">\(\RREF(A)\)</span> has a pivot in each row.</div></article><article class="activity project-like" id="activity-98"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.17</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-801">What can you conclude about the linear map <span class="process-math">\(T:\IR^2\to\IR^3\)</span> with standard matrix <span class="process-math">\(\left[\begin{array}{cc} a &amp; b \\ c &amp; d \\ e &amp; f \end{array}\right]\text{?}\)</span>
+<div class="para" id="p-803">What can you conclude about the linear map <span class="process-math">\(T:\IR^2\to\IR^3\)</span> with standard matrix <span class="process-math">\(\left[\begin{array}{cc} a &amp; b \\ c &amp; d \\ e &amp; f \end{array}\right]\text{?}\)</span>
 </div> <ol class="upper-alpha">
-<li id="li-502"><div class="para" id="p-802">Its standard matrix has more columns than rows, so <span class="process-math">\(T\)</span> is not injective.</div></li>
-<li id="li-503"><div class="para" id="p-803">Its standard matrix has more columns than rows, so <span class="process-math">\(T\)</span> is injective.</div></li>
-<li id="li-504"><div class="para" id="p-804">Its standard matrix has more rows than columns, so <span class="process-math">\(T\)</span> is not surjective.</div></li>
-<li id="li-505"><div class="para" id="p-805">Its standard matrix has more rows than columns, so <span class="process-math">\(T\)</span> is surjective.</div></li>
-</ol></article><article class="activity project-like" id="activity-98"><h4 class="heading">
+<li id="li-505"><div class="para" id="p-804">Its standard matrix has more columns than rows, so <span class="process-math">\(T\)</span> is not injective.</div></li>
+<li id="li-506"><div class="para" id="p-805">Its standard matrix has more columns than rows, so <span class="process-math">\(T\)</span> is injective.</div></li>
+<li id="li-507"><div class="para" id="p-806">Its standard matrix has more rows than columns, so <span class="process-math">\(T\)</span> is not surjective.</div></li>
+<li id="li-508"><div class="para" id="p-807">Its standard matrix has more rows than columns, so <span class="process-math">\(T\)</span> is surjective.</div></li>
+</ol></article><article class="activity project-like" id="activity-99"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.18</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-806">What can you conclude about the linear map <span class="process-math">\(T:\IR^3\to\IR^2\)</span> with standard matrix <span class="process-math">\(\left[\begin{array}{ccc} a &amp; b &amp; c \\ d &amp; e &amp; f \end{array}\right]\text{?}\)</span>
+<div class="para" id="p-808">What can you conclude about the linear map <span class="process-math">\(T:\IR^3\to\IR^2\)</span> with standard matrix <span class="process-math">\(\left[\begin{array}{ccc} a &amp; b &amp; c \\ d &amp; e &amp; f \end{array}\right]\text{?}\)</span>
 </div> <ol class="upper-alpha">
-<li id="li-506"><div class="para" id="p-807">Its standard matrix has more columns than rows, so <span class="process-math">\(T\)</span> is not injective.</div></li>
-<li id="li-507"><div class="para" id="p-808">Its standard matrix has more columns than rows, so <span class="process-math">\(T\)</span> is injective.</div></li>
-<li id="li-508"><div class="para" id="p-809">Its standard matrix has more rows than columns, so <span class="process-math">\(T\)</span> is not surjective.</div></li>
-<li id="li-509"><div class="para" id="p-810">Its standard matrix has more rows than columns, so <span class="process-math">\(T\)</span> is surjective.</div></li>
+<li id="li-509"><div class="para" id="p-809">Its standard matrix has more columns than rows, so <span class="process-math">\(T\)</span> is not injective.</div></li>
+<li id="li-510"><div class="para" id="p-810">Its standard matrix has more columns than rows, so <span class="process-math">\(T\)</span> is injective.</div></li>
+<li id="li-511"><div class="para" id="p-811">Its standard matrix has more rows than columns, so <span class="process-math">\(T\)</span> is not surjective.</div></li>
+<li id="li-512"><div class="para" id="p-812">Its standard matrix has more rows than columns, so <span class="process-math">\(T\)</span> is surjective.</div></li>
 </ol></article><article class="fact theorem-like" id="fact-16"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.4.19</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-811">The following are true for any linear map <span class="process-math">\(T:V\to W\text{:}\)</span>
+<div class="para" id="p-813">The following are true for any linear map <span class="process-math">\(T:V\to W\text{:}\)</span>
 </div> <ul class="disc">
-<li id="li-510"><div class="para" id="p-812">If <span class="process-math">\(\dim(V)&gt;\dim(W)\text{,}\)</span> then <span class="process-math">\(T\)</span> is not injective.</div></li>
-<li id="li-511"><div class="para" id="p-813">If <span class="process-math">\(\dim(V)&lt;\dim(W)\text{,}\)</span> then <span class="process-math">\(T\)</span> is not surjective.</div></li>
-</ul> <div class="para" id="p-814">Basically, a linear transformation cannot reduce dimension without collapsing vectors into each other, and a linear transformation cannot increase dimension from its domain to its image.</div> <figure class="figure figure-like" id="figure-35"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-17.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">35<span class="period">.</span></span><span class="space"> </span>A linear transformation whose domain has a larger dimension than its codomain, and is therefore not injective; and a linear transformation whose domain has a smaller dimension than its codomain, and is therefore not surjective.</figcaption></figure> <div class="para" id="p-815">But dimension arguments <em class="emphasis">cannot</em> be used to prove a map <em class="emphasis">is</em> injective or surjective.</div></article><article class="activity project-like" id="activity-99"><h4 class="heading">
+<li id="li-513"><div class="para" id="p-814">If <span class="process-math">\(\dim(V)&gt;\dim(W)\text{,}\)</span> then <span class="process-math">\(T\)</span> is not injective.</div></li>
+<li id="li-514"><div class="para" id="p-815">If <span class="process-math">\(\dim(V)&lt;\dim(W)\text{,}\)</span> then <span class="process-math">\(T\)</span> is not surjective.</div></li>
+</ul> <div class="para" id="p-816">Basically, a linear transformation cannot reduce dimension without collapsing vectors into each other, and a linear transformation cannot increase dimension from its domain to its image.</div> <figure class="figure figure-like" id="figure-35"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-17.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">35<span class="period">.</span></span><span class="space"> </span>A linear transformation whose domain has a larger dimension than its codomain, and is therefore not injective; and a linear transformation whose domain has a smaller dimension than its codomain, and is therefore not surjective.</figcaption></figure> <div class="para" id="p-817">But dimension arguments <em class="emphasis">cannot</em> be used to prove a map <em class="emphasis">is</em> injective or surjective.</div></article><article class="activity project-like" id="activity-100"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.20</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-42"><div class="para" id="p-816">Suppose <span class="process-math">\(T: \IR^n \rightarrow \IR^4\)</span> with standard matrix <span class="process-math">\(A=\left[\begin{array}{cccc}
+<div class="introduction" id="introduction-44"><div class="para" id="p-818">Suppose <span class="process-math">\(T: \IR^n \rightarrow \IR^4\)</span> with standard matrix <span class="process-math">\(A=\left[\begin{array}{cccc}
 a_{11}&amp;a_{12}&amp;\cdots&amp;a_{1n}\\
 a_{21}&amp;a_{22}&amp;\cdots&amp;a_{2n}\\
 a_{31}&amp;a_{32}&amp;\cdots&amp;a_{3n}\\
 a_{41}&amp;a_{42}&amp;\cdots&amp;a_{4n}\\
 \end{array}\right]\)</span> is both injective and surjective (we call such maps <dfn class="terminology">bijective</dfn>).</div></div>
-<article class="task exercise-like" id="task-112"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-817">How many pivot rows must <span class="process-math">\(\RREF A\)</span> have?</div></article><article class="task exercise-like" id="task-113"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-818">How many pivot columns must <span class="process-math">\(\RREF A\)</span> have?</div></article><article class="task exercise-like" id="task-114"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para" id="p-819">What is <span class="process-math">\(\RREF A\text{?}\)</span>
-</div></article></article><article class="activity project-like" id="activity-100"><h4 class="heading">
+<article class="task exercise-like" id="task-116"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-819">How many pivot rows must <span class="process-math">\(\RREF A\)</span> have?</div></article><article class="task exercise-like" id="task-117"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-820">How many pivot columns must <span class="process-math">\(\RREF A\)</span> have?</div></article><article class="task exercise-like" id="task-118"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="p-821">What is <span class="process-math">\(\RREF A\text{?}\)</span>
+</div></article></article><article class="activity project-like" id="activity-101"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.21</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-820">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^n\)</span> be a bijective linear map with standard matrix <span class="process-math">\(A\text{.}\)</span> Label each of the following as true or false.</div> <ol class="upper-alpha">
-<li id="li-512"><div class="para" id="p-821">
+<div class="para" id="p-822">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^n\)</span> be a bijective linear map with standard matrix <span class="process-math">\(A\text{.}\)</span> Label each of the following as true or false.</div> <ol class="upper-alpha">
+<li id="li-515"><div class="para" id="p-823">
 <span class="process-math">\(\RREF(A)\)</span> is the identity matrix.</div></li>
-<li id="li-513"><div class="para" id="p-822">The columns of <span class="process-math">\(A\)</span> form a basis for <span class="process-math">\(\IR^n\)</span>
+<li id="li-516"><div class="para" id="p-824">The columns of <span class="process-math">\(A\)</span> form a basis for <span class="process-math">\(\IR^n\)</span>
 </div></li>
-<li id="li-514"><div class="para" id="p-823">The system of linear equations given by the augmented matrix <span class="process-math">\(\left[\begin{array}{c|c} A &amp; \vec{b} \end{array}\right]\)</span> has exactly one solution for each <span class="process-math">\(\vec b \in \IR^n\text{.}\)</span>
+<li id="li-517"><div class="para" id="p-825">The system of linear equations given by the augmented matrix <span class="process-math">\(\left[\begin{array}{c|c} A &amp; \vec{b} \end{array}\right]\)</span> has exactly one solution for each <span class="process-math">\(\vec b \in \IR^n\text{.}\)</span>
 </div></li>
-</ol></article><article class="observation remark-like" id="observation-16"><h4 class="heading">
+</ol></article><article class="observation remark-like" id="observation-15"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.4.22</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-824">The easiest way to show that the linear map with standard matrix <span class="process-math">\(A\)</span> is bijective is to show that <span class="process-math">\(\RREF(A)\)</span> is the identity matrix.</div></article><article class="activity project-like" id="activity-101"><h4 class="heading">
+<div class="para" id="p-826">The easiest way to show that the linear map with standard matrix <span class="process-math">\(A\)</span> is bijective is to show that <span class="process-math">\(\RREF(A)\)</span> is the identity matrix.</div></article><article class="activity project-like" id="activity-102"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.23</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-825">
+<div class="para logical" id="p-827">
 <div class="para">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^3\)</span> be given by the standard matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -881,20 +881,20 @@ A=\left[\begin{array}{ccc} 2&amp;1&amp;-1 \\ 4&amp;1&amp;1 \\ 6&amp;2&amp;1\end{
 </div>
 <div class="para">Which of the following must be true?</div>
 </div> <ol class="upper-alpha cols2">
-<li id="li-515"><div class="para" id="p-826">
+<li id="li-518"><div class="para" id="p-828">
 <span class="process-math">\(T\)</span> is neither injective nor surjective</div></li>
-<li id="li-516"><div class="para" id="p-827">
+<li id="li-519"><div class="para" id="p-829">
 <span class="process-math">\(T\)</span> is injective but not surjective</div></li>
-<li id="li-517"><div class="para" id="p-828">
+<li id="li-520"><div class="para" id="p-830">
 <span class="process-math">\(T\)</span> is surjective but not injective</div></li>
-<li id="li-518"><div class="para" id="p-829">
+<li id="li-521"><div class="para" id="p-831">
 <span class="process-math">\(T\)</span> is bijective.</div></li>
-</ol></article><pre class="ptx-sagecell sagecell-octave" id="sage-25"><script type="text/x-sage">rref([2,1,-1; 4,1,1; 6,2,1])
+</ol></article><pre class="ptx-sagecell sagecell-octave" id="sage-26"><script type="text/x-sage">rref([2,1,-1; 4,1,1; 6,2,1])
 </script></pre>
-<article class="activity project-like" id="activity-102"><h4 class="heading">
+<article class="activity project-like" id="activity-103"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.24</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-830">
+<div class="para logical" id="p-832">
 <div class="para">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^3\)</span> be given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -904,20 +904,20 @@ T\left(\left[\begin{array}{ccc} x \\ y  \\ z \end{array}\right] \right) =
 </div>
 <div class="para">Which of the following must be true?</div>
 </div> <ol class="upper-alpha cols2">
-<li id="li-519"><div class="para" id="p-831">
+<li id="li-522"><div class="para" id="p-833">
 <span class="process-math">\(T\)</span> is neither injective nor surjective</div></li>
-<li id="li-520"><div class="para" id="p-832">
+<li id="li-523"><div class="para" id="p-834">
 <span class="process-math">\(T\)</span> is injective but not surjective</div></li>
-<li id="li-521"><div class="para" id="p-833">
+<li id="li-524"><div class="para" id="p-835">
 <span class="process-math">\(T\)</span> is surjective but not injective</div></li>
-<li id="li-522"><div class="para" id="p-834">
+<li id="li-525"><div class="para" id="p-836">
 <span class="process-math">\(T\)</span> is bijective.</div></li>
-</ol></article><pre class="ptx-sagecell sagecell-octave" id="sage-26"><script type="text/x-sage">rref([2,1,-1; 4,1,1; 6,2,0])
+</ol></article><pre class="ptx-sagecell sagecell-octave" id="sage-27"><script type="text/x-sage">rref([2,1,-1; 4,1,1; 6,2,0])
 </script></pre>
-<article class="activity project-like" id="activity-103"><h4 class="heading">
+<article class="activity project-like" id="activity-104"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.25</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-835">
+<div class="para logical" id="p-837">
 <div class="para">Let <span class="process-math">\(T: \IR^2 \rightarrow \IR^3\)</span> be given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -927,20 +927,20 @@ T\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right) =
 </div>
 <div class="para">Which of the following must be true?</div>
 </div> <ol class="upper-alpha cols2">
-<li id="li-523"><div class="para" id="p-836">
+<li id="li-526"><div class="para" id="p-838">
 <span class="process-math">\(T\)</span> is neither injective nor surjective</div></li>
-<li id="li-524"><div class="para" id="p-837">
+<li id="li-527"><div class="para" id="p-839">
 <span class="process-math">\(T\)</span> is injective but not surjective</div></li>
-<li id="li-525"><div class="para" id="p-838">
+<li id="li-528"><div class="para" id="p-840">
 <span class="process-math">\(T\)</span> is surjective but not injective</div></li>
-<li id="li-526"><div class="para" id="p-839">
+<li id="li-529"><div class="para" id="p-841">
 <span class="process-math">\(T\)</span> is bijective.</div></li>
-</ol></article><pre class="ptx-sagecell sagecell-octave" id="sage-27"><script type="text/x-sage">rref([2,3;1,-1;1,3])
+</ol></article><pre class="ptx-sagecell sagecell-octave" id="sage-28"><script type="text/x-sage">rref([2,3;1,-1;1,3])
 </script></pre>
-<article class="activity project-like" id="activity-104"><h4 class="heading">
+<article class="activity project-like" id="activity-105"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.26</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-840">
+<div class="para logical" id="p-842">
 <div class="para">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> be given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -950,15 +950,15 @@ T\left(\left[\begin{array}{c} x \\ y  \\ z \end{array}\right] \right) =
 </div>
 <div class="para">Which of the following must be true?</div>
 </div> <ol class="upper-alpha cols2">
-<li id="li-527"><div class="para" id="p-841">
+<li id="li-530"><div class="para" id="p-843">
 <span class="process-math">\(T\)</span> is neither injective nor surjective</div></li>
-<li id="li-528"><div class="para" id="p-842">
+<li id="li-531"><div class="para" id="p-844">
 <span class="process-math">\(T\)</span> is injective but not surjective</div></li>
-<li id="li-529"><div class="para" id="p-843">
+<li id="li-532"><div class="para" id="p-845">
 <span class="process-math">\(T\)</span> is surjective but not injective</div></li>
-<li id="li-530"><div class="para" id="p-844">
+<li id="li-533"><div class="para" id="p-846">
 <span class="process-math">\(T\)</span> is bijective.</div></li>
-</ol></article><pre class="ptx-sagecell sagecell-octave" id="sage-28"><script type="text/x-sage">rref([2,1,-1;4,1,1])
+</ol></article><pre class="ptx-sagecell sagecell-octave" id="sage-29"><script type="text/x-sage">rref([2,1,-1;4,1,1])
 </script></pre></section><section class="subsection" id="subsection-72"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.2</span> <span class="title">Videos</span>
 </h3>
@@ -967,22 +967,22 @@ T\left(\left[\begin{array}{c} x \\ y  \\ z \end{array}\right] \right) =
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">37<span class="period">.</span></span><span class="space"> </span>Video: Finding a basis of the image of a linear transformation</figcaption></figure></section><section class="subsection" id="subsection-73"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.3</span> <span class="title">Slideshow</span>
 </h3>
-<div class="para" id="p-845">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/AT4.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/AT4.slides.html</code></a>.</div></section><section class="exercises" id="exercises-15"><h3 class="heading hide-type">
+<div class="para" id="p-847">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/AT4.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/AT4.slides.html</code></a>.</div></section><section class="exercises" id="exercises-15"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">3.4.4</span> <span class="title">Exercises</span>
 </h3>
-<div class="para" id="p-846">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/AT4/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/AT4/</code></a>.</div></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
+<div class="para" id="p-848">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/AT4/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/AT4/</code></a>.</div></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-33"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.4.27</span><span class="period">.</span>
 </h4>Suppose that <span class="process-math">\(f:V \rightarrow W\)</span> is a linear transformation between two vector spaces <span class="process-math">\(V\)</span> and <span class="process-math">\(W\text{.}\)</span> State carefully what conditions <span class="process-math">\(f\)</span> must satisfy. Let <span class="process-math">\(\vec{0_V}\)</span> and <span class="process-math">\(\vec{0_W}\)</span> be the zero vectors in <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> respectively. <ul class="disc">
-<li id="li-531"><div class="para" id="p-derived-li-531">Prove that <span class="process-math">\(f\)</span> is one-to-one if and only if <span class="process-math">\(f(\vec{0_V}) = \vec{0_W}\text{,}\)</span> and that <span class="process-math">\(\vec{0_V}\)</span> is the unique element of <span class="process-math">\(V\)</span> which is mapped to <span class="process-math">\(\vec{0_W}\text{.}\)</span> Remember that this needs to be done in both directions. First prove the if and only if statement, and then show the uniqueness.</div></li>
-<li id="li-532"><div class="para" id="p-derived-li-532">Do not use subtraction in your proof. The only vector space operation we have is addition, and a structure preserving function only preserves addition. If you are writing <span class="process-math">\(\vec{v} - \vec{v} = \vec{0}_V\text{,}\)</span> what you really mean is that <span class="process-math">\(\vec{v} \oplus \vec{v}^{-1} = \vec{0}_V\text{,}\)</span> where <span class="process-math">\(\vec{v}^{-1}\)</span> is the additive inverse of <span class="process-math">\(\vec{v}\text{.}\)</span>
+<li id="li-534"><div class="para" id="p-derived-li-534">Prove that <span class="process-math">\(f\)</span> is one-to-one if and only if <span class="process-math">\(f(\vec{0_V}) = \vec{0_W}\text{,}\)</span> and that <span class="process-math">\(\vec{0_V}\)</span> is the unique element of <span class="process-math">\(V\)</span> which is mapped to <span class="process-math">\(\vec{0_W}\text{.}\)</span> Remember that this needs to be done in both directions. First prove the if and only if statement, and then show the uniqueness.</div></li>
+<li id="li-535"><div class="para" id="p-derived-li-535">Do not use subtraction in your proof. The only vector space operation we have is addition, and a structure preserving function only preserves addition. If you are writing <span class="process-math">\(\vec{v} - \vec{v} = \vec{0}_V\text{,}\)</span> what you really mean is that <span class="process-math">\(\vec{v} \oplus \vec{v}^{-1} = \vec{0}_V\text{,}\)</span> where <span class="process-math">\(\vec{v}^{-1}\)</span> is the additive inverse of <span class="process-math">\(\vec{v}\text{.}\)</span>
 </div></li>
 </ul></article><article class="exploration project-like" id="exploration-34"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.4.28</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-847">
+<div class="para logical" id="p-849">
 <div class="para">Start with an <span class="process-math">\(n\)</span>-dimensional vector space <span class="process-math">\(V\text{.}\)</span> We can define the <dfn class="terminology">dual</dfn> of <span class="process-math">\(V\text{,}\)</span> denoted <span class="process-math">\(V^*\text{,}\)</span> by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -991,26 +991,24 @@ V^* = \{h:V \rightarrow \mathbb{R}: h \mbox{ is linear}\}.
 </div>
 <div class="para">Prove that <span class="process-math">\(V\)</span> is isomorphic to<span class="process-math">\(V^*\text{.}\)</span> Here are some things to think about as you work through this.</div>
 <ul class="disc">
-<li id="li-533"><div class="para" id="p-derived-li-533">Start by assuming you have a basis for <span class="process-math">\(V\text{.}\)</span> How many basis vectors should you have?</div></li>
-<li id="li-534"><div class="para" id="p-derived-li-534">For each basis vector in <span class="process-math">\(V\text{,}\)</span> define a function that returns 1 if it's given that basis vector, and returns 0 if it's given any other basis vector. For example, if <span class="process-math">\(\vec{b_i}\)</span> and <span class="process-math">\(\vec{b_j}\)</span> are each members of the basis for <span class="process-math">\(V\text{,}\)</span> and you'll need a function <span class="process-math">\(f_i:V \rightarrow \{0,1\}\text{,}\)</span> where <span class="process-math">\(f_i(b_i) = 1\)</span> and <span class="process-math">\(f_i(b_j)= 0\)</span> for all <span class="process-math">\(j \neq i\text{.}\)</span>
+<li id="li-536"><div class="para" id="p-derived-li-536">Start by assuming you have a basis for <span class="process-math">\(V\text{.}\)</span> How many basis vectors should you have?</div></li>
+<li id="li-537"><div class="para" id="p-derived-li-537">For each basis vector in <span class="process-math">\(V\text{,}\)</span> define a function that returns 1 if it's given that basis vector, and returns 0 if it's given any other basis vector. For example, if <span class="process-math">\(\vec{b_i}\)</span> and <span class="process-math">\(\vec{b_j}\)</span> are each members of the basis for <span class="process-math">\(V\text{,}\)</span> and you'll need a function <span class="process-math">\(f_i:V \rightarrow \{0,1\}\text{,}\)</span> where <span class="process-math">\(f_i(b_i) = 1\)</span> and <span class="process-math">\(f_i(b_j)= 0\)</span> for all <span class="process-math">\(j \neq i\text{.}\)</span>
 </div></li>
-<li id="li-535"><div class="para" id="p-derived-li-535">How many of these functions will you need? Show that each of them is in <span class="process-math">\(V^*\text{.}\)</span>
+<li id="li-538"><div class="para" id="p-derived-li-538">How many of these functions will you need? Show that each of them is in <span class="process-math">\(V^*\text{.}\)</span>
 </div></li>
-<li id="li-536"><div class="para" id="p-derived-li-536">Show that the functions you found in the last part are a basis for <span class="process-math">\(V^*\text{?}\)</span> To do this, take an arbitrary function <span class="process-math">\(h \in V^*\)</span> and some vector <span class="process-math">\(\vec{v} \in V\text{.}\)</span> Write <span class="process-math">\(\vec{v}\)</span> in terms of the basis you chose earlier. How can you write <span class="process-math">\(h(\vec{v})\text{,}\)</span> with respect to that basis? Pay attention to the fact that all functions in <span class="process-math">\(V^*\)</span> are linear.</div></li>
-<li id="li-537"><div class="para" id="p-derived-li-537">Now that you've got a basis for <span class="process-math">\(V\)</span> and a basis for <span class="process-math">\(V^*\text{,}\)</span> can you find an isomorphism?</div></li>
+<li id="li-539"><div class="para" id="p-derived-li-539">Show that the functions you found in the last part are a basis for <span class="process-math">\(V^*\text{?}\)</span> To do this, take an arbitrary function <span class="process-math">\(h \in V^*\)</span> and some vector <span class="process-math">\(\vec{v} \in V\text{.}\)</span> Write <span class="process-math">\(\vec{v}\)</span> in terms of the basis you chose earlier. How can you write <span class="process-math">\(h(\vec{v})\text{,}\)</span> with respect to that basis? Pay attention to the fact that all functions in <span class="process-math">\(V^*\)</span> are linear.</div></li>
+<li id="li-540"><div class="para" id="p-derived-li-540">Now that you've got a basis for <span class="process-math">\(V\)</span> and a basis for <span class="process-math">\(V^*\text{,}\)</span> can you find an isomorphism?</div></li>
 </ul>
 </div></article></section><section class="subsection" id="subsection-75"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.6</span> <span class="title">Sample Problem and Solution</span>
 </h3>
-<div class="para" id="p-848">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-AT4.html" title="Example B.1.15: AT4">Example B.1.15</a>.</div></section></section></div>
+<div class="para" id="p-850">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-AT4.html" title="Example B.1.15: AT4">Example B.1.15</a>.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="AT3.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="AT5.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
-<div class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
-<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
-<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+<div id="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
 </div>
 </body>
 </html>

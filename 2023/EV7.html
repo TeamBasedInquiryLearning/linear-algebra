@@ -70,7 +70,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
                        linked: true,
                        languages: ['octave'],
                        evalButtonText: 'Evaluate (Octave)'});
-</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -205,7 +205,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 </li>
 </ol></div></button><span class="treebuttons"><a class="previous-button button" href="EV6.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="EV.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="AT.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\markedPivot}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
@@ -724,7 +724,7 @@ x_1&amp;\,+\,&amp;2x_2&amp;\,\,&amp; &amp;\,+\,&amp; x_4 &amp;=&amp; 0\\
 <article class="fact theorem-like" id="fact-10"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.7.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-542">The coefficients of the free variables in the solution set of a linear system always yield linearly independent vectors.</div> <div class="para logical" id="p-543">
+<div class="para" id="p-542">The coefficients of the free variables in the solution space of a linear system always yield linearly independent vectors that span the solution space.</div> <div class="para logical" id="p-543">
 <div class="para">Thus if</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -778,7 +778,7 @@ x_4 \left[\begin{array}{c} -4 \\ 1 \\ -4 \end{array}\right]=
 <article class="activity project-like" id="activity-63"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.7</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-548">
+<div class="introduction" id="introduction-33"><div class="para logical" id="p-548">
 <div class="para">Consider the homogeneous system of equations</div>
 <div class="displaymath process-math" id="md-39">
 \begin{alignat*}{5}
@@ -787,48 +787,57 @@ x_1&amp;\,-\,&amp;3x_2&amp;\,+\,&amp; 2x_3  &amp;=&amp; 0\\
 x_1&amp;\,+\,&amp;6x_2&amp;\,-\,&amp;4x_3 &amp;=&amp; 0
 \end{alignat*}
 </div>
-</div> <div class="para" id="p-549">Find a basis for its solution space.</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-20"><script type="text/x-sage"></script></pre>
-<article class="observation remark-like" id="observation-10"><h4 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.7.8</span><span class="period">.</span>
+</div></div>
+<article class="task exercise-like" id="task-88"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-549">Find its solution space.</div></article><article class="task exercise-like" id="task-89"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-550">
+<div class="para">Which of these is the best choice of basis for this solution space?</div>
+<ol class="upper-alpha cols3">
+<li id="li-335"><div class="para" id="p-derived-li-335"><span class="process-math">\(\displaystyle \{\}\)</span></div></li>
+<li id="li-336"><div class="para" id="p-derived-li-336"><span class="process-math">\(\displaystyle \{\vec 0\}\)</span></div></li>
+<li id="li-337"><div class="para" id="p-derived-li-337">The basis does not exist</div></li>
+</ol>
+</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-20"><script type="text/x-sage"></script></pre>
+<article class="activity project-like" id="activity-64"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-550">The basis of the trivial vector space is the empty set.  You can denote this as either <span class="process-math">\(\emptyset\)</span> or <span class="process-math">\(\{\}\text{.}\)</span>
-</div> <div class="para" id="p-551">Thus, if <span class="process-math">\(\vec{0}\)</span> is the only solution of a homogeneous system, the basis of the solution space is  <span class="process-math">\(\emptyset\text{.}\)</span>
-</div></article></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
+<div class="introduction" id="introduction-34"><div class="para" id="p-551">Suppose that in a certain 3D video game, the “camera” aligns the position <span class="process-math">\((x,y,z)\)</span> within the level onto the pixel located at <span class="process-math">\((x+y,y-z)\)</span> on the television screen.</div></div>
+<article class="task exercise-like" id="task-90"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-552">What homoegeneous linear system describes the positions within the level that would be aligned with the pixel <span class="process-math">\((0,0)\)</span> on the screen?</div></article><article class="task exercise-like" id="task-91"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-553">Solve this system to describe these locations.</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-21"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.7.2</span> <span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-19"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-EV7" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/TbN3lvLaNOw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">19<span class="period">.</span></span><span class="space"> </span>Video: Polynomial and matrix calculations</figcaption></figure></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.7.3</span> <span class="title">Slideshow</span>
 </h3>
-<div class="para" id="p-552">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/EV7.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/EV7.slides.html</code></a>.</div></section><section class="exercises" id="exercises-11"><h3 class="heading hide-type">
+<div class="para" id="p-554">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/EV7.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/EV7.slides.html</code></a>.</div></section><section class="exercises" id="exercises-11"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">2.7.4</span> <span class="title">Exercises</span>
 </h3>
-<div class="para" id="p-553">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV7/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV7/</code></a>.</div></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<div class="para" id="p-555">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV7/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV7/</code></a>.</div></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.7.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="non-singular"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.7.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-554">An <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(M\)</span> is <dfn class="terminology">non-singular</dfn> if the associated homogeneous system with coefficient matrix <span class="process-math">\(M\)</span> is consistent with one solution. Assume the matrices in the writing explorations in this section are all non-singular.</div> <ul class="disc">
-<li id="li-335"><div class="para" id="p-derived-li-335">Prove that the reduced row echelon form of <span class="process-math">\(M\)</span> is the identity matrix.</div></li>
-<li id="li-336"><div class="para" id="p-derived-li-336">Prove that, for any column vector <span class="process-math">\(\vec{b} = \left[\begin{array}{c}b_1\\b_2\\ \vdots \\b_n \end{array}\right]\text{,}\)</span> the system of equations given by <span class="process-math">\(\left[\begin{array}{c|c}M &amp; \vec{b}\end{array}
+<div class="para" id="p-556">An <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(M\)</span> is <dfn class="terminology">non-singular</dfn> if the associated homogeneous system with coefficient matrix <span class="process-math">\(M\)</span> is consistent with one solution. Assume the matrices in the writing explorations in this section are all non-singular.</div> <ul class="disc">
+<li id="li-338"><div class="para" id="p-derived-li-338">Prove that the reduced row echelon form of <span class="process-math">\(M\)</span> is the identity matrix.</div></li>
+<li id="li-339"><div class="para" id="p-derived-li-339">Prove that, for any column vector <span class="process-math">\(\vec{b} = \left[\begin{array}{c}b_1\\b_2\\ \vdots \\b_n \end{array}\right]\text{,}\)</span> the system of equations given by <span class="process-math">\(\left[\begin{array}{c|c}M &amp; \vec{b}\end{array}
 \right]\)</span> has a unique solution.</div></li>
-<li id="li-337"><div class="para" id="p-derived-li-337">Prove that the columns of <span class="process-math">\(M\)</span> form a basis for <span class="process-math">\(\mathbb{R}^n\text{.}\)</span>
+<li id="li-340"><div class="para" id="p-derived-li-340">Prove that the columns of <span class="process-math">\(M\)</span> form a basis for <span class="process-math">\(\mathbb{R}^n\text{.}\)</span>
 </div></li>
-<li id="li-338"><div class="para" id="p-derived-li-338">Prove that the rank of <span class="process-math">\(M\)</span> is <span class="process-math">\(n\text{.}\)</span>
+<li id="li-341"><div class="para" id="p-derived-li-341">Prove that the rank of <span class="process-math">\(M\)</span> is <span class="process-math">\(n\text{.}\)</span>
 </div></li>
 </ul></article></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.7.6</span> <span class="title">Sample Problem and Solution</span>
 </h3>
-<div class="para" id="p-555">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-EV7.html" title="Example B.1.11: EV7">Example B.1.11</a>.</div></section></section></div>
+<div class="para" id="p-557">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-EV7.html" title="Example B.1.11: EV7">Example B.1.11</a>.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="EV6.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="AT.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
-<div class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
-<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
-<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+<div id="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
 </div>
 </body>
 </html>

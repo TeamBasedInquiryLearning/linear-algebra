@@ -58,7 +58,7 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -193,7 +193,7 @@ window.MathJax = {
 </li>
 </ol></div></button><span class="treebuttons"><a class="previous-button button" href="AT.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="AT.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="AT2.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\markedPivot}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
@@ -596,18 +596,18 @@ window.MathJax = {
 <span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Linear Transformations (AT1)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-15"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
-<ul class="disc"><li id="li-353"><div class="para" id="p-573">Determine if a map between vector spaces of polynomials is linear or not.</div></li></ul></article><section class="subsection" id="subsection-56"><h3 class="heading hide-type">
+<ul class="disc"><li id="li-356"><div class="para" id="p-575">Determine if a map between vector spaces of polynomials is linear or not.</div></li></ul></article><section class="subsection" id="subsection-56"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.1</span> <span class="title">Class Activities</span>
 </h3>
 <article class="definition definition-like" id="definition-18"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-574">
+<div class="para logical" id="p-576">
 <div class="para">A <dfn class="terminology">linear transformation</dfn> (also called a <dfn class="terminology">linear map</dfn>) is a map between vector spaces that preserves the vector space operations. More precisely, if <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are vector spaces, a map <span class="process-math">\(T:V\rightarrow W\)</span> is called a linear transformation if</div>
 <ol class="decimal">
-<li id="li-354"><div class="para" id="p-575">
+<li id="li-357"><div class="para" id="p-577">
 <span class="process-math">\(T(\vec{v}+\vec{w}) = T(\vec{v})+T(\vec{w})\)</span> for any <span class="process-math">\(\vec{v},\vec{w} \in V\text{,}\)</span> and</div></li>
-<li id="li-355"><div class="para" id="p-576">
+<li id="li-358"><div class="para" id="p-578">
 <span class="process-math">\(T(c\vec{v}) = cT(\vec{v})\)</span> for any <span class="process-math">\(c \in \IR,\)</span> and <span class="process-math">\(\vec{v} \in V\text{.}\)</span>
 </div></li>
 </ol>
@@ -615,16 +615,16 @@ window.MathJax = {
 </div></article><article class="definition definition-like" id="definition-19"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-577">Given a linear transformation <span class="process-math">\(T:V\to W\text{,}\)</span> <span class="process-math">\(V\)</span> is called the <dfn class="terminology">domain</dfn> of <span class="process-math">\(T\)</span> and <span class="process-math">\(W\)</span> is called the <dfn class="terminology">co-domain</dfn> of <span class="process-math">\(T\text{.}\)</span>
+<div class="para" id="p-579">Given a linear transformation <span class="process-math">\(T:V\to W\text{,}\)</span> <span class="process-math">\(V\)</span> is called the <dfn class="terminology">domain</dfn> of <span class="process-math">\(T\)</span> and <span class="process-math">\(W\)</span> is called the <dfn class="terminology">co-domain</dfn> of <span class="process-math">\(T\text{.}\)</span>
 </div> <figure class="figure figure-like" id="figure-20"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-9.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">20<span class="period">.</span></span><span class="space"> </span>A linear transformation with a domain of <span class="process-math">\(\IR^3\)</span> and a co-domain of <span class="process-math">\(\IR^2\)</span></figcaption></figure></article><article class="observation remark-like" id="observation-11"><h4 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">20<span class="period">.</span></span><span class="space"> </span>A linear transformation with a domain of <span class="process-math">\(\IR^3\)</span> and a co-domain of <span class="process-math">\(\IR^2\)</span></figcaption></figure></article><article class="observation remark-like" id="observation-10"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-578">One example of a linear transformation <span class="process-math">\(\IR^3\to\IR^2\)</span> is the projection of three-dimesional data onto a two-dimensional screen, as is necessary for computer animiation in film or video games.</div> <figure class="figure figure-like" id="figure-teapot-projection"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/teapot.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">21<span class="period">.</span></span><span class="space"> </span>A projection of a <span class="process-math">\(3D\)</span> teapot onto a <span class="process-math">\(2D\)</span> screen</figcaption></figure></article><article class="activity project-like" id="activity-64"><h4 class="heading">
+<div class="para" id="p-580">One example of a linear transformation <span class="process-math">\(\IR^3\to\IR^2\)</span> is the projection of three-dimesional data onto a two-dimensional screen, as is necessary for computer animiation in film or video games.</div> <figure class="figure figure-like" id="figure-teapot-projection"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/teapot.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">21<span class="period">.</span></span><span class="space"> </span>A projection of a <span class="process-math">\(3D\)</span> teapot onto a <span class="process-math">\(2D\)</span> screen</figcaption></figure></article><article class="activity project-like" id="activity-65"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-35"><div class="para logical" id="p-579">
+<div class="introduction" id="introduction-37"><div class="para logical" id="p-581">
 <div class="para">Let <span class="process-math">\(T : \IR^3 \rightarrow \IR^2\)</span> be given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -634,8 +634,8 @@ T\left(\left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)
 \end{equation*}
 </div>
 </div></div>
-<article class="task exercise-like" id="task-88"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para logical" id="p-580">
+<article class="task exercise-like" id="task-92"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical" id="p-582">
 <div class="para">Compute the result of adding vectors before a <span class="process-math">\(T\)</span> transformation:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -650,13 +650,13 @@ T\left(
 \end{equation*}
 </div>
 <ol class="upper-alpha cols2">
-<li id="li-356"><div class="para" id="p-581"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x-u+z-w \\ 3y-3v \end{array}\right]\)</span></div></li>
-<li id="li-357"><div class="para" id="p-582"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x+u-z-w \\ 3y+3v \end{array}\right]\)</span></div></li>
-<li id="li-358"><div class="para" id="p-583"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x+u \\ 3y+3v \\ z+w \end{array}\right]\)</span></div></li>
-<li id="li-359"><div class="para" id="p-584"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x-u \\ 3y-3v \\ z-w \end{array}\right]\)</span></div></li>
+<li id="li-359"><div class="para" id="p-583"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x-u+z-w \\ 3y-3v \end{array}\right]\)</span></div></li>
+<li id="li-360"><div class="para" id="p-584"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x+u-z-w \\ 3y+3v \end{array}\right]\)</span></div></li>
+<li id="li-361"><div class="para" id="p-585"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x+u \\ 3y+3v \\ z+w \end{array}\right]\)</span></div></li>
+<li id="li-362"><div class="para" id="p-586"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x-u \\ 3y-3v \\ z-w \end{array}\right]\)</span></div></li>
 </ol>
-</div></article><article class="task exercise-like" id="task-89"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para logical" id="p-585">
+</div></article><article class="task exercise-like" id="task-93"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-587">
 <div class="para">Compute the result of adding vectors after a <span class="process-math">\(T\)</span> transformation:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -671,21 +671,21 @@ T\left(
 \end{equation*}
 </div>
 <ol class="upper-alpha cols2">
-<li id="li-360"><div class="para" id="p-586"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x-u+z-w \\ 3y-3v \end{array}\right]\)</span></div></li>
-<li id="li-361"><div class="para" id="p-587"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x+u-z-w \\ 3y+3v \end{array}\right]\)</span></div></li>
-<li id="li-362"><div class="para" id="p-588"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x+u \\ 3y+3v \\ z+w \end{array}\right]\)</span></div></li>
-<li id="li-363"><div class="para" id="p-589"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x-u \\ 3y-3v \\ z-w \end{array}\right]\)</span></div></li>
+<li id="li-363"><div class="para" id="p-588"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x-u+z-w \\ 3y-3v \end{array}\right]\)</span></div></li>
+<li id="li-364"><div class="para" id="p-589"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x+u-z-w \\ 3y+3v \end{array}\right]\)</span></div></li>
+<li id="li-365"><div class="para" id="p-590"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x+u \\ 3y+3v \\ z+w \end{array}\right]\)</span></div></li>
+<li id="li-366"><div class="para" id="p-591"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x-u \\ 3y-3v \\ z-w \end{array}\right]\)</span></div></li>
 </ol>
-</div></article><article class="task exercise-like" id="task-90"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para logical" id="p-590">
+</div></article><article class="task exercise-like" id="task-94"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para logical" id="p-592">
 <div class="para">Is <span class="process-math">\(T\)</span> a linear transformation?</div>
 <ol class="upper-alpha">
-<li id="li-364"><div class="para" id="p-591">Yes.</div></li>
-<li id="li-365"><div class="para" id="p-592">No.</div></li>
-<li id="li-366"><div class="para" id="p-593">More work is necessary to know.</div></li>
+<li id="li-367"><div class="para" id="p-593">Yes.</div></li>
+<li id="li-368"><div class="para" id="p-594">No.</div></li>
+<li id="li-369"><div class="para" id="p-595">More work is necessary to know.</div></li>
 </ol>
-</div></article><article class="task exercise-like" id="task-91"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<div class="para logical" id="p-594">
+</div></article><article class="task exercise-like" id="task-95"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para logical" id="p-596">
 <div class="para">Compute the result of scalar multiplcation before a <span class="process-math">\(T\)</span> transformation:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -695,13 +695,13 @@ T\left(\left[\begin{array}{c} cx \\ cy \\ cz \end{array}\right] \right)
 \end{equation*}
 </div>
 <ol class="upper-alpha cols2">
-<li id="li-367"><div class="para" id="p-595"><span class="process-math">\(\displaystyle \left[\begin{array}{c} cx-cz\\ 3cy \end{array}\right]\)</span></div></li>
-<li id="li-368"><div class="para" id="p-596"><span class="process-math">\(\displaystyle \left[\begin{array}{c} cx+cz \\ -3cy \end{array}\right]\)</span></div></li>
-<li id="li-369"><div class="para" id="p-597"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x+c \\ 3y+c \\ z+c \end{array}\right]\)</span></div></li>
-<li id="li-370"><div class="para" id="p-598"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x-c \\ 3y-c \\ z-c \end{array}\right]\)</span></div></li>
+<li id="li-370"><div class="para" id="p-597"><span class="process-math">\(\displaystyle \left[\begin{array}{c} cx-cz\\ 3cy \end{array}\right]\)</span></div></li>
+<li id="li-371"><div class="para" id="p-598"><span class="process-math">\(\displaystyle \left[\begin{array}{c} cx+cz \\ -3cy \end{array}\right]\)</span></div></li>
+<li id="li-372"><div class="para" id="p-599"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x+c \\ 3y+c \\ z+c \end{array}\right]\)</span></div></li>
+<li id="li-373"><div class="para" id="p-600"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x-c \\ 3y-c \\ z-c \end{array}\right]\)</span></div></li>
 </ol>
-</div></article><article class="task exercise-like" id="task-92"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<div class="para logical" id="p-599">
+</div></article><article class="task exercise-like" id="task-96"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para logical" id="p-601">
 <div class="para">Compute the result of scalar multiplcation after a <span class="process-math">\(T\)</span> transformation:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -711,23 +711,23 @@ c\left[\begin{array}{c} x-z \\ 3y \end{array}\right]
 \end{equation*}
 </div>
 <ol class="upper-alpha cols2">
-<li id="li-371"><div class="para" id="p-600"><span class="process-math">\(\displaystyle \left[\begin{array}{c} cx-cz\\ 3cy \end{array}\right]\)</span></div></li>
-<li id="li-372"><div class="para" id="p-601"><span class="process-math">\(\displaystyle \left[\begin{array}{c} cx+cz \\ -3cy \end{array}\right]\)</span></div></li>
-<li id="li-373"><div class="para" id="p-602"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x+c \\ 3y+c \\ z+c \end{array}\right]\)</span></div></li>
-<li id="li-374"><div class="para" id="p-603"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x-c \\ 3y-c \\ z-c \end{array}\right]\)</span></div></li>
+<li id="li-374"><div class="para" id="p-602"><span class="process-math">\(\displaystyle \left[\begin{array}{c} cx-cz\\ 3cy \end{array}\right]\)</span></div></li>
+<li id="li-375"><div class="para" id="p-603"><span class="process-math">\(\displaystyle \left[\begin{array}{c} cx+cz \\ -3cy \end{array}\right]\)</span></div></li>
+<li id="li-376"><div class="para" id="p-604"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x+c \\ 3y+c \\ z+c \end{array}\right]\)</span></div></li>
+<li id="li-377"><div class="para" id="p-605"><span class="process-math">\(\displaystyle \left[\begin{array}{c} x-c \\ 3y-c \\ z-c \end{array}\right]\)</span></div></li>
 </ol>
-</div></article><article class="task exercise-like" id="task-93"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<div class="para logical" id="p-604">
+</div></article><article class="task exercise-like" id="task-97"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="para logical" id="p-606">
 <div class="para">Is <span class="process-math">\(T\)</span> a linear transformation?</div>
 <ol class="upper-alpha">
-<li id="li-375"><div class="para" id="p-605">Yes.</div></li>
-<li id="li-376"><div class="para" id="p-606">No.</div></li>
-<li id="li-377"><div class="para" id="p-607">More work is necessary to know.</div></li>
+<li id="li-378"><div class="para" id="p-607">Yes.</div></li>
+<li id="li-379"><div class="para" id="p-608">No.</div></li>
+<li id="li-380"><div class="para" id="p-609">More work is necessary to know.</div></li>
 </ol>
-</div></article></article><article class="activity project-like" id="activity-65"><h4 class="heading">
+</div></article></article><article class="activity project-like" id="activity-66"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-36"><div class="para logical" id="p-608">
+<div class="introduction" id="introduction-38"><div class="para logical" id="p-610">
 <div class="para">Let <span class="process-math">\(S : \IR^2 \rightarrow \IR^4\)</span> be given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -737,8 +737,8 @@ S\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right)
 \end{equation*}
 </div>
 </div></div>
-<article class="task exercise-like" id="task-94"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para logical" id="p-609">
+<article class="task exercise-like" id="task-98"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical" id="p-611">
 <div class="para">Compute</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -753,13 +753,13 @@ S\left(
 \end{equation*}
 </div>
 <ol class="upper-alpha cols4">
-<li id="li-378"><div class="para" id="p-610"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 6 \\ 4 \\ 7 \\ 0 \end{array}\right]\)</span></div></li>
-<li id="li-379"><div class="para" id="p-611"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -3 \\ 0 \\ 1 \\ 5 \end{array}\right]\)</span></div></li>
-<li id="li-380"><div class="para" id="p-612"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -3 \\ -1 \\ 7 \\ 5 \end{array}\right]\)</span></div></li>
-<li id="li-381"><div class="para" id="p-613"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 6 \\ 4 \\ 10 \\ -1 \end{array}\right]\)</span></div></li>
+<li id="li-381"><div class="para" id="p-612"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 6 \\ 4 \\ 7 \\ 0 \end{array}\right]\)</span></div></li>
+<li id="li-382"><div class="para" id="p-613"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -3 \\ 0 \\ 1 \\ 5 \end{array}\right]\)</span></div></li>
+<li id="li-383"><div class="para" id="p-614"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -3 \\ -1 \\ 7 \\ 5 \end{array}\right]\)</span></div></li>
+<li id="li-384"><div class="para" id="p-615"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 6 \\ 4 \\ 10 \\ -1 \end{array}\right]\)</span></div></li>
 </ol>
-</div></article><article class="task exercise-like" id="task-95"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para logical" id="p-614">
+</div></article><article class="task exercise-like" id="task-99"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-616">
 <div class="para">Compute</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -774,23 +774,23 @@ S\left(
 \end{equation*}
 </div>
 <ol class="upper-alpha cols4">
-<li id="li-382"><div class="para" id="p-615"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 6 \\ 4 \\ 7 \\ 0 \end{array}\right]\)</span></div></li>
-<li id="li-383"><div class="para" id="p-616"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -3 \\ 0 \\ 1 \\ 5 \end{array}\right]\)</span></div></li>
-<li id="li-384"><div class="para" id="p-617"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -3 \\ -1 \\ 7 \\ 5 \end{array}\right]\)</span></div></li>
-<li id="li-385"><div class="para" id="p-618"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 6 \\ 4 \\ 10 \\ -1 \end{array}\right]\)</span></div></li>
+<li id="li-385"><div class="para" id="p-617"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 6 \\ 4 \\ 7 \\ 0 \end{array}\right]\)</span></div></li>
+<li id="li-386"><div class="para" id="p-618"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -3 \\ 0 \\ 1 \\ 5 \end{array}\right]\)</span></div></li>
+<li id="li-387"><div class="para" id="p-619"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -3 \\ -1 \\ 7 \\ 5 \end{array}\right]\)</span></div></li>
+<li id="li-388"><div class="para" id="p-620"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 6 \\ 4 \\ 10 \\ -1 \end{array}\right]\)</span></div></li>
 </ol>
-</div></article><article class="task exercise-like" id="task-96"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para logical" id="p-619">
+</div></article><article class="task exercise-like" id="task-100"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para logical" id="p-621">
 <div class="para">Is <span class="process-math">\(T\)</span> a linear transformation?</div>
 <ol class="upper-alpha">
-<li id="li-386"><div class="para" id="p-620">Yes.</div></li>
-<li id="li-387"><div class="para" id="p-621">No.</div></li>
-<li id="li-388"><div class="para" id="p-622">More work is necessary to know.</div></li>
+<li id="li-389"><div class="para" id="p-622">Yes.</div></li>
+<li id="li-390"><div class="para" id="p-623">No.</div></li>
+<li id="li-391"><div class="para" id="p-624">More work is necessary to know.</div></li>
 </ol>
-</div></article></article><article class="activity project-like" id="activity-66"><h4 class="heading">
+</div></article></article><article class="activity project-like" id="activity-67"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-623">
+<div class="para logical" id="p-625">
 <div class="para">Fill in the <span class="process-math">\(\unknown\)</span>s, assuming <span class="process-math">\(T:\mathbb R^3\to\mathbb R^3\)</span> is linear:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -800,31 +800,31 @@ T\left(\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]\right)
 = \left[\begin{array}{c} \unknown \\ \unknown \\ \unknown \end{array}\right]
 \end{equation*}
 </div>
-</div></article><article class="observation remark-like" id="observation-12"><h4 class="heading">
+</div></article><article class="observation remark-like" id="observation-11"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-624">
+<div class="para logical" id="p-626">
 <div class="para">Showing <span class="process-math">\(T:V\to W\)</span> is <em class="emphasis">not</em> a linear transformation can be done by finding an example for <em class="emphasis">any one</em> of the following.</div>
 <ul class="disc">
-<li id="li-389"><div class="para" id="p-625">Show <span class="process-math">\(T(\vec 0)\not=\vec 0\)</span> (where <span class="process-math">\(\vec 0\)</span> is the additive identity of <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span>).</div></li>
-<li id="li-390"><div class="para" id="p-626">Find specific values for <span class="process-math">\(\vec v,\vec w\in V\)</span> such that <span class="process-math">\(T(\vec v+\vec w)\not=T(\vec v)+T(\vec w)\text{.}\)</span>
+<li id="li-392"><div class="para" id="p-627">Show <span class="process-math">\(T(\vec 0)\not=\vec 0\)</span> (where <span class="process-math">\(\vec 0\)</span> is the additive identity of <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span>).</div></li>
+<li id="li-393"><div class="para" id="p-628">Find specific values for <span class="process-math">\(\vec v,\vec w\in V\)</span> such that <span class="process-math">\(T(\vec v+\vec w)\not=T(\vec v)+T(\vec w)\text{.}\)</span>
 </div></li>
-<li id="li-391"><div class="para" id="p-627">Find specific values for <span class="process-math">\(\vec v\in V\)</span> and <span class="process-math">\(c\in \IR\)</span> such that <span class="process-math">\(T(c\vec v)\not=cT(\vec v)\text{.}\)</span>
+<li id="li-394"><div class="para" id="p-629">Find specific values for <span class="process-math">\(\vec v\in V\)</span> and <span class="process-math">\(c\in \IR\)</span> such that <span class="process-math">\(T(c\vec v)\not=cT(\vec v)\text{.}\)</span>
 </div></li>
 </ul>
-</div> <div class="para logical" id="p-628">
+</div> <div class="para logical" id="p-630">
 <div class="para">Otherwise, <span class="process-math">\(T\)</span> can be shown to be linear by proving <em class="emphasis">both</em> of the following <em class="emphasis">in general</em>.</div>
 <ul class="disc">
-<li id="li-392"><div class="para" id="p-629">For all <span class="process-math">\(\vec v,\vec w\in V\text{,}\)</span> <span class="process-math">\(T(\vec v+\vec w)=T(\vec v)+T(\vec w)\text{.}\)</span>
+<li id="li-395"><div class="para" id="p-631">For all <span class="process-math">\(\vec v,\vec w\in V\text{,}\)</span> <span class="process-math">\(T(\vec v+\vec w)=T(\vec v)+T(\vec w)\text{.}\)</span>
 </div></li>
-<li id="li-393"><div class="para" id="p-630">For all <span class="process-math">\(\vec v\in V\)</span> and <span class="process-math">\(c\in \IR\text{,}\)</span> <span class="process-math">\(T(c\vec v)=cT(\vec v)\text{.}\)</span>
+<li id="li-396"><div class="para" id="p-632">For all <span class="process-math">\(\vec v\in V\)</span> and <span class="process-math">\(c\in \IR\text{,}\)</span> <span class="process-math">\(T(c\vec v)=cT(\vec v)\text{.}\)</span>
 </div></li>
 </ul>
-</div> <div class="para" id="p-631">Note the similarities between this process and showing that a subset of a vector space is or is not a subspace (<a href="" class="xref" data-knowl="./knowl/EV3-subspace-check.html" title="Remark 2.3.7">Remark 2.3.7</a>).</div></article><article class="activity project-like" id="activity-67"><h4 class="heading">
+</div> <div class="para" id="p-633">Note the similarities between this process and showing that a subset of a vector space is or is not a subspace (<a href="" class="xref" data-knowl="./knowl/EV3-subspace-check.html" title="Remark 2.3.7">Remark 2.3.7</a>).</div></article><article class="activity project-like" id="activity-68"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span>
 </h4>
-<article class="task exercise-like" id="task-97"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para logical" id="p-632">
+<article class="task exercise-like" id="task-101"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical" id="p-634">
 <div class="para">Consider the following maps of Euclidean vectors <span class="process-math">\(P:\mathbb R^3\rightarrow\mathbb R^3\)</span> and <span class="process-math">\(Q:\mathbb R^3\rightarrow\mathbb R^3\)</span> defined by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -836,15 +836,15 @@ P\left( \left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)=
 </div>
 <div class="para">Which do you <em class="emphasis">suspect</em>?</div>
 <ol class="upper-alpha cols2">
-<li id="li-394"><div class="para" id="p-633">
+<li id="li-397"><div class="para" id="p-635">
 <span class="process-math">\(P\)</span> is linear, but <span class="process-math">\(Q\)</span> is not.</div></li>
-<li id="li-395"><div class="para" id="p-634">
+<li id="li-398"><div class="para" id="p-636">
 <span class="process-math">\(Q\)</span> is linear, but <span class="process-math">\(P\)</span> is not.</div></li>
-<li id="li-396"><div class="para" id="p-635">Both maps are linear.</div></li>
-<li id="li-397"><div class="para" id="p-636">Neither map is linear.</div></li>
+<li id="li-399"><div class="para" id="p-637">Both maps are linear.</div></li>
+<li id="li-400"><div class="para" id="p-638">Neither map is linear.</div></li>
 </ol>
-</div></article><article class="task exercise-like" id="task-98"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para logical" id="p-637">
+</div></article><article class="task exercise-like" id="task-102"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-639">
 <div class="para">Consider the following map of Euclidean vectors <span class="process-math">\(S:\mathbb R^2\rightarrow\mathbb R^2\)</span>
 </div>
 <div class="displaymath process-math">
@@ -853,8 +853,8 @@ S\left( \left[\begin{array}{c} x \\ y \end{array}\right]\right)= \left[\begin{ar
 \end{equation*}
 </div>
 <div class="para">Prove that <span class="process-math">\(S\)</span> <em class="emphasis">is not</em> a linear transformation.</div>
-</div></article><article class="task exercise-like" id="task-99"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para logical" id="p-638">
+</div></article><article class="task exercise-like" id="task-103"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para logical" id="p-640">
 <div class="para">Consider the following map of Euclidean vectors <span class="process-math">\(T:\mathbb R^2\rightarrow\mathbb R^2\)</span>
 </div>
 <div class="displaymath process-math">
@@ -871,31 +871,29 @@ T\left( \left[\begin{array}{c} x \\ y \end{array}\right] \right)= \left[\begin{a
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">23<span class="period">.</span></span><span class="space"> </span>Video: Showing a transformation is not linear</figcaption></figure></section><section class="subsection" id="subsection-58"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.3</span> <span class="title">Slideshow</span>
 </h3>
-<div class="para" id="p-639">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/AT1.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/AT1.slides.html</code></a>.</div></section><section class="exercises" id="exercises-12"><h3 class="heading hide-type">
+<div class="para" id="p-641">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/AT1.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/AT1.slides.html</code></a>.</div></section><section class="exercises" id="exercises-12"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">3.1.4</span> <span class="title">Exercises</span>
 </h3>
-<div class="para" id="p-640">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/AT1/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/AT1/</code></a>.</div></section><section class="subsection" id="subsection-59"><h3 class="heading hide-type">
+<div class="para" id="p-642">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/AT1/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/AT1/</code></a>.</div></section><section class="subsection" id="subsection-59"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-24"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-641">If <span class="process-math">\(V,W\)</span> are vectors spaces, with associated zero vectors <span class="process-math">\(\vec{0}_V\)</span> and <span class="process-math">\(\vec{0}_W\text{,}\)</span> and <span class="process-math">\(T:V \rightarrow W\)</span> is a linear transformation, does <span class="process-math">\(T(\vec{0}_V)  = \vec{0}_W\text{?}\)</span> Prove this is true, or find a counterexample.</div></article><article class="exploration project-like" id="exploration-25"><h4 class="heading">
+<div class="para" id="p-643">If <span class="process-math">\(V,W\)</span> are vectors spaces, with associated zero vectors <span class="process-math">\(\vec{0}_V\)</span> and <span class="process-math">\(\vec{0}_W\text{,}\)</span> and <span class="process-math">\(T:V \rightarrow W\)</span> is a linear transformation, does <span class="process-math">\(T(\vec{0}_V)  = \vec{0}_W\text{?}\)</span> Prove this is true, or find a counterexample.</div></article><article class="exploration project-like" id="exploration-25"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-642">Assume <span class="process-math">\(f: V \rightarrow W\)</span> is a linear transformation between vector spaces. Let <span class="process-math">\(\vec{v} \in V\)</span> with additive inverse <span class="process-math">\(\vec{v}^{-1}\text{.}\)</span> Prove that <span class="process-math">\(f(\vec{v}^{-1}) = [f(\vec{v})]^{-1}\text{.}\)</span>
+<div class="para" id="p-644">Assume <span class="process-math">\(f: V \rightarrow W\)</span> is a linear transformation between vector spaces. Let <span class="process-math">\(\vec{v} \in V\)</span> with additive inverse <span class="process-math">\(\vec{v}^{-1}\text{.}\)</span> Prove that <span class="process-math">\(f(\vec{v}^{-1}) = [f(\vec{v})]^{-1}\text{.}\)</span>
 </div></article></section><section class="subsection" id="subsection-60"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.6</span> <span class="title">Sample Problem and Solution</span>
 </h3>
-<div class="para" id="p-643">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-AT1.html" title="Example B.1.12: AT1">Example B.1.12</a>.</div></section></section></div>
+<div class="para" id="p-645">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-AT1.html" title="Example B.1.12: AT1">Example B.1.12</a>.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="AT.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="AT2.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
-<div class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
-<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
-<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+<div id="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
 </div>
 </body>
 </html>

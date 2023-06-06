@@ -58,7 +58,7 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -193,7 +193,7 @@ window.MathJax = {
 </li>
 </ol></div></button><span class="treebuttons"><a class="previous-button button" href="GT2.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="GT.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="GT4.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\markedPivot}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
 \renewcommand{\P}{\mathcal{P}}
@@ -596,13 +596,13 @@ window.MathJax = {
 <span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">Eigenvalues and Characteristic Polynomials (GT3)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-28"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
-<ul class="disc"><li id="li-744"><div class="para" id="p-1206">Find the eigenvalues of a <span class="process-math">\(2\times 2\)</span> matrix.</div></li></ul></article><section class="subsection" id="subsection-110"><h3 class="heading hide-type">
+<ul class="disc"><li id="li-759"><div class="para" id="p-1219">Find the eigenvalues of a <span class="process-math">\(2\times 2\)</span> matrix.</div></li></ul></article><section class="subsection" id="subsection-110"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.1</span> <span class="title">Class Activities</span>
 </h3>
-<article class="activity project-like" id="activity-149"><h4 class="heading">
+<article class="activity project-like" id="activity-152"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1207">An invertible matrix <span class="process-math">\(M\)</span> and its inverse <span class="process-math">\(M^{-1}\)</span> are given below:</div>
+<div class="para" id="p-1220">An invertible matrix <span class="process-math">\(M\)</span> and its inverse <span class="process-math">\(M^{-1}\)</span> are given below:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 M=\left[\begin{array}{cc}1&amp;2\\3&amp;4\end{array}\right]
@@ -610,16 +610,16 @@ M=\left[\begin{array}{cc}1&amp;2\\3&amp;4\end{array}\right]
 M^{-1}=\left[\begin{array}{cc}-2&amp;1\\3/2&amp;-1/2\end{array}\right]
 \end{equation*}
 </div>
-<div class="para" id="p-1208">Which of the following is equal to <span class="process-math">\(\det(M)\det(M^{-1})\text{?}\)</span>
+<div class="para" id="p-1221">Which of the following is equal to <span class="process-math">\(\det(M)\det(M^{-1})\text{?}\)</span>
 </div> <ol class="upper-alpha cols2">
-<li id="li-745"><div class="para" id="p-1209"><span class="process-math">\(\displaystyle -1\)</span></div></li>
-<li id="li-746"><div class="para" id="p-1210"><span class="process-math">\(\displaystyle 0\)</span></div></li>
-<li id="li-747"><div class="para" id="p-1211"><span class="process-math">\(\displaystyle 1\)</span></div></li>
-<li id="li-748"><div class="para" id="p-1212"><span class="process-math">\(\displaystyle 4\)</span></div></li>
+<li id="li-760"><div class="para" id="p-1222"><span class="process-math">\(\displaystyle -1\)</span></div></li>
+<li id="li-761"><div class="para" id="p-1223"><span class="process-math">\(\displaystyle 0\)</span></div></li>
+<li id="li-762"><div class="para" id="p-1224"><span class="process-math">\(\displaystyle 1\)</span></div></li>
+<li id="li-763"><div class="para" id="p-1225"><span class="process-math">\(\displaystyle 4\)</span></div></li>
 </ol></article><article class="fact theorem-like" id="fact-26"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1213">
+<div class="para logical" id="p-1226">
 <div class="para">For every invertible matrix <span class="process-math">\(M\text{,}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -629,13 +629,13 @@ M^{-1}=\left[\begin{array}{cc}-2&amp;1\\3/2&amp;-1/2\end{array}\right]
 </div>
 <div class="para">so <span class="process-math">\(\det(M^{-1})=\frac{1}{\det(M)}\text{.}\)</span>
 </div>
-</div> <div class="para" id="p-1214">Furthermore, a square matrix <span class="process-math">\(M\)</span> is invertible if and only if <span class="process-math">\(\det(M)\not=0\text{.}\)</span>
-</div></article><article class="observation remark-like" id="observation-33"><h4 class="heading">
+</div> <div class="para" id="p-1227">Furthermore, a square matrix <span class="process-math">\(M\)</span> is invertible if and only if <span class="process-math">\(\det(M)\not=0\text{.}\)</span>
+</div></article><article class="observation remark-like" id="observation-32"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.3.3</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1215">Consider the linear transformation <span class="process-math">\(A : \IR^2 \rightarrow \IR^2\)</span> given by the matrix <span class="process-math">\(A = \left[\begin{array}{cc} 2 &amp; 2 \\ 0 &amp; 3 \end{array}\right]\text{.}\)</span>
+<div class="para" id="p-1228">Consider the linear transformation <span class="process-math">\(A : \IR^2 \rightarrow \IR^2\)</span> given by the matrix <span class="process-math">\(A = \left[\begin{array}{cc} 2 &amp; 2 \\ 0 &amp; 3 \end{array}\right]\text{.}\)</span>
 </div> <figure class="figure figure-like" id="figure-66"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-36.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">66<span class="period">.</span></span><span class="space"> </span>Transformation of the unit square by the linear transformation <span class="process-math">\(A\)</span></figcaption></figure> <div class="para logical" id="p-1216">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">66<span class="period">.</span></span><span class="space"> </span>Transformation of the unit square by the linear transformation <span class="process-math">\(A\)</span></figcaption></figure> <div class="para logical" id="p-1229">
 <div class="para">It is easy to see geometrically that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -645,7 +645,7 @@ A\left[\begin{array}{c}1 \\ 0 \end{array}\right] =
 2 \left[\begin{array}{c}1 \\ 0 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-1217">
+</div> <div class="para logical" id="p-1230">
 <div class="para">It is less obvious (but easily checked once you find it) that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -658,13 +658,13 @@ A\left[\begin{array}{c} 2 \\ 1 \end{array}\right] =
 </div></article><article class="definition definition-like" id="definition-31"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.3.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1218">Let <span class="process-math">\(A \in M_{n,n}\text{.}\)</span> An <dfn class="terminology">eigenvector</dfn> for <span class="process-math">\(A\)</span> is a vector <span class="process-math">\(\vec{x} \in \IR^n\)</span> such that <span class="process-math">\(A\vec{x}\)</span> is parallel to <span class="process-math">\(\vec{x}\text{.}\)</span>
+<div class="para" id="p-1231">Let <span class="process-math">\(A \in M_{n,n}\text{.}\)</span> An <dfn class="terminology">eigenvector</dfn> for <span class="process-math">\(A\)</span> is a vector <span class="process-math">\(\vec{x} \in \IR^n\)</span> such that <span class="process-math">\(A\vec{x}\)</span> is parallel to <span class="process-math">\(\vec{x}\text{.}\)</span>
 </div> <figure class="figure figure-like" id="figure-67"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-37.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">67<span class="period">.</span></span><span class="space"> </span>The map <span class="process-math">\(A\)</span> stretches out the eigenvector <span class="process-math">\(\left[\begin{array}{c}2 \\ 1 \end{array}\right]\)</span> by a factor of <span class="process-math">\(3\)</span> (the corresponding eigenvalue).</figcaption></figure> <div class="para" id="p-1219">In other words, <span class="process-math">\(A\vec{x}=\lambda \vec{x}\)</span> for some scalar <span class="process-math">\(\lambda\text{.}\)</span> If <span class="process-math">\(\vec x\not=\vec 0\text{,}\)</span> then we say <span class="process-math">\(\vec x\)</span> is a <dfn class="terminology">nontrivial eigenvector</dfn> and we call this <span class="process-math">\(\lambda\)</span> an <dfn class="terminology">eigenvalue</dfn> of <span class="process-math">\(A\text{.}\)</span>
-</div></article><article class="activity project-like" id="activity-150"><h4 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">67<span class="period">.</span></span><span class="space"> </span>The map <span class="process-math">\(A\)</span> stretches out the eigenvector <span class="process-math">\(\left[\begin{array}{c}2 \\ 1 \end{array}\right]\)</span> by a factor of <span class="process-math">\(3\)</span> (the corresponding eigenvalue).</figcaption></figure> <div class="para" id="p-1232">In other words, <span class="process-math">\(A\vec{x}=\lambda \vec{x}\)</span> for some scalar <span class="process-math">\(\lambda\text{.}\)</span> If <span class="process-math">\(\vec x\not=\vec 0\text{,}\)</span> then we say <span class="process-math">\(\vec x\)</span> is a <dfn class="terminology">nontrivial eigenvector</dfn> and we call this <span class="process-math">\(\lambda\)</span> an <dfn class="terminology">eigenvalue</dfn> of <span class="process-math">\(A\text{.}\)</span>
+</div></article><article class="activity project-like" id="activity-153"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.5</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1220">
+<div class="para logical" id="p-1233">
 <div class="para">Finding the eigenvalues <span class="process-math">\(\lambda\)</span> that satisfy</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -677,15 +677,15 @@ A\vec x=\lambda\vec x=\lambda(I\vec x)=(\lambda I)\vec x
 (A-\lambda I)\vec x =\vec 0\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="p-1221">Which of the following must be true for any eigenvalue?</div> <ol class="upper-alpha">
-<li id="li-749"><div class="para" id="p-1222">The <em class="emphasis">kernel</em> of the transformation with standard matrix <span class="process-math">\(A-\lambda I\)</span> must contain <em class="emphasis">the zero vector</em>, so <span class="process-math">\(A-\lambda I\)</span> is <em class="emphasis">invertible</em>.</div></li>
-<li id="li-750"><div class="para" id="p-1223">The <em class="emphasis">kernel</em> of the transformation with standard matrix <span class="process-math">\(A-\lambda I\)</span> must contain <em class="emphasis">a non-zero vector</em>, so <span class="process-math">\(A-\lambda I\)</span> is <em class="emphasis">not invertible</em>.</div></li>
-<li id="li-751"><div class="para" id="p-1224">The <em class="emphasis">image</em> of the transformation with standard matrix <span class="process-math">\(A-\lambda I\)</span> must contain <em class="emphasis">the zero vector</em>, so <span class="process-math">\(A-\lambda I\)</span> is <em class="emphasis">invertible</em>.</div></li>
-<li id="li-752"><div class="para" id="p-1225">The <em class="emphasis">image</em> of the transformation with standard matrix <span class="process-math">\(A-\lambda I\)</span> must contain <em class="emphasis">a non-zero vector</em>, so <span class="process-math">\(A-\lambda I\)</span> is <em class="emphasis">not invertible</em>.</div></li>
+</div> <div class="para" id="p-1234">Which of the following must be true for any eigenvalue?</div> <ol class="upper-alpha">
+<li id="li-764"><div class="para" id="p-1235">The <em class="emphasis">kernel</em> of the transformation with standard matrix <span class="process-math">\(A-\lambda I\)</span> must contain <em class="emphasis">the zero vector</em>, so <span class="process-math">\(A-\lambda I\)</span> is <em class="emphasis">invertible</em>.</div></li>
+<li id="li-765"><div class="para" id="p-1236">The <em class="emphasis">kernel</em> of the transformation with standard matrix <span class="process-math">\(A-\lambda I\)</span> must contain <em class="emphasis">a non-zero vector</em>, so <span class="process-math">\(A-\lambda I\)</span> is <em class="emphasis">not invertible</em>.</div></li>
+<li id="li-766"><div class="para" id="p-1237">The <em class="emphasis">image</em> of the transformation with standard matrix <span class="process-math">\(A-\lambda I\)</span> must contain <em class="emphasis">the zero vector</em>, so <span class="process-math">\(A-\lambda I\)</span> is <em class="emphasis">invertible</em>.</div></li>
+<li id="li-767"><div class="para" id="p-1238">The <em class="emphasis">image</em> of the transformation with standard matrix <span class="process-math">\(A-\lambda I\)</span> must contain <em class="emphasis">a non-zero vector</em>, so <span class="process-math">\(A-\lambda I\)</span> is <em class="emphasis">not invertible</em>.</div></li>
 </ol></article><article class="fact theorem-like" id="fact-27"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.3.6</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1226">The eigenvalues <span class="process-math">\(\lambda\)</span> for a matrix <span class="process-math">\(A\)</span> are the values that make <span class="process-math">\(A-\lambda I\)</span> non-invertible.</div> <div class="para logical" id="p-1227">
+<div class="para" id="p-1239">The eigenvalues <span class="process-math">\(\lambda\)</span> for a matrix <span class="process-math">\(A\)</span> are the values that make <span class="process-math">\(A-\lambda I\)</span> non-invertible.</div> <div class="para logical" id="p-1240">
 <div class="para">Thus the eigenvalues <span class="process-math">\(\lambda\)</span> for a matrix <span class="process-math">\(A\)</span> are the solutions to the equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -695,8 +695,8 @@ A\vec x=\lambda\vec x=\lambda(I\vec x)=(\lambda I)\vec x
 </div></article><article class="definition definition-like" id="definition-32"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.3.7</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1228">The expression <span class="process-math">\(\det(A-\lambda I)\)</span> is called <dfn class="terminology">characteristic polynomial</dfn> of <span class="process-math">\(A\text{.}\)</span>
-</div> <div class="para logical" id="p-1229">
+<div class="para" id="p-1241">The expression <span class="process-math">\(\det(A-\lambda I)\)</span> is called <dfn class="terminology">characteristic polynomial</dfn> of <span class="process-math">\(A\text{.}\)</span>
+</div> <div class="para logical" id="p-1242">
 <div class="para">For example, when <span class="process-math">\(A=\left[\begin{array}{cc}1 &amp; 2 \\ 3 &amp; 4\end{array}\right]\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -706,7 +706,7 @@ A-\lambda I=
 \left[\begin{array}{cc}1-\lambda &amp; 2 \\ 3 &amp; 4-\lambda\end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-1230">
+</div> <div class="para logical" id="p-1243">
 <div class="para">Thus the characteristic polynomial of <span class="process-math">\(A\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -719,27 +719,27 @@ A-\lambda I=
 </div>
 <div class="para">and its eigenvalues are the solutions to <span class="process-math">\(\lambda^2-5\lambda-2=0\text{.}\)</span>
 </div>
-</div></article><article class="activity project-like" id="activity-151"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-154"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.8</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-65"><div class="para" id="p-1231">Let <span class="process-math">\(A = \left[\begin{array}{cc} 5 &amp; 2 \\ -3 &amp; -2 \end{array}\right]\text{.}\)</span>
+<div class="introduction" id="introduction-68"><div class="para" id="p-1244">Let <span class="process-math">\(A = \left[\begin{array}{cc} 5 &amp; 2 \\ -3 &amp; -2 \end{array}\right]\text{.}\)</span>
 </div></div>
-<article class="task exercise-like" id="task-161"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-1232">Compute <span class="process-math">\(\det (A-\lambda I)\)</span> to determine the characteristic polynomial of <span class="process-math">\(A\text{.}\)</span>
-</div></article><article class="task exercise-like" id="task-162"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-1233">Set this characteristic polynomial equal to zero and factor to determine the eigenvalues of <span class="process-math">\(A\text{.}\)</span>
-</div></article></article><article class="activity project-like" id="activity-152"><h4 class="heading">
+<article class="task exercise-like" id="task-168"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-1245">Compute <span class="process-math">\(\det (A-\lambda I)\)</span> to determine the characteristic polynomial of <span class="process-math">\(A\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-169"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-1246">Set this characteristic polynomial equal to zero and factor to determine the eigenvalues of <span class="process-math">\(A\text{.}\)</span>
+</div></article></article><article class="activity project-like" id="activity-155"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1234">Find all the eigenvalues for the matrix <span class="process-math">\(A=\left[\begin{array}{cc} 3 &amp; -3 \\ 2 &amp; -4 \end{array}\right]\text{.}\)</span>
-</div></article><article class="activity project-like" id="activity-153"><h4 class="heading">
+<div class="para" id="p-1247">Find all the eigenvalues for the matrix <span class="process-math">\(A=\left[\begin{array}{cc} 3 &amp; -3 \\ 2 &amp; -4 \end{array}\right]\text{.}\)</span>
+</div></article><article class="activity project-like" id="activity-156"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.10</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1235">Find all the eigenvalues for the matrix <span class="process-math">\(A=\left[\begin{array}{cc} 1 &amp; -4 \\ 0 &amp; 5 \end{array}\right]\text{.}\)</span>
-</div></article><article class="activity project-like" id="activity-154"><h4 class="heading">
+<div class="para" id="p-1248">Find all the eigenvalues for the matrix <span class="process-math">\(A=\left[\begin{array}{cc} 1 &amp; -4 \\ 0 &amp; 5 \end{array}\right]\text{.}\)</span>
+</div></article><article class="activity project-like" id="activity-157"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.11</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1236">Find all the eigenvalues for the matrix <span class="process-math">\(A=\left[\begin{array}{ccc} 3 &amp; -3 &amp; 1 \\ 0 &amp; -4 &amp; 2 \\ 0 &amp; 0 &amp; 7 \end{array}\right]\text{.}\)</span>
+<div class="para" id="p-1249">Find all the eigenvalues for the matrix <span class="process-math">\(A=\left[\begin{array}{ccc} 3 &amp; -3 &amp; 1 \\ 0 &amp; -4 &amp; 2 \\ 0 &amp; 0 &amp; 7 \end{array}\right]\text{.}\)</span>
 </div></article></section><section class="subsection" id="subsection-111"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.2</span> <span class="title">Videos</span>
 </h3>
@@ -747,10 +747,10 @@ A-\lambda I=
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">68<span class="period">.</span></span><span class="space"> </span>Video: Finding eigenvalues</figcaption></figure></section><section class="subsection" id="subsection-112"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.3</span> <span class="title">Slideshow</span>
 </h3>
-<div class="para" id="p-1237">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/GT3.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/GT3.slides.html</code></a>.</div></section><section class="exercises" id="exercises-23"><h3 class="heading hide-type">
+<div class="para" id="p-1250">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/GT3.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/GT3.slides.html</code></a>.</div></section><section class="exercises" id="exercises-23"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">5.3.4</span> <span class="title">Exercises</span>
 </h3>
-<div class="para" id="p-1238">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/GT3/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/GT3/</code></a>.</div></section><section class="subsection" id="subsection-113"><h3 class="heading hide-type">
+<div class="para" id="p-1251">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/GT3/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/GT3/</code></a>.</div></section><section class="subsection" id="subsection-113"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-50"><h4 class="heading">
@@ -758,15 +758,13 @@ A-\lambda I=
 </h4>What are the maximum and minimum number of eigenvalues associated with an <span class="process-math">\(n \times n\)</span> matrix? Write small examples to convince yourself you are correct, and then prove this in generality.</article></section><section class="subsection" id="subsection-114"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.6</span> <span class="title">Sample Problem and Solution</span>
 </h3>
-<div class="para" id="p-1239">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-GT3.html" title="Example B.1.23: GT3">Example B.1.23</a>.</div></section></section></div>
+<div class="para" id="p-1252">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-GT3.html" title="Example B.1.23: GT3">Example B.1.23</a>.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="GT2.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="GT4.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
-<div class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
-<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
-<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+<div id="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
 </div>
 </body>
 </html>
