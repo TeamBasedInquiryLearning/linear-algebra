@@ -58,7 +58,19 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
+                       linked: true,
+                       languages: ['octave'],
+                       evalButtonText: 'Evaluate (Octave)'});
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -912,38 +924,71 @@ A=\left[\begin{array}{cccc} 2 &amp; 4 &amp; 2 &amp; -4 \\ -2 &amp; -4 &amp; 1 &a
 \end{equation*}
 </div>
 </div> <div class="para" id="p-142">Compute <span class="process-math">\(\RREF(A)\text{.}\)</span>
-</div></article></section><section class="subsection" id="subsection-7"><h3 class="heading hide-type">
+</div></article><article class="activity project-like" id="activity-15"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.16</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-143">
+<div class="para">Consider the matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B=\left[\begin{array}{ccc|c} 2 &amp; 4 &amp; 2 &amp; -4 \\ -2 &amp; -4 &amp; 1 &amp; 1 \\ 3 &amp; 6 &amp; -1 &amp; -4 \end{array}\right].
+\end{equation*}
+</div>
+<div class="para">which has the same terms as <span class="process-math">\(A\)</span> from the previous activity.</div>
+</div> <div class="para logical" id="p-144">
+<div class="para">Can <span class="process-math">\(\RREF(A)\)</span> be used to find <span class="process-math">\(\RREF(B)\text{?}\)</span>
+</div>
+<ol class="upper-alpha">
+<li id="li-96"><div class="para" id="p-derived-li-96">No, a new calculuation is required.</div></li>
+<li id="li-97"><div class="para" id="p-derived-li-97">Yes, <span class="process-math">\(\RREF(A)\)</span> and <span class="process-math">\(\RREF(B)\)</span> are exactly the same.</div></li>
+<li id="li-98"><div class="para" id="p-derived-li-98">Yes, <span class="process-math">\(\RREF(A)\)</span> may be slightly modified to find <span class="process-math">\(\RREF(B)\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="activity project-like" id="activity-16"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.17</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-145">Free browser-based technologies for mathematical computation are available online.</div> <ul class="disc">
+<li id="li-99"><div class="para" id="p-146">Go to <a class="external" href="https://sagecell.sagemath.org/" target="_blank"><code class="code-inline tex2jax_ignore">https://sagecell.sagemath.org/</code></a>.</div></li>
+<li id="li-100"><div class="para" id="p-derived-li-100">In the dropdown on the right, you can select a number of different languages. Select "Octave" for the Matlab-compatible syntax used by this text.</div></li>
+<li id="li-101"><div class="para" id="p-147">Type <code class="code-inline tex2jax_ignore">rref([1,3,2;2,5,7])</code> and then press the <kbd class="kbdkey">Evaluate</kbd> button to compute the <span class="process-math">\(\RREF\)</span> of <span class="process-math">\(\left[\begin{array}{ccc} 1 &amp; 3 &amp; 2 \\ 2 &amp; 5 &amp; 7 \end{array}\right]\text{.}\)</span>
+</div></li>
+</ul></article><article class="activity project-like" id="activity-17"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.18</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-148">In the HTML version of this text, code cells are often embedded for your convenience when RREFs need to be computed.</div> <div class="para" id="p-149">Try this out to compute <span class="process-math">\(\RREF\left[\begin{array}{cc|c} 2 &amp; 3 &amp; 1 \\ 3 &amp; 0 &amp; 6 \end{array}\right]\text{.}\)</span>
+</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-1"><script type="text/x-sage">rref([2,3,1;3,0,6])
+</script></pre></section><section class="subsection" id="subsection-7"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-2"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-LE2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/6iGMPpD9Mf8?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span><span class="space"> </span>Video: Row reduction</figcaption></figure></section><section class="subsection" id="subsection-8"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.2.3</span> <span class="title">Slideshow</span>
 </h3>
-<div class="para" id="p-143">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/LE2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/LE2.slides.html</code></a>.</div></section><section class="exercises" id="exercises-2"><h3 class="heading hide-type">
+<div class="para" id="p-150">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/LE2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/LE2.slides.html</code></a>.</div></section><section class="exercises" id="exercises-2"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">1.2.4</span> <span class="title">Exercises</span>
 </h3>
-<div class="para" id="p-144">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/LE2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/LE2/</code></a>.</div></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
+<div class="para" id="p-151">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/LE2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/LE2/</code></a>.</div></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.2.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-4"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.2.16</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.2.19</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-145">
+<div class="para logical" id="p-152">
 <div class="para">Prove that Gauss-Jordan Elimination preserves the solution set of a system of linear equations in <span class="process-math">\(n\)</span> variables. Make sure your proof includes each of the following. Just because I've used bullet points here does not mean you should use bullet points in your proof.</div>
 <ul class="disc">
-<li id="li-96"><div class="para" id="p-146">Write an arbitrary system of linear equations in <span class="process-math">\(n\)</span> variables. Your notation should be unambiguous.</div></li>
-<li id="li-97"><div class="para" id="p-147">Label an element of your solution set. You won't know what it is exactly, so you'll have to use a variable. Remember what it means (by definition!) to be in the solution set.</div></li>
-<li id="li-98"><div class="para" id="p-148">Describe the three operations used in Gauss-Jordan Elimination.</div></li>
-<li id="li-99"><div class="para" id="p-149">Consider all three operations in Gauss-Jordan Elimination. After each one is used, show that the element of the solution set you picked still satisfies the definition.</div></li>
+<li id="li-102"><div class="para" id="p-153">Write an arbitrary system of linear equations in <span class="process-math">\(n\)</span> variables. Your notation should be unambiguous.</div></li>
+<li id="li-103"><div class="para" id="p-154">Label an element of your solution set. You won't know what it is exactly, so you'll have to use a variable. Remember what it means (by definition!) to be in the solution set.</div></li>
+<li id="li-104"><div class="para" id="p-155">Describe the three operations used in Gauss-Jordan Elimination.</div></li>
+<li id="li-105"><div class="para" id="p-156">Consider all three operations in Gauss-Jordan Elimination. After each one is used, show that the element of the solution set you picked still satisfies the definition.</div></li>
 </ul>
 </div></article><article class="exploration project-like" id="exploration-5"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.2.17</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.2.20</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-150">Let <span class="process-math">\(M_{2,2}\)</span> indicate the set of all <span class="process-math">\(2 \times 2\)</span> matrices with real entries. Show that equivalence of matrices as defined in this section is an equivalence relation, as in exploration <a href="" class="xref" data-knowl="./knowl/equiv_relation.html" title="Exploration 1.1.17">Exploration 1.1.17</a>
+<div class="para" id="p-157">Let <span class="process-math">\(M_{2,2}\)</span> indicate the set of all <span class="process-math">\(2 \times 2\)</span> matrices with real entries. Show that equivalence of matrices as defined in this section is an equivalence relation, as in exploration <a href="" class="xref" data-knowl="./knowl/equiv_relation.html" title="Exploration 1.1.17">Exploration 1.1.17</a>
 </div></article></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.2.6</span> <span class="title">Sample Problem and Solution</span>
 </h3>
-<div class="para" id="p-151">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-LE2.html" title="Example B.1.2: LE2">Example B.1.2</a>.</div></section></section></div>
+<div class="para" id="p-158">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-LE2.html" title="Example B.1.2: LE2">Example B.1.2</a>.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="LE1.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="LE3.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
