@@ -5,30 +5,48 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>TBIL-LA Row Operations as Matrix Multiplication (MX2)</title>
+<title>TBIL-LA The Inverse of a Matrix (MX2)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
 <meta property="book:title" content="Linear Algebra for Team-Based Inquiry Learning">
 <meta property="book:author" content="Steven Clontz">
 <meta property="book:author" content="Drew Lewis">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -38,70 +56,89 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Evaluate (Sage)'});
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
 </script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
 // Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
-                       linked: true,
-                       languages: ['octave'],
-                       evalButtonText: 'Evaluate (Octave)'});
-</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-octave",
+  "linked": true,
+  "languages": [
+    "octave"
+  ],
+  "evalButtonText": "Evaluate (Octave)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/shell_crc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/banner_crc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/navbar_crc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/toc_crc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/shell_crc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/banner_crc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/navbar_crc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/toc_crc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/colors_blue_green.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/setcolors.css" rel="stylesheet" type="text/css">
 </head>
 <body id="tbilla" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">2023 Edition PREVIEW</span></a></h1>
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">2023 Edition</span></a></h1>
 <p class="byline">Steven Clontz, Drew Lewis</p>
 </div>
-<div id="searchresultsplaceholder" style="display: none">
-<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
 </h2>
-<div id="searchempty"><span>No results.</span></div>
-<ol id="searchresults"></ol>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
 </div>
-</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="avatarbutton" class="avatarbutton name">You!</span><div id="preferences_menu_holder" class="preferences_menu_holder hidden"><ol id="preferences_menu" class="preferences_menu" style="font-family: 'Roboto Serif', serif;">
 <li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
 <ol class="hidden avatar">
 <li data-val="You!" tabindex="-1">
@@ -204,7 +241,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 </ol>
 </li>
 </ol></div></button><span class="treebuttons"><a class="previous-button button" href="MX1.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="MX.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="MX3.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
-<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+<input id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" class="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\markedPivot}[1]{\boxed{#1}}
 \newcommand{\IR}{\mathbb{R}}
 \newcommand{\IC}{\mathbb{C}}
@@ -265,7 +302,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural">
 <li>
 <div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural">
@@ -493,24 +530,34 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 </ul>
 </li>
 <li class="active">
-<div class="toc-item"><a href="MX2.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Row Operations as Matrix Multiplication (MX2)</span></a></div>
+<div class="toc-item"><a href="MX2.html" class="internal"><span class="codenumber">4.2</span> <span class="title">The Inverse of a Matrix (MX2)</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="MX2.html#subsection-91" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Class Activities</span></a></div></li>
 <li><div class="toc-item"><a href="MX2.html#subsection-92" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Videos</span></a></div></li>
 <li><div class="toc-item"><a href="MX2.html#subsection-93" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Slideshow</span></a></div></li>
 <li><div class="toc-item"><a href="MX2.html#exercises-19" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
-<li><div class="toc-item"><a href="MX2.html#subsection-94" class="internal"><span class="codenumber">4.2.5</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+<li><div class="toc-item"><a href="MX2.html#subsection-94" class="internal"><span class="codenumber">4.2.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li><div class="toc-item"><a href="MX2.html#subsection-95" class="internal"><span class="codenumber">4.2.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="MX3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The Inverse of a Matrix (MX3)</span></a></div>
+<div class="toc-item"><a href="MX3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Solving Systems with Matrix Inverses (MX3)</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="MX3.html#subsection-95" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Class Activities</span></a></div></li>
-<li><div class="toc-item"><a href="MX3.html#subsection-96" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Videos</span></a></div></li>
-<li><div class="toc-item"><a href="MX3.html#subsection-97" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Slideshow</span></a></div></li>
-<li><div class="toc-item"><a href="MX3.html#exercises-20" class="internal"><span class="codenumber">4.3.4</span> <span class="title">Exercises</span></a></div></li>
-<li><div class="toc-item"><a href="MX3.html#subsection-98" class="internal"><span class="codenumber">4.3.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
-<li><div class="toc-item"><a href="MX3.html#subsection-99" class="internal"><span class="codenumber">4.3.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+<li><div class="toc-item"><a href="MX3.html#subsection-96" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Class Activities</span></a></div></li>
+<li><div class="toc-item"><a href="MX3.html#subsection-97" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Videos</span></a></div></li>
+<li><div class="toc-item"><a href="MX3.html#exercises-20" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="MX3.html#subsection-98" class="internal"><span class="codenumber">4.3.4</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li><div class="toc-item"><a href="MX3.html#subsection-99" class="internal"><span class="codenumber">4.3.5</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="MX4.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Row Operations as Matrix Multiplication (MX4)</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="MX4.html#subsection-100" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Class Activities</span></a></div></li>
+<li><div class="toc-item"><a href="MX4.html#subsection-101" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Videos</span></a></div></li>
+<li><div class="toc-item"><a href="MX4.html#subsection-102" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Slideshow</span></a></div></li>
+<li><div class="toc-item"><a href="MX4.html#exercises-21" class="internal"><span class="codenumber">4.4.4</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="MX4.html#subsection-103" class="internal"><span class="codenumber">4.4.5</span> <span class="title">Sample Problem and Solution</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -521,45 +568,45 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <li>
 <div class="toc-item"><a href="GT1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Row Operations and Determinants (GT1)</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="GT1.html#subsection-100" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Class Activities</span></a></div></li>
-<li><div class="toc-item"><a href="GT1.html#subsection-101" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Videos</span></a></div></li>
-<li><div class="toc-item"><a href="GT1.html#subsection-102" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Slideshow</span></a></div></li>
-<li><div class="toc-item"><a href="GT1.html#exercises-21" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Exercises</span></a></div></li>
-<li><div class="toc-item"><a href="GT1.html#subsection-103" class="internal"><span class="codenumber">5.1.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
-<li><div class="toc-item"><a href="GT1.html#subsection-104" class="internal"><span class="codenumber">5.1.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+<li><div class="toc-item"><a href="GT1.html#subsection-104" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Class Activities</span></a></div></li>
+<li><div class="toc-item"><a href="GT1.html#subsection-105" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Videos</span></a></div></li>
+<li><div class="toc-item"><a href="GT1.html#subsection-106" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Slideshow</span></a></div></li>
+<li><div class="toc-item"><a href="GT1.html#exercises-22" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="GT1.html#subsection-107" class="internal"><span class="codenumber">5.1.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li><div class="toc-item"><a href="GT1.html#subsection-108" class="internal"><span class="codenumber">5.1.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="GT2.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Computing Determinants (GT2)</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="GT2.html#subsection-105" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Class Activities</span></a></div></li>
-<li><div class="toc-item"><a href="GT2.html#subsection-106" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Videos</span></a></div></li>
-<li><div class="toc-item"><a href="GT2.html#subsection-107" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Slideshow</span></a></div></li>
-<li><div class="toc-item"><a href="GT2.html#exercises-22" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Exercises</span></a></div></li>
-<li><div class="toc-item"><a href="GT2.html#subsection-108" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
-<li><div class="toc-item"><a href="GT2.html#subsection-109" class="internal"><span class="codenumber">5.2.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+<li><div class="toc-item"><a href="GT2.html#subsection-109" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Class Activities</span></a></div></li>
+<li><div class="toc-item"><a href="GT2.html#subsection-110" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Videos</span></a></div></li>
+<li><div class="toc-item"><a href="GT2.html#subsection-111" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Slideshow</span></a></div></li>
+<li><div class="toc-item"><a href="GT2.html#exercises-23" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="GT2.html#subsection-112" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li><div class="toc-item"><a href="GT2.html#subsection-113" class="internal"><span class="codenumber">5.2.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="GT3.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Characteristic Polynomials (GT3)</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="GT3.html#subsection-110" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Class Activities</span></a></div></li>
-<li><div class="toc-item"><a href="GT3.html#subsection-111" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Videos</span></a></div></li>
-<li><div class="toc-item"><a href="GT3.html#subsection-112" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Slideshow</span></a></div></li>
-<li><div class="toc-item"><a href="GT3.html#exercises-23" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises</span></a></div></li>
-<li><div class="toc-item"><a href="GT3.html#subsection-113" class="internal"><span class="codenumber">5.3.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
-<li><div class="toc-item"><a href="GT3.html#subsection-114" class="internal"><span class="codenumber">5.3.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+<li><div class="toc-item"><a href="GT3.html#subsection-114" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Class Activities</span></a></div></li>
+<li><div class="toc-item"><a href="GT3.html#subsection-115" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Videos</span></a></div></li>
+<li><div class="toc-item"><a href="GT3.html#subsection-116" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Slideshow</span></a></div></li>
+<li><div class="toc-item"><a href="GT3.html#exercises-24" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="GT3.html#subsection-117" class="internal"><span class="codenumber">5.3.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li><div class="toc-item"><a href="GT3.html#subsection-118" class="internal"><span class="codenumber">5.3.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="GT4.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Eigenvectors and Eigenspaces (GT4)</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="GT4.html#subsection-115" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Class Activities</span></a></div></li>
-<li><div class="toc-item"><a href="GT4.html#subsection-116" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Videos</span></a></div></li>
-<li><div class="toc-item"><a href="GT4.html#subsection-117" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Slideshow</span></a></div></li>
-<li><div class="toc-item"><a href="GT4.html#exercises-24" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
-<li><div class="toc-item"><a href="GT4.html#subsection-118" class="internal"><span class="codenumber">5.4.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
-<li><div class="toc-item"><a href="GT4.html#subsection-119" class="internal"><span class="codenumber">5.4.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+<li><div class="toc-item"><a href="GT4.html#subsection-119" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Class Activities</span></a></div></li>
+<li><div class="toc-item"><a href="GT4.html#subsection-120" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Videos</span></a></div></li>
+<li><div class="toc-item"><a href="GT4.html#subsection-121" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Slideshow</span></a></div></li>
+<li><div class="toc-item"><a href="GT4.html#exercises-25" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="GT4.html#subsection-122" class="internal"><span class="codenumber">5.4.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li><div class="toc-item"><a href="GT4.html#subsection-123" class="internal"><span class="codenumber">5.4.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -573,22 +620,22 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <li>
 <div class="toc-item"><a href="truss.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Civil Engineering: Trusses and Struts</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="truss.html#subsection-120" class="internal"><span class="codenumber">A.1.1</span> <span class="title">Activities</span></a></div></li>
-<li><div class="toc-item"><a href="truss.html#subsection-121" class="internal"><span class="codenumber">A.1.2</span> <span class="title">Slideshow</span></a></div></li>
+<li><div class="toc-item"><a href="truss.html#subsection-124" class="internal"><span class="codenumber">A.1.1</span> <span class="title">Activities</span></a></div></li>
+<li><div class="toc-item"><a href="truss.html#subsection-125" class="internal"><span class="codenumber">A.1.2</span> <span class="title">Slideshow</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="pagerank.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Computer Science: PageRank</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="pagerank.html#subsection-122" class="internal"><span class="codenumber">A.2.1</span> <span class="title">Activities</span></a></div></li>
-<li><div class="toc-item"><a href="pagerank.html#subsection-123" class="internal"><span class="codenumber">A.2.2</span> <span class="title">Slideshow</span></a></div></li>
+<li><div class="toc-item"><a href="pagerank.html#subsection-126" class="internal"><span class="codenumber">A.2.1</span> <span class="title">Activities</span></a></div></li>
+<li><div class="toc-item"><a href="pagerank.html#subsection-127" class="internal"><span class="codenumber">A.2.2</span> <span class="title">Slideshow</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="geology.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Geology: Phases and Components</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="geology.html#subsection-124" class="internal"><span class="codenumber">A.3.1</span> <span class="title">Activities</span></a></div></li>
-<li><div class="toc-item"><a href="geology.html#subsection-125" class="internal"><span class="codenumber">A.3.2</span> <span class="title">Slideshow</span></a></div></li>
+<li><div class="toc-item"><a href="geology.html#subsection-128" class="internal"><span class="codenumber">A.3.1</span> <span class="title">Activities</span></a></div></li>
+<li><div class="toc-item"><a href="geology.html#subsection-129" class="internal"><span class="codenumber">A.3.2</span> <span class="title">Slideshow</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -605,16 +652,16 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="MX2"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Row Operations as Matrix Multiplication (MX2)</span>
+<span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">The Inverse of a Matrix (MX2)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-23"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
-<ul class="disc"><li id="li-652"><div class="para" id="p-1017">Express row operations through matrix multiplication.</div></li></ul></article><section class="subsection" id="subsection-91"><h3 class="heading hide-type">
+<ul class="disc"><li id="li-679"><div class="para" id="p-1045">Determine if a matrix is invertible, and if so, compute its inverse.</div></li></ul></article><section class="subsection" id="subsection-91"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.1</span> <span class="title">Class Activities</span>
 </h3>
 <article class="activity project-like" id="activity-124"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1018">
+<div class="para logical" id="p-1046">
 <div class="para">Let <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]\text{.}\)</span> Find a <span class="process-math">\(3 \times 3\)</span> matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(BA=A\text{,}\)</span> that is,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -631,7 +678,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
 <article class="definition definition-like" id="definition-28"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1019">
+<div class="para logical" id="p-1047">
 <div class="para">The identity matrix <span class="process-math">\(I_n\)</span> (or just <span class="process-math">\(I\)</span> when <span class="process-math">\(n\)</span> is obvious from context) is the <span class="process-math">\(n \times n\)</span> matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -643,7 +690,7 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 </div></article><article class="fact theorem-like" id="fact-19"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1020">
+<div class="para logical" id="p-1048">
 <div class="para">For any square matrix <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(IA=AI=A\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -660,153 +707,151 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 </div></article><article class="activity project-like" id="activity-125"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-55"><div class="para" id="p-1021">Tweaking the identity matrix slightly allows us to write row operations in terms of matrix multiplication.</div></div>
-<article class="task exercise-like" id="task-141"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para logical" id="p-1022">
-<div class="para">Create a matrix that doubles the third row of <span class="process-math">\(A\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
-\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
-=
-\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 2 &amp; 2 &amp; -2 \end{array}\right]
-\end{equation*}
-</div>
-</div></article><article class="task exercise-like" id="task-142"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para logical" id="p-1023">
-<div class="para">Create a matrix that swaps the second and third rows of <span class="process-math">\(A\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
-\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
-=
-\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 1 &amp; 1 &amp; -1 \\ 0 &amp; 3 &amp; 2 \end{array}\right]
-\end{equation*}
-</div>
-</div></article><article class="task exercise-like" id="task-143"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para logical" id="p-1024">
-<div class="para">Create a matrix that adds <span class="process-math">\(5\)</span> times the third row of <span class="process-math">\(A\)</span> to the first row:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
-\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
-=
-\left[\begin{array}{ccc} 2+5(1) &amp; 7+5(1) &amp; -1+5(-1) \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
-\end{equation*}
-</div>
-</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-32"><script type="text/x-sage"></script></pre>
-<article class="fact theorem-like" id="fact-20"><h4 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
+<div class="para" id="p-1049">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^m\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span> Sort the following items into three groups of statements: a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">injective</em>, a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">surjective</em>, and a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">bijective</em>.</div> <ol class="upper-alpha">
+<li id="li-680"><div class="para" id="p-1050">
+<span class="process-math">\(A\vec x=\vec b\)</span> has a solution for all <span class="process-math">\(\vec b\in\IR^m\)</span>
+</div></li>
+<li id="li-681"><div class="para" id="p-1051">
+<span class="process-math">\(A\vec x=\vec b\)</span> has a unique solution for all <span class="process-math">\(\vec b\in\IR^m\)</span>
+</div></li>
+<li id="li-682"><div class="para" id="p-1052">
+<span class="process-math">\(A\vec x=\vec 0\)</span> has a unique solution.</div></li>
+<li id="li-683"><div class="para" id="p-1053">The columns of <span class="process-math">\(A\)</span> span <span class="process-math">\(\IR^m\)</span>
+</div></li>
+<li id="li-684"><div class="para" id="p-1054">The columns of <span class="process-math">\(A\)</span> are linearly independent</div></li>
+<li id="li-685"><div class="para" id="p-1055">The columns of <span class="process-math">\(A\)</span> are a basis of <span class="process-math">\(\IR^m\)</span>
+</div></li>
+<li id="li-686"><div class="para" id="p-1056">Every column of <span class="process-math">\(\RREF(A)\)</span> has a pivot</div></li>
+<li id="li-687"><div class="para" id="p-1057">Every row of <span class="process-math">\(\RREF(A)\)</span> has a pivot</div></li>
+<li id="li-688"><div class="para" id="p-1058">
+<span class="process-math">\(m=n\)</span> and <span class="process-math">\(\RREF(A)=I\)</span>
+</div></li>
+</ol></article><article class="activity project-like" id="activity-126"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1025">If <span class="process-math">\(R\)</span> is the result of applying a row operation to <span class="process-math">\(I\text{,}\)</span> then <span class="process-math">\(RA\)</span> is the result of applying the same row operation to <span class="process-math">\(A\text{.}\)</span>
+<div class="para" id="p-1059">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^3\)</span> be the linear transformation given by the standard matrix <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; 0 \\ 2 &amp; 1 &amp; 4 \\ 1 &amp; 1 &amp; 3 \end{array}\right]\text{.}\)</span>
+</div> <div class="para" id="p-1060">Write an augmented matrix representing the system of equations given by <span class="process-math">\(T(\vec x)=\vec{0}\text{,}\)</span> that is, <span class="process-math">\(A\vec x=\left[\begin{array}{c}0 \\ 0 \\ 0 \end{array}\right]\text{.}\)</span> Then solve <span class="process-math">\(T(\vec x)=\vec{0}\)</span> to find the kernel of <span class="process-math">\(T\text{.}\)</span>
+</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-32"><script type="text/x-sage"></script></pre>
+<article class="definition definition-like" id="definition-29"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1061">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^n\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span>
 </div> <ul class="disc">
-<li id="li-653"><div class="para" id="p-1026">Scaling a row: <span class="process-math">\(R=
-\left[\begin{array}{ccc}
-c &amp; 0 &amp; 0 \\
-0 &amp; 1 &amp; 0 \\
-0 &amp; 0 &amp; 1
-\end{array}\right]\)</span>
-</div></li>
-<li id="li-654"><div class="para" id="p-1027">Swapping rows: <span class="process-math">\(R=
-\left[\begin{array}{ccc}
-0 &amp; 1 &amp; 0 \\
-1 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 1
-\end{array}\right]\)</span>
-</div></li>
-<li id="li-655"><div class="para" id="p-1028">Adding a row multiple to another row: <span class="process-math">\(R=
-\left[\begin{array}{ccc}
-1 &amp; 0 &amp; c \\
-0 &amp; 1 &amp; 0 \\
-0 &amp; 0 &amp; 1
-\end{array}\right]\)</span>
-</div></li>
-</ul> <div class="para logical" id="p-1029">
-<div class="para">Such matrices can be chained together to emulate multiple row operations. In particular,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\RREF(A)=R_k\dots R_2R_1A
-\end{equation*}
-</div>
-<div class="para">for some sequence of matrices <span class="process-math">\(R_1,R_2,\dots,R_k\text{.}\)</span>
-</div>
-</div></article><article class="activity project-like" id="activity-126"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span>
+<li id="li-689"><div class="para" id="p-1062">If <span class="process-math">\(T\)</span> is a bijection and <span class="process-math">\(\vec b\)</span> is any <span class="process-math">\(\IR^n\)</span> vector, then <span class="process-math">\(T(\vec x)=A\vec x=\vec b\)</span> has a unique solution.</div></li>
+<li id="li-690"><div class="para" id="p-1063">So we may define an <dfn class="terminology">inverse map</dfn> <span class="process-math">\(T^{-1} : \IR^n \rightarrow \IR^n\)</span> by setting <span class="process-math">\(T^{-1}(\vec b)\)</span> to be this unique solution.</div></li>
+<li id="li-691"><div class="para" id="p-1064">Let <span class="process-math">\(A^{-1}\)</span> be the standard matrix for <span class="process-math">\(T^{-1}\text{.}\)</span> We call <span class="process-math">\(A^{-1}\)</span> the <dfn class="terminology">inverse matrix</dfn> of <span class="process-math">\(A\text{,}\)</span> so we also say that <span class="process-math">\(A\)</span> is <dfn class="terminology">invertible</dfn>.</div></li>
+</ul></article><article class="activity project-like" id="activity-127"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.7</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1030">Consider the two row operations <span class="process-math">\(R_2\leftrightarrow R_3\)</span> and <span class="process-math">\(R_1+R_2\to R_1\)</span> applied as follows to show <span class="process-math">\(A\sim B\text{:}\)</span>
-</div>
-<div class="displaymath process-math" id="md-42">
-\begin{align*}
-A
-=
-\left[\begin{array}{ccc}
--1&amp;4&amp;5\\
-0&amp;3&amp;-1\\
-1&amp;2&amp;3\\
-\end{array}\right]
-&amp;\sim
-\left[\begin{array}{ccc}
--1&amp;4&amp;5\\
-1&amp;2&amp;3\\
-0&amp;3&amp;-1\\
-\end{array}\right]\\
-&amp;\sim
-\left[\begin{array}{ccc}
--1+1&amp;4+2&amp;5+3\\
-1&amp;2&amp;3\\
-0&amp;3&amp;-1\\
-\end{array}\right]
-=
-\left[\begin{array}{ccc}
-0&amp;6&amp;8\\
-1&amp;2&amp;3\\
-0&amp;3&amp;-1\\
-\end{array}\right]
-= 
-B
-\end{align*}
-</div>
-<div class="para logical" id="p-1031">
-<div class="para">Express these row operations as matrix multiplication by expressing <span class="process-math">\(B\)</span> as the product of two matrices and <span class="process-math">\(A\text{:}\)</span>
-</div>
+<div class="introduction" id="introduction-59"><div class="para" id="p-1065">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^3\)</span> be the linear transformation given by the standard matrix <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]\text{.}\)</span>
+</div></div>
+<article class="task exercise-like" id="task-150"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-1066">Write an augmented matrix representing the system of equations given by <span class="process-math">\(T(\vec x)=\vec{e}_1\text{,}\)</span> that is, <span class="process-math">\(A\vec x=\left[\begin{array}{c}1 \\ 0 \\ 0 \end{array}\right]\text{.}\)</span> Then solve <span class="process-math">\(T(\vec x)=\vec{e}_1\)</span> to find <span class="process-math">\(T^{-1}(\vec{e}_1)\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-151"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-1067">Solve <span class="process-math">\(T(\vec x)=\vec{e}_2\)</span> to find <span class="process-math">\(T^{-1}(\vec{e}_2)\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-152"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="p-1068">Solve <span class="process-math">\(T(\vec x)=\vec{e}_3\)</span> to find <span class="process-math">\(T^{-1}(\vec{e}_3)\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-153"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="p-1069">Write <span class="process-math">\(A^{-1}\text{,}\)</span> the standard matrix for <span class="process-math">\(T^{-1}\text{.}\)</span>
+</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-33"><script type="text/x-sage"></script></pre>
+<article class="observation remark-like" id="observation-20"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">4.2.8</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-1070">
+<div class="para">We could have solved these three systems simultaneously by row reducing the matrix <span class="process-math">\([A\,|\,I]\)</span> at once.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-B =
-\left[\begin{array}{ccc}
-\unknown&amp;\unknown&amp;\unknown\\
-\unknown&amp;\unknown&amp;\unknown\\
-\unknown&amp;\unknown&amp;\unknown
+\left[\begin{array}{ccc|ccc}
+2 &amp; -1 &amp; -6 &amp; 1 &amp; 0 &amp; 0 \\
+2 &amp; 1 &amp; 3 &amp; 0 &amp; 1 &amp; 0 \\
+1 &amp; 1 &amp; 4 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right] \sim
+\left[\begin{array}{ccc|ccc}
+1 &amp; 0 &amp; 0 &amp; 1 &amp; -2 &amp; 3 \\
+0 &amp; 1 &amp; 0 &amp; -5 &amp; 14 &amp; -18 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; -3 &amp; 4
 \end{array}\right]
-\left[\begin{array}{ccc}
-\unknown&amp;\unknown&amp;\unknown\\
-\unknown&amp;\unknown&amp;\unknown\\
-\unknown&amp;\unknown&amp;\unknown
-\end{array}\right]
-A
 \end{equation*}
 </div>
-<div class="para">Check your work using technology.</div>
-</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-33"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-92"><h3 class="heading hide-type">
+</div></article><article class="activity project-like" id="activity-128"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1071">Find the inverse <span class="process-math">\(A^{-1}\)</span> of the matrix <span class="process-math">\(A=\left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; -2 \end{array}\right]\)</span> by row-reducing <span class="process-math">\([A\,|\,I]\text{.}\)</span>
+</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-34"><script type="text/x-sage"></script></pre>
+<article class="activity project-like" id="activity-129"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.10</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1072">Is the matrix <span class="process-math">\(\left[\begin{array}{ccc} 2 &amp; 3 &amp; 1 \\ -1 &amp; -4 &amp; 2 \\ 0 &amp; -5 &amp; 5 \end{array}\right]\)</span> invertible? Give a reason for your answer.</div></article><pre class="ptx-sagecell sagecell-octave" id="sage-35"><script type="text/x-sage"></script></pre>
+<article class="observation remark-like" id="observation-21"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">4.2.11</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1073">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(\RREF(A) = I_n\text{.}\)</span>
+</div></article><article class="activity project-like" id="activity-130"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.12</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-60"><div class="para" id="p-1074">Let <span class="process-math">\(T:\IR^2\to\IR^2\)</span> be the bijective linear map defined by <span class="process-math">\(T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)=\left[\begin{array}{c} 2x -3y \\ -3x + 5y\end{array}\right]\text{,}\)</span> with the inverse map <span class="process-math">\(T^{-1}\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)=\left[\begin{array}{c} 5x+ 3y \\ 3x + 2y\end{array}\right]\text{.}\)</span>
+</div></div>
+<article class="task exercise-like" id="task-154"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-1075">Compute <span class="process-math">\((T^{-1}\circ T)\left(\left[\begin{array}{c}-2\\1\end{array}\right]\right)\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-155"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-1076">
+<div class="para">If <span class="process-math">\(A\)</span> is the standard matrix for <span class="process-math">\(T\)</span> and <span class="process-math">\(A^{-1}\)</span> is the standard matrix for <span class="process-math">\(T^{-1}\text{,}\)</span> find the <span class="process-math">\(2\times 2\)</span> matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^{-1}A=\left[\begin{array}{ccc}\unknown&amp;\unknown\\\unknown&amp;\unknown\end{array}\right].
+\end{equation*}
+</div>
+</div></article></article><article class="observation remark-like" id="observation-22"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">4.2.13</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1077">
+<span class="process-math">\(T^{-1}\circ T=T\circ T^{-1}\)</span> is the identity map for any bijective linear transformation <span class="process-math">\(T\text{.}\)</span> Therefore <span class="process-math">\(A^{-1}A=AA^{-1}\)</span> equals the identity matrix <span class="process-math">\(I\)</span> for any invertible matrix <span class="process-math">\(A\text{.}\)</span>
+</div></article></section><section class="subsection" id="subsection-92"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.2</span> <span class="title">Videos</span>
 </h3>
-<figure class="figure figure-like" id="figure-44"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-MX2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/5kpk67ABLwY?&amp;modestbranding=1&amp;rel=0"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">44<span class="period">.</span></span><span class="space"> </span>Video: Row operations as matrix multiplication</figcaption></figure></section><section class="subsection" id="subsection-93"><h3 class="heading hide-type">
+<figure class="figure figure-like" id="figure-43"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-MX2-1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/an-Qo2QEyXU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">43<span class="period">.</span></span><span class="space"> </span>Video: Invertible matrices</figcaption></figure><figure class="figure figure-like" id="figure-44"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-MX2-2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/9aXvJGwYZ90?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">44<span class="period">.</span></span><span class="space"> </span>Video: Finding the inverse of a matrix</figcaption></figure></section><section class="subsection" id="subsection-93"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.3</span> <span class="title">Slideshow</span>
 </h3>
-<div class="para" id="p-1032">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/MX2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/MX2.slides.html</code></a>.</div></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
+<div class="para" id="p-1078">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/MX2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/MX2.slides.html</code></a>.</div></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">4.2.4</span> <span class="title">Exercises</span>
 </h3>
-<div class="para" id="p-1033">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX2/</code></a>.</div></section><section class="subsection" id="subsection-94"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.2.5</span> <span class="title">Sample Problem and Solution</span>
+<div class="para" id="p-1079">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX2/</code></a>.</div></section><section class="subsection" id="subsection-94"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
-<div class="para" id="p-1034">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-MX2.html" title="Example B.1.19: MX2">Example B.1.19</a>.</div></section></section></div>
+<article class="exploration project-like" id="exploration-43"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.2.14</span><span class="period">.</span>
+</h4>Assume <span class="process-math">\(A\)</span> is an <span class="process-math">\(n \times n\)</span> matrix. Prove the following are equivalent. Some of these results you have proven previously. <ul class="disc">
+<li id="li-692"><div class="para" id="p-derived-li-692">
+<span class="process-math">\(A\)</span> is non-singular.</div></li>
+<li id="li-693"><div class="para" id="p-derived-li-693">
+<span class="process-math">\(A\)</span> row reduces to the identity matrix.</div></li>
+<li id="li-694"><div class="para" id="p-derived-li-694">For any choice of <span class="process-math">\(\vec{b} \in \mathbb{R}^n\text{,}\)</span> the system of equations represented by the augmented matrix <span class="process-math">\([A|\vec{b}]\)</span> has a unique solution.</div></li>
+<li id="li-695"><div class="para" id="p-derived-li-695">The columns of <span class="process-math">\(A\)</span> are a linearly independent set.</div></li>
+<li id="li-696"><div class="para" id="p-derived-li-696">The columns of <span class="process-math">\(A\)</span> form a basis for <span class="process-math">\(\mathbb{R}^n\text{.}\)</span>
+</div></li>
+<li id="li-697"><div class="para" id="p-derived-li-697">The rank of <span class="process-math">\(A\)</span> is <span class="process-math">\(n\text{.}\)</span>
+</div></li>
+<li id="li-698"><div class="para" id="p-derived-li-698">The nullity of <span class="process-math">\(A\)</span> is 0.</div></li>
+<li id="li-699"><div class="para" id="p-derived-li-699">
+<span class="process-math">\(A\)</span> is invertible.</div></li>
+<li id="li-700"><div class="para" id="p-derived-li-700">The linear transformation <span class="process-math">\(T\)</span> with standard matrix <span class="process-math">\(A\)</span> is injective and surjective. Such a map is called an <em class="emphasis">isomorphism</em>.</div></li>
+</ul></article><article class="exploration project-like" id="exploration-44"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.2.15</span><span class="period">.</span>
+</h4>
+<ul class="disc">
+<li id="li-701"><div class="para" id="p-derived-li-701">Assume <span class="process-math">\(T\)</span> is a square matrix, and <span class="process-math">\(T^4\)</span> is the zero matrix. Prove that <span class="process-math">\((I - T)^{-1} = I + T + T^2 + T^3.\)</span> You will need to first prove a lemma that matrix multiplication distributes over matrix addition.</div></li>
+<li id="li-702"><div class="para" id="p-derived-li-702">Generalize your result to the case where <span class="process-math">\(T^n\)</span> is the zero matrix.</div></li>
+</ul></article></section><section class="subsection" id="subsection-95"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.6</span> <span class="title">Sample Problem and Solution</span>
+</h3>
+<div class="para" id="p-1080">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-MX2.html" title="Example B.1.19: MX2">Example B.1.19</a>.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="MX1.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="MX3.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
-<div id="ptx-page-footer">
+<div id="ptx-page-footer" class="ptx-page-footer">
 <a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
 </div>
 </body>
