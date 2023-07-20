@@ -316,27 +316,15 @@ For example, since
 <observation>
     <statement>
         <p>
-Applying Laplace expansion to a <m>2 \times 2</m> matrix yields a short formula you may have seen:
+Recall the formula for a <m>2\times 2</m> determinant found in <xref ref="GT1-observation-formula"/>:
 <me>
-  \det \left[\begin{array}{cc} {\color{blue} a} &amp; {\color{blue} b} \\ c &amp; d \end{array}\right]
-=
-  {\color{blue} a}\det \left[\begin{array}{cc} {\color{blue} 1} &amp; {\color{blue} 0} \\ 
-    c &amp; d \end{array}\right] 
-+ 
-  {\color{blue} b} \det \left[\begin{array}{cc} {\color{blue} 0} &amp; {\color{blue} 1} \\ 
-    c &amp; d \end{array}\right] 
-=
-  a\det \left[\begin{array}{cc} {\color{red} 1} &amp; {\color{red} 0} \\ 
-    {\color{red} c} &amp; d \end{array}\right] 
--
-  b \det \left[\begin{array}{cc} {\color{red} 1} &amp; {\color{red} 0} \\ 
-    {\color{red} d} &amp; c \end{array}\right] 
-= 
+  \det \left[\begin{array}{cc} a &amp; b \\ c &amp; d \end{array}\right]
+  =
   ad-bc
 </me>.
         </p>
         <p>
-There are formulas for the determinants of larger matrices,
+There are formulas and algorithms for the determinants of larger matrices,
 but they can be pretty tedious to use. For example, writing out a
 formula for a <m>4\times 4</m> determinant would require 24 different terms!
         </p>
@@ -350,9 +338,6 @@ formula for a <m>4\times 4</m> determinant would require 24 different terms!
      =
    a_{11}(a_{22}(a_{33}a_{44}-a_{43}a_{34})-a_{23}(a_{32}a_{44}-a_{42}a_{34})+\dots)+\dots
 </me>
-        <p>
-So this is why we either use Laplace expansion or row/column operations directly.
-        </p>
     </statement>
 </observation>
 
@@ -368,7 +353,7 @@ Based on the previous activities, which technique is easier for computing determ
 </p></li>
 <li><p> Laplace expansion.
 </p></li>
-<li><p> Some other technique (be prepared to describe it).
+<li><p> Some other technique.
 </p></li>
 </ol>
     </statement>
@@ -390,7 +375,7 @@ Based on the previous activities, which technique is easier for computing determ
     </statement>
 </activity>
 
-<insight>You can check your answer using Octave.
+<insight>You can check your answers using technology.
 <sage language="octave">
 <input>det([4,-3,0,0; 1,-3,2,-1; 3,2,0,3; 0,-3,2,-2])</input>
 </sage>
