@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<section xml:id="MX4" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Solving Systems with Matrix Inverses (MX4 - Coming Soon!)</title>
+<section xml:id="MX4" tbil-slides="build" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Row Operations as Matrix Multiplication (MX4)</title>
     <objectives>
         <ul>
             <li>
@@ -10,73 +10,192 @@
     </objectives>
 
 
-
 <subsection><title>Class Activities</title>
-<activity estimated-time='5'>
+
+<activity estimated-time='20'>
+    <introduction>
+        <p>
+Tweaking the identity matrix slightly allows us to write row operations
+in terms of matrix multiplication.
+        </p>
+    </introduction>
+<task>
+    <p>
+Create a matrix that doubles the third row of <m>A</m>:
+<me>
+ \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+ \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+=
+ \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 2 &amp; 2 &amp; -2 \end{array}\right]
+</me>
+    </p>
+</task>
+<task>
+    <p>
+  Create a matrix that swaps the second and third rows of <m>A</m>:
+  <me>
+   \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+   \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+  =
+  \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 1 &amp; 1 &amp; -1 \\ 0 &amp; 3 &amp; 2 \end{array}\right]
+  </me>
+    </p>
+</task>
+<task>
+    <p>
+Create a matrix that adds <m>5</m> times the third row of <m>A</m> to the first row:
+<me>
+ \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+ \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+=
+ \left[\begin{array}{ccc} 2+5(1) &amp; 7+5(1) &amp; -1+5(-1) \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+</me>
+    </p>
+</task>
+</activity>
+<sage language="octave">
+</sage>
+
+<fact>
     <statement>
         <p>
-            Notation for the theory behind the technique
-            Computational examples
-            Categorize situations where this will and won't work
-            Examples of singular coefficient matrices that still have a system with a non-unique solution
+If <m>R</m> is the result of applying a row operation to <m>I</m>, then
+<m>RA</m> is the result of applying the same row operation to <m>A</m>.
+        </p>
+<ul>
+<li>
+    <p>
+    Scaling a row: <m>R=
+  \left[\begin{array}{ccc}
+  c &amp; 0 &amp; 0 \\
+  0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{array}\right]
+</m>
+    </p>
+</li>
+<li>
+    <p>
+    Swapping rows: <m>R=
+  \left[\begin{array}{ccc}
+  0 &amp; 1 &amp; 0 \\
+  1 &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{array}\right]
+</m>
+    </p>
+</li>
+<li>
+    <p>
+    Adding a row multiple to another row: <m>R=
+  \left[\begin{array}{ccc}
+  1 &amp; 0 &amp; c \\
+  0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 1
+  \end{array}\right]
+</m>
+    </p>
+</li>
+</ul>
+        <p>
+Such matrices can be chained together to emulate multiple row operations.
+In particular,
+<me>\RREF(A)=R_k\dots R_2R_1A</me>
+for some sequence of matrices <m>R_1,R_2,\dots,R_k</m>.
+        </p>
+    </statement>
+</fact>
+
+<activity estimated-time='10'>
+    <statement>
+        <p>
+Consider the two row operations 
+<m>R_2\leftrightarrow R_3</m> and <m>R_1+R_2\to R_1</m>
+applied as follows to show <m>A\sim B</m>:
+        </p>
+        <md>
+            <mrow>
+A
+  =
+\left[\begin{array}{ccc}
+-1&amp;4&amp;5\\
+0&amp;3&amp;-1\\
+1&amp;2&amp;3\\
+\end{array}\right]
+  &amp;\sim
+\left[\begin{array}{ccc}
+-1&amp;4&amp;5\\
+1&amp;2&amp;3\\
+0&amp;3&amp;-1\\
+\end{array}\right]
+            </mrow>
+            <mrow>
+  &amp;\sim
+\left[\begin{array}{ccc}
+-1+1&amp;4+2&amp;5+3\\
+1&amp;2&amp;3\\
+0&amp;3&amp;-1\\
+\end{array}\right]
+  =
+\left[\begin{array}{ccc}
+0&amp;6&amp;8\\
+1&amp;2&amp;3\\
+0&amp;3&amp;-1\\
+\end{array}\right]
+  = 
+B
+            </mrow>
+        </md>
+        <p>
+Express these row operations as matrix multiplication
+by expressing <m>B</m> as the product of two matrices and <m>A</m>:
+<me>
+B =
+\left[\begin{array}{ccc}
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown
+\end{array}\right]
+\left[\begin{array}{ccc}
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown
+\end{array}\right]
+A
+</me>
+Check your work using technology.
         </p>
     </statement>
 </activity>
+
+<sage language="octave">
+</sage>
 </subsection>
 
     <subsection>
         <title>Videos</title>
-        NEED MX4 VIDEO
         <figure>
-            <video xml:id="video-MX3-1" youtube="an-Qo2QEyXU"> 
-              <track kind="subtitles" marker="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>
-             </video>
-            <caption>Video: Invertible matrices</caption>
+            <video xml:id="video-MX4" youtube="5kpk67ABLwY">
+              <!--<track kind="subtitles" marker="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: Row operations as matrix multiplication</caption>
         </figure>
+    </subsection>
 
+    <subsection>
+        <title>Slideshow</title>
+        <p>Slideshow of activities available at <url href="https://teambasedinquirylearning.github.io/linear-algebra/2023/MX4.slides.html"/>.</p>
     </subsection>
 
     <exercises>
-        NEED MX4 BANK
-        <p>Exercises available at <url href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX3/"/>.</p>
+        <p>Exercises available at <url href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX4/"/>.</p>
     </exercises>
-
+  
     <subsection>
         <title>Sample Problem and Solution</title>
         <p>
             Sample problem <xref ref="sample-MX4"/>.
         </p>
     </subsection>
-    
-     <subsection>    
-        <title>Mathematical Writing Explorations</title>
-         <exploration>
-            <statement>
-                Use row reduction to find the inverse of the following general matrix. Give conditions on which this inverse exists.
-                <me>\left[\begin{array}{ccc}1 &amp; b &amp; c \\ d &amp; e &amp; f \\ g &amp; h &amp; i \end{array}\right]</me>
-             </statement>
-         </exploration>
-
-<exploration>
-            <statement>Assume that <m>H</m> is invertible, and that <m>HG</m> is the zero matrix. Prove that <m>G</m> must be the zero matrix. Would this still be true if <m>H</m> were not invertible?
-                </statement>
-         </exploration>
-
-<exploration>
-            <statement>If <m>H</m> is invertible and <m>r \in \mathbb{R}</m>, what is the inverse of <m>rH</m>?
-                </statement>
-         </exploration>
-
-<exploration>
-            <statement>If <m>H</m> and <m>G</m> are invertible, is <m>H^{-1} + G^{-1} = (H+G)^{-1}</m>?
-                </statement>
-         </exploration>
-
-<exploration>
-            <statement>If <m>A</m> is nonsingular and square, and both <m>P</m> and <m>Q</m> are nonsingular, with <m>PAQ = I</m>, prove that <m>A^{-1} = QP</m>.
-             </statement>
-         </exploration>
-    </subsection>
-
 
 </section>

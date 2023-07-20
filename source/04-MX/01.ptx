@@ -14,7 +14,9 @@
     <statement>
         <p>
 If <m>T: \IR^n \rightarrow \IR^m</m> and <m>S: \IR^m \rightarrow \IR^k</m> are linear maps,
-then the composition map <m>S\circ T</m> is a linear map from <m>\IR^n \rightarrow \IR^k</m>.
+then the composition map <m>S\circ T</m>
+computed as <m> (S \circ T)(\vec{v})=S(T(\vec{v}))</m>
+is a linear map from <m>\IR^n \rightarrow \IR^k</m>.
         </p>
         <figure>
 			<image width="75%" xml:id="MX1-image-composition">
@@ -26,27 +28,27 @@ then the composition map <m>S\circ T</m> is a linear map from <m>\IR^n \rightarr
 			</image>
 			<caption>The composition of two linear maps.</caption>
         </figure>
-        <p>
-Recall that for a vector, <m>\vec{v} \in \IR^n</m>, the composition is computed as <m> (S \circ T)(\vec{v})=S(T(\vec{v}))</m>.
-        </p>
     </statement>
 </observation>
 
 
-<activity estimated-time='5'>
-    <statement>
+<activity estimated-time='20'>
+    <introduction>
         <p>
-Let <m>T: \IR^3 \rightarrow \IR^2</m> be given by the <m>2\times 3</m> standard matrix
-<m>B=\left[\begin{array}{ccc} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]</m> and
-<m>S: \IR^2 \rightarrow \IR^4</m> be given by the <m>4\times 2</m> standard matrix
-<m>A=\left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]</m>.
+Let <m>T: \IR^3 \rightarrow \IR^2</m> be defined by
+the <m>2\times 3</m> starndard matrix <m>B</m> and
+<m>S: \IR^2 \rightarrow \IR^4</m> be defined by the
+<m>4\times 2</m> standard matrix <m>A</m>:
+<me>B=\left[\begin{array}{ccc} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]
+    \hspace{2em}
+A=\left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]</me>.
         </p>
+    </introduction>
+    <task>
         <p>
 What are the domain and codomain of the composition map <m>S \circ T</m>?
         </p>
 <ol marker="A." cols="2">
-<!-- <li><p> The domain is <m>\IR ^2</m> and the codomain is <m>\IR^3</m>
-</p></li> -->
 <li><p> The domain is <m>\IR ^3</m> and the codomain is <m>\IR^2</m>
 </p></li>
 <li><p> The domain is <m>\IR ^2</m> and the codomain is <m>\IR^4</m>
@@ -55,86 +57,59 @@ What are the domain and codomain of the composition map <m>S \circ T</m>?
 </p></li>
 <li><p> The domain is <m>\IR ^4</m> and the codomain is <m>\IR^3</m>
 </p></li>
-<!-- <li><p> The domain is <m>\IR ^4</m> and the codomain is <m>\IR^2</m>
-</p></li> -->
 </ol>
-    </statement>
-</activity>
-
-
-<activity estimated-time='2'>
-    <statement>
-    <p>
-Let <m>T: \IR^3 \rightarrow \IR^2</m> be given by the <m>2\times 3</m>
-standard matrix <m>B=\left[\begin{array}{ccc} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]</m>
-and <m>S: \IR^2 \rightarrow \IR^4</m> be given by the <m>4\times 2</m> standard matrix
-<m>A=\left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]</m>.
-    </p>
-<p>
-What size will the standard matrix of <m>S \circ T:\IR^3\to\IR^4</m> be?
-(Rows <m>\times</m> Columns)
-        </p>
-<ol marker="A." cols="2">
-<li> <m>4 \times 3</m>
-</li>
-<!-- <li> <m>4 \times 2</m>
-</li> -->
-<li> <m>3 \times 4</m>
-</li>
-<li> <m>3 \times 2</m>
-</li>
-<li> <m>2 \times 4</m>
-</li>
-<!-- <li> <m>2 \times 3</m>
-</li> -->
-</ol>
-    </statement>
-</activity>
-
-<activity estimated-time='15'>
-    <introduction>
+    </task>
+    <task>
         <p>
-Let <m>T: \IR^3 \rightarrow \IR^2</m> be given by the <m>2\times 3</m> standard matrix
-<m>B=\left[\begin{array}{ccc} 2 &amp; 1 &amp; -3 \\ 5 &amp; -3 &amp; 4 \end{array}\right]</m>
-and <m>S: \IR^2 \rightarrow \IR^4</m> be given by the <m>4\times 2</m> standard matrix
-<m>A=\left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; 1 \\ 3 &amp; 5 \\ -1 &amp; -2 \end{array}\right]</m>.
-        </p>
-    </introduction>
-<task>
-    <p>
-Compute
-<me>
-  (S \circ T)(\vec{e}_1)
-    =
-  S(T(\vec{e}_1))
-    =
-  S\left(\left[\begin{array}{c} 2 \\ 5\end{array}\right]\right)
+        What size will the standard matrix of <m>S \circ T</m> be?
+                </p>
+        <ol marker="A." cols="2">
+        <li> <m>4 \text{ (rows)} \times 3 \text{ (columns)}</m>
+        </li>
+        <li> <m>3 \text{ (rows)} \times 4 \text{ (columns)}</m>
+        </li>
+        <li> <m>3 \text{ (rows)} \times 2 \text{ (columns)}</m>
+        </li>
+        <li> <m>2 \text{ (rows)} \times 4 \text{ (columns)}</m>
+        </li>
+        </ol>
+    </task>
+    <task>
+        <p>
+    Compute
+    <me>
+      (S \circ T)(\vec{e}_1)
         =
-  \left[\begin{array}{c}\unknown\\\unknown\\\unknown\\\unknown\end{array}\right].
-</me>
-    </p>
-</task>
-<task>
-    <p>
-Compute
-<m>
-  (S \circ T)(\vec{e}_2)
-</m>.
-    </p>
-</task>
-<task>
-    <p>
-Compute
-<m>
-  (S \circ T)(\vec{e}_3)
-</m>.
-    </p>
-</task>
-<task>
-    <p>
-Write the <m>4\times 3</m> standard matrix of <m>S \circ T:\IR^3\to\IR^4</m>.
-    </p>
-</task>
+      S(T(\vec{e}_1))
+        =
+      S\left(\left[\begin{array}{c} 2 \\ 5\end{array}\right]\right)
+            =
+      \left[\begin{array}{c}\unknown\\\unknown\\\unknown\\\unknown\end{array}\right].
+    </me>
+        </p>
+    </task>
+    <task>
+        <p>
+    Compute
+    <m>
+      (S \circ T)(\vec{e}_2)
+    </m>.
+        </p>
+    </task>
+    <task>
+        <p>
+    Compute
+    <m>
+      (S \circ T)(\vec{e}_3)
+    </m>.
+        </p>
+    </task>
+    <task>
+        <p>
+    Use <m>(S \circ T)(\vec{e}_1),(S \circ T)(\vec{e}_2),(S \circ T)(\vec{e}_3)</m>
+    to write the standard matrix for <m>S \circ T</m>.
+        </p>
+    </task>
 </activity>
 
 <definition>
@@ -280,12 +255,6 @@ B*A
       </me>
       Explain which two can be multiplied and why. Then show how to find their product.</p>
   </statement>
-  <answer>
-      <me>AC=\left[\begin{array}{ccc}
-9 &amp; -13 &amp; 0 \\
--9 &amp; 12 &amp; 2
-\end{array}\right]</me>
-  </answer>
 </activity>
 </subsection>
 
