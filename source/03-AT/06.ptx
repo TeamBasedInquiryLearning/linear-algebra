@@ -11,24 +11,213 @@
 
 
 <subsection><title>Class Activities</title>
+<observation>
+    <p>
+Nearly every term we've defined for Euclidean vector spaces <m>\mathbb R^n</m>
+was actually defined for all kinds of vector spaces:
+        <ul cols="2">
+            <li>
+                <p>
+                    <xref ref="EV1-definition-linear-combo"/>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <xref ref="EV1-definition-span"/>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <xref ref="EV3-definition-subspace"/>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <xref ref="EV4-definition-independence"/>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <xref ref="EV5-definition-basis"/>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <xref ref="AT1-definition-map"/>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <xref ref="AT1-definition-domain"/>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <xref ref="AT3-definition-kernel"/>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <xref ref="AT3-definition-image"/>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <xref ref="AT4-definition-injection"/>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <xref ref="AT4-definition-surjection"/>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <xref ref="AT4-definition-bijection"/>
+                </p>
+            </li>
+        </ul>
+    </p>
+</observation>
+
+<activity>
+    <statement>
+        <p>
+Let <m>V</m> be a vector space with the basis <m>\{\vec v_1,\vec v_2,\vec v_3\}</m>.
+Which of these completes the following definition for
+<m>T:V\to\mathbb R^3</m> so that <m>T</m>
+must be a bijective linear map:
+<me>T(\vec v)=T(a\vec v_1+b\vec v_2+c\vec v_3)=\left[\begin{array}{c}
+    \unknown\\\unknown\\\unknown
+  \end{array}\right]</me>
+  <ol marker="A." cols="3">
+    <li><p><m>\left[\begin{array}{c}
+        0\\ 0\\ 0
+      \end{array}\right]</m></p></li>
+    <li><p><m>\left[\begin{array}{c}
+        a+b+c\\ 0\\ 0
+    \end{array}\right]</m></p></li>
+    <li><p><m>\left[\begin{array}{c}
+        a\\ b\\ c
+        \end{array}\right]</m></p></li>
+  </ol>
+        </p>
+    </statement>
+</activity>
+
 <fact>
     <statement>
         <p>
   Every vector space with finite dimension, that is, every
   vector space <m>V</m> with a basis of the form
-  <m>\{\vec v_1,\vec v_2,\dots,\vec v_n\}</m> is said to be
-  <term>isomorphic</term><idx>isomorphic</idx> to a Euclidean space <m>\IR^n</m>, since there exists
-  a natural correspondance between vectors in <m>V</m> and vectors in <m>\IR^n</m>:
-        </p>
+  <m>\{\vec v_1,\vec v_2,\dots,\vec v_n\}</m> has a linear bijection <m>T</m>
+  with Euclidean space <m>\IR^n</m> that simply swaps its basis with
+  the standard basis for <m>\IR^n</m>:
   <me>
-    c_1\vec v_1+c_2\vec v_2+\dots+c_n\vec v_n
-    \leftrightarrow
+    T(c_1\vec v_1+c_2\vec v_2+\dots+c_n\vec v_n)
+    =
+    c_1\vec e_1+c_2\vec e_2+\dots+c_n\vec e_n
+    =
     \left[\begin{array}{c}
       c_1\\c_2\\\vdots\\c_n
     \end{array}\right]
   </me>
+  This transformation (in fact, any linear bijection between vector spaces)
+  is called an
+  <term>isomorphism</term><idx>isomorphism</idx>, and <m>V</m> is said to be
+  <term>isomorphic</term><idx>isomorphic</idx> to <m>\IR^n</m>.
+</p>
     </statement>
 </fact>
+
+<activity>
+    <introduction>
+        <p>
+The matrix space <m>M_{2,2}=\left\{\left[\begin{array}{cc}
+    a&amp;b\\c&amp;d
+\end{array}\right]\middle| a,b,c,d\in\IR\right\}</m> has the basis
+<me>
+\left\{
+\left[\begin{array}{cc}
+    1&amp;0\\0&amp;0
+\end{array}\right],
+\left[\begin{array}{cc}
+    0&amp;1\\0&amp;0
+\end{array}\right],
+\left[\begin{array}{cc}
+    0&amp;0\\1&amp;0
+\end{array}\right],
+\left[\begin{array}{cc}
+    0&amp;0\\0&amp;1
+\end{array}\right]
+\right\}
+</me>.
+        </p>
+    </introduction>
+    <task>
+        <statement>
+            <p>
+                Which Euclidean space is <m>M_{2,2}</m> isomorphic to?
+                <ol marker="A." cols="2">
+                    <li><m>\IR^2</m></li>
+                    <li><m>\IR^3</m></li>
+                    <li><m>\IR^4</m></li>
+                    <li><m>\IR^5</m></li>
+                </ol>
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                Describe an isomorphism <m>T:M_{2,2}\to\IR^{\unknown}</m>:
+                <me>
+                    T\left(\left[\begin{array}{cc}
+                        a&amp;b\\c&amp;d
+                    \end{array}\right]\right)=\left[\begin{array}{c}
+                        \unknown\\\\\vdots\\\\\unknown
+                    \end{array}\right]
+                </me>
+            </p>
+        </statement>
+    </task>
+</activity>
+
+<activity>
+    <introduction>
+        <p>
+The polynomial space <m>\P^4=\left\{ax^4+bx^3+cx^2+dx+e\middle| a,b,c,d,e\in\IR\right\}</m> has the basis
+<me>
+\left\{x^4,x^3,x^2,x,1\right\}
+</me>.
+        </p>
+    </introduction>
+    <task>
+        <statement>
+            <p>
+                Which Euclidean space is <m>\P^4</m> isomorphic to?
+                <ol marker="A." cols="2">
+                    <li><m>\IR^2</m></li>
+                    <li><m>\IR^3</m></li>
+                    <li><m>\IR^4</m></li>
+                    <li><m>\IR^5</m></li>
+                </ol>
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                Describe an isomorphism <m>T:\P^4\to\IR^{\unknown}</m>:
+                <me>
+                    T\left(ax^4+bx^3+cx^2+dx+e\right)=\left[\begin{array}{c}
+                        \unknown\\\\\vdots\\\\\unknown
+                    \end{array}\right]
+                </me>
+            </p>
+        </statement>
+    </task>
+</activity>
 
 <observation>
     <statement>
