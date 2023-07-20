@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="MX3" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Solving Systems with Matrix Inverses (MX3)</title>
+    <objectives>
+        <ul>
+            <li>
+                <xi:include href="outcomes/03.ptx"/>
+            </li>
+        </ul>
+    </objectives>
+
+
+
+<subsection><title>Class Activities</title>
+    <activity estimated-time='15'>
+        <introduction>
+            <p>
+Consider the following linear system with a unique solution:
+<me>
+\begin{matrix}
+3x_{1} &amp; - &amp; 2x_{2} &amp; - &amp; 2x_{3} &amp; - &amp; 4x_{4} &amp; = &amp; -7 \\
+2x_{1} &amp; - &amp; x_{2}  &amp; - &amp;  x_{3} &amp; - &amp; x_{4} &amp; = &amp; -1 \\
+-x_{1} &amp;   &amp;        &amp; + &amp;  x_{3} &amp;   &amp;        &amp; = &amp; -1 \\
+       &amp; - &amp; x_{2}  &amp;   &amp;        &amp; - &amp; 2x_{4} &amp; = &amp; -5 \\
+\end{matrix}
+</me>
+            </p>
+        </introduction>
+        <task>
+            <p>
+Define
+<me>
+T\left(\left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]\right)=
+\left[\begin{matrix}\hspace{1em}\unknown\hspace{1em}\\\hspace{1em}\unknown\hspace{1em}\\
+\hspace{1em}\unknown\hspace{1em}\\\hspace{1em}\unknown\hspace{1em}\end{matrix}\right]
+</me>
+so that <m>T(\vec x)=\left[\begin{matrix}-7\\-1\\-1\\-5\end{matrix}\right]</m>
+has the same solution set as this system.
+            </p>
+        </task>
+        <task>
+            <p>
+Define
+<me>
+A=
+\left[\begin{matrix}
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown
+\end{matrix}\right]
+</me>
+so that <m>A\vec x=\left[\begin{matrix}-7\\-1\\-1\\-5\end{matrix}\right]</m>
+has the same solution set as this system.
+            </p>
+        </task>
+        <task>
+            <p>
+Find
+<me>
+B=
+\left[\begin{matrix}
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown
+\end{matrix}\right]
+</me>
+so that <m>BA\vec x=\vec x</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Find <m>\vec x=BA\vec x=B\left[\begin{matrix}-7\\-1\\-1\\-5\end{matrix}\right]</m>
+to solve the system.
+            </p>
+        </task>
+    </activity>
+
+    <remark>
+            <p>
+The linear system described by the augmented matrix
+<m>[A \mid \vec w]</m> has exactly the same solution set as
+the matrix equation <m>A\vec x=\vec w</m>.
+            </p>
+    </remark>
+
+    <activity>
+        <statement>
+            <p>
+Let <m>A\vec x=\vec w</m> describe a linear system. When will this linear system
+have exactly one solution?
+<ol marker="A.">
+    <li><p>When <m>A</m> is invertible.</p></li>
+    <li><p>When <m>A</m> is not invertible.</p></li>
+    <li><p>When <m>\RREF A</m> has a non-pivot column.</p></li>
+    <li><p>When <m>\RREF A</m> has a non-pivot row.</p></li>
+</ol>
+            </p>
+        </statement>
+    </activity>
+
+    <fact>
+        <statement>
+            <p>
+When <m>A\vec x=\vec w</m> has exactly one solution, this solution is
+given by <m>\vec x=A^{-1}\vec w</m>.
+            </p>
+        </statement>
+    </fact>
+
+    <activity>
+        <introduction>
+          <p> Consider the vector equation <me>x_{1} \left[\begin{array}{c} 1 \\ 2 \\ -2 \end{array}\right] + x_{2} \left[\begin{array}{c} -2 \\ -3 \\ 3 \end{array}\right] + x_{3} \left[\begin{array}{c} 1 \\ 4 \\ -3 \end{array}\right] = \left[\begin{array}{c} -3 \\ 5 \\ -1 \end{array}\right]</me>  with a unique solution. </p>
+        </introduction>
+          <task>
+            <statement>
+              <p> Explain and demonstrate how this problem can be restated using matrix multiplication. </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p> Use the properties of matrix multiplication to find the unique solution. </p>
+            </statement>
+          </task>
+    </activity>
+</subsection>
+
+    <subsection>
+        <title>Videos</title>
+            <p>
+Video coming soon to 
+<url href="https://www.youtube.com/watch?v=kpOK7RhFEiQ&amp;list=PLwXCBkIf7xBMo3zMnD7WVt39rANLlSdmj">this YouTube playlist</url>.
+            </p>
+        <!-- <figure>
+            <video xml:id="video-MX3-1" youtube="an-Qo2QEyXU"> 
+              <track kind="subtitles" marker="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>
+             </video>
+            <caption>Video: Invertible matrices</caption>
+        </figure> -->
+
+    </subsection>
+
+    <exercises>
+        <p>Exercises available at <url href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX3/"/>.</p>
+    </exercises>
+    
+     <subsection>    
+        <title>Mathematical Writing Explorations</title>
+         <exploration>
+            <statement>
+                Use row reduction to find the inverse of the following general matrix. Give conditions on which this inverse exists.
+                <me>\left[\begin{array}{ccc}1 &amp; b &amp; c \\ d &amp; e &amp; f \\ g &amp; h &amp; i \end{array}\right]</me>
+             </statement>
+         </exploration>
+
+<exploration>
+            <statement>Assume that <m>H</m> is invertible, and that <m>HG</m> is the zero matrix. Prove that <m>G</m> must be the zero matrix. Would this still be true if <m>H</m> were not invertible?
+                </statement>
+         </exploration>
+
+<exploration>
+            <statement>If <m>H</m> is invertible and <m>r \in \mathbb{R}</m>, what is the inverse of <m>rH</m>?
+                </statement>
+         </exploration>
+
+<exploration>
+            <statement>If <m>H</m> and <m>G</m> are invertible, is <m>H^{-1} + G^{-1} = (H+G)^{-1}</m>?
+                </statement>
+         </exploration>
+
+<exploration>
+            <statement>If <m>A</m> is nonsingular and square, and both <m>P</m> and <m>Q</m> are nonsingular, with <m>PAQ = I</m>, prove that <m>A^{-1} = QP</m>.
+             </statement>
+         </exploration>
+    </subsection>
+
+
+    <subsection>
+        <title>Sample Problem and Solution</title>
+        <p>
+            Sample problem <xref ref="sample-MX3"/>.
+        </p>
+    </subsection>
+
+</section>

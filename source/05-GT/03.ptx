@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="GT3" tbil-slides="build" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Eigenvalues and Characteristic Polynomials (GT3)</title>
+    <objectives>
+        <ul>
+            <li>
+                <xi:include href="outcomes/03.ptx"/>
+            </li>
+        </ul>
+    </objectives>
+
+<subsection><title>Class Activities</title>
+<activity estimated-time='5'>
+    <statement>
+    <p>
+  An invertible matrix <m>M</m> and its inverse <m>M^{-1}</m> are given below:
+    </p>
+  <me>
+    M=\left[\begin{array}{cc}1&amp;2\\3&amp;4\end{array}\right]
+  \hspace{2em}
+    M^{-1}=\left[\begin{array}{cc}-2&amp;1\\3/2&amp;-1/2\end{array}\right]
+  </me>
+    <p>
+  Which of the following is equal to <m>\det(M)\det(M^{-1})</m>?
+    </p>
+<ol marker="A." cols="2">
+<li><p> <m>-1</m>
+</p></li>
+<li><p> <m>0</m>
+</p></li>
+<li><p> <m>1</m>
+</p></li>
+<li><p> <m>4</m>
+</p></li>
+</ol>
+    </statement>
+</activity>
+
+<fact>
+    <statement>
+<p>   For every invertible matrix <m>M</m>,
+  <me>
+    \det(M)\det(M^{-1})= \det(I)=1
+  </me>
+  so <m>\det(M^{-1})=\frac{1}{\det(M)}</m>.
+</p>
+<p>Furthermore,
+  a square matrix <m>M</m> is invertible if and only if <m>\det(M)\not=0</m>.</p>
+    </statement>
+</fact>
+
+<observation>
+    <statement>
+        <p>
+Consider the linear transformation <m>A : \IR^2 \rightarrow \IR^2</m> 
+given by the matrix <m>A = \left[\begin{array}{cc} 2 &amp; 2 \\ 0 &amp; 3 \end{array}\right]</m>.
+        </p>
+<figure>
+	<image width="75%" xml:id="GT3-image-unit-square-transform">
+		<latex-image>
+\begin{tikzpicture}
+\fill[red!50] (0,0) rectangle (1,1);
+\draw[thin,gray,&lt;-&gt;] (-1,0)-- (4,0);
+\draw[thin,gray,&lt;-&gt;] (0,-1)-- (0,4);
+\draw[thick,blue,-&gt;] (0,0) -- node[below right] {\(A \vec{e}_1\)}++ (2,0);
+\draw[thick,red,-&gt;] (0,0) -- node[below] {\(\vec{e}_1\)}++ (1,0);
+\draw[thick,blue,-&gt;] (0,0) -- node[above left] {\(A \vec{e}_2\)}++(2,3);
+\draw[thick,red,-&gt;] (0,0) -- node[left] {\(\vec{e}_2\)}++ (0,1);
+\draw[blue,dashed] (2,0) -- (4,3) -- (2,3);
+\draw[purple!50!blue,thick,-&gt;] (0,0) -- (6,3);
+\draw[purple!50!red,thick,-&gt;] (0,0) -- (2,1);
+\end{tikzpicture}
+		</latex-image>
+	</image>
+	<caption>Transformation of the unit square by the linear transformation <m>A</m></caption>
+</figure>
+    <p>
+It is easy to see geometrically that
+<me>
+  A\left[\begin{array}{c}1 \\ 0 \end{array}\right] = 
+  \left[\begin{array}{cc} 2 &amp; 2 \\ 0 &amp; 3 \end{array}\right]\left[\begin{array}{c}1 \\ 0 \end{array}\right]=
+  \left[\begin{array}{c}2 \\ 0 \end{array}\right]= 
+  2 \left[\begin{array}{c}1 \\ 0 \end{array}\right]
+</me>.
+    </p>
+    <p>
+It is less obvious (but easily checked once you find it) that
+<me>
+  A\left[\begin{array}{c} 2 \\ 1 \end{array}\right] = 
+  \left[\begin{array}{cc} 2 &amp; 2 \\ 0 &amp; 3 \end{array}\right]\left[\begin{array}{c}2 \\ 1 \end{array}\right]=
+  \left[\begin{array}{c} 6 \\ 3 \end{array}\right] = 
+  3\left[\begin{array}{c} 2 \\ 1 \end{array}\right]
+</me>.
+    </p>
+    </statement>
+</observation>
+
+<definition>
+    <statement>
+        <p>
+Let <m>A \in M_{n,n}</m>.
+An <term>eigenvector</term><idx>eigenvector</idx> for <m>A</m> 
+is a vector <m>\vec{x} \in \IR^n</m> such that <m>A\vec{x}</m> is parallel to <m>\vec{x}</m>.
+        </p>
+<figure>
+	<image width="75%"  xml:id="GT3-image-eigenvector-stretch">
+		<latex-image>
+\begin{tikzpicture}
+\fill[gray!50] (0,0) rectangle (1,1);
+\draw[thin,gray,&lt;-&gt;] (-1,0)-- (4,0);
+\draw[thin,gray,&lt;-&gt;] (0,-1)-- (0,4);
+\draw[thick,blue,-&gt;] (0,0) -- node[below right] {\(A \vec{e}_1=2\vec e_1\)}++ (2,0);
+\draw[thick,red,-&gt;] (0,0) -- node[below] {\(\vec{e}_1\)}++ (1,0);
+\draw[thick,gray,-&gt;] (0,0) -- node[above left] {\(A \vec{e}_2\)}++(2,3);
+\draw[thick,gray,-&gt;] (0,0) -- node[left] {\(\vec{e}_2\)}++ (0,1);
+\draw[gray,dashed] (2,0) -- (4,3) -- (2,3);
+\draw[purple!50!blue,thick,-&gt;] (0,0) -- (6,3) 
+  node [below right] {\(
+   A\left[\begin{array}{c}2\\1\end{array}\right]
+     =
+   3\left[\begin{array}{c}2\\1\end{array}\right]
+  \)};
+\draw[purple!50!red,thick,-&gt;] (0,0) -- (2,1)
+  node [above] {\(\left[\begin{array}{c}2\\1\end{array}\right]\)};
+\end{tikzpicture}
+		</latex-image>
+	</image>
+	<caption>The map <m>A</m> stretches out the eigenvector <m>\left[\begin{array}{c}2 \\ 1 \end{array}\right]</m> by a factor of <m>3</m> (the corresponding eigenvalue).</caption>
+</figure>
+<p>
+In other words, <m>A\vec{x}=\lambda \vec{x}</m> for some scalar <m>\lambda</m>. 
+If <m>\vec x\not=\vec 0</m>, then we say <m>\vec x</m> is a <term>nontrivial eigenvector</term><idx><h>eigenvector</h></idx><idx>nontrivial</idx>
+and we call this <m>\lambda</m> an <term>eigenvalue</term><idx>eigenvalue</idx> of <m>A</m>.
+    </p>
+    </statement>
+</definition>
+
+<activity estimated-time='5'>
+    <introduction>
+        <p>
+Finding the eigenvalues <m>\lambda</m> that satisfy
+<me>
+  A\vec x=\lambda\vec x=\lambda(I\vec x)=(\lambda I)\vec x
+</me>
+for some nontrivial eigenvector <m>\vec x</m> is equivalent to finding 
+nonzero solutions for the matrix equation
+<me>
+  (A-\lambda I)\vec x =\vec 0
+</me>.
+        </p>
+      </introduction>
+      <task>
+    <p>
+If <m>\lambda</m> is an eigenvalue, and <m>T</m> is the transformation
+with standard matrix <m>A-\lambda I</m>, which of these must
+contain a non-zero vector?
+    </p>
+<ol marker="A." cols="2">
+  <li><p>The kernel of <m>T</m></p></li>
+  <li><p>The image of <m>T</m></p></li>
+  <li><p>The domain of <m>T</m></p></li>
+  <li><p>The codomain of <m>T</m></p></li>
+</ol>
+</task>
+<task>
+<p>
+Therefore, what can we conclude?
+</p>
+<ol marker="A." cols="2">
+<li><p><m>A</m> is invertible</p></li>
+<li><p><m>A</m> is not invertible</p></li>
+<li><p><m>A-\lambda I</m> is invertible</p></li>
+<li><p><m>A-\lambda I</m> is not invertible</p></li>
+</ol>
+</task>
+<task>
+<p>
+And what else?
+</p>
+<ol marker="A." cols="2">
+<li><p><m>\det A=0</m></p></li>
+<li><p><m>\det A=1</m></p></li>
+<li><p><m>\det(A-\lambda I)=0</m></p></li>
+<li><p><m>\det(A-\lambda I)=1</m></p></li>
+</ol>
+</task>
+</activity>
+
+<fact>
+    <statement>
+        <p>
+  The eigenvalues <m>\lambda</m> for a matrix <m>A</m> are exactly the values
+  that make <m>A-\lambda I</m> non-invertible.
+        </p>
+        <p>
+  Thus the eigenvalues <m>\lambda</m> for a matrix <m>A</m>
+  are the solutions to
+  the equation <me>\det(A-\lambda I)=0.</me>
+        </p>
+    </statement>
+</fact>
+
+<definition>
+    <statement>
+        <p>
+The expression <m>\det(A-\lambda I)</m> is called
+<term>characteristic polynomial</term> of <m>A</m>.
+        </p>
+        <p>
+For example, when
+<m>A=\left[\begin{array}{cc}1 &amp; 2 \\ 5 &amp; 4\end{array}\right]</m>, we have
+<me>
+  A-\lambda I=
+  \left[\begin{array}{cc}1 &amp; 2 \\ 5 &amp; 4\end{array}\right]-
+  \left[\begin{array}{cc}\lambda &amp; 0 \\ 0 &amp; \lambda\end{array}\right]=
+  \left[\begin{array}{cc}1-\lambda &amp; 2 \\ 5 &amp; 4-\lambda\end{array}\right]
+</me>.
+        </p>
+        <p>
+Thus the characteristic polynomial of <m>A</m> is
+<me>
+  \det\left[\begin{array}{cc}1-\lambda &amp; 2 \\ 5 &amp; 4-\lambda\end{array}\right]
+=
+  (1-\lambda)(4-\lambda)-(2)(5)
+=
+  \lambda^2-5\lambda-6
+</me>
+and its eigenvalues are the solutions <m>-1,6</m> to <m>\lambda^2-5\lambda-6=0</m>.
+        </p>
+    </statement>
+</definition>
+
+<activity estimated-time='10'>
+    <introduction>
+        <p>
+Let <m>A = \left[\begin{array}{cc} 5 &amp; 2 \\ -3 &amp; -2 \end{array}\right]</m>.
+        </p>
+    </introduction>
+<task>
+    <p>
+Compute <m>\det (A-\lambda I)</m> to determine the characteristic polynomial of <m>A</m>.
+    </p>
+</task>
+<task>
+    <p>
+Set this characteristic polynomial equal to zero and factor to determine the eigenvalues of <m>A</m>.
+    </p>
+</task>
+</activity>
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+  Find all the eigenvalues for the matrix
+  <m>A=\left[\begin{array}{cc} 3 &amp; -3 \\ 2 &amp; -4 \end{array}\right]</m>.
+        </p>
+    </statement>
+</activity>
+
+<activity estimated-time='5'>
+        <statement>
+    <p>
+  Find all the eigenvalues for the matrix
+  <m>A=\left[\begin{array}{cc} 1 &amp; -4 \\ 0 &amp; 5 \end{array}\right]</m>.
+    </p>
+        </statement>
+</activity>
+
+<activity estimated-time='10'>
+    <statement>
+        <p>
+  Find all the eigenvalues for the matrix
+  <m>A=\left[\begin{array}{ccc} 3 &amp; -3 &amp; 1 \\ 0 &amp; -4 &amp; 2 \\ 0 &amp; 0 &amp; 7 \end{array}\right]</m>.
+        </p>
+    </statement>
+</activity>
+</subsection>
+
+<!-- TODO - algebraic and geometric multiplicity -->
+    
+    <subsection>
+        <title>Videos</title>
+        <figure>
+            <video xml:id="video-GT3" youtube="wTD3axcZ3Gk">
+              <!--<track kind="subtitles" marker="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: Finding eigenvalues</caption>
+        </figure>
+    </subsection>
+
+    <subsection>
+        <title>Slideshow</title>
+        <p>Slideshow of activities available at <url href="https://teambasedinquirylearning.github.io/linear-algebra/2023/GT3.slides.html"/>.</p>
+    </subsection>
+
+    <exercises>
+        <p>Exercises available at <url href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/GT3/"/>.</p>
+    </exercises>
+ <subsection>    
+    <title>Mathematical Writing Explorations</title>
+            <exploration>
+                <statement> 
+                    What are the maximum and minimum number of eigenvalues associated with an <m>n \times n</m> matrix? Write small examples to convince yourself you are correct, and then prove this in generality.
+                </statement>
+     </exploration>
+    </subsection>
+    <subsection>
+        <title>Sample Problem and Solution</title>
+        <p>
+            Sample problem <xref ref="sample-GT3"/>.
+        </p>
+    </subsection>
+
+</section>

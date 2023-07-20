@@ -13,11 +13,11 @@
 
 <subsection><title>Class Activities</title>
     
-    <definition>
+    <definition xml:id="EV3-definition-subspace">
         <statement>
             <p>
-      A subset <m>S\subseteq\IR^n</m> of a Euclidean vector space is called a <term>subspace</term><idx>subspace</idx>
-      provided it is equal to the span of a set of vectors.
+      A subset <m>S</m> of a vector space is called a <term>subspace</term><idx>subspace</idx>
+      provided it is equal to the span of a set of vectors from that space.
         </p>
     </statement>
     </definition>
@@ -44,25 +44,37 @@
     </introduction>
     <task>
         <statement>
-            <p> For any unspecified <m>\vec{u}, \vec{v} \in S</m>, is it the case that <m>\vec{u} + \vec{v} \in S</m>?</p>
+            <p> 
+                For any unspecified <m>\vec{u}, \vec{v} \in S</m>, 
+                is it the case that <m>\vec{u} + \vec{v} \in S</m>?
+                <ol marker="A." cols="2"><li><p>Yes.</p></li><li><p>No.</p></li></ol>
+            </p>
         </statement>
     </task>
     <task>
         <statement>
-            <p> For any unspecified <m>\vec{u} \in S</m> and <m>c\in\IR</m>,
-                is it the case that <m>\vec{u}+\left[\begin{array}{c} c \\ c \\ c \end{array}\right] \in S</m>?</p>
+            <p> 
+                For any unspecified <m>\vec{u} \in S</m> and <m>c\in\IR</m>,
+                is it the case that 
+                <m>\vec{u}+\left[\begin{array}{c} c \\ c \\ c \end{array}\right] \in S</m>?
+                <ol marker="A." cols="2"><li><p>Yes.</p></li><li><p>No.</p></li></ol>
+            </p>
         </statement>
     </task>
     <task>
         <statement>
-            <p> For any unspecified <m>\vec{u} \in S</m> and <m>c\in\IR</m>, is it the case that <m>c\vec{u} \in S</m>?</p>
+            <p> 
+                For any unspecified <m>\vec{u} \in S</m> and <m>c\in\IR</m>, 
+                is it the case that <m>c\vec{u} \in S</m>?
+                <ol marker="A." cols="2"><li><p>Yes.</p></li><li><p>No.</p></li></ol>
+            </p>
         </statement>
     </task>
 </activity>
     
-<fact>
+<fact xml:id="EV3-fact-subspace">
         <p>
-  A subset <m>S\subseteq\IR^n</m> of a Euclidean vector space is a subspace
+  A sub<em>set</em> <m>S</m> of a vector space is a sub<em>space</em>
   provided:
         <ul>
         <li>
@@ -88,7 +100,7 @@ we'll learn what this means more carefully in a later chapter.
         </p>
         <figure xml:id="EV3-planar-subspace-vs-r2">
 			<caption>A planar subset of <m>\IR^3</m> compared with the plane <m>\IR^2</m>.</caption>
-			<image width="100%">
+			<image width="100%" xml:id="EV3-image-r2-in-r3">
 			    <description>A planar subset of <m>\IR^3</m> compared with the plane <m>\IR^2</m>.</description>
 				<latex-image>
                 \begin{tikzpicture}[scale=0.5]
@@ -127,7 +139,7 @@ Let <m>S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2
     Let's assume that <m>\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]</m> and
     <m>\vec{w} = \left[\begin{array}{c} a \\ b \\ c \end{array}\right] </m> are in <m>S</m>.
     What are we allowed to assume?
-    <ol marker="A.">
+    <ol marker="A." cols='2'>
         <li>
             <p>
                 <m>x+2y+z=0</m>.
@@ -177,13 +189,13 @@ Let <m>S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2
     </task>
     <task>
         <p>
-Use these assumptions to verify this equation.
+Use the assumptions from (a) to verify the equation from (b).
         </p>
     </task>
     <task>
         <p>
       Is <m>S</m> is a subspace of <m>\IR^3</m>?
-      <ol marker="A.">
+      <ol marker="A." cols="3">
           <li>
               <p>
                   Yes
@@ -212,7 +224,7 @@ Use these assumptions to verify this equation.
 <task>
     <p>
   Is <m>S</m> is a subspace of <m>\IR^3</m>?
-  <ol marker="A.">
+  <ol marker="A." cols="3">
       <li>
           <p>
               Yes
@@ -242,7 +254,7 @@ Let <m>S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2
     <task>
         <p>
 Which of these statements is valid?
-<ol>
+<ol marker="A.">
     <li>
         <p>
 <m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em>and</em>
@@ -328,7 +340,7 @@ nonempty subset <m>W</m> isn't a subspace:
     <p>
 If you cannot do any of these, then <m>W</m> can be proven to be a subspace
 by doing <em>both</em> of the following:
-<ul>
+<ol>
 <li>
     <p>
     Prove that <m>\vec u+\vec v\in W</m> whenever <m>\vec u,\vec v\in W</m>.
@@ -339,7 +351,7 @@ by doing <em>both</em> of the following:
     Prove that <m>c\vec v\in W</m> whenever <m>c\in\IR,\vec v\in W</m>.
     </p>
   </li>
-</ul>
+</ol>
 </p>
 </remark>
 
@@ -398,7 +410,7 @@ by doing <em>both</em> of the following:
         <blockquote>
             <p>
 Let <m>\left[\begin{array}{c} x \\ y \end{array}\right]\in U</m>, so we know that <m>x+y=xy</m>.
-We want to show <m>k\left[\begin{array}{c} x \\ y \end{array}\right]=\left[\begin{array}{c} kx \\ ky \end{array}\right]=\in U</m>,
+We want to show <m>k\left[\begin{array}{c} x \\ y \end{array}\right]=\left[\begin{array}{c} kx \\ ky \end{array}\right]\in U</m>,
 that is, <m>(kx)+(ky)=(kx)(ky)</m>. This is verified by the following calculation:
 <md>
     <mrow>
@@ -418,7 +430,7 @@ k(x+y)&amp;=k^2xy
         </blockquote>
         <p>
             Is this reasoning valid?
-            <ol marker="A.">
+            <ol marker="A." cols="2">
                 <li>
                     <p>
                         Yes
@@ -439,13 +451,14 @@ k(x+y)&amp;=k^2xy
 
     <remark>
             <p>
-Proofs of an equality <m>LEFT=RIGHT</m> should generally be of one of two forms:
+Proofs of an equality <m>\mathrm{LEFT}=\mathrm{RIGHT}</m> should generally be of one of these forms:
 <ol>
     <li>
-        <p>Using a chain of equalities:
+        <p>
+            Using a chain of equalities:
             <md>
                 <mrow>
-            LEFT &amp;= \cdots
+            \mathrm{LEFT} &amp;= \cdots
                 </mrow>
                 <mrow>
              &amp;= \cdots
@@ -454,17 +467,32 @@ Proofs of an equality <m>LEFT=RIGHT</m> should generally be of one of two forms:
              &amp;= \cdots
                 </mrow>
                 <mrow>
-             &amp;= RIGHT
+             &amp;= \mathrm{RIGHT}
+                    </mrow>
+            </md>
+            Alternatively:
+            <md>
+                <mrow>
+            \mathrm{LEFT} &amp;= \cdots &amp; \mathrm{RIGHT} &amp;=\cdots
+                </mrow>
+                <mrow>
+             &amp;= \cdots &amp; &amp;= \cdots
+                </mrow>
+                <mrow>
+              &amp;= \cdots &amp; &amp;= \cdots
+                </mrow>
+                <mrow>
+             &amp;= \mathrm{SAME}&amp; &amp;= \mathrm{SAME}
                     </mrow>
             </md>
         </p>
     </li>
     <li>
         <p>
-When the assumption <m>THIS=THAT</m> is already known or assumed to be true :
+When the assumption <m>\mathrm{THIS}=\mathrm{THAT}</m> is already known or assumed to be true :
             <md>
                 <mrow>
-                    &amp;&amp;    THIS &amp;= THAT
+                    &amp;&amp;    \mathrm{THIS} &amp;= \mathrm{THAT}
                 </mrow>
                 <mrow>
                     &amp;  \Rightarrow&amp;  \cdots &amp;= \cdots
@@ -473,7 +501,7 @@ When the assumption <m>THIS=THAT</m> is already known or assumed to be true :
                     &amp;  \Rightarrow&amp; \cdots &amp;= \cdots
                 </mrow>
                 <mrow>
-                 &amp;   \Rightarrow&amp; LEFT &amp;= RIGHT
+                 &amp;   \Rightarrow&amp; \mathrm{LEFT} &amp;= \mathrm{RIGHT}
                 </mrow>
             </md>
         </p>
@@ -484,11 +512,10 @@ When the assumption <m>THIS=THAT</m> is already known or assumed to be true :
 
     <warning>
         <p>
-The following proof is invalid, as <m>0=0</m> can always be
-proven by multiplying both sides by <m>0</m>.
+The following proof is <em>invalid</em>.
     <md>
         <mrow>
-            &amp;&amp;    LEFT &amp;= RIGHT
+            &amp;&amp;    \mathrm{LEFT} &amp;= \mathrm{RIGHT}
         </mrow>
         <mrow>
             &amp;  \Rightarrow&amp;  \cdots &amp;= \cdots
@@ -499,7 +526,13 @@ proven by multiplying both sides by <m>0</m>.
         <mrow>
          &amp;   \Rightarrow&amp; 0 &amp;= 0
         </mrow>
+        <mrow>
+         &amp;   \Rightarrow&amp; \mathrm{ANYTHING} &amp;= \mathrm{ANYTHING}
+        </mrow>
     </md>
+Basically, you cannot prove something is true by assuming it's true,
+and it's not helpful to prove to someone that zero equals itself
+(they probably already know that).
         </p>
     </warning>
 

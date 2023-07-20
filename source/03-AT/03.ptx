@@ -28,11 +28,16 @@ Which of these subspaces of <m>\IR^2</m> describes
 the set of all vectors that transform into <m>\vec 0</m>?
         </p>
 <ol marker="A." cols="2">
-<li>
-    <p>
-    <m>\setBuilder{\left[\begin{array}{c}a \\ a\end{array}\right]}{a\in\IR}</m>
-    </p>
-</li>
+  <li>
+      <p>
+      <m>\setBuilder{\left[\begin{array}{c}a \\ a\end{array}\right]}{a\in\IR}</m>
+      </p>
+  </li>
+  <li>
+      <p>
+      <m>\setBuilder{\left[\begin{array}{c}a \\ 0\end{array}\right]}{a\in\IR}</m>
+      </p>
+  </li>
 <li>
     <p>
     <m>\setList{\left[\begin{array}{c}0\\0\end{array}\right]}</m>
@@ -40,7 +45,7 @@ the set of all vectors that transform into <m>\vec 0</m>?
 </li>
 <li>
     <p>
-    <m>\IR^2=\setBuilder{\left[\begin{array}{c}x \\ y\end{array}\right]}{x,y\in\IR}</m>
+    <m>\setBuilder{\left[\begin{array}{c}a \\ b\end{array}\right]}{a,b\in\IR}</m>
     </p>
 </li>
 </ol>
@@ -48,7 +53,7 @@ the set of all vectors that transform into <m>\vec 0</m>?
 </activity>
 
     
-<definition>
+<definition xml:id="AT3-definition-kernel">
     <statement>
         <p>
 Let <m>T: V \rightarrow W</m> be a linear transformation, and let <m>\vec{z}</m> be the additive
@@ -59,7 +64,7 @@ is an important subspace of <m>V</m> defined by
 </me>
         </p>
             <figure>
-				<image width="75%">
+				<image width="75%" xml:id="AT3-image-kernel">
 					<latex-image>
   \begin{tikzpicture}[x=0.15in,y=0.15in]
     \begin{scope}[shift={(0,0)}]
@@ -117,7 +122,7 @@ the set of all vectors that transform into <m>\vec 0</m>?
     </li>
 <li>
     <p>
-    <m>\IR^3=\setBuilder{\left[\begin{array}{c}x \\ y\\z\end{array}\right]}{x,y,z\in\IR}</m>
+    <m>\setBuilder{\left[\begin{array}{c}a \\ b\\c\end{array}\right]}{a,b,c\in\IR}</m>
     </p>
 </li>
 </ol>
@@ -202,13 +207,13 @@ Which of these subspaces of <m>\IR^3</m> describes the set of all vectors that a
 </li>
 <li>
     <p>
-    <m>\IR^3=\setBuilder{\left[\begin{array}{c}x \\ y\\z\end{array}\right]}{x,y,z\in\IR}</m>
+    <m>\setBuilder{\left[\begin{array}{c}a \\ b\\c\end{array}\right]}{a,b,c\in\IR}</m>
     </p>
 </li>
 </ol>
     </statement>
 </activity>
-<definition>
+<definition xml:id="AT3-definition-image">
     <statement>
         <p>
 Let <m>T: V \rightarrow W</m> be a linear transformation.
@@ -222,7 +227,7 @@ In the examples below, the left example's image is all of <m>\IR^2</m>, but the
 right example's image is a planar subspace of <m>\IR^3</m>.
         </p>
         <figure>
-			<image width="75%">
+			<image width="75%" xml:id="AT3-image-image">
 				<latex-image>
 \begin{tikzpicture}[x=0.15in,y=0.15in]
   \begin{scope}[shift={(0,0)}]
@@ -294,23 +299,28 @@ Which of these subspaces of <m>\IR^2</m> describes <m>\Im T</m>,
 the set of all vectors that are the result of using <m>T</m> to transform
 <m>\IR^3</m> vectors?
         </p>
-<ol marker="A." cols="2">
-<li>
-    <p>
-    <m>\setBuilder{\left[\begin{array}{c}a \\ a\end{array}\right]}{a\in\IR}</m>
-    </p>
-</li>
-<li>
-    <p>
-    <m>\setList{\left[\begin{array}{c}0\\0\end{array}\right]}</m>
-    </p>
-</li>
-<li>
-    <p>
-    <m>\IR^2=\setBuilder{\left[\begin{array}{c}x \\ y\end{array}\right]}{x,y\in\IR}</m>
-    </p>
-</li>
-</ol>
+        <ol marker="A." cols="2">
+          <li>
+              <p>
+              <m>\setBuilder{\left[\begin{array}{c}a \\ a\end{array}\right]}{a\in\IR}</m>
+              </p>
+          </li>
+          <li>
+              <p>
+              <m>\setBuilder{\left[\begin{array}{c}a \\ 0\end{array}\right]}{a\in\IR}</m>
+              </p>
+          </li>
+        <li>
+            <p>
+            <m>\setList{\left[\begin{array}{c}0\\0\end{array}\right]}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+            <m>\setBuilder{\left[\begin{array}{c}a \\ b\end{array}\right]}{a,b\in\IR}</m>
+            </p>
+        </li>
+        </ol>
     </statement>
 </activity>
 

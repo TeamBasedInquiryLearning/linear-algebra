@@ -11,7 +11,7 @@
 
 <subsection><title>Class Activities</title>
 
-<definition>
+<definition xml:id="AT1-definition-map">
     <statement>
         <p>
 A <term>linear transformation</term> <idx>linear transformation</idx>(also called a <term>linear map</term>)
@@ -38,7 +38,7 @@ can be applied before or after the transformation without affecting the result.
     </statement>
 </definition>
 
-<definition>
+<definition xml:id="AT1-definition-domain">
     <statement>
         <p>
 Given a linear transformation <m>T:V\to W</m>,
@@ -47,7 +47,7 @@ Given a linear transformation <m>T:V\to W</m>,
         </p>
     <figure>
     <caption>A linear transformation with a domain of <m>\IR^3</m> and a co-domain of <m>\IR^2</m></caption>
-		<image width="75%">
+		<image width="75%" xml:id="AT1-image-domain-codomain">
 			<latex-image>
 \begin{tikzpicture}[x=0.2in,y=0.2in]
   \begin{scope}[shift={(0,0)}]
@@ -82,7 +82,7 @@ as is necessary for computer animiation in film or video games.
         </p>
     <figure xml:id="figure-teapot-projection">
     <caption>A projection of a <m>3D</m> teapot onto a <m>2D</m> screen</caption>
-		<image source="teapot.png"/>
+		<image source="teapot.png" xml:id="AT1-image-teapot"/>
     </figure>
 </observation>
 
@@ -498,7 +498,7 @@ Put another way, an easy way to prove that a map like
     </statement>
 </fact> -->
 
-<observation>
+<remark>
         <p>
 Showing <m>T:V\to W</m> is <em>not</em> a linear transformation can be done by finding an example
 for <em>any one</em> of the following.
@@ -522,7 +522,7 @@ for <em>any one</em> of the following.
 </p>
         <p>
 Otherwise, <m>T</m> can be shown to be linear by proving <em>both</em> of the following <em>in general</em>.
-<ul>
+<ol>
 <li>
     <p>
     For all <m>\vec v,\vec w\in V</m>, <m>T(\vec v+\vec w)=T(\vec v)+T(\vec w)</m>.
@@ -533,13 +533,13 @@ Otherwise, <m>T</m> can be shown to be linear by proving <em>both</em> of the fo
     For all <m>\vec v\in V</m> and <m>c\in \IR</m>, <m>T(c\vec v)=cT(\vec v)</m>.
     </p>
 </li>
-</ul>
+</ol>
 </p>
         <p>
 Note the similarities between this process and showing that a subset of a vector
 space is or is not a subspace (<xref ref="EV3-subspace-check"/>).
         </p>
-</observation>
+</remark>
 
 
 <activity>

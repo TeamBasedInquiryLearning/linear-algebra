@@ -1,0 +1,445 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="GT2" tbil-slides="build" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Computing Determinants (GT2)</title>
+    <objectives>
+        <ul>
+            <li>
+                <xi:include href="outcomes/02.ptx"/>
+            </li>
+        </ul>
+    </objectives>
+
+<subsection><title>Class Activities</title>
+<remark>
+    <statement>
+    <p>
+We've seen that row reducing all the way into RREF gives us a method of computing determinants.
+    </p>
+    <p>
+However, we learned in <xref ref="LE"/> that this can be tedious for large matrices.  Thus, we will try
+to figure out how to turn the determinant of a larger matrix
+into the determinant of a smaller matrix.
+    </p>
+    </statement>
+</remark>
+
+<activity estimated-time='5'>
+    <statement>
+    <p>
+  The following image illustrates the transformation of the unit cube
+  by the matrix
+  <m>\left[\begin{array}{ccc} 1 &amp; 1 &amp; 0 \\  1 &amp; 3 &amp; 1 \\  0 &amp; 0 &amp; 1\end{array}\right]</m>.
+    </p>
+  <figure>
+	<image width="75%" xml:id="GT2-image-unit-cube-transform">
+		<latex-image>
+  \begin{tikzpicture}
+  \fill[purple!50!white] (0,0,0) -- (1,0,1) -- (4,0,2) -- (3,0,1) -- (0,0,0);
+  \draw[thin,gray,-&gt;] (0,0,0) -- (3,0,0);
+  \draw[thin,gray,-&gt;] (0,0,0) -- (0,2,0);
+  \draw[thin,gray,-&gt;] (0,0,0) -- (0,0,2);
+  %(y,z,x)
+  \draw[blue] (1,0,1) -- (4,0,2) -- (3,0,1);
+  \draw[blue] (1,1,0) -- (2,1,1) -- (5,1,2) -- (4,1,1) -- (1,1,0);
+  \draw[blue] (1,0,1) -- +(1,1,0);
+  \draw[blue] (4,0,2) -- +(1,1,0);
+  \draw[blue] (3,0,1) -- +(1,1,0);
+
+  \draw[purple,thick,-&gt;] (0,0,0) -- (1,1,0)
+    node[above left]{\tiny\(\left[\begin{array}{c} 0 \\ 1 \\ 1\end{array}\right]\)};
+  \draw[purple,thick,-&gt;] (0,0,0) -- (1,0,1)
+    node[below]{\tiny\(\left[\begin{array}{c} 1 \\ 1 \\ 0\end{array}\right]\)};
+  \draw[purple,thick,-&gt;] (0,0,0) -- (3,0,1)
+    node[above left]{\tiny\(\left[\begin{array}{c} 1 \\ 3 \\ 0\end{array}\right]\)};
+  \draw[purple,dashed,very thick] (0,0,0) -- node[left] {\tiny\(h=1\)} (0,1,0);
+  \end{tikzpicture}
+		</latex-image>
+	</image>
+	<caption>Transformation of the unit cube by the linear transformation.</caption>
+  </figure>
+        <p>
+  Recall that for this solid <m>V=Bh</m>, where <m>h</m> is the height of the solid 
+  and <m>B</m> is the area of its parallelogram base.
+  So what must its volume be?
+        </p>
+<ol marker="A." cols="2">
+<li><p> <m>\det \left[\begin{array}{cc} 1 &amp; 1 \\ 1 &amp; 3 \end{array}\right]</m>
+</p></li>
+<li><p> <m>\det \left[\begin{array}{cc} 1 &amp; 0 \\ 3 &amp; 1 \end{array}\right]</m>
+</p></li>
+<li><p> <m>\det \left[\begin{array}{cc} 1 &amp; 1 \\ 0 &amp; 1 \end{array}\right]</m>
+</p></li>
+<li><p> <m>\det \left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; 0 \end{array}\right]</m>
+</p></li>
+</ol>
+    </statement>
+</activity>
+
+<fact>
+    <statement>
+        <p>
+If row <m>i</m> contains all zeros except for a <m>1</m> on the 
+main (upper-left to lower-right) diagonal, 
+then both column and row <m>i</m>
+may be removed without changing the value of the determinant.
+<me>
+  \det \left[\begin{array}{cccc}
+    3 &amp; {\color{red} 2} &amp; -1 &amp; 3 \\
+    {\color{red} 0} &amp; {\color{red} 1} 
+      &amp; {\color{red} 0} &amp; {\color{red} 0} \\
+    -1 &amp; {\color{red} 4} &amp; 1 &amp; 0 \\
+    5 &amp; {\color{red} 0} &amp; 11 &amp; 1
+  \end{array}\right] =
+  \det \left[\begin{array}{ccc}
+    3 &amp; -1 &amp; 3 \\
+    -1 &amp; 1 &amp; 0 \\
+    5 &amp; 11 &amp; 1
+  \end{array}\right]
+</me>
+        </p>
+        <p>
+Since row and column operations affect the determinants in the same
+way, the same technique works for a column of all zeros except for
+a <m>1</m> on the main diagonal.
+<me>
+  \det \left[\begin{array}{cccc}
+    3 &amp; {\color{red} 0} &amp; -1 &amp; 5 \\
+    {\color{red} 2} &amp; {\color{red} 1} &amp; {\color{red} 4} &amp; 
+       {\color{red} 0} \\
+    -1 &amp; {\color{red} 0} &amp; 1 &amp; 11 \\
+    3 &amp; {\color{red} 0} &amp; 0 &amp; 1
+  \end{array}\right] =
+  \det \left[\begin{array}{ccc}
+    3 &amp; -1 &amp; 5 \\
+    -1 &amp; 1 &amp; 11 \\
+    3 &amp; 0 &amp; 1
+  \end{array}\right]
+</me>
+        </p>
+        <p>
+Put another way, if you have either a column or row from the identity matrix,
+you can cancel both the column and row containing the <m>1</m>.
+        </p>
+    </statement>
+</fact>
+
+<warning>
+  <p>
+If the <m>1</m> is not on the main diagonal, you'll need to use row or column
+swaps in order to cancel.
+<me>
+  \det \left[\begin{array}{cccc}
+    3 &amp; {\color{red} 0} &amp; -1 &amp; 5 \\
+    -1 &amp; {\color{red} 0} &amp; 1 &amp; 11 \\
+    {\color{red} 2} &amp; {\color{red} 1} &amp; {\color{red} 4} &amp; 
+       {\color{red} 0} \\
+    3 &amp; {\color{red} 0} &amp; 0 &amp; 1
+  \end{array}\right] =
+  -\det \left[\begin{array}{cccc}
+    3 &amp; {\color{red} 0} &amp; -1 &amp; 5 \\
+    {\color{red} 2} &amp; {\color{red} 1} &amp; {\color{red} 4} &amp; 
+       {\color{red} 0} \\
+    -1 &amp; {\color{red} 0} &amp; 1 &amp; 11 \\
+    3 &amp; {\color{red} 0} &amp; 0 &amp; 1
+  \end{array}\right] =
+  -\det \left[\begin{array}{ccc}
+    3 &amp; -1 &amp; 5 \\
+    -1 &amp; 1 &amp; 11 \\
+    3 &amp; 0 &amp; 1
+  \end{array}\right]
+</me>
+        </p>
+</warning>
+
+
+<activity estimated-time='5'>
+    <statement>
+    <p>
+  Remove an appropriate row and column of  
+  <m>\det \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 1 &amp; 5 &amp; 12 \\ 3 &amp; 2 &amp; -1 \end{array}\right]</m>
+  to simplify the determinant to a <m>2\times 2</m> determinant.
+        </p></statement>
+</activity>
+
+<activity estimated-time='5'>
+    <introduction>
+        <p>
+  Simplify
+  <m>\det \left[\begin{array}{ccc} 0 &amp; 3 &amp; -2 \\ 2 &amp; 5 &amp; 12 \\ 0 &amp; 2 &amp; -1 \end{array}\right]</m>
+  to a multiple of a <m>2\times 2</m> determinant by first doing the following:
+        </p>
+    </introduction>
+  <task><p> Factor out a <m>2</m> from a column.
+    </p></task>
+<task><p> Swap rows or columns to put a <m>1</m> on the main diagonal.
+    </p></task>
+</activity>
+
+<activity estimated-time='5'>
+    <introduction>
+        <p>
+  Simplify
+  <m>\det \left[\begin{array}{ccc} 4 &amp; -2 &amp; 2 \\ 3 &amp; 1 &amp; 4 \\ 1 &amp; -1 &amp; 3\end{array}\right]</m>
+  to a multiple of a <m>2\times 2</m> determinant by first doing the following:
+        </p>
+    </introduction>
+<task><p> Use row/column operations to create two zeroes in the same row or column.
+    </p></task>
+<task><p> Factor/swap as needed to get a row/column of all zeroes except 
+      a <m>1</m> on the main diagonal.
+    </p></task>
+</activity>
+
+<observation>
+    <statement>
+        <p>
+Using row/column operations, you can introduce zeros
+and reduce dimension to whittle down the determinant of a large
+matrix to a determinant of a smaller matrix.
+        </p>
+    <md>
+        <mrow>
+    \det\left[\begin{array}{cccc}
+      4 &amp; 3 &amp; 0 &amp; 1 \\ 
+      2 &amp; -2 &amp; 4 &amp; 0 \\ 
+      -1 &amp; 4 &amp; 1 &amp; 5 \\ 
+      2 &amp; 8 &amp; 0 &amp; 3 
+    \end{array}\right]
+  &amp;=
+    \det\left[\begin{array}{cccc}
+      4 &amp; 3 &amp; {\color{red} 0} &amp; 1 \\ 
+      6 &amp; -18 &amp; {\color{red} 0} &amp; -20 \\ 
+      {\color{red} {-1}} &amp; {\color{red} 4} &amp; 
+        {\color{red} 1} &amp; {\color{red} 5} \\ 
+      2 &amp; 8 &amp; {\color{red} 0} &amp; 3 
+    \end{array}\right]
+  =
+    \det\left[\begin{array}{ccc}
+      4 &amp; 3 &amp; 1 \\ 
+      6 &amp; -18 &amp; -20 \\ 
+      2 &amp; 8 &amp; 3 
+    \end{array}\right]
+        </mrow>
+        <mrow>
+  &amp;=\dots=
+    -2\det\left[\begin{array}{ccc}
+      {\color{red} 1} &amp; {\color{red} 3} &amp; {\color{red} 4} \\
+      {\color{red} 0} &amp; 21 &amp; 43 \\ 
+      {\color{red} 0} &amp; -1 &amp; -10 
+    \end{array}\right]
+  =
+    -2\det\left[\begin{array}{cc} 21 &amp; 43 \\ -1 &amp; -10 \end{array}\right]
+        </mrow>
+        <mrow>
+  &amp;= \dots=
+    -2\det\left[\begin{array}{cc}
+      -167 &amp; {\color{red}{21}} \\
+      {\color{red} 0} &amp; {\color{red} 1}
+    \end{array}\right]
+   = -2\det[-167]
+        </mrow>
+        <mrow>
+  &amp;=-2(-167)\det(I)=
+    334
+        </mrow>
+    </md>
+    </statement>
+</observation>
+
+<activity estimated-time='10'>
+    <statement>
+    <p>
+Rewrite <me>\det \left[\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; 1 \\ 3 &amp; 0 &amp; 1 &amp; 4
+\\ -2 &amp; 2 &amp; 3 &amp; 0 \\ -2 &amp; 0 &amp; -3 &amp; -3 \end{array}\right] </me>
+as a multiple of a determinant of a <m>3\times3</m> matrix.
+        </p></statement>
+</activity>
+
+
+<activity estimated-time='20'>
+    <statement>
+        <p>
+  Compute
+  <m>
+    \det\left[\begin{array}{cccc}
+      2 &amp; 3 &amp; 5 &amp; 0 \\ 
+      0 &amp; 3 &amp; 2 &amp; 0 \\ 
+      1 &amp; 2 &amp; 0 &amp; 3 \\ 
+      -1 &amp; -1 &amp; 2 &amp; 2 
+    \end{array}\right]
+  </m> by using any combination of row/column operations.
+        </p>
+    </statement>
+</activity>
+
+<observation>
+    <statement>
+        <p>
+Another option is to take advantage of the fact that the determinant is linear 
+in each row or column.  This approach is called
+<term>Laplace expansion</term> or <term>cofactor expansion</term>. 
+        </p>
+        <p>
+For example, since 
+<m>
+        \color{blue}{
+  \left[\begin{array}{ccc} 1 &amp; 2 &amp; 4 \end{array}\right]
+=
+  1\left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \end{array}\right]
++
+  2\left[\begin{array}{ccc} 0 &amp; 1 &amp;  0 \end{array}\right]
++
+  4\left[\begin{array}{ccc} 0  &amp; 0 &amp; 1 \end{array}\right]}
+</m>,
+        </p>
+        <md>
+            <mrow>
+\det \left[\begin{array}{ccc} 2 &amp; 3 &amp; 5  \\ -1 &amp; 3 &amp; 5 \\ {\color{blue} 1} &amp; {\color{blue} 2} &amp; {\color{blue} 4} \end{array}\right] &amp;=
+{\color{blue} 1}\det \left[\begin{array}{ccc} 2 &amp; 3 &amp; 5  \\ -1 &amp; 3 &amp; 5 \\ {\color{blue} 1} &amp; {\color{blue} 0} &amp; {\color{blue} 0} \end{array}\right] +
+{\color{blue} 2}\det \left[\begin{array}{ccc} 2 &amp; 3 &amp; 5  \\ -1 &amp; 3 &amp; 5 \\ {\color{blue} 0} &amp; {\color{blue} 1} &amp; {\color{blue} 0} \end{array}\right] +
+{\color{blue} 4}\det \left[\begin{array}{ccc} 2 &amp; 3 &amp; 5  \\ -1 &amp; 3 &amp; 5 \\ {\color{blue} 0} &amp; {\color{blue} 0} &amp; {\color{blue} 1} \end{array}\right]
+            </mrow>
+            <mrow>
+&amp;= -1\det \left[\begin{array}{ccc}  5 &amp; 3 &amp; 2 \\ 5 &amp; 3 &amp; -1 \\ 0 &amp; 0 &amp; 1 \end{array}\right] 
+-2\det \left[\begin{array}{ccc} 2 &amp; 5 &amp; 3  \\ -1 &amp; 5 &amp; 3 \\ 0 &amp; 0 &amp; 1 \end{array}\right] +
+4\det \left[\begin{array}{ccc} 2 &amp; 3 &amp; 5  \\ -1 &amp; 3 &amp; 5 \\ 0 &amp; 0 &amp; 1 \end{array}\right]
+            </mrow>
+            <mrow>
+&amp;= -\det \left[\begin{array}{cc} 5 &amp; 3 \\ 5 &amp; 3 \end{array}\right] 
+-2 \det \left[\begin{array}{cc} 2 &amp; 5 \\ -1 &amp; 5 \end{array}\right]
++4 \det \left[\begin{array}{cc} 2 &amp; 3 \\ -1 &amp; 3 \end{array}\right]
+            </mrow>
+        </md>
+    </statement>
+</observation>
+
+<observation>
+    <statement>
+        <p>
+Recall the formula for a <m>2\times 2</m> determinant found in <xref ref="GT1-observation-formula"/>:
+<me>
+  \det \left[\begin{array}{cc} a &amp; b \\ c &amp; d \end{array}\right]
+  =
+  ad-bc
+</me>.
+        </p>
+        <p>
+There are formulas and algorithms for the determinants of larger matrices,
+but they can be pretty tedious to use. For example, writing out a
+formula for a <m>4\times 4</m> determinant would require 24 different terms!
+        </p>
+<me>
+   \det\left[\begin{array}{cccc}
+     a_{11} &amp; a_{12} &amp; a_{13} &amp; a_{14} \\
+     a_{21} &amp; a_{22} &amp; a_{23} &amp; a_{24} \\
+     a_{31} &amp; a_{32} &amp; a_{33} &amp; a_{34} \\
+     a_{41} &amp; a_{42} &amp; a_{43} &amp; a_{44}
+   \end{array}\right]
+     =
+   a_{11}(a_{22}(a_{33}a_{44}-a_{43}a_{34})-a_{23}(a_{32}a_{44}-a_{42}a_{34})+\dots)+\dots
+</me>
+    </statement>
+</observation>
+
+<activity estimated-time='5'>
+    <statement>
+    <p>
+Based on the previous activities, which technique is easier for computing determinants?
+    </p>
+<ol marker="A.">
+<li><p> Memorizing formulas.
+</p></li>
+<li><p> Using row/column operations.
+</p></li>
+<li><p> Laplace expansion.
+</p></li>
+<li><p> Some other technique.
+</p></li>
+</ol>
+    </statement>
+</activity>
+
+<activity estimated-time='10'>
+    <statement>
+        <p>
+  Use your preferred technique to compute 
+  <m>
+    \det\left[\begin{array}{cccc}
+      4 &amp; -3 &amp; 0 &amp; 0 \\ 
+      1 &amp; -3 &amp; 2 &amp; -1 \\ 
+      3 &amp; 2 &amp; 0 &amp; 3 \\ 
+      0 &amp; -3 &amp; 2 &amp; -2 
+    \end{array}\right]
+  </m>.
+        </p>
+    </statement>
+</activity>
+
+<insight>You can check your answers using technology.
+<sage language="octave">
+<input>det([4,-3,0,0; 1,-3,2,-1; 3,2,0,3; 0,-3,2,-2])</input>
+</sage>
+</insight>
+</subsection>
+
+
+    <subsection>
+        <title>Videos</title>
+        <figure>
+            <video xml:id="video-GT2-1" youtube="dItnbT4XAlc">
+              <!--<track kind="subtitles" marker="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: Simplifying a determinant using row operations</caption>
+        </figure>
+        <figure>
+            <video xml:id="video-GT2-2" youtube="uWU3D4XnDxA">
+              <!--<track kind="subtitles" marker="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: Computing a determinant</caption>
+        </figure>
+    </subsection>
+
+    <subsection>
+        <title>Slideshow</title>
+        <p>Slideshow of activities available at <url href="https://teambasedinquirylearning.github.io/linear-algebra/2023/GT2.slides.html"/>.</p>
+    </subsection>
+
+    <exercises>
+        <p>Exercises available at <url href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/GT2/"/>.</p>
+    </exercises>
+ <subsection>    
+    <title>Mathematical Writing Explorations</title>
+            <exploration>
+                <statement>  
+                    Prove that the equation of a line in the plane, through points <m>(x_1,y_1), (x_2,y_2)</m>, when <m>x_1 \neq x_2</m> is given by the equation
+<m>\mbox{det}\left(\begin{array}{ccc}x&amp;y&amp;1\\x_1&amp;y_1&amp;1\\x_2&amp;y_2&amp;1\end{array}\right) = 0.</m>
+                </statement>
+                
+     </exploration>
+                 <exploration>
+                <statement> 
+                    Prove that the determinant of any diagonal matrix, upper triangular matrix, or lower triangular matrix, is the product of it's diagonal entries.
+                </statement>
+                
+     </exploration>
+                 <exploration>
+                <statement>  
+                    Show that, if an <m>n \times n</m> matrix <m>M</m> has a non-zero determinant, then any <m>\vec{v} \in \mathbb{R}^n</m> can be represented as a linear combination of the columns of <m>M</m>.
+                </statement>
+                
+     </exploration>
+                      <exploration>
+                <statement> 
+                    What is the smallest number of zeros necessary to place in a <m>4 \times 4</m> matrix, and the placement of those zeros, such that the matrix has a zero determinant?
+                </statement>
+                
+     </exploration>
+    </subsection>
+    <subsection>
+        <title>Sample Problem and Solution</title>
+        <p>
+            Sample problem <xref ref="sample-GT2"/>.
+        </p>
+    </subsection>
+
+</section>

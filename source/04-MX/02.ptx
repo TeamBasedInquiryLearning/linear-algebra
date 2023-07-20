@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="MX2" tbil-slides="build" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>The Inverse of a Matrix (MX2)</title>
+    <objectives>
+        <ul>
+            <li>
+                <xi:include href="outcomes/02.ptx"/>
+            </li>
+        </ul>
+    </objectives>
+
+
+<subsection><title>Class Activities</title>
+    <activity estimated-time='5'>
+        <statement>
+        <p>
+    Let <m>A=\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]</m>.
+    Find a <m>3 \times 3</m> matrix <m>B</m> such that <m>BA=A</m>, that is,
+    <me>
+      \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ 
+      \unknown &amp; \unknown &amp; \unknown 
+      \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+      \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+    =
+      \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+    </me>
+    Check your guess using technology.
+        </p>
+        </statement>
+    </activity>
+    <sage language="octave">
+    </sage>
+    
+    <definition>
+        <statement>
+            <p>
+    The identity matrix <m>I_n</m> (or just <m>I</m> when <m>n</m> is obvious from context) is
+    the <m>n \times n</m> matrix
+    <me>I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &amp; \ddots &amp; \vdots  \\
+    \vdots &amp; \ddots &amp; \ddots &amp; 0 \\ 0 &amp; \cdots &amp; 0 &amp; 1 \end{array}\right].</me>
+    It has a <m>1</m> on each diagonal element and a <m>0</m> in every other position.
+            </p>
+        </statement>
+    </definition>
+    
+    <fact>
+        <statement>
+            <p>
+      For any square matrix <m>A</m>, <m>IA=AI=A</m>:
+      <me>
+        \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right]
+        \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+      =
+        \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+          \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right]
+      =
+        \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+      </me>
+            </p>
+        </statement>
+    </fact>
+<activity estimated-time='15'>
+    <statement>
+        <p>
+Let <m>T: \IR^n \rightarrow \IR^m</m> be a linear map with standard matrix <m>A</m>.
+Sort the following items into three groups of statements: a group that means
+<m>T</m> is <em>injective</em>, a group that means <m>T</m> is <em>surjective</em>,
+and a group that means <m>T</m> is <em>bijective</em>.
+        </p>
+<ol marker="A.">
+<li><p> <m>A\vec x=\vec b</m> has a solution for all <m>\vec b\in\IR^m</m>
+</p></li>
+<li><p> <m>A\vec x=\vec b</m> has a unique solution for all <m>\vec b\in\IR^m</m>
+</p></li>
+<li><p> <m>A\vec x=\vec 0</m> has a unique solution.
+</p></li>
+<li><p> The columns of <m>A</m> span <m>\IR^m</m>
+</p></li>
+<li><p> The columns of <m>A</m> are linearly independent
+</p></li>
+<li><p> The columns of <m>A</m> are a basis of <m>\IR^m</m>
+</p></li>
+<li><p> Every column of <m>\RREF(A)</m> has a pivot
+</p></li>
+<li><p> Every row of <m>\RREF(A)</m> has a pivot
+</p></li>
+<li><p> <m>m=n</m> and <m>\RREF(A)=I</m>
+</p></li>
+</ol>
+    </statement>
+</activity>
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+  Let <m>T: \IR^3 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix
+  <m>A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; 0 \\ 2 &amp; 1 &amp; 4 \\ 1 &amp; 1 &amp; 3 \end{array}\right]</m>.
+        </p>
+        <p>
+  Write an augmented matrix representing the system of equations given by <m>T(\vec x)=\vec{0}</m>,
+  that is, <m>A\vec x=\left[\begin{array}{c}0 \\ 0 \\ 0 \end{array}\right]</m>.
+  Then solve <m>T(\vec x)=\vec{0}</m> to find the kernel of <m>T</m>.
+        </p>
+    </statement>
+</activity>
+
+<sage language="octave">
+</sage>
+
+<definition>
+    <statement>
+    <p>
+  Let <m>T: \IR^n \rightarrow \IR^n</m> be a linear map with standard matrix <m>A</m>.
+    </p>
+<ul>
+<li><p>  If <m>T</m> is a bijection and <m>\vec b</m> is any <m>\IR^n</m> vector, 
+  then <m>T(\vec x)=A\vec x=\vec b</m> has a unique solution.
+</p></li>
+<li><p> So we may define an <term>inverse map</term><idx>inverse map</idx> <m>T^{-1} : \IR^n \rightarrow \IR^n</m> 
+  by setting <m>T^{-1}(\vec b)</m> to be this unique solution.
+</p></li>
+<li><p> Let <m>A^{-1}</m> be the standard matrix for <m>T^{-1}</m>. We call <m>A^{-1}</m> the
+<term>inverse matrix</term><idx>inverse matrix</idx> of <m>A</m>, so we also say that <m>A</m> is <term>invertible</term><idx>invertible</idx>.
+</p></li>
+</ul>
+    </statement>
+</definition>
+
+
+<activity estimated-time='20'>
+    <introduction>
+        <p>
+  Let <m>T: \IR^3 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix
+  <m>A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]</m>.
+        </p>
+    </introduction>
+  <task>
+      <p>
+  Write an augmented matrix representing the system of equations given by <m>T(\vec x)=\vec{e}_1</m>,
+  that is, <m>A\vec x=\left[\begin{array}{c}1 \\ 0 \\ 0 \end{array}\right]</m>.
+  Then solve <m>T(\vec x)=\vec{e}_1</m> to find <m>T^{-1}(\vec{e}_1)</m>.
+      </p>
+  </task>
+  <task>
+      <p>
+   Solve <m>T(\vec x)=\vec{e}_2</m> to find <m>T^{-1}(\vec{e}_2)</m>.
+      </p>
+  </task>
+  <task>
+      <p>
+   Solve <m>T(\vec x)=\vec{e}_3</m> to find <m>T^{-1}(\vec{e}_3)</m>.
+      </p>
+  </task>
+  <task>
+      <p>
+   Write <m>A^{-1}</m>, the standard matrix for <m>T^{-1}</m>.
+      </p>
+  </task>
+</activity>
+
+<sage language="octave">
+</sage>
+
+<observation>
+    <statement>
+        <p>
+We could have solved these three systems simultaneously
+by row reducing the matrix <m>[A\,|\,I]</m> at once.
+<me>
+  \left[\begin{array}{ccc|ccc}
+    2 &amp; -1 &amp; -6 &amp; 1 &amp; 0 &amp; 0 \\
+    2 &amp; 1 &amp; 3 &amp; 0 &amp; 1 &amp; 0 \\
+    1 &amp; 1 &amp; 4 &amp; 0 &amp; 0 &amp; 1
+  \end{array}\right] \sim
+  \left[\begin{array}{ccc|ccc}
+    1 &amp; 0 &amp; 0 &amp; 1 &amp; -2 &amp; 3 \\
+    0 &amp; 1 &amp; 0 &amp; -5 &amp; 14 &amp; -18 \\
+    0 &amp; 0 &amp; 1 &amp; 1 &amp; -3 &amp; 4
+  \end{array}\right]
+</me>
+        </p>
+    </statement>
+</observation>
+
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+  Find the inverse <m>A^{-1}</m> of the matrix
+  <m>A=\left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; -2 \end{array}\right]</m>
+  by row-reducing <m>[A\,|\,I]</m>.
+        </p>
+    </statement>
+</activity>
+
+<sage language="octave">
+</sage>
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Is the matrix <m>\left[\begin{array}{ccc} 2 &amp; 3 &amp; 1 \\ -1 &amp; -4 &amp; 2 \\ 0 &amp; -5 &amp; 5 \end{array}\right]</m> invertible? Give a reason for your answer.
+        </p>
+    </statement>
+</activity>
+<sage language="octave">
+</sage>
+
+<observation>
+    <statement>
+    <p>
+    An <m>n\times n</m> matrix <m>A</m> is invertible if and only if <m>\RREF(A) = I_n</m>.
+    </p>
+    </statement>
+</observation>
+
+<activity estimated-time='10'>
+    <introduction>
+        <p>
+  Let <m>T:\IR^2\to\IR^2</m> be the bijective linear map defined by
+  <m>T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)=\left[\begin{array}{c} 2x -3y \\ -3x + 5y\end{array}\right]</m>,
+  with the inverse map
+  <m>T^{-1}\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)=\left[\begin{array}{c} 5x+ 3y \\ 3x + 2y\end{array}\right]</m>.
+        </p>
+    </introduction>
+  <task>
+      <p>
+    Compute <m>(T^{-1}\circ T)\left(\left[\begin{array}{c}-2\\1\end{array}\right]\right)</m>.
+      </p>
+  </task>
+  <task>
+      <p>
+    If <m>A</m> is the standard matrix for <m>T</m> and <m>A^{-1}</m> is the
+    standard matrix for <m>T^{-1}</m>, find the <m>2\times 2</m> matrix 
+    <me>A^{-1}A=\left[\begin{array}{ccc}\unknown&amp;\unknown\\\unknown&amp;\unknown\end{array}\right].</me>
+      </p>
+  </task>
+</activity>
+
+<observation>
+    <statement>
+        <p>
+  <m>T^{-1}\circ T=T\circ T^{-1}</m> is the identity map for any bijective
+  linear transformation <m>T</m>. Therefore
+  <m>A^{-1}A=AA^{-1}</m> equals the identity matrix <m>I</m> for any invertible matrix
+  <m>A</m>.
+        </p>
+    </statement>
+</observation>
+</subsection>
+
+
+    <subsection>
+        <title>Videos</title>
+        <figure>
+            <video xml:id="video-MX2-1" youtube="an-Qo2QEyXU">
+              <!--<track kind="subtitles" marker="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: Invertible matrices</caption>
+        </figure>
+        <figure>
+            <video xml:id="video-MX2-2" youtube="9aXvJGwYZ90">
+              <!--<track kind="subtitles" marker="US English" xml:lang="en" source="videos/E1-captions.vtt" default=""/>-->
+            </video>
+            <caption>Video: Finding the inverse of a matrix</caption>
+        </figure>
+    </subsection>
+
+    <subsection>
+        <title>Slideshow</title>
+        <p>Slideshow of activities available at <url href="https://teambasedinquirylearning.github.io/linear-algebra/2023/MX2.slides.html"/>.</p>
+    </subsection>
+
+    <exercises>
+        <p>Exercises available at <url href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX2/"/>.</p>
+    </exercises>
+ <subsection>    
+    <title>Mathematical Writing Explorations</title>
+     <exploration>
+    <statement>
+        Assume <m>A</m> is an <m>n \times n</m> matrix. Prove the following are equivalent. Some of these results you have proven previously.
+        <ul>
+<li> <m>A</m> is non-singular.</li>
+<li> <m>A</m> row reduces to the identity matrix.</li>
+<li> For any choice of <m>\vec{b} \in \mathbb{R}^n</m>, the system of equations represented by the augmented matrix <m>[A|\vec{b}]</m> has a unique solution.</li>
+<li> The columns of <m>A</m> are a linearly independent set.</li>
+<li> The columns of <m>A</m> form a basis for <m>\mathbb{R}^n</m>.</li>
+<li> The rank of <m>A</m> is <m>n</m>.</li>
+<li> The nullity of <m>A</m> is 0.</li>
+<li> <m>A</m> is invertible.</li>
+<li> The linear transformation <m>T</m> with standard matrix <m>A</m> is injective and surjective. Such a map is called an <em>isomorphism</em>.</li>
+</ul>
+        </statement>
+     </exploration>  
+      
+     <exploration>
+     <statement>
+         <ul><li>Assume <m>T</m> is a square matrix, and <m>T^4</m> is the zero matrix. Prove that <m>(I - T)^{-1} = I + T + T^2 + T^3.</m> You will need to first prove a lemma that matrix multiplication distributes over matrix addition. </li>
+<li>Generalize your result to the case where <m>T^n</m> is the zero matrix.</li>
+             </ul>
+         </statement>
+     </exploration>
+    </subsection>
+    <subsection>
+        <title>Sample Problem and Solution</title>
+        <p>
+            Sample problem <xref ref="sample-MX2"/>.
+        </p>
+    </subsection>
+
+</section>
