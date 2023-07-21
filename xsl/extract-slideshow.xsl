@@ -66,7 +66,14 @@
 <xsl:template match="definition|remark|fact|observation|example">
     <slide>
         <xsl:apply-templates select="." mode="slides-title"/>
-        <xsl:apply-templates select="statement/*" mode="slideshow-copy"/>
+        <xsl:choose>
+            <xsl:when test="statement">
+                <xsl:apply-templates select="statement/*" mode="slideshow-copy"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates select="*" mode="slideshow-copy"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </slide>
 </xsl:template>
 
