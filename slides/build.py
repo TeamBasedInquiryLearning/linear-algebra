@@ -26,10 +26,13 @@ slides_target = p.get_target("slides")
 for xml_id in XML_IDS:
     print(f"building slides for {xml_id}")
     extract_target.output = Path(f"output/slide-extraction/{xml_id}.ptx")
-    extract_target.output.touch() #hax to fix bug for now
+    extract_target.output.parent.mkdir(exist_ok=True) #hax to fix bug for now
+    extract_target.output.touch(exist_ok=True) #hax to fix bug for now
     extract_target.stringparams["section"] = xml_id
     extract_target.build(generate_assets=False)
     slides_target.source = Path(f"output/slide-extraction/{xml_id}.ptx")
     slides_target.output = Path(f"output/slides/{xml_id}.slides.html")
+    slides_target.output.parent.mkdir(exist_ok=True) #hax to fix bug for now
+    slides_target.output.touch(exist_ok=True) #hax to fix bug for now
     slides_target.build(generate_assets=False)
 
