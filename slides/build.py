@@ -17,15 +17,19 @@ XML_IDS = [
 ] + [
     f"GT{n}" for n in range(1,5)
 ]
-p = Project()
-extract_target = p.target("extract-slides")
-slides_target = p.target("slides")
+p = Project.parse()
+p.source = Path() #hax to fix bug for now
+p.output = Path() #hax to fix bug for now
+p.xsl = Path() #hax to fix bug for now
+extract_target = p.get_target("extract-slides")
+slides_target = p.get_target("slides")
 for xml_id in XML_IDS:
     print(f"building slides for {xml_id}")
     extract_target.output = Path(f"output/slide-extraction/{xml_id}.ptx")
+    extract_target.output.touch() #hax to fix bug for now
     extract_target.stringparams["section"] = xml_id
-    extract_target.build()
-    slides_target.source = extract_target.output
+    extract_target.build(generate_assets=False)
+    slides_target.source = Path(f"output/slide-extraction/{xml_id}.ptx")
     slides_target.output = Path(f"output/slides/{xml_id}.slides.html")
-    extract_target.build()
+    slides_target.build(generate_assets=False)
 

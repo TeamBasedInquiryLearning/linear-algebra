@@ -22,13 +22,6 @@
       <deploy-dir>./2023/pdf</deploy-dir>
       <stringparam key="debug.project.number" value="the-way-it-should-be"/>
     </target>
-    <target name="checkit"><!-- built manually -->
-      <format>checkit</format>
-      <source>source/main.ptx</source>
-      <publication>publication/publication.ptx</publication>
-      <output-dir>output/checkit</output-dir>
-      <deploy-dir>./2023/exercises</deploy-dir>
-    </target>
     <target name="extract-slides">
       <format>custom</format>
       <source>source/main.ptx</source>
@@ -45,22 +38,30 @@
       <source>source/main.ptx</source>
       <publication>publication/publication.ptx</publication>
       <output-dir>output/slides</output-dir>
-      <deploy-dir>./2023/slides</deploy-dir>
       <xsl>xsl/slideshow.xsl</xsl>
+      <deploy-dir>./2023</deploy-dir>
       <!-- Provide these programmatically! -->
       <!-- <source>output/slide-extraction/LE1.ptx</source> -->
       <!-- <output-filename>LE1.slides.html</output-filename> -->
     </target>
+    <target name="checkit"><!-- built manually -->
+      <format>custom</format>
+      <source>source/main.ptx</source>
+      <publication>publication/publication.ptx</publication>
+      <output-dir>output/checkit</output-dir>
+      <xsl>NOT_IMPLEMENTED</xsl>
+      <deploy-dir>./2023/exercises</deploy-dir>
+    </target>
   </targets>
   <executables>
+      <latex>latex</latex>
+      <pdflatex>pdflatex</pdflatex>
       <xelatex>xelatex</xelatex>
       <pdfsvg>pdf2svg</pdfsvg>
       <asy>asy</asy>
       <sage>sage</sage>
       <pdfpng>convert</pdfpng>
       <pdfeps>pdftops</pdfeps>
-      <pdfcrop>pdf-crop-margins</pdfcrop>
-      <pageres>pageres</pageres>
       <node>node</node>
       <liblouis>file2brl</liblouis>
     </executables>
