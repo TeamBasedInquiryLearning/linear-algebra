@@ -30,8 +30,8 @@
       <xsl>xsl/extract-slideshow.xsl</xsl>
       <stringparam key="debug.project.number" value="the-way-it-should-be"/>
       <!-- Provide these programmatically! -->
-      <!-- <output-filename>LE1.ptx</output-filename> -->
-      <!-- <stringparam key="section" value="LE1"/> -->
+      <!-- <output-filename>[xml_id].ptx</output-filename> -->
+      <!-- <stringparam key="section" value="[xml_id]"/> -->
     </target>
     <target name="slides">
       <format>custom</format>
@@ -41,10 +41,11 @@
       <xsl>xsl/slideshow.xsl</xsl>
       <deploy-dir>./2023</deploy-dir>
       <!-- Provide these programmatically! -->
-      <!-- <source>output/slide-extraction/LE1.ptx</source> -->
-      <!-- <output-filename>LE1.slides.html</output-filename> -->
+      <!-- <source>output/slide-extraction/[xml_id].ptx</source> -->
+      <!-- <output-filename>[xml_id].slides.html</output-filename> -->
     </target>
     <target name="checkit"><!-- built manually -->
+      <!-- everything except deploy-dir is unused but needed for validation -->
       <format>custom</format>
       <source>source/main.ptx</source>
       <publication>publication/publication.ptx</publication>

@@ -16,7 +16,7 @@ XML_IDS = [
     f"MX{n}" for n in range(1,5)
 ] + [
     f"GT{n}" for n in range(1,5)
-]
+] + ["geology", "pagerank", "truss"]
 p = Project.parse()
 p.source = Path() #hax to fix bug for now
 p.output = Path() #hax to fix bug for now
