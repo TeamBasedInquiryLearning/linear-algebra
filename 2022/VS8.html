@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TBIL-LA Polynomial and Matrix Spaces (VS8)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra for Team-Based Inquiry Learning">
+<meta property="book:author" content="Steven Clontz">
+<meta property="book:author" content="Drew Lewis">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">2022 Edition</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="VS7.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="VS.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="VS9.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="VS7.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="VS.html" title="Up">Up</a><a class="next-button button toolbar-item" href="VS9.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon.html" data-scroll="colophon" class="internal">Colophon</a></li>
+<li><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal">TBIL Resource Library</a></li>
+<li><a href="instructor-notes.html" data-scroll="instructor-notes" class="internal">For Instructors</a></li>
+<li><a href="video-resources.html" data-scroll="video-resources" class="internal">Video Resources</a></li>
+<li><a href="slideshows.html" data-scroll="slideshows" class="internal">Slideshows</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="LE.html" data-scroll="LE" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (LE)</span></a><ul>
+<li><a href="LE1.html" data-scroll="LE1" class="internal">Linear Systems, Vector Equations, and Augmented Matrices (LE1)</a></li>
+<li><a href="LE2.html" data-scroll="LE2" class="internal">Row Reduction of Matrices (LE2)</a></li>
+<li><a href="LE3.html" data-scroll="LE3" class="internal">Counting Solutions for Linear Systems (LE3)</a></li>
+<li><a href="LE4.html" data-scroll="LE4" class="internal">Linear Systems with Infinitely-Many Solutions (LE4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="VS.html" data-scroll="VS" class="internal"><span class="codenumber">2</span> <span class="title">Vector Spaces (VS)</span></a><ul>
+<li><a href="VS1.html" data-scroll="VS1" class="internal">Vector Spaces (VS1)</a></li>
+<li><a href="VS2.html" data-scroll="VS2" class="internal">Linear Combinations (VS2)</a></li>
+<li><a href="VS3.html" data-scroll="VS3" class="internal">Spanning Sets (VS3)</a></li>
+<li><a href="VS4.html" data-scroll="VS4" class="internal">Subspaces (VS4)</a></li>
+<li><a href="VS5.html" data-scroll="VS5" class="internal">Linear Independence (VS5)</a></li>
+<li><a href="VS6.html" data-scroll="VS6" class="internal">Identifying a Basis (VS6)</a></li>
+<li><a href="VS7.html" data-scroll="VS7" class="internal">Subspace Basis and Dimension (VS7)</a></li>
+<li><a href="VS8.html" data-scroll="VS8" class="active">Polynomial and Matrix Spaces (VS8)</a></li>
+<li><a href="VS9.html" data-scroll="VS9" class="internal">Homogeneous Linear Systems (VS9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="AT.html" data-scroll="AT" class="internal"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (AT)</span></a><ul>
+<li><a href="AT1.html" data-scroll="AT1" class="internal">Linear Transformations (AT1)</a></li>
+<li><a href="AT2.html" data-scroll="AT2" class="internal">Standard Matrices (AT2)</a></li>
+<li><a href="AT3.html" data-scroll="AT3" class="internal">Image and Kernel (AT3)</a></li>
+<li><a href="AT4.html" data-scroll="AT4" class="internal">Injective and Surjective Linear Maps (AT4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="MX.html" data-scroll="MX" class="internal"><span class="codenumber">4</span> <span class="title">Matrices (MX)</span></a><ul>
+<li><a href="MX1.html" data-scroll="MX1" class="internal">Matrices and Multiplication (MX1)</a></li>
+<li><a href="MX2.html" data-scroll="MX2" class="internal">Row Operations as Matrix Multiplication (MX2)</a></li>
+<li><a href="MX3.html" data-scroll="MX3" class="internal">The Inverse of a Matrix (MX3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="GT.html" data-scroll="GT" class="internal"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (GT)</span></a><ul>
+<li><a href="GT1.html" data-scroll="GT1" class="internal">Row Operations and Determinants (GT1)</a></li>
+<li><a href="GT2.html" data-scroll="GT2" class="internal">Computing Determinants (GT2)</a></li>
+<li><a href="GT3.html" data-scroll="GT3" class="internal">Eigenvalues and Characteristic Polynomials (GT3)</a></li>
+<li><a href="GT4.html" data-scroll="GT4" class="internal">Eigenvectors and Eigenspaces (GT4)</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="applications.html" data-scroll="applications" class="internal"><span class="codenumber">A</span> <span class="title">Applications</span></a><ul>
+<li><a href="truss.html" data-scroll="truss" class="internal">Civil Engineering: Trusses and Struts</a></li>
+<li><a href="pagerank.html" data-scroll="pagerank" class="internal">Computer Science: PageRank</a></li>
+<li><a href="geology.html" data-scroll="geology" class="internal">Geology: Phases and Components</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="appendix-2.html" data-scroll="appendix-2" class="internal"><span class="codenumber">B</span> <span class="title">Appendix</span></a><ul>
+<li><a href="sample-exercises.html" data-scroll="sample-exercises" class="internal">Sample Exercises with Solutions</a></li>
+<li><a href="list-of-definitions.html" data-scroll="list-of-definitions" class="internal">Definitions</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="VS8"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.8</span> <span class="title">Polynomial and Matrix Spaces (VS8)</span>
+</h2>
+<article class="objectives goal-like" id="objectives-14"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
+<ul class="disc"><li id="li-268"><p id="p-521">Answer questions about vector spaces of polynomials or matrices.</p></li></ul></article><section class="subsection" id="subsection-56"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.8.1</span> <span class="title">Class Activities</span>
+</h3>
+<article class="fact theorem-like" id="fact-12"><h4 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.8.1</span><span class="period">.</span>
+</h4>
+<p id="p-522">Every vector space with finite dimension, that is, every vector space <span class="process-math">\(V\)</span> with a basis of the form <span class="process-math">\(\{\vec v_1,\vec v_2,\dots,\vec v_n\}\)</span> is said to be <dfn class="terminology">isomorphic</dfn> to a Euclidean space <span class="process-math">\(\IR^n\text{,}\)</span> since there exists a natural correspondance between vectors in <span class="process-math">\(V\)</span> and vectors in <span class="process-math">\(\IR^n\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+c_1\vec v_1+c_2\vec v_2+\dots+c_n\vec v_n
+\leftrightarrow
+\left[\begin{array}{c}
+c_1\\c_2\\\vdots\\c_n
+\end{array}\right]
+\end{equation*}
+</div></article><article class="observation remark-like" id="observation-14"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.8.2</span><span class="period">.</span>
+</h4>
+<p id="p-523">We've already been taking advantage of the previous fact by converting polynomials and matrices into Euclidean vectors. Since <span class="process-math">\(\P_3\)</span> and <span class="process-math">\(M_{2,2}\)</span> are both four-dimensional:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+4x^3+0x^2-1x+5
+\leftrightarrow
+\left[\begin{array}{c}
+4\\0\\-1\\5
+\end{array}\right]
+\leftrightarrow
+\left[\begin{array}{cc}
+4&amp;0\\-1&amp;5
+\end{array}\right]
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-74"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.8.3</span><span class="period">.</span>
+</h4>
+<p id="p-524">Suppose <span class="process-math">\(W\)</span> is a subspace of <span class="process-math">\(\P_8\text{,}\)</span> and you know that the set <span class="process-math">\(\{ x^3+x, x^2+1, x^4-x \}\)</span> is a linearly independent subset of <span class="process-math">\(W\text{.}\)</span> What can you conclude about <span class="process-math">\(W\text{?}\)</span></p>
+<ol class="upper-alpha cols2">
+<li id="li-269"><p id="p-525">The dimension of <span class="process-math">\(W\)</span> is 3 or less.</p></li>
+<li id="li-270"><p id="p-526">The dimension of <span class="process-math">\(W\)</span> is exactly 3.</p></li>
+<li id="li-271"><p id="p-527">The dimension of <span class="process-math">\(W\)</span> is 3 or more.</p></li>
+</ol></article><article class="activity project-like" id="activity-75"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.8.4</span><span class="period">.</span>
+</h4>
+<p id="p-528">Suppose <span class="process-math">\(W\)</span> is a subspace of <span class="process-math">\(\P_8\text{,}\)</span> and you know that <span class="process-math">\(W\)</span> is spanned by the six vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{ x^4-x,x^3+x,x^3+x+1,x^4+2x,x^3,2x+1\}.
+\end{equation*}
+</div>
+<p class="continuation">What can you conclude about <span class="process-math">\(W\text{?}\)</span></p>
+<ol class="upper-alpha cols2">
+<li id="li-272"><p id="p-529">The dimension of <span class="process-math">\(W\)</span> is 6 or less.</p></li>
+<li id="li-273"><p id="p-530">The dimension of <span class="process-math">\(W\)</span> is exactly 6.</p></li>
+<li id="li-274"><p id="p-531">The dimension of <span class="process-math">\(W\)</span> is 6 or more.</p></li>
+</ol></article><article class="observation remark-like" id="observation-15"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.8.5</span><span class="period">.</span>
+</h4>
+<p id="p-532">The space of polynomials <span class="process-math">\(\P\)</span> (of <em class="emphasis">any</em> degree) has the basis <span class="process-math">\(\{1,x,x^2,x^3,\dots\}\text{,}\)</span> so it is a natural example of an infinite-dimensional vector space.</p>
+<p id="p-533">Since <span class="process-math">\(\P\)</span> and other infinite-dimensional spaces cannot be treated as an isomorphic finite-dimensional Euclidean space <span class="process-math">\(\IR^n\text{,}\)</span> vectors in such spaces cannot be studied by converting them into Euclidean vectors. Fortunately, most of the examples we will be interested in for this course will be finite-dimensional.</p></article></section><section class="subsection" id="subsection-57"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.8.2</span> <span class="title">Videos</span>
+</h3>
+<figure class="figure figure-like" id="figure-21"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-VS8" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/yrKAM3QhOPk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">21<span class="period">.</span></span><span class="space"> </span>Video: Polynomial and matrix calculations</figcaption></figure></section><section class="subsection" id="subsection-58"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.8.3</span> <span class="title">Slideshow</span>
+</h3>
+<p id="p-534">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/VS8.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/VS8.slides.html</code></a>.</p></section><section class="exercises" id="exercises-12"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.8.4</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-535">Exercises available at <a class="external" href="https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/VS8/" target="_blank"><code class="code-inline tex2jax_ignore">https://stevenclontz.github.io/checkit-tbil-la-2021-dev/#/bank/VS8/</code></a>.</p></section><section class="subsection" id="subsection-59"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.8.5</span> <span class="title">Mathematical Writing Explorations</span>
+</h3>
+<article class="exploration project-like" id="exploration-25"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.8.6</span><span class="period">.</span>
+</h4>Given a matrix <span class="process-math">\(M\)</span><ul class="disc">
+<li id="li-275"><p id="p-derived-li-275">the span of the set of all columns is the <dfn class="terminology">column space</dfn></p></li>
+<li id="li-276"><p id="p-derived-li-276">the span of the set of all rows is the <dfn class="terminology">row space</dfn></p></li>
+<li id="li-277"><p id="p-derived-li-277">the <dfn class="terminology">rank</dfn> of a matrix is the dimension of the column space.</p></li>
+</ul> Calculate the rank of these matrices. <ul class="disc">
+<li id="li-278"><p id="p-derived-li-278"><span class="process-math">\(\displaystyle \left[\begin{array}{ccc}2 &amp; 1&amp;3\\1&amp;-1&amp;2\\1&amp;0&amp;3\end{array}\right]\)</span></p></li>
+<li id="li-279"><p id="p-derived-li-279"><span class="process-math">\(\displaystyle \left[\begin{array}{cccc}1&amp;-1&amp;2&amp;3\\3&amp;-3&amp;6&amp;3\\-2&amp;2&amp;4&amp;5\end{array}\right]\)</span></p></li>
+<li id="li-280"><p id="p-derived-li-280"><span class="process-math">\(\displaystyle \left[\begin{array}{ccc}1&amp;3&amp;2\\5&amp;1&amp;1\\6&amp;4&amp;3\end{array}\right]\)</span></p></li>
+<li id="li-281"><p id="p-derived-li-281"><span class="process-math">\(\displaystyle \left[\begin{array}{ccc}0&amp;0&amp;0\\0&amp;0&amp;0\\0&amp;0&amp;0\end{array}\right]\)</span></p></li>
+</ul></article><article class="exploration project-like" id="exploration-26"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.8.7</span><span class="period">.</span>
+</h4>Calculate a basis for the row space and a basis for the column space of the matrix <span class="process-math">\(\left[\begin{array}{cccc}2&amp;0&amp;3&amp;4\\0&amp;1&amp;1&amp;-1\\3&amp;1&amp;0&amp;2\\10&amp;-4&amp;-1&amp;-1\end{array}\right]\text{.}\)</span></article><article class="exploration project-like" id="exploration-27"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.8.8</span><span class="period">.</span>
+</h4>If you are given the values of <span class="process-math">\(a,b,\)</span> and <span class="process-math">\(c\text{,}\)</span> what value of <span class="process-math">\(d\)</span> will cause the matrix <span class="process-math">\(\left[\begin{array}{cc}a&amp;b\\c&amp;d\end{array}\right]\)</span> to have rank 1?</article></section><section class="subsection" id="subsection-60"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.8.6</span> <span class="title">Sample Problem and Solution</span>
+</h3>
+<p id="p-536">Sample problem <a href="" class="xref" data-knowl="./knowl/sampleVS8.html" title="Example B.1.12: VS8">Example B.1.12</a>.</p></section></section></div></main>
+</div>
+</body>
+</html>

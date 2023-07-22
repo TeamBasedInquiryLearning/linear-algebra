@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TBIL-LA Vector Spaces (VS1)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra for Team-Based Inquiry Learning">
+<meta property="book:author" content="Steven Clontz">
+<meta property="book:author" content="Drew Lewis">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">2022 Edition</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="VS.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="VS.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="VS2.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="VS.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="VS.html" title="Up">Up</a><a class="next-button button toolbar-item" href="VS2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon.html" data-scroll="colophon" class="internal">Colophon</a></li>
+<li><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal">TBIL Resource Library</a></li>
+<li><a href="instructor-notes.html" data-scroll="instructor-notes" class="internal">For Instructors</a></li>
+<li><a href="video-resources.html" data-scroll="video-resources" class="internal">Video Resources</a></li>
+<li><a href="slideshows.html" data-scroll="slideshows" class="internal">Slideshows</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="LE.html" data-scroll="LE" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (LE)</span></a><ul>
+<li><a href="LE1.html" data-scroll="LE1" class="internal">Linear Systems, Vector Equations, and Augmented Matrices (LE1)</a></li>
+<li><a href="LE2.html" data-scroll="LE2" class="internal">Row Reduction of Matrices (LE2)</a></li>
+<li><a href="LE3.html" data-scroll="LE3" class="internal">Counting Solutions for Linear Systems (LE3)</a></li>
+<li><a href="LE4.html" data-scroll="LE4" class="internal">Linear Systems with Infinitely-Many Solutions (LE4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="VS.html" data-scroll="VS" class="internal"><span class="codenumber">2</span> <span class="title">Vector Spaces (VS)</span></a><ul>
+<li><a href="VS1.html" data-scroll="VS1" class="active">Vector Spaces (VS1)</a></li>
+<li><a href="VS2.html" data-scroll="VS2" class="internal">Linear Combinations (VS2)</a></li>
+<li><a href="VS3.html" data-scroll="VS3" class="internal">Spanning Sets (VS3)</a></li>
+<li><a href="VS4.html" data-scroll="VS4" class="internal">Subspaces (VS4)</a></li>
+<li><a href="VS5.html" data-scroll="VS5" class="internal">Linear Independence (VS5)</a></li>
+<li><a href="VS6.html" data-scroll="VS6" class="internal">Identifying a Basis (VS6)</a></li>
+<li><a href="VS7.html" data-scroll="VS7" class="internal">Subspace Basis and Dimension (VS7)</a></li>
+<li><a href="VS8.html" data-scroll="VS8" class="internal">Polynomial and Matrix Spaces (VS8)</a></li>
+<li><a href="VS9.html" data-scroll="VS9" class="internal">Homogeneous Linear Systems (VS9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="AT.html" data-scroll="AT" class="internal"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (AT)</span></a><ul>
+<li><a href="AT1.html" data-scroll="AT1" class="internal">Linear Transformations (AT1)</a></li>
+<li><a href="AT2.html" data-scroll="AT2" class="internal">Standard Matrices (AT2)</a></li>
+<li><a href="AT3.html" data-scroll="AT3" class="internal">Image and Kernel (AT3)</a></li>
+<li><a href="AT4.html" data-scroll="AT4" class="internal">Injective and Surjective Linear Maps (AT4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="MX.html" data-scroll="MX" class="internal"><span class="codenumber">4</span> <span class="title">Matrices (MX)</span></a><ul>
+<li><a href="MX1.html" data-scroll="MX1" class="internal">Matrices and Multiplication (MX1)</a></li>
+<li><a href="MX2.html" data-scroll="MX2" class="internal">Row Operations as Matrix Multiplication (MX2)</a></li>
+<li><a href="MX3.html" data-scroll="MX3" class="internal">The Inverse of a Matrix (MX3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="GT.html" data-scroll="GT" class="internal"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (GT)</span></a><ul>
+<li><a href="GT1.html" data-scroll="GT1" class="internal">Row Operations and Determinants (GT1)</a></li>
+<li><a href="GT2.html" data-scroll="GT2" class="internal">Computing Determinants (GT2)</a></li>
+<li><a href="GT3.html" data-scroll="GT3" class="internal">Eigenvalues and Characteristic Polynomials (GT3)</a></li>
+<li><a href="GT4.html" data-scroll="GT4" class="internal">Eigenvectors and Eigenspaces (GT4)</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="applications.html" data-scroll="applications" class="internal"><span class="codenumber">A</span> <span class="title">Applications</span></a><ul>
+<li><a href="truss.html" data-scroll="truss" class="internal">Civil Engineering: Trusses and Struts</a></li>
+<li><a href="pagerank.html" data-scroll="pagerank" class="internal">Computer Science: PageRank</a></li>
+<li><a href="geology.html" data-scroll="geology" class="internal">Geology: Phases and Components</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="appendix-2.html" data-scroll="appendix-2" class="internal"><span class="codenumber">B</span> <span class="title">Appendix</span></a><ul>
+<li><a href="sample-exercises.html" data-scroll="sample-exercises" class="internal">Sample Exercises with Solutions</a></li>
+<li><a href="list-of-definitions.html" data-scroll="list-of-definitions" class="internal">Definitions</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="VS1"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Vector Spaces (VS1)</span>
+</h2>
+<article class="objectives goal-like" id="objectives-7"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
+<ul class="disc"><li id="li-148"><p id="p-246">Explain why a given set with defined addition and scalar multiplication does satisfy a given vector space property, but nonetheless isn't a vector space.</p></li></ul></article><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.1</span> <span class="title">Class Activities</span>
+</h3>
+<article class="observation remark-like" id="observation-2"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
+</h4>
+<p id="p-247">Several properties of the real numbers, such as commutivity:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x + y = y + x
+\end{equation*}
+</div>
+<p class="continuation">also hold for Euclidean vectors with multiple components:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{c}x_1\\x_2\end{array}\right]
++
+\left[\begin{array}{c}y_1\\y_2\end{array}\right]
+=
+\left[\begin{array}{c}y_1\\y_2\end{array}\right]
++
+\left[\begin{array}{c}x_1\\x_2\end{array}\right]\text{.}
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-26"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h4>
+<p id="p-248">Consider each of the following properties of the real numbers <span class="process-math">\(\IR^1\text{.}\)</span> Label each property as <em class="emphasis">valid</em> if the property also holds for two-dimensional Euclidean vectors <span class="process-math">\(\vec u,\vec v,\vec w\in\IR^2\)</span> and numbers <span class="process-math">\(a,b\in\IR\text{,}\)</span> and <em class="emphasis">invalid</em> if it does not.</p>
+<ol class="decimal">
+<li id="li-149"><p id="p-249"><span class="process-math">\(\vec u+(\vec v+\vec w)=
+(\vec u+\vec v)+\vec w\text{.}\)</span></p></li>
+<li id="li-150"><p id="p-250"><span class="process-math">\(\vec u+\vec v=
+\vec v+\vec u\text{.}\)</span></p></li>
+<li id="li-151"><p id="p-251">There exists some <span class="process-math">\(\vec z\)</span> where <span class="process-math">\(\vec v +\vec z =\vec v\text{.}\)</span></p></li>
+<li id="li-152"><p id="p-252">There exists some <span class="process-math">\(-\vec v\)</span> where <span class="process-math">\(\vec v+(-\vec v)=\vec z\text{.}\)</span></p></li>
+<li id="li-153"><p id="p-253">If <span class="process-math">\(\vec u\not=\vec v\text{,}\)</span> then <span class="process-math">\(\frac{1}{2}(\vec u +\vec v )\)</span> is the only vector equally distant from both <span class="process-math">\(\vec u\)</span> and <span class="process-math">\(\vec v\)</span></p></li>
+<li id="li-154"><p id="p-254"><span class="process-math">\(a(b\vec v)=(ab)\vec v\text{.}\)</span></p></li>
+<li id="li-155"><p id="p-255"><span class="process-math">\(1\vec v=\vec v\text{.}\)</span></p></li>
+<li id="li-156"><p id="p-256">If <span class="process-math">\(\vec u\not=\vec 0\text{,}\)</span> then there exists some number <span class="process-math">\(c\)</span> such that <span class="process-math">\(c\vec u=\vec v\text{.}\)</span></p></li>
+<li id="li-157"><p id="p-257"><span class="process-math">\(a(\vec u+\vec v)=a\vec u+a\vec v\text{.}\)</span></p></li>
+<li id="li-158"><p id="p-258"><span class="process-math">\((a+b)\vec v=a\vec v+b\vec v\text{.}\)</span></p></li>
+</ol></article><article class="definition definition-like" id="VS1-properties"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h4>
+<p id="p-259"> A <dfn class="terminology">vector space</dfn> <span class="process-math">\(V\)</span> is any set of mathematical objects, called <dfn class="terminology">vectors</dfn>, and a set of numbers, called <dfn class="terminology">scalars</dfn>, with associated addition <span class="process-math">\(\oplus\)</span> and scalar multiplication <span class="process-math">\(\odot\)</span> operations that satisfy the following properties. Let <span class="process-math">\(\vec u,\vec v,\vec w\)</span> be vectors belonging to <span class="process-math">\(V\text{,}\)</span> and let <span class="process-math">\(a,b\)</span> be scalars.</p>
+<ol class="decimal">
+<li id="li-159"><p id="p-260">Vector addition is associative: <span class="process-math">\(\vec u\oplus (\vec v\oplus \vec w)=
+(\vec u\oplus \vec v)\oplus \vec w\text{.}\)</span></p></li>
+<li id="li-160"><p id="p-261">Vector addition is commutative: <span class="process-math">\(\vec u\oplus \vec v=
+\vec v\oplus \vec u\text{.}\)</span></p></li>
+<li id="li-161"><p id="p-262">An additive identity exists: There exists some <span class="process-math">\(\vec z\)</span> where <span class="process-math">\(\vec v\oplus \vec z=\vec v\text{.}\)</span></p></li>
+<li id="li-162"><p id="p-263">Additive inverses exist: There exists some <span class="process-math">\(-\vec v\)</span> where <span class="process-math">\(\vec v\oplus (-\vec v)=\vec z\text{.}\)</span></p></li>
+<li id="li-163"><p id="p-264">Scalar multiplication is associative: <span class="process-math">\(a\odot(b\odot\vec v)=(ab)\odot\vec v\text{.}\)</span></p></li>
+<li id="li-164"><p id="p-265">1 is a multiplicative identity: <span class="process-math">\(1\odot\vec v=\vec v\text{.}\)</span></p></li>
+<li id="li-165"><p id="p-266">Scalar multiplication distributes over vector addition: <span class="process-math">\(a\odot(\vec u\oplus \vec v)=(a\odot\vec u)\oplus(a\odot\vec v)\text{.}\)</span></p></li>
+<li id="li-166"><p id="p-267">Scalar multiplication distributes over scalar addition: <span class="process-math">\((a+ b)\odot\vec v=(a\odot\vec v)\oplus(b\odot \vec v)\text{.}\)</span></p></li>
+</ol></article><article class="observation remark-like" id="observation-3"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
+</h4>
+<p id="p-268">Every <dfn class="terminology">Euclidean vector space</dfn></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\IR^n=\setBuilder{\left[\begin{array}{c}x_1\\x_2\\\vdots\\x_n\end{array}\right]}{x_1,x_2,\dots,x_n\in\IR}
+\end{equation*}
+</div>
+<p class="continuation">satisfies all eight requirements for the usual definitions of addition and scalar multiplication, but we will also study other types of vector spaces.</p></article><article class="observation remark-like" id="observation-4"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
+</h4>
+<p id="p-269">The space of <span class="process-math">\(m \times n\)</span> <dfn class="terminology">matrices</dfn></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+M_{m,n}=\setBuilder{\left[\begin{array}{cccc}a_{11}  &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} \end{array}\right]}
+{a_{11},\ldots,a_{mn} \in\IR}
+\end{equation*}
+</div>
+<p class="continuation">satisfies all eight requirements for component-wise addition and scalar multiplication.</p></article><article class="remark remark-like" id="remark-7"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
+</h4>
+<p id="p-270">Every Euclidean space <span class="process-math">\(\IR^n\)</span> is a vector space, but there are other examples of vector spaces as well.</p>
+<p id="p-271">For example, consider the set <span class="process-math">\(\IC\)</span> of complex numbers with the usual defintions of addition and scalar multiplication, and let <span class="process-math">\(\vec u=a+b\mathbf{i}\text{,}\)</span> <span class="process-math">\(\vec v=c+d\mathbf{i}\text{,}\)</span> and <span class="process-math">\(\vec w=e+f\mathbf{i}\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-30">
+\begin{align*}
+\vec u+(\vec v+\vec w)
+&amp;=
+(a+b\mathbf{i})+((c+d\mathbf{i})+(e+f\mathbf{i}))\\
+&amp;=
+(a+b\mathbf{i})+((c+e)+(d+f)\mathbf{i})
+\\&amp;=(a+c+e)+(b+d+f)\mathbf{i}
+\\&amp;=((a+c)+(b+d)\mathbf{i})+(e+f\mathbf{i})\\
+&amp;=
+(\vec u+\vec v)+\vec w
+\end{align*}
+</div>
+<p id="p-272">All eight properties can be verified in this way.</p></article><article class="remark remark-like" id="remark-8"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
+</h4>
+<p id="p-273">The following sets are just a few examples of vector spaces, with the usual/natural operations for addition and scalar multiplication.</p>
+<ul class="disc">
+<li id="li-167"><p id="p-274"><span class="process-math">\(\IR^n\text{:}\)</span> Euclidean vectors with <span class="process-math">\(n\)</span> components.</p></li>
+<li id="li-168"><p id="p-275"><span class="process-math">\(\IC\text{:}\)</span> Complex numbers.</p></li>
+<li id="li-169"><p id="p-276"><span class="process-math">\(M_{m,n}\text{:}\)</span> Matrices of real numbers with <span class="process-math">\(m\)</span> rows and <span class="process-math">\(n\)</span> columns.</p></li>
+<li id="li-170"><p id="p-277"><span class="process-math">\(\P_n\text{:}\)</span> Polynomials of degree <span class="process-math">\(n\)</span> or less.</p></li>
+<li id="li-171"><p id="p-278"><span class="process-math">\(\P\text{:}\)</span> Polynomials of any degree.</p></li>
+<li id="li-172"><p id="p-279"><span class="process-math">\(C(\IR)\text{:}\)</span> Real-valued continuous functions.</p></li>
+</ul></article><article class="activity project-like" id="activity-27"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span>
+</h4>
+<p id="p-280">Consider the set <span class="process-math">\(V=\setBuilder{(x,y)}{y=2^x}\text{.}\)</span></p>
+<p id="p-281">Which of the following vectors is not in <span class="process-math">\(V\text{?}\)</span></p>
+<ol class="upper-alpha cols2">
+<li id="li-173"><p id="p-282"><span class="process-math">\(\displaystyle (0, 0)\)</span></p></li>
+<li id="li-174"><p id="p-283"><span class="process-math">\(\displaystyle (1, 2)\)</span></p></li>
+<li id="li-175"><p id="p-284"><span class="process-math">\(\displaystyle (2, 4)\)</span></p></li>
+<li id="li-176"><p id="p-285"><span class="process-math">\(\displaystyle (3, 8)\)</span></p></li>
+</ol></article><article class="activity project-like" id="activity-28"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span>
+</h4>
+<p id="p-286">Consider the set <span class="process-math">\(V=\setBuilder{(x,y)}{y=2^x}\)</span> with the operation <span class="process-math">\(\oplus\)</span> defined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)   \text{.}
+\end{equation*}
+</div>
+<p id="p-287">Let <span class="process-math">\(\vec u, \vec v\)</span> be in <span class="process-math">\(V\)</span> with <span class="process-math">\(\vec u=(1, 2)\)</span> and <span class="process-math">\(\vec v=(2, 4)\text{.}\)</span> Using the operations defined for <span class="process-math">\(V\text{,}\)</span> which of the following is <span class="process-math">\(\vec u\oplus\vec v\text{?}\)</span></p>
+<ol class="upper-alpha cols2">
+<li id="li-177"><p id="p-288"><span class="process-math">\(\displaystyle (2, 6)\)</span></p></li>
+<li id="li-178"><p id="p-289"><span class="process-math">\(\displaystyle (2, 8)\)</span></p></li>
+<li id="li-179"><p id="p-290"><span class="process-math">\(\displaystyle (3, 6)\)</span></p></li>
+<li id="li-180"><p id="p-291"><span class="process-math">\(\displaystyle (3, 8)\)</span></p></li>
+</ol></article><article class="activity project-like" id="activity-29"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.10</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-14">
+<p id="p-292">Consider the set <span class="process-math">\(V=\setBuilder{(x,y)}{y=2^x}\)</span> with operations <span class="process-math">\(\oplus,\odot\)</span> defined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+\hspace{3em}
+c\odot (x,y)=(cx,y^c)\text{.}
+\end{equation*}
+</div>
+<p id="p-293">Let <span class="process-math">\(a=2, b=-3\)</span> be scalars and <span class="process-math">\(\vec u=(1,2) \in V\text{.}\)</span></p>
+</div>
+<article class="task exercise-like" id="task-26"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-294">Verify that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(a+b)\odot \vec u=\left(-1,\frac{1}{2}\right)\text{.}
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-27"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-295">Compute the value of</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left(a\odot \vec u\right)\oplus \left(b\odot \vec u\right)\text{.}
+\end{equation*}
+</div></article></article><article class="activity project-like" id="activity-30"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.11</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-15">
+<p id="p-296">Consider the set <span class="process-math">\(V=\setBuilder{(x,y)}{y=2^x}\)</span> with operations <span class="process-math">\(\oplus,\odot\)</span> defined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+\hspace{3em}
+c\odot (x,y)=(cx,y^c)\text{.}
+\end{equation*}
+</div>
+<p id="p-297">Let <span class="process-math">\(a, b\)</span> be unspecified scalars in <span class="process-math">\(\mathbb R\)</span> and <span class="process-math">\(\vec u = (x,y)\)</span> be an unspecified vector in <span class="process-math">\(V\text{.}\)</span></p>
+</div>
+<article class="task exercise-like" id="task-28"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-298">Show that both sides of the equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(a+b)\odot (x,y)=
+\left(a\odot (x,y)\right)\oplus \left(b\odot (x,y)\right)
+\end{equation*}
+</div>
+<p class="continuation">simplify to the expression <span class="process-math">\((ax+bx,y^ay^b)\text{.}\)</span></p></article><article class="task exercise-like" id="task-29"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-299">Which of the properties from <a href="" class="xref" data-knowl="./knowl/VS1-properties.html" title="Definition 2.1.3">Definition 2.1.3</a> did we verify in the previous task?</p>
+<ol class="upper-alpha">
+<li id="li-181"><p id="p-300">Vector addition is associative</p></li>
+<li id="li-182"><p id="p-301"><span class="process-math">\(1\)</span> is a multiplicative identity</p></li>
+<li id="li-183"><p id="p-302">Scalar multiplication distributes over scalar addition</p></li>
+</ol></article><article class="task exercise-like" id="task-30"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-303">Show that <span class="process-math">\(V\)</span> contains an additive identity element <span class="process-math">\(\vec{z}=(\unknown,\unknown)\)</span> satisfying</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(x,y)\oplus(\unknown,\unknown)=(x,y)
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\((x,y)\in V\)</span> by choosing appropriate values for <span class="process-math">\(\vec{z}=(\unknown,\unknown)\)</span> and using those to simplify <span class="process-math">\((x,y)\oplus(\unknown,\unknown)=(x,y)\)</span> to <span class="process-math">\((x,y)\text{.}\)</span></p></article></article><article class="remark remark-like" id="remark-9"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.12</span><span class="period">.</span>
+</h4>
+<p id="p-304">It turns out <span class="process-math">\(V=\setBuilder{(x,y)}{y=2^x}\)</span> with operations <span class="process-math">\(\oplus,\odot\)</span> defined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/VS1-properties.html">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+\hspace{3em}
+c\odot (x,y)=(cx,y^c)
+\end{equation*}
+</div>
+<p class="continuation">satisifes all eight properties from <a href="" class="xref" data-knowl="./knowl/VS1-properties.html" title="Definition 2.1.3">Definition 2.1.3</a>.</p>
+<p id="p-305">Thus, <span class="process-math">\(V\)</span> is a vector space.</p></article><article class="activity project-like" id="activity-31"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.13</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-16">
+<p id="p-306">Let <span class="process-math">\(V=\setBuilder{(x,y)}{x,y\in\IR}\)</span> have operations defined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+y_1+x_2+y_2,x_1^2+x_2^2)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+c\odot (x,y)=(x^c,y+c-1)\text{.}
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-31"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-307">Show that <span class="process-math">\(1\)</span> is the scalar multiplication identity element by simplifying <span class="process-math">\(1\odot(x,y)\)</span> to <span class="process-math">\((x,y)\text{.}\)</span></p></article><article class="task exercise-like" id="task-32"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-308">Show that <span class="process-math">\(V\)</span> does not have an additive identity element <span class="process-math">\(\vec z=(z,w)\)</span> by showing that <span class="process-math">\((0,-1)\oplus(z,w)\not=(0,-1)\)</span> for any possible values of <span class="process-math">\(z,w\text{.}\)</span></p></article><article class="task exercise-like" id="task-33"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-309">Is <span class="process-math">\(V\)</span> a vector space according to <a href="" class="xref" data-knowl="./knowl/VS1-properties.html" title="Definition 2.1.3">Definition 2.1.3</a>?</p></article></article><article class="activity project-like" id="activity-32"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.14</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-17">
+<p id="p-310">Let <span class="process-math">\(V=\setBuilder{(x,y)}{x,y\in\IR}\)</span> have operations defined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1+3y_2)
+\hspace{3em}
+c\odot (x,y)=(cx,cy)
+.
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-34"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-311">Show that scalar multiplication distributes over vector addition, i.e.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+c \odot \left( (x_1,y_1) \oplus (x_2,y_2) \right) = c\odot (x_1,y_1) \oplus c\odot (x_2,y_2)
+\end{equation*}
+</div>
+<p class="continuation">for <em class="emphasis">all</em> <span class="process-math">\(c\in \IR,\, (x_1,y_1),(x_2,y_2) \in V\text{.}\)</span></p></article><article class="task exercise-like" id="task-35"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-312">Show that vector addition is not associative, i.e.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(x_1,y_1) \oplus \left((x_2,y_2) \oplus (x_3,y_3)\right) \neq \left((x_1,y_1)\oplus (x_2,y_2)\right) \oplus (x_3,y_3)
+\end{equation*}
+</div>
+<p class="continuation">for <em class="emphasis">some</em> vectors <span class="process-math">\((x_1,y_1), (x_2,y_2), (x_3,y_3) \in V\text{.}\)</span></p></article><article class="task exercise-like" id="task-36"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-313">Is <span class="process-math">\(V\)</span> a vector space?</p></article></article></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.2</span> <span class="title">Videos</span>
+</h3>
+<figure class="figure figure-like" id="figure-5"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-VS1-1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/7Qv5Sykdv0I?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span>Video: Verifying that a vector space property holds</figcaption></figure><figure class="figure figure-like" id="figure-6"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-VS1-2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/q6VSE54ogc4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6<span class="period">.</span></span><span class="space"> </span>Video: Showing something is not a vector space</figcaption></figure></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.3</span> <span class="title">Slideshow</span>
+</h3>
+<p id="p-314">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/VS1.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/VS1.slides.html</code></a>.</p></section><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.1.4</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-315">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/exercises/#/bank/VS1/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/exercises/#/bank/VS1/</code></a>.</p></section><section class="subsection" id="subsection-24"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.5</span> <span class="title">Mathematical Writing Explorations</span>
+</h3>
+<article class="exploration project-like" id="exploration-9"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.1.15</span><span class="period">.</span>
+</h4>
+<ul id="p-316" class="disc">
+<li id="li-184"><p id="p-derived-li-184">Show that <span class="process-math">\(\mathbb{R}^+\text{,}\)</span> the set of positive real numbers, is a vector space, but where <span class="process-math">\(x\oplus y\)</span> really means the product (so <span class="process-math">\(2 \oplus 3 = 6\)</span>), and where scalar multiplication <span class="process-math">\(\alpha\odot x\)</span> really means <span class="process-math">\(x^\alpha\text{.}\)</span> Yes, you really do need to check all of the properties, but this is the only time I'll make you do so. Remember, examples aren't proofs, so you should start with arbitrary elements of <span class="process-math">\(\mathbb R^+\)</span> for your vectors. Make sure you're careful about telling the reader what <span class="process-math">\(\alpha\)</span> means.</p></li>
+<li id="li-185"><p id="p-derived-li-185">Prove that the additive identity <span class="process-math">\(\vec{z}\)</span> in an arbitrary vector space is unique.</p></li>
+<li id="li-186"><p id="p-derived-li-186">Prove that additive inverses are unique. Assume you have a vector space <span class="process-math">\(V\)</span> and  some <span class="process-math">\(\vec{v} \in V\text{.}\)</span> Further, assume <span class="process-math">\(\vec{w_1},\vec{w_2} \in V\)</span> with <span class="process-math">\(\vec{v} \oplus \vec{w_1} = \vec{v} \oplus \vec{w_2} = \vec{z}\text{.}\)</span> Prove that <span class="process-math">\(\vec{w_1} = \vec{w_2}\text{.}\)</span></p></li>
+</ul></article><article class="exploration project-like" id="exploration-10"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.1.16</span><span class="period">.</span>
+</h4>
+<p id="p-317">Consider the vector space of polynomials, <span class="process-math">\(\P_n\text{.}\)</span> Suppose further that <span class="process-math">\(n= ab\text{,}\)</span> where <span class="process-math">\(a \mbox{ and } b\)</span> are each positive integers. Conjecture a relationship between <span class="process-math">\(M_{a,b}\)</span> and <span class="process-math">\(\P_n\text{.}\)</span> We will investigate this further in section <a href="VS8.html" class="internal" title="Section 2.8: Polynomial and Matrix Spaces (VS8)">Section 2.8</a></p></article></section><section class="subsection" id="subsection-25"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.6</span> <span class="title">Sample Problem and Solution</span>
+</h3>
+<p id="p-318">Sample problem <a href="" class="xref" data-knowl="./knowl/sampleVS1.html" title="Example B.1.5: VS1">Example B.1.5</a>.</p></section></section></div></main>
+</div>
+</body>
+</html>

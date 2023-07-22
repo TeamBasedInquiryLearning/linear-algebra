@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-07-29T18:47:20Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Image and Kernel (A3)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra for Team-Based Inquiry Learning">
+<meta property="book:author" content="Steven Clontz">
+<meta property="book:author" content="Drew Lewis">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
+                       linked: true,
+                       languages: ['octave'],
+                       evalButtonText: 'Evaluate (Octave)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">Legacy Edition</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="A2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="A.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="A4.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="A2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="A.html" title="Up">Up</a><a class="next-button button toolbar-item" href="A4.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes" class="internal">Learning Outcomes</a></li>
+<li><a href="slideshow-link.html" data-scroll="slideshow-link" class="internal">Slideshow</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="E.html" data-scroll="E" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (E)</span></a><ul>
+<li><a href="E1.html" data-scroll="E1" class="internal">Linear Systems, Vector Equations, and Augmented Matrices (E1)</a></li>
+<li><a href="E2.html" data-scroll="E2" class="internal">Row Reduction of Matrices (E2)</a></li>
+<li><a href="E3.html" data-scroll="E3" class="internal">Solving Linear Systems (E3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="V.html" data-scroll="V" class="internal"><span class="codenumber">2</span> <span class="title">Vector Spaces (V)</span></a><ul>
+<li><a href="V1.html" data-scroll="V1" class="internal">Vector Spaces (V1)</a></li>
+<li><a href="V2.html" data-scroll="V2" class="internal">Linear Combinations (V2)</a></li>
+<li><a href="V3.html" data-scroll="V3" class="internal">Spanning Sets (V3)</a></li>
+<li><a href="V4.html" data-scroll="V4" class="internal">Subspaces (V4)</a></li>
+<li><a href="V5.html" data-scroll="V5" class="internal">Linear Independence (V5)</a></li>
+<li><a href="V6.html" data-scroll="V6" class="internal">Identifying a Basis (V6)</a></li>
+<li><a href="V7.html" data-scroll="V7" class="internal">Subspace Basis and Dimension (V7)</a></li>
+<li><a href="V8.html" data-scroll="V8" class="internal">Polynomial and Matrix Spaces (V8)</a></li>
+<li><a href="V9.html" data-scroll="V9" class="internal">Homogeneous Linear Systems (V9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="A.html" data-scroll="A" class="internal"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (A)</span></a><ul>
+<li><a href="A1.html" data-scroll="A1" class="internal">Linear Transformations (A1)</a></li>
+<li><a href="A2.html" data-scroll="A2" class="internal">Standard Matrices (A2)</a></li>
+<li><a href="A3.html" data-scroll="A3" class="active">Image and Kernel (A3)</a></li>
+<li><a href="A4.html" data-scroll="A4" class="internal">Injective and Surjective Linear Maps (A4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="M.html" data-scroll="M" class="internal"><span class="codenumber">4</span> <span class="title">Matrices (M)</span></a><ul>
+<li><a href="M1.html" data-scroll="M1" class="internal">Matrices and Multiplication (M1)</a></li>
+<li><a href="M2.html" data-scroll="M2" class="internal">Row Operations as Matrix Multiplication (M2)</a></li>
+<li><a href="M3.html" data-scroll="M3" class="internal">The Inverse of a Matrix (M3)</a></li>
+<li><a href="M4.html" data-scroll="M4" class="internal">Invertible Matrices (M4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="G.html" data-scroll="G" class="internal"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (G)</span></a><ul>
+<li><a href="G1.html" data-scroll="G1" class="internal">Row Operations and Determinants (G1)</a></li>
+<li><a href="G2.html" data-scroll="G2" class="internal">Computing Determinants (G2)</a></li>
+<li><a href="G3.html" data-scroll="G3" class="internal">Eigenvalues and Characteristic Polynomials (G3)</a></li>
+<li><a href="G4.html" data-scroll="G4" class="internal">Eigenvectors and Eigenspaces (G4)</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="applications.html" data-scroll="applications" class="internal"><span class="codenumber">A</span> <span class="title">Applications</span></a><ul>
+<li><a href="geology.html" data-scroll="geology" class="internal">Geology: Phases and Components</a></li>
+<li><a href="pagerank.html" data-scroll="pagerank" class="internal">Computer Science: PageRank</a></li>
+<li><a href="truss.html" data-scroll="truss" class="internal">Civil Engineering: Trusses and Struts</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="appendix-2.html" data-scroll="appendix-2" class="internal"><span class="codenumber">B</span> <span class="title">Appendix</span></a><ul>
+<li><a href="sample-exercises.html" data-scroll="sample-exercises" class="internal">Sample Exercises with Solutions</a></li>
+<li><a href="list-of-definitions.html" data-scroll="list-of-definitions" class="internal">Definitions</a></li>
+</ul>
+</li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="A3"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Image and Kernel (A3)</span>
+</h2>
+<article class="definition definition-like" id="definition-20"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
+</h3>
+<p id="p-468">Let <span class="process-math">\(T: V \rightarrow W\)</span> be a linear transformation.  The <dfn class="terminology">kernel</dfn> of <span class="process-math">\(T\)</span> is an important subspace of <span class="process-math">\(V\)</span> defined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\ker T = \left\{ \vec{v} \in V\ \big|\ T(\vec{v})=\vec{z}\right\}
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="figure-25"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-9.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>The kernel of a linear transformation</figcaption></figure></article><article class="activity project-like" id="activity-81"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
+</h3>
+<p id="p-469">Let <span class="process-math">\(T: \IR^2 \rightarrow \IR^3\)</span> be given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
+=
+\left[\begin{array}{c} x \\ y \\ 0 \end{array}\right]
+\hspace{3em}
+\text{with standard matrix }
+\left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">Which of these subspaces of <span class="process-math">\(\IR^2\)</span> describes <span class="process-math">\(\ker T\text{,}\)</span> the set of all vectors that transform into <span class="process-math">\(\vec 0\text{?}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-203"><p id="p-470"><span class="process-math">\(\displaystyle \setBuilder{\left[\begin{array}{c}a \\ a\end{array}\right]}{a\in\IR}\)</span></p></li>
+<li id="li-204"><p id="p-471"><span class="process-math">\(\displaystyle \setList{\left[\begin{array}{c}0\\0\end{array}\right]}\)</span></p></li>
+<li id="li-205"><p id="p-472"><span class="process-math">\(\displaystyle \IR^2=\setBuilder{\left[\begin{array}{c}x \\ y\end{array}\right]}{x,y\in\IR}\)</span></p></li>
+</ol></article><article class="activity project-like" id="activity-82"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
+</h3>
+<p id="p-473">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> be given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
+=
+\left[\begin{array}{c} x \\ y \end{array}\right]
+\hspace{3em}
+\text{with standard matrix }
+\left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">Which of these subspaces of <span class="process-math">\(\IR^3\)</span> describes <span class="process-math">\(\ker T\text{,}\)</span> the set of all vectors that transform into <span class="process-math">\(\vec 0\text{?}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-206"><p id="p-474"><span class="process-math">\(\displaystyle \setBuilder{\left[\begin{array}{c}0 \\ 0\\ a\end{array}\right]}{a\in\IR}\)</span></p></li>
+<li id="li-207"><p id="p-475"><span class="process-math">\(\displaystyle \setBuilder{\left[\begin{array}{c}a \\ a\\ 0\end{array}\right]}{a\in\IR}\)</span></p></li>
+<li id="li-208"><p id="p-476"><span class="process-math">\(\displaystyle \setList{\left[\begin{array}{c}0\\0\\0\end{array}\right]}\)</span></p></li>
+<li id="li-209"><p id="p-477"><span class="process-math">\(\displaystyle \IR^3=\setBuilder{\left[\begin{array}{c}x \\ y\\z\end{array}\right]}{x,y,z\in\IR}\)</span></p></li>
+</ol></article><article class="activity project-like" id="activity-83"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-29">
+<p id="p-478">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> be the linear transformation given by the standard matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T\left( \left[\begin{array}{c} x \\ y \\ z \end{array}\right]\right) = \left[\begin{array}{c} 3x+4y-z \\ x+2y+z \end{array}\right]
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-65"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-479">Set <span class="process-math">\(T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)
+=
+\left[\begin{array}{c}0\\0\end{array}\right]\)</span> to find a linear system of equations whose solution set is the kernel.</p></article><article class="task exercise-like" id="task-66"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-480">Use <span class="process-math">\(\RREF(A)\)</span> to solve this homogeneous system of equations and find a basis for the kernel of <span class="process-math">\(T\text{.}\)</span></p></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-29"><script type="text/x-sage"></script></pre>
+<article class="activity project-like" id="activity-84"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.6</span><span class="period">.</span>
+</h3>
+<p id="p-481">Let <span class="process-math">\(T: \IR^4 \rightarrow \IR^3\)</span> be the linear transformation given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T\left(\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right] \right) = 
+\left[\begin{array}{c} 2x+4y+2z-4w \\ -2x-4y+z+w \\ 3x+6y-z-4w\end{array}\right].
+\end{equation*}
+</div>
+<p id="p-482">Find a basis for the kernel of <span class="process-math">\(T\text{.}\)</span></p></article><pre class="ptx-sagecell sagecell-octave" id="sage-30"><script type="text/x-sage"></script></pre>
+<article class="definition definition-like" id="definition-21"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.7</span><span class="period">.</span>
+</h3>
+<p id="p-483">Let <span class="process-math">\(T: V \rightarrow W\)</span> be a linear transformation. The <dfn class="terminology">image</dfn> of <span class="process-math">\(T\)</span> is an important subspace of <span class="process-math">\(W\)</span> defined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\Im T = \left\{ \vec{w} \in W\ \big|\ \text{there is some }\vec v\in V \text{ with } T(\vec{v})=\vec{w}\right\}
+\end{equation*}
+</div>
+<p id="p-484">In the examples below, the left example's image is all of <span class="process-math">\(\IR^2\text{,}\)</span> but the right example's image is a planar subspace of <span class="process-math">\(\IR^3\text{.}\)</span></p>
+<figure class="figure figure-like" id="figure-26"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-10.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.8<span class="period">.</span></span><span class="space"> </span>The image of a linear transformation</figcaption></figure></article><article class="activity project-like" id="activity-85"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.9</span><span class="period">.</span>
+</h3>
+<p id="p-485">Let <span class="process-math">\(T: \IR^2 \rightarrow \IR^3\)</span> be given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
+=
+\left[\begin{array}{c} x \\ y \\ 0 \end{array}\right]
+\hspace{3em}
+\text{with standard matrix }
+\left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">Which of these subspaces of <span class="process-math">\(\IR^3\)</span> describes <span class="process-math">\(\Im T\text{,}\)</span> the set of all vectors that are the result of using <span class="process-math">\(T\)</span> to transform <span class="process-math">\(\IR^2\)</span> vectors?</p>
+<ol class="lower-alpha">
+<li id="li-210"><p id="p-486"><span class="process-math">\(\displaystyle \setBuilder{\left[\begin{array}{c}0 \\ 0\\ a\end{array}\right]}{a\in\IR}\)</span></p></li>
+<li id="li-211"><p id="p-487"><span class="process-math">\(\displaystyle \setBuilder{\left[\begin{array}{c}a \\ b\\ 0\end{array}\right]}{a,b\in\IR}\)</span></p></li>
+<li id="li-212"><p id="p-488"><span class="process-math">\(\displaystyle \setList{\left[\begin{array}{c}0\\0\\0\end{array}\right]}\)</span></p></li>
+<li id="li-213"><p id="p-489"><span class="process-math">\(\displaystyle \IR^3=\setBuilder{\left[\begin{array}{c}x \\ y\\z\end{array}\right]}{x,y,z\in\IR}\)</span></p></li>
+</ol></article><article class="activity project-like" id="activity-86"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.10</span><span class="period">.</span>
+</h3>
+<p id="p-490">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> be given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
+=
+\left[\begin{array}{c} x \\ y \end{array}\right]
+\hspace{3em}
+\text{with standard matrix }
+\left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">Which of these subspaces of <span class="process-math">\(\IR^2\)</span> describes <span class="process-math">\(\Im T\text{,}\)</span> the set of all vectors that are the result of using <span class="process-math">\(T\)</span> to transform <span class="process-math">\(\IR^3\)</span> vectors?</p>
+<ol class="lower-alpha">
+<li id="li-214"><p id="p-491"><span class="process-math">\(\displaystyle \setBuilder{\left[\begin{array}{c}a \\ a\end{array}\right]}{a\in\IR}\)</span></p></li>
+<li id="li-215"><p id="p-492"><span class="process-math">\(\displaystyle \setList{\left[\begin{array}{c}0\\0\end{array}\right]}\)</span></p></li>
+<li id="li-216"><p id="p-493"><span class="process-math">\(\displaystyle \IR^2=\setBuilder{\left[\begin{array}{c}x \\ y\end{array}\right]}{x,y\in\IR}\)</span></p></li>
+</ol></article><article class="activity project-like" id="activity-87"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.11</span><span class="period">.</span>
+</h3>
+<p id="p-494">Let <span class="process-math">\(T: \IR^4 \rightarrow \IR^3\)</span> be the linear transformation given by the standard matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A
+=
+\left[\begin{array}{cccc} 3 &amp; 4 &amp; 7 &amp; 1\\ -1 &amp; 1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 3 &amp; -1 \end{array}\right]
+=
+\left[\begin{array}{cccc}T(\vec e_1)&amp;T(\vec e_2)&amp;T(\vec e_3)&amp;T(\vec e_4)\end{array}\right]
+.
+\end{equation*}
+</div>
+<p id="p-495">Since <span class="process-math">\(T(\vec v)=T(x_1\vec e_1+x_2\vec e_2+x_3\vec e_3+x_4\vec e_4)\text{,}\)</span> the set of vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\setList{
+\left[\begin{array}{c}3\\-1\\2\end{array}\right],
+\left[\begin{array}{c}4\\1\\1\end{array}\right],
+\left[\begin{array}{c}7\\0\\3\end{array}\right],
+\left[\begin{array}{c}1\\2\\-1\end{array}\right]
+}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-217"><p id="p-496">spans <span class="process-math">\(\Im T\)</span></p></li>
+<li id="li-218"><p id="p-497">is a linearly independent subset of <span class="process-math">\(\Im T\)</span></p></li>
+<li id="li-219"><p id="p-498">is a basis for <span class="process-math">\(\Im T\)</span></p></li>
+</ol></article><article class="observation remark-like" id="observation-17"><h3 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.3.12</span><span class="period">.</span>
+</h3>
+<p id="p-499">Let <span class="process-math">\(T: \IR^4 \rightarrow \IR^3\)</span> be the linear transformation given by the standard matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A
+=
+\left[\begin{array}{cccc} 3 &amp; 4 &amp; 7 &amp; 1\\ -1 &amp; 1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 3 &amp; -1 \end{array}\right]
+.
+\end{equation*}
+</div>
+<p id="p-500">Since the set <span class="process-math">\(\setList{
+\left[\begin{array}{c}3\\-1\\2\end{array}\right],
+\left[\begin{array}{c}4\\1\\1\end{array}\right],
+\left[\begin{array}{c}7\\0\\3\end{array}\right],
+\left[\begin{array}{c}1\\2\\-1\end{array}\right]
+}\)</span> spans <span class="process-math">\(\Im T\text{,}\)</span> we can obtain a basis for <span class="process-math">\(\Im T\)</span> by finding <span class="process-math">\(\RREF A
+=
+\left[\begin{array}{cccc} 1 &amp; 0 &amp; 1 &amp; -1\\ 0 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]\)</span> and only using the vectors corresponding to pivot columns:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\setList{
+\left[\begin{array}{c}3\\-1\\2\end{array}\right],
+\left[\begin{array}{c}4\\1\\1\end{array}\right]
+}
+\end{equation*}
+</div></article><article class="fact theorem-like" id="fact-17"><h3 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.3.13</span><span class="period">.</span>
+</h3>
+<p id="p-501">Let  <span class="process-math">\(T:\IR^n\to\IR^m\)</span> be a linear transformation with standard matrix <span class="process-math">\(A\text{.}\)</span></p>
+<ul class="disc">
+<li id="li-220"><p id="p-502">The kernel of <span class="process-math">\(T\)</span> is the solution set of the homogeneous system given by the augmented matrix <span class="process-math">\(\left[\begin{array}{c|c}A&amp;\vec 0\end{array}\right]\text{.}\)</span> Use the coefficients of its free variables to get a basis for the kernel.</p></li>
+<li id="li-221"><p id="p-503">The image of <span class="process-math">\(T\)</span> is the span of the columns of <span class="process-math">\(A\text{.}\)</span> Remove the vectors creating non-pivot columns in <span class="process-math">\(\RREF A\)</span> to get a basis for the image.</p></li>
+</ul></article><article class="activity project-like" id="activity-88"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.14</span><span class="period">.</span>
+</h3>
+<p id="p-504">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^4\)</span> be the linear transformation given by the standard matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A
+=
+\left[\begin{array}{ccc} 1 &amp; -3 &amp; 2\\ 2 &amp; -6 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ -1 &amp; 3 &amp; 1 \end{array}\right]
+.
+\end{equation*}
+</div>
+<p id="p-505">Find a basis for the kernel and a basis for the image of <span class="process-math">\(T\text{.}\)</span></p></article><pre class="ptx-sagecell sagecell-octave" id="sage-31"><script type="text/x-sage"></script></pre>
+<article class="activity project-like" id="activity-89"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.15</span><span class="period">.</span>
+</h3>
+<p id="p-506">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^m\)</span> be a linear transformation with standard matrix <span class="process-math">\(A\text{.}\)</span> Which of the following is equal to the dimension of the kernel of <span class="process-math">\(T\text{?}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-222"><p id="p-507">The number of pivot columns</p></li>
+<li id="li-223"><p id="p-508">The number of non-pivot columns</p></li>
+<li id="li-224"><p id="p-509">The number of pivot rows</p></li>
+<li id="li-225"><p id="p-510">The number of non-pivot rows</p></li>
+</ol></article><article class="activity project-like" id="activity-90"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.16</span><span class="period">.</span>
+</h3>
+<p id="p-511">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^m\)</span> be a linear transformation with standard matrix <span class="process-math">\(A\text{.}\)</span> Which of the following is equal to the dimension of the image of <span class="process-math">\(T\text{?}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-226"><p id="p-512">The number of pivot columns</p></li>
+<li id="li-227"><p id="p-513">The number of non-pivot columns</p></li>
+<li id="li-228"><p id="p-514">The number of pivot rows</p></li>
+<li id="li-229"><p id="p-515">The number of non-pivot rows</p></li>
+</ol></article><article class="observation remark-like" id="observation-18"><h3 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.3.17</span><span class="period">.</span>
+</h3>
+<p id="p-516">Combining these with the observation that the number of columns is the dimension of the domain of <span class="process-math">\(T\text{,}\)</span> we have the <dfn class="terminology">rank-nullity theorem</dfn>:</p>
+<blockquote class="blockquote" id="blockquote-1"><p id="p-517">The dimension of the domain of <span class="process-math">\(T\)</span> equals <span class="process-math">\(\dim(\ker T)+\dim(\Im T)\text{.}\)</span></p></blockquote>
+<p id="p-518">The dimension of the image is called the <dfn class="terminology">rank</dfn> of <span class="process-math">\(T\)</span> (or <span class="process-math">\(A\)</span>) and the dimension of the kernel is called the <dfn class="terminology">nullity</dfn>.</p></article><article class="activity project-like" id="activity-91"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.18</span><span class="period">.</span>
+</h3>
+<p id="p-519">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^4\)</span> be the linear transformation given by the standard matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A
+=
+\left[\begin{array}{ccc} 1 &amp; -3 &amp; 2\\ 2 &amp; -6 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ -1 &amp; 3 &amp; 1 \end{array}\right]
+.
+\end{equation*}
+</div>
+<p class="continuation">Verify that the rank-nullity theorem holds for <span class="process-math">\(T\text{.}\)</span></p></article><pre class="ptx-sagecell sagecell-octave" id="sage-32"><script type="text/x-sage"></script></pre>
+<section class="subsection" id="subsection-16"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.3.1</span> <span class="title">Videos</span>
+</h3>
+<figure class="figure figure-like" id="figure-27"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-A3-1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/FGyD1KLFHwc?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.19<span class="period">.</span></span><span class="space"> </span>Video: The kernel and image of a linear transformation</figcaption></figure><figure class="figure figure-like" id="figure-28"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-A3-2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/ut_1dVFqwXw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.20<span class="period">.</span></span><span class="space"> </span>Video: Finding a basis of the image of a linear transformation</figcaption></figure><figure class="figure figure-like" id="figure-29"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-A3-3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/VO2bDSiwbJM?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.21<span class="period">.</span></span><span class="space"> </span>Video: Finding a basis of the kernel of a linear transformation</figcaption></figure><figure class="figure figure-like" id="figure-30"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-A3-4" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/A0RzdY_g44Y?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.22<span class="period">.</span></span><span class="space"> </span>Video: The rank-nullity theorem</figcaption></figure></section><section class="exercises" id="exercises-15"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.3.2</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-520"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/A3/" target="_blank">checkit.clontz.org</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-16" id="fn-16"><sup> 1 </sup></a>.</em></p></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-16"><div class="fn"><code class="code-inline tex2jax_ignore">https://checkit.clontz.org/#/banks/tbil-la/A3/</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

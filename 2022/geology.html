@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TBIL-LA Geology: Phases and Components</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra for Team-Based Inquiry Learning">
+<meta property="book:author" content="Steven Clontz">
+<meta property="book:author" content="Drew Lewis">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">2022 Edition</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="pagerank.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="applications.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="appendix-2.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="pagerank.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="applications.html" title="Up">Up</a><a class="next-button button toolbar-item" href="appendix-2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon.html" data-scroll="colophon" class="internal">Colophon</a></li>
+<li><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal">TBIL Resource Library</a></li>
+<li><a href="instructor-notes.html" data-scroll="instructor-notes" class="internal">For Instructors</a></li>
+<li><a href="video-resources.html" data-scroll="video-resources" class="internal">Video Resources</a></li>
+<li><a href="slideshows.html" data-scroll="slideshows" class="internal">Slideshows</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="LE.html" data-scroll="LE" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (LE)</span></a><ul>
+<li><a href="LE1.html" data-scroll="LE1" class="internal">Linear Systems, Vector Equations, and Augmented Matrices (LE1)</a></li>
+<li><a href="LE2.html" data-scroll="LE2" class="internal">Row Reduction of Matrices (LE2)</a></li>
+<li><a href="LE3.html" data-scroll="LE3" class="internal">Counting Solutions for Linear Systems (LE3)</a></li>
+<li><a href="LE4.html" data-scroll="LE4" class="internal">Linear Systems with Infinitely-Many Solutions (LE4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="VS.html" data-scroll="VS" class="internal"><span class="codenumber">2</span> <span class="title">Vector Spaces (VS)</span></a><ul>
+<li><a href="VS1.html" data-scroll="VS1" class="internal">Vector Spaces (VS1)</a></li>
+<li><a href="VS2.html" data-scroll="VS2" class="internal">Linear Combinations (VS2)</a></li>
+<li><a href="VS3.html" data-scroll="VS3" class="internal">Spanning Sets (VS3)</a></li>
+<li><a href="VS4.html" data-scroll="VS4" class="internal">Subspaces (VS4)</a></li>
+<li><a href="VS5.html" data-scroll="VS5" class="internal">Linear Independence (VS5)</a></li>
+<li><a href="VS6.html" data-scroll="VS6" class="internal">Identifying a Basis (VS6)</a></li>
+<li><a href="VS7.html" data-scroll="VS7" class="internal">Subspace Basis and Dimension (VS7)</a></li>
+<li><a href="VS8.html" data-scroll="VS8" class="internal">Polynomial and Matrix Spaces (VS8)</a></li>
+<li><a href="VS9.html" data-scroll="VS9" class="internal">Homogeneous Linear Systems (VS9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="AT.html" data-scroll="AT" class="internal"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (AT)</span></a><ul>
+<li><a href="AT1.html" data-scroll="AT1" class="internal">Linear Transformations (AT1)</a></li>
+<li><a href="AT2.html" data-scroll="AT2" class="internal">Standard Matrices (AT2)</a></li>
+<li><a href="AT3.html" data-scroll="AT3" class="internal">Image and Kernel (AT3)</a></li>
+<li><a href="AT4.html" data-scroll="AT4" class="internal">Injective and Surjective Linear Maps (AT4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="MX.html" data-scroll="MX" class="internal"><span class="codenumber">4</span> <span class="title">Matrices (MX)</span></a><ul>
+<li><a href="MX1.html" data-scroll="MX1" class="internal">Matrices and Multiplication (MX1)</a></li>
+<li><a href="MX2.html" data-scroll="MX2" class="internal">Row Operations as Matrix Multiplication (MX2)</a></li>
+<li><a href="MX3.html" data-scroll="MX3" class="internal">The Inverse of a Matrix (MX3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="GT.html" data-scroll="GT" class="internal"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (GT)</span></a><ul>
+<li><a href="GT1.html" data-scroll="GT1" class="internal">Row Operations and Determinants (GT1)</a></li>
+<li><a href="GT2.html" data-scroll="GT2" class="internal">Computing Determinants (GT2)</a></li>
+<li><a href="GT3.html" data-scroll="GT3" class="internal">Eigenvalues and Characteristic Polynomials (GT3)</a></li>
+<li><a href="GT4.html" data-scroll="GT4" class="internal">Eigenvectors and Eigenspaces (GT4)</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="applications.html" data-scroll="applications" class="internal"><span class="codenumber">A</span> <span class="title">Applications</span></a><ul>
+<li><a href="truss.html" data-scroll="truss" class="internal">Civil Engineering: Trusses and Struts</a></li>
+<li><a href="pagerank.html" data-scroll="pagerank" class="internal">Computer Science: PageRank</a></li>
+<li><a href="geology.html" data-scroll="geology" class="active">Geology: Phases and Components</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="appendix-2.html" data-scroll="appendix-2" class="internal"><span class="codenumber">B</span> <span class="title">Appendix</span></a><ul>
+<li><a href="sample-exercises.html" data-scroll="sample-exercises" class="internal">Sample Exercises with Solutions</a></li>
+<li><a href="list-of-definitions.html" data-scroll="list-of-definitions" class="internal">Definitions</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="geology"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">A.3</span> <span class="title">Geology: Phases and Components</span>
+</h2>
+<article class="definition definition-like" id="definition-32"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">A.3.1</span><span class="period">.</span>
+</h3>
+<p id="p-1158">In geology, a <dfn class="terminology">phase</dfn> is any physically separable material in the system, such as various minerals or liquids.</p>
+<p id="p-1159">A <dfn class="terminology">component</dfn> is a chemical compound necessary to make up the phases; these are usually oxides such as Calcium Oxide (<span class="process-math">\({\rm CaO}\)</span>) or Silicon Dioxide (<span class="process-math">\({\rm SiO_2}\)</span>).</p>
+<p id="p-1160">In a typical application, a geologist knows how to build each phase from the components, and is interested in determining reactions among the different phases.</p></article><article class="observation remark-like" id="observation-47"><h3 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">A.3.2</span><span class="period">.</span>
+</h3>
+<p id="p-1161">Consider the 3 components</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec{c}_1={\rm CaO} \hspace{1em} \vec{c}_2={\rm MgO} \hspace{1em} \text{and } \vec{c}_3={\rm SiO_2}
+\end{equation*}
+</div>
+<p class="continuation">and the 5 phases:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-47">
+\begin{align*}
+\vec{p}_1 &amp;= {\rm Ca_3MgSi_2O_8} &amp; \vec{p}_2 &amp;= {\rm CaMgSiO_4} &amp; \vec{p}_3 &amp;= {\rm CaSiO_3}\\
+\vec{p}_4 &amp;= {\rm CaMgSi_2O_6} &amp; \vec{p}_5 &amp;= {\rm Ca_2MgSi_2O_7}
+\end{align*}
+</div>
+<p id="p-1162">Geologists already know (or can easily deduce) that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-48">
+\begin{align*}
+\vec{p}_1 &amp;= 3\vec{c}_1 + \vec{c}_2 + 2 \vec{c}_3 &amp; \vec{p}_2 &amp;= \vec{c}_1 +\vec{c}_2 + \vec{c}_3  &amp;
+\vec{p}_3 &amp;= \vec{c}_1 + 0\vec{c}_2 +  \vec{c}_3\\
+\vec{p}_4 &amp;= \vec{c}_1 +\vec{c}_2 + 2\vec{c}_3 &amp;  \vec{p}_5 &amp;= 2\vec{c}_1 + \vec{c}_2 + 2 \vec{c}_3 
+\end{align*}
+</div>
+<p class="continuation">since, for example:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec c_1+\vec c_3 = \mathrm{CaO} + \mathrm{SiO_2} = \mathrm{CaSiO_3} = \vec p_3  
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-173"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.3.3</span><span class="period">.</span>
+</h3>
+<p id="p-1163">To study this vector space, each of the three components <span class="process-math">\(\vec c_1,\vec c_2,\vec c_3\)</span> may be considered as the three components of a Euclidean vector.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec{p}_1 = \left[\begin{array}{c} 3 \\ 1 \\ 2 \end{array}\right],
+\vec{p}_2 = \left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right],
+\vec{p}_3 = \left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right],
+\vec{p}_4 = \left[\begin{array}{c} 1 \\ 1 \\ 2 \end{array}\right],
+\vec{p}_5 = \left[\begin{array}{c} 2 \\ 1 \\ 2 \end{array}\right].
+\end{equation*}
+</div>
+<p id="p-1164">Determine if the set of phases is linearly dependent or linearly independent.</p></article><article class="activity project-like" id="activity-174"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.3.4</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-66">
+<p id="p-1165">Geologists are interested in knowing all the possible chemical reactions among the 5 phases:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec{p}_1 = \mathrm{Ca_3MgSi_2O_8} = \left[\begin{array}{c} 3 \\ 1 \\ 2 \end{array}\right] \hspace{1em}
+\vec{p}_2 = \mathrm{CaMgSiO_4} = \left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right] \hspace{1em}
+\vec{p}_3 = \mathrm{CaSiO_3} =  \left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right]
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec{p}_4 = \mathrm{CaMgSi_2O_6} = \left[\begin{array}{c} 1 \\ 1 \\ 2 \end{array}\right] \hspace{1em}
+\vec{p}_5 = \mathrm{Ca_2MgSi_2O_7} = \left[\begin{array}{c} 2 \\ 1 \\ 2 \end{array}\right].
+\end{equation*}
+</div>
+<p class="continuation">That is, they want to find numbers <span class="process-math">\(x_1,x_2,x_3,x_4,x_5\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_1\vec{p}_1+x_2\vec{p}_2+x_3\vec{p}_3+x_4\vec{p}_4+x_5\vec{p}_5 = 0.
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-143"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-1166">Set up a system of equations equivalent to this vector equation.</p></article><article class="task exercise-like" id="task-144"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-1167">Find a basis for its solution space.</p></article><article class="task exercise-like" id="task-145"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-1168">Interpret each basis vector as a vector equation and a chemical equation.</p></article></article><article class="activity project-like" id="activity-175"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.3.5</span><span class="period">.</span>
+</h3>
+<p id="p-1169">We found two basis vectors <span class="process-math">\(\left[\begin{array}{c} 1 \\ -2 \\ -2 \\ 1 \\ 0 \end{array}\right]\)</span> and <span class="process-math">\(\left[\begin{array}{c} 0 \\ -1 \\ -1 \\ 0 \\ 1 \end{array}\right]\text{,}\)</span> corresponding to the vector and chemical equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-49">
+\begin{align*}
+2\vec{p}_2 + 2 \vec{p}_3 &amp;= \vec{p}_1 + \vec{p}_4 &amp; 2{\rm CaMgSiO_4}+2{\rm CaSiO_3}&amp;={\rm Ca_3MgSi_2O_8}+{\rm CaMgSi_2O_6}\\
+\vec{p}_2 +\vec{p}_3 &amp;= \vec{p}_5 &amp;  {\rm CaMgSiO_4} + {\rm CaSiO_3} &amp;= {\rm Ca_2MgSi_2O_7}
+\end{align*}
+</div>
+<p id="p-1170">Combine the basis vectors to produce a chemical equation among the five phases that does not involve <span class="process-math">\(\vec{p}_2 = {\rm CaMgSiO_4}\text{.}\)</span></p></article><section class="subsection" id="subsection-122"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">A.3.1</span> <span class="title">Slideshow</span>
+</h3>
+<p id="p-1171">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/geology.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/geology.slides.html</code></a>.</p></section></section></div></main>
+</div>
+</body>
+</html>

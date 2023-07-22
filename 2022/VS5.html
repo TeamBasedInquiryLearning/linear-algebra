@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TBIL-LA Linear Independence (VS5)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra for Team-Based Inquiry Learning">
+<meta property="book:author" content="Steven Clontz">
+<meta property="book:author" content="Drew Lewis">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
+                       linked: true,
+                       languages: ['octave'],
+                       evalButtonText: 'Evaluate (Octave)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">2022 Edition</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="VS4.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="VS.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="VS6.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="VS4.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="VS.html" title="Up">Up</a><a class="next-button button toolbar-item" href="VS6.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon.html" data-scroll="colophon" class="internal">Colophon</a></li>
+<li><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal">TBIL Resource Library</a></li>
+<li><a href="instructor-notes.html" data-scroll="instructor-notes" class="internal">For Instructors</a></li>
+<li><a href="video-resources.html" data-scroll="video-resources" class="internal">Video Resources</a></li>
+<li><a href="slideshows.html" data-scroll="slideshows" class="internal">Slideshows</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="LE.html" data-scroll="LE" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (LE)</span></a><ul>
+<li><a href="LE1.html" data-scroll="LE1" class="internal">Linear Systems, Vector Equations, and Augmented Matrices (LE1)</a></li>
+<li><a href="LE2.html" data-scroll="LE2" class="internal">Row Reduction of Matrices (LE2)</a></li>
+<li><a href="LE3.html" data-scroll="LE3" class="internal">Counting Solutions for Linear Systems (LE3)</a></li>
+<li><a href="LE4.html" data-scroll="LE4" class="internal">Linear Systems with Infinitely-Many Solutions (LE4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="VS.html" data-scroll="VS" class="internal"><span class="codenumber">2</span> <span class="title">Vector Spaces (VS)</span></a><ul>
+<li><a href="VS1.html" data-scroll="VS1" class="internal">Vector Spaces (VS1)</a></li>
+<li><a href="VS2.html" data-scroll="VS2" class="internal">Linear Combinations (VS2)</a></li>
+<li><a href="VS3.html" data-scroll="VS3" class="internal">Spanning Sets (VS3)</a></li>
+<li><a href="VS4.html" data-scroll="VS4" class="internal">Subspaces (VS4)</a></li>
+<li><a href="VS5.html" data-scroll="VS5" class="active">Linear Independence (VS5)</a></li>
+<li><a href="VS6.html" data-scroll="VS6" class="internal">Identifying a Basis (VS6)</a></li>
+<li><a href="VS7.html" data-scroll="VS7" class="internal">Subspace Basis and Dimension (VS7)</a></li>
+<li><a href="VS8.html" data-scroll="VS8" class="internal">Polynomial and Matrix Spaces (VS8)</a></li>
+<li><a href="VS9.html" data-scroll="VS9" class="internal">Homogeneous Linear Systems (VS9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="AT.html" data-scroll="AT" class="internal"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (AT)</span></a><ul>
+<li><a href="AT1.html" data-scroll="AT1" class="internal">Linear Transformations (AT1)</a></li>
+<li><a href="AT2.html" data-scroll="AT2" class="internal">Standard Matrices (AT2)</a></li>
+<li><a href="AT3.html" data-scroll="AT3" class="internal">Image and Kernel (AT3)</a></li>
+<li><a href="AT4.html" data-scroll="AT4" class="internal">Injective and Surjective Linear Maps (AT4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="MX.html" data-scroll="MX" class="internal"><span class="codenumber">4</span> <span class="title">Matrices (MX)</span></a><ul>
+<li><a href="MX1.html" data-scroll="MX1" class="internal">Matrices and Multiplication (MX1)</a></li>
+<li><a href="MX2.html" data-scroll="MX2" class="internal">Row Operations as Matrix Multiplication (MX2)</a></li>
+<li><a href="MX3.html" data-scroll="MX3" class="internal">The Inverse of a Matrix (MX3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="GT.html" data-scroll="GT" class="internal"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (GT)</span></a><ul>
+<li><a href="GT1.html" data-scroll="GT1" class="internal">Row Operations and Determinants (GT1)</a></li>
+<li><a href="GT2.html" data-scroll="GT2" class="internal">Computing Determinants (GT2)</a></li>
+<li><a href="GT3.html" data-scroll="GT3" class="internal">Eigenvalues and Characteristic Polynomials (GT3)</a></li>
+<li><a href="GT4.html" data-scroll="GT4" class="internal">Eigenvectors and Eigenspaces (GT4)</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="applications.html" data-scroll="applications" class="internal"><span class="codenumber">A</span> <span class="title">Applications</span></a><ul>
+<li><a href="truss.html" data-scroll="truss" class="internal">Civil Engineering: Trusses and Struts</a></li>
+<li><a href="pagerank.html" data-scroll="pagerank" class="internal">Computer Science: PageRank</a></li>
+<li><a href="geology.html" data-scroll="geology" class="internal">Geology: Phases and Components</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="appendix-2.html" data-scroll="appendix-2" class="internal"><span class="codenumber">B</span> <span class="title">Appendix</span></a><ul>
+<li><a href="sample-exercises.html" data-scroll="sample-exercises" class="internal">Sample Exercises with Solutions</a></li>
+<li><a href="list-of-definitions.html" data-scroll="list-of-definitions" class="internal">Definitions</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="VS5"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">Linear Independence (VS5)</span>
+</h2>
+<article class="objectives goal-like" id="objectives-11"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
+<ul class="disc"><li id="li-228"><p id="p-430">Determine if a set of Euclidean vectors is linearly dependent or independent by solving an appropriate vector equation.</p></li></ul></article><section class="subsection" id="subsection-41"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.5.1</span> <span class="title">Class Activities</span>
+</h3>
+<article class="activity project-like" id="activity-55"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span>
+</h4>
+<p id="p-431">Consider the two sets</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S=\left\{
+\left[\begin{array}{c}2\\3\\1\end{array}\right],
+\left[\begin{array}{c}1\\1\\4\end{array}\right]
+\right\} \hspace{1em}
+T=\left\{
+\left[\begin{array}{c}2\\3\\1\end{array}\right],
+\left[\begin{array}{c}1\\1\\4\end{array}\right],
+\left[\begin{array}{c}-1\\0\\-11\end{array}\right]
+\right\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Which of the following is true?</p>
+<ol class="upper-alpha">
+<li id="li-229"><p id="p-derived-li-229"><span class="process-math">\(\vspan S\)</span> is bigger than <span class="process-math">\(\vspan T\text{.}\)</span></p></li>
+<li id="li-230"><p id="p-derived-li-230"><span class="process-math">\(\vspan S\)</span> and <span class="process-math">\(\vspan T\)</span> are the same size.</p></li>
+<li id="li-231"><p id="p-derived-li-231"><span class="process-math">\(\vspan S\)</span> is smaller than <span class="process-math">\(\vspan T\text{.}\)</span></p></li>
+</ol></article><article class="definition definition-like" id="definition-13"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span>
+</h4>
+<p id="p-432">We say that a set of vectors is <dfn class="terminology">linearly dependent</dfn> if one vector in the set belongs to the span of the others. Otherwise, we say the set is <dfn class="terminology">linearly independent</dfn>.</p>
+<figure class="figure figure-like" id="figure-16"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-7.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">16<span class="period">.</span></span><span class="space"> </span>A linearly dependent set of three vectors</figcaption></figure><p id="p-433">You can think of linearly dependent sets as containing a redundant vector, in the sense that you can drop a vector out without reducing the span of the set. In the above image, all three vectors lay in the same planar subspace, but only two vectors are needed to span the plane, so the set is linearly dependent.</p></article><article class="activity project-like" id="activity-56"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-30">
+<p id="p-434">Begin with 3 vectors in <span class="process-math">\(\IR^3\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec v_1=\left[\begin{array}{c}1 \\ 0 \\ 0\end{array}\right],
+\vec v_2=\left[\begin{array}{c}0 \\ 1 \\ 0\end{array}\right],
+\text{ and }
+\vec v_3=\left[\begin{array}{c}0 \\ 0 \\ 1\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-69"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-435">Choose three non-zero scalars, <span class="process-math">\(a,b\text{,}\)</span> and <span class="process-math">\(c\text{.}\)</span> Let <span class="process-math">\(\vec w = a\vec v_1 + b \vec v_2 + c \vec v_3\text{.}\)</span> Is the set <span class="process-math">\(\{\vec v_1,\vec v_2,\vec v_3,\vec w\}\)</span> linearly dependent?</p></article><article class="task exercise-like" id="task-70"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-436">Find</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\RREF \left[\begin{array}{cccc}
+\vdots &amp; \vdots &amp;\vdots &amp;\vdots \\
+\vec v_1 &amp; \vec v_2  &amp; \vec v_3  &amp; \vec w \\
+\vdots &amp;\vdots &amp;\vdots &amp;\vdots
+\end{array}\right].
+\end{equation*}
+</div>
+<p id="p-437">What does this tell you about solution set for the vector equation <span class="process-math">\(x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3 + x_4\vec w=\vec{0}\text{?}\)</span></p></article></article><article class="activity project-like" id="activity-57"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span>
+</h4>
+<p id="p-438">Let <span class="process-math">\(\vec{v}_1,\vec{v}_2,\vec{v}_3 \)</span> be vectors in <span class="process-math">\(\mathbb R^n\text{.}\)</span> Suppose <span class="process-math">\(3\vec{v}_1-5\vec{v}_2=\vec{v}_3\text{,}\)</span> so the set <span class="process-math">\(\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}\)</span> is linearly dependent. Which of the following is true of the vector equation <span class="process-math">\(x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3=\vec{0}\text{?}\)</span></p>
+<ol class="upper-alpha">
+<li id="li-232"><p id="p-439">It is consistent with one solution.</p></li>
+<li id="li-233"><p id="p-440">It is consistent with infinitely many solutions.</p></li>
+<li id="li-234"><p id="p-441">It is inconsistent.</p></li>
+</ol></article><article class="fact theorem-like" id="fact-8"><h4 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span>
+</h4>
+<p id="p-442">For any vector space, the set <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly dependent if and only if the vector equation <span class="process-math">\(x_1\vec v_1+\dots+x_n\vec v_n=\vec{0}\)</span> is consistent with infinitely many solutions.</p></article><article class="activity project-like" id="activity-58"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span>
+</h4>
+<p id="p-443">Find</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\RREF\left[\begin{array}{ccccc|c}
+2&amp;2&amp;3&amp;-1&amp;4&amp;0\\
+3&amp;0&amp;13&amp;10&amp;3&amp;0\\
+0&amp;0&amp;7&amp;7&amp;0&amp;0\\
+-1&amp;3&amp;16&amp;14&amp;1&amp;0
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">and mark the part of the matrix that demonstrates that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S=\left\{
+\left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+\left[\begin{array}{c}2\\0\\0\\3\end{array}\right],
+\left[\begin{array}{c}3\\13\\7\\16\end{array}\right],
+\left[\begin{array}{c}-1\\10\\7\\14\end{array}\right],
+\left[\begin{array}{c}4\\3\\0\\1\end{array}\right]
+\right\}
+\end{equation*}
+</div>
+<p class="continuation">is linearly dependent (the part that shows its linear system has infinitely many solutions).</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-16"><script type="text/x-sage"></script></pre>
+<article class="observation remark-like" id="observation-8"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.5.7</span><span class="period">.</span>
+</h4>
+<p id="p-444">A set of Euclidean vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly dependent if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has a column without a pivot position.</p></article><article class="observation remark-like" id="def_of_LI"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.5.8</span><span class="period">.</span>
+</h4>
+<p id="p-445">Compare the following results:</p>
+<ul class="disc">
+<li id="li-235"><p id="p-446">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly independent if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has all pivot columns.</p></li>
+<li id="li-236"><p id="p-447">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> spans <span class="process-math">\(\IR^m\)</span> if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has all pivot rows.</p></li>
+<li id="li-237">
+<p id="p-448">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly independent if and only the vector equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+c_1\vec v_1+ c_2 \vec v_2 + \cdots + c_n\vec v_n = 0
+\end{equation*}
+</div>
+<p class="continuation">has exactly one solution, with <span class="process-math">\(c_1 = c_2 = \cdots  = c_n = 0\text{.}\)</span></p>
+</li>
+</ul></article><article class="activity project-like" id="activity-59"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.9</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-31"><p id="p-449">Consider whether the set of Euclidean vectors <span class="process-math">\(\left\{
+\left[\begin{array}{c}-4\\2\\3\\0\\-1\end{array}\right],
+\left[\begin{array}{c}1\\2\\0\\0\\3\end{array}\right],
+\left[\begin{array}{c}1\\10\\10\\2\\6\end{array}\right],
+\left[\begin{array}{c}3\\4\\7\\2\\1\end{array}\right]
+\right\}\)</span> is linearly dependent or linearly independent.</p></div>
+<article class="task exercise-like" id="task-71"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-450">Reinterpret this question as an appropriate question about solutions to a vector equation.</p></article><article class="task exercise-like" id="task-72"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-451">Use the solution to this question to answer the original question.</p></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-17"><script type="text/x-sage"></script></pre>
+<article class="activity project-like" id="activity-60"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.10</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-32"><p id="p-452">Consider whether the set of polynomials <span class="process-math">\(\left\{
+x^3+1,x^2+2x,x^2+7x+4
+\right\}\)</span> is linearly dependent or linearly independent.</p></div>
+<article class="task exercise-like" id="task-73"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-453">Reinterpret this question as an appropriate question about solutions to a polynomial equation.</p></article><article class="task exercise-like" id="task-74"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-454">Use the solution to this question to answer the original question.</p></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-18"><script type="text/x-sage"></script></pre>
+<article class="activity project-like" id="activity-61"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.11</span><span class="period">.</span>
+</h4>
+<p id="p-455">What is the largest number of <span class="process-math">\(\IR^4\)</span> vectors that can form a linearly independent set?</p>
+<ol class="upper-alpha cols2">
+<li id="li-238"><p id="p-456"><span class="process-math">\(\displaystyle 3\)</span></p></li>
+<li id="li-239"><p id="p-457"><span class="process-math">\(\displaystyle 4\)</span></p></li>
+<li id="li-240"><p id="p-458"><span class="process-math">\(\displaystyle 5\)</span></p></li>
+<li id="li-241"><p id="p-459">You can have infinitely many vectors and still be linearly independent.</p></li>
+</ol></article><article class="activity project-like" id="activity-62"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.12</span><span class="period">.</span>
+</h4>
+<p id="p-460">What is the largest number of</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\P_4=\setBuilder{ax^4+bx^3+cx^2+dx+e}{a,b,c,d,e\in\IR}
+\end{equation*}
+</div>
+<p class="continuation">vectors that can form a linearly independent set?</p>
+<ol class="upper-alpha cols2">
+<li id="li-242"><p id="p-461"><span class="process-math">\(\displaystyle 3\)</span></p></li>
+<li id="li-243"><p id="p-462"><span class="process-math">\(\displaystyle 4\)</span></p></li>
+<li id="li-244"><p id="p-463"><span class="process-math">\(\displaystyle 5\)</span></p></li>
+<li id="li-245"><p id="p-464">You can have infinitely many vectors and still be linearly independent.</p></li>
+</ol></article><article class="activity project-like" id="activity-63"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.13</span><span class="period">.</span>
+</h4>
+<p id="p-465">What is the largest number of</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\P=\setBuilder{f(x)}{f(x)\text{ is any polynomial}}
+\end{equation*}
+</div>
+<p class="continuation">vectors that can form a linearly independent set?</p>
+<ol class="upper-alpha cols2">
+<li id="li-246"><p id="p-466"><span class="process-math">\(\displaystyle 3\)</span></p></li>
+<li id="li-247"><p id="p-467"><span class="process-math">\(\displaystyle 4\)</span></p></li>
+<li id="li-248"><p id="p-468"><span class="process-math">\(\displaystyle 5\)</span></p></li>
+<li id="li-249"><p id="p-469">You can have infinitely many vectors and still be linearly independent.</p></li>
+</ol></article><article class="activity project-like" id="activity-64"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.14</span><span class="period">.</span>
+</h4>
+<p id="p-470">Is is possible for the set of vectors <span class="process-math">\(\{\vec v_1, \vec v_2,\ldots, \vec v_n, \vec 0\}\)</span> in a vector space <span class="process-math">\(V \)</span> to be linearly independent? Recall that <span class="process-math">\(\vec 0\)</span> represents the additive identity.</p></article></section><section class="subsection" id="subsection-42"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.5.2</span> <span class="title">Videos</span>
+</h3>
+<figure class="figure figure-like" id="figure-17"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-VS5" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/EZ9BX1z-H4Y?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">17<span class="period">.</span></span><span class="space"> </span>Video: Linear independence</figcaption></figure></section><section class="subsection" id="subsection-43"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.5.3</span> <span class="title">Slideshow</span>
+</h3>
+<p id="p-471">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/VS5.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/VS5.slides.html</code></a>.</p></section><section class="exercises" id="exercises-9"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.5.4</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-472">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/exercises/#/bank/VS5/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/exercises/#/bank/VS5/</code></a>.</p></section><section class="subsection" id="subsection-44"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.5.5</span> <span class="title">Mathematical Writing Explorations</span>
+</h3>
+<article class="exploration project-like" id="exploration-18"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.5.15</span><span class="period">.</span>
+</h4>Prove the result of <a href="" class="xref" data-knowl="./knowl/def_of_LI.html" title="Observation 2.5.8">Observation 2.5.8</a>, by showing that, given a set <span class="process-math">\(S = \{\vec{v}_1,\vec{v}_2,\ldots,\vec{v}_n\}\)</span> of vectors, <span class="process-math">\(S\)</span> is linearly independent iff the equation <span class="process-math">\(x_1\vec{v}_1 + x_2\vec{v}_2 + \ldots\ + x_n\vec{v}_n = \vec{0}\)</span> is only true when <span class="process-math">\(x_1 = x_2 = \cdots = x_n = 0\text{.}\)</span></article></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.5.6</span> <span class="title">Sample Problem and Solution</span>
+</h3>
+<p id="p-473">Sample problem <a href="" class="xref" data-knowl="./knowl/sampleVS5.html" title="Example B.1.9: VS5">Example B.1.9</a>.</p></section></section></div></main>
+</div>
+</body>
+</html>

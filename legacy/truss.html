@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-07-29T18:47:21Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Civil Engineering: Trusses and Struts</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra for Team-Based Inquiry Learning">
+<meta property="book:author" content="Steven Clontz">
+<meta property="book:author" content="Drew Lewis">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">Legacy Edition</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="pagerank.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="applications.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="appendix-2.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="pagerank.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="applications.html" title="Up">Up</a><a class="next-button button toolbar-item" href="appendix-2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes" class="internal">Learning Outcomes</a></li>
+<li><a href="slideshow-link.html" data-scroll="slideshow-link" class="internal">Slideshow</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="E.html" data-scroll="E" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (E)</span></a><ul>
+<li><a href="E1.html" data-scroll="E1" class="internal">Linear Systems, Vector Equations, and Augmented Matrices (E1)</a></li>
+<li><a href="E2.html" data-scroll="E2" class="internal">Row Reduction of Matrices (E2)</a></li>
+<li><a href="E3.html" data-scroll="E3" class="internal">Solving Linear Systems (E3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="V.html" data-scroll="V" class="internal"><span class="codenumber">2</span> <span class="title">Vector Spaces (V)</span></a><ul>
+<li><a href="V1.html" data-scroll="V1" class="internal">Vector Spaces (V1)</a></li>
+<li><a href="V2.html" data-scroll="V2" class="internal">Linear Combinations (V2)</a></li>
+<li><a href="V3.html" data-scroll="V3" class="internal">Spanning Sets (V3)</a></li>
+<li><a href="V4.html" data-scroll="V4" class="internal">Subspaces (V4)</a></li>
+<li><a href="V5.html" data-scroll="V5" class="internal">Linear Independence (V5)</a></li>
+<li><a href="V6.html" data-scroll="V6" class="internal">Identifying a Basis (V6)</a></li>
+<li><a href="V7.html" data-scroll="V7" class="internal">Subspace Basis and Dimension (V7)</a></li>
+<li><a href="V8.html" data-scroll="V8" class="internal">Polynomial and Matrix Spaces (V8)</a></li>
+<li><a href="V9.html" data-scroll="V9" class="internal">Homogeneous Linear Systems (V9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="A.html" data-scroll="A" class="internal"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (A)</span></a><ul>
+<li><a href="A1.html" data-scroll="A1" class="internal">Linear Transformations (A1)</a></li>
+<li><a href="A2.html" data-scroll="A2" class="internal">Standard Matrices (A2)</a></li>
+<li><a href="A3.html" data-scroll="A3" class="internal">Image and Kernel (A3)</a></li>
+<li><a href="A4.html" data-scroll="A4" class="internal">Injective and Surjective Linear Maps (A4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="M.html" data-scroll="M" class="internal"><span class="codenumber">4</span> <span class="title">Matrices (M)</span></a><ul>
+<li><a href="M1.html" data-scroll="M1" class="internal">Matrices and Multiplication (M1)</a></li>
+<li><a href="M2.html" data-scroll="M2" class="internal">Row Operations as Matrix Multiplication (M2)</a></li>
+<li><a href="M3.html" data-scroll="M3" class="internal">The Inverse of a Matrix (M3)</a></li>
+<li><a href="M4.html" data-scroll="M4" class="internal">Invertible Matrices (M4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="G.html" data-scroll="G" class="internal"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (G)</span></a><ul>
+<li><a href="G1.html" data-scroll="G1" class="internal">Row Operations and Determinants (G1)</a></li>
+<li><a href="G2.html" data-scroll="G2" class="internal">Computing Determinants (G2)</a></li>
+<li><a href="G3.html" data-scroll="G3" class="internal">Eigenvalues and Characteristic Polynomials (G3)</a></li>
+<li><a href="G4.html" data-scroll="G4" class="internal">Eigenvectors and Eigenspaces (G4)</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="applications.html" data-scroll="applications" class="internal"><span class="codenumber">A</span> <span class="title">Applications</span></a><ul>
+<li><a href="geology.html" data-scroll="geology" class="internal">Geology: Phases and Components</a></li>
+<li><a href="pagerank.html" data-scroll="pagerank" class="internal">Computer Science: PageRank</a></li>
+<li><a href="truss.html" data-scroll="truss" class="active">Civil Engineering: Trusses and Struts</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="appendix-2.html" data-scroll="appendix-2" class="internal"><span class="codenumber">B</span> <span class="title">Appendix</span></a><ul>
+<li><a href="sample-exercises.html" data-scroll="sample-exercises" class="internal">Sample Exercises with Solutions</a></li>
+<li><a href="list-of-definitions.html" data-scroll="list-of-definitions" class="internal">Definitions</a></li>
+</ul>
+</li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="truss"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">A.3</span> <span class="title">Civil Engineering: Trusses and Struts</span>
+</h2>
+<article class="definition definition-like" id="definition-32"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">A.3.1</span><span class="period">.</span>
+</h3>
+<p id="p-884">In engineering, a <dfn class="terminology">truss</dfn> is a structure designed from several beams of material called <dfn class="terminology">struts</dfn>, assembled to behave as a single object.</p>
+<figure class="figure figure-like" id="figure-71"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-40.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.3.2<span class="period">.</span></span><span class="space"> </span>A simple truss</figcaption></figure></article><article class="activity project-like" id="activity-159"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.3.3</span><span class="period">.</span>
+</h3>
+<p id="p-885">Consider the representation of a simple truss pictured below. All of the seven struts are of equal length, affixed to two anchor points applying a normal force to nodes <span class="process-math">\(C\)</span> and <span class="process-math">\(E\text{,}\)</span> and with a <span class="process-math">\(10000 N\)</span> load applied to the node given by <span class="process-math">\(D\text{.}\)</span></p>
+<figure class="figure figure-like" id="figure-72"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-41.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.3.4<span class="period">.</span></span><span class="space"> </span>A simple truss</figcaption></figure><p id="p-886">Which of the following must hold for the truss to be stable?</p>
+<ol class="decimal">
+<li id="li-401"><p id="p-887">All of the struts will experience compression.</p></li>
+<li id="li-402"><p id="p-888">All of the struts will experience tension.</p></li>
+<li id="li-403"><p id="p-889">Some of the struts will be compressed, but others will be tensioned.</p></li>
+</ol></article><article class="observation remark-like" id="observation-40"><h3 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">A.3.5</span><span class="period">.</span>
+</h3>
+<p id="p-890">Since the forces must balance at each node for the truss to be stable, some of the struts will be compressed, while others will be tensioned.</p>
+<figure class="figure figure-like" id="figure-73"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-42.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.3.6<span class="period">.</span></span><span class="space"> </span>Completed truss</figcaption></figure><p id="p-891">By finding vector equations that must hold at each node, we may determine many of the forces at play.</p></article><article class="remark remark-like" id="remark-18"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">A.3.7</span><span class="period">.</span>
+</h3>
+<p id="p-892">For example, at the bottom left node there are 3 forces acting.</p>
+<figure class="figure figure-like" id="figure-74"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-43.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.3.8<span class="period">.</span></span><span class="space"> </span>Truss with forces</figcaption></figure><p id="p-893">Let <span class="process-math">\(\vec F_{CA}\)</span> be the force on <span class="process-math">\(C\)</span> given by the compression/tension of the strut <span class="process-math">\(CA\text{,}\)</span> let <span class="process-math">\(\vec F_{CD}\)</span> be defined similarly, and let <span class="process-math">\(\vec N_C\)</span> be the normal force of the anchor point on <span class="process-math">\(C\text{.}\)</span></p>
+<p id="p-894">For the truss to be stable, we must have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-160"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.3.9</span><span class="period">.</span>
+</h3>
+<p id="p-895">Using the conventions of the previous remark, and where <span class="process-math">\(\vec L\)</span> represents the load vector on node <span class="process-math">\(D\text{,}\)</span> find four more vector equations that must be satisfied for each of the other four nodes of the truss.</p>
+<figure class="figure figure-like" id="figure-75"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-44.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.3.10<span class="period">.</span></span><span class="space"> </span>A simple truss</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A: \unknown
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+B: \unknown
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+D:\unknown
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E:\unknown
+\end{equation*}
+</div></article><article class="remark remark-like" id="remark-19"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">A.3.11</span><span class="period">.</span>
+</h3>
+<p id="p-896">The five vector equations may be written as follows.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A: \vec F_{AC}+\vec F_{AD}+\vec F_{AB}=\vec 0
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+B: \vec F_{BA}+\vec F_{BD}+\vec F_{BE}=\vec 0
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+D: \vec F_{DC}+\vec F_{DA}+\vec F_{DB} +\vec F_{DE}+\vec L=\vec 0
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E: \vec F_{EB}+\vec F_{ED}+\vec N_E=\vec 0
+\end{equation*}
+</div></article><article class="observation remark-like" id="observation-41"><h3 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">A.3.12</span><span class="period">.</span>
+</h3>
+<p id="p-897">Each vector has a vertical and horizontal component, so it may be treated as a vector in <span class="process-math">\(\IR^2\text{.}\)</span> Note that <span class="process-math">\(\vec F_{CA}\)</span> must have the same magnitude (but opposite direction) as <span class="process-math">\(\vec F_{AC}\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec{F}_{CA}
+= 
+x\begin{bmatrix} \cos(60^\circ) \\ \sin(60^\circ) \end{bmatrix}
+=
+x\begin{bmatrix} 1/2 \\ \sqrt{3}/2\end{bmatrix}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec{F}_{AC}
+= 
+x\begin{bmatrix} \cos(-120^\circ) \\ \sin(-120^\circ) \end{bmatrix}
+=
+x\begin{bmatrix} -1/2 \\ -\sqrt{3}/2\end{bmatrix}
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-161"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.3.13</span><span class="period">.</span>
+</h3>
+<p id="p-898">To write a linear system that models the truss under consideration with constant load <span class="process-math">\(10000\)</span> newtons, how many scalar variables will be required?</p>
+<ul class="disc">
+<li id="li-404"><p id="p-899"><span class="process-math">\(7\text{:}\)</span> <span class="process-math">\(5\)</span> from the nodes, <span class="process-math">\(2\)</span> from the anchors</p></li>
+<li id="li-405"><p id="p-900"><span class="process-math">\(9\text{:}\)</span> <span class="process-math">\(7\)</span> from the struts, <span class="process-math">\(2\)</span> from the anchors</p></li>
+<li id="li-406"><p id="p-901"><span class="process-math">\(11\text{:}\)</span> <span class="process-math">\(7\)</span> from the struts, <span class="process-math">\(4\)</span> from the anchors</p></li>
+<li id="li-407"><p id="p-902"><span class="process-math">\(12\text{:}\)</span> <span class="process-math">\(7\)</span> from the struts, <span class="process-math">\(4\)</span> from the anchors, <span class="process-math">\(1\)</span> from the load</p></li>
+<li id="li-408"><p id="p-903"><span class="process-math">\(13\text{:}\)</span> <span class="process-math">\(5\)</span> from the nodes, <span class="process-math">\(7\)</span> from the struts, <span class="process-math">\(1\)</span> from the load</p></li>
+</ul>
+<figure class="figure figure-like" id="figure-76"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-45.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.3.14<span class="period">.</span></span><span class="space"> </span>A simple truss</figcaption></figure></article><article class="observation remark-like" id="observation-42"><h3 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">A.3.15</span><span class="period">.</span>
+</h3>
+<p id="p-904">Since the angles for each strut are known, one variable may be used to represent each.</p>
+<figure class="figure figure-like" id="figure-77"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-46.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.3.16<span class="period">.</span></span><span class="space"> </span>Variables for the truss</figcaption></figure><p id="p-905">For example:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec F_{AB}=-\vec F_{BA}=x_1\begin{bmatrix}\cos(0)\\\sin(0)\end{bmatrix}
+=x_1\begin{bmatrix}1\\0\end{bmatrix}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec F_{BE}=-\vec F_{EB}=x_5\begin{bmatrix}\cos(-60^\circ)\\\sin(-60^\circ)\end{bmatrix}
+=x_5\begin{bmatrix}1/2\\-\sqrt{3}/2\end{bmatrix}
+\end{equation*}
+</div></article><article class="observation remark-like" id="observation-43"><h3 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">A.3.17</span><span class="period">.</span>
+</h3>
+<p id="p-906">Since the angle of the normal forces for each anchor point are unknown, two variables may be used to represent each.</p>
+<figure class="figure figure-like" id="figure-78"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-47.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.3.18<span class="period">.</span></span><span class="space"> </span>Truss with normal forces</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec N_C=\begin{bmatrix}y_1\\y_2\end{bmatrix}
+\hspace{3em}
+\vec N_D=\begin{bmatrix}z_1\\z_2\end{bmatrix}
+\end{equation*}
+</div>
+<p id="p-907">The load vector is constant.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec L = \begin{bmatrix}0\\-10000\end{bmatrix}
+\end{equation*}
+</div></article><article class="remark remark-like" id="remark-20"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">A.3.19</span><span class="period">.</span>
+</h3>
+<p id="p-908">Each of the five vector equations found previously represent two linear equations: one for the horizontal component and one for the vertical.</p>
+<figure class="figure figure-like" id="figure-79"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-48.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.3.20<span class="period">.</span></span><span class="space"> </span>Variables for the truss</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\Leftrightarrow
+x_2\begin{bmatrix}\cos(60^\circ)\\\sin(60^\circ)\end{bmatrix}+
+x_6\begin{bmatrix}\cos(0^\circ)\\\sin(0^\circ)\end{bmatrix}+
+\begin{bmatrix}y_1\\y_2\end{bmatrix}=\begin{bmatrix}0\\0\end{bmatrix}
+\end{equation*}
+</div>Using the approximation <span class="process-math">\(\sqrt{3}/2\approx 0.866\text{,}\)</span> we have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\Leftrightarrow
+x_2\begin{bmatrix}0.5\\0.866\end{bmatrix}+
+x_6\begin{bmatrix}1\\0\end{bmatrix}+
+y_1\begin{bmatrix}1\\0\end{bmatrix}+
+y_2\begin{bmatrix}0\\1\end{bmatrix}=
+\begin{bmatrix}0\\0\end{bmatrix}
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-162"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">A.3.21</span><span class="period">.</span>
+</h3>
+<p id="p-909">Expand the vector equation given below using sine and cosine of appropriate angles, then compute each component (approximating <span class="process-math">\(\sqrt{3}/2\approx 0.866\)</span>).</p>
+<figure class="figure figure-like" id="figure-80"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-49.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.3.22<span class="period">.</span></span><span class="space"> </span>Variables for the truss</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+D:\vec F_{DA}+\vec F_{DB}+\vec F_{DC}+\vec F_{DE}=-\vec L
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\Leftrightarrow
+x_3\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}+
+x_4\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}+
+x_6\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}+
+x_7\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}=
+\begin{bmatrix}\unknown\\\unknown\end{bmatrix}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\Leftrightarrow
+x_3\begin{bmatrix}\unknown\\\unknown\end{bmatrix}+
+x_4\begin{bmatrix}\unknown\\\unknown\end{bmatrix}+
+x_6\begin{bmatrix}\unknown\\\unknown\end{bmatrix}+
+x_7\begin{bmatrix}\unknown\\\unknown\end{bmatrix}=
+\begin{bmatrix}\unknown\\\unknown\end{bmatrix}
+\end{equation*}
+</div></article><article class="observation remark-like" id="observation-44"><h3 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">A.3.23</span><span class="period">.</span>
+</h3>
+<p id="p-910">The full augmented matrix given by the ten equations in this linear system is given below, where the elevent columns correspond to <span class="process-math">\(x_1,\dots,x_7,y_1,y_2,z_1,z_2\text{,}\)</span> and the ten rows correspond to the horizontal and vertical components of the forces acting at <span class="process-math">\(A,\dots,E\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{ccccccccccc|c}
+1&amp;-0.5&amp;0.5&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;-0.866&amp;-0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+-1&amp;0&amp;0&amp;-0.5&amp;0.5&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;-0.866&amp;-0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0.5&amp;0&amp;0&amp;0&amp;1&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;-0.5&amp;0.5&amp;0&amp;-1&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0.866&amp;0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;10000\\
+0&amp;0&amp;0&amp;0&amp;-0.5&amp;0&amp;-1&amp;0&amp;0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0\\
+\end{array}\right]
+\end{equation*}
+</div></article><article class="observation remark-like" id="observation-45"><h3 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">A.3.24</span><span class="period">.</span>
+</h3>
+<p id="p-911">This matrix row-reduces to the following.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sim
+\left[\begin{array}{ccccccccccc|c}
+1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;-5773.7\\
+0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;-5773.7\\
+0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;5773.7\\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;5773.7\\
+0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;-5773.7\\
+0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;-1&amp;0&amp;2886.8\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;-1&amp;0&amp;2886.8\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;5000\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;5000\\
+\end{array}\right]
+\end{equation*}
+</div></article><article class="observation remark-like" id="observation-46"><h3 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">A.3.25</span><span class="period">.</span>
+</h3>
+<p id="p-912">Thus we know the truss must satisfy the following conditions.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-48">
+\begin{align*}
+x_1=x_2=x_5&amp;=-5882.4\\
+x_3=x_4&amp;=5882.4\\
+x_6=x_7&amp;=2886.8+z_1\\
+y_1&amp;=-z_1\\
+y_2=z_2&amp;=5000 
+\end{align*}
+</div>
+<p id="p-913">In particular, the negative <span class="process-math">\(x_1,x_2,x_5\)</span> represent tension (forces pointing into the nodes), and the postive <span class="process-math">\(x_3,x_4\)</span> represent compression (forces pointing out of the nodes). The vertical normal forces <span class="process-math">\(y_2+z_2\)</span> counteract the <span class="process-math">\(10000\)</span> load.</p>
+<figure class="figure figure-like" id="figure-81"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/image-50.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">A.3.26<span class="period">.</span></span><span class="space"> </span>Completed truss</figcaption></figure></article></section></div></main>
+</div>
+</body>
+</html>

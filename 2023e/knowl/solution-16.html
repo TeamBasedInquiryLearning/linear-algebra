@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">B.1.16.1</span><span class="period">.</span>
+</h3>
+<ol class="decimal">
+<li><div class="para logical">
+<div class="para">To find the image we compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Im(T) = T\left(\vspan\left\{\vec{e}_1,\vec{e}_2,\vec{e}_3,\vec{e}_4\right\}\right)
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \vspan\left\{T(\vec{e}_1),T(\vec{e}_2),T(\vec{e}_3),T(\vec{e}_4)\right\}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \vspan\left\{\left[\begin{array}{c}1 \\ 2 \\ 1 \end{array}\right], \left[\begin{array}{c} 3 \\ 4 \\ 6  \end{array}\right], \left[\begin{array}{c} 2 \\ 6 \\ -1 \end{array}\right], \left[\begin{array}{c} -3 \\ -10 \\ 3 \end{array}\right]\right\}.
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">The kernel is the solution set of the corresponding homogeneous system of equations, i.e.</div>
+<div class="displaymath process-math">
+\begin{alignat*}{5}
+x &amp;+&amp; 3y &amp;+&amp; 2z &amp;-&amp; 3w &amp;=&amp; 0\\
+2x &amp;+&amp; 4y &amp;+&amp; 6z &amp;-&amp; 10w &amp;=&amp; 0\\
+x &amp;+&amp; 6y &amp;-&amp; z &amp;+&amp; 3w &amp;=&amp; 0 .
+\end{alignat*}
+</div>
+<div class="para">So we compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\RREF\left[\begin{array}{cccc|c} 1 &amp; 3 &amp; 2 &amp; -3 &amp; 0 \\ 2 &amp; 4 &amp; 6 &amp; -10 &amp;0 \\ 1 &amp; 6 &amp; -1 &amp; 3 &amp; 0 \end{array}\right]
+= \left[\begin{array}{cccc|c} 1 &amp; 0 &amp; 5 &amp; -9 &amp; 0 \\ 0 &amp; 1 &amp; -1 &amp; 2 &amp; 0  \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right].
+\end{equation*}
+</div>
+<div class="para">Then, letting <span class="process-math">\(z=a\)</span> and <span class="process-math">\(w=b\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ker T = \setBuilder{\left[\begin{array}{c}-5a+9b \\ a-2b \\ a \\ b \end{array}\right]}{a,b \in \IR}. 
+\end{equation*}
+</div>
+</div></li>
+<li>
+<div class="para logical">
+<div class="para">Since <span class="process-math">\(\Im(T) = \vspan\left\{\left[\begin{array}{c}1 \\ 2 \\ 1 \end{array}\right], \left[\begin{array}{c} 3 \\ 4 \\ 6  \end{array}\right],
+\left[\begin{array}{c} 2 \\ 6 \\ -1 \end{array}\right], \left[\begin{array}{c} -3 \\ -10 \\ 3 \end{array}\right]\right\}\text{,}\)</span> we simply need to find a linearly independent subset of these four spanning vectors. So we compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\RREF \left[\begin{array}{cccc}1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right]
+= \left[\begin{array}{cccc} 1 &amp; 0 &amp; 5 &amp; -9 \\ 0 &amp; 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right].
+\end{equation*}
+</div>
+<div class="para">Since the first two columns are pivot columns, they form a linearly independent spanning set, so a basis for <span class="process-math">\(\Im T\)</span> is <span class="process-math">\(\setList{\left[\begin{array}{c}1\\2\\1 \end{array}\right], \left[\begin{array}{c}3\\4\\6 \end{array}\right]}.\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">To find a basis for the kernel, note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ker T = \setBuilder{\left[\begin{array}{c}-5a+9b \\ a-2b \\ a \\ b \end{array}\right]}{a,b \in \IR}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \setBuilder{a \left[\begin{array}{c}-5 \\ 1 \\ 1  \\ 0 \end{array}\right]+b \left[\begin{array}{c} 9 \\ -2 \\ 0 \\ 1 \end{array}\right]}{a,b \in \IR}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \vspan\left\{ \left[\begin{array}{c} -5 \\ 1 \\ 1 \\ 0 \end{array}\right], \left[\begin{array}{c} 9 \\ -2 \\ 0 \\ 1 \end{array}\right]\right\}.
+\end{equation*}
+</div>
+<div class="para">so a basis for the kernel is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\setList{\left[\begin{array}{c}-5 \\ 1 \\ 1 \\ 0 \end{array}\right],
+\left[\begin{array}{c}9 \\ -2 \\ 0 \\ 1 \end{array}\right]}.
+\end{equation*}
+</div>
+</div>
+</li>
+<li><div class="para">The dimension of the image (the rank) is <span class="process-math">\(2\text{,}\)</span> the dimension of the kernel (the nullity) is <span class="process-math">\(2\text{,}\)</span> and the dimension of the domain of <span class="process-math">\(T\)</span> is <span class="process-math">\(4\text{,}\)</span> so we see <span class="process-math">\(2+2=4\text{,}\)</span> which verifies that the sum of the rank and nullity of <span class="process-math">\(T\)</span> is the dimension of the domain of <span class="process-math">\(T\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<span class="incontext"><a href="sample-exercises.html#solution-16" class="internal">in-context</a></span>
+</body>
+</html>

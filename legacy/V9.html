@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-07-29T18:47:20Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Homogeneous Linear Systems (V9)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra for Team-Based Inquiry Learning">
+<meta property="book:author" content="Steven Clontz">
+<meta property="book:author" content="Drew Lewis">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
+                       linked: true,
+                       languages: ['octave'],
+                       evalButtonText: 'Evaluate (Octave)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">Legacy Edition</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="V8.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="V.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="A.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="V8.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="V.html" title="Up">Up</a><a class="next-button button toolbar-item" href="A.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes" class="internal">Learning Outcomes</a></li>
+<li><a href="slideshow-link.html" data-scroll="slideshow-link" class="internal">Slideshow</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="E.html" data-scroll="E" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (E)</span></a><ul>
+<li><a href="E1.html" data-scroll="E1" class="internal">Linear Systems, Vector Equations, and Augmented Matrices (E1)</a></li>
+<li><a href="E2.html" data-scroll="E2" class="internal">Row Reduction of Matrices (E2)</a></li>
+<li><a href="E3.html" data-scroll="E3" class="internal">Solving Linear Systems (E3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="V.html" data-scroll="V" class="internal"><span class="codenumber">2</span> <span class="title">Vector Spaces (V)</span></a><ul>
+<li><a href="V1.html" data-scroll="V1" class="internal">Vector Spaces (V1)</a></li>
+<li><a href="V2.html" data-scroll="V2" class="internal">Linear Combinations (V2)</a></li>
+<li><a href="V3.html" data-scroll="V3" class="internal">Spanning Sets (V3)</a></li>
+<li><a href="V4.html" data-scroll="V4" class="internal">Subspaces (V4)</a></li>
+<li><a href="V5.html" data-scroll="V5" class="internal">Linear Independence (V5)</a></li>
+<li><a href="V6.html" data-scroll="V6" class="internal">Identifying a Basis (V6)</a></li>
+<li><a href="V7.html" data-scroll="V7" class="internal">Subspace Basis and Dimension (V7)</a></li>
+<li><a href="V8.html" data-scroll="V8" class="internal">Polynomial and Matrix Spaces (V8)</a></li>
+<li><a href="V9.html" data-scroll="V9" class="active">Homogeneous Linear Systems (V9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="A.html" data-scroll="A" class="internal"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (A)</span></a><ul>
+<li><a href="A1.html" data-scroll="A1" class="internal">Linear Transformations (A1)</a></li>
+<li><a href="A2.html" data-scroll="A2" class="internal">Standard Matrices (A2)</a></li>
+<li><a href="A3.html" data-scroll="A3" class="internal">Image and Kernel (A3)</a></li>
+<li><a href="A4.html" data-scroll="A4" class="internal">Injective and Surjective Linear Maps (A4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="M.html" data-scroll="M" class="internal"><span class="codenumber">4</span> <span class="title">Matrices (M)</span></a><ul>
+<li><a href="M1.html" data-scroll="M1" class="internal">Matrices and Multiplication (M1)</a></li>
+<li><a href="M2.html" data-scroll="M2" class="internal">Row Operations as Matrix Multiplication (M2)</a></li>
+<li><a href="M3.html" data-scroll="M3" class="internal">The Inverse of a Matrix (M3)</a></li>
+<li><a href="M4.html" data-scroll="M4" class="internal">Invertible Matrices (M4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="G.html" data-scroll="G" class="internal"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (G)</span></a><ul>
+<li><a href="G1.html" data-scroll="G1" class="internal">Row Operations and Determinants (G1)</a></li>
+<li><a href="G2.html" data-scroll="G2" class="internal">Computing Determinants (G2)</a></li>
+<li><a href="G3.html" data-scroll="G3" class="internal">Eigenvalues and Characteristic Polynomials (G3)</a></li>
+<li><a href="G4.html" data-scroll="G4" class="internal">Eigenvectors and Eigenspaces (G4)</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="applications.html" data-scroll="applications" class="internal"><span class="codenumber">A</span> <span class="title">Applications</span></a><ul>
+<li><a href="geology.html" data-scroll="geology" class="internal">Geology: Phases and Components</a></li>
+<li><a href="pagerank.html" data-scroll="pagerank" class="internal">Computer Science: PageRank</a></li>
+<li><a href="truss.html" data-scroll="truss" class="internal">Civil Engineering: Trusses and Struts</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="appendix-2.html" data-scroll="appendix-2" class="internal"><span class="codenumber">B</span> <span class="title">Appendix</span></a><ul>
+<li><a href="sample-exercises.html" data-scroll="sample-exercises" class="internal">Sample Exercises with Solutions</a></li>
+<li><a href="list-of-definitions.html" data-scroll="list-of-definitions" class="internal">Definitions</a></li>
+</ul>
+</li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="V9"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.9</span> <span class="title">Homogeneous Linear Systems (V9)</span>
+</h2>
+<article class="definition definition-like" id="definition-16"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.9.1</span><span class="period">.</span>
+</h3>
+<p id="p-367">A <dfn class="terminology">homogeneous</dfn> system of linear equations is one of the form:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-33">
+\begin{alignat*}{5}
+a_{11}x_1 &amp;\,+\,&amp; a_{12}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{1n}x_n &amp;\,=\,&amp; 0 \\
+a_{21}x_1 &amp;\,+\,&amp; a_{22}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{2n}x_n &amp;\,=\,&amp; 0 \\
+\vdots&amp;  &amp;\vdots&amp;   &amp;&amp;  &amp;\vdots&amp;&amp;\vdots\\
+a_{m1}x_1 &amp;\,+\,&amp; a_{m2}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{mn}x_n &amp;\,=\,&amp; 0
+\end{alignat*}
+</div>
+<p id="p-368">This system is equivalent to the vector equation:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0}
+\end{equation*}
+</div>
+<p class="continuation">and the augmented matrix:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{cccc|c}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} &amp; 0\\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} &amp; 0\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\\
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; 0
+\end{array}\right]
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-64"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.2</span><span class="period">.</span>
+</h3>
+<p id="p-369">Note that if <span class="process-math">\(\left[\begin{array}{c} a_1 \\ \vdots \\ a_n \end{array}\right] \)</span> and <span class="process-math">\(\left[\begin{array}{c} b_1 \\ \vdots \\ b_n \end{array}\right] \)</span> are solutions to <span class="process-math">\(x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0}\)</span> so is  <span class="process-math">\(\left[\begin{array}{c} a_1 +b_1\\ \vdots \\ a_n+b_n \end{array}\right] \text{,}\)</span> since</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a_1 \vec{v}_1+\cdots+a_n \vec{v}_n = \vec{0}
+\text{ and }
+b_1 \vec{v}_1+\cdots+b_n \vec{v}_n = \vec{0} 
+\end{equation*}
+</div>
+<p class="continuation">implies</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(a_1 + b_1) \vec{v}_1+\cdots+(a_n+b_n) \vec{v}_n = \vec{0} .
+\end{equation*}
+</div>
+<p id="p-370">Similarly, if <span class="process-math">\(c \in \IR\text{,}\)</span> <span class="process-math">\(\left[\begin{array}{c} ca_1 \\ \vdots \\ ca_n \end{array}\right] \)</span> is a solution. Thus the solution set of a homogeneous system is...</p>
+<ol class="lower-alpha">
+<li id="li-167"><p id="p-371">A basis for <span class="process-math">\(\IR^n\text{.}\)</span></p></li>
+<li id="li-168"><p id="p-372">A subspace of <span class="process-math">\(\IR^n\text{.}\)</span></p></li>
+<li id="li-169"><p id="p-373">The empty set.</p></li>
+</ol></article><article class="activity project-like" id="activity-65"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.3</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-24">
+<p id="p-374">Consider the homogeneous system of equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-34">
+\begin{alignat*}{5}
+x_1&amp;\,+\,&amp;2x_2&amp;\,\,&amp; &amp;\,+\,&amp; x_4 &amp;=&amp; 0\\
+2x_1&amp;\,+\,&amp;4x_2&amp;\,-\,&amp;x_3 &amp;\,-\,&amp;2 x_4 &amp;=&amp; 0\\
+3x_1&amp;\,+\,&amp;6x_2&amp;\,-\,&amp;x_3 &amp;\,-\,&amp; x_4 &amp;=&amp; 0
+\end{alignat*}
+</div>
+</div>
+<article class="task exercise-like" id="task-53"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-375">Find its solution set (a subspace of <span class="process-math">\(\IR^4\)</span>).</p></article><article class="task exercise-like" id="task-54"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-376">Rewrite this solution space in the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\setBuilder{ a \left[\begin{array}{c} \unknown \\ \unknown \\ \unknown \\ \unknown\end{array}\right] + b \left[\begin{array}{c} \unknown \\ \unknown \\ \unknown \\ \unknown \end{array}\right] }{a,b \in \IR}.
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-55"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-377">Rewrite this solution space in the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vspan\left\{\left[\begin{array}{c} \unknown \\ \unknown \\ \unknown \\ \unknown\end{array}\right], \left[\begin{array}{c} \unknown \\ \unknown \\ \unknown \\ \unknown \end{array}\right]\right\}.
+\end{equation*}
+</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-25"><script type="text/x-sage"></script></pre>
+<article class="fact theorem-like" id="fact-12"><h3 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.9.4</span><span class="period">.</span>
+</h3>
+<p id="p-378">The coefficients of the free variables in the solution set of a linear system always yield linearly independent vectors.</p>
+<p id="p-379">Thus if</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\setBuilder{
+a \left[\begin{array}{c} -2 \\ 1 \\ 0 \\ 0\end{array}\right] +
+b \left[\begin{array}{c} -1 \\ 0 \\ -4 \\ 1 \end{array}\right]
+}{
+a,b \in \IR
+} = \vspan\left\{ \left[\begin{array}{c} -2 \\ 1 \\ 0 \\ 0\end{array}\right], 
+\left[\begin{array}{c} -1 \\ 0 \\ -4 \\ 1 \end{array}\right] \right\}
+\end{equation*}
+</div>
+<p class="continuation">is the solution space for a homogeneous system, then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\setList{
+\left[\begin{array}{c} -2 \\ 1 \\ 0 \\ 0\end{array}\right],
+\left[\begin{array}{c} -1 \\ 0 \\ -4 \\ 1 \end{array}\right]
+}
+\end{equation*}
+</div>
+<p class="continuation">is a basis for the solution space.</p></article><article class="activity project-like" id="activity-66"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.5</span><span class="period">.</span>
+</h3>
+<p id="p-380">Consider the homogeneous system of equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-35">
+\begin{alignat*}{5}
+2x_1&amp;\,+\,&amp;4x_2&amp;\,+\,&amp; 2x_3&amp;\,-\,&amp;4x_4  &amp;=&amp; 0 \\
+-2x_1&amp;\,-\,&amp;4x_2&amp;\,+\,&amp;x_3 &amp;\,+\,&amp; x_4 &amp;=&amp; 0\\
+3x_1&amp;\,+\,&amp;6x_2&amp;\,-\,&amp;x_3 &amp;\,-\,&amp;4 x_4 &amp;=&amp; 0
+\end{alignat*}
+</div>
+<p id="p-381">Find a basis for its solution space.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-26"><script type="text/x-sage"></script></pre>
+<article class="activity project-like" id="activity-67"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.6</span><span class="period">.</span>
+</h3>
+<p id="p-382">Consider the homogeneous vector equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_1 \left[\begin{array}{c} 2 \\ -2 \\ 3 \end{array}\right]+
+x_2 \left[\begin{array}{c} 4 \\ -4 \\ 6 \end{array}\right]+
+x_3 \left[\begin{array}{c} 2 \\ 1 \\ -1 \end{array}\right]+
+x_4 \left[\begin{array}{c} -4 \\ 1 \\ -4 \end{array}\right]=
+\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]
+\end{equation*}
+</div>
+<p id="p-383">Find a basis for its solution space.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-27"><script type="text/x-sage"></script></pre>
+<article class="activity project-like" id="activity-68"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.9.7</span><span class="period">.</span>
+</h3>
+<p id="p-384">Consider the homogeneous system of equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-36">
+\begin{alignat*}{5}
+x_1&amp;\,-\,&amp;3x_2&amp;\,+\,&amp; 2x_3  &amp;=&amp; 0\\
+2x_1&amp;\,+\,&amp;6x_2&amp;\,+\,&amp;4x_3  &amp;=&amp; 0\\
+x_1&amp;\,+\,&amp;6x_2&amp;\,-\,&amp;4x_3 &amp;=&amp; 0
+\end{alignat*}
+</div>
+<p id="p-385">Find a basis for its solution space.</p></article><pre class="ptx-sagecell sagecell-octave" id="sage-28"><script type="text/x-sage"></script></pre>
+<article class="observation remark-like" id="observation-15"><h3 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.9.8</span><span class="period">.</span>
+</h3>
+<p id="p-386">The basis of the trivial vector space is the empty set.  You can denote this as either <span class="process-math">\(\emptyset\)</span> or <span class="process-math">\(\{\}\text{.}\)</span></p>
+<p id="p-387">Thus, if <span class="process-math">\(\vec{0}\)</span> is the only solution of a homogeneous system, the basis of the solution space is  <span class="process-math">\(\emptyset\text{.}\)</span></p></article><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.9.1</span> <span class="title">Videos</span>
+</h3>
+<figure class="figure figure-like" id="figure-20"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-V9" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/TbN3lvLaNOw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.9.9<span class="period">.</span></span><span class="space"> </span>Video: Polynomial and matrix calculations</figcaption></figure></section><section class="exercises" id="exercises-12"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.9.2</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-388"><em class="emphasis">Exercises available at <a class="external" href="https://checkit.clontz.org/#/banks/tbil-la/V9/" target="_blank">checkit.clontz.org</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-13" id="fn-13"><sup> 1 </sup></a>.</em></p></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-13"><div class="fn"><code class="code-inline tex2jax_ignore">https://checkit.clontz.org/#/banks/tbil-la/V9/</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

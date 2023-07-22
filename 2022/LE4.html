@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TBIL-LA Linear Systems with Infinitely-Many Solutions (LE4)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra for Team-Based Inquiry Learning">
+<meta property="book:author" content="Steven Clontz">
+<meta property="book:author" content="Drew Lewis">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-octave',
+                       linked: true,
+                       languages: ['octave'],
+                       evalButtonText: 'Evaluate (Octave)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">2022 Edition</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="LE3.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="LE.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="VS.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="LE3.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="LE.html" title="Up">Up</a><a class="next-button button toolbar-item" href="VS.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon.html" data-scroll="colophon" class="internal">Colophon</a></li>
+<li><a href="tbil-rl.html" data-scroll="tbil-rl" class="internal">TBIL Resource Library</a></li>
+<li><a href="instructor-notes.html" data-scroll="instructor-notes" class="internal">For Instructors</a></li>
+<li><a href="video-resources.html" data-scroll="video-resources" class="internal">Video Resources</a></li>
+<li><a href="slideshows.html" data-scroll="slideshows" class="internal">Slideshows</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="LE.html" data-scroll="LE" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (LE)</span></a><ul>
+<li><a href="LE1.html" data-scroll="LE1" class="internal">Linear Systems, Vector Equations, and Augmented Matrices (LE1)</a></li>
+<li><a href="LE2.html" data-scroll="LE2" class="internal">Row Reduction of Matrices (LE2)</a></li>
+<li><a href="LE3.html" data-scroll="LE3" class="internal">Counting Solutions for Linear Systems (LE3)</a></li>
+<li><a href="LE4.html" data-scroll="LE4" class="active">Linear Systems with Infinitely-Many Solutions (LE4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="VS.html" data-scroll="VS" class="internal"><span class="codenumber">2</span> <span class="title">Vector Spaces (VS)</span></a><ul>
+<li><a href="VS1.html" data-scroll="VS1" class="internal">Vector Spaces (VS1)</a></li>
+<li><a href="VS2.html" data-scroll="VS2" class="internal">Linear Combinations (VS2)</a></li>
+<li><a href="VS3.html" data-scroll="VS3" class="internal">Spanning Sets (VS3)</a></li>
+<li><a href="VS4.html" data-scroll="VS4" class="internal">Subspaces (VS4)</a></li>
+<li><a href="VS5.html" data-scroll="VS5" class="internal">Linear Independence (VS5)</a></li>
+<li><a href="VS6.html" data-scroll="VS6" class="internal">Identifying a Basis (VS6)</a></li>
+<li><a href="VS7.html" data-scroll="VS7" class="internal">Subspace Basis and Dimension (VS7)</a></li>
+<li><a href="VS8.html" data-scroll="VS8" class="internal">Polynomial and Matrix Spaces (VS8)</a></li>
+<li><a href="VS9.html" data-scroll="VS9" class="internal">Homogeneous Linear Systems (VS9)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="AT.html" data-scroll="AT" class="internal"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (AT)</span></a><ul>
+<li><a href="AT1.html" data-scroll="AT1" class="internal">Linear Transformations (AT1)</a></li>
+<li><a href="AT2.html" data-scroll="AT2" class="internal">Standard Matrices (AT2)</a></li>
+<li><a href="AT3.html" data-scroll="AT3" class="internal">Image and Kernel (AT3)</a></li>
+<li><a href="AT4.html" data-scroll="AT4" class="internal">Injective and Surjective Linear Maps (AT4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="MX.html" data-scroll="MX" class="internal"><span class="codenumber">4</span> <span class="title">Matrices (MX)</span></a><ul>
+<li><a href="MX1.html" data-scroll="MX1" class="internal">Matrices and Multiplication (MX1)</a></li>
+<li><a href="MX2.html" data-scroll="MX2" class="internal">Row Operations as Matrix Multiplication (MX2)</a></li>
+<li><a href="MX3.html" data-scroll="MX3" class="internal">The Inverse of a Matrix (MX3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="GT.html" data-scroll="GT" class="internal"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (GT)</span></a><ul>
+<li><a href="GT1.html" data-scroll="GT1" class="internal">Row Operations and Determinants (GT1)</a></li>
+<li><a href="GT2.html" data-scroll="GT2" class="internal">Computing Determinants (GT2)</a></li>
+<li><a href="GT3.html" data-scroll="GT3" class="internal">Eigenvalues and Characteristic Polynomials (GT3)</a></li>
+<li><a href="GT4.html" data-scroll="GT4" class="internal">Eigenvectors and Eigenspaces (GT4)</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="applications.html" data-scroll="applications" class="internal"><span class="codenumber">A</span> <span class="title">Applications</span></a><ul>
+<li><a href="truss.html" data-scroll="truss" class="internal">Civil Engineering: Trusses and Struts</a></li>
+<li><a href="pagerank.html" data-scroll="pagerank" class="internal">Computer Science: PageRank</a></li>
+<li><a href="geology.html" data-scroll="geology" class="internal">Geology: Phases and Components</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="appendix-2.html" data-scroll="appendix-2" class="internal"><span class="codenumber">B</span> <span class="title">Appendix</span></a><ul>
+<li><a href="sample-exercises.html" data-scroll="sample-exercises" class="internal">Sample Exercises with Solutions</a></li>
+<li><a href="list-of-definitions.html" data-scroll="list-of-definitions" class="internal">Definitions</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="LE4"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Linear Systems with Infinitely-Many Solutions (LE4)</span>
+</h2>
+<article class="objectives goal-like" id="objectives-5"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
+<ul class="disc"><li id="li-119"><p id="p-194">Compute the solution set for a system of linear equations or a vector equation with infinitly many solutions.</p></li></ul></article><section class="subsection" id="subsection-16"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.1</span> <span class="title">Class Activities</span>
+</h3>
+<article class="activity project-like" id="activity-22"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-9">
+<p id="p-195">Consider this simplified linear system found to be equivalent to the system from <a href="" class="xref" data-knowl="./knowl/LE3-inf.html" title="Activity 1.3.6">Activity 1.3.6</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/LE3-inf.html" id="md-28">
+\begin{alignat*}{3}
+x_1 &amp;+ 2x_2 &amp; &amp;= 4\\
+&amp; &amp;\phantom{+}x_3 &amp;= -1
+\end{alignat*}
+</div>
+<p id="p-196">Earlier, we determined this system has infinitely-many solutions.</p>
+</div>
+<article class="task exercise-like" id="task-17"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-197">Let <span class="process-math">\(x_1=a\)</span> and write the solution set in the form <span class="process-math">\(\setBuilder
+{
+\left[\begin{array}{c} a \\ \unknown \\ \unknown \end{array}\right]
+}{
+a \in \IR
+}
+\text{.}\)</span></p></article><article class="task exercise-like" id="task-18"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-198">Let <span class="process-math">\(x_2=b\)</span> and write the solution set in the form <span class="process-math">\(\setBuilder
+{
+\left[\begin{array}{c} \unknown \\ b \\ \unknown \end{array}\right]
+}{
+b \in \IR
+}
+\text{.}\)</span></p></article><article class="task exercise-like" id="task-19"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-199">Which of these was easier?  What features of the RREF matrix <span class="process-math">\(\left[\begin{array}{ccc|c}
+\circledNumber{1} &amp; 2 &amp; 0 &amp; 4 \\
+0 &amp; 0 &amp; \circledNumber{1} &amp; -1
+\end{array}\right]\)</span> caused this?</p></article></article><article class="definition definition-like" id="definition-8"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
+</h4>
+<p id="p-200">Recall that the pivots of a matrix in <span class="process-math">\(\RREF\)</span> form are the leading <span class="process-math">\(1\)</span>s in each non-zero row.</p>
+<p id="p-201">The pivot columns in an augmented matrix correspond to the <dfn class="terminology">bound variables</dfn> in the system of equations (<span class="process-math">\(x_1,x_3\)</span> below). The remaining variables are called <dfn class="terminology">free variables</dfn> (<span class="process-math">\(x_2\)</span> below).</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{ccc|c}
+\circledNumber{1} &amp; 2 &amp; 0 &amp; 4 \\
+0 &amp; 0 &amp; \circledNumber{1} &amp; -1
+\end{array}\right]
+\end{equation*}
+</div>
+<p id="p-202">To efficiently solve a system in RREF form, assign letters to the free variables, and then solve for the bound variables.</p></article><article class="activity project-like" id="activity-23"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-10">
+<p id="p-203">Find the solution set for the system</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-29">
+\begin{alignat*}{6}
+2x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;6x_3&amp;\,+\,&amp;x_4&amp;\,-\,&amp;x_5&amp;\,=\,&amp;3 \\
+-x_1&amp;\,+\,&amp;x_2&amp;\,+\,&amp;3x_3&amp;\,-\,&amp;x_4&amp;\,+\,&amp;2x_5 &amp;\,=\,&amp; -3 \\
+x_1&amp;\,-\,&amp;2x_2&amp;\,-\,&amp;x_3&amp;\,+\,&amp;x_4&amp;\,+\,&amp;x_5 &amp;\,=\,&amp; 2
+\end{alignat*}
+</div>
+<p class="continuation">by doing the following.</p>
+</div>
+<article class="task exercise-like" id="task-20"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-204">Row-reduce its augmented matrix.</p></article><article class="task exercise-like" id="task-21"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-205">Assign letters to the free variables (given by the non-pivot columns): <p id="p-206"><span class="process-math">\(\unknown = a\)</span> and <span class="process-math">\(\unknown = b\text{.}\)</span></p></p></article><article class="task exercise-like" id="task-22"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-207">Solve for the bound variables (given by the pivot columns) to show that <p id="p-208"><span class="process-math">\(\unknown = 1+5a+2b\text{,}\)</span></p> <p id="p-209"><span class="process-math">\(\unknown = 1+2a+3b\text{,}\)</span></p> <p id="p-210">and <span class="process-math">\(\unknown=3+3b\text{.}\)</span></p></p></article><article class="task exercise-like" id="task-23"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-211">Replace <span class="process-math">\(x_1\)</span> through <span class="process-math">\(x_5\)</span> with the appropriate expressions of <span class="process-math">\(a,b\)</span> in the following set-builder notation.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-212">
+\begin{equation*}
+\setBuilder
+{
+\left[\begin{array}{c}
+x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5
+\end{array}\right]
+}{
+a,b\in \IR
+}
+\end{equation*}
+</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-6"><script type="text/x-sage"></script></pre>
+<article class="remark remark-like" id="remark-6"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="period">.</span>
+</h4>
+<p id="p-213">Don't forget to correctly express the solution set of a linear system. Systems with zero or one solutions may be written by listing their elements, while systems with infinitely-many solutions may be written using set-builder notation.</p>
+<ul class="disc">
+<li id="li-120"><p id="p-214"><em class="emphasis">Inconsistent</em>: <span class="process-math">\(\emptyset\)</span> or <span class="process-math">\(\{\}\)</span> (not <span class="process-math">\(0\)</span>).</p></li>
+<li id="li-121"><p id="p-215"><em class="emphasis">Consistent</em> with <em class="emphasis">one solution</em>: e.g. <span class="process-math">\(\setList{ \left[\begin{array}{c}1\\2\\3\end{array}\right] }\)</span> (not just <span class="process-math">\(\left[\begin{array}{c}1\\2\\3\end{array}\right]\)</span>).</p></li>
+<li id="li-122"><p id="p-216"><em class="emphasis">Consistent</em> with <em class="emphasis">infinitely-many solutions</em>: e.g. <span class="process-math">\(\setBuilder
+{
+\left[\begin{array}{c}1\\2-3a\\a\end{array}\right]
+}{
+a\in\IR
+}\)</span> (not just <span class="process-math">\(\left[\begin{array}{c}1\\2-3a\\a\end{array}\right]\)</span> ).</p></li>
+</ul></article><article class="activity project-like" id="activity-24"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span>
+</h4>
+<p id="p-217">Show how to find the solution set for the vector equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_{1} \left[\begin{array}{c}
+1 \\
+0 \\
+1
+\end{array}\right] + x_{2} \left[\begin{array}{c}
+0 \\
+1 \\
+-1
+\end{array}\right] + x_{3} \left[\begin{array}{c}
+-1 \\
+5 \\
+-5
+\end{array}\right] + x_{4} \left[\begin{array}{c}
+-3 \\
+13 \\
+-13
+\end{array}\right] = \left[\begin{array}{c}
+-3 \\
+12 \\
+-12
+\end{array}\right]\text{.}
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-25"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.6</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-11">
+<p id="p-218">Consider the following system of linear equations.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{matrix}
+x_{1} &amp;  &amp;  &amp;  -  &amp; 2 \, x_{3} &amp; = &amp; -3 \\
+5 \, x_{1} &amp;  +  &amp; x_{2} &amp;  -  &amp; 7 \, x_{3} &amp; = &amp; -18 \\
+5 \, x_{1} &amp;  -  &amp; x_{2} &amp;  -  &amp; 13 \, x_{3} &amp; = &amp; -12 \\
+x_{1} &amp;  +  &amp; 3 \, x_{2} &amp;  +  &amp; 7 \, x_{3} &amp; = &amp; -12 \\
+\end{matrix}
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-24"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-219">Explain how to find a simpler system or vector equation that has the same solution set.</p></article><article class="task exercise-like" id="task-25"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-220">Explain how to describe this solution set using set notation.</p></article></article></section><section class="subsection" id="subsection-17"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.2</span> <span class="title">Videos</span>
+</h3>
+<figure class="figure figure-like" id="figure-4"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-LE4" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/_ievdPswLoE?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span>Video: Solving a system of linear equations with infinitely-many solutions</figcaption></figure></section><section class="subsection" id="subsection-18"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.3</span> <span class="title">Slideshow</span>
+</h3>
+<p id="p-221">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/LE4.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/LE4.slides.html</code></a>.</p></section><section class="exercises" id="exercises-4"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">1.4.4</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-222">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2022/exercises/#/bank/LE4/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2022/exercises/#/bank/LE4/</code></a>.</p></section><section class="subsection" id="subsection-19"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.5</span> <span class="title">Mathematical Writing Explorations</span>
+</h3>
+<article class="exploration project-like" id="exploration-7"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span>
+</h4>
+<p id="p-223">Construct a system of 3 equations in 3 variables having:</p>
+<ul class="disc">
+<li id="li-123"><p id="p-derived-li-123">0 free variables</p></li>
+<li id="li-124"><p id="p-derived-li-124">1 free variable</p></li>
+<li id="li-125"><p id="p-derived-li-125">2 free variables</p></li>
+</ul>
+<p class="continuation">In each case, solve the system you have created. Conjecture a relationship between the number of free variables and the type of solution set that can be obtained from a given system.</p></article><article class="exploration project-like" id="exploration-8"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.4.8</span><span class="period">.</span>
+</h4>
+<p id="p-224">For each of the following, decide if it's true or false. If you think it's true, can we construct a proof? If you think it's false, can we find a counterexample?</p>
+<ul class="disc">
+<li id="li-126"><p id="p-derived-li-126">If the coefficient matrix of a system of linear equations has a pivot in the rightmost column, then the system is inconsistent.</p></li>
+<li id="li-127"><p id="p-derived-li-127">If a system of equations has two equations and four unknowns, then it must be consistent.</p></li>
+<li id="li-128"><p id="p-derived-li-128">If a system of equations having four equations and three unknowns is consistent, then the solution is unique.</p></li>
+<li id="li-129"><p id="p-derived-li-129">Suppose that a linear system has four equations and four unknowns and that the coefficient matrix has four pivots. Then the linear system is consistent and has a unique solution.</p></li>
+<li id="li-130"><p id="p-derived-li-130">Suppose that a linear system has five equations and three unknowns and that the coefficient matrix has a pivot in every column. Then the linear system is consistent and has a unique solution.</p></li>
+</ul></article></section><section class="subsection" id="subsection-20"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.6</span> <span class="title">Sample Problem and Solution</span>
+</h3>
+<p id="p-225">Sample problem <a href="" class="xref" data-knowl="./knowl/sampleLE4.html" title="Example B.1.4: LE4">Example B.1.4</a>.</p></section></section></div></main>
+</div>
+</body>
+</html>

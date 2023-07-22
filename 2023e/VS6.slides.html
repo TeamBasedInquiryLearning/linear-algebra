@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-12-22T19:00:01Z       *-->
+<!--*   A recent stable commit (2022-07-01):   *-->
+<!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html xmlns:pi="http://pretextbook.org/2020/pretext/internal">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear Algebra for Team-Based Inquiry Learning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/simple.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+</head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>Linear Algebra for Team-Based Inquiry Learning</h1>
+<h2>2023 Early Edition</h2>
+<table>
+<tr>
+<th align="center" style="border-bottom: 0px;">Steven Clontz</th>
+<th align="center" style="border-bottom: 0px;">Drew Lewis</th>
+</tr>
+<tr>
+<td align="center" style="border-bottom: 0px;">University of South Alabama</td>
+<td align="center" style="border-bottom: 0px;">University of South Alabama</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</table>
+<h4><div class="date">December 22, 2022</div></h4></section></section><section><section><h1>Section 2.6: Identifying a Basis (VS6)</h1></section><section><h3>Observation 2.6.1</h3>
+<div align="left"> <p>Suppose you are building a starship, which is for some reason in the shape of a cube. Due to some clever engineering, each part of the ship can be made out of a finite set of components. In fact, there are only 5 basic components. Assemble them in different ways, and you make every part of the cube! However, at the last minute, the design is changed from a cube to an octahedron. Would it make more sense to take all of the parts you were planning to build, build them anyway and modify them later, or to just modify the 5 basic components?</p>
+</div></section><section><h3>Activity 2.6.2 (~10 min)</h3>
+<div align="left"> <p>Start with three vectors<div class="displaymath process-math">
+\begin{equation*}
+\vec e_1=\hat\imath=\left[\begin{array}{c}1 \\ 0 \\ 0\end{array}\right],
+\vec e_2=\hat\jmath=\left[\begin{array}{c}0 \\ 1 \\ 0\end{array}\right],
+\text{ and }
+\vec e_3=\hat k=\left[\begin{array}{c}0 \\ 0 \\ 1\end{array}\right]\text{.}
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 1.</em></p> <p>Let <span class="process-math">\(\vec{v}\)</span> be an unspecified vector in <span class="process-math">\(\IR\text{.}\)</span> Show that <span class="process-math">\(\vec{v}\)</span> can be expressed as a linear combination of <span class="process-math">\(\vec{e}_1, \vec{e}_2\text{,}\)</span> and <span class="process-math">\(\vec{e}_3\text{.}\)</span></p>
+</div></section><section><h3>Activity 2.6.2 (~10 min)</h3>
+<div align="left"> <p>Start with three vectors<div class="displaymath process-math">
+\begin{equation*}
+\vec e_1=\hat\imath=\left[\begin{array}{c}1 \\ 0 \\ 0\end{array}\right],
+\vec e_2=\hat\jmath=\left[\begin{array}{c}0 \\ 1 \\ 0\end{array}\right],
+\text{ and }
+\vec e_3=\hat k=\left[\begin{array}{c}0 \\ 0 \\ 1\end{array}\right]\text{.}
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 2.</em></p> <p>Let <span class="process-math">\(\vec{w} = \left[\begin{array}{c}1 \\ 1 \\ 0\end{array}\right]\text{.}\)</span> Show that <span class="process-math">\(\vec{v}\)</span> cannot be expressed as a linear combination of <span class="process-math">\(\vec{e}_1, \vec{e}_2\text{,}\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span></p>
+</div></section><section><h3>Activity 2.6.2 (~10 min)</h3>
+<div align="left"> <p>Start with three vectors<div class="displaymath process-math">
+\begin{equation*}
+\vec e_1=\hat\imath=\left[\begin{array}{c}1 \\ 0 \\ 0\end{array}\right],
+\vec e_2=\hat\jmath=\left[\begin{array}{c}0 \\ 1 \\ 0\end{array}\right],
+\text{ and }
+\vec e_3=\hat k=\left[\begin{array}{c}0 \\ 0 \\ 1\end{array}\right]\text{.}
+\end{equation*}
+</div></p> <p><em class="emphasis">Part 3.</em></p> <p>Does this imply that all vectors in <span class="process-math">\(\IR^3\)</span> can be written as a linear combination of <span class="process-math">\(\vec{e}_1, \vec{e}_2\text{,}\)</span> and <span class="process-math">\(\vec{e}_3\text{?}\)</span> If you think so, explain what makes these vectors special. If not, explain why not.</p>
+</div></section><section><h3>Definition 2.6.3</h3>
+<div align="left"> <p>A <dfn class="terminology">basis</dfn> is a linearly independent set that spans a vector space.</p> <p>The <dfn class="terminology">standard basis</dfn> of <span class="process-math">\(\IR^n\)</span> is the set <span class="process-math">\(\{\vec{e}_1, \ldots, \vec{e}_n\}\)</span> where<div class="displaymath process-math" id="md-1">
+\begin{align*}
+\vec{e}_1 &amp;= \left[\begin{array}{c}1 \\ 0 \\ 0 \\ \vdots \\ 0 \\  0 \end{array}\right] &amp;
+\vec{e}_2 &amp;= \left[\begin{array}{c}0 \\ 1 \\ 0 \\ \vdots \\ 0 \\ 0 \end{array}\right] &amp;
+\cdots &amp; &amp;
+\vec{e}_n = \left[\begin{array}{c}0 \\ 0 \\ 0 \\ \vdots \\ 0 \\ 1 \end{array}\right]\text{.}
+\end{align*}
+</div></p>
+</div></section><section><h3>Observation 2.6.4</h3>
+<div align="left"> <p>A basis may be thought of as a collection of building blocks for a vector space,  since every vector in the space can be expressed as a unique linear combination of basis vectors.</p> <p>For example, in many calculus courses, vectors in <span class="process-math">\(\IR^3\)</span> are often expressed in their component form<div class="displaymath process-math">
+\begin{equation*}
+(3,-2,4)=\left[\begin{array}{c}3 \\ -2 \\ 4\end{array}\right]
+\end{equation*}
+</div>or in their standard basic vector form<div class="displaymath process-math">
+\begin{equation*}
+3\vec e_1-2\vec e_2+4\vec e_3 = 3\hat\imath-2\hat\jmath+4\hat k
+.
+\end{equation*}
+</div>Since every vector in <span class="process-math">\(\IR^3\)</span> can be uniquely described as a linear combination of the vectors in <span class="process-math">\(\setList{\vec e_1,\vec e_2,\vec e_3}\text{,}\)</span> this set is indeed a basis.</p>
+</div></section><section><h3>Activity 2.6.5 (~15 min)</h3>
+<div align="left"> <p>Label each of the sets <span class="process-math">\(A,B,C,D,E\)</span> as<ul class="disc">
+<li><p>SPANS <span class="process-math">\(\IR^4\)</span> or DOES NOT SPAN <span class="process-math">\(\IR^4\)</span></p></li>
+<li><p>LINEARLY INDEPENDENT or LINEARLY DEPENDENT</p></li>
+<li><p>BASIS FOR <span class="process-math">\(\IR^4\)</span> or NOT A BASIS FOR <span class="process-math">\(\IR^4\)</span></p></li>
+</ul>by finding <span class="process-math">\(\RREF\)</span> for their corresponding matrices.</p>
+<div class="displaymath process-math" id="md-2">
+\begin{align*}
+A&amp;=\left\{
+\left[\begin{array}{c}1\\0\\0\\0\end{array}\right],
+\left[\begin{array}{c}0\\1\\0\\0\end{array}\right],
+\left[\begin{array}{c}0\\0\\1\\0\end{array}\right],
+\left[\begin{array}{c}0\\0\\0\\1\end{array}\right]
+\right\}
+&amp;
+B&amp;=\left\{
+\left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+\left[\begin{array}{c}2\\0\\0\\3\end{array}\right],
+\left[\begin{array}{c}4\\3\\0\\2\end{array}\right],
+\left[\begin{array}{c}-3\\0\\1\\3\end{array}\right]
+\right\}\\
+C&amp;=\left\{
+\left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+\left[\begin{array}{c}2\\0\\0\\3\end{array}\right],
+\left[\begin{array}{c}3\\13\\7\\16\end{array}\right],
+\left[\begin{array}{c}-1\\10\\7\\14\end{array}\right],
+\left[\begin{array}{c}4\\3\\0\\2\end{array}\right]
+\right\}
+&amp;
+D&amp;=\left\{
+\left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+\left[\begin{array}{c}4\\3\\0\\2\end{array}\right],
+\left[\begin{array}{c}-3\\0\\1\\3\end{array}\right],
+\left[\begin{array}{c}3\\6\\1\\5\end{array}\right]
+\right\}\\
+E&amp;=\left\{
+\left[\begin{array}{c}5\\3\\0\\-1\end{array}\right],
+\left[\begin{array}{c}-2\\1\\0\\3\end{array}\right],
+\left[\begin{array}{c}4\\5\\1\\3\end{array}\right]
+\right\}
+\end{align*}
+</div>
+</div></section><section><h3>Activity 2.6.6 (~10 min)</h3>
+<div align="left"> <p>If <span class="process-math">\(\{\vec v_1,\vec v_2,\vec v_3,\vec v_4\}\)</span> is a basis for <span class="process-math">\(\IR^4\text{,}\)</span> that means <span class="process-math">\(\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]\)</span> doesn't have a non-pivot column, and doesn't have a row of zeros. What is <span class="process-math">\(\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]\text{?}\)</span></p>
+<div class="displaymath process-math">
+\begin{equation*}
+\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]
+=
+\left[\begin{array}{cccc}
+\unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+\unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+\unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+\unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+\end{array}\right]
+\end{equation*}
+</div>
+</div></section><section><h3>Fact 2.6.7</h3>
+<div align="left"> <p>The set <span class="process-math">\(\{\vec v_1,\dots,\vec v_m\}\)</span> is a basis for <span class="process-math">\(\IR^n\)</span> if and only if <span class="process-math">\(m=n\)</span> and <span class="process-math">\(\RREF[\vec v_1\,\dots\,\vec v_n]=
+\left[\begin{array}{cccc}
+1&amp;0&amp;\dots&amp;0\\
+0&amp;1&amp;\dots&amp;0\\
+\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+0&amp;0&amp;\dots&amp;1
+\end{array}\right]
+\text{.}\)</span></p> <p>That is, a basis for <span class="process-math">\(\IR^n\)</span> must have exactly <span class="process-math">\(n\)</span> vectors and its square matrix must row-reduce to the so-called <dfn class="terminology">identity matrix</dfn> containing all zeros except for a downward diagonal of ones. (We will learn where the identity matrix gets its name in a later module.)</p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

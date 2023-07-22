@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-12-22T19:00:22Z       *-->
+<!--*   A recent stable commit (2022-07-01):   *-->
+<!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html xmlns:pi="http://pretextbook.org/2020/pretext/internal">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear Algebra for Team-Based Inquiry Learning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/simple.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+</head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>Linear Algebra for Team-Based Inquiry Learning</h1>
+<h2>2023 Early Edition</h2>
+<table>
+<tr>
+<th align="center" style="border-bottom: 0px;">Steven Clontz</th>
+<th align="center" style="border-bottom: 0px;">Drew Lewis</th>
+</tr>
+<tr>
+<td align="center" style="border-bottom: 0px;">University of South Alabama</td>
+<td align="center" style="border-bottom: 0px;">University of South Alabama</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</table>
+<h4><div class="date">December 22, 2022</div></h4></section></section><section><section><h1>Section 4.3: The Inverse of a Matrix (MX3)</h1></section><section><h3>Activity 4.3.1 (~15 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(T: \IR^n \rightarrow \IR^m\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span> Sort the following items into three groups of statements: a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">injective</em>, a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">surjective</em>, and a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">bijective</em>.</p> <ol class="upper-alpha">
+<li><p><span class="process-math">\(A\vec x=\vec b\)</span> has a solution for all <span class="process-math">\(\vec b\in\IR^m\)</span></p></li>
+<li><p><span class="process-math">\(A\vec x=\vec b\)</span> has a unique solution for all <span class="process-math">\(\vec b\in\IR^m\)</span></p></li>
+<li><p><span class="process-math">\(A\vec x=\vec 0\)</span> has a unique solution.</p></li>
+<li><p>The columns of <span class="process-math">\(A\)</span> span <span class="process-math">\(\IR^m\)</span></p></li>
+<li><p>The columns of <span class="process-math">\(A\)</span> are linearly independent</p></li>
+<li><p>The columns of <span class="process-math">\(A\)</span> are a basis of <span class="process-math">\(\IR^m\)</span></p></li>
+<li><p>Every column of <span class="process-math">\(\RREF(A)\)</span> has a pivot</p></li>
+<li><p>Every row of <span class="process-math">\(\RREF(A)\)</span> has a pivot</p></li>
+<li><p><span class="process-math">\(m=n\)</span> and <span class="process-math">\(\RREF(A)=I\)</span></p></li>
+</ol>
+</div></section><section><h3>Activity 4.3.2 (~5 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^3\)</span> be the linear transformation given by the standard matrix <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; 0 \\ 2 &amp; 1 &amp; 4 \\ 1 &amp; 1 &amp; 3 \end{array}\right]\text{.}\)</span></p> <p>Write an augmented matrix representing the system of equations given by <span class="process-math">\(T(\vec x)=\vec{0}\text{,}\)</span> that is, <span class="process-math">\(A\vec x=\left[\begin{array}{c}0 \\ 0 \\ 0 \end{array}\right]\text{.}\)</span> Then solve <span class="process-math">\(T(\vec x)=\vec{0}\)</span> to find the kernel of <span class="process-math">\(T\text{.}\)</span></p>
+</div></section><section><h3>Definition 4.3.3</h3>
+<div align="left"> <p>Let <span class="process-math">\(T: \IR^n \rightarrow \IR^n\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span></p> <ul class="disc">
+<li><p>If <span class="process-math">\(T\)</span> is a bijection and <span class="process-math">\(\vec b\)</span> is any <span class="process-math">\(\IR^n\)</span> vector, then <span class="process-math">\(T(\vec x)=A\vec x=\vec b\)</span> has a unique solution.</p></li>
+<li><p>So we may define an <dfn class="terminology">inverse map</dfn> <span class="process-math">\(T^{-1} : \IR^n \rightarrow \IR^n\)</span> by setting <span class="process-math">\(T^{-1}(\vec b)\)</span> to be this unique solution.</p></li>
+<li><p>Let <span class="process-math">\(A^{-1}\)</span> be the standard matrix for <span class="process-math">\(T^{-1}\text{.}\)</span> We call <span class="process-math">\(A^{-1}\)</span> the <dfn class="terminology">inverse matrix</dfn> of <span class="process-math">\(A\text{,}\)</span> so we also say that <span class="process-math">\(A\)</span> is <dfn class="terminology">invertible</dfn>.</p></li>
+</ul>
+</div></section><section><h3>Activity 4.3.4 (~20 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^3\)</span> be the linear transformation given by the standard matrix <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]\text{.}\)</span></p> <p><em class="emphasis">Part 1.</em></p> <p>Write an augmented matrix representing the system of equations given by <span class="process-math">\(T(\vec x)=\vec{e}_1\text{,}\)</span> that is, <span class="process-math">\(A\vec x=\left[\begin{array}{c}1 \\ 0 \\ 0 \end{array}\right]\text{.}\)</span> Then solve <span class="process-math">\(T(\vec x)=\vec{e}_1\)</span> to find <span class="process-math">\(T^{-1}(\vec{e}_1)\text{.}\)</span></p>
+</div></section><section><h3>Activity 4.3.4 (~20 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^3\)</span> be the linear transformation given by the standard matrix <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]\text{.}\)</span></p> <p><em class="emphasis">Part 2.</em></p> <p>Solve <span class="process-math">\(T(\vec x)=\vec{e}_2\)</span> to find <span class="process-math">\(T^{-1}(\vec{e}_2)\text{.}\)</span></p>
+</div></section><section><h3>Activity 4.3.4 (~20 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^3\)</span> be the linear transformation given by the standard matrix <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]\text{.}\)</span></p> <p><em class="emphasis">Part 3.</em></p> <p>Solve <span class="process-math">\(T(\vec x)=\vec{e}_3\)</span> to find <span class="process-math">\(T^{-1}(\vec{e}_3)\text{.}\)</span></p>
+</div></section><section><h3>Activity 4.3.4 (~20 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^3\)</span> be the linear transformation given by the standard matrix <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]\text{.}\)</span></p> <p><em class="emphasis">Part 4.</em></p> <p>Write <span class="process-math">\(A^{-1}\text{,}\)</span> the standard matrix for <span class="process-math">\(T^{-1}\text{.}\)</span></p>
+</div></section><section><h3>Observation 4.3.5</h3>
+<div align="left"> <p>We could have solved these three systems simultaneously by row reducing the matrix <span class="process-math">\([A\,|\,I]\)</span> at once.<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{ccc|ccc}
+2 &amp; -1 &amp; -6 &amp; 1 &amp; 0 &amp; 0 \\
+2 &amp; 1 &amp; 3 &amp; 0 &amp; 1 &amp; 0 \\
+1 &amp; 1 &amp; 4 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right] \sim
+\left[\begin{array}{ccc|ccc}
+1 &amp; 0 &amp; 0 &amp; 1 &amp; -2 &amp; 3 \\
+0 &amp; 1 &amp; 0 &amp; -5 &amp; 14 &amp; -18 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; -3 &amp; 4
+\end{array}\right]
+\end{equation*}
+</div></p>
+</div></section><section><h3>Activity 4.3.6 (~5 min)</h3>
+<div align="left"> <p>Find the inverse <span class="process-math">\(A^{-1}\)</span> of the matrix <span class="process-math">\(A=\left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; -2 \end{array}\right]\)</span> by row-reducing <span class="process-math">\([A\,|\,I]\text{.}\)</span></p>
+</div></section><section><h3>Activity 4.3.7 (~5 min)</h3>
+<div align="left"> <p>Is the matrix <span class="process-math">\(\left[\begin{array}{ccc} 2 &amp; 3 &amp; 1 \\ -1 &amp; -4 &amp; 2 \\ 0 &amp; -5 &amp; 5 \end{array}\right]\)</span> invertible? Give a reason for your answer.</p>
+</div></section><section><h3>Observation 4.3.8</h3>
+<div align="left"> <p>An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(\RREF(A) = I_n\text{.}\)</span></p>
+</div></section><section><h3>Activity 4.3.9 (~10 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(T:\IR^2\to\IR^2\)</span> be the bijective linear map defined by <span class="process-math">\(T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)=\left[\begin{array}{c} 2x -3y \\ -3x + 5y\end{array}\right]\text{,}\)</span> with the inverse map <span class="process-math">\(T^{-1}\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)=\left[\begin{array}{c} 5x+ 3y \\ 3x + 2y\end{array}\right]\text{.}\)</span></p> <p><em class="emphasis">Part 1.</em></p> <p>Compute <span class="process-math">\((T^{-1}\circ T)\left(\left[\begin{array}{c}-2\\1\end{array}\right]\right)\text{.}\)</span></p>
+</div></section><section><h3>Activity 4.3.9 (~10 min)</h3>
+<div align="left"> <p>Let <span class="process-math">\(T:\IR^2\to\IR^2\)</span> be the bijective linear map defined by <span class="process-math">\(T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)=\left[\begin{array}{c} 2x -3y \\ -3x + 5y\end{array}\right]\text{,}\)</span> with the inverse map <span class="process-math">\(T^{-1}\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)=\left[\begin{array}{c} 5x+ 3y \\ 3x + 2y\end{array}\right]\text{.}\)</span></p> <p><em class="emphasis">Part 2.</em></p> <p>If <span class="process-math">\(A\)</span> is the standard matrix for <span class="process-math">\(T\)</span> and <span class="process-math">\(A^{-1}\)</span> is the standard matrix for <span class="process-math">\(T^{-1}\text{,}\)</span> find the <span class="process-math">\(2\times 2\)</span> matrix<div class="displaymath process-math">
+\begin{equation*}
+A^{-1}A=\left[\begin{array}{ccc}\unknown&amp;\unknown\\\unknown&amp;\unknown\end{array}\right].
+\end{equation*}
+</div></p>
+</div></section><section><h3>Observation 4.3.10</h3>
+<div align="left"> <p><span class="process-math">\(T^{-1}\circ T=T\circ T^{-1}\)</span> is the identity map for any bijective linear transformation <span class="process-math">\(T\text{.}\)</span> Therefore <span class="process-math">\(A^{-1}A=AA^{-1}\)</span> equals the identity matrix <span class="process-math">\(I\)</span> for any invertible matrix <span class="process-math">\(A\text{.}\)</span></p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>
