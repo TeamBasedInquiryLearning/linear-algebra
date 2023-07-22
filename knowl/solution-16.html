@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">B.1.16.1</span><span class="period">.</span>
+</h3>
+<ol class="decimal">
+<li>
+<div class="para">We compute both sides:</div>
+<div class="displaymath process-math">
+\begin{align*}
+c \odot \left((x_1,y_1) \oplus (x_2,y_2) \right)
+&amp;= c \odot (2x_1+2x_2,2y_1+2y_2)\\
+&amp;= (c(2x_1+2x_2),c^2(2y_1+2y_2))\\
+&amp;= (2cx_1+2cx_2,2c^2y_1+2c^2y_2)
+\end{align*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{align*}
+c\odot (x_1,y_1) \oplus c \odot (x_2,y_2) 
+&amp;= (cx_1,c^2y_1) \oplus (cx_2,c^2y_2)\\
+&amp;= (2cx_1+2cx_2,2c^2y_1+2c^2y_2)
+\end{align*}
+</div>
+<div class="para">Since these are the same, we have shown that the property holds.</div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">To show <span class="process-math">\(V\)</span> is not a vector space, we must show that it fails one of the 8 defining properties of vector spaces. We will show that scalar multiplication does not distribute over scalar addition, i.e., there are values such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(c+d)\odot(x,y) \neq c \odot(x,y) \oplus d\odot(x,y) 
+\end{equation*}
+</div>
+</div>
+<ul class="disc">
+<li>
+<div class="para">(Solution method 1) First, we compute</div>
+<div class="displaymath process-math">
+\begin{align*}
+(c+d)\odot(x,y) &amp;= ((c+d)x,(c+d)^2y)\\
+&amp;= ( (c+d)x, (c^2+2cd+d^2)y).
+\end{align*}
+</div>
+<div class="para">Then we compute</div>
+<div class="displaymath process-math">
+\begin{align*}
+c\odot (x,y) \oplus d\odot(x,y) &amp;= (cx,c^2y) \oplus (dx,d^2y)\\
+&amp;= ( 2cx+2dx, 2c^2y+2d^2y).
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\((c+d)x\not=2cx+2dy\)</span> when <span class="process-math">\(c,d,x,y=1\text{,}\)</span> the property fails to hold.</div>
+</li>
+<li>
+<div class="para">(Solution method 2) When we let <span class="process-math">\(c,d,x,y=1\text{,}\)</span> we may simplify both sides as follows.</div>
+<div class="displaymath process-math">
+\begin{align*}
+(c+d)\odot(x,y) &amp;= 2\odot(1,1)\\
+&amp;= (2\cdot1,2^2\cdot1)\\
+&amp;=(2,4)
+\end{align*}
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+c\odot (x,y) \oplus d\odot(x,y) &amp;= 1\odot(1,1)\oplus 1\odot(1,1)\\
+&amp;= (1\cdot1,1^2\cdot1)\oplus(1\cdot1,1^2\cdot1)\\
+&amp;= (1,1)\oplus(1,1)\\
+&amp;= (2\cdot1+2\cdot1,2\cdot1+2\cdot1)\\
+&amp;= (4,4)
+\end{align*}
+</div>
+<div class="para">Since these ordered pairs are different, the property fails to hold.</div>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="sample-exercises.html#solution-16" class="internal">in-context</a></span>
+</body>
+</html>
