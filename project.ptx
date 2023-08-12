@@ -7,18 +7,18 @@
     <target name="print" format="pdf" deploy-dir="./2023/pdf/">
       <stringparam key="debug.project.number" value="the-way-it-should-be"/>
     </target>
-    <target name="extract-slides" format="custom" xsl="xsl/extract-slideshow.xsl">
+    <target name="extract-slides" format="custom" xsl="extract-slideshow.xsl">
       <!-- Provide these programmatically: -->
       <!-- @output-filename="[xml_id].ptx" -->
       <!-- <stringparam key="section" value="[xml_id]"/> -->
       <stringparam key="debug.project.number" value="the-way-it-should-be"/>
     </target>
-    <target name="slides" format="custom" xsl="xsl/extract-slideshow.xsl" deploy-dir="./2023">
+    <target name="slides" format="custom" xsl="slideshow.xsl" deploy-dir="./2023">
       <!-- Provide these programmatically! -->
       <!-- @source="../output/extract-slides/[xml_id].ptx" -->
       <!-- @output-filename="[xml_id].slides.html" -->
     </target>
-    <target name="checkit" format="custom" output-dir="exercises/docs" deploy-dir="./2023/exercises">
+    <target name="checkit" format="custom" output-dir="../exercises/docs" deploy-dir="./2023/exercises">
       <!-- built by checkit, not pretext -->
       <!-- everything except output-dir and deploy-dir is unused -->
     </target>
