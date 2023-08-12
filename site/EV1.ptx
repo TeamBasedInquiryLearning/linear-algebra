@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <docinfo xml:base="meta/docinfo.ptx" original-id="root-p1d1" internal-id="docinfo-root--a-a">
+    <document-id original-id="root-p1d1d1" internal-id="document-id-root--a-a-a">tbilla</document-id>
+    <initialism original-id="root-p1d1i2" internal-id="initialism-root--a-a-b">TBIL-LA</initialism>
+    <blurb shelf="math" original-id="root-p1d1b3" internal-id="blurb-root--a-a-c">Activities and exercises for easily implementing Team-Based Inquiry Learning in a single-variable calculus classroom.</blurb>
+    <macros original-id="root-p1d1m4" internal-id="macros-root--a-a-d">
+\newcommand{\markedPivot}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{%
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{%
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{%
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+    </macros>
+    <latex-image-preamble original-id="root-p1d1l5" internal-id="latex-image-preamble-root--a-a-e">
+\usepackage{tikz}
+\usepackage{tikz-cd}
+    </latex-image-preamble>
+    <rename element="objectives" xml:lang="en-US" original-id="root-p1d1r6" internal-id="rename-root--a-a-f" locale-lang="en-US">Learning Outcomes</rename>
+    <numbering original-id="root-p1d1n7" internal-id="numbering-root--a-a-g">
+      <figures level="0" original-id="root-p1d1n7f1" internal-id="figures-root--a-a-g-a"/>
+    </numbering>
+    <!-- Specify the default type of cross reference:           -->
+    <cross-references text="type-global" original-id="root-p1d1c8" internal-id="cross-references-root--a-a-h"/>
+  </docinfo>
+  <slideshow>
+    <title original-id="linear-algebra-for-team-based-inquiry-learning-t1" internal-id="title-linear-algebra-for-team-based-inquiry-learning-a">Linear Algebra for Team-Based Inquiry Learning</title>
+    <subtitle component="main" original-id="linear-algebra-for-team-based-inquiry-learning-s2" internal-id="subtitle-linear-algebra-for-team-based-inquiry-learning-b">2023 Edition</subtitle>
+    <frontmatter>
+      <titlepage original-id="frontmatter-t1" internal-id="titlepage-frontmatter-a">
+        <author original-id="frontmatter-t1a1" internal-id="author-frontmatter-a-a">
+          <personname original-id="frontmatter-t1a1p1" internal-id="personname-frontmatter-a-a-a">Steven Clontz</personname>
+          <department original-id="frontmatter-t1a1d2" internal-id="department-frontmatter-a-a-b">Department of Mathematics and Statistics</department>
+          <institution original-id="frontmatter-t1a1i3" internal-id="institution-frontmatter-a-a-c">University of South Alabama</institution>
+          <email original-id="frontmatter-t1a1e4" internal-id="email-frontmatter-a-a-d">sclontz@southalabama.edu</email>
+        </author>
+        <author original-id="frontmatter-t1a2" internal-id="author-frontmatter-a-b">
+          <personname original-id="frontmatter-t1a2p1" internal-id="personname-frontmatter-a-b-a">Drew Lewis</personname>
+          <email original-id="frontmatter-t1a2e2" internal-id="email-frontmatter-a-b-b">drew.lewis@gmail.com</email>
+        </author>
+        <credit original-id="frontmatter-t1c3" internal-id="credit-frontmatter-a-c">
+    <title original-id="frontmatter-t1c3t1" internal-id="title-frontmatter-a-c-a">Contributing Authors</title>
+    <author original-id="frontmatter-t1c3a2" internal-id="author-frontmatter-a-c-b"><personname original-id="frontmatter-t1c3a2p1" internal-id="personname-frontmatter-a-c-b-a">Jessalyn Bolkema</personname><department original-id="frontmatter-t1c3a2d2" internal-id="department-frontmatter-a-c-b-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a2i3" internal-id="institution-frontmatter-a-c-b-c">California State University, Dominguez Hills</institution><email original-id="frontmatter-t1c3a2e4" internal-id="email-frontmatter-a-c-b-d">jbolkema@csudh.edu</email></author>
+    <author original-id="frontmatter-t1c3a3" internal-id="author-frontmatter-a-c-c"><personname original-id="frontmatter-t1c3a3p1" internal-id="personname-frontmatter-a-c-c-a">Jeff Ford</personname><department original-id="frontmatter-t1c3a3d2" internal-id="department-frontmatter-a-c-c-b">Department of Mathematics, Computer Science, and Statistics</department><institution original-id="frontmatter-t1c3a3i3" internal-id="institution-frontmatter-a-c-c-c">Gustavus Adolphus College</institution><email original-id="frontmatter-t1c3a3e4" internal-id="email-frontmatter-a-c-c-d">jford@gustavus.edu</email></author>
+    <author original-id="frontmatter-t1c3a4" internal-id="author-frontmatter-a-c-d"><personname original-id="frontmatter-t1c3a4p1" internal-id="personname-frontmatter-a-c-d-a">Sharona Krinsky</personname><department original-id="frontmatter-t1c3a4d2" internal-id="department-frontmatter-a-c-d-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a4i3" internal-id="institution-frontmatter-a-c-d-c">California State University, Los Angeles</institution><email original-id="frontmatter-t1c3a4e4" internal-id="email-frontmatter-a-c-d-d">skrinsk@calstatela.edu</email></author>
+    <author original-id="frontmatter-t1c3a5" internal-id="author-frontmatter-a-c-e"><personname original-id="frontmatter-t1c3a5p1" internal-id="personname-frontmatter-a-c-e-a">Jennifer Nordstrom</personname><department original-id="frontmatter-t1c3a5d2" internal-id="department-frontmatter-a-c-e-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a5i3" internal-id="institution-frontmatter-a-c-e-c">Linfield University</institution><email original-id="frontmatter-t1c3a5e4" internal-id="email-frontmatter-a-c-e-d">jnordstrom@linfield.edu</email></author>
+    <author original-id="frontmatter-t1c3a6" internal-id="author-frontmatter-a-c-f"><personname original-id="frontmatter-t1c3a6p1" internal-id="personname-frontmatter-a-c-f-a">Kate Owens</personname><department original-id="frontmatter-t1c3a6d2" internal-id="department-frontmatter-a-c-f-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a6i3" internal-id="institution-frontmatter-a-c-f-c">College of Charleston</institution><email original-id="frontmatter-t1c3a6e4" internal-id="email-frontmatter-a-c-f-d">owensks@cofc.edu</email></author>
+  </credit>
+        <date original-id="frontmatter-t1d4" internal-id="date-frontmatter-a-d">
+          <today original-id="frontmatter-t1d4t1" internal-id="today-frontmatter-a-d-a"/>
+        </date>
+      </titlepage>
+    </frontmatter>
+    <section>
+      <title>Section 2.1:
+        Linear Combinations (EV1) </title>
+      <slide>
+        <title>Definition 2.1.2 </title>
+        <p original-id="EV1-definition-linear-combo-s1p1" internal-id="p-EV1-definition-linear-combo-a-a">
+  A <term original-id="EV1-definition-linear-combo-s1p1t1" internal-id="term-EV1-definition-linear-combo-a-a-a">linear combination</term> <idx original-id="EV1-definition-linear-combo-s1p1i2" internal-id="idx-EV1-definition-linear-combo-a-a-b"> linear combination</idx>of a set of vectors
+  <m original-id="EV1-definition-linear-combo-s1p1m3" internal-id="m-EV1-definition-linear-combo-a-a-c">\{\vec v_1,\vec v_2,\dots,\vec v_m\}</m> is given by
+  <m original-id="EV1-definition-linear-combo-s1p1m4" internal-id="m-EV1-definition-linear-combo-a-a-d">c_1\vec v_1+c_2\vec v_2+\dots+c_m\vec v_m</m> for any choice of
+  scalar multiples <m original-id="EV1-definition-linear-combo-s1p1m5" internal-id="m-EV1-definition-linear-combo-a-a-e">c_1,c_2,\dots,c_m</m>.
+        </p>
+        <p original-id="EV1-definition-linear-combo-s1p2" internal-id="p-EV1-definition-linear-combo-a-b">
+  For example, we can say <m original-id="EV1-definition-linear-combo-s1p2m1" internal-id="m-EV1-definition-linear-combo-a-b-a">\left[\begin{array}{c}3 \\0 \\ 5\end{array}\right]</m> 
+  is a linear combination of the vectors <m original-id="EV1-definition-linear-combo-s1p2m2" internal-id="m-EV1-definition-linear-combo-a-b-b">\left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right]</m> 
+  and <m original-id="EV1-definition-linear-combo-s1p2m3" internal-id="m-EV1-definition-linear-combo-a-b-c">\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]</m> since 
+  <me original-id="EV1-definition-linear-combo-s1p2m4" internal-id="me-EV1-definition-linear-combo-a-b-d">
+    \left[\begin{array}{c} 3 \\ 0 \\ 5 \end{array}\right] = 
+    2 \left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right] + 
+    1\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]
+  </me>.
+        </p>
+      </slide>
+      <slide>
+        <title>Definition 2.1.3 </title>
+        <p original-id="EV1-definition-span-s1p1" internal-id="p-EV1-definition-span-a-a">
+  The <term original-id="EV1-definition-span-s1p1t1" internal-id="term-EV1-definition-span-a-a-a">span</term><idx original-id="EV1-definition-span-s1p1i2" internal-id="idx-EV1-definition-span-a-a-b">span</idx> of a set of vectors is the collection of all linear
+  combinations of that set:
+  <me original-id="EV1-definition-span-s1p1m3" internal-id="me-EV1-definition-span-a-a-c">
+    \vspan\{\vec v_1,\vec v_2,\dots,\vec v_m\} =
+    \setBuilder{c_1\vec v_1+c_2\vec v_2+\dots+c_m\vec v_m}{
+    c_i\in\IR}
+  </me>.
+        </p>
+        <p original-id="EV1-definition-span-s1p2" internal-id="p-EV1-definition-span-a-b">
+  For example:
+  <me original-id="EV1-definition-span-s1p2m1" internal-id="me-EV1-definition-span-a-b-a">
+    \vspan\setList
+    {
+      \left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right],
+      \left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]
+    } = \setBuilder
+    {
+      a\left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right]+
+      b\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]
+    }{
+      a,b\in\IR
+    }
+  </me>.
+        </p>
+      </slide>
+      <slide>
+        <title>Remark 2.1.4 </title>
+        <p original-id="EV1-s3r5p1" internal-id="p-EV1-c-e-a">
+It is important to remember that
+<me original-id="EV1-s3r5p1m1" internal-id="me-EV1-c-e-a-a">\{\vec v_1,\vec v_2,\dots,\vec v_m\}\not=\vspan\{\vec v_1,\vec v_2,\dots,\vec v_m\}</me>.
+        </p>
+        <p original-id="EV1-s3r5p2" internal-id="p-EV1-c-e-b">
+  For example,
+  <me original-id="EV1-s3r5p2m1" internal-id="me-EV1-c-e-b-a">
+    \setList
+    {
+      \left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right],
+      \left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]
+    }
+  </me>
+is a set containing exactly two vectors, while
+  <me original-id="EV1-s3r5p2m2" internal-id="me-EV1-c-e-b-b">
+    \vspan\setList
+    {
+      \left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right],
+      \left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]
+    } = \setBuilder
+    {
+      a\left[\begin{array}{c} 1 \\ -1 \\ 2 \end{array}\right]+
+      b\left[\begin{array}{c} 1 \\ 2 \\ 1 \end{array}\right]
+    }{
+      a,b\in\IR
+    }
+  </me>
+is a set containing infinitely-many vectors.
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.1.1 (~10 min)</title>
+        <p original-id="EV1-s3a6i1p1" internal-id="p-EV1-c-f-a-a">
+  Consider <m original-id="EV1-s3a6i1p1m1" internal-id="m-EV1-c-f-a-a-a">\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right]\right\}</m>.
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="EV1-s3a6t2p1" internal-id="p-EV1-c-f-b-a">
+    Sketch the four Euclidean vectors
+    <me original-id="EV1-s3a6t2p1m1" internal-id="me-EV1-c-f-b-a-a">1\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}1\\2\end{array}\right],\hspace{1em}
+    3\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}3\\6\end{array}\right],\hspace{1em}
+    0\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}0\\0\end{array}\right],\hspace{1em}
+    -2\left[\begin{array}{c}1\\2\end{array}\right]=\left[\begin{array}{c}-2\\-4\end{array}\right]</me> 
+    in the <m original-id="EV1-s3a6t2p1m2" internal-id="m-EV1-c-f-b-a-b">xy</m> plane by placing a dot at the <m original-id="EV1-s3a6t2p1m3" internal-id="m-EV1-c-f-b-a-c">(x,y)</m> coordinate associated with each vector.
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 2.1.1 (~10 min)</title>
+        <p original-id="EV1-s3a6i1p1" internal-id="p-EV1-c-f-a-a">
+  Consider <m original-id="EV1-s3a6i1p1m1" internal-id="m-EV1-c-f-a-a-a">\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right]\right\}</m>.
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="EV1-s3a6t3p1" internal-id="p-EV1-c-f-c-a">
+    Sketch a representation of all the vectors belonging to
+    <me original-id="EV1-s3a6t3p1m1" internal-id="me-EV1-c-f-c-a-a">
+      \vspan\setList{\left[\begin{array}{c}1\\2\end{array}\right]}
+        =
+      \setBuilder{a\left[\begin{array}{c}1\\2\end{array}\right]}{a\in\IR}
+    </me>
+    in the <m original-id="EV1-s3a6t3p1m2" internal-id="m-EV1-c-f-c-a-b">xy</m> plane by plotting their <m original-id="EV1-s3a6t3p1m3" internal-id="m-EV1-c-f-c-a-c">(x,y)</m> coordinates as dots.
+    What best describes this sketch?
+    <ol marker="A." cols="4" original-id="EV1-s3a6t3p1o4" internal-id="ol-EV1-c-f-c-a-d"><li original-id="EV1-s3a6t3p1o4l1" internal-id="li-EV1-c-f-c-a-d-a">A line</li><li original-id="EV1-s3a6t3p1o4l2" internal-id="li-EV1-c-f-c-a-d-b">A plane</li><li original-id="EV1-s3a6t3p1o4l3" internal-id="li-EV1-c-f-c-a-d-c">A parabola</li><li original-id="EV1-s3a6t3p1o4l4" internal-id="li-EV1-c-f-c-a-d-d">A circle</li></ol>
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 2.1.2 (~10 min)</title>
+        <p original-id="EV1-s3a7i1p1" internal-id="p-EV1-c-g-a-a">
+  Consider <m original-id="EV1-s3a7i1p1m1" internal-id="m-EV1-c-g-a-a-a">\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right],
+  \left[\begin{array}{c}-1\\1\end{array}\right]\right\}</m>.
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="EV1-s3a7t2p1" internal-id="p-EV1-c-g-b-a">
+    Sketch the following five Euclidean vectors in the <m original-id="EV1-s3a7t2p1m1" internal-id="m-EV1-c-g-b-a-a">xy</m> plane.
+    <me original-id="EV1-s3a7t2p1m2" internal-id="me-EV1-c-g-b-a-b">
+    1\left[\begin{array}{c}1\\2\end{array}\right]+
+    0\left[\begin{array}{c}-1\\1\end{array}\right]=\unknown\hspace{2em}
+    0\left[\begin{array}{c}1\\2\end{array}\right]+
+    1\left[\begin{array}{c}-1\\1\end{array}\right]=\unknown\hspace{2em}
+    1\left[\begin{array}{c}1\\2\end{array}\right]+
+    1\left[\begin{array}{c}-1\\1\end{array}\right]=\unknown
+    </me>
+    <me original-id="EV1-s3a7t2p1m3" internal-id="me-EV1-c-g-b-a-c">
+    -2\left[\begin{array}{c}1\\2\end{array}\right]+
+    1\left[\begin{array}{c}-1\\1\end{array}\right]=\unknown\hspace{2em}
+    -1\left[\begin{array}{c}1\\2\end{array}\right]+
+    -2\left[\begin{array}{c}-1\\1\end{array}\right]=\unknown
+    </me>
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 2.1.2 (~10 min)</title>
+        <p original-id="EV1-s3a7i1p1" internal-id="p-EV1-c-g-a-a">
+  Consider <m original-id="EV1-s3a7i1p1m1" internal-id="m-EV1-c-g-a-a-a">\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right],
+  \left[\begin{array}{c}-1\\1\end{array}\right]\right\}</m>.
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="EV1-s3a7t3p1" internal-id="p-EV1-c-g-c-a">
+    Sketch a representation of all the vectors belonging to
+    <me original-id="EV1-s3a7t3p1m1" internal-id="me-EV1-c-g-c-a-a">\vspan\left\{\left[\begin{array}{c}1\\2\end{array}\right],
+     \left[\begin{array}{c}-1\\1\end{array}\right]\right\}=
+     \setBuilder{a\left[\begin{array}{c}1\\2\end{array}\right]+
+     b\left[\begin{array}{c}-1\\1\end{array}\right]}{a, b \in \IR}</me>
+    in the <m original-id="EV1-s3a7t3p1m2" internal-id="m-EV1-c-g-c-a-b">xy</m> plane. What best describes this sketch?
+    <ol marker="A." cols="4" original-id="EV1-s3a7t3p1o3" internal-id="ol-EV1-c-g-c-a-c"><li original-id="EV1-s3a7t3p1o3l1" internal-id="li-EV1-c-g-c-a-c-a">A line</li><li original-id="EV1-s3a7t3p1o3l2" internal-id="li-EV1-c-g-c-a-c-b">A plane</li><li original-id="EV1-s3a7t3p1o3l3" internal-id="li-EV1-c-g-c-a-c-c">A parabola</li><li original-id="EV1-s3a7t3p1o3l4" internal-id="li-EV1-c-g-c-a-c-d">A circle</li></ol>
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 2.1.3 (~5 min)</title>
+        <p original-id="EV1-s3a8s1p1" internal-id="p-EV1-c-h-a-a">
+    Sketch a representation of all the vectors belonging to
+    <m original-id="EV1-s3a8s1p1m1" internal-id="m-EV1-c-h-a-a-a">\vspan\left\{\left[\begin{array}{c}6\\-4\end{array}\right],
+     \left[\begin{array}{c}-3\\2\end{array}\right]\right\}</m>
+    in the <m original-id="EV1-s3a8s1p1m2" internal-id="m-EV1-c-h-a-a-b">xy</m> plane. What best describes this sketch?
+    <ol marker="A." original-id="EV1-s3a8s1p1o3" internal-id="ol-EV1-c-h-a-a-c"><li original-id="EV1-s3a8s1p1o3l1" internal-id="li-EV1-c-h-a-a-c-a">A line</li><li original-id="EV1-s3a8s1p1o3l2" internal-id="li-EV1-c-h-a-a-c-b">A plane</li><li original-id="EV1-s3a8s1p1o3l3" internal-id="li-EV1-c-h-a-a-c-c">A parabola</li><li original-id="EV1-s3a8s1p1o3l4" internal-id="li-EV1-c-h-a-a-c-d">A cube</li></ol>
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.1.4 (~15 min)</title>
+        <p original-id="EV1-s3a9i1p1" internal-id="p-EV1-c-i-a-a">
+Consider the following questions to discover whether a Euclidean
+vector belongs to a span.
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="EV1-s3a9t2p1" internal-id="p-EV1-c-i-b-a">
+The Euclidean vector
+<m original-id="EV1-s3a9t2p1m1" internal-id="m-EV1-c-i-b-a-a">\left[\begin{array}{c}-1\\-6\\1\end{array}\right]</m> belongs to
+<m original-id="EV1-s3a9t2p1m2" internal-id="m-EV1-c-i-b-a-b">\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
+\left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}</m> exactly when
+there exists a solution to which of these vector equations?
+        </p>
+        <p original-id="EV1-s3a9t2p2" internal-id="p-EV1-c-i-b-b">
+            <ol marker="A." original-id="EV1-s3a9t2p2o1" internal-id="ol-EV1-c-i-b-b-a"><li original-id="EV1-s3a9t2p2o1l1" internal-id="li-EV1-c-i-b-b-a-a">
+<m original-id="EV1-s3a9t2p2o1l1m1" internal-id="m-EV1-c-i-b-b-a-a-a">x_1\left[\begin{array}{c}-1\\-6\\1\end{array}\right]+
+x_2\left[\begin{array}{c}1\\0\\-3\end{array}\right]
+=\left[\begin{array}{c}-1\\-3\\2\end{array}\right]</m>
+                </li><li original-id="EV1-s3a9t2p2o1l2" internal-id="li-EV1-c-i-b-b-a-b">
+<m original-id="EV1-s3a9t2p2o1l2m1" internal-id="m-EV1-c-i-b-b-a-b-a">x_1\left[\begin{array}{c}1\\0\\-3\end{array}\right]+
+x_2\left[\begin{array}{c}-1\\-3\\2\end{array}\right]
+=\left[\begin{array}{c}-1\\-6\\1\end{array}\right]</m>
+                </li><li original-id="EV1-s3a9t2p2o1l3" internal-id="li-EV1-c-i-b-b-a-c">
+<m original-id="EV1-s3a9t2p2o1l3m1" internal-id="m-EV1-c-i-b-b-a-c-a">x_1\left[\begin{array}{c}-1\\-3\\2\end{array}\right]+
+x_2\left[\begin{array}{c}-1\\-6\\1\end{array}\right]+
+x_3\left[\begin{array}{c}1\\0\\-3\end{array}\right]=0</m>
+                </li></ol>
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.1.4 (~15 min)</title>
+        <p original-id="EV1-s3a9i1p1" internal-id="p-EV1-c-i-a-a">
+Consider the following questions to discover whether a Euclidean
+vector belongs to a span.
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="EV1-s3a9t3p1" internal-id="p-EV1-c-i-c-a">
+    Use technology to find <m original-id="EV1-s3a9t3p1m1" internal-id="m-EV1-c-i-c-a-a">\RREF</m> of the corresponding augmented matrix,
+    and then use that matrix to find the solution set of the vector equation.
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 2.1.4 (~15 min)</title>
+        <p original-id="EV1-s3a9i1p1" internal-id="p-EV1-c-i-a-a">
+Consider the following questions to discover whether a Euclidean
+vector belongs to a span.
+        </p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <p original-id="EV1-s3a9t4p1" internal-id="p-EV1-c-i-d-a">
+    Given this solution set, does
+    <m original-id="EV1-s3a9t4p1m1" internal-id="m-EV1-c-i-d-a-a">\left[\begin{array}{c}-1\\-6\\1\end{array}\right]</m> belong to
+    <m original-id="EV1-s3a9t4p1m2" internal-id="m-EV1-c-i-d-a-b">\vspan\left\{\left[\begin{array}{c}1\\0\\-3\end{array}\right],
+    \left[\begin{array}{c}-1\\-3\\2\end{array}\right]\right\}</m>?
+      </p>
+      </slide>
+      <slide>
+        <title>Observation 2.1.5 </title>
+        <p original-id="EV1-s3o11p1" internal-id="p-EV1-c-k-a">
+The following are all equivalent statements:
+            </p>
+        <ul original-id="EV1-s3o11u2" internal-id="ul-EV1-c-k-b">
+          <li original-id="EV1-s3o11u2l1" internal-id="li-EV1-c-k-b-a">
+    <p original-id="EV1-s3o11u2l1p1" internal-id="p-EV1-c-k-b-a-a">
+    The vector <m original-id="EV1-s3o11u2l1p1m1" internal-id="m-EV1-c-k-b-a-a-a">\vec{b}</m> belongs to <m original-id="EV1-s3o11u2l1p1m2" internal-id="m-EV1-c-k-b-a-a-b">\vspan\{\vec v_1,\dots,\vec v_n\}</m>.
+    </p>
+</li>
+          <li original-id="EV1-s3o11u2l2" internal-id="li-EV1-c-k-b-b">
+    <p original-id="EV1-s3o11u2l2p1" internal-id="p-EV1-c-k-b-b-a">
+    The vector <m original-id="EV1-s3o11u2l2p1m1" internal-id="m-EV1-c-k-b-b-a-a">\vec{b}</m> is a linear combination of the vectors <m original-id="EV1-s3o11u2l2p1m2" internal-id="m-EV1-c-k-b-b-a-b">\vec v_1,\dots,\vec v_n</m>.
+    </p>
+</li>
+          <li original-id="EV1-s3o11u2l3" internal-id="li-EV1-c-k-b-c">
+    <p original-id="EV1-s3o11u2l3p1" internal-id="p-EV1-c-k-b-c-a">
+        The vector equation <m original-id="EV1-s3o11u2l3p1m1" internal-id="m-EV1-c-k-b-c-a-a">x_1 \vec{v}_1+\cdots+x_n \vec{v}_n=\vec{b}</m> is consistent.
+    </p>
+</li>
+          <li original-id="EV1-s3o11u2l4" internal-id="li-EV1-c-k-b-d">
+    <p original-id="EV1-s3o11u2l4p1" internal-id="p-EV1-c-k-b-d-a">
+    The linear system corresponding to
+  <m original-id="EV1-s3o11u2l4p1m1" internal-id="m-EV1-c-k-b-d-a-a">\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]</m>
+  is consistent.
+    </p>
+</li>
+          <li original-id="EV1-s3o11u2l5" internal-id="li-EV1-c-k-b-e">
+   <p original-id="EV1-s3o11u2l5p1" internal-id="p-EV1-c-k-b-e-a">
+    <m original-id="EV1-s3o11u2l5p1m1" internal-id="m-EV1-c-k-b-e-a-a">\RREF\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]</m>
+  doesn't have a row <m original-id="EV1-s3o11u2l5p1m2" internal-id="m-EV1-c-k-b-e-a-b">[0\,\cdots\,0\,|\,1]</m>
+  representing the contradiction <m original-id="EV1-s3o11u2l5p1m3" internal-id="m-EV1-c-k-b-e-a-c">0=1</m>.
+    </p>
+</li>
+        </ul>
+      </slide>
+      <slide>
+        <title>Activity 2.1.5 (~10 min)</title>
+        <p original-id="EV1-s3a12i1p1" internal-id="p-EV1-c-l-a-a">Consider this claim about a vector equation:</p>
+        <p original-id="EV1-s3a12i1p2" internal-id="p-EV1-c-l-a-b"><m original-id="EV1-s3a12i1p2m1" internal-id="m-EV1-c-l-a-b-a">\left[\begin{array}{c} -6 \\ 2 \\ -6 \end{array}\right]</m>is a linear combination of the vectors <m original-id="EV1-s3a12i1p2m2" internal-id="m-EV1-c-l-a-b-b">\left[\begin{array}{c} 1 \\ 0 \\ 2 \end{array}\right] , \left[\begin{array}{c} 3 \\ 0 \\ 6 \end{array}\right] , \left[\begin{array}{c} 2 \\ 0 \\ 4 \end{array}\right] , \text{ and } \left[\begin{array}{c} -4 \\ 1 \\ -5 \end{array}\right]</m>.</p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <statement original-id="EV1-s3a12t2s1" internal-id="statement-EV1-c-l-b-a">
+          <p original-id="EV1-s3a12t2s1p1" internal-id="p-EV1-c-l-b-a-a"> Write a statement involving the solutions of a vector equation that's equivalent to this claim. </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 2.1.5 (~10 min)</title>
+        <p original-id="EV1-s3a12i1p1" internal-id="p-EV1-c-l-a-a">Consider this claim about a vector equation:</p>
+        <p original-id="EV1-s3a12i1p2" internal-id="p-EV1-c-l-a-b"><m original-id="EV1-s3a12i1p2m1" internal-id="m-EV1-c-l-a-b-a">\left[\begin{array}{c} -6 \\ 2 \\ -6 \end{array}\right]</m>is a linear combination of the vectors <m original-id="EV1-s3a12i1p2m2" internal-id="m-EV1-c-l-a-b-b">\left[\begin{array}{c} 1 \\ 0 \\ 2 \end{array}\right] , \left[\begin{array}{c} 3 \\ 0 \\ 6 \end{array}\right] , \left[\begin{array}{c} 2 \\ 0 \\ 4 \end{array}\right] , \text{ and } \left[\begin{array}{c} -4 \\ 1 \\ -5 \end{array}\right]</m>.</p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <statement original-id="EV1-s3a12t3s1" internal-id="statement-EV1-c-l-c-a">
+          <p original-id="EV1-s3a12t3s1p1" internal-id="p-EV1-c-l-c-a-a"> Explain why the statement you wrote is true. </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 2.1.5 (~10 min)</title>
+        <p original-id="EV1-s3a12i1p1" internal-id="p-EV1-c-l-a-a">Consider this claim about a vector equation:</p>
+        <p original-id="EV1-s3a12i1p2" internal-id="p-EV1-c-l-a-b"><m original-id="EV1-s3a12i1p2m1" internal-id="m-EV1-c-l-a-b-a">\left[\begin{array}{c} -6 \\ 2 \\ -6 \end{array}\right]</m>is a linear combination of the vectors <m original-id="EV1-s3a12i1p2m2" internal-id="m-EV1-c-l-a-b-b">\left[\begin{array}{c} 1 \\ 0 \\ 2 \end{array}\right] , \left[\begin{array}{c} 3 \\ 0 \\ 6 \end{array}\right] , \left[\begin{array}{c} 2 \\ 0 \\ 4 \end{array}\right] , \text{ and } \left[\begin{array}{c} -4 \\ 1 \\ -5 \end{array}\right]</m>.</p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <statement original-id="EV1-s3a12t4s1" internal-id="statement-EV1-c-l-d-a">
+          <p original-id="EV1-s3a12t4s1p1" internal-id="p-EV1-c-l-d-a-a"> Since your statement was true, use the solution set to describe a linear combination of <m original-id="EV1-s3a12t4s1p1m1" internal-id="m-EV1-c-l-d-a-a-a">\left[\begin{array}{c} 1 \\ 0 \\ 2 \end{array}\right] , \left[\begin{array}{c} 3 \\ 0 \\ 6 \end{array}\right] , \left[\begin{array}{c} 2 \\ 0 \\ 4 \end{array}\right] , \text{ and } \left[\begin{array}{c} -4 \\ 1 \\ -5 \end{array}\right]</m> that equals <m original-id="EV1-s3a12t4s1p1m2" internal-id="m-EV1-c-l-d-a-a-b">\left[\begin{array}{c} -5 \\ -1 \\ -7 \end{array}\right]</m>. </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 2.1.6 (~10 min)</title>
+        <p original-id="EV1-s3a14i1p1" internal-id="p-EV1-c-n-a-a">Consider this claim about a vector equation:</p>
+        <p original-id="EV1-s3a14i1p2" internal-id="p-EV1-c-n-a-b"><m original-id="EV1-s3a14i1p2m1" internal-id="m-EV1-c-n-a-b-a">\left[\begin{array}{c} -5 \\ -1 \\ -7 \end{array}\right]</m> belongs to
+          <m original-id="EV1-s3a14i1p2m2" internal-id="m-EV1-c-n-a-b-b">\vspan\left\{\left[\begin{array}{c} 1 \\ 0 \\ 2 \end{array}\right] , \left[\begin{array}{c} 3 \\ 0 \\ 6 \end{array}\right] , 
+          \left[\begin{array}{c} 2 \\ 0 \\ 4 \end{array}\right] , \left[\begin{array}{c} -4 \\ 1 \\ -5 \end{array}\right]\right\}</m>.</p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <statement original-id="EV1-s3a14t2s1" internal-id="statement-EV1-c-n-b-a">
+          <p original-id="EV1-s3a14t2s1p1" internal-id="p-EV1-c-n-b-a-a"> Write a statement involving the solutions of a vector equation that's equivalent to this claim. </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 2.1.6 (~10 min)</title>
+        <p original-id="EV1-s3a14i1p1" internal-id="p-EV1-c-n-a-a">Consider this claim about a vector equation:</p>
+        <p original-id="EV1-s3a14i1p2" internal-id="p-EV1-c-n-a-b"><m original-id="EV1-s3a14i1p2m1" internal-id="m-EV1-c-n-a-b-a">\left[\begin{array}{c} -5 \\ -1 \\ -7 \end{array}\right]</m> belongs to
+          <m original-id="EV1-s3a14i1p2m2" internal-id="m-EV1-c-n-a-b-b">\vspan\left\{\left[\begin{array}{c} 1 \\ 0 \\ 2 \end{array}\right] , \left[\begin{array}{c} 3 \\ 0 \\ 6 \end{array}\right] , 
+          \left[\begin{array}{c} 2 \\ 0 \\ 4 \end{array}\right] , \left[\begin{array}{c} -4 \\ 1 \\ -5 \end{array}\right]\right\}</m>.</p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <statement original-id="EV1-s3a14t3s1" internal-id="statement-EV1-c-n-c-a">
+          <p original-id="EV1-s3a14t3s1p1" internal-id="p-EV1-c-n-c-a-a"> Explain why the statement you wrote is false, to conclude that the vector does not belong to the span. </p>
+        </statement>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>

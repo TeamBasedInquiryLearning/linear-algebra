@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <docinfo xml:base="meta/docinfo.ptx" original-id="root-p1d1" internal-id="docinfo-root--a-a">
+    <document-id original-id="root-p1d1d1" internal-id="document-id-root--a-a-a">tbilla</document-id>
+    <initialism original-id="root-p1d1i2" internal-id="initialism-root--a-a-b">TBIL-LA</initialism>
+    <blurb shelf="math" original-id="root-p1d1b3" internal-id="blurb-root--a-a-c">Activities and exercises for easily implementing Team-Based Inquiry Learning in a single-variable calculus classroom.</blurb>
+    <macros original-id="root-p1d1m4" internal-id="macros-root--a-a-d">
+\newcommand{\markedPivot}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{%
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{%
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{%
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+    </macros>
+    <latex-image-preamble original-id="root-p1d1l5" internal-id="latex-image-preamble-root--a-a-e">
+\usepackage{tikz}
+\usepackage{tikz-cd}
+    </latex-image-preamble>
+    <rename element="objectives" xml:lang="en-US" original-id="root-p1d1r6" internal-id="rename-root--a-a-f" locale-lang="en-US">Learning Outcomes</rename>
+    <numbering original-id="root-p1d1n7" internal-id="numbering-root--a-a-g">
+      <figures level="0" original-id="root-p1d1n7f1" internal-id="figures-root--a-a-g-a"/>
+    </numbering>
+    <!-- Specify the default type of cross reference:           -->
+    <cross-references text="type-global" original-id="root-p1d1c8" internal-id="cross-references-root--a-a-h"/>
+  </docinfo>
+  <slideshow>
+    <title original-id="linear-algebra-for-team-based-inquiry-learning-t1" internal-id="title-linear-algebra-for-team-based-inquiry-learning-a">Linear Algebra for Team-Based Inquiry Learning</title>
+    <subtitle component="main" original-id="linear-algebra-for-team-based-inquiry-learning-s2" internal-id="subtitle-linear-algebra-for-team-based-inquiry-learning-b">2023 Edition</subtitle>
+    <frontmatter>
+      <titlepage original-id="frontmatter-t1" internal-id="titlepage-frontmatter-a">
+        <author original-id="frontmatter-t1a1" internal-id="author-frontmatter-a-a">
+          <personname original-id="frontmatter-t1a1p1" internal-id="personname-frontmatter-a-a-a">Steven Clontz</personname>
+          <department original-id="frontmatter-t1a1d2" internal-id="department-frontmatter-a-a-b">Department of Mathematics and Statistics</department>
+          <institution original-id="frontmatter-t1a1i3" internal-id="institution-frontmatter-a-a-c">University of South Alabama</institution>
+          <email original-id="frontmatter-t1a1e4" internal-id="email-frontmatter-a-a-d">sclontz@southalabama.edu</email>
+        </author>
+        <author original-id="frontmatter-t1a2" internal-id="author-frontmatter-a-b">
+          <personname original-id="frontmatter-t1a2p1" internal-id="personname-frontmatter-a-b-a">Drew Lewis</personname>
+          <email original-id="frontmatter-t1a2e2" internal-id="email-frontmatter-a-b-b">drew.lewis@gmail.com</email>
+        </author>
+        <credit original-id="frontmatter-t1c3" internal-id="credit-frontmatter-a-c">
+    <title original-id="frontmatter-t1c3t1" internal-id="title-frontmatter-a-c-a">Contributing Authors</title>
+    <author original-id="frontmatter-t1c3a2" internal-id="author-frontmatter-a-c-b"><personname original-id="frontmatter-t1c3a2p1" internal-id="personname-frontmatter-a-c-b-a">Jessalyn Bolkema</personname><department original-id="frontmatter-t1c3a2d2" internal-id="department-frontmatter-a-c-b-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a2i3" internal-id="institution-frontmatter-a-c-b-c">California State University, Dominguez Hills</institution><email original-id="frontmatter-t1c3a2e4" internal-id="email-frontmatter-a-c-b-d">jbolkema@csudh.edu</email></author>
+    <author original-id="frontmatter-t1c3a3" internal-id="author-frontmatter-a-c-c"><personname original-id="frontmatter-t1c3a3p1" internal-id="personname-frontmatter-a-c-c-a">Jeff Ford</personname><department original-id="frontmatter-t1c3a3d2" internal-id="department-frontmatter-a-c-c-b">Department of Mathematics, Computer Science, and Statistics</department><institution original-id="frontmatter-t1c3a3i3" internal-id="institution-frontmatter-a-c-c-c">Gustavus Adolphus College</institution><email original-id="frontmatter-t1c3a3e4" internal-id="email-frontmatter-a-c-c-d">jford@gustavus.edu</email></author>
+    <author original-id="frontmatter-t1c3a4" internal-id="author-frontmatter-a-c-d"><personname original-id="frontmatter-t1c3a4p1" internal-id="personname-frontmatter-a-c-d-a">Sharona Krinsky</personname><department original-id="frontmatter-t1c3a4d2" internal-id="department-frontmatter-a-c-d-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a4i3" internal-id="institution-frontmatter-a-c-d-c">California State University, Los Angeles</institution><email original-id="frontmatter-t1c3a4e4" internal-id="email-frontmatter-a-c-d-d">skrinsk@calstatela.edu</email></author>
+    <author original-id="frontmatter-t1c3a5" internal-id="author-frontmatter-a-c-e"><personname original-id="frontmatter-t1c3a5p1" internal-id="personname-frontmatter-a-c-e-a">Jennifer Nordstrom</personname><department original-id="frontmatter-t1c3a5d2" internal-id="department-frontmatter-a-c-e-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a5i3" internal-id="institution-frontmatter-a-c-e-c">Linfield University</institution><email original-id="frontmatter-t1c3a5e4" internal-id="email-frontmatter-a-c-e-d">jnordstrom@linfield.edu</email></author>
+    <author original-id="frontmatter-t1c3a6" internal-id="author-frontmatter-a-c-f"><personname original-id="frontmatter-t1c3a6p1" internal-id="personname-frontmatter-a-c-f-a">Kate Owens</personname><department original-id="frontmatter-t1c3a6d2" internal-id="department-frontmatter-a-c-f-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a6i3" internal-id="institution-frontmatter-a-c-f-c">College of Charleston</institution><email original-id="frontmatter-t1c3a6e4" internal-id="email-frontmatter-a-c-f-d">owensks@cofc.edu</email></author>
+  </credit>
+        <date original-id="frontmatter-t1d4" internal-id="date-frontmatter-a-d">
+          <today original-id="frontmatter-t1d4t1" internal-id="today-frontmatter-a-d-a"/>
+        </date>
+      </titlepage>
+    </frontmatter>
+    <section>
+      <title>Section 3.3:
+        Image and Kernel (AT3) </title>
+      <slide>
+        <title>Activity 3.3.1 (~5 min)</title>
+        <p original-id="AT3-s3a2s1p1" internal-id="p-AT3-c-b-a-a">
+Let <m original-id="AT3-s3a2s1p1m1" internal-id="m-AT3-c-b-a-a-a">T: \IR^2 \rightarrow \IR^3</m> be given by
+<me original-id="AT3-s3a2s1p1m2" internal-id="me-AT3-c-b-a-a-b">
+  T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \\ 0 \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]
+</me>
+Which of these subspaces of <m original-id="AT3-s3a2s1p1m3" internal-id="m-AT3-c-b-a-a-c">\IR^2</m> describes
+the set of all vectors that transform into <m original-id="AT3-s3a2s1p1m4" internal-id="m-AT3-c-b-a-a-d">\vec 0</m>?
+        </p>
+        <ol marker="A." cols="2" original-id="AT3-s3a2s1o2" internal-id="ol-AT3-c-b-a-b">
+          <li original-id="AT3-s3a2s1o2l1" internal-id="li-AT3-c-b-a-b-a">
+      <p original-id="AT3-s3a2s1o2l1p1" internal-id="p-AT3-c-b-a-b-a-a">
+      <m original-id="AT3-s3a2s1o2l1p1m1" internal-id="m-AT3-c-b-a-b-a-a-a">\setBuilder{\left[\begin{array}{c}a \\ a\end{array}\right]}{a\in\IR}</m>
+      </p>
+  </li>
+          <li original-id="AT3-s3a2s1o2l2" internal-id="li-AT3-c-b-a-b-b">
+      <p original-id="AT3-s3a2s1o2l2p1" internal-id="p-AT3-c-b-a-b-b-a">
+      <m original-id="AT3-s3a2s1o2l2p1m1" internal-id="m-AT3-c-b-a-b-b-a-a">\setBuilder{\left[\begin{array}{c}a \\ 0\end{array}\right]}{a\in\IR}</m>
+      </p>
+  </li>
+          <li original-id="AT3-s3a2s1o2l3" internal-id="li-AT3-c-b-a-b-c">
+    <p original-id="AT3-s3a2s1o2l3p1" internal-id="p-AT3-c-b-a-b-c-a">
+    <m original-id="AT3-s3a2s1o2l3p1m1" internal-id="m-AT3-c-b-a-b-c-a-a">\setList{\left[\begin{array}{c}0\\0\end{array}\right]}</m>
+    </p>
+</li>
+          <li original-id="AT3-s3a2s1o2l4" internal-id="li-AT3-c-b-a-b-d">
+    <p original-id="AT3-s3a2s1o2l4p1" internal-id="p-AT3-c-b-a-b-d-a">
+    <m original-id="AT3-s3a2s1o2l4p1m1" internal-id="m-AT3-c-b-a-b-d-a-a">\setBuilder{\left[\begin{array}{c}a \\ b\end{array}\right]}{a,b\in\IR}</m>
+    </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Definition 3.3.1 </title>
+        <p original-id="AT3-definition-kernel-s1p1" internal-id="p-AT3-definition-kernel-a-a">
+Let <m original-id="AT3-definition-kernel-s1p1m1" internal-id="m-AT3-definition-kernel-a-a-a">T: V \rightarrow W</m> be a linear transformation, and let <m original-id="AT3-definition-kernel-s1p1m2" internal-id="m-AT3-definition-kernel-a-a-b">\vec{z}</m> be the additive
+identity (the <q original-id="AT3-definition-kernel-s1p1q3" internal-id="q-AT3-definition-kernel-a-a-c">zero vector</q>) of <m original-id="AT3-definition-kernel-s1p1m4" internal-id="m-AT3-definition-kernel-a-a-d">W</m>.  The <term original-id="AT3-definition-kernel-s1p1t5" internal-id="term-AT3-definition-kernel-a-a-e">kernel</term><idx original-id="AT3-definition-kernel-s1p1i6" internal-id="idx-AT3-definition-kernel-a-a-f">kernel</idx> of <m original-id="AT3-definition-kernel-s1p1m7" internal-id="m-AT3-definition-kernel-a-a-g">T</m>
+is an important subspace of <m original-id="AT3-definition-kernel-s1p1m8" internal-id="m-AT3-definition-kernel-a-a-h">V</m> defined by
+<me original-id="AT3-definition-kernel-s1p1m9" internal-id="me-AT3-definition-kernel-a-a-i">
+\ker T = \left\{ \vec{v} \in V\ \big|\ T(\vec{v})=\vec{z}\right\}
+</me>
+        </p>
+        <figure original-id="AT3-definition-kernel-s1f2" internal-id="figure-AT3-definition-kernel-a-b">
+          <image source="generated/latex-image/AT3-image-kernel.svg"/>
+          <caption original-id="AT3-definition-kernel-s1f2c2" internal-id="caption-AT3-definition-kernel-a-b-b">The kernel of a linear transformation</caption>
+        </figure>
+      </slide>
+      <slide>
+        <title>Activity 3.3.2 (~5 min)</title>
+        <p original-id="AT3-s3a4s1p1" internal-id="p-AT3-c-d-a-a">
+Let <m original-id="AT3-s3a4s1p1m1" internal-id="m-AT3-c-d-a-a-a">T: \IR^3 \rightarrow \IR^2</m> be given by
+<me original-id="AT3-s3a4s1p1m2" internal-id="me-AT3-c-d-a-a-b">
+  T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right]
+</me>
+Which of these subspaces of <m original-id="AT3-s3a4s1p1m3" internal-id="m-AT3-c-d-a-a-c">\IR^3</m> describes <m original-id="AT3-s3a4s1p1m4" internal-id="m-AT3-c-d-a-a-d">\ker T</m>,
+the set of all vectors that transform into <m original-id="AT3-s3a4s1p1m5" internal-id="m-AT3-c-d-a-a-e">\vec 0</m>?
+        </p>
+        <ol marker="A." cols="2" original-id="AT3-s3a4s1o2" internal-id="ol-AT3-c-d-a-b">
+          <li original-id="AT3-s3a4s1o2l1" internal-id="li-AT3-c-d-a-b-a">
+    <p original-id="AT3-s3a4s1o2l1p1" internal-id="p-AT3-c-d-a-b-a-a">
+    <m original-id="AT3-s3a4s1o2l1p1m1" internal-id="m-AT3-c-d-a-b-a-a-a">\setBuilder{\left[\begin{array}{c}0 \\ 0\\ a\end{array}\right]}{a\in\IR}</m>
+    </p>
+</li>
+          <li original-id="AT3-s3a4s1o2l2" internal-id="li-AT3-c-d-a-b-b">
+    <p original-id="AT3-s3a4s1o2l2p1" internal-id="p-AT3-c-d-a-b-b-a">
+    <m original-id="AT3-s3a4s1o2l2p1m1" internal-id="m-AT3-c-d-a-b-b-a-a">\setBuilder{\left[\begin{array}{c}a \\ a\\ 0\end{array}\right]}{a\in\IR}</m>
+    </p>
+</li>
+          <li original-id="AT3-s3a4s1o2l3" internal-id="li-AT3-c-d-a-b-c">
+    <p original-id="AT3-s3a4s1o2l3p1" internal-id="p-AT3-c-d-a-b-c-a">
+        <m original-id="AT3-s3a4s1o2l3p1m1" internal-id="m-AT3-c-d-a-b-c-a-a">\setList{\left[\begin{array}{c}0\\0\\0\end{array}\right]}</m>
+    </p>
+    </li>
+          <li original-id="AT3-s3a4s1o2l4" internal-id="li-AT3-c-d-a-b-d">
+    <p original-id="AT3-s3a4s1o2l4p1" internal-id="p-AT3-c-d-a-b-d-a">
+    <m original-id="AT3-s3a4s1o2l4p1m1" internal-id="m-AT3-c-d-a-b-d-a-a">\setBuilder{\left[\begin{array}{c}a \\ b\\c\end{array}\right]}{a,b,c\in\IR}</m>
+    </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 3.3.3 (~10 min)</title>
+        <p original-id="AT3-s3a5i1p1" internal-id="p-AT3-c-e-a-a">
+Let <m original-id="AT3-s3a5i1p1m1" internal-id="m-AT3-c-e-a-a-a">T: \IR^3 \rightarrow \IR^2</m> be the linear transformation given by the
+standard matrix
+<me original-id="AT3-s3a5i1p1m2" internal-id="me-AT3-c-e-a-a-b">T\left( \left[\begin{array}{c} x \\ y \\ z \end{array}\right]\right) = \left[\begin{array}{c} 3x+4y-z \\ x+2y+z \end{array}\right]</me>
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="AT3-s3a5t2p1" internal-id="p-AT3-c-e-b-a">
+Set
+<m original-id="AT3-s3a5t2p1m1" internal-id="m-AT3-c-e-b-a-a">
+  T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)
+    =
+  \left[\begin{array}{c}0\\0\end{array}\right]
+</m> to find a linear system of equations whose solution set is the kernel.
+    </p>
+      </slide>
+      <slide>
+        <title>Activity 3.3.3 (~10 min)</title>
+        <p original-id="AT3-s3a5i1p1" internal-id="p-AT3-c-e-a-a">
+Let <m original-id="AT3-s3a5i1p1m1" internal-id="m-AT3-c-e-a-a-a">T: \IR^3 \rightarrow \IR^2</m> be the linear transformation given by the
+standard matrix
+<me original-id="AT3-s3a5i1p1m2" internal-id="me-AT3-c-e-a-a-b">T\left( \left[\begin{array}{c} x \\ y \\ z \end{array}\right]\right) = \left[\begin{array}{c} 3x+4y-z \\ x+2y+z \end{array}\right]</me>
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="AT3-s3a5t3p1" internal-id="p-AT3-c-e-c-a">
+Use <m original-id="AT3-s3a5t3p1m1" internal-id="m-AT3-c-e-c-a-a">\RREF(A)</m> to solve this homogeneous system of equations and find a basis
+for the kernel of <m original-id="AT3-s3a5t3p1m2" internal-id="m-AT3-c-e-c-a-b">T</m>.
+    </p>
+      </slide>
+      <slide>
+        <title>Activity 3.3.4 (~10 min)</title>
+        <p original-id="AT3-s3a7s1p1" internal-id="p-AT3-c-g-a-a">
+Let <m original-id="AT3-s3a7s1p1m1" internal-id="m-AT3-c-g-a-a-a">T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by 
+<me original-id="AT3-s3a7s1p1m2" internal-id="me-AT3-c-g-a-a-b"> T\left(\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right] \right) = 
+\left[\begin{array}{c} 2x+4y+2z-4w \\ -2x-4y+z+w \\ 3x+6y-z-4w\end{array}\right].</me>
+        </p>
+        <p original-id="AT3-s3a7s1p2" internal-id="p-AT3-c-g-a-b">
+Find a basis for the kernel of <m original-id="AT3-s3a7s1p2m1" internal-id="m-AT3-c-g-a-b-a">T</m>.
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 3.3.5 (~5 min)</title>
+        <p original-id="AT3-s3a9s1p1" internal-id="p-AT3-c-i-a-a">
+Let <m original-id="AT3-s3a9s1p1m1" internal-id="m-AT3-c-i-a-a-a">T: \IR^2 \rightarrow \IR^3</m> be given by
+<me original-id="AT3-s3a9s1p1m2" internal-id="me-AT3-c-i-a-a-b">
+  T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \\ 0 \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]
+</me>
+Which of these subspaces of <m original-id="AT3-s3a9s1p1m3" internal-id="m-AT3-c-i-a-a-c">\IR^3</m> describes the set of all vectors that are the result of using <m original-id="AT3-s3a9s1p1m4" internal-id="m-AT3-c-i-a-a-d">T</m> to transform
+<m original-id="AT3-s3a9s1p1m5" internal-id="m-AT3-c-i-a-a-e">\IR^2</m> vectors?
+        </p>
+        <ol marker="A." cols="2" original-id="AT3-s3a9s1o2" internal-id="ol-AT3-c-i-a-b">
+          <li original-id="AT3-s3a9s1o2l1" internal-id="li-AT3-c-i-a-b-a">
+    <p original-id="AT3-s3a9s1o2l1p1" internal-id="p-AT3-c-i-a-b-a-a">
+    <m original-id="AT3-s3a9s1o2l1p1m1" internal-id="m-AT3-c-i-a-b-a-a-a">\setBuilder{\left[\begin{array}{c}0 \\ 0\\ a\end{array}\right]}{a\in\IR}</m>
+    </p>
+</li>
+          <li original-id="AT3-s3a9s1o2l2" internal-id="li-AT3-c-i-a-b-b">
+    <p original-id="AT3-s3a9s1o2l2p1" internal-id="p-AT3-c-i-a-b-b-a">
+    <m original-id="AT3-s3a9s1o2l2p1m1" internal-id="m-AT3-c-i-a-b-b-a-a">\setBuilder{\left[\begin{array}{c}a \\ b\\ 0\end{array}\right]}{a,b\in\IR}</m>
+    </p>
+</li>
+          <li original-id="AT3-s3a9s1o2l3" internal-id="li-AT3-c-i-a-b-c">
+    <p original-id="AT3-s3a9s1o2l3p1" internal-id="p-AT3-c-i-a-b-c-a">
+        <m original-id="AT3-s3a9s1o2l3p1m1" internal-id="m-AT3-c-i-a-b-c-a-a">\setList{\left[\begin{array}{c}0\\0\\0\end{array}\right]}</m>
+    </p>
+</li>
+          <li original-id="AT3-s3a9s1o2l4" internal-id="li-AT3-c-i-a-b-d">
+    <p original-id="AT3-s3a9s1o2l4p1" internal-id="p-AT3-c-i-a-b-d-a">
+    <m original-id="AT3-s3a9s1o2l4p1m1" internal-id="m-AT3-c-i-a-b-d-a-a">\setBuilder{\left[\begin{array}{c}a \\ b\\c\end{array}\right]}{a,b,c\in\IR}</m>
+    </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Definition 3.3.2 </title>
+        <p original-id="AT3-definition-image-s1p1" internal-id="p-AT3-definition-image-a-a">
+Let <m original-id="AT3-definition-image-s1p1m1" internal-id="m-AT3-definition-image-a-a-a">T: V \rightarrow W</m> be a linear transformation.
+The <term original-id="AT3-definition-image-s1p1t2" internal-id="term-AT3-definition-image-a-a-b">image</term> of <m original-id="AT3-definition-image-s1p1m3" internal-id="m-AT3-definition-image-a-a-c">T</m> is an important subspace of <m original-id="AT3-definition-image-s1p1m4" internal-id="m-AT3-definition-image-a-a-d">W</m> defined by
+<me original-id="AT3-definition-image-s1p1m5" internal-id="me-AT3-definition-image-a-a-e">
+\Im T = \left\{ \vec{w} \in W\ \big|\ \text{there is some }\vec v\in V \text{ with } T(\vec{v})=\vec{w}\right\}
+</me>
+        </p>
+        <p original-id="AT3-definition-image-s1p2" internal-id="p-AT3-definition-image-a-b">
+In the examples below, the left example's image is all of <m original-id="AT3-definition-image-s1p2m1" internal-id="m-AT3-definition-image-a-b-a">\IR^2</m>, but the
+right example's image is a planar subspace of <m original-id="AT3-definition-image-s1p2m2" internal-id="m-AT3-definition-image-a-b-b">\IR^3</m>.
+        </p>
+        <figure original-id="AT3-definition-image-s1f3" internal-id="figure-AT3-definition-image-a-c">
+          <image source="generated/latex-image/AT3-image-image.svg"/>
+          <caption original-id="AT3-definition-image-s1f3c2" internal-id="caption-AT3-definition-image-a-c-b">The image of a linear transformation</caption>
+        </figure>
+      </slide>
+      <slide>
+        <title>Activity 3.3.6 (~5 min)</title>
+        <p original-id="AT3-s3a11s1p1" internal-id="p-AT3-c-k-a-a">
+Let <m original-id="AT3-s3a11s1p1m1" internal-id="m-AT3-c-k-a-a-a">T: \IR^3 \rightarrow \IR^2</m> be given by
+<me original-id="AT3-s3a11s1p1m2" internal-id="me-AT3-c-k-a-a-b">
+  T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right]
+</me>
+Which of these subspaces of <m original-id="AT3-s3a11s1p1m3" internal-id="m-AT3-c-k-a-a-c">\IR^2</m> describes <m original-id="AT3-s3a11s1p1m4" internal-id="m-AT3-c-k-a-a-d">\Im T</m>,
+the set of all vectors that are the result of using <m original-id="AT3-s3a11s1p1m5" internal-id="m-AT3-c-k-a-a-e">T</m> to transform
+<m original-id="AT3-s3a11s1p1m6" internal-id="m-AT3-c-k-a-a-f">\IR^3</m> vectors?
+        </p>
+        <ol marker="A." cols="2" original-id="AT3-s3a11s1o2" internal-id="ol-AT3-c-k-a-b">
+          <li original-id="AT3-s3a11s1o2l1" internal-id="li-AT3-c-k-a-b-a">
+              <p original-id="AT3-s3a11s1o2l1p1" internal-id="p-AT3-c-k-a-b-a-a">
+              <m original-id="AT3-s3a11s1o2l1p1m1" internal-id="m-AT3-c-k-a-b-a-a-a">\setBuilder{\left[\begin{array}{c}a \\ a\end{array}\right]}{a\in\IR}</m>
+              </p>
+          </li>
+          <li original-id="AT3-s3a11s1o2l2" internal-id="li-AT3-c-k-a-b-b">
+              <p original-id="AT3-s3a11s1o2l2p1" internal-id="p-AT3-c-k-a-b-b-a">
+              <m original-id="AT3-s3a11s1o2l2p1m1" internal-id="m-AT3-c-k-a-b-b-a-a">\setBuilder{\left[\begin{array}{c}a \\ 0\end{array}\right]}{a\in\IR}</m>
+              </p>
+          </li>
+          <li original-id="AT3-s3a11s1o2l3" internal-id="li-AT3-c-k-a-b-c">
+            <p original-id="AT3-s3a11s1o2l3p1" internal-id="p-AT3-c-k-a-b-c-a">
+            <m original-id="AT3-s3a11s1o2l3p1m1" internal-id="m-AT3-c-k-a-b-c-a-a">\setList{\left[\begin{array}{c}0\\0\end{array}\right]}</m>
+            </p>
+        </li>
+          <li original-id="AT3-s3a11s1o2l4" internal-id="li-AT3-c-k-a-b-d">
+            <p original-id="AT3-s3a11s1o2l4p1" internal-id="p-AT3-c-k-a-b-d-a">
+            <m original-id="AT3-s3a11s1o2l4p1m1" internal-id="m-AT3-c-k-a-b-d-a-a">\setBuilder{\left[\begin{array}{c}a \\ b\end{array}\right]}{a,b\in\IR}</m>
+            </p>
+        </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 3.3.7 (~5 min)</title>
+        <p original-id="AT3-s3a12s1p1" internal-id="p-AT3-c-l-a-a">
+Let <m original-id="AT3-s3a12s1p1m1" internal-id="m-AT3-c-l-a-a-a">T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by the
+standard matrix
+<me original-id="AT3-s3a12s1p1m2" internal-id="me-AT3-c-l-a-a-b">
+  A
+    =
+  \left[\begin{array}{cccc} 3 &amp; 4 &amp; 7 &amp; 1\\ -1 &amp; 1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 3 &amp; -1 \end{array}\right]
+    =
+  \left[\begin{array}{cccc}T(\vec e_1)&amp;T(\vec e_2)&amp;T(\vec e_3)&amp;T(\vec e_4)\end{array}\right]
+.</me>
+        </p>
+        <p original-id="AT3-s3a12s1p2" internal-id="p-AT3-c-l-a-b">
+Since for a vector <m original-id="AT3-s3a12s1p2m1" internal-id="m-AT3-c-l-a-b-a">\vec v =\left[\begin{array}{c}x_1 \\ x_2 \\ x_3 \\ x_4 \end{array}\right] </m>, <m original-id="AT3-s3a12s1p2m2" internal-id="m-AT3-c-l-a-b-b">T(\vec v)=T(x_1\vec e_1+x_2\vec e_2+x_3\vec e_3+x_4\vec e_4)</m>,
+which of the following best describes the set of vectors
+<me original-id="AT3-s3a12s1p2m3" internal-id="me-AT3-c-l-a-b-c">
+  \setList{
+    \left[\begin{array}{c}3\\-1\\2\end{array}\right],
+    \left[\begin{array}{c}4\\1\\1\end{array}\right],
+    \left[\begin{array}{c}7\\0\\3\end{array}\right],
+    \left[\begin{array}{c}1\\2\\-1\end{array}\right]
+  }
+</me>?
+        </p>
+        <ol marker="A." original-id="AT3-s3a12s1o3" internal-id="ol-AT3-c-l-a-c">
+          <li original-id="AT3-s3a12s1o3l1" internal-id="li-AT3-c-l-a-c-a">
+    <p original-id="AT3-s3a12s1o3l1p1" internal-id="p-AT3-c-l-a-c-a-a">
+    The set of vectors spans <m original-id="AT3-s3a12s1o3l1p1m1" internal-id="m-AT3-c-l-a-c-a-a-a">\Im T</m> but is not linearly independent.
+    </p>
+</li>
+          <li original-id="AT3-s3a12s1o3l2" internal-id="li-AT3-c-l-a-c-b">
+    <p original-id="AT3-s3a12s1o3l2p1" internal-id="p-AT3-c-l-a-c-b-a">
+    The set of vectors is a linearly independent subset of <m original-id="AT3-s3a12s1o3l2p1m1" internal-id="m-AT3-c-l-a-c-b-a-a">\Im T</m> but does not span <m original-id="AT3-s3a12s1o3l2p1m2" internal-id="m-AT3-c-l-a-c-b-a-b">\Im T</m>.
+    </p>
+</li>
+          <li original-id="AT3-s3a12s1o3l3" internal-id="li-AT3-c-l-a-c-c">
+    <p original-id="AT3-s3a12s1o3l3p1" internal-id="p-AT3-c-l-a-c-c-a">
+    The set of vectors is linearly independent <emph original-id="AT3-s3a12s1o3l3p1e1" internal-id="emph-AT3-c-l-a-c-c-a-a">and</emph> spans <m original-id="AT3-s3a12s1o3l3p1m2" internal-id="m-AT3-c-l-a-c-c-a-b"> \Im T</m>; that is, the set of vectors is a basis for <m original-id="AT3-s3a12s1o3l3p1m3" internal-id="m-AT3-c-l-a-c-c-a-c">\Im T</m>.
+    </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Observation 3.3.3 </title>
+        <p original-id="AT3-s3o13s1p1" internal-id="p-AT3-c-m-a-a">
+Let <m original-id="AT3-s3o13s1p1m1" internal-id="m-AT3-c-m-a-a-a">T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by the
+standard matrix
+<me original-id="AT3-s3o13s1p1m2" internal-id="me-AT3-c-m-a-a-b">
+  A
+    =
+  \left[\begin{array}{cccc} 3 &amp; 4 &amp; 7 &amp; 1\\ -1 &amp; 1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 3 &amp; -1 \end{array}\right]
+.</me>
+        </p>
+        <p original-id="AT3-s3o13s1p2" internal-id="p-AT3-c-m-a-b">
+Since the set
+<m original-id="AT3-s3o13s1p2m1" internal-id="m-AT3-c-m-a-b-a">
+  \setList{
+    \left[\begin{array}{c}3\\-1\\2\end{array}\right],
+    \left[\begin{array}{c}4\\1\\1\end{array}\right],
+    \left[\begin{array}{c}7\\0\\3\end{array}\right],
+    \left[\begin{array}{c}1\\2\\-1\end{array}\right]
+  }
+</m>
+spans <m original-id="AT3-s3o13s1p2m2" internal-id="m-AT3-c-m-a-b-b">\Im T</m>, we can obtain a basis for <m original-id="AT3-s3o13s1p2m3" internal-id="m-AT3-c-m-a-b-c">\Im T</m> by finding
+<m original-id="AT3-s3o13s1p2m4" internal-id="m-AT3-c-m-a-b-d">
+  \RREF A
+    =
+  \left[\begin{array}{cccc} 1 &amp; 0 &amp; 1 &amp; -1\\ 0 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]
+</m>
+and only using the vectors corresponding to pivot columns:
+<me original-id="AT3-s3o13s1p2m5" internal-id="me-AT3-c-m-a-b-e">
+  \setList{
+    \left[\begin{array}{c}3\\-1\\2\end{array}\right],
+    \left[\begin{array}{c}4\\1\\1\end{array}\right]
+  }
+</me>
+        </p>
+      </slide>
+      <slide>
+        <title>Fact 3.3.4 </title>
+        <p original-id="AT3-s3f14s1p1" internal-id="p-AT3-c-n-a-a">
+Let  <m original-id="AT3-s3f14s1p1m1" internal-id="m-AT3-c-n-a-a-a">T:\IR^n\to\IR^m</m> be a linear transformation with standard matrix <m original-id="AT3-s3f14s1p1m2" internal-id="m-AT3-c-n-a-a-b">A</m>.
+    </p>
+        <ul original-id="AT3-s3f14s1u2" internal-id="ul-AT3-c-n-a-b">
+          <li original-id="AT3-s3f14s1u2l1" internal-id="li-AT3-c-n-a-b-a">
+    <p original-id="AT3-s3f14s1u2l1p1" internal-id="p-AT3-c-n-a-b-a-a">
+    The kernel of <m original-id="AT3-s3f14s1u2l1p1m1" internal-id="m-AT3-c-n-a-b-a-a-a">T</m> is the solution set of the homogeneous system given
+by the augmented matrix <m original-id="AT3-s3f14s1u2l1p1m2" internal-id="m-AT3-c-n-a-b-a-a-b">\left[\begin{array}{c|c}A&amp;\vec 0\end{array}\right]</m>.
+Use the coefficients of its free variables to get a basis for the kernel.
+    </p>
+</li>
+          <li original-id="AT3-s3f14s1u2l2" internal-id="li-AT3-c-n-a-b-b">
+    <p original-id="AT3-s3f14s1u2l2p1" internal-id="p-AT3-c-n-a-b-b-a">
+    The image of <m original-id="AT3-s3f14s1u2l2p1m1" internal-id="m-AT3-c-n-a-b-b-a-a">T</m> is the span of the columns of <m original-id="AT3-s3f14s1u2l2p1m2" internal-id="m-AT3-c-n-a-b-b-a-b">A</m>. Remove
+the vectors creating non-pivot columns in <m original-id="AT3-s3f14s1u2l2p1m3" internal-id="m-AT3-c-n-a-b-b-a-c">\RREF A</m> to get a basis
+for the image.
+    </p>
+</li>
+        </ul>
+      </slide>
+      <slide>
+        <title>Activity 3.3.8 (~10 min)</title>
+        <p original-id="AT3-s3a15s1p1" internal-id="p-AT3-c-o-a-a">
+Let <m original-id="AT3-s3a15s1p1m1" internal-id="m-AT3-c-o-a-a-a">T: \IR^3 \rightarrow \IR^4</m> be the linear transformation given by the
+standard matrix
+<me original-id="AT3-s3a15s1p1m2" internal-id="me-AT3-c-o-a-a-b">
+  A
+    =
+  \left[\begin{array}{ccc} 1 &amp; -3 &amp; 2\\ 2 &amp; -6 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ -1 &amp; 3 &amp; 1 \end{array}\right]
+.</me>
+        </p>
+        <p original-id="AT3-s3a15s1p2" internal-id="p-AT3-c-o-a-b">
+Find a basis for the kernel and a basis for the image of <m original-id="AT3-s3a15s1p2m1" internal-id="m-AT3-c-o-a-b-a">T</m>.
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 3.3.9 (~5 min)</title>
+        <p original-id="AT3-s3a17s1p1" internal-id="p-AT3-c-q-a-a">
+Let <m original-id="AT3-s3a17s1p1m1" internal-id="m-AT3-c-q-a-a-a">T: \IR^n \rightarrow \IR^m</m> be a linear transformation with standard matrix <m original-id="AT3-s3a17s1p1m2" internal-id="m-AT3-c-q-a-a-b">A</m>.
+Which of the following is equal to the dimension of the kernel of <m original-id="AT3-s3a17s1p1m3" internal-id="m-AT3-c-q-a-a-c">T</m>?
+        </p>
+        <ol marker="A." original-id="AT3-s3a17s1o2" internal-id="ol-AT3-c-q-a-b">
+          <li original-id="AT3-s3a17s1o2l1" internal-id="li-AT3-c-q-a-b-a">
+    <p original-id="AT3-s3a17s1o2l1p1" internal-id="p-AT3-c-q-a-b-a-a">
+    The number of pivot columns
+    </p>
+</li>
+          <li original-id="AT3-s3a17s1o2l2" internal-id="li-AT3-c-q-a-b-b">
+    <p original-id="AT3-s3a17s1o2l2p1" internal-id="p-AT3-c-q-a-b-b-a">
+    The number of non-pivot columns
+    </p>
+</li>
+          <li original-id="AT3-s3a17s1o2l3" internal-id="li-AT3-c-q-a-b-c">
+    <p original-id="AT3-s3a17s1o2l3p1" internal-id="p-AT3-c-q-a-b-c-a">
+    The number of pivot rows
+    </p>
+</li>
+          <li original-id="AT3-s3a17s1o2l4" internal-id="li-AT3-c-q-a-b-d">
+    <p original-id="AT3-s3a17s1o2l4p1" internal-id="p-AT3-c-q-a-b-d-a">
+    The number of non-pivot rows
+    </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 3.3.10 (~5 min)</title>
+        <p original-id="AT3-s3a18s1p1" internal-id="p-AT3-c-r-a-a">
+Let <m original-id="AT3-s3a18s1p1m1" internal-id="m-AT3-c-r-a-a-a">T: \IR^n \rightarrow \IR^m</m> be a linear transformation with standard matrix <m original-id="AT3-s3a18s1p1m2" internal-id="m-AT3-c-r-a-a-b">A</m>.
+Which of the following is equal to the dimension of the image of <m original-id="AT3-s3a18s1p1m3" internal-id="m-AT3-c-r-a-a-c">T</m>?
+        </p>
+        <ol marker="A." original-id="AT3-s3a18s1o2" internal-id="ol-AT3-c-r-a-b">
+          <li original-id="AT3-s3a18s1o2l1" internal-id="li-AT3-c-r-a-b-a">
+    <p original-id="AT3-s3a18s1o2l1p1" internal-id="p-AT3-c-r-a-b-a-a">
+    The number of pivot columns
+    </p>
+</li>
+          <li original-id="AT3-s3a18s1o2l2" internal-id="li-AT3-c-r-a-b-b">
+    <p original-id="AT3-s3a18s1o2l2p1" internal-id="p-AT3-c-r-a-b-b-a">
+    The number of non-pivot columns
+    </p>
+</li>
+          <li original-id="AT3-s3a18s1o2l3" internal-id="li-AT3-c-r-a-b-c">
+    <p original-id="AT3-s3a18s1o2l3p1" internal-id="p-AT3-c-r-a-b-c-a">
+    The number of pivot rows
+    </p>
+</li>
+          <li original-id="AT3-s3a18s1o2l4" internal-id="li-AT3-c-r-a-b-d">
+    <p original-id="AT3-s3a18s1o2l4p1" internal-id="p-AT3-c-r-a-b-d-a">
+    The number of non-pivot rows
+    </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Observation 3.3.5 </title>
+        <p original-id="AT3-s3o19s1p1" internal-id="p-AT3-c-s-a-a">
+Combining these with the observation that the number of columns is the dimension of the domain of <m original-id="AT3-s3o19s1p1m1" internal-id="m-AT3-c-s-a-a-a">T</m>, we have the <term original-id="AT3-s3o19s1p1t2" internal-id="term-AT3-c-s-a-a-b">rank-nullity theorem</term>:
+        </p>
+        <blockquote original-id="AT3-s3o19s1b2" internal-id="blockquote-AT3-c-s-a-b">
+          <p original-id="AT3-s3o19s1b2p1" internal-id="p-AT3-c-s-a-b-a">
+The dimension of the domain of <m original-id="AT3-s3o19s1b2p1m1" internal-id="m-AT3-c-s-a-b-a-a">T</m> equals <m original-id="AT3-s3o19s1b2p1m2" internal-id="m-AT3-c-s-a-b-a-b">\dim(\ker T)+\dim(\Im T)</m>.
+        </p>
+        </blockquote>
+        <p original-id="AT3-s3o19s1p3" internal-id="p-AT3-c-s-a-c">
+The dimension of the image is called the <term original-id="AT3-s3o19s1p3t1" internal-id="term-AT3-c-s-a-c-a">rank</term> of <m original-id="AT3-s3o19s1p3m2" internal-id="m-AT3-c-s-a-c-b">T</m> (or <m original-id="AT3-s3o19s1p3m3" internal-id="m-AT3-c-s-a-c-c">A</m>) and the dimension of the kernel is called the <term original-id="AT3-s3o19s1p3t4" internal-id="term-AT3-c-s-a-c-d">nullity</term>. 
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 3.3.11 (~10 min)</title>
+        <p original-id="AT3-s3a20i1p1" internal-id="p-AT3-c-t-a-a"> Let <m original-id="AT3-s3a20i1p1m1" internal-id="m-AT3-c-t-a-a-a">T:\mathbb{R}^4 \to \mathbb{R}^3</m> be the linear transformation given by <me original-id="AT3-s3a20i1p1m2" internal-id="me-AT3-c-t-a-a-b">T\left( \left[\begin{array}{c} x \\ y \\ z \\ {w} \end{array}\right] \right) = \left[\begin{array}{c} x - y + 5 \, z + 3 \, {w} \\ -x - 4 \, z - 2 \, {w} \\ y - 2 \, z - {w} \end{array}\right].</me> </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <statement original-id="AT3-s3a20t2s1" internal-id="statement-AT3-c-t-b-a">
+          <p original-id="AT3-s3a20t2s1p1" internal-id="p-AT3-c-t-b-a-a">Explain and demonstrate how to find the image of <m original-id="AT3-s3a20t2s1p1m1" internal-id="m-AT3-c-t-b-a-a-a">T</m> and a basis for that image.</p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 3.3.11 (~10 min)</title>
+        <p original-id="AT3-s3a20i1p1" internal-id="p-AT3-c-t-a-a"> Let <m original-id="AT3-s3a20i1p1m1" internal-id="m-AT3-c-t-a-a-a">T:\mathbb{R}^4 \to \mathbb{R}^3</m> be the linear transformation given by <me original-id="AT3-s3a20i1p1m2" internal-id="me-AT3-c-t-a-a-b">T\left( \left[\begin{array}{c} x \\ y \\ z \\ {w} \end{array}\right] \right) = \left[\begin{array}{c} x - y + 5 \, z + 3 \, {w} \\ -x - 4 \, z - 2 \, {w} \\ y - 2 \, z - {w} \end{array}\right].</me> </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <statement original-id="AT3-s3a20t3s1" internal-id="statement-AT3-c-t-c-a">
+          <p original-id="AT3-s3a20t3s1p1" internal-id="p-AT3-c-t-c-a-a">Explain and demonstrate how to find the kernel of <m original-id="AT3-s3a20t3s1p1m1" internal-id="m-AT3-c-t-c-a-a-a">T</m> and a basis for that kernel.</p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 3.3.11 (~10 min)</title>
+        <p original-id="AT3-s3a20i1p1" internal-id="p-AT3-c-t-a-a"> Let <m original-id="AT3-s3a20i1p1m1" internal-id="m-AT3-c-t-a-a-a">T:\mathbb{R}^4 \to \mathbb{R}^3</m> be the linear transformation given by <me original-id="AT3-s3a20i1p1m2" internal-id="me-AT3-c-t-a-a-b">T\left( \left[\begin{array}{c} x \\ y \\ z \\ {w} \end{array}\right] \right) = \left[\begin{array}{c} x - y + 5 \, z + 3 \, {w} \\ -x - 4 \, z - 2 \, {w} \\ y - 2 \, z - {w} \end{array}\right].</me> </p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <statement original-id="AT3-s3a20t4s1" internal-id="statement-AT3-c-t-d-a">
+          <p original-id="AT3-s3a20t4s1p1" internal-id="p-AT3-c-t-d-a-a">Explain and demonstrate how to find the rank and nullity of <m original-id="AT3-s3a20t4s1p1m1" internal-id="m-AT3-c-t-d-a-a-a">T</m>, and why the rank-nullity theorem holds for <m original-id="AT3-s3a20t4s1p1m2" internal-id="m-AT3-c-t-d-a-a-b">T</m>.</p>
+        </statement>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>

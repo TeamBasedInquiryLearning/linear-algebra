@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <docinfo xml:base="meta/docinfo.ptx" original-id="root-p1d1" internal-id="docinfo-root--a-a">
+    <document-id original-id="root-p1d1d1" internal-id="document-id-root--a-a-a">tbilla</document-id>
+    <initialism original-id="root-p1d1i2" internal-id="initialism-root--a-a-b">TBIL-LA</initialism>
+    <blurb shelf="math" original-id="root-p1d1b3" internal-id="blurb-root--a-a-c">Activities and exercises for easily implementing Team-Based Inquiry Learning in a single-variable calculus classroom.</blurb>
+    <macros original-id="root-p1d1m4" internal-id="macros-root--a-a-d">
+\newcommand{\markedPivot}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{%
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{%
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{%
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+    </macros>
+    <latex-image-preamble original-id="root-p1d1l5" internal-id="latex-image-preamble-root--a-a-e">
+\usepackage{tikz}
+\usepackage{tikz-cd}
+    </latex-image-preamble>
+    <rename element="objectives" xml:lang="en-US" original-id="root-p1d1r6" internal-id="rename-root--a-a-f" locale-lang="en-US">Learning Outcomes</rename>
+    <numbering original-id="root-p1d1n7" internal-id="numbering-root--a-a-g">
+      <figures level="0" original-id="root-p1d1n7f1" internal-id="figures-root--a-a-g-a"/>
+    </numbering>
+    <!-- Specify the default type of cross reference:           -->
+    <cross-references text="type-global" original-id="root-p1d1c8" internal-id="cross-references-root--a-a-h"/>
+  </docinfo>
+  <slideshow>
+    <title original-id="linear-algebra-for-team-based-inquiry-learning-t1" internal-id="title-linear-algebra-for-team-based-inquiry-learning-a">Linear Algebra for Team-Based Inquiry Learning</title>
+    <subtitle component="main" original-id="linear-algebra-for-team-based-inquiry-learning-s2" internal-id="subtitle-linear-algebra-for-team-based-inquiry-learning-b">2023 Edition</subtitle>
+    <frontmatter>
+      <titlepage original-id="frontmatter-t1" internal-id="titlepage-frontmatter-a">
+        <author original-id="frontmatter-t1a1" internal-id="author-frontmatter-a-a">
+          <personname original-id="frontmatter-t1a1p1" internal-id="personname-frontmatter-a-a-a">Steven Clontz</personname>
+          <department original-id="frontmatter-t1a1d2" internal-id="department-frontmatter-a-a-b">Department of Mathematics and Statistics</department>
+          <institution original-id="frontmatter-t1a1i3" internal-id="institution-frontmatter-a-a-c">University of South Alabama</institution>
+          <email original-id="frontmatter-t1a1e4" internal-id="email-frontmatter-a-a-d">sclontz@southalabama.edu</email>
+        </author>
+        <author original-id="frontmatter-t1a2" internal-id="author-frontmatter-a-b">
+          <personname original-id="frontmatter-t1a2p1" internal-id="personname-frontmatter-a-b-a">Drew Lewis</personname>
+          <email original-id="frontmatter-t1a2e2" internal-id="email-frontmatter-a-b-b">drew.lewis@gmail.com</email>
+        </author>
+        <credit original-id="frontmatter-t1c3" internal-id="credit-frontmatter-a-c">
+    <title original-id="frontmatter-t1c3t1" internal-id="title-frontmatter-a-c-a">Contributing Authors</title>
+    <author original-id="frontmatter-t1c3a2" internal-id="author-frontmatter-a-c-b"><personname original-id="frontmatter-t1c3a2p1" internal-id="personname-frontmatter-a-c-b-a">Jessalyn Bolkema</personname><department original-id="frontmatter-t1c3a2d2" internal-id="department-frontmatter-a-c-b-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a2i3" internal-id="institution-frontmatter-a-c-b-c">California State University, Dominguez Hills</institution><email original-id="frontmatter-t1c3a2e4" internal-id="email-frontmatter-a-c-b-d">jbolkema@csudh.edu</email></author>
+    <author original-id="frontmatter-t1c3a3" internal-id="author-frontmatter-a-c-c"><personname original-id="frontmatter-t1c3a3p1" internal-id="personname-frontmatter-a-c-c-a">Jeff Ford</personname><department original-id="frontmatter-t1c3a3d2" internal-id="department-frontmatter-a-c-c-b">Department of Mathematics, Computer Science, and Statistics</department><institution original-id="frontmatter-t1c3a3i3" internal-id="institution-frontmatter-a-c-c-c">Gustavus Adolphus College</institution><email original-id="frontmatter-t1c3a3e4" internal-id="email-frontmatter-a-c-c-d">jford@gustavus.edu</email></author>
+    <author original-id="frontmatter-t1c3a4" internal-id="author-frontmatter-a-c-d"><personname original-id="frontmatter-t1c3a4p1" internal-id="personname-frontmatter-a-c-d-a">Sharona Krinsky</personname><department original-id="frontmatter-t1c3a4d2" internal-id="department-frontmatter-a-c-d-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a4i3" internal-id="institution-frontmatter-a-c-d-c">California State University, Los Angeles</institution><email original-id="frontmatter-t1c3a4e4" internal-id="email-frontmatter-a-c-d-d">skrinsk@calstatela.edu</email></author>
+    <author original-id="frontmatter-t1c3a5" internal-id="author-frontmatter-a-c-e"><personname original-id="frontmatter-t1c3a5p1" internal-id="personname-frontmatter-a-c-e-a">Jennifer Nordstrom</personname><department original-id="frontmatter-t1c3a5d2" internal-id="department-frontmatter-a-c-e-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a5i3" internal-id="institution-frontmatter-a-c-e-c">Linfield University</institution><email original-id="frontmatter-t1c3a5e4" internal-id="email-frontmatter-a-c-e-d">jnordstrom@linfield.edu</email></author>
+    <author original-id="frontmatter-t1c3a6" internal-id="author-frontmatter-a-c-f"><personname original-id="frontmatter-t1c3a6p1" internal-id="personname-frontmatter-a-c-f-a">Kate Owens</personname><department original-id="frontmatter-t1c3a6d2" internal-id="department-frontmatter-a-c-f-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a6i3" internal-id="institution-frontmatter-a-c-f-c">College of Charleston</institution><email original-id="frontmatter-t1c3a6e4" internal-id="email-frontmatter-a-c-f-d">owensks@cofc.edu</email></author>
+  </credit>
+        <date original-id="frontmatter-t1d4" internal-id="date-frontmatter-a-d">
+          <today original-id="frontmatter-t1d4t1" internal-id="today-frontmatter-a-d-a"/>
+        </date>
+      </titlepage>
+    </frontmatter>
+    <section>
+      <title>Section 2.5:
+        Identifying a Basis (EV5) </title>
+      <slide>
+        <title>Activity 2.5.1 (~15 min)</title>
+        <p original-id="activity-EV5-intro-i1p1" internal-id="p-activity-EV5-intro-a-a">
+            Consider the set of vectors
+            <me original-id="activity-EV5-intro-i1p1m1" internal-id="me-activity-EV5-intro-a-a-a">S=\left\{ 
+                \left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right],
+                \left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right],
+                \left[\begin{array}{c} 0 \\ -16 \\ -5 \\ -3  \end{array} \right],
+                \left[\begin{array}{c} 1 \\ 2 \\ 3 \\ 0  \end{array} \right],
+                \left[\begin{array}{c} 3 \\ 3 \\ 0 \\ 1  \end{array} \right]
+                \right\}
+            </me>.
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <statement original-id="activity-EV5-intro-t2s1" internal-id="statement-activity-EV5-intro-b-a">
+          <p original-id="activity-EV5-intro-t2s1p1" internal-id="p-activity-EV5-intro-b-a-a">
+                Express the vector <m original-id="activity-EV5-intro-t2s1p1m1" internal-id="m-activity-EV5-intro-b-a-a-a">\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]</m> as a linear combination
+                of the vectors in <m original-id="activity-EV5-intro-t2s1p1m2" internal-id="m-activity-EV5-intro-b-a-a-b">S</m>, i.e. find scalars such that
+                <me original-id="activity-EV5-intro-t2s1p1m3" internal-id="me-activity-EV5-intro-b-a-a-c">
+                \left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right] = 
+                \unknown \left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right] + 
+                \unknown \left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right] + 
+                \unknown \left[\begin{array}{c} 0 \\ -16 \\ -5 \\ -3  \end{array} \right] +
+                \unknown \left[\begin{array}{c} 1 \\ 2 \\ 3 \\ 0  \end{array} \right] +
+                \unknown \left[\begin{array}{c} 3 \\ 3 \\ 0 \\ 1  \end{array} \right]
+                </me>.
+            </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 2.5.1 (~15 min)</title>
+        <p original-id="activity-EV5-intro-i1p1" internal-id="p-activity-EV5-intro-a-a">
+            Consider the set of vectors
+            <me original-id="activity-EV5-intro-i1p1m1" internal-id="me-activity-EV5-intro-a-a-a">S=\left\{ 
+                \left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right],
+                \left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right],
+                \left[\begin{array}{c} 0 \\ -16 \\ -5 \\ -3  \end{array} \right],
+                \left[\begin{array}{c} 1 \\ 2 \\ 3 \\ 0  \end{array} \right],
+                \left[\begin{array}{c} 3 \\ 3 \\ 0 \\ 1  \end{array} \right]
+                \right\}
+            </me>.
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <statement original-id="activity-EV5-intro-t3s1" internal-id="statement-activity-EV5-intro-c-a">
+          <p original-id="activity-EV5-intro-t3s1p1" internal-id="p-activity-EV5-intro-c-a-a">
+                Find a <em original-id="activity-EV5-intro-t3s1p1e1" internal-id="em-activity-EV5-intro-c-a-a-a">different</em> way to express the vector <m original-id="activity-EV5-intro-t3s1p1m2" internal-id="m-activity-EV5-intro-c-a-a-b">\left[\begin{array}{c} 5 \\ 2 \\ 0 \\ 1  \end{array} \right]</m> 
+                as a linear combination of the vectors in <m original-id="activity-EV5-intro-t3s1p1m3" internal-id="m-activity-EV5-intro-c-a-a-c">S</m>.
+            </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 2.5.1 (~15 min)</title>
+        <p original-id="activity-EV5-intro-i1p1" internal-id="p-activity-EV5-intro-a-a">
+            Consider the set of vectors
+            <me original-id="activity-EV5-intro-i1p1m1" internal-id="me-activity-EV5-intro-a-a-a">S=\left\{ 
+                \left[\begin{array}{c} 3 \\ -2 \\ -1 \\ 0  \end{array} \right],
+                \left[\begin{array}{c} 2 \\ 4 \\ 1 \\ 1  \end{array} \right],
+                \left[\begin{array}{c} 0 \\ -16 \\ -5 \\ -3  \end{array} \right],
+                \left[\begin{array}{c} 1 \\ 2 \\ 3 \\ 0  \end{array} \right],
+                \left[\begin{array}{c} 3 \\ 3 \\ 0 \\ 1  \end{array} \right]
+                \right\}
+            </me>.
+        </p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <statement original-id="activity-EV5-intro-t4s1" internal-id="statement-activity-EV5-intro-d-a">
+          <p original-id="activity-EV5-intro-t4s1p1" internal-id="p-activity-EV5-intro-d-a-a">
+                Consider another vector <m original-id="activity-EV5-intro-t4s1p1m1" internal-id="m-activity-EV5-intro-d-a-a-a">\left[\begin{array}{c} 8 \\ 6 \\ 7 \\ 5  \end{array} \right]</m>.
+                Without computing the RREF of another matrix,
+                how many ways can this vector be written as a linear combination of the vectors in <m original-id="activity-EV5-intro-t4s1p1m2" internal-id="m-activity-EV5-intro-d-a-a-b">S</m>?
+                <ol marker="A." original-id="activity-EV5-intro-t4s1p1o3" internal-id="ol-activity-EV5-intro-d-a-a-c"><li original-id="activity-EV5-intro-t4s1p1o3l1" internal-id="li-activity-EV5-intro-d-a-a-c-a"><p original-id="activity-EV5-intro-t4s1p1o3l1p1" internal-id="p-activity-EV5-intro-d-a-a-c-a-a">Zero.</p></li><li original-id="activity-EV5-intro-t4s1p1o3l2" internal-id="li-activity-EV5-intro-d-a-a-c-b"><p original-id="activity-EV5-intro-t4s1p1o3l2p1" internal-id="p-activity-EV5-intro-d-a-a-c-b-a">One.</p></li><li original-id="activity-EV5-intro-t4s1p1o3l3" internal-id="li-activity-EV5-intro-d-a-a-c-c"><p original-id="activity-EV5-intro-t4s1p1o3l3p1" internal-id="p-activity-EV5-intro-d-a-a-c-c-a">Infintiely-many.</p></li><li original-id="activity-EV5-intro-t4s1p1o3l4" internal-id="li-activity-EV5-intro-d-a-a-c-d"><p original-id="activity-EV5-intro-t4s1p1o3l4p1" internal-id="p-activity-EV5-intro-d-a-a-c-d-a">Computing a new matrix RREF is necessary.</p></li></ol>
+            </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 2.5.2 </title>
+        <p original-id="EV5-s3a4i1p1" internal-id="p-EV5-c-d-a-a">
+            Let's review some of the terminology we've been dealing with...
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="EV5-s3a4t2p1" internal-id="p-EV5-c-d-b-a">
+    If every vector in a space can be constructed as one or more linear combination of vectors in a set <m original-id="EV5-s3a4t2p1m1" internal-id="m-EV5-c-d-b-a-a">S</m>, we can say...
+            <ol marker="A." original-id="EV5-s3a4t2p1o2" internal-id="ol-EV5-c-d-b-a-b"><li original-id="EV5-s3a4t2p1o2l1" internal-id="li-EV5-c-d-b-a-b-a"><p original-id="EV5-s3a4t2p1o2l1p1" internal-id="p-EV5-c-d-b-a-b-a-a">the set <m original-id="EV5-s3a4t2p1o2l1p1m1" internal-id="m-EV5-c-d-b-a-b-a-a-a">S</m> spans the space.</p></li><li original-id="EV5-s3a4t2p1o2l2" internal-id="li-EV5-c-d-b-a-b-b"><p original-id="EV5-s3a4t2p1o2l2p1" internal-id="p-EV5-c-d-b-a-b-b-a">the set <m original-id="EV5-s3a4t2p1o2l2p1m1" internal-id="m-EV5-c-d-b-a-b-b-a-a">S</m> fails to span the space.</p></li><li original-id="EV5-s3a4t2p1o2l3" internal-id="li-EV5-c-d-b-a-b-c"><p original-id="EV5-s3a4t2p1o2l3p1" internal-id="p-EV5-c-d-b-a-b-c-a">the set <m original-id="EV5-s3a4t2p1o2l3p1m1" internal-id="m-EV5-c-d-b-a-b-c-a-a">S</m> is linearly independent.</p></li><li original-id="EV5-s3a4t2p1o2l4" internal-id="li-EV5-c-d-b-a-b-d"><p original-id="EV5-s3a4t2p1o2l4p1" internal-id="p-EV5-c-d-b-a-b-d-a">the set <m original-id="EV5-s3a4t2p1o2l4p1m1" internal-id="m-EV5-c-d-b-a-b-d-a-a">S</m> is linearly dependent.</p></li></ol>
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.5.2 </title>
+        <p original-id="EV5-s3a4i1p1" internal-id="p-EV5-c-d-a-a">
+            Let's review some of the terminology we've been dealing with...
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="EV5-s3a4t3p1" internal-id="p-EV5-c-d-c-a">
+    If the zero vector <m original-id="EV5-s3a4t3p1m1" internal-id="m-EV5-c-d-c-a-a">\vec 0</m> can be constructed as a <em original-id="EV5-s3a4t3p1e2" internal-id="em-EV5-c-d-c-a-b">unique</em> linear combination of vectors in a set <m original-id="EV5-s3a4t3p1m3" internal-id="m-EV5-c-d-c-a-c">S</m>
+    (the combination multiplying every vector by the scalar value <m original-id="EV5-s3a4t3p1m4" internal-id="m-EV5-c-d-c-a-d">0</m>), we can say...
+            <ol marker="A." original-id="EV5-s3a4t3p1o5" internal-id="ol-EV5-c-d-c-a-e"><li original-id="EV5-s3a4t3p1o5l1" internal-id="li-EV5-c-d-c-a-e-a"><p original-id="EV5-s3a4t3p1o5l1p1" internal-id="p-EV5-c-d-c-a-e-a-a">the set <m original-id="EV5-s3a4t3p1o5l1p1m1" internal-id="m-EV5-c-d-c-a-e-a-a-a">S</m> spans the space.</p></li><li original-id="EV5-s3a4t3p1o5l2" internal-id="li-EV5-c-d-c-a-e-b"><p original-id="EV5-s3a4t3p1o5l2p1" internal-id="p-EV5-c-d-c-a-e-b-a">the set <m original-id="EV5-s3a4t3p1o5l2p1m1" internal-id="m-EV5-c-d-c-a-e-b-a-a">S</m> fails to span the space.</p></li><li original-id="EV5-s3a4t3p1o5l3" internal-id="li-EV5-c-d-c-a-e-c"><p original-id="EV5-s3a4t3p1o5l3p1" internal-id="p-EV5-c-d-c-a-e-c-a">the set <m original-id="EV5-s3a4t3p1o5l3p1m1" internal-id="m-EV5-c-d-c-a-e-c-a-a">S</m> is linearly independent.</p></li><li original-id="EV5-s3a4t3p1o5l4" internal-id="li-EV5-c-d-c-a-e-d"><p original-id="EV5-s3a4t3p1o5l4p1" internal-id="p-EV5-c-d-c-a-e-d-a">the set <m original-id="EV5-s3a4t3p1o5l4p1m1" internal-id="m-EV5-c-d-c-a-e-d-a-a">S</m> is linearly dependent.</p></li></ol>
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.5.2 </title>
+        <p original-id="EV5-s3a4i1p1" internal-id="p-EV5-c-d-a-a">
+            Let's review some of the terminology we've been dealing with...
+        </p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <p original-id="EV5-s3a4t4p1" internal-id="p-EV5-c-d-d-a">
+    If every vector of a space can either be constructed as a <em original-id="EV5-s3a4t4p1e1" internal-id="em-EV5-c-d-d-a-a">unique</em> linear combination of vectors in a set <m original-id="EV5-s3a4t4p1m2" internal-id="m-EV5-c-d-d-a-b">S</m>,
+    or not at all, we can say...
+            <ol marker="A." original-id="EV5-s3a4t4p1o3" internal-id="ol-EV5-c-d-d-a-c"><li original-id="EV5-s3a4t4p1o3l1" internal-id="li-EV5-c-d-d-a-c-a"><p original-id="EV5-s3a4t4p1o3l1p1" internal-id="p-EV5-c-d-d-a-c-a-a">the set <m original-id="EV5-s3a4t4p1o3l1p1m1" internal-id="m-EV5-c-d-d-a-c-a-a-a">S</m> spans the space.</p></li><li original-id="EV5-s3a4t4p1o3l2" internal-id="li-EV5-c-d-d-a-c-b"><p original-id="EV5-s3a4t4p1o3l2p1" internal-id="p-EV5-c-d-d-a-c-b-a">the set <m original-id="EV5-s3a4t4p1o3l2p1m1" internal-id="m-EV5-c-d-d-a-c-b-a-a">S</m> fails to span the space.</p></li><li original-id="EV5-s3a4t4p1o3l3" internal-id="li-EV5-c-d-d-a-c-c"><p original-id="EV5-s3a4t4p1o3l3p1" internal-id="p-EV5-c-d-d-a-c-c-a">the set <m original-id="EV5-s3a4t4p1o3l3p1m1" internal-id="m-EV5-c-d-d-a-c-c-a-a">S</m> is linearly independent.</p></li><li original-id="EV5-s3a4t4p1o3l4" internal-id="li-EV5-c-d-d-a-c-d"><p original-id="EV5-s3a4t4p1o3l4p1" internal-id="p-EV5-c-d-d-a-c-d-a">the set <m original-id="EV5-s3a4t4p1o3l4p1m1" internal-id="m-EV5-c-d-d-a-c-d-a-a">S</m> is linearly dependent.</p></li></ol>
+        </p>
+      </slide>
+      <slide>
+        <title>Definition 2.5.1 </title>
+        <p original-id="EV5-definition-basis-s1p1" internal-id="p-EV5-definition-basis-a-a">
+        A <term original-id="EV5-definition-basis-s1p1t1" internal-id="term-EV5-definition-basis-a-a-a">basis</term><idx original-id="EV5-definition-basis-s1p1i2" internal-id="idx-EV5-definition-basis-a-a-b"> basis </idx> of a vector space is a set of vectors <m original-id="EV5-definition-basis-s1p1m3" internal-id="m-EV5-definition-basis-a-a-c">S</m> for which 
+        </p>
+        <ol original-id="EV5-definition-basis-s1o2" internal-id="ol-EV5-definition-basis-a-b">
+          <li original-id="EV5-definition-basis-s1o2l1" internal-id="li-EV5-definition-basis-a-b-a">
+                <p original-id="EV5-definition-basis-s1o2l1p1" internal-id="p-EV5-definition-basis-a-b-a-a">
+                    <em original-id="EV5-definition-basis-s1o2l1p1e1" internal-id="em-EV5-definition-basis-a-b-a-a-a">Every</em> vector of the space can be expressed as a linear combination of the vectors in <m original-id="EV5-definition-basis-s1o2l1p1m2" internal-id="m-EV5-definition-basis-a-b-a-a-b">S</m>.
+                </p>
+            </li>
+          <li original-id="EV5-definition-basis-s1o2l2" internal-id="li-EV5-definition-basis-a-b-b">
+                <p original-id="EV5-definition-basis-s1o2l2p1" internal-id="p-EV5-definition-basis-a-b-b-a">
+                    For each vector <m original-id="EV5-definition-basis-s1o2l2p1m1" internal-id="m-EV5-definition-basis-a-b-b-a-a">\vec{v}</m> in the space, there is only <em original-id="EV5-definition-basis-s1o2l2p1e2" internal-id="em-EV5-definition-basis-a-b-b-a-b">one</em> way to write it as a linear combination
+                    of the vectors in <m original-id="EV5-definition-basis-s1o2l2p1m3" internal-id="m-EV5-definition-basis-a-b-b-a-c">S</m>.
+                </p>
+            </li>
+        </ol>
+        <p original-id="EV5-definition-basis-s1p3" internal-id="p-EV5-definition-basis-a-c">These two properties may be expressed more succintly as the statement "Every vector in <m original-id="EV5-definition-basis-s1p3m1" internal-id="m-EV5-definition-basis-a-c-a">V</m> can be expressed
+        <em original-id="EV5-definition-basis-s1p3e2" internal-id="em-EV5-definition-basis-a-c-b">uniquely</em> as a linear combination of the vectors in <m original-id="EV5-definition-basis-s1p3m3" internal-id="m-EV5-definition-basis-a-c-c">S</m>".
+        </p>
+      </slide>
+      <slide>
+        <title>Observation 2.5.2 </title>
+        <p original-id="EV5-s3o6p1" internal-id="p-EV5-c-f-a">In terms of a vector equation, a set <m original-id="EV5-s3o6p1m1" internal-id="m-EV5-c-f-a-a">S=\left\{\vec{v}_1,\ldots,\vec{v}_n\right\}</m> is a basis of a space if the vector equation
+    <me original-id="EV5-s3o6p1m2" internal-id="me-EV5-c-f-a-b">x_1 \vec{v_1}+\cdots+x_n\vec{v_n}=\vec{w}</me>
+    has a <em original-id="EV5-s3o6p1e3" internal-id="em-EV5-c-f-a-c">unique</em> solution for <em original-id="EV5-s3o6p1e4" internal-id="em-EV5-c-f-a-d">every</em> vector <m original-id="EV5-s3o6p1m5" internal-id="m-EV5-c-f-a-e"> \vec{w}</m> in the space.</p>
+        <p original-id="EV5-s3o6p2" internal-id="p-EV5-c-f-b">Put another way, a basis may be thought of as a minimal set of <q original-id="EV5-s3o6p2q1" internal-id="q-EV5-c-f-b-a">building blocks</q> that can be used to construct
+        any other vector of the space.</p>
+      </slide>
+      <slide>
+        <title>Activity 2.5.3 </title>
+      </slide>
+      <slide>
+        <title>Activity 2.5.4 </title>
+      </slide>
+      <slide>
+        <title>Definition 2.5.3 </title>
+        <p original-id="EV5-s3d9s1p1" internal-id="p-EV5-c-i-a-a">
+  The <term original-id="EV5-s3d9s1p1t1" internal-id="term-EV5-c-i-a-a-a">standard basis</term><idx original-id="EV5-s3d9s1p1i2" internal-id="idx-EV5-c-i-a-a-b"><h original-id="EV5-s3d9s1p1i2h1" internal-id="h-EV5-c-i-a-a-b-a">basis</h></idx><idx original-id="EV5-s3d9s1p1i3" internal-id="idx-EV5-c-i-a-a-c">standard</idx> of <m original-id="EV5-s3d9s1p1m4" internal-id="m-EV5-c-i-a-a-d">\IR^n</m> is the set <m original-id="EV5-s3d9s1p1m5" internal-id="m-EV5-c-i-a-a-e">\{\vec{e}_1, \ldots, \vec{e}_n\}</m> where
+            <md original-id="EV5-s3d9s1p1m6" internal-id="md-EV5-c-i-a-a-f"><mrow original-id="EV5-s3d9s1p1m6m1" internal-id="mrow-EV5-c-i-a-a-f-a">
+  \vec{e}_1 &amp;= \left[\begin{array}{c}1 \\ 0 \\ 0 \\ \vdots \\ 0 \\  0 \end{array}\right] &amp;
+  \vec{e}_2 &amp;= \left[\begin{array}{c}0 \\ 1 \\ 0 \\ \vdots \\ 0 \\ 0 \end{array}\right] &amp;
+  \cdots &amp; &amp;
+  \vec{e}_n = \left[\begin{array}{c}0 \\ 0 \\ 0 \\ \vdots \\ 0 \\ 1 \end{array}\right]
+                </mrow></md>.
+        </p>
+        <p original-id="EV5-s3d9s1p2" internal-id="p-EV5-c-i-a-b">
+In particular, the standard basis for <m original-id="EV5-s3d9s1p2m1" internal-id="m-EV5-c-i-a-b-a">\mathbb R^3</m> is <m original-id="EV5-s3d9s1p2m2" internal-id="m-EV5-c-i-a-b-b">\{\vec e_1,\vec e_2,\vec e_3\}=\{\hat\imath,\hat\jmath,\hat k\}</m>.
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.5.5 (~15 min)</title>
+        <p original-id="EV5-s3a10i1p1" internal-id="p-EV5-c-j-a-a">
+  Take the RREF of an appropriate matrix to determine
+  if each of the following sets is a basis for <m original-id="EV5-s3a10i1p1m1" internal-id="m-EV5-c-j-a-a-a">\IR^4</m>.
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="EV5-s3a10t2p1" internal-id="p-EV5-c-j-b-a">
+        <me original-id="EV5-s3a10t2p1m1" internal-id="me-EV5-c-j-b-a-a">
+      \left\{
+      \left[\begin{array}{c}1\\0\\0\\0\end{array}\right],
+      \left[\begin{array}{c}0\\1\\0\\0\end{array}\right],
+      \left[\begin{array}{c}0\\0\\1\\0\end{array}\right],
+      \left[\begin{array}{c}0\\0\\0\\1\end{array}\right]
+      \right\}
+      </me>
+      <ol marker="A." original-id="EV5-s3a10t2p1o2" internal-id="ol-EV5-c-j-b-a-b"><li original-id="EV5-s3a10t2p1o2l1" internal-id="li-EV5-c-j-b-a-b-a">
+            <p original-id="EV5-s3a10t2p1o2l1p1" internal-id="p-EV5-c-j-b-a-b-a-a">
+A basis because it both spans and is linearly independent.   
+            </p>
+        </li><li original-id="EV5-s3a10t2p1o2l2" internal-id="li-EV5-c-j-b-a-b-b">
+            <p original-id="EV5-s3a10t2p1o2l2p1" internal-id="p-EV5-c-j-b-a-b-b-a">
+Spans, but not a basis as it is linearly dependent.   
+            </p>
+        </li><li original-id="EV5-s3a10t2p1o2l3" internal-id="li-EV5-c-j-b-a-b-c">
+            <p original-id="EV5-s3a10t2p1o2l3p1" internal-id="p-EV5-c-j-b-a-b-c-a">
+Linearly independent, but not a basis as it fails to span. 
+            </p>
+        </li><li original-id="EV5-s3a10t2p1o2l4" internal-id="li-EV5-c-j-b-a-b-d">
+            <p original-id="EV5-s3a10t2p1o2l4p1" internal-id="p-EV5-c-j-b-a-b-d-a">
+Fails to span and linearly independent, so not a basis.
+            </p>
+        </li></ol>
+</p>
+      </slide>
+      <slide>
+        <title>Activity 2.5.5 (~15 min)</title>
+        <p original-id="EV5-s3a10i1p1" internal-id="p-EV5-c-j-a-a">
+  Take the RREF of an appropriate matrix to determine
+  if each of the following sets is a basis for <m original-id="EV5-s3a10i1p1m1" internal-id="m-EV5-c-j-a-a-a">\IR^4</m>.
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="EV5-s3a10t3p1" internal-id="p-EV5-c-j-c-a">
+    <me original-id="EV5-s3a10t3p1m1" internal-id="me-EV5-c-j-c-a-a">
+        \left\{
+            \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+            \left[\begin{array}{c}2\\0\\0\\3\end{array}\right],
+            \left[\begin{array}{c}4\\3\\0\\2\end{array}\right],
+            \left[\begin{array}{c}-3\\0\\1\\3\end{array}\right]
+            \right\}
+  </me>
+  <ol marker="A." original-id="EV5-s3a10t3p1o2" internal-id="ol-EV5-c-j-c-a-b"><li original-id="EV5-s3a10t3p1o2l1" internal-id="li-EV5-c-j-c-a-b-a">
+        <p original-id="EV5-s3a10t3p1o2l1p1" internal-id="p-EV5-c-j-c-a-b-a-a">
+A basis because it both spans and is linearly independent.   
+        </p>
+    </li><li original-id="EV5-s3a10t3p1o2l2" internal-id="li-EV5-c-j-c-a-b-b">
+        <p original-id="EV5-s3a10t3p1o2l2p1" internal-id="p-EV5-c-j-c-a-b-b-a">
+Spans, but not a basis as it is linearly dependent.   
+        </p>
+    </li><li original-id="EV5-s3a10t3p1o2l3" internal-id="li-EV5-c-j-c-a-b-c">
+        <p original-id="EV5-s3a10t3p1o2l3p1" internal-id="p-EV5-c-j-c-a-b-c-a">
+Linearly independent, but not a basis as it fails to span. 
+        </p>
+    </li><li original-id="EV5-s3a10t3p1o2l4" internal-id="li-EV5-c-j-c-a-b-d">
+        <p original-id="EV5-s3a10t3p1o2l4p1" internal-id="p-EV5-c-j-c-a-b-d-a">
+Fails to span and linearly independent, so not a basis.
+        </p>
+    </li></ol>
+</p>
+      </slide>
+      <slide>
+        <title>Activity 2.5.5 (~15 min)</title>
+        <p original-id="EV5-s3a10i1p1" internal-id="p-EV5-c-j-a-a">
+  Take the RREF of an appropriate matrix to determine
+  if each of the following sets is a basis for <m original-id="EV5-s3a10i1p1m1" internal-id="m-EV5-c-j-a-a-a">\IR^4</m>.
+        </p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <p original-id="EV5-s3a10t4p1" internal-id="p-EV5-c-j-d-a">
+    <me original-id="EV5-s3a10t4p1m1" internal-id="me-EV5-c-j-d-a-a">
+        \left\{
+            \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+            \left[\begin{array}{c}2\\0\\0\\3\end{array}\right],
+            \left[\begin{array}{c}3\\13\\7\\16\end{array}\right],
+            \left[\begin{array}{c}-1\\10\\7\\14\end{array}\right],
+            \left[\begin{array}{c}4\\3\\0\\2\end{array}\right]
+            \right\}
+  </me>
+  <ol marker="A." original-id="EV5-s3a10t4p1o2" internal-id="ol-EV5-c-j-d-a-b"><li original-id="EV5-s3a10t4p1o2l1" internal-id="li-EV5-c-j-d-a-b-a">
+        <p original-id="EV5-s3a10t4p1o2l1p1" internal-id="p-EV5-c-j-d-a-b-a-a">
+A basis because it both spans and is linearly independent.   
+        </p>
+    </li><li original-id="EV5-s3a10t4p1o2l2" internal-id="li-EV5-c-j-d-a-b-b">
+        <p original-id="EV5-s3a10t4p1o2l2p1" internal-id="p-EV5-c-j-d-a-b-b-a">
+Spans, but not a basis as it is linearly dependent.   
+        </p>
+    </li><li original-id="EV5-s3a10t4p1o2l3" internal-id="li-EV5-c-j-d-a-b-c">
+        <p original-id="EV5-s3a10t4p1o2l3p1" internal-id="p-EV5-c-j-d-a-b-c-a">
+Linearly independent, but not a basis as it fails to span. 
+        </p>
+    </li><li original-id="EV5-s3a10t4p1o2l4" internal-id="li-EV5-c-j-d-a-b-d">
+        <p original-id="EV5-s3a10t4p1o2l4p1" internal-id="p-EV5-c-j-d-a-b-d-a">
+Fails to span and linearly independent, so not a basis.
+        </p>
+    </li></ol>
+</p>
+      </slide>
+      <slide>
+        <title>Activity 2.5.5 (~15 min)</title>
+        <p original-id="EV5-s3a10i1p1" internal-id="p-EV5-c-j-a-a">
+  Take the RREF of an appropriate matrix to determine
+  if each of the following sets is a basis for <m original-id="EV5-s3a10i1p1m1" internal-id="m-EV5-c-j-a-a-a">\IR^4</m>.
+        </p>
+        <p>
+          <em>Part 4.</em>
+        </p>
+        <p original-id="EV5-s3a10t5p1" internal-id="p-EV5-c-j-e-a">
+    <me original-id="EV5-s3a10t5p1m1" internal-id="me-EV5-c-j-e-a-a">
+        \left\{
+            \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+            \left[\begin{array}{c}4\\3\\0\\2\end{array}\right],
+            \left[\begin{array}{c}-3\\0\\1\\3\end{array}\right],
+            \left[\begin{array}{c}3\\6\\1\\5\end{array}\right]
+            \right\}
+  </me>
+  <ol marker="A." original-id="EV5-s3a10t5p1o2" internal-id="ol-EV5-c-j-e-a-b"><li original-id="EV5-s3a10t5p1o2l1" internal-id="li-EV5-c-j-e-a-b-a">
+        <p original-id="EV5-s3a10t5p1o2l1p1" internal-id="p-EV5-c-j-e-a-b-a-a">
+A basis because it both spans and is linearly independent.   
+        </p>
+    </li><li original-id="EV5-s3a10t5p1o2l2" internal-id="li-EV5-c-j-e-a-b-b">
+        <p original-id="EV5-s3a10t5p1o2l2p1" internal-id="p-EV5-c-j-e-a-b-b-a">
+Spans, but not a basis as it is linearly dependent.   
+        </p>
+    </li><li original-id="EV5-s3a10t5p1o2l3" internal-id="li-EV5-c-j-e-a-b-c">
+        <p original-id="EV5-s3a10t5p1o2l3p1" internal-id="p-EV5-c-j-e-a-b-c-a">
+Linearly independent, but not a basis as it fails to span. 
+        </p>
+    </li><li original-id="EV5-s3a10t5p1o2l4" internal-id="li-EV5-c-j-e-a-b-d">
+        <p original-id="EV5-s3a10t5p1o2l4p1" internal-id="p-EV5-c-j-e-a-b-d-a">
+Fails to span and linearly independent, so not a basis.
+        </p>
+    </li></ol>
+</p>
+      </slide>
+      <slide>
+        <title>Activity 2.5.5 (~15 min)</title>
+        <p original-id="EV5-s3a10i1p1" internal-id="p-EV5-c-j-a-a">
+  Take the RREF of an appropriate matrix to determine
+  if each of the following sets is a basis for <m original-id="EV5-s3a10i1p1m1" internal-id="m-EV5-c-j-a-a-a">\IR^4</m>.
+        </p>
+        <p>
+          <em>Part 5.</em>
+        </p>
+        <p original-id="EV5-s3a10t6p1" internal-id="p-EV5-c-j-f-a">
+    <me original-id="EV5-s3a10t6p1m1" internal-id="me-EV5-c-j-f-a-a">
+        \left\{
+            \left[\begin{array}{c}5\\3\\0\\-1\end{array}\right],
+            \left[\begin{array}{c}-2\\1\\0\\3\end{array}\right],
+            \left[\begin{array}{c}4\\5\\1\\3\end{array}\right]
+            \right\}
+  </me>
+  <ol marker="A." original-id="EV5-s3a10t6p1o2" internal-id="ol-EV5-c-j-f-a-b"><li original-id="EV5-s3a10t6p1o2l1" internal-id="li-EV5-c-j-f-a-b-a">
+        <p original-id="EV5-s3a10t6p1o2l1p1" internal-id="p-EV5-c-j-f-a-b-a-a">
+A basis because it both spans and is linearly independent.   
+        </p>
+    </li><li original-id="EV5-s3a10t6p1o2l2" internal-id="li-EV5-c-j-f-a-b-b">
+        <p original-id="EV5-s3a10t6p1o2l2p1" internal-id="p-EV5-c-j-f-a-b-b-a">
+Spans, but not a basis as it is linearly dependent.   
+        </p>
+    </li><li original-id="EV5-s3a10t6p1o2l3" internal-id="li-EV5-c-j-f-a-b-c">
+        <p original-id="EV5-s3a10t6p1o2l3p1" internal-id="p-EV5-c-j-f-a-b-c-a">
+Linearly independent, but not a basis as it fails to span. 
+        </p>
+    </li><li original-id="EV5-s3a10t6p1o2l4" internal-id="li-EV5-c-j-f-a-b-d">
+        <p original-id="EV5-s3a10t6p1o2l4p1" internal-id="p-EV5-c-j-f-a-b-d-a">
+Fails to span and linearly independent, so not a basis.
+        </p>
+    </li></ol>
+</p>
+      </slide>
+      <slide>
+        <title>Activity 2.5.6 (~10 min)</title>
+        <p original-id="EV5-s3a12s1p1" internal-id="p-EV5-c-l-a-a">
+  If <m original-id="EV5-s3a12s1p1m1" internal-id="m-EV5-c-l-a-a-a">\{\vec v_1,\vec v_2,\vec v_3,\vec v_4\}</m> is a basis for
+  <m original-id="EV5-s3a12s1p1m2" internal-id="m-EV5-c-l-a-a-b">\IR^4</m>, that means <m original-id="EV5-s3a12s1p1m3" internal-id="m-EV5-c-l-a-a-c">\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]</m>
+  has a pivot in every row (because it spans), and has a pivot in every column
+  (because it's linearly independent).
+        </p>
+        <p original-id="EV5-s3a12s1p2" internal-id="p-EV5-c-l-a-b">
+            What is <m original-id="EV5-s3a12s1p2m1" internal-id="m-EV5-c-l-a-b-a">\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]</m>?
+  <me original-id="EV5-s3a12s1p2m2" internal-id="me-EV5-c-l-a-b-b">
+    \RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]
+      =
+    \left[\begin{array}{cccc}
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+    \end{array}\right]
+  </me>
+</p>
+      </slide>
+      <slide>
+        <title>Fact 2.5.4 </title>
+        <p original-id="EV5-s3f13s1p1" internal-id="p-EV5-c-m-a-a">
+  The set <m original-id="EV5-s3f13s1p1m1" internal-id="m-EV5-c-m-a-a-a">\{\vec v_1,\dots,\vec v_m\}</m> is a basis for <m original-id="EV5-s3f13s1p1m2" internal-id="m-EV5-c-m-a-a-b">\IR^n</m> if and
+  only if <m original-id="EV5-s3f13s1p1m3" internal-id="m-EV5-c-m-a-a-c">m=n</m> and
+  <m original-id="EV5-s3f13s1p1m4" internal-id="m-EV5-c-m-a-a-d">\RREF[\vec v_1\,\dots\,\vec v_n]=
+  \left[\begin{array}{cccc}
+    1&amp;0&amp;\dots&amp;0\\
+    0&amp;1&amp;\dots&amp;0\\
+    \vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+    0&amp;0&amp;\dots&amp;1
+  \end{array}\right]
+  </m>.
+            </p>
+        <p original-id="EV5-s3f13s1p2" internal-id="p-EV5-c-m-a-b">
+  That is, a basis for <m original-id="EV5-s3f13s1p2m1" internal-id="m-EV5-c-m-a-b-a">\IR^n</m> must have exactly <m original-id="EV5-s3f13s1p2m2" internal-id="m-EV5-c-m-a-b-b">n</m> vectors and
+  its square matrix must row-reduce to the so-called <term original-id="EV5-s3f13s1p2t3" internal-id="term-EV5-c-m-a-b-c">identity matrix</term><idx original-id="EV5-s3f13s1p2i4" internal-id="idx-EV5-c-m-a-b-d">identity matrix</idx>
+  containing all zeros except for a downward diagonal of ones.
+  (We will learn where the identity matrix gets its name in a later module.)
+            </p>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>

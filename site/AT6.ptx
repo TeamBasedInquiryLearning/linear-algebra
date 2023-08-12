@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <docinfo xml:base="meta/docinfo.ptx" original-id="root-p1d1" internal-id="docinfo-root--a-a">
+    <document-id original-id="root-p1d1d1" internal-id="document-id-root--a-a-a">tbilla</document-id>
+    <initialism original-id="root-p1d1i2" internal-id="initialism-root--a-a-b">TBIL-LA</initialism>
+    <blurb shelf="math" original-id="root-p1d1b3" internal-id="blurb-root--a-a-c">Activities and exercises for easily implementing Team-Based Inquiry Learning in a single-variable calculus classroom.</blurb>
+    <macros original-id="root-p1d1m4" internal-id="macros-root--a-a-d">
+\newcommand{\markedPivot}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{%
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{%
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{%
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+    </macros>
+    <latex-image-preamble original-id="root-p1d1l5" internal-id="latex-image-preamble-root--a-a-e">
+\usepackage{tikz}
+\usepackage{tikz-cd}
+    </latex-image-preamble>
+    <rename element="objectives" xml:lang="en-US" original-id="root-p1d1r6" internal-id="rename-root--a-a-f" locale-lang="en-US">Learning Outcomes</rename>
+    <numbering original-id="root-p1d1n7" internal-id="numbering-root--a-a-g">
+      <figures level="0" original-id="root-p1d1n7f1" internal-id="figures-root--a-a-g-a"/>
+    </numbering>
+    <!-- Specify the default type of cross reference:           -->
+    <cross-references text="type-global" original-id="root-p1d1c8" internal-id="cross-references-root--a-a-h"/>
+  </docinfo>
+  <slideshow>
+    <title original-id="linear-algebra-for-team-based-inquiry-learning-t1" internal-id="title-linear-algebra-for-team-based-inquiry-learning-a">Linear Algebra for Team-Based Inquiry Learning</title>
+    <subtitle component="main" original-id="linear-algebra-for-team-based-inquiry-learning-s2" internal-id="subtitle-linear-algebra-for-team-based-inquiry-learning-b">2023 Edition</subtitle>
+    <frontmatter>
+      <titlepage original-id="frontmatter-t1" internal-id="titlepage-frontmatter-a">
+        <author original-id="frontmatter-t1a1" internal-id="author-frontmatter-a-a">
+          <personname original-id="frontmatter-t1a1p1" internal-id="personname-frontmatter-a-a-a">Steven Clontz</personname>
+          <department original-id="frontmatter-t1a1d2" internal-id="department-frontmatter-a-a-b">Department of Mathematics and Statistics</department>
+          <institution original-id="frontmatter-t1a1i3" internal-id="institution-frontmatter-a-a-c">University of South Alabama</institution>
+          <email original-id="frontmatter-t1a1e4" internal-id="email-frontmatter-a-a-d">sclontz@southalabama.edu</email>
+        </author>
+        <author original-id="frontmatter-t1a2" internal-id="author-frontmatter-a-b">
+          <personname original-id="frontmatter-t1a2p1" internal-id="personname-frontmatter-a-b-a">Drew Lewis</personname>
+          <email original-id="frontmatter-t1a2e2" internal-id="email-frontmatter-a-b-b">drew.lewis@gmail.com</email>
+        </author>
+        <credit original-id="frontmatter-t1c3" internal-id="credit-frontmatter-a-c">
+    <title original-id="frontmatter-t1c3t1" internal-id="title-frontmatter-a-c-a">Contributing Authors</title>
+    <author original-id="frontmatter-t1c3a2" internal-id="author-frontmatter-a-c-b"><personname original-id="frontmatter-t1c3a2p1" internal-id="personname-frontmatter-a-c-b-a">Jessalyn Bolkema</personname><department original-id="frontmatter-t1c3a2d2" internal-id="department-frontmatter-a-c-b-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a2i3" internal-id="institution-frontmatter-a-c-b-c">California State University, Dominguez Hills</institution><email original-id="frontmatter-t1c3a2e4" internal-id="email-frontmatter-a-c-b-d">jbolkema@csudh.edu</email></author>
+    <author original-id="frontmatter-t1c3a3" internal-id="author-frontmatter-a-c-c"><personname original-id="frontmatter-t1c3a3p1" internal-id="personname-frontmatter-a-c-c-a">Jeff Ford</personname><department original-id="frontmatter-t1c3a3d2" internal-id="department-frontmatter-a-c-c-b">Department of Mathematics, Computer Science, and Statistics</department><institution original-id="frontmatter-t1c3a3i3" internal-id="institution-frontmatter-a-c-c-c">Gustavus Adolphus College</institution><email original-id="frontmatter-t1c3a3e4" internal-id="email-frontmatter-a-c-c-d">jford@gustavus.edu</email></author>
+    <author original-id="frontmatter-t1c3a4" internal-id="author-frontmatter-a-c-d"><personname original-id="frontmatter-t1c3a4p1" internal-id="personname-frontmatter-a-c-d-a">Sharona Krinsky</personname><department original-id="frontmatter-t1c3a4d2" internal-id="department-frontmatter-a-c-d-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a4i3" internal-id="institution-frontmatter-a-c-d-c">California State University, Los Angeles</institution><email original-id="frontmatter-t1c3a4e4" internal-id="email-frontmatter-a-c-d-d">skrinsk@calstatela.edu</email></author>
+    <author original-id="frontmatter-t1c3a5" internal-id="author-frontmatter-a-c-e"><personname original-id="frontmatter-t1c3a5p1" internal-id="personname-frontmatter-a-c-e-a">Jennifer Nordstrom</personname><department original-id="frontmatter-t1c3a5d2" internal-id="department-frontmatter-a-c-e-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a5i3" internal-id="institution-frontmatter-a-c-e-c">Linfield University</institution><email original-id="frontmatter-t1c3a5e4" internal-id="email-frontmatter-a-c-e-d">jnordstrom@linfield.edu</email></author>
+    <author original-id="frontmatter-t1c3a6" internal-id="author-frontmatter-a-c-f"><personname original-id="frontmatter-t1c3a6p1" internal-id="personname-frontmatter-a-c-f-a">Kate Owens</personname><department original-id="frontmatter-t1c3a6d2" internal-id="department-frontmatter-a-c-f-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a6i3" internal-id="institution-frontmatter-a-c-f-c">College of Charleston</institution><email original-id="frontmatter-t1c3a6e4" internal-id="email-frontmatter-a-c-f-d">owensks@cofc.edu</email></author>
+  </credit>
+        <date original-id="frontmatter-t1d4" internal-id="date-frontmatter-a-d">
+          <today original-id="frontmatter-t1d4t1" internal-id="today-frontmatter-a-d-a"/>
+        </date>
+      </titlepage>
+    </frontmatter>
+    <section>
+      <title>Section 3.6:
+        Polynomial and Matrix Spaces (AT6) </title>
+      <slide>
+        <title>Observation 3.6.1 </title>
+        <p original-id="AT6-s3o2p1" internal-id="p-AT6-c-b-a">
+Nearly every term we've defined for Euclidean vector spaces <m original-id="AT6-s3o2p1m1" internal-id="m-AT6-c-b-a-a">\mathbb R^n</m>
+was actually defined for all kinds of vector spaces:
+        <ul cols="2" original-id="AT6-s3o2p1u2" internal-id="ul-AT6-c-b-a-b"><li original-id="AT6-s3o2p1u2l1" internal-id="li-AT6-c-b-a-b-a">
+                <p original-id="AT6-s3o2p1u2l1p1" internal-id="p-AT6-c-b-a-b-a-a">
+                    Definition 2.1.2 
+                </p>
+            </li><li original-id="AT6-s3o2p1u2l2" internal-id="li-AT6-c-b-a-b-b">
+                <p original-id="AT6-s3o2p1u2l2p1" internal-id="p-AT6-c-b-a-b-b-a">
+                    Definition 2.1.3 
+                </p>
+            </li><li original-id="AT6-s3o2p1u2l3" internal-id="li-AT6-c-b-a-b-c">
+                <p original-id="AT6-s3o2p1u2l3p1" internal-id="p-AT6-c-b-a-b-c-a">
+                    Definition 2.3.1 
+                </p>
+            </li><li original-id="AT6-s3o2p1u2l4" internal-id="li-AT6-c-b-a-b-d">
+                <p original-id="AT6-s3o2p1u2l4p1" internal-id="p-AT6-c-b-a-b-d-a">
+                    Definition 2.4.1 
+                </p>
+            </li><li original-id="AT6-s3o2p1u2l5" internal-id="li-AT6-c-b-a-b-e">
+                <p original-id="AT6-s3o2p1u2l5p1" internal-id="p-AT6-c-b-a-b-e-a">
+                    Definition 2.5.1 
+                </p>
+            </li><li original-id="AT6-s3o2p1u2l6" internal-id="li-AT6-c-b-a-b-f">
+                <p original-id="AT6-s3o2p1u2l6p1" internal-id="p-AT6-c-b-a-b-f-a">
+                    Definition 3.1.1 
+                </p>
+            </li><li original-id="AT6-s3o2p1u2l7" internal-id="li-AT6-c-b-a-b-g">
+                <p original-id="AT6-s3o2p1u2l7p1" internal-id="p-AT6-c-b-a-b-g-a">
+                    Definition 3.1.2 
+                </p>
+            </li><li original-id="AT6-s3o2p1u2l8" internal-id="li-AT6-c-b-a-b-h">
+                <p original-id="AT6-s3o2p1u2l8p1" internal-id="p-AT6-c-b-a-b-h-a">
+                    Definition 3.3.1 
+                </p>
+            </li><li original-id="AT6-s3o2p1u2l9" internal-id="li-AT6-c-b-a-b-i">
+                <p original-id="AT6-s3o2p1u2l9p1" internal-id="p-AT6-c-b-a-b-i-a">
+                    Definition 3.3.2 
+                </p>
+            </li><li original-id="AT6-s3o2p1u2l10" internal-id="li-AT6-c-b-a-b-j">
+                <p original-id="AT6-s3o2p1u2l10p1" internal-id="p-AT6-c-b-a-b-j-a">
+                    Definition 3.4.1 
+                </p>
+            </li><li original-id="AT6-s3o2p1u2l11" internal-id="li-AT6-c-b-a-b-k">
+                <p original-id="AT6-s3o2p1u2l11p1" internal-id="p-AT6-c-b-a-b-k-a">
+                    Definition 3.4.2 
+                </p>
+            </li><li original-id="AT6-s3o2p1u2l12" internal-id="li-AT6-c-b-a-b-l">
+                <p original-id="AT6-s3o2p1u2l12p1" internal-id="p-AT6-c-b-a-b-l-a">
+                    Definition 3.4.5 
+                </p>
+            </li></ul>
+    </p>
+      </slide>
+      <slide>
+        <title>Activity 3.6.1 </title>
+        <p original-id="AT6-s3a3s1p1" internal-id="p-AT6-c-c-a-a">
+Let <m original-id="AT6-s3a3s1p1m1" internal-id="m-AT6-c-c-a-a-a">V</m> be a vector space with the basis <m original-id="AT6-s3a3s1p1m2" internal-id="m-AT6-c-c-a-a-b">\{\vec v_1,\vec v_2,\vec v_3\}</m>.
+Which of these completes the following definition for a bijective linear map
+<m original-id="AT6-s3a3s1p1m3" internal-id="m-AT6-c-c-a-a-c">T:V\to\mathbb R^3</m>?
+<me original-id="AT6-s3a3s1p1m4" internal-id="me-AT6-c-c-a-a-d">T(\vec v)=T(a\vec v_1+b\vec v_2+c\vec v_3)=\left[\begin{array}{c}
+    \unknown\\\unknown\\\unknown
+  \end{array}\right]</me>
+  <ol marker="A." cols="3" original-id="AT6-s3a3s1p1o5" internal-id="ol-AT6-c-c-a-a-e"><li original-id="AT6-s3a3s1p1o5l1" internal-id="li-AT6-c-c-a-a-e-a"><p original-id="AT6-s3a3s1p1o5l1p1" internal-id="p-AT6-c-c-a-a-e-a-a"><m original-id="AT6-s3a3s1p1o5l1p1m1" internal-id="m-AT6-c-c-a-a-e-a-a-a">\left[\begin{array}{c}
+        0\\ 0\\ 0
+      \end{array}\right]</m></p></li><li original-id="AT6-s3a3s1p1o5l2" internal-id="li-AT6-c-c-a-a-e-b"><p original-id="AT6-s3a3s1p1o5l2p1" internal-id="p-AT6-c-c-a-a-e-b-a"><m original-id="AT6-s3a3s1p1o5l2p1m1" internal-id="m-AT6-c-c-a-a-e-b-a-a">\left[\begin{array}{c}
+        a+b+c\\ 0\\ 0
+    \end{array}\right]</m></p></li><li original-id="AT6-s3a3s1p1o5l3" internal-id="li-AT6-c-c-a-a-e-c"><p original-id="AT6-s3a3s1p1o5l3p1" internal-id="p-AT6-c-c-a-a-e-c-a"><m original-id="AT6-s3a3s1p1o5l3p1m1" internal-id="m-AT6-c-c-a-a-e-c-a-a">\left[\begin{array}{c}
+        a\\ b\\ c
+        \end{array}\right]</m></p></li></ol>
+        </p>
+      </slide>
+      <slide>
+        <title>Fact 3.6.2 </title>
+        <p original-id="AT6-s3f4s1p1" internal-id="p-AT6-c-d-a-a">
+  Every vector space with finite dimension, that is, every
+  vector space <m original-id="AT6-s3f4s1p1m1" internal-id="m-AT6-c-d-a-a-a">V</m> with a basis of the form
+  <m original-id="AT6-s3f4s1p1m2" internal-id="m-AT6-c-d-a-a-b">\{\vec v_1,\vec v_2,\dots,\vec v_n\}</m> has a linear bijection <m original-id="AT6-s3f4s1p1m3" internal-id="m-AT6-c-d-a-a-c">T</m>
+  with Euclidean space <m original-id="AT6-s3f4s1p1m4" internal-id="m-AT6-c-d-a-a-d">\IR^n</m> that simply swaps its basis with
+  the standard basis <m original-id="AT6-s3f4s1p1m5" internal-id="m-AT6-c-d-a-a-e">\{\vec e_1,\vec e_2,\dots,\vec e_n\}</m> for <m original-id="AT6-s3f4s1p1m6" internal-id="m-AT6-c-d-a-a-f">\IR^n</m>:
+  <me original-id="AT6-s3f4s1p1m7" internal-id="me-AT6-c-d-a-a-g">
+    T(c_1\vec v_1+c_2\vec v_2+\dots+c_n\vec v_n)
+    =
+    c_1\vec e_1+c_2\vec e_2+\dots+c_n\vec e_n
+    =
+    \left[\begin{array}{c}
+      c_1\\c_2\\\vdots\\c_n
+    \end{array}\right]
+  </me>
+  This transformation (in fact, any linear bijection between vector spaces)
+  is called an
+  <term original-id="AT6-s3f4s1p1t8" internal-id="term-AT6-c-d-a-a-h">isomorphism</term><idx original-id="AT6-s3f4s1p1i9" internal-id="idx-AT6-c-d-a-a-i">isomorphism</idx>, and <m original-id="AT6-s3f4s1p1m10" internal-id="m-AT6-c-d-a-a-j">V</m> is said to be
+  <term original-id="AT6-s3f4s1p1t11" internal-id="term-AT6-c-d-a-a-k">isomorphic</term><idx original-id="AT6-s3f4s1p1i12" internal-id="idx-AT6-c-d-a-a-l">isomorphic</idx> to <m original-id="AT6-s3f4s1p1m13" internal-id="m-AT6-c-d-a-a-m">\IR^n</m>.
+</p>
+      </slide>
+      <slide>
+        <title>Activity 3.6.2 </title>
+        <p original-id="AT6-s3a5i1p1" internal-id="p-AT6-c-e-a-a">
+The matrix space <m original-id="AT6-s3a5i1p1m1" internal-id="m-AT6-c-e-a-a-a">M_{2,2}=\left\{\left[\begin{array}{cc}
+    a&amp;b\\c&amp;d
+\end{array}\right]\middle| a,b,c,d\in\IR\right\}</m> has the basis
+<me original-id="AT6-s3a5i1p1m2" internal-id="me-AT6-c-e-a-a-b">
+\left\{
+\left[\begin{array}{cc}
+    1&amp;0\\0&amp;0
+\end{array}\right],
+\left[\begin{array}{cc}
+    0&amp;1\\0&amp;0
+\end{array}\right],
+\left[\begin{array}{cc}
+    0&amp;0\\1&amp;0
+\end{array}\right],
+\left[\begin{array}{cc}
+    0&amp;0\\0&amp;1
+\end{array}\right]
+\right\}
+</me>.
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <statement original-id="AT6-s3a5t2s1" internal-id="statement-AT6-c-e-b-a">
+          <p original-id="AT6-s3a5t2s1p1" internal-id="p-AT6-c-e-b-a-a">
+                Which Euclidean space is <m original-id="AT6-s3a5t2s1p1m1" internal-id="m-AT6-c-e-b-a-a-a">M_{2,2}</m> isomorphic to?
+                <ol marker="A." cols="2" original-id="AT6-s3a5t2s1p1o2" internal-id="ol-AT6-c-e-b-a-a-b"><li original-id="AT6-s3a5t2s1p1o2l1" internal-id="li-AT6-c-e-b-a-a-b-a"><m original-id="AT6-s3a5t2s1p1o2l1m1" internal-id="m-AT6-c-e-b-a-a-b-a-a">\IR^2</m></li><li original-id="AT6-s3a5t2s1p1o2l2" internal-id="li-AT6-c-e-b-a-a-b-b"><m original-id="AT6-s3a5t2s1p1o2l2m1" internal-id="m-AT6-c-e-b-a-a-b-b-a">\IR^3</m></li><li original-id="AT6-s3a5t2s1p1o2l3" internal-id="li-AT6-c-e-b-a-a-b-c"><m original-id="AT6-s3a5t2s1p1o2l3m1" internal-id="m-AT6-c-e-b-a-a-b-c-a">\IR^4</m></li><li original-id="AT6-s3a5t2s1p1o2l4" internal-id="li-AT6-c-e-b-a-a-b-d"><m original-id="AT6-s3a5t2s1p1o2l4m1" internal-id="m-AT6-c-e-b-a-a-b-d-a">\IR^5</m></li></ol>
+            </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 3.6.2 </title>
+        <p original-id="AT6-s3a5i1p1" internal-id="p-AT6-c-e-a-a">
+The matrix space <m original-id="AT6-s3a5i1p1m1" internal-id="m-AT6-c-e-a-a-a">M_{2,2}=\left\{\left[\begin{array}{cc}
+    a&amp;b\\c&amp;d
+\end{array}\right]\middle| a,b,c,d\in\IR\right\}</m> has the basis
+<me original-id="AT6-s3a5i1p1m2" internal-id="me-AT6-c-e-a-a-b">
+\left\{
+\left[\begin{array}{cc}
+    1&amp;0\\0&amp;0
+\end{array}\right],
+\left[\begin{array}{cc}
+    0&amp;1\\0&amp;0
+\end{array}\right],
+\left[\begin{array}{cc}
+    0&amp;0\\1&amp;0
+\end{array}\right],
+\left[\begin{array}{cc}
+    0&amp;0\\0&amp;1
+\end{array}\right]
+\right\}
+</me>.
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <statement original-id="AT6-s3a5t3s1" internal-id="statement-AT6-c-e-c-a">
+          <p original-id="AT6-s3a5t3s1p1" internal-id="p-AT6-c-e-c-a-a">
+                Describe an isomorphism <m original-id="AT6-s3a5t3s1p1m1" internal-id="m-AT6-c-e-c-a-a-a">T:M_{2,2}\to\IR^{\unknown}</m>:
+                <me original-id="AT6-s3a5t3s1p1m2" internal-id="me-AT6-c-e-c-a-a-b">
+                    T\left(\left[\begin{array}{cc}
+                        a&amp;b\\c&amp;d
+                    \end{array}\right]\right)=\left[\begin{array}{c}
+                        \unknown\\\\\vdots\\\\\unknown
+                    \end{array}\right]
+                </me>
+            </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 3.6.3 </title>
+        <p original-id="AT6-s3a6i1p1" internal-id="p-AT6-c-f-a-a">
+The polynomial space <m original-id="AT6-s3a6i1p1m1" internal-id="m-AT6-c-f-a-a-a">\P^4=\left\{a+bx+cx^2+dx^3+ex^4\middle| a,b,c,d,e\in\IR\right\}</m> has the basis
+<me original-id="AT6-s3a6i1p1m2" internal-id="me-AT6-c-f-a-a-b">
+\left\{1,x,x^2,x^3,x^4\right\}
+</me>.
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <statement original-id="AT6-s3a6t2s1" internal-id="statement-AT6-c-f-b-a">
+          <p original-id="AT6-s3a6t2s1p1" internal-id="p-AT6-c-f-b-a-a">
+                Which Euclidean space is <m original-id="AT6-s3a6t2s1p1m1" internal-id="m-AT6-c-f-b-a-a-a">\P^4</m> isomorphic to?
+                <ol marker="A." cols="2" original-id="AT6-s3a6t2s1p1o2" internal-id="ol-AT6-c-f-b-a-a-b"><li original-id="AT6-s3a6t2s1p1o2l1" internal-id="li-AT6-c-f-b-a-a-b-a"><m original-id="AT6-s3a6t2s1p1o2l1m1" internal-id="m-AT6-c-f-b-a-a-b-a-a">\IR^2</m></li><li original-id="AT6-s3a6t2s1p1o2l2" internal-id="li-AT6-c-f-b-a-a-b-b"><m original-id="AT6-s3a6t2s1p1o2l2m1" internal-id="m-AT6-c-f-b-a-a-b-b-a">\IR^3</m></li><li original-id="AT6-s3a6t2s1p1o2l3" internal-id="li-AT6-c-f-b-a-a-b-c"><m original-id="AT6-s3a6t2s1p1o2l3m1" internal-id="m-AT6-c-f-b-a-a-b-c-a">\IR^4</m></li><li original-id="AT6-s3a6t2s1p1o2l4" internal-id="li-AT6-c-f-b-a-a-b-d"><m original-id="AT6-s3a6t2s1p1o2l4m1" internal-id="m-AT6-c-f-b-a-a-b-d-a">\IR^5</m></li></ol>
+            </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 3.6.3 </title>
+        <p original-id="AT6-s3a6i1p1" internal-id="p-AT6-c-f-a-a">
+The polynomial space <m original-id="AT6-s3a6i1p1m1" internal-id="m-AT6-c-f-a-a-a">\P^4=\left\{a+bx+cx^2+dx^3+ex^4\middle| a,b,c,d,e\in\IR\right\}</m> has the basis
+<me original-id="AT6-s3a6i1p1m2" internal-id="me-AT6-c-f-a-a-b">
+\left\{1,x,x^2,x^3,x^4\right\}
+</me>.
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <statement original-id="AT6-s3a6t3s1" internal-id="statement-AT6-c-f-c-a">
+          <p original-id="AT6-s3a6t3s1p1" internal-id="p-AT6-c-f-c-a-a">
+                Describe an isomorphism <m original-id="AT6-s3a6t3s1p1m1" internal-id="m-AT6-c-f-c-a-a-a">T:\P^4\to\IR^{\unknown}</m>:
+                <me original-id="AT6-s3a6t3s1p1m2" internal-id="me-AT6-c-f-c-a-a-b">
+                    T\left(a+bx+cx^2+dx^3+ex^4\right)=\left[\begin{array}{c}
+                        \unknown\\\\\vdots\\\\\unknown
+                    \end{array}\right]
+                </me>
+            </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Remark 3.6.3 </title>
+        <p original-id="AT6-s3r7p1" internal-id="p-AT6-c-g-a">
+Since any finite-dimensional vector space is isomorphic to a Euclidean
+space <m original-id="AT6-s3r7p1m1" internal-id="m-AT6-c-g-a-a">\IR^n</m>, one approach to answering questions about such spaces
+is to answer the corresponding question about <m original-id="AT6-s3r7p1m2" internal-id="m-AT6-c-g-a-b">\IR^n</m>.
+    </p>
+      </slide>
+      <slide>
+        <title>Activity 3.6.4 </title>
+        <p original-id="AT6-s3a8i1p1" internal-id="p-AT6-c-h-a-a">
+Consider how to construct the polynomial <m original-id="AT6-s3a8i1p1m1" internal-id="m-AT6-c-h-a-a-a">x^3+x^2+5x+1</m>
+as a linear combination of polynomials from the set
+<me original-id="AT6-s3a8i1p1m2" internal-id="me-AT6-c-h-a-a-b">\left\{ x^{3} - 2 \, x^{2} + x + 2 , 2 \, x^{2} - 1 , 
+-x^{3} + 3 \, x^{2} + 3 \, x - 2 , x^{3} - 6 \, x^{2} + 9 \, x + 5 \right\}</me>.
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <statement original-id="AT6-s3a8t2s1" internal-id="statement-AT6-c-h-b-a">
+          <p original-id="AT6-s3a8t2s1p1" internal-id="p-AT6-c-h-b-a-a"> Describe the vector space involved in this problem, and an isomorphic Euclidean space and relevant Eucldean vectors that can be used to solve this problem. </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 3.6.4 </title>
+        <p original-id="AT6-s3a8i1p1" internal-id="p-AT6-c-h-a-a">
+Consider how to construct the polynomial <m original-id="AT6-s3a8i1p1m1" internal-id="m-AT6-c-h-a-a-a">x^3+x^2+5x+1</m>
+as a linear combination of polynomials from the set
+<me original-id="AT6-s3a8i1p1m2" internal-id="me-AT6-c-h-a-a-b">\left\{ x^{3} - 2 \, x^{2} + x + 2 , 2 \, x^{2} - 1 , 
+-x^{3} + 3 \, x^{2} + 3 \, x - 2 , x^{3} - 6 \, x^{2} + 9 \, x + 5 \right\}</me>.
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <statement original-id="AT6-s3a8t3s1" internal-id="statement-AT6-c-h-c-a">
+          <p original-id="AT6-s3a8t3s1p1" internal-id="p-AT6-c-h-c-a-a"> Show how to construct an appropriate Euclidean vector from an approriate set of Euclidean vectors. </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 3.6.4 </title>
+        <p original-id="AT6-s3a8i1p1" internal-id="p-AT6-c-h-a-a">
+Consider how to construct the polynomial <m original-id="AT6-s3a8i1p1m1" internal-id="m-AT6-c-h-a-a-a">x^3+x^2+5x+1</m>
+as a linear combination of polynomials from the set
+<me original-id="AT6-s3a8i1p1m2" internal-id="me-AT6-c-h-a-a-b">\left\{ x^{3} - 2 \, x^{2} + x + 2 , 2 \, x^{2} - 1 , 
+-x^{3} + 3 \, x^{2} + 3 \, x - 2 , x^{3} - 6 \, x^{2} + 9 \, x + 5 \right\}</me>.
+        </p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <statement original-id="AT6-s3a8t4s1" internal-id="statement-AT6-c-h-d-a">
+          <p original-id="AT6-s3a8t4s1p1" internal-id="p-AT6-c-h-d-a-a"> Use this result to answer the original question. </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Observation 3.6.4 </title>
+        <p original-id="AT6-s3o9s1p1" internal-id="p-AT6-c-i-a-a">
+  The space of polynomials <m original-id="AT6-s3o9s1p1m1" internal-id="m-AT6-c-i-a-a-a">\P</m> (of <em original-id="AT6-s3o9s1p1e2" internal-id="em-AT6-c-i-a-a-b">any</em> degree)
+  has the basis <m original-id="AT6-s3o9s1p1m3" internal-id="m-AT6-c-i-a-a-c">\{1,x,x^2,x^3,\dots\}</m>,
+  so it is a natural example of an infinite-dimensional vector space.
+        </p>
+        <p original-id="AT6-s3o9s1p2" internal-id="p-AT6-c-i-a-b">
+  Since <m original-id="AT6-s3o9s1p2m1" internal-id="m-AT6-c-i-a-b-a">\P</m> and other infinite-dimensional spaces cannot be treated as
+  an isomorphic finite-dimensional Euclidean space <m original-id="AT6-s3o9s1p2m2" internal-id="m-AT6-c-i-a-b-b">\IR^n</m>, vectors in
+  such spaces cannot be studied by converting them into Euclidean vectors.
+  Fortunately, most of the examples we will be
+  interested in for this course will be finite-dimensional.
+        </p>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>

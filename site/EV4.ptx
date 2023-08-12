@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <docinfo xml:base="meta/docinfo.ptx" original-id="root-p1d1" internal-id="docinfo-root--a-a">
+    <document-id original-id="root-p1d1d1" internal-id="document-id-root--a-a-a">tbilla</document-id>
+    <initialism original-id="root-p1d1i2" internal-id="initialism-root--a-a-b">TBIL-LA</initialism>
+    <blurb shelf="math" original-id="root-p1d1b3" internal-id="blurb-root--a-a-c">Activities and exercises for easily implementing Team-Based Inquiry Learning in a single-variable calculus classroom.</blurb>
+    <macros original-id="root-p1d1m4" internal-id="macros-root--a-a-d">
+\newcommand{\markedPivot}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{%
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{%
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{%
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+    </macros>
+    <latex-image-preamble original-id="root-p1d1l5" internal-id="latex-image-preamble-root--a-a-e">
+\usepackage{tikz}
+\usepackage{tikz-cd}
+    </latex-image-preamble>
+    <rename element="objectives" xml:lang="en-US" original-id="root-p1d1r6" internal-id="rename-root--a-a-f" locale-lang="en-US">Learning Outcomes</rename>
+    <numbering original-id="root-p1d1n7" internal-id="numbering-root--a-a-g">
+      <figures level="0" original-id="root-p1d1n7f1" internal-id="figures-root--a-a-g-a"/>
+    </numbering>
+    <!-- Specify the default type of cross reference:           -->
+    <cross-references text="type-global" original-id="root-p1d1c8" internal-id="cross-references-root--a-a-h"/>
+  </docinfo>
+  <slideshow>
+    <title original-id="linear-algebra-for-team-based-inquiry-learning-t1" internal-id="title-linear-algebra-for-team-based-inquiry-learning-a">Linear Algebra for Team-Based Inquiry Learning</title>
+    <subtitle component="main" original-id="linear-algebra-for-team-based-inquiry-learning-s2" internal-id="subtitle-linear-algebra-for-team-based-inquiry-learning-b">2023 Edition</subtitle>
+    <frontmatter>
+      <titlepage original-id="frontmatter-t1" internal-id="titlepage-frontmatter-a">
+        <author original-id="frontmatter-t1a1" internal-id="author-frontmatter-a-a">
+          <personname original-id="frontmatter-t1a1p1" internal-id="personname-frontmatter-a-a-a">Steven Clontz</personname>
+          <department original-id="frontmatter-t1a1d2" internal-id="department-frontmatter-a-a-b">Department of Mathematics and Statistics</department>
+          <institution original-id="frontmatter-t1a1i3" internal-id="institution-frontmatter-a-a-c">University of South Alabama</institution>
+          <email original-id="frontmatter-t1a1e4" internal-id="email-frontmatter-a-a-d">sclontz@southalabama.edu</email>
+        </author>
+        <author original-id="frontmatter-t1a2" internal-id="author-frontmatter-a-b">
+          <personname original-id="frontmatter-t1a2p1" internal-id="personname-frontmatter-a-b-a">Drew Lewis</personname>
+          <email original-id="frontmatter-t1a2e2" internal-id="email-frontmatter-a-b-b">drew.lewis@gmail.com</email>
+        </author>
+        <credit original-id="frontmatter-t1c3" internal-id="credit-frontmatter-a-c">
+    <title original-id="frontmatter-t1c3t1" internal-id="title-frontmatter-a-c-a">Contributing Authors</title>
+    <author original-id="frontmatter-t1c3a2" internal-id="author-frontmatter-a-c-b"><personname original-id="frontmatter-t1c3a2p1" internal-id="personname-frontmatter-a-c-b-a">Jessalyn Bolkema</personname><department original-id="frontmatter-t1c3a2d2" internal-id="department-frontmatter-a-c-b-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a2i3" internal-id="institution-frontmatter-a-c-b-c">California State University, Dominguez Hills</institution><email original-id="frontmatter-t1c3a2e4" internal-id="email-frontmatter-a-c-b-d">jbolkema@csudh.edu</email></author>
+    <author original-id="frontmatter-t1c3a3" internal-id="author-frontmatter-a-c-c"><personname original-id="frontmatter-t1c3a3p1" internal-id="personname-frontmatter-a-c-c-a">Jeff Ford</personname><department original-id="frontmatter-t1c3a3d2" internal-id="department-frontmatter-a-c-c-b">Department of Mathematics, Computer Science, and Statistics</department><institution original-id="frontmatter-t1c3a3i3" internal-id="institution-frontmatter-a-c-c-c">Gustavus Adolphus College</institution><email original-id="frontmatter-t1c3a3e4" internal-id="email-frontmatter-a-c-c-d">jford@gustavus.edu</email></author>
+    <author original-id="frontmatter-t1c3a4" internal-id="author-frontmatter-a-c-d"><personname original-id="frontmatter-t1c3a4p1" internal-id="personname-frontmatter-a-c-d-a">Sharona Krinsky</personname><department original-id="frontmatter-t1c3a4d2" internal-id="department-frontmatter-a-c-d-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a4i3" internal-id="institution-frontmatter-a-c-d-c">California State University, Los Angeles</institution><email original-id="frontmatter-t1c3a4e4" internal-id="email-frontmatter-a-c-d-d">skrinsk@calstatela.edu</email></author>
+    <author original-id="frontmatter-t1c3a5" internal-id="author-frontmatter-a-c-e"><personname original-id="frontmatter-t1c3a5p1" internal-id="personname-frontmatter-a-c-e-a">Jennifer Nordstrom</personname><department original-id="frontmatter-t1c3a5d2" internal-id="department-frontmatter-a-c-e-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a5i3" internal-id="institution-frontmatter-a-c-e-c">Linfield University</institution><email original-id="frontmatter-t1c3a5e4" internal-id="email-frontmatter-a-c-e-d">jnordstrom@linfield.edu</email></author>
+    <author original-id="frontmatter-t1c3a6" internal-id="author-frontmatter-a-c-f"><personname original-id="frontmatter-t1c3a6p1" internal-id="personname-frontmatter-a-c-f-a">Kate Owens</personname><department original-id="frontmatter-t1c3a6d2" internal-id="department-frontmatter-a-c-f-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a6i3" internal-id="institution-frontmatter-a-c-f-c">College of Charleston</institution><email original-id="frontmatter-t1c3a6e4" internal-id="email-frontmatter-a-c-f-d">owensks@cofc.edu</email></author>
+  </credit>
+        <date original-id="frontmatter-t1d4" internal-id="date-frontmatter-a-d">
+          <today original-id="frontmatter-t1d4t1" internal-id="today-frontmatter-a-d-a"/>
+        </date>
+      </titlepage>
+    </frontmatter>
+    <section>
+      <title>Section 2.4:
+        Linear Independence (EV4) </title>
+      <slide>
+        <title>Activity 2.4.1 (~10 min)</title>
+        <p original-id="EV4-s3a2s1p1" internal-id="p-EV4-c-b-a-a">
+  Consider the two sets
+            <me original-id="EV4-s3a2s1p1m1" internal-id="me-EV4-c-b-a-a-a">
+    S=\left\{
+  \left[\begin{array}{c}2\\3\\1\end{array}\right],
+  \left[\begin{array}{c}1\\1\\4\end{array}\right]
+  \right\} \hspace{3em}
+    T=\left\{
+  \left[\begin{array}{c}2\\3\\1\end{array}\right],
+  \left[\begin{array}{c}1\\1\\4\end{array}\right],
+  \left[\begin{array}{c}-1\\0\\-11\end{array}\right]
+  \right\}
+            </me>.
+  Which of the following is true?
+        </p>
+        <ol marker="A." original-id="EV4-s3a2s1o2" internal-id="ol-EV4-c-b-a-b">
+          <li original-id="EV4-s3a2s1o2l1" internal-id="li-EV4-c-b-a-b-a"> <m original-id="EV4-s3a2s1o2l1m1" internal-id="m-EV4-c-b-a-b-a-a">\vspan S</m> is bigger than <m original-id="EV4-s3a2s1o2l1m2" internal-id="m-EV4-c-b-a-b-a-b">\vspan T</m>.
+    </li>
+          <li original-id="EV4-s3a2s1o2l2" internal-id="li-EV4-c-b-a-b-b"> <m original-id="EV4-s3a2s1o2l2m1" internal-id="m-EV4-c-b-a-b-b-a">\vspan S</m> and <m original-id="EV4-s3a2s1o2l2m2" internal-id="m-EV4-c-b-a-b-b-b">\vspan T</m> are the same size.
+    </li>
+          <li original-id="EV4-s3a2s1o2l3" internal-id="li-EV4-c-b-a-b-c"> <m original-id="EV4-s3a2s1o2l3m1" internal-id="m-EV4-c-b-a-b-c-a">\vspan S</m> is smaller than <m original-id="EV4-s3a2s1o2l3m2" internal-id="m-EV4-c-b-a-b-c-b">\vspan T</m>.
+    </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Definition 2.4.1 </title>
+        <p original-id="EV4-definition-independence-s1p1" internal-id="p-EV4-definition-independence-a-a">
+  We say that a set of vectors is <term original-id="EV4-definition-independence-s1p1t1" internal-id="term-EV4-definition-independence-a-a-a">linearly dependent</term><idx original-id="EV4-definition-independence-s1p1i2" internal-id="idx-EV4-definition-independence-a-a-b">linearly dependent</idx> if one vector
+  in the set belongs to the span of the others. Otherwise, we say the set
+  is <term original-id="EV4-definition-independence-s1p1t3" internal-id="term-EV4-definition-independence-a-a-c">linearly independent</term>.<idx original-id="EV4-definition-independence-s1p1i4" internal-id="idx-EV4-definition-independence-a-a-d">linearly independent</idx>
+        </p>
+        <figure original-id="EV4-figure-linearly-dependent" label="EV4-figure-linearly-dependent" internal-id="figure-EV4-figure-linearly-dependent">
+          <image source="generated/latex-image/EV4-image-linearly-dependent.svg"/>
+          <caption original-id="EV4-figure-linearly-dependent-c2" internal-id="caption-EV4-figure-linearly-dependent-b">A linearly dependent set of three vectors</caption>
+        </figure>
+        <p original-id="EV4-definition-independence-s1p3" internal-id="p-EV4-definition-independence-a-c">
+  You can think of linearly dependent sets as containing a redundant vector,
+  in the sense that you can drop a vector out without reducing the span of the set. In the above image, all three vectors lay in the same planar subspace,
+  but only two vectors are needed to span the plane, so the set is
+  linearly dependent.
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.4.2 (~10 min)</title>
+        <p original-id="EV4-s3a4i1p1" internal-id="p-EV4-c-d-a-a">Consider the following three vectors in <m original-id="EV4-s3a4i1p1m1" internal-id="m-EV4-c-d-a-a-a">\IR^3</m>:
+        <me original-id="EV4-s3a4i1p1m2" internal-id="me-EV4-c-d-a-a-b">\vec v_1=\left[\begin{array}{c}-2 \\ 0 \\ 0\end{array}\right],
+    \vec v_2=\left[\begin{array}{c}1 \\ 3 \\ 0\end{array}\right],
+   \text{ and }
+    \vec v_3=\left[\begin{array}{c}-2 \\ 5 \\ 4\end{array}\right]
+  </me>.
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="EV4-s3a4t2p1" internal-id="p-EV4-c-d-b-a">
+            Let <m original-id="EV4-s3a4t2p1m1" internal-id="m-EV4-c-d-b-a-a"> \vec w = 3\vec v_1 - \vec v_2 - 5 \vec v_3 = \left[\begin{array}{c}\unknown \\ \unknown \\ \unknown\end{array}\right]</m>. 
+            The set <m original-id="EV4-s3a4t2p1m2" internal-id="m-EV4-c-d-b-a-b">\{\vec v_1,\vec v_2,\vec v_3,\vec w\}</m> is...
+            <ol marker="A." original-id="EV4-s3a4t2p1o3" internal-id="ol-EV4-c-d-b-a-c"><li original-id="EV4-s3a4t2p1o3l1" internal-id="li-EV4-c-d-b-a-c-a"><p original-id="EV4-s3a4t2p1o3l1p1" internal-id="p-EV4-c-d-b-a-c-a-a">linearly dependent: at least one vector is a linear combination of others</p></li><li original-id="EV4-s3a4t2p1o3l2" internal-id="li-EV4-c-d-b-a-c-b"><p original-id="EV4-s3a4t2p1o3l2p1" internal-id="p-EV4-c-d-b-a-c-b-a">linearly independent: no vector is a linear combination of others</p></li></ol>
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.4.2 (~10 min)</title>
+        <p original-id="EV4-s3a4i1p1" internal-id="p-EV4-c-d-a-a">Consider the following three vectors in <m original-id="EV4-s3a4i1p1m1" internal-id="m-EV4-c-d-a-a-a">\IR^3</m>:
+        <me original-id="EV4-s3a4i1p1m2" internal-id="me-EV4-c-d-a-a-b">\vec v_1=\left[\begin{array}{c}-2 \\ 0 \\ 0\end{array}\right],
+    \vec v_2=\left[\begin{array}{c}1 \\ 3 \\ 0\end{array}\right],
+   \text{ and }
+    \vec v_3=\left[\begin{array}{c}-2 \\ 5 \\ 4\end{array}\right]
+  </me>.
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="EV4-s3a4t3p1" internal-id="p-EV4-c-d-c-a">
+       Find <me original-id="EV4-s3a4t3p1m1" internal-id="me-EV4-c-d-c-a-a">\RREF \left[\begin{array}{cccc}
+        \vec v_1 &amp; \vec v_2  &amp; \vec v_3  &amp; \vec w \\
+            \end{array}\right]= 
+        \RREF \left[\begin{array}{cccc}
+        -2 &amp; 1 &amp;-2 &amp; \unknown \\
+        0 &amp; 3  &amp; 5 &amp; \unknown  \\
+        0 &amp;0 &amp;4 &amp; \unknown 
+            \end{array}\right]=  \unknown .</me>
+        </p>
+        <p original-id="EV4-s3a4t3p2" internal-id="p-EV4-c-d-c-b">   
+            What does this tell you about solution set for the vector equation 
+            <m original-id="EV4-s3a4t3p2m1" internal-id="m-EV4-c-d-c-b-a">x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3 + x_4\vec w=\vec{0}</m>?
+            <ol marker="A." original-id="EV4-s3a4t3p2o2" internal-id="ol-EV4-c-d-c-b-b"><li original-id="EV4-s3a4t3p2o2l1" internal-id="li-EV4-c-d-c-b-b-a">
+                    <p original-id="EV4-s3a4t3p2o2l1p1" internal-id="p-EV4-c-d-c-b-b-a-a">
+                    It is inconsistent.
+                    </p>
+                </li><li original-id="EV4-s3a4t3p2o2l2" internal-id="li-EV4-c-d-c-b-b-b">
+                    <p original-id="EV4-s3a4t3p2o2l2p1" internal-id="p-EV4-c-d-c-b-b-b-a">
+                    It is consistent with one solution.
+                    </p>
+                </li><li original-id="EV4-s3a4t3p2o2l3" internal-id="li-EV4-c-d-c-b-b-c">
+                    <p original-id="EV4-s3a4t3p2o2l3p1" internal-id="p-EV4-c-d-c-b-b-c-a">
+                    It is consistent with infinitely many solutions.
+                    </p>
+                </li></ol>
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.4.2 (~10 min)</title>
+        <p original-id="EV4-s3a4i1p1" internal-id="p-EV4-c-d-a-a">Consider the following three vectors in <m original-id="EV4-s3a4i1p1m1" internal-id="m-EV4-c-d-a-a-a">\IR^3</m>:
+        <me original-id="EV4-s3a4i1p1m2" internal-id="me-EV4-c-d-a-a-b">\vec v_1=\left[\begin{array}{c}-2 \\ 0 \\ 0\end{array}\right],
+    \vec v_2=\left[\begin{array}{c}1 \\ 3 \\ 0\end{array}\right],
+   \text{ and }
+    \vec v_3=\left[\begin{array}{c}-2 \\ 5 \\ 4\end{array}\right]
+  </me>.
+        </p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <p original-id="EV4-s3a4t4p1" internal-id="p-EV4-c-d-d-a">
+                Which of these might explain the connection?
+                <ol marker="A." original-id="EV4-s3a4t4p1o1" internal-id="ol-EV4-c-d-d-a-a"><li original-id="EV4-s3a4t4p1o1l1" internal-id="li-EV4-c-d-d-a-a-a">
+                        <p original-id="EV4-s3a4t4p1o1l1p1" internal-id="p-EV4-c-d-d-a-a-a-a">
+A pivot column establishes linear independence and creates a
+contradiction.
+                        </p>
+                    </li><li original-id="EV4-s3a4t4p1o1l2" internal-id="li-EV4-c-d-d-a-a-b">
+                        <p original-id="EV4-s3a4t4p1o1l2p1" internal-id="p-EV4-c-d-d-a-a-b-a">
+A non-pivot column both describes a linear combination and
+reveals the number of solutions.
+                        </p>
+                    </li><li original-id="EV4-s3a4t4p1o1l3" internal-id="li-EV4-c-d-d-a-a-c">
+                        <p original-id="EV4-s3a4t4p1o1l3p1" internal-id="p-EV4-c-d-d-a-a-c-a">
+A pivot row describes the bound variables and prevents
+a contradiction.
+                        </p>
+                    </li><li original-id="EV4-s3a4t4p1o1l4" internal-id="li-EV4-c-d-d-a-a-d">
+                        <p original-id="EV4-s3a4t4p1o1l4p1" internal-id="p-EV4-c-d-d-a-a-d-a">
+A non-pivot row prevents contradictions and makes the vector
+equation solvable.
+                        </p>
+                    </li></ol>
+            </p>
+      </slide>
+      <slide>
+        <title>Fact 2.4.2 </title>
+        <p original-id="EV4-s3f5s1p1" internal-id="p-EV4-c-e-a-a">
+  For any vector space,
+  the set <m original-id="EV4-s3f5s1p1m1" internal-id="m-EV4-c-e-a-a-a">\{\vec v_1,\dots\vec v_n\}</m> is linearly dependent if and only
+  if the vector equation <m original-id="EV4-s3f5s1p1m2" internal-id="m-EV4-c-e-a-a-b">x_1\vec v_1+ x_2 \vec v_2+\dots+x_n\vec v_n=\vec{0}</m> is consistent with
+  infinitely many solutions.
+        </p>
+        <p original-id="EV4-s3f5s1p2" internal-id="p-EV4-c-e-a-b">
+   Likewise, the set of vectors
+        <m original-id="EV4-s3f5s1p2m1" internal-id="m-EV4-c-e-a-b-a">\{\vec v_1,\dots\vec v_n\}</m> is linearly independent 
+        if and only the vector equation <me original-id="EV4-s3f5s1p2m2" internal-id="me-EV4-c-e-a-b-b">x_1\vec v_1+ x_2 \vec v_2 + \cdots + x_n\vec v_n = 0</me> 
+        has exactly one solution: <m original-id="EV4-s3f5s1p2m3" internal-id="m-EV4-c-e-a-b-c">\left[\begin{array}{c}
+            x_1 \\ \vdots  \\ x_n
+                \end{array}\right]=\left[\begin{array}{c}
+                0 \\ \vdots  \\ 0
+                    \end{array}\right]</m>.
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.4.3 (~10 min)</title>
+        <p original-id="EV4-s3a6s1p1" internal-id="p-EV4-c-f-a-a">
+  Find
+  <me original-id="EV4-s3a6s1p1m1" internal-id="me-EV4-c-f-a-a-a">\RREF\left[\begin{array}{ccccc|c}
+  2&amp;2&amp;3&amp;-1&amp;4&amp;0\\
+  3&amp;0&amp;13&amp;10&amp;3&amp;0\\
+  0&amp;0&amp;7&amp;7&amp;0&amp;0\\
+  -1&amp;3&amp;16&amp;14&amp;1&amp;0
+  \end{array}\right]
+  </me>
+  and mark the part of the matrix that demonstrates that
+  <me original-id="EV4-s3a6s1p1m2" internal-id="me-EV4-c-f-a-a-b">S=\left\{
+  \left[\begin{array}{c}2\\3\\0\\-1\end{array}\right],
+  \left[\begin{array}{c}2\\0\\0\\3\end{array}\right],
+  \left[\begin{array}{c}3\\13\\7\\16\end{array}\right],
+  \left[\begin{array}{c}-1\\10\\7\\14\end{array}\right],
+  \left[\begin{array}{c}4\\3\\0\\1\end{array}\right]
+  \right\}
+  </me>
+  is linearly dependent (the part that shows its linear system has
+  infinitely many solutions).
+        </p>
+      </slide>
+      <slide>
+        <title>Observation 2.4.3 </title>
+        <p original-id="def_of_LI-s1p1" internal-id="p-def_of_LI-a-a">
+  Compare the following results:
+        </p>
+        <ul original-id="def_of_LI-s1u2" internal-id="ul-def_of_LI-a-b">
+          <li original-id="def_of_LI-s1u2l1" internal-id="li-def_of_LI-a-b-a">
+        <p original-id="def_of_LI-s1u2l1p1" internal-id="p-def_of_LI-a-b-a-a">
+        A set of <m original-id="def_of_LI-s1u2l1p1m1" internal-id="m-def_of_LI-a-b-a-a-a">\IR^m</m> vectors
+      <m original-id="def_of_LI-s1u2l1p1m2" internal-id="m-def_of_LI-a-b-a-a-b">\{\vec v_1,\dots\vec v_n\}</m> is linearly independent if and only
+      if <m original-id="def_of_LI-s1u2l1p1m3" internal-id="m-def_of_LI-a-b-a-a-c">\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]</m>
+      has all pivot <em original-id="def_of_LI-s1u2l1p1e4" internal-id="em-def_of_LI-a-b-a-a-d">columns</em>.
+        </p>
+      </li>
+          <li original-id="def_of_LI-s1u2l2" internal-id="li-def_of_LI-a-b-b">
+          <p original-id="def_of_LI-s1u2l2p1" internal-id="p-def_of_LI-a-b-b-a">
+          A set of <m original-id="def_of_LI-s1u2l2p1m1" internal-id="m-def_of_LI-a-b-b-a-a">\IR^m</m> vectors
+        <m original-id="def_of_LI-s1u2l2p1m2" internal-id="m-def_of_LI-a-b-b-a-b">\{\vec v_1,\dots\vec v_n\}</m> is linearly dependent if and only
+        if <m original-id="def_of_LI-s1u2l2p1m3" internal-id="m-def_of_LI-a-b-b-a-c">\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]</m>
+        has at least one non-pivot <em original-id="def_of_LI-s1u2l2p1e4" internal-id="em-def_of_LI-a-b-b-a-d">column</em>.
+          </p>
+        </li>
+          <li original-id="def_of_LI-s1u2l3" internal-id="li-def_of_LI-a-b-c">
+            <p original-id="def_of_LI-s1u2l3p1" internal-id="p-def_of_LI-a-b-c-a">
+            A set of <m original-id="def_of_LI-s1u2l3p1m1" internal-id="m-def_of_LI-a-b-c-a-a">\IR^m</m> vectors
+          <m original-id="def_of_LI-s1u2l3p1m2" internal-id="m-def_of_LI-a-b-c-a-b">\{\vec v_1,\dots\vec v_n\}</m> spans <m original-id="def_of_LI-s1u2l3p1m3" internal-id="m-def_of_LI-a-b-c-a-c">\IR^m</m> if and only
+          if <m original-id="def_of_LI-s1u2l3p1m4" internal-id="m-def_of_LI-a-b-c-a-d">\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]</m>
+          has all pivot <em original-id="def_of_LI-s1u2l3p1e5" internal-id="em-def_of_LI-a-b-c-a-e">rows</em>.
+            </p>
+          </li>
+          <li original-id="def_of_LI-s1u2l4" internal-id="li-def_of_LI-a-b-d">
+          <p original-id="def_of_LI-s1u2l4p1" internal-id="p-def_of_LI-a-b-d-a">
+          A set of <m original-id="def_of_LI-s1u2l4p1m1" internal-id="m-def_of_LI-a-b-d-a-a">\IR^m</m> vectors
+        <m original-id="def_of_LI-s1u2l4p1m2" internal-id="m-def_of_LI-a-b-d-a-b">\{\vec v_1,\dots\vec v_n\}</m> fails to span <m original-id="def_of_LI-s1u2l4p1m3" internal-id="m-def_of_LI-a-b-d-a-c">\IR^m</m> if and only
+        if <m original-id="def_of_LI-s1u2l4p1m4" internal-id="m-def_of_LI-a-b-d-a-d">\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]</m>
+        has at least one non-pivot <em original-id="def_of_LI-s1u2l4p1e5" internal-id="em-def_of_LI-a-b-d-a-e">row</em>.
+          </p>
+        </li>
+        </ul>
+      </slide>
+      <slide>
+        <title>Activity 2.4.4 </title>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <introduction original-id="EV4-s3a9t1i1" internal-id="introduction-EV4-c-i-a-a">
+          <p original-id="EV4-s3a9t1i1p1" internal-id="p-EV4-c-i-a-a-a"> Write a statement involving the solutions of a vector equation that's equivalent to each claim: </p>
+        </introduction>
+        <slide>
+          <title>Activity 2.4.4 </title>
+          <p>
+            <em>Part 1.</em>
+          </p>
+          <statement original-id="EV4-s3a9t1t2s1" internal-id="statement-EV4-c-i-a-b-a">
+            <p original-id="EV4-s3a9t1t2s1p1" internal-id="p-EV4-c-i-a-b-a-a">
+                    <q original-id="EV4-s3a9t1t2s1p1q1" internal-id="q-EV4-c-i-a-b-a-a-a">The set of vectors <m original-id="EV4-s3a9t1t2s1p1q1m1" internal-id="m-EV4-c-i-a-b-a-a-a-a">\left\{ \left[\begin{array}{c}
+                    1 \\
+                    -1 \\
+                    0 \\
+                    -1
+                    \end{array}\right] , \left[\begin{array}{c}
+                    5 \\
+                    5 \\
+                    3 \\
+                    1
+                    \end{array}\right] , \left[\begin{array}{c}
+                    9 \\
+                    11 \\
+                    6 \\
+                    3
+                    \end{array}\right] \right\}</m> is linearly <em original-id="EV4-s3a9t1t2s1p1q1e2" internal-id="em-EV4-c-i-a-b-a-a-a-b">independent</em>.</q>
+                    </p>
+          </statement>
+        </slide>
+        <slide>
+          <title>Activity 2.4.4 </title>
+          <p>
+            <em>Part 2.</em>
+          </p>
+          <statement original-id="EV4-s3a9t1t3s1" internal-id="statement-EV4-c-i-a-c-a">
+            <p original-id="EV4-s3a9t1t3s1p1" internal-id="p-EV4-c-i-a-c-a-a">
+                    <q original-id="EV4-s3a9t1t3s1p1q1" internal-id="q-EV4-c-i-a-c-a-a-a">The set of vectors <m original-id="EV4-s3a9t1t3s1p1q1m1" internal-id="m-EV4-c-i-a-c-a-a-a-a">\left\{ \left[\begin{array}{c}
+                    1 \\
+                    -1 \\
+                    0 \\
+                    -1
+                    \end{array}\right] , \left[\begin{array}{c}
+                    5 \\
+                    5 \\
+                    3 \\
+                    1
+                    \end{array}\right] , \left[\begin{array}{c}
+                    9 \\
+                    11 \\
+                    6 \\
+                    3
+                    \end{array}\right] \right\}</m> is linearly <em original-id="EV4-s3a9t1t3s1p1q1e2" internal-id="em-EV4-c-i-a-c-a-a-a-b">dependent</em>.</q>
+                </p>
+          </statement>
+        </slide>
+      </slide>
+      <slide>
+        <title>Activity 2.4.4 </title>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <statement original-id="EV4-s3a9t2s1" internal-id="statement-EV4-c-i-b-a">
+          <p original-id="EV4-s3a9t2s1p1" internal-id="p-EV4-c-i-b-a-a"> Explain how to determine which of these statements is true. </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 2.4.5 (~5 min)</title>
+        <p original-id="EV4-s3a11s1p1" internal-id="p-EV4-c-k-a-a">
+What is the largest number of <m original-id="EV4-s3a11s1p1m1" internal-id="m-EV4-c-k-a-a-a">\IR^4</m> vectors that can form a linearly independent set?
+        </p>
+        <ol marker="A." cols="2" original-id="EV4-s3a11s1o2" internal-id="ol-EV4-c-k-a-b">
+          <li original-id="EV4-s3a11s1o2l1" internal-id="li-EV4-c-k-a-b-a">
+    <p original-id="EV4-s3a11s1o2l1p1" internal-id="p-EV4-c-k-a-b-a-a">
+    <m original-id="EV4-s3a11s1o2l1p1m1" internal-id="m-EV4-c-k-a-b-a-a-a">3</m>
+    </p>
+</li>
+          <li original-id="EV4-s3a11s1o2l2" internal-id="li-EV4-c-k-a-b-b">
+    <p original-id="EV4-s3a11s1o2l2p1" internal-id="p-EV4-c-k-a-b-b-a">
+    <m original-id="EV4-s3a11s1o2l2p1m1" internal-id="m-EV4-c-k-a-b-b-a-a">4</m>
+    </p>
+</li>
+          <li original-id="EV4-s3a11s1o2l3" internal-id="li-EV4-c-k-a-b-c">
+    <p original-id="EV4-s3a11s1o2l3p1" internal-id="p-EV4-c-k-a-b-c-a">
+    <m original-id="EV4-s3a11s1o2l3p1m1" internal-id="m-EV4-c-k-a-b-c-a-a">5</m>
+    </p>
+</li>
+          <li original-id="EV4-s3a11s1o2l4" internal-id="li-EV4-c-k-a-b-d">
+    <p original-id="EV4-s3a11s1o2l4p1" internal-id="p-EV4-c-k-a-b-d-a">
+    You can have infinitely many vectors and still be linearly independent.
+    </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 2.4.6 (~5 min)</title>
+        <p original-id="EV4-s3a12s1p1" internal-id="p-EV4-c-l-a-a">
+    Is is possible for the set of Euclidean vectors <m original-id="EV4-s3a12s1p1m1" internal-id="m-EV4-c-l-a-a-a">\{\vec v_1, \vec v_2,\ldots, \vec v_n, \vec 0\}</m>
+    to be linearly independent?
+    <ol marker="A." cols="2" original-id="EV4-s3a12s1p1o2" internal-id="ol-EV4-c-l-a-a-b"><li original-id="EV4-s3a12s1p1o2l1" internal-id="li-EV4-c-l-a-a-b-a">
+        <p original-id="EV4-s3a12s1p1o2l1p1" internal-id="p-EV4-c-l-a-a-b-a-a">
+            Yes
+        </p>
+    </li><li original-id="EV4-s3a12s1p1o2l2" internal-id="li-EV4-c-l-a-a-b-b">
+        <p original-id="EV4-s3a12s1p1o2l2p1" internal-id="p-EV4-c-l-a-a-b-b-a">
+            No
+        </p>
+    </li></ol>
+        </p>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>

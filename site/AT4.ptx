@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <docinfo xml:base="meta/docinfo.ptx" original-id="root-p1d1" internal-id="docinfo-root--a-a">
+    <document-id original-id="root-p1d1d1" internal-id="document-id-root--a-a-a">tbilla</document-id>
+    <initialism original-id="root-p1d1i2" internal-id="initialism-root--a-a-b">TBIL-LA</initialism>
+    <blurb shelf="math" original-id="root-p1d1b3" internal-id="blurb-root--a-a-c">Activities and exercises for easily implementing Team-Based Inquiry Learning in a single-variable calculus classroom.</blurb>
+    <macros original-id="root-p1d1m4" internal-id="macros-root--a-a-d">
+\newcommand{\markedPivot}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{%
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{%
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{%
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+    </macros>
+    <latex-image-preamble original-id="root-p1d1l5" internal-id="latex-image-preamble-root--a-a-e">
+\usepackage{tikz}
+\usepackage{tikz-cd}
+    </latex-image-preamble>
+    <rename element="objectives" xml:lang="en-US" original-id="root-p1d1r6" internal-id="rename-root--a-a-f" locale-lang="en-US">Learning Outcomes</rename>
+    <numbering original-id="root-p1d1n7" internal-id="numbering-root--a-a-g">
+      <figures level="0" original-id="root-p1d1n7f1" internal-id="figures-root--a-a-g-a"/>
+    </numbering>
+    <!-- Specify the default type of cross reference:           -->
+    <cross-references text="type-global" original-id="root-p1d1c8" internal-id="cross-references-root--a-a-h"/>
+  </docinfo>
+  <slideshow>
+    <title original-id="linear-algebra-for-team-based-inquiry-learning-t1" internal-id="title-linear-algebra-for-team-based-inquiry-learning-a">Linear Algebra for Team-Based Inquiry Learning</title>
+    <subtitle component="main" original-id="linear-algebra-for-team-based-inquiry-learning-s2" internal-id="subtitle-linear-algebra-for-team-based-inquiry-learning-b">2023 Edition</subtitle>
+    <frontmatter>
+      <titlepage original-id="frontmatter-t1" internal-id="titlepage-frontmatter-a">
+        <author original-id="frontmatter-t1a1" internal-id="author-frontmatter-a-a">
+          <personname original-id="frontmatter-t1a1p1" internal-id="personname-frontmatter-a-a-a">Steven Clontz</personname>
+          <department original-id="frontmatter-t1a1d2" internal-id="department-frontmatter-a-a-b">Department of Mathematics and Statistics</department>
+          <institution original-id="frontmatter-t1a1i3" internal-id="institution-frontmatter-a-a-c">University of South Alabama</institution>
+          <email original-id="frontmatter-t1a1e4" internal-id="email-frontmatter-a-a-d">sclontz@southalabama.edu</email>
+        </author>
+        <author original-id="frontmatter-t1a2" internal-id="author-frontmatter-a-b">
+          <personname original-id="frontmatter-t1a2p1" internal-id="personname-frontmatter-a-b-a">Drew Lewis</personname>
+          <email original-id="frontmatter-t1a2e2" internal-id="email-frontmatter-a-b-b">drew.lewis@gmail.com</email>
+        </author>
+        <credit original-id="frontmatter-t1c3" internal-id="credit-frontmatter-a-c">
+    <title original-id="frontmatter-t1c3t1" internal-id="title-frontmatter-a-c-a">Contributing Authors</title>
+    <author original-id="frontmatter-t1c3a2" internal-id="author-frontmatter-a-c-b"><personname original-id="frontmatter-t1c3a2p1" internal-id="personname-frontmatter-a-c-b-a">Jessalyn Bolkema</personname><department original-id="frontmatter-t1c3a2d2" internal-id="department-frontmatter-a-c-b-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a2i3" internal-id="institution-frontmatter-a-c-b-c">California State University, Dominguez Hills</institution><email original-id="frontmatter-t1c3a2e4" internal-id="email-frontmatter-a-c-b-d">jbolkema@csudh.edu</email></author>
+    <author original-id="frontmatter-t1c3a3" internal-id="author-frontmatter-a-c-c"><personname original-id="frontmatter-t1c3a3p1" internal-id="personname-frontmatter-a-c-c-a">Jeff Ford</personname><department original-id="frontmatter-t1c3a3d2" internal-id="department-frontmatter-a-c-c-b">Department of Mathematics, Computer Science, and Statistics</department><institution original-id="frontmatter-t1c3a3i3" internal-id="institution-frontmatter-a-c-c-c">Gustavus Adolphus College</institution><email original-id="frontmatter-t1c3a3e4" internal-id="email-frontmatter-a-c-c-d">jford@gustavus.edu</email></author>
+    <author original-id="frontmatter-t1c3a4" internal-id="author-frontmatter-a-c-d"><personname original-id="frontmatter-t1c3a4p1" internal-id="personname-frontmatter-a-c-d-a">Sharona Krinsky</personname><department original-id="frontmatter-t1c3a4d2" internal-id="department-frontmatter-a-c-d-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a4i3" internal-id="institution-frontmatter-a-c-d-c">California State University, Los Angeles</institution><email original-id="frontmatter-t1c3a4e4" internal-id="email-frontmatter-a-c-d-d">skrinsk@calstatela.edu</email></author>
+    <author original-id="frontmatter-t1c3a5" internal-id="author-frontmatter-a-c-e"><personname original-id="frontmatter-t1c3a5p1" internal-id="personname-frontmatter-a-c-e-a">Jennifer Nordstrom</personname><department original-id="frontmatter-t1c3a5d2" internal-id="department-frontmatter-a-c-e-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a5i3" internal-id="institution-frontmatter-a-c-e-c">Linfield University</institution><email original-id="frontmatter-t1c3a5e4" internal-id="email-frontmatter-a-c-e-d">jnordstrom@linfield.edu</email></author>
+    <author original-id="frontmatter-t1c3a6" internal-id="author-frontmatter-a-c-f"><personname original-id="frontmatter-t1c3a6p1" internal-id="personname-frontmatter-a-c-f-a">Kate Owens</personname><department original-id="frontmatter-t1c3a6d2" internal-id="department-frontmatter-a-c-f-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a6i3" internal-id="institution-frontmatter-a-c-f-c">College of Charleston</institution><email original-id="frontmatter-t1c3a6e4" internal-id="email-frontmatter-a-c-f-d">owensks@cofc.edu</email></author>
+  </credit>
+        <date original-id="frontmatter-t1d4" internal-id="date-frontmatter-a-d">
+          <today original-id="frontmatter-t1d4t1" internal-id="today-frontmatter-a-d-a"/>
+        </date>
+      </titlepage>
+    </frontmatter>
+    <section>
+      <title>Section 3.4:
+        Injective and Surjective Linear Maps (AT4) </title>
+      <slide>
+        <title>Definition 3.4.1 </title>
+        <p original-id="AT4-definition-injection-s1p1" internal-id="p-AT4-definition-injection-a-a">
+Let <m original-id="AT4-definition-injection-s1p1m1" internal-id="m-AT4-definition-injection-a-a-a">T: V \rightarrow W</m> be a linear transformation.
+<m original-id="AT4-definition-injection-s1p1m2" internal-id="m-AT4-definition-injection-a-a-b">T</m> is called <term original-id="AT4-definition-injection-s1p1t3" internal-id="term-AT4-definition-injection-a-a-c">injective</term> or <term original-id="AT4-definition-injection-s1p1t4" internal-id="term-AT4-definition-injection-a-a-d">one-to-one</term> if <m original-id="AT4-definition-injection-s1p1m5" internal-id="m-AT4-definition-injection-a-a-e">T</m> does not map two
+distinct vectors to the same place.  More precisely, <m original-id="AT4-definition-injection-s1p1m6" internal-id="m-AT4-definition-injection-a-a-f">T</m> is injective if
+<m original-id="AT4-definition-injection-s1p1m7" internal-id="m-AT4-definition-injection-a-a-g">T(\vec{v}) \neq T(\vec{w})</m> whenever <m original-id="AT4-definition-injection-s1p1m8" internal-id="m-AT4-definition-injection-a-a-h">\vec{v} \neq \vec{w}</m>.
+        </p>
+        <figure original-id="AT4-definition-injection-s1f2" internal-id="figure-AT4-definition-injection-a-b">
+          <caption original-id="AT4-definition-injection-s1f2c1" internal-id="caption-AT4-definition-injection-a-b-a">An injective transformation and a non-injective transformation</caption>
+          <image source="generated/latex-image/AT4-injective-image.svg"/>
+        </figure>
+      </slide>
+      <slide>
+        <title>Activity 3.4.1 (~3 min)</title>
+        <p original-id="AT4-s3a3s1p1" internal-id="p-AT4-c-c-a-a">
+Let <m original-id="AT4-s3a3s1p1m1" internal-id="m-AT4-c-c-a-a-a">T: \IR^3 \rightarrow \IR^2</m> be given by
+<me original-id="AT4-s3a3s1p1m2" internal-id="me-AT4-c-c-a-a-b">
+  T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right]
+</me>
+Is <m original-id="AT4-s3a3s1p1m3" internal-id="m-AT4-c-c-a-a-c">T</m> injective?
+        </p>
+        <ol marker="A." original-id="AT4-s3a3s1o2" internal-id="ol-AT4-c-c-a-b">
+          <li original-id="AT4-s3a3s1o2l1" internal-id="li-AT4-c-c-a-b-a">
+    <p original-id="AT4-s3a3s1o2l1p1" internal-id="p-AT4-c-c-a-b-a-a">
+    Yes, because <m original-id="AT4-s3a3s1o2l1p1m1" internal-id="m-AT4-c-c-a-b-a-a-a">T(\vec v)=T(\vec w)</m> whenever <m original-id="AT4-s3a3s1o2l1p1m2" internal-id="m-AT4-c-c-a-b-a-a-b">\vec v=\vec w</m>.
+    </p>
+</li>
+          <li original-id="AT4-s3a3s1o2l2" internal-id="li-AT4-c-c-a-b-b">
+    <p original-id="AT4-s3a3s1o2l2p1" internal-id="p-AT4-c-c-a-b-b-a">
+    Yes, because <m original-id="AT4-s3a3s1o2l2p1m1" internal-id="m-AT4-c-c-a-b-b-a-a">T(\vec v)\not=T(\vec w)</m> whenever <m original-id="AT4-s3a3s1o2l2p1m2" internal-id="m-AT4-c-c-a-b-b-a-b">\vec v\not=\vec w</m>.
+    </p>
+</li>
+          <li original-id="AT4-s3a3s1o2l3" internal-id="li-AT4-c-c-a-b-c">
+    <p original-id="AT4-s3a3s1o2l3p1" internal-id="p-AT4-c-c-a-b-c-a">
+    No, because 
+  <m original-id="AT4-s3a3s1o2l3p1m1" internal-id="m-AT4-c-c-a-b-c-a-a">
+    T\left(\left[\begin{array}{c}0\\0\\1\end{array}\right]\right)
+      \not=
+    T\left(\left[\begin{array}{c}0\\0\\2\end{array}\right]\right)
+  </m>.
+    </p>
+</li>
+          <li original-id="AT4-s3a3s1o2l4" internal-id="li-AT4-c-c-a-b-d">
+    <p original-id="AT4-s3a3s1o2l4p1" internal-id="p-AT4-c-c-a-b-d-a">
+    No, because 
+  <m original-id="AT4-s3a3s1o2l4p1m1" internal-id="m-AT4-c-c-a-b-d-a-a">
+    T\left(\left[\begin{array}{c}0\\0\\1\end{array}\right]\right)
+      =
+    T\left(\left[\begin{array}{c}0\\0\\2\end{array}\right]\right)
+  </m>.
+    </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 3.4.2 (~2 min)</title>
+        <p original-id="AT4-s3a4s1p1" internal-id="p-AT4-c-d-a-a">
+Let <m original-id="AT4-s3a4s1p1m1" internal-id="m-AT4-c-d-a-a-a">T: \IR^2 \rightarrow \IR^3</m> be given by
+<me original-id="AT4-s3a4s1p1m2" internal-id="me-AT4-c-d-a-a-b">
+  T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \\ 0 \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]
+</me>
+Is <m original-id="AT4-s3a4s1p1m3" internal-id="m-AT4-c-d-a-a-c">T</m> injective?
+        </p>
+        <ol marker="A." original-id="AT4-s3a4s1o2" internal-id="ol-AT4-c-d-a-b">
+          <li original-id="AT4-s3a4s1o2l1" internal-id="li-AT4-c-d-a-b-a">
+    <p original-id="AT4-s3a4s1o2l1p1" internal-id="p-AT4-c-d-a-b-a-a">
+    Yes, because <m original-id="AT4-s3a4s1o2l1p1m1" internal-id="m-AT4-c-d-a-b-a-a-a">T(\vec v)=T(\vec w)</m> whenever <m original-id="AT4-s3a4s1o2l1p1m2" internal-id="m-AT4-c-d-a-b-a-a-b">\vec v=\vec w</m>.
+    </p>
+</li>
+          <li original-id="AT4-s3a4s1o2l2" internal-id="li-AT4-c-d-a-b-b">
+    <p original-id="AT4-s3a4s1o2l2p1" internal-id="p-AT4-c-d-a-b-b-a">
+    Yes, because <m original-id="AT4-s3a4s1o2l2p1m1" internal-id="m-AT4-c-d-a-b-b-a-a">T(\vec v)\not=T(\vec w)</m> whenever <m original-id="AT4-s3a4s1o2l2p1m2" internal-id="m-AT4-c-d-a-b-b-a-b">\vec v\not=\vec w</m>.
+    </p>
+</li>
+          <li original-id="AT4-s3a4s1o2l3" internal-id="li-AT4-c-d-a-b-c">
+    <p original-id="AT4-s3a4s1o2l3p1" internal-id="p-AT4-c-d-a-b-c-a">
+    No, because 
+  <m original-id="AT4-s3a4s1o2l3p1m1" internal-id="m-AT4-c-d-a-b-c-a-a">
+    T\left(\left[\begin{array}{c}1\\2\end{array}\right]\right)
+      \not=
+    T\left(\left[\begin{array}{c}3\\4\end{array}\right]\right)
+  </m>.
+    </p>
+</li>
+          <li original-id="AT4-s3a4s1o2l4" internal-id="li-AT4-c-d-a-b-d">
+    <p original-id="AT4-s3a4s1o2l4p1" internal-id="p-AT4-c-d-a-b-d-a">
+    No, because 
+  <m original-id="AT4-s3a4s1o2l4p1m1" internal-id="m-AT4-c-d-a-b-d-a-a">
+    T\left(\left[\begin{array}{c}1\\2\end{array}\right]\right)
+      =
+    T\left(\left[\begin{array}{c}3\\4\end{array}\right]\right)
+  </m>.
+    </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Definition 3.4.2 </title>
+        <p original-id="AT4-definition-surjection-s1p1" internal-id="p-AT4-definition-surjection-a-a">
+Let <m original-id="AT4-definition-surjection-s1p1m1" internal-id="m-AT4-definition-surjection-a-a-a">T: V \rightarrow W</m> be a linear transformation.
+<m original-id="AT4-definition-surjection-s1p1m2" internal-id="m-AT4-definition-surjection-a-a-b">T</m> is called <term original-id="AT4-definition-surjection-s1p1t3" internal-id="term-AT4-definition-surjection-a-a-c">surjective</term> or <term original-id="AT4-definition-surjection-s1p1t4" internal-id="term-AT4-definition-surjection-a-a-d">onto</term> if every element of <m original-id="AT4-definition-surjection-s1p1m5" internal-id="m-AT4-definition-surjection-a-a-e">W</m> is mapped to by an element of <m original-id="AT4-definition-surjection-s1p1m6" internal-id="m-AT4-definition-surjection-a-a-f">V</m>.  More precisely, for every <m original-id="AT4-definition-surjection-s1p1m7" internal-id="m-AT4-definition-surjection-a-a-g">\vec{w} \in W</m>, there is some <m original-id="AT4-definition-surjection-s1p1m8" internal-id="m-AT4-definition-surjection-a-a-h">\vec{v} \in V</m> with <m original-id="AT4-definition-surjection-s1p1m9" internal-id="m-AT4-definition-surjection-a-a-i">T(\vec{v})=\vec{w}</m>.
+        </p>
+        <figure original-id="AT4-definition-surjection-s1f2" internal-id="figure-AT4-definition-surjection-a-b">
+          <image source="generated/latex-image/AT4-surjective-image.svg"/>
+          <caption original-id="AT4-definition-surjection-s1f2c2" internal-id="caption-AT4-definition-surjection-a-b-b">A surjective transformation and a non-surjective transformation</caption>
+        </figure>
+      </slide>
+      <slide>
+        <title>Activity 3.4.3 (~3 min)</title>
+        <p original-id="AT4-s3a6s1p1" internal-id="p-AT4-c-f-a-a">
+Let <m original-id="AT4-s3a6s1p1m1" internal-id="m-AT4-c-f-a-a-a">T: \IR^2 \rightarrow \IR^3</m> be given by
+<me original-id="AT4-s3a6s1p1m2" internal-id="me-AT4-c-f-a-a-b">
+  T\left(\left[\begin{array}{c}x \\ y \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \\ 0 \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]
+</me>
+Is <m original-id="AT4-s3a6s1p1m3" internal-id="m-AT4-c-f-a-a-c">T</m> surjective?
+        </p>
+        <ol marker="A." original-id="AT4-s3a6s1o2" internal-id="ol-AT4-c-f-a-b">
+          <li original-id="AT4-s3a6s1o2l1" internal-id="li-AT4-c-f-a-b-a">
+    <p original-id="AT4-s3a6s1o2l1p1" internal-id="p-AT4-c-f-a-b-a-a">
+    Yes, because for every <m original-id="AT4-s3a6s1o2l1p1m1" internal-id="m-AT4-c-f-a-b-a-a-a">\vec w=\left[\begin{array}{c}x\\y\\z\end{array}\right]\in\IR^3</m>,
+there exists <m original-id="AT4-s3a6s1o2l1p1m2" internal-id="m-AT4-c-f-a-b-a-a-b">\vec v=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2</m> such that
+<m original-id="AT4-s3a6s1o2l1p1m3" internal-id="m-AT4-c-f-a-b-a-a-c">T(\vec v)=\vec w</m>.
+    </p>
+</li>
+          <li original-id="AT4-s3a6s1o2l2" internal-id="li-AT4-c-f-a-b-b">
+    <p original-id="AT4-s3a6s1o2l2p1" internal-id="p-AT4-c-f-a-b-b-a">
+    No, because 
+  <m original-id="AT4-s3a6s1o2l2p1m1" internal-id="m-AT4-c-f-a-b-b-a-a">
+    T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)
+  </m>
+can never equal
+  <m original-id="AT4-s3a6s1o2l2p1m2" internal-id="m-AT4-c-f-a-b-b-a-b">
+  \left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]
+  </m>.
+    </p>
+</li>
+          <li original-id="AT4-s3a6s1o2l3" internal-id="li-AT4-c-f-a-b-c">
+    <p original-id="AT4-s3a6s1o2l3p1" internal-id="p-AT4-c-f-a-b-c-a">
+    No, because 
+  <m original-id="AT4-s3a6s1o2l3p1m1" internal-id="m-AT4-c-f-a-b-c-a-a">
+    T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)
+  </m>
+can never equal
+  <m original-id="AT4-s3a6s1o2l3p1m2" internal-id="m-AT4-c-f-a-b-c-a-b">
+  \left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]
+  </m>.
+    </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 3.4.4 (~2 min)</title>
+        <p original-id="AT4-s3a7s1p1" internal-id="p-AT4-c-g-a-a">
+Let <m original-id="AT4-s3a7s1p1m1" internal-id="m-AT4-c-g-a-a-a">T: \IR^3 \rightarrow \IR^2</m> be given by
+<me original-id="AT4-s3a7s1p1m2" internal-id="me-AT4-c-g-a-a-b">
+  T\left(\left[\begin{array}{c}x \\ y\\z \end{array}\right] \right)
+    =
+  \left[\begin{array}{c} x \\ y \end{array}\right]
+    \hspace{3em}
+    \text{with standard matrix }
+  \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right]
+</me>
+Is <m original-id="AT4-s3a7s1p1m3" internal-id="m-AT4-c-g-a-a-c">T</m> surjective?
+        </p>
+        <ol marker="A." original-id="AT4-s3a7s1o2" internal-id="ol-AT4-c-g-a-b">
+          <li original-id="AT4-s3a7s1o2l1" internal-id="li-AT4-c-g-a-b-a">
+    <p original-id="AT4-s3a7s1o2l1p1" internal-id="p-AT4-c-g-a-b-a-a">
+    Yes, because for every <m original-id="AT4-s3a7s1o2l1p1m1" internal-id="m-AT4-c-g-a-b-a-a-a">\vec w=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2</m>,
+there exists <m original-id="AT4-s3a7s1o2l1p1m2" internal-id="m-AT4-c-g-a-b-a-a-b">\vec v=\left[\begin{array}{c}x\\y\\42\end{array}\right]\in\IR^3</m> such that
+<m original-id="AT4-s3a7s1o2l1p1m3" internal-id="m-AT4-c-g-a-b-a-a-c">T(\vec v)=\vec w</m>.
+    </p>
+</li>
+          <li original-id="AT4-s3a7s1o2l2" internal-id="li-AT4-c-g-a-b-b">
+    <p original-id="AT4-s3a7s1o2l2p1" internal-id="p-AT4-c-g-a-b-b-a">
+    Yes, because for every <m original-id="AT4-s3a7s1o2l2p1m1" internal-id="m-AT4-c-g-a-b-b-a-a">\vec w=\left[\begin{array}{c}x\\y\end{array}\right]\in\IR^2</m>,
+there exists <m original-id="AT4-s3a7s1o2l2p1m2" internal-id="m-AT4-c-g-a-b-b-a-b">\vec v=\left[\begin{array}{c}0\\0\\z\end{array}\right]\in\IR^3</m> such that
+<m original-id="AT4-s3a7s1o2l2p1m3" internal-id="m-AT4-c-g-a-b-b-a-c">T(\vec v)=\vec w</m>.
+    </p>
+</li>
+          <li original-id="AT4-s3a7s1o2l3" internal-id="li-AT4-c-g-a-b-c">
+    <p original-id="AT4-s3a7s1o2l3p1" internal-id="p-AT4-c-g-a-b-c-a">
+    No, because 
+  <m original-id="AT4-s3a7s1o2l3p1m1" internal-id="m-AT4-c-g-a-b-c-a-a">
+    T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)
+  </m>
+can never equal
+  <m original-id="AT4-s3a7s1o2l3p1m2" internal-id="m-AT4-c-g-a-b-c-a-b">
+  \left[\begin{array}{c} 3\\-2 \end{array}\right]
+  </m>.
+    </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 3.4.5 (~5 min)</title>
+        <p original-id="AT4-s3a8s1p1" internal-id="p-AT4-c-h-a-a">
+Let <m original-id="AT4-s3a8s1p1m1" internal-id="m-AT4-c-h-a-a-a">T: V \rightarrow W</m> be a linear transformation where
+<m original-id="AT4-s3a8s1p1m2" internal-id="m-AT4-c-h-a-a-b">\ker T</m> contains multiple vectors. What can you conclude?
+        </p>
+        <ol marker="A." cols="2" original-id="AT4-s3a8s1o2" internal-id="ol-AT4-c-h-a-b">
+          <li original-id="AT4-s3a8s1o2l1" internal-id="li-AT4-c-h-a-b-a">
+    <p original-id="AT4-s3a8s1o2l1p1" internal-id="p-AT4-c-h-a-b-a-a">
+    <m original-id="AT4-s3a8s1o2l1p1m1" internal-id="m-AT4-c-h-a-b-a-a-a">T</m> is injective
+    </p>
+</li>
+          <li original-id="AT4-s3a8s1o2l2" internal-id="li-AT4-c-h-a-b-b">
+    <p original-id="AT4-s3a8s1o2l2p1" internal-id="p-AT4-c-h-a-b-b-a">
+    <m original-id="AT4-s3a8s1o2l2p1m1" internal-id="m-AT4-c-h-a-b-b-a-a">T</m> is not injective
+    </p>
+</li>
+          <li original-id="AT4-s3a8s1o2l3" internal-id="li-AT4-c-h-a-b-c">
+    <p original-id="AT4-s3a8s1o2l3p1" internal-id="p-AT4-c-h-a-b-c-a">
+    <m original-id="AT4-s3a8s1o2l3p1m1" internal-id="m-AT4-c-h-a-b-c-a-a">T</m> is surjective
+    </p>
+</li>
+          <li original-id="AT4-s3a8s1o2l4" internal-id="li-AT4-c-h-a-b-d">
+    <p original-id="AT4-s3a8s1o2l4p1" internal-id="p-AT4-c-h-a-b-d-a">
+    <m original-id="AT4-s3a8s1o2l4p1m1" internal-id="m-AT4-c-h-a-b-d-a-a">T</m> is not surjective
+    </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Fact 3.4.3 </title>
+        <p original-id="AT4-s3f9s1p1" internal-id="p-AT4-c-i-a-a">
+A linear transformation <m original-id="AT4-s3f9s1p1m1" internal-id="m-AT4-c-i-a-a-a">T</m> is injective <em original-id="AT4-s3f9s1p1e2" internal-id="em-AT4-c-i-a-a-b">if and only if</em> <m original-id="AT4-s3f9s1p1m3" internal-id="m-AT4-c-i-a-a-c">\ker T = \{\vec{0}\}</m>.
+Put another way, an injective linear transformation may be
+recognized by its <term original-id="AT4-s3f9s1p1t4" internal-id="term-AT4-c-i-a-a-d">trivial</term> kernel.
+        </p>
+        <figure original-id="AT4-s3f9s1f2" internal-id="figure-AT4-c-i-a-b">
+          <image source="generated/latex-image/AT4-trivial-kernel-image.svg"/>
+          <caption original-id="AT4-s3f9s1f2c2" internal-id="caption-AT4-c-i-a-b-b">A linear transformation with trivial kernel, which is therefore injective</caption>
+        </figure>
+      </slide>
+      <slide>
+        <title>Activity 3.4.6 (~5 min)</title>
+        <p original-id="AT4-s3a10s1p1" internal-id="p-AT4-c-j-a-a">
+Let <m original-id="AT4-s3a10s1p1m1" internal-id="m-AT4-c-j-a-a-a">T: V \rightarrow \IR^3</m> be a linear transformation where
+<m original-id="AT4-s3a10s1p1m2" internal-id="m-AT4-c-j-a-a-b">\Im T</m> may be spanned by only two vectors.
+What can you conclude?
+        </p>
+        <ol marker="A." cols="2" original-id="AT4-s3a10s1o2" internal-id="ol-AT4-c-j-a-b">
+          <li original-id="AT4-s3a10s1o2l1" internal-id="li-AT4-c-j-a-b-a">
+    <p original-id="AT4-s3a10s1o2l1p1" internal-id="p-AT4-c-j-a-b-a-a">
+    <m original-id="AT4-s3a10s1o2l1p1m1" internal-id="m-AT4-c-j-a-b-a-a-a">T</m> is injective
+    </p>
+</li>
+          <li original-id="AT4-s3a10s1o2l2" internal-id="li-AT4-c-j-a-b-b">
+    <p original-id="AT4-s3a10s1o2l2p1" internal-id="p-AT4-c-j-a-b-b-a">
+    <m original-id="AT4-s3a10s1o2l2p1m1" internal-id="m-AT4-c-j-a-b-b-a-a">T</m> is not injective
+    </p>
+</li>
+          <li original-id="AT4-s3a10s1o2l3" internal-id="li-AT4-c-j-a-b-c">
+    <p original-id="AT4-s3a10s1o2l3p1" internal-id="p-AT4-c-j-a-b-c-a">
+    <m original-id="AT4-s3a10s1o2l3p1m1" internal-id="m-AT4-c-j-a-b-c-a-a">T</m> is surjective
+    </p>
+</li>
+          <li original-id="AT4-s3a10s1o2l4" internal-id="li-AT4-c-j-a-b-d">
+    <p original-id="AT4-s3a10s1o2l4p1" internal-id="p-AT4-c-j-a-b-d-a">
+    <m original-id="AT4-s3a10s1o2l4p1m1" internal-id="m-AT4-c-j-a-b-d-a-a">T</m> is not surjective
+    </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Fact 3.4.4 </title>
+        <p original-id="AT4-s3f11s1p1" internal-id="p-AT4-c-k-a-a">
+A linear transformation <m original-id="AT4-s3f11s1p1m1" internal-id="m-AT4-c-k-a-a-a">T:V \rightarrow W</m> is surjective <em original-id="AT4-s3f11s1p1e2" internal-id="em-AT4-c-k-a-a-b">if and only if</em>
+<m original-id="AT4-s3f11s1p1m3" internal-id="m-AT4-c-k-a-a-c">\Im T = W</m>. Put another way, a surjective linear transformation may be
+recognized by its identical codomain and image.
+        </p>
+        <figure original-id="AT4-s3f11s1f2" internal-id="figure-AT4-c-k-a-b">
+          <image source="generated/latex-image/AT4-codomain-range-image.svg"/>
+          <caption original-id="AT4-s3f11s1f2c2" internal-id="caption-AT4-c-k-a-b-b">A linear transformation with identical codomain and image, which is therefore surjective; and a linear transformation with an image smaller than the codomain <m original-id="AT4-s3f11s1f2c2m1" internal-id="m-AT4-c-k-a-b-b-a">\IR^3</m>, which is therefore not surjective.</caption>
+        </figure>
+      </slide>
+      <slide>
+        <title>Definition 3.4.5 </title>
+        <p original-id="AT4-definition-bijection-s1p1" internal-id="p-AT4-definition-bijection-a-a">
+      A transformation that is both injective and surjective is said to be
+      <term original-id="AT4-definition-bijection-s1p1t1" internal-id="term-AT4-definition-bijection-a-a-a">bijective</term>.
+    </p>
+      </slide>
+      <slide>
+        <title>Activity 3.4.7 (~5 min)</title>
+        <p original-id="AT4-s3a13s1p1" internal-id="p-AT4-c-m-a-a">
+Let <m original-id="AT4-s3a13s1p1m1" internal-id="m-AT4-c-m-a-a-a">T: \IR^n \rightarrow \IR^m</m> be a linear map with standard matrix <m original-id="AT4-s3a13s1p1m2" internal-id="m-AT4-c-m-a-a-b">A</m>.
+Determine whether each of the following statements
+means <m original-id="AT4-s3a13s1p1m3" internal-id="m-AT4-c-m-a-a-c">T</m> is (A) <em original-id="AT4-s3a13s1p1e4" internal-id="em-AT4-c-m-a-a-d">injective</em>, (B) <em original-id="AT4-s3a13s1p1e5" internal-id="em-AT4-c-m-a-a-e">surjective</em>, or
+(C) <em original-id="AT4-s3a13s1p1e6" internal-id="em-AT4-c-m-a-a-f">bijective</em> (both).
+<ol marker="1." original-id="AT4-s3a13s1p1o7" internal-id="ol-AT4-c-m-a-a-g"><li original-id="AT4-s3a13s1p1o7l1" internal-id="li-AT4-c-m-a-a-g-a"><p original-id="AT4-s3a13s1p1o7l1p1" internal-id="p-AT4-c-m-a-a-g-a-a"> The kernel of <m original-id="AT4-s3a13s1p1o7l1p1m1" internal-id="m-AT4-c-m-a-a-g-a-a-a">T</m> is trivial, i.e. <m original-id="AT4-s3a13s1p1o7l1p1m2" internal-id="m-AT4-c-m-a-a-g-a-a-b">\ker T=\{\vec 0\}</m>.
+</p></li><li original-id="AT4-s3a13s1p1o7l2" internal-id="li-AT4-c-m-a-a-g-b"><p original-id="AT4-s3a13s1p1o7l2p1" internal-id="p-AT4-c-m-a-a-g-b-a"> The image of <m original-id="AT4-s3a13s1p1o7l2p1m1" internal-id="m-AT4-c-m-a-a-g-b-a-a">T</m> equals its codomain, i.e. <m original-id="AT4-s3a13s1p1o7l2p1m2" internal-id="m-AT4-c-m-a-a-g-b-a-b">\Im T=\IR^m</m>.
+</p></li><li original-id="AT4-s3a13s1p1o7l3" internal-id="li-AT4-c-m-a-a-g-c"><p original-id="AT4-s3a13s1p1o7l3p1" internal-id="p-AT4-c-m-a-a-g-c-a"> For every <m original-id="AT4-s3a13s1p1o7l3p1m1" internal-id="m-AT4-c-m-a-a-g-c-a-a">\vec w\in \IR^m</m>, the set <m original-id="AT4-s3a13s1p1o7l3p1m2" internal-id="m-AT4-c-m-a-a-g-c-a-b">\{\vec w\in \IR^n|T(\vec v)=\vec w\}</m> contains
+  exactly one vector.
+</p></li></ol>
+</p>
+      </slide>
+      <slide>
+        <title>Activity 3.4.8 (~5 min)</title>
+        <p original-id="AT4-s3a14s1p1" internal-id="p-AT4-c-n-a-a">
+Let <m original-id="AT4-s3a14s1p1m1" internal-id="m-AT4-c-n-a-a-a">T: \IR^n \rightarrow \IR^m</m> be a linear map with standard matrix <m original-id="AT4-s3a14s1p1m2" internal-id="m-AT4-c-n-a-a-b">A</m>.
+Determine whether each of the following statements
+means <m original-id="AT4-s3a14s1p1m3" internal-id="m-AT4-c-n-a-a-c">T</m> is (A) <em original-id="AT4-s3a14s1p1e4" internal-id="em-AT4-c-n-a-a-d">injective</em>, (B) <em original-id="AT4-s3a14s1p1e5" internal-id="em-AT4-c-n-a-a-e">surjective</em>, or
+(C) <em original-id="AT4-s3a14s1p1e6" internal-id="em-AT4-c-n-a-a-f">bijective</em> (both).
+<ol marker="1." original-id="AT4-s3a14s1p1o7" internal-id="ol-AT4-c-n-a-a-g"><li original-id="AT4-s3a14s1p1o7l1" internal-id="li-AT4-c-n-a-a-g-a"><p original-id="AT4-s3a14s1p1o7l1p1" internal-id="p-AT4-c-n-a-a-g-a-a"> The columns of <m original-id="AT4-s3a14s1p1o7l1p1m1" internal-id="m-AT4-c-n-a-a-g-a-a-a">A</m> span <m original-id="AT4-s3a14s1p1o7l1p1m2" internal-id="m-AT4-c-n-a-a-g-a-a-b">\IR^m</m>.
+</p></li><li original-id="AT4-s3a14s1p1o7l2" internal-id="li-AT4-c-n-a-a-g-b"><p original-id="AT4-s3a14s1p1o7l2p1" internal-id="p-AT4-c-n-a-a-g-b-a"> The columns of <m original-id="AT4-s3a14s1p1o7l2p1m1" internal-id="m-AT4-c-n-a-a-g-b-a-a">A</m> form a basis for <m original-id="AT4-s3a14s1p1o7l2p1m2" internal-id="m-AT4-c-n-a-a-g-b-a-b">\IR^m</m>.
+</p></li><li original-id="AT4-s3a14s1p1o7l3" internal-id="li-AT4-c-n-a-a-g-c"><p original-id="AT4-s3a14s1p1o7l3p1" internal-id="p-AT4-c-n-a-a-g-c-a"> The columns of <m original-id="AT4-s3a14s1p1o7l3p1m1" internal-id="m-AT4-c-n-a-a-g-c-a-a">A</m> are linearly independent.
+</p></li></ol>
+</p>
+      </slide>
+      <slide>
+        <title>Activity 3.4.9 (~5 min)</title>
+        <p original-id="AT4-s3a15s1p1" internal-id="p-AT4-c-o-a-a">
+Let <m original-id="AT4-s3a15s1p1m1" internal-id="m-AT4-c-o-a-a-a">T: \IR^n \rightarrow \IR^m</m> be a linear map with standard matrix <m original-id="AT4-s3a15s1p1m2" internal-id="m-AT4-c-o-a-a-b">A</m>.
+Determine whether each of the following statements
+means <m original-id="AT4-s3a15s1p1m3" internal-id="m-AT4-c-o-a-a-c">T</m> is (A) <em original-id="AT4-s3a15s1p1e4" internal-id="em-AT4-c-o-a-a-d">injective</em>, (B) <em original-id="AT4-s3a15s1p1e5" internal-id="em-AT4-c-o-a-a-e">surjective</em>, or
+(C) <em original-id="AT4-s3a15s1p1e6" internal-id="em-AT4-c-o-a-a-f">bijective</em> (both).
+<ol marker="1." original-id="AT4-s3a15s1p1o7" internal-id="ol-AT4-c-o-a-a-g"><li original-id="AT4-s3a15s1p1o7l1" internal-id="li-AT4-c-o-a-a-g-a"><p original-id="AT4-s3a15s1p1o7l1p1" internal-id="p-AT4-c-o-a-a-g-a-a"> <m original-id="AT4-s3a15s1p1o7l1p1m1" internal-id="m-AT4-c-o-a-a-g-a-a-a">\RREF(A)</m> is the identity matrix.
+</p></li><li original-id="AT4-s3a15s1p1o7l2" internal-id="li-AT4-c-o-a-a-g-b"><p original-id="AT4-s3a15s1p1o7l2p1" internal-id="p-AT4-c-o-a-a-g-b-a"> Every column of <m original-id="AT4-s3a15s1p1o7l2p1m1" internal-id="m-AT4-c-o-a-a-g-b-a-a">\RREF(A)</m> has a pivot.
+</p></li><li original-id="AT4-s3a15s1p1o7l3" internal-id="li-AT4-c-o-a-a-g-c"><p original-id="AT4-s3a15s1p1o7l3p1" internal-id="p-AT4-c-o-a-a-g-c-a"> Every row of <m original-id="AT4-s3a15s1p1o7l3p1m1" internal-id="m-AT4-c-o-a-a-g-c-a-a">\RREF(A)</m> has a pivot.
+</p></li></ol>
+</p>
+      </slide>
+      <slide>
+        <title>Activity 3.4.10 (~5 min)</title>
+        <p original-id="AT4-s3a16s1p1" internal-id="p-AT4-c-p-a-a">
+Let <m original-id="AT4-s3a16s1p1m1" internal-id="m-AT4-c-p-a-a-a">T: \IR^n \rightarrow \IR^m</m> be a linear map with standard matrix <m original-id="AT4-s3a16s1p1m2" internal-id="m-AT4-c-p-a-a-b">A</m>.
+Determine whether each of the following statements
+means <m original-id="AT4-s3a16s1p1m3" internal-id="m-AT4-c-p-a-a-c">T</m> is (A) <em original-id="AT4-s3a16s1p1e4" internal-id="em-AT4-c-p-a-a-d">injective</em>, (B) <em original-id="AT4-s3a16s1p1e5" internal-id="em-AT4-c-p-a-a-e">surjective</em>, or
+(C) <em original-id="AT4-s3a16s1p1e6" internal-id="em-AT4-c-p-a-a-f">bijective</em> (both).
+<ol marker="1." original-id="AT4-s3a16s1p1o7" internal-id="ol-AT4-c-p-a-a-g"><li original-id="AT4-s3a16s1p1o7l1" internal-id="li-AT4-c-p-a-a-g-a"><p original-id="AT4-s3a16s1p1o7l1p1" internal-id="p-AT4-c-p-a-a-g-a-a"> The system of linear equations given by the augmented matrix 
+  <m original-id="AT4-s3a16s1p1o7l1p1m1" internal-id="m-AT4-c-p-a-a-g-a-a-a">\left[\begin{array}{c|c}A &amp; \vec{b} \end{array}\right]</m> has a solution for all <m original-id="AT4-s3a16s1p1o7l1p1m2" internal-id="m-AT4-c-p-a-a-g-a-a-b">\vec{b} \in \IR^m</m>.
+</p></li><li original-id="AT4-s3a16s1p1o7l2" internal-id="li-AT4-c-p-a-a-g-b"><p original-id="AT4-s3a16s1p1o7l2p1" internal-id="p-AT4-c-p-a-a-g-b-a"> The system of linear equations given by the augmented matrix 
+  <m original-id="AT4-s3a16s1p1o7l2p1m1" internal-id="m-AT4-c-p-a-a-g-b-a-a">\left[\begin{array}{c|c}A &amp; \vec{b} \end{array}\right]</m> has exactly one solution for all <m original-id="AT4-s3a16s1p1o7l2p1m2" internal-id="m-AT4-c-p-a-a-g-b-a-b">\vec{b} \in \IR^m</m>.
+</p></li><li original-id="AT4-s3a16s1p1o7l3" internal-id="li-AT4-c-p-a-a-g-c"><p original-id="AT4-s3a16s1p1o7l3p1" internal-id="p-AT4-c-p-a-a-g-c-a"> The system of linear equations given by the augmented matrix
+  <m original-id="AT4-s3a16s1p1o7l3p1m1" internal-id="m-AT4-c-p-a-a-g-c-a-a">\left[\begin{array}{c|c} A &amp; \vec{0} \end{array}\right]</m> has exactly one solution.
+</p></li></ol>
+</p>
+      </slide>
+      <slide>
+        <title>Observation 3.4.6 </title>
+        <p original-id="AT4-s3o17p1" internal-id="p-AT4-c-q-a">
+  The easiest way to determine if the linear map with standard matrix <m original-id="AT4-s3o17p1m1" internal-id="m-AT4-c-q-a-a">A</m>
+  is injective is to see if <m original-id="AT4-s3o17p1m2" internal-id="m-AT4-c-q-a-b">\RREF(A)</m> has a pivot in each column.
+        </p>
+        <p original-id="AT4-s3o17p2" internal-id="p-AT4-c-q-b">
+  The easiest way to determine if the linear map with standard matrix <m original-id="AT4-s3o17p2m1" internal-id="m-AT4-c-q-b-a">A</m>
+  is surjective is to see if <m original-id="AT4-s3o17p2m2" internal-id="m-AT4-c-q-b-b">\RREF(A)</m> has a pivot in each row.
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 3.4.11 (~3 min)</title>
+        <p original-id="AT4-s3a18s1p1" internal-id="p-AT4-c-r-a-a">
+  What can you conclude about the linear map 
+  <m original-id="AT4-s3a18s1p1m1" internal-id="m-AT4-c-r-a-a-a">T:\IR^2\to\IR^3</m> with standard matrix 
+  <m original-id="AT4-s3a18s1p1m2" internal-id="m-AT4-c-r-a-a-b">\left[\begin{array}{cc} a &amp; b \\ c &amp; d \\ e &amp; f \end{array}\right]</m>?
+        </p>
+        <ol marker="A." original-id="AT4-s3a18s1o2" internal-id="ol-AT4-c-r-a-b">
+          <li original-id="AT4-s3a18s1o2l1" internal-id="li-AT4-c-r-a-b-a">
+            <p original-id="AT4-s3a18s1o2l1p1" internal-id="p-AT4-c-r-a-b-a-a"> Its standard matrix has more columns than rows, so <m original-id="AT4-s3a18s1o2l1p1m1" internal-id="m-AT4-c-r-a-b-a-a-a">T</m> is not
+    injective.
+    </p>
+          </li>
+          <li original-id="AT4-s3a18s1o2l2" internal-id="li-AT4-c-r-a-b-b">
+            <p original-id="AT4-s3a18s1o2l2p1" internal-id="p-AT4-c-r-a-b-b-a"> Its standard matrix has more columns than rows, so <m original-id="AT4-s3a18s1o2l2p1m1" internal-id="m-AT4-c-r-a-b-b-a-a">T</m> is
+    injective.
+    </p>
+          </li>
+          <li original-id="AT4-s3a18s1o2l3" internal-id="li-AT4-c-r-a-b-c">
+            <p original-id="AT4-s3a18s1o2l3p1" internal-id="p-AT4-c-r-a-b-c-a"> Its standard matrix has more rows than columns, so <m original-id="AT4-s3a18s1o2l3p1m1" internal-id="m-AT4-c-r-a-b-c-a-a">T</m> is not
+    surjective.
+    </p>
+          </li>
+          <li original-id="AT4-s3a18s1o2l4" internal-id="li-AT4-c-r-a-b-d">
+            <p original-id="AT4-s3a18s1o2l4p1" internal-id="p-AT4-c-r-a-b-d-a"> Its standard matrix has more rows than columns, so <m original-id="AT4-s3a18s1o2l4p1m1" internal-id="m-AT4-c-r-a-b-d-a-a">T</m> is
+    surjective.
+    </p>
+          </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 3.4.12 (~2 min)</title>
+        <p original-id="AT4-s3a19s1p1" internal-id="p-AT4-c-s-a-a">
+  What can you conclude about the linear map <m original-id="AT4-s3a19s1p1m1" internal-id="m-AT4-c-s-a-a-a">T:\IR^3\to\IR^2</m> with standard matrix 
+  <m original-id="AT4-s3a19s1p1m2" internal-id="m-AT4-c-s-a-a-b">\left[\begin{array}{ccc} a &amp; b &amp; c \\ d &amp; e &amp; f \end{array}\right]</m>?
+        </p>
+        <ol marker="A." original-id="AT4-s3a19s1o2" internal-id="ol-AT4-c-s-a-b">
+          <li original-id="AT4-s3a19s1o2l1" internal-id="li-AT4-c-s-a-b-a">
+            <p original-id="AT4-s3a19s1o2l1p1" internal-id="p-AT4-c-s-a-b-a-a"> Its standard matrix has more columns than rows, so <m original-id="AT4-s3a19s1o2l1p1m1" internal-id="m-AT4-c-s-a-b-a-a-a">T</m> is not
+    injective.
+    </p>
+          </li>
+          <li original-id="AT4-s3a19s1o2l2" internal-id="li-AT4-c-s-a-b-b">
+            <p original-id="AT4-s3a19s1o2l2p1" internal-id="p-AT4-c-s-a-b-b-a"> Its standard matrix has more columns than rows, so <m original-id="AT4-s3a19s1o2l2p1m1" internal-id="m-AT4-c-s-a-b-b-a-a">T</m> is
+    injective.
+    </p>
+          </li>
+          <li original-id="AT4-s3a19s1o2l3" internal-id="li-AT4-c-s-a-b-c">
+            <p original-id="AT4-s3a19s1o2l3p1" internal-id="p-AT4-c-s-a-b-c-a"> Its standard matrix has more rows than columns, so <m original-id="AT4-s3a19s1o2l3p1m1" internal-id="m-AT4-c-s-a-b-c-a-a">T</m> is not
+    surjective.
+    </p>
+          </li>
+          <li original-id="AT4-s3a19s1o2l4" internal-id="li-AT4-c-s-a-b-d">
+            <p original-id="AT4-s3a19s1o2l4p1" internal-id="p-AT4-c-s-a-b-d-a"> Its standard matrix has more rows than columns, so <m original-id="AT4-s3a19s1o2l4p1m1" internal-id="m-AT4-c-s-a-b-d-a-a">T</m> is
+    surjective.
+    </p>
+          </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Fact 3.4.7 </title>
+        <p original-id="AT4-s3f20s1p1" internal-id="p-AT4-c-t-a-a">The following are true for any linear map <m original-id="AT4-s3f20s1p1m1" internal-id="m-AT4-c-t-a-a-a">T:V\to W</m>:</p>
+        <ul original-id="AT4-s3f20s1u2" internal-id="ul-AT4-c-t-a-b">
+          <li original-id="AT4-s3f20s1u2l1" internal-id="li-AT4-c-t-a-b-a">
+            <p original-id="AT4-s3f20s1u2l1p1" internal-id="p-AT4-c-t-a-b-a-a"> If <m original-id="AT4-s3f20s1u2l1p1m1" internal-id="m-AT4-c-t-a-b-a-a-a">\dim(V)&gt;\dim(W)</m>, then <m original-id="AT4-s3f20s1u2l1p1m2" internal-id="m-AT4-c-t-a-b-a-a-b">T</m> is not injective.
+    </p>
+          </li>
+          <li original-id="AT4-s3f20s1u2l2" internal-id="li-AT4-c-t-a-b-b">
+            <p original-id="AT4-s3f20s1u2l2p1" internal-id="p-AT4-c-t-a-b-b-a"> If <m original-id="AT4-s3f20s1u2l2p1m1" internal-id="m-AT4-c-t-a-b-b-a-a">\dim(V)&lt;\dim(W)</m>, then <m original-id="AT4-s3f20s1u2l2p1m2" internal-id="m-AT4-c-t-a-b-b-a-b">T</m> is not surjective.
+    </p>
+          </li>
+        </ul>
+        <p original-id="AT4-s3f20s1p3" internal-id="p-AT4-c-t-a-c">
+  Basically, a linear transformation cannot reduce dimension without collapsing
+  vectors into each other, and a linear transformation cannot
+  increase dimension from its domain to its image.
+    </p>
+        <figure original-id="AT4-s3f20s1f4" internal-id="figure-AT4-c-t-a-d">
+          <image source="generated/latex-image/AT4-image-dimension.svg"/>
+          <caption original-id="AT4-s3f20s1f4c2" internal-id="caption-AT4-c-t-a-d-b">A linear transformation whose domain has a larger dimension than its codomain, and is therefore not injective; and a linear transformation whose domain has a smaller dimension than its codomain, and is therefore not surjective.</caption>
+        </figure>
+        <p original-id="AT4-s3f20s1p5" internal-id="p-AT4-c-t-a-e">
+  But dimension arguments <em original-id="AT4-s3f20s1p5e1" internal-id="em-AT4-c-t-a-e-a">cannot</em> be used to prove a map <em original-id="AT4-s3f20s1p5e2" internal-id="em-AT4-c-t-a-e-b">is</em>
+  injective or surjective.
+    </p>
+      </slide>
+      <slide>
+        <title>Activity 3.4.13 (~5 min)</title>
+        <p original-id="AT4-s3a21i1p1" internal-id="p-AT4-c-u-a-a">
+Suppose <m original-id="AT4-s3a21i1p1m1" internal-id="m-AT4-c-u-a-a-a">T: \IR^n \rightarrow \IR^4</m> with standard matrix 
+<m original-id="AT4-s3a21i1p1m2" internal-id="m-AT4-c-u-a-a-b">A=\left[\begin{array}{cccc}
+  a_{11}&amp;a_{12}&amp;\cdots&amp;a_{1n}\\
+  a_{21}&amp;a_{22}&amp;\cdots&amp;a_{2n}\\
+  a_{31}&amp;a_{32}&amp;\cdots&amp;a_{3n}\\
+  a_{41}&amp;a_{42}&amp;\cdots&amp;a_{4n}\\
+\end{array}\right]</m> is both 
+injective and surjective (we call such maps <term original-id="AT4-s3a21i1p1t3" internal-id="term-AT4-c-u-a-a-c">bijective</term>).
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="AT4-s3a21t2p1" internal-id="p-AT4-c-u-b-a">
+How many pivot rows must <m original-id="AT4-s3a21t2p1m1" internal-id="m-AT4-c-u-b-a-a">\RREF A</m> have?
+    </p>
+      </slide>
+      <slide>
+        <title>Activity 3.4.13 (~5 min)</title>
+        <p original-id="AT4-s3a21i1p1" internal-id="p-AT4-c-u-a-a">
+Suppose <m original-id="AT4-s3a21i1p1m1" internal-id="m-AT4-c-u-a-a-a">T: \IR^n \rightarrow \IR^4</m> with standard matrix 
+<m original-id="AT4-s3a21i1p1m2" internal-id="m-AT4-c-u-a-a-b">A=\left[\begin{array}{cccc}
+  a_{11}&amp;a_{12}&amp;\cdots&amp;a_{1n}\\
+  a_{21}&amp;a_{22}&amp;\cdots&amp;a_{2n}\\
+  a_{31}&amp;a_{32}&amp;\cdots&amp;a_{3n}\\
+  a_{41}&amp;a_{42}&amp;\cdots&amp;a_{4n}\\
+\end{array}\right]</m> is both 
+injective and surjective (we call such maps <term original-id="AT4-s3a21i1p1t3" internal-id="term-AT4-c-u-a-a-c">bijective</term>).
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="AT4-s3a21t3p1" internal-id="p-AT4-c-u-c-a">
+ How many pivot columns must <m original-id="AT4-s3a21t3p1m1" internal-id="m-AT4-c-u-c-a-a">\RREF A</m> have?
+    </p>
+      </slide>
+      <slide>
+        <title>Activity 3.4.13 (~5 min)</title>
+        <p original-id="AT4-s3a21i1p1" internal-id="p-AT4-c-u-a-a">
+Suppose <m original-id="AT4-s3a21i1p1m1" internal-id="m-AT4-c-u-a-a-a">T: \IR^n \rightarrow \IR^4</m> with standard matrix 
+<m original-id="AT4-s3a21i1p1m2" internal-id="m-AT4-c-u-a-a-b">A=\left[\begin{array}{cccc}
+  a_{11}&amp;a_{12}&amp;\cdots&amp;a_{1n}\\
+  a_{21}&amp;a_{22}&amp;\cdots&amp;a_{2n}\\
+  a_{31}&amp;a_{32}&amp;\cdots&amp;a_{3n}\\
+  a_{41}&amp;a_{42}&amp;\cdots&amp;a_{4n}\\
+\end{array}\right]</m> is both 
+injective and surjective (we call such maps <term original-id="AT4-s3a21i1p1t3" internal-id="term-AT4-c-u-a-a-c">bijective</term>).
+        </p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <p original-id="AT4-s3a21t4p1" internal-id="p-AT4-c-u-d-a">
+What is <m original-id="AT4-s3a21t4p1m1" internal-id="m-AT4-c-u-d-a-a">\RREF A</m>?
+    </p>
+      </slide>
+      <slide>
+        <title>Activity 3.4.14 (~5 min)</title>
+        <p original-id="AT4-s3a22s1p1" internal-id="p-AT4-c-v-a-a">
+Let <m original-id="AT4-s3a22s1p1m1" internal-id="m-AT4-c-v-a-a-a">T: \IR^n \rightarrow \IR^n</m> be a bijective linear map with
+standard matrix <m original-id="AT4-s3a22s1p1m2" internal-id="m-AT4-c-v-a-a-b">A</m>. Label each of the following as true or false.
+        </p>
+        <ol marker="A." original-id="AT4-s3a22s1o2" internal-id="ol-AT4-c-v-a-b">
+          <li original-id="AT4-s3a22s1o2l1" internal-id="li-AT4-c-v-a-b-a">
+            <p original-id="AT4-s3a22s1o2l1p1" internal-id="p-AT4-c-v-a-b-a-a"> <m original-id="AT4-s3a22s1o2l1p1m1" internal-id="m-AT4-c-v-a-b-a-a-a">\RREF(A)</m> is the identity matrix.
+</p>
+          </li>
+          <li original-id="AT4-s3a22s1o2l2" internal-id="li-AT4-c-v-a-b-b">
+            <p original-id="AT4-s3a22s1o2l2p1" internal-id="p-AT4-c-v-a-b-b-a"> The columns of <m original-id="AT4-s3a22s1o2l2p1m1" internal-id="m-AT4-c-v-a-b-b-a-a">A</m> form a basis for <m original-id="AT4-s3a22s1o2l2p1m2" internal-id="m-AT4-c-v-a-b-b-a-b">\IR^n</m>
+</p>
+          </li>
+          <li original-id="AT4-s3a22s1o2l3" internal-id="li-AT4-c-v-a-b-c">
+            <p original-id="AT4-s3a22s1o2l3p1" internal-id="p-AT4-c-v-a-b-c-a"> The system of linear equations given by the augmented matrix <m original-id="AT4-s3a22s1o2l3p1m1" internal-id="m-AT4-c-v-a-b-c-a-a">\left[\begin{array}{c|c} A &amp; \vec{b} \end{array}\right]</m> has exactly one solution
+for each <m original-id="AT4-s3a22s1o2l3p1m2" internal-id="m-AT4-c-v-a-b-c-a-b">\vec b \in \IR^n</m>.
+</p>
+          </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Observation 3.4.8 </title>
+        <p original-id="AT4-s3o23s1p1" internal-id="p-AT4-c-w-a-a">
+  The easiest way to show that the linear map with standard matrix <m original-id="AT4-s3o23s1p1m1" internal-id="m-AT4-c-w-a-a-a">A</m>
+  is bijective is to show that <m original-id="AT4-s3o23s1p1m2" internal-id="m-AT4-c-w-a-a-b">\RREF(A)</m> is the identity matrix.
+    </p>
+      </slide>
+      <slide>
+        <title>Activity 3.4.15 (~3 min)</title>
+        <p original-id="AT4-s3a24s1p1" internal-id="p-AT4-c-x-a-a">
+Let <m original-id="AT4-s3a24s1p1m1" internal-id="m-AT4-c-x-a-a-a">T: \IR^3 \rightarrow \IR^3</m> be given by the standard matrix
+<me original-id="AT4-s3a24s1p1m2" internal-id="me-AT4-c-x-a-a-b">A=\left[\begin{array}{ccc} 2&amp;1&amp;-1 \\ 4&amp;1&amp;1 \\ 6&amp;2&amp;1\end{array}\right].</me>
+Which of the following must be true?
+        </p>
+        <ol marker="A." cols="2" original-id="AT4-s3a24s1o2" internal-id="ol-AT4-c-x-a-b">
+          <li original-id="AT4-s3a24s1o2l1" internal-id="li-AT4-c-x-a-b-a">
+            <p original-id="AT4-s3a24s1o2l1p1" internal-id="p-AT4-c-x-a-b-a-a"> <m original-id="AT4-s3a24s1o2l1p1m1" internal-id="m-AT4-c-x-a-b-a-a-a">T</m> is neither injective nor surjective
+</p>
+          </li>
+          <li original-id="AT4-s3a24s1o2l2" internal-id="li-AT4-c-x-a-b-b">
+            <p original-id="AT4-s3a24s1o2l2p1" internal-id="p-AT4-c-x-a-b-b-a"> <m original-id="AT4-s3a24s1o2l2p1m1" internal-id="m-AT4-c-x-a-b-b-a-a">T</m> is injective but not surjective
+</p>
+          </li>
+          <li original-id="AT4-s3a24s1o2l3" internal-id="li-AT4-c-x-a-b-c">
+            <p original-id="AT4-s3a24s1o2l3p1" internal-id="p-AT4-c-x-a-b-c-a"> <m original-id="AT4-s3a24s1o2l3p1m1" internal-id="m-AT4-c-x-a-b-c-a-a">T</m> is surjective but not injective
+</p>
+          </li>
+          <li original-id="AT4-s3a24s1o2l4" internal-id="li-AT4-c-x-a-b-d">
+            <p original-id="AT4-s3a24s1o2l4p1" internal-id="p-AT4-c-x-a-b-d-a"> <m original-id="AT4-s3a24s1o2l4p1m1" internal-id="m-AT4-c-x-a-b-d-a-a">T</m> is bijective.
+</p>
+          </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 3.4.16 (~3 min)</title>
+        <p original-id="AT4-s3a26s1p1" internal-id="p-AT4-c-z-a-a">
+Let <m original-id="AT4-s3a26s1p1m1" internal-id="m-AT4-c-z-a-a-a">T: \IR^3 \rightarrow \IR^3</m> be given by
+<me original-id="AT4-s3a26s1p1m2" internal-id="me-AT4-c-z-a-a-b">T\left(\left[\begin{array}{ccc} x \\ y  \\ z \end{array}\right] \right) =
+\left[\begin{array}{c} 2x+y-z \\ 4x+y+z \\ 6x+2y\end{array}\right].</me>
+Which of the following must be true?
+        </p>
+        <ol marker="A." cols="2" original-id="AT4-s3a26s1o2" internal-id="ol-AT4-c-z-a-b">
+          <li original-id="AT4-s3a26s1o2l1" internal-id="li-AT4-c-z-a-b-a">
+            <p original-id="AT4-s3a26s1o2l1p1" internal-id="p-AT4-c-z-a-b-a-a"> <m original-id="AT4-s3a26s1o2l1p1m1" internal-id="m-AT4-c-z-a-b-a-a-a">T</m> is neither injective nor surjective
+</p>
+          </li>
+          <li original-id="AT4-s3a26s1o2l2" internal-id="li-AT4-c-z-a-b-b">
+            <p original-id="AT4-s3a26s1o2l2p1" internal-id="p-AT4-c-z-a-b-b-a"> <m original-id="AT4-s3a26s1o2l2p1m1" internal-id="m-AT4-c-z-a-b-b-a-a">T</m> is injective but not surjective
+</p>
+          </li>
+          <li original-id="AT4-s3a26s1o2l3" internal-id="li-AT4-c-z-a-b-c">
+            <p original-id="AT4-s3a26s1o2l3p1" internal-id="p-AT4-c-z-a-b-c-a"> <m original-id="AT4-s3a26s1o2l3p1m1" internal-id="m-AT4-c-z-a-b-c-a-a">T</m> is surjective but not injective
+</p>
+          </li>
+          <li original-id="AT4-s3a26s1o2l4" internal-id="li-AT4-c-z-a-b-d">
+            <p original-id="AT4-s3a26s1o2l4p1" internal-id="p-AT4-c-z-a-b-d-a"> <m original-id="AT4-s3a26s1o2l4p1m1" internal-id="m-AT4-c-z-a-b-d-a-a">T</m> is bijective.
+</p>
+          </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 3.4.17 (~3 min)</title>
+        <p original-id="AT4-s3a28s1p1" internal-id="p-AT4-c-ab-a-a">
+Let <m original-id="AT4-s3a28s1p1m1" internal-id="m-AT4-c-ab-a-a-a">T: \IR^2 \rightarrow \IR^3</m> be given by
+<me original-id="AT4-s3a28s1p1m2" internal-id="me-AT4-c-ab-a-a-b">T\left(\left[\begin{array}{c} x \\ y \end{array}\right] \right) =
+\left[\begin{array}{c} 2x+3y \\ x-y \\ x+3y\end{array}\right].</me>
+Which of the following must be true?
+        </p>
+        <ol marker="A." cols="2" original-id="AT4-s3a28s1o2" internal-id="ol-AT4-c-ab-a-b">
+          <li original-id="AT4-s3a28s1o2l1" internal-id="li-AT4-c-ab-a-b-a">
+            <p original-id="AT4-s3a28s1o2l1p1" internal-id="p-AT4-c-ab-a-b-a-a"> <m original-id="AT4-s3a28s1o2l1p1m1" internal-id="m-AT4-c-ab-a-b-a-a-a">T</m> is neither injective nor surjective
+</p>
+          </li>
+          <li original-id="AT4-s3a28s1o2l2" internal-id="li-AT4-c-ab-a-b-b">
+            <p original-id="AT4-s3a28s1o2l2p1" internal-id="p-AT4-c-ab-a-b-b-a"> <m original-id="AT4-s3a28s1o2l2p1m1" internal-id="m-AT4-c-ab-a-b-b-a-a">T</m> is injective but not surjective
+</p>
+          </li>
+          <li original-id="AT4-s3a28s1o2l3" internal-id="li-AT4-c-ab-a-b-c">
+            <p original-id="AT4-s3a28s1o2l3p1" internal-id="p-AT4-c-ab-a-b-c-a"> <m original-id="AT4-s3a28s1o2l3p1m1" internal-id="m-AT4-c-ab-a-b-c-a-a">T</m> is surjective but not injective
+</p>
+          </li>
+          <li original-id="AT4-s3a28s1o2l4" internal-id="li-AT4-c-ab-a-b-d">
+            <p original-id="AT4-s3a28s1o2l4p1" internal-id="p-AT4-c-ab-a-b-d-a"> <m original-id="AT4-s3a28s1o2l4p1m1" internal-id="m-AT4-c-ab-a-b-d-a-a">T</m> is bijective.
+</p>
+          </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 3.4.18 (~3 min)</title>
+        <p original-id="AT4-s3a30s1p1" internal-id="p-AT4-c-ad-a-a">
+Let <m original-id="AT4-s3a30s1p1m1" internal-id="m-AT4-c-ad-a-a-a">T: \IR^3 \rightarrow \IR^2</m> be given by
+<me original-id="AT4-s3a30s1p1m2" internal-id="me-AT4-c-ad-a-a-b">T\left(\left[\begin{array}{c} x \\ y  \\ z \end{array}\right] \right) =
+\left[\begin{array}{c} 2x+y-z \\ 4x+y+z\end{array}\right].</me>
+Which of the following must be true?
+        </p>
+        <ol marker="A." cols="2" original-id="AT4-s3a30s1o2" internal-id="ol-AT4-c-ad-a-b">
+          <li original-id="AT4-s3a30s1o2l1" internal-id="li-AT4-c-ad-a-b-a">
+            <p original-id="AT4-s3a30s1o2l1p1" internal-id="p-AT4-c-ad-a-b-a-a"> <m original-id="AT4-s3a30s1o2l1p1m1" internal-id="m-AT4-c-ad-a-b-a-a-a">T</m> is neither injective nor surjective
+</p>
+          </li>
+          <li original-id="AT4-s3a30s1o2l2" internal-id="li-AT4-c-ad-a-b-b">
+            <p original-id="AT4-s3a30s1o2l2p1" internal-id="p-AT4-c-ad-a-b-b-a"> <m original-id="AT4-s3a30s1o2l2p1m1" internal-id="m-AT4-c-ad-a-b-b-a-a">T</m> is injective but not surjective
+</p>
+          </li>
+          <li original-id="AT4-s3a30s1o2l3" internal-id="li-AT4-c-ad-a-b-c">
+            <p original-id="AT4-s3a30s1o2l3p1" internal-id="p-AT4-c-ad-a-b-c-a"> <m original-id="AT4-s3a30s1o2l3p1m1" internal-id="m-AT4-c-ad-a-b-c-a-a">T</m> is surjective but not injective
+</p>
+          </li>
+          <li original-id="AT4-s3a30s1o2l4" internal-id="li-AT4-c-ad-a-b-d">
+            <p original-id="AT4-s3a30s1o2l4p1" internal-id="p-AT4-c-ad-a-b-d-a"> <m original-id="AT4-s3a30s1o2l4p1m1" internal-id="m-AT4-c-ad-a-b-d-a-a">T</m> is bijective.
+</p>
+          </li>
+        </ol>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>

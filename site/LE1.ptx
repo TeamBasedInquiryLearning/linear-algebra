@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <docinfo xml:base="meta/docinfo.ptx" original-id="root-p1d1" internal-id="docinfo-root--a-a">
+    <document-id original-id="root-p1d1d1" internal-id="document-id-root--a-a-a">tbilla</document-id>
+    <initialism original-id="root-p1d1i2" internal-id="initialism-root--a-a-b">TBIL-LA</initialism>
+    <blurb shelf="math" original-id="root-p1d1b3" internal-id="blurb-root--a-a-c">Activities and exercises for easily implementing Team-Based Inquiry Learning in a single-variable calculus classroom.</blurb>
+    <macros original-id="root-p1d1m4" internal-id="macros-root--a-a-d">
+\newcommand{\markedPivot}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{%
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{%
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{%
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+    </macros>
+    <latex-image-preamble original-id="root-p1d1l5" internal-id="latex-image-preamble-root--a-a-e">
+\usepackage{tikz}
+\usepackage{tikz-cd}
+    </latex-image-preamble>
+    <rename element="objectives" xml:lang="en-US" original-id="root-p1d1r6" internal-id="rename-root--a-a-f" locale-lang="en-US">Learning Outcomes</rename>
+    <numbering original-id="root-p1d1n7" internal-id="numbering-root--a-a-g">
+      <figures level="0" original-id="root-p1d1n7f1" internal-id="figures-root--a-a-g-a"/>
+    </numbering>
+    <!-- Specify the default type of cross reference:           -->
+    <cross-references text="type-global" original-id="root-p1d1c8" internal-id="cross-references-root--a-a-h"/>
+  </docinfo>
+  <slideshow>
+    <title original-id="linear-algebra-for-team-based-inquiry-learning-t1" internal-id="title-linear-algebra-for-team-based-inquiry-learning-a">Linear Algebra for Team-Based Inquiry Learning</title>
+    <subtitle component="main" original-id="linear-algebra-for-team-based-inquiry-learning-s2" internal-id="subtitle-linear-algebra-for-team-based-inquiry-learning-b">2023 Edition</subtitle>
+    <frontmatter>
+      <titlepage original-id="frontmatter-t1" internal-id="titlepage-frontmatter-a">
+        <author original-id="frontmatter-t1a1" internal-id="author-frontmatter-a-a">
+          <personname original-id="frontmatter-t1a1p1" internal-id="personname-frontmatter-a-a-a">Steven Clontz</personname>
+          <department original-id="frontmatter-t1a1d2" internal-id="department-frontmatter-a-a-b">Department of Mathematics and Statistics</department>
+          <institution original-id="frontmatter-t1a1i3" internal-id="institution-frontmatter-a-a-c">University of South Alabama</institution>
+          <email original-id="frontmatter-t1a1e4" internal-id="email-frontmatter-a-a-d">sclontz@southalabama.edu</email>
+        </author>
+        <author original-id="frontmatter-t1a2" internal-id="author-frontmatter-a-b">
+          <personname original-id="frontmatter-t1a2p1" internal-id="personname-frontmatter-a-b-a">Drew Lewis</personname>
+          <email original-id="frontmatter-t1a2e2" internal-id="email-frontmatter-a-b-b">drew.lewis@gmail.com</email>
+        </author>
+        <credit original-id="frontmatter-t1c3" internal-id="credit-frontmatter-a-c">
+    <title original-id="frontmatter-t1c3t1" internal-id="title-frontmatter-a-c-a">Contributing Authors</title>
+    <author original-id="frontmatter-t1c3a2" internal-id="author-frontmatter-a-c-b"><personname original-id="frontmatter-t1c3a2p1" internal-id="personname-frontmatter-a-c-b-a">Jessalyn Bolkema</personname><department original-id="frontmatter-t1c3a2d2" internal-id="department-frontmatter-a-c-b-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a2i3" internal-id="institution-frontmatter-a-c-b-c">California State University, Dominguez Hills</institution><email original-id="frontmatter-t1c3a2e4" internal-id="email-frontmatter-a-c-b-d">jbolkema@csudh.edu</email></author>
+    <author original-id="frontmatter-t1c3a3" internal-id="author-frontmatter-a-c-c"><personname original-id="frontmatter-t1c3a3p1" internal-id="personname-frontmatter-a-c-c-a">Jeff Ford</personname><department original-id="frontmatter-t1c3a3d2" internal-id="department-frontmatter-a-c-c-b">Department of Mathematics, Computer Science, and Statistics</department><institution original-id="frontmatter-t1c3a3i3" internal-id="institution-frontmatter-a-c-c-c">Gustavus Adolphus College</institution><email original-id="frontmatter-t1c3a3e4" internal-id="email-frontmatter-a-c-c-d">jford@gustavus.edu</email></author>
+    <author original-id="frontmatter-t1c3a4" internal-id="author-frontmatter-a-c-d"><personname original-id="frontmatter-t1c3a4p1" internal-id="personname-frontmatter-a-c-d-a">Sharona Krinsky</personname><department original-id="frontmatter-t1c3a4d2" internal-id="department-frontmatter-a-c-d-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a4i3" internal-id="institution-frontmatter-a-c-d-c">California State University, Los Angeles</institution><email original-id="frontmatter-t1c3a4e4" internal-id="email-frontmatter-a-c-d-d">skrinsk@calstatela.edu</email></author>
+    <author original-id="frontmatter-t1c3a5" internal-id="author-frontmatter-a-c-e"><personname original-id="frontmatter-t1c3a5p1" internal-id="personname-frontmatter-a-c-e-a">Jennifer Nordstrom</personname><department original-id="frontmatter-t1c3a5d2" internal-id="department-frontmatter-a-c-e-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a5i3" internal-id="institution-frontmatter-a-c-e-c">Linfield University</institution><email original-id="frontmatter-t1c3a5e4" internal-id="email-frontmatter-a-c-e-d">jnordstrom@linfield.edu</email></author>
+    <author original-id="frontmatter-t1c3a6" internal-id="author-frontmatter-a-c-f"><personname original-id="frontmatter-t1c3a6p1" internal-id="personname-frontmatter-a-c-f-a">Kate Owens</personname><department original-id="frontmatter-t1c3a6d2" internal-id="department-frontmatter-a-c-f-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a6i3" internal-id="institution-frontmatter-a-c-f-c">College of Charleston</institution><email original-id="frontmatter-t1c3a6e4" internal-id="email-frontmatter-a-c-f-d">owensks@cofc.edu</email></author>
+  </credit>
+        <date original-id="frontmatter-t1d4" internal-id="date-frontmatter-a-d">
+          <today original-id="frontmatter-t1d4t1" internal-id="today-frontmatter-a-d-a"/>
+        </date>
+      </titlepage>
+    </frontmatter>
+    <section>
+      <title>Section 1.1:
+        Linear Systems, Vector Equations, and Augmented Matrices (LE1) </title>
+      <slide>
+        <title>Definition 1.1.1 </title>
+        <p original-id="LE1-s3d2s1p1" internal-id="p-LE1-c-b-a-a">
+A <term original-id="LE1-s3d2s1p1t1" internal-id="term-LE1-c-b-a-a-a">linear equation</term><idx original-id="LE1-s3d2s1p1i2" internal-id="idx-LE1-c-b-a-a-b">linear equation</idx> is an equation of the variables <m original-id="LE1-s3d2s1p1m3" internal-id="m-LE1-c-b-a-a-c">x_i</m> of the form
+<me original-id="LE1-s3d2s1p1m4" internal-id="me-LE1-c-b-a-a-d">
+a_1x_1+a_2x_2+\dots+a_nx_n=b
+</me>.
+            </p>
+        <p original-id="LE1-s3d2s1p2" internal-id="p-LE1-c-b-a-b">
+                A <term original-id="LE1-s3d2s1p2t1" internal-id="term-LE1-c-b-a-b-a">solution</term> for a linear equation is a Euclidean vector<idx original-id="LE1-s3d2s1p2i2" internal-id="idx-LE1-c-b-a-b-b">Euclidean vector</idx><idx original-id="LE1-s3d2s1p2i3" internal-id="idx-LE1-c-b-a-b-c"><h original-id="LE1-s3d2s1p2i3h1" internal-id="h-LE1-c-b-a-b-c-a">vector</h><h original-id="LE1-s3d2s1p2i3h2" internal-id="h-LE1-c-b-a-b-c-b">Euclidean</h></idx>
+<me original-id="LE1-s3d2s1p2m4" internal-id="me-LE1-c-b-a-b-d">
+  \left[\begin{array}{c}
+    s_1 \\
+    s_2 \\
+    \vdots \\
+    s_n
+  \end{array}\right]
+</me>
+that satisfies
+<me original-id="LE1-s3d2s1p2m5" internal-id="me-LE1-c-b-a-b-e">
+a_1s_1+a_2s_2+\dots+a_ns_n=b
+</me>
+(that is, a Euclidean vector that can be plugged into the equation).
+            </p>
+      </slide>
+      <slide>
+        <title>Remark 1.1.2 </title>
+        <p original-id="LE1-s3r3s1p1" internal-id="p-LE1-c-c-a-a">
+In previous classes you likely used the variables <m original-id="LE1-s3r3s1p1m1" internal-id="m-LE1-c-c-a-a-a">x,y,z</m> in equations.
+However, since this course often deals with equations of four or more
+variables, we will often write our variables as <m original-id="LE1-s3r3s1p1m2" internal-id="m-LE1-c-c-a-a-b">x_i</m>, and assume
+<m original-id="LE1-s3r3s1p1m3" internal-id="m-LE1-c-c-a-a-c">x=x_1,y=x_2,z=x_3,w=x_4</m> when convenient.
+        </p>
+      </slide>
+      <slide>
+        <title>Definition 1.1.3 </title>
+        <p original-id="LE1-s3d4s1p1" internal-id="p-LE1-c-d-a-a">
+        A <term original-id="LE1-s3d4s1p1t1" internal-id="term-LE1-c-d-a-a-a">system of linear equations</term> (or a <term original-id="LE1-s3d4s1p1t2" internal-id="term-LE1-c-d-a-a-b">linear system</term> for short)
+is a collection of one or more linear equations.
+        <md alignment="alignat" alignat-columns="5" original-id="LE1-s3d4s1p1m3" internal-id="md-LE1-c-d-a-a-c"><mrow original-id="LE1-s3d4s1p1m3m1" internal-id="mrow-LE1-c-d-a-a-c-a">
+    a_{11}x_1 &amp;\,+\,&amp; a_{12}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{1n}x_n &amp;\,=\,&amp; b_1 
+            </mrow><mrow original-id="LE1-s3d4s1p1m3m2" internal-id="mrow-LE1-c-d-a-a-c-b">
+    a_{21}x_1 &amp;\,+\,&amp; a_{22}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{2n}x_n &amp;\,=\,&amp; b_2
+            </mrow><mrow original-id="LE1-s3d4s1p1m3m3" internal-id="mrow-LE1-c-d-a-a-c-c">
+     \vdots&amp;  &amp;\vdots&amp;   &amp;&amp;  &amp;\vdots&amp;&amp;\vdots  
+            </mrow><mrow original-id="LE1-s3d4s1p1m3m4" internal-id="mrow-LE1-c-d-a-a-c-d">
+    a_{m1}x_1 &amp;\,+\,&amp; a_{m2}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{mn}x_n &amp;\,=\,&amp; b_m
+            </mrow></md>
+    </p>
+        <p original-id="LE1-s3d4s1p2" internal-id="p-LE1-c-d-a-b">
+        Its <term original-id="LE1-s3d4s1p2t1" internal-id="term-LE1-c-d-a-b-a">solution set</term><idx original-id="LE1-s3d4s1p2i2" internal-id="idx-LE1-c-d-a-b-b">solution set</idx> is given by
+<me original-id="LE1-s3d4s1p2m3" internal-id="me-LE1-c-d-a-b-c">
+  \setBuilder
+  {
+    \left[\begin{array}{c}
+      s_1 \\
+      s_2 \\
+      \vdots \\
+      s_n
+    \end{array}\right]
+  }{
+    \left[\begin{array}{c}
+      s_1 \\
+      s_2 \\
+      \vdots \\
+      s_n
+    \end{array}\right]
+    \text{is a solution to all equations in the system}
+  }
+</me>.
+    </p>
+      </slide>
+      <slide>
+        <title>Remark 1.1.4 </title>
+        <p original-id="LE1-s3r5s1p1" internal-id="p-LE1-c-e-a-a">
+  When variables in a large linear system are missing, we prefer to
+  write the system in one of the following standard forms:
+    </p>
+        <sidebyside widths="33% 33% 33%" margins="auto" valign="middle" original-id="LE1-s3r5s1s2" internal-id="sidebyside-LE1-c-e-a-b">
+          <p original-id="LE1-s3r5s1s2p1" internal-id="p-LE1-c-e-a-b-a">
+    Original linear system:
+            <md alignment="alignat" alignat-columns="2" original-id="LE1-s3r5s1s2p1m1" internal-id="md-LE1-c-e-a-b-a-a"><mrow original-id="LE1-s3r5s1s2p1m1m1" internal-id="mrow-LE1-c-e-a-b-a-a-a">
+       x_1 + 3x_3 &amp;\,=\,&amp; 3
+                </mrow><mrow original-id="LE1-s3r5s1s2p1m1m2" internal-id="mrow-LE1-c-e-a-b-a-a-b">
+      3x_1 - 2x_2 + 4x_3 &amp;\,=\,&amp; 0
+                </mrow><mrow original-id="LE1-s3r5s1s2p1m1m3" internal-id="mrow-LE1-c-e-a-b-a-a-c">
+      -x_2 +  x_3 &amp;\,=\,&amp; -2
+                </mrow></md>
+        </p>
+          <p original-id="LE1-s3r5s1s2p2" internal-id="p-LE1-c-e-a-b-b">
+    Verbose standard form:
+            <md alignment="alignat" alignat-columns="4" original-id="LE1-s3r5s1s2p2m1" internal-id="md-LE1-c-e-a-b-b-a"><mrow original-id="LE1-s3r5s1s2p2m1m1" internal-id="mrow-LE1-c-e-a-b-b-a-a">
+      1x_1 &amp;\,+\,&amp; 0x_2 &amp;\,+\,&amp; 3x_3 &amp;\,=\,&amp; 3
+                </mrow><mrow original-id="LE1-s3r5s1s2p2m1m2" internal-id="mrow-LE1-c-e-a-b-b-a-b">
+      3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 4x_3 &amp;\,=\,&amp; 0
+                </mrow><mrow original-id="LE1-s3r5s1s2p2m1m3" internal-id="mrow-LE1-c-e-a-b-b-a-c">
+      0x_1 &amp;\,-\,&amp; 1x_2 &amp;\,+\,&amp; 1x_3 &amp;\,=\,&amp; -2
+                </mrow></md>
+        </p>
+          <p original-id="LE1-s3r5s1s2p3" internal-id="p-LE1-c-e-a-b-c">
+    Concise standard form:
+            <md alignment="alignat" alignat-columns="4" original-id="LE1-s3r5s1s2p3m1" internal-id="md-LE1-c-e-a-b-c-a"><mrow original-id="LE1-s3r5s1s2p3m1m1" internal-id="mrow-LE1-c-e-a-b-c-a-a">
+       x_1 &amp;     &amp;      &amp;\,+\,&amp; 3x_3 &amp;\,=\,&amp; 3
+                </mrow><mrow original-id="LE1-s3r5s1s2p3m1m2" internal-id="mrow-LE1-c-e-a-b-c-a-b">
+      3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 4x_3 &amp;\,=\,&amp; 0
+                </mrow><mrow original-id="LE1-s3r5s1s2p3m1m3" internal-id="mrow-LE1-c-e-a-b-c-a-c">
+           &amp;\,-\,&amp;  x_2 &amp;\,+\,&amp;  x_3 &amp;\,=\,&amp; -2
+                </mrow></md>
+        </p>
+        </sidebyside>
+      </slide>
+      <slide>
+        <title>Remark 1.1.5 </title>
+        <p original-id="LE1-s3r6s1p1" internal-id="p-LE1-c-f-a-a">
+It will often be convenient to think of a system of equations as a vector equation.<idx original-id="LE1-s3r6s1p1i1" internal-id="idx-LE1-c-f-a-a-a">vector equation</idx>
+        </p>
+        <p original-id="LE1-s3r6s1p2" internal-id="p-LE1-c-f-a-b">
+By applying vector operations and equating components, it is straightforward to see that the vector equation
+<me original-id="LE1-s3r6s1p2m1" internal-id="me-LE1-c-f-a-b-a"> x_1 \left[\begin{array}{c} 1 \\ 3 \\ 0 \end{array}\right]+ x_2 \left[\begin{array}{c} 0 \\ -2 \\ -1 \end{array}\right]
+    + x_3 \left[\begin{array}{c} 3 \\ 4 \\1 \end{array}\right] = \left[\begin{array}{c} 3 \\ 0 \\ -2 \end{array}\right]</me>
+is equivalent to the system of equations
+            <md alignment="alignat" alignat-columns="4" original-id="LE1-s3r6s1p2m2" internal-id="md-LE1-c-f-a-b-b"><mrow original-id="LE1-s3r6s1p2m2m1" internal-id="mrow-LE1-c-f-a-b-b-a">
+   x_1 &amp;     &amp;      &amp;\,+\,&amp; 3x_3 &amp;\,=\,&amp; 3
+                </mrow><mrow original-id="LE1-s3r6s1p2m2m2" internal-id="mrow-LE1-c-f-a-b-b-b">
+  3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 4x_3 &amp;\,=\,&amp; 0
+                </mrow><mrow original-id="LE1-s3r6s1p2m2m3" internal-id="mrow-LE1-c-f-a-b-b-c">
+       &amp;\,-\,&amp;  x_2 &amp;\,+\,&amp;  x_3 &amp;\,=\,&amp; -2
+                </mrow></md>
+        </p>
+      </slide>
+      <slide>
+        <title>Definition 1.1.6 </title>
+        <p original-id="LE1-s3d7s1p1" internal-id="p-LE1-c-g-a-a">
+A linear system is <term original-id="LE1-s3d7s1p1t1" internal-id="term-LE1-c-g-a-a-a">consistent</term><idx original-id="LE1-s3d7s1p1i2" internal-id="idx-LE1-c-g-a-a-b"><h original-id="LE1-s3d7s1p1i2h1" internal-id="h-LE1-c-g-a-a-b-a">linear system</h><h original-id="LE1-s3d7s1p1i2h2" internal-id="h-LE1-c-g-a-a-b-b">consistent</h></idx> if its solution set
+  is non-empty (that is, there exists a solution for the
+system). Otherwise it is <term original-id="LE1-s3d7s1p1t3" internal-id="term-LE1-c-g-a-a-c">inconsistent</term>.<idx original-id="LE1-s3d7s1p1i4" internal-id="idx-LE1-c-g-a-a-d"><h original-id="LE1-s3d7s1p1i4h1" internal-id="h-LE1-c-g-a-a-d-a">linear system</h><h original-id="LE1-s3d7s1p1i4h2" internal-id="h-LE1-c-g-a-a-d-b">inconsistent</h></idx>
+            </p>
+      </slide>
+      <slide>
+        <title>Fact 1.1.7 </title>
+        <p original-id="LE1-s3f8s1p1" internal-id="p-LE1-c-h-a-a">
+  All linear systems are one of the following:
+            </p>
+        <ol original-id="LE1-s3f8s1o2" internal-id="ol-LE1-c-h-a-b">
+          <li original-id="LE1-s3f8s1o2l1" internal-id="li-LE1-c-h-a-b-a"><em original-id="LE1-s3f8s1o2l1e1" internal-id="em-LE1-c-h-a-b-a-a">Consistent with one solution:</em>
+          its solution set contains a single vector, e.g.
+          <m original-id="LE1-s3f8s1o2l1m2" internal-id="m-LE1-c-h-a-b-a-b">\setList{\left[\begin{array}{c}1\\2\\3\end{array}\right]}</m>
+                </li>
+          <li original-id="LE1-s3f8s1o2l2" internal-id="li-LE1-c-h-a-b-b">
+                    <em original-id="LE1-s3f8s1o2l2e1" internal-id="em-LE1-c-h-a-b-b-a">Consistent with infinitely-many solutions</em>:
+          its solution set contains infinitely many vectors, e.g.
+          <m original-id="LE1-s3f8s1o2l2m2" internal-id="m-LE1-c-h-a-b-b-b">
+            \setBuilder
+            {
+              \left[\begin{array}{c}1\\2-3a\\a\end{array}\right]
+            }{
+              a\in\IR
+            }
+          </m>
+                </li>
+          <li original-id="LE1-s3f8s1o2l3" internal-id="li-LE1-c-h-a-b-c"><em original-id="LE1-s3f8s1o2l3e1" internal-id="em-LE1-c-h-a-b-c-a">Inconsistent</em>:
+          its solution set is the empty set, denoted by either <m original-id="LE1-s3f8s1o2l3m2" internal-id="m-LE1-c-h-a-b-c-b">\{\}</m> or <m original-id="LE1-s3f8s1o2l3m3" internal-id="m-LE1-c-h-a-b-c-c">\emptyset</m>.
+                </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 1.1.1 (~10 min)</title>
+        <p original-id="LE1-s3a9s1p1" internal-id="p-LE1-c-i-a-a">
+All inconsistent linear systems contain a logical <term original-id="LE1-s3a9s1p1t1" internal-id="term-LE1-c-i-a-a-a">contradiction</term>.
+  Find a contradiction in this system to show that its solution set
+  is the empty set.
+            </p>
+        <md original-id="LE1-s3a9s1m2" internal-id="md-LE1-c-i-a-b">
+          <mrow original-id="LE1-s3a9s1m2m1" internal-id="mrow-LE1-c-i-a-b-a">
+  -x_1+2x_2  &amp;=  5
+                </mrow>
+          <mrow original-id="LE1-s3a9s1m2m2" internal-id="mrow-LE1-c-i-a-b-b">
+  2x_1-4x_2  &amp;=  6
+                </mrow>
+        </md>
+      </slide>
+      <slide>
+        <title>Activity 1.1.2 (~10 min)</title>
+        <p original-id="LE1-s3a10i1p1" internal-id="p-LE1-c-j-a-a">
+  Consider the following consistent linear system.
+            </p>
+        <md original-id="LE1-s3a10i1m2" internal-id="md-LE1-c-j-a-b">
+          <mrow original-id="LE1-s3a10i1m2m1" internal-id="mrow-LE1-c-j-a-b-a">
+  -x_1+2x_2  &amp;= -3
+                </mrow>
+          <mrow original-id="LE1-s3a10i1m2m2" internal-id="mrow-LE1-c-j-a-b-b">
+  2x_1-4x_2  &amp;=  6
+                </mrow>
+        </md>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="LE1-s3a10t2p1" internal-id="p-LE1-c-j-b-a">
+  Find three different solutions
+  for this system.
+            </p>
+      </slide>
+      <slide>
+        <title>Activity 1.1.2 (~10 min)</title>
+        <p original-id="LE1-s3a10i1p1" internal-id="p-LE1-c-j-a-a">
+  Consider the following consistent linear system.
+            </p>
+        <md original-id="LE1-s3a10i1m2" internal-id="md-LE1-c-j-a-b">
+          <mrow original-id="LE1-s3a10i1m2m1" internal-id="mrow-LE1-c-j-a-b-a">
+  -x_1+2x_2  &amp;= -3
+                </mrow>
+          <mrow original-id="LE1-s3a10i1m2m2" internal-id="mrow-LE1-c-j-a-b-b">
+  2x_1-4x_2  &amp;=  6
+                </mrow>
+        </md>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="LE1-s3a10t3p1" internal-id="p-LE1-c-j-c-a">
+  Let <m original-id="LE1-s3a10t3p1m1" internal-id="m-LE1-c-j-c-a-a">x_2=a</m> where <m original-id="LE1-s3a10t3p1m2" internal-id="m-LE1-c-j-c-a-b">a</m> is an arbitrary real number, then find an
+  expression for <m original-id="LE1-s3a10t3p1m3" internal-id="m-LE1-c-j-c-a-c">x_1</m> in terms of <m original-id="LE1-s3a10t3p1m4" internal-id="m-LE1-c-j-c-a-d">a</m>. Use this to write
+  the solution set
+  <m original-id="LE1-s3a10t3p1m5" internal-id="m-LE1-c-j-c-a-e">
+    \setBuilder
+    {
+        \left[\begin{array}{c}
+        \unknown \\
+        a
+      \end{array}\right]
+    }{
+      a \in \IR
+      }
+  </m>
+  for the linear system.
+            </p>
+      </slide>
+      <slide>
+        <title>Activity 1.1.3 (~10 min)</title>
+        <p original-id="LE1-s3a11s1p1" internal-id="p-LE1-c-k-a-a">
+  Consider the following linear system.
+            </p>
+        <md alignment="alignat" alignat-columns="5" original-id="LE1-s3a11s1m2" internal-id="md-LE1-c-k-a-b">
+          <mrow original-id="LE1-s3a11s1m2m1" internal-id="mrow-LE1-c-k-a-b-a">
+    x_1 &amp;\,+\,&amp; 2x_2 &amp;\, \,&amp;     &amp;\,-\,&amp;  x_4 &amp;\,=\,&amp; 3
+                </mrow>
+          <mrow original-id="LE1-s3a11s1m2m2" internal-id="mrow-LE1-c-k-a-b-b">
+        &amp;\, \,&amp;      &amp;\, \,&amp; x_3 &amp;\,+\,&amp; 4x_4 &amp;\,=\,&amp; -2
+                </mrow>
+        </md>
+        <p original-id="LE1-s3a11s1p3" internal-id="p-LE1-c-k-a-c">
+  Describe the solution set
+  <me original-id="LE1-s3a11s1p3m1" internal-id="me-LE1-c-k-a-c-a">
+      \setBuilder
+    {
+        \left[\begin{array}{c}
+          \unknown \\
+          a \\
+          \unknown \\
+          b
+        \end{array}\right]
+    }{
+      a,b \in \IR
+    }
+  </me>
+  to the linear system
+  by setting <m original-id="LE1-s3a11s1p3m2" internal-id="m-LE1-c-k-a-c-b">x_2=a</m> and <m original-id="LE1-s3a11s1p3m3" internal-id="m-LE1-c-k-a-c-c">x_4=b</m>, and then solving for <m original-id="LE1-s3a11s1p3m4" internal-id="m-LE1-c-k-a-c-d">x_1</m> and
+  <m original-id="LE1-s3a11s1p3m5" internal-id="m-LE1-c-k-a-c-e">x_3</m>.
+            </p>
+      </slide>
+      <slide>
+        <title>Observation 1.1.8 </title>
+        <p original-id="LE1-s3o12s1p1" internal-id="p-LE1-c-l-a-a">
+  Solving linear systems of two variables by graphing or substitution is
+  reasonable for two-variable systems, but these simple techniques
+  won't usually cut it for equations with
+  more than two variables or more than two equations. For example,
+            <md alignment="alignat" alignat-columns="5" original-id="LE1-s3o12s1p1m1" internal-id="md-LE1-c-l-a-a-a"><mrow original-id="LE1-s3o12s1p1m1m1" internal-id="mrow-LE1-c-l-a-a-a-a">
+    -2x_1 &amp;\,-\,&amp; 4x_2 &amp;\,+\,&amp;  x_3 &amp;\,-\,&amp;  4x_4 &amp;\,=\,&amp; -8
+                </mrow><mrow original-id="LE1-s3o12s1p1m1m2" internal-id="mrow-LE1-c-l-a-a-a-b">
+      x_1 &amp;\,+\,&amp; 2x_2 &amp;\,+\,&amp; 2x_3 &amp;\,+\,&amp; 12x_4 &amp;\,=\,&amp; -1
+                </mrow><mrow original-id="LE1-s3o12s1p1m1m3" internal-id="mrow-LE1-c-l-a-a-a-c">
+      x_1 &amp;\,+\,&amp; 2x_2 &amp;\,+\,&amp;  x_3 &amp;\,+\,&amp;  8x_4 &amp;\,=\,&amp;  1
+                </mrow></md>
+  has the exact same solution set as the system in the previous
+  activity, but we'll want to learn new techniques
+  to compute these solutions efficiently.
+        </p>
+      </slide>
+      <slide>
+        <title>Remark 1.1.9 </title>
+        <p original-id="LE1-s3r13s1p1" internal-id="p-LE1-c-m-a-a">
+  The only important information in a linear system are its coefficients and
+  constants.
+        </p>
+        <sidebyside widths="33% 33% 33%" margins="auto" valign="middle" original-id="LE1-s3r13s1s2" internal-id="sidebyside-LE1-c-m-a-b">
+          <p original-id="LE1-s3r13s1s2p1" internal-id="p-LE1-c-m-a-b-a">
+    Original linear system:
+            <md alignment="alignat" alignat-columns="2" original-id="LE1-s3r13s1s2p1m1" internal-id="md-LE1-c-m-a-b-a-a"><mrow original-id="LE1-s3r13s1s2p1m1m1" internal-id="mrow-LE1-c-m-a-b-a-a-a">
+       x_1 + 3x_3 &amp;\,=\,&amp; 3
+                </mrow><mrow original-id="LE1-s3r13s1s2p1m1m2" internal-id="mrow-LE1-c-m-a-b-a-a-b">
+      3x_1 - 2x_2 + 4x_3 &amp;\,=\,&amp; 0
+                </mrow><mrow original-id="LE1-s3r13s1s2p1m1m3" internal-id="mrow-LE1-c-m-a-b-a-a-c">
+      -x_2 +  x_3 &amp;\,=\,&amp; -2
+                </mrow></md>
+        </p>
+          <p original-id="LE1-s3r13s1s2p2" internal-id="p-LE1-c-m-a-b-b">
+    Verbose standard form:
+            <md alignment="alignat" alignat-columns="4" original-id="LE1-s3r13s1s2p2m1" internal-id="md-LE1-c-m-a-b-b-a"><mrow original-id="LE1-s3r13s1s2p2m1m1" internal-id="mrow-LE1-c-m-a-b-b-a-a">
+      1x_1 &amp;\,+\,&amp; 0x_2 &amp;\,+\,&amp; 3x_3 &amp;\,=\,&amp; 3
+                </mrow><mrow original-id="LE1-s3r13s1s2p2m1m2" internal-id="mrow-LE1-c-m-a-b-b-a-b">
+      3x_1 &amp;\,-\,&amp; 2x_2 &amp;\,+\,&amp; 4x_3 &amp;\,=\,&amp; 0
+                </mrow><mrow original-id="LE1-s3r13s1s2p2m1m3" internal-id="mrow-LE1-c-m-a-b-b-a-c">
+      0x_1 &amp;\,-\,&amp; 1x_2 &amp;\,+\,&amp; 1x_3 &amp;\,=\,&amp; -2
+                </mrow></md>
+        </p>
+          <p original-id="LE1-s3r13s1s2p3" internal-id="p-LE1-c-m-a-b-c">
+    Coefficients/constants:
+            <md alignment="alignat" alignat-columns="4" original-id="LE1-s3r13s1s2p3m1" internal-id="md-LE1-c-m-a-b-c-a"><mrow original-id="LE1-s3r13s1s2p3m1m1" internal-id="mrow-LE1-c-m-a-b-c-a-a">
+       1 &amp;     &amp;  0 &amp;\,\,&amp; 3 &amp;\,|\,&amp; 3
+                </mrow><mrow original-id="LE1-s3r13s1s2p3m1m2" internal-id="mrow-LE1-c-m-a-b-c-a-b">
+       3 &amp;\, \,&amp; -2 &amp;\,\,&amp; 4 &amp;\,|\,&amp; 0
+                </mrow><mrow original-id="LE1-s3r13s1s2p3m1m3" internal-id="mrow-LE1-c-m-a-b-c-a-c">
+       0 &amp;\, \,&amp; -1 &amp;\,\,&amp; 1 &amp;\,|\,&amp; -2
+                </mrow></md>
+        </p>
+        </sidebyside>
+      </slide>
+      <slide>
+        <title>Definition 1.1.10 </title>
+        <p original-id="LE1-s3d14s1p1" internal-id="p-LE1-c-n-a-a">
+  A system of <m original-id="LE1-s3d14s1p1m1" internal-id="m-LE1-c-n-a-a-a">m</m> linear equations with <m original-id="LE1-s3d14s1p1m2" internal-id="m-LE1-c-n-a-a-b">n</m> variables is often represented
+    by writing its coefficients and constants in an <term original-id="LE1-s3d14s1p1t3" internal-id="term-LE1-c-n-a-a-c">augmented matrix</term>.<idx original-id="LE1-s3d14s1p1i4" internal-id="idx-LE1-c-n-a-a-d">augmented matrix</idx>
+            </p>
+        <md alignment="alignat" alignat-columns="5" original-id="LE1-s3d14s1m2" internal-id="md-LE1-c-n-a-b">
+          <mrow original-id="LE1-s3d14s1m2m1" internal-id="mrow-LE1-c-n-a-b-a">
+    a_{11}x_1 &amp;\,+\,&amp; a_{12}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{1n}x_n &amp;\,=\,&amp; b_1
+                </mrow>
+          <mrow original-id="LE1-s3d14s1m2m2" internal-id="mrow-LE1-c-n-a-b-b">
+    a_{21}x_1 &amp;\,+\,&amp; a_{22}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{2n}x_n &amp;\,=\,&amp; b_2
+                </mrow>
+          <mrow original-id="LE1-s3d14s1m2m3" internal-id="mrow-LE1-c-n-a-b-c">
+     \vdots&amp;  &amp;\vdots&amp;   &amp;&amp;  &amp;\vdots&amp;&amp;\vdots
+                </mrow>
+          <mrow original-id="LE1-s3d14s1m2m4" internal-id="mrow-LE1-c-n-a-b-d">
+    a_{m1}x_1 &amp;\,+\,&amp; a_{m2}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{mn}x_n &amp;\,=\,&amp; b_m
+                </mrow>
+        </md>
+        <me original-id="LE1-s3d14s1m3" internal-id="me-LE1-c-n-a-c">
+    \left[\begin{array}{cccc|c}
+      a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} &amp; b_1\\
+      a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} &amp; b_2\\
+      \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\\
+      a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; b_m
+    \end{array}\right]
+            </me>
+      </slide>
+      <slide>
+        <title>Example 1.1.11 </title>
+        <p original-id="LE1-s3e15s1p1" internal-id="p-LE1-c-o-a-a">
+  The corresponding augmented matrix for this system is obtained by
+  simply writing the coefficients and constants in matrix form.
+        </p>
+        <sidebyside widths="49% 49%" margins="auto" valign="middle" original-id="LE1-s3e15s1s2" internal-id="sidebyside-LE1-c-o-a-b">
+          <p original-id="LE1-s3e15s1s2p1" internal-id="p-LE1-c-o-a-b-a">
+    Linear system:
+            <md alignment="alignat" alignat-columns="2" original-id="LE1-s3e15s1s2p1m1" internal-id="md-LE1-c-o-a-b-a-a"><mrow original-id="LE1-s3e15s1s2p1m1m1" internal-id="mrow-LE1-c-o-a-b-a-a-a">
+       x_1 + 3x_3 &amp;\,=\,&amp; 3
+                </mrow><mrow original-id="LE1-s3e15s1s2p1m1m2" internal-id="mrow-LE1-c-o-a-b-a-a-b">
+      3x_1 - 2x_2 + 4x_3 &amp;\,=\,&amp; 0
+                </mrow><mrow original-id="LE1-s3e15s1s2p1m1m3" internal-id="mrow-LE1-c-o-a-b-a-a-c">
+      -x_2 +  x_3 &amp;\,=\,&amp; -2
+                </mrow></md>
+        </p>
+          <p original-id="LE1-s3e15s1s2p2" internal-id="p-LE1-c-o-a-b-b">
+    Augmented matrix:
+    <me original-id="LE1-s3e15s1s2p2m1" internal-id="me-LE1-c-o-a-b-b-a">
+      \left[\begin{array}{ccc|c}
+        1 &amp; 0 &amp; 3 &amp; 3 \\
+        3 &amp; -2 &amp; 4 &amp; 0 \\
+        0 &amp; -1 &amp; 1 &amp; -2
+      \end{array}\right]
+    </me>
+        </p>
+        </sidebyside>
+        <p original-id="LE1-s3e15s1p3" internal-id="p-LE1-c-o-a-c">
+    Vector equation:
+<me original-id="LE1-s3e15s1p3m1" internal-id="me-LE1-c-o-a-c-a"> x_1 \left[\begin{array}{c} 1 \\ 3 \\ 0 \end{array}\right]+ x_2 \left[\begin{array}{c} 0 \\ -2 \\ -1 \end{array}\right] + x_3 \left[\begin{array}{c} 3 \\ 4 \\1 \end{array}\right] = \left[\begin{array}{c} 3 \\ 0 \\ -2 \end{array}\right]</me>
+        </p>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <docinfo xml:base="meta/docinfo.ptx" original-id="root-p1d1" internal-id="docinfo-root--a-a">
+    <document-id original-id="root-p1d1d1" internal-id="document-id-root--a-a-a">tbilla</document-id>
+    <initialism original-id="root-p1d1i2" internal-id="initialism-root--a-a-b">TBIL-LA</initialism>
+    <blurb shelf="math" original-id="root-p1d1b3" internal-id="blurb-root--a-a-c">Activities and exercises for easily implementing Team-Based Inquiry Learning in a single-variable calculus classroom.</blurb>
+    <macros original-id="root-p1d1m4" internal-id="macros-root--a-a-d">
+\newcommand{\markedPivot}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{%
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{%
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{%
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+    </macros>
+    <latex-image-preamble original-id="root-p1d1l5" internal-id="latex-image-preamble-root--a-a-e">
+\usepackage{tikz}
+\usepackage{tikz-cd}
+    </latex-image-preamble>
+    <rename element="objectives" xml:lang="en-US" original-id="root-p1d1r6" internal-id="rename-root--a-a-f" locale-lang="en-US">Learning Outcomes</rename>
+    <numbering original-id="root-p1d1n7" internal-id="numbering-root--a-a-g">
+      <figures level="0" original-id="root-p1d1n7f1" internal-id="figures-root--a-a-g-a"/>
+    </numbering>
+    <!-- Specify the default type of cross reference:           -->
+    <cross-references text="type-global" original-id="root-p1d1c8" internal-id="cross-references-root--a-a-h"/>
+  </docinfo>
+  <slideshow>
+    <title original-id="linear-algebra-for-team-based-inquiry-learning-t1" internal-id="title-linear-algebra-for-team-based-inquiry-learning-a">Linear Algebra for Team-Based Inquiry Learning</title>
+    <subtitle component="main" original-id="linear-algebra-for-team-based-inquiry-learning-s2" internal-id="subtitle-linear-algebra-for-team-based-inquiry-learning-b">2023 Edition</subtitle>
+    <frontmatter>
+      <titlepage original-id="frontmatter-t1" internal-id="titlepage-frontmatter-a">
+        <author original-id="frontmatter-t1a1" internal-id="author-frontmatter-a-a">
+          <personname original-id="frontmatter-t1a1p1" internal-id="personname-frontmatter-a-a-a">Steven Clontz</personname>
+          <department original-id="frontmatter-t1a1d2" internal-id="department-frontmatter-a-a-b">Department of Mathematics and Statistics</department>
+          <institution original-id="frontmatter-t1a1i3" internal-id="institution-frontmatter-a-a-c">University of South Alabama</institution>
+          <email original-id="frontmatter-t1a1e4" internal-id="email-frontmatter-a-a-d">sclontz@southalabama.edu</email>
+        </author>
+        <author original-id="frontmatter-t1a2" internal-id="author-frontmatter-a-b">
+          <personname original-id="frontmatter-t1a2p1" internal-id="personname-frontmatter-a-b-a">Drew Lewis</personname>
+          <email original-id="frontmatter-t1a2e2" internal-id="email-frontmatter-a-b-b">drew.lewis@gmail.com</email>
+        </author>
+        <credit original-id="frontmatter-t1c3" internal-id="credit-frontmatter-a-c">
+    <title original-id="frontmatter-t1c3t1" internal-id="title-frontmatter-a-c-a">Contributing Authors</title>
+    <author original-id="frontmatter-t1c3a2" internal-id="author-frontmatter-a-c-b"><personname original-id="frontmatter-t1c3a2p1" internal-id="personname-frontmatter-a-c-b-a">Jessalyn Bolkema</personname><department original-id="frontmatter-t1c3a2d2" internal-id="department-frontmatter-a-c-b-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a2i3" internal-id="institution-frontmatter-a-c-b-c">California State University, Dominguez Hills</institution><email original-id="frontmatter-t1c3a2e4" internal-id="email-frontmatter-a-c-b-d">jbolkema@csudh.edu</email></author>
+    <author original-id="frontmatter-t1c3a3" internal-id="author-frontmatter-a-c-c"><personname original-id="frontmatter-t1c3a3p1" internal-id="personname-frontmatter-a-c-c-a">Jeff Ford</personname><department original-id="frontmatter-t1c3a3d2" internal-id="department-frontmatter-a-c-c-b">Department of Mathematics, Computer Science, and Statistics</department><institution original-id="frontmatter-t1c3a3i3" internal-id="institution-frontmatter-a-c-c-c">Gustavus Adolphus College</institution><email original-id="frontmatter-t1c3a3e4" internal-id="email-frontmatter-a-c-c-d">jford@gustavus.edu</email></author>
+    <author original-id="frontmatter-t1c3a4" internal-id="author-frontmatter-a-c-d"><personname original-id="frontmatter-t1c3a4p1" internal-id="personname-frontmatter-a-c-d-a">Sharona Krinsky</personname><department original-id="frontmatter-t1c3a4d2" internal-id="department-frontmatter-a-c-d-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a4i3" internal-id="institution-frontmatter-a-c-d-c">California State University, Los Angeles</institution><email original-id="frontmatter-t1c3a4e4" internal-id="email-frontmatter-a-c-d-d">skrinsk@calstatela.edu</email></author>
+    <author original-id="frontmatter-t1c3a5" internal-id="author-frontmatter-a-c-e"><personname original-id="frontmatter-t1c3a5p1" internal-id="personname-frontmatter-a-c-e-a">Jennifer Nordstrom</personname><department original-id="frontmatter-t1c3a5d2" internal-id="department-frontmatter-a-c-e-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a5i3" internal-id="institution-frontmatter-a-c-e-c">Linfield University</institution><email original-id="frontmatter-t1c3a5e4" internal-id="email-frontmatter-a-c-e-d">jnordstrom@linfield.edu</email></author>
+    <author original-id="frontmatter-t1c3a6" internal-id="author-frontmatter-a-c-f"><personname original-id="frontmatter-t1c3a6p1" internal-id="personname-frontmatter-a-c-f-a">Kate Owens</personname><department original-id="frontmatter-t1c3a6d2" internal-id="department-frontmatter-a-c-f-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a6i3" internal-id="institution-frontmatter-a-c-f-c">College of Charleston</institution><email original-id="frontmatter-t1c3a6e4" internal-id="email-frontmatter-a-c-f-d">owensks@cofc.edu</email></author>
+  </credit>
+        <date original-id="frontmatter-t1d4" internal-id="date-frontmatter-a-d">
+          <today original-id="frontmatter-t1d4t1" internal-id="today-frontmatter-a-d-a"/>
+        </date>
+      </titlepage>
+    </frontmatter>
+    <section>
+      <title>Section 4.3:
+        Solving Systems with Matrix Inverses (MX3) </title>
+      <slide>
+        <title>Activity 4.3.1 (~15 min)</title>
+        <p original-id="MX3-s3a2i1p1" internal-id="p-MX3-c-b-a-a">
+Consider the following linear system with a unique solution:
+<me original-id="MX3-s3a2i1p1m1" internal-id="me-MX3-c-b-a-a-a">
+\begin{matrix}
+3x_{1} &amp; - &amp; 2x_{2} &amp; - &amp; 2x_{3} &amp; - &amp; 4x_{4} &amp; = &amp; -7 \\
+2x_{1} &amp; - &amp; x_{2}  &amp; - &amp;  x_{3} &amp; - &amp; x_{4} &amp; = &amp; -1 \\
+-x_{1} &amp;   &amp;        &amp; + &amp;  x_{3} &amp;   &amp;        &amp; = &amp; -1 \\
+       &amp; - &amp; x_{2}  &amp;   &amp;        &amp; - &amp; 2x_{4} &amp; = &amp; -5 \\
+\end{matrix}
+</me>
+            </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="MX3-s3a2t2p1" internal-id="p-MX3-c-b-b-a">
+Define
+<me original-id="MX3-s3a2t2p1m1" internal-id="me-MX3-c-b-b-a-a">
+T\left(\left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]\right)=
+\left[\begin{matrix}\hspace{1em}\unknown\hspace{1em}\\\hspace{1em}\unknown\hspace{1em}\\
+\hspace{1em}\unknown\hspace{1em}\\\hspace{1em}\unknown\hspace{1em}\end{matrix}\right]
+</me>
+so that <m original-id="MX3-s3a2t2p1m2" internal-id="m-MX3-c-b-b-a-b">T(\vec x)=\left[\begin{matrix}-7\\-1\\-1\\-5\end{matrix}\right]</m>
+has the same solution set as this system.
+            </p>
+      </slide>
+      <slide>
+        <title>Activity 4.3.1 (~15 min)</title>
+        <p original-id="MX3-s3a2i1p1" internal-id="p-MX3-c-b-a-a">
+Consider the following linear system with a unique solution:
+<me original-id="MX3-s3a2i1p1m1" internal-id="me-MX3-c-b-a-a-a">
+\begin{matrix}
+3x_{1} &amp; - &amp; 2x_{2} &amp; - &amp; 2x_{3} &amp; - &amp; 4x_{4} &amp; = &amp; -7 \\
+2x_{1} &amp; - &amp; x_{2}  &amp; - &amp;  x_{3} &amp; - &amp; x_{4} &amp; = &amp; -1 \\
+-x_{1} &amp;   &amp;        &amp; + &amp;  x_{3} &amp;   &amp;        &amp; = &amp; -1 \\
+       &amp; - &amp; x_{2}  &amp;   &amp;        &amp; - &amp; 2x_{4} &amp; = &amp; -5 \\
+\end{matrix}
+</me>
+            </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="MX3-s3a2t3p1" internal-id="p-MX3-c-b-c-a">
+Define
+<me original-id="MX3-s3a2t3p1m1" internal-id="me-MX3-c-b-c-a-a">
+A=
+\left[\begin{matrix}
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown
+\end{matrix}\right]
+</me>
+so that <m original-id="MX3-s3a2t3p1m2" internal-id="m-MX3-c-b-c-a-b">A\vec x=\left[\begin{matrix}-7\\-1\\-1\\-5\end{matrix}\right]</m>
+has the same solution set as this system.
+            </p>
+      </slide>
+      <slide>
+        <title>Activity 4.3.1 (~15 min)</title>
+        <p original-id="MX3-s3a2i1p1" internal-id="p-MX3-c-b-a-a">
+Consider the following linear system with a unique solution:
+<me original-id="MX3-s3a2i1p1m1" internal-id="me-MX3-c-b-a-a-a">
+\begin{matrix}
+3x_{1} &amp; - &amp; 2x_{2} &amp; - &amp; 2x_{3} &amp; - &amp; 4x_{4} &amp; = &amp; -7 \\
+2x_{1} &amp; - &amp; x_{2}  &amp; - &amp;  x_{3} &amp; - &amp; x_{4} &amp; = &amp; -1 \\
+-x_{1} &amp;   &amp;        &amp; + &amp;  x_{3} &amp;   &amp;        &amp; = &amp; -1 \\
+       &amp; - &amp; x_{2}  &amp;   &amp;        &amp; - &amp; 2x_{4} &amp; = &amp; -5 \\
+\end{matrix}
+</me>
+            </p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <p original-id="MX3-s3a2t4p1" internal-id="p-MX3-c-b-d-a">
+Find
+<me original-id="MX3-s3a2t4p1m1" internal-id="me-MX3-c-b-d-a-a">
+B=
+\left[\begin{matrix}
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown&amp;\unknown
+\end{matrix}\right]
+</me>
+so that <m original-id="MX3-s3a2t4p1m2" internal-id="m-MX3-c-b-d-a-b">BA\vec x=\vec x</m>.
+            </p>
+      </slide>
+      <slide>
+        <title>Activity 4.3.1 (~15 min)</title>
+        <p original-id="MX3-s3a2i1p1" internal-id="p-MX3-c-b-a-a">
+Consider the following linear system with a unique solution:
+<me original-id="MX3-s3a2i1p1m1" internal-id="me-MX3-c-b-a-a-a">
+\begin{matrix}
+3x_{1} &amp; - &amp; 2x_{2} &amp; - &amp; 2x_{3} &amp; - &amp; 4x_{4} &amp; = &amp; -7 \\
+2x_{1} &amp; - &amp; x_{2}  &amp; - &amp;  x_{3} &amp; - &amp; x_{4} &amp; = &amp; -1 \\
+-x_{1} &amp;   &amp;        &amp; + &amp;  x_{3} &amp;   &amp;        &amp; = &amp; -1 \\
+       &amp; - &amp; x_{2}  &amp;   &amp;        &amp; - &amp; 2x_{4} &amp; = &amp; -5 \\
+\end{matrix}
+</me>
+            </p>
+        <p>
+          <em>Part 4.</em>
+        </p>
+        <p original-id="MX3-s3a2t5p1" internal-id="p-MX3-c-b-e-a">
+Find <m original-id="MX3-s3a2t5p1m1" internal-id="m-MX3-c-b-e-a-a">\vec x=BA\vec x=B\left[\begin{matrix}-7\\-1\\-1\\-5\end{matrix}\right]</m>
+to solve the system.
+            </p>
+      </slide>
+      <slide>
+        <title>Remark 4.3.1 </title>
+        <p original-id="MX3-s3r3p1" internal-id="p-MX3-c-c-a">
+The linear system described by the augmented matrix
+<m original-id="MX3-s3r3p1m1" internal-id="m-MX3-c-c-a-a">[A \mid \vec w]</m> has exactly the same solution set as
+the matrix equation <m original-id="MX3-s3r3p1m2" internal-id="m-MX3-c-c-a-b">A\vec x=\vec w</m>.
+            </p>
+      </slide>
+      <slide>
+        <title>Activity 4.3.2 </title>
+        <p original-id="MX3-s3a4s1p1" internal-id="p-MX3-c-d-a-a">
+Let <m original-id="MX3-s3a4s1p1m1" internal-id="m-MX3-c-d-a-a-a">A\vec x=\vec w</m> describe a linear system. When will this linear system
+have exactly one solution?
+<ol marker="A." original-id="MX3-s3a4s1p1o2" internal-id="ol-MX3-c-d-a-a-b"><li original-id="MX3-s3a4s1p1o2l1" internal-id="li-MX3-c-d-a-a-b-a"><p original-id="MX3-s3a4s1p1o2l1p1" internal-id="p-MX3-c-d-a-a-b-a-a">When <m original-id="MX3-s3a4s1p1o2l1p1m1" internal-id="m-MX3-c-d-a-a-b-a-a-a">A</m> is invertible.</p></li><li original-id="MX3-s3a4s1p1o2l2" internal-id="li-MX3-c-d-a-a-b-b"><p original-id="MX3-s3a4s1p1o2l2p1" internal-id="p-MX3-c-d-a-a-b-b-a">When <m original-id="MX3-s3a4s1p1o2l2p1m1" internal-id="m-MX3-c-d-a-a-b-b-a-a">A</m> is not invertible.</p></li><li original-id="MX3-s3a4s1p1o2l3" internal-id="li-MX3-c-d-a-a-b-c"><p original-id="MX3-s3a4s1p1o2l3p1" internal-id="p-MX3-c-d-a-a-b-c-a">When <m original-id="MX3-s3a4s1p1o2l3p1m1" internal-id="m-MX3-c-d-a-a-b-c-a-a">\RREF A</m> has a non-pivot column.</p></li><li original-id="MX3-s3a4s1p1o2l4" internal-id="li-MX3-c-d-a-a-b-d"><p original-id="MX3-s3a4s1p1o2l4p1" internal-id="p-MX3-c-d-a-a-b-d-a">When <m original-id="MX3-s3a4s1p1o2l4p1m1" internal-id="m-MX3-c-d-a-a-b-d-a-a">\RREF A</m> has a non-pivot row.</p></li></ol>
+            </p>
+      </slide>
+      <slide>
+        <title>Fact 4.3.2 </title>
+        <p original-id="MX3-s3f5s1p1" internal-id="p-MX3-c-e-a-a">
+When <m original-id="MX3-s3f5s1p1m1" internal-id="m-MX3-c-e-a-a-a">A\vec x=\vec w</m> has exactly one solution, this solution is
+given by <m original-id="MX3-s3f5s1p1m2" internal-id="m-MX3-c-e-a-a-b">\vec x=A^{-1}\vec w</m>.
+            </p>
+      </slide>
+      <slide>
+        <title>Activity 4.3.3 </title>
+        <p original-id="MX3-s3a6i1p1" internal-id="p-MX3-c-f-a-a"> Consider the vector equation <me original-id="MX3-s3a6i1p1m1" internal-id="me-MX3-c-f-a-a-a">x_{1} \left[\begin{array}{c} 1 \\ 2 \\ -2 \end{array}\right] + x_{2} \left[\begin{array}{c} -2 \\ -3 \\ 3 \end{array}\right] + x_{3} \left[\begin{array}{c} 1 \\ 4 \\ -3 \end{array}\right] = \left[\begin{array}{c} -3 \\ 5 \\ -1 \end{array}\right]</me>  with a unique solution. </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <statement original-id="MX3-s3a6t2s1" internal-id="statement-MX3-c-f-b-a">
+          <p original-id="MX3-s3a6t2s1p1" internal-id="p-MX3-c-f-b-a-a"> Explain and demonstrate how this problem can be restated using matrix multiplication. </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 4.3.3 </title>
+        <p original-id="MX3-s3a6i1p1" internal-id="p-MX3-c-f-a-a"> Consider the vector equation <me original-id="MX3-s3a6i1p1m1" internal-id="me-MX3-c-f-a-a-a">x_{1} \left[\begin{array}{c} 1 \\ 2 \\ -2 \end{array}\right] + x_{2} \left[\begin{array}{c} -2 \\ -3 \\ 3 \end{array}\right] + x_{3} \left[\begin{array}{c} 1 \\ 4 \\ -3 \end{array}\right] = \left[\begin{array}{c} -3 \\ 5 \\ -1 \end{array}\right]</me>  with a unique solution. </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <statement original-id="MX3-s3a6t3s1" internal-id="statement-MX3-c-f-c-a">
+          <p original-id="MX3-s3a6t3s1p1" internal-id="p-MX3-c-f-c-a-a"> Use the properties of matrix multiplication to find the unique solution. </p>
+        </statement>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>

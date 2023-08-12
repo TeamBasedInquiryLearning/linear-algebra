@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <docinfo xml:base="meta/docinfo.ptx" original-id="root-p1d1" internal-id="docinfo-root--a-a">
+    <document-id original-id="root-p1d1d1" internal-id="document-id-root--a-a-a">tbilla</document-id>
+    <initialism original-id="root-p1d1i2" internal-id="initialism-root--a-a-b">TBIL-LA</initialism>
+    <blurb shelf="math" original-id="root-p1d1b3" internal-id="blurb-root--a-a-c">Activities and exercises for easily implementing Team-Based Inquiry Learning in a single-variable calculus classroom.</blurb>
+    <macros original-id="root-p1d1m4" internal-id="macros-root--a-a-d">
+\newcommand{\markedPivot}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{%
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{%
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{%
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+    </macros>
+    <latex-image-preamble original-id="root-p1d1l5" internal-id="latex-image-preamble-root--a-a-e">
+\usepackage{tikz}
+\usepackage{tikz-cd}
+    </latex-image-preamble>
+    <rename element="objectives" xml:lang="en-US" original-id="root-p1d1r6" internal-id="rename-root--a-a-f" locale-lang="en-US">Learning Outcomes</rename>
+    <numbering original-id="root-p1d1n7" internal-id="numbering-root--a-a-g">
+      <figures level="0" original-id="root-p1d1n7f1" internal-id="figures-root--a-a-g-a"/>
+    </numbering>
+    <!-- Specify the default type of cross reference:           -->
+    <cross-references text="type-global" original-id="root-p1d1c8" internal-id="cross-references-root--a-a-h"/>
+  </docinfo>
+  <slideshow>
+    <title original-id="linear-algebra-for-team-based-inquiry-learning-t1" internal-id="title-linear-algebra-for-team-based-inquiry-learning-a">Linear Algebra for Team-Based Inquiry Learning</title>
+    <subtitle component="main" original-id="linear-algebra-for-team-based-inquiry-learning-s2" internal-id="subtitle-linear-algebra-for-team-based-inquiry-learning-b">2023 Edition</subtitle>
+    <frontmatter>
+      <titlepage original-id="frontmatter-t1" internal-id="titlepage-frontmatter-a">
+        <author original-id="frontmatter-t1a1" internal-id="author-frontmatter-a-a">
+          <personname original-id="frontmatter-t1a1p1" internal-id="personname-frontmatter-a-a-a">Steven Clontz</personname>
+          <department original-id="frontmatter-t1a1d2" internal-id="department-frontmatter-a-a-b">Department of Mathematics and Statistics</department>
+          <institution original-id="frontmatter-t1a1i3" internal-id="institution-frontmatter-a-a-c">University of South Alabama</institution>
+          <email original-id="frontmatter-t1a1e4" internal-id="email-frontmatter-a-a-d">sclontz@southalabama.edu</email>
+        </author>
+        <author original-id="frontmatter-t1a2" internal-id="author-frontmatter-a-b">
+          <personname original-id="frontmatter-t1a2p1" internal-id="personname-frontmatter-a-b-a">Drew Lewis</personname>
+          <email original-id="frontmatter-t1a2e2" internal-id="email-frontmatter-a-b-b">drew.lewis@gmail.com</email>
+        </author>
+        <credit original-id="frontmatter-t1c3" internal-id="credit-frontmatter-a-c">
+    <title original-id="frontmatter-t1c3t1" internal-id="title-frontmatter-a-c-a">Contributing Authors</title>
+    <author original-id="frontmatter-t1c3a2" internal-id="author-frontmatter-a-c-b"><personname original-id="frontmatter-t1c3a2p1" internal-id="personname-frontmatter-a-c-b-a">Jessalyn Bolkema</personname><department original-id="frontmatter-t1c3a2d2" internal-id="department-frontmatter-a-c-b-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a2i3" internal-id="institution-frontmatter-a-c-b-c">California State University, Dominguez Hills</institution><email original-id="frontmatter-t1c3a2e4" internal-id="email-frontmatter-a-c-b-d">jbolkema@csudh.edu</email></author>
+    <author original-id="frontmatter-t1c3a3" internal-id="author-frontmatter-a-c-c"><personname original-id="frontmatter-t1c3a3p1" internal-id="personname-frontmatter-a-c-c-a">Jeff Ford</personname><department original-id="frontmatter-t1c3a3d2" internal-id="department-frontmatter-a-c-c-b">Department of Mathematics, Computer Science, and Statistics</department><institution original-id="frontmatter-t1c3a3i3" internal-id="institution-frontmatter-a-c-c-c">Gustavus Adolphus College</institution><email original-id="frontmatter-t1c3a3e4" internal-id="email-frontmatter-a-c-c-d">jford@gustavus.edu</email></author>
+    <author original-id="frontmatter-t1c3a4" internal-id="author-frontmatter-a-c-d"><personname original-id="frontmatter-t1c3a4p1" internal-id="personname-frontmatter-a-c-d-a">Sharona Krinsky</personname><department original-id="frontmatter-t1c3a4d2" internal-id="department-frontmatter-a-c-d-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a4i3" internal-id="institution-frontmatter-a-c-d-c">California State University, Los Angeles</institution><email original-id="frontmatter-t1c3a4e4" internal-id="email-frontmatter-a-c-d-d">skrinsk@calstatela.edu</email></author>
+    <author original-id="frontmatter-t1c3a5" internal-id="author-frontmatter-a-c-e"><personname original-id="frontmatter-t1c3a5p1" internal-id="personname-frontmatter-a-c-e-a">Jennifer Nordstrom</personname><department original-id="frontmatter-t1c3a5d2" internal-id="department-frontmatter-a-c-e-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a5i3" internal-id="institution-frontmatter-a-c-e-c">Linfield University</institution><email original-id="frontmatter-t1c3a5e4" internal-id="email-frontmatter-a-c-e-d">jnordstrom@linfield.edu</email></author>
+    <author original-id="frontmatter-t1c3a6" internal-id="author-frontmatter-a-c-f"><personname original-id="frontmatter-t1c3a6p1" internal-id="personname-frontmatter-a-c-f-a">Kate Owens</personname><department original-id="frontmatter-t1c3a6d2" internal-id="department-frontmatter-a-c-f-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a6i3" internal-id="institution-frontmatter-a-c-f-c">College of Charleston</institution><email original-id="frontmatter-t1c3a6e4" internal-id="email-frontmatter-a-c-f-d">owensks@cofc.edu</email></author>
+  </credit>
+        <date original-id="frontmatter-t1d4" internal-id="date-frontmatter-a-d">
+          <today original-id="frontmatter-t1d4t1" internal-id="today-frontmatter-a-d-a"/>
+        </date>
+      </titlepage>
+    </frontmatter>
+    <section>
+      <title>Section 3.5:
+        Vector Spaces (AT5) </title>
+      <slide>
+        <title>Observation 3.5.1 </title>
+        <p original-id="AT5-s3o2p1" internal-id="p-AT5-c-b-a">
+Consider the following applications of properites of the real numbers 
+<m original-id="AT5-s3o2p1m1" internal-id="m-AT5-c-b-a-a">\mathbb R</m>:
+  </p>
+        <ol original-id="AT5-s3o2o2" internal-id="ol-AT5-c-b-b">
+          <li original-id="AT5-s3o2o2l1" internal-id="li-AT5-c-b-b-a"><p original-id="AT5-s3o2o2l1p1" internal-id="p-AT5-c-b-b-a-a"> <m original-id="AT5-s3o2o2l1p1m1" internal-id="m-AT5-c-b-b-a-a-a">1+(2+3)=(1+2)+3</m>.
+  </p>
+</li>
+          <li original-id="AT5-s3o2o2l2" internal-id="li-AT5-c-b-b-b">
+  <p original-id="AT5-s3o2o2l2p1" internal-id="p-AT5-c-b-b-b-a">
+    <m original-id="AT5-s3o2o2l2p1m1" internal-id="m-AT5-c-b-b-b-a-a">
+      7+4=4+7</m>.
+  </p>
+</li>
+          <li original-id="AT5-s3o2o2l3" internal-id="li-AT5-c-b-b-c">
+  <p original-id="AT5-s3o2o2l3p1" internal-id="p-AT5-c-b-b-c-a">
+  There exists some <m original-id="AT5-s3o2o2l3p1m1" internal-id="m-AT5-c-b-b-c-a-a">\unknown</m>
+      where <m original-id="AT5-s3o2o2l3p1m2" internal-id="m-AT5-c-b-b-c-a-b">5+\unknown=5</m>.
+  </p>
+</li>
+          <li original-id="AT5-s3o2o2l4" internal-id="li-AT5-c-b-b-d">
+  <p original-id="AT5-s3o2o2l4p1" internal-id="p-AT5-c-b-b-d-a">
+    There exists some <m original-id="AT5-s3o2o2l4p1m1" internal-id="m-AT5-c-b-b-d-a-a">\unknown</m>
+        where <m original-id="AT5-s3o2o2l4p1m2" internal-id="m-AT5-c-b-b-d-a-b">9+\unknown=0</m>.
+  </p>
+</li>
+          <li original-id="AT5-s3o2o2l5" internal-id="li-AT5-c-b-b-e">
+  <p original-id="AT5-s3o2o2l5p1" internal-id="p-AT5-c-b-b-e-a">
+        <m original-id="AT5-s3o2o2l5p1m1" internal-id="m-AT5-c-b-b-e-a-a">\frac{1}{2}(1+7)</m>
+      is the only number that is equally distant from
+      <m original-id="AT5-s3o2o2l5p1m2" internal-id="m-AT5-c-b-b-e-a-b">1</m> and <m original-id="AT5-s3o2o2l5p1m3" internal-id="m-AT5-c-b-b-e-a-c">7</m>.
+  </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 3.5.1 (~5 min)</title>
+        <p original-id="AT5-s3a3s1p1" internal-id="p-AT5-c-c-a-a">
+Which of the following properites of <m original-id="AT5-s3a3s1p1m1" internal-id="m-AT5-c-c-a-a-a">\IR^2</m> Euclidean vectors is NOT true?
+  </p>
+        <ol marker="A." original-id="AT5-s3a3s1o2" internal-id="ol-AT5-c-c-a-b">
+          <li original-id="AT5-s3a3s1o2l1" internal-id="li-AT5-c-c-a-b-a"><p original-id="AT5-s3a3s1o2l1p1" internal-id="p-AT5-c-c-a-b-a-a"> <m original-id="AT5-s3a3s1o2l1p1m1" internal-id="m-AT5-c-c-a-b-a-a-a">\left[\begin{array}{c} x_1\\x_2\end{array}\right]
+      +\left(\left[\begin{array}{c} y_1\\y_2\end{array}\right]
+      +\left[\begin{array}{c} z_1\\z_2\end{array}\right]\right)=
+      \left(\left[\begin{array}{c} x_1\\x_2\end{array}\right]
+      +\left[\begin{array}{c} y_1\\y_2\end{array}\right]\right)
+      +\left[\begin{array}{c} z_1\\z_2\end{array}\right]</m>.
+  </p>
+</li>
+          <li original-id="AT5-s3a3s1o2l2" internal-id="li-AT5-c-c-a-b-b">
+  <p original-id="AT5-s3a3s1o2l2p1" internal-id="p-AT5-c-c-a-b-b-a">
+    <m original-id="AT5-s3a3s1o2l2p1m1" internal-id="m-AT5-c-c-a-b-b-a-a">
+      \left[\begin{array}{c}x_1\\x_2\end{array}\right]
+      +
+      \left[\begin{array}{c}y_1\\y_2\end{array}\right]
+      =
+      \left[\begin{array}{c}y_1\\y_2\end{array}\right]
+      +
+      \left[\begin{array}{c}x_1\\x_2\end{array}\right]</m>.
+  </p>
+</li>
+          <li original-id="AT5-s3a3s1o2l3" internal-id="li-AT5-c-c-a-b-c">
+  <p original-id="AT5-s3a3s1o2l3p1" internal-id="p-AT5-c-c-a-b-c-a">
+  There exists some <m original-id="AT5-s3a3s1o2l3p1m1" internal-id="m-AT5-c-c-a-b-c-a-a">\left[\begin{array}{c}\unknown\\\unknown\end{array}\right]</m>
+      where <m original-id="AT5-s3a3s1o2l3p1m2" internal-id="m-AT5-c-c-a-b-c-a-b">\left[\begin{array}{c}x_1\\x_2\end{array}\right] 
+        +\left[\begin{array}{c}\unknown\\\unknown\end{array}\right] 
+        =\left[\begin{array}{c}x_1\\x_2\end{array}\right]</m>.
+  </p>
+</li>
+          <li original-id="AT5-s3a3s1o2l4" internal-id="li-AT5-c-c-a-b-d">
+  <p original-id="AT5-s3a3s1o2l4p1" internal-id="p-AT5-c-c-a-b-d-a">
+  There exists some <m original-id="AT5-s3a3s1o2l4p1m1" internal-id="m-AT5-c-c-a-b-d-a-a">\left[\begin{array}{c}\unknown\\\unknown\end{array}\right]</m>
+      where <m original-id="AT5-s3a3s1o2l4p1m2" internal-id="m-AT5-c-c-a-b-d-a-b">\left[\begin{array}{c}x_1\\x_2\end{array}\right]+
+        \left[\begin{array}{c}\unknown\\\unknown\end{array}\right]=
+        \left[\begin{array}{c}0\\0\end{array}\right]</m>.
+  </p>
+</li>
+          <li original-id="AT5-s3a3s1o2l5" internal-id="li-AT5-c-c-a-b-e">
+  <p original-id="AT5-s3a3s1o2l5p1" internal-id="p-AT5-c-c-a-b-e-a">
+        <m original-id="AT5-s3a3s1o2l5p1m1" internal-id="m-AT5-c-c-a-b-e-a-a">\displaystyle\frac{1}{2}\left(\left[\begin{array}{c}x_1\\x_2\end{array}\right] +
+          \left[\begin{array}{c}y_1\\y_2\end{array}\right] \right)</m>
+      is the only vector whose endpoint is equally distant from the endpoints of
+      <m original-id="AT5-s3a3s1o2l5p1m2" internal-id="m-AT5-c-c-a-b-e-a-b">\left[\begin{array}{c}x_1\\x_2\end{array}\right]</m> and
+      <m original-id="AT5-s3a3s1o2l5p1m3" internal-id="m-AT5-c-c-a-b-e-a-c">\left[\begin{array}{c}y_1\\y_2\end{array}\right]</m>.
+  </p>
+</li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Observation 3.5.2 </title>
+        <p original-id="AT5-s3o4p1" internal-id="p-AT5-c-d-a">
+      Consider the following applications of properites of the real numbers 
+      <m original-id="AT5-s3o4p1m1" internal-id="m-AT5-c-d-a-a">\mathbb R</m>:
+    </p>
+        <ol original-id="AT5-s3o4o2" internal-id="ol-AT5-c-d-b">
+          <li original-id="AT5-s3o4o2l1" internal-id="li-AT5-c-d-b-a">
+        <p original-id="AT5-s3o4o2l1p1" internal-id="p-AT5-c-d-b-a-a">
+        <m original-id="AT5-s3o4o2l1p1m1" internal-id="m-AT5-c-d-b-a-a-a">3(2(7))=(3\cdot 2)(7)</m>.
+        </p>
+      </li>
+          <li original-id="AT5-s3o4o2l2" internal-id="li-AT5-c-d-b-b">
+        <p original-id="AT5-s3o4o2l2p1" internal-id="p-AT5-c-d-b-b-a">
+        <m original-id="AT5-s3o4o2l2p1m1" internal-id="m-AT5-c-d-b-b-a-a">1(19)=19</m>.
+        </p>
+      </li>
+          <li original-id="AT5-s3o4o2l3" internal-id="li-AT5-c-d-b-c">
+        <p original-id="AT5-s3o4o2l3p1" internal-id="p-AT5-c-d-b-c-a">
+        There exists some <m original-id="AT5-s3o4o2l3p1m1" internal-id="m-AT5-c-d-b-c-a-a">\unknown</m> 
+            such that <m original-id="AT5-s3o4o2l3p1m2" internal-id="m-AT5-c-d-b-c-a-b">\unknown \cdot 4=
+              9</m>.
+        </p>
+      </li>
+          <li original-id="AT5-s3o4o2l4" internal-id="li-AT5-c-d-b-d">
+        <p original-id="AT5-s3o4o2l4p1" internal-id="p-AT5-c-d-b-d-a">
+        <m original-id="AT5-s3o4o2l4p1m1" internal-id="m-AT5-c-d-b-d-a-a">3\cdot (2+8)=3\cdot 2+3\cdot 8</m>.
+        </p>
+      </li>
+          <li original-id="AT5-s3o4o2l5" internal-id="li-AT5-c-d-b-e">
+        <p original-id="AT5-s3o4o2l5p1" internal-id="p-AT5-c-d-b-e-a">
+        <m original-id="AT5-s3o4o2l5p1m1" internal-id="m-AT5-c-d-b-e-a-a">(2+7)\cdot 4=2\cdot 4+7\cdot 4</m>.
+        </p>
+      </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 3.5.2 (~5 min)</title>
+        <p original-id="AT5-s3a5s1p1" internal-id="p-AT5-c-e-a-a">
+Which of the following properites of <m original-id="AT5-s3a5s1p1m1" internal-id="m-AT5-c-e-a-a-a">\IR^2</m> Euclidean vectors is NOT true?
+    </p>
+        <ol marker="A." original-id="AT5-s3a5s1o2" internal-id="ol-AT5-c-e-a-b">
+          <li original-id="AT5-s3a5s1o2l1" internal-id="li-AT5-c-e-a-b-a">
+    <p original-id="AT5-s3a5s1o2l1p1" internal-id="p-AT5-c-e-a-b-a-a">
+    <m original-id="AT5-s3a5s1o2l1p1m1" internal-id="m-AT5-c-e-a-b-a-a-a">a\left(b\left[\begin{array}{c}x_1\\x_2\end{array}\right]\right)=
+      ab\left[\begin{array}{c}x_1\\x_2\end{array}\right]</m>.
+    </p>
+  </li>
+          <li original-id="AT5-s3a5s1o2l2" internal-id="li-AT5-c-e-a-b-b">
+    <p original-id="AT5-s3a5s1o2l2p1" internal-id="p-AT5-c-e-a-b-b-a">
+    <m original-id="AT5-s3a5s1o2l2p1m1" internal-id="m-AT5-c-e-a-b-b-a-a">1\left[\begin{array}{c}x_1\\x_2\end{array}\right]=
+      \left[\begin{array}{c}x_1\\x_2\end{array}\right]</m>.
+    </p>
+  </li>
+          <li original-id="AT5-s3a5s1o2l3" internal-id="li-AT5-c-e-a-b-c">
+    <p original-id="AT5-s3a5s1o2l3p1" internal-id="p-AT5-c-e-a-b-c-a">
+    There exists some <m original-id="AT5-s3a5s1o2l3p1m1" internal-id="m-AT5-c-e-a-b-c-a-a">\unknown</m> 
+        such that <m original-id="AT5-s3a5s1o2l3p1m2" internal-id="m-AT5-c-e-a-b-c-a-b">\unknown\left[\begin{array}{c}x_1\\x_2\end{array}\right]=
+          \left[\begin{array}{c}y_1\\y_2\end{array}\right]</m>.
+    </p>
+  </li>
+          <li original-id="AT5-s3a5s1o2l4" internal-id="li-AT5-c-e-a-b-d">
+    <p original-id="AT5-s3a5s1o2l4p1" internal-id="p-AT5-c-e-a-b-d-a">
+    <m original-id="AT5-s3a5s1o2l4p1m1" internal-id="m-AT5-c-e-a-b-d-a-a">a(\vec u+\vec v)=a\vec u+a\vec v</m>.
+    </p>
+  </li>
+          <li original-id="AT5-s3a5s1o2l5" internal-id="li-AT5-c-e-a-b-e">
+    <p original-id="AT5-s3a5s1o2l5p1" internal-id="p-AT5-c-e-a-b-e-a">
+    <m original-id="AT5-s3a5s1o2l5p1m1" internal-id="m-AT5-c-e-a-b-e-a-a">(a+b)\vec v=a\vec v+b\vec v</m>.
+    </p>
+  </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Fact 3.5.3 </title>
+        <p original-id="AT5-s3f6s1p1" internal-id="p-AT5-c-f-a-a">
+  Every Euclidean vector space <m original-id="AT5-s3f6s1p1m1" internal-id="m-AT5-c-f-a-a-a">\mathbb R^n</m> satisfies the following properties, where
+  <m original-id="AT5-s3f6s1p1m2" internal-id="m-AT5-c-f-a-a-b">\vec u,\vec v,\vec w</m> are Euclidean vectors and <m original-id="AT5-s3f6s1p1m3" internal-id="m-AT5-c-f-a-a-c">a,b</m> are scalars.
+        </p>
+        <ol original-id="AT5-s3f6s1o2" internal-id="ol-AT5-c-f-a-b">
+          <li original-id="AT5-s3f6s1o2l1" internal-id="li-AT5-c-f-a-b-a"><p original-id="AT5-s3f6s1o2l1p1" internal-id="p-AT5-c-f-a-b-a-a"> Vector addition is associative: <m original-id="AT5-s3f6s1o2l1p1m1" internal-id="m-AT5-c-f-a-b-a-a-a">\vec u +  (\vec v +  \vec w)=
+        (\vec u +  \vec v) +  \vec w</m>.
+    </p>
+  </li>
+          <li original-id="AT5-s3f6s1o2l2" internal-id="li-AT5-c-f-a-b-b">
+    <p original-id="AT5-s3f6s1o2l2p1" internal-id="p-AT5-c-f-a-b-b-a"> Vector addition is commutative:
+    <m original-id="AT5-s3f6s1o2l2p1m1" internal-id="m-AT5-c-f-a-b-b-a-a">\vec u +  \vec v=
+        \vec v +  \vec u</m>.
+    </p>
+  </li>
+          <li original-id="AT5-s3f6s1o2l3" internal-id="li-AT5-c-f-a-b-c">
+    <p original-id="AT5-s3f6s1o2l3p1" internal-id="p-AT5-c-f-a-b-c-a"> An additive identity exists:
+    There exists some <m original-id="AT5-s3f6s1o2l3p1m1" internal-id="m-AT5-c-f-a-b-c-a-a">\vec z</m>
+        where <m original-id="AT5-s3f6s1o2l3p1m2" internal-id="m-AT5-c-f-a-b-c-a-b">\vec v +  \vec z=\vec v</m>.
+    </p>
+  </li>
+          <li original-id="AT5-s3f6s1o2l4" internal-id="li-AT5-c-f-a-b-d">
+    <p original-id="AT5-s3f6s1o2l4p1" internal-id="p-AT5-c-f-a-b-d-a"> Additive inverses exist: 
+    There exists some <m original-id="AT5-s3f6s1o2l4p1m1" internal-id="m-AT5-c-f-a-b-d-a-a">-\vec v</m>
+        where <m original-id="AT5-s3f6s1o2l4p1m2" internal-id="m-AT5-c-f-a-b-d-a-b">\vec v +  (-\vec v)=\vec z</m>.
+    </p>
+  </li>
+          <li original-id="AT5-s3f6s1o2l5" internal-id="li-AT5-c-f-a-b-e">
+    <p original-id="AT5-s3f6s1o2l5p1" internal-id="p-AT5-c-f-a-b-e-a"> Scalar multiplication is associative: 
+    <m original-id="AT5-s3f6s1o2l5p1m1" internal-id="m-AT5-c-f-a-b-e-a-a">a (b \vec v)=(ab) \vec v</m>.
+    </p>
+  </li>
+          <li original-id="AT5-s3f6s1o2l6" internal-id="li-AT5-c-f-a-b-f">
+    <p original-id="AT5-s3f6s1o2l6p1" internal-id="p-AT5-c-f-a-b-f-a">1 is a multiplicative identity:
+    <m original-id="AT5-s3f6s1o2l6p1m1" internal-id="m-AT5-c-f-a-b-f-a-a">1 \vec v=\vec v</m>.
+    </p>
+  </li>
+          <li original-id="AT5-s3f6s1o2l7" internal-id="li-AT5-c-f-a-b-g">
+    <p original-id="AT5-s3f6s1o2l7p1" internal-id="p-AT5-c-f-a-b-g-a">Scalar multiplication distributes over vector addition:
+    <m original-id="AT5-s3f6s1o2l7p1m1" internal-id="m-AT5-c-f-a-b-g-a-a">a (\vec u +  \vec v)=(a \vec u) + (a \vec v)</m>.
+    </p>
+  </li>
+          <li original-id="AT5-s3f6s1o2l8" internal-id="li-AT5-c-f-a-b-h">
+    <p original-id="AT5-s3f6s1o2l8p1" internal-id="p-AT5-c-f-a-b-h-a">Scalar multiplication distributes over scalar addition:
+    <m original-id="AT5-s3f6s1o2l8p1m1" internal-id="m-AT5-c-f-a-b-h-a-a">(a+ b) \vec v=(a \vec v) + (b  \vec v)</m>.
+    </p>
+  </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Definition 3.5.4 </title>
+        <p original-id="AT5-properties-s1p1" internal-id="p-AT5-properties-a-a">
+  A <term original-id="AT5-properties-s1p1t1" internal-id="term-AT5-properties-a-a-a">vector space</term><idx original-id="AT5-properties-s1p1i2" internal-id="idx-AT5-properties-a-a-b">vector space</idx> <m original-id="AT5-properties-s1p1m3" internal-id="m-AT5-properties-a-a-c">V</m> is any set of mathematical objects, called <term original-id="AT5-properties-s1p1t4" internal-id="term-AT5-properties-a-a-d">vectors</term><idx original-id="AT5-properties-s1p1i5" internal-id="idx-AT5-properties-a-a-e"> vector </idx>, and a set of numbers, called <term original-id="AT5-properties-s1p1t6" internal-id="term-AT5-properties-a-a-f">scalars</term><idx original-id="AT5-properties-s1p1i7" internal-id="idx-AT5-properties-a-a-g"> scalar </idx>, with
+  associated addition <m original-id="AT5-properties-s1p1m8" internal-id="m-AT5-properties-a-a-h">\oplus</m> and scalar multiplication <m original-id="AT5-properties-s1p1m9" internal-id="m-AT5-properties-a-a-i">\odot</m>
+  operations that satisfy the following properties. 
+            Let <m original-id="AT5-properties-s1p1m10" internal-id="m-AT5-properties-a-a-j">\vec u,\vec v,\vec w</m> be vectors belonging to <m original-id="AT5-properties-s1p1m11" internal-id="m-AT5-properties-a-a-k">V</m>, and let <m original-id="AT5-properties-s1p1m12" internal-id="m-AT5-properties-a-a-l">a,b</m> be scalars.
+        </p>
+        <aside original-id="AT5-properties-s1a2" internal-id="aside-AT5-properties-a-b">
+          <p original-id="AT5-properties-s1a2p1" internal-id="p-AT5-properties-a-b-a"> We always assume the codomain of our operations is <m original-id="AT5-properties-s1a2p1m1" internal-id="m-AT5-properties-a-b-a-a">V</m>, i.e. that addition is a map <m original-id="AT5-properties-s1a2p1m2" internal-id="m-AT5-properties-a-b-a-b">V \times V \rightarrow V</m> and that scalar multiplication
+          is a map <m original-id="AT5-properties-s1a2p1m3" internal-id="m-AT5-properties-a-b-a-c">\IR \times V \rightarrow V</m>.
+          </p>
+          <p original-id="AT5-properties-s1a2p2" internal-id="p-AT5-properties-a-b-b">
+            Likewise, we only consider <q original-id="AT5-properties-s1a2p2q1" internal-id="q-AT5-properties-a-b-b-a">real</q> vector spaces, i.e. those whose scalars come from <m original-id="AT5-properties-s1a2p2m2" internal-id="m-AT5-properties-a-b-b-b">\IR</m>.  However, one can similarly define
+            vector spaces with scalars from other fields like the complex or rational numbers.
+          </p>
+        </aside>
+        <ol original-id="AT5-properties-s1o3" internal-id="ol-AT5-properties-a-c">
+          <li original-id="AT5-properties-s1o3l1" internal-id="li-AT5-properties-a-c-a"><p original-id="AT5-properties-s1o3l1p1" internal-id="p-AT5-properties-a-c-a-a"> Vector addition is associative: <m original-id="AT5-properties-s1o3l1p1m1" internal-id="m-AT5-properties-a-c-a-a-a">\vec u\oplus (\vec v\oplus \vec w)=
+        (\vec u\oplus \vec v)\oplus \vec w</m>.
+    </p>
+  </li>
+          <li original-id="AT5-properties-s1o3l2" internal-id="li-AT5-properties-a-c-b">
+    <p original-id="AT5-properties-s1o3l2p1" internal-id="p-AT5-properties-a-c-b-a"> Vector addition is commutative:
+    <m original-id="AT5-properties-s1o3l2p1m1" internal-id="m-AT5-properties-a-c-b-a-a">\vec u\oplus \vec v=
+        \vec v\oplus \vec u</m>.
+    </p>
+  </li>
+          <li original-id="AT5-properties-s1o3l3" internal-id="li-AT5-properties-a-c-c">
+    <p original-id="AT5-properties-s1o3l3p1" internal-id="p-AT5-properties-a-c-c-a"> An additive identity exists:
+    There exists some <m original-id="AT5-properties-s1o3l3p1m1" internal-id="m-AT5-properties-a-c-c-a-a">\vec z</m>
+        where <m original-id="AT5-properties-s1o3l3p1m2" internal-id="m-AT5-properties-a-c-c-a-b">\vec v\oplus \vec z=\vec v</m>.<idx original-id="AT5-properties-s1o3l3p1i3" internal-id="idx-AT5-properties-a-c-c-a-c">additive identity</idx>
+    </p>
+  </li>
+          <li original-id="AT5-properties-s1o3l4" internal-id="li-AT5-properties-a-c-d">
+    <p original-id="AT5-properties-s1o3l4p1" internal-id="p-AT5-properties-a-c-d-a"> Additive inverses exist: 
+    There exists some <m original-id="AT5-properties-s1o3l4p1m1" internal-id="m-AT5-properties-a-c-d-a-a">-\vec v</m>
+        where <m original-id="AT5-properties-s1o3l4p1m2" internal-id="m-AT5-properties-a-c-d-a-b">\vec v\oplus (-\vec v)=\vec z</m>.<idx original-id="AT5-properties-s1o3l4p1i3" internal-id="idx-AT5-properties-a-c-d-a-c">additive inverse</idx>
+    </p>
+  </li>
+          <li original-id="AT5-properties-s1o3l5" internal-id="li-AT5-properties-a-c-e">
+    <p original-id="AT5-properties-s1o3l5p1" internal-id="p-AT5-properties-a-c-e-a"> Scalar multiplication is associative: 
+    <m original-id="AT5-properties-s1o3l5p1m1" internal-id="m-AT5-properties-a-c-e-a-a">a\odot(b\odot\vec v)=(ab)\odot\vec v</m>.
+    </p>
+  </li>
+          <li original-id="AT5-properties-s1o3l6" internal-id="li-AT5-properties-a-c-f">
+    <p original-id="AT5-properties-s1o3l6p1" internal-id="p-AT5-properties-a-c-f-a">1 is a multiplicative identity:
+    <m original-id="AT5-properties-s1o3l6p1m1" internal-id="m-AT5-properties-a-c-f-a-a">1\odot\vec v=\vec v</m>.
+    </p>
+  </li>
+          <li original-id="AT5-properties-s1o3l7" internal-id="li-AT5-properties-a-c-g">
+    <p original-id="AT5-properties-s1o3l7p1" internal-id="p-AT5-properties-a-c-g-a">Scalar multiplication distributes over vector addition:
+    <m original-id="AT5-properties-s1o3l7p1m1" internal-id="m-AT5-properties-a-c-g-a-a">a\odot(\vec u\oplus \vec v)=(a\odot\vec u)\oplus(a\odot\vec v)</m>.
+    </p>
+  </li>
+          <li original-id="AT5-properties-s1o3l8" internal-id="li-AT5-properties-a-c-h">
+    <p original-id="AT5-properties-s1o3l8p1" internal-id="p-AT5-properties-a-c-h-a">Scalar multiplication distributes over scalar addition:
+    <m original-id="AT5-properties-s1o3l8p1m1" internal-id="m-AT5-properties-a-c-h-a-a">(a+ b)\odot\vec v=(a\odot\vec v)\oplus(b\odot \vec v)</m>.
+    </p>
+  </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Remark 3.5.5 </title>
+        <p original-id="AT5-s3r8p1" internal-id="p-AT5-c-h-a">
+  Consider the
+  set <m original-id="AT5-s3r8p1m1" internal-id="m-AT5-c-h-a-a">\IC</m> of complex numbers with the usual defintion for addition:
+  <m original-id="AT5-s3r8p1m2" internal-id="m-AT5-c-h-a-b">(a+b\mathbf i)\oplus(c+d\mathbf i)=(a+c)+(b+d)\mathbf i</m>.
+    </p>
+        <p original-id="AT5-s3r8p2" internal-id="p-AT5-c-h-b">Let 
+  <m original-id="AT5-s3r8p2m1" internal-id="m-AT5-c-h-b-a">\vec u=a+b\mathbf{i}</m>, <m original-id="AT5-s3r8p2m2" internal-id="m-AT5-c-h-b-b">\vec v=c+d\mathbf{i}</m>, and <m original-id="AT5-s3r8p2m3" internal-id="m-AT5-c-h-b-c">\vec w=e+f\mathbf{i}</m>. Then
+    <md original-id="AT5-s3r8p2m4" internal-id="md-AT5-c-h-b-d"><mrow original-id="AT5-s3r8p2m4m1" internal-id="mrow-AT5-c-h-b-d-a">
+    \vec u\oplus(\vec v \oplus \vec w)
+      &amp;=
+    (a+b\mathbf{i})\oplus((c+d\mathbf{i})\oplus(e+f\mathbf{i}))
+        </mrow><mrow original-id="AT5-s3r8p2m4m2" internal-id="mrow-AT5-c-h-b-d-b">
+            &amp;=
+    (a+b\mathbf{i})\oplus((c+e)+(d+f)\mathbf{i})
+        </mrow><mrow original-id="AT5-s3r8p2m4m3" internal-id="mrow-AT5-c-h-b-d-c"> 
+          &amp;=(a+c+e)+(b+d+f)\mathbf{i}
+        </mrow></md>
+    <md original-id="AT5-s3r8p2m5" internal-id="md-AT5-c-h-b-e"><mrow original-id="AT5-s3r8p2m5m1" internal-id="mrow-AT5-c-h-b-e-a">
+    (\vec u\oplus\vec v) \oplus \vec w
+    &amp;=
+    ((a+b\mathbf{i})\oplus(c+d\mathbf{i}))\oplus(e+f\mathbf{i})
+        </mrow><mrow original-id="AT5-s3r8p2m5m2" internal-id="mrow-AT5-c-h-b-e-b">
+      &amp;=((a+c)+(b+d)\mathbf{i})\oplus(e+f\mathbf{i})
+        </mrow><mrow original-id="AT5-s3r8p2m5m3" internal-id="mrow-AT5-c-h-b-e-c"> 
+          &amp;=(a+c+e)+(b+d+f)\mathbf{i}
+        </mrow></md>
+  </p>
+        <p original-id="AT5-s3r8p3" internal-id="p-AT5-c-h-c">
+This proves that complex addition is associative:
+<m original-id="AT5-s3r8p3m1" internal-id="m-AT5-c-h-c-a">\vec u\oplus(\vec v \oplus \vec w) = (\vec u\oplus\vec v) \oplus \vec w</m>.
+The seven other vector space properties may also be verified, so <m original-id="AT5-s3r8p3m2" internal-id="m-AT5-c-h-c-b">\IC</m>
+is an example of a non-Euclidean vector space.
+    </p>
+      </slide>
+      <slide>
+        <title>Remark 3.5.6 </title>
+        <p original-id="AT5-s3r9s1p1" internal-id="p-AT5-c-i-a-a">
+  The following sets are just a few examples of vector spaces, with the usual/natural
+  operations for addition and scalar multiplication.
+    </p>
+        <ul original-id="AT5-s3r9s1u2" internal-id="ul-AT5-c-i-a-b">
+          <li original-id="AT5-s3r9s1u2l1" internal-id="li-AT5-c-i-a-b-a">
+    <p original-id="AT5-s3r9s1u2l1p1" internal-id="p-AT5-c-i-a-b-a-a">
+    <m original-id="AT5-s3r9s1u2l1p1m1" internal-id="m-AT5-c-i-a-b-a-a-a">\IR^n</m>: Euclidean vectors with <m original-id="AT5-s3r9s1u2l1p1m2" internal-id="m-AT5-c-i-a-b-a-a-b">n</m> components.
+    </p>
+    </li>
+          <li original-id="AT5-s3r9s1u2l2" internal-id="li-AT5-c-i-a-b-b">
+    <p original-id="AT5-s3r9s1u2l2p1" internal-id="p-AT5-c-i-a-b-b-a">
+    <m original-id="AT5-s3r9s1u2l2p1m1" internal-id="m-AT5-c-i-a-b-b-a-a">\IC</m>: Complex numbers.
+    </p>
+    </li>
+          <li original-id="AT5-s3r9s1u2l3" internal-id="li-AT5-c-i-a-b-c">
+   <p original-id="AT5-s3r9s1u2l3p1" internal-id="p-AT5-c-i-a-b-c-a">
+    <m original-id="AT5-s3r9s1u2l3p1m1" internal-id="m-AT5-c-i-a-b-c-a-a">M_{m,n}</m>: Matrices of real numbers with <m original-id="AT5-s3r9s1u2l3p1m2" internal-id="m-AT5-c-i-a-b-c-a-b">m</m> rows and
+          <m original-id="AT5-s3r9s1u2l3p1m3" internal-id="m-AT5-c-i-a-b-c-a-c">n</m> columns.
+    </p>
+    </li>
+          <li original-id="AT5-s3r9s1u2l4" internal-id="li-AT5-c-i-a-b-d">
+    <p original-id="AT5-s3r9s1u2l4p1" internal-id="p-AT5-c-i-a-b-d-a">
+    <m original-id="AT5-s3r9s1u2l4p1m1" internal-id="m-AT5-c-i-a-b-d-a-a">\P_n</m>: Polynomials of degree <m original-id="AT5-s3r9s1u2l4p1m2" internal-id="m-AT5-c-i-a-b-d-a-b">n</m> or less.
+    </p>
+    </li>
+          <li original-id="AT5-s3r9s1u2l5" internal-id="li-AT5-c-i-a-b-e">
+    <p original-id="AT5-s3r9s1u2l5p1" internal-id="p-AT5-c-i-a-b-e-a">
+    <m original-id="AT5-s3r9s1u2l5p1m1" internal-id="m-AT5-c-i-a-b-e-a-a">\P</m>: Polynomials of any degree.
+    </p>
+    </li>
+          <li original-id="AT5-s3r9s1u2l6" internal-id="li-AT5-c-i-a-b-f">
+    <p original-id="AT5-s3r9s1u2l6p1" internal-id="p-AT5-c-i-a-b-f-a">
+    <m original-id="AT5-s3r9s1u2l6p1m1" internal-id="m-AT5-c-i-a-b-f-a-a">C(\IR)</m>: Real-valued continuous functions.
+    </p>
+    </li>
+        </ul>
+      </slide>
+      <slide>
+        <title>Activity 3.5.3 (~5 min)</title>
+        <p original-id="AT5-s3a10s1p1" internal-id="p-AT5-c-j-a-a">
+  Consider the set <m original-id="AT5-s3a10s1p1m1" internal-id="m-AT5-c-j-a-a-a">V=\setBuilder{(x,y)}{y=2^x}</m>.
+    </p>
+        <p original-id="AT5-s3a10s1p2" internal-id="p-AT5-c-j-a-b">Which of the following vectors is not in <m original-id="AT5-s3a10s1p2m1" internal-id="m-AT5-c-j-a-b-a">V</m>?               </p>
+        <ol marker="A." cols="2" original-id="AT5-s3a10s1o3" internal-id="ol-AT5-c-j-a-c">
+          <li original-id="AT5-s3a10s1o3l1" internal-id="li-AT5-c-j-a-c-a">
+            <p original-id="AT5-s3a10s1o3l1p1" internal-id="p-AT5-c-j-a-c-a-a">
+            <m original-id="AT5-s3a10s1o3l1p1m1" internal-id="m-AT5-c-j-a-c-a-a-a">(0, 0)</m>
+            </p>
+        </li>
+          <li original-id="AT5-s3a10s1o3l2" internal-id="li-AT5-c-j-a-c-b">
+            <p original-id="AT5-s3a10s1o3l2p1" internal-id="p-AT5-c-j-a-c-b-a">
+            <m original-id="AT5-s3a10s1o3l2p1m1" internal-id="m-AT5-c-j-a-c-b-a-a">(1, 2)</m>
+            </p>
+        </li>
+          <li original-id="AT5-s3a10s1o3l3" internal-id="li-AT5-c-j-a-c-c">
+            <p original-id="AT5-s3a10s1o3l3p1" internal-id="p-AT5-c-j-a-c-c-a">
+            <m original-id="AT5-s3a10s1o3l3p1m1" internal-id="m-AT5-c-j-a-c-c-a-a">(2, 4)</m>
+            </p>
+        </li>
+          <li original-id="AT5-s3a10s1o3l4" internal-id="li-AT5-c-j-a-c-d">
+            <p original-id="AT5-s3a10s1o3l4p1" internal-id="p-AT5-c-j-a-c-d-a">
+            <m original-id="AT5-s3a10s1o3l4p1m1" internal-id="m-AT5-c-j-a-c-d-a-a">(3, 8)</m>
+            </p>
+        </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 3.5.4 (~5 min)</title>
+        <p original-id="AT5-s3a11s1p1" internal-id="p-AT5-c-k-a-a">
+  Consider the set <m original-id="AT5-s3a11s1p1m1" internal-id="m-AT5-c-k-a-a-a">V=\setBuilder{(x,y)}{y=2^x}</m> with
+  the operation <m original-id="AT5-s3a11s1p1m2" internal-id="m-AT5-c-k-a-a-b">\oplus</m> defined by
+  <me original-id="AT5-s3a11s1p1m3" internal-id="me-AT5-c-k-a-a-c">
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)   
+  </me>.
+    </p>
+        <p original-id="AT5-s3a11s1p2" internal-id="p-AT5-c-k-a-b">
+Let <m original-id="AT5-s3a11s1p2m1" internal-id="m-AT5-c-k-a-b-a">\vec u, \vec v</m> be in <m original-id="AT5-s3a11s1p2m2" internal-id="m-AT5-c-k-a-b-b">V</m> with
+<m original-id="AT5-s3a11s1p2m3" internal-id="m-AT5-c-k-a-b-c">\vec u=(1, 2)</m> and <m original-id="AT5-s3a11s1p2m4" internal-id="m-AT5-c-k-a-b-d">\vec v=(2, 4)</m>.
+Using the operations defined for <m original-id="AT5-s3a11s1p2m5" internal-id="m-AT5-c-k-a-b-e">V</m>, which of the
+following is <m original-id="AT5-s3a11s1p2m6" internal-id="m-AT5-c-k-a-b-f">\vec u\oplus\vec v</m>?</p>
+        <ol marker="A." cols="2" original-id="AT5-s3a11s1o3" internal-id="ol-AT5-c-k-a-c">
+          <li original-id="AT5-s3a11s1o3l1" internal-id="li-AT5-c-k-a-c-a">
+            <p original-id="AT5-s3a11s1o3l1p1" internal-id="p-AT5-c-k-a-c-a-a">
+            <m original-id="AT5-s3a11s1o3l1p1m1" internal-id="m-AT5-c-k-a-c-a-a-a">(2, 6)</m>
+            </p>
+        </li>
+          <li original-id="AT5-s3a11s1o3l2" internal-id="li-AT5-c-k-a-c-b">
+            <p original-id="AT5-s3a11s1o3l2p1" internal-id="p-AT5-c-k-a-c-b-a">
+            <m original-id="AT5-s3a11s1o3l2p1m1" internal-id="m-AT5-c-k-a-c-b-a-a">(2, 8)</m>
+            </p>
+        </li>
+          <li original-id="AT5-s3a11s1o3l3" internal-id="li-AT5-c-k-a-c-c">
+            <p original-id="AT5-s3a11s1o3l3p1" internal-id="p-AT5-c-k-a-c-c-a">
+            <m original-id="AT5-s3a11s1o3l3p1m1" internal-id="m-AT5-c-k-a-c-c-a-a">(3, 6)</m>
+            </p>
+        </li>
+          <li original-id="AT5-s3a11s1o3l4" internal-id="li-AT5-c-k-a-c-d">
+            <p original-id="AT5-s3a11s1o3l4p1" internal-id="p-AT5-c-k-a-c-d-a">
+            <m original-id="AT5-s3a11s1o3l4p1m1" internal-id="m-AT5-c-k-a-c-d-a-a">(3, 8)</m>
+            </p>
+        </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Activity 3.5.5 (~10 min)</title>
+        <p original-id="AT5-s3a12i1p1" internal-id="p-AT5-c-l-a-a">
+Consider the set <m original-id="AT5-s3a12i1p1m1" internal-id="m-AT5-c-l-a-a-a">V=\setBuilder{(x,y)}{y=2^x}</m> with
+operations <m original-id="AT5-s3a12i1p1m2" internal-id="m-AT5-c-l-a-a-b">\oplus,\odot</m> defined by
+        <me original-id="AT5-s3a12i1p1m3" internal-id="me-AT5-c-l-a-a-c">
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+      \hspace{3em}
+    c\odot (x,y)=(cx,y^c)
+        </me>.
+      </p>
+        <p original-id="AT5-s3a12i1p2" internal-id="p-AT5-c-l-a-b">
+Let <m original-id="AT5-s3a12i1p2m1" internal-id="m-AT5-c-l-a-b-a">a=2, b=-3</m> be scalars and
+<m original-id="AT5-s3a12i1p2m2" internal-id="m-AT5-c-l-a-b-b">\vec u=(1,2) \in V</m>.
+      </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="AT5-s3a12t2p1" internal-id="p-AT5-c-l-b-a">
+Verify that
+<me original-id="AT5-s3a12t2p1m1" internal-id="me-AT5-c-l-b-a-a">(a+b)\odot \vec u=\left(-1,\frac{1}{2}\right)</me>.
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 3.5.5 (~10 min)</title>
+        <p original-id="AT5-s3a12i1p1" internal-id="p-AT5-c-l-a-a">
+Consider the set <m original-id="AT5-s3a12i1p1m1" internal-id="m-AT5-c-l-a-a-a">V=\setBuilder{(x,y)}{y=2^x}</m> with
+operations <m original-id="AT5-s3a12i1p1m2" internal-id="m-AT5-c-l-a-a-b">\oplus,\odot</m> defined by
+        <me original-id="AT5-s3a12i1p1m3" internal-id="me-AT5-c-l-a-a-c">
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+      \hspace{3em}
+    c\odot (x,y)=(cx,y^c)
+        </me>.
+      </p>
+        <p original-id="AT5-s3a12i1p2" internal-id="p-AT5-c-l-a-b">
+Let <m original-id="AT5-s3a12i1p2m1" internal-id="m-AT5-c-l-a-b-a">a=2, b=-3</m> be scalars and
+<m original-id="AT5-s3a12i1p2m2" internal-id="m-AT5-c-l-a-b-b">\vec u=(1,2) \in V</m>.
+      </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="AT5-s3a12t3p1" internal-id="p-AT5-c-l-c-a">
+Compute the value of
+        <me original-id="AT5-s3a12t3p1m1" internal-id="me-AT5-c-l-c-a-a">
+\left(a\odot \vec u\right)\oplus \left(b\odot \vec u\right)
+        </me>.
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 3.5.6 (~10 min)</title>
+        <p original-id="AT5-s3a13i1p1" internal-id="p-AT5-c-m-a-a">
+Consider the set <m original-id="AT5-s3a13i1p1m1" internal-id="m-AT5-c-m-a-a-a">V=\setBuilder{(x,y)}{y=2^x}</m> with
+operations <m original-id="AT5-s3a13i1p1m2" internal-id="m-AT5-c-m-a-a-b">\oplus,\odot</m> defined by
+        <me original-id="AT5-s3a13i1p1m3" internal-id="me-AT5-c-m-a-a-c">
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+      \hspace{3em}
+    c\odot (x,y)=(cx,y^c)
+        </me>.
+      </p>
+        <p original-id="AT5-s3a13i1p2" internal-id="p-AT5-c-m-a-b">
+Let <m original-id="AT5-s3a13i1p2m1" internal-id="m-AT5-c-m-a-b-a">a, b</m> be unspecified 
+scalars in <m original-id="AT5-s3a13i1p2m2" internal-id="m-AT5-c-m-a-b-b">\mathbb R</m> and <m original-id="AT5-s3a13i1p2m3" internal-id="m-AT5-c-m-a-b-c">\vec u = (x,y)</m> be an
+unspecified vector in <m original-id="AT5-s3a13i1p2m4" internal-id="m-AT5-c-m-a-b-d">V</m>.
+    </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="AT5-s3a13t2p1" internal-id="p-AT5-c-m-b-a">
+Show that both sides of the equation
+        <me original-id="AT5-s3a13t2p1m1" internal-id="me-AT5-c-m-b-a-a">
+(a+b)\odot (x,y)=
+\left(a\odot (x,y)\right)\oplus \left(b\odot (x,y)\right)
+        </me>
+simplify to the expression <m original-id="AT5-s3a13t2p1m2" internal-id="m-AT5-c-m-b-a-b">(ax+bx,y^ay^b)</m>.
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 3.5.6 (~10 min)</title>
+        <p original-id="AT5-s3a13i1p1" internal-id="p-AT5-c-m-a-a">
+Consider the set <m original-id="AT5-s3a13i1p1m1" internal-id="m-AT5-c-m-a-a-a">V=\setBuilder{(x,y)}{y=2^x}</m> with
+operations <m original-id="AT5-s3a13i1p1m2" internal-id="m-AT5-c-m-a-a-b">\oplus,\odot</m> defined by
+        <me original-id="AT5-s3a13i1p1m3" internal-id="me-AT5-c-m-a-a-c">
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+      \hspace{3em}
+    c\odot (x,y)=(cx,y^c)
+        </me>.
+      </p>
+        <p original-id="AT5-s3a13i1p2" internal-id="p-AT5-c-m-a-b">
+Let <m original-id="AT5-s3a13i1p2m1" internal-id="m-AT5-c-m-a-b-a">a, b</m> be unspecified 
+scalars in <m original-id="AT5-s3a13i1p2m2" internal-id="m-AT5-c-m-a-b-b">\mathbb R</m> and <m original-id="AT5-s3a13i1p2m3" internal-id="m-AT5-c-m-a-b-c">\vec u = (x,y)</m> be an
+unspecified vector in <m original-id="AT5-s3a13i1p2m4" internal-id="m-AT5-c-m-a-b-d">V</m>.
+    </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="AT5-s3a13t3p1" internal-id="p-AT5-c-m-c-a">
+Show that <m original-id="AT5-s3a13t3p1m1" internal-id="m-AT5-c-m-c-a-a">V</m> contains an additive identity element
+<m original-id="AT5-s3a13t3p1m2" internal-id="m-AT5-c-m-c-a-b">\vec{z}=(\unknown,\unknown)</m> satisfying
+<me original-id="AT5-s3a13t3p1m3" internal-id="me-AT5-c-m-c-a-c">(x,y)\oplus(\unknown,\unknown)=(x,y)</me>
+for all <m original-id="AT5-s3a13t3p1m4" internal-id="m-AT5-c-m-c-a-d">(x,y)\in V</m>.
+      </p>
+        <p original-id="AT5-s3a13t3p2" internal-id="p-AT5-c-m-c-b">
+That is, pick appropriate values for
+<m original-id="AT5-s3a13t3p2m1" internal-id="m-AT5-c-m-c-b-a">\vec{z}=(\unknown,\unknown)</m> and then
+simplify <m original-id="AT5-s3a13t3p2m2" internal-id="m-AT5-c-m-c-b-b">(x,y)\oplus(\unknown,\unknown)</m>
+into just <m original-id="AT5-s3a13t3p2m3" internal-id="m-AT5-c-m-c-b-c">(x,y)</m>.
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 3.5.6 (~10 min)</title>
+        <p original-id="AT5-s3a13i1p1" internal-id="p-AT5-c-m-a-a">
+Consider the set <m original-id="AT5-s3a13i1p1m1" internal-id="m-AT5-c-m-a-a-a">V=\setBuilder{(x,y)}{y=2^x}</m> with
+operations <m original-id="AT5-s3a13i1p1m2" internal-id="m-AT5-c-m-a-a-b">\oplus,\odot</m> defined by
+        <me original-id="AT5-s3a13i1p1m3" internal-id="me-AT5-c-m-a-a-c">
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+      \hspace{3em}
+    c\odot (x,y)=(cx,y^c)
+        </me>.
+      </p>
+        <p original-id="AT5-s3a13i1p2" internal-id="p-AT5-c-m-a-b">
+Let <m original-id="AT5-s3a13i1p2m1" internal-id="m-AT5-c-m-a-b-a">a, b</m> be unspecified 
+scalars in <m original-id="AT5-s3a13i1p2m2" internal-id="m-AT5-c-m-a-b-b">\mathbb R</m> and <m original-id="AT5-s3a13i1p2m3" internal-id="m-AT5-c-m-a-b-c">\vec u = (x,y)</m> be an
+unspecified vector in <m original-id="AT5-s3a13i1p2m4" internal-id="m-AT5-c-m-a-b-d">V</m>.
+    </p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <p original-id="AT5-s3a13t4p1" internal-id="p-AT5-c-m-d-a">
+  Is <m original-id="AT5-s3a13t4p1m1" internal-id="m-AT5-c-m-d-a-a">V</m> a vector space?
+  <ol marker="A." original-id="AT5-s3a13t4p1o2" internal-id="ol-AT5-c-m-d-a-b"><li original-id="AT5-s3a13t4p1o2l1" internal-id="li-AT5-c-m-d-a-b-a"><p original-id="AT5-s3a13t4p1o2l1p1" internal-id="p-AT5-c-m-d-a-b-a-a">Yes</p></li><li original-id="AT5-s3a13t4p1o2l2" internal-id="li-AT5-c-m-d-a-b-b"><p original-id="AT5-s3a13t4p1o2l2p1" internal-id="p-AT5-c-m-d-a-b-b-a">No</p></li><li original-id="AT5-s3a13t4p1o2l3" internal-id="li-AT5-c-m-d-a-b-c"><p original-id="AT5-s3a13t4p1o2l3p1" internal-id="p-AT5-c-m-d-a-b-c-a">More work is required</p></li></ol>
+      </p>
+      </slide>
+      <slide>
+        <title>Remark 3.5.7 </title>
+        <p original-id="AT5-s3r14s1p1" internal-id="p-AT5-c-n-a-a">
+  It turns out <m original-id="AT5-s3r14s1p1m1" internal-id="m-AT5-c-n-a-a-a">V=\setBuilder{(x,y)}{y=2^x}</m> with
+operations <m original-id="AT5-s3r14s1p1m2" internal-id="m-AT5-c-n-a-a-b">\oplus,\odot</m> defined by
+        <me original-id="AT5-s3r14s1p1m3" internal-id="me-AT5-c-n-a-a-c">
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1y_2)
+      \hspace{3em}
+    c\odot (x,y)=(cx,y^c)
+        </me>
+satisifes all eight properties from Definition 3.5.4 .
+    </p>
+        <p original-id="AT5-s3r14s1p2" internal-id="p-AT5-c-n-a-b">
+  Thus, <m original-id="AT5-s3r14s1p2m1" internal-id="m-AT5-c-n-a-b-a">V</m> is a vector space.
+    </p>
+      </slide>
+      <slide>
+        <title>Activity 3.5.7 (~15 min)</title>
+        <p original-id="AT5-s3a15i1p1" internal-id="p-AT5-c-o-a-a">
+  Let <m original-id="AT5-s3a15i1p1m1" internal-id="m-AT5-c-o-a-a-a">V=\setBuilder{(x,y)}{x,y\in\IR}</m>
+  have operations defined by
+  <me original-id="AT5-s3a15i1p1m2" internal-id="me-AT5-c-o-a-a-b">
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+y_1+x_2+y_2,x_1^2+x_2^2)
+  </me>
+  <me original-id="AT5-s3a15i1p1m3" internal-id="me-AT5-c-o-a-a-c">
+    c\odot (x,y)=(x^c,y+c-1)
+  </me>.
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="AT5-s3a15t2p1" internal-id="p-AT5-c-o-b-a">
+    Show that <m original-id="AT5-s3a15t2p1m1" internal-id="m-AT5-c-o-b-a-a">1</m> is the scalar multiplication identity element
+	by simplifying <m original-id="AT5-s3a15t2p1m2" internal-id="m-AT5-c-o-b-a-b">1\odot(x,y)</m> to <m original-id="AT5-s3a15t2p1m3" internal-id="m-AT5-c-o-b-a-c">(x,y)</m>.
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 3.5.7 (~15 min)</title>
+        <p original-id="AT5-s3a15i1p1" internal-id="p-AT5-c-o-a-a">
+  Let <m original-id="AT5-s3a15i1p1m1" internal-id="m-AT5-c-o-a-a-a">V=\setBuilder{(x,y)}{x,y\in\IR}</m>
+  have operations defined by
+  <me original-id="AT5-s3a15i1p1m2" internal-id="me-AT5-c-o-a-a-b">
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+y_1+x_2+y_2,x_1^2+x_2^2)
+  </me>
+  <me original-id="AT5-s3a15i1p1m3" internal-id="me-AT5-c-o-a-a-c">
+    c\odot (x,y)=(x^c,y+c-1)
+  </me>.
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="AT5-s3a15t3p1" internal-id="p-AT5-c-o-c-a">
+    Show that <m original-id="AT5-s3a15t3p1m1" internal-id="m-AT5-c-o-c-a-a">V</m> does not have an additive identity element
+    <m original-id="AT5-s3a15t3p1m2" internal-id="m-AT5-c-o-c-a-b">\vec z=(z,w)</m> by showing that 
+	<m original-id="AT5-s3a15t3p1m3" internal-id="m-AT5-c-o-c-a-c">(0,-1)\oplus(z,w)\not=(0,-1)</m> no matter what the values of <m original-id="AT5-s3a15t3p1m4" internal-id="m-AT5-c-o-c-a-d">z,w</m>
+  are.
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 3.5.7 (~15 min)</title>
+        <p original-id="AT5-s3a15i1p1" internal-id="p-AT5-c-o-a-a">
+  Let <m original-id="AT5-s3a15i1p1m1" internal-id="m-AT5-c-o-a-a-a">V=\setBuilder{(x,y)}{x,y\in\IR}</m>
+  have operations defined by
+  <me original-id="AT5-s3a15i1p1m2" internal-id="me-AT5-c-o-a-a-b">
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+y_1+x_2+y_2,x_1^2+x_2^2)
+  </me>
+  <me original-id="AT5-s3a15i1p1m3" internal-id="me-AT5-c-o-a-a-c">
+    c\odot (x,y)=(x^c,y+c-1)
+  </me>.
+        </p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <p original-id="AT5-s3a15t4p1" internal-id="p-AT5-c-o-d-a">
+  Is <m original-id="AT5-s3a15t4p1m1" internal-id="m-AT5-c-o-d-a-a">V</m> a vector space?
+  <ol marker="A." original-id="AT5-s3a15t4p1o2" internal-id="ol-AT5-c-o-d-a-b"><li original-id="AT5-s3a15t4p1o2l1" internal-id="li-AT5-c-o-d-a-b-a"><p original-id="AT5-s3a15t4p1o2l1p1" internal-id="p-AT5-c-o-d-a-b-a-a">Yes</p></li><li original-id="AT5-s3a15t4p1o2l2" internal-id="li-AT5-c-o-d-a-b-b"><p original-id="AT5-s3a15t4p1o2l2p1" internal-id="p-AT5-c-o-d-a-b-b-a">No</p></li><li original-id="AT5-s3a15t4p1o2l3" internal-id="li-AT5-c-o-d-a-b-c"><p original-id="AT5-s3a15t4p1o2l3p1" internal-id="p-AT5-c-o-d-a-b-c-a">More work is required</p></li></ol>
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 3.5.8 (~15 min)</title>
+        <p original-id="AT5-s3a16i1p1" internal-id="p-AT5-c-p-a-a">
+  Let <m original-id="AT5-s3a16i1p1m1" internal-id="m-AT5-c-p-a-a-a">V=\setBuilder{(x,y)}{x,y\in\IR}</m> have operations defined by
+  <me original-id="AT5-s3a16i1p1m2" internal-id="me-AT5-c-p-a-a-b">
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1+3y_2)
+      \hspace{3em}
+    c\odot (x,y)=(cx,cy)
+  .</me>
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="AT5-s3a16t2p1" internal-id="p-AT5-c-p-b-a">
+Show that scalar multiplication distributes over vector addition, i.e.
+<me original-id="AT5-s3a16t2p1m1" internal-id="me-AT5-c-p-b-a-a"> c \odot \left( (x_1,y_1) \oplus (x_2,y_2) \right) = c\odot (x_1,y_1) \oplus c\odot (x_2,y_2)</me>
+for <em original-id="AT5-s3a16t2p1e2" internal-id="em-AT5-c-p-b-a-b">all</em> <m original-id="AT5-s3a16t2p1m3" internal-id="m-AT5-c-p-b-a-c">c\in \IR,\, (x_1,y_1),(x_2,y_2) \in V</m>. 
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 3.5.8 (~15 min)</title>
+        <p original-id="AT5-s3a16i1p1" internal-id="p-AT5-c-p-a-a">
+  Let <m original-id="AT5-s3a16i1p1m1" internal-id="m-AT5-c-p-a-a-a">V=\setBuilder{(x,y)}{x,y\in\IR}</m> have operations defined by
+  <me original-id="AT5-s3a16i1p1m2" internal-id="me-AT5-c-p-a-a-b">
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1+3y_2)
+      \hspace{3em}
+    c\odot (x,y)=(cx,cy)
+  .</me>
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="AT5-s3a16t3p1" internal-id="p-AT5-c-p-c-a">
+    Show that vector addition is not associative, i.e. 
+  <me original-id="AT5-s3a16t3p1m1" internal-id="me-AT5-c-p-c-a-a"> (x_1,y_1) \oplus \left((x_2,y_2) \oplus (x_3,y_3)\right) \neq \left((x_1,y_1)\oplus (x_2,y_2)\right) \oplus (x_3,y_3)</me>
+  for <em original-id="AT5-s3a16t3p1e2" internal-id="em-AT5-c-p-c-a-b">some</em> vectors <m original-id="AT5-s3a16t3p1m3" internal-id="m-AT5-c-p-c-a-c"> (x_1,y_1), (x_2,y_2), (x_3,y_3) \in V</m>.
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 3.5.8 (~15 min)</title>
+        <p original-id="AT5-s3a16i1p1" internal-id="p-AT5-c-p-a-a">
+  Let <m original-id="AT5-s3a16i1p1m1" internal-id="m-AT5-c-p-a-a-a">V=\setBuilder{(x,y)}{x,y\in\IR}</m> have operations defined by
+  <me original-id="AT5-s3a16i1p1m2" internal-id="me-AT5-c-p-a-a-b">
+    (x_1,y_1)\oplus (x_2,y_2)=(x_1+x_2,y_1+3y_2)
+      \hspace{3em}
+    c\odot (x,y)=(cx,cy)
+  .</me>
+        </p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <p original-id="AT5-s3a16t4p1" internal-id="p-AT5-c-p-d-a">
+  Is <m original-id="AT5-s3a16t4p1m1" internal-id="m-AT5-c-p-d-a-a">V</m> a vector space?
+  <ol marker="A." original-id="AT5-s3a16t4p1o2" internal-id="ol-AT5-c-p-d-a-b"><li original-id="AT5-s3a16t4p1o2l1" internal-id="li-AT5-c-p-d-a-b-a"><p original-id="AT5-s3a16t4p1o2l1p1" internal-id="p-AT5-c-p-d-a-b-a-a">Yes</p></li><li original-id="AT5-s3a16t4p1o2l2" internal-id="li-AT5-c-p-d-a-b-b"><p original-id="AT5-s3a16t4p1o2l2p1" internal-id="p-AT5-c-p-d-a-b-b-a">No</p></li><li original-id="AT5-s3a16t4p1o2l3" internal-id="li-AT5-c-p-d-a-b-c"><p original-id="AT5-s3a16t4p1o2l3p1" internal-id="p-AT5-c-p-d-a-b-c-a">More work is required</p></li></ol>
+      </p>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>

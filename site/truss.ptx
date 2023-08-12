@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <docinfo xml:base="meta/docinfo.ptx" original-id="root-p1d1" internal-id="docinfo-root--a-a">
+    <document-id original-id="root-p1d1d1" internal-id="document-id-root--a-a-a">tbilla</document-id>
+    <initialism original-id="root-p1d1i2" internal-id="initialism-root--a-a-b">TBIL-LA</initialism>
+    <blurb shelf="math" original-id="root-p1d1b3" internal-id="blurb-root--a-a-c">Activities and exercises for easily implementing Team-Based Inquiry Learning in a single-variable calculus classroom.</blurb>
+    <macros original-id="root-p1d1m4" internal-id="macros-root--a-a-d">
+\newcommand{\markedPivot}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{%
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{%
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{%
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+    </macros>
+    <latex-image-preamble original-id="root-p1d1l5" internal-id="latex-image-preamble-root--a-a-e">
+\usepackage{tikz}
+\usepackage{tikz-cd}
+    </latex-image-preamble>
+    <rename element="objectives" xml:lang="en-US" original-id="root-p1d1r6" internal-id="rename-root--a-a-f" locale-lang="en-US">Learning Outcomes</rename>
+    <numbering original-id="root-p1d1n7" internal-id="numbering-root--a-a-g">
+      <figures level="0" original-id="root-p1d1n7f1" internal-id="figures-root--a-a-g-a"/>
+    </numbering>
+    <!-- Specify the default type of cross reference:           -->
+    <cross-references text="type-global" original-id="root-p1d1c8" internal-id="cross-references-root--a-a-h"/>
+  </docinfo>
+  <slideshow>
+    <title original-id="linear-algebra-for-team-based-inquiry-learning-t1" internal-id="title-linear-algebra-for-team-based-inquiry-learning-a">Linear Algebra for Team-Based Inquiry Learning</title>
+    <subtitle component="main" original-id="linear-algebra-for-team-based-inquiry-learning-s2" internal-id="subtitle-linear-algebra-for-team-based-inquiry-learning-b">2023 Edition</subtitle>
+    <frontmatter>
+      <titlepage original-id="frontmatter-t1" internal-id="titlepage-frontmatter-a">
+        <author original-id="frontmatter-t1a1" internal-id="author-frontmatter-a-a">
+          <personname original-id="frontmatter-t1a1p1" internal-id="personname-frontmatter-a-a-a">Steven Clontz</personname>
+          <department original-id="frontmatter-t1a1d2" internal-id="department-frontmatter-a-a-b">Department of Mathematics and Statistics</department>
+          <institution original-id="frontmatter-t1a1i3" internal-id="institution-frontmatter-a-a-c">University of South Alabama</institution>
+          <email original-id="frontmatter-t1a1e4" internal-id="email-frontmatter-a-a-d">sclontz@southalabama.edu</email>
+        </author>
+        <author original-id="frontmatter-t1a2" internal-id="author-frontmatter-a-b">
+          <personname original-id="frontmatter-t1a2p1" internal-id="personname-frontmatter-a-b-a">Drew Lewis</personname>
+          <email original-id="frontmatter-t1a2e2" internal-id="email-frontmatter-a-b-b">drew.lewis@gmail.com</email>
+        </author>
+        <credit original-id="frontmatter-t1c3" internal-id="credit-frontmatter-a-c">
+    <title original-id="frontmatter-t1c3t1" internal-id="title-frontmatter-a-c-a">Contributing Authors</title>
+    <author original-id="frontmatter-t1c3a2" internal-id="author-frontmatter-a-c-b"><personname original-id="frontmatter-t1c3a2p1" internal-id="personname-frontmatter-a-c-b-a">Jessalyn Bolkema</personname><department original-id="frontmatter-t1c3a2d2" internal-id="department-frontmatter-a-c-b-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a2i3" internal-id="institution-frontmatter-a-c-b-c">California State University, Dominguez Hills</institution><email original-id="frontmatter-t1c3a2e4" internal-id="email-frontmatter-a-c-b-d">jbolkema@csudh.edu</email></author>
+    <author original-id="frontmatter-t1c3a3" internal-id="author-frontmatter-a-c-c"><personname original-id="frontmatter-t1c3a3p1" internal-id="personname-frontmatter-a-c-c-a">Jeff Ford</personname><department original-id="frontmatter-t1c3a3d2" internal-id="department-frontmatter-a-c-c-b">Department of Mathematics, Computer Science, and Statistics</department><institution original-id="frontmatter-t1c3a3i3" internal-id="institution-frontmatter-a-c-c-c">Gustavus Adolphus College</institution><email original-id="frontmatter-t1c3a3e4" internal-id="email-frontmatter-a-c-c-d">jford@gustavus.edu</email></author>
+    <author original-id="frontmatter-t1c3a4" internal-id="author-frontmatter-a-c-d"><personname original-id="frontmatter-t1c3a4p1" internal-id="personname-frontmatter-a-c-d-a">Sharona Krinsky</personname><department original-id="frontmatter-t1c3a4d2" internal-id="department-frontmatter-a-c-d-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a4i3" internal-id="institution-frontmatter-a-c-d-c">California State University, Los Angeles</institution><email original-id="frontmatter-t1c3a4e4" internal-id="email-frontmatter-a-c-d-d">skrinsk@calstatela.edu</email></author>
+    <author original-id="frontmatter-t1c3a5" internal-id="author-frontmatter-a-c-e"><personname original-id="frontmatter-t1c3a5p1" internal-id="personname-frontmatter-a-c-e-a">Jennifer Nordstrom</personname><department original-id="frontmatter-t1c3a5d2" internal-id="department-frontmatter-a-c-e-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a5i3" internal-id="institution-frontmatter-a-c-e-c">Linfield University</institution><email original-id="frontmatter-t1c3a5e4" internal-id="email-frontmatter-a-c-e-d">jnordstrom@linfield.edu</email></author>
+    <author original-id="frontmatter-t1c3a6" internal-id="author-frontmatter-a-c-f"><personname original-id="frontmatter-t1c3a6p1" internal-id="personname-frontmatter-a-c-f-a">Kate Owens</personname><department original-id="frontmatter-t1c3a6d2" internal-id="department-frontmatter-a-c-f-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a6i3" internal-id="institution-frontmatter-a-c-f-c">College of Charleston</institution><email original-id="frontmatter-t1c3a6e4" internal-id="email-frontmatter-a-c-f-d">owensks@cofc.edu</email></author>
+  </credit>
+        <date original-id="frontmatter-t1d4" internal-id="date-frontmatter-a-d">
+          <today original-id="frontmatter-t1d4t1" internal-id="today-frontmatter-a-d-a"/>
+        </date>
+      </titlepage>
+    </frontmatter>
+    <section>
+      <title>Section A.1:
+        Civil Engineering: Trusses and Struts </title>
+      <slide>
+        <title>Definition A.1.1 </title>
+        <p original-id="truss-s2d2s1p1" internal-id="p-truss-b-b-a-a">
+In engineering, a <term original-id="truss-s2d2s1p1t1" internal-id="term-truss-b-b-a-a-a">truss</term> is a structure designed from several beams
+of material called <term original-id="truss-s2d2s1p1t2" internal-id="term-truss-b-b-a-a-b">struts</term>, assembled to behave as a single object.
+        </p>
+        <figure original-id="truss-s2d2s1f2" internal-id="figure-truss-b-b-a-b">
+          <image source="external/truss.jpg"/>
+          <caption original-id="truss-s2d2s1f2c2" internal-id="caption-truss-b-b-a-b-b">A simple truss</caption>
+        </figure>
+        <figure original-id="truss-s2d2s1f3" internal-id="figure-truss-b-b-a-c">
+          <image source="generated/latex-image/truss-image-simple.svg"/>
+          <caption original-id="truss-s2d2s1f3c2" internal-id="caption-truss-b-b-a-c-b">A simple truss</caption>
+        </figure>
+      </slide>
+      <slide>
+        <title>Activity A.1.1 (~5 min)</title>
+        <p original-id="truss-s2a3s1p1" internal-id="p-truss-b-c-a-a">
+Consider the representation of a simple truss pictured below.
+All of the seven struts are of equal length, affixed to two anchor points
+applying a normal force to nodes <m original-id="truss-s2a3s1p1m1" internal-id="m-truss-b-c-a-a-a">C</m> and <m original-id="truss-s2a3s1p1m2" internal-id="m-truss-b-c-a-a-b">E</m>, and
+with a <m original-id="truss-s2a3s1p1m3" internal-id="m-truss-b-c-a-a-c">10000 N</m> load applied to the node given by <m original-id="truss-s2a3s1p1m4" internal-id="m-truss-b-c-a-a-d">D</m>.
+            </p>
+        <figure original-id="truss-s2a3s1f2" internal-id="figure-truss-b-c-a-b">
+          <image source="generated/latex-image/truss-image-simple2.svg"/>
+          <caption original-id="truss-s2a3s1f2c2" internal-id="caption-truss-b-c-a-b-b">A simple truss</caption>
+        </figure>
+        <p original-id="truss-s2a3s1p3" internal-id="p-truss-b-c-a-c">
+Which of the following must hold for the truss to be stable?
+            </p>
+        <ol original-id="truss-s2a3s1o4" internal-id="ol-truss-b-c-a-d">
+          <li original-id="truss-s2a3s1o4l1" internal-id="li-truss-b-c-a-d-a">
+            <p original-id="truss-s2a3s1o4l1p1" internal-id="p-truss-b-c-a-d-a-a">
+All of the struts will experience compression.
+                </p>
+          </li>
+          <li original-id="truss-s2a3s1o4l2" internal-id="li-truss-b-c-a-d-b">
+            <p original-id="truss-s2a3s1o4l2p1" internal-id="p-truss-b-c-a-d-b-a">
+All of the struts will experience tension.
+                </p>
+          </li>
+          <li original-id="truss-s2a3s1o4l3" internal-id="li-truss-b-c-a-d-c">
+            <p original-id="truss-s2a3s1o4l3p1" internal-id="p-truss-b-c-a-d-c-a">
+Some of the struts will be compressed, but others will be tensioned.
+                </p>
+          </li>
+        </ol>
+      </slide>
+      <slide>
+        <title>Observation A.1.2 </title>
+        <p original-id="truss-s2o4s1p1" internal-id="p-truss-b-d-a-a">
+Since the forces must balance at each node for the truss to be stable,
+some of the struts will be compressed, while others will be tensioned. 
+            </p>
+        <figure original-id="truss-s2o4s1f2" internal-id="figure-truss-b-d-a-b">
+          <image source="generated/latex-image/truss-image-simple-complete.svg"/>
+          <caption original-id="truss-s2o4s1f2c2" internal-id="caption-truss-b-d-a-b-b">Completed truss</caption>
+        </figure>
+        <p original-id="truss-s2o4s1p3" internal-id="p-truss-b-d-a-c">
+By finding vector equations that must hold at each node, we may
+determine many of the forces at play.
+            </p>
+      </slide>
+      <slide>
+        <title>Remark A.1.3 </title>
+        <p original-id="truss-s2r5s1p1" internal-id="p-truss-b-e-a-a">
+For example, at the bottom left node there are 3 forces acting.
+            </p>
+        <figure original-id="truss-s2r5s1f2" internal-id="figure-truss-b-e-a-b">
+          <image source="generated/latex-image/truss-image-simple-forces.svg"/>
+          <caption original-id="truss-s2r5s1f2c2" internal-id="caption-truss-b-e-a-b-b">Truss with forces</caption>
+        </figure>
+        <p original-id="truss-s2r5s1p3" internal-id="p-truss-b-e-a-c">
+Let <m original-id="truss-s2r5s1p3m1" internal-id="m-truss-b-e-a-c-a">\vec F_{CA}</m> be the force on <m original-id="truss-s2r5s1p3m2" internal-id="m-truss-b-e-a-c-b">C</m> given by the compression/tension
+of the strut <m original-id="truss-s2r5s1p3m3" internal-id="m-truss-b-e-a-c-c">CA</m>, let <m original-id="truss-s2r5s1p3m4" internal-id="m-truss-b-e-a-c-d">\vec F_{CD}</m> be defined similarly, and let
+<m original-id="truss-s2r5s1p3m5" internal-id="m-truss-b-e-a-c-e">\vec N_C</m> be the normal force of the anchor point on <m original-id="truss-s2r5s1p3m6" internal-id="m-truss-b-e-a-c-f">C</m>.
+            </p>
+        <p original-id="truss-s2r5s1p4" internal-id="p-truss-b-e-a-d">
+For the truss to be stable, we must have:
+            </p>
+        <me original-id="truss-s2r5s1m5" internal-id="me-truss-b-e-a-e">
+\vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+            </me>
+      </slide>
+      <slide>
+        <title>Activity A.1.2 (~10 min)</title>
+        <p original-id="truss-s2a6s1p1" internal-id="p-truss-b-f-a-a">
+Using the conventions of the previous remark, and where <m original-id="truss-s2a6s1p1m1" internal-id="m-truss-b-f-a-a-a">\vec L</m>
+represents the load vector on node <m original-id="truss-s2a6s1p1m2" internal-id="m-truss-b-f-a-a-b">D</m>, find four more vector equations
+that must be satisfied for each of the other four nodes of the truss.
+        </p>
+        <figure original-id="truss-s2a6s1f2" internal-id="figure-truss-b-f-a-b">
+          <image source="generated/latex-image/truss-image-simple3.svg"/>
+          <caption original-id="truss-s2a6s1f2c2" internal-id="caption-truss-b-f-a-b-b">A simple truss</caption>
+        </figure>
+        <me original-id="truss-s2a6s1m3" internal-id="me-truss-b-f-a-c">
+A: \unknown
+</me>
+        <me original-id="truss-s2a6s1m4" internal-id="me-truss-b-f-a-d">
+B: \unknown
+</me>
+        <me original-id="truss-s2a6s1m5" internal-id="me-truss-b-f-a-e">
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+</me>
+        <me original-id="truss-s2a6s1m6" internal-id="me-truss-b-f-a-f">D:\unknown</me>
+        <me original-id="truss-s2a6s1m7" internal-id="me-truss-b-f-a-g">E:\unknown</me>
+      </slide>
+      <slide>
+        <title>Remark A.1.4 </title>
+        <p original-id="truss-s2r7s1p1" internal-id="p-truss-b-g-a-a">
+The five vector equations may be written as follows.
+            </p>
+        <me original-id="truss-s2r7s1m2" internal-id="me-truss-b-g-a-b">
+A: \vec F_{AC}+\vec F_{AD}+\vec F_{AB}=\vec 0
+</me>
+        <me original-id="truss-s2r7s1m3" internal-id="me-truss-b-g-a-c">
+B: \vec F_{BA}+\vec F_{BD}+\vec F_{BE}=\vec 0
+</me>
+        <me original-id="truss-s2r7s1m4" internal-id="me-truss-b-g-a-d">
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+</me>
+        <me original-id="truss-s2r7s1m5" internal-id="me-truss-b-g-a-e">
+D: \vec F_{DC}+\vec F_{DA}+\vec F_{DB} +\vec F_{DE}+\vec L=\vec 0
+</me>
+        <me original-id="truss-s2r7s1m6" internal-id="me-truss-b-g-a-f">
+E: \vec F_{EB}+\vec F_{ED}+\vec N_E=\vec 0
+</me>
+      </slide>
+      <slide>
+        <title>Observation A.1.5 </title>
+        <p original-id="truss-s2o8s1p1" internal-id="p-truss-b-h-a-a">
+Each vector has a vertical and horizontal component,
+so it may be treated as a vector in <m original-id="truss-s2o8s1p1m1" internal-id="m-truss-b-h-a-a-a">\IR^2</m>.
+Note that <m original-id="truss-s2o8s1p1m2" internal-id="m-truss-b-h-a-a-b">\vec F_{CA}</m> must have the same magnitude (but opposite
+direction) as <m original-id="truss-s2o8s1p1m3" internal-id="m-truss-b-h-a-a-c">\vec F_{AC}</m>.
+            </p>
+        <me original-id="truss-s2o8s1m2" internal-id="me-truss-b-h-a-b">
+  \vec{F}_{CA}
+    = 
+  x\begin{bmatrix} \cos(60^\circ) \\ \sin(60^\circ) \end{bmatrix}
+    =
+  x\begin{bmatrix} 1/2 \\ \sqrt{3}/2\end{bmatrix}
+</me>
+        <me original-id="truss-s2o8s1m3" internal-id="me-truss-b-h-a-c">
+  \vec{F}_{AC}
+    = 
+  x\begin{bmatrix} \cos(-120^\circ) \\ \sin(-120^\circ) \end{bmatrix}
+    =
+  x\begin{bmatrix} -1/2 \\ -\sqrt{3}/2\end{bmatrix}
+</me>
+      </slide>
+      <slide>
+        <title>Activity A.1.3 (~5 min)</title>
+        <p original-id="truss-s2a9s1p1" internal-id="p-truss-b-i-a-a">
+To write a linear system that models the truss under consideration
+with constant load <m original-id="truss-s2a9s1p1m1" internal-id="m-truss-b-i-a-a-a">10000</m> newtons,
+how many scalar variables will be required?
+            </p>
+        <ul original-id="truss-s2a9s1u2" internal-id="ul-truss-b-i-a-b">
+          <li original-id="truss-s2a9s1u2l1" internal-id="li-truss-b-i-a-b-a">
+                    <p original-id="truss-s2a9s1u2l1p1" internal-id="p-truss-b-i-a-b-a-a">
+<m original-id="truss-s2a9s1u2l1p1m1" internal-id="m-truss-b-i-a-b-a-a-a">7</m>: <m original-id="truss-s2a9s1u2l1p1m2" internal-id="m-truss-b-i-a-b-a-a-b">5</m> from the nodes, <m original-id="truss-s2a9s1u2l1p1m3" internal-id="m-truss-b-i-a-b-a-a-c">2</m> from the anchors
+                    </p>
+                </li>
+          <li original-id="truss-s2a9s1u2l2" internal-id="li-truss-b-i-a-b-b">
+                    <p original-id="truss-s2a9s1u2l2p1" internal-id="p-truss-b-i-a-b-b-a">
+<m original-id="truss-s2a9s1u2l2p1m1" internal-id="m-truss-b-i-a-b-b-a-a">9</m>: <m original-id="truss-s2a9s1u2l2p1m2" internal-id="m-truss-b-i-a-b-b-a-b">7</m> from the struts, <m original-id="truss-s2a9s1u2l2p1m3" internal-id="m-truss-b-i-a-b-b-a-c">2</m> from the anchors
+                    </p>
+                </li>
+          <li original-id="truss-s2a9s1u2l3" internal-id="li-truss-b-i-a-b-c">
+                    <p original-id="truss-s2a9s1u2l3p1" internal-id="p-truss-b-i-a-b-c-a">
+<m original-id="truss-s2a9s1u2l3p1m1" internal-id="m-truss-b-i-a-b-c-a-a">11</m>: <m original-id="truss-s2a9s1u2l3p1m2" internal-id="m-truss-b-i-a-b-c-a-b">7</m> from the struts, <m original-id="truss-s2a9s1u2l3p1m3" internal-id="m-truss-b-i-a-b-c-a-c">4</m> from the anchors
+                    </p>
+                </li>
+          <li original-id="truss-s2a9s1u2l4" internal-id="li-truss-b-i-a-b-d">
+                    <p original-id="truss-s2a9s1u2l4p1" internal-id="p-truss-b-i-a-b-d-a">
+<m original-id="truss-s2a9s1u2l4p1m1" internal-id="m-truss-b-i-a-b-d-a-a">12</m>: <m original-id="truss-s2a9s1u2l4p1m2" internal-id="m-truss-b-i-a-b-d-a-b">7</m> from the struts, <m original-id="truss-s2a9s1u2l4p1m3" internal-id="m-truss-b-i-a-b-d-a-c">4</m> from the anchors, <m original-id="truss-s2a9s1u2l4p1m4" internal-id="m-truss-b-i-a-b-d-a-d">1</m> from the load
+                    </p>
+                </li>
+          <li original-id="truss-s2a9s1u2l5" internal-id="li-truss-b-i-a-b-e">
+                    <p original-id="truss-s2a9s1u2l5p1" internal-id="p-truss-b-i-a-b-e-a">
+<m original-id="truss-s2a9s1u2l5p1m1" internal-id="m-truss-b-i-a-b-e-a-a">13</m>: <m original-id="truss-s2a9s1u2l5p1m2" internal-id="m-truss-b-i-a-b-e-a-b">5</m> from the nodes, <m original-id="truss-s2a9s1u2l5p1m3" internal-id="m-truss-b-i-a-b-e-a-c">7</m> from the struts, <m original-id="truss-s2a9s1u2l5p1m4" internal-id="m-truss-b-i-a-b-e-a-d">1</m> from the load
+                    </p>
+                </li>
+        </ul>
+        <figure original-id="truss-s2a9s1f3" internal-id="figure-truss-b-i-a-c">
+          <image source="generated/latex-image/truss-image-simple-4.svg"/>
+          <caption original-id="truss-s2a9s1f3c2" internal-id="caption-truss-b-i-a-c-b">A simple truss</caption>
+        </figure>
+      </slide>
+      <slide>
+        <title>Observation A.1.6 </title>
+        <p original-id="truss-s2o10s1p1" internal-id="p-truss-b-j-a-a">
+Since the angles for each strut are known,
+one variable may be used to represent each.
+            </p>
+        <figure original-id="truss-s2o10s1f2" internal-id="figure-truss-b-j-a-b">
+          <image source="generated/latex-image/truss-image-simple-variables.svg"/>
+          <caption original-id="truss-s2o10s1f2c2" internal-id="caption-truss-b-j-a-b-b">Variables for the truss</caption>
+        </figure>
+        <p original-id="truss-s2o10s1p3" internal-id="p-truss-b-j-a-c">
+            For example:
+            </p>
+        <me original-id="truss-s2o10s1m4" internal-id="me-truss-b-j-a-d">
+\vec F_{AB}=-\vec F_{BA}=x_1\begin{bmatrix}\cos(0)\\\sin(0)\end{bmatrix}
+=x_1\begin{bmatrix}1\\0\end{bmatrix}
+</me>
+        <me original-id="truss-s2o10s1m5" internal-id="me-truss-b-j-a-e">
+\vec F_{BE}=-\vec F_{EB}=x_5\begin{bmatrix}\cos(-60^\circ)\\\sin(-60^\circ)\end{bmatrix}
+=x_5\begin{bmatrix}1/2\\-\sqrt{3}/2\end{bmatrix}
+</me>
+      </slide>
+      <slide>
+        <title>Observation A.1.7 </title>
+        <p original-id="truss-s2o11s1p1" internal-id="p-truss-b-k-a-a">
+Since the angle of the normal forces for each anchor point are unknown,
+two variables may be used to represent each.
+            </p>
+        <figure original-id="truss-s2o11s1f2" internal-id="figure-truss-b-k-a-b">
+          <image source="generated/latex-image/truss-image-normal-forces.svg"/>
+          <caption original-id="truss-s2o11s1f2c2" internal-id="caption-truss-b-k-a-b-b">Truss with normal forces</caption>
+        </figure>
+        <me original-id="truss-s2o11s1m3" internal-id="me-truss-b-k-a-c">
+\vec N_C=\begin{bmatrix}y_1\\y_2\end{bmatrix}
+\hspace{3em}
+\vec N_D=\begin{bmatrix}z_1\\z_2\end{bmatrix}
+</me>
+        <p original-id="truss-s2o11s1p4" internal-id="p-truss-b-k-a-d">
+The load vector is constant.
+            </p>
+        <me original-id="truss-s2o11s1m5" internal-id="me-truss-b-k-a-e">
+\vec L = \begin{bmatrix}0\\-10000\end{bmatrix}
+</me>
+      </slide>
+      <slide>
+        <title>Remark A.1.8 </title>
+        <p original-id="truss-s2r12s1p1" internal-id="p-truss-b-l-a-a">
+Each of the five vector
+equations found previously represent two linear equations:
+one for the horizontal component and one for the vertical.
+            </p>
+        <figure original-id="truss-s2r12s1f2" internal-id="figure-truss-b-l-a-b">
+          <image source="generated/latex-image/truss-image-simple-variables-2.svg"/>
+          <caption original-id="truss-s2r12s1f2c2" internal-id="caption-truss-b-l-a-b-b">Variables for the truss</caption>
+        </figure>
+        <me original-id="truss-s2r12s1m3" internal-id="me-truss-b-l-a-c">
+C: \vec F_{CA}+\vec F_{CD}+\vec N_C=\vec 0
+</me>
+        <me original-id="truss-s2r12s1m4" internal-id="me-truss-b-l-a-d">
+\Leftrightarrow
+x_2\begin{bmatrix}\cos(60^\circ)\\\sin(60^\circ)\end{bmatrix}+
+x_6\begin{bmatrix}\cos(0^\circ)\\\sin(0^\circ)\end{bmatrix}+
+\begin{bmatrix}y_1\\y_2\end{bmatrix}=\begin{bmatrix}0\\0\end{bmatrix}
+</me>
+        <m original-id="truss-s2r12s1m5" internal-id="m-truss-b-l-a-e">\sqrt{3}/2\approx 0.866</m>
+        <me original-id="truss-s2r12s1m6" internal-id="me-truss-b-l-a-f">
+\Leftrightarrow
+x_2\begin{bmatrix}0.5\\0.866\end{bmatrix}+
+x_6\begin{bmatrix}1\\0\end{bmatrix}+
+y_1\begin{bmatrix}1\\0\end{bmatrix}+
+y_2\begin{bmatrix}0\\1\end{bmatrix}=
+\begin{bmatrix}0\\0\end{bmatrix}
+</me>
+      </slide>
+      <slide>
+        <title>Activity A.1.4 (~10 min)</title>
+        <p original-id="truss-s2a13s1p1" internal-id="p-truss-b-m-a-a">
+Expand the vector equation given below using sine and cosine of appropriate angles,
+then compute each component (approximating <m original-id="truss-s2a13s1p1m1" internal-id="m-truss-b-m-a-a-a">\sqrt{3}/2\approx 0.866</m>).
+            </p>
+        <figure original-id="truss-s2a13s1f2" internal-id="figure-truss-b-m-a-b">
+          <image source="generated/latex-image/truss-image-simple-variables-3.svg"/>
+          <caption original-id="truss-s2a13s1f2c2" internal-id="caption-truss-b-m-a-b-b">Variables for the truss</caption>
+        </figure>
+        <me original-id="truss-s2a13s1m3" internal-id="me-truss-b-m-a-c">
+D:\vec F_{DA}+\vec F_{DB}+\vec F_{DC}+\vec F_{DE}=-\vec L
+</me>
+        <me original-id="truss-s2a13s1m4" internal-id="me-truss-b-m-a-d">
+\Leftrightarrow
+x_3\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}+
+x_4\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}+
+x_6\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}+
+x_7\begin{bmatrix}\cos(\unknown)\\\sin(\unknown)\end{bmatrix}=
+\begin{bmatrix}\unknown\\\unknown\end{bmatrix}
+</me>
+        <me original-id="truss-s2a13s1m5" internal-id="me-truss-b-m-a-e">
+\Leftrightarrow
+x_3\begin{bmatrix}\unknown\\\unknown\end{bmatrix}+
+x_4\begin{bmatrix}\unknown\\\unknown\end{bmatrix}+
+x_6\begin{bmatrix}\unknown\\\unknown\end{bmatrix}+
+x_7\begin{bmatrix}\unknown\\\unknown\end{bmatrix}=
+\begin{bmatrix}\unknown\\\unknown\end{bmatrix}
+</me>
+      </slide>
+      <slide>
+        <title>Observation A.1.9 </title>
+        <p original-id="truss-s2o14s1p1" internal-id="p-truss-b-n-a-a">
+The full augmented matrix given by the ten equations in this linear system
+is given below, where the elevent columns correspond to <m original-id="truss-s2o14s1p1m1" internal-id="m-truss-b-n-a-a-a">x_1,\dots,x_7,y_1,y_2,z_1,z_2</m>,
+and the ten rows correspond to the horizontal and vertical components of the
+forces acting at <m original-id="truss-s2o14s1p1m2" internal-id="m-truss-b-n-a-a-b">A,\dots,E</m>.
+            </p>
+        <me original-id="truss-s2o14s1m2" internal-id="me-truss-b-n-a-b">
+\left[\begin{array}{ccccccccccc|c}
+1&amp;-0.5&amp;0.5&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;-0.866&amp;-0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+-1&amp;0&amp;0&amp;-0.5&amp;0.5&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;-0.866&amp;-0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0.5&amp;0&amp;0&amp;0&amp;1&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;-0.5&amp;0.5&amp;0&amp;-1&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0.866&amp;0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;10000\\
+0&amp;0&amp;0&amp;0&amp;-0.5&amp;0&amp;-1&amp;0&amp;0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0.866&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0\\
+\end{array}\right]
+</me>
+      </slide>
+      <slide>
+        <title>Observation A.1.10 </title>
+        <p original-id="truss-s2o15s1p1" internal-id="p-truss-b-o-a-a">
+This matrix row-reduces to the following.
+            </p>
+        <me original-id="truss-s2o15s1m2" internal-id="me-truss-b-o-a-b">\sim
+\left[\begin{array}{ccccccccccc|c}
+1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;-5773.7\\
+0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;-5773.7\\
+0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;5773.7\\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;5773.7\\
+0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;-5773.7\\
+0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;-1&amp;0&amp;2886.8\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;-1&amp;0&amp;2886.8\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;5000\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;5000\\
+\end{array}\right]
+</me>
+      </slide>
+      <slide>
+        <title>Observation A.1.11 </title>
+        <p original-id="truss-s2o16s1p1" internal-id="p-truss-b-p-a-a">
+Thus we know the truss must satisfy the following conditions.
+            </p>
+        <md original-id="truss-s2o16s1m2" internal-id="md-truss-b-p-a-b">
+          <mrow original-id="truss-s2o16s1m2m1" internal-id="mrow-truss-b-p-a-b-a">
+x_1=x_2=x_5&amp;=-5882.4
+                </mrow>
+          <mrow original-id="truss-s2o16s1m2m2" internal-id="mrow-truss-b-p-a-b-b">
+x_3=x_4&amp;=5882.4
+                </mrow>
+          <mrow original-id="truss-s2o16s1m2m3" internal-id="mrow-truss-b-p-a-b-c">
+x_6=x_7&amp;=2886.8+z_1
+                </mrow>
+          <mrow original-id="truss-s2o16s1m2m4" internal-id="mrow-truss-b-p-a-b-d">
+y_1&amp;=-z_1
+                </mrow>
+          <mrow original-id="truss-s2o16s1m2m5" internal-id="mrow-truss-b-p-a-b-e">
+y_2=z_2&amp;=5000 
+                </mrow>
+        </md>
+        <p original-id="truss-s2o16s1p3" internal-id="p-truss-b-p-a-c">
+In particular, the negative <m original-id="truss-s2o16s1p3m1" internal-id="m-truss-b-p-a-c-a">x_1,x_2,x_5</m> represent tension (forces pointing into the nodes),
+and the postive <m original-id="truss-s2o16s1p3m2" internal-id="m-truss-b-p-a-c-b">x_3,x_4</m> represent compression (forces pointing out of the nodes).
+The vertical normal forces <m original-id="truss-s2o16s1p3m3" internal-id="m-truss-b-p-a-c-c">y_2+z_2</m> counteract the <m original-id="truss-s2o16s1p3m4" internal-id="m-truss-b-p-a-c-d">10000</m> load.
+            </p>
+        <figure original-id="truss-s2o16s1f4" internal-id="figure-truss-b-p-a-d">
+          <image source="generated/latex-image/truss-image-simple-complete-again.svg"/>
+          <caption original-id="truss-s2o16s1f4c2" internal-id="caption-truss-b-p-a-d-b">Completed truss</caption>
+        </figure>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>

@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <docinfo xml:base="meta/docinfo.ptx" original-id="root-p1d1" internal-id="docinfo-root--a-a">
+    <document-id original-id="root-p1d1d1" internal-id="document-id-root--a-a-a">tbilla</document-id>
+    <initialism original-id="root-p1d1i2" internal-id="initialism-root--a-a-b">TBIL-LA</initialism>
+    <blurb shelf="math" original-id="root-p1d1b3" internal-id="blurb-root--a-a-c">Activities and exercises for easily implementing Team-Based Inquiry Learning in a single-variable calculus classroom.</blurb>
+    <macros original-id="root-p1d1m4" internal-id="macros-root--a-a-d">
+\newcommand{\markedPivot}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{%
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{%
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{%
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{%
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+    </macros>
+    <latex-image-preamble original-id="root-p1d1l5" internal-id="latex-image-preamble-root--a-a-e">
+\usepackage{tikz}
+\usepackage{tikz-cd}
+    </latex-image-preamble>
+    <rename element="objectives" xml:lang="en-US" original-id="root-p1d1r6" internal-id="rename-root--a-a-f" locale-lang="en-US">Learning Outcomes</rename>
+    <numbering original-id="root-p1d1n7" internal-id="numbering-root--a-a-g">
+      <figures level="0" original-id="root-p1d1n7f1" internal-id="figures-root--a-a-g-a"/>
+    </numbering>
+    <!-- Specify the default type of cross reference:           -->
+    <cross-references text="type-global" original-id="root-p1d1c8" internal-id="cross-references-root--a-a-h"/>
+  </docinfo>
+  <slideshow>
+    <title original-id="linear-algebra-for-team-based-inquiry-learning-t1" internal-id="title-linear-algebra-for-team-based-inquiry-learning-a">Linear Algebra for Team-Based Inquiry Learning</title>
+    <subtitle component="main" original-id="linear-algebra-for-team-based-inquiry-learning-s2" internal-id="subtitle-linear-algebra-for-team-based-inquiry-learning-b">2023 Edition</subtitle>
+    <frontmatter>
+      <titlepage original-id="frontmatter-t1" internal-id="titlepage-frontmatter-a">
+        <author original-id="frontmatter-t1a1" internal-id="author-frontmatter-a-a">
+          <personname original-id="frontmatter-t1a1p1" internal-id="personname-frontmatter-a-a-a">Steven Clontz</personname>
+          <department original-id="frontmatter-t1a1d2" internal-id="department-frontmatter-a-a-b">Department of Mathematics and Statistics</department>
+          <institution original-id="frontmatter-t1a1i3" internal-id="institution-frontmatter-a-a-c">University of South Alabama</institution>
+          <email original-id="frontmatter-t1a1e4" internal-id="email-frontmatter-a-a-d">sclontz@southalabama.edu</email>
+        </author>
+        <author original-id="frontmatter-t1a2" internal-id="author-frontmatter-a-b">
+          <personname original-id="frontmatter-t1a2p1" internal-id="personname-frontmatter-a-b-a">Drew Lewis</personname>
+          <email original-id="frontmatter-t1a2e2" internal-id="email-frontmatter-a-b-b">drew.lewis@gmail.com</email>
+        </author>
+        <credit original-id="frontmatter-t1c3" internal-id="credit-frontmatter-a-c">
+    <title original-id="frontmatter-t1c3t1" internal-id="title-frontmatter-a-c-a">Contributing Authors</title>
+    <author original-id="frontmatter-t1c3a2" internal-id="author-frontmatter-a-c-b"><personname original-id="frontmatter-t1c3a2p1" internal-id="personname-frontmatter-a-c-b-a">Jessalyn Bolkema</personname><department original-id="frontmatter-t1c3a2d2" internal-id="department-frontmatter-a-c-b-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a2i3" internal-id="institution-frontmatter-a-c-b-c">California State University, Dominguez Hills</institution><email original-id="frontmatter-t1c3a2e4" internal-id="email-frontmatter-a-c-b-d">jbolkema@csudh.edu</email></author>
+    <author original-id="frontmatter-t1c3a3" internal-id="author-frontmatter-a-c-c"><personname original-id="frontmatter-t1c3a3p1" internal-id="personname-frontmatter-a-c-c-a">Jeff Ford</personname><department original-id="frontmatter-t1c3a3d2" internal-id="department-frontmatter-a-c-c-b">Department of Mathematics, Computer Science, and Statistics</department><institution original-id="frontmatter-t1c3a3i3" internal-id="institution-frontmatter-a-c-c-c">Gustavus Adolphus College</institution><email original-id="frontmatter-t1c3a3e4" internal-id="email-frontmatter-a-c-c-d">jford@gustavus.edu</email></author>
+    <author original-id="frontmatter-t1c3a4" internal-id="author-frontmatter-a-c-d"><personname original-id="frontmatter-t1c3a4p1" internal-id="personname-frontmatter-a-c-d-a">Sharona Krinsky</personname><department original-id="frontmatter-t1c3a4d2" internal-id="department-frontmatter-a-c-d-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a4i3" internal-id="institution-frontmatter-a-c-d-c">California State University, Los Angeles</institution><email original-id="frontmatter-t1c3a4e4" internal-id="email-frontmatter-a-c-d-d">skrinsk@calstatela.edu</email></author>
+    <author original-id="frontmatter-t1c3a5" internal-id="author-frontmatter-a-c-e"><personname original-id="frontmatter-t1c3a5p1" internal-id="personname-frontmatter-a-c-e-a">Jennifer Nordstrom</personname><department original-id="frontmatter-t1c3a5d2" internal-id="department-frontmatter-a-c-e-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a5i3" internal-id="institution-frontmatter-a-c-e-c">Linfield University</institution><email original-id="frontmatter-t1c3a5e4" internal-id="email-frontmatter-a-c-e-d">jnordstrom@linfield.edu</email></author>
+    <author original-id="frontmatter-t1c3a6" internal-id="author-frontmatter-a-c-f"><personname original-id="frontmatter-t1c3a6p1" internal-id="personname-frontmatter-a-c-f-a">Kate Owens</personname><department original-id="frontmatter-t1c3a6d2" internal-id="department-frontmatter-a-c-f-b">Department of Mathematics</department><institution original-id="frontmatter-t1c3a6i3" internal-id="institution-frontmatter-a-c-f-c">College of Charleston</institution><email original-id="frontmatter-t1c3a6e4" internal-id="email-frontmatter-a-c-f-d">owensks@cofc.edu</email></author>
+  </credit>
+        <date original-id="frontmatter-t1d4" internal-id="date-frontmatter-a-d">
+          <today original-id="frontmatter-t1d4t1" internal-id="today-frontmatter-a-d-a"/>
+        </date>
+      </titlepage>
+    </frontmatter>
+    <section>
+      <title>Section 2.3:
+        Subspaces (EV3) </title>
+      <slide>
+        <title>Definition 2.3.1 </title>
+        <p original-id="EV3-definition-subspace-s1p1" internal-id="p-EV3-definition-subspace-a-a">
+      A subset <m original-id="EV3-definition-subspace-s1p1m1" internal-id="m-EV3-definition-subspace-a-a-a">S</m> of a vector space is called a <term original-id="EV3-definition-subspace-s1p1t2" internal-id="term-EV3-definition-subspace-a-a-b">subspace</term><idx original-id="EV3-definition-subspace-s1p1i3" internal-id="idx-EV3-definition-subspace-a-a-c">subspace</idx>
+      provided it is equal to the span of a set of vectors from that space.
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.3.1 (~5 min)</title>
+        <p original-id="EV3-s3a3i1p1" internal-id="p-EV3-c-c-a-a">
+            Consider two non-colinear vectors in <m original-id="EV3-s3a3i1p1m1" internal-id="m-EV3-c-c-a-a-a">\IR^3</m>. If we look at all linear combinations of those two vectors
+            (that is, their span), we end up with a planar subspace within <m original-id="EV3-s3a3i1p1m2" internal-id="m-EV3-c-c-a-a-b">\IR^3</m>. Call this plane <m original-id="EV3-s3a3i1p1m3" internal-id="m-EV3-c-c-a-a-c">S</m>.</p>
+        <image source="generated/latex-image/EV3-planar-subspace.svg"/>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <statement original-id="EV3-s3a3t2s1" internal-id="statement-EV3-c-c-b-a">
+          <p original-id="EV3-s3a3t2s1p1" internal-id="p-EV3-c-c-b-a-a"> 
+                For any unspecified <m original-id="EV3-s3a3t2s1p1m1" internal-id="m-EV3-c-c-b-a-a-a">\vec{u}, \vec{v} \in S</m>, 
+                is it the case that <m original-id="EV3-s3a3t2s1p1m2" internal-id="m-EV3-c-c-b-a-a-b">\vec{u} + \vec{v} \in S</m>?
+                <ol marker="A." cols="2" original-id="EV3-s3a3t2s1p1o3" internal-id="ol-EV3-c-c-b-a-a-c"><li original-id="EV3-s3a3t2s1p1o3l1" internal-id="li-EV3-c-c-b-a-a-c-a"><p original-id="EV3-s3a3t2s1p1o3l1p1" internal-id="p-EV3-c-c-b-a-a-c-a-a">Yes.</p></li><li original-id="EV3-s3a3t2s1p1o3l2" internal-id="li-EV3-c-c-b-a-a-c-b"><p original-id="EV3-s3a3t2s1p1o3l2p1" internal-id="p-EV3-c-c-b-a-a-c-b-a">No.</p></li></ol>
+            </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 2.3.1 (~5 min)</title>
+        <p original-id="EV3-s3a3i1p1" internal-id="p-EV3-c-c-a-a">
+            Consider two non-colinear vectors in <m original-id="EV3-s3a3i1p1m1" internal-id="m-EV3-c-c-a-a-a">\IR^3</m>. If we look at all linear combinations of those two vectors
+            (that is, their span), we end up with a planar subspace within <m original-id="EV3-s3a3i1p1m2" internal-id="m-EV3-c-c-a-a-b">\IR^3</m>. Call this plane <m original-id="EV3-s3a3i1p1m3" internal-id="m-EV3-c-c-a-a-c">S</m>.</p>
+        <image source="generated/latex-image/EV3-planar-subspace.svg"/>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <statement original-id="EV3-s3a3t3s1" internal-id="statement-EV3-c-c-c-a">
+          <p original-id="EV3-s3a3t3s1p1" internal-id="p-EV3-c-c-c-a-a"> 
+                For any unspecified <m original-id="EV3-s3a3t3s1p1m1" internal-id="m-EV3-c-c-c-a-a-a">\vec{u} \in S</m> and <m original-id="EV3-s3a3t3s1p1m2" internal-id="m-EV3-c-c-c-a-a-b">c\in\IR</m>,
+                is it the case that 
+                <m original-id="EV3-s3a3t3s1p1m3" internal-id="m-EV3-c-c-c-a-a-c">\vec{u}+\left[\begin{array}{c} c \\ c \\ c \end{array}\right] \in S</m>?
+                <ol marker="A." cols="2" original-id="EV3-s3a3t3s1p1o4" internal-id="ol-EV3-c-c-c-a-a-d"><li original-id="EV3-s3a3t3s1p1o4l1" internal-id="li-EV3-c-c-c-a-a-d-a"><p original-id="EV3-s3a3t3s1p1o4l1p1" internal-id="p-EV3-c-c-c-a-a-d-a-a">Yes.</p></li><li original-id="EV3-s3a3t3s1p1o4l2" internal-id="li-EV3-c-c-c-a-a-d-b"><p original-id="EV3-s3a3t3s1p1o4l2p1" internal-id="p-EV3-c-c-c-a-a-d-b-a">No.</p></li></ol>
+            </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Activity 2.3.1 (~5 min)</title>
+        <p original-id="EV3-s3a3i1p1" internal-id="p-EV3-c-c-a-a">
+            Consider two non-colinear vectors in <m original-id="EV3-s3a3i1p1m1" internal-id="m-EV3-c-c-a-a-a">\IR^3</m>. If we look at all linear combinations of those two vectors
+            (that is, their span), we end up with a planar subspace within <m original-id="EV3-s3a3i1p1m2" internal-id="m-EV3-c-c-a-a-b">\IR^3</m>. Call this plane <m original-id="EV3-s3a3i1p1m3" internal-id="m-EV3-c-c-a-a-c">S</m>.</p>
+        <image source="generated/latex-image/EV3-planar-subspace.svg"/>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <statement original-id="EV3-s3a3t4s1" internal-id="statement-EV3-c-c-d-a">
+          <p original-id="EV3-s3a3t4s1p1" internal-id="p-EV3-c-c-d-a-a"> 
+                For any unspecified <m original-id="EV3-s3a3t4s1p1m1" internal-id="m-EV3-c-c-d-a-a-a">\vec{u} \in S</m> and <m original-id="EV3-s3a3t4s1p1m2" internal-id="m-EV3-c-c-d-a-a-b">c\in\IR</m>, 
+                is it the case that <m original-id="EV3-s3a3t4s1p1m3" internal-id="m-EV3-c-c-d-a-a-c">c\vec{u} \in S</m>?
+                <ol marker="A." cols="2" original-id="EV3-s3a3t4s1p1o4" internal-id="ol-EV3-c-c-d-a-a-d"><li original-id="EV3-s3a3t4s1p1o4l1" internal-id="li-EV3-c-c-d-a-a-d-a"><p original-id="EV3-s3a3t4s1p1o4l1p1" internal-id="p-EV3-c-c-d-a-a-d-a-a">Yes.</p></li><li original-id="EV3-s3a3t4s1p1o4l2" internal-id="li-EV3-c-c-d-a-a-d-b"><p original-id="EV3-s3a3t4s1p1o4l2p1" internal-id="p-EV3-c-c-d-a-a-d-b-a">No.</p></li></ol>
+            </p>
+        </statement>
+      </slide>
+      <slide>
+        <title>Fact 2.3.2 </title>
+        <p original-id="EV3-fact-subspace-p1" internal-id="p-EV3-fact-subspace-a">
+  A sub<em original-id="EV3-fact-subspace-p1e1" internal-id="em-EV3-fact-subspace-a-a">set</em> <m original-id="EV3-fact-subspace-p1m2" internal-id="m-EV3-fact-subspace-a-b">S</m> of a vector space is a sub<em original-id="EV3-fact-subspace-p1e3" internal-id="em-EV3-fact-subspace-a-c">space</em>
+  provided:
+        <ul original-id="EV3-fact-subspace-p1u4" internal-id="ul-EV3-fact-subspace-a-d"><li original-id="EV3-fact-subspace-p1u4l1" internal-id="li-EV3-fact-subspace-a-d-a">
+            <p original-id="EV3-fact-subspace-p1u4l1p1" internal-id="p-EV3-fact-subspace-a-d-a-a">
+            the subset is <term original-id="EV3-fact-subspace-p1u4l1p1t1" internal-id="term-EV3-fact-subspace-a-d-a-a-a">closed under addition</term><idx original-id="EV3-fact-subspace-p1u4l1p1i2" internal-id="idx-EV3-fact-subspace-a-d-a-a-b"><h original-id="EV3-fact-subspace-p1u4l1p1i2h1" internal-id="h-EV3-fact-subspace-a-d-a-a-b-a">vector space</h></idx><idx original-id="EV3-fact-subspace-p1u4l1p1i3" internal-id="idx-EV3-fact-subspace-a-d-a-a-c">closed under addition</idx>: for any <m original-id="EV3-fact-subspace-p1u4l1p1m4" internal-id="m-EV3-fact-subspace-a-d-a-a-d">\vec{u},\vec{v} \in S</m>, the sum <m original-id="EV3-fact-subspace-p1u4l1p1m5" internal-id="m-EV3-fact-subspace-a-d-a-a-e">\vec{u}+\vec{v}</m> is also in <m original-id="EV3-fact-subspace-p1u4l1p1m6" internal-id="m-EV3-fact-subspace-a-d-a-a-f">S</m>.
+            </p>
+        </li><li original-id="EV3-fact-subspace-p1u4l2" internal-id="li-EV3-fact-subspace-a-d-b">
+            <p original-id="EV3-fact-subspace-p1u4l2p1" internal-id="p-EV3-fact-subspace-a-d-b-a">
+            the subset is <term original-id="EV3-fact-subspace-p1u4l2p1t1" internal-id="term-EV3-fact-subspace-a-d-b-a-a">closed under scalar multiplication</term><idx original-id="EV3-fact-subspace-p1u4l2p1i2" internal-id="idx-EV3-fact-subspace-a-d-b-a-b"><h original-id="EV3-fact-subspace-p1u4l2p1i2h1" internal-id="h-EV3-fact-subspace-a-d-b-a-b-a">vector space</h></idx><idx original-id="EV3-fact-subspace-p1u4l2p1i3" internal-id="idx-EV3-fact-subspace-a-d-b-a-c">closed under scalar multiplication</idx>: for any <m original-id="EV3-fact-subspace-p1u4l2p1m4" internal-id="m-EV3-fact-subspace-a-d-b-a-d">\vec{u} \in S</m> and scalar <m original-id="EV3-fact-subspace-p1u4l2p1m5" internal-id="m-EV3-fact-subspace-a-d-b-a-e">c \in \IR</m>, the product <m original-id="EV3-fact-subspace-p1u4l2p1m6" internal-id="m-EV3-fact-subspace-a-d-b-a-f">c\vec{u}</m> is also in <m original-id="EV3-fact-subspace-p1u4l2p1m7" internal-id="m-EV3-fact-subspace-a-d-b-a-g">S</m>.
+            </p>
+        </li></ul>
+    </p>
+      </slide>
+      <slide>
+        <title>Observation 2.3.3 </title>
+        <p original-id="EV3-s3o5p1" internal-id="p-EV3-c-e-a">
+Note the similarities between a planar subspace spanned by two non-colinear vectors in <m original-id="EV3-s3o5p1m1" internal-id="m-EV3-c-e-a-a">\IR^3</m>,
+and the Euclidean plane <m original-id="EV3-s3o5p1m2" internal-id="m-EV3-c-e-a-b">\IR^2</m>. While they are not the same thing (and shouldn't be referred to
+interchangably), algebraists call such similar spaces <term original-id="EV3-s3o5p1t3" internal-id="term-EV3-c-e-a-c">isomorphic</term><idx original-id="EV3-s3o5p1i4" internal-id="idx-EV3-c-e-a-d">isomorphic</idx>;
+we'll learn what this means more carefully in a later chapter.
+        </p>
+        <figure original-id="EV3-planar-subspace-vs-r2" label="EV3-planar-subspace-vs-r2" internal-id="figure-EV3-planar-subspace-vs-r2">
+          <caption original-id="EV3-planar-subspace-vs-r2-c1" internal-id="caption-EV3-planar-subspace-vs-r2-a">A planar subset of <m original-id="EV3-planar-subspace-vs-r2-c1m1" internal-id="m-EV3-planar-subspace-vs-r2-a-a">\IR^3</m> compared with the plane <m original-id="EV3-planar-subspace-vs-r2-c1m2" internal-id="m-EV3-planar-subspace-vs-r2-a-b">\IR^2</m>.</caption>
+          <image source="generated/latex-image/EV3-image-r2-in-r3.svg"/>
+        </figure>
+      </slide>
+      <slide>
+        <title>Activity 2.3.2 (~10 min)</title>
+        <p original-id="EV3-s3a6i1p1" internal-id="p-EV3-c-f-a-a">
+Let <m original-id="EV3-s3a6i1p1m1" internal-id="m-EV3-c-f-a-a-a">S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}</m>.
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="EV3-s3a6t2p1" internal-id="p-EV3-c-f-b-a">
+    Let's assume that <m original-id="EV3-s3a6t2p1m1" internal-id="m-EV3-c-f-b-a-a">\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]</m> and
+    <m original-id="EV3-s3a6t2p1m2" internal-id="m-EV3-c-f-b-a-b">\vec{w} = \left[\begin{array}{c} a \\ b \\ c \end{array}\right] </m> are in <m original-id="EV3-s3a6t2p1m3" internal-id="m-EV3-c-f-b-a-c">S</m>.
+    What are we allowed to assume?
+    <ol marker="A." cols="2" original-id="EV3-s3a6t2p1o4" internal-id="ol-EV3-c-f-b-a-d"><li original-id="EV3-s3a6t2p1o4l1" internal-id="li-EV3-c-f-b-a-d-a">
+            <p original-id="EV3-s3a6t2p1o4l1p1" internal-id="p-EV3-c-f-b-a-d-a-a">
+                <m original-id="EV3-s3a6t2p1o4l1p1m1" internal-id="m-EV3-c-f-b-a-d-a-a-a">x+2y+z=0</m>.
+            </p>
+        </li><li original-id="EV3-s3a6t2p1o4l2" internal-id="li-EV3-c-f-b-a-d-b">
+            <p original-id="EV3-s3a6t2p1o4l2p1" internal-id="p-EV3-c-f-b-a-d-b-a">
+                <m original-id="EV3-s3a6t2p1o4l2p1m1" internal-id="m-EV3-c-f-b-a-d-b-a-a">a+2b+c=0</m>.
+            </p>
+        </li><li original-id="EV3-s3a6t2p1o4l3" internal-id="li-EV3-c-f-b-a-d-c">
+            <p original-id="EV3-s3a6t2p1o4l3p1" internal-id="p-EV3-c-f-b-a-d-c-a">
+                Both of these.
+            </p>
+        </li><li original-id="EV3-s3a6t2p1o4l4" internal-id="li-EV3-c-f-b-a-d-d">
+            <p original-id="EV3-s3a6t2p1o4l4p1" internal-id="p-EV3-c-f-b-a-d-d-a">
+                Neither of these.
+            </p>
+        </li></ol>
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.3.2 (~10 min)</title>
+        <p original-id="EV3-s3a6i1p1" internal-id="p-EV3-c-f-a-a">
+Let <m original-id="EV3-s3a6i1p1m1" internal-id="m-EV3-c-f-a-a-a">S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}</m>.
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="EV3-s3a6t3p1" internal-id="p-EV3-c-f-c-a">
+      Which equation must be verified to show that
+      <m original-id="EV3-s3a6t3p1m1" internal-id="m-EV3-c-f-c-a-a">\vec v+\vec w = \left[\begin{array}{c} x+a \\ y+b \\ z+c \end{array}\right]</m>
+      also belongs to <m original-id="EV3-s3a6t3p1m2" internal-id="m-EV3-c-f-c-a-b">S</m>?
+            <ol marker="A." original-id="EV3-s3a6t3p1o3" internal-id="ol-EV3-c-f-c-a-c"><li original-id="EV3-s3a6t3p1o3l1" internal-id="li-EV3-c-f-c-a-c-a">
+                    <p original-id="EV3-s3a6t3p1o3l1p1" internal-id="p-EV3-c-f-c-a-c-a-a">
+                        <m original-id="EV3-s3a6t3p1o3l1p1m1" internal-id="m-EV3-c-f-c-a-c-a-a-a">(x+a)+2(y+b)+(z+c)=0</m>.
+                    </p>
+                </li><li original-id="EV3-s3a6t3p1o3l2" internal-id="li-EV3-c-f-c-a-c-b">
+                    <p original-id="EV3-s3a6t3p1o3l2p1" internal-id="p-EV3-c-f-c-a-c-b-a">
+                        <m original-id="EV3-s3a6t3p1o3l2p1m1" internal-id="m-EV3-c-f-c-a-c-b-a-a">x+a+2y+b+z+c=0</m>.
+                    </p>
+                </li><li original-id="EV3-s3a6t3p1o3l3" internal-id="li-EV3-c-f-c-a-c-c">
+                    <p original-id="EV3-s3a6t3p1o3l3p1" internal-id="p-EV3-c-f-c-a-c-c-a">
+                        <m original-id="EV3-s3a6t3p1o3l3p1m1" internal-id="m-EV3-c-f-c-a-c-c-a-a">x+2y+z=a+2b+c</m>.
+                    </p>
+                </li></ol>
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.3.2 (~10 min)</title>
+        <p original-id="EV3-s3a6i1p1" internal-id="p-EV3-c-f-a-a">
+Let <m original-id="EV3-s3a6i1p1m1" internal-id="m-EV3-c-f-a-a-a">S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}</m>.
+        </p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <p original-id="EV3-s3a6t4p1" internal-id="p-EV3-c-f-d-a">
+Use the assumptions from (a) to verify the equation from (b).
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.3.2 (~10 min)</title>
+        <p original-id="EV3-s3a6i1p1" internal-id="p-EV3-c-f-a-a">
+Let <m original-id="EV3-s3a6i1p1m1" internal-id="m-EV3-c-f-a-a-a">S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}</m>.
+        </p>
+        <p>
+          <em>Part 4.</em>
+        </p>
+        <p original-id="EV3-s3a6t5p1" internal-id="p-EV3-c-f-e-a">
+      Is <m original-id="EV3-s3a6t5p1m1" internal-id="m-EV3-c-f-e-a-a">S</m> is a subspace of <m original-id="EV3-s3a6t5p1m2" internal-id="m-EV3-c-f-e-a-b">\IR^3</m>?
+      <ol marker="A." cols="3" original-id="EV3-s3a6t5p1o3" internal-id="ol-EV3-c-f-e-a-c"><li original-id="EV3-s3a6t5p1o3l1" internal-id="li-EV3-c-f-e-a-c-a">
+              <p original-id="EV3-s3a6t5p1o3l1p1" internal-id="p-EV3-c-f-e-a-c-a-a">
+                  Yes
+              </p>
+          </li><li original-id="EV3-s3a6t5p1o3l2" internal-id="li-EV3-c-f-e-a-c-b">
+              <p original-id="EV3-s3a6t5p1o3l2p1" internal-id="p-EV3-c-f-e-a-c-b-a">
+                  No
+              </p>
+          </li><li original-id="EV3-s3a6t5p1o3l3" internal-id="li-EV3-c-f-e-a-c-c">
+              <p original-id="EV3-s3a6t5p1o3l3p1" internal-id="p-EV3-c-f-e-a-c-c-a">
+                  Not enough information
+              </p>
+          </li></ol>
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.3.2 (~10 min)</title>
+        <p original-id="EV3-s3a6i1p1" internal-id="p-EV3-c-f-a-a">
+Let <m original-id="EV3-s3a6i1p1m1" internal-id="m-EV3-c-f-a-a-a">S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}</m>.
+        </p>
+        <p>
+          <em>Part 5.</em>
+        </p>
+        <p original-id="EV3-s3a6t6p1" internal-id="p-EV3-c-f-f-a">
+  Show that <m original-id="EV3-s3a6t6p1m1" internal-id="m-EV3-c-f-f-a-a">k\vec v=\left[\begin{array}{c}kx\\ky\\kz\end{array}\right]</m> 
+  also belongs to <m original-id="EV3-s3a6t6p1m2" internal-id="m-EV3-c-f-f-a-b">S</m> for any <m original-id="EV3-s3a6t6p1m3" internal-id="m-EV3-c-f-f-a-c">k\in\IR</m> by verifying
+  <m original-id="EV3-s3a6t6p1m4" internal-id="m-EV3-c-f-f-a-d">(kx)+2(ky)+(kz)=0</m> under these assumptions.
+    </p>
+      </slide>
+      <slide>
+        <title>Activity 2.3.2 (~10 min)</title>
+        <p original-id="EV3-s3a6i1p1" internal-id="p-EV3-c-f-a-a">
+Let <m original-id="EV3-s3a6i1p1m1" internal-id="m-EV3-c-f-a-a-a">S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}</m>.
+        </p>
+        <p>
+          <em>Part 6.</em>
+        </p>
+        <p original-id="EV3-s3a6t7p1" internal-id="p-EV3-c-f-g-a">
+  Is <m original-id="EV3-s3a6t7p1m1" internal-id="m-EV3-c-f-g-a-a">S</m> is a subspace of <m original-id="EV3-s3a6t7p1m2" internal-id="m-EV3-c-f-g-a-b">\IR^3</m>?
+  <ol marker="A." cols="3" original-id="EV3-s3a6t7p1o3" internal-id="ol-EV3-c-f-g-a-c"><li original-id="EV3-s3a6t7p1o3l1" internal-id="li-EV3-c-f-g-a-c-a">
+          <p original-id="EV3-s3a6t7p1o3l1p1" internal-id="p-EV3-c-f-g-a-c-a-a">
+              Yes
+          </p>
+      </li><li original-id="EV3-s3a6t7p1o3l2" internal-id="li-EV3-c-f-g-a-c-b">
+          <p original-id="EV3-s3a6t7p1o3l2p1" internal-id="p-EV3-c-f-g-a-c-b-a">
+              No
+          </p>
+      </li><li original-id="EV3-s3a6t7p1o3l3" internal-id="li-EV3-c-f-g-a-c-c">
+          <p original-id="EV3-s3a6t7p1o3l3p1" internal-id="p-EV3-c-f-g-a-c-c-a">
+              Not enough information
+          </p>
+      </li></ol>
+    </p>
+      </slide>
+      <slide>
+        <title>Activity 2.3.3 (~10 min)</title>
+        <p original-id="EV3-s3a7i1p1" internal-id="p-EV3-c-g-a-a">
+Let <m original-id="EV3-s3a7i1p1m1" internal-id="m-EV3-c-g-a-a-a">S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=4}</m>.
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="EV3-s3a7t2p1" internal-id="p-EV3-c-g-b-a">
+Which of these statements is valid?
+<ol marker="A." original-id="EV3-s3a7t2p1o1" internal-id="ol-EV3-c-g-b-a-a"><li original-id="EV3-s3a7t2p1o1l1" internal-id="li-EV3-c-g-b-a-a-a">
+        <p original-id="EV3-s3a7t2p1o1l1p1" internal-id="p-EV3-c-g-b-a-a-a-a">
+<m original-id="EV3-s3a7t2p1o1l1p1m1" internal-id="m-EV3-c-g-b-a-a-a-a-a">\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em original-id="EV3-s3a7t2p1o1l1p1e2" internal-id="em-EV3-c-g-b-a-a-a-a-b">and</em>
+<m original-id="EV3-s3a7t2p1o1l1p1m3" internal-id="m-EV3-c-g-b-a-a-a-a-c">\left[\begin{array}{c} 2 \\ 2 \\ 2 \end{array}\right]\in S</m>, so <m original-id="EV3-s3a7t2p1o1l1p1m4" internal-id="m-EV3-c-g-b-a-a-a-a-d">S</m> <em original-id="EV3-s3a7t2p1o1l1p1e5" internal-id="em-EV3-c-g-b-a-a-a-a-e">is</em> a subspace.
+        </p>
+    </li><li original-id="EV3-s3a7t2p1o1l2" internal-id="li-EV3-c-g-b-a-a-b">
+        <p original-id="EV3-s3a7t2p1o1l2p1" internal-id="p-EV3-c-g-b-a-a-b-a">
+<m original-id="EV3-s3a7t2p1o1l2p1m1" internal-id="m-EV3-c-g-b-a-a-b-a-a">\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em original-id="EV3-s3a7t2p1o1l2p1e2" internal-id="em-EV3-c-g-b-a-a-b-a-b">and</em>
+<m original-id="EV3-s3a7t2p1o1l2p1m3" internal-id="m-EV3-c-g-b-a-a-b-a-c">\left[\begin{array}{c} 2 \\ 2 \\ 2 \end{array}\right]\in S</m>, so <m original-id="EV3-s3a7t2p1o1l2p1m4" internal-id="m-EV3-c-g-b-a-a-b-a-d">S</m> <em original-id="EV3-s3a7t2p1o1l2p1e5" internal-id="em-EV3-c-g-b-a-a-b-a-e">is not</em> a subspace.
+        </p>
+    </li><li original-id="EV3-s3a7t2p1o1l3" internal-id="li-EV3-c-g-b-a-a-c">
+        <p original-id="EV3-s3a7t2p1o1l3p1" internal-id="p-EV3-c-g-b-a-a-c-a">
+<m original-id="EV3-s3a7t2p1o1l3p1m1" internal-id="m-EV3-c-g-b-a-a-c-a-a">\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em original-id="EV3-s3a7t2p1o1l3p1e2" internal-id="em-EV3-c-g-b-a-a-c-a-b">but</em>
+<m original-id="EV3-s3a7t2p1o1l3p1m3" internal-id="m-EV3-c-g-b-a-a-c-a-c">\left[\begin{array}{c} 2 \\ 2 \\ 2 \end{array}\right]\not\in S</m>, so <m original-id="EV3-s3a7t2p1o1l3p1m4" internal-id="m-EV3-c-g-b-a-a-c-a-d">S</m> <em original-id="EV3-s3a7t2p1o1l3p1e5" internal-id="em-EV3-c-g-b-a-a-c-a-e">is</em> a subspace.
+        </p>
+    </li><li original-id="EV3-s3a7t2p1o1l4" internal-id="li-EV3-c-g-b-a-a-d">
+        <p original-id="EV3-s3a7t2p1o1l4p1" internal-id="p-EV3-c-g-b-a-a-d-a">
+<m original-id="EV3-s3a7t2p1o1l4p1m1" internal-id="m-EV3-c-g-b-a-a-d-a-a">\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em original-id="EV3-s3a7t2p1o1l4p1e2" internal-id="em-EV3-c-g-b-a-a-d-a-b">but</em>
+<m original-id="EV3-s3a7t2p1o1l4p1m3" internal-id="m-EV3-c-g-b-a-a-d-a-c">\left[\begin{array}{c} 2 \\ 2 \\ 2 \end{array}\right]\not\in S</m>, so <m original-id="EV3-s3a7t2p1o1l4p1m4" internal-id="m-EV3-c-g-b-a-a-d-a-d">S</m> <em original-id="EV3-s3a7t2p1o1l4p1e5" internal-id="em-EV3-c-g-b-a-a-d-a-e">is not</em> a subspace.
+        </p>
+    </li></ol>
+        </p>
+      </slide>
+      <slide>
+        <title>Activity 2.3.3 (~10 min)</title>
+        <p original-id="EV3-s3a7i1p1" internal-id="p-EV3-c-g-a-a">
+Let <m original-id="EV3-s3a7i1p1m1" internal-id="m-EV3-c-g-a-a-a">S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=4}</m>.
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="EV3-s3a7t3p1" internal-id="p-EV3-c-g-c-a">
+Which of these statements is valid?
+<ol original-id="EV3-s3a7t3p1o1" internal-id="ol-EV3-c-g-c-a-a"><li original-id="EV3-s3a7t3p1o1l1" internal-id="li-EV3-c-g-c-a-a-a">
+        <p original-id="EV3-s3a7t3p1o1l1p1" internal-id="p-EV3-c-g-c-a-a-a-a">
+<m original-id="EV3-s3a7t3p1o1l1p1m1" internal-id="m-EV3-c-g-c-a-a-a-a-a">\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em original-id="EV3-s3a7t3p1o1l1p1e2" internal-id="em-EV3-c-g-c-a-a-a-a-b">and</em>
+<m original-id="EV3-s3a7t3p1o1l1p1m3" internal-id="m-EV3-c-g-c-a-a-a-a-c">\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]\in S</m>, so <m original-id="EV3-s3a7t3p1o1l1p1m4" internal-id="m-EV3-c-g-c-a-a-a-a-d">S</m> <em original-id="EV3-s3a7t3p1o1l1p1e5" internal-id="em-EV3-c-g-c-a-a-a-a-e">is</em> a subspace.
+        </p>
+    </li><li original-id="EV3-s3a7t3p1o1l2" internal-id="li-EV3-c-g-c-a-a-b">
+        <p original-id="EV3-s3a7t3p1o1l2p1" internal-id="p-EV3-c-g-c-a-a-b-a">
+<m original-id="EV3-s3a7t3p1o1l2p1m1" internal-id="m-EV3-c-g-c-a-a-b-a-a">\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em original-id="EV3-s3a7t3p1o1l2p1e2" internal-id="em-EV3-c-g-c-a-a-b-a-b">and</em>
+<m original-id="EV3-s3a7t3p1o1l2p1m3" internal-id="m-EV3-c-g-c-a-a-b-a-c">\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]\in S</m>, so <m original-id="EV3-s3a7t3p1o1l2p1m4" internal-id="m-EV3-c-g-c-a-a-b-a-d">S</m> <em original-id="EV3-s3a7t3p1o1l2p1e5" internal-id="em-EV3-c-g-c-a-a-b-a-e">is not</em> a subspace.
+        </p>
+    </li><li original-id="EV3-s3a7t3p1o1l3" internal-id="li-EV3-c-g-c-a-a-c">
+        <p original-id="EV3-s3a7t3p1o1l3p1" internal-id="p-EV3-c-g-c-a-a-c-a">
+<m original-id="EV3-s3a7t3p1o1l3p1m1" internal-id="m-EV3-c-g-c-a-a-c-a-a">\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em original-id="EV3-s3a7t3p1o1l3p1e2" internal-id="em-EV3-c-g-c-a-a-c-a-b">but</em>
+<m original-id="EV3-s3a7t3p1o1l3p1m3" internal-id="m-EV3-c-g-c-a-a-c-a-c">\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]\not\in S</m>, so <m original-id="EV3-s3a7t3p1o1l3p1m4" internal-id="m-EV3-c-g-c-a-a-c-a-d">S</m> <em original-id="EV3-s3a7t3p1o1l3p1e5" internal-id="em-EV3-c-g-c-a-a-c-a-e">is</em> a subspace.
+        </p>
+    </li><li original-id="EV3-s3a7t3p1o1l4" internal-id="li-EV3-c-g-c-a-a-d">
+        <p original-id="EV3-s3a7t3p1o1l4p1" internal-id="p-EV3-c-g-c-a-a-d-a">
+<m original-id="EV3-s3a7t3p1o1l4p1m1" internal-id="m-EV3-c-g-c-a-a-d-a-a">\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em original-id="EV3-s3a7t3p1o1l4p1e2" internal-id="em-EV3-c-g-c-a-a-d-a-b">but</em>
+<m original-id="EV3-s3a7t3p1o1l4p1m3" internal-id="m-EV3-c-g-c-a-a-d-a-c">\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]\not\in S</m>, so <m original-id="EV3-s3a7t3p1o1l4p1m4" internal-id="m-EV3-c-g-c-a-a-d-a-d">S</m> <em original-id="EV3-s3a7t3p1o1l4p1e5" internal-id="em-EV3-c-g-c-a-a-d-a-e">is not</em> a subspace.
+        </p>
+    </li></ol>
+        </p>
+      </slide>
+      <slide>
+        <title>Remark 2.3.4 </title>
+        <p original-id="EV3-subspace-check-p1" internal-id="p-EV3-subspace-check-a">
+In summary, you can check <em original-id="EV3-subspace-check-p1e1" internal-id="em-EV3-subspace-check-a-a">any</em> of the following to show that a
+nonempty subset <m original-id="EV3-subspace-check-p1m2" internal-id="m-EV3-subspace-check-a-b">W</m> isn't a subspace:
+<ul original-id="EV3-subspace-check-p1u3" internal-id="ul-EV3-subspace-check-a-c"><li original-id="EV3-subspace-check-p1u3l1" internal-id="li-EV3-subspace-check-a-c-a">
+    <p original-id="EV3-subspace-check-p1u3l1p1" internal-id="p-EV3-subspace-check-a-c-a-a">
+    Find <m original-id="EV3-subspace-check-p1u3l1p1m1" internal-id="m-EV3-subspace-check-a-c-a-a-a">\vec u,\vec v\in W</m> such that <m original-id="EV3-subspace-check-p1u3l1p1m2" internal-id="m-EV3-subspace-check-a-c-a-a-b">\vec u+\vec v\not\in W</m>.
+    </p>
+  </li><li original-id="EV3-subspace-check-p1u3l2" internal-id="li-EV3-subspace-check-a-c-b">
+    <p original-id="EV3-subspace-check-p1u3l2p1" internal-id="p-EV3-subspace-check-a-c-b-a">
+    Find <m original-id="EV3-subspace-check-p1u3l2p1m1" internal-id="m-EV3-subspace-check-a-c-b-a-a">c\in\IR,\vec v\in W</m> such that <m original-id="EV3-subspace-check-p1u3l2p1m2" internal-id="m-EV3-subspace-check-a-c-b-a-b">c\vec v\not\in W</m>.
+    </p>
+  </li><li original-id="EV3-subspace-check-p1u3l3" internal-id="li-EV3-subspace-check-a-c-c">
+      <p original-id="EV3-subspace-check-p1u3l3p1" internal-id="p-EV3-subspace-check-a-c-c-a">
+      Show that <m original-id="EV3-subspace-check-p1u3l3p1m1" internal-id="m-EV3-subspace-check-a-c-c-a-a">\vec 0\not\in W</m> (same as the last step, with <m original-id="EV3-subspace-check-p1u3l3p1m2" internal-id="m-EV3-subspace-check-a-c-c-a-b">c=0</m>). 
+      </p>
+    </li></ul>
+</p>
+        <p original-id="EV3-subspace-check-p2" internal-id="p-EV3-subspace-check-b">
+If you cannot do any of these, then <m original-id="EV3-subspace-check-p2m1" internal-id="m-EV3-subspace-check-b-a">W</m> can be proven to be a subspace
+by doing <em original-id="EV3-subspace-check-p2e2" internal-id="em-EV3-subspace-check-b-b">both</em> of the following:
+<ol original-id="EV3-subspace-check-p2o3" internal-id="ol-EV3-subspace-check-b-c"><li original-id="EV3-subspace-check-p2o3l1" internal-id="li-EV3-subspace-check-b-c-a">
+    <p original-id="EV3-subspace-check-p2o3l1p1" internal-id="p-EV3-subspace-check-b-c-a-a">
+    Prove that <m original-id="EV3-subspace-check-p2o3l1p1m1" internal-id="m-EV3-subspace-check-b-c-a-a-a">\vec u+\vec v\in W</m> whenever <m original-id="EV3-subspace-check-p2o3l1p1m2" internal-id="m-EV3-subspace-check-b-c-a-a-b">\vec u,\vec v\in W</m>.
+    </p>
+  </li><li original-id="EV3-subspace-check-p2o3l2" internal-id="li-EV3-subspace-check-b-c-b">
+    <p original-id="EV3-subspace-check-p2o3l2p1" internal-id="p-EV3-subspace-check-b-c-b-a">
+    Prove that <m original-id="EV3-subspace-check-p2o3l2p1m1" internal-id="m-EV3-subspace-check-b-c-b-a-a">c\vec v\in W</m> whenever <m original-id="EV3-subspace-check-p2o3l2p1m2" internal-id="m-EV3-subspace-check-b-c-b-a-b">c\in\IR,\vec v\in W</m>.
+    </p>
+  </li></ol>
+</p>
+      </slide>
+      <slide>
+        <title>Activity 2.3.4 (~20 min)</title>
+        <p original-id="EV3-s3a9i1p1" internal-id="p-EV3-c-i-a-a">
+  Consider these subsets of <m original-id="EV3-s3a9i1p1m1" internal-id="m-EV3-c-i-a-a-a">\IR^3</m>:
+  <me original-id="EV3-s3a9i1p1m2" internal-id="me-EV3-c-i-a-a-b">
+    R=
+    \setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{y=z+1}
+    \hspace{2em}
+    S=
+    \setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{y=|z|}
+    \hspace{2em}
+    T=
+    \setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{z=xy}
+  </me>.
+        </p>
+        <p>
+          <em>Part 1.</em>
+        </p>
+        <p original-id="EV3-s3a9t2p1" internal-id="p-EV3-c-i-b-a">
+  Show <m original-id="EV3-s3a9t2p1m1" internal-id="m-EV3-c-i-b-a-a">R</m> isn't a subspace by showing that <m original-id="EV3-s3a9t2p1m2" internal-id="m-EV3-c-i-b-a-b">\vec 0\not\in R</m>.
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 2.3.4 (~20 min)</title>
+        <p original-id="EV3-s3a9i1p1" internal-id="p-EV3-c-i-a-a">
+  Consider these subsets of <m original-id="EV3-s3a9i1p1m1" internal-id="m-EV3-c-i-a-a-a">\IR^3</m>:
+  <me original-id="EV3-s3a9i1p1m2" internal-id="me-EV3-c-i-a-a-b">
+    R=
+    \setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{y=z+1}
+    \hspace{2em}
+    S=
+    \setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{y=|z|}
+    \hspace{2em}
+    T=
+    \setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{z=xy}
+  </me>.
+        </p>
+        <p>
+          <em>Part 2.</em>
+        </p>
+        <p original-id="EV3-s3a9t3p1" internal-id="p-EV3-c-i-c-a">
+  Show <m original-id="EV3-s3a9t3p1m1" internal-id="m-EV3-c-i-c-a-a">S</m> isn't a subspace by finding two vectors <m original-id="EV3-s3a9t3p1m2" internal-id="m-EV3-c-i-c-a-b">\vec u,\vec v\in S</m>
+  such that <m original-id="EV3-s3a9t3p1m3" internal-id="m-EV3-c-i-c-a-c">\vec u+\vec v\not\in S</m>.
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 2.3.4 (~20 min)</title>
+        <p original-id="EV3-s3a9i1p1" internal-id="p-EV3-c-i-a-a">
+  Consider these subsets of <m original-id="EV3-s3a9i1p1m1" internal-id="m-EV3-c-i-a-a-a">\IR^3</m>:
+  <me original-id="EV3-s3a9i1p1m2" internal-id="me-EV3-c-i-a-a-b">
+    R=
+    \setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{y=z+1}
+    \hspace{2em}
+    S=
+    \setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{y=|z|}
+    \hspace{2em}
+    T=
+    \setBuilder{ \left[\begin{array}{c}x\\y\\z\end{array}\right]}{z=xy}
+  </me>.
+        </p>
+        <p>
+          <em>Part 3.</em>
+        </p>
+        <p original-id="EV3-s3a9t4p1" internal-id="p-EV3-c-i-d-a">
+  Show <m original-id="EV3-s3a9t4p1m1" internal-id="m-EV3-c-i-d-a-a">T</m> isn't a subspace by finding a vector <m original-id="EV3-s3a9t4p1m2" internal-id="m-EV3-c-i-d-a-b">\vec v\in T</m>
+  such that <m original-id="EV3-s3a9t4p1m3" internal-id="m-EV3-c-i-d-a-c">2\vec v\not\in T</m>.
+      </p>
+      </slide>
+      <slide>
+        <title>Activity 2.3.5 </title>
+        <p original-id="EV3-s3a10s1p1" internal-id="p-EV3-c-j-a-a"> Consider the following two sets of Euclidean vectors: <me original-id="EV3-s3a10s1p1m1" internal-id="me-EV3-c-j-a-a-a">U=\left\{ \left[\begin{array}{c} x \\ y \end{array}\right] \middle|\,7 \, x + 4 \, y = 0\right\} \hspace{2em} W=\left\{ \left[\begin{array}{c} x \\ y \end{array}\right] \middle|\,3 \, x y^{2} = 0\right\}</me> </p>
+        <p original-id="EV3-s3a10s1p2" internal-id="p-EV3-c-j-a-b"> Explain why one of these sets is a subspace of <m original-id="EV3-s3a10s1p2m1" internal-id="m-EV3-c-j-a-b-a">\mathbb{R}^2</m> and one is not. </p>
+      </slide>
+      <slide>
+        <title>Activity 2.3.6 </title>
+        <p original-id="EV3-s3a11s1p1" internal-id="p-EV3-c-k-a-a"> 
+            Consider the following attempted proof that 
+            <me original-id="EV3-s3a11s1p1m1" internal-id="me-EV3-c-k-a-a-a">U=\left\{ \left[\begin{array}{c} x \\ y \end{array}\right] \middle| x+y=xy\right\}</me>
+            is closed under scalar multiplication.
+        </p>
+        <blockquote original-id="EV3-s3a11s1b2" internal-id="blockquote-EV3-c-k-a-b">
+          <p original-id="EV3-s3a11s1b2p1" internal-id="p-EV3-c-k-a-b-a">
+Let <m original-id="EV3-s3a11s1b2p1m1" internal-id="m-EV3-c-k-a-b-a-a">\left[\begin{array}{c} x \\ y \end{array}\right]\in U</m>, so we know that <m original-id="EV3-s3a11s1b2p1m2" internal-id="m-EV3-c-k-a-b-a-b">x+y=xy</m>.
+We want to show <m original-id="EV3-s3a11s1b2p1m3" internal-id="m-EV3-c-k-a-b-a-c">k\left[\begin{array}{c} x \\ y \end{array}\right]=\left[\begin{array}{c} kx \\ ky \end{array}\right]\in U</m>,
+that is, <m original-id="EV3-s3a11s1b2p1m4" internal-id="m-EV3-c-k-a-b-a-d">(kx)+(ky)=(kx)(ky)</m>. This is verified by the following calculation:
+<md original-id="EV3-s3a11s1b2p1m5" internal-id="md-EV3-c-k-a-b-a-e"><mrow original-id="EV3-s3a11s1b2p1m5m1" internal-id="mrow-EV3-c-k-a-b-a-e-a">
+(kx)+(ky)&amp;=(kx)(ky)
+    </mrow><mrow original-id="EV3-s3a11s1b2p1m5m2" internal-id="mrow-EV3-c-k-a-b-a-e-b">
+k(x+y)&amp;=k^2xy
+    </mrow><mrow original-id="EV3-s3a11s1b2p1m5m3" internal-id="mrow-EV3-c-k-a-b-a-e-c">
+0[k(x+y)]&amp;=0[k^2xy]
+    </mrow><mrow original-id="EV3-s3a11s1b2p1m5m4" internal-id="mrow-EV3-c-k-a-b-a-e-d">
+0&amp;=0
+    </mrow></md>
+            </p>
+        </blockquote>
+        <p original-id="EV3-s3a11s1p3" internal-id="p-EV3-c-k-a-c">
+            Is this reasoning valid?
+            <ol marker="A." cols="2" original-id="EV3-s3a11s1p3o1" internal-id="ol-EV3-c-k-a-c-a"><li original-id="EV3-s3a11s1p3o1l1" internal-id="li-EV3-c-k-a-c-a-a">
+                    <p original-id="EV3-s3a11s1p3o1l1p1" internal-id="p-EV3-c-k-a-c-a-a-a">
+                        Yes
+                    </p>
+                </li><li original-id="EV3-s3a11s1p3o1l2" internal-id="li-EV3-c-k-a-c-a-b">
+                    <p original-id="EV3-s3a11s1p3o1l2p1" internal-id="p-EV3-c-k-a-c-a-b-a">
+                        No
+                    </p>
+                </li></ol>
+        </p>
+      </slide>
+      <slide>
+        <title>Remark 2.3.5 </title>
+        <p original-id="EV3-s3r12p1" internal-id="p-EV3-c-l-a">
+Proofs of an equality <m original-id="EV3-s3r12p1m1" internal-id="m-EV3-c-l-a-a">\mathrm{LEFT}=\mathrm{RIGHT}</m> should generally be of one of these forms:
+<ol original-id="EV3-s3r12p1o2" internal-id="ol-EV3-c-l-a-b"><li original-id="EV3-s3r12p1o2l1" internal-id="li-EV3-c-l-a-b-a">
+        <p original-id="EV3-s3r12p1o2l1p1" internal-id="p-EV3-c-l-a-b-a-a">
+            Using a chain of equalities:
+            <md original-id="EV3-s3r12p1o2l1p1m1" internal-id="md-EV3-c-l-a-b-a-a-a"><mrow original-id="EV3-s3r12p1o2l1p1m1m1" internal-id="mrow-EV3-c-l-a-b-a-a-a-a">
+            \mathrm{LEFT} &amp;= \cdots
+                </mrow><mrow original-id="EV3-s3r12p1o2l1p1m1m2" internal-id="mrow-EV3-c-l-a-b-a-a-a-b">
+             &amp;= \cdots
+                </mrow><mrow original-id="EV3-s3r12p1o2l1p1m1m3" internal-id="mrow-EV3-c-l-a-b-a-a-a-c">
+             &amp;= \cdots
+                </mrow><mrow original-id="EV3-s3r12p1o2l1p1m1m4" internal-id="mrow-EV3-c-l-a-b-a-a-a-d">
+             &amp;= \mathrm{RIGHT}
+                    </mrow></md>
+            Alternatively:
+            <md original-id="EV3-s3r12p1o2l1p1m2" internal-id="md-EV3-c-l-a-b-a-a-b"><mrow original-id="EV3-s3r12p1o2l1p1m2m1" internal-id="mrow-EV3-c-l-a-b-a-a-b-a">
+            \mathrm{LEFT} &amp;= \cdots &amp; \mathrm{RIGHT} &amp;=\cdots
+                </mrow><mrow original-id="EV3-s3r12p1o2l1p1m2m2" internal-id="mrow-EV3-c-l-a-b-a-a-b-b">
+             &amp;= \cdots &amp; &amp;= \cdots
+                </mrow><mrow original-id="EV3-s3r12p1o2l1p1m2m3" internal-id="mrow-EV3-c-l-a-b-a-a-b-c">
+              &amp;= \cdots &amp; &amp;= \cdots
+                </mrow><mrow original-id="EV3-s3r12p1o2l1p1m2m4" internal-id="mrow-EV3-c-l-a-b-a-a-b-d">
+             &amp;= \mathrm{SAME}&amp; &amp;= \mathrm{SAME}
+                    </mrow></md>
+        </p>
+    </li><li original-id="EV3-s3r12p1o2l2" internal-id="li-EV3-c-l-a-b-b">
+        <p original-id="EV3-s3r12p1o2l2p1" internal-id="p-EV3-c-l-a-b-b-a">
+When the assumption <m original-id="EV3-s3r12p1o2l2p1m1" internal-id="m-EV3-c-l-a-b-b-a-a">\mathrm{THIS}=\mathrm{THAT}</m> is already known or assumed to be true :
+            <md original-id="EV3-s3r12p1o2l2p1m2" internal-id="md-EV3-c-l-a-b-b-a-b"><mrow original-id="EV3-s3r12p1o2l2p1m2m1" internal-id="mrow-EV3-c-l-a-b-b-a-b-a">
+                    &amp;&amp;    \mathrm{THIS} &amp;= \mathrm{THAT}
+                </mrow><mrow original-id="EV3-s3r12p1o2l2p1m2m2" internal-id="mrow-EV3-c-l-a-b-b-a-b-b">
+                    &amp;  \Rightarrow&amp;  \cdots &amp;= \cdots
+                </mrow><mrow original-id="EV3-s3r12p1o2l2p1m2m3" internal-id="mrow-EV3-c-l-a-b-b-a-b-c">
+                    &amp;  \Rightarrow&amp; \cdots &amp;= \cdots
+                </mrow><mrow original-id="EV3-s3r12p1o2l2p1m2m4" internal-id="mrow-EV3-c-l-a-b-b-a-b-d">
+                 &amp;   \Rightarrow&amp; \mathrm{LEFT} &amp;= \mathrm{RIGHT}
+                </mrow></md>
+        </p>
+    </li></ol>
+            </p>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>
