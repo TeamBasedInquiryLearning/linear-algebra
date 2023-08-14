@@ -61,4 +61,6 @@ at <http://linear.tbil.org>.
 2. `build print` target using PreTeXt 
 3. Build slides using `python scripts/slides.py`
 4. Build bank using `python scripts/bank.py`
+    - One liner: `pretext build web && pretext build print && python scripts/slides.py && python scripts/bank.py`
 5. `deploy` using PreTeXt
+    - `pretext deploy --stage-only` can be used to stage what deployment will look like in `output/stage`
