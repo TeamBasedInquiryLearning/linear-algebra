@@ -1,70 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    This file provides the overall configuration for your PreTeXt
-    project. To edit the content of your document, open `source/main.ptx`
-    (default location).
--->
-<project>
+<project ptx-version="2">
   <targets>
-    <target name="web">
-      <format>html</format>
-      <source>source/main.ptx</source>
-      <publication>publication/publication.ptx</publication>
-      <output-dir>output/web</output-dir>
-      <deploy-dir>./2023</deploy-dir>
+    <target name="web" format="html" deploy-dir="2023">
       <stringparam key="debug.project.number" value="the-way-it-should-be"/>
     </target>
-    <target name="print">
-      <format>pdf</format>
-      <source>source/main.ptx</source>
-      <publication>publication/publication.ptx</publication>
-      <output-dir>output/print</output-dir>
-      <deploy-dir>./2023/pdf</deploy-dir>
+    <target name="print" format="pdf" deploy-dir="2023/pdf/">
       <stringparam key="debug.project.number" value="the-way-it-should-be"/>
     </target>
-    <target name="extract-slides">
-      <format>custom</format>
-      <source>source/main.ptx</source>
-      <publication>publication/publication.ptx</publication>
-      <output-dir>output/slide-extraction</output-dir>
-      <xsl>xsl/extract-slideshow.xsl</xsl>
+    <!-- use `python scripts/slides.py` for these two targets: -->
+    <target name="extract-slides" format="custom" xsl="extract-slideshow.xsl">
       <stringparam key="debug.project.number" value="the-way-it-should-be"/>
-      <!-- Provide these programmatically! -->
-      <!-- <output-filename>[xml_id].ptx</output-filename> -->
+      <!-- @output-filename="[xml_id].ptx" -->
       <!-- <stringparam key="section" value="[xml_id]"/> -->
     </target>
-    <target name="slides">
-      <format>custom</format>
-      <source>source/main.ptx</source>
-      <publication>publication/publication.ptx</publication>
-      <output-dir>output/slides</output-dir>
-      <xsl>xsl/slideshow.xsl</xsl>
-      <deploy-dir>./2023</deploy-dir>
-      <!-- Provide these programmatically! -->
-      <!-- <source>output/slide-extraction/[xml_id].ptx</source> -->
-      <!-- <output-filename>[xml_id].slides.html</output-filename> -->
+    <target name="slides" format="custom" xsl="slideshow.xsl" deploy-dir="2023">
+      <!-- Provide these programmatically: -->
+      <!-- @source="../output/extract-slides/[xml_id].ptx" -->
+      <!-- @output-filename="[xml_id].slides.html" -->
     </target>
-    <target name="checkit">
+    <!-- use `python scripts/bank.py` for this target -->
+    <target name="checkit" format="custom" output-dir="../exercises/docs" deploy-dir="2023/exercises">
       <!-- built by checkit, not pretext -->
-      <!-- everything except output-dir and deploy-dir is unused but needed for validation -->
-      <format>custom</format>
-      <source>source/main.ptx</source>
-      <publication>publication/publication.ptx</publication>
-      <output-dir>exercises/docs</output-dir>
-      <xsl>NOT_IMPLEMENTED</xsl>
-      <deploy-dir>./2023/exercises</deploy-dir>
+      <!-- everything except output-dir and deploy-dir is unused -->
     </target>
   </targets>
-  <executables>
-      <latex>latex</latex>
-      <pdflatex>pdflatex</pdflatex>
-      <xelatex>xelatex</xelatex>
-      <pdfsvg>pdf2svg</pdfsvg>
-      <asy>asy</asy>
-      <sage>sage</sage>
-      <pdfpng>convert</pdfpng>
-      <pdfeps>pdftops</pdfeps>
-      <node>node</node>
-      <liblouis>file2brl</liblouis>
-    </executables>
 </project>
