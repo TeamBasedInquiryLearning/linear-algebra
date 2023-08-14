@@ -13,13 +13,10 @@ of this project.
 
 ## Getting started
 
-These materials are hosted at
-<http://linear.tbil.org>.
+These materials are hosted at <http://linear.tbil.org>.
 
-Other materials, such as quizzes for the Readiness Assurance Process,
-are available in the PDF folder of this repository, with updated versions
-available by joining the TBIL Slack community. Learn more at
-[TBIL.org](http://tbil.org).
+Learn more at [TBIL.org](http://tbil.org) and join our community of instructors
+and contributors!
 
 ## Copyright and Licensing
 
