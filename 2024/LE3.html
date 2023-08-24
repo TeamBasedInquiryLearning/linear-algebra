@@ -87,21 +87,13 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
-  "linked": true,
-  "languages": [
-    "sage"
-  ],
-  "evalButtonText": "Evaluate (Sage)"
-});
-</script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
   "inputLocation": "pre.sagecell-octave",
   "linked": true,
+  "linkKey": "linked-octave",
+  "autoeval": false,
   "languages": [
     "octave"
   ],
@@ -652,11 +644,11 @@ sagecell.makeSagecell({
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="LE3"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Counting Solutions for Linear Systems (LE3)</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.3</span><span class="space"> </span><span class="title">Counting Solutions for Linear Systems (LE3)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-4"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
 <ul class="disc"><li id="li-107"><div class="para" id="p-160">Determine the number of solutions for a system of linear equations or a vector equation.</div></li></ul></article><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.3.1</span> <span class="title">Class Activities</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="space"> </span><span class="title">Class Activities</span>
 </h3>
 <article class="remark remark-like" id="remark-6"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
@@ -856,17 +848,17 @@ x_{1} \left[\begin{array}{c}
 \end{array}\right]
 \end{equation*}
 </div></div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-5"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.3.2</span> <span class="title">Videos</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="space"> </span><span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-3"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-LE3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/tkRKPBtkJcw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span>Video: Finding the number of solutions for a system</figcaption></figure></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.3.3</span> <span class="title">Slideshow</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="space"> </span><span class="title">Slideshow</span>
 </h3>
 <div class="para" id="p-197">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/LE3.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/LE3.slides.html</code></a>.</div></section><section class="exercises" id="exercises-3"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">1.3.4</span> <span class="title">Exercises</span>
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <div class="para" id="p-198">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/LE3/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/LE3/</code></a>.</div></section><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.3.5</span> <span class="title">Mathematical Writing Explorations</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="space"> </span><span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-6"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span>
@@ -879,7 +871,7 @@ x_{1} \left[\begin{array}{c}
 <li id="li-125"><div class="para" id="p-derived-li-125">Prove or disprove. A system of linear equations is homogeneous if an only if it has the the zero vector as a solution.</div></li>
 </ul>
 </div></article></section><section class="subsection" id="subsection-15"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.3.6</span> <span class="title">Sample Problem and Solution</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="space"> </span><span class="title">Sample Problem and Solution</span>
 </h3>
 <div class="para" id="p-200">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-LE3.html" title="Example B.1.3: LE3">Example B.1.3</a>.</div></section></section></div>
 <div class="ptx-content-footer">

@@ -87,21 +87,13 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
-  "linked": true,
-  "languages": [
-    "sage"
-  ],
-  "evalButtonText": "Evaluate (Sage)"
-});
-</script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
   "inputLocation": "pre.sagecell-octave",
   "linked": true,
+  "linkKey": "linked-octave",
+  "autoeval": false,
   "languages": [
     "octave"
   ],
@@ -652,12 +644,12 @@ sagecell.makeSagecell({
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="EV5"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">Identifying a Basis (EV5)</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.5</span><span class="space"> </span><span class="title">Identifying a Basis (EV5)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-11"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
 <ul class="disc"><li id="li-267"><div class="para" id="p-432">Explain why a set of Euclidean vectors is or is not a basis of <span class="process-math">\(\IR^n\text{.}\)</span>
 </div></li></ul></article><section class="subsection" id="subsection-41"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.5.1</span> <span class="title">Class Activities</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="space"> </span><span class="title">Class Activities</span>
 </h3>
 <article class="activity project-like" id="activity-EV5-intro"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span>
@@ -931,17 +923,17 @@ x_1 \vec{v_1}+\cdots+x_n\vec{v_n}=\vec{w}
 \end{array}\right]
 \text{.}\)</span>
 </div> <div class="para" id="p-501">That is, a basis for <span class="process-math">\(\IR^n\)</span> must have exactly <span class="process-math">\(n\)</span> vectors and its square matrix must row-reduce to the so-called <dfn class="terminology">identity matrix</dfn> containing all zeros except for a downward diagonal of ones. (We will learn where the identity matrix gets its name in a later module.)</div></article></section><section class="subsection" id="subsection-42"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.5.2</span> <span class="title">Videos</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="space"> </span><span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-16"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-EV5" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/ayft2QhQ-xM?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">16<span class="period">.</span></span><span class="space"> </span>Video: Verifying that a set of vectors is a basis of a vector space</figcaption></figure></section><section class="subsection" id="subsection-43"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.5.3</span> <span class="title">Slideshow</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="space"> </span><span class="title">Slideshow</span>
 </h3>
 <div class="para" id="p-502">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/EV5.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/EV5.slides.html</code></a>.</div></section><section class="exercises" id="exercises-9"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">2.5.4</span> <span class="title">Exercises</span>
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <div class="para" id="p-503">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV5/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV5/</code></a>.</div></section><section class="subsection" id="subsection-44"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.5.5</span> <span class="title">Mathematical Writing Explorations</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="space"> </span><span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-17"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.5.7</span><span class="period">.</span>
@@ -961,7 +953,7 @@ x_1 \vec{v_1}+\cdots+x_n\vec{v_n}=\vec{w}
 </ul></article><article class="exploration project-like" id="exploration-19"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.5.9</span><span class="period">.</span>
 </h4>Must a basis for the space <span class="process-math">\(P_2\text{,}\)</span> the space of all quadratic polynomials, contain a polynomial of each degree less than or equal to 2? Generalize your result to polynomials of arbitrary degree.</article></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.5.6</span> <span class="title">Sample Problem and Solution</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="space"> </span><span class="title">Sample Problem and Solution</span>
 </h3>
 <div class="para" id="p-504">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-EV5.html" title="Example B.1.9: EV5">Example B.1.9</a>.</div></section></section></div>
 <div class="ptx-content-footer">

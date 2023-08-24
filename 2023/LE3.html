@@ -661,8 +661,8 @@ sagecell.makeSagecell({
 <article class="remark remark-like" id="remark-6"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-161">We will frequently need to know the reduced row echelon form of matrices during the remainder of this course, so unless you’re told otherwise, feel free to use technology (see <a href="" class="xref" data-knowl="./knowl/LE2-rref-tech.html" title="Activity 1.2.13">Activity 1.2.13</a>) to compute RREFs efficiently.</div></article><article class="activity project-like" id="activity-18"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
+<div class="para" id="p-161">We will frequently need to know the reduced row echelon form of matrices during the remainder of this course, so unless you’re told otherwise, feel free to use technology (see <a href="" class="xref" data-knowl="./knowl/LE2-rref-tech.html" title="Activity 1.2.17">Activity 1.2.17</a>) to compute RREFs efficiently.</div></article><article class="activity project-like" id="activity-18"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
 </h4>
 <div class="introduction" id="introduction-5">
 <div class="para" id="p-162">Consider the following system of equations.</div>
@@ -703,7 +703,7 @@ sagecell.makeSagecell({
 </ol></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-2"><script type="text/x-sage">rref([3,-2,13,6;2,-2,10,2;-1,3,-6,11])
 </script></pre>
 <article class="activity project-like" id="activity-19"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
 </h4>
 <div class="introduction" id="introduction-6">
 <div class="para" id="p-169">Consider the vector equation</div>
@@ -743,7 +743,7 @@ x_1 \left[\begin{array}{c} 3 \\ 2\\ -1 \end{array}\right]
 </ol></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-3"><script type="text/x-sage">rref([3,-2,13,6;2,-2,10,2;-1,0,-3,1])
 </script></pre>
 <article class="activity project-like" id="activity-20"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span>
 </h4>
 <div class="para" id="p-176">What contradictory equations besides <span class="process-math">\(0=1\)</span> may be obtained from the RREF of an augmented matrix?</div> <ol class="upper-alpha">
 <li id="li-114"><div class="para" id="p-177">
@@ -755,7 +755,7 @@ x_1 \left[\begin{array}{c} 3 \\ 2\\ -1 \end{array}\right]
 <li id="li-117"><div class="para" id="p-180">
 <span class="process-math">\(0=1\)</span> is the only obtainable contradiction</div></li>
 </ol></article><article class="activity project-like" id="LE3-inf"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
 </h4>
 <div class="introduction" id="introduction-7">
 <div class="para" id="p-181">Consider the following linear system.</div>
@@ -777,10 +777,10 @@ x_1 &amp;+ 2x_2 &amp;+ 3x_3 &amp;= 1\\
 <li id="li-120"><div class="para" id="p-187">Infinitely-many</div></li>
 </ol></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-4"><script type="text/x-sage"></script></pre>
 <article class="fact theorem-like" id="fact-2"><h4 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span>
 </h4>
 <div class="para" id="p-188">We will see in <a href="LE4.html" class="internal" title="Section 1.4: Linear Systems with Infinitely-Many Solutions (LE4)">Section 1.4</a> that the intuition established here generalizes: a <em class="emphasis">consistent</em> system with more variables than equations (ignoring <span class="process-math">\(0=0\)</span>) will always have infinitely many solutions.</div></article><article class="fact theorem-like" id="fact-3"><h4 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span>
 </h4>
 <div class="para" id="p-189">By finding <span class="process-math">\(\RREF(A)\)</span> from a linear system’s corresponding augmented matrix <span class="process-math">\(A\text{,}\)</span> we can immediately tell how many solutions the system has.</div> <ul class="disc">
 <li id="li-121"><div class="para" id="p-190">If the linear system given by <span class="process-math">\(\RREF(A)\)</span> includes the contradiction <span class="process-math">\(0=1\text{,}\)</span> that is, the row <span class="process-math">\(\left[\begin{array}{ccc|c}0&amp;\cdots&amp;0&amp;1\end{array}\right]\text{,}\)</span> then the system is <em class="emphasis">inconsistent</em>, which means it has <em class="emphasis">zero</em> solutions and its solution set is written as <span class="process-math">\(\emptyset\)</span> or <span class="process-math">\(\{\}\text{.}\)</span>
@@ -789,7 +789,7 @@ x_1 &amp;+ 2x_2 &amp;+ 3x_3 &amp;= 1\\
 </div></li>
 <li id="li-123"><div class="para" id="p-192">Otherwise, the system must have more variables than non-trivial equations (equations other than <span class="process-math">\(0=0\)</span>). This means it is <em class="emphasis">consistent</em> with <em class="emphasis">infinitely-many</em> different solutions. We’ll learn how to find such solution sets in <a href="LE4.html" class="internal" title="Section 1.4: Linear Systems with Infinitely-Many Solutions (LE4)">Section 1.4</a>.</div></li>
 </ul></article><article class="activity project-like" id="activity-22"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.8</span><span class="period">.</span>
 </h4>
 <div class="introduction" id="introduction-8"><div class="para" id="p-193">For each vector equation, write an explanation for whether each solution set has no solutions, one solution, or infinitely-many solutions. If the set is finite, describe it using set notation.</div></div>
 <article class="task exercise-like" id="task-14"><h5 class="heading"><span class="codenumber">(a)</span></h5>
@@ -869,7 +869,7 @@ x_{1} \left[\begin{array}{c}
 <span class="type">Subsection</span> <span class="codenumber">1.3.5</span> <span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-6"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.3.9</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="p-199">
 <div class="para">A system of equations with all constants equal to 0 is called <dfn class="terminology">homogeneous</dfn>. These are addressed in detail in section <a href="EV7.html" class="internal" title="Section 2.7: Homogeneous Linear Systems (EV7)">Section 2.7</a>

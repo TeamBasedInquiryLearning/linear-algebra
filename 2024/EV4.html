@@ -87,21 +87,13 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
-  "linked": true,
-  "languages": [
-    "sage"
-  ],
-  "evalButtonText": "Evaluate (Sage)"
-});
-</script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
   "inputLocation": "pre.sagecell-octave",
   "linked": true,
+  "linkKey": "linked-octave",
+  "autoeval": false,
   "languages": [
     "octave"
   ],
@@ -652,11 +644,11 @@ sagecell.makeSagecell({
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="EV4"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Linear Independence (EV4)</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.4</span><span class="space"> </span><span class="title">Linear Independence (EV4)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-10"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
 <ul class="disc"><li id="li-244"><div class="para" id="p-391">Determine if a set of Euclidean vectors is linearly dependent or independent by solving an appropriate vector equation.</div></li></ul></article><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Class Activities</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="space"> </span><span class="title">Class Activities</span>
 </h3>
 <article class="activity project-like" id="activity-44"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
@@ -855,22 +847,22 @@ S=\left\{
 <li id="li-266"><div class="para" id="p-428">No</div></li>
 </ol>
 </div></article></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.4.2</span> <span class="title">Videos</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="space"> </span><span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-15"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-EV4" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/EZ9BX1z-H4Y?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15<span class="period">.</span></span><span class="space"> </span>Video: Linear independence</figcaption></figure></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.4.3</span> <span class="title">Slideshow</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="space"> </span><span class="title">Slideshow</span>
 </h3>
 <div class="para" id="p-429">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/EV4.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/EV4.slides.html</code></a>.</div></section><section class="exercises" id="exercises-8"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">2.4.4</span> <span class="title">Exercises</span>
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <div class="para" id="p-430">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV4/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV4/</code></a>.</div></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.4.5</span> <span class="title">Mathematical Writing Explorations</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="space"> </span><span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-16"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span>
 </h4>Prove the result of <a href="" class="xref" data-knowl="./knowl/def_of_LI.html" title="Observation 2.4.3">Observation 2.4.3</a>, by showing that, given a set <span class="process-math">\(S = \{\vec{v}_1,\vec{v}_2,\ldots,\vec{v}_n\}\)</span> of vectors, <span class="process-math">\(S\)</span> is linearly independent iff the equation <span class="process-math">\(x_1\vec{v}_1 + x_2\vec{v}_2 + \ldots\ + x_n\vec{v}_n = \vec{0}\)</span> is only true when <span class="process-math">\(x_1 = x_2 = \cdots = x_n = 0\text{.}\)</span></article></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.4.6</span> <span class="title">Sample Problem and Solution</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="space"> </span><span class="title">Sample Problem and Solution</span>
 </h3>
 <div class="para" id="p-431">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-EV4.html" title="Example B.1.8: EV4">Example B.1.8</a>.</div></section></section></div>
 <div class="ptx-content-footer">

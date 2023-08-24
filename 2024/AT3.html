@@ -87,21 +87,13 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
-  "linked": true,
-  "languages": [
-    "sage"
-  ],
-  "evalButtonText": "Evaluate (Sage)"
-});
-</script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
   "inputLocation": "pre.sagecell-octave",
   "linked": true,
+  "linkKey": "linked-octave",
+  "autoeval": false,
   "languages": [
     "octave"
   ],
@@ -652,11 +644,11 @@ sagecell.makeSagecell({
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="AT3"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Image and Kernel (AT3)</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.3</span><span class="space"> </span><span class="title">Image and Kernel (AT3)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-17"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
 <ul class="disc"><li id="li-439"><div class="para" id="p-701">Compute a basis for the kernel and a basis for the image of a linear map, and verify that the rank-nullity theorem holds for a given linear map.</div></li></ul></article><section class="subsection" id="subsection-66"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.3.1</span> <span class="title">Class Activities</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="space"> </span><span class="title">Class Activities</span>
 </h3>
 <article class="activity project-like" id="activity-78"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
@@ -920,20 +912,20 @@ T\left( \left[\begin{array}{c} x \\ y \\ z \\ {w} \end{array}\right] \right) = \
 <div class="para" id="p-757">Explain and demonstrate how to find the kernel of <span class="process-math">\(T\)</span> and a basis for that kernel.</div></article><article class="task exercise-like" id="task-115"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="p-758">Explain and demonstrate how to find the rank and nullity of <span class="process-math">\(T\text{,}\)</span> and why the rank-nullity theorem holds for <span class="process-math">\(T\text{.}\)</span>
 </div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-25"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-67"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.3.2</span> <span class="title">Videos</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="space"> </span><span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-26"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-AT3-1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/FGyD1KLFHwc?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">26<span class="period">.</span></span><span class="space"> </span>Video: The kernel and image of a linear transformation</figcaption></figure><figure class="figure figure-like" id="figure-27"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-AT3-2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/ut_1dVFqwXw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">27<span class="period">.</span></span><span class="space"> </span>Video: Finding a basis of the image of a linear transformation</figcaption></figure><figure class="figure figure-like" id="figure-28"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-AT3-3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/VO2bDSiwbJM?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">28<span class="period">.</span></span><span class="space"> </span>Video: Finding a basis of the kernel of a linear transformation</figcaption></figure><figure class="figure figure-like" id="figure-29"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-AT3-4" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/A0RzdY_g44Y?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">29<span class="period">.</span></span><span class="space"> </span>Video: The rank-nullity theorem</figcaption></figure></section><section class="subsection" id="subsection-68"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.3.3</span> <span class="title">Slideshow</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="space"> </span><span class="title">Slideshow</span>
 </h3>
 <div class="para" id="p-759">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/AT3.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/AT3.slides.html</code></a>.</div></section><section class="exercises" id="exercises-14"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">3.3.4</span> <span class="title">Exercises</span>
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <div class="para" id="p-760">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/AT3/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/AT3/</code></a>.</div></section><section class="subsection" id="subsection-69"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.3.5</span> <span class="title">Mathematical Writing Explorations</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="space"> </span><span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-31"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.3.12</span><span class="period">.</span>
@@ -965,7 +957,7 @@ T\left( \left[\begin{array}{c} x \\ y \\ z \\ {w} \end{array}\right] \right) = \
 <li id="li-480"><div class="para" id="p-derived-li-480">Show that <span class="process-math">\(B_R\)</span> spans the range space.</div></li>
 <li id="li-481"><div class="para" id="p-derived-li-481">State your conclusion.</div></li>
 </ul></article></section><section class="subsection" id="subsection-70"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.3.6</span> <span class="title">Sample Problem and Solution</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.6</span><span class="space"> </span><span class="title">Sample Problem and Solution</span>
 </h3>
 <div class="para" id="p-762">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-AT3.html" title="Example B.1.14: AT3">Example B.1.14</a>.</div></section></section></div>
 <div class="ptx-content-footer">

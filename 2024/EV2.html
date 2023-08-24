@@ -87,21 +87,13 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
-  "linked": true,
-  "languages": [
-    "sage"
-  ],
-  "evalButtonText": "Evaluate (Sage)"
-});
-</script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-octave' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
   "inputLocation": "pre.sagecell-octave",
   "linked": true,
+  "linkKey": "linked-octave",
+  "autoeval": false,
   "languages": [
     "octave"
   ],
@@ -652,11 +644,11 @@ sagecell.makeSagecell({
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="EV2"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Spanning Sets (EV2)</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.2</span><span class="space"> </span><span class="title">Spanning Sets (EV2)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-8"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
 <ul class="disc"><li id="li-175"><div class="para" id="p-289">Determine if a set of Euclidean vectors spans <span class="process-math">\(\IR^n\)</span> by solving appropriate vector equations.</div></li></ul></article><section class="subsection" id="subsection-26"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.2.1</span> <span class="title">Class Activities</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="space"> </span><span class="title">Class Activities</span>
 </h3>
 <article class="observation remark-like" id="observation-3"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
@@ -792,17 +784,17 @@ x_1 \vec{v}_1 + \cdots x_m\vec{v}_m = \vec{w}
 <span class="process-math">\(\vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \)</span> is smaller than <span class="process-math">\(\vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} \text{.}\)</span>
 </div></li>
 </ol></article></section><section class="subsection" id="subsection-27"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.2.2</span> <span class="title">Videos</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="space"> </span><span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-10"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-EV2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Mr8LJAPwp1E?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10<span class="period">.</span></span><span class="space"> </span>Video: Determining if a set spans a Euclidean space</figcaption></figure></section><section class="subsection" id="subsection-28"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.2.3</span> <span class="title">Slideshow</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="space"> </span><span class="title">Slideshow</span>
 </h3>
 <div class="para" id="p-316">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/EV2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/EV2.slides.html</code></a>.</div></section><section class="exercises" id="exercises-6"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">2.2.4</span> <span class="title">Exercises</span>
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <div class="para" id="p-317">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV2/</code></a>.</div></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.2.5</span> <span class="title">Mathematical Writing Explorations</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="space"> </span><span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-10"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span>
@@ -818,7 +810,7 @@ x_1 \vec{v}_1 + \cdots x_m\vec{v}_m = \vec{w}
 </ul> For any of the sets you constructed that did span the required space, are any of the vectors a linear combination of the others in your set?</article><article class="exploration project-like" id="exploration-11"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
 </h4>Based on these results, generalize this a conjecture about how a set of <span class="process-math">\(n-1, n\)</span> and <span class="process-math">\(n+1\)</span> vectors would or would not span <span class="process-math">\(\mathbb{R}^n\text{.}\)</span></article></section><section class="subsection" id="subsection-30"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.2.6</span> <span class="title">Sample Problem and Solution</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="space"> </span><span class="title">Sample Problem and Solution</span>
 </h3>
 <div class="para" id="p-318">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-EV2.html" title="Example B.1.6: EV2">Example B.1.6</a>.</div></section></section></div>
 <div class="ptx-content-footer">
