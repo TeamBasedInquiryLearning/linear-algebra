@@ -25,8 +25,8 @@ for xml_id in XML_IDS:
     extract_slides_filename = Path(f"{xml_id}.ptx")
     extract_target.output_filename = extract_slides_filename
     extract_target.stringparams["section"] = xml_id
-    extract_target.build(no_generate=True)
+    extract_target.build(generate=False)
     slides_target.source = Path("../output/extract-slides")/extract_slides_filename
     slides_target.output_filename = Path(f"{xml_id}.slides.html")
-    slides_target.build(no_generate=True)
+    slides_target.build(generate=False)
 
