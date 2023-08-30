@@ -679,11 +679,11 @@ T=\left\{
 <span class="process-math">\(\vspan S\)</span> is smaller than <span class="process-math">\(\vspan T\text{.}\)</span>
 </div></li>
 </ol></article><article class="definition definition-like" id="EV4-definition-independence"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
 </h4>
 <div class="para" id="p-393">We say that a set of vectors is <dfn class="terminology">linearly dependent</dfn> if one vector in the set belongs to the span of the others. Otherwise, we say the set is <dfn class="terminology">linearly independent</dfn>.</div> <figure class="figure figure-like" id="EV4-figure-linearly-dependent"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/EV4-image-linearly-dependent.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14<span class="period">.</span></span><span class="space"> </span>A linearly dependent set of three vectors</figcaption></figure> <div class="para" id="p-394">You can think of linearly dependent sets as containing a redundant vector, in the sense that you can drop a vector out without reducing the span of the set. In the above image, all three vectors lay in the same planar subspace, but only two vectors are needed to span the plane, so the set is linearly dependent.</div></article><article class="activity project-like" id="activity-45"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
 </h4>
 <div class="introduction" id="introduction-25"><div class="para logical" id="p-395">
 <div class="para">Consider the following three vectors in <span class="process-math">\(\IR^3\text{:}\)</span>
@@ -738,7 +738,7 @@ T=\left\{
 <li id="li-256"><div class="para" id="p-408">A non-pivot row prevents contradictions and makes the vector equation solvable.</div></li>
 </ol>
 </div></article></article><article class="fact theorem-like" id="fact-7"><h4 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
 </h4>
 <div class="para" id="p-409">For any vector space, the set <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly dependent if and only if the vector equation <span class="process-math">\(x_1\vec v_1+ x_2 \vec v_2+\dots+x_n\vec v_n=\vec{0}\)</span> is consistent with infinitely many solutions.</div> <div class="para logical" id="p-410">
 <div class="para">Likewise, the set of vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly independent if and only the vector equation</div>
@@ -754,7 +754,7 @@ x_1 \\ \vdots  \\ x_n
 \end{array}\right]\text{.}\)</span>
 </div>
 </div></article><article class="activity project-like" id="activity-46"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="p-411">
 <div class="para">Find</div>
@@ -783,7 +783,7 @@ S=\left\{
 <div class="para">is linearly dependent (the part that shows its linear system has infinitely many solutions).</div>
 </div></article><pre class="ptx-sagecell sagecell-octave" id="sage-11"><script type="text/x-sage"></script></pre>
 <article class="observation remark-like" id="def_of_LI"><h4 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span>
 </h4>
 <div class="para" id="p-412">Compare the following results:</div> <ul class="disc">
 <li id="li-257"><div class="para" id="p-413">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> is linearly independent if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has all pivot <em class="emphasis">columns</em>.</div></li>
@@ -791,7 +791,7 @@ S=\left\{
 <li id="li-259"><div class="para" id="p-415">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> spans <span class="process-math">\(\IR^m\)</span> if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has all pivot <em class="emphasis">rows</em>.</div></li>
 <li id="li-260"><div class="para" id="p-416">A set of <span class="process-math">\(\IR^m\)</span> vectors <span class="process-math">\(\{\vec v_1,\dots\vec v_n\}\)</span> fails to span <span class="process-math">\(\IR^m\)</span> if and only if <span class="process-math">\(\RREF\left[\begin{array}{ccc}\vec v_1&amp;\dots&amp;\vec v_n\end{array}\right]\)</span> has at least one non-pivot <em class="emphasis">row</em>.</div></li>
 </ul></article><article class="activity project-like" id="activity-47"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span>
 </h4>
 <article class="task exercise-like" id="task-61"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="introduction" id="introduction-26"><div class="para" id="p-417">Write a statement involving the solutions of a vector equation that’s equivalent to each claim:</div></div>
@@ -830,7 +830,7 @@ S=\left\{
 \end{array}\right] \right\}\)</span> is linearly <em class="emphasis">dependent</em>.”</div></article></article><article class="task exercise-like" id="task-64"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="p-420">Explain how to determine which of these statements is true.</div></article></article><pre class="ptx-sagecell sagecell-octave" id="sage-12"><script type="text/x-sage"></script></pre>
 <article class="activity project-like" id="activity-48"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span>
 </h4>
 <div class="para" id="p-421">What is the largest number of <span class="process-math">\(\IR^4\)</span> vectors that can form a linearly independent set?</div> <ol class="upper-alpha cols2">
 <li id="li-261"><div class="para" id="p-422"><span class="process-math">\(\displaystyle 3\)</span></div></li>
@@ -838,7 +838,7 @@ S=\left\{
 <li id="li-263"><div class="para" id="p-424"><span class="process-math">\(\displaystyle 5\)</span></div></li>
 <li id="li-264"><div class="para" id="p-425">You can have infinitely many vectors and still be linearly independent.</div></li>
 </ol></article><article class="activity project-like" id="activity-49"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.9</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="p-426">
 <div class="para">Is is possible for the set of Euclidean vectors <span class="process-math">\(\{\vec v_1, \vec v_2,\ldots, \vec v_n, \vec 0\}\)</span> to be linearly independent?</div>
@@ -860,8 +860,8 @@ S=\left\{
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="space"> </span><span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-16"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span>
-</h4>Prove the result of <a href="" class="xref" data-knowl="./knowl/def_of_LI.html" title="Observation 2.4.3">Observation 2.4.3</a>, by showing that, given a set <span class="process-math">\(S = \{\vec{v}_1,\vec{v}_2,\ldots,\vec{v}_n\}\)</span> of vectors, <span class="process-math">\(S\)</span> is linearly independent iff the equation <span class="process-math">\(x_1\vec{v}_1 + x_2\vec{v}_2 + \ldots\ + x_n\vec{v}_n = \vec{0}\)</span> is only true when <span class="process-math">\(x_1 = x_2 = \cdots = x_n = 0\text{.}\)</span></article></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.4.10</span><span class="period">.</span>
+</h4>Prove the result of <a href="" class="xref" data-knowl="./knowl/def_of_LI.html" title="Observation 2.4.6">Observation 2.4.6</a>, by showing that, given a set <span class="process-math">\(S = \{\vec{v}_1,\vec{v}_2,\ldots,\vec{v}_n\}\)</span> of vectors, <span class="process-math">\(S\)</span> is linearly independent iff the equation <span class="process-math">\(x_1\vec{v}_1 + x_2\vec{v}_2 + \ldots\ + x_n\vec{v}_n = \vec{0}\)</span> is only true when <span class="process-math">\(x_1 = x_2 = \cdots = x_n = 0\text{.}\)</span></article></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="space"> </span><span class="title">Sample Problem and Solution</span>
 </h3>
 <div class="para" id="p-431">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-EV4.html" title="Example B.1.8: EV4">Example B.1.8</a>.</div></section></section></div>

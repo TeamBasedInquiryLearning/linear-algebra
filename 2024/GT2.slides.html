@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-08-24T22:27:17Z       *-->
+<!--*       on 2023-08-30T15:52:05Z       *-->
 <!--*   A recent stable commit (2022-07-01):   *-->
 <!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
 <!--*                                          *-->
@@ -169,16 +169,16 @@ dfn {
 <td align="center"></td>
 </tr>
 </table>
-<h4><div class="date">August 24, 2023</div></h4></section></section><section><section><h1>Section 5.2: Computing Determinants (GT2)</h1></section><section><h3>Remark 5.2.1</h3>
+<h4><div class="date">August 30, 2023</div></h4></section></section><section><section><h1>Section 5.2: Computing Determinants (GT2)</h1></section><section><h3>Remark 5.2.1</h3>
 <div align="left"> <p>We’ve seen that row reducing all the way into RREF gives us a method of computing determinants.</p> <p>However, we learned in Chapter 1 Systems of Linear Equations (LE) that this can be tedious for large matrices.  Thus, we will try to figure out how to turn the determinant of a larger matrix into the determinant of a smaller matrix.</p>
-</div></section><section><h3>Activity 5.2.1 (~5 min)</h3>
+</div></section><section><h3>Activity 5.2.2 (~5 min)</h3>
 <div align="left"> <p>The following image illustrates the transformation of the unit cube by the matrix <span class="process-math">\(\left[\begin{array}{ccc} 1 &amp; 1 &amp; 0 \\  1 &amp; 3 &amp; 1 \\  0 &amp; 0 &amp; 1\end{array}\right]\text{.}\)</span></p> <figure class="figure figure-like" id="figure-1"><img src="generated/latex-image/GT2-image-unit-cube-transform.svg"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span>Transformation of the unit cube by the linear transformation.</figcaption></figure> <p>Recall that for this solid <span class="process-math">\(V=Bh\text{,}\)</span> where <span class="process-math">\(h\)</span> is the height of the solid and <span class="process-math">\(B\)</span> is the area of its parallelogram base. So what must its volume be?</p> <ol class="upper-alpha cols2">
 <li><p><span class="process-math">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 1 \\ 1 &amp; 3 \end{array}\right]\)</span></p></li>
 <li><p><span class="process-math">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 0 \\ 3 &amp; 1 \end{array}\right]\)</span></p></li>
 <li><p><span class="process-math">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 1 \\ 0 &amp; 1 \end{array}\right]\)</span></p></li>
 <li><p><span class="process-math">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; 0 \end{array}\right]\)</span></p></li>
 </ol>
-</div></section><section><h3>Fact 5.2.2</h3>
+</div></section><section><h3>Fact 5.2.3</h3>
 <div align="left"> <p>If row <span class="process-math">\(i\)</span> contains all zeros except for a <span class="process-math">\(1\)</span> on the main (upper-left to lower-right) diagonal, then both column and row <span class="process-math">\(i\)</span> may be removed without changing the value of the determinant.<div class="displaymath process-math">
 \begin{equation*}
 \det \left[\begin{array}{cccc}
@@ -210,17 +210,17 @@ dfn {
 \end{array}\right]
 \end{equation*}
 </div></p> <p>Put another way, if you have either a column or row from the identity matrix, you can cancel both the column and row containing the <span class="process-math">\(1\text{.}\)</span></p>
-</div></section><section><h3>Activity 5.2.2 (~5 min)</h3>
+</div></section><section><h3>Activity 5.2.5 (~5 min)</h3>
 <div align="left"> <p>Remove an appropriate row and column of <span class="process-math">\(\det \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 1 &amp; 5 &amp; 12 \\ 3 &amp; 2 &amp; -1 \end{array}\right]\)</span> to simplify the determinant to a <span class="process-math">\(2\times 2\)</span> determinant.</p>
-</div></section><section><h3>Activity 5.2.3 (~5 min)</h3>
+</div></section><section><h3>Activity 5.2.6 (~5 min)</h3>
 <div align="left"> <p>Simplify <span class="process-math">\(\det \left[\begin{array}{ccc} 0 &amp; 3 &amp; -2 \\ 2 &amp; 5 &amp; 12 \\ 0 &amp; 2 &amp; -1 \end{array}\right]\)</span> to a multiple of a <span class="process-math">\(2\times 2\)</span> determinant by first doing the following:</p> <p><em class="emphasis">Part 1.</em></p> <p>Factor out a <span class="process-math">\(2\)</span> from a column.</p>
-</div></section><section><h3>Activity 5.2.3 (~5 min)</h3>
+</div></section><section><h3>Activity 5.2.6 (~5 min)</h3>
 <div align="left"> <p>Simplify <span class="process-math">\(\det \left[\begin{array}{ccc} 0 &amp; 3 &amp; -2 \\ 2 &amp; 5 &amp; 12 \\ 0 &amp; 2 &amp; -1 \end{array}\right]\)</span> to a multiple of a <span class="process-math">\(2\times 2\)</span> determinant by first doing the following:</p> <p><em class="emphasis">Part 2.</em></p> <p>Swap rows or columns to put a <span class="process-math">\(1\)</span> on the main diagonal.</p>
-</div></section><section><h3>Activity 5.2.4 (~5 min)</h3>
+</div></section><section><h3>Activity 5.2.7 (~5 min)</h3>
 <div align="left"> <p>Simplify <span class="process-math">\(\det \left[\begin{array}{ccc} 4 &amp; -2 &amp; 2 \\ 3 &amp; 1 &amp; 4 \\ 1 &amp; -1 &amp; 3\end{array}\right]\)</span> to a multiple of a <span class="process-math">\(2\times 2\)</span> determinant by first doing the following:</p> <p><em class="emphasis">Part 1.</em></p> <p>Use row/column operations to create two zeroes in the same row or column.</p>
-</div></section><section><h3>Activity 5.2.4 (~5 min)</h3>
+</div></section><section><h3>Activity 5.2.7 (~5 min)</h3>
 <div align="left"> <p>Simplify <span class="process-math">\(\det \left[\begin{array}{ccc} 4 &amp; -2 &amp; 2 \\ 3 &amp; 1 &amp; 4 \\ 1 &amp; -1 &amp; 3\end{array}\right]\)</span> to a multiple of a <span class="process-math">\(2\times 2\)</span> determinant by first doing the following:</p> <p><em class="emphasis">Part 2.</em></p> <p>Factor/swap as needed to get a row/column of all zeroes except a <span class="process-math">\(1\)</span> on the main diagonal.</p>
-</div></section><section><h3>Observation 5.2.4</h3>
+</div></section><section><h3>Observation 5.2.8</h3>
 <div align="left"> <p>Using row/column operations, you can introduce zeros and reduce dimension to whittle down the determinant of a large matrix to a determinant of a smaller matrix.</p>
 <div class="displaymath process-math" id="md-1">
 \begin{align*}
@@ -262,21 +262,21 @@ dfn {
 334
 \end{align*}
 </div>
-</div></section><section><h3>Activity 5.2.5 (~10 min)</h3>
+</div></section><section><h3>Activity 5.2.9 (~10 min)</h3>
 <div align="left"> <p>Rewrite<div class="displaymath process-math">
 \begin{equation*}
 \det \left[\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; 1 \\ 3 &amp; 0 &amp; 1 &amp; 4
 \\ -2 &amp; 2 &amp; 3 &amp; 0 \\ -2 &amp; 0 &amp; -3 &amp; -3 \end{array}\right] 
 \end{equation*}
 </div>as a multiple of a determinant of a <span class="process-math">\(3\times3\)</span> matrix.</p>
-</div></section><section><h3>Activity 5.2.6 (~20 min)</h3>
+</div></section><section><h3>Activity 5.2.10 (~20 min)</h3>
 <div align="left"> <p>Compute <span class="process-math">\(\det\left[\begin{array}{cccc}
 2 &amp; 3 &amp; 5 &amp; 0 \\ 
 0 &amp; 3 &amp; 2 &amp; 0 \\ 
 1 &amp; 2 &amp; 0 &amp; 3 \\ 
 -1 &amp; -1 &amp; 2 &amp; 2 
 \end{array}\right]\)</span> by using any combination of row/column operations.</p>
-</div></section><section><h3>Observation 5.2.5</h3>
+</div></section><section><h3>Observation 5.2.11</h3>
 <div align="left"> <p>Another option is to take advantage of the fact that the determinant is linear in each row or column.  This approach is called <dfn class="terminology">Laplace expansion</dfn> or <dfn class="terminology">cofactor expansion</dfn>.</p> <p>For example, since <span class="process-math">\(\color{blue}{
 \left[\begin{array}{ccc} 1 &amp; 2 &amp; 4 \end{array}\right]
 =
@@ -300,8 +300,8 @@ dfn {
 +4 \det \left[\begin{array}{cc} 2 &amp; 3 \\ -1 &amp; 3 \end{array}\right]
 \end{align*}
 </div>
-</div></section><section><h3>Observation 5.2.6</h3>
-<div align="left"> <p>Recall the formula for a <span class="process-math">\(2\times 2\)</span> determinant found in Observation 5.1.18 :<div class="displaymath process-math">
+</div></section><section><h3>Observation 5.2.12</h3>
+<div align="left"> <p>Recall the formula for a <span class="process-math">\(2\times 2\)</span> determinant found in Observation 5.1.30 :<div class="displaymath process-math">
 \begin{equation*}
 \det \left[\begin{array}{cc} a &amp; b \\ c &amp; d \end{array}\right]
 =
@@ -320,14 +320,14 @@ a_{41} &amp; a_{42} &amp; a_{43} &amp; a_{44}
 a_{11}(a_{22}(a_{33}a_{44}-a_{43}a_{34})-a_{23}(a_{32}a_{44}-a_{42}a_{34})+\dots)+\dots
 \end{equation*}
 </div>
-</div></section><section><h3>Activity 5.2.7 (~5 min)</h3>
+</div></section><section><h3>Activity 5.2.13 (~5 min)</h3>
 <div align="left"> <p>Based on the previous activities, which technique is easier for computing determinants?</p> <ol class="upper-alpha">
 <li><p>Memorizing formulas.</p></li>
 <li><p>Using row/column operations.</p></li>
 <li><p>Laplace expansion.</p></li>
 <li><p>Some other technique.</p></li>
 </ol>
-</div></section><section><h3>Activity 5.2.8 (~10 min)</h3>
+</div></section><section><h3>Activity 5.2.14 (~10 min)</h3>
 <div align="left"> <p>Use your preferred technique to compute <span class="process-math">\(\det\left[\begin{array}{cccc}
 4 &amp; -3 &amp; 0 &amp; 0 \\ 
 1 &amp; -3 &amp; 2 &amp; -1 \\ 
