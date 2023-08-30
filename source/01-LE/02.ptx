@@ -73,35 +73,179 @@
 </definition>
 
 <activity estimated-time='10'>
-    <!-- TODO split into activities per operation, have students perform op on example -->
-    <statement>
+    <introduction>
         <p>
-  Following are seven procedures used to manipulate an augmented matrix.
-  Label the procedures that would result in an equivalent augmented
-  matrix as <em>valid</em>, and label the procedures that might
-  change the solution set of the corresponding linear system as
-  <em>invalid</em>.
+Consider whether these matrix manipulations (A) <em>must keep</em> or
+(B) <em>could change</em>
+the solution set for the corresponding linear system.
         </p>
-    <ol marker="A.">
-<li> Swap two rows.
-      </li>
-<li> Swap two columns.
-      </li>
-<li> Add a constant to every term in a row.
-      </li>
-<li> Multiply a row by a nonzero constant.
-      </li>
-<li> Add a constant multiple of one row to another row.
-      </li>
-<li> Replace a column with zeros.
-      </li>
-<li> Replace a row with zeros.
-      </li>
-    </ol>
-  <!--
-    This activity could be ran as a card sort.  Allow 5 additional minutes for intra team discussion.
-  -->
-    </statement>
+    </introduction>
+    <task>
+        <statement>
+            <p>
+Swapping two rows, for example:
+            </p>
+<sidebyside>
+    <p>
+        <me>
+            \left[\begin{array}{cc|c} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{array}\right]
+        \sim
+            \left[\begin{array}{cc|c} 4 &amp; 5 &amp; 6 \\ 1 &amp; 2 &amp; 3 \end{array}\right]
+        </me>
+    </p>
+    <p>
+        <md>
+            <mrow>x  +2y \amp= 3 \amp 4x + 5y \amp= 6</mrow>
+            <mrow>4x + 5y \amp= 6 \amp x  +2y \amp= 3 </mrow>
+        </md>
+    </p>
+</sidebyside>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+Swapping two columns, for example:
+            </p>
+<sidebyside>
+    <p>
+        <me>
+            \left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+                                    \\ 4 &amp; 5 &amp; 6 \end{array}\right]
+        \sim
+            \left[\begin{array}{cc|c} 2 &amp; 1 &amp; 3 
+                                    \\ 5 &amp; 4 &amp; 6 \end{array}\right]
+        </me>
+    </p>
+    <p>
+        <md>
+            <mrow>x  +2y \amp= 3 \amp 2x + y \amp= 6</mrow>
+            <mrow>4x + 5y \amp= 6 \amp 5x  +4y \amp= 3 </mrow>
+        </md>
+    </p>
+</sidebyside>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+Add a constant to every term of a row, for example:
+            </p>
+<sidebyside>
+    <p>
+        <me>
+            \left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+                                    \\ 4 &amp; 5 &amp; 6 \end{array}\right]
+        \sim
+            \left[\begin{array}{cc|c} 1+6 &amp; 2+6 &amp; 3+6
+                                    \\ 4 &amp; 5 &amp; 6 \end{array}\right]
+        </me>
+    </p>
+    <p>
+        <md>
+            <mrow>x  +2y \amp= 3 \amp 7x + 8y \amp= 9</mrow>
+            <mrow>4x + 5y \amp= 6 \amp 4x  +5y \amp= 3 </mrow>
+        </md>
+    </p>
+</sidebyside>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+Multiply a row by a nonzero constant, for example:
+            </p>
+<sidebyside>
+    <p>
+        <me>
+            \left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+                                    \\ 4 &amp; 5 &amp; 6 \end{array}\right]
+        \sim
+            \left[\begin{array}{cc|c} 3 &amp; 6 &amp; 9 
+                                    \\ 4 &amp; 5 &amp; 6 \end{array}\right]
+        </me>
+    </p>
+    <p>
+        <md>
+            <mrow>x  +2y \amp= 3 \amp 3x + 6y \amp= 9</mrow>
+            <mrow>4x + 5y \amp= 6 \amp 4x  +5y \amp= 3 </mrow>
+        </md>
+    </p>
+</sidebyside>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+Add a constant multiple of one row to another row, for example:
+            </p>
+<sidebyside>
+    <p>
+        <me>
+            \left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+                                    \\ 4 &amp; 5 &amp; 6 \end{array}\right]
+        \sim
+            \left[\begin{array}{cc|c} 1 &amp; 2 &amp; 3
+                                    \\ 4+3 &amp; 5+6 &amp; 6+9 \end{array}\right]
+        </me>
+    </p>
+    <p>
+        <md>
+            <mrow>x  +2y \amp= 3 \amp \unknown x  +\unknown y \amp= \unknown </mrow>
+            <mrow>4x + 5y \amp= 6 \amp \unknown x  +\unknown y \amp= \unknown </mrow>
+        </md>
+    </p>
+</sidebyside>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+Replace a column with zeros, for example:
+            </p>
+<sidebyside>
+    <p>
+        <me>
+            \left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+                                    \\ 4 &amp; 5 &amp; 6 \end{array}\right]
+        \sim
+            \left[\begin{array}{cc|c} 1 &amp; 0 &amp; 3
+                                    \\ 4 &amp; 0 &amp; 6 \end{array}\right]
+        </me>
+    </p>
+    <p>
+        <md>
+            <mrow>x  +2y \amp= 3 \amp \unknown x  +\unknown y \amp= \unknown </mrow>
+            <mrow>4x + 5y \amp= 6 \amp \unknown x  +\unknown y \amp= \unknown </mrow>
+        </md>
+    </p>
+</sidebyside>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+Replace a row with zeros, for example:
+            </p>
+<sidebyside>
+    <p>
+        <me>
+            \left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+                                    \\ 4 &amp; 5 &amp; 6 \end{array}\right]
+        \sim
+            \left[\begin{array}{cc|c} 1 &amp; 2 &amp; 3
+                                    \\ 0 &amp; 0 &amp; 0 \end{array}\right]
+        </me>
+    </p>
+    <p>
+        <md>
+            <mrow>x  +2y \amp= 3 \amp \unknown x  +\unknown y \amp= \unknown </mrow>
+            <mrow>4x + 5y \amp= 6 \amp \unknown x  +\unknown y \amp= \unknown </mrow>
+        </md>
+    </p>
+</sidebyside>
+        </statement>
+    </task>
 </activity>
 
 
@@ -110,7 +254,6 @@
         <p>
   The following three <term>row operations</term><idx>row operations</idx> produce equivalent
   augmented matrices.
-        </p>
   <ol>
 <li><p>
     Swap two rows, for example, <m>R_1\leftrightarrow R_2</m>:
@@ -140,13 +283,18 @@
     </p>
     </li>
   </ol>
+</p>
+<p>
+Observe that we will use the following
+notation: (Combination of old rows) <m>\rightarrow</m> (New row).
+</p>
     </statement>
     </definition>
 
-<activity estimated-time='10'>
+<activity estimated-time='10' xml:id="LE2-activity-sort">
     <statement>
         <p>
-  Consider the following (equivalent) linear systems.
+Each of the following linear systems has the same solution set.
         </p>
       <sidebyside widths="33% 33% 33%">
           <p> A)
@@ -231,7 +379,8 @@
           </p>
         </sidebyside>
         <p>
-   Rank the six linear systems from most complicated to simplest.
+Sort these six equivalent linear systems from
+most complicated to simplest (in your opinion).
         </p>
     </statement>
 </activity>
@@ -240,23 +389,33 @@
 <activity estimated-time='5'>
     <statement>
     <p>
-We can rewrite the previous in terms of  equivalences of augmented matrices
+Here we've written the sorted linear systems from <xref ref="LE2-activity-sort"/>
+as augmented matrices.
     </p>
     <md alignment="alignat" alignat-columns='3'>
         <mrow>
-        \left[\begin{array}{ccc|c} 2 &amp; 5 &amp; 3 &amp; 7 \\ -1 &amp; -1 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 1 &amp; 3 \end{array}\right] &amp; \sim &amp;
-        \left[\begin{array}{ccc|c} \markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ -1 &amp; -1 &amp; 1 &amp; 1 \\ 2 &amp; 5 &amp;  3 &amp; 7  \end{array}\right] &amp; \sim &amp;
-        \left[\begin{array}{ccc|c} \markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; 1 &amp; 2 &amp; 4 \\ 2 &amp; 5 &amp; 3 &amp; 7  \end{array}\right] \sim 
+\left[\begin{array}{ccc|c} 2 &amp; 5 &amp; 3 &amp; 7 \\ -1 &amp; -1 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 1 &amp; 3 \end{array}\right] &amp; \sim &amp;
+\left[\begin{array}{ccc|c} \markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ -1 &amp; -1 &amp; 1 &amp; 1 \\ 2 &amp; 5 &amp;  3 &amp; 7  \end{array}\right] &amp; \sim &amp;
+\left[\begin{array}{ccc|c} \markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; 1 &amp; 2 &amp; 4 \\ 2 &amp; 5 &amp; 3 &amp; 7  \end{array}\right]\sim 
         </mrow>
         <mrow>
-        \left[\begin{array}{ccc|c} \markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; \markedPivot{1} &amp; 2 &amp; 4 \\ 0 &amp; 1 &amp; 1 &amp; 1  \end{array}\right] &amp; \sim &amp;
-        \left[\begin{array}{ccc|c} \markedPivot{1} &amp; 0 &amp; -1 &amp; 1 \\ 0 &amp; \markedPivot{1} &amp; 2 &amp; 4 \\ 0 &amp; 1 &amp; 1 &amp; 1  \end{array}\right] &amp; \sim &amp;
-        \left[\begin{array}{ccc|c} \markedPivot{1} &amp; 0 &amp; -1 &amp; 1 \\ 0 &amp; \markedPivot{1} &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; -1 &amp; -3  \end{array}\right] 
+\sim \left[\begin{array}{ccc|c} \markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; \markedPivot{1} &amp; 2 &amp; 4 \\ 0 &amp; 1 &amp; 1 &amp; 1  \end{array}\right] &amp; \sim &amp;
+\left[\begin{array}{ccc|c} \markedPivot{1} &amp; 0 &amp; -1 &amp; 1 \\ 0 &amp; \markedPivot{1} &amp; 2 &amp; 4 \\ 0 &amp; 1 &amp; 1 &amp; 1  \end{array}\right] &amp; \sim &amp;
+\left[\begin{array}{ccc|c} \markedPivot{1} &amp; 0 &amp; -1 &amp; 1 \\ 0 &amp; \markedPivot{1} &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; -1 &amp; -3  \end{array}\right] 
         </mrow>
      </md>
 <p>
-        Determine the row operation(s) necessary in each step to transform the most complicated
-    system's augmented matrix into the simplest.
+Assign the following row operations to each step used to manipulate each
+matrix to the next:
+<sidebyside>
+    <p><me>R_3-1R_2\to R_3</me></p>
+    <p><me>R_2+1R_1\to R_2</me></p>
+    <p><me>R_1\leftrightarrow R_3</me></p>
+</sidebyside>
+<sidebyside>
+    <p><me>R_3-2R_1\to R_3</me></p>
+    <p><me>R_1-2R_3\to R_1</me></p>
+</sidebyside>
         </p>
     </statement>
 </activity>
@@ -300,8 +459,8 @@ Recall that a matrix is in <term>reduced row echelon form</term> (<term>RREF</te
 </li>
 </ol>
     <p>
-For each matrix, circle the leading terms, and label it as RREF or not RREF.
-For the ones not in RREF, find their RREF.
+For each matrix, mark the leading terms, and label it as RREF or not RREF.
+For the ones not in RREF, determine which rule is violated and how it might be fixed.
     </p>
       <sidebyside widths="33% 33% 33%">
 <p><me> A=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 0 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me></p>
@@ -328,8 +487,8 @@ Recall that a matrix is in <term>reduced row echelon form</term> (<term>RREF</te
 </li>
 </ol>
     <p>
-For each matrix, circle the leading terms, and label it as RREF or not RREF.
-For the ones not in RREF, find their RREF.
+For each matrix, mark the leading terms, and label it as RREF or not RREF.
+For the ones not in RREF, determine which rule is violated and how it might be fixed.
     </p>
       <sidebyside widths="33% 33% 33%">
 <p><me> D=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 2 &amp; -3 \\ 0 &amp; 3 &amp; 3 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me></p>
@@ -349,7 +508,7 @@ we use technology to do so.
 However, it is also important to understand the <term>Gauss-Jordan elimination</term><idx>Gauss-Jordan elimination</idx> algorithm
 that a computer or calculator uses to convert a matrix (augmented or not) into reduced row echelon form.
 Understanding this algorithm will help us better understand how to interpret the results
-in many applications we use it for in Module V.
+in many applications we use it for in <xref ref="EV"/>.
     </p>
     </statement>
 </remark>
@@ -414,34 +573,60 @@ Which row operation is the best choice for the next move in converting to RREF?
     </statement>
 </activity>
 
-<activity estimated-time='10'>
-    <introduction>
+<observation>
+    <p>
+The steps for the Gauss-Jordan elimination algorithm may be summarized
+as follows:
+<ol>
+    <li>
         <p>
-Consider the matrix
-<me>\left[\begin{array}{ccc}2 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 0 \\ 3 &amp; -1 &amp; 1 \end{array}\right].</me>
+Ignoring any rows that already have marked pivots, identify the leftmost column
+with a nonzero entry.
         </p>
-    </introduction>
-<task>
-    <p>
-Perform three row operations to produce a matrix closer to RREF.
+    </li>
+    <li>
+        <p>
+Use row operations to obtain a pivot of value <m>1</m> in the topmost row
+that does not already have a marked pivot.
+        </p>
+    </li>
+    <li>
+        <p>
+Mark this pivot, then use row operations to change all values above and below the
+marked pivot to <m>0</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+Repeat these steps until the matrix is in RREF. 
+        </p>
+    </li>
+</ol>
     </p>
-</task>
-<task>
     <p>
-Finish putting it in RREF.
+In particular, <em>once a pivot is marked, it should remain in the same position</em>.
+This will keep you from undoing your progress towards an RREF matrix.
     </p>
-</task>
-</activity>
+</observation>
 
 <activity estimated-time='10'>
     <statement>
         <p>
-Consider the matrix
-<me>A=\left[\begin{array}{cccc}2 &amp; 3 &amp; 2 &amp; 3 \\ -2 &amp; 1 &amp; 6 &amp; 1 \\ -1 &amp; -3 &amp; -4 &amp; 1 \end{array}\right].</me>
-        </p>
-        <p>
-Compute <m>\RREF(A)</m>.
-        </p>
+Complete the following RREF calculation (multiple row operations may be needed
+for certain steps):
+<me>
+    A=
+    \left[\begin{array}{cccc}2 &amp; 3 &amp; 2 &amp; 3 \\ -2 &amp; 1 &amp; 6 &amp; 1 \\ -1 &amp; -3 &amp; -4 &amp; 1 \end{array}\right]
+    \sim \left[\begin{array}{cccc}\markedPivot{1} &amp; \unknown &amp; \unknown &amp; \unknown \\ -2 &amp; 1 &amp; 6 &amp; 1 \\ -1 &amp; -3 &amp; -4 &amp; 1 \end{array}\right]
+    \sim \left[\begin{array}{cccc}\markedPivot{1} &amp; \unknown &amp; \unknown &amp; \unknown \\ 0 &amp; \unknown &amp; \unknown &amp; \unknown \\ 0 &amp; \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+</me>
+<me>
+    \sim \left[\begin{array}{cccc}\markedPivot{1} &amp; \unknown &amp; \unknown &amp; \unknown \\ 0 &amp; \markedPivot{1} &amp; \unknown &amp; \unknown \\ 0 &amp; \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+    \sim \left[\begin{array}{cccc}\markedPivot{1} &amp; 0 &amp; \unknown &amp; \unknown \\ 0 &amp; \markedPivot{1} &amp; \unknown &amp; \unknown \\ 0 &amp; 0 &amp; \unknown &amp; \unknown \end{array}\right]
+    \sim \cdots
+    \sim \left[\begin{array}{cccc}\markedPivot{1} &amp; 0 &amp; -2 &amp; 0 \\ 0 &amp; \markedPivot{1} &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]
+</me>
+</p>
     </statement>
 </activity>
 
@@ -460,16 +645,16 @@ Compute <m>\RREF(A)</m>.
 <activity estimated-time='5'>
     <statement>
         <p>
-Consider the matrix
-<me>B=\left[\begin{array}{ccc|c} 2 &amp; 4 &amp; 2 &amp; -4 \\ -2 &amp; -4 &amp; 1 &amp; 1 \\ 3 &amp; 6 &amp; -1 &amp; -4 \end{array}\right].</me>
-which has the same terms as <m>A</m> from the previous activity.
+Consider the non-augmented and augmented matrices
+<me>A=\left[\begin{array}{cccc} 2 &amp; 4 &amp; 2 &amp; -4 \\ -2 &amp; -4 &amp; 1 &amp; 1 \\ 3 &amp; 6 &amp; -1 &amp; -4 \end{array}\right]\hspace{2em}
+B=\left[\begin{array}{ccc|c} 2 &amp; 4 &amp; 2 &amp; -4 \\ -2 &amp; -4 &amp; 1 &amp; 1 \\ 3 &amp; 6 &amp; -1 &amp; -4 \end{array}\right].</me>
         </p>
         <p>
 Can <m>\RREF(A)</m> be used to find <m>\RREF(B)</m>?
             <ol marker="A.">
-<li>No, a new calculuation is required.</li>
 <li>Yes, <m>\RREF(A)</m> and <m>\RREF(B)</m> are exactly the same.</li>
 <li>Yes, <m>\RREF(A)</m> may be slightly modified to find <m>\RREF(B)</m>.</li>
+<li>No, a new calculuation is required.</li>
             </ol>
         </p>
     </statement>
