@@ -12,18 +12,17 @@
 </head>
 <body class="ignore-math">
 <article class="observation remark-like"><h4 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span>
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">1.2.13</span><span class="period">.</span>
 </h4>
-<div class="para">The following are all equivalent statements:</div> <ul class="disc">
-<li><div class="para">The vector <span class="process-math">\(\vec{b}\)</span> belongs to <span class="process-math">\(\vspan\{\vec v_1,\dots,\vec v_n\}\text{.}\)</span>
+<div class="para logical">
+<div class="para">The steps for the Gauss-Jordan elimination algorithm may be summarized as follows:</div>
+<ol class="decimal">
+<li><div class="para">Ignoring any rows that already have marked pivots, identify the leftmost column with a nonzero entry.</div></li>
+<li><div class="para">Use row operations to obtain a pivot of value <span class="process-math">\(1\)</span> in the topmost row that does not already have a marked pivot.</div></li>
+<li><div class="para">Mark this pivot, then use row operations to change all values above and below the marked pivot to <span class="process-math">\(0\text{.}\)</span>
 </div></li>
-<li><div class="para">The vector <span class="process-math">\(\vec{b}\)</span> is a linear combination of the vectors <span class="process-math">\(\vec v_1,\dots,\vec v_n\text{.}\)</span>
-</div></li>
-<li><div class="para">The vector equation <span class="process-math">\(x_1 \vec{v}_1+\cdots+x_n \vec{v}_n=\vec{b}\)</span> is consistent.</div></li>
-<li><div class="para">The linear system corresponding to <span class="process-math">\(\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]\)</span> is consistent.</div></li>
-<li><div class="para">
-<span class="process-math">\(\RREF\left[\vec v_1\,\dots\,\vec v_n \,|\, \vec b\right]\)</span> doesn’t have a row <span class="process-math">\([0\,\cdots\,0\,|\,1]\)</span> representing the contradiction <span class="process-math">\(0=1\text{.}\)</span>
-</div></li>
-</ul></article><span class="incontext"><a href="EV1.html#observation-2" class="internal">in-context</a></span>
+<li><div class="para">Repeat these steps until the matrix is in RREF.</div></li>
+</ol>
+</div> <div class="para">In particular, <em class="emphasis">once a pivot is marked, it should remain in the same position</em>. This will keep you from undoing your progress towards an RREF matrix.</div></article><span class="incontext"><a href="LE2.html#observation-2" class="internal">in-context</a></span>
 </body>
 </html>

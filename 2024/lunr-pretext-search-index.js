@@ -232,7 +232,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.2",
   "title": "Row Reduction of Matrices (LE2)",
-  "body": " Row Reduction of Matrices (LE2)     Explain why a matrix isn’t in reduced row echelon form, and put a matrix in reduced row echelon form.     Class Activities    Two systems of linear equations (and their corresponding augmented matrices) are said to be equivalent equivalent matrices if they have the same solution set.  For example, both of these systems share the same solution set .          Therefore these augmented matrices are equivalent (even though they're not equal ), which we denote with :         Following are seven procedures used to manipulate an augmented matrix. Label the procedures that would result in an equivalent augmented matrix as valid , and label the procedures that might change the solution set of the corresponding linear system as invalid .   Swap two rows.  Swap two columns.  Add a constant to every term in a row.  Multiply a row by a nonzero constant.  Add a constant multiple of one row to another row.  Replace a column with zeros.  Replace a row with zeros.        The following three row operations row operations produce equivalent augmented matrices.   Swap two rows, for example, :     Multiply a row by a nonzero constant, for example, :    Add a constant multiple of one row to another row, for example, :         Consider the following (equivalent) linear systems.   A)   B)   C)     D)   E)   F)    Rank the six linear systems from most complicated to simplest.      We can rewrite the previous in terms of equivalences of augmented matrices   Determine the row operation(s) necessary in each step to transform the most complicated system's augmented matrix into the simplest.      A matrix is in reduced row echelon form ( RREF ) Reduced row echelon form if   The leading term (first nonzero term) of each nonzero row is a 1. Call these terms pivots . pivot   Each pivot is to the right of every higher pivot.  Each term above or below a pivot is zero.  All rows of zeroes are at the bottom of the matrix.   Every matrix has a unique reduced row echelon form. If is a matrix, we write for the reduced row echelon form of that matrix.      Recall that a matrix is in reduced row echelon form ( RREF ) if   The leading term (first nonzero term) of each nonzero row is a 1. Call these terms pivots .  Each pivot is to the right of every higher pivot.  Each term above or below a pivot is zero.  All rows of zeroes are at the bottom of the matrix.   For each matrix, circle the leading terms, and label it as RREF or not RREF. For the ones not in RREF, find their RREF.           Recall that a matrix is in reduced row echelon form ( RREF ) if   The leading term (first nonzero term) of each nonzero row is a 1. Call these terms pivots .  Each pivot is to the right of every higher pivot.  Each term above or below a pivot is zero.  All rows of zeroes are at the bottom of the matrix.   For each matrix, circle the leading terms, and label it as RREF or not RREF. For the ones not in RREF, find their RREF.           In practice, if we simply need to convert a matrix into reduced row echelon form, we use technology to do so.  However, it is also important to understand the Gauss-Jordan elimination Gauss-Jordan elimination algorithm that a computer or calculator uses to convert a matrix (augmented or not) into reduced row echelon form. Understanding this algorithm will help us better understand how to interpret the results in many applications we use it for in Module V.      Consider the matrix Which row operation is the best choice for the first move in converting to RREF?   Add row 3 to row 2 ( )  Add row 2 to row 3 ( )  Swap row 1 to row 2 ( )  Add -2 row 2 to row 1 ( )       Consider the matrix Which row operation is the best choice for the next move in converting to RREF?   Add row 1 to row 3 ( )  Add -2 row 1 to row 2 ( )  Add 2 row 2 to row 3 ( )  Add 2 row 3 to row 2 ( )       Consider the matrix Which row operation is the best choice for the next move in converting to RREF?   Add row 1 to row 2 ( )  Add -1 row 3 to row 2 ( )  Add -1 row 2 to row 3 ( )  Add row 2 to row 1 ( )       Consider the matrix    Perform three row operations to produce a matrix closer to RREF.  Finish putting it in RREF.     Consider the matrix   Compute .      Consider the matrix   Compute .      Consider the matrix which has the same terms as from the previous activity.  Can be used to find ?  No, a new calculuation is required.  Yes, and are exactly the same.  Yes, may be slightly modified to find .        Free browser-based technologies for mathematical computation are available online.   Go to .   In the dropdown on the right, you can select a number of different languages. Select \"Octave\" for the Matlab-compatible syntax used by this text.   Type rref([1,3,2;2,5,7]) and then press the Evaluate button to compute the of .        In the HTML version of this text, code cells are often embedded for your convenience when RREFs need to be computed.  Try this out to compute .       Videos      Video: Row reduction     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations    Prove that Gauss-Jordan Elimination preserves the solution set of a system of linear equations in variables. Make sure your proof includes each of the following. Just because I've used bullet points here does not mean you should use bullet points in your proof.  Write an arbitrary system of linear equations in variables. Your notation should be unambiguous.  Label an element of your solution set. You won't know what it is exactly, so you'll have to use a variable. Remember what it means (by definition!) to be in the solution set.  Describe the three operations used in Gauss-Jordan Elimination.  Consider all three operations in Gauss-Jordan Elimination. After each one is used, show that the element of the solution set you picked still satisfies the definition.        Let indicate the set of all matrices with real entries. Show that equivalence of matrices as defined in this section is an equivalence relation, as in exploration     Sample Problem and Solution  Sample problem .   "
+  "body": " Row Reduction of Matrices (LE2)     Explain why a matrix isn’t in reduced row echelon form, and put a matrix in reduced row echelon form.     Class Activities    Two systems of linear equations (and their corresponding augmented matrices) are said to be equivalent equivalent matrices if they have the same solution set.  For example, both of these systems share the same solution set .          Therefore these augmented matrices are equivalent (even though they're not equal ), which we denote with :        Consider whether these matrix manipulations (A) must keep or (B) could change the solution set for the corresponding linear system.    Swapping two rows, for example:            Swapping two columns, for example:            Add a constant to every term of a row, for example:            Multiply a row by a nonzero constant, for example:            Add a constant multiple of one row to another row, for example:            Replace a column with zeros, for example:            Replace a row with zeros, for example:              The following three row operations row operations produce equivalent augmented matrices.  Swap two rows, for example, :     Multiply a row by a nonzero constant, for example, :    Add a constant multiple of one row to another row, for example, :      Observe that we will use the following notation: (Combination of old rows) (New row).      Each of the following linear systems has the same solution set.   A)   B)   C)     D)   E)   F)    Sort these six equivalent linear systems from most complicated to simplest (in your opinion).      Here we've written the sorted linear systems from as augmented matrices.   Assign the following row operations to each step used to manipulate each matrix to the next:               A matrix is in reduced row echelon form ( RREF ) Reduced row echelon form if   The leading term (first nonzero term) of each nonzero row is a 1. Call these terms pivots . pivot   Each pivot is to the right of every higher pivot.  Each term above or below a pivot is zero.  All rows of zeroes are at the bottom of the matrix.   Every matrix has a unique reduced row echelon form. If is a matrix, we write for the reduced row echelon form of that matrix.      Recall that a matrix is in reduced row echelon form ( RREF ) if   The leading term (first nonzero term) of each nonzero row is a 1. Call these terms pivots .  Each pivot is to the right of every higher pivot.  Each term above or below a pivot is zero.  All rows of zeroes are at the bottom of the matrix.   For each matrix, mark the leading terms, and label it as RREF or not RREF. For the ones not in RREF, determine which rule is violated and how it might be fixed.           Recall that a matrix is in reduced row echelon form ( RREF ) if   The leading term (first nonzero term) of each nonzero row is a 1. Call these terms pivots .  Each pivot is to the right of every higher pivot.  Each term above or below a pivot is zero.  All rows of zeroes are at the bottom of the matrix.   For each matrix, mark the leading terms, and label it as RREF or not RREF. For the ones not in RREF, determine which rule is violated and how it might be fixed.           In practice, if we simply need to convert a matrix into reduced row echelon form, we use technology to do so.  However, it is also important to understand the Gauss-Jordan elimination Gauss-Jordan elimination algorithm that a computer or calculator uses to convert a matrix (augmented or not) into reduced row echelon form. Understanding this algorithm will help us better understand how to interpret the results in many applications we use it for in .      Consider the matrix Which row operation is the best choice for the first move in converting to RREF?   Add row 3 to row 2 ( )  Add row 2 to row 3 ( )  Swap row 1 to row 2 ( )  Add -2 row 2 to row 1 ( )       Consider the matrix Which row operation is the best choice for the next move in converting to RREF?   Add row 1 to row 3 ( )  Add -2 row 1 to row 2 ( )  Add 2 row 2 to row 3 ( )  Add 2 row 3 to row 2 ( )       Consider the matrix Which row operation is the best choice for the next move in converting to RREF?   Add row 1 to row 2 ( )  Add -1 row 3 to row 2 ( )  Add -1 row 2 to row 3 ( )  Add row 2 to row 1 ( )      The steps for the Gauss-Jordan elimination algorithm may be summarized as follows:   Ignoring any rows that already have marked pivots, identify the leftmost column with a nonzero entry.    Use row operations to obtain a pivot of value in the topmost row that does not already have a marked pivot.    Mark this pivot, then use row operations to change all values above and below the marked pivot to .    Repeat these steps until the matrix is in RREF.     In particular, once a pivot is marked, it should remain in the same position . This will keep you from undoing your progress towards an RREF matrix.     Complete the following RREF calculation (multiple row operations may be needed for certain steps):        Consider the matrix   Compute .      Consider the non-augmented and augmented matrices   Can be used to find ?  Yes, and are exactly the same.  Yes, may be slightly modified to find .  No, a new calculuation is required.        Free browser-based technologies for mathematical computation are available online.   Go to .   In the dropdown on the right, you can select a number of different languages. Select \"Octave\" for the Matlab-compatible syntax used by this text.   Type rref([1,3,2;2,5,7]) and then press the Evaluate button to compute the of .        In the HTML version of this text, code cells are often embedded for your convenience when RREFs need to be computed.  Try this out to compute .       Videos      Video: Row reduction     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations    Prove that Gauss-Jordan Elimination preserves the solution set of a system of linear equations in variables. Make sure your proof includes each of the following. Just because I've used bullet points here does not mean you should use bullet points in your proof.  Write an arbitrary system of linear equations in variables. Your notation should be unambiguous.  Label an element of your solution set. You won't know what it is exactly, so you'll have to use a variable. Remember what it means (by definition!) to be in the solution set.  Describe the three operations used in Gauss-Jordan Elimination.  Consider all three operations in Gauss-Jordan Elimination. After each one is used, show that the element of the solution set you picked still satisfies the definition.        Let indicate the set of all matrices with real entries. Show that equivalence of matrices as defined in this section is an equivalence relation, as in exploration     Sample Problem and Solution  Sample problem .   "
 },
 {
   "id": "objectives-3",
@@ -259,7 +259,7 @@ var ptx_lunr_docs = [
   "type": "Activity",
   "number": "1.2.2",
   "title": "",
-  "body": "   Following are seven procedures used to manipulate an augmented matrix. Label the procedures that would result in an equivalent augmented matrix as valid , and label the procedures that might change the solution set of the corresponding linear system as invalid .   Swap two rows.  Swap two columns.  Add a constant to every term in a row.  Multiply a row by a nonzero constant.  Add a constant multiple of one row to another row.  Replace a column with zeros.  Replace a row with zeros.     "
+  "body": "  Consider whether these matrix manipulations (A) must keep or (B) could change the solution set for the corresponding linear system.    Swapping two rows, for example:            Swapping two columns, for example:            Add a constant to every term of a row, for example:            Multiply a row by a nonzero constant, for example:            Add a constant multiple of one row to another row, for example:            Replace a column with zeros, for example:            Replace a row with zeros, for example:           "
 },
 {
   "id": "definition-6",
@@ -268,16 +268,16 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.2.3",
   "title": "",
-  "body": "  The following three row operations row operations produce equivalent augmented matrices.   Swap two rows, for example, :     Multiply a row by a nonzero constant, for example, :    Add a constant multiple of one row to another row, for example, :      "
+  "body": "  The following three row operations row operations produce equivalent augmented matrices.  Swap two rows, for example, :     Multiply a row by a nonzero constant, for example, :    Add a constant multiple of one row to another row, for example, :      Observe that we will use the following notation: (Combination of old rows) (New row).   "
 },
 {
-  "id": "activity-5",
+  "id": "LE2-activity-sort",
   "level": "2",
-  "url": "LE2.html#activity-5",
+  "url": "LE2.html#LE2-activity-sort",
   "type": "Activity",
   "number": "1.2.4",
   "title": "",
-  "body": "  Consider the following (equivalent) linear systems.   A)   B)   C)     D)   E)   F)    Rank the six linear systems from most complicated to simplest.   "
+  "body": "  Each of the following linear systems has the same solution set.   A)   B)   C)     D)   E)   F)    Sort these six equivalent linear systems from most complicated to simplest (in your opinion).   "
 },
 {
   "id": "activity-6",
@@ -286,7 +286,7 @@ var ptx_lunr_docs = [
   "type": "Activity",
   "number": "1.2.5",
   "title": "",
-  "body": "  We can rewrite the previous in terms of equivalences of augmented matrices   Determine the row operation(s) necessary in each step to transform the most complicated system's augmented matrix into the simplest.   "
+  "body": "  Here we've written the sorted linear systems from as augmented matrices.   Assign the following row operations to each step used to manipulate each matrix to the next:            "
 },
 {
   "id": "definition-7",
@@ -304,7 +304,7 @@ var ptx_lunr_docs = [
   "type": "Activity",
   "number": "1.2.7",
   "title": "",
-  "body": "  Recall that a matrix is in reduced row echelon form ( RREF ) if   The leading term (first nonzero term) of each nonzero row is a 1. Call these terms pivots .  Each pivot is to the right of every higher pivot.  Each term above or below a pivot is zero.  All rows of zeroes are at the bottom of the matrix.   For each matrix, circle the leading terms, and label it as RREF or not RREF. For the ones not in RREF, find their RREF.        "
+  "body": "  Recall that a matrix is in reduced row echelon form ( RREF ) if   The leading term (first nonzero term) of each nonzero row is a 1. Call these terms pivots .  Each pivot is to the right of every higher pivot.  Each term above or below a pivot is zero.  All rows of zeroes are at the bottom of the matrix.   For each matrix, mark the leading terms, and label it as RREF or not RREF. For the ones not in RREF, determine which rule is violated and how it might be fixed.        "
 },
 {
   "id": "activity-8",
@@ -313,7 +313,7 @@ var ptx_lunr_docs = [
   "type": "Activity",
   "number": "1.2.8",
   "title": "",
-  "body": "  Recall that a matrix is in reduced row echelon form ( RREF ) if   The leading term (first nonzero term) of each nonzero row is a 1. Call these terms pivots .  Each pivot is to the right of every higher pivot.  Each term above or below a pivot is zero.  All rows of zeroes are at the bottom of the matrix.   For each matrix, circle the leading terms, and label it as RREF or not RREF. For the ones not in RREF, find their RREF.        "
+  "body": "  Recall that a matrix is in reduced row echelon form ( RREF ) if   The leading term (first nonzero term) of each nonzero row is a 1. Call these terms pivots .  Each pivot is to the right of every higher pivot.  Each term above or below a pivot is zero.  All rows of zeroes are at the bottom of the matrix.   For each matrix, mark the leading terms, and label it as RREF or not RREF. For the ones not in RREF, determine which rule is violated and how it might be fixed.        "
 },
 {
   "id": "remark-5",
@@ -322,7 +322,7 @@ var ptx_lunr_docs = [
   "type": "Remark",
   "number": "1.2.9",
   "title": "",
-  "body": "  In practice, if we simply need to convert a matrix into reduced row echelon form, we use technology to do so.  However, it is also important to understand the Gauss-Jordan elimination Gauss-Jordan elimination algorithm that a computer or calculator uses to convert a matrix (augmented or not) into reduced row echelon form. Understanding this algorithm will help us better understand how to interpret the results in many applications we use it for in Module V.   "
+  "body": "  In practice, if we simply need to convert a matrix into reduced row echelon form, we use technology to do so.  However, it is also important to understand the Gauss-Jordan elimination Gauss-Jordan elimination algorithm that a computer or calculator uses to convert a matrix (augmented or not) into reduced row echelon form. Understanding this algorithm will help us better understand how to interpret the results in many applications we use it for in .   "
 },
 {
   "id": "activity-9",
@@ -352,20 +352,29 @@ var ptx_lunr_docs = [
   "body": "  Consider the matrix Which row operation is the best choice for the next move in converting to RREF?   Add row 1 to row 2 ( )  Add -1 row 3 to row 2 ( )  Add -1 row 2 to row 3 ( )  Add row 2 to row 1 ( )    "
 },
 {
+  "id": "observation-2",
+  "level": "2",
+  "url": "LE2.html#observation-2",
+  "type": "Observation",
+  "number": "1.2.13",
+  "title": "",
+  "body": " The steps for the Gauss-Jordan elimination algorithm may be summarized as follows:   Ignoring any rows that already have marked pivots, identify the leftmost column with a nonzero entry.    Use row operations to obtain a pivot of value in the topmost row that does not already have a marked pivot.    Mark this pivot, then use row operations to change all values above and below the marked pivot to .    Repeat these steps until the matrix is in RREF.     In particular, once a pivot is marked, it should remain in the same position . This will keep you from undoing your progress towards an RREF matrix.  "
+},
+{
   "id": "activity-12",
   "level": "2",
   "url": "LE2.html#activity-12",
   "type": "Activity",
-  "number": "1.2.13",
+  "number": "1.2.14",
   "title": "",
-  "body": "  Consider the matrix    Perform three row operations to produce a matrix closer to RREF.  Finish putting it in RREF.  "
+  "body": "  Complete the following RREF calculation (multiple row operations may be needed for certain steps):     "
 },
 {
   "id": "activity-13",
   "level": "2",
   "url": "LE2.html#activity-13",
   "type": "Activity",
-  "number": "1.2.14",
+  "number": "1.2.15",
   "title": "",
   "body": "  Consider the matrix   Compute .   "
 },
@@ -374,18 +383,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "LE2.html#activity-14",
   "type": "Activity",
-  "number": "1.2.15",
-  "title": "",
-  "body": "  Consider the matrix   Compute .   "
-},
-{
-  "id": "activity-15",
-  "level": "2",
-  "url": "LE2.html#activity-15",
-  "type": "Activity",
   "number": "1.2.16",
   "title": "",
-  "body": "  Consider the matrix which has the same terms as from the previous activity.  Can be used to find ?  No, a new calculuation is required.  Yes, and are exactly the same.  Yes, may be slightly modified to find .     "
+  "body": "  Consider the non-augmented and augmented matrices   Can be used to find ?  Yes, and are exactly the same.  Yes, may be slightly modified to find .  No, a new calculuation is required.     "
 },
 {
   "id": "LE2-rref-tech",
@@ -397,9 +397,9 @@ var ptx_lunr_docs = [
   "body": "  Free browser-based technologies for mathematical computation are available online.   Go to .   In the dropdown on the right, you can select a number of different languages. Select \"Octave\" for the Matlab-compatible syntax used by this text.   Type rref([1,3,2;2,5,7]) and then press the Evaluate button to compute the of .     "
 },
 {
-  "id": "activity-17",
+  "id": "activity-16",
   "level": "2",
-  "url": "LE2.html#activity-17",
+  "url": "LE2.html#activity-16",
   "type": "Activity",
   "number": "1.2.18",
   "title": "",
@@ -460,27 +460,27 @@ var ptx_lunr_docs = [
   "body": "  We will frequently need to know the reduced row echelon form of matrices during the remainder of this course, so unless you're told otherwise, feel free to use technology (see ) to compute RREFs efficiently.   "
 },
 {
-  "id": "activity-18",
+  "id": "activity-17",
   "level": "2",
-  "url": "LE3.html#activity-18",
+  "url": "LE3.html#activity-17",
   "type": "Activity",
   "number": "1.3.2",
   "title": "",
   "body": "  Consider the following system of equations.  .  Convert this to an augmented matrix and use technology to compute its reduced row echelon form:   Use the matrix to write a linear system equivalent to the original system.  How many solutions must this system have?   Zero    Only one    Infinitely-many    "
 },
 {
-  "id": "activity-19",
+  "id": "activity-18",
   "level": "2",
-  "url": "LE3.html#activity-19",
+  "url": "LE3.html#activity-18",
   "type": "Activity",
   "number": "1.3.3",
   "title": "",
   "body": "  Consider the vector equation    Convert this to an augmented matrix and use technology to compute its reduced row echelon form:  Use the matrix to write a linear system equivalent to the original system.  How many solutions must this system have?   Zero    Only one    Infinitely-many    "
 },
 {
-  "id": "activity-20",
+  "id": "activity-19",
   "level": "2",
-  "url": "LE3.html#activity-20",
+  "url": "LE3.html#activity-19",
   "type": "Activity",
   "number": "1.3.4",
   "title": "",
@@ -514,9 +514,9 @@ var ptx_lunr_docs = [
   "body": "  By finding from a linear system's corresponding augmented matrix , we can immediately tell how many solutions the system has.    If the linear system given by includes the contradiction , that is, the row , then the system is inconsistent , which means it has zero solutions and its solution set is written as or .    If the linear system given by sets each variable of the system to a single value; that is, , , and so on; then the system is consistent with exactly one solution , and its solution set is .    Otherwise, the system must have more variables than non-trivial equations (equations other than ). This means it is consistent with infinitely-many different solutions. We'll learn how to find such solution sets in .     "
 },
 {
-  "id": "activity-22",
+  "id": "activity-21",
   "level": "2",
-  "url": "LE3.html#activity-22",
+  "url": "LE3.html#activity-21",
   "type": "Activity",
   "number": "1.3.8",
   "title": "",
@@ -559,9 +559,9 @@ var ptx_lunr_docs = [
   "body": "   Compute the solution set for a system of linear equations or a vector equation with infinitly many solutions.    "
 },
 {
-  "id": "activity-23",
+  "id": "activity-22",
   "level": "2",
-  "url": "LE4.html#activity-23",
+  "url": "LE4.html#activity-22",
   "type": "Activity",
   "number": "1.4.1",
   "title": "",
@@ -577,9 +577,9 @@ var ptx_lunr_docs = [
   "body": "  Recall that the pivots of a matrix in form are the leading s in each non-zero row.  The pivot columns in an augmented matrix correspond to the bound variables bound variables in the system of equations ( below). The remaining variables are called free variables free variables ( below).    To efficiently solve a system in RREF form, assign letters to the free variables, and then solve for the bound variables.   "
 },
 {
-  "id": "activity-24",
+  "id": "activity-23",
   "level": "2",
-  "url": "LE4.html#activity-24",
+  "url": "LE4.html#activity-23",
   "type": "Activity",
   "number": "1.4.3",
   "title": "",
@@ -595,18 +595,18 @@ var ptx_lunr_docs = [
   "body": "  Don't forget to correctly express the solution set of a linear system. Systems with zero or one solutions may be written by listing their elements, while systems with infinitely-many solutions may be written using set-builder notation.    Inconsistent : or (not ).    Consistent with one solution : e.g. (not just ).     Consistent with infinitely-many solutions : e.g. (not just ).     "
 },
 {
-  "id": "activity-25",
+  "id": "activity-24",
   "level": "2",
-  "url": "LE4.html#activity-25",
+  "url": "LE4.html#activity-24",
   "type": "Activity",
   "number": "1.4.5",
   "title": "",
   "body": "  Show how to find the solution set for the vector equation .    "
 },
 {
-  "id": "activity-26",
+  "id": "activity-25",
   "level": "2",
-  "url": "LE4.html#activity-26",
+  "url": "LE4.html#activity-25",
   "type": "Activity",
   "number": "1.4.6",
   "title": "",
@@ -694,63 +694,63 @@ var ptx_lunr_docs = [
   "body": " It is important to remember that .  For example, is a set containing exactly two vectors, while is a set containing infinitely-many vectors.  "
 },
 {
-  "id": "activity-27",
+  "id": "activity-26",
   "level": "2",
-  "url": "EV1.html#activity-27",
+  "url": "EV1.html#activity-26",
   "type": "Activity",
   "number": "2.1.5",
   "title": "",
   "body": "  Consider .   Sketch the four Euclidean vectors in the plane by placing a dot at the coordinate associated with each vector.  Sketch a representation of all the vectors belonging to in the plane by plotting their coordinates as dots. What best describes this sketch?  A line  A plane  A parabola  A circle    "
 },
 {
-  "id": "activity-28",
+  "id": "activity-27",
   "level": "2",
-  "url": "EV1.html#activity-28",
+  "url": "EV1.html#activity-27",
   "type": "Activity",
   "number": "2.1.6",
   "title": "",
   "body": "  Consider .   Sketch the following five Euclidean vectors in the plane.    Sketch a representation of all the vectors belonging to in the plane. What best describes this sketch?  A line  A plane  A parabola  A circle    "
 },
 {
-  "id": "activity-29",
+  "id": "activity-28",
   "level": "2",
-  "url": "EV1.html#activity-29",
+  "url": "EV1.html#activity-28",
   "type": "Activity",
   "number": "2.1.7",
   "title": "",
   "body": "  Sketch a representation of all the vectors belonging to in the plane. What best describes this sketch?  A line  A plane  A parabola  A cube     "
 },
 {
-  "id": "activity-30",
+  "id": "activity-29",
   "level": "2",
-  "url": "EV1.html#activity-30",
+  "url": "EV1.html#activity-29",
   "type": "Activity",
   "number": "2.1.8",
   "title": "",
   "body": "  Consider the following questions to discover whether a Euclidean vector belongs to a span.   The Euclidean vector belongs to exactly when there exists a solution to which of these vector equations?              Use technology to find of the corresponding augmented matrix, and then use that matrix to find the solution set of the vector equation.  Given this solution set, does belong to ?  "
 },
 {
-  "id": "observation-2",
+  "id": "observation-3",
   "level": "2",
-  "url": "EV1.html#observation-2",
+  "url": "EV1.html#observation-3",
   "type": "Observation",
   "number": "2.1.9",
   "title": "",
   "body": " The following are all equivalent statements:    The vector belongs to .    The vector is a linear combination of the vectors .    The vector equation is consistent.    The linear system corresponding to is consistent.     doesn't have a row representing the contradiction .    "
 },
 {
-  "id": "activity-31",
+  "id": "activity-30",
   "level": "2",
-  "url": "EV1.html#activity-31",
+  "url": "EV1.html#activity-30",
   "type": "Activity",
   "number": "2.1.10",
   "title": "",
   "body": "  Consider this claim about a vector equation:  is a linear combination of the vectors .    Write a statement involving the solutions of a vector equation that's equivalent to this claim.    Explain why the statement you wrote is true.    Since your statement was true, use the solution set to describe a linear combination of that equals .    "
 },
 {
-  "id": "activity-32",
+  "id": "activity-31",
   "level": "2",
-  "url": "EV1.html#activity-32",
+  "url": "EV1.html#activity-31",
   "type": "Activity",
   "number": "2.1.11",
   "title": "",
@@ -793,27 +793,27 @@ var ptx_lunr_docs = [
   "body": "   Determine if a set of Euclidean vectors spans by solving appropriate vector equations.    "
 },
 {
-  "id": "observation-3",
+  "id": "observation-4",
   "level": "2",
-  "url": "EV2.html#observation-3",
+  "url": "EV2.html#observation-4",
   "type": "Observation",
   "number": "2.2.1",
   "title": "",
   "body": "  Any single non-zero vector\/number in spans , since .      An vector    "
 },
 {
-  "id": "activity-33",
+  "id": "activity-32",
   "level": "2",
-  "url": "EV2.html#activity-33",
+  "url": "EV2.html#activity-32",
   "type": "Activity",
   "number": "2.2.2",
   "title": "",
   "body": "  How many vectors are required to span ? Sketch a drawing in the plane to support your answer.      The plane                         Infinitely Many     "
 },
 {
-  "id": "activity-34",
+  "id": "activity-33",
   "level": "2",
-  "url": "EV2.html#activity-34",
+  "url": "EV2.html#activity-33",
   "type": "Activity",
   "number": "2.2.3",
   "title": "",
@@ -829,9 +829,9 @@ var ptx_lunr_docs = [
   "body": "  At least vectors are required to span .      Failed attempts to span by vectors    "
 },
 {
-  "id": "activity-35",
+  "id": "activity-34",
   "level": "2",
-  "url": "EV2.html#activity-35",
+  "url": "EV2.html#activity-34",
   "type": "Activity",
   "number": "2.2.5",
   "title": "",
@@ -847,18 +847,18 @@ var ptx_lunr_docs = [
   "body": "  The set spans all of exactly when the vector equation is consistent for every vector .  Likewise, the set fails to span all of exactly when the vector equation is inconsistent for some vector .  Note these two possibilities are decided based on whether or not has either all pivot rows, or at least one non-pivot row (a row of zeroes): .   "
 },
 {
-  "id": "activity-36",
+  "id": "activity-35",
   "level": "2",
-  "url": "EV2.html#activity-36",
+  "url": "EV2.html#activity-35",
   "type": "Activity",
   "number": "2.2.7",
   "title": "",
   "body": "  Consider the set of vectors and the question Does ?    Rewrite this question in terms of the solutions to a vector equation.  Answer your new question, and use this to answer the original question.  "
 },
 {
-  "id": "activity-37",
+  "id": "activity-36",
   "level": "2",
-  "url": "EV2.html#activity-37",
+  "url": "EV2.html#activity-36",
   "type": "Activity",
   "number": "2.2.8",
   "title": "",
@@ -919,9 +919,9 @@ var ptx_lunr_docs = [
   "body": "  A subset of a vector space is called a subspace subspace provided it is equal to the span of a set of vectors from that space.   "
 },
 {
-  "id": "activity-38",
+  "id": "activity-37",
   "level": "2",
-  "url": "EV3.html#activity-38",
+  "url": "EV3.html#activity-37",
   "type": "Activity",
   "number": "2.3.2",
   "title": "",
@@ -937,27 +937,27 @@ var ptx_lunr_docs = [
   "body": " A sub set  of a vector space is a sub space provided:   the subset is closed under addition vector space closed under addition : for any , the sum is also in .    the subset is closed under scalar multiplication vector space closed under scalar multiplication : for any and scalar , the product is also in .     "
 },
 {
-  "id": "observation-4",
+  "id": "observation-5",
   "level": "2",
-  "url": "EV3.html#observation-4",
+  "url": "EV3.html#observation-5",
   "type": "Observation",
   "number": "2.3.4",
   "title": "",
   "body": " Note the similarities between a planar subspace spanned by two non-colinear vectors in , and the Euclidean plane . While they are not the same thing (and shouldn't be referred to interchangably), algebraists call such similar spaces isomorphic isomorphic ; we'll learn what this means more carefully in a later chapter.   A planar subset of compared with the plane .   A planar subset of compared with the plane .     "
 },
 {
-  "id": "activity-39",
+  "id": "activity-38",
   "level": "2",
-  "url": "EV3.html#activity-39",
+  "url": "EV3.html#activity-38",
   "type": "Activity",
   "number": "2.3.5",
   "title": "",
   "body": "  Let .   Let's assume that and are in . What are we allowed to assume?    .     .    Both of these.    Neither of these.     Which equation must be verified to show that also belongs to ?    .     .     .     Use the assumptions from (a) to verify the equation from (b).  Is is a subspace of ?   Yes    No    Not enough information     Show that also belongs to for any by verifying under these assumptions.  Is is a subspace of ?   Yes    No    Not enough information     "
 },
 {
-  "id": "activity-40",
+  "id": "activity-39",
   "level": "2",
-  "url": "EV3.html#activity-40",
+  "url": "EV3.html#activity-39",
   "type": "Activity",
   "number": "2.3.6",
   "title": "",
@@ -973,27 +973,27 @@ var ptx_lunr_docs = [
   "body": " In summary, you can check any of the following to show that a nonempty subset isn't a subspace:   Find such that .    Find such that .    Show that (same as the last step, with ).     If you cannot do any of these, then can be proven to be a subspace by doing both of the following:   Prove that whenever .    Prove that whenever .     "
 },
 {
-  "id": "activity-41",
+  "id": "activity-40",
   "level": "2",
-  "url": "EV3.html#activity-41",
+  "url": "EV3.html#activity-40",
   "type": "Activity",
   "number": "2.3.8",
   "title": "",
   "body": "  Consider these subsets of : .   Show isn't a subspace by showing that .  Show isn't a subspace by finding two vectors such that .  Show isn't a subspace by finding a vector such that .  "
 },
 {
-  "id": "activity-42",
+  "id": "activity-41",
   "level": "2",
-  "url": "EV3.html#activity-42",
+  "url": "EV3.html#activity-41",
   "type": "Activity",
   "number": "2.3.9",
   "title": "",
   "body": "  Consider the following two sets of Euclidean vectors:   Explain why one of these sets is a subspace of and one is not.    "
 },
 {
-  "id": "activity-43",
+  "id": "activity-42",
   "level": "2",
-  "url": "EV3.html#activity-43",
+  "url": "EV3.html#activity-42",
   "type": "Activity",
   "number": "2.3.10",
   "title": "",
@@ -1090,9 +1090,9 @@ var ptx_lunr_docs = [
   "body": "   Determine if a set of Euclidean vectors is linearly dependent or independent by solving an appropriate vector equation.    "
 },
 {
-  "id": "activity-44",
+  "id": "activity-43",
   "level": "2",
-  "url": "EV4.html#activity-44",
+  "url": "EV4.html#activity-43",
   "type": "Activity",
   "number": "2.4.1",
   "title": "",
@@ -1108,9 +1108,9 @@ var ptx_lunr_docs = [
   "body": "  We say that a set of vectors is linearly dependent linearly dependent if one vector in the set belongs to the span of the others. Otherwise, we say the set is linearly independent . linearly independent       A linearly dependent set of three vectors   You can think of linearly dependent sets as containing a redundant vector, in the sense that you can drop a vector out without reducing the span of the set. In the above image, all three vectors lay in the same planar subspace, but only two vectors are needed to span the plane, so the set is linearly dependent.   "
 },
 {
-  "id": "activity-45",
+  "id": "activity-44",
   "level": "2",
-  "url": "EV4.html#activity-45",
+  "url": "EV4.html#activity-44",
   "type": "Activity",
   "number": "2.4.3",
   "title": "",
@@ -1126,9 +1126,9 @@ var ptx_lunr_docs = [
   "body": "  For any vector space, the set is linearly dependent if and only if the vector equation is consistent with infinitely many solutions.  Likewise, the set of vectors is linearly independent if and only the vector equation has exactly one solution: .   "
 },
 {
-  "id": "activity-46",
+  "id": "activity-45",
   "level": "2",
-  "url": "EV4.html#activity-46",
+  "url": "EV4.html#activity-45",
   "type": "Activity",
   "number": "2.4.5",
   "title": "",
@@ -1144,27 +1144,27 @@ var ptx_lunr_docs = [
   "body": "  Compare the following results:    A set of vectors is linearly independent if and only if has all pivot columns .    A set of vectors is linearly dependent if and only if has at least one non-pivot column .    A set of vectors spans if and only if has all pivot rows .    A set of vectors fails to span if and only if has at least one non-pivot row .     "
 },
 {
-  "id": "activity-47",
+  "id": "activity-46",
   "level": "2",
-  "url": "EV4.html#activity-47",
+  "url": "EV4.html#activity-46",
   "type": "Activity",
   "number": "2.4.7",
   "title": "",
   "body": "  Write a statement involving the solutions of a vector equation that's equivalent to each claim:    The set of vectors is linearly independent .     The set of vectors is linearly dependent .     Explain how to determine which of these statements is true.   "
 },
 {
-  "id": "activity-48",
+  "id": "activity-47",
   "level": "2",
-  "url": "EV4.html#activity-48",
+  "url": "EV4.html#activity-47",
   "type": "Activity",
   "number": "2.4.8",
   "title": "",
   "body": "  What is the largest number of vectors that can form a linearly independent set?                   You can have infinitely many vectors and still be linearly independent.     "
 },
 {
-  "id": "activity-49",
+  "id": "activity-48",
   "level": "2",
-  "url": "EV4.html#activity-49",
+  "url": "EV4.html#activity-48",
   "type": "Activity",
   "number": "2.4.9",
   "title": "",
@@ -1216,9 +1216,9 @@ var ptx_lunr_docs = [
   "body": "  Consider the set of vectors .    Express the vector as a linear combination of the vectors in , i.e. find scalars such that .    Find a different way to express the vector as a linear combination of the vectors in .    Consider another vector . Without computing the RREF of another matrix, how many ways can this vector be written as a linear combination of the vectors in ?  Zero.  One.  Infintiely-many.  Computing a new matrix RREF is necessary.     "
 },
 {
-  "id": "activity-51",
+  "id": "activity-50",
   "level": "2",
-  "url": "EV5.html#activity-51",
+  "url": "EV5.html#activity-50",
   "type": "Activity",
   "number": "2.5.2",
   "title": "",
@@ -1234,27 +1234,27 @@ var ptx_lunr_docs = [
   "body": "  A basis basis of a vector space is a set of vectors for which     Every vector of the space can be expressed as a linear combination of the vectors in .    For each vector in the space, there is only one way to write it as a linear combination of the vectors in .    These two properties may be expressed more succintly as the statement \"Every vector in can be expressed uniquely as a linear combination of the vectors in \".   "
 },
 {
-  "id": "observation-6",
+  "id": "observation-7",
   "level": "2",
-  "url": "EV5.html#observation-6",
+  "url": "EV5.html#observation-7",
   "type": "Observation",
   "number": "2.5.4",
   "title": "",
   "body": " In terms of a vector equation, a set is a basis of a space if the vector equation has a unique solution for every vector in the space.  Put another way, a basis may be thought of as a minimal set of building blocks that can be used to construct any other vector of the space.  "
 },
 {
-  "id": "activity-52",
+  "id": "activity-51",
   "level": "2",
-  "url": "EV5.html#activity-52",
+  "url": "EV5.html#activity-51",
   "type": "Activity",
   "number": "2.5.5",
   "title": "",
   "body": " Let be a basis ( ) for a space. Then...  the set must both span the space and be linearly independent.  the set must span the space but could be linearly dependent.  the set must be linearly independent but could fail to span the space.  the set could fail to span the space and could be linearly dependent.    "
 },
 {
-  "id": "activity-53",
+  "id": "activity-52",
   "level": "2",
-  "url": "EV5.html#activity-53",
+  "url": "EV5.html#activity-52",
   "type": "Activity",
   "number": "2.5.6",
   "title": "",
@@ -1270,18 +1270,18 @@ var ptx_lunr_docs = [
   "body": "  The standard basis basis standard of is the set where .  In particular, the standard basis for is .   "
 },
 {
-  "id": "activity-54",
+  "id": "activity-53",
   "level": "2",
-  "url": "EV5.html#activity-54",
+  "url": "EV5.html#activity-53",
   "type": "Activity",
   "number": "2.5.8",
   "title": "",
   "body": "  Take the RREF of an appropriate matrix to determine if each of the following sets is a basis for .       A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly independent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.         A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly independent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.         A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly independent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.         A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly independent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.         A basis because it both spans and is linearly independent.    Spans, but not a basis as it is linearly dependent.    Linearly independent, but not a basis as it fails to span.    Fails to span and linearly independent, so not a basis.     "
 },
 {
-  "id": "activity-55",
+  "id": "activity-54",
   "level": "2",
-  "url": "EV5.html#activity-55",
+  "url": "EV5.html#activity-54",
   "type": "Activity",
   "number": "2.5.9",
   "title": "",
@@ -1351,18 +1351,18 @@ var ptx_lunr_docs = [
   "body": "   Compute a basis for the subspace spanned by a given set of Euclidean vectors, and determine the dimension of the subspace.    "
 },
 {
-  "id": "observation-7",
+  "id": "observation-8",
   "level": "2",
-  "url": "EV6.html#observation-7",
+  "url": "EV6.html#observation-8",
   "type": "Observation",
   "number": "2.6.1",
   "title": "",
   "body": " Recall from section that a subspace of a vector space is the result of spanning a set of vectors from that space.  Recall also that a linearly dependent set contains redundant vectors. For example, only two of the three vectors in are needed to span the planar subspace.  "
 },
 {
-  "id": "activity-56",
+  "id": "activity-55",
   "level": "2",
-  "url": "EV6.html#activity-56",
+  "url": "EV6.html#activity-55",
   "type": "Activity",
   "number": "2.6.2",
   "title": "",
@@ -1378,27 +1378,27 @@ var ptx_lunr_docs = [
   "body": "  Let be a subspace of a vector space. A basis for is a linearly independent set of vectors that spans (but not necessarily the entire vector space).   "
 },
 {
-  "id": "observation-8",
+  "id": "observation-9",
   "level": "2",
-  "url": "EV6.html#observation-8",
+  "url": "EV6.html#observation-9",
   "type": "Observation",
   "number": "2.6.4",
   "title": "",
   "body": " So given a set , to compute a basis for the subspace , simply remove the vectors corresponding to the non-pivot columns of . For example, since the subspace has as a basis.  "
 },
 {
-  "id": "activity-57",
+  "id": "activity-56",
   "level": "2",
-  "url": "EV6.html#activity-57",
+  "url": "EV6.html#activity-56",
   "type": "Activity",
   "number": "2.6.5",
   "title": "",
   "body": " Find a basis for where .  Find a basis for where .  "
 },
 {
-  "id": "observation-9",
+  "id": "observation-10",
   "level": "2",
-  "url": "EV6.html#observation-9",
+  "url": "EV6.html#observation-10",
   "type": "Observation",
   "number": "2.6.6",
   "title": "",
@@ -1423,18 +1423,18 @@ var ptx_lunr_docs = [
   "body": "  The dimension of a vector space or subspace is equal to the size of any basis for the vector space.  As you'd expect, has dimension . For example, has dimension because any basis for such as contains exactly three vectors.   "
 },
 {
-  "id": "activity-58",
+  "id": "activity-57",
   "level": "2",
-  "url": "EV6.html#activity-58",
+  "url": "EV6.html#activity-57",
   "type": "Activity",
   "number": "2.6.9",
   "title": "",
   "body": "  Consider the following subspace of :     Explain and demonstrate how to find a basis of .    Explain and demonstrate how to find the dimension of .   "
 },
 {
-  "id": "activity-59",
+  "id": "activity-58",
   "level": "2",
-  "url": "EV6.html#activity-59",
+  "url": "EV6.html#activity-58",
   "type": "Activity",
   "number": "2.6.10",
   "title": "",
@@ -1504,18 +1504,18 @@ var ptx_lunr_docs = [
   "body": "  A homogeneous homogeneous system of linear equations is one of the form:   This system is equivalent to the vector equation: and the augmented matrix:    "
 },
 {
-  "id": "activity-60",
+  "id": "activity-59",
   "level": "2",
-  "url": "EV7.html#activity-60",
+  "url": "EV7.html#activity-59",
   "type": "Activity",
   "number": "2.7.2",
   "title": "",
   "body": "  Consider the homogeneous vector equation .    Note that if and are both solutions, we know that . Therefore by adding these equations,  shows that is also a solution. Thus the solution set of a homogeneous system is...   Closed under addition.    Not closed under addition.    Linearly dependent.    Linearly independent.    Similarly, if , is a solution. Thus the solution set of a homogeneous system is also closed under scalar multiplication, and therefore...   A basis for .    A subspace of .    All of .    The empty set.    "
 },
 {
-  "id": "activity-61",
+  "id": "activity-60",
   "level": "2",
-  "url": "EV7.html#activity-61",
+  "url": "EV7.html#activity-60",
   "type": "Activity",
   "number": "2.7.3",
   "title": "",
@@ -1531,36 +1531,36 @@ var ptx_lunr_docs = [
   "body": "  The coefficients of the free variables in the solution space of a linear system always yield linearly independent vectors that span the solution space.  Thus if is the solution space for a homogeneous system, then is a basis for the solution space.   "
 },
 {
-  "id": "activity-62",
+  "id": "activity-61",
   "level": "2",
-  "url": "EV7.html#activity-62",
+  "url": "EV7.html#activity-61",
   "type": "Activity",
   "number": "2.7.5",
   "title": "",
   "body": "  Consider the homogeneous system of equations   Find a basis for its solution space.   "
 },
 {
-  "id": "activity-63",
+  "id": "activity-62",
   "level": "2",
-  "url": "EV7.html#activity-63",
+  "url": "EV7.html#activity-62",
   "type": "Activity",
   "number": "2.7.6",
   "title": "",
   "body": "  Consider the homogeneous vector equation   Find a basis for its solution space.   "
 },
 {
-  "id": "activity-64",
+  "id": "activity-63",
   "level": "2",
-  "url": "EV7.html#activity-64",
+  "url": "EV7.html#activity-63",
   "type": "Activity",
   "number": "2.7.7",
   "title": "",
   "body": "  Consider the homogeneous system of equations     Find its solution space.    Which of these is the best choice of basis for this solution space?    The basis does not exist     "
 },
 {
-  "id": "activity-65",
+  "id": "activity-64",
   "level": "2",
-  "url": "EV7.html#activity-65",
+  "url": "EV7.html#activity-64",
   "type": "Activity",
   "number": "2.7.8",
   "title": "",
@@ -1621,36 +1621,36 @@ var ptx_lunr_docs = [
   "body": "  Given a linear transformation , is called the domain of and is called the co-domain of .   A linear transformation with a domain of and a co-domain of       "
 },
 {
-  "id": "observation-10",
+  "id": "observation-11",
   "level": "2",
-  "url": "AT1.html#observation-10",
+  "url": "AT1.html#observation-11",
   "type": "Observation",
   "number": "3.1.3",
   "title": "",
   "body": " One example of a linear transformation is the projection of three-dimesional data onto a two-dimensional screen, as is necessary for computer animiation in film or video games.   A projection of a teapot onto a screen    "
 },
 {
-  "id": "activity-66",
+  "id": "activity-65",
   "level": "2",
-  "url": "AT1.html#activity-66",
+  "url": "AT1.html#activity-65",
   "type": "Activity",
   "number": "3.1.4",
   "title": "",
   "body": "  Let be given by    Compute the result of adding vectors before a transformation:                         Compute the result of adding vectors after a transformation:                         Is a linear transformation?   Yes.    No.    More work is necessary to know.     Compute the result of scalar multiplcation before a transformation:                         Compute the result of scalar multiplcation after a transformation:                         Is a linear transformation?   Yes.    No.    More work is necessary to know.     "
 },
 {
-  "id": "activity-67",
+  "id": "activity-66",
   "level": "2",
-  "url": "AT1.html#activity-67",
+  "url": "AT1.html#activity-66",
   "type": "Activity",
   "number": "3.1.5",
   "title": "",
   "body": "  Let be given by    Compute                         Compute                         Is a linear transformation?   Yes.    No.    More work is necessary to know.     "
 },
 {
-  "id": "activity-68",
+  "id": "activity-67",
   "level": "2",
-  "url": "AT1.html#activity-68",
+  "url": "AT1.html#activity-67",
   "type": "Activity",
   "number": "3.1.6",
   "title": "",
@@ -1666,9 +1666,9 @@ var ptx_lunr_docs = [
   "body": " Showing is not a linear transformation can be done by finding an example for any one of the following.   Show (where is the additive identity of and ).    Find specific values for such that .    Find specific values for and such that .     Otherwise, can be shown to be linear by proving both of the following in general .   For all , .    For all and , .     Note the similarities between this process and showing that a subset of a vector space is or is not a subspace ( ).  "
 },
 {
-  "id": "activity-69",
+  "id": "activity-68",
   "level": "2",
-  "url": "AT1.html#activity-69",
+  "url": "AT1.html#activity-68",
   "type": "Activity",
   "number": "3.1.8",
   "title": "",
@@ -1738,20 +1738,29 @@ var ptx_lunr_docs = [
   "body": "  Recall that a linear map satisfies     for any .     for any .    In other words, a map is linear when vector space operations can be applied before or after the transformation without affecting the result.   "
 },
 {
-  "id": "activity-70",
+  "id": "activity-69",
   "level": "2",
-  "url": "AT2.html#activity-70",
+  "url": "AT2.html#activity-69",
   "type": "Activity",
   "number": "3.2.2",
   "title": "",
   "body": "  Suppose is a linear map, and you know and . What is ?                 "
 },
 {
+  "id": "activity-70",
+  "level": "2",
+  "url": "AT2.html#activity-70",
+  "type": "Activity",
+  "number": "3.2.3",
+  "title": "",
+  "body": "  Suppose is a linear map, and you know and . What is ?                         "
+},
+{
   "id": "activity-71",
   "level": "2",
   "url": "AT2.html#activity-71",
   "type": "Activity",
-  "number": "3.2.3",
+  "number": "3.2.4",
   "title": "",
   "body": "  Suppose is a linear map, and you know and . What is ?                         "
 },
@@ -1759,15 +1768,6 @@ var ptx_lunr_docs = [
   "id": "activity-72",
   "level": "2",
   "url": "AT2.html#activity-72",
-  "type": "Activity",
-  "number": "3.2.4",
-  "title": "",
-  "body": "  Suppose is a linear map, and you know and . What is ?                         "
-},
-{
-  "id": "activity-73",
-  "level": "2",
-  "url": "AT2.html#activity-73",
   "type": "Activity",
   "number": "3.2.5",
   "title": "",
@@ -1792,18 +1792,18 @@ var ptx_lunr_docs = [
   "body": "  Since a linear transformation is determined by its action on the standard basis , it is convenient to store this information in an matrix, called the standard matrix standard matrix of , given by .  For example, let be the linear map determined by the following values for applied to the standard basis of .   Then the standard matrix corresponding to is    "
 },
 {
-  "id": "activity-74",
+  "id": "activity-73",
   "level": "2",
-  "url": "AT2.html#activity-74",
+  "url": "AT2.html#activity-73",
   "type": "Activity",
   "number": "3.2.8",
   "title": "",
   "body": "  Let be the linear transformation given by Write the standard matrix for .   "
 },
 {
-  "id": "activity-75",
+  "id": "activity-74",
   "level": "2",
-  "url": "AT2.html#activity-75",
+  "url": "AT2.html#activity-74",
   "type": "Activity",
   "number": "3.2.9",
   "title": "",
@@ -1819,18 +1819,18 @@ var ptx_lunr_docs = [
   "body": "  Because every linear map has a linear combination of the variables in each component, and thus yields exactly the coefficients of , the standard matrix for is simply an array of the coefficients of the :    "
 },
 {
-  "id": "activity-76",
+  "id": "activity-75",
   "level": "2",
-  "url": "AT2.html#activity-76",
+  "url": "AT2.html#activity-75",
   "type": "Activity",
   "number": "3.2.11",
   "title": "",
   "body": "  Let be the linear transformation given by the standard matrix    Compute .  Compute .  "
 },
 {
-  "id": "activity-77",
+  "id": "activity-76",
   "level": "2",
-  "url": "AT2.html#activity-77",
+  "url": "AT2.html#activity-76",
   "type": "Activity",
   "number": "3.2.12",
   "title": "",
@@ -1846,9 +1846,9 @@ var ptx_lunr_docs = [
   "body": "    Video: Using the standard matrix to compute the image of a vector  "
 },
 {
-  "id": "p-698",
+  "id": "p-727",
   "level": "2",
-  "url": "AT2.html#p-698",
+  "url": "AT2.html#p-727",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1918,9 +1918,9 @@ var ptx_lunr_docs = [
   "body": "   Compute a basis for the kernel and a basis for the image of a linear map, and verify that the rank-nullity theorem holds for a given linear map.    "
 },
 {
-  "id": "activity-78",
+  "id": "activity-77",
   "level": "2",
-  "url": "AT3.html#activity-78",
+  "url": "AT3.html#activity-77",
   "type": "Activity",
   "number": "3.3.1",
   "title": "",
@@ -1936,36 +1936,36 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation, and let be the additive identity (the zero vector ) of . The kernel kernel of is an important subspace of defined by       The kernel of a linear transformation    "
 },
 {
-  "id": "activity-79",
+  "id": "activity-78",
   "level": "2",
-  "url": "AT3.html#activity-79",
+  "url": "AT3.html#activity-78",
   "type": "Activity",
   "number": "3.3.3",
   "title": "",
   "body": "  Let be given by Which of these subspaces of describes , the set of all vectors that transform into ?                         "
 },
 {
-  "id": "activity-80",
+  "id": "activity-79",
   "level": "2",
-  "url": "AT3.html#activity-80",
+  "url": "AT3.html#activity-79",
   "type": "Activity",
   "number": "3.3.4",
   "title": "",
   "body": "  Let be the linear transformation given by the standard matrix    Set to find a linear system of equations whose solution set is the kernel.  Use to solve this homogeneous system of equations and find a basis for the kernel of .  "
 },
 {
-  "id": "activity-81",
+  "id": "activity-80",
   "level": "2",
-  "url": "AT3.html#activity-81",
+  "url": "AT3.html#activity-80",
   "type": "Activity",
   "number": "3.3.5",
   "title": "",
   "body": "  Let be the linear transformation given by   Find a basis for the kernel of .   "
 },
 {
-  "id": "activity-82",
+  "id": "activity-81",
   "level": "2",
-  "url": "AT3.html#activity-82",
+  "url": "AT3.html#activity-81",
   "type": "Activity",
   "number": "3.3.6",
   "title": "",
@@ -1981,27 +1981,27 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation. The image of is an important subspace of defined by   In the examples below, the left example's image is all of , but the right example's image is a planar subspace of .      The image of a linear transformation    "
 },
 {
-  "id": "activity-83",
+  "id": "activity-82",
   "level": "2",
-  "url": "AT3.html#activity-83",
+  "url": "AT3.html#activity-82",
   "type": "Activity",
   "number": "3.3.8",
   "title": "",
   "body": "  Let be given by Which of these subspaces of describes , the set of all vectors that are the result of using to transform vectors?                         "
 },
 {
-  "id": "activity-84",
+  "id": "activity-83",
   "level": "2",
-  "url": "AT3.html#activity-84",
+  "url": "AT3.html#activity-83",
   "type": "Activity",
   "number": "3.3.9",
   "title": "",
   "body": "  Let be the linear transformation given by the standard matrix   Since for a vector , , which of the following best describes the set of vectors ?    The set of vectors spans but is not linearly independent.    The set of vectors is a linearly independent subset of but does not span .    The set of vectors is linearly independent and spans ; that is, the set of vectors is a basis for .     "
 },
 {
-  "id": "observation-11",
+  "id": "observation-12",
   "level": "2",
-  "url": "AT3.html#observation-11",
+  "url": "AT3.html#observation-12",
   "type": "Observation",
   "number": "3.3.10",
   "title": "",
@@ -2017,45 +2017,45 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation with standard matrix .    The kernel of is the solution set of the homogeneous system given by the augmented matrix . Use the coefficients of its free variables to get a basis for the kernel.    The image of is the span of the columns of . Remove the vectors creating non-pivot columns in to get a basis for the image.     "
 },
 {
-  "id": "activity-85",
+  "id": "activity-84",
   "level": "2",
-  "url": "AT3.html#activity-85",
+  "url": "AT3.html#activity-84",
   "type": "Activity",
   "number": "3.3.12",
   "title": "",
   "body": "  Let be the linear transformation given by the standard matrix   Find a basis for the kernel and a basis for the image of .   "
 },
 {
-  "id": "activity-86",
+  "id": "activity-85",
   "level": "2",
-  "url": "AT3.html#activity-86",
+  "url": "AT3.html#activity-85",
   "type": "Activity",
   "number": "3.3.13",
   "title": "",
   "body": "  Let be a linear transformation with standard matrix . Which of the following is equal to the dimension of the kernel of ?    The number of pivot columns    The number of non-pivot columns    The number of pivot rows    The number of non-pivot rows     "
 },
 {
-  "id": "activity-87",
+  "id": "activity-86",
   "level": "2",
-  "url": "AT3.html#activity-87",
+  "url": "AT3.html#activity-86",
   "type": "Activity",
   "number": "3.3.14",
   "title": "",
   "body": "  Let be a linear transformation with standard matrix . Which of the following is equal to the dimension of the image of ?    The number of pivot columns    The number of non-pivot columns    The number of pivot rows    The number of non-pivot rows     "
 },
 {
-  "id": "observation-12",
+  "id": "observation-13",
   "level": "2",
-  "url": "AT3.html#observation-12",
+  "url": "AT3.html#observation-13",
   "type": "Observation",
   "number": "3.3.15",
   "title": "",
   "body": "  Combining these with the observation that the number of columns is the dimension of the domain of , we have the rank-nullity theorem :   The dimension of the domain of equals .   The dimension of the image is called the rank of (or ) and the dimension of the kernel is called the nullity .   "
 },
 {
-  "id": "activity-88",
+  "id": "activity-87",
   "level": "2",
-  "url": "AT3.html#activity-88",
+  "url": "AT3.html#activity-87",
   "type": "Activity",
   "number": "3.3.16",
   "title": "",
@@ -2143,18 +2143,18 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation. is called injective or one-to-one if does not map two distinct vectors to the same place. More precisely, is injective if whenever .   An injective transformation and a non-injective transformation       "
 },
 {
-  "id": "activity-89",
+  "id": "activity-88",
   "level": "2",
-  "url": "AT4.html#activity-89",
+  "url": "AT4.html#activity-88",
   "type": "Activity",
   "number": "3.4.2",
   "title": "",
   "body": "  Let be given by Is injective?    Yes, because whenever .    Yes, because whenever .    No, because .    No, because .     "
 },
 {
-  "id": "activity-90",
+  "id": "activity-89",
   "level": "2",
-  "url": "AT4.html#activity-90",
+  "url": "AT4.html#activity-89",
   "type": "Activity",
   "number": "3.4.3",
   "title": "",
@@ -2170,27 +2170,27 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation. is called surjective or onto if every element of is mapped to by an element of . More precisely, for every , there is some with .      A surjective transformation and a non-surjective transformation    "
 },
 {
-  "id": "activity-91",
+  "id": "activity-90",
   "level": "2",
-  "url": "AT4.html#activity-91",
+  "url": "AT4.html#activity-90",
   "type": "Activity",
   "number": "3.4.5",
   "title": "",
   "body": "  Let be given by Is surjective?    Yes, because for every , there exists such that .    No, because can never equal .    No, because can never equal .     "
 },
 {
-  "id": "activity-92",
+  "id": "activity-91",
   "level": "2",
-  "url": "AT4.html#activity-92",
+  "url": "AT4.html#activity-91",
   "type": "Activity",
   "number": "3.4.6",
   "title": "",
   "body": "  Let be given by Is surjective?    Yes, because for every , there exists such that .    Yes, because for every , there exists such that .    No, because can never equal .     "
 },
 {
-  "id": "activity-93",
+  "id": "activity-92",
   "level": "2",
-  "url": "AT4.html#activity-93",
+  "url": "AT4.html#activity-92",
   "type": "Activity",
   "number": "3.4.7",
   "title": "",
@@ -2206,9 +2206,9 @@ var ptx_lunr_docs = [
   "body": "  A linear transformation is injective if and only if  . Put another way, an injective linear transformation may be recognized by its trivial kernel.      A linear transformation with trivial kernel, which is therefore injective    "
 },
 {
-  "id": "activity-94",
+  "id": "activity-93",
   "level": "2",
-  "url": "AT4.html#activity-94",
+  "url": "AT4.html#activity-93",
   "type": "Activity",
   "number": "3.4.9",
   "title": "",
@@ -2233,63 +2233,63 @@ var ptx_lunr_docs = [
   "body": "  A transformation that is both injective and surjective is said to be bijective .   "
 },
 {
-  "id": "activity-95",
+  "id": "activity-94",
   "level": "2",
-  "url": "AT4.html#activity-95",
+  "url": "AT4.html#activity-94",
   "type": "Activity",
   "number": "3.4.12",
   "title": "",
   "body": "  Let be a linear map with standard matrix . Determine whether each of the following statements means is (A) injective , (B) surjective , or (C) bijective (both).  The kernel of is trivial, i.e. .  The image of equals its codomain, i.e. .  For every , the set contains exactly one vector.     "
 },
 {
-  "id": "activity-96",
+  "id": "activity-95",
   "level": "2",
-  "url": "AT4.html#activity-96",
+  "url": "AT4.html#activity-95",
   "type": "Activity",
   "number": "3.4.13",
   "title": "",
   "body": "  Let be a linear map with standard matrix . Determine whether each of the following statements means is (A) injective , (B) surjective , or (C) bijective (both).  The columns of span .  The columns of form a basis for .  The columns of are linearly independent.     "
 },
 {
-  "id": "activity-97",
+  "id": "activity-96",
   "level": "2",
-  "url": "AT4.html#activity-97",
+  "url": "AT4.html#activity-96",
   "type": "Activity",
   "number": "3.4.14",
   "title": "",
   "body": "  Let be a linear map with standard matrix . Determine whether each of the following statements means is (A) injective , (B) surjective , or (C) bijective (both).   is the identity matrix.  Every column of has a pivot.  Every row of has a pivot.     "
 },
 {
-  "id": "activity-98",
+  "id": "activity-97",
   "level": "2",
-  "url": "AT4.html#activity-98",
+  "url": "AT4.html#activity-97",
   "type": "Activity",
   "number": "3.4.15",
   "title": "",
   "body": "  Let be a linear map with standard matrix . Determine whether each of the following statements means is (A) injective , (B) surjective , or (C) bijective (both).  The system of linear equations given by the augmented matrix has a solution for all .  The system of linear equations given by the augmented matrix has exactly one solution for all .  The system of linear equations given by the augmented matrix has exactly one solution.     "
 },
 {
-  "id": "observation-13",
+  "id": "observation-14",
   "level": "2",
-  "url": "AT4.html#observation-13",
+  "url": "AT4.html#observation-14",
   "type": "Observation",
   "number": "3.4.16",
   "title": "",
   "body": " The easiest way to determine if the linear map with standard matrix is injective is to see if has a pivot in each column.  The easiest way to determine if the linear map with standard matrix is surjective is to see if has a pivot in each row.  "
 },
 {
-  "id": "activity-99",
+  "id": "activity-98",
   "level": "2",
-  "url": "AT4.html#activity-99",
+  "url": "AT4.html#activity-98",
   "type": "Activity",
   "number": "3.4.17",
   "title": "",
   "body": "  What can you conclude about the linear map with standard matrix ?   Its standard matrix has more columns than rows, so is not injective.  Its standard matrix has more columns than rows, so is injective.  Its standard matrix has more rows than columns, so is not surjective.  Its standard matrix has more rows than columns, so is surjective.    "
 },
 {
-  "id": "activity-100",
+  "id": "activity-99",
   "level": "2",
-  "url": "AT4.html#activity-100",
+  "url": "AT4.html#activity-99",
   "type": "Activity",
   "number": "3.4.18",
   "title": "",
@@ -2305,47 +2305,56 @@ var ptx_lunr_docs = [
   "body": "  The following are true for any linear map :   If , then is not injective.  If , then is not surjective.   Basically, a linear transformation cannot reduce dimension without collapsing vectors into each other, and a linear transformation cannot increase dimension from its domain to its image.      A linear transformation whose domain has a larger dimension than its codomain, and is therefore not injective; and a linear transformation whose domain has a smaller dimension than its codomain, and is therefore not surjective.   But dimension arguments cannot be used to prove a map is injective or surjective.   "
 },
 {
-  "id": "activity-101",
+  "id": "activity-100",
   "level": "2",
-  "url": "AT4.html#activity-101",
+  "url": "AT4.html#activity-100",
   "type": "Activity",
   "number": "3.4.20",
   "title": "",
   "body": "  Suppose with standard matrix is both injective and surjective (we call such maps bijective ).   How many pivot rows must have?  How many pivot columns must have?  What is ?  "
 },
 {
-  "id": "activity-102",
+  "id": "activity-101",
   "level": "2",
-  "url": "AT4.html#activity-102",
+  "url": "AT4.html#activity-101",
   "type": "Activity",
   "number": "3.4.21",
   "title": "",
   "body": "  Let be a bijective linear map with standard matrix . Label each of the following as true or false.    is the identity matrix.  The columns of form a basis for   The system of linear equations given by the augmented matrix has exactly one solution for each .    "
 },
 {
-  "id": "observation-14",
+  "id": "observation-15",
   "level": "2",
-  "url": "AT4.html#observation-14",
+  "url": "AT4.html#observation-15",
   "type": "Observation",
   "number": "3.4.22",
   "title": "",
   "body": "  The easiest way to show that the linear map with standard matrix is bijective is to show that is the identity matrix.   "
 },
 {
-  "id": "activity-103",
+  "id": "activity-102",
   "level": "2",
-  "url": "AT4.html#activity-103",
+  "url": "AT4.html#activity-102",
   "type": "Activity",
   "number": "3.4.23",
   "title": "",
   "body": "  Let be given by the standard matrix Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.    "
 },
 {
+  "id": "activity-103",
+  "level": "2",
+  "url": "AT4.html#activity-103",
+  "type": "Activity",
+  "number": "3.4.24",
+  "title": "",
+  "body": "  Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.    "
+},
+{
   "id": "activity-104",
   "level": "2",
   "url": "AT4.html#activity-104",
   "type": "Activity",
-  "number": "3.4.24",
+  "number": "3.4.25",
   "title": "",
   "body": "  Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.    "
 },
@@ -2353,15 +2362,6 @@ var ptx_lunr_docs = [
   "id": "activity-105",
   "level": "2",
   "url": "AT4.html#activity-105",
-  "type": "Activity",
-  "number": "3.4.25",
-  "title": "",
-  "body": "  Let be given by Which of the following must be true?    is neither injective nor surjective   is injective but not surjective   is surjective but not injective   is bijective.    "
-},
-{
-  "id": "activity-106",
-  "level": "2",
-  "url": "AT4.html#activity-106",
   "type": "Activity",
   "number": "3.4.26",
   "title": "",
@@ -2422,36 +2422,36 @@ var ptx_lunr_docs = [
   "body": "   Determine if a map between vector spaces of polynomials is linear or not.    "
 },
 {
-  "id": "observation-15",
+  "id": "observation-16",
   "level": "2",
-  "url": "AT5.html#observation-15",
+  "url": "AT5.html#observation-16",
   "type": "Observation",
   "number": "3.5.1",
   "title": "",
   "body": " Consider the following applications of properites of the real numbers :    .     .    There exists some where .    There exists some where .     is the only number that is equally distant from and .    "
 },
 {
-  "id": "activity-107",
+  "id": "activity-106",
   "level": "2",
-  "url": "AT5.html#activity-107",
+  "url": "AT5.html#activity-106",
   "type": "Activity",
   "number": "3.5.2",
   "title": "",
   "body": "  Which of the following properites of Euclidean vectors is NOT true?    .     .    There exists some where .    There exists some where .     is the only vector whose endpoint is equally distant from the endpoints of and .     "
 },
 {
-  "id": "observation-16",
+  "id": "observation-17",
   "level": "2",
-  "url": "AT5.html#observation-16",
+  "url": "AT5.html#observation-17",
   "type": "Observation",
   "number": "3.5.3",
   "title": "",
   "body": " Consider the following applications of properites of the real numbers :     .     .    There exists some such that .     .     .    "
 },
 {
-  "id": "activity-108",
+  "id": "activity-107",
   "level": "2",
-  "url": "AT5.html#activity-108",
+  "url": "AT5.html#activity-107",
   "type": "Activity",
   "number": "3.5.4",
   "title": "",
@@ -2494,36 +2494,36 @@ var ptx_lunr_docs = [
   "body": "  The following sets are just a few examples of vector spaces, with the usual\/natural operations for addition and scalar multiplication.     : Euclidean vectors with components.     : Complex numbers.     : Matrices of real numbers with rows and columns.     : Polynomials of degree or less.     : Polynomials of any degree.     : Real-valued continuous functions.     "
 },
 {
-  "id": "activity-109",
+  "id": "activity-108",
   "level": "2",
-  "url": "AT5.html#activity-109",
+  "url": "AT5.html#activity-108",
   "type": "Activity",
   "number": "3.5.9",
   "title": "",
   "body": "  Consider the set .  Which of the following vectors is not in ?                         "
 },
 {
-  "id": "activity-110",
+  "id": "activity-109",
   "level": "2",
-  "url": "AT5.html#activity-110",
+  "url": "AT5.html#activity-109",
   "type": "Activity",
   "number": "3.5.10",
   "title": "",
   "body": "  Consider the set with the operation defined by .  Let be in with and . Using the operations defined for , which of the following is ?                         "
 },
 {
-  "id": "activity-111",
+  "id": "activity-110",
   "level": "2",
-  "url": "AT5.html#activity-111",
+  "url": "AT5.html#activity-110",
   "type": "Activity",
   "number": "3.5.11",
   "title": "",
   "body": "  Consider the set with operations defined by .  Let be scalars and .   Verify that .  Compute the value of .  "
 },
 {
-  "id": "activity-112",
+  "id": "activity-111",
   "level": "2",
-  "url": "AT5.html#activity-112",
+  "url": "AT5.html#activity-111",
   "type": "Activity",
   "number": "3.5.12",
   "title": "",
@@ -2539,18 +2539,18 @@ var ptx_lunr_docs = [
   "body": "  It turns out with operations defined by satisifes all eight properties from .  Thus, is a vector space.   "
 },
 {
-  "id": "activity-113",
+  "id": "activity-112",
   "level": "2",
-  "url": "AT5.html#activity-113",
+  "url": "AT5.html#activity-112",
   "type": "Activity",
   "number": "3.5.14",
   "title": "",
   "body": "  Let have operations defined by  .   Show that is the scalar multiplication identity element by simplifying to .  Show that does not have an additive identity element by showing that no matter what the values of are.  Is a vector space?  Yes  No  More work is required    "
 },
 {
-  "id": "activity-114",
+  "id": "activity-113",
   "level": "2",
-  "url": "AT5.html#activity-114",
+  "url": "AT5.html#activity-113",
   "type": "Activity",
   "number": "3.5.15",
   "title": "",
@@ -2611,18 +2611,18 @@ var ptx_lunr_docs = [
   "body": "   Answer questions about vector spaces of polynomials or matrices.    "
 },
 {
-  "id": "observation-17",
+  "id": "observation-18",
   "level": "2",
-  "url": "AT6.html#observation-17",
+  "url": "AT6.html#observation-18",
   "type": "Observation",
   "number": "3.6.1",
   "title": "",
   "body": " Nearly every term we've defined for Euclidean vector spaces was actually defined for all kinds of vector spaces:                                                                "
 },
 {
-  "id": "activity-115",
+  "id": "activity-114",
   "level": "2",
-  "url": "AT6.html#activity-115",
+  "url": "AT6.html#activity-114",
   "type": "Activity",
   "number": "3.6.2",
   "title": "",
@@ -2638,18 +2638,18 @@ var ptx_lunr_docs = [
   "body": "  Every vector space with finite dimension, that is, every vector space with a basis of the form has a linear bijection with Euclidean space that simply swaps its basis with the standard basis for : This transformation (in fact, any linear bijection between vector spaces) is called an isomorphism isomorphism , and is said to be isomorphic isomorphic to .   "
 },
 {
-  "id": "activity-116",
+  "id": "activity-115",
   "level": "2",
-  "url": "AT6.html#activity-116",
+  "url": "AT6.html#activity-115",
   "type": "Activity",
   "number": "3.6.4",
   "title": "",
   "body": "  The matrix space has the basis .    Which Euclidean space is isomorphic to?          Describe an isomorphism :    "
 },
 {
-  "id": "activity-117",
+  "id": "activity-116",
   "level": "2",
-  "url": "AT6.html#activity-117",
+  "url": "AT6.html#activity-116",
   "type": "Activity",
   "number": "3.6.5",
   "title": "",
@@ -2665,18 +2665,18 @@ var ptx_lunr_docs = [
   "body": " Since any finite-dimensional vector space is isomorphic to a Euclidean space , one approach to answering questions about such spaces is to answer the corresponding question about .  "
 },
 {
-  "id": "activity-118",
+  "id": "activity-117",
   "level": "2",
-  "url": "AT6.html#activity-118",
+  "url": "AT6.html#activity-117",
   "type": "Activity",
   "number": "3.6.7",
   "title": "",
   "body": "  Consider how to construct the polynomial as a linear combination of polynomials from the set .    Describe the vector space involved in this problem, and an isomorphic Euclidean space and relevant Eucldean vectors that can be used to solve this problem.    Show how to construct an appropriate Euclidean vector from an approriate set of Euclidean vectors.    Use this result to answer the original question.   "
 },
 {
-  "id": "observation-18",
+  "id": "observation-19",
   "level": "2",
-  "url": "AT6.html#observation-18",
+  "url": "AT6.html#observation-19",
   "type": "Observation",
   "number": "3.6.8",
   "title": "",
@@ -2737,18 +2737,18 @@ var ptx_lunr_docs = [
   "body": "   Multiply matrices.    "
 },
 {
-  "id": "observation-19",
+  "id": "observation-20",
   "level": "2",
-  "url": "MX1.html#observation-19",
+  "url": "MX1.html#observation-20",
   "type": "Observation",
   "number": "4.1.1",
   "title": "",
   "body": "  If and are linear maps, then the composition map computed as is a linear map from .      The composition of two linear maps.    "
 },
 {
-  "id": "activity-119",
+  "id": "activity-118",
   "level": "2",
-  "url": "MX1.html#activity-119",
+  "url": "MX1.html#activity-118",
   "type": "Activity",
   "number": "4.1.2",
   "title": "",
@@ -2764,36 +2764,36 @@ var ptx_lunr_docs = [
   "body": "  We define the product  of a matrix and a matrix to be the standard matrix of the composition map of the two corresponding linear functions.  For the previous activity, was a map , and was a map , so gave a map with a standard matrix:     "
 },
 {
-  "id": "activity-120",
+  "id": "activity-119",
   "level": "2",
-  "url": "MX1.html#activity-120",
+  "url": "MX1.html#activity-119",
   "type": "Activity",
   "number": "4.1.4",
   "title": "",
   "body": "  Let be given by the matrix and be given by the matrix .   Write the dimensions (rows columns) for , , , and .  Find the standard matrix of .  Find the standard matrix of .  "
 },
 {
-  "id": "activity-121",
+  "id": "activity-120",
   "level": "2",
-  "url": "MX1.html#activity-121",
+  "url": "MX1.html#activity-120",
   "type": "Activity",
   "number": "4.1.5",
   "title": "",
   "body": "  Consider the following three matrices.    Find the domain and codomain of each of the three linear maps corresponding to , , and .  Only one of the matrix products can actually be computed. Compute it.  "
 },
 {
-  "id": "activity-122",
+  "id": "activity-121",
   "level": "2",
-  "url": "MX1.html#activity-122",
+  "url": "MX1.html#activity-121",
   "type": "Activity",
   "number": "4.1.6",
   "title": "",
   "body": "  Let , and let .   Compute the product by hand.  Check your work using technology. Using Octave: B = [3 -4 0 ; 2 0 -1 ; 0 -3 3] A = [2 7 -1 ; 0 3 2 ; 1 1 -1] B*A  "
 },
 {
-  "id": "activity-123",
+  "id": "activity-122",
   "level": "2",
-  "url": "MX1.html#activity-123",
+  "url": "MX1.html#activity-122",
   "type": "Activity",
   "number": "4.1.7",
   "title": "",
@@ -2854,9 +2854,9 @@ var ptx_lunr_docs = [
   "body": "   Determine if a matrix is invertible, and if so, compute its inverse.    "
 },
 {
-  "id": "activity-124",
+  "id": "activity-123",
   "level": "2",
-  "url": "MX2.html#activity-124",
+  "url": "MX2.html#activity-123",
   "type": "Activity",
   "number": "4.2.1",
   "title": "",
@@ -2881,18 +2881,18 @@ var ptx_lunr_docs = [
   "body": "  For any square matrix , :    "
 },
 {
-  "id": "activity-125",
+  "id": "activity-124",
   "level": "2",
-  "url": "MX2.html#activity-125",
+  "url": "MX2.html#activity-124",
   "type": "Activity",
   "number": "4.2.4",
   "title": "",
   "body": "  Let be a linear map with standard matrix . Sort the following items into three groups of statements: a group that means is injective , a group that means is surjective , and a group that means is bijective .    has a solution for all    has a unique solution for all    has a unique solution.  The columns of span   The columns of are linearly independent  The columns of are a basis of   Every column of has a pivot  Every row of has a pivot   and     "
 },
 {
-  "id": "activity-126",
+  "id": "activity-125",
   "level": "2",
-  "url": "MX2.html#activity-126",
+  "url": "MX2.html#activity-125",
   "type": "Activity",
   "number": "4.2.5",
   "title": "",
@@ -2908,63 +2908,63 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear map with standard matrix .   If is a bijection and is any vector, then has a unique solution.  So we may define an inverse map inverse map  by setting to be this unique solution.  Let be the standard matrix for . We call the inverse matrix inverse matrix of , so we also say that is invertible invertible .    "
 },
 {
-  "id": "activity-127",
+  "id": "activity-126",
   "level": "2",
-  "url": "MX2.html#activity-127",
+  "url": "MX2.html#activity-126",
   "type": "Activity",
   "number": "4.2.7",
   "title": "",
   "body": "  Let be the linear transformation given by the standard matrix .   Write an augmented matrix representing the system of equations given by , that is, . Then solve to find .  Solve to find .  Solve to find .  Write , the standard matrix for .  "
 },
 {
-  "id": "observation-20",
+  "id": "observation-21",
   "level": "2",
-  "url": "MX2.html#observation-20",
+  "url": "MX2.html#observation-21",
   "type": "Observation",
   "number": "4.2.8",
   "title": "",
   "body": "  We could have solved these three systems simultaneously by row reducing the matrix at once.    "
 },
 {
-  "id": "activity-128",
+  "id": "activity-127",
   "level": "2",
-  "url": "MX2.html#activity-128",
+  "url": "MX2.html#activity-127",
   "type": "Activity",
   "number": "4.2.9",
   "title": "",
   "body": "  Find the inverse of the matrix by row-reducing .   "
 },
 {
-  "id": "activity-129",
+  "id": "activity-128",
   "level": "2",
-  "url": "MX2.html#activity-129",
+  "url": "MX2.html#activity-128",
   "type": "Activity",
   "number": "4.2.10",
   "title": "",
   "body": "  Is the matrix invertible? Give a reason for your answer.   "
 },
 {
-  "id": "observation-21",
+  "id": "observation-22",
   "level": "2",
-  "url": "MX2.html#observation-21",
+  "url": "MX2.html#observation-22",
   "type": "Observation",
   "number": "4.2.11",
   "title": "",
   "body": "  An matrix is invertible if and only if .   "
 },
 {
-  "id": "activity-130",
+  "id": "activity-129",
   "level": "2",
-  "url": "MX2.html#activity-130",
+  "url": "MX2.html#activity-129",
   "type": "Activity",
   "number": "4.2.12",
   "title": "",
   "body": "  Let be the bijective linear map defined by , with the inverse map .   Compute .  If is the standard matrix for and is the standard matrix for , find the matrix   "
 },
 {
-  "id": "observation-22",
+  "id": "observation-23",
   "level": "2",
-  "url": "MX2.html#observation-22",
+  "url": "MX2.html#observation-23",
   "type": "Observation",
   "number": "4.2.13",
   "title": "",
@@ -3025,9 +3025,9 @@ var ptx_lunr_docs = [
   "body": "   Invert an appropriate matrix to solve a system of linear equations.    "
 },
 {
-  "id": "activity-131",
+  "id": "activity-130",
   "level": "2",
-  "url": "MX3.html#activity-131",
+  "url": "MX3.html#activity-130",
   "type": "Activity",
   "number": "4.3.1",
   "title": "",
@@ -3043,9 +3043,9 @@ var ptx_lunr_docs = [
   "body": " The linear system described by the augmented matrix has exactly the same solution set as the matrix equation .  "
 },
 {
-  "id": "activity-132",
+  "id": "activity-131",
   "level": "2",
-  "url": "MX3.html#activity-132",
+  "url": "MX3.html#activity-131",
   "type": "Activity",
   "number": "4.3.3",
   "title": "",
@@ -3061,9 +3061,9 @@ var ptx_lunr_docs = [
   "body": "  When has exactly one solution, this solution is given by .   "
 },
 {
-  "id": "activity-133",
+  "id": "activity-132",
   "level": "2",
-  "url": "MX3.html#activity-133",
+  "url": "MX3.html#activity-132",
   "type": "Activity",
   "number": "4.3.5",
   "title": "",
@@ -3133,9 +3133,9 @@ var ptx_lunr_docs = [
   "body": "   Express row operations through matrix multiplication.    "
 },
 {
-  "id": "activity-134",
+  "id": "activity-133",
   "level": "2",
-  "url": "MX4.html#activity-134",
+  "url": "MX4.html#activity-133",
   "type": "Activity",
   "number": "4.4.1",
   "title": "",
@@ -3151,9 +3151,9 @@ var ptx_lunr_docs = [
   "body": "  If is the result of applying a row operation to , then is the result of applying the same row operation to .    Scaling a row:     Swapping rows:     Adding a row multiple to another row:     Such matrices can be chained together to emulate multiple row operations. In particular, for some sequence of matrices .   "
 },
 {
-  "id": "activity-135",
+  "id": "activity-134",
   "level": "2",
-  "url": "MX4.html#activity-135",
+  "url": "MX4.html#activity-134",
   "type": "Activity",
   "number": "4.4.3",
   "title": "",
@@ -3187,36 +3187,36 @@ var ptx_lunr_docs = [
   "body": "   Describe how a row operation affects the determinant of a matrix.    "
 },
 {
-  "id": "activity-136",
+  "id": "activity-135",
   "level": "2",
-  "url": "GT1.html#activity-136",
+  "url": "GT1.html#activity-135",
   "type": "Activity",
   "number": "5.1.1",
   "title": "",
   "body": "  The image in illustrates how the linear transformation given by the standard matrix transforms the unit square.      Transformation of the unit square by the matrix .    What are the lengths of and ?  What is the area of the transformed unit square?  "
 },
 {
-  "id": "activity-137",
+  "id": "activity-136",
   "level": "2",
-  "url": "GT1.html#activity-137",
+  "url": "GT1.html#activity-136",
   "type": "Activity",
   "number": "5.1.2",
   "title": "",
   "body": "  The image below illustrates how the linear transformation given by the standard matrix transforms the unit square.      Transformation of the unit square by the matrix    What are the lengths of and ?  What is the area of the transformed unit square?  "
 },
 {
-  "id": "observation-23",
+  "id": "observation-24",
   "level": "2",
-  "url": "GT1.html#observation-23",
+  "url": "GT1.html#observation-24",
   "type": "Observation",
   "number": "5.1.3",
   "title": "",
   "body": "  It is possible to find two nonparallel vectors that are scaled but not rotated by the linear map given by .        Certain vectors are stretched out without being rotated.   The process for finding such vectors will be covered later in this chapter.   "
 },
 {
-  "id": "observation-24",
+  "id": "observation-25",
   "level": "2",
-  "url": "GT1.html#observation-24",
+  "url": "GT1.html#observation-25",
   "type": "Observation",
   "number": "5.1.4",
   "title": "",
@@ -3232,27 +3232,27 @@ var ptx_lunr_docs = [
   "body": "  We will define the determinant of a square matrix , or for short, to be the factor by which scales areas. In order to figure out how to compute it, we first figure out the properties it must satisfy.      The linear transformation scaling areas by a constant factor, which we call the determinant    "
 },
 {
-  "id": "activity-138",
+  "id": "activity-137",
   "level": "2",
-  "url": "GT1.html#activity-138",
+  "url": "GT1.html#activity-137",
   "type": "Activity",
   "number": "5.1.6",
   "title": "",
   "body": "  The transformation of the unit square by the standard matrix is illustrated below. If is the area of resulting parallelogram, what is the value of ?      The transformation of the unit square by the identity matrix.   The value for is:   0  1  2  4    "
 },
 {
-  "id": "activity-139",
+  "id": "activity-138",
   "level": "2",
-  "url": "GT1.html#activity-139",
+  "url": "GT1.html#activity-138",
   "type": "Activity",
   "number": "5.1.7",
   "title": "",
   "body": "  The transformation of the unit square by the standard matrix is illustrated below: both . If is the area of the generated parallelogram, what is the value of ?      Transformation of the unit square by a matrix with identical columns.   The value of is:   0  1  2  4    "
 },
 {
-  "id": "activity-140",
+  "id": "activity-139",
   "level": "2",
-  "url": "GT1.html#activity-140",
+  "url": "GT1.html#activity-139",
   "type": "Activity",
   "number": "5.1.8",
   "title": "",
@@ -3286,9 +3286,9 @@ var ptx_lunr_docs = [
   "body": " Similarly, represents the shaded area shown below.      Parallelogram generated by and   "
 },
 {
-  "id": "activity-141",
+  "id": "activity-140",
   "level": "2",
-  "url": "GT1.html#activity-141",
+  "url": "GT1.html#activity-140",
   "type": "Activity",
   "number": "5.1.12",
   "title": "",
@@ -3304,9 +3304,9 @@ var ptx_lunr_docs = [
   "body": "  The determinant is the unique function satisfying these properties:   whenever two columns of the matrix are identical.   , assuming no other columns change.   , assuming no other columns change.    Note that these last two properties together can be phrased as The determinant is linear in each column.    "
 },
 {
-  "id": "observation-25",
+  "id": "observation-26",
   "level": "2",
-  "url": "GT1.html#observation-25",
+  "url": "GT1.html#observation-26",
   "type": "Observation",
   "number": "5.1.14",
   "title": "",
@@ -3322,9 +3322,9 @@ var ptx_lunr_docs = [
   "body": "  Swapping columns may be thought of as a reflection, which is represented by a negative determinant. For example, the following matrices transform the unit square into the same parallelogram, but the second matrix reflects its orientation.       Reflection of a parallelogram as a result of swapping columns.    "
 },
 {
-  "id": "observation-26",
+  "id": "observation-27",
   "level": "2",
-  "url": "GT1.html#observation-26",
+  "url": "GT1.html#observation-27",
   "type": "Observation",
   "number": "5.1.16",
   "title": "",
@@ -3340,9 +3340,9 @@ var ptx_lunr_docs = [
   "body": "  To summarize, we've shown that the column versions of the three row-reducing operations a matrix may be used to simplify a determinant in the following way:   Multiplying a column by a scalar multiplies the determinant by that scalar:   Swapping two columns changes the sign of the determinant:   Adding a multiple of a column to another column does not change the determinant:     "
 },
 {
-  "id": "activity-142",
+  "id": "activity-141",
   "level": "2",
-  "url": "GT1.html#activity-142",
+  "url": "GT1.html#activity-141",
   "type": "Activity",
   "number": "5.1.18",
   "title": "",
@@ -3376,36 +3376,36 @@ var ptx_lunr_docs = [
   "body": "  The determinants of row operation matrices may be computed by manipulating columns to reduce each matrix to the identity:   Scaling a row:   Swapping rows:   Adding a row multiple to another row:     "
 },
 {
-  "id": "activity-143",
+  "id": "activity-142",
   "level": "2",
-  "url": "GT1.html#activity-143",
+  "url": "GT1.html#activity-142",
   "type": "Activity",
   "number": "5.1.22",
   "title": "",
   "body": "  Consider the row operation applied as follows to show :    Find a matrix such that , by applying the same row operation to .  Find by comparing with the previous slide.  If is a matrix with , find   "
 },
 {
-  "id": "activity-144",
+  "id": "activity-143",
   "level": "2",
-  "url": "GT1.html#activity-144",
+  "url": "GT1.html#activity-143",
   "type": "Activity",
   "number": "5.1.23",
   "title": "",
   "body": "  Consider the row operation applied as follows to show :    Find a matrix such that , by applying the same row operation to .  If is a matrix with , find .  "
 },
 {
-  "id": "activity-145",
+  "id": "activity-144",
   "level": "2",
-  "url": "GT1.html#activity-145",
+  "url": "GT1.html#activity-144",
   "type": "Activity",
   "number": "5.1.24",
   "title": "",
   "body": "  Consider the row operation applied as follows to show :    Find a matrix such that .  If is a matrix with , find .  "
 },
 {
-  "id": "activity-146",
+  "id": "activity-145",
   "level": "2",
-  "url": "GT1.html#activity-146",
+  "url": "GT1.html#activity-145",
   "type": "Activity",
   "number": "5.1.25",
   "title": "",
@@ -3439,9 +3439,9 @@ var ptx_lunr_docs = [
   "body": "  Thus we can also use both row operations to simplify determinants:   Multiplying rows by scalars:    Swapping two rows:    Adding multiples of rows\/columns to other rows:      "
 },
 {
-  "id": "activity-147",
+  "id": "activity-146",
   "level": "2",
-  "url": "GT1.html#activity-147",
+  "url": "GT1.html#activity-146",
   "type": "Activity",
   "number": "5.1.29",
   "title": "",
@@ -3502,9 +3502,9 @@ var ptx_lunr_docs = [
   "body": "  We've seen that row reducing all the way into RREF gives us a method of computing determinants.  However, we learned in that this can be tedious for large matrices. Thus, we will try to figure out how to turn the determinant of a larger matrix into the determinant of a smaller matrix.   "
 },
 {
-  "id": "activity-148",
+  "id": "activity-147",
   "level": "2",
-  "url": "GT2.html#activity-148",
+  "url": "GT2.html#activity-147",
   "type": "Activity",
   "number": "5.2.2",
   "title": "",
@@ -3529,90 +3529,90 @@ var ptx_lunr_docs = [
   "body": " If the is not on the main diagonal, you'll need to use row or column swaps in order to cancel.   "
 },
 {
-  "id": "activity-149",
+  "id": "activity-148",
   "level": "2",
-  "url": "GT2.html#activity-149",
+  "url": "GT2.html#activity-148",
   "type": "Activity",
   "number": "5.2.5",
   "title": "",
   "body": "  Remove an appropriate row and column of to simplify the determinant to a determinant.  "
 },
 {
-  "id": "activity-150",
+  "id": "activity-149",
   "level": "2",
-  "url": "GT2.html#activity-150",
+  "url": "GT2.html#activity-149",
   "type": "Activity",
   "number": "5.2.6",
   "title": "",
   "body": "  Simplify to a multiple of a determinant by first doing the following:   Factor out a from a column.  Swap rows or columns to put a on the main diagonal.  "
 },
 {
-  "id": "activity-151",
+  "id": "activity-150",
   "level": "2",
-  "url": "GT2.html#activity-151",
+  "url": "GT2.html#activity-150",
   "type": "Activity",
   "number": "5.2.7",
   "title": "",
   "body": "  Simplify to a multiple of a determinant by first doing the following:   Use row\/column operations to create two zeroes in the same row or column.  Factor\/swap as needed to get a row\/column of all zeroes except a on the main diagonal.  "
 },
 {
-  "id": "observation-28",
+  "id": "observation-29",
   "level": "2",
-  "url": "GT2.html#observation-28",
+  "url": "GT2.html#observation-29",
   "type": "Observation",
   "number": "5.2.8",
   "title": "",
   "body": "  Using row\/column operations, you can introduce zeros and reduce dimension to whittle down the determinant of a large matrix to a determinant of a smaller matrix.    "
 },
 {
-  "id": "activity-152",
+  "id": "activity-151",
   "level": "2",
-  "url": "GT2.html#activity-152",
+  "url": "GT2.html#activity-151",
   "type": "Activity",
   "number": "5.2.9",
   "title": "",
   "body": "  Rewrite as a multiple of a determinant of a matrix.  "
 },
 {
-  "id": "activity-153",
+  "id": "activity-152",
   "level": "2",
-  "url": "GT2.html#activity-153",
+  "url": "GT2.html#activity-152",
   "type": "Activity",
   "number": "5.2.10",
   "title": "",
   "body": "  Compute by using any combination of row\/column operations.   "
 },
 {
-  "id": "observation-29",
+  "id": "observation-30",
   "level": "2",
-  "url": "GT2.html#observation-29",
+  "url": "GT2.html#observation-30",
   "type": "Observation",
   "number": "5.2.11",
   "title": "",
   "body": "  Another option is to take advantage of the fact that the determinant is linear in each row or column. This approach is called Laplace expansion or cofactor expansion .  For example, since ,    "
 },
 {
-  "id": "observation-30",
+  "id": "observation-31",
   "level": "2",
-  "url": "GT2.html#observation-30",
+  "url": "GT2.html#observation-31",
   "type": "Observation",
   "number": "5.2.12",
   "title": "",
   "body": "  Recall the formula for a determinant found in : .  There are formulas and algorithms for the determinants of larger matrices, but they can be pretty tedious to use. For example, writing out a formula for a determinant would require 24 different terms!    "
 },
 {
-  "id": "activity-154",
+  "id": "activity-153",
   "level": "2",
-  "url": "GT2.html#activity-154",
+  "url": "GT2.html#activity-153",
   "type": "Activity",
   "number": "5.2.13",
   "title": "",
   "body": "  Based on the previous activities, which technique is easier for computing determinants?   Memorizing formulas.  Using row\/column operations.  Laplace expansion.  Some other technique.    "
 },
 {
-  "id": "activity-155",
+  "id": "activity-154",
   "level": "2",
-  "url": "GT2.html#activity-155",
+  "url": "GT2.html#activity-154",
   "type": "Activity",
   "number": "5.2.14",
   "title": "",
@@ -3700,9 +3700,9 @@ var ptx_lunr_docs = [
   "body": "   Find the eigenvalues of a matrix.    "
 },
 {
-  "id": "activity-156",
+  "id": "activity-155",
   "level": "2",
-  "url": "GT3.html#activity-156",
+  "url": "GT3.html#activity-155",
   "type": "Activity",
   "number": "5.3.1",
   "title": "",
@@ -3718,9 +3718,9 @@ var ptx_lunr_docs = [
   "body": "  For every invertible matrix , so .  Furthermore, a square matrix is invertible if and only if .   "
 },
 {
-  "id": "observation-31",
+  "id": "observation-32",
   "level": "2",
-  "url": "GT3.html#observation-31",
+  "url": "GT3.html#observation-32",
   "type": "Observation",
   "number": "5.3.3",
   "title": "",
@@ -3736,9 +3736,9 @@ var ptx_lunr_docs = [
   "body": "  Let . An eigenvector eigenvector for is a vector such that is parallel to .      The map stretches out the eigenvector by a factor of (the corresponding eigenvalue).   In other words, for some scalar . If , then we say is a nontrivial eigenvector eigenvector nontrivial and we call this an eigenvalue eigenvalue of .   "
 },
 {
-  "id": "activity-157",
+  "id": "activity-156",
   "level": "2",
-  "url": "GT3.html#activity-157",
+  "url": "GT3.html#activity-156",
   "type": "Activity",
   "number": "5.3.5",
   "title": "",
@@ -3763,20 +3763,29 @@ var ptx_lunr_docs = [
   "body": "  The expression is called characteristic polynomial of .  For example, when , we have .  Thus the characteristic polynomial of is and its eigenvalues are the solutions to .   "
 },
 {
-  "id": "activity-158",
+  "id": "activity-157",
   "level": "2",
-  "url": "GT3.html#activity-158",
+  "url": "GT3.html#activity-157",
   "type": "Activity",
   "number": "5.3.8",
   "title": "",
   "body": "  Let .   Compute to determine the characteristic polynomial of .  Set this characteristic polynomial equal to zero and factor to determine the eigenvalues of .  "
 },
 {
+  "id": "activity-158",
+  "level": "2",
+  "url": "GT3.html#activity-158",
+  "type": "Activity",
+  "number": "5.3.9",
+  "title": "",
+  "body": "  Find all the eigenvalues for the matrix .   "
+},
+{
   "id": "activity-159",
   "level": "2",
   "url": "GT3.html#activity-159",
   "type": "Activity",
-  "number": "5.3.9",
+  "number": "5.3.10",
   "title": "",
   "body": "  Find all the eigenvalues for the matrix .   "
 },
@@ -3784,15 +3793,6 @@ var ptx_lunr_docs = [
   "id": "activity-160",
   "level": "2",
   "url": "GT3.html#activity-160",
-  "type": "Activity",
-  "number": "5.3.10",
-  "title": "",
-  "body": "  Find all the eigenvalues for the matrix .   "
-},
-{
-  "id": "activity-161",
-  "level": "2",
-  "url": "GT3.html#activity-161",
   "type": "Activity",
   "number": "5.3.11",
   "title": "",
@@ -3835,9 +3835,9 @@ var ptx_lunr_docs = [
   "body": "   Find a basis for the eigenspace of a matrix associated with a given eigenvalue.    "
 },
 {
-  "id": "activity-162",
+  "id": "activity-161",
   "level": "2",
-  "url": "GT4.html#activity-162",
+  "url": "GT4.html#activity-161",
   "type": "Activity",
   "number": "5.4.1",
   "title": "",
@@ -3853,11 +3853,20 @@ var ptx_lunr_docs = [
   "body": "  Since the kernel of a linear map is a subspace of , and the kernel obtained from contains all the eigenvectors associated with , we call this kernel the eigenspace eigenspace of associated with .   "
 },
 {
+  "id": "activity-162",
+  "level": "2",
+  "url": "GT4.html#activity-162",
+  "type": "Activity",
+  "number": "5.4.3",
+  "title": "",
+  "body": "  Find a basis for the eigenspace for the matrix associated with the eigenvalue .   "
+},
+{
   "id": "activity-163",
   "level": "2",
   "url": "GT4.html#activity-163",
   "type": "Activity",
-  "number": "5.4.3",
+  "number": "5.4.4",
   "title": "",
   "body": "  Find a basis for the eigenspace for the matrix associated with the eigenvalue .   "
 },
@@ -3865,15 +3874,6 @@ var ptx_lunr_docs = [
   "id": "activity-164",
   "level": "2",
   "url": "GT4.html#activity-164",
-  "type": "Activity",
-  "number": "5.4.4",
-  "title": "",
-  "body": "  Find a basis for the eigenspace for the matrix associated with the eigenvalue .   "
-},
-{
-  "id": "activity-165",
-  "level": "2",
-  "url": "GT4.html#activity-165",
   "type": "Activity",
   "number": "5.4.5",
   "title": "",
@@ -3916,18 +3916,18 @@ var ptx_lunr_docs = [
   "body": "  In engineering, a truss is a structure designed from several beams of material called struts , assembled to behave as a single object.    A simple truss       A simple truss    "
 },
 {
-  "id": "activity-166",
+  "id": "activity-165",
   "level": "2",
-  "url": "truss.html#activity-166",
+  "url": "truss.html#activity-165",
   "type": "Activity",
   "number": "A.1.2",
   "title": "",
   "body": "  Consider the representation of a simple truss pictured below. All of the seven struts are of equal length, affixed to two anchor points applying a normal force to nodes and , and with a load applied to the node given by .      A simple truss   Which of the following must hold for the truss to be stable?   All of the struts will experience compression.  All of the struts will experience tension.  Some of the struts will be compressed, but others will be tensioned.    "
 },
 {
-  "id": "observation-32",
+  "id": "observation-33",
   "level": "2",
-  "url": "truss.html#observation-32",
+  "url": "truss.html#observation-33",
   "type": "Observation",
   "number": "A.1.3",
   "title": "",
@@ -3943,9 +3943,9 @@ var ptx_lunr_docs = [
   "body": "  For example, at the bottom left node there are 3 forces acting.      Truss with forces   Let be the force on given by the compression\/tension of the strut , let be defined similarly, and let be the normal force of the anchor point on .  For the truss to be stable, we must have:    "
 },
 {
-  "id": "activity-167",
+  "id": "activity-166",
   "level": "2",
-  "url": "truss.html#activity-167",
+  "url": "truss.html#activity-166",
   "type": "Activity",
   "number": "A.1.5",
   "title": "",
@@ -3961,36 +3961,36 @@ var ptx_lunr_docs = [
   "body": "  The five vector equations may be written as follows.        "
 },
 {
-  "id": "observation-33",
+  "id": "observation-34",
   "level": "2",
-  "url": "truss.html#observation-33",
+  "url": "truss.html#observation-34",
   "type": "Observation",
   "number": "A.1.7",
   "title": "",
   "body": "  Each vector has a vertical and horizontal component, so it may be treated as a vector in . Note that must have the same magnitude (but opposite direction) as .     "
 },
 {
-  "id": "activity-168",
+  "id": "activity-167",
   "level": "2",
-  "url": "truss.html#activity-168",
+  "url": "truss.html#activity-167",
   "type": "Activity",
   "number": "A.1.8",
   "title": "",
   "body": "  To write a linear system that models the truss under consideration with constant load newtons, how many scalar variables will be required?     : from the nodes, from the anchors     : from the struts, from the anchors     : from the struts, from the anchors     : from the struts, from the anchors, from the load     : from the nodes, from the struts, from the load        A simple truss    "
 },
 {
-  "id": "observation-34",
+  "id": "observation-35",
   "level": "2",
-  "url": "truss.html#observation-34",
+  "url": "truss.html#observation-35",
   "type": "Observation",
   "number": "A.1.9",
   "title": "",
   "body": "  Since the angles for each strut are known, one variable may be used to represent each.      Variables for the truss   For example:     "
 },
 {
-  "id": "observation-35",
+  "id": "observation-36",
   "level": "2",
-  "url": "truss.html#observation-35",
+  "url": "truss.html#observation-36",
   "type": "Observation",
   "number": "A.1.10",
   "title": "",
@@ -4006,36 +4006,36 @@ var ptx_lunr_docs = [
   "body": "  Each of the five vector equations found previously represent two linear equations: one for the horizontal component and one for the vertical.      Variables for the truss    Using the approximation , we have   "
 },
 {
-  "id": "activity-169",
+  "id": "activity-168",
   "level": "2",
-  "url": "truss.html#activity-169",
+  "url": "truss.html#activity-168",
   "type": "Activity",
   "number": "A.1.12",
   "title": "",
   "body": "  Expand the vector equation given below using sine and cosine of appropriate angles, then compute each component (approximating ).      Variables for the truss       "
 },
 {
-  "id": "observation-36",
+  "id": "observation-37",
   "level": "2",
-  "url": "truss.html#observation-36",
+  "url": "truss.html#observation-37",
   "type": "Observation",
   "number": "A.1.13",
   "title": "",
   "body": "  The full augmented matrix given by the ten equations in this linear system is given below, where the elevent columns correspond to , and the ten rows correspond to the horizontal and vertical components of the forces acting at .    "
 },
 {
-  "id": "observation-37",
+  "id": "observation-38",
   "level": "2",
-  "url": "truss.html#observation-37",
+  "url": "truss.html#observation-38",
   "type": "Observation",
   "number": "A.1.14",
   "title": "",
   "body": "  This matrix row-reduces to the following.    "
 },
 {
-  "id": "observation-38",
+  "id": "observation-39",
   "level": "2",
-  "url": "truss.html#observation-38",
+  "url": "truss.html#observation-39",
   "type": "Observation",
   "number": "A.1.15",
   "title": "",
@@ -4051,18 +4051,18 @@ var ptx_lunr_docs = [
   "body": " Computer Science: PageRank   Activities   The $978,000,000,000 Problem     In the picture below, each circle represents a webpage, and each arrow represents a link from one page to another.      A seven-webpage network   Based on how these pages link to each other, write a list of the 7 webpages in order from most important to least important.     The $978,000,000,000 Idea   Links are endorsements. That is:    A webpage is important if it is linked to (endorsed) by important pages.    A webpage distributes its importance equally among all the pages it links to (endorses).       Consider this small network with only three pages. Let be the importance of the three pages respectively.      A three-webpage network     splits its endorsement in half between and   sends all of its endorsement to   sends all of its endorsement to .   This corresponds to the page rank system :          A three-webpage network           By writing this linear system in terms of matrix multiplication, we obtain the page rank matrix  and page rank vector . Thus, computing the importance of pages on a network is equivalent to solving the matrix equation .      Thus, our $978,000,000,000 problem is what kind of problem?    An antiderivative problem  A bijection problem  A cofactoring problem  A determinant problem  An eigenvector problem      Find a page rank vector satisfying for the following network's page rank matrix .  That is, find the eigenspace associated with for the matrix , and choose a vector from that eigenspace.       A three-webpage network           Row-reducing yields the basic eigenvector . Therefore, we may conclude that pages and are equally important, and both pages are twice as important as page .      Compute the page rank matrix for the following network.      A seven-webpage network   For example, since website distributes its endorsement equally between and , the first column is .      Find a page rank vector for the given page rank matrix.          A seven-webpage network    Which webpage is most important?      Since a page rank vector for the network is given by , it's reasonable to consider page as the most important page.   Based upon this page rank vector, here is a complete ranking of all seven pages from most important to least important:       A seven-webpage network       Given the following diagram, use a page rank vector to rank the pages through in order from most important to least important.      Another seven-webpage network       Slideshow  Slideshow of activities available at .   "
 },
 {
-  "id": "activity-170",
+  "id": "activity-169",
   "level": "2",
-  "url": "pagerank.html#activity-170",
+  "url": "pagerank.html#activity-169",
   "type": "Activity",
   "number": "A.2.1",
   "title": "The $978,000,000,000 Problem.",
   "body": " The $978,000,000,000 Problem     In the picture below, each circle represents a webpage, and each arrow represents a link from one page to another.      A seven-webpage network   Based on how these pages link to each other, write a list of the 7 webpages in order from most important to least important.   "
 },
 {
-  "id": "observation-39",
+  "id": "observation-40",
   "level": "2",
-  "url": "pagerank.html#observation-39",
+  "url": "pagerank.html#observation-40",
   "type": "Observation",
   "number": "A.2.2",
   "title": "The $978,000,000,000 Idea.",
@@ -4078,72 +4078,72 @@ var ptx_lunr_docs = [
   "body": "  Consider this small network with only three pages. Let be the importance of the three pages respectively.      A three-webpage network     splits its endorsement in half between and   sends all of its endorsement to   sends all of its endorsement to .   This corresponds to the page rank system :   "
 },
 {
-  "id": "observation-40",
+  "id": "observation-41",
   "level": "2",
-  "url": "pagerank.html#observation-40",
+  "url": "pagerank.html#observation-41",
   "type": "Observation",
   "number": "A.2.4",
   "title": "",
   "body": "      A three-webpage network           By writing this linear system in terms of matrix multiplication, we obtain the page rank matrix  and page rank vector . Thus, computing the importance of pages on a network is equivalent to solving the matrix equation .   "
 },
 {
-  "id": "activity-171",
+  "id": "activity-170",
   "level": "2",
-  "url": "pagerank.html#activity-171",
+  "url": "pagerank.html#activity-170",
   "type": "Activity",
   "number": "A.2.5",
   "title": "",
   "body": "  Thus, our $978,000,000,000 problem is what kind of problem?    An antiderivative problem  A bijection problem  A cofactoring problem  A determinant problem  An eigenvector problem   "
 },
 {
-  "id": "activity-172",
+  "id": "activity-171",
   "level": "2",
-  "url": "pagerank.html#activity-172",
+  "url": "pagerank.html#activity-171",
   "type": "Activity",
   "number": "A.2.6",
   "title": "",
   "body": "  Find a page rank vector satisfying for the following network's page rank matrix .  That is, find the eigenspace associated with for the matrix , and choose a vector from that eigenspace.       A three-webpage network        "
 },
 {
-  "id": "observation-41",
+  "id": "observation-42",
   "level": "2",
-  "url": "pagerank.html#observation-41",
+  "url": "pagerank.html#observation-42",
   "type": "Observation",
   "number": "A.2.7",
   "title": "",
   "body": "  Row-reducing yields the basic eigenvector . Therefore, we may conclude that pages and are equally important, and both pages are twice as important as page .   "
 },
 {
-  "id": "activity-173",
+  "id": "activity-172",
   "level": "2",
-  "url": "pagerank.html#activity-173",
+  "url": "pagerank.html#activity-172",
   "type": "Activity",
   "number": "A.2.8",
   "title": "",
   "body": "  Compute the page rank matrix for the following network.      A seven-webpage network   For example, since website distributes its endorsement equally between and , the first column is .   "
 },
 {
-  "id": "activity-174",
+  "id": "activity-173",
   "level": "2",
-  "url": "pagerank.html#activity-174",
+  "url": "pagerank.html#activity-173",
   "type": "Activity",
   "number": "A.2.9",
   "title": "",
   "body": "  Find a page rank vector for the given page rank matrix.          A seven-webpage network    Which webpage is most important?   "
 },
 {
-  "id": "observation-42",
+  "id": "observation-43",
   "level": "2",
-  "url": "pagerank.html#observation-42",
+  "url": "pagerank.html#observation-43",
   "type": "Observation",
   "number": "A.2.10",
   "title": "",
   "body": "  Since a page rank vector for the network is given by , it's reasonable to consider page as the most important page.   Based upon this page rank vector, here is a complete ranking of all seven pages from most important to least important:       A seven-webpage network    "
 },
 {
-  "id": "activity-175",
+  "id": "activity-174",
   "level": "2",
-  "url": "pagerank.html#activity-175",
+  "url": "pagerank.html#activity-174",
   "type": "Activity",
   "number": "A.2.11",
   "title": "",
@@ -4168,36 +4168,36 @@ var ptx_lunr_docs = [
   "body": "  In geology, a phase is any physically separable material in the system, such as various minerals or liquids.  A component is a chemical compound necessary to make up the phases; these are usually oxides such as Calcium Oxide ( ) or Silicon Dioxide ( ).  In a typical application, a geologist knows how to build each phase from the components, and is interested in determining reactions among the different phases.   "
 },
 {
-  "id": "observation-43",
+  "id": "observation-44",
   "level": "2",
-  "url": "geology.html#observation-43",
+  "url": "geology.html#observation-44",
   "type": "Observation",
   "number": "A.3.2",
   "title": "",
   "body": "  Consider the 3 components and the 5 phases:   Geologists already know (or can easily deduce) that since, for example:    "
 },
 {
-  "id": "activity-176",
+  "id": "activity-175",
   "level": "2",
-  "url": "geology.html#activity-176",
+  "url": "geology.html#activity-175",
   "type": "Activity",
   "number": "A.3.3",
   "title": "",
   "body": "  To study this vector space, each of the three components may be considered as the three components of a Euclidean vector.   Determine if the set of phases is linearly dependent or linearly independent.   "
 },
 {
-  "id": "activity-177",
+  "id": "activity-176",
   "level": "2",
-  "url": "geology.html#activity-177",
+  "url": "geology.html#activity-176",
   "type": "Activity",
   "number": "A.3.4",
   "title": "",
   "body": "  Geologists are interested in knowing all the possible chemical reactions among the 5 phases:  That is, they want to find numbers such that    Set up a system of equations equivalent to this vector equation.  Find a basis for its solution space.  Interpret each basis vector as a vector equation and a chemical equation.  "
 },
 {
-  "id": "activity-178",
+  "id": "activity-177",
   "level": "2",
-  "url": "geology.html#activity-178",
+  "url": "geology.html#activity-177",
   "type": "Activity",
   "number": "A.3.5",
   "title": "",

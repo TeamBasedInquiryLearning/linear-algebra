@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-08-30T15:51:44Z       *-->
+<!--*       on 2023-08-31T14:56:59Z       *-->
 <!--*   A recent stable commit (2022-07-01):   *-->
 <!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
 <!--*                                          *-->
@@ -169,7 +169,7 @@ dfn {
 <td align="center"></td>
 </tr>
 </table>
-<h4><div class="date">August 30, 2023</div></h4></section></section><section><section><h1>Section 1.2: Row Reduction of Matrices (LE2)</h1></section><section><h3>Definition 1.2.1</h3>
+<h4><div class="date">August 31, 2023</div></h4></section></section><section><section><h1>Section 1.2: Row Reduction of Matrices (LE2)</h1></section><section><h3>Definition 1.2.1</h3>
 <div align="left"> <p>Two systems of linear equations (and their corresponding augmented matrices) are said to be <dfn class="terminology">equivalent</dfn> if they have the same solution set.</p> <p>For example, both of these systems share the same solution set <span class="process-math">\(\setList{ \left[\begin{array}{c} 1 \\ 1\end{array}\right] }\text{.}\)</span></p> <div style="display:table;margin-left:0%;margin-right:0%;">
 <div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math" id="md-1">
 \begin{alignat*}{3}
@@ -211,17 +211,131 @@ x_1 &amp;\,+\,&amp; 4x_2 &amp;\,=\,&amp; 5
 \end{equation*}
 </div>
 </div></section><section><h3>Activity 1.2.2 (~10 min)</h3>
-<div align="left"> <p>Following are seven procedures used to manipulate an augmented matrix. Label the procedures that would result in an equivalent augmented matrix as <em class="emphasis">valid</em>, and label the procedures that might change the solution set of the corresponding linear system as <em class="emphasis">invalid</em>.</p> <ol class="upper-alpha">
-<li>Swap two rows.</li>
-<li>Swap two columns.</li>
-<li>Add a constant to every term in a row.</li>
-<li>Multiply a row by a nonzero constant.</li>
-<li>Add a constant multiple of one row to another row.</li>
-<li>Replace a column with zeros.</li>
-<li>Replace a row with zeros.</li>
-</ol>
+<div align="left"> <p>Consider whether these matrix manipulations (A) <em class="emphasis">must keep</em> or (B) <em class="emphasis">could change</em> the solution set for the corresponding linear system.</p> <p><em class="emphasis">Part 1.</em></p> <p>Swapping two rows, for example:</p> <div style="display:table;margin-left:0%;margin-right:0%;">
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\sim
+\left[\begin{array}{cc|c} 4 &amp; 5 &amp; 6 \\ 1 &amp; 2 &amp; 3 \end{array}\right]
+\end{equation*}
+</div></p></div>
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math" id="md-3">
+\begin{align*}
+x  +2y \amp= 3 \amp 4x + 5y \amp= 6\\
+4x + 5y \amp= 6 \amp x  +2y \amp= 3 
+\end{align*}
+</div></p></div>
+</div>
+</div></section><section><h3>Activity 1.2.2 (~10 min)</h3>
+<div align="left"> <p>Consider whether these matrix manipulations (A) <em class="emphasis">must keep</em> or (B) <em class="emphasis">could change</em> the solution set for the corresponding linear system.</p> <p><em class="emphasis">Part 2.</em></p> <p>Swapping two columns, for example:</p> <div style="display:table;margin-left:0%;margin-right:0%;">
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\sim
+\left[\begin{array}{cc|c} 2 &amp; 1 &amp; 3 
+\\ 5 &amp; 4 &amp; 6 \end{array}\right]
+\end{equation*}
+</div></p></div>
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math" id="md-4">
+\begin{align*}
+x  +2y \amp= 3 \amp 2x + y \amp= 6\\
+4x + 5y \amp= 6 \amp 5x  +4y \amp= 3 
+\end{align*}
+</div></p></div>
+</div>
+</div></section><section><h3>Activity 1.2.2 (~10 min)</h3>
+<div align="left"> <p>Consider whether these matrix manipulations (A) <em class="emphasis">must keep</em> or (B) <em class="emphasis">could change</em> the solution set for the corresponding linear system.</p> <p><em class="emphasis">Part 3.</em></p> <p>Add a constant to every term of a row, for example:</p> <div style="display:table;margin-left:0%;margin-right:0%;">
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\sim
+\left[\begin{array}{cc|c} 1+6 &amp; 2+6 &amp; 3+6
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\end{equation*}
+</div></p></div>
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math" id="md-5">
+\begin{align*}
+x  +2y \amp= 3 \amp 7x + 8y \amp= 9\\
+4x + 5y \amp= 6 \amp 4x  +5y \amp= 3 
+\end{align*}
+</div></p></div>
+</div>
+</div></section><section><h3>Activity 1.2.2 (~10 min)</h3>
+<div align="left"> <p>Consider whether these matrix manipulations (A) <em class="emphasis">must keep</em> or (B) <em class="emphasis">could change</em> the solution set for the corresponding linear system.</p> <p><em class="emphasis">Part 4.</em></p> <p>Multiply a row by a nonzero constant, for example:</p> <div style="display:table;margin-left:0%;margin-right:0%;">
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\sim
+\left[\begin{array}{cc|c} 3 &amp; 6 &amp; 9 
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\end{equation*}
+</div></p></div>
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math" id="md-6">
+\begin{align*}
+x  +2y \amp= 3 \amp 3x + 6y \amp= 9\\
+4x + 5y \amp= 6 \amp 4x  +5y \amp= 3 
+\end{align*}
+</div></p></div>
+</div>
+</div></section><section><h3>Activity 1.2.2 (~10 min)</h3>
+<div align="left"> <p>Consider whether these matrix manipulations (A) <em class="emphasis">must keep</em> or (B) <em class="emphasis">could change</em> the solution set for the corresponding linear system.</p> <p><em class="emphasis">Part 5.</em></p> <p>Add a constant multiple of one row to another row, for example:</p> <div style="display:table;margin-left:0%;margin-right:0%;">
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\sim
+\left[\begin{array}{cc|c} 1 &amp; 2 &amp; 3
+\\ 4+3 &amp; 5+6 &amp; 6+9 \end{array}\right]
+\end{equation*}
+</div></p></div>
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math" id="md-7">
+\begin{align*}
+x  +2y \amp= 3 \amp \unknown x  +\unknown y \amp= \unknown \\
+4x + 5y \amp= 6 \amp \unknown x  +\unknown y \amp= \unknown 
+\end{align*}
+</div></p></div>
+</div>
+</div></section><section><h3>Activity 1.2.2 (~10 min)</h3>
+<div align="left"> <p>Consider whether these matrix manipulations (A) <em class="emphasis">must keep</em> or (B) <em class="emphasis">could change</em> the solution set for the corresponding linear system.</p> <p><em class="emphasis">Part 6.</em></p> <p>Replace a column with zeros, for example:</p> <div style="display:table;margin-left:0%;margin-right:0%;">
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\sim
+\left[\begin{array}{cc|c} 1 &amp; 0 &amp; 3
+\\ 4 &amp; 0 &amp; 6 \end{array}\right]
+\end{equation*}
+</div></p></div>
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math" id="md-8">
+\begin{align*}
+x  +2y \amp= 3 \amp \unknown x  +\unknown y \amp= \unknown \\
+4x + 5y \amp= 6 \amp \unknown x  +\unknown y \amp= \unknown 
+\end{align*}
+</div></p></div>
+</div>
+</div></section><section><h3>Activity 1.2.2 (~10 min)</h3>
+<div align="left"> <p>Consider whether these matrix manipulations (A) <em class="emphasis">must keep</em> or (B) <em class="emphasis">could change</em> the solution set for the corresponding linear system.</p> <p><em class="emphasis">Part 7.</em></p> <p>Replace a row with zeros, for example:</p> <div style="display:table;margin-left:0%;margin-right:0%;">
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\sim
+\left[\begin{array}{cc|c} 1 &amp; 2 &amp; 3
+\\ 0 &amp; 0 &amp; 0 \end{array}\right]
+\end{equation*}
+</div></p></div>
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math" id="md-9">
+\begin{align*}
+x  +2y \amp= 3 \amp \unknown x  +\unknown y \amp= \unknown \\
+4x + 5y \amp= 6 \amp \unknown x  +\unknown y \amp= \unknown 
+\end{align*}
+</div></p></div>
+</div>
 </div></section><section><h3>Definition 1.2.3</h3>
-<div align="left"> <p>The following three <dfn class="terminology">row operations</dfn> produce equivalent augmented matrices.</p> <ol class="decimal">
+<div align="left"> <p>The following three <dfn class="terminology">row operations</dfn> produce equivalent augmented matrices.<ol class="decimal">
 <li><p>Swap two rows, for example, <span class="process-math">\(R_1\leftrightarrow R_2\text{:}\)</span><div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{cc|c} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{array}\right]
@@ -243,24 +357,24 @@ x_1 &amp;\,+\,&amp; 4x_2 &amp;\,=\,&amp; 5
 \left[\begin{array}{cc|c} 1 &amp; 2 &amp; 3 \\ 4-4(1) &amp; 5-4(2) &amp; 6-4(3) \end{array}\right]
 \end{equation*}
 </div></p></li>
-</ol>
+</ol></p> <p>Observe that we will use the following notation: (Combination of old rows) <span class="process-math">\(\rightarrow\)</span> (New row).</p>
 </div></section><section><h3>Activity 1.2.4 (~10 min)</h3>
-<div align="left"> <p>Consider the following (equivalent) linear systems.</p> <div style="display:table;margin-left:0.166666666666667%;margin-right:0.166666666666667%;">
-<div style="display:table-cell;width:33.1103678929766%;vertical-align:top;"><p>A)<div class="displaymath process-math" id="md-3">
+<div align="left"> <p>Each of the following linear systems has the same solution set.</p> <div style="display:table;margin-left:0.166666666666667%;margin-right:0.166666666666667%;">
+<div style="display:table-cell;width:33.1103678929766%;vertical-align:top;"><p>A)<div class="displaymath process-math" id="md-10">
 \begin{alignat*}{4}
 x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3 \\
 -x &amp;\,-\,&amp; y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 1 \\
 2x &amp;\,+\,&amp; 5y  &amp;\,+\,&amp; 3z &amp;\,=\,&amp; 7   
 \end{alignat*}
 </div></p></div>
-<div style="display:table-cell;width:33.1103678929766%;vertical-align:top;"><p>B)<div class="displaymath process-math" id="md-4">
+<div style="display:table-cell;width:33.1103678929766%;vertical-align:top;"><p>B)<div class="displaymath process-math" id="md-11">
 \begin{alignat*}{4}
 2x &amp;\,+\,&amp; 5y  &amp;\,+\,&amp; 3z &amp;\,=\,&amp; 7 \\
 -x &amp;\,-\,&amp; y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 1 \\
 x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3  
 \end{alignat*}
 </div></p></div>
-<div style="display:table-cell;width:33.1103678929766%;vertical-align:top;"><p>C)<div class="displaymath process-math" id="md-5">
+<div style="display:table-cell;width:33.1103678929766%;vertical-align:top;"><p>C)<div class="displaymath process-math" id="md-12">
 \begin{alignat*}{4}
 x &amp; &amp;   &amp;\,-\,&amp; z &amp;\,=\,&amp; 1 \\
 &amp; &amp; y  &amp;\,+\,&amp; 2z &amp;\,=\,&amp; 4   \\
@@ -268,41 +382,68 @@ x &amp; &amp;   &amp;\,-\,&amp; z &amp;\,=\,&amp; 1 \\
 \end{alignat*}
 </div></p></div>
 </div> <div style="display:table;margin-left:0.166666666666667%;margin-right:0.166666666666667%;">
-<div style="display:table-cell;width:33.1103678929766%;vertical-align:top;"><p>D)<div class="displaymath process-math" id="md-6">
+<div style="display:table-cell;width:33.1103678929766%;vertical-align:top;"><p>D)<div class="displaymath process-math" id="md-13">
 \begin{alignat*}{4}
 x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3 \\
 &amp; &amp; y  &amp;\,+\,&amp; 2z &amp;\,=\,&amp; 4 \\
 2x &amp;\,+\,&amp; 5y  &amp;\,+\,&amp; 3z &amp;\,=\,&amp; 7   
 \end{alignat*}
 </div></p></div>
-<div style="display:table-cell;width:33.1103678929766%;vertical-align:top;"><p>E)<div class="displaymath process-math" id="md-7">
+<div style="display:table-cell;width:33.1103678929766%;vertical-align:top;"><p>E)<div class="displaymath process-math" id="md-14">
 \begin{alignat*}{4}
 x &amp; &amp;   &amp;\,-\,&amp; z &amp;\,=\,&amp; 1 \\
 &amp; &amp; y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 1 \\
 &amp; &amp;   &amp; &amp; z &amp;\,=\,&amp; 3   
 \end{alignat*}
 </div></p></div>
-<div style="display:table-cell;width:33.1103678929766%;vertical-align:top;"><p>F)<div class="displaymath process-math" id="md-8">
+<div style="display:table-cell;width:33.1103678929766%;vertical-align:top;"><p>F)<div class="displaymath process-math" id="md-15">
 \begin{alignat*}{4}
 x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3 \\
 &amp; &amp; y  &amp;\,+\,&amp; 2z &amp;\,=\,&amp; 4 \\
 &amp; &amp; y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 1   
 \end{alignat*}
 </div></p></div>
-</div> <p>Rank the six linear systems from most complicated to simplest.</p>
+</div> <p>Sort these six equivalent linear systems from most complicated to simplest (in your opinion).</p>
 </div></section><section><h3>Activity 1.2.5 (~5 min)</h3>
-<div align="left"> <p>We can rewrite the previous in terms of  equivalences of augmented matrices</p>
-<div class="displaymath process-math" id="md-9">
+<div align="left"> <p>Here we’ve written the sorted linear systems from Activity 1.2.4 as augmented matrices.</p>
+<div class="displaymath process-math" id="md-16">
 \begin{alignat*}{3}
 \left[\begin{array}{ccc|c} 2 &amp; 5 &amp; 3 &amp; 7 \\ -1 &amp; -1 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 1 &amp; 3 \end{array}\right] &amp; \sim &amp;
 \left[\begin{array}{ccc|c} \markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ -1 &amp; -1 &amp; 1 &amp; 1 \\ 2 &amp; 5 &amp;  3 &amp; 7  \end{array}\right] &amp; \sim &amp;
-\left[\begin{array}{ccc|c} \markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; 1 &amp; 2 &amp; 4 \\ 2 &amp; 5 &amp; 3 &amp; 7  \end{array}\right] \sim \\
-\left[\begin{array}{ccc|c} \markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; \markedPivot{1} &amp; 2 &amp; 4 \\ 0 &amp; 1 &amp; 1 &amp; 1  \end{array}\right] &amp; \sim &amp;
+\left[\begin{array}{ccc|c} \markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; 1 &amp; 2 &amp; 4 \\ 2 &amp; 5 &amp; 3 &amp; 7  \end{array}\right]\sim \\
+\sim \left[\begin{array}{ccc|c} \markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; \markedPivot{1} &amp; 2 &amp; 4 \\ 0 &amp; 1 &amp; 1 &amp; 1  \end{array}\right] &amp; \sim &amp;
 \left[\begin{array}{ccc|c} \markedPivot{1} &amp; 0 &amp; -1 &amp; 1 \\ 0 &amp; \markedPivot{1} &amp; 2 &amp; 4 \\ 0 &amp; 1 &amp; 1 &amp; 1  \end{array}\right] &amp; \sim &amp;
 \left[\begin{array}{ccc|c} \markedPivot{1} &amp; 0 &amp; -1 &amp; 1 \\ 0 &amp; \markedPivot{1} &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; -1 &amp; -3  \end{array}\right] 
 \end{alignat*}
 </div>
-<p>Determine the row operation(s) necessary in each step to transform the most complicated system’s augmented matrix into the simplest.</p>
+<p>Assign the following row operations to each step used to manipulate each matrix to the next: <div style="display:table;margin-left:0%;margin-right:0%;">
+<div style="display:table-cell;width:33.3333333333333%;vertical-align:top;"><p><div class="displaymath process-math">
+\begin{equation*}
+R_3-1R_2\to R_3
+\end{equation*}
+</div></p></div>
+<div style="display:table-cell;width:33.3333333333333%;vertical-align:top;"><p><div class="displaymath process-math">
+\begin{equation*}
+R_2+1R_1\to R_2
+\end{equation*}
+</div></p></div>
+<div style="display:table-cell;width:33.3333333333333%;vertical-align:top;"><p><div class="displaymath process-math">
+\begin{equation*}
+R_1\leftrightarrow R_3
+\end{equation*}
+</div></p></div>
+</div> <div style="display:table;margin-left:0%;margin-right:0%;">
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math">
+\begin{equation*}
+R_3-2R_1\to R_3
+\end{equation*}
+</div></p></div>
+<div style="display:table-cell;width:50%;vertical-align:top;"><p><div class="displaymath process-math">
+\begin{equation*}
+R_1-2R_3\to R_1
+\end{equation*}
+</div></p></div>
+</div></p>
 </div></section><section><h3>Definition 1.2.6</h3>
 <div align="left"> <p>A matrix is in <dfn class="terminology">reduced row echelon form</dfn> (<dfn class="terminology">RREF</dfn>) if</p> <ol class="decimal">
 <li>The leading term (first nonzero term) of each nonzero row is a 1. Call these terms <dfn class="terminology">pivots</dfn>.</li>
@@ -316,7 +457,7 @@ x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3 \\
 <li>Each pivot is to the right of every higher pivot.</li>
 <li>Each term above or below a pivot is zero.</li>
 <li>All rows of zeroes are at the bottom of the matrix.</li>
-</ol> <p>For each matrix, circle the leading terms, and label it as RREF or not RREF. For the ones not in RREF, find their RREF.</p> <div style="display:table;margin-left:0.166666666666667%;margin-right:0.166666666666667%;">
+</ol> <p>For each matrix, mark the leading terms, and label it as RREF or not RREF. For the ones not in RREF, determine which rule is violated and how it might be fixed.</p> <div style="display:table;margin-left:0.166666666666667%;margin-right:0.166666666666667%;">
 <div style="display:table-cell;width:33.1103678929766%;vertical-align:top;"><p><div class="displaymath process-math">
 \begin{equation*}
 A=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 0 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]
@@ -339,7 +480,7 @@ C=\left[\begin{array}{ccc|c} 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 2 &amp; 0 &amp
 <li>Each pivot is to the right of every higher pivot.</li>
 <li>Each term above or below a pivot is zero.</li>
 <li>All rows of zeroes are at the bottom of the matrix.</li>
-</ol> <p>For each matrix, circle the leading terms, and label it as RREF or not RREF. For the ones not in RREF, find their RREF.</p> <div style="display:table;margin-left:0.166666666666667%;margin-right:0.166666666666667%;">
+</ol> <p>For each matrix, mark the leading terms, and label it as RREF or not RREF. For the ones not in RREF, determine which rule is violated and how it might be fixed.</p> <div style="display:table;margin-left:0.166666666666667%;margin-right:0.166666666666667%;">
 <div style="display:table-cell;width:33.1103678929766%;vertical-align:top;"><p><div class="displaymath process-math">
 \begin{equation*}
 D=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 2 &amp; -3 \\ 0 &amp; 3 &amp; 3 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]
@@ -357,7 +498,7 @@ F=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 0 &amp; 4 \\ 0 &amp; 1 &amp; 0 &amp
 </div></p></div>
 </div>
 </div></section><section><h3>Remark 1.2.9</h3>
-<div align="left"> <p>In practice, if we simply need to convert a matrix into reduced row echelon form, we use technology to do so.</p> <p>However, it is also important to understand the <dfn class="terminology">Gauss-Jordan elimination</dfn> algorithm that a computer or calculator uses to convert a matrix (augmented or not) into reduced row echelon form. Understanding this algorithm will help us better understand how to interpret the results in many applications we use it for in Module V.</p>
+<div align="left"> <p>In practice, if we simply need to convert a matrix into reduced row echelon form, we use technology to do so.</p> <p>However, it is also important to understand the <dfn class="terminology">Gauss-Jordan elimination</dfn> algorithm that a computer or calculator uses to convert a matrix (augmented or not) into reduced row echelon form. Understanding this algorithm will help us better understand how to interpret the results in many applications we use it for in Chapter 2 Euclidean Vectors (EV).</p>
 </div></section><section><h3>Activity 1.2.10 (~8 min)</h3>
 <div align="left"> <p>Consider the matrix<div class="displaymath process-math">
 \begin{equation*}
@@ -391,24 +532,29 @@ F=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 0 &amp; 4 \\ 0 &amp; 1 &amp; 0 &amp
 <li>Add -1 row 2 to  row 3 (<span class="process-math">\(R_3-R_2 \rightarrow R_3\)</span>)</li>
 <li>Add row 2 to row 1 (<span class="process-math">\(R_1+R_2 \rightarrow R_1\)</span>)</li>
 </ol>
-</div></section><section><h3>Activity 1.2.13 (~10 min)</h3>
-<div align="left"> <p>Consider the matrix<div class="displaymath process-math">
-\begin{equation*}
-\left[\begin{array}{ccc}2 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 0 \\ 3 &amp; -1 &amp; 1 \end{array}\right].
-\end{equation*}
-</div></p> <p><em class="emphasis">Part 1.</em></p> <p>Perform three row operations to produce a matrix closer to RREF.</p>
-</div></section><section><h3>Activity 1.2.13 (~10 min)</h3>
-<div align="left"> <p>Consider the matrix<div class="displaymath process-math">
-\begin{equation*}
-\left[\begin{array}{ccc}2 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 0 \\ 3 &amp; -1 &amp; 1 \end{array}\right].
-\end{equation*}
-</div></p> <p><em class="emphasis">Part 2.</em></p> <p>Finish putting it in RREF.</p>
+</div></section><section><h3>Observation 1.2.13</h3>
+<div align="left"> <p>The steps for the Gauss-Jordan elimination algorithm may be summarized as follows:<ol class="decimal">
+<li><p>Ignoring any rows that already have marked pivots, identify the leftmost column with a nonzero entry.</p></li>
+<li><p>Use row operations to obtain a pivot of value <span class="process-math">\(1\)</span> in the topmost row that does not already have a marked pivot.</p></li>
+<li><p>Mark this pivot, then use row operations to change all values above and below the marked pivot to <span class="process-math">\(0\text{.}\)</span></p></li>
+<li><p>Repeat these steps until the matrix is in RREF.</p></li>
+</ol></p> <p>In particular, <em class="emphasis">once a pivot is marked, it should remain in the same position</em>. This will keep you from undoing your progress towards an RREF matrix.</p>
 </div></section><section><h3>Activity 1.2.14 (~10 min)</h3>
-<div align="left"> <p>Consider the matrix<div class="displaymath process-math">
+<div align="left"> <p>Complete the following RREF calculation (multiple row operations may be needed for certain steps):<div class="displaymath process-math">
 \begin{equation*}
-A=\left[\begin{array}{cccc}2 &amp; 3 &amp; 2 &amp; 3 \\ -2 &amp; 1 &amp; 6 &amp; 1 \\ -1 &amp; -3 &amp; -4 &amp; 1 \end{array}\right].
+A=
+\left[\begin{array}{cccc}2 &amp; 3 &amp; 2 &amp; 3 \\ -2 &amp; 1 &amp; 6 &amp; 1 \\ -1 &amp; -3 &amp; -4 &amp; 1 \end{array}\right]
+\sim \left[\begin{array}{cccc}\markedPivot{1} &amp; \unknown &amp; \unknown &amp; \unknown \\ -2 &amp; 1 &amp; 6 &amp; 1 \\ -1 &amp; -3 &amp; -4 &amp; 1 \end{array}\right]
+\sim \left[\begin{array}{cccc}\markedPivot{1} &amp; \unknown &amp; \unknown &amp; \unknown \\ 0 &amp; \unknown &amp; \unknown &amp; \unknown \\ 0 &amp; \unknown &amp; \unknown &amp; \unknown \end{array}\right]
 \end{equation*}
-</div></p> <p>Compute <span class="process-math">\(\RREF(A)\text{.}\)</span></p>
+</div><div class="displaymath process-math">
+\begin{equation*}
+\sim \left[\begin{array}{cccc}\markedPivot{1} &amp; \unknown &amp; \unknown &amp; \unknown \\ 0 &amp; \markedPivot{1} &amp; \unknown &amp; \unknown \\ 0 &amp; \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+\sim \left[\begin{array}{cccc}\markedPivot{1} &amp; 0 &amp; \unknown &amp; \unknown \\ 0 &amp; \markedPivot{1} &amp; \unknown &amp; \unknown \\ 0 &amp; 0 &amp; \unknown &amp; \unknown \end{array}\right]
+\sim \cdots
+\sim \left[\begin{array}{cccc}\markedPivot{1} &amp; 0 &amp; -2 &amp; 0 \\ 0 &amp; \markedPivot{1} &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right]
+\end{equation*}
+</div></p>
 </div></section><section><h3>Activity 1.2.15 (~10 min)</h3>
 <div align="left"> <p>Consider the matrix<div class="displaymath process-math">
 \begin{equation*}
@@ -416,15 +562,16 @@ A=\left[\begin{array}{cccc} 2 &amp; 4 &amp; 2 &amp; -4 \\ -2 &amp; -4 &amp; 1 &a
 \end{equation*}
 </div></p> <p>Compute <span class="process-math">\(\RREF(A)\text{.}\)</span></p>
 </div></section><section><h3>Activity 1.2.16 (~5 min)</h3>
-<div align="left"> <p>Consider the matrix<div class="displaymath process-math">
+<div align="left"> <p>Consider the non-augmented and augmented matrices<div class="displaymath process-math">
 \begin{equation*}
+A=\left[\begin{array}{cccc} 2 &amp; 4 &amp; 2 &amp; -4 \\ -2 &amp; -4 &amp; 1 &amp; 1 \\ 3 &amp; 6 &amp; -1 &amp; -4 \end{array}\right]\hspace{2em}
 B=\left[\begin{array}{ccc|c} 2 &amp; 4 &amp; 2 &amp; -4 \\ -2 &amp; -4 &amp; 1 &amp; 1 \\ 3 &amp; 6 &amp; -1 &amp; -4 \end{array}\right].
 \end{equation*}
-</div>which has the same terms as <span class="process-math">\(A\)</span> from the previous activity.</p> <p>Can <span class="process-math">\(\RREF(A)\)</span> be used to find <span class="process-math">\(\RREF(B)\text{?}\)</span><ol class="upper-alpha">
-<li>No, a new calculuation is required.</li>
+</div></p> <p>Can <span class="process-math">\(\RREF(A)\)</span> be used to find <span class="process-math">\(\RREF(B)\text{?}\)</span><ol class="upper-alpha">
 <li>Yes, <span class="process-math">\(\RREF(A)\)</span> and <span class="process-math">\(\RREF(B)\)</span> are exactly the same.</li>
 <li>Yes, <span class="process-math">\(\RREF(A)\)</span> may be slightly modified to find <span class="process-math">\(\RREF(B)\text{.}\)</span>
 </li>
+<li>No, a new calculuation is required.</li>
 </ol></p>
 </div></section><section><h3>Activity 1.2.17 (~10 min)</h3>
 <div align="left"> <p>Free browser-based technologies for mathematical computation are available online.</p> <ul class="disc">
