@@ -123,14 +123,13 @@ Row-reduce its augmented matrix.
     <task>
         <p>
 Assign letters to the free variables (given by the non-pivot columns):
-<p><m>\unknown = a</m> and <m>\unknown = b</m>.</p>
+<p><me>\unknown = a</me> <me>\unknown = b</me></p>
         </p>
     </task>
     <task>
         <p>
 Solve for the bound variables (given by the pivot columns) to show that
-<p><m>\unknown = 1+5a+2b</m>,</p> <p><m>\unknown = 1+2a+3b</m>,</p> <p>and
-<m>\unknown=3+3b</m>.</p>
+<me>\unknown = 1+5a+2b</me><me>\unknown = 1+2a+3b</me><me>\unknown=3+3b</me>
         </p>
     </task>
     <task>
@@ -190,13 +189,17 @@ Systems with zero or one solutions may be written by listing their elements,
         set-builder notation.
     </p>
   <ul>
-<li><p> <em>Inconsistent</em>: <m>\emptyset</m> or <m>\{\}</m> (not <m>0</m>).
+<li><p> <em>Inconsistent</em>: <m>\emptyset</m> or <m>\{\}</m> 
+  <ul><li>(not <m>0</m> or 
+    <m>
+        \left[\begin{array}{c}0\\0\\0\end{array}\right]
+    </m>)</li></ul>
     </p>
   </li>
       <li><p> <em>Consistent</em> with <em>one solution</em>: e.g.
         <m>\setList{ \left[\begin{array}{c}1\\2\\3\end{array}\right] }</m>
-          (not just
-        <m>\left[\begin{array}{c}1\\2\\3\end{array}\right]</m>).
+        <ul><li>(not just
+          <m>\left[\begin{array}{c}1\\2\\3\end{array}\right]</m>)</li></ul>
     </p>
   </li>
 <li> <p>
@@ -209,11 +212,11 @@ Systems with zero or one solutions may be written by listing their elements,
             a\in\IR
           }
         </m>
-    (not just
-        <m>
-            \left[\begin{array}{c}1\\2-3a\\a\end{array}\right]
-        </m>
-    ).
+        <ul><li>(not just
+          <m>
+              \left[\begin{array}{c}1\\2-3a\\a\end{array}\right]
+          </m>
+      )</li></ul>
     </p>
   </li>
   </ul>
@@ -221,9 +224,11 @@ Systems with zero or one solutions may be written by listing their elements,
 </remark>
 
 <activity estimated-time="15">
-  <statement>
-    <p>Show how to find the solution set for the
-        vector equation <me>x_{1} \left[\begin{array}{c}
+  <introduction>
+    <p>
+      Consider the following
+      system of linear equations.
+<me>x_{1} \left[\begin{array}{c}
 1 \\
 0 \\
 1
@@ -245,27 +250,18 @@ Systems with zero or one solutions may be written by listing their elements,
 -12
 \end{array}\right]</me>.
      </p>
-  </statement>
-
-<!--  <answer>
+  </introduction>
+  <task>
       <p>
-      <me>\mathrm{RREF}\left[\begin{array}{cccc|c}
-1 &amp; 0 &amp; -1 &amp; -3 &amp; -3 \\
-0 &amp; 1 &amp; 5 &amp; 13 &amp; 12 \\
-1 &amp; -1 &amp; -5 &amp; -13 &amp; -12
-\end{array}\right]=\left[\begin{array}{cccc|c}
-1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 1 &amp; 0 &amp; -2 &amp; -3 \\
-0 &amp; 0 &amp; 1 &amp; 3 &amp; 3
-\end{array}\right]</me>
+Explain how to find a simpler system or vector equation
+that has the same solution set.
       </p>
-      <p>The solution set is <m> \left\{ \left[\begin{array}{c}
-0 \\
-2 \, a - 3 \\
--3 \, a + 3 \\
-a
-\end{array}\right] \,\middle|\, a \in\mathbb R \right\} </m>.</p>
-  </answer>-->
+    </task>
+    <task>
+      <p>
+Explain how to describe this solution set using set notation.
+      </p>
+    </task>
     
 </activity>
     <activity checkit-seed="0019" checkit-slug="LE4" checkit-title="Linear Systems with Infinitely-Many Solutions" estimated-time="10">
