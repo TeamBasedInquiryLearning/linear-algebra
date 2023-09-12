@@ -1,4 +1,3 @@
-import subprocess
 from pathlib import Path
 from lxml import etree
 from pretext.project import Project
