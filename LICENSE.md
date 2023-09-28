@@ -11,7 +11,7 @@ licenses:
 [GPL-3.0](https://opensource.org/license/gpl-3-0/).
 - All other media, including the procedurally generated output of unmodified software
 products made available in this repository, are available for use under the terms of
-[CC-BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+[CC-BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 In particular, these terms allow for the free use of any and all materials contained
 in this repository for non-commercial, educational purposes, though any derivative works
