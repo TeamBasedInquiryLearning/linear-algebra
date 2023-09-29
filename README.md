@@ -18,10 +18,6 @@ These materials are hosted at <http://linear.tbil.org>.
 Learn more at [TBIL.org](http://tbil.org) and join our community of instructors
 and contributors!
 
-## Copyright and Licensing
-
-See [source/meta/copyright.ptx](source/meta/copyright.ptx).
-
 ## Contributing
 
 Contributing guidelines are maintained in our organization [wiki](https://github.com/TeamBasedInquiryLearning/wiki/wiki).
