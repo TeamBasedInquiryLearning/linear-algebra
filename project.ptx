@@ -13,6 +13,15 @@
       <!-- @output-filename="[xml_id].ptx" -->
       <!-- <stringparam key="section" value="[xml_id]"/> -->
     </target>
+<!-->    <target name="slides-new">
+        <format>pdf</format>
+        <output-dir>output/slides</output-dir>
+        <deploy-dir>2024</deploy-dir>
+        <xsl>xsl/slides.xsl</xsl>      
+      </target>-->
+    <target name="slides-new" format="pdf" xsl="slides.xsl" deploy-dir="2024">
+      <stringparams debug.project.number="the-way-it-should-be"/>
+    </target>
     <target name="slides" format="custom" xsl="slideshow.xsl" deploy-dir="2024">
       <!-- Provide these programmatically: -->
       <!-- @source="../output/extract-slides/[xml_id].ptx" -->
