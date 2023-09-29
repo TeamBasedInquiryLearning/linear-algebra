@@ -63,12 +63,13 @@
 <xsl:template match="appendix[@xml:id='appendix-extras']"/>
 <xsl:template match="index" />
 
+<!-- Use letter paper and leave one-inch margins all around -->
+<!--<xsl:param name="latex.geometry" select="'letterpaper,margin=1in'" />-->
+
 
 <!-- Style titles -->
 <xsl:template name="titlesec-section-style">
-
-
-    <!-- Everything in this template below here is stock PTX as of 2018-12-17 -->
+    <!-- This next bit is stock PTX -->
     <xsl:text>\titleformat{\section}[block]&#xa;</xsl:text>
 <xsl:text>{\normalfont\Large\bfseries}{\thesection\space\titleptx}{1em}{}&#xa;</xsl:text>
     <xsl:text>[{\large\authorsptx}]&#xa;</xsl:text>
@@ -89,12 +90,15 @@
     <xsl:text>\titleformat{name=\subsubsection,numberless}[block]&#xa;</xsl:text>
     <xsl:text>{\normalfont\normalsize\bfseries}{}{0pt}{#1}&#xa;</xsl:text>
     <xsl:text>[{\normalsize\authorsptx}]&#xa;</xsl:text>
-    <xsl:text>\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}&#xa;</xsl:text>
+    <xsl:text>\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}&#xa;</xsl:text>    
+    <!--Custom headers -->
+    <xsl:text>\renewpagestyle{headings}{&#xa;</xsl:text>
+    <xsl:text>\sethead[][\textbf{\small \sectiontitle}][] % even&#xa;</xsl:text>
+    <xsl:text>{}{\textbf{\small \sectiontitle}}{}} % odd&#xa;</xsl:text>
+    <xsl:text>\pagestyle{headings}&#xa;</xsl:text>
 </xsl:template>
 
 
-<!-- Use letter paper and leave one-inch margins all around -->
-<xsl:param name="latex.geometry" select="'letterpaper,margin=1in'" />
 
 
 </xsl:stylesheet>
