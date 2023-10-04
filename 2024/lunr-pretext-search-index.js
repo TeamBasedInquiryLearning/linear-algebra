@@ -37,15 +37,6 @@ var ptx_lunr_docs = [
   "body": " Video Resources  Videos are available at the end of each section. A complete playlist of videos aligned with this text is available on YouTube .  "
 },
 {
-  "id": "slideshows",
-  "level": "1",
-  "url": "slideshows.html",
-  "type": "Preface",
-  "number": "",
-  "title": "Slideshows",
-  "body": " Slideshows  Slides for each section are available in HTML format.    LE     LE1 slides      LE2 slides      LE3 slides      LE4 slides       EV     EV1 slides      EV2 slides      EV3 slides      EV4 slides      EV5 slides      EV6 slides      EV7 slides       AT     AT1 slides      AT2 slides      AT3 slides      AT4 slides      AT5 slides      AT6 slides       MX     MX1 slides      MX2 slides      MX3 slides      MX4 slides       GT     GT1 slides      GT2 slides      GT3 slides      GT4 slides       Applications     Civil Engineering slides      Computer Science slides      Geology slides       "
-},
-{
   "id": "LE1",
   "level": "1",
   "url": "LE1.html",
@@ -1846,9 +1837,9 @@ var ptx_lunr_docs = [
   "body": "    Video: Using the standard matrix to compute the image of a vector  "
 },
 {
-  "id": "p-726",
+  "id": "p-691",
   "level": "2",
-  "url": "AT2.html#p-726",
+  "url": "AT2.html#p-691",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",

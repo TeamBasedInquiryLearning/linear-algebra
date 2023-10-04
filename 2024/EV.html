@@ -302,7 +302,6 @@ sagecell.makeSagecell({
 <li><div class="toc-item"><a href="tbil-rl.html" class="internal"><span class="title">TBIL Resource Library</span></a></div></li>
 <li><div class="toc-item"><a href="instructor-notes.html" class="internal"><span class="title">For Instructors</span></a></div></li>
 <li><div class="toc-item"><a href="video-resources.html" class="internal"><span class="title">Video Resources</span></a></div></li>
-<li><div class="toc-item"><a href="slideshows.html" class="internal"><span class="title">Slideshows</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -633,7 +632,7 @@ sagecell.makeSagecell({
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">B</span> <span class="title">Appendix</span></a></div>
+<div class="toc-item"><a href="appendix-extras.html" class="internal"><span class="codenumber">B</span> <span class="title">Appendix</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="sample-exercises.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Sample Exercises with Solutions</span></a></div></li>
 <li><div class="toc-item"><a href="list-of-definitions.html" class="internal"><span class="codenumber">B.2</span> <span class="title">Definitions</span></a></div></li>
@@ -649,31 +648,31 @@ sagecell.makeSagecell({
 </h2>
 <article class="objectives goal-like" id="objectives-6"><h2 class="heading"><span class="type">Learning Outcomes</span></h2>
 <div class="introduction" id="introduction-13">
-<div class="para" id="p-261">What is a space of Euclidean vectors?</div> <div class="para" id="p-262">By the end of this chapter, you should be able to...</div>
+<div class="para" id="p-226">What is a space of Euclidean vectors?</div> <div class="para" id="p-227">By the end of this chapter, you should be able to...</div>
 </div>
 <ol class="decimal">
-<li id="li-138"><div class="para" id="p-263">Determine if a Euclidean vector can be written as a linear combination of a given set of Euclidean vectors by solving an appropriate vector equation.</div></li>
-<li id="li-139"><div class="para" id="p-264">Determine if a set of Euclidean vectors spans <span class="process-math">\(\IR^n\)</span> by solving appropriate vector equations.</div></li>
-<li id="li-140"><div class="para" id="p-265">Determine if a subset of <span class="process-math">\(\IR^n\)</span> is a subspace or not.</div></li>
-<li id="li-141"><div class="para" id="p-266">Determine if a set of Euclidean vectors is linearly dependent or independent by solving an appropriate vector equation.</div></li>
-<li id="li-142"><div class="para" id="p-267">Explain why a set of Euclidean vectors is or is not a basis of <span class="process-math">\(\IR^n\text{.}\)</span>
+<li id="li-104"><div class="para" id="p-228">Determine if a Euclidean vector can be written as a linear combination of a given set of Euclidean vectors by solving an appropriate vector equation.</div></li>
+<li id="li-105"><div class="para" id="p-229">Determine if a set of Euclidean vectors spans <span class="process-math">\(\IR^n\)</span> by solving appropriate vector equations.</div></li>
+<li id="li-106"><div class="para" id="p-230">Determine if a subset of <span class="process-math">\(\IR^n\)</span> is a subspace or not.</div></li>
+<li id="li-107"><div class="para" id="p-231">Determine if a set of Euclidean vectors is linearly dependent or independent by solving an appropriate vector equation.</div></li>
+<li id="li-108"><div class="para" id="p-232">Explain why a set of Euclidean vectors is or is not a basis of <span class="process-math">\(\IR^n\text{.}\)</span>
 </div></li>
-<li id="li-143"><div class="para" id="p-268">Compute a basis for the subspace spanned by a given set of Euclidean vectors, and determine the dimension of the subspace.</div></li>
-<li id="li-144"><div class="para" id="p-269">Find a basis for the solution set of a homogeneous system of equations.</div></li>
-</ol></article><section class="introduction" id="EV-intro"><section class="paragraphs" id="EV-readiness"><h2 class="heading"><span class="title">Readiness Assurance.</span></h2> <div class="para" id="p-270">Before beginning this chapter, you should be able to...</div> <ol class="decimal">
-<li id="li-145">
-<div class="para" id="p-271">Use set builder notation to describe sets of vectors.</div>
-<ul class="disc"><li id="li-146"><div class="para" id="p-272">Review: <a class="external" href="https://youtu.be/xnfUZ-NTsCE" target="_blank">YouTube</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-38" id="fn-38"><sup> 1 </sup></a>
+<li id="li-109"><div class="para" id="p-233">Compute a basis for the subspace spanned by a given set of Euclidean vectors, and determine the dimension of the subspace.</div></li>
+<li id="li-110"><div class="para" id="p-234">Find a basis for the solution set of a homogeneous system of equations.</div></li>
+</ol></article><section class="introduction" id="EV-intro"><section class="paragraphs" id="EV-readiness"><h2 class="heading"><span class="title">Readiness Assurance.</span></h2> <div class="para" id="p-235">Before beginning this chapter, you should be able to...</div> <ol class="decimal">
+<li id="li-111">
+<div class="para" id="p-236">Use set builder notation to describe sets of vectors.</div>
+<ul class="disc"><li id="li-112"><div class="para" id="p-237">Review: <a class="external" href="https://youtu.be/xnfUZ-NTsCE" target="_blank">YouTube</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-10" id="fn-10"><sup> 1 </sup></a>
 </div></li></ul>
 </li>
-<li id="li-147">
-<div class="para" id="p-273">Add Euclidean vectors and multiply Euclidean vectors by scalars.</div>
-<ul class="disc"><li id="li-148"><div class="para" id="p-274">Review: <a class="external" href="https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/vectors/v/adding-vectors" target="_blank">Khan Academy (1)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-39" id="fn-39"><sup> 2 </sup></a> <a class="external" href="https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/vectors/v/multiplying-vector-by-scalar" target="_blank">(2)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-40" id="fn-40"><sup> 3 </sup></a>
+<li id="li-113">
+<div class="para" id="p-238">Add Euclidean vectors and multiply Euclidean vectors by scalars.</div>
+<ul class="disc"><li id="li-114"><div class="para" id="p-239">Review: <a class="external" href="https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/vectors/v/adding-vectors" target="_blank">Khan Academy (1)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-11" id="fn-11"><sup> 2 </sup></a> <a class="external" href="https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/vectors/v/multiplying-vector-by-scalar" target="_blank">(2)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-12" id="fn-12"><sup> 3 </sup></a>
 </div></li></ul>
 </li>
-<li id="li-149">
-<div class="para" id="p-275">Perform basic manipulations of augmented matrices and linear systems.</div>
-<ul class="disc"><li id="li-150"><div class="para" id="p-276">Review: <a href="LE1.html" class="internal" title="Section 1.1: Linear Systems, Vector Equations, and Augmented Matrices (LE1)">Section 1.1</a>, <a href="LE2.html" class="internal" title="Section 1.2: Row Reduction of Matrices (LE2)">Section 1.2</a>, <a href="LE3.html" class="internal" title="Section 1.3: Counting Solutions for Linear Systems (LE3)">Section 1.3</a>
+<li id="li-115">
+<div class="para" id="p-240">Perform basic manipulations of augmented matrices and linear systems.</div>
+<ul class="disc"><li id="li-116"><div class="para" id="p-241">Review: <a href="LE1.html" class="internal" title="Section 1.1: Linear Systems, Vector Equations, and Augmented Matrices (LE1)">Section 1.1</a>, <a href="LE2.html" class="internal" title="Section 1.2: Row Reduction of Matrices (LE2)">Section 1.2</a>, <a href="LE3.html" class="internal" title="Section 1.3: Counting Solutions for Linear Systems (LE3)">Section 1.3</a>
 </div></li></ul>
 </li>
 </ol></section></section><nav class="summary-links"><ul>
@@ -684,9 +683,9 @@ sagecell.makeSagecell({
 <li><a href="EV5.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Identifying a Basis (EV5)</span></a></li>
 <li><a href="EV6.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Subspace Basis and Dimension (EV6)</span></a></li>
 <li><a href="EV7.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Homogeneous Linear Systems (EV7)</span></a></li>
-</ul></nav></section><div class="hidden-content tex2jax_ignore" id="hk-fn-38"><div class="fn"><code class="code-inline tex2jax_ignore">youtu.be/xnfUZ-NTsCE</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-39"><div class="fn"><code class="code-inline tex2jax_ignore">www.khanacademy.org/math/linear-algebra/vectors-and-spaces/vectors/v/adding-vectors</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-40"><div class="fn"><code class="code-inline tex2jax_ignore">www.khanacademy.org/math/linear-algebra/vectors-and-spaces/vectors/v/multiplying-vector-by-scalar</code></div></div>
+</ul></nav></section><div class="hidden-content tex2jax_ignore" id="hk-fn-10"><div class="fn"><code class="code-inline tex2jax_ignore">youtu.be/xnfUZ-NTsCE</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-11"><div class="fn"><code class="code-inline tex2jax_ignore">www.khanacademy.org/math/linear-algebra/vectors-and-spaces/vectors/v/adding-vectors</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-12"><div class="fn"><code class="code-inline tex2jax_ignore">www.khanacademy.org/math/linear-algebra/vectors-and-spaces/vectors/v/multiplying-vector-by-scalar</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="LE4.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="EV1.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
