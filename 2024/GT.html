@@ -648,38 +648,38 @@ sagecell.makeSagecell({
 <span class="type">Chapter</span><span class="space"> </span><span class="codenumber">5</span><span class="space"> </span><span class="title">Geometric Properties of Linear Maps (GT)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-26"><h2 class="heading"><span class="type">Learning Outcomes</span></h2>
-<div class="introduction" id="introduction-64">
-<div class="para" id="p-1144">How do we understand linear maps geometrically?</div> <div class="para" id="p-1145">By the end of this chapter, you should be able to...</div>
+<div class="introduction" id="introduction-65">
+<div class="para" id="p-1143">How do we understand linear maps geometrically?</div> <div class="para" id="p-1144">By the end of this chapter, you should be able to...</div>
 </div>
 <ol class="decimal">
-<li id="li-709"><div class="para" id="p-1146">Describe how a row operation affects the determinant of a matrix.</div></li>
-<li id="li-710"><div class="para" id="p-1147">Compute the determinant of a <span class="process-math">\(4\times 4\)</span> matrix.</div></li>
-<li id="li-711"><div class="para" id="p-1148">Find the eigenvalues of a <span class="process-math">\(2\times 2\)</span> matrix.</div></li>
-<li id="li-712"><div class="para" id="p-1149">Find a basis for the eigenspace of a <span class="process-math">\(4\times 4\)</span> matrix associated with a given eigenvalue.</div></li>
-</ol></article><section class="introduction" id="GT-intro"><section class="paragraphs" id="GT-readiness"><h2 class="heading"><span class="title">Readiness Assurance.</span></h2> <div class="para" id="p-1150">Before beginning this chapter, you should be able to...</div> <ol class="decimal">
-<li id="li-713">
-<div class="para" id="p-1151">Calculate the area of a parallelogram.</div>
-<ul class="disc"><li id="li-714"><div class="para" id="p-1152">Review: <a class="external" href="https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-geometry-topic/cc-6th-parallelogram-area/v/intuition-for-area-of-a-parallelogram" target="_blank">Khan Academy</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-45" id="fn-45"><sup> 1 </sup></a>
+<li id="li-712"><div class="para" id="p-1145">Describe how a row operation affects the determinant of a matrix.</div></li>
+<li id="li-713"><div class="para" id="p-1146">Compute the determinant of a <span class="process-math">\(4\times 4\)</span> matrix.</div></li>
+<li id="li-714"><div class="para" id="p-1147">Find the eigenvalues of a <span class="process-math">\(2\times 2\)</span> matrix.</div></li>
+<li id="li-715"><div class="para" id="p-1148">Find a basis for the eigenspace of a <span class="process-math">\(4\times 4\)</span> matrix associated with a given eigenvalue.</div></li>
+</ol></article><section class="introduction" id="GT-intro"><section class="paragraphs" id="GT-readiness"><h2 class="heading"><span class="title">Readiness Assurance.</span></h2> <div class="para" id="p-1149">Before beginning this chapter, you should be able to...</div> <ol class="decimal">
+<li id="li-716">
+<div class="para" id="p-1150">Calculate the area of a parallelogram.</div>
+<ul class="disc"><li id="li-717"><div class="para" id="p-1151">Review: <a class="external" href="https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-geometry-topic/cc-6th-parallelogram-area/v/intuition-for-area-of-a-parallelogram" target="_blank">Khan Academy</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-45" id="fn-45"><sup> 1 </sup></a>
 </div></li></ul>
 </li>
-<li id="li-715">
-<div class="para" id="p-1153">Recall and use the definition of a linear transformation.</div>
-<ul class="disc"><li id="li-716"><div class="para" id="p-1154">Review: <a href="AT1.html" class="internal" title="Section 3.1: Linear Transformations (AT1)">Section 3.1</a>
+<li id="li-718">
+<div class="para" id="p-1152">Recall and use the definition of a linear transformation.</div>
+<ul class="disc"><li id="li-719"><div class="para" id="p-1153">Review: <a href="AT1.html" class="internal" title="Section 3.1: Linear Transformations (AT1)">Section 3.1</a>
 </div></li></ul>
 </li>
-<li id="li-717">
-<div class="para" id="p-1155">Find the matrix corresponding to a linear transformation of Euclidean spaces.</div>
-<ul class="disc"><li id="li-718"><div class="para" id="p-1156">Review: <a href="AT2.html" class="internal" title="Section 3.2: Standard Matrices (AT2)">Section 3.2</a>
+<li id="li-720">
+<div class="para" id="p-1154">Find the matrix corresponding to a linear transformation of Euclidean spaces.</div>
+<ul class="disc"><li id="li-721"><div class="para" id="p-1155">Review: <a href="AT2.html" class="internal" title="Section 3.2: Standard Matrices (AT2)">Section 3.2</a>
 </div></li></ul>
 </li>
-<li id="li-719">
-<div class="para" id="p-1157">Find all roots of quadratic polynomials (including complex ones).</div>
-<ul class="disc"><li id="li-720"><div class="para" id="p-1158">Review: <a class="external" href="https://www.khanacademy.org/math/algebra-home/alg-polynomials/alg-factoring-polynomials-quadratic-forms/v/factoring-trinomials-by-grouping-5" target="_blank">Khan Academy</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-46" id="fn-46"><sup> 2 </sup></a>, <a class="external" href="https://youtu.be/Aa-v1EK7DR4" target="_blank">YouTube (1)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-47" id="fn-47"><sup> 3 </sup></a>, <a class="external" href="https://www.youtube.com/watch?v=2yBhDsNE0w" target="_blank">YouTube (2)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-48" id="fn-48"><sup> 4 </sup></a>
+<li id="li-722">
+<div class="para" id="p-1156">Find all roots of quadratic polynomials (including complex ones).</div>
+<ul class="disc"><li id="li-723"><div class="para" id="p-1157">Review: <a class="external" href="https://www.khanacademy.org/math/algebra-home/alg-polynomials/alg-factoring-polynomials-quadratic-forms/v/factoring-trinomials-by-grouping-5" target="_blank">Khan Academy</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-46" id="fn-46"><sup> 2 </sup></a>, <a class="external" href="https://youtu.be/Aa-v1EK7DR4" target="_blank">YouTube (1)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-47" id="fn-47"><sup> 3 </sup></a>, <a class="external" href="https://www.youtube.com/watch?v=2yBhDsNE0w" target="_blank">YouTube (2)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-48" id="fn-48"><sup> 4 </sup></a>
 </div></li></ul>
 </li>
-<li id="li-721">
-<div class="para" id="p-1159">Interpret the statement “<span class="process-math">\(A\)</span> is an invertible matrix” in many equivalent ways in different contexts.</div>
-<ul class="disc"><li id="li-722"><div class="para" id="p-1160">Review: <a href="MX3.html" class="internal" title="Section 4.3: Solving Systems with Matrix Inverses (MX3)">Section 4.3</a>
+<li id="li-724">
+<div class="para" id="p-1158">Interpret the statement “<span class="process-math">\(A\)</span> is an invertible matrix” in many equivalent ways in different contexts.</div>
+<ul class="disc"><li id="li-725"><div class="para" id="p-1159">Review: <a href="MX3.html" class="internal" title="Section 4.3: Solving Systems with Matrix Inverses (MX3)">Section 4.3</a>
 </div></li></ul>
 </li>
 </ol></section></section><nav class="summary-links"><ul>
