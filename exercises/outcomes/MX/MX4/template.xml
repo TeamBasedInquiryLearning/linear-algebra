@@ -1,40 +1,51 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
     <intro>
-        <p>
-Consider the
-<!-- {{#system}} -->
-system of equations <me>{{system}}</me>
-<!-- {{/system}} -->
-<!-- {{#vector_eq}} -->
-vector equation <me>{{vector_eq}}</me>
-<!-- {{/vector_eq}} -->
-with a unique solution.
-        </p>
+        <p>Let <m>A</m> be <em>any</em> <m>4 \times 4</m> matrix.</p>
     </intro>
     <knowl>
         <content>
             <p>
-Explain and demonstrate how this problem can be restated
-using matrix multiplication.
+Give a <m>4 \times 4</m> matrix <m>{{name1}}</m> that may be used to
+perform the row operation <m>{{row_op1}}</m>.
             </p>
         </content>
         <outtro>
-            <p>
-<me>{{matrix}}{{vars}}={{constant_vector}}</me>
-            </p>
+            <p><m>{{name1}}={{mat1}}</m></p>
         </outtro>
     </knowl>
     <knowl>
         <content>
             <p>
-Use the properties of matrix multiplication to find the
-unique solution.
+Give a <m>4 \times 4</m> matrix <m>{{name2}}</m> that may be used to
+perform the row operation <m>{{row_op2}}</m>.
+            </p>
+        </content>
+        <outtro>
+            <p><m>{{name2}}={{mat2}}</m></p>
+        </outtro>
+    </knowl>
+    <knowl>
+        <content>
+            <p>
+Use matrix multiplication to describe the matrix obtained by applying
+<!-- {{#swapped}} -->
+<m>{{row_op2}}</m> and then <m>{{row_op1}}</m>
+<!-- {{/swapped}} -->
+<!-- {{^swapped}} -->
+<m>{{row_op1}}</m> and then <m>{{row_op2}}</m>
+<!-- {{/swapped}} -->
+to <m>A</m> (note the order).
             </p>
         </content>
         <outtro>
             <p>
-<me>{{inverse}}{{constant_vector}}={{solution}}</me>
+                <!-- {{#swapped}} -->
+                <m>{{name1}}{{name2}}A</m>
+                <!-- {{/swapped}} -->
+                <!-- {{^swapped}} -->
+                <m>{{name2}}{{name1}}A</m>
+                <!-- {{/swapped}} -->
             </p>
         </outtro>
     </knowl>

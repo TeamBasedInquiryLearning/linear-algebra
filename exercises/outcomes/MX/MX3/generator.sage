@@ -2,29 +2,24 @@ load("library/common.sage")
 
 class Generator(BaseGenerator):
     def data(self):
-        labels = list("ABCDLMNPQ")
-        shuffle(labels)
-        # invertible matrix
-        A=CheckIt.simple_random_matrix_of_rank(4,rows=4,columns=4)
-        matrices = [{
+        # create a 3x3 invertible matrix
+        A = CheckIt.simple_random_matrix_of_rank(3,rows=3,columns=3)
+        solution = column_matrix(
+            vector(QQ, [randrange(1,5)*choice([-1,1]) for _ in range(3)])
+        )
+        vars = column_matrix(var("x_1 x_2 x_3"))
+        constants = A*solution
+        result = {
+            "vars": vars,
+            "solution": solution,
             "matrix": A,
-            "rref": A.rref(),
-            "invertible": True,
             "inverse": A^(-1),
-            "label": labels[0],
-        }]
-        # non-invertible matrix
-        A=CheckIt.simple_random_matrix_of_rank(choice([2,3]),rows=4,columns=4)
-        matrices += [{
-            "matrix": A,
-            "rref": A.rref(),
-            "invertible": False,
-            "label": labels[1],
-        }]
-
-        shuffle(matrices)
-
-        return {
-            "matrices": matrices,
+            "constant_vector": constants,
         }
+        m = A.augment(constants, subdivide=True)
+        if choice([True,False]):
+            result["system"] = CheckIt.latex_system_from_matrix(m)
+        else:
+            result["vector_eq"] = vectorEquation(m)
+        return result
 

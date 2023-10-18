@@ -2,54 +2,40 @@
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
     <intro>
         <p>
-Consider each of the following matrices.
+Consider the
+<!-- {{#system}} -->
+system of equations <me>{{system}}</me>
+<!-- {{/system}} -->
+<!-- {{#vector_eq}} -->
+vector equation <me>{{vector_eq}}</me>
+<!-- {{/vector_eq}} -->
+with a unique solution.
         </p>
     </intro>
-    <!-- {{#matrices}} -->
     <knowl>
-        <intro>
+        <content>
             <p>
-<me>{{label}} = {{matrix}}</me>
+Explain and demonstrate how this problem can be restated
+using matrix multiplication.
             </p>
-        </intro>
-        <knowl>
-            <content>
-                <p>
-Explain why this matrix is or is not invertible by
-discussing its corresponding linear transformation.
-                </p>
-            </content>
-            <outtro>
-                <p>
-<me>\mathrm{RREF}\,{{matrix}}={{rref}}</me>
-                </p>
-                <p>
-<!-- {{#invertible}} -->
-<m>{{label}}</m> is invertible.
-<!-- {{/invertible}} -->
-<!-- {{^invertible}} -->
-<m>{{label}}</m> is not invertible.
-<!-- {{/invertible}} -->
-                </p>
-            </outtro>
-        </knowl>
-        <knowl>
-            <content>
-                <p>
-If the matrix is invertible, explain how to find its inverse.
-                </p>
-            </content>
-            <outtro>
-                <p>
-<!-- {{#invertible}} -->
-Its inverse is <m>{{inverse}}</m>.
-<!-- {{/invertible}} -->
-<!-- {{^invertible}} -->
-N/A
-<!-- {{/invertible}} -->
-                </p>
-            </outtro>
-        </knowl>
+        </content>
+        <outtro>
+            <p>
+<me>{{matrix}}{{vars}}={{constant_vector}}</me>
+            </p>
+        </outtro>
     </knowl>
-    <!-- {{/matrices}} -->
+    <knowl>
+        <content>
+            <p>
+Use the properties of matrix multiplication to find the
+unique solution.
+            </p>
+        </content>
+        <outtro>
+            <p>
+<me>{{inverse}}{{constant_vector}}={{solution}}</me>
+            </p>
+        </outtro>
+    </knowl>
 </knowl>
