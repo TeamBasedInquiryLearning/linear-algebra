@@ -40,6 +40,8 @@ sandbox_path.mkdir()
 </bank>
 """.strip())
 (sandbox_path/"outcome").mkdir()
+(sandbox_path/"library").mkdir()
+shutil.copy(Path("exercises")/"library"/"common.sage", sandbox_path/"library"/"common.sage")
 outcome_path = (exercise_path/outcome_ele.find("{*}path").text)
 shutil.copy(outcome_path/"template.xml", sandbox_path/"outcome/template.xml")
 shutil.copy(outcome_path/"generator.sage", sandbox_path/"outcome/generator.sage")
