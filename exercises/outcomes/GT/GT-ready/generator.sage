@@ -158,7 +158,7 @@ class Generator(BaseGenerator):
         #polyroot real lambda
         roots = sample(range(4,9),3)
         roots = [choice([-1,1])*r for r in roots]
-        l = var("l", latex_name="\lambda")
+        l = var("l", latex_name="\\lambda")
         poly = ((l-roots[0])*(l-roots[1])).expand()
         questions.append({
             "polyroot": True,
