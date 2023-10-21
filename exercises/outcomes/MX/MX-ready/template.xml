@@ -2,20 +2,20 @@
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
     <intro><p>Choose the most appropriate response for each question.</p></intro>
     <!-- {{#questions}} -->
-    <!-- {{#LE3-4}} -->
+    <!-- {{#composition}} -->
     <knowl>
         <content>
             <p>
-                Find the solution set for
+Suppose <m>f(x),g(x)</m> are real-valued equations satsifying
                 <me>
-{{system}}
+{{eqs_latex}}
                 </me>
+What is the value of <m>{{comp_string}}</m>?
             </p>
             <list>
                 <!-- {{#choices}} -->
                 <item><p>({{letter}}) <m>{{item}}</m></p></item>
                 <!-- {{/choices}} -->
-                <item><p>(d) <m>\emptyset</m></p></item>
             </list>
         </content>
         <outtro>
@@ -26,139 +26,6 @@
             <!-- {{/choices}} -->
         </outtro>
     </knowl>
-    <!-- {{/LE3-4}} -->
-    <!-- {{#EV7}} -->
-    <knowl>
-        <content>
-            <p>
-                Find a basis for the solution space of
-                <me>
-{{system}}
-                </me>
-            </p>
-            <list>
-                <!-- {{#choices}} -->
-                <item><p>({{letter}}) <m>{{item}}</m></p></item>
-                <!-- {{/choices}} -->
-                <item><p>(d) <m>\emptyset</m></p></item>
-            </list>
-        </content>
-        <outtro>
-            <!-- {{#choices}} -->
-                <!-- {{#correct}} -->
-            <p>({{letter}}) <m>{{item}}</m></p>
-                <!-- {{/correct}} -->
-            <!-- {{/choices}} -->
-        </outtro>
-    </knowl>
-    <!-- {{/EV7}} -->
-    <!-- {{#EVstuff}} -->
-    <knowl>
-        <content>
-            <p>
-Which of the choices best describes the set of <m>\mathbb R^3</m> vectors
-                <me>
-{{vecset}}
-                </me>
-            </p>
-            <list>
-                <item><p>(a) The set is linearly dependent and fails to span <m>\mathbb R^3</m></p></item>
-                <item><p>(b) The set is linearly independent and fails to span <m>\mathbb R^3</m></p></item>
-                <item><p>(c) The set is linearly dependent and spans <m>\mathbb R^3</m></p></item>
-                <item><p>(d) The set is a basis for <m>\mathbb R^3</m></p></item>
-            </list>
-        </content>
-        <outtro>
-            <!-- {{#neither}} -->
-            <p>(a) The set is linearly dependent and fails to span <m>\mathbb R^3</m></p>
-            <!-- {{/neither}} -->
-            <!-- {{#independent}} -->
-            <p>(b) The set is linearly independent and fails to span <m>\mathbb R^3</m></p>
-            <!-- {{/independent}} -->
-            <!-- {{#spans}} -->
-            <p>(c) The set is linearly dependent and spans <m>\mathbb R^3</m></p>
-            <!-- {{/spans}} -->
-            <!-- {{#basis}} -->
-            <p>(d) The set is a basis for <m>\mathbb R^3</m></p>
-            <!-- {{/basis}} -->
-        </outtro>
-    </knowl>
-    <!-- {{/EVstuff}} -->
-    <!-- {{#word}} -->
-    <knowl>
-        <content>
-            <p>
-Suppose <m>S</m> is a set of Euclidean vectors from
-<m>\mathbb R^{ {{dim}} }</m>, and every vector in 
-<!-- {{^spans}} -->
-<m>\operatorname{span} S</m> (but not necessarily all of <m>\mathbb R^{ {{dim}} }</m>)
-<!-- {{/spans}} -->
-<!-- {{#spans}} -->
-<m>\mathbb R^{ {{dim}} }</m>
-<!-- {{/spans}} -->
-can be written
-<!-- {{#independent}} -->
-<em>uniquely</em>
-<!-- {{/independent}} -->
-as a linear combination of vectors from <m>S</m>.
-What can you conclude about <m>S</m>?
-            </p>
-            <!-- {{#count}} -->
-            <list>
-                <item><p>(a) <m>S</m> contains <m>{{dim}}</m> or fewer vectors.</p></item>
-                <item><p>(b) <m>S</m> contains exactly <m>{{dim}}</m> vectors.</p></item>
-                <item><p>(c) <m>S</m> contains <m>{{dim}}</m> or more vectors.</p></item>
-                <item><p>(d) <m>S</m> can contain any number of vectors.</p></item>
-            </list>
-            <!-- {{/count}} -->
-            <!-- {{#quality}} -->
-            <list>
-                <item><p>(a) <m>S</m> is linearly independent.</p></item>
-                <item><p>(b) <m>S</m> is a basis.</p></item>
-                <item><p>(c) <m>S</m> spans <m>\mathbb R^{ {{dim}} }</m>.</p></item>
-                <item><p>(d) <m>S</m> is linearly dependent and fails to span <m>\mathbb R^{ {{dim}} }</m>.</p></item>
-            </list>
-            <!-- {{/quality}} -->
-        </content>
-        <outtro>
-            <!-- {{#count}} -->
-            <!-- {{#independent}} -->
-                <!-- {{^spans}} -->
-                <p>(a) <m>S</m> contains <m>{{dim}}</m> or fewer vectors.</p>
-                <!-- {{/spans}} -->
-                <!-- {{#spans}} -->
-                <p>(b) <m>S</m> contains exactly <m>{{dim}}</m> vectors.</p>
-                <!-- {{/spans}} -->
-            <!-- {{/independent}} -->
-            <!-- {{^independent}} -->
-                <!-- {{#spans}} -->
-                <p>(c) <m>S</m> contains <m>{{dim}}</m> or more vectors.</p>
-                <!-- {{/spans}} -->
-                <!-- {{^spans}} -->
-                <p>ERROR</p>
-                <!-- {{/spans}} -->
-            <!-- {{/independent}} -->
-            <!-- {{/count}} -->
-            <!-- {{#quality}} -->
-            <!-- {{#independent}} -->
-                <!-- {{^spans}} -->
-                <p>(a) <m>S</m> is linearly independent.</p>
-                <!-- {{/spans}} -->
-                <!-- {{#spans}} -->
-                <p>(b) <m>S</m> is a basis.</p>
-                <!-- {{/spans}} -->
-            <!-- {{/independent}} -->
-            <!-- {{^independent}} -->
-                <!-- {{#spans}} -->
-                <p>(c) <m>S</m> spans <m>\mathbb R^{ {{dim}} }</m>.</p>
-                <!-- {{/spans}} -->
-                <!-- {{^spans}} -->
-                <p>ERROR</p>
-                <!-- {{/spans}} -->
-            <!-- {{/independent}} -->
-            <!-- {{/quality}} -->
-        </outtro>
-    </knowl>
-    <!-- {{/word}} -->
+    <!-- {{/composition}} -->
     <!-- {{/questions}} -->
 </knowl>
