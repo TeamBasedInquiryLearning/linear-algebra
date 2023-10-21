@@ -85,6 +85,84 @@ class Generator(BaseGenerator):
         })
 
 
+        # find_std_mx
+        # create a 3x2 standard matrix
+        values = sample(range(1,10),4)
+        values = [choice([-1,1])*v for v in values]+[0,0]
+        shuffle(values)
+        A = matrix(QQ,2,values)
+        B = matrix(QQ,2,values[2:]+values[:2])
+        # construct variables
+        xs=column_matrix(vector([var("x"),var("y"),var("z")]))
+
+        questions.append({
+            "find_std_mx": True,
+            "Tv": A*xs,
+            "choices": choices_from_list([
+                A,
+                A.transpose(),
+                B,
+                B.transpose(),
+            ]),
+        })
+
+        # apply_std_mx
+        # create a 3x2 standard matrix
+        values = sample(range(1,7),4)
+        values = [choice([-1,1])*v for v in values]+[0,0]
+        shuffle(values)
+        A = matrix(QQ,2,values)
+        B = matrix(QQ,2,values[2:]+values[:2])
+
+        # give vector to transform
+        entries = [randrange(1,4)*choice([-1,1]) for _ in range(3)]
+        v = column_matrix(entries)
+        offsets = [choice([-1,1]) for _ in range(2)]
+        w = column_matrix(offsets)
+
+        questions.append({
+            "apply_std_mx": True,
+            "dom_dim": 3,
+            "codom_dim": 2,
+            "A": A,
+            "v": v,
+            "choices": choices_from_list([
+                A*v,
+                A*v+w,
+                B*v,
+                B*v+w,
+            ]),
+        })
+
+        # apply_std_mx
+        # create a 2x3 standard matrix
+        values = sample(range(1,7),5)
+        values = [choice([-1,1])*v for v in values]+[0]
+        shuffle(values)
+        A = matrix(QQ,3,values)
+        B = matrix(QQ,3,values[4:]+values[:4])
+
+        # give vector to transform
+        entries = [randrange(1,4)*choice([-1,1]) for _ in range(2)]
+        v = column_matrix(entries)
+        offsets = [choice([-1,1]) for _ in range(3)]
+        w = column_matrix(offsets)
+
+        questions.append({
+            "apply_std_mx": True,
+            "dom_dim": 2,
+            "codom_dim": 3,
+            "A": A,
+            "v": v,
+            "choices": choices_from_list([
+                A*v,
+                A*v+w,
+                B*v,
+                B*v+w,
+            ]),
+        })
+
+
         
         # shuffle(questions)
         questions.reverse()

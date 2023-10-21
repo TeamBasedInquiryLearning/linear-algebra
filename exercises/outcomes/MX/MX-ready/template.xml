@@ -51,5 +51,56 @@ Which expression is equal to
         </outtro>
     </knowl>
     <!-- {{/comp_func}} -->
+    <!-- {{#find_std_mx}} -->
+    <knowl>
+        <content>
+            <p>
+Suppose
+<m>
+    T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)
+    =
+    {{Tv}}
+</m>.
+What is the standard matrix for <m>T</m>?
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) <m>{{item}}</m></p></item>
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+                <!-- {{#correct}} -->
+            <p>({{letter}}) <m>{{item}}</m></p>
+                <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/find_std_mx}} -->
+    <!-- {{#apply_std_mx}} -->
+    <knowl>
+        <content>
+            <p>
+Suppose a linear map 
+<m>T:\mathbb R^{ {{dom_dim}} }\to\mathbb R^{ {{codom_dim}} }</m> 
+has the standard matrix <m>{{A}}</m>.
+What is the value of <m>T\left({{v}}\right)</m>?
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) <m>{{item}}</m></p></item>
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+                <!-- {{#correct}} -->
+            <p>({{letter}}) <m>{{item}}</m></p>
+                <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/apply_std_mx}} -->
     <!-- {{/questions}} -->
 </knowl>
