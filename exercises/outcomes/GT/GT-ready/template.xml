@@ -2,15 +2,12 @@
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
     <intro><p>Choose the most appropriate response for each question.</p></intro>
     <!-- {{#questions}} -->
-    <!-- {{#comp_real}} -->
+    <!-- {{#area_comp}} -->
     <knowl>
         <content>
             <p>
-Suppose <m>f(x),g(x)</m> are functions satisfying
-                <me>
-{{eqs_latex}}
-                </me>
-What is the value of <m>{{comp_string}}</m>?
+Find the area of the parallelogram with vertices
+<m>{{verts}}</m>.
             </p>
             <list>
                 <!-- {{#choices}} -->
@@ -26,15 +23,20 @@ What is the value of <m>{{comp_string}}</m>?
             <!-- {{/choices}} -->
         </outtro>
     </knowl>
-    <!-- {{/comp_real}} -->
-    <!-- {{#comp_func}} -->
+    <!-- {{/area_comp}} -->
+    <!-- {{#area_adj}} -->
     <knowl>
         <content>
             <p>
-Suppose <m>f(x)={{f}}</m> and <m>g(x)={{g}}</m>.
-Which expression is equal to
-<!-- {{#fog}} --><m>(f\circ g)(x)</m>?<!-- {{/fog}} -->
-<!-- {{#gof}} --><m>(g\circ f)(x)</m>?<!-- {{/gof}} -->
+A parallelogram <m>P</m> has area <m>{{area}}</m>. If another
+parallelogram <m>Q</m> has
+<!-- {{#base}} -->
+a base that's {{adjustment}} the base of <m>P</m> but the same height,
+<!-- {{/base}} -->
+<!-- {{#height}} -->
+a height that's {{adjustment}} the height of <m>P</m> but the same base,
+<!-- {{/height}} -->
+what is the area of <m>Q</m>?
             </p>
             <list>
                 <!-- {{#choices}} -->
@@ -50,253 +52,6 @@ Which expression is equal to
             <!-- {{/choices}} -->
         </outtro>
     </knowl>
-    <!-- {{/comp_func}} -->
-    <!-- {{#find_std_mx}} -->
-    <knowl>
-        <content>
-            <p>
-Suppose
-<m>
-    T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)
-    =
-    {{Tv}}
-</m>.
-What is the standard matrix for <m>T</m>?
-            </p>
-            <list>
-                <!-- {{#choices}} -->
-                <item><p>({{letter}}) <m>{{item}}</m></p></item>
-                <!-- {{/choices}} -->
-            </list>
-        </content>
-        <outtro>
-            <!-- {{#choices}} -->
-                <!-- {{#correct}} -->
-            <p>({{letter}}) <m>{{item}}</m></p>
-                <!-- {{/correct}} -->
-            <!-- {{/choices}} -->
-        </outtro>
-    </knowl>
-    <!-- {{/find_std_mx}} -->
-    <!-- {{#apply_std_mx}} -->
-    <knowl>
-        <content>
-            <p>
-Suppose a linear map 
-<m>T:\mathbb R^{ {{dom_dim}} }\to\mathbb R^{ {{codom_dim}} }</m> 
-has the standard matrix <m>{{A}}</m>.
-Compute <m>T\left({{v}}\right)</m>.
-            </p>
-            <list>
-                <!-- {{#choices}} -->
-                <item><p>({{letter}}) <m>{{item}}</m></p></item>
-                <!-- {{/choices}} -->
-            </list>
-        </content>
-        <outtro>
-            <!-- {{#choices}} -->
-                <!-- {{#correct}} -->
-            <p>({{letter}}) <m>{{item}}</m></p>
-                <!-- {{/correct}} -->
-            <!-- {{/choices}} -->
-        </outtro>
-    </knowl>
-    <!-- {{/apply_std_mx}} -->
-    <!-- {{#dom_cdom}} -->
-    <knowl>
-        <content>
-            <p>
-Suppose a linear map 
-<m>T</m> 
-has the standard matrix <m>{{A}}</m>.
-What is its domain and codomain?
-            </p>
-            <list>
-                <!-- {{#choices}} -->
-                <item><p>({{letter}}) 
-                    <!-- {{#item}} -->
-Its domain is <m>\mathbb R^{{dom}}</m> and
-its codomain is <m>\mathbb R^{{cdom}}</m>.
-                    <!-- {{/item}} -->
-                </p></item>
-                <!-- {{/choices}} -->
-            </list>
-        </content>
-        <outtro>
-            <!-- {{#choices}} -->
-                <!-- {{#correct}} -->
-                    <p>({{letter}}) 
-                        <!-- {{#item}} -->
-Its domain is <m>\mathbb R^{{dom}}</m> and
-its codomain is <m>\mathbb R^{{cdom}}</m>.
-                        <!-- {{/item}} -->
-                    </p>
-                <!-- {{/correct}} -->
-            <!-- {{/choices}} -->
-        </outtro>
-    </knowl>
-    <!-- {{/dom_cdom}} -->
-    <!-- {{#inj_surj_rref}} -->
-    <knowl>
-        <content>
-            <p>
-Is the linear map defined by
-<me>
-    T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)
-    =
-    {{Tv}}
-</me>
-injective? Is it surjective?
-            </p>
-            <list>
-<item><p>(a) <m>T</m> is neither injective nor surjective</p></item>
-<item><p>(b) <m>T</m> is injective but not surjective</p></item>
-<item><p>(c) <m>T</m> is surjective but not injective</p></item>
-<item><p>(d) <m>T</m> is both injective and surjective</p></item>
-            </list>
-        </content>
-        <outtro>
-            <!-- {{ #neither }} -->
-<p>(a) <m>T</m> is neither injective nor surjective</p>
-            <!-- {{ /neither }} -->
-            <!-- {{ #injective }} -->
-<p>(b) <m>T</m> is injective but not surjective</p>
-            <!-- {{ /injective }} -->
-            <!-- {{ #surjective }} -->
-<p>(c) <m>T</m> is surjective but not injective</p>
-            <!-- {{ /surjective }} -->
-            <!-- {{ #both }} -->
-<p>(d) <m>T</m> is both injective and surjective</p>
-            <!-- {{ /both }} -->
-        </outtro>
-    </knowl>
-    <!-- {{/inj_surj_rref}} -->
-    <!-- {{#inj_surj_def}} -->
-    <knowl>
-        <content>
-            <p>
-Let <m>T:\mathbb R^n\to\mathbb R^m</m> be a linear transformation
-with standard matrix <m>A</m>. Which of the following would mean
-that <m>T</m> is <em>{{term}}</em>?
-            </p>
-            <list>
-                <!-- {{#choices}} -->
-                <item><p>({{letter}}) 
-                    <!-- {{#item}} -->
-                    <!-- {{#inj1}} -->
-The kernel of <m>T</m> contains only the zero vector.
-                    <!-- {{/inj1}} -->
-                    <!-- {{#inj2}} -->
-The columns of <m>A</m> are linearlly independent.
-                    <!-- {{/inj2}} -->
-                    <!-- {{#inj3}} -->
-Every column of <m>\operatorname{RREF}A</m> has a pivot.
-                    <!-- {{/inj3}} -->
-                    <!-- {{#inj4}} -->
-If <m>\vec u\not=\vec v</m> then <m>T(\vec u)\not=T(\vec v)</m>.
-                    <!-- {{/inj4}} -->
-                    <!-- {{#ninj1}} -->
-The kernel of <m>T</m> contains more than one vector.
-                    <!-- {{/ninj1}} -->
-                    <!-- {{#ninj2}} -->
-The columns of <m>A</m> are linearlly dependent.
-                    <!-- {{/ninj2}} -->
-                    <!-- {{#ninj3}} -->
-Some column of <m>\operatorname{RREF}A</m> lacks a pivot.
-                    <!-- {{/ninj3}} -->
-                    <!-- {{#ninj4}} -->
-There exist <m>\vec u\not=\vec v</m> where <m>T(\vec u)=T(\vec v)</m>.
-                    <!-- {{/ninj4}} -->
-                    <!-- {{#sur1}} -->
-The image of <m>T</m> is the same as its codomain.
-                    <!-- {{/sur1}} -->
-                    <!-- {{#sur2}} -->
-The columns of <m>A</m> span <m>\mathbb R^m</m>.
-                    <!-- {{/sur2}} -->
-                    <!-- {{#sur3}} -->
-Every row of <m>\operatorname{RREF}A</m> has a pivot.
-                    <!-- {{/sur3}} -->
-                    <!-- {{#sur4}} -->
-Every vector in the codomain has a vector in the domain that
-<m>T</m> maps to it.
-                    <!-- {{/sur4}} -->
-                    <!-- {{#nsur1}} -->
-The image of <m>T</m> is different than its codomain.
-                    <!-- {{/nsur1}} -->
-                    <!-- {{#nsur2}} -->
-The columns of <m>A</m> fail to span <m>\mathbb R^m</m>.
-                    <!-- {{/nsur2}} -->
-                    <!-- {{#nsur3}} -->
-<m>\operatorname{RREF}A</m> has a zero row.
-                    <!-- {{/nsur3}} -->
-                    <!-- {{#nsur4}} -->
-Some vector in the codomain is not mapped to by <m>T</m>.
-                    <!-- {{/nsur4}} -->
-                    <!-- {{/item}} -->
-                </p></item>
-                <!-- {{/choices}} -->
-            </list>
-        </content>
-        <outtro>
-            <!-- {{#choices}} -->
-            <!-- {{#correct}} -->
-            <p>({{letter}})
-                <!-- {{#item}} -->
-                <!-- {{#inj1}} -->
-The kernel of <m>T</m> contains only the zero vector.
-                <!-- {{/inj1}} -->
-                <!-- {{#inj2}} -->
-The columns of <m>A</m> are linearlly independent.
-                <!-- {{/inj2}} -->
-                <!-- {{#inj3}} -->
-Every column of <m>\operatorname{RREF}A</m> has a pivot.
-                <!-- {{/inj3}} -->
-                <!-- {{#inj4}} -->
-If <m>\vec u\not=\vec v</m> then <m>T(\vec u)\not=T(\vec v)</m>.
-                <!-- {{/inj4}} -->
-                <!-- {{#ninj1}} -->
-The kernel of <m>T</m> contains more than one vector.
-                <!-- {{/ninj1}} -->
-                <!-- {{#ninj2}} -->
-The columns of <m>A</m> are linearlly dependent.
-                <!-- {{/ninj2}} -->
-                <!-- {{#ninj3}} -->
-Some column of <m>\operatorname{RREF}A</m> lacks a pivot.
-                <!-- {{/ninj3}} -->
-                <!-- {{#ninj4}} -->
-There exist <m>\vec u\not=\vec v</m> where <m>T(\vec u)=T(\vec v)</m>.
-                <!-- {{/ninj4}} -->
-                <!-- {{#sur1}} -->
-The image of <m>T</m> is the same as its codomain.
-                <!-- {{/sur1}} -->
-                <!-- {{#sur2}} -->
-The columns of <m>A</m> span <m>\mathbb R^m</m>.
-                <!-- {{/sur2}} -->
-                <!-- {{#sur3}} -->
-Every row of <m>\operatorname{RREF}A</m> has a pivot.
-                <!-- {{/sur3}} -->
-                <!-- {{#sur4}} -->
-Every vector in the codomain has a vector in the domain that
-<m>T</m> maps to it.
-                <!-- {{/sur4}} -->
-                <!-- {{#nsur1}} -->
-The image of <m>T</m> is different than its codomain.
-                <!-- {{/nsur1}} -->
-                <!-- {{#nsur2}} -->
-The columns of <m>A</m> fail to span <m>\mathbb R^m</m>.
-                <!-- {{/nsur2}} -->
-                <!-- {{#nsur3}} -->
-<m>\operatorname{RREF}A</m> has a zero row.
-                <!-- {{/nsur3}} -->
-                <!-- {{#nsur4}} -->
-Some vector in the codomain is not mapped to by <m>T</m>.
-                <!-- {{/nsur4}} -->
-                <!-- {{/item}} -->
-            </p>
-            <!-- {{/correct}} -->
-            <!-- {{/choices}} -->
-        </outtro>
-    </knowl>
-    <!-- {{/inj_surj_def}} -->
+    <!-- {{/area_adj}} -->
     <!-- {{/questions}} -->
 </knowl>
