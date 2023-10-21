@@ -2,19 +2,21 @@
 # ensure this file is tracked
 !.gitignore
 
-# don't track unpublished builds
+# don't track unpublished builds or stage
 output
 
 # don't track assets generated from source
 generated-assets
+
+# don't track the executables.ptx file
+executables.ptx
 
 # don't track node packages
 node_modules
 
 # don't track error logs
 .error_schema.log
-cli.log
-logs/*
+logs
 
 # don't track OS related files (windows/macos/linux)
 .DS_Store
@@ -46,7 +48,6 @@ ehthumbs_vista.db
 .fuse_hidden*
 .Trash-*
 .nfs*
-*.term
 
 # Don't include VSCode generated files
 .vscode
@@ -90,6 +91,9 @@ GitHub.sublime-settings
 .dropbox
 .dropbox.attr
 .dropbox.cache
+
+# Don't track codechat config (will be generated automatically)
+codechat_config.yaml
 
 # project-specific stuff
 RATs/*
