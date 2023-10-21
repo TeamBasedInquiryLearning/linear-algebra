@@ -117,6 +117,27 @@ class Generator(BaseGenerator):
                 {f"inj{versions[3]}":True},
             ]),
         })
+
+        # find_std_mx
+        # create a 3x2 standard matrix
+        values = sample(range(1,10),4)
+        values = [choice([-1,1])*v for v in values]+[0,0]
+        shuffle(values)
+        A = matrix(QQ,2,values)
+        B = matrix(QQ,2,values[2:]+values[:2])
+        # construct variables
+        xs=column_matrix(vector([var("x"),var("y"),var("z")]))
+
+        questions.append({
+            "find_std_mx": True,
+            "Tv": A*xs,
+            "choices": choices_from_list([
+                A,
+                A.transpose(),
+                B,
+                B.transpose(),
+            ]),
+        })
         
         # shuffle(questions)
         questions.reverse()
