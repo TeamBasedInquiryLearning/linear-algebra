@@ -61,7 +61,7 @@ class Generator(BaseGenerator):
         })
 
         # area_adj
-        area = randrange(2,7)*12
+        area = randrange(2,7)*36
         if side == "base":
             side = "height"
         else:
@@ -138,9 +138,57 @@ class Generator(BaseGenerator):
                 B.transpose(),
             ]),
         })
+
+        #polyroot real
+        roots = sample(range(4,9),3)
+        roots = [choice([-1,1])*r for r in roots]
+        poly = ((x-roots[0])*(x-roots[1])).expand()
+        questions.append({
+            "polyroot": True,
+            "var": x,
+            "poly": poly,
+            "choices": choices_from_list([
+                roots[0],
+                -roots[0],
+                roots[2],
+                -roots[2],
+            ]),
+        })
+
+        #polyroot real lambda
+        roots = sample(range(4,9),3)
+        roots = [choice([-1,1])*r for r in roots]
+        l = var("l", latex_name="\lambda")
+        poly = ((l-roots[0])*(l-roots[1])).expand()
+        questions.append({
+            "polyroot": True,
+            "var": l,
+            "poly": poly,
+            "choices": choices_from_list([
+                roots[0],
+                -roots[0],
+                roots[2],
+                -roots[2],
+            ]),
+        })
+
+        #polyroot complex
+        vals = sample(range(1,9),8)
+        vals = [choice([-1,1])*r for r in vals]
+        poly = ((x-vals[0])^2+vals[1]^2).expand()
+        questions.append({
+            "polyroot": True,
+            "var": x,
+            "poly": poly,
+            "choices": choices_from_list([
+                vals[0]+vals[1]*I,
+                vals[2]+vals[3]*I,
+                vals[4]+vals[5]*I,
+                vals[6]+vals[7]*I,
+            ]),
+        })
         
-        # shuffle(questions)
-        questions.reverse()
+        shuffle(questions)
         return {
             "questions": questions,
         }
