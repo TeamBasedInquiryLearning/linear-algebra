@@ -182,7 +182,7 @@ class Generator(BaseGenerator):
             ]),
         })
 
-        # inj_surj
+        # inj_surj_rref
         A = CheckIt.simple_random_matrix_of_rank(
             2,
             rows=3,
@@ -192,12 +192,12 @@ class Generator(BaseGenerator):
         Tv = A*xs
 
         questions.append({
-            "inj_surj": True,
+            "inj_surj_rref": True,
             "Tv": Tv,
             "neither": True,
         })
 
-        # inj_surj
+        # inj_surj_rref
         A = CheckIt.simple_random_matrix_of_rank(
             3,
             rows=3,
@@ -207,15 +207,61 @@ class Generator(BaseGenerator):
         Tv = A*xs
 
         questions.append({
-            "inj_surj": True,
+            "inj_surj_rref": True,
             "Tv": Tv,
             "both": True,
         })
 
 
+        # inj_surj_def
+        versions = sample(range(1,5),4)
+        if choice([True, False]):
+            questions.append({
+                "inj_surj_def": True,
+                "term": "injective",
+                "choices": choices_from_list([
+                    {f"inj{versions[0]}":True},
+                    {f"ninj{versions[1]}":True},
+                    {f"sur{versions[2]}":True},
+                    {f"nsur{versions[3]}":True},
+                ]),
+            })
+        else:
+            questions.append({
+                "inj_surj_def": True,
+                "term": "not injective",
+                "choices": choices_from_list([
+                    {f"ninj{versions[0]}":True},
+                    {f"inj{versions[1]}":True},
+                    {f"sur{versions[2]}":True},
+                    {f"nsur{versions[3]}":True},
+                ]),
+            })
+        if choice([True, False]):
+            questions.append({
+                "inj_surj_def": True,
+                "term": "surjective",
+                "choices": choices_from_list([
+                    {f"sur{versions[0]}":True},
+                    {f"ninj{versions[1]}":True},
+                    {f"inj{versions[2]}":True},
+                    {f"nsur{versions[3]}":True},
+                ]),
+            })
+        else:
+            questions.append({
+                "inj_surj_def": True,
+                "term": "not surjective",
+                "choices": choices_from_list([
+                    {f"nsur{versions[0]}":True},
+                    {f"ninj{versions[1]}":True},
+                    {f"sur{versions[2]}":True},
+                    {f"inj{versions[3]}":True},
+                ]),
+            })
+
         
-        # shuffle(questions)
-        questions.reverse()
+        shuffle(questions)
         return {
             "questions": questions,
         }

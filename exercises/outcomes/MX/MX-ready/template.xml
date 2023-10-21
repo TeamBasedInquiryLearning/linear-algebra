@@ -136,7 +136,7 @@ its codomain is <m>\mathbb R^{{cdom}}</m>.
         </outtro>
     </knowl>
     <!-- {{/dom_cdom}} -->
-    <!-- {{#inj_surj}} -->
+    <!-- {{#inj_surj_rref}} -->
     <knowl>
         <content>
             <p>
@@ -170,6 +170,133 @@ injective? Is it surjective?
             <!-- {{ /both }} -->
         </outtro>
     </knowl>
-    <!-- {{/inj_surj}} -->
+    <!-- {{/inj_surj_rref}} -->
+    <!-- {{#inj_surj_def}} -->
+    <knowl>
+        <content>
+            <p>
+Let <m>T:\mathbb R^n\to\mathbb R^m</m> be a linear transformation
+with standard matrix <m>A</m>. Which of the following would mean
+that <m>T</m> is <em>{{term}}</em>?
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) 
+                    <!-- {{#item}} -->
+                    <!-- {{#inj1}} -->
+The kernel of <m>T</m> contains only the zero vector.
+                    <!-- {{/inj1}} -->
+                    <!-- {{#inj2}} -->
+The columns of <m>A</m> are linearlly independent.
+                    <!-- {{/inj2}} -->
+                    <!-- {{#inj3}} -->
+Every column of <m>\operatorname{RREF}A</m> has a pivot.
+                    <!-- {{/inj3}} -->
+                    <!-- {{#inj4}} -->
+If <m>\vec u\not=\vec v</m> then <m>T(\vec u)\not=T(\vec v)</m>.
+                    <!-- {{/inj4}} -->
+                    <!-- {{#ninj1}} -->
+The kernel of <m>T</m> contains more than one vector.
+                    <!-- {{/ninj1}} -->
+                    <!-- {{#ninj2}} -->
+The columns of <m>A</m> are linearlly dependent.
+                    <!-- {{/ninj2}} -->
+                    <!-- {{#ninj3}} -->
+Some column of <m>\operatorname{RREF}A</m> lacks a pivot.
+                    <!-- {{/ninj3}} -->
+                    <!-- {{#ninj4}} -->
+There exist <m>\vec u\not=\vec v</m> where <m>T(\vec u)=T(\vec v)</m>.
+                    <!-- {{/ninj4}} -->
+                    <!-- {{#sur1}} -->
+The image of <m>T</m> is the same as its codomain.
+                    <!-- {{/sur1}} -->
+                    <!-- {{#sur2}} -->
+The columns of <m>A</m> span <m>\mathbb R^m</m>.
+                    <!-- {{/sur2}} -->
+                    <!-- {{#sur3}} -->
+Every row of <m>\operatorname{RREF}A</m> has a pivot.
+                    <!-- {{/sur3}} -->
+                    <!-- {{#sur4}} -->
+Every vector in the codomain has a vector in the domain that
+<m>T</m> maps to it.
+                    <!-- {{/sur4}} -->
+                    <!-- {{#nsur1}} -->
+The image of <m>T</m> is different than its codomain.
+                    <!-- {{/nsur1}} -->
+                    <!-- {{#nsur2}} -->
+The columns of <m>A</m> fail to span <m>\mathbb R^m</m>.
+                    <!-- {{/nsur2}} -->
+                    <!-- {{#nsur3}} -->
+<m>\operatorname{RREF}A</m> has a zero row.
+                    <!-- {{/nsur3}} -->
+                    <!-- {{#nsur4}} -->
+Some vector in the codomain is not mapped to by <m>T</m>.
+                    <!-- {{/nsur4}} -->
+                    <!-- {{/item}} -->
+                </p></item>
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+            <!-- {{#correct}} -->
+            <p>({{letter}})
+                <!-- {{#item}} -->
+                <!-- {{#inj1}} -->
+The kernel of <m>T</m> contains only the zero vector.
+                <!-- {{/inj1}} -->
+                <!-- {{#inj2}} -->
+The columns of <m>A</m> are linearlly independent.
+                <!-- {{/inj2}} -->
+                <!-- {{#inj3}} -->
+Every column of <m>\operatorname{RREF}A</m> has a pivot.
+                <!-- {{/inj3}} -->
+                <!-- {{#inj4}} -->
+If <m>\vec u\not=\vec v</m> then <m>T(\vec u)\not=T(\vec v)</m>.
+                <!-- {{/inj4}} -->
+                <!-- {{#ninj1}} -->
+The kernel of <m>T</m> contains more than one vector.
+                <!-- {{/ninj1}} -->
+                <!-- {{#ninj2}} -->
+The columns of <m>A</m> are linearlly dependent.
+                <!-- {{/ninj2}} -->
+                <!-- {{#ninj3}} -->
+Some column of <m>\operatorname{RREF}A</m> lacks a pivot.
+                <!-- {{/ninj3}} -->
+                <!-- {{#ninj4}} -->
+There exist <m>\vec u\not=\vec v</m> where <m>T(\vec u)=T(\vec v)</m>.
+                <!-- {{/ninj4}} -->
+                <!-- {{#sur1}} -->
+The image of <m>T</m> is the same as its codomain.
+                <!-- {{/sur1}} -->
+                <!-- {{#sur2}} -->
+The columns of <m>A</m> span <m>\mathbb R^m</m>.
+                <!-- {{/sur2}} -->
+                <!-- {{#sur3}} -->
+Every row of <m>\operatorname{RREF}A</m> has a pivot.
+                <!-- {{/sur3}} -->
+                <!-- {{#sur4}} -->
+Every vector in the codomain has a vector in the domain that
+<m>T</m> maps to it.
+                <!-- {{/sur4}} -->
+                <!-- {{#nsur1}} -->
+The image of <m>T</m> is different than its codomain.
+                <!-- {{/nsur1}} -->
+                <!-- {{#nsur2}} -->
+The columns of <m>A</m> fail to span <m>\mathbb R^m</m>.
+                <!-- {{/nsur2}} -->
+                <!-- {{#nsur3}} -->
+<m>\operatorname{RREF}A</m> has a zero row.
+                <!-- {{/nsur3}} -->
+                <!-- {{#nsur4}} -->
+Some vector in the codomain is not mapped to by <m>T</m>.
+                <!-- {{/nsur4}} -->
+                <!-- {{/item}} -->
+            </p>
+            <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/inj_surj_def}} -->
     <!-- {{/questions}} -->
 </knowl>
