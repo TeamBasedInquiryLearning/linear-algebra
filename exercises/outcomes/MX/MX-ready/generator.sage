@@ -5,7 +5,7 @@ class Generator(BaseGenerator):
         questions = []
         x,y,z = var("x y z")
 
-        # composition
+        # comp_real
 
         # use 4 random nonzero numbers between -9 and 9
         values = sample(range(1,10),5)
@@ -43,7 +43,7 @@ class Generator(BaseGenerator):
         eqs_latex = " \\hspace{1.5em} ".join(eq_list)
 
         questions.append({
-            "composition": True,
+            "comp_real": True,
             "eqs_latex": eqs_latex,
             "comp_string": comp_string,
             "choices": choices_from_list([
@@ -55,10 +55,39 @@ class Generator(BaseGenerator):
         })
 
 
+        # comp_func
+        values = sample(range(2,10),2)
+        values = [choice([-1,1])*v for v in values]
+        f = x^2+values[0]
+        g = x^2+values[1]
+        if choice([True,False]):
+            version = "gof"
+            comp_exp = g(x=f)
+            distractor = f(x=g)
+        else:
+            version = "fog"
+            comp_exp = g(x=f)
+            distractor = f(x=g)
+        choices = [
+            comp_exp,
+            distractor,
+            x^4+values[0]+values[1],
+            f*g,
+        ]
+        choices = [c.expand() for c in choices]
+
+        questions.append({
+            "comp_func": True,
+            version: True,
+            "f": f,
+            "g": g,
+            "choices": choices_from_list(choices),
+        })
 
 
         
-        shuffle(questions)
+        # shuffle(questions)
+        questions.reverse()
         return {
             "questions": questions,
         }

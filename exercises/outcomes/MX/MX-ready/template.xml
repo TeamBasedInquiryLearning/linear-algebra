@@ -2,11 +2,11 @@
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
     <intro><p>Choose the most appropriate response for each question.</p></intro>
     <!-- {{#questions}} -->
-    <!-- {{#composition}} -->
+    <!-- {{#comp_real}} -->
     <knowl>
         <content>
             <p>
-Suppose <m>f(x),g(x)</m> are real-valued equations satsifying
+Suppose <m>f(x),g(x)</m> are functions satisfying
                 <me>
 {{eqs_latex}}
                 </me>
@@ -26,6 +26,30 @@ What is the value of <m>{{comp_string}}</m>?
             <!-- {{/choices}} -->
         </outtro>
     </knowl>
-    <!-- {{/composition}} -->
+    <!-- {{/comp_real}} -->
+    <!-- {{#comp_func}} -->
+    <knowl>
+        <content>
+            <p>
+Suppose <m>f(x)={{f}}</m> and <m>g(x)={{g}}</m>.
+Which expression is equal to
+<!-- {{#fog}} --><m>(f\circ g)(x)</m>?<!-- {{/fog}} -->
+<!-- {{#gof}} --><m>(g\circ f)(x)</m>?<!-- {{/gof}} -->
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) <m>{{item}}</m></p></item>
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+                <!-- {{#correct}} -->
+            <p>({{letter}}) <m>{{item}}</m></p>
+                <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/comp_func}} -->
     <!-- {{/questions}} -->
 </knowl>
