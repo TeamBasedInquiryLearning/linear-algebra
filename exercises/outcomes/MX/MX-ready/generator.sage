@@ -162,6 +162,26 @@ class Generator(BaseGenerator):
             ]),
         })
 
+        # dom_cdom
+        # create a cdom x dom standard matrix
+        dom, cdom = sample(range(2,5),2)
+        A = CheckIt.simple_random_matrix_of_rank(
+            min(dom, cdom),
+            rows=cdom,
+            columns=dom
+        )
+
+        questions.append({
+            "dom_cdom": True,
+            "A": A,
+            "choices": choices_from_list([
+                {"dom":dom, "cdom":cdom},
+                {"dom":cdom, "cdom":dom},
+                {"dom":dom, "cdom":dom},
+                {"dom":cdom, "cdom":cdom},
+            ]),
+        })
+
 
         
         # shuffle(questions)
