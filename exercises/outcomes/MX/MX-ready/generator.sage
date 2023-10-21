@@ -182,6 +182,36 @@ class Generator(BaseGenerator):
             ]),
         })
 
+        # inj_surj
+        A = CheckIt.simple_random_matrix_of_rank(
+            2,
+            rows=3,
+            columns=3
+        )
+        xs=column_matrix(vector([var("x"),var("y"),var("z")]))
+        Tv = A*xs
+
+        questions.append({
+            "inj_surj": True,
+            "Tv": Tv,
+            "neither": True,
+        })
+
+        # inj_surj
+        A = CheckIt.simple_random_matrix_of_rank(
+            3,
+            rows=3,
+            columns=3
+        )
+        xs=column_matrix(vector([var("x"),var("y"),var("z")]))
+        Tv = A*xs
+
+        questions.append({
+            "inj_surj": True,
+            "Tv": Tv,
+            "both": True,
+        })
+
 
         
         # shuffle(questions)
