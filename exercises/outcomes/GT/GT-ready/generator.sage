@@ -81,6 +81,42 @@ class Generator(BaseGenerator):
         })
 
 
+        # linearity
+        v=column_matrix(vector([
+            randrange(1,5)*choice([-1,1])*x+
+            randrange(1,5)*choice([-1,1])*y,
+            randrange(1,5)*choice([-1,1])*x+
+            randrange(1,5)*choice([-1,1])*y,
+        ]))
+        w=column_matrix(vector([
+            randrange(1,5)*choice([-1,1])*x+
+            randrange(1,5)*choice([-1,1])*y,
+            randrange(1,5)*choice([-1,1])*x+
+            randrange(1,5)*choice([-1,1])*y,
+        ]))
+        questions.append({
+            "linearity": True,
+            "v": v,
+            "w": w,
+            "choices": choices_from_list([
+                v+2*w,
+                w+2*v,
+                2*v+2*w,
+                v+w+column_matrix(vector([2,2]))
+            ]),
+        })
+
+        # inv_def
+        versions = sample(range(1,5),4)
+        questions.append({
+            "inv_def": True,
+            "choices": choices_from_list([
+                {f"inv{versions[0]}":True},
+                {f"dst{versions[1]}":True},
+                {f"sur{versions[2]}":True},
+                {f"inj{versions[3]}":True},
+            ]),
+        })
         
         # shuffle(questions)
         questions.reverse()
