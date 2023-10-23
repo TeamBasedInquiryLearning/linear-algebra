@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
+    <intro><p>Choose the most appropriate response for each question.</p></intro>
+    <!-- {{#questions}} -->
+    <!-- {{#area_comp}} -->
+    <knowl>
+        <content>
+            <p>
+Find the area of the parallelogram with vertices
+<m>{{verts}}</m>.
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) <m>{{item}}</m></p></item>
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+                <!-- {{#correct}} -->
+            <p>({{letter}}) <m>{{item}}</m></p>
+                <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/area_comp}} -->
+    <!-- {{#area_adj}} -->
+    <knowl>
+        <content>
+            <p>
+A parallelogram <m>P</m> has area <m>{{area}}</m>. If another
+parallelogram <m>Q</m> has
+<!-- {{#base}} -->
+a base that's {{adjustment}} the base of <m>P</m> but the same height,
+<!-- {{/base}} -->
+<!-- {{#height}} -->
+a height that's {{adjustment}} the height of <m>P</m> but the same base,
+<!-- {{/height}} -->
+what is the area of <m>Q</m>?
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) <m>{{item}}</m></p></item>
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+                <!-- {{#correct}} -->
+            <p>({{letter}}) <m>{{item}}</m></p>
+                <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/area_adj}} -->
+    <!-- {{#linearity}} -->
+    <knowl>
+        <content>
+            <p>
+Let <m>T</m> be a linear map. Which of these is equal to
+<m>T\left({{v}}\right)+2T\left({{w}}\right)</m>?
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) <m>T\left({{item}}\right)</m></p></item>
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+                <!-- {{#correct}} -->
+            <p>({{letter}}) <m>T\left({{item}}\right)</m></p>
+                <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/linearity}} -->
+    <!-- {{#inv_def}} -->
+    <knowl>
+        <content>
+            <p>
+Let <m>T:\mathbb R^n\to\mathbb R^n</m> be a linear transformation
+with standard matrix <m>A</m>. Which of the following would mean
+that <m>A</m> is <em>invertible</em>?
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) 
+                    <!-- {{#item}} -->
+                    <!-- {{#inj1}} -->
+The kernel of <m>T</m> contains only the zero vector.
+                    <!-- {{/inj1}} -->
+                    <!-- {{#inj2}} -->
+The columns of <m>A</m> are linearlly independent.
+                    <!-- {{/inj2}} -->
+                    <!-- {{#inj3}} -->
+Every column of <m>\operatorname{RREF}A</m> has a pivot.
+                    <!-- {{/inj3}} -->
+                    <!-- {{#inj4}} -->
+If <m>\vec u\not=\vec v</m> then <m>T(\vec u)\not=T(\vec v)</m>.
+                    <!-- {{/inj4}} -->
+                    <!-- {{#sur1}} -->
+The image of <m>T</m> is the same as its codomain.
+                    <!-- {{/sur1}} -->
+                    <!-- {{#sur2}} -->
+The columns of <m>A</m> span <m>\mathbb R^m</m>.
+                    <!-- {{/sur2}} -->
+                    <!-- {{#sur3}} -->
+Every row of <m>\operatorname{RREF}A</m> has a pivot.
+                    <!-- {{/sur3}} -->
+                    <!-- {{#sur4}} -->
+Every vector in the codomain has a vector in the domain that
+<m>T</m> maps to it.
+                    <!-- {{/sur4}} -->
+                    <!-- {{#inv1}} -->
+<m>T</m> is a bijection.
+                    <!-- {{/inv1}} -->
+                    <!-- {{#inv2}} -->
+<m>\operatorname{RREF} A</m> is the identity matrix
+                    <!-- {{/inv2}} -->
+                    <!-- {{#inv3}} -->
+<m>AB</m> equals the identity matrix for some matrix <m>B</m>
+                    <!-- {{/inv3}} -->
+                    <!-- {{#inv4}} -->
+The vector equation <m>T(\vec x)=\vec w</m> has exactly one solution.
+                    <!-- {{/inv4}} -->
+                    <!-- {{#dst1}} -->
+<m>A</m> has more rows than columns
+                    <!-- {{/dst1}} -->
+                    <!-- {{#dst2}} -->
+<m>A=\operatorname{RREF} A</m>
+                    <!-- {{/dst2}} -->
+                    <!-- {{#dst3}} -->
+<m>A</m> has more columns than rows
+                    <!-- {{/dst3}} -->
+                    <!-- {{#dst4}} -->
+The vector equation <m>T(\vec x)=\vec w</m> has no solutions.
+                    <!-- {{/dst4}} -->
+                    <!-- {{/item}} -->
+                </p></item>
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+            <!-- {{#correct}} -->
+            <p>({{letter}})
+                <!-- {{#item}} -->
+                <!-- {{#inj1}} -->
+The kernel of <m>T</m> contains only the zero vector.
+                <!-- {{/inj1}} -->
+                <!-- {{#inj2}} -->
+The columns of <m>A</m> are linearlly independent.
+                <!-- {{/inj2}} -->
+                <!-- {{#inj3}} -->
+Every column of <m>\operatorname{RREF}A</m> has a pivot.
+                <!-- {{/inj3}} -->
+                <!-- {{#inj4}} -->
+If <m>\vec u\not=\vec v</m> then <m>T(\vec u)\not=T(\vec v)</m>.
+                <!-- {{/inj4}} -->
+                <!-- {{#sur1}} -->
+The image of <m>T</m> is the same as its codomain.
+                <!-- {{/sur1}} -->
+                <!-- {{#sur2}} -->
+The columns of <m>A</m> span <m>\mathbb R^m</m>.
+                <!-- {{/sur2}} -->
+                <!-- {{#sur3}} -->
+Every row of <m>\operatorname{RREF}A</m> has a pivot.
+                <!-- {{/sur3}} -->
+                <!-- {{#sur4}} -->
+Every vector in the codomain has a vector in the domain that
+<m>T</m> maps to it.
+                <!-- {{/sur4}} -->
+                <!-- {{#inv1}} -->
+<m>T</m> is a bijection.
+                <!-- {{/inv1}} -->
+                <!-- {{#inv2}} -->
+<m>\operatorname{RREF} A</m> is the identity matrix
+                <!-- {{/inv2}} -->
+                <!-- {{#inv3}} -->
+<m>AB</m> equals the identity matrix for some matrix <m>B</m>
+                <!-- {{/inv3}} -->
+                <!-- {{#inv4}} -->
+The vector equation <m>T(\vec x)=\vec w</m> has exactly one solution.
+                <!-- {{/inv4}} -->
+                <!-- {{#dst1}} -->
+<m>A</m> has more rows than columns
+                <!-- {{/dst1}} -->
+                <!-- {{#dst2}} -->
+<m>A=\operatorname{RREF} A</m>
+                <!-- {{/dst2}} -->
+                <!-- {{#dst3}} -->
+<m>A</m> has more columns than rows
+                <!-- {{/dst3}} -->
+                <!-- {{#dst4}} -->
+The vector equation <m>T(\vec x)=\vec w</m> has no solutions.
+                <!-- {{/dst4}} -->
+                <!-- {{/item}} -->
+            </p>
+            <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/inv_def}} -->
+    <!-- {{#find_std_mx}} -->
+    <knowl>
+        <content>
+            <p>
+Suppose
+<m>
+    T\left(\left[\begin{array}{c}x\\y\\z\end{array}\right]\right)
+    =
+    {{Tv}}
+</m>.
+What is the standard matrix for <m>T</m>?
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) <m>{{item}}</m></p></item>
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+                <!-- {{#correct}} -->
+            <p>({{letter}}) <m>{{item}}</m></p>
+                <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/find_std_mx}} -->
+    <!-- {{#polyroot}} -->
+    <knowl>
+        <content>
+            <p>
+Which of the following is a root of the polynomial <m>{{poly}}</m>?
+            </p>
+            <list>
+                <!-- {{#choices}} -->
+                <item><p>({{letter}}) <m>{{var}} = {{item}}</m></p></item>
+                <!-- {{/choices}} -->
+            </list>
+        </content>
+        <outtro>
+            <!-- {{#choices}} -->
+                <!-- {{#correct}} -->
+            <p>({{letter}}) <m>{{var}} = {{item}}</m></p>
+                <!-- {{/correct}} -->
+            <!-- {{/choices}} -->
+        </outtro>
+    </knowl>
+    <!-- {{/polyroot}} -->
+    <!-- {{/questions}} -->
+</knowl>
