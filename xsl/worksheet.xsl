@@ -30,17 +30,17 @@
 </xsl:template>
 
 
-<!-- We start a new page after each thing-->
-<!--<xsl:template match="activity">
-    <xsl:apply-imports />
-</xsl:template>-->
-
 <!-- We pull activities from each subsection and create a new page afterwards  -->
 <xsl:template match="subsection">
-    <xsl:apply-templates select="activity" />
+    <!--Pull in activities as well as other numbered things-->
+    <xsl:apply-templates select="activity|fact|definition|note|remark|observation"/>
     <xsl:text>\cleardoublepage&#xA;&#xA;</xsl:text>
 </xsl:template>
 
+<!--We don't want to actually display these, so just increase the counter to preserve numbering-->
+<xsl:template match="fact|definition|note|remark|observation">
+    <xsl:text>\refstepcounter{tcb@cnt@block}&#xa;&#xA;</xsl:text>
+</xsl:template>
 
 <xsl:template match="objectives" />
 <!--Exercise groups are not in a subsection, so drop them -->
