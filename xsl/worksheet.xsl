@@ -29,17 +29,113 @@
   <xsl:apply-templates select="." mode="number" />
 </xsl:template>
 
+<!--This is actually useless!-->
+<xsl:variable name="b-latex-hardcode-numbers" select="true()"/>
 
 <!-- We pull activities from each subsection and create a new page afterwards  -->
 <xsl:template match="subsection">
     <!--Pull in activities as well as other numbered things-->
-    <xsl:apply-templates select="activity|fact|definition|note|remark|observation"/>
+    <!--<xsl:apply-templates select="activity|fact|definition|note|remark|observation"/>-->
+    <xsl:apply-templates select="activity"/>
     <xsl:text>\cleardoublepage&#xA;&#xA;</xsl:text>
 </xsl:template>
 
-<!--We don't want to actually display these, so just increase the counter to preserve numbering-->
-<xsl:template match="fact|definition|note|remark|observation">
-    <xsl:text>\refstepcounter{tcb@cnt@block}&#xa;&#xA;</xsl:text>
+<!--Redefine the whole stupid activity template so we can use the hardcoded number-->
+<xsl:template match="activity" mode="environment">
+    <!-- Names of various pieces normally use the      -->
+    <!-- element name, but "exercise" does triple duty -->
+    <xsl:variable name="environment-name">
+                <xsl:value-of select="local-name(.)"/>
+    </xsl:variable>
+    <!-- projects and inline exercises sometimes run on their own counters -->
+    <xsl:variable name="counter">
+                <xsl:text>block</xsl:text>
+    </xsl:variable>
+    <xsl:text>%% </xsl:text>
+    <!-- per-environment style -->
+    <xsl:value-of select="$environment-name"/>
+    <xsl:text>: fairly simple numbered block/structure&#xa;</xsl:text>
+    <xsl:text>\tcbset{ </xsl:text>
+    <xsl:value-of select="$environment-name"/>
+    <xsl:text>style/.style={</xsl:text>
+    <xsl:apply-templates select="." mode="tcb-style"/>
+    <xsl:text>} }&#xa;</xsl:text>
+    <!-- create and configure the environment/tcolorbox -->
+    <xsl:text>\newtcolorbox</xsl:text>
+    <!-- run on a common, default, faux counter -->
+    <xsl:text>[</xsl:text>
+    <xsl:text>use counter from=</xsl:text>
+    <xsl:value-of select="$counter"/>
+    <xsl:text>]</xsl:text>
+    <!-- environment's tcolorbox name, pair -->
+    <!-- with actual constructions in body  -->
+    <xsl:text>{</xsl:text>
+    <xsl:value-of select="$environment-name"/>
+    <xsl:text>}[4]</xsl:text>
+
+    <!-- begin: options -->
+    <xsl:text>{</xsl:text>
+    <!-- begin: title construction -->
+    <!--Argument 4 will have the hardcoded number-->
+    <xsl:text>title={{#1~#4}},</xsl:text>
+            <xsl:text>phantomlabel={#3}, </xsl:text>
+    <!-- always breakable -->
+    <xsl:text>breakable, after={\par}, </xsl:text>
+    <xsl:value-of select="$environment-name"/>
+    <xsl:text>style, }&#xa;</xsl:text>
+    <!-- end: options -->
+</xsl:template>
+
+<xsl:template match="activity">
+
+    <xsl:variable name="project" select="true()"/>
+
+    <!-- structured version of a project-like may contain a     -->
+    <!-- prelude, which is rendered *before* environment begins -->
+
+    <!--<xsl:if test="(statement or task)">
+        <xsl:apply-templates select="prelude" />
+    </xsl:if>-->
+    <!-- The exact environment depends on the placement of the -->
+    <!-- "exercise" when located in an "exercises" division    -->
+    <xsl:variable name="env-name">
+        <xsl:apply-templates select="." mode="environment-name"/>
+    </xsl:variable>
+    <xsl:text>\begin{</xsl:text>
+    <xsl:value-of select="$env-name"/>
+    <xsl:text>}</xsl:text>
+    <xsl:text>{</xsl:text>
+        <xsl:apply-templates select="." mode="type-name"/>
+        <xsl:text>}</xsl:text>
+        <xsl:text>{</xsl:text>
+        <xsl:apply-templates select="." mode="title-full"/>
+        <xsl:text>}</xsl:text>
+            <xsl:text>{</xsl:text>
+            <!--I don't know why this doesn't seem to work-->
+            <!--<xsl:apply-templates select="." mode="unique-id"/>-->
+            <!--This at least compiles...-->
+            <xsl:apply-templates select="." mode="number" />
+            <xsl:text>}</xsl:text>
+        <xsl:text>{</xsl:text>
+            <xsl:apply-templates select="." mode="number" />
+        <xsl:text>}</xsl:text> 
+  
+    <xsl:text>%&#xa;</xsl:text>
+    <!-- Each "idx" produces its own newline -->
+    <xsl:apply-templates select="idx"/>
+    <!-- Now the guts of the exercise, inside of its  -->
+    <!-- (variable) identification, environment, etc. -->
+    <xsl:apply-templates select="." mode="exercise-components">
+        <xsl:with-param name="b-original" select="true()" />
+        <xsl:with-param name="b-has-statement" select="true()" />
+    </xsl:apply-templates>
+    <!-- closing % necessary, as newline between adjacent environments -->
+    <!-- will cause a slight indent on trailing exercise               -->
+    <xsl:text>\end{</xsl:text>
+    <xsl:value-of select="$env-name"/>
+    <xsl:text>}%&#xa;</xsl:text>
+    <xsl:apply-templates select="." mode="pop-footnote-text"/>
+
 </xsl:template>
 
 <xsl:template match="objectives" />
