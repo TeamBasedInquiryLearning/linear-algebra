@@ -74,8 +74,8 @@ class Generator(BaseGenerator):
                 ],
                 [
                     sum(
-                        x^i*e_vector[i]
-                        for i in range(rows)
+                        x^j*A.columns()[A.pivots()[i]][j]
+                        for j in range(rows)
                     )
                     for i in range(number_of_pivots)
                 ],
