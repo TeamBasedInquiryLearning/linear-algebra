@@ -21,35 +21,155 @@ in terms of matrix multiplication.
     </introduction>
 <task>
     <p>
-Create a matrix that doubles the third row of <m>A</m>:
+Which of these tweaks of the identity matrix
+yields a matrix that doubles the third row of <m>A</m> when
+left-multiplying? (<m>2R_3\to R_3</m>)
 <me>
  \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
  \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
 =
  \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 2 &amp; 2 &amp; -2 \end{array}\right]
 </me>
+    <ol label="A." cols="2">
+        <li>
+            <m>
+\left[\begin{array}{ccc}
+2 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\ 
+0 &amp; 0 &amp; 1 
+\end{array}\right]
+            </m>
+        </li>
+        <li>
+            <m>
+\left[\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 2 &amp; 0 \\ 
+0 &amp; 0 &amp; 1 
+\end{array}\right]
+            </m>
+        </li>
+        <li>
+            <m>
+\left[\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\ 
+0 &amp; 0 &amp; 2
+\end{array}\right]
+            </m>
+        </li>
+        <li>
+            <m>
+\left[\begin{array}{ccc}
+2 &amp; 0 &amp; 0 \\
+0 &amp; 2 &amp; 0 \\ 
+0 &amp; 0 &amp; 2 
+\end{array}\right]
+            </m>
+        </li>
+    </ol>
     </p>
 </task>
 <task>
     <p>
-  Create a matrix that swaps the second and third rows of <m>A</m>:
+Which of these tweaks of the identity matrix
+yields a matrix that swaps the first and third rows of <m>A</m>
+when left-multiplying? (<m>R_1\leftrightarrow R_3</m>)
   <me>
    \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
    \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
   =
   \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 1 &amp; 1 &amp; -1 \\ 0 &amp; 3 &amp; 2 \end{array}\right]
   </me>
-    </p>
+  <ol label="A." cols="2">
+      <li>
+          <m>
+\left[\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 0 \\ 
+\end{array}\right]
+          </m>
+      </li>
+      <li>
+          <m>
+\left[\begin{array}{ccc}
+0 &amp; 1 &amp; 0 \\ 
+0 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 0 \\
+\end{array}\right]
+          </m>
+      </li>
+      <li>
+          <m>
+\left[\begin{array}{ccc}
+0 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 0 \\ 
+1 &amp; 0 &amp; 0 \\
+\end{array}\right]
+          </m>
+      </li>
+      <li>
+          <m>
+\left[\begin{array}{ccc}
+0 &amp; 1 &amp; 0 \\ 
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 
+\end{array}\right]
+          </m>
+      </li>
+  </ol>
+  </p>
 </task>
 <task>
     <p>
-Create a matrix that adds <m>5</m> times the third row of <m>A</m> to the first row:
+Which of these tweaks of the identity matrix
+yields a matrix that adds <m>5</m> times the third row of <m>A</m> to
+the first row when left-multiplying? (<m>R_1+5R_3\to R_1</m>)
 <me>
  \left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
  \left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
 =
  \left[\begin{array}{ccc} 2+5(1) &amp; 7+5(1) &amp; -1+5(-1) \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
 </me>
+<ol label="A." cols="2">
+    <li>
+        <m>
+\left[\begin{array}{ccc}
+1 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 0 \\ 
+0 &amp; 0 &amp; 5 
+\end{array}\right]
+        </m>
+    </li>
+    <li>
+        <m>
+\left[\begin{array}{ccc}
+1 &amp; 0 &amp; 5 \\
+0 &amp; 1 &amp; 0 \\ 
+0 &amp; 0 &amp; 1 
+\end{array}\right]
+        </m>
+    </li>
+    <li>
+        <m>
+\left[\begin{array}{ccc}
+5 &amp; 5 &amp; 5 \\
+0 &amp; 1 &amp; 0 \\ 
+0 &amp; 0 &amp; 1 
+\end{array}\right]
+        </m>
+    </li>
+    <li>
+        <m>
+\left[\begin{array}{ccc}
+1 &amp; 0 &amp; 5 \\
+0 &amp; 1 &amp; 0 \\ 
+0 &amp; 0 &amp; 5
+\end{array}\right]
+        </m>
+    </li>
+</ol>
     </p>
 </task>
 </activity>
@@ -105,6 +225,20 @@ for some sequence of matrices <m>R_1,R_2,\dots,R_k</m>.
         </p>
     </statement>
 </fact>
+
+<activity>
+    <statement>
+        <p>
+What would happen if you <em>right</em>-multiplied by
+the tweaked identity matrix rather than left-multiplied?
+<ol label="A.">
+    <li>The manipulated rows would be reversed.</li>
+    <li>Columns would be manipulated instead of rows.</li>
+    <li>The entries of the resulting matrix would be rotated 180 degrees.</li>
+</ol>
+        </p>
+    </statement>
+</activity>
 
 <activity estimated-time='10'>
     <statement>
@@ -168,8 +302,30 @@ Check your work using technology.
     </statement>
 </activity>
 
-<sage language="octave">
-</sage>
+<sage language="octave"/>
+
+<activity>
+    <introduction>
+      <p>Let <m>A</m> be <em>any</em> <m>4 \times 4</m> matrix.</p>
+    </introduction>
+      <task>
+        <statement>
+          <p> Give a <m>4 \times 4</m> matrix <m>M</m> that may be used to perform the row operation <m>-5 R_2 \to R_2</m>. </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p> Give a <m>4 \times 4</m> matrix <m>Y</m> that may be used to perform the row operation <m>R_2 \leftrightarrow R_3</m>. </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p> Use matrix multiplication to describe the matrix obtained by applying   <m>-5 R_2 \to R_2</m> and then <m>R_2 \leftrightarrow R_3</m>  to <m>A</m> (note the order). </p>
+        </statement>
+      </task>
+  </activity>
+
+<sage language="octave"/>
 </subsection>
 
     <subsection>
