@@ -1708,7 +1708,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "Standard Matrices (AT2)",
-  "body": " Standard Matrices (AT2)     Translate back and forth between a linear transformation of Euclidean spaces and its standard matrix, and perform related computations.     Class Activities    Recall that a linear map satisfies     for any .     for any .    In other words, a map is linear when vector space operations can be applied before or after the transformation without affecting the result.      Suppose is a linear map, and you know and . What is ?                    Suppose is a linear map, and you know and . What is ?                            Suppose is a linear map, and you know and . What is ?                            Suppose is a linear map, and you know and . What piece of information would help you compute ?    The value of .    The value of .    The value of .    Any of the above.        Consider any basis for . Since every vector can be written as a linear combination of basis vectors, , we may compute as follows:   Therefore any linear transformation can be defined by just describing the values of .  Put another way, the images of the basis vectors completely determine determine the transformation .      Since a linear transformation is determined by its action on the standard basis , it is convenient to store this information in an matrix, called the standard matrix standard matrix of , given by .  For example, let be the linear map determined by the following values for applied to the standard basis of .   Then the standard matrix corresponding to is       Let be the linear transformation given by Write the standard matrix for .      Let be the linear transformation given by    Compute , , and .  Find the standard matrix for .     Because every linear map has a linear combination of the variables in each component, and thus yields exactly the coefficients of , the standard matrix for is simply an array of the coefficients of the :       Let be the linear transformation given by the standard matrix    Compute .  Compute .     Compute the following linear transformations of vectors given their standard matrices.         Videos      Video: Using the standard matrix to compute the image of a vector     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations  We can represent images in the plane using vectors, and manipulate those images with linear transformations. We introduce some notation in these explorations that is needed for their completion, but is not essential to the rest of the text. These have a geometric flair to them, and can be understood by thinking of geometric transformations in terms of standard matrices.  Given two vectors and , we define the dot product dot product as    For each of the following properties, determine if it is held by the dot product. Either provide a proof it the property holds, or provide a counter-example if it does not.  Distributive over addition (e.g., (  Associative?  Commutative?    Given the properties you proved in the last exploration, could the dot product take the place of as a vector space operation on ?  Is the dot product a linear operator? That is, given vectors , and , is it true that Prove or provide a counter-example.    Assume and define the length of a vector by . Prove that if an only if and are perpendicular. You may use the fact (try and prove it!) that two vectors are perpendicular if and only if their dot product is zero.       A dilation is given by by mapping a vector to some scalar multiple of .  A rotation is given by  A reflection of over a line can be found by first finding a vector along , then  Represent each of the following transformations with respect to the standard basis in .  Rotation through an angle .  Reflection over a line passing through the origin.  Dilation by some scalar .  Prove that each transformation is linear, and that your matrix representations are correct.     Sample Problem and Solution  Sample problem .   "
+  "body": " Standard Matrices (AT2)     Translate back and forth between a linear transformation of Euclidean spaces and its standard matrix, and perform related computations.     Class Activities    Recall that a linear map satisfies     for any .     for any .    In other words, a map is linear when vector space operations can be applied before or after the transformation without affecting the result.      Suppose is a linear map, and you know and . What is ?                    Suppose is a linear map, and you know and . What is ?                            Suppose is a linear map, and you know and . What is ?                            Suppose is a linear map, and you know and . What piece of information would help you compute ?    The value of .    The value of .    The value of .    Any of the above.        Consider any basis for . Since every vector can be written as a linear combination of basis vectors, , we may compute as follows:   Therefore any linear transformation can be defined by just describing the values of .  Put another way, the images of the basis vectors completely determine determine the transformation .      Since a linear transformation is determined by its action on the standard basis , it is convenient to store this information in an matrix, called the standard matrix standard matrix of , given by .  For example, let be the linear map determined by the following values for applied to the standard basis of .   Then the standard matrix corresponding to is       Let be the linear transformation given by Write the standard matrix for .      Let be the linear transformation given by    Compute , , and .  Find the standard matrix for .     Because every linear map has a linear combination of the variables in each component, and thus yields exactly the coefficients of , the standard matrix for is simply an array of the coefficients of the :   Since the formula for a linear transformation and its standard matrix may both be used to compute the transformation of a vector , we will often write and interchangably:       Let be the linear transformation given by the standard matrix    Compute .  Compute .     Compute the following linear transformations of vectors given their standard matrices.         Videos      Video: Using the standard matrix to compute the image of a vector     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations  We can represent images in the plane using vectors, and manipulate those images with linear transformations. We introduce some notation in these explorations that is needed for their completion, but is not essential to the rest of the text. These have a geometric flair to them, and can be understood by thinking of geometric transformations in terms of standard matrices.  Given two vectors and , we define the dot product dot product as    For each of the following properties, determine if it is held by the dot product. Either provide a proof it the property holds, or provide a counter-example if it does not.  Distributive over addition (e.g., (  Associative?  Commutative?    Given the properties you proved in the last exploration, could the dot product take the place of as a vector space operation on ?  Is the dot product a linear operator? That is, given vectors , and , is it true that Prove or provide a counter-example.    Assume and define the length of a vector by . Prove that if an only if and are perpendicular. You may use the fact (try and prove it!) that two vectors are perpendicular if and only if their dot product is zero.       A dilation is given by by mapping a vector to some scalar multiple of .  A rotation is given by  A reflection of over a line can be found by first finding a vector along , then  Represent each of the following transformations with respect to the standard basis in .  Rotation through an angle .  Reflection over a line passing through the origin.  Dilation by some scalar .  Prove that each transformation is linear, and that your matrix representations are correct.     Sample Problem and Solution  Sample problem .   "
 },
 {
   "id": "objectives-16",
@@ -1801,13 +1801,13 @@ var ptx_lunr_docs = [
   "body": "  Let be the linear transformation given by    Compute , , and .  Find the standard matrix for .  "
 },
 {
-  "id": "fact-12",
+  "id": "AT3-standard-matrix-fact",
   "level": "2",
-  "url": "AT2.html#fact-12",
+  "url": "AT2.html#AT3-standard-matrix-fact",
   "type": "Fact",
   "number": "3.2.10",
   "title": "",
-  "body": "  Because every linear map has a linear combination of the variables in each component, and thus yields exactly the coefficients of , the standard matrix for is simply an array of the coefficients of the :    "
+  "body": "  Because every linear map has a linear combination of the variables in each component, and thus yields exactly the coefficients of , the standard matrix for is simply an array of the coefficients of the :   Since the formula for a linear transformation and its standard matrix may both be used to compute the transformation of a vector , we will often write and interchangably:    "
 },
 {
   "id": "activity-75",
@@ -1837,9 +1837,9 @@ var ptx_lunr_docs = [
   "body": "    Video: Using the standard matrix to compute the image of a vector  "
 },
 {
-  "id": "p-691",
+  "id": "p-692",
   "level": "2",
-  "url": "AT2.html#p-691",
+  "url": "AT2.html#p-692",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -2716,7 +2716,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.1",
   "title": "Matrices and Multiplication (MX1)",
-  "body": " Matrices and Multiplication (MX1)     Multiply matrices.     Class Activities    If and are linear maps, then the composition map computed as is a linear map from .      The composition of two linear maps.       Let be defined by the standard matrix and be defined by the standard matrix : .   What are the domain and codomain of the composition map ?  The domain is and the codomain is   The domain is and the codomain is   The domain is and the codomain is   The domain is and the codomain is    What size will the standard matrix of be?               Compute   Compute .  Compute .  Use to write the standard matrix for .     We define the product  of a matrix and a matrix to be the standard matrix of the composition map of the two corresponding linear functions.  For the previous activity, was a map , and was a map , so gave a map with a standard matrix:        Let be given by the matrix and be given by the matrix .   Write the dimensions (rows columns) for , , , and .  Find the standard matrix of .  Find the standard matrix of .     Consider the following three matrices.    Find the domain and codomain of each of the three linear maps corresponding to , , and .  Only one of the matrix products can actually be computed. Compute it.     Let , and let .   Compute the product by hand.  Check your work using technology. Using Octave: B = [3 -4 0 ; 2 0 -1 ; 0 -3 3] A = [2 7 -1 ; 0 3 2 ; 1 1 -1] B*A      Of the following three matrices, only two may be multiplied. Explain which two can be multiplied and why. Then show how to find their product.      Videos      Video: Multiplying matrices     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations   Construct 3 matrices, , such that    .     Construct 3 examples of matrix multiplication, with all matrix dimensions at least 2.  Where and are not square, but is square.  Where .  Where .      Use the included map in this problem.  Adjacency map, showing roads between 5 cities   A map with 5 dots. A is connected to B, B is connected to C, C is connected to D and E, and D and E are connected to each other      An adjacency matrix for this map is a matrix that has the number of roads from city to city in the entry of the matrix. A road is a path of length exactly 1. All entries are 0. Write the adjacency matrix for this map, with the cities in alphabetical order.  What does the square of this matrix tell you about the map? The cube? The -th power?       Sample Problem and Solution  Sample problem .   "
+  "body": " Matrices and Multiplication (MX1)     Multiply matrices.     Class Activities    If and are linear maps, then the composition map computed as is a linear map from .      The composition of two linear maps.       Let be defined by the standard matrix and be defined by the standard matrix : .   What are the domain and codomain of the composition map ?  The domain is and the codomain is   The domain is and the codomain is   The domain is and the codomain is   The domain is and the codomain is    What size will the standard matrix of be?               Compute   Compute .  Compute .  Use to write the standard matrix for .     We define the product  of a matrix and a matrix to be the standard matrix of the composition map of the two corresponding linear functions.  For the previous activity, was a map , and was a map , so gave a map with a standard matrix:        Let be given by the matrix and be given by the matrix .   Write the dimensions (rows columns) for , , , and .  Find the standard matrix of .  Find the standard matrix of .     Consider the following three matrices.    Find the domain and codomain of each of the three linear maps corresponding to , , and .  Only one of the matrix products can actually be computed. Compute it.     Let , and let .   Compute the product by hand.  Check your work using technology. Using Octave: B = [3 -4 0 ; 2 0 -1 ; 0 -3 3] A = [2 7 -1 ; 0 3 2 ; 1 1 -1] B*A      Of the following three matrices, only two may be multiplied. Explain which two can be multiplied and why. Then show how to find their product.      Let In we adopted the notation . Verify that in terms of matrix multiplication.      Videos      Video: Multiplying matrices     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations   Construct 3 matrices, , such that    .     Construct 3 examples of matrix multiplication, with all matrix dimensions at least 2.  Where and are not square, but is square.  Where .  Where .      Use the included map in this problem.  Adjacency map, showing roads between 5 cities   A map with 5 dots. A is connected to B, B is connected to C, C is connected to D and E, and D and E are connected to each other      An adjacency matrix for this map is a matrix that has the number of roads from city to city in the entry of the matrix. A road is a path of length exactly 1. All entries are 0. Write the adjacency matrix for this map, with the cities in alphabetical order.  What does the square of this matrix tell you about the map? The cube? The -th power?       Sample Problem and Solution  Sample problem .   "
 },
 {
   "id": "objectives-22",
@@ -2791,6 +2791,15 @@ var ptx_lunr_docs = [
   "body": "  Of the following three matrices, only two may be multiplied. Explain which two can be multiplied and why. Then show how to find their product.   "
 },
 {
+  "id": "activity-123",
+  "level": "2",
+  "url": "MX1.html#activity-123",
+  "type": "Activity",
+  "number": "4.1.8",
+  "title": "",
+  "body": "  Let In we adopted the notation . Verify that in terms of matrix multiplication.   "
+},
+{
   "id": "figure-41",
   "level": "2",
   "url": "MX1.html#figure-41",
@@ -2804,7 +2813,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "MX1.html#exploration-40",
   "type": "Exploration",
-  "number": "4.1.8",
+  "number": "4.1.9",
   "title": "",
   "body": " Construct 3 matrices, , such that    .   "
 },
@@ -2813,7 +2822,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "MX1.html#exploration-41",
   "type": "Exploration",
-  "number": "4.1.9",
+  "number": "4.1.10",
   "title": "",
   "body": " Construct 3 examples of matrix multiplication, with all matrix dimensions at least 2.  Where and are not square, but is square.  Where .  Where .    "
 },
@@ -2822,7 +2831,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "MX1.html#exploration-42",
   "type": "Exploration",
-  "number": "4.1.10",
+  "number": "4.1.11",
   "title": "",
   "body": " Use the included map in this problem.  Adjacency map, showing roads between 5 cities   A map with 5 dots. A is connected to B, B is connected to C, C is connected to D and E, and D and E are connected to each other      An adjacency matrix for this map is a matrix that has the number of roads from city to city in the entry of the matrix. A road is a path of length exactly 1. All entries are 0. Write the adjacency matrix for this map, with the cities in alphabetical order.  What does the square of this matrix tell you about the map? The cube? The -th power?    "
 },
@@ -2833,7 +2842,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.2",
   "title": "The Inverse of a Matrix (MX2)",
-  "body": " The Inverse of a Matrix (MX2)     Determine if a matrix is invertible, and if so, compute its inverse.     Class Activities    Let . Find a matrix such that , that is, Check your guess using technology.       The identity matrix (or just when is obvious from context) is the matrix It has a on each diagonal element and a in every other position.      For any square matrix , :       Let be a linear map with standard matrix . Sort the following items into three groups of statements: a group that means is injective , a group that means is surjective , and a group that means is bijective .    has a solution for all    has a unique solution for all    has a unique solution.  The columns of span   The columns of are linearly independent  The columns of are a basis of   Every column of has a pivot  Every row of has a pivot   and        Let be the linear transformation given by the standard matrix .  Write an augmented matrix representing the system of equations given by , that is, . Then solve to find the kernel of .       Let be a linear map with standard matrix .   If is a bijection and is any vector, then has a unique solution.  So we may define an inverse map inverse map  by setting to be this unique solution.  Let be the standard matrix for . We call the inverse matrix inverse matrix of , so we also say that is invertible invertible .       Let be the linear transformation given by the standard matrix .   Write an augmented matrix representing the system of equations given by , that is, . Then solve to find .  Solve to find .  Solve to find .  Write , the standard matrix for .      We could have solved these three systems simultaneously by row reducing the matrix at once.       Find the inverse of the matrix by row-reducing .       Is the matrix invertible? Give a reason for your answer.       An matrix is invertible if and only if .      Let be the bijective linear map defined by , with the inverse map .   Compute .  If is the standard matrix for and is the standard matrix for , find the matrix       is the identity map for any bijective linear transformation . Therefore equals the identity matrix for any invertible matrix .      Videos      Video: Invertible matrices       Video: Finding the inverse of a matrix     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations   Assume is an matrix. Prove the following are equivalent. Some of these results you have proven previously.   row reduces to the identity matrix.  For any choice of , the system of equations represented by the augmented matrix has a unique solution.  The columns of are a linearly independent set.  The columns of form a basis for .  The rank of is .  The nullity of is 0.   is invertible.  The linear transformation with standard matrix is injective and surjective. Such a map is called an isomorphism .       Assume is a square matrix, and is the zero matrix. Prove that You will need to first prove a lemma that matrix multiplication distributes over matrix addition.  Generalize your result to the case where is the zero matrix.       Sample Problem and Solution  Sample problem .   "
+  "body": " The Inverse of a Matrix (MX2)     Determine if a matrix is invertible, and if so, compute its inverse.     Class Activities    Let . Find a matrix such that , that is, Check your guess using technology.       The identity matrix (or just when is obvious from context) is the matrix It has a on each diagonal element and a in every other position.      For any square matrix , :       Let be a linear map with standard matrix . Sort the following items into three groups of statements: a group that means is injective , a group that means is surjective , and a group that means is bijective .    has a solution for all    has a unique solution for all    has a unique solution.  The columns of span   The columns of are linearly independent  The columns of are a basis of   Every column of has a pivot  Every row of has a pivot   and        Let be a linear bijection with standard matrix .  By item (B) from we may define an inverse map inverse map  that defines as the unique solution satisfying , that is, .  Furthermore, let be the standard matrix for . We call the inverse matrix inverse matrix of , and we also say that is an invertible invertible matrix.      Let be the linear bijection given by the standard matrix .   To find , we need to find the unique solution for . Which of these linear systems can be used to find this solution?        Use that system to find the solution for .  Similarly, solve to find , and solve to find .  Use these to write , the standard matrix for .      Find the inverse of the matrix by computing how it transforms each of the standard basis vectors for : , , , and .       Is the matrix invertible?  Yes, because its transformation is a bijection.  Yes, because its transformation is not a bijection.  No, because its transformation is a bijection.  No, because its transformation is not a bijection.         An matrix is invertible if and only if .      Let be the bijective linear map defined by , with the inverse map .   Compute .  If is the standard matrix for and is the standard matrix for , find the matrix       is the identity map for any bijective linear transformation . Therefore equals the identity matrix for any invertible matrix .      Videos      Video: Invertible matrices       Video: Finding the inverse of a matrix     Slideshow  Slideshow of activities available at .    Exercises available at .    Mathematical Writing Explorations   Assume is an matrix. Prove the following are equivalent. Some of these results you have proven previously.   row reduces to the identity matrix.  For any choice of , the system of equations represented by the augmented matrix has a unique solution.  The columns of are a linearly independent set.  The columns of form a basis for .  The rank of is .  The nullity of is 0.   is invertible.  The linear transformation with standard matrix is injective and surjective. Such a map is called an isomorphism .       Assume is a square matrix, and is the zero matrix. Prove that You will need to first prove a lemma that matrix multiplication distributes over matrix addition.  Generalize your result to the case where is the zero matrix.       Sample Problem and Solution  Sample problem .   "
 },
 {
   "id": "objectives-23",
@@ -2845,9 +2854,9 @@ var ptx_lunr_docs = [
   "body": "   Determine if a matrix is invertible, and if so, compute its inverse.    "
 },
 {
-  "id": "activity-123",
+  "id": "activity-124",
   "level": "2",
-  "url": "MX2.html#activity-123",
+  "url": "MX2.html#activity-124",
   "type": "Activity",
   "number": "4.2.1",
   "title": "",
@@ -2872,74 +2881,56 @@ var ptx_lunr_docs = [
   "body": "  For any square matrix , :    "
 },
 {
-  "id": "activity-124",
+  "id": "MX2-card-sort",
   "level": "2",
-  "url": "MX2.html#activity-124",
+  "url": "MX2.html#MX2-card-sort",
   "type": "Activity",
   "number": "4.2.4",
   "title": "",
   "body": "  Let be a linear map with standard matrix . Sort the following items into three groups of statements: a group that means is injective , a group that means is surjective , and a group that means is bijective .    has a solution for all    has a unique solution for all    has a unique solution.  The columns of span   The columns of are linearly independent  The columns of are a basis of   Every column of has a pivot  Every row of has a pivot   and     "
 },
 {
-  "id": "activity-125",
-  "level": "2",
-  "url": "MX2.html#activity-125",
-  "type": "Activity",
-  "number": "4.2.5",
-  "title": "",
-  "body": "  Let be the linear transformation given by the standard matrix .  Write an augmented matrix representing the system of equations given by , that is, . Then solve to find the kernel of .   "
-},
-{
   "id": "definition-29",
   "level": "2",
   "url": "MX2.html#definition-29",
   "type": "Definition",
-  "number": "4.2.6",
+  "number": "4.2.5",
   "title": "",
-  "body": "  Let be a linear map with standard matrix .   If is a bijection and is any vector, then has a unique solution.  So we may define an inverse map inverse map  by setting to be this unique solution.  Let be the standard matrix for . We call the inverse matrix inverse matrix of , so we also say that is invertible invertible .    "
+  "body": "  Let be a linear bijection with standard matrix .  By item (B) from we may define an inverse map inverse map  that defines as the unique solution satisfying , that is, .  Furthermore, let be the standard matrix for . We call the inverse matrix inverse matrix of , and we also say that is an invertible invertible matrix.   "
 },
 {
   "id": "activity-126",
   "level": "2",
   "url": "MX2.html#activity-126",
   "type": "Activity",
-  "number": "4.2.7",
+  "number": "4.2.6",
   "title": "",
-  "body": "  Let be the linear transformation given by the standard matrix .   Write an augmented matrix representing the system of equations given by , that is, . Then solve to find .  Solve to find .  Solve to find .  Write , the standard matrix for .  "
-},
-{
-  "id": "observation-21",
-  "level": "2",
-  "url": "MX2.html#observation-21",
-  "type": "Observation",
-  "number": "4.2.8",
-  "title": "",
-  "body": "  We could have solved these three systems simultaneously by row reducing the matrix at once.    "
+  "body": "  Let be the linear bijection given by the standard matrix .   To find , we need to find the unique solution for . Which of these linear systems can be used to find this solution?        Use that system to find the solution for .  Similarly, solve to find , and solve to find .  Use these to write , the standard matrix for .  "
 },
 {
   "id": "activity-127",
   "level": "2",
   "url": "MX2.html#activity-127",
   "type": "Activity",
-  "number": "4.2.9",
+  "number": "4.2.7",
   "title": "",
-  "body": "  Find the inverse of the matrix by row-reducing .   "
+  "body": "  Find the inverse of the matrix by computing how it transforms each of the standard basis vectors for : , , , and .   "
 },
 {
   "id": "activity-128",
   "level": "2",
   "url": "MX2.html#activity-128",
   "type": "Activity",
-  "number": "4.2.10",
+  "number": "4.2.8",
   "title": "",
-  "body": "  Is the matrix invertible? Give a reason for your answer.   "
+  "body": "  Is the matrix invertible?  Yes, because its transformation is a bijection.  Yes, because its transformation is not a bijection.  No, because its transformation is a bijection.  No, because its transformation is not a bijection.     "
 },
 {
-  "id": "observation-22",
+  "id": "observation-21",
   "level": "2",
-  "url": "MX2.html#observation-22",
+  "url": "MX2.html#observation-21",
   "type": "Observation",
-  "number": "4.2.11",
+  "number": "4.2.9",
   "title": "",
   "body": "  An matrix is invertible if and only if .   "
 },
@@ -2948,16 +2939,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "MX2.html#activity-129",
   "type": "Activity",
-  "number": "4.2.12",
+  "number": "4.2.10",
   "title": "",
   "body": "  Let be the bijective linear map defined by , with the inverse map .   Compute .  If is the standard matrix for and is the standard matrix for , find the matrix   "
 },
 {
-  "id": "observation-23",
+  "id": "observation-22",
   "level": "2",
-  "url": "MX2.html#observation-23",
+  "url": "MX2.html#observation-22",
   "type": "Observation",
-  "number": "4.2.13",
+  "number": "4.2.11",
   "title": "",
   "body": "   is the identity map for any bijective linear transformation . Therefore equals the identity matrix for any invertible matrix .   "
 },
@@ -2984,7 +2975,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "MX2.html#exploration-43",
   "type": "Exploration",
-  "number": "4.2.14",
+  "number": "4.2.12",
   "title": "",
   "body": " Assume is an matrix. Prove the following are equivalent. Some of these results you have proven previously.   row reduces to the identity matrix.  For any choice of , the system of equations represented by the augmented matrix has a unique solution.  The columns of are a linearly independent set.  The columns of form a basis for .  The rank of is .  The nullity of is 0.   is invertible.  The linear transformation with standard matrix is injective and surjective. Such a map is called an isomorphism .    "
 },
@@ -2993,7 +2984,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "MX2.html#exploration-44",
   "type": "Exploration",
-  "number": "4.2.15",
+  "number": "4.2.13",
   "title": "",
   "body": "  Assume is a square matrix, and is the zero matrix. Prove that You will need to first prove a lemma that matrix multiplication distributes over matrix addition.  Generalize your result to the case where is the zero matrix.    "
 },
@@ -3196,18 +3187,18 @@ var ptx_lunr_docs = [
   "body": "  The image below illustrates how the linear transformation given by the standard matrix transforms the unit square.      Transformation of the unit square by the matrix    What are the lengths of and ?  What is the area of the transformed unit square?  "
 },
 {
-  "id": "observation-24",
+  "id": "observation-23",
   "level": "2",
-  "url": "GT1.html#observation-24",
+  "url": "GT1.html#observation-23",
   "type": "Observation",
   "number": "5.1.3",
   "title": "",
   "body": "  It is possible to find two nonparallel vectors that are scaled but not rotated by the linear map given by .        Certain vectors are stretched out without being rotated.   The process for finding such vectors will be covered later in this chapter.   "
 },
 {
-  "id": "observation-25",
+  "id": "observation-24",
   "level": "2",
-  "url": "GT1.html#observation-25",
+  "url": "GT1.html#observation-24",
   "type": "Observation",
   "number": "5.1.4",
   "title": "",
@@ -3295,9 +3286,9 @@ var ptx_lunr_docs = [
   "body": "  The determinant is the unique function satisfying these properties:   whenever two columns of the matrix are identical.   , assuming no other columns change.   , assuming no other columns change.    Note that these last two properties together can be phrased as The determinant is linear in each column.    "
 },
 {
-  "id": "observation-26",
+  "id": "observation-25",
   "level": "2",
-  "url": "GT1.html#observation-26",
+  "url": "GT1.html#observation-25",
   "type": "Observation",
   "number": "5.1.14",
   "title": "",
@@ -3313,9 +3304,9 @@ var ptx_lunr_docs = [
   "body": "  Swapping columns may be thought of as a reflection, which is represented by a negative determinant. For example, the following matrices transform the unit square into the same parallelogram, but the second matrix reflects its orientation.       Reflection of a parallelogram as a result of swapping columns.    "
 },
 {
-  "id": "observation-27",
+  "id": "observation-26",
   "level": "2",
-  "url": "GT1.html#observation-27",
+  "url": "GT1.html#observation-26",
   "type": "Observation",
   "number": "5.1.16",
   "title": "",
@@ -3547,9 +3538,9 @@ var ptx_lunr_docs = [
   "body": "  Simplify to a multiple of a determinant by first doing the following:   Use row\/column operations to create two zeroes in the same row or column.  Factor\/swap as needed to get a row\/column of all zeroes except a on the main diagonal.  "
 },
 {
-  "id": "observation-29",
+  "id": "observation-28",
   "level": "2",
-  "url": "GT2.html#observation-29",
+  "url": "GT2.html#observation-28",
   "type": "Observation",
   "number": "5.2.8",
   "title": "",
@@ -3574,18 +3565,18 @@ var ptx_lunr_docs = [
   "body": "  Compute by using any combination of row\/column operations.   "
 },
 {
-  "id": "observation-30",
+  "id": "observation-29",
   "level": "2",
-  "url": "GT2.html#observation-30",
+  "url": "GT2.html#observation-29",
   "type": "Observation",
   "number": "5.2.11",
   "title": "",
   "body": "  Another option is to take advantage of the fact that the determinant is linear in each row or column. This approach is called Laplace expansion or cofactor expansion .  For example, since ,    "
 },
 {
-  "id": "observation-31",
+  "id": "observation-30",
   "level": "2",
-  "url": "GT2.html#observation-31",
+  "url": "GT2.html#observation-30",
   "type": "Observation",
   "number": "5.2.12",
   "title": "",
@@ -3709,9 +3700,9 @@ var ptx_lunr_docs = [
   "body": "  For every invertible matrix , so .  Furthermore, a square matrix is invertible if and only if .   "
 },
 {
-  "id": "observation-32",
+  "id": "observation-31",
   "level": "2",
-  "url": "GT3.html#observation-32",
+  "url": "GT3.html#observation-31",
   "type": "Observation",
   "number": "5.3.3",
   "title": "",
@@ -3916,9 +3907,9 @@ var ptx_lunr_docs = [
   "body": "  Consider the representation of a simple truss pictured below. All of the seven struts are of equal length, affixed to two anchor points applying a normal force to nodes and , and with a load applied to the node given by .      A simple truss   Which of the following must hold for the truss to be stable?   All of the struts will experience compression.  All of the struts will experience tension.  Some of the struts will be compressed, but others will be tensioned.    "
 },
 {
-  "id": "observation-33",
+  "id": "observation-32",
   "level": "2",
-  "url": "truss.html#observation-33",
+  "url": "truss.html#observation-32",
   "type": "Observation",
   "number": "A.1.3",
   "title": "",
@@ -3952,9 +3943,9 @@ var ptx_lunr_docs = [
   "body": "  The five vector equations may be written as follows.        "
 },
 {
-  "id": "observation-34",
+  "id": "observation-33",
   "level": "2",
-  "url": "truss.html#observation-34",
+  "url": "truss.html#observation-33",
   "type": "Observation",
   "number": "A.1.7",
   "title": "",
@@ -3970,18 +3961,18 @@ var ptx_lunr_docs = [
   "body": "  To write a linear system that models the truss under consideration with constant load newtons, how many scalar variables will be required?     : from the nodes, from the anchors     : from the struts, from the anchors     : from the struts, from the anchors     : from the struts, from the anchors, from the load     : from the nodes, from the struts, from the load        A simple truss    "
 },
 {
-  "id": "observation-35",
+  "id": "observation-34",
   "level": "2",
-  "url": "truss.html#observation-35",
+  "url": "truss.html#observation-34",
   "type": "Observation",
   "number": "A.1.9",
   "title": "",
   "body": "  Since the angles for each strut are known, one variable may be used to represent each.      Variables for the truss   For example:     "
 },
 {
-  "id": "observation-36",
+  "id": "observation-35",
   "level": "2",
-  "url": "truss.html#observation-36",
+  "url": "truss.html#observation-35",
   "type": "Observation",
   "number": "A.1.10",
   "title": "",
@@ -4006,27 +3997,27 @@ var ptx_lunr_docs = [
   "body": "  Expand the vector equation given below using sine and cosine of appropriate angles, then compute each component (approximating ).      Variables for the truss       "
 },
 {
-  "id": "observation-37",
+  "id": "observation-36",
   "level": "2",
-  "url": "truss.html#observation-37",
+  "url": "truss.html#observation-36",
   "type": "Observation",
   "number": "A.1.13",
   "title": "",
   "body": "  The full augmented matrix given by the ten equations in this linear system is given below, where the elevent columns correspond to , and the ten rows correspond to the horizontal and vertical components of the forces acting at .    "
 },
 {
-  "id": "observation-38",
+  "id": "observation-37",
   "level": "2",
-  "url": "truss.html#observation-38",
+  "url": "truss.html#observation-37",
   "type": "Observation",
   "number": "A.1.14",
   "title": "",
   "body": "  This matrix row-reduces to the following.    "
 },
 {
-  "id": "observation-39",
+  "id": "observation-38",
   "level": "2",
-  "url": "truss.html#observation-39",
+  "url": "truss.html#observation-38",
   "type": "Observation",
   "number": "A.1.15",
   "title": "",
@@ -4051,9 +4042,9 @@ var ptx_lunr_docs = [
   "body": " The $978,000,000,000 Problem     In the picture below, each circle represents a webpage, and each arrow represents a link from one page to another.      A seven-webpage network   Based on how these pages link to each other, write a list of the 7 webpages in order from most important to least important.   "
 },
 {
-  "id": "observation-40",
+  "id": "observation-39",
   "level": "2",
-  "url": "pagerank.html#observation-40",
+  "url": "pagerank.html#observation-39",
   "type": "Observation",
   "number": "A.2.2",
   "title": "The $978,000,000,000 Idea.",
@@ -4069,9 +4060,9 @@ var ptx_lunr_docs = [
   "body": "  Consider this small network with only three pages. Let be the importance of the three pages respectively.      A three-webpage network     splits its endorsement in half between and   sends all of its endorsement to   sends all of its endorsement to .   This corresponds to the page rank system :   "
 },
 {
-  "id": "observation-41",
+  "id": "observation-40",
   "level": "2",
-  "url": "pagerank.html#observation-41",
+  "url": "pagerank.html#observation-40",
   "type": "Observation",
   "number": "A.2.4",
   "title": "",
@@ -4096,9 +4087,9 @@ var ptx_lunr_docs = [
   "body": "  Find a page rank vector satisfying for the following network's page rank matrix .  That is, find the eigenspace associated with for the matrix , and choose a vector from that eigenspace.       A three-webpage network        "
 },
 {
-  "id": "observation-42",
+  "id": "observation-41",
   "level": "2",
-  "url": "pagerank.html#observation-42",
+  "url": "pagerank.html#observation-41",
   "type": "Observation",
   "number": "A.2.7",
   "title": "",
@@ -4123,9 +4114,9 @@ var ptx_lunr_docs = [
   "body": "  Find a page rank vector for the given page rank matrix.          A seven-webpage network    Which webpage is most important?   "
 },
 {
-  "id": "observation-43",
+  "id": "observation-42",
   "level": "2",
-  "url": "pagerank.html#observation-43",
+  "url": "pagerank.html#observation-42",
   "type": "Observation",
   "number": "A.2.10",
   "title": "",
@@ -4159,9 +4150,9 @@ var ptx_lunr_docs = [
   "body": "  In geology, a phase is any physically separable material in the system, such as various minerals or liquids.  A component is a chemical compound necessary to make up the phases; these are usually oxides such as Calcium Oxide ( ) or Silicon Dioxide ( ).  In a typical application, a geologist knows how to build each phase from the components, and is interested in determining reactions among the different phases.   "
 },
 {
-  "id": "observation-44",
+  "id": "observation-43",
   "level": "2",
-  "url": "geology.html#observation-44",
+  "url": "geology.html#observation-43",
   "type": "Observation",
   "number": "A.3.2",
   "title": "",
