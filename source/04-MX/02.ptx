@@ -59,7 +59,7 @@
             </p>
         </statement>
     </fact>
-<activity estimated-time='15'>
+<activity estimated-time='15' xml:id="MX2-card-sort">
     <statement>
         <p>
 Let <m>T: \IR^n \rightarrow \IR^m</m> be a linear map with standard matrix <m>A</m>.
@@ -68,11 +68,11 @@ Sort the following items into three groups of statements: a group that means
 and a group that means <m>T</m> is <em>bijective</em>.
         </p>
 <ol marker="A.">
-<li><p> <m>A\vec x=\vec b</m> has a solution for all <m>\vec b\in\IR^m</m>
+<li><p> <m>T(\vec x)=\vec b</m> has a solution for all <m>\vec b\in\IR^m</m>
 </p></li>
-<li><p> <m>A\vec x=\vec b</m> has a unique solution for all <m>\vec b\in\IR^m</m>
+<li><p> <m>T(\vec x)=\vec b</m> has a unique solution for all <m>\vec b\in\IR^m</m>
 </p></li>
-<li><p> <m>A\vec x=\vec 0</m> has a unique solution.
+<li><p> <m>T(\vec x)=\vec 0</m> has a unique solution.
 </p></li>
 <li><p> The columns of <m>A</m> span <m>\IR^m</m>
 </p></li>
@@ -90,39 +90,27 @@ and a group that means <m>T</m> is <em>bijective</em>.
     </statement>
 </activity>
 
-<activity estimated-time='5'>
-    <statement>
-        <p>
-  Let <m>T: \IR^3 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix
-  <m>A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; 0 \\ 2 &amp; 1 &amp; 4 \\ 1 &amp; 1 &amp; 3 \end{array}\right]</m>.
-        </p>
-        <p>
-  Write an augmented matrix representing the system of equations given by <m>T(\vec x)=\vec{0}</m>,
-  that is, <m>A\vec x=\left[\begin{array}{c}0 \\ 0 \\ 0 \end{array}\right]</m>.
-  Then solve <m>T(\vec x)=\vec{0}</m> to find the kernel of <m>T</m>.
-        </p>
-    </statement>
-</activity>
-
-<sage language="octave">
-</sage>
-
 <definition>
     <statement>
-    <p>
-  Let <m>T: \IR^n \rightarrow \IR^n</m> be a linear map with standard matrix <m>A</m>.
-    </p>
-<ul>
-<li><p>  If <m>T</m> is a bijection and <m>\vec b</m> is any <m>\IR^n</m> vector, 
-  then <m>T(\vec x)=A\vec x=\vec b</m> has a unique solution.
-</p></li>
-<li><p> So we may define an <term>inverse map</term><idx>inverse map</idx> <m>T^{-1} : \IR^n \rightarrow \IR^n</m> 
-  by setting <m>T^{-1}(\vec b)</m> to be this unique solution.
-</p></li>
-<li><p> Let <m>A^{-1}</m> be the standard matrix for <m>T^{-1}</m>. We call <m>A^{-1}</m> the
-<term>inverse matrix</term><idx>inverse matrix</idx> of <m>A</m>, so we also say that <m>A</m> is <term>invertible</term><idx>invertible</idx>.
-</p></li>
-</ul>
+        <p>
+Let <m>T: \IR^n \rightarrow \IR^n</m> be a linear bijection with standard matrix
+<m>A</m>.
+        </p>
+        <p>
+By item (B) from <xref ref="MX2-card-sort"/>
+we may define an <term>inverse map</term><idx>inverse map</idx>
+<m>T^{-1} : \IR^n \rightarrow \IR^n</m> 
+that defines <m>T^{-1}(\vec b)</m> as the unique solution <m>\vec x</m> satisfying
+<m>T(\vec x)=\vec b</m>, that is, <m>T(T^{-1}(\vec b))=\vec b</m>.
+        </p>
+        <p>
+Furthermore, let
+<me>A^{-1}=[T^{-1}(\vec e_1)\hspace{1em}\cdots\hspace{1em}T^{-1}(\vec e_n)]</me>
+be the standard matrix for <m>T^{-1}</m>. We call <m>A^{-1}</m> the
+<term>inverse matrix</term><idx>inverse matrix</idx> of <m>A</m>,
+and we also say that <m>A</m> is an <term>invertible</term><idx>invertible</idx>
+matrix.
+        </p>
     </statement>
 </definition>
 
@@ -130,30 +118,65 @@ and a group that means <m>T</m> is <em>bijective</em>.
 <activity estimated-time='20'>
     <introduction>
         <p>
-  Let <m>T: \IR^3 \rightarrow \IR^3</m> be the linear transformation given by the standard matrix
-  <m>A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]</m>.
+Let <m>T: \IR^3 \rightarrow \IR^3</m> be the linear bijection given by the standard matrix
+<m>A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]</m>.
         </p>
     </introduction>
   <task>
       <p>
-  Write an augmented matrix representing the system of equations given by <m>T(\vec x)=\vec{e}_1</m>,
-  that is, <m>A\vec x=\left[\begin{array}{c}1 \\ 0 \\ 0 \end{array}\right]</m>.
-  Then solve <m>T(\vec x)=\vec{e}_1</m> to find <m>T^{-1}(\vec{e}_1)</m>.
+To find <m>\vec x = T^{-1}(\vec{e}_1)</m>, we need to find the unique
+solution for <m>T(\vec x)=\vec e_1</m>. Which of these linear systems
+can be used to find this solution?
+        <ol marker="A." cols="2">
+            <li><m>
+\begin{array}{cccc}
+2x_1 &amp; -1x_2 &amp; -6x_3 &amp; =x_1 \\ 
+2x_1 &amp; +1x_2 &amp; +3x_3 &amp; =0 \\ 
+1x_1 &amp; +1x_2 &amp; +4x_3 &amp; =0
+\end{array}
+            </m></li>
+            <li><m>
+\begin{array}{cccc}
+2x_1 &amp; -1x_2 &amp; -6x_3 &amp; =x_1 \\ 
+2x_1 &amp; +1x_2 &amp; +3x_3 &amp; =x_2 \\ 
+1x_1 &amp; +1x_2 &amp; +4x_3 &amp; =x_3
+\end{array}
+            </m></li>
+            <li><m>
+\begin{array}{cccc}
+2x_1 &amp; -1x_2 &amp; -6x_3 &amp; =1 \\ 
+2x_1 &amp; +1x_2 &amp; +3x_3 &amp; =0 \\ 
+1x_1 &amp; +1x_2 &amp; +4x_3 &amp; =0
+\end{array}
+            </m></li>
+            <li><m>
+\begin{array}{cccc}
+2x_1 &amp; -1x_2 &amp; -6x_3 &amp; =1 \\ 
+2x_1 &amp; +1x_2 &amp; +3x_3 &amp; =1 \\ 
+1x_1 &amp; +1x_2 &amp; +4x_3 &amp; =1
+\end{array}
+            </m></li>
+        </ol>
       </p>
   </task>
   <task>
       <p>
-   Solve <m>T(\vec x)=\vec{e}_2</m> to find <m>T^{-1}(\vec{e}_2)</m>.
+Use that system to find the solution <m>\vec x=T^{-1}(\vec{e}_1)</m>
+for <m>T(\vec x)=\vec{e}_1</m>.
       </p>
   </task>
   <task>
       <p>
-   Solve <m>T(\vec x)=\vec{e}_3</m> to find <m>T^{-1}(\vec{e}_3)</m>.
+Similarly, solve <m>T(\vec x)=\vec{e}_2</m> to find <m>T^{-1}(\vec{e}_2)</m>,
+and solve <m>T(\vec x)=\vec{e}_3</m> to find <m>T^{-1}(\vec{e}_3)</m>.
       </p>
-  </task>
-  <task>
+    </task>
+    <task>
       <p>
-   Write <m>A^{-1}</m>, the standard matrix for <m>T^{-1}</m>.
+Use these to write <me>
+A^{-1}= [T^{-1}(\vec e_1)\hspace{1em}
+T^{-1}(\vec e_2)\hspace{1em}T^{-1}(\vec e_3)]
+</me>, the standard matrix for <m>T^{-1}</m>.
       </p>
   </task>
 </activity>
@@ -161,34 +184,16 @@ and a group that means <m>T</m> is <em>bijective</em>.
 <sage language="octave">
 </sage>
 
-<observation>
-    <statement>
-        <p>
-We could have solved these three systems simultaneously
-by row reducing the matrix <m>[A\,|\,I]</m> at once.
-<me>
-  \left[\begin{array}{ccc|ccc}
-    2 &amp; -1 &amp; -6 &amp; 1 &amp; 0 &amp; 0 \\
-    2 &amp; 1 &amp; 3 &amp; 0 &amp; 1 &amp; 0 \\
-    1 &amp; 1 &amp; 4 &amp; 0 &amp; 0 &amp; 1
-  \end{array}\right] \sim
-  \left[\begin{array}{ccc|ccc}
-    1 &amp; 0 &amp; 0 &amp; 1 &amp; -2 &amp; 3 \\
-    0 &amp; 1 &amp; 0 &amp; -5 &amp; 14 &amp; -18 \\
-    0 &amp; 0 &amp; 1 &amp; 1 &amp; -3 &amp; 4
-  \end{array}\right]
-</me>
-        </p>
-    </statement>
-</observation>
-
 
 <activity estimated-time='5'>
     <statement>
         <p>
-  Find the inverse <m>A^{-1}</m> of the matrix
-  <m>A=\left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; -2 \end{array}\right]</m>
-  by row-reducing <m>[A\,|\,I]</m>.
+Find the inverse <m>A^{-1}</m> of the matrix
+<me>A=\left[\begin{array}{cccc} 0 &amp; 0 &amp; 0 &amp; -1 \\ 1 &amp; 0 &amp; -1 &amp; -4 \\ 1 &amp; 1 &amp; 0 &amp; -4 \\ 1 &amp; -1 &amp; -1 &amp; 2 \end{array}\right]</me>
+by computing how it transforms each of the standard
+basis vectors for <m>\mathbb R^4</m>:
+<m>T^{-1}(\vec e_1)</m>, <m>T^{-1}(\vec e_2)</m>, <m>T^{-1}(\vec e_3)</m>,
+and <m>T^{-1}(\vec e_4)</m>. 
         </p>
     </statement>
 </activity>
@@ -199,7 +204,13 @@ by row reducing the matrix <m>[A\,|\,I]</m> at once.
 <activity estimated-time='5'>
     <statement>
         <p>
-Is the matrix <m>\left[\begin{array}{ccc} 2 &amp; 3 &amp; 1 \\ -1 &amp; -4 &amp; 2 \\ 0 &amp; -5 &amp; 5 \end{array}\right]</m> invertible? Give a reason for your answer.
+Is the matrix <m>\left[\begin{array}{ccc} 2 &amp; 3 &amp; 1 \\ -1 &amp; -4 &amp; 2 \\ 0 &amp; -5 &amp; 5 \end{array}\right]</m> invertible?
+            <ol marker="A.">
+                <li>Yes, because its transformation is a bijection.</li>
+                <li>Yes, because its transformation is not a bijection.</li>
+                <li>No, because its transformation is a bijection.</li>
+                <li>No, because its transformation is not a bijection.</li>
+            </ol>
         </p>
     </statement>
 </activity>
