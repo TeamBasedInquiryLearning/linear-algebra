@@ -25,7 +25,9 @@ class Generator(BaseGenerator):
 
         n = randrange(6)
         if n==0:
-            plus = lambda v1,v2 : vector([randrange(2,5)*v1[0]+v2[0], v1[1]+randrange(1,4)*v2[1]])
+            m1=randrange(2,5)
+            m2=randrange(1,4)
+            plus = lambda v1,v2, m1=m1, m2=m2 : vector([m1*v1[0]+v2[0], v1[1]+m2*v2[1]])
             times = lambda c,v : vector([c*v[0],c*v[1]])
             a=randrange(1,8)
             b=randrange(1,8)
