@@ -9,19 +9,31 @@ class Generator(BaseGenerator):
         v = vector([x,y])
         vectorsimplify = lambda v : vector([simplify(expand(x)) for x in v])
         def verify(prop,plus,times):
-            if prop == "add_assoc":
-                result = plus(v1,plus(v2,v3))
-            elif prop == "add_comm":
-                result = plus(v1,v2)
-            elif prop == "mul_assoc":
-                result = times(c*d,v)
-            elif prop == "mul_id":
-                result = times(1,v)
-            elif prop == "dist_v":
-                result = times(c,plus(v1,v2))
-            elif prop == "dist_s":
-                result = times(c+d,v)
-            return vectorsimplify(result)
+            try:
+                if prop == "add_assoc":
+                    LHS = plus(v1,plus(v2,v3))
+                    RHS = plus(plus(v1,v2),v3)
+                elif prop == "add_comm":
+                    LHS = plus(v1,v2)
+                    RHS = plus(v2,v1)
+                elif prop == "mul_assoc":
+                    LHS = times(c*d,v)
+                    RHS = times(c,times(d,v))
+                elif prop == "mul_id":
+                    LHS = times(1,v)
+                    RHS = v
+                elif prop == "dist_v":
+                    LHS = times(c,plus(v1,v2))
+                    RHS = plus(times(c,v1),times(c,v2))
+                elif prop == "dist_s":
+                    LHS = times(c+d,v)
+                    RHS = plus(times(c,v),times(d,v))
+                LHS = vectorsimplify(LHS)
+                RHS = vectorsimplify(RHS)
+                assert LHS == RHS
+            except AssertionError:
+                raise Exception(f"failed on {prop} {LHS} {RHS}")
+            return vectorsimplify(LHS)
 
         n = randrange(6)
         if n==0:
