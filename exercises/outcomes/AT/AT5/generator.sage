@@ -121,10 +121,11 @@ class Generator(BaseGenerator):
             theta = lambda v: vector([v[0],v[1]+a*v[0]])
             untheta = lambda v : vector([v[0],v[1]-a*v[0]])
 
-            trueproperty=choice(["add_assoc","dist_v","dist_s"])
+            trueproperty=choice(["add_assoc","dist_s"])
             falseproperties=[
                 "mul_assoc",
                 "mul_id",
+                "dist_v",
             ]
 
         oplus = lambda v1,v2 : theta(plus(untheta(v1),untheta(v2)))
