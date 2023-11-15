@@ -8,33 +8,62 @@ class Generator(BaseGenerator):
         v3 = vector([x3,y3])
         v = vector([x,y])
         vectorsimplify = lambda v : vector([simplify(expand(x)) for x in v])
-        def verify(prop,plus,times):
-            try:
-                if prop == "add_assoc":
-                    LHS = plus(v1,plus(v2,v3))
-                    RHS = plus(plus(v1,v2),v3)
-                elif prop == "add_comm":
-                    LHS = plus(v1,v2)
-                    RHS = plus(v2,v1)
-                elif prop == "mul_assoc":
-                    LHS = times(c*d,v)
-                    RHS = times(c,times(d,v))
-                elif prop == "mul_id":
-                    LHS = times(1,v)
-                    RHS = v
-                elif prop == "dist_v":
-                    LHS = times(c,plus(v1,v2))
-                    RHS = plus(times(c,v1),times(c,v2))
-                elif prop == "dist_s":
-                    LHS = times(c+d,v)
-                    RHS = plus(times(c,v),times(d,v))
-                LHS = vectorsimplify(LHS)
-                RHS = vectorsimplify(RHS)
-                assert LHS == RHS
-            except AssertionError:
-                raise Exception(f"failed on {prop} {LHS} {RHS}")
-            return vectorsimplify(LHS)
 
+        true_property_options = ["add_assoc","add_comm","mul_assoc","dist_v","dist_s"]
+        false_only_property_options = ["add_id","add_inv","mul_id"]
+        false_property_options = true_property_options + false_only_property_options
+
+        def verify(plus,times,hardfalseproperties=[]):
+            trueproperties={}
+            falseproperties=hardfalseproperties
+            for prop in true_property_options:
+                    if prop == "add_assoc":
+                        LHS = plus(v1,plus(v2,v3))
+                        RHS = plus(plus(v1,v2),v3)
+                    elif prop == "add_comm":
+                        LHS = plus(v1,v2)
+                        RHS = plus(v2,v1)
+                    elif prop == "mul_assoc":
+                        LHS = times(c*d,v)
+                        RHS = times(c,times(d,v))
+                    elif prop == "mul_id":
+                        LHS = times(1,v)
+                        RHS = v
+                    elif prop == "dist_v":
+                        LHS = times(c,plus(v1,v2))
+                        RHS = plus(times(c,v1),times(c,v2))
+                    elif prop == "dist_s":
+                        LHS = times(c+d,v)
+                        RHS = plus(times(c,v),times(d,v))
+                    LHS = vectorsimplify(LHS)
+                    RHS = vectorsimplify(RHS)
+                    if LHS == RHS:
+                        trueproperties[prop]=vectorsimplify(LHS)
+                    else:
+                        falseproperties.append(prop)
+            for prop in false_only_property_options:
+                if prop == "mul_id":
+                        LHS = times(1,v)
+                        RHS = v
+                        if vectorsimplify(LHS) != vectorsimplify(RHS):
+                            falseproperties.append(prop)
+                else:
+                    if "dist_s" in trueproperties and "mul_id" in trueproperties:
+                        if prop == "add_id":
+                            LHS = plus(times(0,v),v)
+                            RHS = v
+                            if vectorsimplify(LHS) != vectorsimplify(RHS):
+                                falseproperties.append(prop)
+                            else:
+                                LHS = plus(times(-1,v),v)
+                                RHS = times(0,v)
+                                if vectorsimplify(LHS) != vectorsimplify(RHS):
+                                    falseproperties.append("add_inv")
+            return (trueproperties, falseproperties)
+        
+        
+        hardfalseproperties=[]
+        
         n = randrange(6)
         if n==0:
             m1=randrange(2,5)
@@ -105,6 +134,7 @@ class Generator(BaseGenerator):
             theta = lambda v : vector([v[0]+b,v[1]+a*v[0]])
             untheta = lambda v : vector([v[0]-b,v[1]-a*(v[0]-b)])
 
+
             trueproperty=choice(["mul_assoc"])
             falseproperties=[
                 "dist_v",
@@ -131,11 +161,14 @@ class Generator(BaseGenerator):
         oplus = lambda v1,v2 : theta(plus(untheta(v1),untheta(v2)))
         otimes = lambda c,v : theta(times(c,untheta(v)))
 
+        trueproperties, falseproperties = verify(oplus,otimes,hardfalseproperties)
+        trueproperty, verification = choice(list(trueproperties.items()))
+
         return {
             "oplus": vectorsimplify(oplus(v1,v2)),
             "otimes": vectorsimplify(otimes(c,v)),
             "trueproperty": {
-                trueproperty: verify(trueproperty,oplus,otimes)
+                trueproperty: verification
             },
             "falseproperties": {f: True for f in falseproperties},
         }
