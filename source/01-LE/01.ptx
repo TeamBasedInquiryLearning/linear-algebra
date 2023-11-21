@@ -13,13 +13,124 @@
     <definition>
         <statement>
             <p>
+A <term>Euclidean vector</term><idx>Euclidean vector</idx><idx><h>vector</h><h>Euclidean</h></idx> is an ordered
+list of real numbers
+<me>
+  \left[\begin{array}{c}
+    a_1 \\
+    a_2 \\
+    \vdots \\
+    a_n
+  \end{array}\right]
+</me>.
+We will find it useful to almost always typeset Euclidean vectors vertically, but the notation
+<m>\left[\begin{array}{c}a_1 &amp; a_2 &amp; \cdots &amp; a_n\end{array}\right]^T</m> is also
+valid when vertical typesetting is inconvenient. The set of all Euclidean vectors with
+<m>n</m> components is denoted as <m>\mathbb R^n</m>, and vectors are often described using
+the notation <m>\vec v</m>.
+            </p>
+            <p>
+Each number in the list is called a <term>component</term>, and we use the following
+definitions for the sum of two vectors, and the product of a real number and a vector:
+<me>
+    \left[\begin{array}{c}
+      a_1 \\
+      a_2 \\
+      \vdots \\
+      a_n
+    \end{array}\right]+
+    \left[\begin{array}{c}
+      b_1 \\
+      b_2 \\
+      \vdots \\
+      b_n
+    \end{array}\right]=
+    \left[\begin{array}{c}
+      a_1+b_1 \\
+      a_2+b_2 \\
+      \vdots \\
+      a_n+b_n
+    \end{array}\right]
+    \hspace{3em}
+    c
+    \left[\begin{array}{c}
+      a_1 \\
+      a_2 \\
+      \vdots \\
+      a_n
+    \end{array}\right]=
+    \left[\begin{array}{c}
+      ca_1 \\
+      ca_2 \\
+      \vdots \\
+      ca_n
+    \end{array}\right]
+</me>
+            </p>
+        </statement>
+    </definition>
+    <example>
+        <p>
+Following are some examples of addition and scalar multiplication in <m>\mathbb R^4</m>.
+<me>
+    \left[\begin{array}{c}
+      3 \\
+      -3 \\
+      0 \\
+      4
+    \end{array}\right]+
+    \left[\begin{array}{c}
+      0 \\
+      2 \\
+      7 \\
+      1
+    \end{array}\right]=
+    \left[\begin{array}{c}
+      3+0 \\
+      -3+2 \\
+      0+7 \\
+      4+1
+    \end{array}\right]=
+    \left[\begin{array}{c}
+      3 \\
+      -1 \\
+      7 \\
+      5
+    \end{array}\right]
+</me>
+<me>
+    -4
+    \left[\begin{array}{c}
+      0 \\
+      2 \\
+      -2 \\
+      3
+    \end{array}\right]=
+    \left[\begin{array}{c}
+      -4(0) \\
+      -4(2)\\
+      -4(-2) \\
+      -4(3)
+    \end{array}\right]=
+    \left[\begin{array}{c}
+      0 \\
+      -8 \\
+      8 \\
+      -12
+    \end{array}\right]
+</me>
+        </p>
+    </example>
+    <definition>
+        <statement>
+            <p>
 A <term>linear equation</term><idx>linear equation</idx> is an equation of the variables <m>x_i</m> of the form
 <me>
 a_1x_1+a_2x_2+\dots+a_nx_n=b
 </me>.
             </p>
             <p>
-                A <term>solution</term> for a linear equation is a Euclidean vector<idx>Euclidean vector</idx><idx><h>vector</h><h>Euclidean</h></idx>
+                A <term>solution</term> for a linear equation is a Euclidean vector
 <me>
   \left[\begin{array}{c}
     s_1 \\
@@ -32,7 +143,7 @@ that satisfies
 <me>
 a_1s_1+a_2s_2+\dots+a_ns_n=b
 </me>
-(that is, a Euclidean vector that can be plugged into the equation).
+(that is, a Euclidean vector whose components can be plugged into the equation).
             </p>
         </statement><idx><h>linear equation</h><h>solution</h></idx>
     </definition>
