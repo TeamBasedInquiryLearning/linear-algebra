@@ -97,7 +97,7 @@ class Generator(BaseGenerator):
             theta = lambda v: vector([v[0],v[1]+a*v[0]^2])
             untheta = lambda v : vector([v[0],v[1]-a*v[0]^2])
 
-          elif n==4:
+        elif n==4:
             r=randrange(3,8)
             plus = lambda v1,v2 : vector([v1[0]+v2[0], v1[1]+v2[1]])
             times= lambda c,v : vector([c*v[0],c*v[1]-r*c+r])            
