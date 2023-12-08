@@ -58,11 +58,10 @@ class Generator(BaseGenerator):
         hardfalseproperties=[]
 
         #Use this to list a property that is true, but you don't want students to check
-        #because it is too easy (usually "add_comm")
-        truebuteasy_properties=[]
+        #because it is too easy (usually "add_comm") or too hard
+        true_no_check_properties=[]
         
         n = randrange(6)
-        n=2 #Debugging, delete later
         if n==0:
             m1=randrange(2,5)
             m2=randrange(1,4)
@@ -83,17 +82,19 @@ class Generator(BaseGenerator):
             a=randrange(1,8)
             theta = lambda v : vector([v[0],v[1]+a])
             untheta = lambda v : vector([v[0],v[1]-a])
-            truebuteasy_properties.append("add_comm")
+            true_no_check_properties.append("add_comm") #Too easy
 
         elif n==2:            
             plus = lambda v1,v2 : vector([v1[0]+v2[0], v1[1]+v2[1]])
             r2 = randrange(2,4)
-            times= lambda c,v : vector([c*v[0],c^(r2)*v[1]])
+            #times= lambda c,v : vector([c*v[0],c^(r2)*v[1]])
+            times= lambda c,v : vector([c^(r2)*v[0],c*v[1]])
             a=randrange(1,8)
             b=randrange(2,8)
             theta = lambda v: vector([v[0]+b*v[1],v[1]+a])
             untheta = lambda v : vector([v[0]-b*(v[1]-a),v[1]-a])
-            truebuteasy_properties.append("add_comm")
+            true_no_check_properties.append("add_comm") #Too easy
+            true_no_check_properties.append("mul_assoc") #Too hard?
 
         elif n==3:
             r1 = randrange(1,9)
@@ -111,6 +112,7 @@ class Generator(BaseGenerator):
             b=randrange(1,5)
             theta = lambda v : vector([v[0]+b,v[1]+a*v[0]])
             untheta = lambda v : vector([v[0]-b,v[1]-a*(v[0]-b)])
+            true_no_check_properties.append("add_comm") #Too easy
 
         elif n==5:
             r=randrange(1,6)
@@ -121,12 +123,14 @@ class Generator(BaseGenerator):
             a=randrange(1,5)
             theta = lambda v: vector([v[0],v[1]+a*v[0]])
             untheta = lambda v : vector([v[0],v[1]-a*v[0]])
+            true_no_check_properties.append("add_comm") #Too easy
 
+        #Applying a bijection theta does not change the truth values of properties 
         oplus = lambda v1,v2 : theta(plus(untheta(v1),untheta(v2)))
         otimes = lambda c,v : theta(times(c,untheta(v)))
 
         trueproperties, falseproperties = verify(oplus,otimes,hardfalseproperties)
-        for prop in truebuteasy_properties:
+        for prop in true_no_check_properties:
             if prop in trueproperties.keys():
                 trueproperties.pop(prop)
             else:
