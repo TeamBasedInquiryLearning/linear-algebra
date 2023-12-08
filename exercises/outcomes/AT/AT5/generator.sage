@@ -54,11 +54,15 @@ class Generator(BaseGenerator):
                                 falseproperties.append("add_inv")
             return (trueproperties, falseproperties)
         
-        
+        #Use this to code in false properties that cannot be checked automatically ("add_id" and "add_inv")
         hardfalseproperties=[]
+
+        #Use this to list a property that is true, but you don't want students to check
+        #because it is too easy (usually "add_comm")
+        truebuteasy_properties=[]
         
         n = randrange(6)
-        n=1 #Debugging, delete later
+        n=2 #Debugging, delete later
         if n==0:
             m1=randrange(2,5)
             m2=randrange(1,4)
@@ -79,6 +83,7 @@ class Generator(BaseGenerator):
             a=randrange(1,8)
             theta = lambda v : vector([v[0],v[1]+a])
             untheta = lambda v : vector([v[0],v[1]-a])
+            truebuteasy_properties.append("add_comm")
 
         elif n==2:            
             plus = lambda v1,v2 : vector([v1[0]+v2[0], v1[1]+v2[1]])
@@ -88,6 +93,7 @@ class Generator(BaseGenerator):
             b=randrange(2,8)
             theta = lambda v: vector([v[0]+b*v[1],v[1]+a])
             untheta = lambda v : vector([v[0]-b*(v[1]-a),v[1]-a])
+            truebuteasy_properties.append("add_comm")
 
         elif n==3:
             r1 = randrange(1,9)
@@ -120,6 +126,11 @@ class Generator(BaseGenerator):
         otimes = lambda c,v : theta(times(c,untheta(v)))
 
         trueproperties, falseproperties = verify(oplus,otimes,hardfalseproperties)
+        for prop in truebuteasy_properties:
+            if prop in trueproperties.keys():
+                trueproperties.pop(prop)
+            else:
+                print("WARNING:  Property "+prop + " was false.")
         trueproperty, verification = choice(list(trueproperties.items()))
 
         return {
