@@ -28,86 +28,159 @@ Consider the following linear system with a unique solution:
         </introduction>
         <task>
             <p>
-Define
+Suppose we let
 <me>
 T\left(\left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]\right)=
-\left[\begin{matrix}\hspace{1em}\unknown\hspace{1em}\\\hspace{1em}\unknown\hspace{1em}\\
-\hspace{1em}\unknown\hspace{1em}\\\hspace{1em}\unknown\hspace{1em}\end{matrix}\right]
-</me>
-so that <m>T(\vec x)=\left[\begin{matrix}-7\\-1\\-1\\-5\end{matrix}\right]</m>
-has the same solution set as this system.
-            </p>
-        </task>
-        <task>
-            <p>
-Define
-<me>
-A=
 \left[\begin{matrix}
-\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
-\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
-\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
-\unknown&amp;\unknown&amp;\unknown&amp;\unknown
+3x_{1} &amp; - &amp; 2x_{2} &amp; - &amp; 2x_{3} &amp; - &amp; 4x_{4} \\
+2x_{1} &amp; - &amp; x_{2}  &amp; - &amp;  x_{3} &amp; - &amp; x_{4} \\
+-x_{1} &amp;   &amp;        &amp; + &amp;  x_{3} &amp;   &amp;        \\
+       &amp; - &amp; x_{2}  &amp;   &amp;        &amp; - &amp; 2x_{4} \\
 \end{matrix}\right]
-</me>
-so that <m>A\vec x=\left[\begin{matrix}-7\\-1\\-1\\-5\end{matrix}\right]</m>
-has the same solution set as this system.
-            </p>
-        </task>
-        <task>
-            <p>
-Find
-<me>
-B=
+</me>.
+Which of these choices would help us solve the given system?
+                <ol label="A.">
+                    <li>
+Compute
+<m>T\left(
 \left[\begin{matrix}
-\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
-\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
-\unknown&amp;\unknown&amp;\unknown&amp;\unknown\\
-\unknown&amp;\unknown&amp;\unknown&amp;\unknown
-\end{matrix}\right]
-</me>
-so that <m>BA\vec x=\vec x</m>.
+-7 \\
+ -1 \\
+ -1 \\
+ -5 \\
+\end{matrix}\right]\right)</m>
+                    </li>
+                    <li>
+Find <m>\left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]</m> where
+<m>T\left(\left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]\right)=
+\left[\begin{matrix}
+-7 \\
+ -1 \\
+ -1 \\
+ -5 \\
+\end{matrix}\right]</m>
+                    </li>
+                </ol>
             </p>
         </task>
         <task>
             <p>
-Find <m>\vec x=BA\vec x=B\left[\begin{matrix}-7\\-1\\-1\\-5\end{matrix}\right]</m>
-to solve the system.
+How can we express this in terms of matrix multiplication?
+            </p>
+            <ol label="A.">
+                <li>
+<m>
+\left[\begin{matrix}
+3 &amp; -2 &amp; -2 &amp; - 4 \\
+2 &amp; -1 &amp; -1 &amp; -1  \\
+-1 &amp; 0 &amp; 1 &amp; 0  \\
+0 &amp; -1 &amp; 0  &amp; -2 \\
+\end{matrix}\right]
+\left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]
+=
+\left[\begin{matrix}
+-7 \\
+ -1 \\
+ -1 \\
+ -5 \\
+\end{matrix}\right]
+</m>
+                </li>
+                <li>
+                <m>
+\left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]
+=
+\left[\begin{matrix}
+3 &amp; -2 &amp; -2 &amp; - 4 \\
+2 &amp; -1 &amp; -1 &amp; -1  \\
+-1 &amp; 0 &amp; 1 &amp; 0  \\
+0 &amp; -1 &amp; 0  &amp; -2 \\
+\end{matrix}\right]
+\left[\begin{matrix}
+-7 \\
+    -1 \\
+    -1 \\
+    -5 \\
+\end{matrix}\right]
+                </m>
+            </li>
+                <li>
+<m>
+\left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]
+\left[\begin{matrix}
+3 &amp; -2 &amp; -2 &amp; - 4 \\
+2 &amp; -1 &amp; -1 &amp; -1  \\
+-1 &amp; 0 &amp; 1 &amp; 0  \\
+0 &amp; -1 &amp; 0  &amp; -2 \\
+\end{matrix}\right]
+=
+\left[\begin{matrix}
+-7 \\
+ -1 \\
+ -1 \\
+ -5 \\
+\end{matrix}\right]
+</m>
+                </li>
+                <li>
+                <m>
+\left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]
+=
+\left[\begin{matrix}
+-7 \\
+    -1 \\
+    -1 \\
+    -5 \\
+\end{matrix}\right]
+\left[\begin{matrix}
+3 &amp; -2 &amp; -2 &amp; - 4 \\
+2 &amp; -1 &amp; -1 &amp; -1  \\
+-1 &amp; 0 &amp; 1 &amp; 0  \\
+0 &amp; -1 &amp; 0  &amp; -2 \\
+\end{matrix}\right]
+                </m>
+                                </li>
+            </ol>
+        </task>
+        <task>
+            <p>
+How could a matrix equation of the form <m>A\vec x=\vec b</m>
+be solved for <m>\vec x</m>?
+                <ol label="A.">
+                    <li>Multiply: <m>(\RREF A)(A\vec x)=(\RREF A)\vec b</m></li>
+                    <li>Add: <m>(\RREF A) + A\vec x=(\RREF A)+\vec b</m></li>
+                    <li>Multiply: <m>(A^{-1})(A\vec x)=(A^{-1})\vec b</m></li>
+                    <li>Add: <m>(A^{-1}) + A\vec x=(A^{-1})+\vec b</m></li>
+                </ol>
+            </p>
+        </task>
+        <task>
+            <p>
+Find <m>
+    \left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]
+</m> using the method you chose in (c).
             </p>
         </task>
     </activity>
 
     <remark>
-            <p>
+        <p>
 The linear system described by the augmented matrix
-<m>[A \mid \vec w]</m> has exactly the same solution set as
-the matrix equation <m>A\vec x=\vec w</m>.
-            </p>
+<m>[A \mid \vec b]</m> has exactly the same solution set as
+the matrix equation <m>A\vec x=\vec b</m>.
+        </p>
+        <p>
+When <m>A</m> is invertible, then we have both
+<m>[A \mid \vec b]\sim[I \mid \vec x]</m> and
+<m>\vec x=A^{-1}\vec b</m>, which can be seen as
+<md>
+    <mrow>&amp;&amp; A\vec x&amp;=\vec b</mrow>
+    <mrow>&amp;\Rightarrow &amp; A^{-1}A\vec x&amp;=A^{-1}\vec b</mrow>
+    <mrow>&amp;\Rightarrow &amp;\vec x&amp;=A^{-1}\vec b</mrow> 
+</md>
+
+        </p>
     </remark>
-
-    <activity>
-        <statement>
-            <p>
-Let <m>A\vec x=\vec w</m> describe a linear system. When will this linear system
-have exactly one solution?
-<ol marker="A.">
-    <li><p>When <m>A</m> is invertible.</p></li>
-    <li><p>When <m>A</m> is not invertible.</p></li>
-    <li><p>When <m>\RREF A</m> has a non-pivot column.</p></li>
-    <li><p>When <m>\RREF A</m> has a non-pivot row.</p></li>
-</ol>
-            </p>
-        </statement>
-    </activity>
-
-    <fact>
-        <statement>
-            <p>
-When <m>A\vec x=\vec w</m> has exactly one solution, this solution is
-given by <m>\vec x=A^{-1}\vec w</m>.
-            </p>
-        </statement>
-    </fact>
 
     <activity>
         <introduction>
