@@ -3,49 +3,30 @@
     <intro>
         <p>Let <m>A</m> be <em>any</em> <m>4 \times 4</m> matrix.</p>
     </intro>
+    <!-- {{#tasks}} -->
     <knowl>
         <content>
             <p>
-Give a <m>4 \times 4</m> matrix <m>{{name1}}</m> that may be used to
-perform the row operation <m>{{row_op1}}</m>.
+Give a <m>4 \times 4</m> matrix <m>{{name}}</m> that may be used to
+perform the row operation <m>{{row_op}}</m>.
             </p>
         </content>
         <outtro>
-            <p><m>{{name1}}={{mat1}}</m></p>
+            <p><m>{{name}}={{mat}}</m></p>
         </outtro>
     </knowl>
+    <!-- {{/tasks}} -->
     <knowl>
         <content>
             <p>
-Give a <m>4 \times 4</m> matrix <m>{{name2}}</m> that may be used to
-perform the row operation <m>{{row_op2}}</m>.
-            </p>
-        </content>
-        <outtro>
-            <p><m>{{name2}}={{mat2}}</m></p>
-        </outtro>
-    </knowl>
-    <knowl>
-        <content>
-            <p>
-Use matrix multiplication to describe the matrix obtained by applying
-<!-- {{#swapped}} -->
-<m>{{row_op2}}</m> and then <m>{{row_op1}}</m>
-<!-- {{/swapped}} -->
-<!-- {{^swapped}} -->
-<m>{{row_op1}}</m> and then <m>{{row_op2}}</m>
-<!-- {{/swapped}} -->
-to <m>A</m> (note the order).
+Use matrix multiplication to express the matrix obtained by 
+first applying <m>{{first_op}}</m>, then <m>{{second_op}}</m>,
+and finally <m>{{third_op}}</m> to <m>A</m> (note the order).
             </p>
         </content>
         <outtro>
             <p>
-                <!-- {{#swapped}} -->
-                <m>{{name1}}{{name2}}A</m>
-                <!-- {{/swapped}} -->
-                <!-- {{^swapped}} -->
-                <m>{{name2}}{{name1}}A</m>
-                <!-- {{/swapped}} -->
+                <m>{{matrix_product}}A</m>
             </p>
         </outtro>
     </knowl>
