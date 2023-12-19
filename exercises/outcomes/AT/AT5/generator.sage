@@ -95,6 +95,7 @@ class Generator(BaseGenerator):
             untheta = lambda v : vector([v[0]-b*(v[1]-a),v[1]-a])
             true_no_check_properties.append("add_comm") #Too easy
             true_no_check_properties.append("mul_assoc") #Too hard?
+            true_no_check_properties.append("dist_v") #Too hard?
 
         elif n==3:
             r1 = randrange(1,9)
