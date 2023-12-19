@@ -43,14 +43,14 @@
 
 
 <!-- We start a new page after each thing-->
-<xsl:template match="activity|definition|observation|fact|remark|example|objectives">
+<xsl:template match="activity|definition|observation|fact|remark|example|objectives|note">
     <xsl:apply-imports />
     <xsl:text>\cleardoublepage&#xA;&#xA;</xsl:text>
 </xsl:template>
 
 <!-- We pull activities,etc. from each subsection -->
 <xsl:template match="subsection">
-    <xsl:apply-templates select="activity|definition|observation|fact|remark|example" />
+    <xsl:apply-templates select="activity|definition|observation|fact|remark|example|note" />
 </xsl:template>
 
 <!--Exercise groups are not in a subsection, so drop them -->
