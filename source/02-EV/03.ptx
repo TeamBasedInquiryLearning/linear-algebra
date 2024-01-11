@@ -33,6 +33,134 @@
         </statement>
     </activity>
 
+    <definition>
+        <statement>
+        <p>
+    A <term>homogeneous</term><idx>homogeneous</idx> system of linear equations is one of the form:
+      <md alignat-columns='5' alignment="alignat">
+          <mrow>
+        a_{11}x_1 &amp;\,+\,&amp; a_{12}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{1n}x_n &amp;\,=\,&amp; 0 
+          </mrow>
+          <mrow>
+        a_{21}x_1 &amp;\,+\,&amp; a_{22}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{2n}x_n &amp;\,=\,&amp; 0 
+    </mrow>
+    <mrow>
+         \vdots&amp;  &amp;\vdots&amp;   &amp;&amp;  &amp;\vdots&amp;&amp;\vdots
+    </mrow>
+    <mrow>
+        a_{m1}x_1 &amp;\,+\,&amp; a_{m2}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{mn}x_n &amp;\,=\,&amp; 0
+          </mrow>
+      </md>
+            </p>
+            <p>
+      This system is equivalent to the vector equation:
+      <me>x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0}</me>
+      and the augmented matrix:
+      <me>
+        \left[\begin{array}{cccc|c}
+          a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} &amp; 0\\
+          a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} &amp; 0\\
+          \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\\
+          a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; 0
+        \end{array}\right]
+      </me>
+        </p>
+        </statement>
+    </definition>
+    
+    <activity estimated-time='5'>
+        <introduction>
+            <p>
+    Consider the homogeneous vector equation <m>x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0}</m>.<abbr></abbr>
+            </p>
+        </introduction>
+        <task>
+            <p>
+        Is this equation consistent?
+                </p>
+        <ol marker="A.">
+        <li>
+            <p>
+                no.
+            </p>
+          </li>
+        <li>
+            <p>
+                yes.
+            </p>
+          </li>
+          <li>
+              <p>
+                  more information is required.
+              </p>
+            </li>
+        </ol>
+            </task>
+        <task>
+        <p>
+    Note that if <m>\left[\begin{array}{c} a_1 \\ \vdots \\ a_n \end{array}\right] </m> and
+    <m>\left[\begin{array}{c} b_1 \\ \vdots \\ b_n \end{array}\right] </m> are both solutions,
+    we know that
+    <me>a_1 \vec{v}_1+\cdots+a_n \vec{v}_n = \vec{0}
+    \text{ and }
+    b_1 \vec{v}_1+\cdots+b_n \vec{v}_n = \vec{0} </me>.
+    Therefore by adding these equations:
+    <me>(a_1 + b_1) \vec{v}_1+\cdots+(a_n+b_n) \vec{v}_n = \vec{0},</me>
+            </p>
+        <p>
+    we may conclude that the vector <m>\left[\begin{array}{c} a_1+ b_1 \\ \vdots \\ a_n+b_n \end{array}\right] </m> 
+    is...
+        </p>
+    <ol marker="A.">
+    <li>
+        <p>
+            another solution.
+        </p>
+      </li>
+    <li>
+        <p>
+            not a solution.
+        </p>
+      </li>
+      <li>
+          <p>
+              is equal to <m>\vec{0}</m>.
+          </p>
+        </li>
+    </ol>
+        </task>
+        <task>
+        <p>
+    Similarly, if <m>c \in \IR</m>, then since multiplying by <m>c</m> yields: <me>
+        (ca_1)\vec{v}_1+\cdots+(ca_n)\vec{v}_n=\vec{0},
+    </me>
+    we may conclude that the vector <m>\left[\begin{array}{c} ca_1 \\ \vdots \\ ca_n \end{array}\right] </m> is...
+        </p>
+    <ol marker="A.">
+    <li>
+        <p>
+        another solution.
+        </p>
+      </li>
+    <li>
+        <p>
+        not a solution.
+        </p>
+      </li>
+      <li>
+          <p>
+          is equal to <m>\vec{0}</m>.
+          </p>
+        </li>
+    <li>
+        <p>
+        The empty set.
+        </p>
+      </li>
+    </ol>
+        </task>
+    </activity>
+
     <observation>
         <p>
             If <m>S</m> is any set of vectors in <m>\IR^n</m>, then the set <m>\vspan(S)</m> has the following properties:
@@ -50,6 +178,24 @@
                 <li>
                     <p>
                         the set <m>\vspan(S)</m> is closed under scalar multiplication: for any <m>\vec{u}\in\vspan(S)</m> and scalar <m>c\in\IR</m>, the product <m>c\vec{u}</m> is also in <m>\vspan(S)</m>.    
+                    </p>
+                </li>
+            </ul>
+            Likewise, if <m>W</m> is the solution set to a homogenous vector equation, it too satisfies:
+            <ul>
+                <li>
+                    <p>
+                        the set <m>W</m> is non-empty.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        the set <m>W</m> is closed under addition: for any <m>\vec{u},\vec{v}\in W</m>, the sum <m>\vec{u}+\vec{v}</m> is also in <m>W</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        the set <m>\vspan(S)</m> is closed under scalar multiplication: for any <m>\vec{u}\in W</m> and scalar <m>c\in\IR</m>, the product <m>c\vec{u}</m> is also in <m>W</m>.    
                     </p>
                 </li>
             </ul>
