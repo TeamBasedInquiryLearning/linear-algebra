@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TBIL-LA Row Operations and Determinants (GT1)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra for Team-Based Inquiry Learning">
+<meta property="book:author" content="Steven Clontz">
+<meta property="book:author" content="Drew Lewis">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.32/pretext_search.js"></script><link href="https://pretextbook.org/css/0.82/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.32</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.32/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.32/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.32/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.82/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/shell_crc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/banner_crc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/navbar_crc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/toc_crc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/colors_blue_green.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="tbilla" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-for-team-based-inquiry-learning.html"><span class="title">Linear Algebra for Team-Based Inquiry Learning:</span> <span class="subtitle">2024 Early Edition</span></a></h1>
+<p class="byline">Steven Clontz, Drew Lewis</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="GT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="GT.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="GT2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\markedPivot}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="tbil-rl.html" class="internal"><span class="title">TBIL Resource Library</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="instructor-notes.html" class="internal"><span class="title">For Instructors</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="video-resources.html" class="internal"><span class="title">Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="LE.html" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations (LE)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="LE1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Linear Systems, Vector Equations, and Augmented Matrices (LE1)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE1.html#subsection-1" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE1.html#subsection-2" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE1.html#subsection-3" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="LE1.html#exercises-1" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE1.html#subsection-4" class="internal"><span class="codenumber">1.1.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE1.html#subsection-5" class="internal"><span class="codenumber">1.1.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="LE2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Row Reduction of Matrices (LE2)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE2.html#subsection-6" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE2.html#subsection-7" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE2.html#subsection-8" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="LE2.html#exercises-2" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE2.html#subsection-9" class="internal"><span class="codenumber">1.2.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE2.html#subsection-10" class="internal"><span class="codenumber">1.2.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="LE3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Counting Solutions for Linear Systems (LE3)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE3.html#subsection-11" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE3.html#subsection-12" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE3.html#subsection-13" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="LE3.html#exercises-3" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE3.html#subsection-14" class="internal"><span class="codenumber">1.3.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE3.html#subsection-15" class="internal"><span class="codenumber">1.3.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="LE4.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Linear Systems with Infinitely-Many Solutions (LE4)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE4.html#subsection-16" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE4.html#subsection-17" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE4.html#subsection-18" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="LE4.html#exercises-4" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE4.html#subsection-19" class="internal"><span class="codenumber">1.4.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="LE4.html#subsection-20" class="internal"><span class="codenumber">1.4.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="EV.html" class="internal"><span class="codenumber">2</span> <span class="title">Euclidean Vectors (EV)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="EV1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Linear Combinations (EV1)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV1.html#subsection-21" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV1.html#subsection-22" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV1.html#subsection-23" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="EV1.html#exercises-5" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV1.html#subsection-24" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV1.html#subsection-25" class="internal"><span class="codenumber">2.1.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="EV2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Spanning Sets (EV2)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV2.html#subsection-26" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV2.html#subsection-27" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV2.html#subsection-28" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="EV2.html#exercises-6" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV2.html#subsection-29" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV2.html#subsection-30" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="EV3.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Subspaces (EV3)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV3.html#subsection-31" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV3.html#subsection-32" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV3.html#subsection-33" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="EV3.html#exercises-7" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV3.html#subsection-34" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV3.html#subsection-35" class="internal"><span class="codenumber">2.3.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="EV4.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Linear Independence (EV4)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV4.html#subsection-36" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV4.html#subsection-37" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV4.html#subsection-38" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="EV4.html#exercises-8" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV4.html#subsection-39" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV4.html#subsection-40" class="internal"><span class="codenumber">2.4.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="EV5.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Identifying a Basis (EV5)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV5.html#subsection-41" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV5.html#subsection-42" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV5.html#subsection-43" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="EV5.html#exercises-9" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV5.html#subsection-44" class="internal"><span class="codenumber">2.5.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV5.html#subsection-45" class="internal"><span class="codenumber">2.5.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="EV6.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Subspace Basis and Dimension (EV6)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV6.html#subsection-46" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV6.html#subsection-47" class="internal"><span class="codenumber">2.6.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV6.html#subsection-48" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="EV6.html#exercises-10" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV6.html#subsection-49" class="internal"><span class="codenumber">2.6.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV6.html#subsection-50" class="internal"><span class="codenumber">2.6.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="EV7.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Homogeneous Linear Systems (EV7)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV7.html#subsection-51" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV7.html#subsection-52" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV7.html#subsection-53" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="EV7.html#exercises-11" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV7.html#subsection-54" class="internal"><span class="codenumber">2.7.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="EV7.html#subsection-55" class="internal"><span class="codenumber">2.7.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="AT.html" class="internal"><span class="codenumber">3</span> <span class="title">Algebraic Properties of Linear Maps (AT)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="AT1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Linear Transformations (AT1)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT1.html#subsection-56" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT1.html#subsection-57" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT1.html#subsection-58" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="AT1.html#exercises-12" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT1.html#subsection-59" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT1.html#subsection-60" class="internal"><span class="codenumber">3.1.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="AT2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Standard Matrices (AT2)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT2.html#subsection-61" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT2.html#subsection-62" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT2.html#subsection-63" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="AT2.html#exercises-13" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT2.html#subsection-64" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT2.html#subsection-65" class="internal"><span class="codenumber">3.2.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="AT3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Image and Kernel (AT3)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT3.html#subsection-66" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT3.html#subsection-67" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT3.html#subsection-68" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="AT3.html#exercises-14" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT3.html#subsection-69" class="internal"><span class="codenumber">3.3.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT3.html#subsection-70" class="internal"><span class="codenumber">3.3.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="AT4.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Injective and Surjective Linear Maps (AT4)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT4.html#subsection-71" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT4.html#subsection-72" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT4.html#subsection-73" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="AT4.html#exercises-15" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT4.html#subsection-74" class="internal"><span class="codenumber">3.4.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT4.html#subsection-75" class="internal"><span class="codenumber">3.4.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="AT5.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Vector Spaces (AT5)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT5.html#subsection-76" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT5.html#subsection-77" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT5.html#subsection-78" class="internal"><span class="codenumber">3.5.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="AT5.html#exercises-16" class="internal"><span class="codenumber">3.5.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT5.html#subsection-79" class="internal"><span class="codenumber">3.5.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT5.html#subsection-80" class="internal"><span class="codenumber">3.5.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="AT6.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Polynomial and Matrix Spaces (AT6)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT6.html#subsection-81" class="internal"><span class="codenumber">3.6.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT6.html#subsection-82" class="internal"><span class="codenumber">3.6.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT6.html#subsection-83" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="AT6.html#exercises-17" class="internal"><span class="codenumber">3.6.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT6.html#subsection-84" class="internal"><span class="codenumber">3.6.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="AT6.html#subsection-85" class="internal"><span class="codenumber">3.6.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="MX.html" class="internal"><span class="codenumber">4</span> <span class="title">Matrices (MX)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="MX1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Matrices and Multiplication (MX1)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX1.html#subsection-86" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX1.html#subsection-87" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX1.html#subsection-88" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="MX1.html#exercises-18" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX1.html#subsection-89" class="internal"><span class="codenumber">4.1.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX1.html#subsection-90" class="internal"><span class="codenumber">4.1.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="MX2.html" class="internal"><span class="codenumber">4.2</span> <span class="title">The Inverse of a Matrix (MX2)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX2.html#subsection-91" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX2.html#subsection-92" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX2.html#subsection-93" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="MX2.html#exercises-19" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX2.html#subsection-94" class="internal"><span class="codenumber">4.2.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX2.html#subsection-95" class="internal"><span class="codenumber">4.2.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="MX3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Solving Systems with Matrix Inverses (MX3)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX3.html#subsection-96" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX3.html#subsection-97" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="MX3.html#exercises-20" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX3.html#subsection-98" class="internal"><span class="codenumber">4.3.4</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX3.html#subsection-99" class="internal"><span class="codenumber">4.3.5</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="MX4.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Row Operations as Matrix Multiplication (MX4)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX4.html#subsection-100" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX4.html#subsection-101" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX4.html#subsection-102" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="MX4.html#exercises-21" class="internal"><span class="codenumber">4.4.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="MX4.html#subsection-103" class="internal"><span class="codenumber">4.4.5</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="GT.html" class="internal"><span class="codenumber">5</span> <span class="title">Geometric Properties of Linear Maps (GT)</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="GT1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Row Operations and Determinants (GT1)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT1.html#subsection-104" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT1.html#subsection-105" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT1.html#subsection-106" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="GT1.html#exercises-22" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT1.html#subsection-107" class="internal"><span class="codenumber">5.1.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT1.html#subsection-108" class="internal"><span class="codenumber">5.1.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="GT2.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Computing Determinants (GT2)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT2.html#subsection-109" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT2.html#subsection-110" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT2.html#subsection-111" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="GT2.html#exercises-23" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT2.html#subsection-112" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT2.html#subsection-113" class="internal"><span class="codenumber">5.2.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="GT3.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Eigenvalues and Characteristic Polynomials (GT3)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT3.html#subsection-114" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT3.html#subsection-115" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT3.html#subsection-116" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="GT3.html#exercises-24" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT3.html#subsection-117" class="internal"><span class="codenumber">5.3.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT3.html#subsection-118" class="internal"><span class="codenumber">5.3.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="GT4.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Eigenvectors and Eigenspaces (GT4)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT4.html#subsection-119" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Class Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT4.html#subsection-120" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Videos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT4.html#subsection-121" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Slideshow</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="GT4.html#exercises-25" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT4.html#subsection-122" class="internal"><span class="codenumber">5.4.5</span> <span class="title">Mathematical Writing Explorations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="GT4.html#subsection-123" class="internal"><span class="codenumber">5.4.6</span> <span class="title">Sample Problem and Solution</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="applications.html" class="internal"><span class="codenumber">A</span> <span class="title">Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="truss.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Civil Engineering: Trusses and Struts</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="truss.html#subsection-124" class="internal"><span class="codenumber">A.1.1</span> <span class="title">Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="truss.html#subsection-125" class="internal"><span class="codenumber">A.1.2</span> <span class="title">Slideshow</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="pagerank.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Computer Science: PageRank</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pagerank.html#subsection-126" class="internal"><span class="codenumber">A.2.1</span> <span class="title">Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pagerank.html#subsection-127" class="internal"><span class="codenumber">A.2.2</span> <span class="title">Slideshow</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="geology.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Geology: Phases and Components</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="geology.html#subsection-128" class="internal"><span class="codenumber">A.3.1</span> <span class="title">Activities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="geology.html#subsection-129" class="internal"><span class="codenumber">A.3.2</span> <span class="title">Slideshow</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-extras.html" class="internal"><span class="codenumber">B</span> <span class="title">Appendix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sample-exercises.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Sample Exercises with Solutions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="list-of-definitions.html" class="internal"><span class="codenumber">B.2</span> <span class="title">Definitions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="GT1"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">5.1</span><span class="space"> </span><span class="title">Row Operations and Determinants (GT1)</span>
+</h2>
+<article class="objectives goal-like" id="objectives-27"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
+<ul class="disc"><li id="li-730"><div class="para" id="p-1132">Describe how a row operation affects the determinant of a matrix.</div></li></ul></article><section class="subsection" id="subsection-104"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="space"> </span><span class="title">Class Activities</span>
+</h3>
+<article class="activity project-like" id="activity-136"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-69">
+<div class="para" id="p-1133">The image in <a href="" class="xref" data-knowl="./knowl/GT1-unit-square-transform.html" title="Figure 46">Figure 46</a> illustrates how the linear transformation <span class="process-math">\(T : \IR^2 \rightarrow \IR^2\)</span> given by the standard matrix <span class="process-math">\(A = \left[\begin{array}{cc} 2 &amp; 0 \\ 0 &amp; 3 \end{array}\right]\)</span> transforms the unit square.</div> <figure class="figure figure-like" id="GT1-unit-square-transform"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-unit-square-transform.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">46<span class="period">.</span></span><span class="space"> </span>Transformation of the unit square by the matrix <span class="process-math">\(A\text{.}\)</span></figcaption></figure>
+</div>
+<article class="task exercise-like" id="task-181"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-1134">What are the lengths of <span class="process-math">\(A\vec e_1\)</span> and <span class="process-math">\(A\vec e_2\text{?}\)</span>
+</div></article><article class="task exercise-like" id="task-182"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-1135">What is the area of the transformed unit square?</div></article></article><article class="activity project-like" id="activity-137"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-70">
+<div class="para" id="p-1136">The image below illustrates how the linear transformation <span class="process-math">\(S : \IR^2 \rightarrow \IR^2\)</span> given by the standard matrix <span class="process-math">\(B = \left[\begin{array}{cc} 2 &amp; 3 \\ 0 &amp; 4 \end{array}\right]\)</span> transforms the unit square.</div> <figure class="figure figure-like" id="figure-47"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-unit-square-transform2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">47<span class="period">.</span></span><span class="space"> </span>Transformation of the unit square by the matrix <span class="process-math">\(B\)</span></figcaption></figure>
+</div>
+<article class="task exercise-like" id="task-183"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-1137">What are the lengths of <span class="process-math">\(B\vec e_1\)</span> and <span class="process-math">\(B\vec e_2\text{?}\)</span>
+</div></article><article class="task exercise-like" id="task-184"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-1138">What is the area of the transformed unit square?</div></article></article><article class="observation remark-like" id="observation-23"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1139">It is possible to find two nonparallel vectors that are scaled but not rotated by the linear map given by <span class="process-math">\(B\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B\vec e_1=\left[\begin{array}{cc} 2 &amp; 3 \\ 0 &amp; 4 \end{array}\right]\left[\begin{array}{c}1\\0\end{array}\right]
+=\left[\begin{array}{c}2\\0\end{array}\right]=2\vec e_1
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B\left[\begin{array}{c}\frac{3}{4}\\\frac{1}{2}\end{array}\right]
+=
+\left[\begin{array}{cc} 2 &amp; 3 \\ 0 &amp; 4 \end{array}\right]\left[\begin{array}{c}\frac{3}{4}\\\frac{1}{2}\end{array}\right]
+=
+\left[\begin{array}{c}3\\2\end{array}\right]
+=
+4\left[\begin{array}{c}\frac{3}{4}\\\frac{1}{2}\end{array}\right]
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="figure-48"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-scale-not-rotate.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">48<span class="period">.</span></span><span class="space"> </span>Certain vectors are stretched out without being rotated.</figcaption></figure> <div class="para" id="p-1140">The process for finding such vectors will be covered later in this chapter.</div></article><article class="observation remark-like" id="observation-24"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1141">Notice that while a linear map can transform vectors in various ways, linear maps always transform parallelograms into parallelograms, and these areas are always transformed by the same factor: in the case of <span class="process-math">\(B=\left[\begin{array}{cc} 2 &amp; 3 \\ 0 &amp; 4 \end{array}\right]\text{,}\)</span> this factor is <span class="process-math">\(8\text{.}\)</span>
+</div> <figure class="figure figure-like" id="figure-49"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-area-scaling.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">49<span class="period">.</span></span><span class="space"> </span>A linear map transforming parallelograms into parallelograms.</figcaption></figure> <div class="para" id="p-1142">Since this change in area is always the same for a given linear map, it will be equal to the value of the transformed unit square (which begins with area <span class="process-math">\(1\)</span>).</div></article><article class="remark remark-like" id="remark-18"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1143">We will define the <dfn class="terminology">determinant</dfn> of a square matrix <span class="process-math">\(B\text{,}\)</span> or <span class="process-math">\(\det(B)\)</span> for short, to be the factor by which <span class="process-math">\(B\)</span> scales areas. In order to figure out how to compute it, we first figure out the properties it must satisfy.</div> <figure class="figure figure-like" id="figure-50"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-determinant.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">50<span class="period">.</span></span><span class="space"> </span>The linear transformation <span class="process-math">\(B\)</span> scaling areas by a constant factor, which we call the <dfn class="terminology">determinant</dfn></figcaption></figure></article><article class="activity project-like" id="activity-138"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1144">The transformation of the unit square by the standard matrix <span class="process-math">\([\vec{e}_1\hspace{0.5em} \vec{e}_2]=\left[\begin{array}{cc}1&amp;0\\0&amp;1\end{array}\right]=I\)</span> is illustrated below. If <span class="process-math">\(\det([\vec{e}_1\hspace{0.5em} \vec{e}_2])=\det(I)\)</span> is the area of resulting parallelogram, what is the value of <span class="process-math">\(\det([\vec{e}_1\hspace{0.5em} \vec{e}_2])=\det(I)\text{?}\)</span>
+</div> <figure class="figure figure-like" id="figure-51"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-identity-determinant.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">51<span class="period">.</span></span><span class="space"> </span>The transformation of the unit square by the identity matrix.</figcaption></figure> <div class="para" id="p-1145">The value for <span class="process-math">\(\det([\vec{e}_1\hspace{0.5em} \vec{e}_2])=\det(I)\)</span> is:</div> <ol class="upper-alpha cols2">
+<li id="li-731"><div class="para" id="p-1146">0</div></li>
+<li id="li-732"><div class="para" id="p-1147">1</div></li>
+<li id="li-733"><div class="para" id="p-1148">2</div></li>
+<li id="li-734"><div class="para" id="p-1149">4</div></li>
+</ol></article><article class="activity project-like" id="activity-139"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1150">The transformation of the unit square by the standard matrix <span class="process-math">\([\vec{v}\hspace{0.5em} \vec{v}]\)</span> is illustrated below: both <span class="process-math">\(T(\vec{e}_1)=T(\vec{e}_2)=\vec{v}\text{.}\)</span> If <span class="process-math">\(\det([\vec{v}\hspace{0.5em} \vec{v}])\)</span> is the area of the generated parallelogram, what is the value of <span class="process-math">\(\det([\vec{v}\hspace{0.5em} \vec{v}])\text{?}\)</span>
+</div> <figure class="figure figure-like" id="figure-52"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-duplicate-column-determinant.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">52<span class="period">.</span></span><span class="space"> </span>Transformation of the unit square by a matrix with identical columns.</figcaption></figure> <div class="para" id="p-1151">The value of <span class="process-math">\(\det([\vec{v}\hspace{0.5em} \vec{v}])\)</span> is:</div> <ol class="upper-alpha cols2">
+<li id="li-735"><div class="para" id="p-1152">0</div></li>
+<li id="li-736"><div class="para" id="p-1153">1</div></li>
+<li id="li-737"><div class="para" id="p-1154">2</div></li>
+<li id="li-738"><div class="para" id="p-1155">4</div></li>
+</ol></article><article class="activity project-like" id="activity-140"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1156">The transformations of the unit square by the standard matrices <span class="process-math">\([\vec{v}\hspace{0.5em} \vec{w}]\)</span> and <span class="process-math">\([c\vec{v}\hspace{0.5em} \vec{w}]\)</span> are illustrated below. Describe the value of <span class="process-math">\(\det([c\vec{v}\hspace{0.5em} \vec{w}])\text{.}\)</span>
+</div> <figure class="figure figure-like" id="figure-53"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-scaled-column-determinant.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">53<span class="period">.</span></span><span class="space"> </span>The parallelograms generated by <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span>/<span class="process-math">\(c\vec{w}\)</span></figcaption></figure> <div class="para" id="p-1157">Describe the value of <span class="process-math">\(\det([c\vec{v}\hspace{0.5em} \vec{w}])\text{:}\)</span>
+</div> <ol class="upper-alpha cols2">
+<li id="li-739"><div class="para" id="p-1158"><span class="process-math">\(\displaystyle \det([\vec{v}\hspace{0.5em} \vec{w}])\)</span></div></li>
+<li id="li-740"><div class="para" id="p-1159"><span class="process-math">\(\displaystyle c\det([\vec{v}\hspace{0.5em} \vec{w}])\)</span></div></li>
+<li id="li-741"><div class="para" id="p-1160"><span class="process-math">\(\displaystyle c^2\det([\vec{v}\hspace{0.5em} \vec{w}])\)</span></div></li>
+<li id="li-742"><div class="para" id="p-1161">Cannot be determined from this information.</div></li>
+</ol></article><article class="remark remark-like" id="remark-19"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1162">Consider the vectors <span class="process-math">\(\vec{u}\text{,}\)</span> <span class="process-math">\(\vec{v}\text{,}\)</span> <span class="process-math">\(\vec{u}+\vec{v}\text{,}\)</span> and <span class="process-math">\(\vec{w}\)</span> displayed below. Each pair of vectors generates a parallelogram, and the area of each parallelogram can be described in terms of determinants.</div> <figure class="figure figure-like" id="figure-54"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-add-column-determinant.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">54<span class="period">.</span></span><span class="space"> </span>The vectors <span class="process-math">\(\vec{u}\text{,}\)</span> <span class="process-math">\(\vec{v}\text{,}\)</span> <span class="process-math">\(\vec{u}+\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span></figcaption></figure></article><article class="remark remark-like" id="remark-20"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.10</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1163">For example, <span class="process-math">\(\det([\vec{u}\hspace{0.5em} \vec{w}])\)</span> represents the shaded area shown below.</div> <figure class="figure figure-like" id="figure-55"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-shaded-determinant.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">55<span class="period">.</span></span><span class="space"> </span>Parallelogram generated by <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{w}\)</span></figcaption></figure></article><article class="remark remark-like" id="remark-21"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.11</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1164">Similarly, <span class="process-math">\(\det([\vec{v}\hspace{0.5em} \vec{w}])\)</span> represents the shaded area shown below.</div> <figure class="figure figure-like" id="figure-56"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-shaded-determinant-2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">56<span class="period">.</span></span><span class="space"> </span>Parallelogram generated by <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span></figcaption></figure></article><article class="activity project-like" id="activity-141"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.12</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1165">The parallelograms generated by the standard matrices <span class="process-math">\([\vec{u}\hspace{0.5em} \vec{w}]\text{,}\)</span> <span class="process-math">\([\vec{v}\hspace{0.5em} \vec{w}]\)</span> and <span class="process-math">\([\vec{u}+\vec{v}\hspace{0.5em} \vec{w}]\)</span> are illustrated below.</div> <figure class="figure figure-like" id="figure-57"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-shaded-determinant-3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">57<span class="period">.</span></span><span class="space"> </span>Parallelogram generated by <span class="process-math">\(\vec{u}+\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span></figcaption></figure> <div class="para" id="p-1166">Describe the value of <span class="process-math">\(\det([\vec{u}+\vec{v}\hspace{0.5em} \vec{w}])\text{.}\)</span>
+</div> <ol class="upper-alpha cols2">
+<li id="li-743"><div class="para" id="p-1167"><span class="process-math">\(\displaystyle \det([\vec{u}\hspace{0.5em} \vec{w}])=\det([\vec{v}\hspace{0.5em} \vec{w}])\)</span></div></li>
+<li id="li-744"><div class="para" id="p-1168"><span class="process-math">\(\displaystyle \det([\vec{u}\hspace{0.5em} \vec{w}])+\det([\vec{v}\hspace{0.5em} \vec{w}])\)</span></div></li>
+<li id="li-745"><div class="para" id="p-1169"><span class="process-math">\(\displaystyle \det([\vec{u}\hspace{0.5em} \vec{w}])\det([\vec{v}\hspace{0.5em} \vec{w}])\)</span></div></li>
+<li id="li-746"><div class="para" id="p-1170">Cannot be determined from this information.</div></li>
+</ol></article><article class="definition definition-like" id="definition-31"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.13</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-1171">
+<div class="para">The <dfn class="terminology">determinant</dfn> is the unique function <span class="process-math">\(\det:M_{n,n}\to\IR\)</span> satisfying these  properties:</div>
+<ol class="decimal">
+<li id="li-747"><div class="para" id="p-derived-li-747"><span class="process-math">\(\displaystyle \det(I)=1\)</span></div></li>
+<li id="li-748"><div class="para" id="p-derived-li-748">
+<span class="process-math">\(\det(A)=0\)</span> whenever two columns of the matrix are identical.</div></li>
+<li id="li-749"><div class="para" id="p-derived-li-749">
+<span class="process-math">\(\det[\cdots\hspace{0.5em}c\vec{v}\hspace{0.5em}\cdots]=
+c\det[\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}\cdots]\text{,}\)</span> assuming no other columns change.</div></li>
+<li id="li-750"><div class="para" id="p-derived-li-750">
+<span class="process-math">\(\det[\cdots\hspace{0.5em}\vec{v}+\vec{w}\hspace{0.5em}\cdots]=
+\det[\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}\cdots]+
+\det[\cdots\hspace{0.5em}\vec{w}\hspace{0.5em}\cdots]\text{,}\)</span> assuming no other columns change.</div></li>
+</ol>
+</div> <div class="para" id="p-1172">Note that these last two properties together can be phrased as “The determinant is linear in each column.”</div></article><article class="observation remark-like" id="observation-25"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.1.14</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1173">The determinant must also satisfy other properties. Consider <span class="process-math">\(\det([\vec v \hspace{1em}\vec w+c \vec{v}])\)</span> and <span class="process-math">\(\det([\vec v\hspace{1em}\vec w])\text{.}\)</span>
+</div> <figure class="figure figure-like" id="figure-58"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-add-column-multiple-determinant.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">58<span class="period">.</span></span><span class="space"> </span>Parallelogram built by <span class="process-math">\(\vec{w}+c\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span></figcaption></figure> <div class="para" id="p-1174">The base of both parallelograms is <span class="process-math">\(\vec{v}\text{,}\)</span> while the height has not changed, so the determinant does not change either. This can also be proven using the other properties of the determinant:</div>
+<div class="displaymath process-math" id="md-52">
+\begin{align*}
+\det([\vec{v}+c\vec{w}\hspace{1em}\vec{w}])
+&amp;=
+\det([\vec{v}\hspace{1em}\vec{w}])+
+\det([c\vec{w}\hspace{1em}\vec{w}])\\
+&amp;=
+\det([\vec{v}\hspace{1em}\vec{w}])+
+c\det([\vec{w}\hspace{1em}\vec{w}])\\
+&amp;=
+\det([\vec{v}\hspace{1em}\vec{w}])+
+c\cdot 0\\
+&amp;=
+\det([\vec{v}\hspace{1em}\vec{w}])
+\end{align*}
+</div></article><article class="remark remark-like" id="remark-22"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.15</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1175">Swapping columns may be thought of as a reflection, which is represented by a negative determinant. For example, the following matrices transform the unit square into the same parallelogram, but the second matrix reflects its orientation.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\left[\begin{array}{cc}2&amp;3\\0&amp;4\end{array}\right]\hspace{1em}\det A=8\hspace{3em}
+B=\left[\begin{array}{cc}3&amp;2\\4&amp;0\end{array}\right]\hspace{1em}\det B=-8
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="figure-59"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-orientation-determinant.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">59<span class="period">.</span></span><span class="space"> </span>Reflection of a parallelogram as a result of swapping columns.</figcaption></figure></article><article class="observation remark-like" id="observation-26"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.1.16</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1176">The fact that swapping columns multiplies determinants by a negative may be verified by adding and subtracting columns.</div>
+<div class="displaymath process-math" id="md-53">
+\begin{align*}
+\det([\vec{v}\hspace{1em}\vec{w}])
+&amp;=
+\det([\vec{v}+\vec{w}\hspace{1em}\vec{w}])\\
+&amp;=
+\det([\vec{v}+\vec{w}\hspace{1em}\vec{w}-(\vec{v}+\vec{w})])\\
+&amp;=
+\det([\vec{v}+\vec{w}\hspace{1em}-\vec{v}])\\
+&amp;=
+\det([\vec{v}+\vec{w}-\vec{v}\hspace{1em}-\vec{v}])\\
+&amp;=
+\det([\vec{w}\hspace{1em}-\vec{v}])\\
+&amp;=
+-\det([\vec{w}\hspace{1em}\vec{v}])
+\end{align*}
+</div></article><article class="fact theorem-like" id="fact-21"><h4 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.1.17</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1177">To summarize, we’ve shown that the column versions of the three row-reducing operations a matrix may be used to simplify a determinant in the following way:</div> <ol class="decimal">
+<li id="li-751"><div class="para logical" id="p-1178">
+<div class="para">Multiplying a column by a scalar multiplies the determinant by that scalar:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em} \cdots])=
+\det([\cdots\hspace{0.5em}c\vec{v}\hspace{0.5em} \cdots])
+\end{equation*}
+</div>
+</div></li>
+<li id="li-752"><div class="para logical" id="p-1179">
+<div class="para">Swapping two columns changes the sign of the determinant:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}
+\cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])=
+-\det([\cdots\hspace{0.5em}\vec{w}\hspace{0.5em}
+\cdots\hspace{1em}\vec{v}\hspace{0.5em} \cdots])
+\end{equation*}
+</div>
+</div></li>
+<li id="li-753"><div class="para logical" id="p-1180">
+<div class="para">Adding a multiple of a column to another column does not change the determinant:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}
+\cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])=
+\det([\cdots\hspace{0.5em}\vec{v}+c\vec{w}\hspace{0.5em}
+\cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])
+\end{equation*}
+</div>
+</div></li>
+</ol></article><article class="activity project-like" id="activity-142"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.18</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1181">The transformation given by the standard matrix <span class="process-math">\(A\)</span> scales areas by <span class="process-math">\(4\text{,}\)</span> and the transformation given by the standard matrix <span class="process-math">\(B\)</span> scales areas by <span class="process-math">\(3\text{.}\)</span> By what factor does the transformation given by the standard matrix <span class="process-math">\(AB\)</span> scale areas?</div> <figure class="figure figure-like" id="figure-60"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT1-image-composition-area-scaling.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">60<span class="period">.</span></span><span class="space"> </span>Area changing under the composition of two linear maps</figcaption></figure> <ol class="upper-alpha cols2">
+<li id="li-754"><div class="para" id="p-1182"><span class="process-math">\(\displaystyle 1\)</span></div></li>
+<li id="li-755"><div class="para" id="p-1183"><span class="process-math">\(\displaystyle 7\)</span></div></li>
+<li id="li-756"><div class="para" id="p-1184"><span class="process-math">\(\displaystyle 12\)</span></div></li>
+<li id="li-757"><div class="para" id="p-1185">Cannot be determined</div></li>
+</ol></article><article class="fact theorem-like" id="fact-22"><h4 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.1.19</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-1186">
+<div class="para">Since the transformation given by the standard matrix <span class="process-math">\(AB\)</span> is obtained by applying the transformations given by <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> it follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(AB)=\det(A)\det(B)=\det(B)\det(A)=\det(BA)\text{.}
+\end{equation*}
+</div>
+</div></article><article class="remark remark-like" id="remark-23"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.20</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1187">Recall that row operations may be produced by matrix multiplication.</div> <ul class="disc">
+<li id="li-758"><div class="para" id="p-1188">Multiply the first row of <span class="process-math">\(A\)</span> by <span class="process-math">\(c\text{:}\)</span> <span class="process-math">\(\left[\begin{array}{cccc}
+c &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]A\)</span>
+</div></li>
+<li id="li-759"><div class="para" id="p-1189">Swap the first and second row of <span class="process-math">\(A\text{:}\)</span> <span class="process-math">\(\left[\begin{array}{cccc}
+0 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]A\)</span>
+</div></li>
+<li id="li-760"><div class="para" id="p-1190">Add <span class="process-math">\(c\)</span> times the third row to the first row of <span class="process-math">\(A\text{:}\)</span> <span class="process-math">\(\left[\begin{array}{cccc}
+1 &amp; 0 &amp; c &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]A\)</span>
+</div></li>
+</ul></article><article class="fact theorem-like" id="fact-23"><h4 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.1.21</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1191">The determinants of row operation matrices may be computed by manipulating columns to reduce each matrix to the identity:</div> <ul class="disc">
+<li id="li-761"><div class="para" id="p-1192">Scaling a row: <span class="process-math">\(\det
+\left[\begin{array}{cccc}
+c &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]
+=
+c\det
+\left[\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]
+=
+c\)</span>
+</div></li>
+<li id="li-762"><div class="para" id="p-1193">Swapping rows: <span class="process-math">\(\det
+\left[\begin{array}{cccc}
+0 &amp; 1 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]
+=
+-1\det
+\left[\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]
+=
+-1\)</span>
+</div></li>
+<li id="li-763"><div class="para" id="p-1194">Adding a row multiple to another row: <span class="process-math">\(\det
+\left[\begin{array}{cccc}
+1 &amp; 0 &amp; c &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]
+=
+\det
+\left[\begin{array}{cccc}
+1 &amp; 0 &amp; c-1c &amp; 0\\
+0 &amp; 1 &amp; 0-0c &amp; 0\\
+0 &amp; 0 &amp; 1-0c &amp; 0 \\
+0 &amp; 0 &amp; 0-0c &amp; 1
+\end{array}\right]
+=
+\det(I)=1\)</span>
+</div></li>
+</ul></article><article class="activity project-like" id="activity-143"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.22</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-71">
+<div class="para" id="p-1195">Consider the row operation <span class="process-math">\(R_1+4R_3\to R_1\)</span> applied as follows to show <span class="process-math">\(A\sim B\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\left[\begin{array}{cccc}1&amp;2&amp;3 &amp; 4\\5&amp;6 &amp; 7 &amp; 8\\9 &amp; 10 &amp; 11 &amp; 12 \\ 13 &amp; 14 &amp; 15 &amp; 16\end{array}\right] 
+\sim
+\left[\begin{array}{cccc}1+4(9)&amp;2+4(10)&amp;3+4(11) &amp; 4+4(12) \\5&amp;6 &amp; 7 &amp; 8\\9 &amp; 10 &amp; 11 &amp; 12 \\ 13 &amp; 14 &amp; 15 &amp; 16\end{array}\right]=B
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-185"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-1196">Find a matrix <span class="process-math">\(R\)</span> such that <span class="process-math">\(B=RA\text{,}\)</span> by applying the same row operation to <span class="process-math">\(I=\left[\begin{array}{cccc}1&amp;0&amp;0&amp;0\\0&amp;1&amp;0&amp;0\\0&amp;0&amp;1&amp;0\\0&amp;0&amp;0&amp;1\end{array}\right]\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-186"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-1197">Find <span class="process-math">\(\det R\)</span> by comparing with the previous slide.</div></article><article class="task exercise-like" id="task-187"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para logical" id="p-1198">
+<div class="para">If <span class="process-math">\(C \in M_{4,4}\)</span> is a matrix with <span class="process-math">\(\det(C)= -3\text{,}\)</span> find</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(RC)=\det(R)\det(C).
+\end{equation*}
+</div>
+</div></article></article><article class="activity project-like" id="activity-144"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.23</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-72">
+<div class="para" id="p-1199">Consider the row operation <span class="process-math">\(R_1\leftrightarrow R_3\)</span> applied as follows to show <span class="process-math">\(A\sim B\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\left[\begin{array}{cccc}1&amp;2&amp;3&amp;4\\5&amp;6&amp;7&amp;8\\9&amp;10&amp;11&amp;12 \\ 13 &amp; 14 &amp; 15 &amp; 16\end{array}\right]
+\sim
+\left[\begin{array}{cccc}9&amp;10&amp;11&amp;12\\5&amp;6&amp;7&amp;8\\1&amp;2&amp;3&amp;4 \\ 13 &amp; 14 &amp; 15 &amp; 16\end{array}\right]=B
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-188"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-1200">Find a matrix <span class="process-math">\(R\)</span> such that <span class="process-math">\(B=RA\text{,}\)</span> by applying the same row operation to <span class="process-math">\(I\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-189"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-1201">If <span class="process-math">\(C \in M_{4,4}\)</span> is a matrix with <span class="process-math">\(\det(C)= 5\text{,}\)</span> find <span class="process-math">\(\det(RC)\text{.}\)</span>
+</div></article></article><article class="activity project-like" id="activity-145"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.24</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-73">
+<div class="para" id="p-1202">Consider the row operation <span class="process-math">\(3R_2\to R_2\)</span> applied as follows to show <span class="process-math">\(A\sim B\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\left[\begin{array}{cccc}1&amp;2&amp;3&amp;4\\5&amp;6&amp;7&amp;8\\9&amp;10&amp;11&amp;12 \\ 13 &amp; 14 &amp; 15 &amp; 16\end{array}\right]
+\sim
+\left[\begin{array}{cccc}1&amp;2&amp;3&amp;4\\3(5)&amp;3(6)&amp;3(7)&amp;3(8)\\9&amp;10&amp;11&amp;12 \\ 13 &amp; 14 &amp; 15 &amp; 16\end{array}\right]=B
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-190"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-1203">Find a matrix <span class="process-math">\(R\)</span> such that <span class="process-math">\(B=RA\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-191"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-1204">If <span class="process-math">\(C \in M_{4,4}\)</span> is a matrix with <span class="process-math">\(\det(C)= -7\text{,}\)</span> find <span class="process-math">\(\det(RC)\text{.}\)</span>
+</div></article></article><article class="activity project-like" id="activity-146"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.25</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-74"><div class="para" id="p-1205">Let <span class="process-math">\(A\)</span> be <em class="emphasis">any</em> <span class="process-math">\(4 \times 4\)</span> matrix with determinant <span class="process-math">\(2\text{.}\)</span>
+</div></div>
+<article class="task exercise-like" id="task-192"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-1206">Let <span class="process-math">\(B\)</span> be the matrix obtained from <span class="process-math">\(A\)</span> by applying the row operation <span class="process-math">\(R_1 - 5 R_3 \to R_1\text{.}\)</span> What is <span class="process-math">\(\mathrm{det}\,B\text{?}\)</span>
+</div> <div class="para logical" id="p-1207"><ol class="upper-alpha cols4">
+<li id="li-764"><div class="para" id="p-derived-li-764">-4</div></li>
+<li id="li-765"><div class="para" id="p-derived-li-765">-2</div></li>
+<li id="li-766"><div class="para" id="p-derived-li-766">2</div></li>
+<li id="li-767"><div class="para" id="p-derived-li-767">10</div></li>
+</ol></div></article><article class="task exercise-like" id="task-193"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-1208">Let <span class="process-math">\(M\)</span> be the matrix obtained from <span class="process-math">\(A\)</span> by applying the row operation <span class="process-math">\(R_3 \leftrightarrow R_1\text{.}\)</span> What is <span class="process-math">\(\mathrm{det}\,M\text{?}\)</span>
+</div> <div class="para logical" id="p-1209"><ol class="upper-alpha cols4">
+<li id="li-768"><div class="para" id="p-derived-li-768">-4</div></li>
+<li id="li-769"><div class="para" id="p-derived-li-769">-2</div></li>
+<li id="li-770"><div class="para" id="p-derived-li-770">2</div></li>
+<li id="li-771"><div class="para" id="p-derived-li-771">10</div></li>
+</ol></div></article><article class="task exercise-like" id="task-194"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="p-1210">Let <span class="process-math">\(P\)</span> be the matrix obtained from <span class="process-math">\(A\)</span> by applying the row operation <span class="process-math">\(2 R_4 \to R_4\text{.}\)</span> What is <span class="process-math">\(\mathrm{det}\,P\text{?}\)</span>
+</div> <div class="para logical" id="p-1211"><ol class="upper-alpha cols4">
+<li id="li-772"><div class="para" id="p-derived-li-772">-4</div></li>
+<li id="li-773"><div class="para" id="p-derived-li-773">-2</div></li>
+<li id="li-774"><div class="para" id="p-derived-li-774">2</div></li>
+<li id="li-775"><div class="para" id="p-derived-li-775">10</div></li>
+</ol></div></article></article><article class="remark remark-like" id="remark-24"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.26</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1212">Recall that the column versions of the three row-reducing operations a matrix may be used to simplify a determinant:</div> <ol class="decimal">
+<li id="li-776"><div class="para logical" id="p-1213">
+<div class="para">Multiplying columns by scalars:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det([\cdots\hspace{0.5em}c\vec{v}\hspace{0.5em} \cdots])=
+c\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em} \cdots])
+\end{equation*}
+</div>
+</div></li>
+<li id="li-777"><div class="para logical" id="p-1214">
+<div class="para">Swapping two columns:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}
+\cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])=
+-\det([\cdots\hspace{0.5em}\vec{w}\hspace{0.5em}
+\cdots\hspace{1em}\vec{v}\hspace{0.5em} \cdots])
+\end{equation*}
+</div>
+</div></li>
+<li id="li-778"><div class="para logical" id="p-1215">
+<div class="para">Adding a multiple of a column to another column:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det([\cdots\hspace{0.5em}\vec{v}\hspace{0.5em}
+\cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])=
+\det([\cdots\hspace{0.5em}\vec{v}+c\vec{w}\hspace{0.5em}
+\cdots\hspace{1em}\vec{w}\hspace{0.5em} \cdots])
+\end{equation*}
+</div>
+</div></li>
+</ol></article><article class="remark remark-like" id="remark-25"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.27</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1216">The determinants of row operation matrices may be computed by manipulating columns to reduce each matrix to the identity:</div> <ul class="disc">
+<li id="li-779"><div class="para" id="p-1217">Scaling a row: <span class="process-math">\(\left[\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp;0  \\
+0 &amp; c &amp; 0 &amp;0\\
+0 &amp; 0 &amp; 1 &amp;0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]\)</span>
+</div></li>
+<li id="li-780"><div class="para" id="p-1218">Swapping rows: <span class="process-math">\(\left[\begin{array}{cccc}
+0 &amp; 1 &amp; 0 &amp;0 \\
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]\)</span>
+</div></li>
+<li id="li-781"><div class="para" id="p-1219">Adding a row multiple to another row: <span class="process-math">\(\left[\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; c &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]\)</span>
+</div></li>
+</ul></article><article class="fact theorem-like" id="fact-24"><h4 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.1.28</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-1220">Thus we can also use both row operations to simplify determinants:</div> <ul class="disc">
+<li id="li-782"><div class="para logical" id="p-1221">
+<div class="para">Multiplying rows by scalars:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det\left[\begin{array}{c}\vdots\\cR\\\vdots\end{array}\right]=
+c\det\left[\begin{array}{c}\vdots\\R\\\vdots\end{array}\right]
+\end{equation*}
+</div>
+</div></li>
+<li id="li-783"><div class="para logical" id="p-1222">
+<div class="para">Swapping two rows:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det\left[\begin{array}{c}\vdots\\R\\\vdots\\S\\\vdots\end{array}\right]=
+-\det\left[\begin{array}{c}\vdots\\S\\\vdots\\R\\\vdots\end{array}\right]
+\end{equation*}
+</div>
+</div></li>
+<li id="li-784"><div class="para logical" id="p-1223">
+<div class="para">Adding multiples of rows/columns to other rows:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det\left[\begin{array}{c}\vdots\\R\\\vdots\\S\\\vdots\end{array}\right]=
+\det\left[\begin{array}{c}\vdots\\R+cS\\\vdots\\S\\\vdots\end{array}\right]
+\end{equation*}
+</div>
+</div></li>
+</ul></article><article class="activity project-like" id="activity-147"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.29</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-1224">
+<div class="para">Complete the following derivation for a formula calculating <span class="process-math">\(2\times 2\)</span> determinants:</div>
+<div class="displaymath process-math" id="md-54">
+\begin{align*}
+\det\left[\begin{array}{cc} a &amp; b \\ c &amp; d \end{array}\right]
+&amp;=
+\unknown \det \left[\begin{array}{cc} 1 &amp; b/a \\ c &amp; d \end{array}\right]\\
+&amp;=
+\unknown \det \left[\begin{array}{cc} 1 &amp; b/a \\ c-c &amp; d-bc/a \end{array}\right]\\
+&amp;=
+\unknown \det \left[\begin{array}{cc} 1 &amp; b/a \\ 0 &amp; d-bc/a \end{array}\right]\\
+&amp;=
+\unknown \det \left[\begin{array}{cc} 1 &amp; b/a \\ 0 &amp; 1 \end{array}\right]\\
+&amp;=
+\unknown \det \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \end{array}\right]\\
+&amp;=
+\unknown \det I\\
+&amp;=
+\unknown
+\end{align*}
+</div>
+</div></article><article class="observation remark-like" id="GT1-observation-formula"><h4 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.1.30</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-1225">
+<div class="para">So we may compute the determinant of <span class="process-math">\(\left[\begin{array}{cc} 2 &amp; 4 \\ 2 &amp; 3 \end{array}\right]\)</span> by using determinant properties to manipulate its rows/columns to reduce the matrix to <span class="process-math">\(I\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-55">
+\begin{align*}
+\det\left[\begin{array}{cc} 2 &amp; 4 \\ 2 &amp; 3 \end{array}\right]
+&amp;=
+2 \det \left[\begin{array}{cc} 1 &amp; 2 \\ 2 &amp; 3 \end{array}\right]\\
+&amp;=
+%2 \det \left[\begin{array}{cc} 1 &amp; 2 \\ 2-2(1) &amp; 3-2(2)\end{array}\right]=
+2 \det \left[\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; -1 \end{array}\right]\\
+&amp;=
+%2(-1) \det \left[\begin{array}{cc} 1 &amp; -2 \\ 0 &amp; +1 \end{array}\right]=
+-2 \det \left[\begin{array}{cc} 1 &amp; -2 \\ 0 &amp; 1 \end{array}\right]\\
+&amp;=
+%-2 \det \left[\begin{array}{cc} 1+2(0) &amp; -2+2(1) \\ 0 &amp; 1\end{array}\right] =
+-2 \det \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \end{array}\right]\\
+&amp;=
+%-2\det I = 
+%-2(1) = 
+-2
+\end{align*}
+</div>
+</div> <div class="para logical" id="p-1226">
+<div class="para">Or we may use a formula:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det\left[\begin{array}{cc} 2 &amp; 4 \\ 2 &amp; 3 \end{array}\right]
+=
+(2)(3)-(4)(2)=-2
+\end{equation*}
+</div>
+</div></article></section><section class="subsection" id="subsection-105"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="space"> </span><span class="title">Videos</span>
+</h3>
+<figure class="figure figure-like" id="figure-61"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/l6aQ4xTCm88?&amp;modestbranding=1&amp;rel=0" id="video-GT1"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">61<span class="period">.</span></span><span class="space"> </span>Video: Row operations, matrix multiplication, and determinants</figcaption></figure></section><section class="subsection" id="subsection-106"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="space"> </span><span class="title">Slideshow</span>
+</h3>
+<div class="para" id="p-1227">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/GT1.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/GT1.slides.html</code></a>.</div></section><section class="exercises" id="exercises-22"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<div class="para" id="p-1228">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/GT1/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/GT1/</code></a>.</div></section><section class="subsection" id="subsection-107"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="space"> </span><span class="title">Mathematical Writing Explorations</span>
+</h3>
+<article class="exploration project-like" id="exploration-50"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">5.1.31</span><span class="period">.</span>
+</h4>
+<ul class="disc">
+<li id="li-785"><div class="para" id="p-derived-li-785">Prove or disprove. The determinant is a linear operator on the vector space of <span class="process-math">\(n \times n\)</span> matrices.</div></li>
+<li id="li-786"><div class="para" id="p-derived-li-786">Find a matrix that will double the area of a region in <span class="process-math">\(\mathbb{R}^2\text{.}\)</span>
+</div></li>
+<li id="li-787"><div class="para" id="p-derived-li-787">Find a matrix that will triple the area of a region in <span class="process-math">\(\mathbb{R}^2\text{.}\)</span>
+</div></li>
+<li id="li-788"><div class="para" id="p-derived-li-788">Find a matrix that will halve the area of a region in <span class="process-math">\(\mathbb{R}^2\text{.}\)</span>
+</div></li>
+</ul></article></section><section class="subsection" id="subsection-108"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="space"> </span><span class="title">Sample Problem and Solution</span>
+</h3>
+<div class="para" id="p-1229">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-GT1.html" title="Example B.1.22: GT1">Example B.1.22</a>.</div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="GT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="GT2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
