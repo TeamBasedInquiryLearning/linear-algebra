@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">B.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">AT1.</span>
+</h3>
+<div class="para">Answer the following questions about transformations.</div> <ol class="decimal">
+<li><div class="para logical">
+<div class="para">Consider the following maps of Euclidean vectors <span class="process-math">\(P:\mathbb R^3\rightarrow\mathbb R^3\)</span> and <span class="process-math">\(Q:\mathbb R^3\rightarrow\mathbb R^3\)</span> defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P\left( \left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)= 
+\left[\begin{array}{c} 3 \, x - y + z \\ 2 \, x - 2 \, y + 4 \, z \\ -2 \, x - 2 \, y - 3 \, z \end{array}\right] 
+\hspace{1em} \text{and} \hspace{1em} Q\left( \left[\begin{array}{c} x \\ y \\ z \end{array}\right] \right)= 
+\left[\begin{array}{c} y - 2 \, z \\ -3 \, x - 4 \, y + 12 \, z \\ 5 \, x y + 3 \, z \end{array}\right].
+\end{equation*}
+</div>
+<div class="para">Without writing a proof, explain why only one of these maps is likely to be a linear transformation.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Consider the following map of Euclidean vectors <span class="process-math">\(S:\mathbb R^2\rightarrow\mathbb R^2\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S\left( \left[\begin{array}{c} x \\ y \end{array}\right] \right)=\left[\begin{array}{c} x + 2 \, y \\ -3 \, x y \end{array}\right].
+\end{equation*}
+</div>
+<div class="para">Prove that <span class="process-math">\(S\)</span> <em class="emphasis">is not</em> a linear transformation.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Consider the following map of Euclidean vectors <span class="process-math">\(T:\mathbb R^2\rightarrow\mathbb R^2\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T\left( \left[\begin{array}{c} x \\ y \end{array}\right] \right)=\left[\begin{array}{c} -4 \, x - 5 \, y \\ 2 \, x - 4 \, y \end{array}\right].
+\end{equation*}
+</div>
+<div class="para">Prove that <span class="process-math">\(T\)</span> <em class="emphasis">is</em> a linear transformation.</div>
+</div></li>
+</ol>
+<div class="solutions"><details class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><ol class="decimal">
+<li><div class="para">A linear map between Euclidean spaces must consist of linear polynomials in each component. All three components of <span class="process-math">\(P\)</span> are linear so <span class="process-math">\(P\)</span> is likely to be linear; however, the third component of <span class="process-math">\(Q\)</span> contains the nonlinear term <span class="process-math">\(xy\text{,}\)</span> so <span class="process-math">\(Q\)</span> is unlikely to be linear.</div></li>
+<li>
+<div class="para">We need to show <em class="emphasis">either</em> that <span class="process-math">\(S\)</span> fails to preserve either vector addition <em class="emphasis">or</em> that <span class="process-math">\(S\)</span> fails to preserve scalar multiplication.</div>
+<div class="para logical">
+<div class="para">For example, for a scalar <span class="process-math">\(c \in \IR\)</span> and a vector <span class="process-math">\(\left[\begin{array}{c}x \\y \end{array}\right] \in \IR^2\text{,}\)</span> we can compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S\left(c\left[\begin{array}{c} x \\ y \end{array} \right]\right) = 
+S\left(\left[\begin{array}{c} cx \\ cy \end{array} \right]\right) = 
+\left[\begin{array}{c}cx+2cy \\ -3c^2xy \end{array} \right]
+\end{equation*}
+</div>
+<div class="para">whereas</div>
+<div class="displaymath process-math">
+\begin{equation*}
+cS\left(\left[\begin{array}{c} x \\ y \end{array} \right]\right) = 
+c\left[\begin{array}{c}x+2y \\ -3xy \end{array} \right] =
+\left[\begin{array}{c}cx+2cy \\ -3cxy \end{array} \right].
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(-3c^2xy \neq -3cxy\text{,}\)</span> we see that <span class="process-math">\(S\left(c\left[\begin{array}{c} x \\ y \end{array} \right]\right) \neq cS\left(\left[\begin{array}{c} x \\ y \end{array} \right]\right)\text{,}\)</span> so <span class="process-math">\(S\)</span> fails to preserve scalar multiplication and cannot be a linear transformation.</div>
+</div>
+<div class="para logical">
+<div class="para">Alternatively, we could instead take two vectors <span class="process-math">\(\left[\begin{array}{c}x_1 \\y_1 \end{array}\right], \left[\begin{array}{c}x_2 \\y_2 \end{array}\right] \in \IR^2\)</span> and compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right] + \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) = 
+S \left( \left[\begin{array}{c}x_1 +x_2 \\y_1 + y_2 \end{array}\right] \right) =
+\left[\begin{array}{c} (x_1+x_2)+2(y_1+y_2) \\ -3(x_1+x_2)(y_1+y_2) \end{array} \right]
+\end{equation*}
+</div>
+<div class="para">whereas</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right]\right) +S\left( \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) = 
+\left[\begin{array}{c} x_1+2y_1 \\ -3x_1y_1 \end{array}\right] + 
+\left[\begin{array}{c} x_2+2y_2 \\ -3x_2y_2 \end{array}\right] = 
+\left[\begin{array}{c} x_1+2y_1+x_2+2y_2 \\ -3x_1y_1-3x_2y_2 \end{array} \right]
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(-3(x_1+x_2)(y_1+y_2) \neq -3x_1y_1-3x_2y_2 \text{,}\)</span> we see that <span class="process-math">\(S \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right] + \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) \neq 
+S \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right]\right) +S\left( \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) 
+\text{,}\)</span> so <span class="process-math">\(S\)</span> fails to preserve addition and cannot be a linear transformation.</div>
+</div>
+</li>
+<li>
+<div class="para">We need to show that <span class="process-math">\(T\)</span> preserves <em class="emphasis">both</em> vector addition <em class="emphasis">and</em> that <span class="process-math">\(T\)</span>  preserves scalar multiplication.</div>
+<div class="para logical">
+<div class="para">First, let us take two vectors <span class="process-math">\(\left[\begin{array}{c}x_1 \\y_1 \end{array}\right], \left[\begin{array}{c}x_2 \\y_2 \end{array}\right] \in \IR^2\)</span> and compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right] + \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) = 
+T \left( \left[\begin{array}{c}x_1 +x_2 \\y_1 + y_2 \end{array}\right] \right) =
+\left[\begin{array}{c} -4(x_1+x_2)-5(y_1+y_2) \\ 2(x_1+x_2)-4(y_1+y_2)\end{array} \right]
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right]\right) +T\left( \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) = 
+\left[\begin{array}{c} -4x_1-5y_1  \\ 2x_1-4y_1  \end{array}\right] + 
+\left[\begin{array}{c} -4x_2-5y_2  \\ 2x_2-4y_2  \end{array}\right]  =
+\left[\begin{array}{c} -4x_1-5y_1-4x_2-5y_2 \\ 2x_1-4y_1+2x_2-4y_2\end{array} \right]
+\end{equation*}
+</div>
+<div class="para">So we see that <span class="process-math">\(T \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right] + \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) =
+T \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right]\right) +T\left( \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) 
+\text{,}\)</span> so <span class="process-math">\(T\)</span> preserves addition.</div>
+</div>
+<div class="para logical">
+<div class="para">Now, take a scalar <span class="process-math">\(c \in \IR\)</span> and a vector <span class="process-math">\(\left[\begin{array}{c}x \\y \end{array}\right] \in \IR^2\text{,}\)</span> and compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T\left(c\left[\begin{array}{c} x \\ y \end{array} \right]\right) = 
+T\left(\left[\begin{array}{c} cx \\ cy \end{array} \right]\right) = 
+\left[\begin{array}{c} -4cx-5cy \\ 2cx-4cy\end{array} \right]
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+cT\left(\left[\begin{array}{c} x \\ y \end{array} \right]\right) = 
+c\left[\begin{array}{c}-4x-5y \\ 2x-4y \end{array} \right] =
+\left[\begin{array}{c}-4cx-5cy \\ 2cx-4cy\end{array} \right].
+\end{equation*}
+</div>
+<div class="para">We see that <span class="process-math">\(T\left(c\left[\begin{array}{c} x \\ y \end{array} \right]\right) = cT\left(\left[\begin{array}{c} x \\ y \end{array} \right]\right)\text{,}\)</span> so <span class="process-math">\(T\)</span>  preserves scalar multiplication.</div>
+</div>
+<div class="para">Since <span class="process-math">\(T\)</span> preserves both addition and scalar multiplication, we have proven that <span class="process-math">\(T\)</span> is a linear transformation.</div>
+</li>
+</ol></div></details></div></article><span class="incontext"><a class="internal" href="sample-exercises.html#sample-AT1">in-context</a></span>
+</body>
+</html>
