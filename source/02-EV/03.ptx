@@ -12,90 +12,81 @@
 
 
 <subsection><title>Class Activities</title>
+
+    <observation>
+        <p>
+            Recall that if <m>S=\left\{\vec{v}_1,\dots, \vec{v}_n\right\}</m> is subset of vectors in <m>\IR^n</m>, then <m>\vspan(S)</m> is the set of all linear combinations of vectors in <m>S</m>.
+            In EV2 (how to reference properly), we learned how to decide whether <m>\vspan(S)</m> was equal to all of <m>\IR^n</m> or something strictly smaller. 
+        </p>
+    </observation>
+    <activity>
+        <statement>
+            <p>
+        Let <m>S</m> denote a set of vectors in <m>\IR^n</m> and suppose that <m>\vec{u},\vec{v}\in\vspan(S)</m>, <m>c\in\IR</m> and that <m>\vec{w}\in\IR^n</m>. Which of the following vectors must belong to <m>\vspan(S)</m>?
+        <ol marker="A.">
+          <li><m>\vec{0}</m></li>
+          <li><m>\vec{u}+\vec{w}</m></li>
+          <li><m>\vec{u}+\vec{v}</m></li>
+          <li><m>c\vec{u}</m></li>
+        </ol>
+            </p>
+        </statement>
+    </activity>
+
+    <observation>
+        <p>
+            If <m>S</m> is any set of vectors in <m>\IR^n</m>, then the set <m>\vspan(S)</m> has the following properties:
+            <ul>
+                <li>
+                    <p>
+                        the set <m>\vspan(S)</m> is non-empty.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        the set <m>\vspan(S)</m> is closed under addition: for any <m>\vec{u},\vec{v}\in \vspan(S)</m>, the sum <m>\vec{u}+\vec{v}</m> is also in <m>\vspan(S)</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        the set <m>\vspan(S)</m> is closed under scalar multiplication: for any <m>\vec{u}\in\vspan(S)</m> and scalar <m>c\in\IR</m>, the product <m>c\vec{u}</m> is also in <m>\vspan(S)</m>.    
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </observation>
     
     <definition xml:id="EV3-definition-subspace">
         <statement>
             <p>
-      A subset <m>S</m> of a vector space is called a <term>subspace</term><idx>subspace</idx>
-      provided it is equal to the span of a set of vectors from that vector space.
-        </p>
-    </statement>
-    </definition>
-
-<activity estimated-time="5">
-    <introduction>
-        <p>
-            Consider two non-colinear vectors in <m>\IR^3</m>. If we look at all linear combinations of those two vectors
-            (that is, their span), we end up with a planar subspace within <m>\IR^3</m>. Call this plane <m>S</m>.</p>
-			<image xml:id="EV3-planar-subspace" width="50%">
-                <description>Illustration of a planar subspace of R3</description>
-				<latex-image>
-  \begin{tikzpicture}[x={(210:0.8cm)}, y={(0:1cm)}, z={(90:1cm)}]
-    \draw[-&gt;] (0,0,0) -- (6,0,0);
-    \draw[-&gt;] (0,0,0) -- (0,6,0);
-    \draw[-&gt;] (0,0,0) -- (0,0,6);
-    \draw[fill=purple!20,fill opacity=0.5]
-      (-2,-2,2) -- (6,-2,-2) -- (2,2,-2) -- (-6,2,2) -- (-2,-2,2);
-    \draw[thick,blue,-&gt;] (0,0,0) -- (1,-1,0);
-    \draw[thick,red,-&gt;] (0,0,0) -- (-2,0,1);
-  \end{tikzpicture}
-				</latex-image>
-			</image>
-    </introduction>
-    <task>
-        <statement>
-            <p> 
-                For any unspecified <m>\vec{u}, \vec{v} \in S</m>, 
-                is it the case that <m>\vec{u} + \vec{v} \in S</m>?
-                <ol marker="A." cols="2"><li><p>Yes.</p></li><li><p>No.</p></li></ol>
-            </p>
-        </statement>
-    </task>
-    <task>
-        <statement>
-            <p> 
-                For any unspecified <m>\vec{u} \in S</m> and <m>c\in\IR</m>,
-                is it the case that 
-                <m>\vec{u}+\left[\begin{array}{c} c \\ c \\ c \end{array}\right] \in S</m>?
-                <ol marker="A." cols="2"><li><p>Yes.</p></li><li><p>No.</p></li></ol>
-            </p>
-        </statement>
-    </task>
-    <task>
-        <statement>
-            <p> 
-                For any unspecified <m>\vec{u} \in S</m> and <m>c\in\IR</m>, 
-                is it the case that <m>c\vec{u} \in S</m>?
-                <ol marker="A." cols="2"><li><p>Yes.</p></li><li><p>No.</p></li></ol>
-            </p>
-        </statement>
-    </task>
-</activity>
-    
-<fact xml:id="EV3-fact-subspace">
-        <p>
-  A sub<em>set</em> <m>S</m> of a vector space is a sub<em>space</em>
-  provided:
-        <ul>
+      A subset <m>W</m> of a vector space is called a <term>subspace</term><idx>subspace</idx>
+      provided that it satisfies the following properties:
+      <ul>
         <li>
             <p>
-            the subset is <term>closed under addition</term><idx><h>vector space</h></idx><idx>closed under addition</idx>: for any <m>\vec{u},\vec{v} \in S</m>, the sum <m>\vec{u}+\vec{v}</m> is also in <m>S</m>.
+            the subset is non-empty.    
             </p>
         </li>
         <li>
             <p>
-            the subset is <term>closed under scalar multiplication</term><idx><h>vector space</h></idx><idx>closed under scalar multiplication</idx>: for any <m>\vec{u} \in S</m> and scalar <m>c \in \IR</m>, the product <m>c\vec{u}</m> is also in <m>S</m>.
+            the subset is <term>closed under addition</term><idx><h>vector space</h></idx><idx>closed under addition</idx>: for any <m>\vec{u},\vec{v} \in W</m>, the sum <m>\vec{u}+\vec{v}</m> is also in <m>W</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+            the subset is <term>closed under scalar multiplication</term><idx><h>vector space</h></idx><idx>closed under scalar multiplication</idx>: for any <m>\vec{u} \in W</m> and scalar <m>c \in \IR</m>, the product <m>c\vec{u}</m> is also in <m>W</m>.
             </p>
         </li>
         </ul>
-    </p>
-</fact>
+        </p>
+    </statement>
+    </definition>
 
 <observation>
         <p>
 Note the similarities between a planar subspace spanned by two non-colinear vectors in <m>\IR^3</m>,
 and the Euclidean plane <m>\IR^2</m>. While they are not the same thing (and shouldn't be referred to
-interchangably), algebraists call such similar vector spaces <term>isomorphic</term><idx>isomorphic</idx>;
+interchangably), algebraists call such similar spaces <term>isomorphic</term><idx>isomorphic</idx>;
 we'll learn what this means more carefully in a later chapter.
         </p>
         <figure xml:id="EV3-planar-subspace-vs-r2">
@@ -130,14 +121,20 @@ we'll learn what this means more carefully in a later chapter.
 <activity estimated-time='10'>
     <introduction>
         <p>
-Let <m>S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}</m>.
+Let <m>W=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=0}</m>.
         </p>
     </introduction>
-
+    <task>
+        <statement>
+            <p>
+                Is <m>W</m> the empty set?
+            </p>
+        </statement>
+    </task>
     <task>
         <p>
     Let's assume that <m>\vec{v}=\left[\begin{array}{c} x \\ y \\ z \end{array}\right]</m> and
-    <m>\vec{w} = \left[\begin{array}{c} a \\ b \\ c \end{array}\right] </m> are in <m>S</m>.
+    <m>\vec{w} = \left[\begin{array}{c} a \\ b \\ c \end{array}\right] </m> are in <m>W</m>.
     What are we allowed to assume?
     <ol marker="A." cols='2'>
         <li>
@@ -167,7 +164,7 @@ Let <m>S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2
         <p>
       Which equation must be verified to show that
       <m>\vec v+\vec w = \left[\begin{array}{c} x+a \\ y+b \\ z+c \end{array}\right]</m>
-      also belongs to <m>S</m>?
+      also belongs to <m>W</m>?
             <ol marker="A.">
                 <li>
                     <p>
@@ -194,7 +191,7 @@ Use the assumptions from (a) to verify the equation from (b).
     </task>
     <task>
         <p>
-      Is <m>S</m> is a subspace of <m>\IR^3</m>?
+      Is <m>W</m> is a subspace of <m>\IR^3</m>?
       <ol marker="A." cols="3">
           <li>
               <p>
@@ -217,13 +214,13 @@ Use the assumptions from (a) to verify the equation from (b).
 <task>
     <p>
   Show that <m>k\vec v=\left[\begin{array}{c}kx\\ky\\kz\end{array}\right]</m> 
-  also belongs to <m>S</m> for any <m>k\in\IR</m> by verifying
+  also belongs to <m>W</m> for any <m>k\in\IR</m> by verifying
   <m>(kx)+2(ky)+(kz)=0</m> under these assumptions.
     </p>
 </task>
 <task>
     <p>
-  Is <m>S</m> is a subspace of <m>\IR^3</m>?
+  Is <m>W</m> is a subspace of <m>\IR^3</m>?
   <ol marker="A." cols="3">
       <li>
           <p>
@@ -248,35 +245,42 @@ Use the assumptions from (a) to verify the equation from (b).
 <activity estimated-time='10'>
     <introduction>
         <p>
-Let <m>S=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=4}</m>.
+Let <m>W=\setBuilder{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}{ x+2y+z=4}</m>.
         </p>
     </introduction>
+    <task>
+        <statement>
+            <p>
+                Is <m>W</m> the empty set?
+            </p>
+        </statement>
+    </task>
     <task>
         <p>
 Which of these statements is valid?
 <ol marker="A.">
     <li>
         <p>
-<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em>and</em>
-<m>\left[\begin{array}{c} 2 \\ 2 \\ 2 \end{array}\right]\in S</m>, so <m>S</m> <em>is</em> a subspace.
+<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in W</m>, <em>and</em>
+<m>\left[\begin{array}{c} 2 \\ 2 \\ 2 \end{array}\right]\in W</m>, so <m>W</m> <em>is</em> a subspace.
         </p>
     </li>
     <li>
         <p>
-<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em>and</em>
-<m>\left[\begin{array}{c} 2 \\ 2 \\ 2 \end{array}\right]\in S</m>, so <m>S</m> <em>is not</em> a subspace.
+<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in W</m>, <em>and</em>
+<m>\left[\begin{array}{c} 2 \\ 2 \\ 2 \end{array}\right]\in W</m>, so <m>W</m> <em>is not</em> a subspace.
         </p>
     </li>
     <li>
         <p>
-<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em>but</em>
-<m>\left[\begin{array}{c} 2 \\ 2 \\ 2 \end{array}\right]\not\in S</m>, so <m>S</m> <em>is</em> a subspace.
+<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in W</m>, <em>but</em>
+<m>\left[\begin{array}{c} 2 \\ 2 \\ 2 \end{array}\right]\not\in W</m>, so <m>W</m> <em>is</em> a subspace.
         </p>
     </li>
     <li>
         <p>
-<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em>but</em>
-<m>\left[\begin{array}{c} 2 \\ 2 \\ 2 \end{array}\right]\not\in S</m>, so <m>S</m> <em>is not</em> a subspace.
+<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in W</m>, <em>but</em>
+<m>\left[\begin{array}{c} 2 \\ 2 \\ 2 \end{array}\right]\not\in W</m>, so <m>W</m> <em>is not</em> a subspace.
         </p>
     </li>
 </ol>
@@ -288,26 +292,26 @@ Which of these statements is valid?
 <ol>
     <li>
         <p>
-<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em>and</em>
-<m>\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]\in S</m>, so <m>S</m> <em>is</em> a subspace.
+<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in W</m>, <em>and</em>
+<m>\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]\in W</m>, so <m>W</m> <em>is</em> a subspace.
         </p>
     </li>
     <li>
         <p>
-<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em>and</em>
-<m>\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]\in S</m>, so <m>S</m> <em>is not</em> a subspace.
+<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in W</m>, <em>and</em>
+<m>\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]\in W</m>, so <m>W</m> <em>is not</em> a subspace.
         </p>
     </li>
     <li>
         <p>
-<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em>but</em>
-<m>\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]\not\in S</m>, so <m>S</m> <em>is</em> a subspace.
+<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in W</m>, <em>but</em>
+<m>\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]\not\in W</m>, so <m>W</m> <em>is</em> a subspace.
         </p>
     </li>
     <li>
         <p>
-<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in S</m>, <em>but</em>
-<m>\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]\not\in S</m>, so <m>S</m> <em>is not</em> a subspace.
+<m>\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\in W</m>, <em>but</em>
+<m>\left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]\not\in W</m>, so <m>W</m> <em>is not</em> a subspace.
         </p>
     </li>
 </ol>
@@ -341,8 +345,13 @@ Show that <m>\vec 0\not\in W</m>.
 </p>
 <p>
 If you cannot do any of these, then <m>W</m> can be proven to be a subspace
-by doing <em>both</em> of the following:
+by doing <em>all</em> of the following:
 <ol>
+    <li>
+        <p>
+            Show that <m>W</m> is non-empty.
+        </p>
+    </li>
   <li>
     <p>
 For all <m>\vec v,\vec w\in W</m> (not just specific values), 
