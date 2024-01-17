@@ -12,19 +12,128 @@
 </head>
 <body class="ignore-math">
 <article class="activity project-like"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
 </h4>
 <div class="introduction"><div class="para logical">
-<div class="para">Consider the vector equation</div>
+<div class="para">Consider the following linear system with a unique solution:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-x_{1} \left[\begin{array}{c} 1 \\ 2 \\ -2 \end{array}\right] + x_{2} \left[\begin{array}{c} -2 \\ -3 \\ 3 \end{array}\right] + x_{3} \left[\begin{array}{c} 1 \\ 4 \\ -3 \end{array}\right] = \left[\begin{array}{c} -3 \\ 5 \\ -1 \end{array}\right]
+\begin{matrix}
+3x_{1} &amp; - &amp; 2x_{2} &amp; - &amp; 2x_{3} &amp; - &amp; 4x_{4} &amp; = &amp; -7 \\
+2x_{1} &amp; - &amp; x_{2}  &amp; - &amp;  x_{3} &amp; - &amp; x_{4} &amp; = &amp; -1 \\
+-x_{1} &amp;   &amp;        &amp; + &amp;  x_{3} &amp;   &amp;        &amp; = &amp; -1 \\
+&amp; - &amp; x_{2}  &amp;   &amp;        &amp; - &amp; 2x_{4} &amp; = &amp; -5 \\
+\end{matrix}
 \end{equation*}
 </div>
-<div class="para">with a unique solution.</div>
 </div></div>
 <article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para">Explain and demonstrate how this problem can be restated using matrix multiplication.</div></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para">Use the properties of matrix multiplication to find the unique solution.</div></article></article><span class="incontext"><a class="internal" href="MX3.html#activity-131">in-context</a></span>
+<div class="para logical">
+<div class="para">Suppose we let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T\left(\left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]\right)=
+\left[\begin{matrix}
+3x_{1} &amp; - &amp; 2x_{2} &amp; - &amp; 2x_{3} &amp; - &amp; 4x_{4} \\
+2x_{1} &amp; - &amp; x_{2}  &amp; - &amp;  x_{3} &amp; - &amp; x_{4} \\
+-x_{1} &amp;   &amp;        &amp; + &amp;  x_{3} &amp;   &amp;        \\
+&amp; - &amp; x_{2}  &amp;   &amp;        &amp; - &amp; 2x_{4} \\
+\end{matrix}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">Which of these choices would help us solve the given system?</div>
+<ol class="upper-alpha">
+<li><div class="para">Compute <span class="process-math">\(T\left(
+\left[\begin{matrix}
+-7 \\
+-1 \\
+-1 \\
+-5 \\
+\end{matrix}\right]\right)\)</span>
+</div></li>
+<li><div class="para">Find <span class="process-math">\(\left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]\)</span> where <span class="process-math">\(T\left(\left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]\right)=
+\left[\begin{matrix}
+-7 \\
+-1 \\
+-1 \\
+-5 \\
+\end{matrix}\right]\)</span>
+</div></li>
+</ol>
+</div></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para">How can we express this in terms of matrix multiplication?</div>
+<ol class="upper-alpha">
+<li><div class="para"><span class="process-math">\(\displaystyle \left[\begin{matrix}
+3 &amp; -2 &amp; -2 &amp; - 4 \\
+2 &amp; -1 &amp; -1 &amp; -1  \\
+-1 &amp; 0 &amp; 1 &amp; 0  \\
+0 &amp; -1 &amp; 0  &amp; -2 \\
+\end{matrix}\right]
+\left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]
+=
+\left[\begin{matrix}
+-7 \\
+-1 \\
+-1 \\
+-5 \\
+\end{matrix}\right]\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle \left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]
+=
+\left[\begin{matrix}
+3 &amp; -2 &amp; -2 &amp; - 4 \\
+2 &amp; -1 &amp; -1 &amp; -1  \\
+-1 &amp; 0 &amp; 1 &amp; 0  \\
+0 &amp; -1 &amp; 0  &amp; -2 \\
+\end{matrix}\right]
+\left[\begin{matrix}
+-7 \\
+-1 \\
+-1 \\
+-5 \\
+\end{matrix}\right]\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle \left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]
+\left[\begin{matrix}
+3 &amp; -2 &amp; -2 &amp; - 4 \\
+2 &amp; -1 &amp; -1 &amp; -1  \\
+-1 &amp; 0 &amp; 1 &amp; 0  \\
+0 &amp; -1 &amp; 0  &amp; -2 \\
+\end{matrix}\right]
+=
+\left[\begin{matrix}
+-7 \\
+-1 \\
+-1 \\
+-5 \\
+\end{matrix}\right]\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle \left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]
+=
+\left[\begin{matrix}
+-7 \\
+-1 \\
+-1 \\
+-5 \\
+\end{matrix}\right]
+\left[\begin{matrix}
+3 &amp; -2 &amp; -2 &amp; - 4 \\
+2 &amp; -1 &amp; -1 &amp; -1  \\
+-1 &amp; 0 &amp; 1 &amp; 0  \\
+0 &amp; -1 &amp; 0  &amp; -2 \\
+\end{matrix}\right]\)</span></div></li>
+</ol></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para logical">
+<div class="para">How could a matrix equation of the form <span class="process-math">\(A\vec x=\vec b\)</span> be solved for <span class="process-math">\(\vec x\text{?}\)</span>
+</div>
+<ol class="upper-alpha">
+<li><div class="para">Multiply: <span class="process-math">\((\RREF A)(A\vec x)=(\RREF A)\vec b\)</span>
+</div></li>
+<li><div class="para">Add: <span class="process-math">\((\RREF A) + A\vec x=(\RREF A)+\vec b\)</span>
+</div></li>
+<li><div class="para">Multiply: <span class="process-math">\((A^{-1})(A\vec x)=(A^{-1})\vec b\)</span>
+</div></li>
+<li><div class="para">Add: <span class="process-math">\((A^{-1}) + A\vec x=(A^{-1})+\vec b\)</span>
+</div></li>
+</ol>
+</div></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para">Find <span class="process-math">\(\left[\begin{matrix}x_1\\x_2\\x_3\\x_4\end{matrix}\right]\)</span> using the method you chose in (c).</div></article></article><span class="incontext"><a class="internal" href="MX3.html#activity-131">in-context</a></span>
 </body>
 </html>

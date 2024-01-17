@@ -548,15 +548,15 @@ sagecell.makeSagecell({
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.7</span><span class="space"> </span><span class="title">Homogeneous Linear Systems (EV7)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-13"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
-<ul class="disc"><li id="li-298"><div class="para" id="p-526">Find a basis for the solution set of a homogeneous system of equations.</div></li></ul></article><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
+<ul class="disc"><li id="li-314"><div class="para" id="p-545">Find a basis for the solution set of a homogeneous system of equations.</div></li></ul></article><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.1</span><span class="space"> </span><span class="title">Class Activities</span>
 </h3>
-<article class="definition definition-like" id="definition-18"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.7.1</span><span class="period">.</span>
+<article class="remark remark-like" id="remark-11"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.7.1</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-527">
-<div class="para">A <dfn class="terminology">homogeneous</dfn> system of linear equations is one of the form:</div>
-<div class="displaymath process-math" id="md-44">
+<div class="para logical" id="p-546">
+<div class="para">Recall that a <dfn class="terminology">homogeneous</dfn> system of linear equations is one of the form:</div>
+<div class="displaymath process-math" id="md-45">
 \begin{alignat*}{5}
 a_{11}x_1 &amp;\,+\,&amp; a_{12}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{1n}x_n &amp;\,=\,&amp; 0 \\
 a_{21}x_1 &amp;\,+\,&amp; a_{22}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{2n}x_n &amp;\,=\,&amp; 0 \\
@@ -564,7 +564,7 @@ a_{21}x_1 &amp;\,+\,&amp; a_{22}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{2n
 a_{m1}x_1 &amp;\,+\,&amp; a_{m2}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{mn}x_n &amp;\,=\,&amp; 0
 \end{alignat*}
 </div>
-</div> <div class="para logical" id="p-528">
+</div> <div class="para logical" id="p-547">
 <div class="para">This system is equivalent to the vector equation:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -582,13 +582,13 @@ a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; 0
 \end{array}\right]
 \end{equation*}
 </div>
-</div></article><article class="activity project-like" id="activity-59"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-60"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.2</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-33"><div class="para" id="p-529">Consider the homogeneous vector equation <span class="process-math">\(x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0}\text{.}\)</span><abbr class="abbreviation"></abbr>
+<div class="introduction" id="introduction-33"><div class="para" id="p-548">Consider the homogeneous vector equation <span class="process-math">\(x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0}\text{.}\)</span><abbr class="abbreviation"></abbr>
 </div></div>
-<article class="task exercise-like" id="task-89"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para logical" id="p-530">
+<article class="task exercise-like" id="task-91"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical" id="p-549">
 <div class="para">Note that if <span class="process-math">\(\left[\begin{array}{c} a_1 \\ \vdots \\ a_n \end{array}\right] \)</span> and <span class="process-math">\(\left[\begin{array}{c} b_1 \\ \vdots \\ b_n \end{array}\right] \)</span> are both solutions, we know that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -604,28 +604,28 @@ b_1 \vec{v}_1+\cdots+b_n \vec{v}_n = \vec{0} \text{.}
 \end{equation*}
 </div>
 </div>
-<div class="para" id="p-531">shows that <span class="process-math">\(\left[\begin{array}{c} a_1+ b_1 \\ \vdots \\ a_n+b_n \end{array}\right] \)</span> is also a solution. Thus the solution set of a homogeneous system is...</div>
+<div class="para" id="p-550">shows that <span class="process-math">\(\left[\begin{array}{c} a_1+ b_1 \\ \vdots \\ a_n+b_n \end{array}\right] \)</span> is also a solution. Thus the solution set of a homogeneous system is...</div>
 <ol class="upper-alpha">
-<li id="li-299"><div class="para" id="p-532">Closed under addition.</div></li>
-<li id="li-300"><div class="para" id="p-533">Not closed under addition.</div></li>
-<li id="li-301"><div class="para" id="p-534">Linearly dependent.</div></li>
-<li id="li-302"><div class="para" id="p-535">Linearly independent.</div></li>
-</ol></article><article class="task exercise-like" id="task-90"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-536">Similarly, if <span class="process-math">\(c \in \IR\text{,}\)</span> <span class="process-math">\(\left[\begin{array}{c} ca_1 \\ \vdots \\ ca_n \end{array}\right] \)</span> is a solution. Thus the solution set of a homogeneous system is also closed under scalar multiplication, and therefore...</div>
+<li id="li-315"><div class="para" id="p-551">Closed under addition.</div></li>
+<li id="li-316"><div class="para" id="p-552">Not closed under addition.</div></li>
+<li id="li-317"><div class="para" id="p-553">Linearly dependent.</div></li>
+<li id="li-318"><div class="para" id="p-554">Linearly independent.</div></li>
+</ol></article><article class="task exercise-like" id="task-92"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-555">Similarly, if <span class="process-math">\(c \in \IR\text{,}\)</span> <span class="process-math">\(\left[\begin{array}{c} ca_1 \\ \vdots \\ ca_n \end{array}\right] \)</span> is a solution. Thus the solution set of a homogeneous system is also closed under scalar multiplication, and therefore...</div>
 <ol class="upper-alpha">
-<li id="li-303"><div class="para" id="p-537">A basis for <span class="process-math">\(\IR^n\text{.}\)</span>
+<li id="li-319"><div class="para" id="p-556">A basis for <span class="process-math">\(\IR^n\text{.}\)</span>
 </div></li>
-<li id="li-304"><div class="para" id="p-538">A subspace of <span class="process-math">\(\IR^n\text{.}\)</span>
+<li id="li-320"><div class="para" id="p-557">A subspace of <span class="process-math">\(\IR^n\text{.}\)</span>
 </div></li>
-<li id="li-305"><div class="para" id="p-539">All of <span class="process-math">\(\IR^n\text{.}\)</span>
+<li id="li-321"><div class="para" id="p-558">All of <span class="process-math">\(\IR^n\text{.}\)</span>
 </div></li>
-<li id="li-306"><div class="para" id="p-540">The empty set.</div></li>
-</ol></article></article><article class="activity project-like" id="activity-60"><h4 class="heading">
+<li id="li-322"><div class="para" id="p-559">The empty set.</div></li>
+</ol></article></article><article class="activity project-like" id="activity-61"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-34"><div class="para logical" id="p-541">
+<div class="introduction" id="introduction-34"><div class="para logical" id="p-560">
 <div class="para">Consider the homogeneous system of equations</div>
-<div class="displaymath process-math" id="md-45">
+<div class="displaymath process-math" id="md-46">
 \begin{alignat*}{5}
 x_1&amp;\,+\,&amp;2x_2&amp;\,\,&amp; &amp;\,+\,&amp; x_4 &amp;=&amp; 0\\
 2x_1&amp;\,+\,&amp;4x_2&amp;\,-\,&amp;x_3 &amp;\,-\,&amp;2 x_4 &amp;=&amp; 0\\
@@ -633,38 +633,38 @@ x_1&amp;\,+\,&amp;2x_2&amp;\,\,&amp; &amp;\,+\,&amp; x_4 &amp;=&amp; 0\\
 \end{alignat*}
 </div>
 </div></div>
-<article class="task exercise-like" id="task-91"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-542">Find its solution set (a subspace of <span class="process-math">\(\IR^4\)</span>).</div></article><article class="task exercise-like" id="task-92"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para logical" id="p-543">
+<article class="task exercise-like" id="task-93"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-561">Find its solution set (a subspace of <span class="process-math">\(\IR^4\)</span>).</div></article><article class="task exercise-like" id="task-94"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-562">
 <div class="para">Rewrite this solution space in the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \setBuilder{ a \left[\begin{array}{c} \unknown \\ \unknown \\ \unknown \\ \unknown\end{array}\right] + b \left[\begin{array}{c} \unknown \\ \unknown \\ \unknown \\ \unknown \end{array}\right] }{a,b \in \IR}.
 \end{equation*}
 </div>
-</div></article><article class="task exercise-like" id="task-93"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para logical" id="p-544">
+</div></article><article class="task exercise-like" id="task-95"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para logical" id="p-563">
 <div class="para">Rewrite this solution space in the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \vspan\left\{\left[\begin{array}{c} \unknown \\ \unknown \\ \unknown \\ \unknown\end{array}\right], \left[\begin{array}{c} \unknown \\ \unknown \\ \unknown \\ \unknown \end{array}\right]\right\}.
 \end{equation*}
 </div>
-</div></article><article class="task exercise-like" id="task-94"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<div class="para logical" id="p-545">
+</div></article><article class="task exercise-like" id="task-96"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para logical" id="p-564">
 <div class="para">Which of these choices best describes the set of two vectors <span class="process-math">\(\left\{\left[\begin{array}{c} \unknown \\ \unknown \\ \unknown \\ \unknown\end{array}\right], \left[\begin{array}{c} \unknown \\ \unknown \\ \unknown \\ \unknown \end{array}\right]\right\}\)</span> used in this span?</div>
 <ol class="upper-alpha">
-<li id="li-307"><div class="para" id="p-546">The set is linearly dependent.</div></li>
-<li id="li-308"><div class="para" id="p-547">The set is linearly independent.</div></li>
-<li id="li-309"><div class="para" id="p-548">The set spans all of <span class="process-math">\(\IR^4\text{.}\)</span>
+<li id="li-323"><div class="para" id="p-565">The set is linearly dependent.</div></li>
+<li id="li-324"><div class="para" id="p-566">The set is linearly independent.</div></li>
+<li id="li-325"><div class="para" id="p-567">The set spans all of <span class="process-math">\(\IR^4\text{.}\)</span>
 </div></li>
-<li id="li-310"><div class="para" id="p-549">The set fails to span the solution space.</div></li>
+<li id="li-326"><div class="para" id="p-568">The set fails to span the solution space.</div></li>
 </ol>
 </div></article></article><pre id="sage-17" class="ptx-sagecell sagecell-octave"><script type="text/x-sage"></script></pre>
-<article class="fact theorem-like" id="fact-10"><h4 class="heading">
+<article class="fact theorem-like" id="fact-9"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.7.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-550">The coefficients of the free variables in the solution space of a linear system always yield linearly independent vectors that span the solution space.</div> <div class="para logical" id="p-551">
+<div class="para" id="p-569">The coefficients of the free variables in the solution space of a linear system always yield linearly independent vectors that span the solution space.</div> <div class="para logical" id="p-570">
 <div class="para">Thus if</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -687,23 +687,23 @@ a,b \in \IR
 \end{equation*}
 </div>
 <div class="para">is a basis for the solution space.</div>
-</div></article><article class="activity project-like" id="activity-61"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-62"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.5</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-552">
+<div class="para logical" id="p-571">
 <div class="para">Consider the homogeneous system of equations</div>
-<div class="displaymath process-math" id="md-46">
+<div class="displaymath process-math" id="md-47">
 \begin{alignat*}{5}
 2x_1&amp;\,+\,&amp;4x_2&amp;\,+\,&amp; 2x_3&amp;\,-\,&amp;4x_4  &amp;=&amp; 0 \\
 -2x_1&amp;\,-\,&amp;4x_2&amp;\,+\,&amp;x_3 &amp;\,+\,&amp; x_4 &amp;=&amp; 0\\
 3x_1&amp;\,+\,&amp;6x_2&amp;\,-\,&amp;x_3 &amp;\,-\,&amp;4 x_4 &amp;=&amp; 0
 \end{alignat*}
 </div>
-</div> <div class="para" id="p-553">Find a basis for its solution space.</div></article><pre id="sage-18" class="ptx-sagecell sagecell-octave"><script type="text/x-sage"></script></pre>
-<article class="activity project-like" id="activity-62"><h4 class="heading">
+</div> <div class="para" id="p-572">Find a basis for its solution space.</div></article><pre id="sage-18" class="ptx-sagecell sagecell-octave"><script type="text/x-sage"></script></pre>
+<article class="activity project-like" id="activity-63"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.6</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-554">
+<div class="para logical" id="p-573">
 <div class="para">Consider the homogeneous vector equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -714,13 +714,13 @@ x_4 \left[\begin{array}{c} -4 \\ 1 \\ -4 \end{array}\right]=
 \left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]
 \end{equation*}
 </div>
-</div> <div class="para" id="p-555">Find a basis for its solution space.</div></article><pre id="sage-19" class="ptx-sagecell sagecell-octave"><script type="text/x-sage"></script></pre>
-<article class="activity project-like" id="activity-63"><h4 class="heading">
+</div> <div class="para" id="p-574">Find a basis for its solution space.</div></article><pre id="sage-19" class="ptx-sagecell sagecell-octave"><script type="text/x-sage"></script></pre>
+<article class="activity project-like" id="activity-64"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.7</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-35"><div class="para logical" id="p-556">
+<div class="introduction" id="introduction-35"><div class="para logical" id="p-575">
 <div class="para">Consider the homogeneous system of equations</div>
-<div class="displaymath process-math" id="md-47">
+<div class="displaymath process-math" id="md-48">
 \begin{alignat*}{5}
 x_1&amp;\,-\,&amp;3x_2&amp;\,+\,&amp; 2x_3  &amp;=&amp; 0\\
 2x_1&amp;\,+\,&amp;6x_2&amp;\,+\,&amp;4x_3  &amp;=&amp; 0\\
@@ -728,51 +728,51 @@ x_1&amp;\,+\,&amp;6x_2&amp;\,-\,&amp;4x_3 &amp;=&amp; 0
 \end{alignat*}
 </div>
 </div></div>
-<article class="task exercise-like" id="task-95"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-557">Find its solution space.</div></article><article class="task exercise-like" id="task-96"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para logical" id="p-558">
+<article class="task exercise-like" id="task-97"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-576">Find its solution space.</div></article><article class="task exercise-like" id="task-98"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-577">
 <div class="para">Which of these is the best choice of basis for this solution space?</div>
 <ol class="upper-alpha cols3">
-<li id="li-311"><div class="para" id="p-derived-li-311"><span class="process-math">\(\displaystyle \{\}\)</span></div></li>
-<li id="li-312"><div class="para" id="p-derived-li-312"><span class="process-math">\(\displaystyle \{\vec 0\}\)</span></div></li>
-<li id="li-313"><div class="para" id="p-derived-li-313">The basis does not exist</div></li>
+<li id="li-327"><div class="para" id="p-derived-li-327"><span class="process-math">\(\displaystyle \{\}\)</span></div></li>
+<li id="li-328"><div class="para" id="p-derived-li-328"><span class="process-math">\(\displaystyle \{\vec 0\}\)</span></div></li>
+<li id="li-329"><div class="para" id="p-derived-li-329">The basis does not exist</div></li>
 </ol>
 </div></article></article><pre id="sage-20" class="ptx-sagecell sagecell-octave"><script type="text/x-sage"></script></pre>
-<article class="activity project-like" id="activity-64"><h4 class="heading">
+<article class="activity project-like" id="activity-65"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.7.8</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-36"><div class="para" id="p-559">To create a computer-animated film, an animator first models a scene as a subset of <span class="process-math">\(\mathbb R^3\text{.}\)</span> Then to transform this three-dimensional visual data for display on a two-dimensional movie screen or television set, the computer could apply a linear tranformation that maps visual information at the point <span class="process-math">\((x,y,z)\in\mathbb R^3\)</span> onto the pixel located at <span class="process-math">\((x+y,y-z)\in\mathbb R^2\text{.}\)</span>
+<div class="introduction" id="introduction-36"><div class="para" id="p-578">To create a computer-animated film, an animator first models a scene as a subset of <span class="process-math">\(\mathbb R^3\text{.}\)</span> Then to transform this three-dimensional visual data for display on a two-dimensional movie screen or television set, the computer could apply a linear tranformation that maps visual information at the point <span class="process-math">\((x,y,z)\in\mathbb R^3\)</span> onto the pixel located at <span class="process-math">\((x+y,y-z)\in\mathbb R^2\text{.}\)</span>
 </div></div>
-<article class="task exercise-like" id="task-97"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-560">What homoegeneous linear system describes the positions <span class="process-math">\((x,y,z)\)</span> within the original scene that would be aligned with the pixel <span class="process-math">\((0,0)\)</span> on the screen?</div></article><article class="task exercise-like" id="task-98"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-561">Solve this system to describe these locations.</div></article></article><pre id="sage-21" class="ptx-sagecell sagecell-octave"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
+<article class="task exercise-like" id="task-99"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-579">What homoegeneous linear system describes the positions <span class="process-math">\((x,y,z)\)</span> within the original scene that would be aligned with the pixel <span class="process-math">\((0,0)\)</span> on the screen?</div></article><article class="task exercise-like" id="task-100"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-580">Solve this system to describe these locations.</div></article></article><pre id="sage-21" class="ptx-sagecell sagecell-octave"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.2</span><span class="space"> </span><span class="title">Videos</span>
 </h3>
 <figure class="figure figure-like" id="figure-18"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/TbN3lvLaNOw?&amp;modestbranding=1&amp;rel=0" id="video-EV7"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">18<span class="period">.</span></span><span class="space"> </span>Video: Polynomial and matrix calculations</figcaption></figure></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="space"> </span><span class="title">Slideshow</span>
 </h3>
-<div class="para" id="p-562">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/EV7.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/EV7.slides.html</code></a>.</div></section><section class="exercises" id="exercises-11"><h3 class="heading hide-type">
+<div class="para" id="p-581">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/EV7.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/EV7.slides.html</code></a>.</div></section><section class="exercises" id="exercises-11"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">2.7.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
-<div class="para" id="p-563">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV7/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV7/</code></a>.</div></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<div class="para" id="p-582">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV7/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/EV7/</code></a>.</div></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.5</span><span class="space"> </span><span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="non-singular"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.7.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-564">An <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(M\)</span> is <dfn class="terminology">non-singular</dfn> if the associated homogeneous system with coefficient matrix <span class="process-math">\(M\)</span> is consistent with one solution. Assume the matrices in the writing explorations in this section are all non-singular.</div> <ul class="disc">
-<li id="li-314"><div class="para" id="p-derived-li-314">Prove that the reduced row echelon form of <span class="process-math">\(M\)</span> is the identity matrix.</div></li>
-<li id="li-315"><div class="para" id="p-derived-li-315">Prove that, for any column vector <span class="process-math">\(\vec{b} = \left[\begin{array}{c}b_1\\b_2\\ \vdots \\b_n \end{array}\right]\text{,}\)</span> the system of equations given by <span class="process-math">\(\left[\begin{array}{c|c}M &amp; \vec{b}\end{array}
+<div class="para" id="p-583">An <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(M\)</span> is <dfn class="terminology">non-singular</dfn> if the associated homogeneous system with coefficient matrix <span class="process-math">\(M\)</span> is consistent with one solution. Assume the matrices in the writing explorations in this section are all non-singular.</div> <ul class="disc">
+<li id="li-330"><div class="para" id="p-derived-li-330">Prove that the reduced row echelon form of <span class="process-math">\(M\)</span> is the identity matrix.</div></li>
+<li id="li-331"><div class="para" id="p-derived-li-331">Prove that, for any column vector <span class="process-math">\(\vec{b} = \left[\begin{array}{c}b_1\\b_2\\ \vdots \\b_n \end{array}\right]\text{,}\)</span> the system of equations given by <span class="process-math">\(\left[\begin{array}{c|c}M &amp; \vec{b}\end{array}
 \right]\)</span> has a unique solution.</div></li>
-<li id="li-316"><div class="para" id="p-derived-li-316">Prove that the columns of <span class="process-math">\(M\)</span> form a basis for <span class="process-math">\(\mathbb{R}^n\text{.}\)</span>
+<li id="li-332"><div class="para" id="p-derived-li-332">Prove that the columns of <span class="process-math">\(M\)</span> form a basis for <span class="process-math">\(\mathbb{R}^n\text{.}\)</span>
 </div></li>
-<li id="li-317"><div class="para" id="p-derived-li-317">Prove that the rank of <span class="process-math">\(M\)</span> is <span class="process-math">\(n\text{.}\)</span>
+<li id="li-333"><div class="para" id="p-derived-li-333">Prove that the rank of <span class="process-math">\(M\)</span> is <span class="process-math">\(n\text{.}\)</span>
 </div></li>
 </ul></article></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.7.6</span><span class="space"> </span><span class="title">Sample Problem and Solution</span>
 </h3>
-<div class="para" id="p-565">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-EV7.html" title="Example B.1.11: EV7">Example B.1.11</a>.</div></section></section></div>
+<div class="para" id="p-584">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-EV7.html" title="Example B.1.11: EV7">Example B.1.11</a>.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="EV6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="AT.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

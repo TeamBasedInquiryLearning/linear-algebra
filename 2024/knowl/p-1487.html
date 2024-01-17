@@ -13,12 +13,26 @@
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">Compute</div>
+<div class="para">First, let us take two vectors <span class="process-math">\(\left[\begin{array}{c}x_1 \\y_1 \end{array}\right], \left[\begin{array}{c}x_2 \\y_2 \end{array}\right] \in \IR^2\)</span> and compute</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\RREF\left[\begin{array}{cccc}1 &amp; 3 &amp; 2 &amp; -3 \\ 2 &amp; 4 &amp; 6 &amp; -10 \\ 1 &amp; 6 &amp; -1 &amp; 3 \end{array}\right] = \left[\begin{array}{cccc} 1 &amp; 0 &amp; 5 &amp; -9 \\ 0 &amp; 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right].
+T \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right] + \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) = 
+T \left( \left[\begin{array}{c}x_1 +x_2 \\y_1 + y_2 \end{array}\right] \right) =
+\left[\begin{array}{c} -4(x_1+x_2)-5(y_1+y_2) \\ 2(x_1+x_2)-4(y_1+y_2)\end{array} \right]
 \end{equation*}
 </div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right]\right) +T\left( \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) = 
+\left[\begin{array}{c} -4x_1-5y_1  \\ 2x_1-4y_1  \end{array}\right] + 
+\left[\begin{array}{c} -4x_2-5y_2  \\ 2x_2-4y_2  \end{array}\right]  =
+\left[\begin{array}{c} -4x_1-5y_1-4x_2-5y_2 \\ 2x_1-4y_1+2x_2-4y_2\end{array} \right]
+\end{equation*}
+</div>
+<div class="para">So we see that <span class="process-math">\(T \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right] + \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) =
+T \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right]\right) +T\left( \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) 
+\text{,}\)</span> so <span class="process-math">\(T\)</span> preserves addition.</div>
 </div>
 <span class="incontext"><a class="internal" href="sample-exercises.html#p-1487">in-context</a></span>
 </body>

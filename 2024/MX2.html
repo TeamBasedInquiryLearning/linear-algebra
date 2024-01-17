@@ -548,13 +548,13 @@ sagecell.makeSagecell({
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">4.2</span><span class="space"> </span><span class="title">The Inverse of a Matrix (MX2)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-23"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
-<ul class="disc"><li id="li-658"><div class="para" id="p-1049">Determine if a matrix is invertible, and if so, compute its inverse.</div></li></ul></article><section class="subsection" id="subsection-91"><h3 class="heading hide-type">
+<ul class="disc"><li id="li-674"><div class="para" id="p-1068">Determine if a matrix is invertible, and if so, compute its inverse.</div></li></ul></article><section class="subsection" id="subsection-91"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="space"> </span><span class="title">Class Activities</span>
 </h3>
-<article class="activity project-like" id="activity-124"><h4 class="heading">
+<article class="activity project-like" id="activity-125"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1050">
+<div class="para logical" id="p-1069">
 <div class="para">Let <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]\text{.}\)</span> Find a <span class="process-math">\(3 \times 3\)</span> matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(BA=A\text{,}\)</span> that is,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -571,7 +571,7 @@ sagecell.makeSagecell({
 <article class="definition definition-like" id="definition-29"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1051">
+<div class="para logical" id="p-1070">
 <div class="para">The identity matrix <span class="process-math">\(I_n\)</span> (or just <span class="process-math">\(I\)</span> when <span class="process-math">\(n\)</span> is obvious from context) is the <span class="process-math">\(n \times n\)</span> matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -580,10 +580,10 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 \end{equation*}
 </div>
 <div class="para">It has a <span class="process-math">\(1\)</span> on each diagonal element and a <span class="process-math">\(0\)</span> in every other position.</div>
-</div></article><article class="fact theorem-like" id="fact-19"><h4 class="heading">
+</div></article><article class="fact theorem-like" id="fact-18"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1052">
+<div class="para logical" id="p-1071">
 <div class="para">For any square matrix <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(IA=AI=A\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -600,31 +600,31 @@ I_n = \left[\begin{array}{cccc} 1 &amp; 0  &amp; \cdots &amp; 0 \\ 0 &amp; 1 &am
 </div></article><article class="activity project-like" id="MX2-card-sort"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1053">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^m\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span> Sort the following items into three groups of statements: a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">injective</em>, a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">surjective</em>, and a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">bijective</em>.</div> <ol class="upper-alpha">
-<li id="li-659"><div class="para" id="p-1054">
+<div class="para" id="p-1072">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^m\)</span> be a linear map with standard matrix <span class="process-math">\(A\text{.}\)</span> Sort the following items into three groups of statements: a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">injective</em>, a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">surjective</em>, and a group that means <span class="process-math">\(T\)</span> is <em class="emphasis">bijective</em>.</div> <ol class="upper-alpha">
+<li id="li-675"><div class="para" id="p-1073">
 <span class="process-math">\(T(\vec x)=\vec b\)</span> has a solution for all <span class="process-math">\(\vec b\in\IR^m\)</span>
 </div></li>
-<li id="li-660"><div class="para" id="p-1055">
+<li id="li-676"><div class="para" id="p-1074">
 <span class="process-math">\(T(\vec x)=\vec b\)</span> has a unique solution for all <span class="process-math">\(\vec b\in\IR^m\)</span>
 </div></li>
-<li id="li-661"><div class="para" id="p-1056">
+<li id="li-677"><div class="para" id="p-1075">
 <span class="process-math">\(T(\vec x)=\vec 0\)</span> has a unique solution.</div></li>
-<li id="li-662"><div class="para" id="p-1057">The columns of <span class="process-math">\(A\)</span> span <span class="process-math">\(\IR^m\)</span>
+<li id="li-678"><div class="para" id="p-1076">The columns of <span class="process-math">\(A\)</span> span <span class="process-math">\(\IR^m\)</span>
 </div></li>
-<li id="li-663"><div class="para" id="p-1058">The columns of <span class="process-math">\(A\)</span> are linearly independent</div></li>
-<li id="li-664"><div class="para" id="p-1059">The columns of <span class="process-math">\(A\)</span> are a basis of <span class="process-math">\(\IR^m\)</span>
+<li id="li-679"><div class="para" id="p-1077">The columns of <span class="process-math">\(A\)</span> are linearly independent</div></li>
+<li id="li-680"><div class="para" id="p-1078">The columns of <span class="process-math">\(A\)</span> are a basis of <span class="process-math">\(\IR^m\)</span>
 </div></li>
-<li id="li-665"><div class="para" id="p-1060">Every column of <span class="process-math">\(\RREF(A)\)</span> has a pivot</div></li>
-<li id="li-666"><div class="para" id="p-1061">Every row of <span class="process-math">\(\RREF(A)\)</span> has a pivot</div></li>
-<li id="li-667"><div class="para" id="p-1062">
+<li id="li-681"><div class="para" id="p-1079">Every column of <span class="process-math">\(\RREF(A)\)</span> has a pivot</div></li>
+<li id="li-682"><div class="para" id="p-1080">Every row of <span class="process-math">\(\RREF(A)\)</span> has a pivot</div></li>
+<li id="li-683"><div class="para" id="p-1081">
 <span class="process-math">\(m=n\)</span> and <span class="process-math">\(\RREF(A)=I\)</span>
 </div></li>
 </ol></article><article class="definition definition-like" id="definition-30"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1063">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^n\)</span> be a linear bijection with standard matrix <span class="process-math">\(A\text{.}\)</span>
-</div> <div class="para" id="p-1064">By item (B) from <a href="" class="xref" data-knowl="./knowl/MX2-card-sort.html" title="Activity 4.2.4">Activity 4.2.4</a> we may define an <dfn class="terminology">inverse map</dfn> <span class="process-math">\(T^{-1} : \IR^n \rightarrow \IR^n\)</span> that defines <span class="process-math">\(T^{-1}(\vec b)\)</span> as the unique solution <span class="process-math">\(\vec x\)</span> satisfying <span class="process-math">\(T(\vec x)=\vec b\text{,}\)</span> that is, <span class="process-math">\(T(T^{-1}(\vec b))=\vec b\text{.}\)</span>
-</div> <div class="para logical" id="p-1065">
+<div class="para" id="p-1082">Let <span class="process-math">\(T: \IR^n \rightarrow \IR^n\)</span> be a linear bijection with standard matrix <span class="process-math">\(A\text{.}\)</span>
+</div> <div class="para" id="p-1083">By item (B) from <a href="" class="xref" data-knowl="./knowl/MX2-card-sort.html" title="Activity 4.2.4">Activity 4.2.4</a> we may define an <dfn class="terminology">inverse map</dfn> <span class="process-math">\(T^{-1} : \IR^n \rightarrow \IR^n\)</span> that defines <span class="process-math">\(T^{-1}(\vec b)\)</span> as the unique solution <span class="process-math">\(\vec x\)</span> satisfying <span class="process-math">\(T(\vec x)=\vec b\text{,}\)</span> that is, <span class="process-math">\(T(T^{-1}(\vec b))=\vec b\text{.}\)</span>
+</div> <div class="para logical" id="p-1084">
 <div class="para">Furthermore, let</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -632,42 +632,42 @@ A^{-1}=[T^{-1}(\vec e_1)\hspace{1em}\cdots\hspace{1em}T^{-1}(\vec e_n)]
 \end{equation*}
 </div>
 <div class="para">be the standard matrix for <span class="process-math">\(T^{-1}\text{.}\)</span> We call <span class="process-math">\(A^{-1}\)</span> the <dfn class="terminology">inverse matrix</dfn> of <span class="process-math">\(A\text{,}\)</span> and we also say that <span class="process-math">\(A\)</span> is an <dfn class="terminology">invertible</dfn> matrix.</div>
-</div></article><article class="activity project-like" id="activity-126"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-127"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-61"><div class="para" id="p-1066">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^3\)</span> be the linear bijection given by the standard matrix <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]\text{.}\)</span>
+<div class="introduction" id="introduction-61"><div class="para" id="p-1085">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^3\)</span> be the linear bijection given by the standard matrix <span class="process-math">\(A=\left[\begin{array}{ccc} 2 &amp; -1 &amp; -6 \\ 2 &amp; 1 &amp; 3 \\ 1 &amp; 1 &amp; 4 \end{array}\right]\text{.}\)</span>
 </div></div>
-<article class="task exercise-like" id="task-163"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para logical" id="p-1067">
+<article class="task exercise-like" id="task-165"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical" id="p-1086">
 <div class="para">To find <span class="process-math">\(\vec x = T^{-1}(\vec{e}_1)\text{,}\)</span> we need to find the unique solution for <span class="process-math">\(T(\vec x)=\vec e_1\text{.}\)</span> Which of these linear systems can be used to find this solution?</div>
 <ol class="upper-alpha cols2">
-<li id="li-668"><div class="para" id="p-derived-li-668"><span class="process-math">\(\displaystyle \begin{array}{cccc}
+<li id="li-684"><div class="para" id="p-derived-li-684"><span class="process-math">\(\displaystyle \begin{array}{cccc}
 2x_1 &amp; -1x_2 &amp; -6x_3 &amp; =x_1 \\ 
 2x_1 &amp; +1x_2 &amp; +3x_3 &amp; =0 \\ 
 1x_1 &amp; +1x_2 &amp; +4x_3 &amp; =0
 \end{array}\)</span></div></li>
-<li id="li-669"><div class="para" id="p-derived-li-669"><span class="process-math">\(\displaystyle \begin{array}{cccc}
+<li id="li-685"><div class="para" id="p-derived-li-685"><span class="process-math">\(\displaystyle \begin{array}{cccc}
 2x_1 &amp; -1x_2 &amp; -6x_3 &amp; =x_1 \\ 
 2x_1 &amp; +1x_2 &amp; +3x_3 &amp; =x_2 \\ 
 1x_1 &amp; +1x_2 &amp; +4x_3 &amp; =x_3
 \end{array}\)</span></div></li>
-<li id="li-670"><div class="para" id="p-derived-li-670"><span class="process-math">\(\displaystyle \begin{array}{cccc}
+<li id="li-686"><div class="para" id="p-derived-li-686"><span class="process-math">\(\displaystyle \begin{array}{cccc}
 2x_1 &amp; -1x_2 &amp; -6x_3 &amp; =1 \\ 
 2x_1 &amp; +1x_2 &amp; +3x_3 &amp; =0 \\ 
 1x_1 &amp; +1x_2 &amp; +4x_3 &amp; =0
 \end{array}\)</span></div></li>
-<li id="li-671"><div class="para" id="p-derived-li-671"><span class="process-math">\(\displaystyle \begin{array}{cccc}
+<li id="li-687"><div class="para" id="p-derived-li-687"><span class="process-math">\(\displaystyle \begin{array}{cccc}
 2x_1 &amp; -1x_2 &amp; -6x_3 &amp; =1 \\ 
 2x_1 &amp; +1x_2 &amp; +3x_3 &amp; =1 \\ 
 1x_1 &amp; +1x_2 &amp; +4x_3 &amp; =1
 \end{array}\)</span></div></li>
 </ol>
-</div></article><article class="task exercise-like" id="task-164"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-1068">Use that system to find the solution <span class="process-math">\(\vec x=T^{-1}(\vec{e}_1)\)</span> for <span class="process-math">\(T(\vec x)=\vec{e}_1\text{.}\)</span>
-</div></article><article class="task exercise-like" id="task-165"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para" id="p-1069">Similarly, solve <span class="process-math">\(T(\vec x)=\vec{e}_2\)</span> to find <span class="process-math">\(T^{-1}(\vec{e}_2)\text{,}\)</span> and solve <span class="process-math">\(T(\vec x)=\vec{e}_3\)</span> to find <span class="process-math">\(T^{-1}(\vec{e}_3)\text{.}\)</span>
-</div></article><article class="task exercise-like" id="task-166"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<div class="para logical" id="p-1070">
+</div></article><article class="task exercise-like" id="task-166"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-1087">Use that system to find the solution <span class="process-math">\(\vec x=T^{-1}(\vec{e}_1)\)</span> for <span class="process-math">\(T(\vec x)=\vec{e}_1\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-167"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="p-1088">Similarly, solve <span class="process-math">\(T(\vec x)=\vec{e}_2\)</span> to find <span class="process-math">\(T^{-1}(\vec{e}_2)\text{,}\)</span> and solve <span class="process-math">\(T(\vec x)=\vec{e}_3\)</span> to find <span class="process-math">\(T^{-1}(\vec{e}_3)\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-168"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para logical" id="p-1089">
 <div class="para">Use these to write</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -678,10 +678,10 @@ T^{-1}(\vec e_2)\hspace{1em}T^{-1}(\vec e_3)]\text{,}
 <div class="para">the standard matrix for <span class="process-math">\(T^{-1}\text{.}\)</span>
 </div>
 </div></article></article><pre id="sage-32" class="ptx-sagecell sagecell-octave"><script type="text/x-sage"></script></pre>
-<article class="activity project-like" id="activity-127"><h4 class="heading">
+<article class="activity project-like" id="activity-128"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.7</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1071">
+<div class="para logical" id="p-1090">
 <div class="para">Find the inverse <span class="process-math">\(A^{-1}\)</span> of the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -691,41 +691,41 @@ A=\left[\begin{array}{cccc} 0 &amp; 0 &amp; 0 &amp; -1 \\ 1 &amp; 0 &amp; -1 &am
 <div class="para">by computing how it transforms each of the standard basis vectors for <span class="process-math">\(\mathbb R^4\text{:}\)</span> <span class="process-math">\(T^{-1}(\vec e_1)\text{,}\)</span> <span class="process-math">\(T^{-1}(\vec e_2)\text{,}\)</span> <span class="process-math">\(T^{-1}(\vec e_3)\text{,}\)</span> and <span class="process-math">\(T^{-1}(\vec e_4)\text{.}\)</span>
 </div>
 </div></article><pre id="sage-33" class="ptx-sagecell sagecell-octave"><script type="text/x-sage"></script></pre>
-<article class="activity project-like" id="activity-128"><h4 class="heading">
+<article class="activity project-like" id="activity-129"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.8</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1072">
+<div class="para logical" id="p-1091">
 <div class="para">Is the matrix <span class="process-math">\(\left[\begin{array}{ccc} 2 &amp; 3 &amp; 1 \\ -1 &amp; -4 &amp; 2 \\ 0 &amp; -5 &amp; 5 \end{array}\right]\)</span> invertible?</div>
 <ol class="upper-alpha">
-<li id="li-672"><div class="para" id="p-derived-li-672">Yes, because its transformation is a bijection.</div></li>
-<li id="li-673"><div class="para" id="p-derived-li-673">Yes, because its transformation is not a bijection.</div></li>
-<li id="li-674"><div class="para" id="p-derived-li-674">No, because its transformation is a bijection.</div></li>
-<li id="li-675"><div class="para" id="p-derived-li-675">No, because its transformation is not a bijection.</div></li>
+<li id="li-688"><div class="para" id="p-derived-li-688">Yes, because its transformation is a bijection.</div></li>
+<li id="li-689"><div class="para" id="p-derived-li-689">Yes, because its transformation is not a bijection.</div></li>
+<li id="li-690"><div class="para" id="p-derived-li-690">No, because its transformation is a bijection.</div></li>
+<li id="li-691"><div class="para" id="p-derived-li-691">No, because its transformation is not a bijection.</div></li>
 </ol>
 </div></article><pre id="sage-34" class="ptx-sagecell sagecell-octave"><script type="text/x-sage"></script></pre>
-<article class="observation remark-like" id="observation-21"><h4 class="heading">
+<article class="observation remark-like" id="observation-23"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">4.2.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1073">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(\RREF(A) = I_n\text{.}\)</span>
-</div></article><article class="activity project-like" id="activity-129"><h4 class="heading">
+<div class="para" id="p-1092">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(\RREF(A) = I_n\text{.}\)</span>
+</div></article><article class="activity project-like" id="activity-130"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.10</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-62"><div class="para" id="p-1074">Let <span class="process-math">\(T:\IR^2\to\IR^2\)</span> be the bijective linear map defined by <span class="process-math">\(T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)=\left[\begin{array}{c} 2x -3y \\ -3x + 5y\end{array}\right]\text{,}\)</span> with the inverse map <span class="process-math">\(T^{-1}\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)=\left[\begin{array}{c} 5x+ 3y \\ 3x + 2y\end{array}\right]\text{.}\)</span>
+<div class="introduction" id="introduction-62"><div class="para" id="p-1093">Let <span class="process-math">\(T:\IR^2\to\IR^2\)</span> be the bijective linear map defined by <span class="process-math">\(T\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)=\left[\begin{array}{c} 2x -3y \\ -3x + 5y\end{array}\right]\text{,}\)</span> with the inverse map <span class="process-math">\(T^{-1}\left(\left[\begin{array}{c}x\\y\end{array}\right]\right)=\left[\begin{array}{c} 5x+ 3y \\ 3x + 2y\end{array}\right]\text{.}\)</span>
 </div></div>
-<article class="task exercise-like" id="task-167"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-1075">Compute <span class="process-math">\((T^{-1}\circ T)\left(\left[\begin{array}{c}-2\\1\end{array}\right]\right)\text{.}\)</span>
-</div></article><article class="task exercise-like" id="task-168"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para logical" id="p-1076">
+<article class="task exercise-like" id="task-169"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-1094">Compute <span class="process-math">\((T^{-1}\circ T)\left(\left[\begin{array}{c}-2\\1\end{array}\right]\right)\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-170"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-1095">
 <div class="para">If <span class="process-math">\(A\)</span> is the standard matrix for <span class="process-math">\(T\)</span> and <span class="process-math">\(A^{-1}\)</span> is the standard matrix for <span class="process-math">\(T^{-1}\text{,}\)</span> find the <span class="process-math">\(2\times 2\)</span> matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A^{-1}A=\left[\begin{array}{ccc}\unknown&amp;\unknown\\\unknown&amp;\unknown\end{array}\right].
 \end{equation*}
 </div>
-</div></article></article><article class="observation remark-like" id="observation-22"><h4 class="heading">
+</div></article></article><article class="observation remark-like" id="observation-24"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">4.2.11</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1077">
+<div class="para" id="p-1096">
 <span class="process-math">\(T^{-1}\circ T=T\circ T^{-1}\)</span> is the identity map for any bijective linear transformation <span class="process-math">\(T\text{.}\)</span> Therefore <span class="process-math">\(A^{-1}A=AA^{-1}\)</span> equals the identity matrix <span class="process-math">\(I\)</span> for any invertible matrix <span class="process-math">\(A\text{.}\)</span>
 </div></article></section><section class="subsection" id="subsection-92"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="space"> </span><span class="title">Videos</span>
@@ -735,37 +735,37 @@ A^{-1}A=\left[\begin{array}{ccc}\unknown&amp;\unknown\\\unknown&amp;\unknown\end
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">44<span class="period">.</span></span><span class="space"> </span>Video: Finding the inverse of a matrix</figcaption></figure></section><section class="subsection" id="subsection-93"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="space"> </span><span class="title">Slideshow</span>
 </h3>
-<div class="para" id="p-1078">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/MX2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/MX2.slides.html</code></a>.</div></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
+<div class="para" id="p-1097">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/MX2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/MX2.slides.html</code></a>.</div></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
-<div class="para" id="p-1079">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX2/</code></a>.</div></section><section class="subsection" id="subsection-94"><h3 class="heading hide-type">
+<div class="para" id="p-1098">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/MX2/</code></a>.</div></section><section class="subsection" id="subsection-94"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="space"> </span><span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-43"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.2.12</span><span class="period">.</span>
 </h4>Assume <span class="process-math">\(A\)</span> is an <span class="process-math">\(n \times n\)</span> matrix. Prove the following are equivalent. Some of these results you have proven previously. <ul class="disc">
-<li id="li-676"><div class="para" id="p-derived-li-676">
+<li id="li-692"><div class="para" id="p-derived-li-692">
 <span class="process-math">\(A\)</span> row reduces to the identity matrix.</div></li>
-<li id="li-677"><div class="para" id="p-derived-li-677">For any choice of <span class="process-math">\(\vec{b} \in \mathbb{R}^n\text{,}\)</span> the system of equations represented by the augmented matrix <span class="process-math">\([A|\vec{b}]\)</span> has a unique solution.</div></li>
-<li id="li-678"><div class="para" id="p-derived-li-678">The columns of <span class="process-math">\(A\)</span> are a linearly independent set.</div></li>
-<li id="li-679"><div class="para" id="p-derived-li-679">The columns of <span class="process-math">\(A\)</span> form a basis for <span class="process-math">\(\mathbb{R}^n\text{.}\)</span>
+<li id="li-693"><div class="para" id="p-derived-li-693">For any choice of <span class="process-math">\(\vec{b} \in \mathbb{R}^n\text{,}\)</span> the system of equations represented by the augmented matrix <span class="process-math">\([A|\vec{b}]\)</span> has a unique solution.</div></li>
+<li id="li-694"><div class="para" id="p-derived-li-694">The columns of <span class="process-math">\(A\)</span> are a linearly independent set.</div></li>
+<li id="li-695"><div class="para" id="p-derived-li-695">The columns of <span class="process-math">\(A\)</span> form a basis for <span class="process-math">\(\mathbb{R}^n\text{.}\)</span>
 </div></li>
-<li id="li-680"><div class="para" id="p-derived-li-680">The rank of <span class="process-math">\(A\)</span> is <span class="process-math">\(n\text{.}\)</span>
+<li id="li-696"><div class="para" id="p-derived-li-696">The rank of <span class="process-math">\(A\)</span> is <span class="process-math">\(n\text{.}\)</span>
 </div></li>
-<li id="li-681"><div class="para" id="p-derived-li-681">The nullity of <span class="process-math">\(A\)</span> is 0.</div></li>
-<li id="li-682"><div class="para" id="p-derived-li-682">
+<li id="li-697"><div class="para" id="p-derived-li-697">The nullity of <span class="process-math">\(A\)</span> is 0.</div></li>
+<li id="li-698"><div class="para" id="p-derived-li-698">
 <span class="process-math">\(A\)</span> is invertible.</div></li>
-<li id="li-683"><div class="para" id="p-derived-li-683">The linear transformation <span class="process-math">\(T\)</span> with standard matrix <span class="process-math">\(A\)</span> is injective and surjective. Such a map is called an <em class="emphasis">isomorphism</em>.</div></li>
+<li id="li-699"><div class="para" id="p-derived-li-699">The linear transformation <span class="process-math">\(T\)</span> with standard matrix <span class="process-math">\(A\)</span> is injective and surjective. Such a map is called an <em class="emphasis">isomorphism</em>.</div></li>
 </ul></article><article class="exploration project-like" id="exploration-44"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.2.13</span><span class="period">.</span>
 </h4>
 <ul class="disc">
-<li id="li-684"><div class="para" id="p-derived-li-684">Assume <span class="process-math">\(T\)</span> is a square matrix, and <span class="process-math">\(T^4\)</span> is the zero matrix. Prove that <span class="process-math">\((I - T)^{-1} = I + T + T^2 + T^3.\)</span> You will need to first prove a lemma that matrix multiplication distributes over matrix addition.</div></li>
-<li id="li-685"><div class="para" id="p-derived-li-685">Generalize your result to the case where <span class="process-math">\(T^n\)</span> is the zero matrix.</div></li>
+<li id="li-700"><div class="para" id="p-derived-li-700">Assume <span class="process-math">\(T\)</span> is a square matrix, and <span class="process-math">\(T^4\)</span> is the zero matrix. Prove that <span class="process-math">\((I - T)^{-1} = I + T + T^2 + T^3.\)</span> You will need to first prove a lemma that matrix multiplication distributes over matrix addition.</div></li>
+<li id="li-701"><div class="para" id="p-derived-li-701">Generalize your result to the case where <span class="process-math">\(T^n\)</span> is the zero matrix.</div></li>
 </ul></article></section><section class="subsection" id="subsection-95"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="space"> </span><span class="title">Sample Problem and Solution</span>
 </h3>
-<div class="para" id="p-1080">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-MX2.html" title="Example B.1.19: MX2">Example B.1.19</a>.</div></section></section></div>
+<div class="para" id="p-1099">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-MX2.html" title="Example B.1.19: MX2">Example B.1.19</a>.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="MX1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="MX3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

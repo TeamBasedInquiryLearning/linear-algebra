@@ -12,7 +12,28 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Explain why <span class="process-math">\(T\)</span> is or is not injective.</div>
+<div class="para logical">
+<div class="para">Alternatively, we could instead take two vectors <span class="process-math">\(\left[\begin{array}{c}x_1 \\y_1 \end{array}\right], \left[\begin{array}{c}x_2 \\y_2 \end{array}\right] \in \IR^2\)</span> and compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right] + \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) = 
+S \left( \left[\begin{array}{c}x_1 +x_2 \\y_1 + y_2 \end{array}\right] \right) =
+\left[\begin{array}{c} (x_1+x_2)+2(y_1+y_2) \\ -3(x_1+x_2)(y_1+y_2) \end{array} \right]
+\end{equation*}
+</div>
+<div class="para">whereas</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right]\right) +S\left( \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) = 
+\left[\begin{array}{c} x_1+2y_1 \\ -3x_1y_1 \end{array}\right] + 
+\left[\begin{array}{c} x_2+2y_2 \\ -3x_2y_2 \end{array}\right] = 
+\left[\begin{array}{c} x_1+2y_1+x_2+2y_2 \\ -3x_1y_1-3x_2y_2 \end{array} \right]
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(-3(x_1+x_2)(y_1+y_2) \neq -3x_1y_1-3x_2y_2 \text{,}\)</span> we see that <span class="process-math">\(S \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right] + \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) \neq 
+S \left( \left[\begin{array}{c}x_1 \\y_1 \end{array}\right]\right) +S\left( \left[\begin{array}{c}x_2 \\y_2 \end{array}\right]\right) 
+\text{,}\)</span> so <span class="process-math">\(S\)</span> fails to preserve addition and cannot be a linear transformation.</div>
+</div>
 <span class="incontext"><a class="internal" href="sample-exercises.html#p-1485">in-context</a></span>
 </body>
 </html>

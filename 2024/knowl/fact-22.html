@@ -12,15 +12,63 @@
 </head>
 <body class="ignore-math">
 <article class="fact theorem-like"><h4 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.1.19</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.1.21</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">Since the transformation given by the standard matrix <span class="process-math">\(AB\)</span> is obtained by applying the transformations given by <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> it follows that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\det(AB)=\det(A)\det(B)=\det(B)\det(A)=\det(BA)\text{.}
-\end{equation*}
-</div>
-</div></article><span class="incontext"><a class="internal" href="GT1.html#fact-22">in-context</a></span>
+<div class="para">The determinants of row operation matrices may be computed by manipulating columns to reduce each matrix to the identity:</div> <ul class="disc">
+<li><div class="para">Scaling a row: <span class="process-math">\(\det
+\left[\begin{array}{cccc}
+c &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]
+=
+c\det
+\left[\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]
+=
+c\)</span>
+</div></li>
+<li><div class="para">Swapping rows: <span class="process-math">\(\det
+\left[\begin{array}{cccc}
+0 &amp; 1 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]
+=
+-1\det
+\left[\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]
+=
+-1\)</span>
+</div></li>
+<li><div class="para">Adding a row multiple to another row: <span class="process-math">\(\det
+\left[\begin{array}{cccc}
+1 &amp; 0 &amp; c &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]
+=
+\det
+\left[\begin{array}{cccc}
+1 &amp; 0 &amp; c-1c &amp; 0\\
+0 &amp; 1 &amp; 0-0c &amp; 0\\
+0 &amp; 0 &amp; 1-0c &amp; 0 \\
+0 &amp; 0 &amp; 0-0c &amp; 1
+\end{array}\right]
+=
+\det(I)=1\)</span>
+</div></li>
+</ul></article><span class="incontext"><a class="internal" href="GT1.html#fact-22">in-context</a></span>
 </body>
 </html>

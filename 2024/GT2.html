@@ -548,26 +548,26 @@ sagecell.makeSagecell({
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">5.2</span><span class="space"> </span><span class="title">Computing Determinants (GT2)</span>
 </h2>
 <article class="objectives goal-like" id="objectives-28"><h3 class="heading"><span class="type">Learning Outcomes</span></h3>
-<ul class="disc"><li id="li-789"><div class="para" id="p-1230">Compute the determinant of a <span class="process-math">\(4\times 4\)</span> matrix.</div></li></ul></article><section class="subsection" id="subsection-109"><h3 class="heading hide-type">
+<ul class="disc"><li id="li-805"><div class="para" id="p-1249">Compute the determinant of a <span class="process-math">\(4\times 4\)</span> matrix.</div></li></ul></article><section class="subsection" id="subsection-109"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="space"> </span><span class="title">Class Activities</span>
 </h3>
-<article class="remark remark-like" id="remark-26"><h4 class="heading">
+<article class="remark remark-like" id="remark-27"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1231">We’ve seen that row reducing all the way into RREF gives us a method of computing determinants.</div> <div class="para" id="p-1232">However, we learned in <a href="LE.html" class="internal" title="Chapter 1: Systems of Linear Equations (LE)">Chapter 1</a> that this can be tedious for large matrices.  Thus, we will try to figure out how to turn the determinant of a larger matrix into the determinant of a smaller matrix.</div></article><article class="activity project-like" id="activity-148"><h4 class="heading">
+<div class="para" id="p-1250">We’ve seen that row reducing all the way into RREF gives us a method of computing determinants.</div> <div class="para" id="p-1251">However, we learned in <a href="LE.html" class="internal" title="Chapter 1: Systems of Linear Equations (LE)">Chapter 1</a> that this can be tedious for large matrices.  Thus, we will try to figure out how to turn the determinant of a larger matrix into the determinant of a smaller matrix.</div></article><article class="activity project-like" id="activity-149"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1233">The following image illustrates the transformation of the unit cube by the matrix <span class="process-math">\(\left[\begin{array}{ccc} 1 &amp; 1 &amp; 0 \\  1 &amp; 3 &amp; 1 \\  0 &amp; 0 &amp; 1\end{array}\right]\text{.}\)</span>
+<div class="para" id="p-1252">The following image illustrates the transformation of the unit cube by the matrix <span class="process-math">\(\left[\begin{array}{ccc} 1 &amp; 1 &amp; 0 \\  1 &amp; 3 &amp; 1 \\  0 &amp; 0 &amp; 1\end{array}\right]\text{.}\)</span>
 </div> <figure class="figure figure-like" id="figure-62"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/GT2-image-unit-cube-transform.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">62<span class="period">.</span></span><span class="space"> </span>Transformation of the unit cube by the linear transformation.</figcaption></figure> <div class="para" id="p-1234">Recall that for this solid <span class="process-math">\(V=Bh\text{,}\)</span> where <span class="process-math">\(h\)</span> is the height of the solid and <span class="process-math">\(B\)</span> is the area of its parallelogram base. So what must its volume be?</div> <ol class="upper-alpha cols2">
-<li id="li-790"><div class="para" id="p-1235"><span class="process-math">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 1 \\ 1 &amp; 3 \end{array}\right]\)</span></div></li>
-<li id="li-791"><div class="para" id="p-1236"><span class="process-math">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 0 \\ 3 &amp; 1 \end{array}\right]\)</span></div></li>
-<li id="li-792"><div class="para" id="p-1237"><span class="process-math">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 1 \\ 0 &amp; 1 \end{array}\right]\)</span></div></li>
-<li id="li-793"><div class="para" id="p-1238"><span class="process-math">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; 0 \end{array}\right]\)</span></div></li>
-</ol></article><article class="fact theorem-like" id="fact-25"><h4 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">62<span class="period">.</span></span><span class="space"> </span>Transformation of the unit cube by the linear transformation.</figcaption></figure> <div class="para" id="p-1253">Recall that for this solid <span class="process-math">\(V=Bh\text{,}\)</span> where <span class="process-math">\(h\)</span> is the height of the solid and <span class="process-math">\(B\)</span> is the area of its parallelogram base. So what must its volume be?</div> <ol class="upper-alpha cols2">
+<li id="li-806"><div class="para" id="p-1254"><span class="process-math">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 1 \\ 1 &amp; 3 \end{array}\right]\)</span></div></li>
+<li id="li-807"><div class="para" id="p-1255"><span class="process-math">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 0 \\ 3 &amp; 1 \end{array}\right]\)</span></div></li>
+<li id="li-808"><div class="para" id="p-1256"><span class="process-math">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 1 \\ 0 &amp; 1 \end{array}\right]\)</span></div></li>
+<li id="li-809"><div class="para" id="p-1257"><span class="process-math">\(\displaystyle \det \left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; 0 \end{array}\right]\)</span></div></li>
+</ol></article><article class="fact theorem-like" id="fact-24"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1239">
+<div class="para logical" id="p-1258">
 <div class="para">If row <span class="process-math">\(i\)</span> contains all zeros except for a <span class="process-math">\(1\)</span> on the main (upper-left to lower-right) diagonal, then both column and row <span class="process-math">\(i\)</span> may be removed without changing the value of the determinant.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -585,7 +585,7 @@ sagecell.makeSagecell({
 \end{array}\right]
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-1240">
+</div> <div class="para logical" id="p-1259">
 <div class="para">Since row and column operations affect the determinants in the same way, the same technique works for a column of all zeros except for a <span class="process-math">\(1\)</span> on the main diagonal.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -603,11 +603,11 @@ sagecell.makeSagecell({
 \end{array}\right]
 \end{equation*}
 </div>
-</div> <div class="para" id="p-1241">Put another way, if you have either a column or row from the identity matrix, you can cancel both the column and row containing the <span class="process-math">\(1\text{.}\)</span>
+</div> <div class="para" id="p-1260">Put another way, if you have either a column or row from the identity matrix, you can cancel both the column and row containing the <span class="process-math">\(1\text{.}\)</span>
 </div></article><article class="warning remark-like" id="warning-2"><h4 class="heading">
 <span class="type">Warning</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1242">
+<div class="para logical" id="p-1261">
 <div class="para">If the <span class="process-math">\(1\)</span> is not on the main diagonal, you’ll need to use row or column swaps in order to cancel.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -632,26 +632,26 @@ sagecell.makeSagecell({
 \end{array}\right]
 \end{equation*}
 </div>
-</div></article><article class="activity project-like" id="activity-149"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-150"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1243">Remove an appropriate row and column of <span class="process-math">\(\det \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 1 &amp; 5 &amp; 12 \\ 3 &amp; 2 &amp; -1 \end{array}\right]\)</span> to simplify the determinant to a <span class="process-math">\(2\times 2\)</span> determinant.</div></article><article class="activity project-like" id="activity-150"><h4 class="heading">
+<div class="para" id="p-1262">Remove an appropriate row and column of <span class="process-math">\(\det \left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 1 &amp; 5 &amp; 12 \\ 3 &amp; 2 &amp; -1 \end{array}\right]\)</span> to simplify the determinant to a <span class="process-math">\(2\times 2\)</span> determinant.</div></article><article class="activity project-like" id="activity-151"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-75"><div class="para" id="p-1244">Simplify <span class="process-math">\(\det \left[\begin{array}{ccc} 0 &amp; 3 &amp; -2 \\ 2 &amp; 5 &amp; 12 \\ 0 &amp; 2 &amp; -1 \end{array}\right]\)</span> to a multiple of a <span class="process-math">\(2\times 2\)</span> determinant by first doing the following:</div></div>
-<article class="task exercise-like" id="task-195"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-1245">Factor out a <span class="process-math">\(2\)</span> from a column.</div></article><article class="task exercise-like" id="task-196"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-1246">Swap rows or columns to put a <span class="process-math">\(1\)</span> on the main diagonal.</div></article></article><article class="activity project-like" id="activity-151"><h4 class="heading">
+<div class="introduction" id="introduction-75"><div class="para" id="p-1263">Simplify <span class="process-math">\(\det \left[\begin{array}{ccc} 0 &amp; 3 &amp; -2 \\ 2 &amp; 5 &amp; 12 \\ 0 &amp; 2 &amp; -1 \end{array}\right]\)</span> to a multiple of a <span class="process-math">\(2\times 2\)</span> determinant by first doing the following:</div></div>
+<article class="task exercise-like" id="task-197"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-1264">Factor out a <span class="process-math">\(2\)</span> from a column.</div></article><article class="task exercise-like" id="task-198"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-1265">Swap rows or columns to put a <span class="process-math">\(1\)</span> on the main diagonal.</div></article></article><article class="activity project-like" id="activity-152"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
 </h4>
-<div class="introduction" id="introduction-76"><div class="para" id="p-1247">Simplify <span class="process-math">\(\det \left[\begin{array}{ccc} 4 &amp; -2 &amp; 2 \\ 3 &amp; 1 &amp; 4 \\ 1 &amp; -1 &amp; 3\end{array}\right]\)</span> to a multiple of a <span class="process-math">\(2\times 2\)</span> determinant by first doing the following:</div></div>
-<article class="task exercise-like" id="task-197"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-1248">Use row/column operations to create two zeroes in the same row or column.</div></article><article class="task exercise-like" id="task-198"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-1249">Factor/swap as needed to get a row/column of all zeroes except a <span class="process-math">\(1\)</span> on the main diagonal.</div></article></article><article class="observation remark-like" id="observation-28"><h4 class="heading">
+<div class="introduction" id="introduction-76"><div class="para" id="p-1266">Simplify <span class="process-math">\(\det \left[\begin{array}{ccc} 4 &amp; -2 &amp; 2 \\ 3 &amp; 1 &amp; 4 \\ 1 &amp; -1 &amp; 3\end{array}\right]\)</span> to a multiple of a <span class="process-math">\(2\times 2\)</span> determinant by first doing the following:</div></div>
+<article class="task exercise-like" id="task-199"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-1267">Use row/column operations to create two zeroes in the same row or column.</div></article><article class="task exercise-like" id="task-200"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-1268">Factor/swap as needed to get a row/column of all zeroes except a <span class="process-math">\(1\)</span> on the main diagonal.</div></article></article><article class="observation remark-like" id="observation-30"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1250">Using row/column operations, you can introduce zeros and reduce dimension to whittle down the determinant of a large matrix to a determinant of a smaller matrix.</div>
-<div class="displaymath process-math" id="md-56">
+<div class="para" id="p-1269">Using row/column operations, you can introduce zeros and reduce dimension to whittle down the determinant of a large matrix to a determinant of a smaller matrix.</div>
+<div class="displaymath process-math" id="md-57">
 \begin{align*}
 \det\left[\begin{array}{cccc}
 4 &amp; 3 &amp; 0 &amp; 1 \\ 
@@ -690,10 +690,10 @@ sagecell.makeSagecell({
 &amp;=-2(-167)\det(I)=
 334
 \end{align*}
-</div></article><article class="activity project-like" id="activity-152"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-153"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.9</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1251">
+<div class="para logical" id="p-1270">
 <div class="para">Rewrite</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -702,18 +702,18 @@ sagecell.makeSagecell({
 \end{equation*}
 </div>
 <div class="para">as a multiple of a determinant of a <span class="process-math">\(3\times3\)</span> matrix.</div>
-</div></article><article class="activity project-like" id="activity-153"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-154"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.10</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1252">Compute <span class="process-math">\(\det\left[\begin{array}{cccc}
+<div class="para" id="p-1271">Compute <span class="process-math">\(\det\left[\begin{array}{cccc}
 2 &amp; 3 &amp; 5 &amp; 0 \\ 
 0 &amp; 3 &amp; 2 &amp; 0 \\ 
 1 &amp; 2 &amp; 0 &amp; 3 \\ 
 -1 &amp; -1 &amp; 2 &amp; 2 
-\end{array}\right]\)</span> by using any combination of row/column operations.</div></article><article class="observation remark-like" id="observation-29"><h4 class="heading">
+\end{array}\right]\)</span> by using any combination of row/column operations.</div></article><article class="observation remark-like" id="observation-31"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.11</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1253">Another option is to take advantage of the fact that the determinant is linear in each row or column.  This approach is called <dfn class="terminology">Laplace expansion</dfn> or <dfn class="terminology">cofactor expansion</dfn>.</div> <div class="para" id="p-1254">For example, since <span class="process-math">\(\color{blue}{
+<div class="para" id="p-1272">Another option is to take advantage of the fact that the determinant is linear in each row or column.  This approach is called <dfn class="terminology">Laplace expansion</dfn> or <dfn class="terminology">cofactor expansion</dfn>.</div> <div class="para" id="p-1273">For example, since <span class="process-math">\(\color{blue}{
 \left[\begin{array}{ccc} 1 &amp; 2 &amp; 4 \end{array}\right]
 =
 1\left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \end{array}\right]
@@ -723,7 +723,7 @@ sagecell.makeSagecell({
 4\left[\begin{array}{ccc} 0  &amp; 0 &amp; 1 \end{array}\right]}
 \text{,}\)</span>
 </div>
-<div class="displaymath process-math" id="md-57">
+<div class="displaymath process-math" id="md-58">
 \begin{align*}
 \det \left[\begin{array}{ccc} 2 &amp; 3 &amp; 5  \\ -1 &amp; 3 &amp; 5 \\ {\color{blue} 1} &amp; {\color{blue} 2} &amp; {\color{blue} 4} \end{array}\right] &amp;=
 {\color{blue} 1}\det \left[\begin{array}{ccc} 2 &amp; 3 &amp; 5  \\ -1 &amp; 3 &amp; 5 \\ {\color{blue} 1} &amp; {\color{blue} 0} &amp; {\color{blue} 0} \end{array}\right] +
@@ -736,10 +736,10 @@ sagecell.makeSagecell({
 -2 \det \left[\begin{array}{cc} 2 &amp; 5 \\ -1 &amp; 5 \end{array}\right]
 +4 \det \left[\begin{array}{cc} 2 &amp; 3 \\ -1 &amp; 3 \end{array}\right]
 \end{align*}
-</div></article><article class="observation remark-like" id="observation-30"><h4 class="heading">
+</div></article><article class="observation remark-like" id="observation-32"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">5.2.12</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1255">
+<div class="para logical" id="p-1274">
 <div class="para">Recall the formula for a <span class="process-math">\(2\times 2\)</span> determinant found in <a href="" class="xref" data-knowl="./knowl/GT1-observation-formula.html" title="Observation 5.1.30">Observation 5.1.30</a>:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/GT1-observation-formula.html">
 \begin{equation*}
@@ -748,7 +748,7 @@ sagecell.makeSagecell({
 ad-bc\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="p-1256">There are formulas and algorithms for the determinants of larger matrices, but they can be pretty tedious to use. For example, writing out a formula for a <span class="process-math">\(4\times 4\)</span> determinant would require 24 different terms!</div>
+</div> <div class="para" id="p-1275">There are formulas and algorithms for the determinants of larger matrices, but they can be pretty tedious to use. For example, writing out a formula for a <span class="process-math">\(4\times 4\)</span> determinant would require 24 different terms!</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/GT1-observation-formula.html">
 \begin{equation*}
 \det\left[\begin{array}{cccc}
@@ -760,18 +760,18 @@ a_{41} &amp; a_{42} &amp; a_{43} &amp; a_{44}
 =
 a_{11}(a_{22}(a_{33}a_{44}-a_{43}a_{34})-a_{23}(a_{32}a_{44}-a_{42}a_{34})+\dots)+\dots
 \end{equation*}
-</div></article><article class="activity project-like" id="activity-154"><h4 class="heading">
+</div></article><article class="activity project-like" id="activity-155"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.13</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1257">Based on the previous activities, which technique is easier for computing determinants?</div> <ol class="upper-alpha">
-<li id="li-794"><div class="para" id="p-1258">Memorizing formulas.</div></li>
-<li id="li-795"><div class="para" id="p-1259">Using row/column operations.</div></li>
-<li id="li-796"><div class="para" id="p-1260">Laplace expansion.</div></li>
-<li id="li-797"><div class="para" id="p-1261">Some other technique.</div></li>
-</ol></article><article class="activity project-like" id="activity-155"><h4 class="heading">
+<div class="para" id="p-1276">Based on the previous activities, which technique is easier for computing determinants?</div> <ol class="upper-alpha">
+<li id="li-810"><div class="para" id="p-1277">Memorizing formulas.</div></li>
+<li id="li-811"><div class="para" id="p-1278">Using row/column operations.</div></li>
+<li id="li-812"><div class="para" id="p-1279">Laplace expansion.</div></li>
+<li id="li-813"><div class="para" id="p-1280">Some other technique.</div></li>
+</ol></article><article class="activity project-like" id="activity-156"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.14</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1262">Use your preferred technique to compute <span class="process-math">\(\det\left[\begin{array}{cccc}
+<div class="para" id="p-1281">Use your preferred technique to compute <span class="process-math">\(\det\left[\begin{array}{cccc}
 4 &amp; -3 &amp; 0 &amp; 0 \\ 
 1 &amp; -3 &amp; 2 &amp; -1 \\ 
 3 &amp; 2 &amp; 0 &amp; 3 \\ 
@@ -789,10 +789,10 @@ a_{11}(a_{22}(a_{33}a_{44}-a_{43}a_{34})-a_{23}(a_{32}a_{44}-a_{42}a_{34})+\dots
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">64<span class="period">.</span></span><span class="space"> </span>Video: Computing a determinant</figcaption></figure></section><section class="subsection" id="subsection-111"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="space"> </span><span class="title">Slideshow</span>
 </h3>
-<div class="para" id="p-1263">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/GT2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/GT2.slides.html</code></a>.</div></section><section class="exercises" id="exercises-23"><h3 class="heading hide-type">
+<div class="para" id="p-1282">Slideshow of activities available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/GT2.slides.html" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/GT2.slides.html</code></a>.</div></section><section class="exercises" id="exercises-23"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
-<div class="para" id="p-1264">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/GT2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/GT2/</code></a>.</div></section><section class="subsection" id="subsection-112"><h3 class="heading hide-type">
+<div class="para" id="p-1283">Exercises available at <a class="external" href="https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/GT2/" target="_blank"><code class="code-inline tex2jax_ignore">https://teambasedinquirylearning.github.io/linear-algebra/2023/exercises/#/bank/GT2/</code></a>.</div></section><section class="subsection" id="subsection-112"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="space"> </span><span class="title">Mathematical Writing Explorations</span>
 </h3>
 <article class="exploration project-like" id="exploration-51"><h4 class="heading">
@@ -806,7 +806,7 @@ a_{11}(a_{22}(a_{33}a_{44}-a_{43}a_{34})-a_{23}(a_{32}a_{44}-a_{42}a_{34})+\dots
 </h4>What is the smallest number of zeros necessary to place in a <span class="process-math">\(4 \times 4\)</span> matrix, and the placement of those zeros, such that the matrix has a zero determinant?</article></section><section class="subsection" id="subsection-113"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="space"> </span><span class="title">Sample Problem and Solution</span>
 </h3>
-<div class="para" id="p-1265">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-GT2.html" title="Example B.1.23: GT2">Example B.1.23</a>.</div></section></section></div>
+<div class="para" id="p-1284">Sample problem <a href="" class="xref" data-knowl="./knowl/sample-GT2.html" title="Example B.1.23: GT2">Example B.1.23</a>.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="GT1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="GT3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
