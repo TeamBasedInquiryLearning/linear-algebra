@@ -25,7 +25,7 @@ class Generator(BaseGenerator):
         tasks.append({
             "diagonal": True,
             "row_op": rowOp("diagonal",rows[0]+1,rows[0]+1,scale),
-            "mat": identity_matrix(4).with_rescaled_row(rows[1],scale),
+            "mat": identity_matrix(4).with_rescaled_row(rows[0],scale),
             "name": names[2]
         })
 
