@@ -9,6 +9,31 @@
         </ul>
     </objectives>
 
+    <subsection>
+        <!-- I'm thinking for this warmup, I mostly want students to recall the definition of a linear combination of vectors and the span of a set. -->
+        <title>Warm Up</title>
+        <activity>
+            <introduction>
+                <p>
+                    Given a set of ingredients and a meal, a recipe is a list of amounts of each ingredient required to prepare the given meal. 
+                </p>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Use the words <em>vector</em> and <em>linear combination</em> to create a new statement that is analogous to one above. 
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Building on your analogy, what role might the word <em>span</em> play?
+                    </p>
+                </statement>
+            </task>
+        </activity>
+        </subsection>
 
 <subsection><title>Class Activities</title>
 <observation>
@@ -126,7 +151,7 @@ since <m>\IR^1=\setBuilder{cx}{c\in\IR}</m>.
     </statement>
 </activity>
 
-<fact>
+<fact xml:id="EV2-n-vectors-span" >
     <statement>
         <p>
   At least <m>n</m> vectors are required to span <m>\IR^n</m>.
@@ -356,6 +381,41 @@ What can you conclude about
     </statement>
 </activity>
     </subsection>
+
+<subsection>
+    <title>Cool Down</title>
+    <activity>
+        <introduction>
+            <p>
+                One of our important results in this lesson is <xref ref="EV2-n-vectors-span"/>, which states that a set of <m></m> vectors is required to span <m>\IR^n</m>.
+                While we developed some geometric intuition for why this true, we did not prove it in class.
+                Before coming to class next time, follow the steps outlined below to convince yourself of this fact using the concepts we learned in this lesson.
+            </p>
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                    Let <m>\{\vec{v}_1,\dots, \vec{v}_m\}</m> be a set of vectors living in <m>\IR^n</m> and assume that <m>m &lt;n</m>.
+                    How many rows and how many columns will the matrix <m>[\vec{v}_1\cdots \vec{v}_m]</m> have?
+                </p>
+            </statement>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Given no additional information about the vectors <m>\vec{v}_1,\dots, \vec{v}_m</m>, what is the maximum possible number of pivots in <m>\RREF[\vec v_1\,\dots\,\vec v_m]</m>?
+                </p>
+            </statement>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Conclude that our given set of vector cannot span all of <m>\IR^n</m>.
+                </p>
+            </statement>
+        </task>
+    </activity>
+</subsection>    
 
     <subsection>
         <title>Videos</title>
