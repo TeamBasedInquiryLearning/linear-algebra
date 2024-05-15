@@ -9,6 +9,30 @@
         </ul>
     </objectives>
 
+    <subsection>
+        <title>Warm Up</title>
+        <activity>
+            <introduction>
+                <p>
+                    Consider the linear equation <me>x+2y+z=0.</me>
+                </p>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Verify that both <m>\vec{v}=\left[\begin{array}{c}1\\-1\\1\end{array}\right]</m> and <m>\vec{w}=\left[\begin{array}{c}1\\0\\-1\end{array}\right]</m> are solutions.
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Is the vector <m>2\vec{v}-3\vec{w}</m> also a solution?
+                    </p>
+                </statement>
+            </task>
+        </activity>
+        </subsection>
 
 
 <subsection><title>Class Activities</title>
@@ -780,6 +804,74 @@ Let <m>W</m> be a subspace of a vector space <m>V</m>.  How are <m>\vspan W</m> 
     </statement>
 </fact>-->
     </subsection> 
+
+    <subsection>
+        <title>Cool Down</title>
+        <activity>
+            <introduction>
+                <p>
+                    In Warm Up <xref ref="EV2-Analogy"/> we used the words <em>vector</em>, <em>linear combination</em>, and <em>span</em> to make an anology with recipes, ingredients, and meals. 
+                </p>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Given the set of ingredients <m>S=\{\textrm{flour}, \textrm{yeast}, \textrm{salt}, \textrm{water}, \textrm{sugar}, \textrm{milk}\}</m>, how should we think of the subspace <m>\vspan(S)</m>? 
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        What is one meal that lives in the subspace <m>\vspan(S)</m>?
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        What is one meal that does not live in the subspace <m>\vspan(S)</m>?
+                    </p>
+                </statement>
+            </task>
+        </activity>
+
+        <activity>
+            <introduction>
+                <p>
+                    Let <me>W=\left\{\left[\begin{array}{c}x\\y\\z\\w\end{array}\right]\middle|x+y=3z+2w\right\}.</me>
+                    The set <m>W</m> is a subspace. Below are two attempted proofs of the fact that <m>W</m> is closed under vector addition. 
+                    Both of them are invalid; explain why. 
+                </p>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Let <m>\vec{u}=\left[\begin{array}{c}1\\4\\1\\1\end{array}\right],\vec{v}=\left[\begin{array}{c}2\\-1\\1\\-1\end{array}\right].</m>
+                        Then both <m>\vec{u},\vec{w}</m> are elements of <m>W</m>. Their sum is
+                        <me>\vec{w}=\left[\begin{array}{c}3\\3\\2\\0\end{array}\right]</me>
+                        and since <me>3+3=3\cdot (2)+2\cdot (0),</me>
+                        it follows that <m>\vec{w}</m> is also in <m>W</m> and so <m>W</m> is closed under vector addition.
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        If <m>\left[\begin{array}{c}x\\y\\z\\w\end{array}\right],\left[\begin{array}{c}a\\b\\c\\d\end{array}\right]</m> are in <m>W</m>, we need to show that <m>\left[\begin{array}{c}x+a\\y+b\\z+c\\w+d\end{array}\right]</m> is also in W. 
+                        To be in <m>W</m>, we need 
+                        <me>(x+a)+(y+b)=3(z+c)+2(w+d).</me>
+                        Well, if <me>(x+a)+(y+b)=3(z+c)+2(w+d),</me>
+                        then we know that <me>x+y-3z-2w+a+b-3c-2d=0</me>
+                        by moving everything over to the left hand side. 
+                        Since we are assumming that <m>x+y-3z-2w=0</m> and <m>a+b-3c-2d=0</m>, it follows that
+                        <m>0=0</m>, which is true, which proves that vector addition is closed.
+                    </p>
+                </statement>
+            </task>
+        </activity>
+
+        </subsection>
 
 
     <subsection>
