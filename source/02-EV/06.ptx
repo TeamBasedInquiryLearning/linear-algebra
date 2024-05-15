@@ -9,6 +9,38 @@
         </ul>
     </objectives>
 
+<subsection>
+  <title>Warm Up</title>
+  <activity>
+    <introduction>
+      <p>
+        Consider the set <m>S</m> of vectors in <m>\IR^4</m> given by
+        <me>S=\left\{\left[\begin{array}{c}2\\3\\0\\1\end{array}\right],\left[\begin{array}{c}2\\0\\1\\-1\end{array}\right]\right\}</me>
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Is the set <m>S</m> linearly independent or linearly dependent?
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          How would you describe the subspace <m>\vspan{S}</m> geometrically?
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          What do the spaces <m>\vspan{S}</m> and <m>\IR^2</m> have in common? In what ways do they differ?
+        </p>
+      </statement>
+    </task>
+  </activity>
+</subsection>
 
 <subsection><title>Class Activities</title>
 <observation>
@@ -346,6 +378,57 @@ Thus the basis for a subspace is not unique in general.
 
     </subsection>
 
+    <subsection>
+      <title>Cool Down</title>
+      <activity>
+        <introduction>
+          <p>
+            In <xref ref="observation-subspace-basis"/>, we found a basis for the subspace 
+            <me>W=\vspan\setList{
+              \left[\begin{array}{c}1\\2\\3\end{array}\right],
+              \left[\begin{array}{c}2\\4\\6\end{array}\right],
+              \left[\begin{array}{c}0\\-2\\-2\end{array}\right],
+              \left[\begin{array}{c}1\\2\\1\end{array}\right]
+            }.</me>
+            To do so, we use the results of the calculation: 
+            <me>
+              \RREF
+              \left[\begin{array}{cccc}
+              1 &amp; 2 &amp; 0 &amp; 1 \\
+              2 &amp; 4 &amp; -2 &amp; 2 \\
+              3 &amp; 6 &amp; -2 &amp; 1 \\
+              \end{array}\right]
+                =
+              \left[\begin{array}{cccc}
+                \markedPivot{1} &amp; 2 &amp; 0 &amp; 1 \\
+                0 &amp; 0 &amp; \markedPivot{1} &amp; 1 \\
+                0 &amp; 0 &amp; 0 &amp; 0
+              \end{array}\right]
+            </me>
+            to conclude that the set <m>\setList{
+              \left[\begin{array}{c}1\\2\\3\end{array}\right],
+              \left[\begin{array}{c}0\\-2\\-2\end{array}\right]
+            }</m>, the set of vectors <em>corresponding</em> to the pivot columns of the RREF, is a basis for <m>W</m>. 
+          </p>
+        </introduction>
+        <task>
+          <statement>
+            <p>
+              Explain why neither of the vectors <m>
+                \left[\begin{array}{c}1\\0\\0\end{array}\right],
+                \left[\begin{array}{c}0\\1\\0\end{array}\right]</m> are elements of <m>W</m>. 
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Explain why this shows that, in general, when we calculate a basis for <m>W=\vspan\{\vec{v}_1,\dots, \vec{v}_n\}</m>, the pivot columns of <m>\RREF[\vec{v}_1\dots \vec{v}_n]</m> themselves do not form a basis for <m>W</m>.
+            </p>
+          </statement>
+        </task>
+      </activity>
+    </subsection>
     <subsection>
         <title>Videos</title>
         <figure>
