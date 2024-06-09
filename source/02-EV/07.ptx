@@ -9,11 +9,11 @@
         </ul>
     </objectives>
 
-
-<subsection><title>Class Activities</title>
+<subsection>
+    <title>Warmup</title> 
     <remark>
         <p>
-    Recall that a <term>homogeneous</term><idx>homogeneous</idx> system of linear equations is one of the form:
+    Recall from <xref ref="EV3"/> that a <term>homogeneous</term><idx>homogeneous</idx> system of linear equations is one of the form:
       <md alignat-columns='5' alignment="alignat">
           <mrow>
         a_{11}x_1 &amp;\,+\,&amp; a_{12}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{1n}x_n &amp;\,=\,&amp; 0 
@@ -39,84 +39,65 @@
           a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} &amp; 0\\
           \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\\
           a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; 0
-        \end{array}\right]
+        \end{array}\right].
       </me>
         </p>
     </remark>
 
-<activity estimated-time='5'>
-    <introduction>
-        <p>
-Consider the homogeneous vector equation <m>x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0}</m>.<abbr></abbr>
-        </p>
-    </introduction>
-    <task>
-    <p>
-Note that if <m>\left[\begin{array}{c} a_1 \\ \vdots \\ a_n \end{array}\right] </m> and
-<m>\left[\begin{array}{c} b_1 \\ \vdots \\ b_n \end{array}\right] </m> are both solutions,
-we know that
-<me>a_1 \vec{v}_1+\cdots+a_n \vec{v}_n = \vec{0}
-\text{ and }
-b_1 \vec{v}_1+\cdots+b_n \vec{v}_n = \vec{0} </me>.
-Therefore by adding these equations,
-<me>(a_1 + b_1) \vec{v}_1+\cdots+(a_n+b_n) \vec{v}_n = \vec{0}</me>
-        </p>
-    <p>
-shows that <m>\left[\begin{array}{c} a_1+ b_1 \\ \vdots \\ a_n+b_n \end{array}\right] </m> 
-is also a solution. Thus the solution set of a homogeneous system is...
-    </p>
-<ol marker="A.">
-<li>
-    <p>
-        Closed under addition.
-    </p>
-  </li>
-<li>
-    <p>
-        Not closed under addition.
-    </p>
-  </li>
-  <li>
-      <p>
-          Linearly dependent.
-      </p>
-    </li>
-    <li>
-        <p>
-            Linearly independent.
-        </p>
-      </li>
-</ol>
-    </task>
-    <task>
-    <p>
-Similarly, if <m>c \in \IR</m>, <m>\left[\begin{array}{c} ca_1 \\ \vdots \\ ca_n \end{array}\right] </m> is a solution.
-Thus the solution set of a homogeneous system is also closed under scalar multiplication, and therefore...
-    </p>
-<ol marker="A.">
-<li>
-    <p>
-    A basis for <m>\IR^n</m>.
-    </p>
-  </li>
-<li>
-    <p>
-    A subspace of <m>\IR^n</m>.
-    </p>
-  </li>
-  <li>
-      <p>
-      All of <m>\IR^n</m>.
-      </p>
-    </li>
-<li>
-    <p>
-    The empty set.
-    </p>
-  </li>
-</ol>
-    </task>
-</activity>
+    <activity>
+        <introduction>
+            <p>
+                In <xref ref="EV3"/>, we observed that if
+                <me>x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0}</me>
+                is a homogenous vector equation, then:
+                <ul>
+                    <li>
+                        <p>
+                            The zero vector <m>\vec{0}</m> is a solution;
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The sum of any two solutions is again a solution;
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Multiplying a solution by a scalar produces another solution.
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </introduction>
+            <p>
+                Based on this recollection, which of the following best describes the solution set to the homogenous equation?
+                <ol marker="A.">
+                    <li>
+                        <p>
+                        A basis for <m>\IR^n</m>.
+                        </p>
+                      </li>
+                    <li>
+                        <p>
+                        A subspace of <m>\IR^n</m>.
+                        </p>
+                      </li>
+                      <li>
+                          <p>
+                          All of <m>\IR^n</m>.
+                          </p>
+                        </li>
+                    <li>
+                        <p>
+                        The empty set.
+                        </p>
+                      </li>
+                    </ol>
+            </p>
+    </activity>
+</subsection>
+
+<subsection><title>Class Activities</title>
 
 <activity estimated-time='10'>
     <introduction>
@@ -337,6 +318,60 @@ Solve this system to describe these locations.
 
     </subsection>
 
+    <subsection>
+        <title>Cool Down</title>
+        <activity>
+            <introduction>
+                <p>
+                    Let <m>S=\setList{
+                        \left[\begin{array}{c} -2 \\ 1 \\ 0 \\ 0\end{array}\right],
+                        \left[\begin{array}{c} -1 \\ 0 \\ -4 \\ 1 \end{array}\right],
+                        \left[\begin{array}{c} 1 \\ 0 \\ -2 \\ 3 \end{array}\right]
+                      }</m> and <m>A=\left[\begin{array}{ccc}
+                        -2 &amp; -1 &amp;1\\
+                        1 &amp; 0 &amp;0\\
+                        0 &amp; -4 &amp;-2\\
+                        0 &amp; 1 &amp;3
+                      \end{array}\right];</m> note that 
+                      <me>\RREF(A)=\left[\begin{array}{ccc}
+                        1 &amp; 0 &amp;0\\
+                        0 &amp; 1 &amp;0\\
+                        0 &amp; 0 &amp;1\\
+                        0 &amp; 0 &amp;0
+                      \end{array}\right].</me>
+                      The following statements are all <em>invalid</em> for at least one reason. Determine what makes them invalid and, suggest alternative <em>valid</em> statements that the author may have meant instead.
+                </p>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        The matrix <m>A</m> is linearly independent because <m>\RREF(A)</m> has a pivot in each column.
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        The matrix <m>A</m> does not span <m>\IR^4</m> because <m>\RREF(A)</m> has a row of zeroes. 
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        The set of vectors <m>S</m> spans. 
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        The set of vectors <m>S</m> is a basis. 
+                    </p>
+                </statement>
+            </task>
+        </activity>
+    </subsection>
 
 
     <subsection>
