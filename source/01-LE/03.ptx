@@ -9,6 +9,30 @@
         </ul>
     </objectives>
 
+<subsection>
+    <title>Warm Up</title>
+    <activity>
+        <task>
+            <statement>
+                <p>
+                    Without referring to your Activity Book, which of the four criteria for a matrix to be in Reduced Row Echelon Form (RREF) can you recall?
+                </p>
+            </statement>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Which, if any, of the following matrices are in RREF? You may refer to the Activity Book now for criteria that you may have forgotten.
+                </p>
+                <sidebyside widths="33% 33% 33%">
+                    <p><me> P=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; \frac{2}{3} &amp; -3 \\ 0 &amp; 3 &amp; 3 &amp; -\frac{3}{5} \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me></p>
+                    <p><me> Q=\left[\begin{array}{ccc|c} 0 &amp; 1 &amp; 0 &amp; 7 \\ 1 &amp; 0 &amp; 0 &amp; 4 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me></p>
+                    <p><me> R=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; \frac{1}{2} &amp; 4 \\ 0 &amp; 1 &amp; 0 &amp; 7 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{array}\right]</me></p>
+                    </sidebyside>
+            </statement>
+        </task>
+    </activity>
+</subsection>
 <subsection><title>Class Activities</title>
 
 <remark>
@@ -210,7 +234,7 @@ How many solutions must this system have?
 <sage language="octave">
 </sage>
 
-<fact>
+<fact xml:id="linearsystemsfact2">
     <statement>
         <p>
 We will see in <xref ref="LE4"/> that the intuition established here generalizes: a <em>consistent</em> system with more variables
@@ -342,6 +366,43 @@ If the set is finite, describe it using set notation.
 </sage>
     </subsection>
 
+    <subsection>
+        <title>Cool Down</title>
+        <activity>
+            <statement>
+                <p>
+                   In <xref ref="linearsystemsfact"/>, we stated, but did not prove the assertion that 
+                   all linear systems are one of the following:
+            <ol>
+    <li><em>Consistent with one solution:</em>
+          its solution set contains a single vector, e.g.
+          <m>\setList{\left[\begin{array}{c}1\\2\\3\end{array}\right]}</m>
+                </li>
+                <li>
+                    <em>Consistent with infinitely-many solutions</em>:
+          its solution set contains infinitely many vectors, e.g.
+          <m>
+            \setBuilder
+            {
+              \left[\begin{array}{c}1\\2-3a\\a\end{array}\right]
+            }{
+              a\in\IR
+            }
+          </m>
+                </li>
+                <li><em>Inconsistent</em>:
+          its solution set is the empty set, denoted by either <m>\{\}</m> or <m>\emptyset</m>.
+                </li>
+            </ol>
+                </p>
+            </statement>
+            <statement>
+                <p>
+                    Explain why this fact is a consequence of <xref ref="linearsystemsfact2"/> above.
+                </p>
+            </statement>
+        </activity>
+    </subsection>
     <subsection>
         <title>Videos</title>
     <figure>
