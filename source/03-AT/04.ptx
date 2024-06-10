@@ -9,7 +9,29 @@
         </ul>
     </objectives>
 
-
+<subsection>
+  <title>Warm Up</title>
+  <activity>
+    <statement>
+      <p>
+        Consider the linear transformation <m>T\colon\IR^4\to\IR^3</m> that is represented by the standard matrix <m>A=\left[\begin{array}{cccc} 3 &amp; 4 &amp; 7 &amp; 1\\ -1 &amp; 1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 3 &amp; -1 \end{array}\right].</m>
+        Which of the following processes helps us compute a basis for <m>\Im T</m> and which helps us compute a basis for <m>\ker T</m>?
+      </p>
+    <ol marker="A.">
+      <li>
+        <p>
+          Compute <m>\RREF(A)</m> and consider the set of columns of <m>A</m> that correspond to columns in <m>\RREF(A)</m> with pivots.
+        </p>
+      </li>
+      <li>
+        <p>
+          Calculate a basis for the solution space to the homogenous system of equations for which <m>A</m> is the coefficient matrix. 
+        </p>
+      </li>
+    </ol>
+    </statement>
+  </activity>
+</subsection>
 <subsection><title>Class Activities</title>
 
 <definition xml:id="AT4-definition-injection">
@@ -892,6 +914,101 @@ Which of the following must be true?
 </sage>
 
 </subsection>
+
+<subsubsection>
+  <title>Cool Down</title>
+  <activity>
+    <introduction>
+      <p>
+        Let <m>T\colon\IR^n\to\IR^m</m> be a linear transformation with standard matrix <m>A</m>. 
+        We reasoned during class that the following statements are logically equivalent:
+      </p>
+      <ol>
+        <li>
+          <p>
+            The columns of <m>A</m> are linearly independent. 
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\RREF(A)</m> has a pivot in each column. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The transformation <m>T</m> is injective. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The system of equations given by <m>[A|\vec{0}]</m> has a unique solution. 
+          </p>
+        </li>
+      </ol>
+      While they are all logically equivalent, they are different statements that offer varied perspectives on our growing conceptual knowledge of linear algebra.
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          If you are asked to decide if a transformation <m>T</m> is injective, which of the above statements do you think is the most useful?
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Can you think of some situations in which translating between these four statements might be useful to you?
+        </p>
+      </statement>
+    </task>
+  </activity>
+
+  <activity>
+    <introduction>
+      <p>
+        Let <m>T\colon\IR^n\to\IR^m</m> be a linear transformation with standard matrix <m>A</m>. 
+        We reasoned during class that the following statements are logically equivalent:
+      </p>
+      <ol>
+        <li>
+          <p>
+            The columns of <m>A</m> span all of <m>\IR^m</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\RREF(A)</m> has a pivot in each row. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The transformation <m>T</m> is surjective. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The system of equations given by <m>[A|\vec{b}]</m> is always consistent. 
+          </p>
+        </li>
+      </ol>
+      While they are all logically equivalent, they are different statements that offer varied perspectives on our growing conceptual knowledge of linear algebra.
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          If you are asked to decide if a transformation <m>T</m> is surjective, which of the above statements do you think is the most useful?
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Can you think of some situations in which translating between these four statements might be useful to you?
+        </p>
+      </statement>
+    </task>
+  </activity>
+</subsubsection>
 
 
     <subsection>
