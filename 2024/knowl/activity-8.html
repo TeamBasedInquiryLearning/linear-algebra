@@ -12,29 +12,70 @@
 </head>
 <body class="ignore-math">
 <article class="activity project-like"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
 </h4>
-<div class="para">Recall that a matrix is in <dfn class="terminology">reduced row echelon form</dfn> (<dfn class="terminology">RREF</dfn>) if</div> <ol class="decimal">
-<li><div class="para">The leftmost nonzero term of each row is 1. We call these terms <dfn class="terminology">pivots</dfn>.</div></li>
-<li><div class="para">Each pivot is to the right of every higher pivot.</div></li>
-<li><div class="para">Each term that is either above or below a pivot is 0.</div></li>
-<li><div class="para">All zero rows (rows whose terms are all 0) are at the bottom of the matrix.</div></li>
-</ol> <div class="para">For each matrix, mark the leading terms, and label it as RREF or not RREF. For the ones not in RREF, determine which rule is violated and how it might be fixed.</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0.166666666666667%;margin-right:0.166666666666667%;">
-<div class="sbspanel top" style="width:33.1103678929766%;"><div class="para logical"><div class="displaymath process-math">
+<div class="para">Here we’ve written the sorted linear systems from <a href="" class="xref" data-knowl="./knowl/LE2-activity-sort.html" title="Activity 1.2.4">Activity 1.2.4</a> as augmented matrices.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/LE2-activity-sort.html">
+\begin{alignat*}{3}
+\left[\begin{array}{ccc|c} 
+2 &amp; 5 &amp; 3 &amp; 7 \\ 
+-1 &amp; -1 &amp; 1 &amp; 1 \\ 
+1 &amp; 2 &amp; 1 &amp; 3 
+\end{array}\right] &amp; \sim &amp;
+\left[\begin{array}{ccc|c} 
+\markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ 
+-1 &amp; -1 &amp; 1 &amp; 1 \\ 
+2 &amp; 5 &amp;  3 &amp; 7  
+\end{array}\right] &amp; \sim &amp;
+\left[\begin{array}{ccc|c} 
+\markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ 
+0 &amp; 1 &amp; 2 &amp; 4 \\ 
+2 &amp; 5 &amp; 3 &amp; 7  
+\end{array}\right]\sim \\
+\sim \left[\begin{array}{ccc|c} 
+\markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ 
+0 &amp; \markedPivot{1} &amp; 2 &amp; 4 \\ 
+0 &amp; 1 &amp; 1 &amp; 1  
+\end{array}\right] &amp; \sim &amp;
+\left[\begin{array}{ccc|c} 
+\markedPivot{1} &amp; 0 &amp; -1 &amp; 1 \\ 
+0 &amp; \markedPivot{1} &amp; 2 &amp; 4 \\ 
+0 &amp; 1 &amp; 1 &amp; 1  
+\end{array}\right] &amp; \sim &amp;
+\left[\begin{array}{ccc|c} 
+\markedPivot{1} &amp; 0 &amp; -1 &amp; 1 \\ 
+0 &amp; \markedPivot{1} &amp; 2 &amp; 4 \\ 
+0 &amp; 0 &amp; -1 &amp; -3  \end{array}\right] 
+\end{alignat*}
+</div>
+<div class="para">Assign the following row operations to each step used to manipulate each matrix to the next: <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:33.3333333333333%;"><div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
-D=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 2 &amp; -3 \\ 0 &amp; 3 &amp; 3 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]
+R_3-1R_2\to R_3
 \end{equation*}
 </div></div></div>
-<div class="sbspanel top" style="width:33.1103678929766%;"><div class="para logical"><div class="displaymath process-math">
+<div class="sbspanel top" style="width:33.3333333333333%;"><div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
-E=\left[\begin{array}{ccc|c} 0 &amp; 1 &amp; 0 &amp; 7 \\ 1 &amp; 0 &amp; 0 &amp; 4 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]
+R_2+1R_1\to R_2
 \end{equation*}
 </div></div></div>
-<div class="sbspanel top" style="width:33.1103678929766%;"><div class="para logical"><div class="displaymath process-math">
+<div class="sbspanel top" style="width:33.3333333333333%;"><div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
-F=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 0 &amp; 4 \\ 0 &amp; 1 &amp; 0 &amp; 7 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{array}\right]
+R_1\leftrightarrow R_3
 \end{equation*}
 </div></div></div>
-</div></div></article><span class="incontext"><a class="internal" href="LE2.html#activity-8">in-context</a></span>
+</div></div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+R_3-2R_1\to R_3
+\end{equation*}
+</div></div></div>
+<div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+R_1-2R_3\to R_1
+\end{equation*}
+</div></div></div>
+</div></div>
+</div></article><span class="incontext"><a class="internal" href="LE2.html#activity-8">in-context</a></span>
 </body>
 </html>

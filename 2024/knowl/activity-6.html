@@ -12,70 +12,126 @@
 </head>
 <body class="ignore-math">
 <article class="activity project-like"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
 </h4>
-<div class="para">Here we’ve written the sorted linear systems from <a href="" class="xref" data-knowl="./knowl/LE2-activity-sort.html" title="Activity 1.2.4">Activity 1.2.4</a> as augmented matrices.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/LE2-activity-sort.html">
-\begin{alignat*}{3}
-\left[\begin{array}{ccc|c} 
-2 &amp; 5 &amp; 3 &amp; 7 \\ 
--1 &amp; -1 &amp; 1 &amp; 1 \\ 
-1 &amp; 2 &amp; 1 &amp; 3 
-\end{array}\right] &amp; \sim &amp;
-\left[\begin{array}{ccc|c} 
-\markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ 
--1 &amp; -1 &amp; 1 &amp; 1 \\ 
-2 &amp; 5 &amp;  3 &amp; 7  
-\end{array}\right] &amp; \sim &amp;
-\left[\begin{array}{ccc|c} 
-\markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ 
-0 &amp; 1 &amp; 2 &amp; 4 \\ 
-2 &amp; 5 &amp; 3 &amp; 7  
-\end{array}\right]\sim \\
-\sim \left[\begin{array}{ccc|c} 
-\markedPivot{1} &amp; 2 &amp; 1 &amp; 3 \\ 
-0 &amp; \markedPivot{1} &amp; 2 &amp; 4 \\ 
-0 &amp; 1 &amp; 1 &amp; 1  
-\end{array}\right] &amp; \sim &amp;
-\left[\begin{array}{ccc|c} 
-\markedPivot{1} &amp; 0 &amp; -1 &amp; 1 \\ 
-0 &amp; \markedPivot{1} &amp; 2 &amp; 4 \\ 
-0 &amp; 1 &amp; 1 &amp; 1  
-\end{array}\right] &amp; \sim &amp;
-\left[\begin{array}{ccc|c} 
-\markedPivot{1} &amp; 0 &amp; -1 &amp; 1 \\ 
-0 &amp; \markedPivot{1} &amp; 2 &amp; 4 \\ 
-0 &amp; 0 &amp; -1 &amp; -3  \end{array}\right] 
-\end{alignat*}
-</div>
-<div class="para">Assign the following row operations to each step used to manipulate each matrix to the next: <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:33.3333333333333%;"><div class="para logical"><div class="displaymath process-math">
-\begin{equation*}
-R_3-1R_2\to R_3
-\end{equation*}
-</div></div></div>
-<div class="sbspanel top" style="width:33.3333333333333%;"><div class="para logical"><div class="displaymath process-math">
-\begin{equation*}
-R_2+1R_1\to R_2
-\end{equation*}
-</div></div></div>
-<div class="sbspanel top" style="width:33.3333333333333%;"><div class="para logical"><div class="displaymath process-math">
-\begin{equation*}
-R_1\leftrightarrow R_3
-\end{equation*}
-</div></div></div>
-</div></div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="introduction"><div class="para">Consider whether these matrix manipulations (A) <em class="emphasis">must keep</em> or (B) <em class="emphasis">could change</em> the solution set for the corresponding linear system.</div></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para">Swapping two rows, for example:</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
-R_3-2R_1\to R_3
+\left[\begin{array}{cc|c} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\sim
+\left[\begin{array}{cc|c} 4 &amp; 5 &amp; 6 \\ 1 &amp; 2 &amp; 3 \end{array}\right]
 \end{equation*}
 </div></div></div>
 <div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+x  +2y \amp= 3 \amp 4x + 5y \amp= 6\\
+4x + 5y \amp= 6 \amp x  +2y \amp= 3 
+\end{align*}
+</div></div></div>
+</div></div></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para">Swapping two columns, for example:</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
-R_1-2R_3\to R_1
+\left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\sim
+\left[\begin{array}{cc|c} 2 &amp; 1 &amp; 3 
+\\ 5 &amp; 4 &amp; 6 \end{array}\right]
 \end{equation*}
 </div></div></div>
-</div></div>
-</div></article><span class="incontext"><a class="internal" href="LE2.html#activity-6">in-context</a></span>
+<div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+x  +2y \amp= 3 \amp 2x + y \amp= 3\\
+4x + 5y \amp= 6 \amp 5x  +4y \amp= 6 
+\end{align*}
+</div></div></div>
+</div></div></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para">Add a constant to every term of a row, for example:</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\sim
+\left[\begin{array}{cc|c} 1+6 &amp; 2+6 &amp; 3+6
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\end{equation*}
+</div></div></div>
+<div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+x  +2y \amp= 3 \amp 7x + 8y \amp= 9\\
+4x + 5y \amp= 6 \amp 4x  +5y \amp= 6 
+\end{align*}
+</div></div></div>
+</div></div></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para">Multiply a row by a nonzero constant, for example:</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\sim
+\left[\begin{array}{cc|c} 3 &amp; 6 &amp; 9 
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\end{equation*}
+</div></div></div>
+<div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+x  +2y \amp= 3 \amp 3x + 6y \amp= 9\\
+4x + 5y \amp= 6 \amp 4x  +5y \amp= 6 
+\end{align*}
+</div></div></div>
+</div></div></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para">Add a constant multiple of one row to another row, for example:</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\sim
+\left[\begin{array}{cc|c} 1 &amp; 2 &amp; 3
+\\ 4+3 &amp; 5+6 &amp; 6+9 \end{array}\right]
+\end{equation*}
+</div></div></div>
+<div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+x  +2y \amp= 3 \amp \unknown x  +\unknown y \amp= \unknown \\
+4x + 5y \amp= 6 \amp \unknown x  +\unknown y \amp= \unknown 
+\end{align*}
+</div></div></div>
+</div></div></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="para">Replace a column with zeros, for example:</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\sim
+\left[\begin{array}{cc|c} 1 &amp; 0 &amp; 3
+\\ 4 &amp; 0 &amp; 6 \end{array}\right]
+\end{equation*}
+</div></div></div>
+<div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+x  +2y \amp= 3 \amp \unknown x  +\unknown y \amp= \unknown \\
+4x + 5y \amp= 6 \amp \unknown x  +\unknown y \amp= \unknown 
+\end{align*}
+</div></div></div>
+</div></div></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<div class="para">Replace a row with zeros, for example:</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c}  1 &amp; 2 &amp; 3 
+\\ 4 &amp; 5 &amp; 6 \end{array}\right]
+\sim
+\left[\begin{array}{cc|c} 1 &amp; 2 &amp; 3
+\\ 0 &amp; 0 &amp; 0 \end{array}\right]
+\end{equation*}
+</div></div></div>
+<div class="sbspanel top" style="width:50%;"><div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+x  +2y \amp= 3 \amp \unknown x  +\unknown y \amp= \unknown \\
+4x + 5y \amp= 6 \amp \unknown x  +\unknown y \amp= \unknown 
+\end{align*}
+</div></div></div>
+</div></div></article></article><span class="incontext"><a class="internal" href="LE2.html#activity-6">in-context</a></span>
 </body>
 </html>

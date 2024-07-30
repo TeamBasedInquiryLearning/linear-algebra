@@ -12,30 +12,36 @@
 </head>
 <body class="ignore-math">
 <article class="remark remark-like"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.5.7</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.7.1</span><span class="period">.</span>
 </h4>
-<div class="para">Consider the set <span class="process-math">\(\IC\)</span> of complex numbers with the usual defintion for addition: <span class="process-math">\((a+b\mathbf i)\oplus(c+d\mathbf i)=(a+c)+(b+d)\mathbf i\text{.}\)</span>
+<div class="para logical">
+<div class="para">Recall from <a href="EV3.html" class="internal" title="Section 2.3: Subspaces (EV3)">Section 2.3</a> that a <dfn class="terminology">homogeneous</dfn> system of linear equations is one of the form:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/EV3.html">
+\begin{alignat*}{5}
+a_{11}x_1 &amp;\,+\,&amp; a_{12}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{1n}x_n &amp;\,=\,&amp; 0 \\
+a_{21}x_1 &amp;\,+\,&amp; a_{22}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{2n}x_n &amp;\,=\,&amp; 0 \\
+\vdots&amp;  &amp;\vdots&amp;   &amp;&amp;  &amp;\vdots&amp;&amp;\vdots\\
+a_{m1}x_1 &amp;\,+\,&amp; a_{m2}x_2 &amp;\,+\,&amp; \dots  &amp;\,+\,&amp; a_{mn}x_n &amp;\,=\,&amp; 0
+\end{alignat*}
+</div>
 </div> <div class="para logical">
-<div class="para">Let <span class="process-math">\(\vec u=a+b\mathbf{i}\text{,}\)</span> <span class="process-math">\(\vec v=c+d\mathbf{i}\text{,}\)</span> and <span class="process-math">\(\vec w=e+f\mathbf{i}\text{.}\)</span> Then</div>
+<div class="para">This system is equivalent to the vector equation:</div>
 <div class="displaymath process-math">
-\begin{align*}
-\vec u\oplus(\vec v \oplus \vec w)
-&amp;=
-(a+b\mathbf{i})\oplus((c+d\mathbf{i})\oplus(e+f\mathbf{i}))\\
-&amp;=
-(a+b\mathbf{i})\oplus((c+e)+(d+f)\mathbf{i})\\
-&amp;=(a+c+e)+(b+d+f)\mathbf{i}
-\end{align*}
+\begin{equation*}
+x_1 \vec{v}_1 + \cdots+x_n \vec{v}_n = \vec{0}
+\end{equation*}
 </div>
+<div class="para">and the augmented matrix:</div>
 <div class="displaymath process-math">
-\begin{align*}
-(\vec u\oplus\vec v) \oplus \vec w
-&amp;=
-((a+b\mathbf{i})\oplus(c+d\mathbf{i}))\oplus(e+f\mathbf{i})\\
-&amp;=((a+c)+(b+d)\mathbf{i})\oplus(e+f\mathbf{i})\\
-&amp;=(a+c+e)+(b+d+f)\mathbf{i}
-\end{align*}
+\begin{equation*}
+\left[\begin{array}{cccc|c}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} &amp; 0\\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} &amp; 0\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\\
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; 0
+\end{array}\right].
+\end{equation*}
 </div>
-</div> <div class="para">This proves that complex addition is associative: <span class="process-math">\(\vec u\oplus(\vec v \oplus \vec w) = (\vec u\oplus\vec v) \oplus \vec w\text{.}\)</span> The seven other vector space properties may also be verified, so <span class="process-math">\(\IC\)</span> is an example of a vector space.</div></article><span class="incontext"><a class="internal" href="AT5.html#remark-14">in-context</a></span>
+</div></article><span class="incontext"><a class="internal" href="EV7.html#remark-14">in-context</a></span>
 </body>
 </html>

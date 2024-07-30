@@ -12,17 +12,48 @@
 </head>
 <body class="ignore-math">
 <article class="activity project-like"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.12</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">Let <span class="process-math">\(T: \IR^4 \rightarrow \IR^3\)</span> be the linear transformation given by</div>
-<div class="displaymath process-math">
+<div class="introduction"><div class="para logical">
+<div class="para">In <a href="" class="xref" data-knowl="./knowl/observation-subspace-basis.html" title="Observation 2.6.5">Observation 2.6.5</a>, we found a basis for the subspace</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/observation-subspace-basis.html">
 \begin{equation*}
-T\left(\left[\begin{array}{c} x \\ y \\ z \\ w \end{array}\right] \right) = 
-\left[\begin{array}{c} 2x+4y+2z-4w \\ -2x-4y+z+w \\ 3x+6y-z-4w\end{array}\right].
+W=\vspan\setList{
+\left[\begin{array}{c}1\\2\\3\end{array}\right],
+\left[\begin{array}{c}2\\4\\6\end{array}\right],
+\left[\begin{array}{c}0\\-2\\-2\end{array}\right],
+\left[\begin{array}{c}1\\2\\1\end{array}\right]
+}.
 \end{equation*}
 </div>
-</div> <div class="para">Find a basis for the kernel of <span class="process-math">\(T\text{.}\)</span>
-</div></article><span class="incontext"><a class="internal" href="AT3.html#activity-81">in-context</a></span>
+<div class="para">To do so, we use the results of the calculation:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/observation-subspace-basis.html">
+\begin{equation*}
+\RREF
+\left[\begin{array}{cccc}
+1 &amp; 2 &amp; 0 &amp; 1 \\
+2 &amp; 4 &amp; -2 &amp; 2 \\
+3 &amp; 6 &amp; -2 &amp; 1 \\
+\end{array}\right]
+=
+\left[\begin{array}{cccc}
+\markedPivot{1} &amp; 2 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; \markedPivot{1} &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]
+\end{equation*}
+</div>
+<div class="para">to conclude that the set <span class="process-math">\(\setList{
+\left[\begin{array}{c}1\\2\\3\end{array}\right],
+\left[\begin{array}{c}0\\-2\\-2\end{array}\right]
+}\text{,}\)</span> the set of vectors <em class="emphasis">corresponding</em> to the pivot columns of the RREF, is a basis for <span class="process-math">\(W\text{.}\)</span>
+</div>
+</div></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para">Explain why neither of the vectors <span class="process-math">\(\left[\begin{array}{c}1\\0\\0\end{array}\right],
+\left[\begin{array}{c}0\\1\\0\end{array}\right]\)</span> are elements of <span class="process-math">\(W\text{.}\)</span>
+</div></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para">Explain why this shows that, in general, when we calculate a basis for <span class="process-math">\(W=\vspan\{\vec{v}_1,\dots, \vec{v}_n\}\text{,}\)</span> the pivot columns of <span class="process-math">\(\RREF[\vec{v}_1\dots \vec{v}_n]\)</span> themselves do not form a basis for <span class="process-math">\(W\text{.}\)</span>
+</div></article></article><span class="incontext"><a class="internal" href="EV6.html#activity-81">in-context</a></span>
 </body>
 </html>
